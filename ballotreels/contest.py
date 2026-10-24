@@ -1,0 +1,178 @@
+"""Load a contest directory: data/<election>/<contest>/.
+
+The format is docs/SCRIPT-FORMAT.md. The loader only checks shape (files
+exist, TOML parses, keys have the right types) and raises ContestError
+when the data cannot be read at all. Whether the data meets the standard
+is the checks' job (ballotreels.checks), which report every failure.
+"""
+
+from __future__ import annotations
+
+import tomllib
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any
+
+_MISSING = object()
+
+
+class ContestError(Exception):
+    """A contest directory that cannot be loaded."""
+
+
+@dataclass(frozen=True)
+class Source:
+    id: str
+    kind: str
+    publisher: str
+    url: str
+    file: str
+    retrieved: str
+
+
+@dataclass(frozen=True)
+class Line:
+    text: str
+    sources: tuple[str, ...] | None  # None when the key is absent
+    connective: bool
+
+
+@dataclass(frozen=True)
+class Section:
+    id: str
+    heading: str
+    side: str | None
+    lines: tuple[Line, ...]
+
+
+@dataclass(frozen=True)
+class Script:
+    contest: str
+    template: str
+    template_version: int
+    standard_version: int
+    sections: tuple[Section, ...]
+
+
+@dataclass(frozen=True)
+class Contest:
+    path: Path
+    id: str
+    election: str
+    division: str
+    kind: str
+    title: str
+    sources: tuple[Source, ...]
+    script: Script
+
+    def source(self, source_id: str) -> Source | None:
+        for s in self.sources:
+            if s.id == source_id:
+                return s
+        return None
+
+
+def _get(table: dict[str, Any], key: str, typ: type, where: str,
+         default: Any = _MISSING) -> Any:
+    if key not in table:
+        if default is _MISSING:
+            raise ContestError(f"{where}: missing key {key!r}")
+        return default
+    value = table[key]
+    # bool is a subclass of int; do not let `true` pass as a version number.
+    if not isinstance(value, typ) or (typ is int and isinstance(value, bool)):
+        raise ContestError(
+            f"{where}: {key!r} must be {typ.__name__}, "
+            f"got {type(value).__name__}")
+    return value
+
+
+def _read_toml(path: Path) -> dict[str, Any]:
+    try:
+        with path.open("rb") as f:
+            return tomllib.load(f)
+    except FileNotFoundError:
+        raise ContestError(f"{path}: not found") from None
+    except tomllib.TOMLDecodeError as e:
+        raise ContestError(f"{path}: {e}") from None
+
+
+def _load_sources(path: Path) -> tuple[dict[str, Any], tuple[Source, ...]]:
+    data = _read_toml(path)
+    contest = _get(data, "contest", dict, path.name)
+    sources = []
+    seen = set()
+    for i, raw in enumerate(_get(data, "source", list, path.name, [])):
+        where = f"{path.name}: source[{i}]"
+        if not isinstance(raw, dict):
+            raise ContestError(f"{where}: must be a table")
+        src = Source(**{k: _get(raw, k, str, where) for k in
+                        ("id", "kind", "publisher", "url", "file",
+                         "retrieved")})
+        if src.id in seen:
+            raise ContestError(f"{where}: duplicate source id {src.id!r}")
+        seen.add(src.id)
+        sources.append(src)
+    return contest, tuple(sources)
+
+
+def _load_line(raw: Any, where: str) -> Line:
+    if not isinstance(raw, dict):
+        raise ContestError(f"{where}: must be a table")
+    sources = _get(raw, "sources", list, where, None)
+    if sources is not None:
+        if not all(isinstance(s, str) for s in sources):
+            raise ContestError(f"{where}: 'sources' must be a list of strings")
+        sources = tuple(sources)
+    return Line(
+        text=_get(raw, "text", str, where),
+        sources=sources,
+        connective=_get(raw, "connective", bool, where, False),
+    )
+
+
+def _load_script(path: Path) -> Script:
+    data = _read_toml(path)
+    name = path.name
+    sections = []
+    for i, raw in enumerate(_get(data, "section", list, name, [])):
+        where = f"{name}: section[{i}]"
+        if not isinstance(raw, dict):
+            raise ContestError(f"{where}: must be a table")
+        sid = _get(raw, "id", str, where)
+        where = f"{name}: section {sid!r}"
+        lines = tuple(
+            _load_line(line, f"{where} line[{j}]")
+            for j, line in enumerate(_get(raw, "line", list, where, [])))
+        sections.append(Section(
+            id=sid,
+            heading=_get(raw, "heading", str, where),
+            side=_get(raw, "side", str, where, None),
+            lines=lines,
+        ))
+    return Script(
+        contest=_get(data, "contest", str, name),
+        template=_get(data, "template", str, name),
+        template_version=_get(data, "template_version", int, name),
+        standard_version=_get(data, "standard_version", int, name),
+        sections=tuple(sections),
+    )
+
+
+def load_contest(path: str | Path) -> Contest:
+    """Load the contest in directory `path`, or raise ContestError."""
+    path = Path(path)
+    if not path.is_dir():
+        raise ContestError(f"{path}: not a directory")
+    meta, sources = _load_sources(path / "sources.toml")
+    where = "sources.toml: [contest]"
+    return Contest(
+        path=path,
+        id=_get(meta, "id", str, where),
+        election=_get(meta, "election", str, where),
+        division=_get(meta, "division", str, where),
+        kind=_get(meta, "kind", str, where),
+        title=_get(meta, "title", str, where),
+        sources=sources,
+        script=_load_script(path / "script.toml"),
+    )
