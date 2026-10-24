@@ -1,0 +1,56 @@
+import io
+import subprocess
+import sys
+import unittest
+
+from ballotreels.cli import main
+
+from .helpers import PROP_2, REPO, ContestCopyTestCase
+
+
+class CliTest(ContestCopyTestCase):
+    def run_cli(self, *dirs):
+        out = io.StringIO()
+        code = main(["check", *map(str, dirs)], out=out)
+        return code, out.getvalue().splitlines()
+
+    def test_prop_2_passes(self):
+        code, lines = self.run_cli(PROP_2)
+        self.assertEqual(code, 0)
+        self.assertEqual(lines, [
+            "PASS ca-2026-11-03-prop-2; words what=27 today=40 change=54 "
+            "fiscal=35 yes=79 no=79 vote=39; no plays first"])
+
+    def test_failures_one_per_line(self):
+        self.edit("script.toml", "standard_version = 1",
+                  "standard_version = 0")
+        self.edit("script.toml", "The Legislature placed",
+                  "The bold Legislature placed")
+        code, lines = self.run_cli(PROP_2, self.dir)
+        self.assertEqual(code, 1)
+        self.assertEqual(len(lines), 4)
+        self.assertTrue(lines[0].startswith("PASS"))
+        self.assertIn("[judgment-word] what.line[1]: judgment word 'bold'",
+                      lines[1])
+        self.assertIn("[standard-version]", lines[2])
+        self.assertTrue(lines[3].startswith(
+            "FAIL ca-2026-11-03-prop-2: 2 failures; words "))
+
+    def test_unloadable_contest(self):
+        (self.dir / "script.toml").unlink()
+        code, lines = self.run_cli(self.dir)
+        self.assertEqual(code, 1)
+        self.assertEqual(lines, [f"{self.dir}: script.toml: not found",
+                                 f"FAIL {self.dir}: could not load"])
+
+    def test_module_entry_point(self):
+        r = subprocess.run(
+            [sys.executable, "-m", "ballotreels", "check",
+             "data/ca-2026-11-03/prop-2"],
+            cwd=REPO, capture_output=True, text=True)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertTrue(r.stdout.startswith("PASS "))
+
+
+if __name__ == "__main__":
+    unittest.main()

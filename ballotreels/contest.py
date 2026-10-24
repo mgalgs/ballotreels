@@ -92,9 +92,9 @@ def _read_toml(path: Path) -> dict[str, Any]:
         with path.open("rb") as f:
             return tomllib.load(f)
     except FileNotFoundError:
-        raise ContestError(f"{path}: not found") from None
+        raise ContestError(f"{path.name}: not found") from None
     except tomllib.TOMLDecodeError as e:
-        raise ContestError(f"{path}: {e}") from None
+        raise ContestError(f"{path.name}: {e}") from None
 
 
 def _load_sources(path: Path) -> tuple[dict[str, Any], tuple[Source, ...]]:
@@ -163,7 +163,7 @@ def load_contest(path: str | Path) -> Contest:
     """Load the contest in directory `path`, or raise ContestError."""
     path = Path(path)
     if not path.is_dir():
-        raise ContestError(f"{path}: not a directory")
+        raise ContestError("not a directory")
     meta, sources = _load_sources(path / "sources.toml")
     where = "sources.toml: [contest]"
     return Contest(
