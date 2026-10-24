@@ -28,6 +28,16 @@ SOURCE_KINDS = frozenset({
 
 _VERSION_RE = re.compile(r"^Standard version:\s*(\d+)\s*$", re.MULTILINE)
 
+# template -> version -> section ids in order, and which of them are sides
+# (docs/SCRIPT-FORMAT.md). Shared by checks.check_template and narration's
+# playback order, so the two can't drift apart.
+TEMPLATES: dict[str, dict[int, tuple[tuple[str, ...], dict[str, str]]]] = {
+    "measure": {
+        1: (("what", "today", "change", "fiscal", "yes", "no", "vote"),
+            {"yes": "yes", "no": "no"}),
+    },
+}
+
 
 @dataclass(frozen=True)
 class Standard:

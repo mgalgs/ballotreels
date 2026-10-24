@@ -9,10 +9,13 @@ from .helpers import PROP_2, REPO, ContestCopyTestCase
 
 
 class CliTest(ContestCopyTestCase):
-    def run_cli(self, *dirs):
+    def run_cli_cmd(self, command, *dirs):
         out = io.StringIO()
-        code = main(["check", *map(str, dirs)], out=out)
+        code = main([command, *map(str, dirs)], out=out)
         return code, out.getvalue().splitlines()
+
+    def run_cli(self, *dirs):
+        return self.run_cli_cmd("check", *dirs)
 
     def test_prop_2_passes(self):
         code, lines = self.run_cli(PROP_2)
@@ -39,6 +42,20 @@ class CliTest(ContestCopyTestCase):
     def test_unloadable_contest(self):
         (self.dir / "script.toml").unlink()
         code, lines = self.run_cli(self.dir)
+        self.assertEqual(code, 1)
+        self.assertEqual(lines, [f"{self.dir}: script.toml: not found",
+                                 f"FAIL {self.dir}: could not load"])
+
+    def test_narration_matches_committed_file(self):
+        code, lines = self.run_cli_cmd("narration", self.dir)
+        self.assertEqual(code, 0)
+        self.assertEqual(len(lines), 1)
+        self.assertEqual((self.dir / "narration.txt").read_text(encoding="utf-8"),
+                         (PROP_2 / "narration.txt").read_text(encoding="utf-8"))
+
+    def test_narration_unloadable_contest(self):
+        (self.dir / "script.toml").unlink()
+        code, lines = self.run_cli_cmd("narration", self.dir)
         self.assertEqual(code, 1)
         self.assertEqual(lines, [f"{self.dir}: script.toml: not found",
                                  f"FAIL {self.dir}: could not load"])

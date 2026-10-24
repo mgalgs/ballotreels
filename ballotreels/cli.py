@@ -1,12 +1,18 @@
-"""Command line: python -m ballotreels check <contest-dir>..."""
+"""Command line:
+
+    python -m ballotreels check <contest-dir>...
+    python -m ballotreels narration <contest-dir>...
+"""
 
 from __future__ import annotations
 
 import argparse
 import sys
+from pathlib import Path
 
 from .checks import check_contest, word_count
 from .contest import ContestError, load_contest
+from .narration import narration_text
 from .standard import load_standard, side_order
 
 
@@ -32,13 +38,38 @@ def _check_one(path: str, standard, out) -> bool:
     return not failures
 
 
+def _narration_one(path: str, out) -> bool:
+    try:
+        contest = load_contest(path)
+    except ContestError as e:
+        print(f"{path}: {e}", file=out)
+        print(f"FAIL {path}: could not load", file=out)
+        return False
+    text = narration_text(contest)
+    dest = Path(path) / "narration.txt"
+    dest.write_text(text, encoding="utf-8")
+    print(f"{dest}: wrote {len(text.splitlines())} lines", file=out)
+    return True
+
+
 def main(argv: list[str] | None = None, out=sys.stdout) -> int:
     parser = argparse.ArgumentParser(prog="python -m ballotreels")
     sub = parser.add_subparsers(dest="command", required=True)
     check = sub.add_parser(
         "check", help="run the standard's machine checks on contests")
     check.add_argument("contests", nargs="+", metavar="contest-dir")
+    narration = sub.add_parser(
+        "narration",
+        help="write narration.txt: each script line's text, one per line, "
+             "in playback order, for `videobuilder say`")
+    narration.add_argument("contests", nargs="+", metavar="contest-dir")
     args = parser.parse_args(argv)
+
+    if args.command == "narration":
+        ok = True
+        for path in args.contests:
+            ok = _narration_one(path, out) and ok
+        return 0 if ok else 1
 
     standard = load_standard()
     ok = True

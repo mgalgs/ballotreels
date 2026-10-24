@@ -11,16 +11,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from .contest import Contest, Section
-from .standard import (SOURCE_KINDS, Standard, judgment_word_pattern,
-                       load_standard)
-
-# template -> version -> section ids in order, and which of them are sides.
-TEMPLATES: dict[str, dict[int, tuple[tuple[str, ...], dict[str, str]]]] = {
-    "measure": {
-        1: (("what", "today", "change", "fiscal", "yes", "no", "vote"),
-            {"yes": "yes", "no": "no"}),
-    },
-}
+from .standard import (SOURCE_KINDS, TEMPLATES, Standard,
+                       judgment_word_pattern, load_standard)
 
 SIDE_TOLERANCE = 0.05
 
