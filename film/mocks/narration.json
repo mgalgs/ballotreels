@@ -1,0 +1,48 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 19.34,
+  "phrases": [
+    {
+      "text": "California's tax revenue rises and falls with the economy.",
+      "start": 0.03,
+      "end": 3.74
+    },
+    {
+      "text": "In a bad recession, it can drop by tens of billions of dollars.",
+      "start": 4.15,
+      "end": 7.8
+    },
+    {
+      "text": "To get through those years, the state saves in a Rainy Day Fund.",
+      "start": 8.2,
+      "end": 11.49
+    },
+    {
+      "text": "Today, it saves until the fund holds 10 percent of General Fund taxes.",
+      "start": 11.9,
+      "end": 16.17
+    },
+    {
+      "text": "Proposition 2 would raise that to 20 percent.",
+      "start": 16.58,
+      "end": 19.31
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "California's tax revenue rises and falls with the economy.",
+      "In a bad recession, it can drop by tens of billions of dollars.",
+      "To get through those years, the state saves in a Rainy Day Fund.",
+      "Today, it saves until the fund holds 10 percent of General Fund taxes.",
+      "Proposition 2 would raise that to 20 percent."
+    ],
+    "voice": "af_heart",
+    "speed": 1.0,
+    "lang": "en-us",
+    "gap": 0.35,
+    "lexicon": {},
+    "model": "kokoro-v1.0.onnx+voices-v1.0.bin"
+  },
+  "sha256": "8a77a5a1afeac5fde635c1a6a141e50cdd7b6e576e470c90c1f653823ef2ff9e"
+}
