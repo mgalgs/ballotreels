@@ -10,11 +10,13 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from . import narration
 from .contest import Contest, Section
 from .standard import (SOURCE_KINDS, TEMPLATES, Standard,
                        judgment_word_pattern, load_standard)
 
 SIDE_TOLERANCE = 0.05
+AIRTIME_TOLERANCE = 0.05
 
 
 @dataclass(frozen=True)
@@ -142,6 +144,34 @@ def check_side_parity(c: Contest) -> list[Failure]:
                     f"larger: {yes[0].id}={a}, {no[0].id}={b}")]
 
 
+def check_airtime(c: Contest) -> list[Failure]:
+    """STANDARD.md 2.2/4.1: the two sides' spoken durations within 5% of the
+    larger, measured from the narration sidecars' phrase times.
+
+    Silently reports nothing when there are no sidecars yet, or when they no
+    longer line up with the script (narration.NarrationError): a stale
+    sidecar can't tell us anything about the current script's airtime: it is
+    not this check's job to say the narration is stale, only to measure it
+    when it can.
+    """
+    try:
+        durations = narration.side_durations(c)
+    except ImportError:
+        return []
+    except narration.NarrationError:
+        return []
+    except KeyError:
+        return []  # an unknown template/version; check_template reports it
+    if durations is None:
+        return []
+    (side_a, dur_a), (side_b, dur_b) = durations
+    if abs(dur_a - dur_b) <= AIRTIME_TOLERANCE * max(dur_a, dur_b):
+        return []
+    return [Failure("airtime",
+                    f"side spoken durations differ by more than 5% of the "
+                    f"larger: {side_a}={dur_a:.1f}s, {side_b}={dur_b:.1f}s")]
+
+
 def check_judgment_words(c: Contest, words: tuple[str, ...]) -> list[Failure]:
     if not words:
         return []
@@ -182,6 +212,7 @@ def check_contest(c: Contest, standard: Standard | None = None
         *check_sources(c),
         *check_template(c),
         *check_side_parity(c),
+        *check_airtime(c),
         *check_judgment_words(c, standard.judgment_words),
         *check_standard_version(c, standard.version),
     ]

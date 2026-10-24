@@ -167,6 +167,28 @@ class BrokenCopyTest(ContestCopyTestCase):
                   "standard_version = 0")
         self.assertOnly("standard-version")
 
+    # 9. airtime
+    def test_airtime_imbalance(self):
+        # Shrinks the "no" side's span from 30.07s to 25.26s (yes stays at
+        # 28.69s), past the 5% tolerance; see tests/test_narration.py for
+        # where those numbers come from.
+        self.edit("narration.json", '"end": 89.81', '"end": 85.0')
+        [f] = self.assertOnly("airtime")
+        self.assertIn("no=25.3", f.message)
+        self.assertIn("yes=28.7", f.message)
+
+    def test_airtime_skips_when_narration_is_stale(self):
+        # "bold" is also a judgment word, so the edit still fails a check,
+        # just not "airtime": the sidecars no longer match this line's text,
+        # so airtime can't be measured from them and says nothing.
+        self.edit("script.toml", "The Legislature placed",
+                  "The Legislature, in a bold process, placed")
+        self.assertEqual({f.check for f in self.failures()}, {"judgment-word"})
+
+    def test_airtime_skips_with_no_sidecars(self):
+        (self.dir / "narration.json").unlink()
+        self.assertEqual(self.failures(), [])
+
     def test_reports_every_failure(self):
         self.edit("script.toml", 'contest = "ca-2026-11-03-prop-2"',
                   'contest = "x"')
