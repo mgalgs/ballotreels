@@ -1,0 +1,121 @@
+# Narration script for California Proposition 2, 2026-11-03.
+# Written by hand from the archived sources in sources.toml, as the
+# reference example for the measure template. Format: docs/SCRIPT-FORMAT.md.
+
+contest = "ca-2026-11-03-prop-2"
+template = "measure"
+template_version = 1
+standard_version = 1
+
+[[section]]
+id = "what"
+heading = "What it is"
+
+[[section.line]]
+text = "Proposition 2 changes how much California must save in its Rainy Day Fund, the state's main budget reserve."
+sources = ["title-summary", "lao-analysis"]
+
+[[section.line]]
+text = "The Legislature placed this constitutional amendment on the ballot."
+sources = ["guide-section"]
+
+[[section]]
+id = "today"
+heading = "The rules today"
+
+[[section.line]]
+text = "Today, the state must deposit part of its tax revenue in the fund each year, until the fund reaches 10 percent of General Fund taxes."
+sources = ["lao-analysis"]
+
+[[section.line]]
+text = "The state must also make extra payments toward pension and retiree health debts, until 2030."
+sources = ["lao-analysis"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Proposition 2 raises the fund's target to 20 percent, with larger deposits when revenue from investment gains is very high."
+sources = ["lao-analysis", "title-summary"]
+
+[[section.line]]
+text = "It extends the extra debt payments to 2040, for a wider set of debts."
+sources = ["lao-analysis"]
+
+[[section.line]]
+text = "And deposits into reserves would count toward the state's spending limit when they are spent, not when they are saved."
+sources = ["lao-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "Fiscal effect"
+
+[[section.line]]
+text = "The Legislative Analyst's Office estimates that state reserves would be higher, and that the state might make more debt payments."
+sources = ["lao-analysis"]
+
+[[section.line]]
+text = "The arguments that follow are their authors' opinions. No official agency checked them for accuracy."
+sources = ["guide-section"]
+
+# The yes and no sections are the two sides. The renderer decides which
+# plays first (STANDARD.md rule 2.4); their word counts must stay within 5%.
+
+[[section]]
+id = "yes"
+heading = "Supporters say"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say a larger reserve would protect schools, health care, and public safety from cuts in the next downturn."
+sources = ["arguments"]
+
+[[section.line]]
+text = "They say it makes the state save more of a revenue spike instead of spending it, and that the Legislative Analyst's Office recommends saving more."
+sources = ["arguments"]
+
+[[section.line]]
+text = "And they say the rebate rule opponents cite rewards spending over saving."
+sources = ["arguments"]
+
+[[section.line]]
+text = "Their argument is signed by leaders of the California Professional Firefighters, the Assembly Budget Committee, and the Los Angeles Area Chamber of Commerce."
+sources = ["arguments"]
+
+[[section]]
+id = "no"
+heading = "Opponents say"
+side = "no"
+
+[[section.line]]
+text = "Opponents say it weakens the spending limit voters approved in 1978, making the tax rebates that limit can trigger less likely."
+sources = ["arguments"]
+
+[[section.line]]
+text = "They say it adds no new money for schools, health care, or public safety, and the state should follow its existing rules."
+sources = ["arguments"]
+
+[[section.line]]
+text = "And they say its backers soon voted to suspend over 5 billion dollars in deposits."
+sources = ["arguments"]
+
+[[section.line]]
+text = "Their argument is signed by leaders of the Assembly Budget Committee, the Senate Elections and Constitutional Amendments Committee, and Reform California."
+sources = ["arguments"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means reserves would be higher, and extra debt payments would continue for longer."
+sources = ["quick-reference"]
+
+[[section.line]]
+text = "A no vote means the current rules would not change."
+sources = ["quick-reference"]
+
+[[section.line]]
+text = "Every fact here comes from California's Official Voter Information Guide, listed on screen."
+connective = true
