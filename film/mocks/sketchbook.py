@@ -55,12 +55,12 @@ def seg(name, at, until, copy='', overlap=0, **data):
 SOURCE = "Source: Legislative Analyst's Office"
 TIMELINE = vb.Timeline(GRID, [
     seg('rise', 0, 123, ['tax revenue', 'years', 'illustrative, not real data']),
-    seg('plunge', 123, 234, 'tens of billions', copy_at=60),
-    seg('fund', 234, 357, 'Rainy Day Fund', copy_at=110, overlap=28),
-    seg('today', 357, 498, 'Today: 10%', copy_at=80),
+    seg('plunge', 123, 246, 'tens of billions', copy_at=63),
+    seg('fund', 246, 357, 'Rainy Day Fund', copy_at=50, overlap=24),
+    seg('today', 357, 498, 'Today: 10%', copy_at=89),
     # The source line is written in the narration gap before this phrase and
     # stays to the end; it is a footnote, so it isn't held to a read time.
-    seg('prop2', 498, 615, 'Prop 2: 20%', copy_at=60, source=SOURCE),
+    seg('prop2', 498, 615, 'Prop 2: 20%', copy_at=56, source=SOURCE),
 ], end=615)
 D = {s.name: s.data for s in TIMELINE.segments}
 
@@ -115,7 +115,7 @@ def text_item(f0, f1, words, fnt, x, y, ink=GRAPHITE, alpha=1.0, align='left', m
     def draw(cv, p):
         with cv.clip(left - 30, y - 40, 30 + (w + 60) * p, h + 80):
             sp.pencil_text(cv, words, fnt, left, y, ink, alpha)
-        if mark and p >= 1:
+        if mark and p >= 1 and not getattr(cv, '_sb_nomark', False):
             cv.mark(mark, left, y, w, h)
 
     def head(p):
@@ -176,27 +176,28 @@ def _chart():
     shade = Hatch(under, 4, angle=62, spacing=15, alpha=0.36, width=2.0)
     c.append(Item(80, 230, lambda cv, p: _shade_under(cv, shade), None))
     # the plunge, in orange
-    c.append(stroke_item(146, 168, Stroke(PLUNGE_PTS, 5, passes=3, width=5.0, wobble=1.2), ORANGE))
-    c.append(stroke_item(170, 186, Stroke(TAIL_PTS, 6, passes=2, width=4.2)))
+    c.append(stroke_item(136, 154, Stroke(PLUNGE_PTS, 5, passes=3, width=5.0, wobble=1.2), ORANGE))
+    c.append(stroke_item(154, 164, Stroke(TAIL_PTS, 6, passes=2, width=4.2)))
     # guide lines at the peak and the trough, and the drop between them
-    for k, (xy, f) in enumerate(((PEAK_XY, 182), (TROUGH_XY, 190))):
+    for k, (xy, f) in enumerate(((PEAK_XY, 158), (TROUGH_XY, 162))):
         for j, d in enumerate(sp.dashes([(xy[0] + 14, xy[1]), (ARROW_X + 24, xy[1])], 16, 11)):
             c.append(stroke_item(f + j * 0.6, f + j * 0.6 + 2, Stroke(d, 70 + 10 * k + j, passes=1, width=2.4,
                                                                     overshoot=1, wobble=0.6), pencil=False))
     lost = PLUNGE_PTS + [(TROUGH_XY[0], PEAK_XY[1])]
-    c.append(hatch_item(184, 204, Hatch(lost, 8, angle=-35, spacing=12, alpha=0.6, width=2.4), ORANGE))
+    c.append(hatch_item(164, 186, Hatch(lost, 8, angle=-35, spacing=12, alpha=0.6, width=2.4), ORANGE,
+                        pencil=False))
     top, bot = PEAK_XY[1] + 6, TROUGH_XY[1] - 6
-    c.append(stroke_item(196, 206, Stroke([(ARROW_X, top), (ARROW_X, bot)], 9, passes=2, width=4), ORANGE))
+    c.append(stroke_item(164, 174, Stroke([(ARROW_X, top), (ARROW_X, bot)], 9, passes=2, width=4), ORANGE,
+                         pencil=False))
     for k, (y, s) in enumerate(((top, 1), (bot, -1))):
-        c.append(stroke_item(206 + 2 * k, 209 + 2 * k,
+        c.append(stroke_item(174 + 2 * k, 177 + 2 * k,
                              Stroke([(ARROW_X - 17, y + 22 * s), (ARROW_X, y), (ARROW_X + 17, y + 22 * s)],
-                                    11 + k, passes=2, width=4, overshoot=2), ORANGE))
-    cy = (top + bot) / 2
+                                    11 + k, passes=2, width=4, overshoot=2), ORANGE, pencil=False))
+    # the callout sits just above the peak's guide, ending over the arrow
     words = D['plunge']['copy']
     w = text.measure(words, T_CALLOUT)
-    c.append(text_item(200, 226, words, T_CALLOUT, ARROW_X - 34 - w, cy - 150, ORANGE, mark='callout'))
-    c.append(stroke_item(226, 232, Stroke([(ARROW_X - 90, cy - 40), (ARROW_X - 54, cy - 10), (ARROW_X - 18, cy)],
-                                           13, passes=2, width=3.4), ORANGE))
+    c.append(text_item(166, 186, words, T_CALLOUT, ARROW_X + 20 - w,
+                       PEAK_XY[1] - 16 - text.line_height(T_CALLOUT), ORANGE, mark='callout'))
 
 
 def _shade_under(cv, shade):
@@ -214,10 +215,10 @@ def _shade_under(cv, shade):
 
 _chart()
 _RISE = next(i for i, it in enumerate(CHART) if it.f0 == 78)
-_PLUNGE = next(i for i, it in enumerate(CHART) if it.f0 == 146)
-_TAIL = next(i for i, it in enumerate(CHART) if it.f0 == 170)
+_PLUNGE = next(i for i, it in enumerate(CHART) if it.f0 == 136)
+_TAIL = next(i for i, it in enumerate(CHART) if it.f0 == 154)
 
-ERASE0, ERASE1 = 234, 262   # the eraser's pass, under the fund scene's first beat
+ERASE0, ERASE1 = 240, 264   # the eraser's pass, under the fund scene's first beat
 ZIGZAG = []
 for _i in range(8):
     _y = 330 + _i * 118
@@ -235,8 +236,10 @@ def chart_scene(cv, n):
     e = vb.clamp01((n - ERASE0) / (ERASE1 - ERASE0))
     ctx = cv.ctx
     ctx.push_group()
+    cv._sb_nomark = True
     for it in CHART:
         it.draw(cv, n, full=True)
+    cv._sb_nomark = False
     ctx.set_operator(cairo.OPERATOR_DEST_OUT)
     ctx.set_line_cap(cairo.LINE_CAP_ROUND)
     ctx.set_line_join(cairo.LINE_JOIN_ROUND)
@@ -337,18 +340,18 @@ COINS = []
 def _fund():
     f = FUND
     # canopy: the top in one sweep, then the scalloped hem, ribs, shaft and hook
-    f.append(stroke_item(254, 274, Stroke(CANOPY_TOP, 20, passes=3, width=4.4)))
+    f.append(stroke_item(258, 272, Stroke(CANOPY_TOP, 20, passes=3, width=4.4)))
     hem = [p for s in SCALLOPS for p in s[:-1]] + [SCALLOPS[-1][-1]]
-    f.append(stroke_item(274, 284, Stroke(hem, 21, passes=2, width=3.8)))
+    f.append(stroke_item(272, 280, Stroke(hem, 21, passes=2, width=3.8), pencil=False))
     for k, rib in enumerate(RIB_LINES):
-        f.append(stroke_item(284 + 1.6 * k, 287 + 1.6 * k, Stroke(rib, 22 + k, passes=2, width=3), pencil=k % 2 == 0))
-    f.append(stroke_item(292, 296, Stroke(SHAFT[0], 30, passes=2, width=5)))
-    f.append(stroke_item(296, 302, Stroke(SHAFT[1] + HOOK[1:], 31, passes=3, width=5.4)))
+        f.append(stroke_item(276 + 1.6 * k, 279 + 1.6 * k, Stroke(rib, 22 + k, passes=2, width=3), pencil=False))
+    f.append(stroke_item(278, 281, Stroke(SHAFT[0], 30, passes=2, width=5), pencil=False))
+    f.append(stroke_item(280, 288, Stroke(SHAFT[1] + HOOK[1:], 31, passes=3, width=5.4), pencil=False))
     for k in (4, 5):
-        f.append(hatch_item(286 + 4 * (k - 4), 300, Hatch(PANELS[k], 40 + k, angle=-58, spacing=13,
+        f.append(hatch_item(282 + 4 * (k - 4), 296, Hatch(PANELS[k], 40 + k, angle=-58, spacing=13,
                                                         cross=k == 5, alpha=0.38), pencil=False))
     # the jar, its rim and a glint on the glass
-    f.append(stroke_item(300, 314, Stroke(JAR_PTS, 32, passes=3, width=4)))
+    f.append(stroke_item(298, 312, Stroke(JAR_PTS, 32, passes=3, width=4)))
     f.append(stroke_item(312, 318, Stroke(RIM, 33, passes=2, width=3.4, closed=True)))
     for k, (x0, y0, y1) in enumerate(((296, 880, 990), (304, 1010, 1040))):
         f.append(stroke_item(318, 320, Stroke([(x0, y0), (x0 - 2, y1)], 34 + k, passes=1, width=3, alpha=0.5),
@@ -360,9 +363,9 @@ def _fund():
                         pencil=False))
     # the label, underlined in orange
     words = D['fund']['copy']
-    f.append(text_item(322, 344, words, T_FUND, JX + 50, 1166, align='center', mark='fund label'))
+    f.append(text_item(278, 296, words, T_FUND, JX + 50, 1166, align='center', mark='fund label'))
     w = text.measure(words, T_FUND)
-    f.append(stroke_item(345, 352, Stroke(sp.catmull([(JX + 50 - w / 2, 1286), (JX + 50, 1281),
+    f.append(stroke_item(336, 344, Stroke(sp.catmull([(JX + 50 - w / 2, 1286), (JX + 50, 1281),
                                                        (JX + 50 + w / 2 + 8, 1288)], per=10), 39, passes=2,
                                           width=5), ORANGE))
     # coins dropping into the jar as the state saves
@@ -378,7 +381,7 @@ def _fund():
                            closed=True)
             fill = Hatch(sp.ellipse(0, 0, 30, 30 * ry, rot=rot, n=24), 140 + k, angle=40, spacing=7,
                          alpha=0.55, width=2)
-            COINS.append(dict(x=x + rnd.uniform(-4, 4), y=y + rnd.uniform(-3, 3), f=302 + 2.6 * k,
+            COINS.append(dict(x=x + rnd.uniform(-4, 4), y=y + rnd.uniform(-3, 3), f=306 + 2.6 * k,
                               outer=outer, inner=inner, fill=fill, spin=rnd.uniform(-3, 3)))
             k += 1
 
@@ -469,9 +472,9 @@ BAR_ITEMS = []
 
 def _bars():
     b = BAR_ITEMS
-    b.append(stroke_item(382, 398, Stroke([(120, BASE_Y), (1000, BASE_Y)], 200, passes=3, width=4.2)))
-    b.append(text_item(398, 404, '0%', font(44, family=PRINT), 112, BASE_Y - 20, alpha=0.8, align='right',
-                       mark='zero'))
+    b.append(stroke_item(378, 392, Stroke([(120, BASE_Y), (1000, BASE_Y)], 200, passes=3, width=4.2)))
+    b.append(text_item(388, 394, '0%', font(44, family=PRINT), 112, BASE_Y - 20, alpha=0.8, align='right',
+                       pencil=False, mark='zero'))
     # a light guide at the 10% line, carried across to where the second bar will go
     y10 = BASE_Y - 0.10 * PX_PER_PCT
     b.append(stroke_item(466, 482, Stroke([(BARS[0][0] + BAR_W + 8, y10), (BARS[1][0] + BAR_W + 30, y10)], 201,
@@ -491,7 +494,8 @@ class Bar:
         self.right = Stroke([(x + BAR_W, BASE_Y), (x + BAR_W, top)], seed + 1, passes=3, width=4.2, overshoot=4)
         self.top = Stroke([(x - 4, 0), (x + BAR_W + 6, 0)], seed + 2, passes=3, width=4.2)
         self.fill = Hatch([(x, BASE_Y), (x, top), (x + BAR_W, top), (x + BAR_W, BASE_Y)], seed + 3,
-                          angle=52, spacing=13, cross=ink == GRAPHITE, alpha=0.42)
+                          angle=52, spacing=13, cross=ink == GRAPHITE,
+                          alpha=0.42 if ink == GRAPHITE else 0.7)
 
     def height(self, n):
         return self.h * self.grow(n)
@@ -517,22 +521,22 @@ class Bar:
 
 
 def _grow_today(n):
-    return DRAW(vb.clamp01((n - 404) / 26))
+    return DRAW(vb.clamp01((n - 396) / 26))
 
 
 def _grow_prop2(n):
     # up to the old 10% line, a beat's pause, then on to twice the height
-    a = DRAW(vb.clamp01((n - 506) / 16)) * 0.5
-    s = vb.spring_at(n - 528, FPS, **vb.damped(0.62, hz=1.3)) if n >= 528 else 0.0
+    a = DRAW(vb.clamp01((n - 504) / 14)) * 0.5
+    s = vb.spring_at(n - 520, FPS, **vb.damped(0.62, hz=1.3)) if n >= 520 else 0.0
     return a + 0.5 * s
 
 
 BAR_OBJS = [Bar(BARS[0][0], BARS[0][1], BARS[0][2], 210, GRAPHITE, _grow_today),
             Bar(BARS[1][0], BARS[1][1], BARS[1][2], 220, ORANGE, _grow_prop2)]
-BAR_ITEMS.append(Item(404, 430, lambda cv, p: None, lambda p: BAR_OBJS[0].head(404 + p * 26), ease=vb.linear))
-BAR_ITEMS.append(Item(506, 548, lambda cv, p: None, lambda p: BAR_OBJS[1].head(506 + p * 42), ORANGE,
+BAR_ITEMS.append(Item(396, 422, lambda cv, p: None, lambda p: BAR_OBJS[0].head(396 + p * 26), ease=vb.linear))
+BAR_ITEMS.append(Item(504, 530, lambda cv, p: None, lambda p: BAR_OBJS[1].head(504 + p * 26), ORANGE,
                       ease=vb.linear))
-for _b, (_f0, _f1) in zip(BAR_OBJS, ((432, 458), (552, 576))):
+for _b, (_f0, _f1) in zip(BAR_OBJS, ((424, 446), (534, 554))):
     _top = BASE_Y - _b.h
     BAR_ITEMS.append(text_item(_f0, _f1, _b.label, T_BAR, _b.x + BAR_W / 2, _top - 116, align='center',
                                mark='label ' + _b.label))
@@ -550,7 +554,9 @@ def icon_transform(n):
 def bars_scene(cv, n):
     s, dx, dy = icon_transform(n)
     with cv.layer(dx=dx, dy=dy, scale=s):
+        cv._sb_nomark = True
         fund_drawing(cv, n, full=True, marks=False)
+        cv._sb_nomark = False
     cv.mark('fund sketch', 190 * s + dx, 232 * s + dy, 760 * s, 1100 * s)
     for it in BAR_ITEMS:
         it.draw(cv, n)
@@ -682,6 +688,9 @@ def draw(n, cv):
     draw_tool(cv, n)
     captions(cv, n)
 
+
+# The callout is an annotation on the chart, meant to sit on it.
+OVERLAP_OK = {('chart', 'callout')}
 
 FILM = vb.Film(
     draw=draw,
