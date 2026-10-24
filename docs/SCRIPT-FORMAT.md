@@ -55,6 +55,8 @@ A line has `sources` (non-empty) or `connective = true`, never both.
 Sections, in this order: `what`, `today`, `change`, `fiscal`, the two
 sides, `vote`. The sides are `yes` (with `side = "yes"`) and `no` (with
 `side = "no"`). Which side plays first is decided at render time by a
-stable hash of the contest id (STANDARD.md rule 2.4); the script file
-always lists `yes` then `no`. Their word counts must be within 5% of
+stable hash of the contest id (STANDARD.md rule 2.4): the SHA-256 of
+the UTF-8 contest id, `yes` first when its first byte is even and `no`
+first when it is odd (`ballotreels.side_order`). The script file always
+lists `yes` then `no`. Their word counts must be within 5% of
 each other.
