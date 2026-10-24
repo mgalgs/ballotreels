@@ -393,7 +393,7 @@ def draw_coin(cv, c, n, full=False):
     t = 1.0 if full else vb.clamp01((n - c['f']) / 11)
     if t <= 0:
         return
-    drop = 660 - c['y'] + 40 * math.sin(c['x'])
+    drop = c['y'] - 660 + 40 * math.sin(c['x'])
     # falls with gravity, settles with a small bounce
     y = c['y'] - drop * (1 - t * t) if t < 1 else c['y']
     b = vb.clamp01((n - c['f'] - 11) / 6) if not full else 1
