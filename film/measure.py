@@ -533,6 +533,11 @@ def timeline_visual(chart, lines, L, f0, f1):
             break
         df, itf = font(df.size * 0.92, 600), font(itf.size * 0.92, family=PRINT)
     gap = max(40 * u, min(110 * u, (room - sum(heights)) / max(1, n - 1)))
+    # centre the column on the stage
+    widest = max(max(text.measure(ln, df) for ln in a) for a, _ in blocks)
+    widest = max(widest, max(text.measure(ln, itf) for _, b in blocks for ln in b))
+    shift = max(0, (stage.w - (tx - stage.x) - widest) / 2 - 20 * u)
+    spine_x, tx = spine_x + shift, tx + shift
     y = stage.y + max(0, (room - sum(heights) - gap * (n - 1)) / 2)
     starts = timeline_reveals(n, lines, f0)
     items = [src]
