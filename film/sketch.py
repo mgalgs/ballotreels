@@ -549,7 +549,7 @@ class Rub:
 
     @property
     def gone(self):
-        return self.e1 + GHOST_FADE
+        return math.inf if self.e1 is None else self.e1 + GHOST_FADE
 
     def draw(self, cv, n, mark=None):
         if self.e0 is None or n < self.e0:
