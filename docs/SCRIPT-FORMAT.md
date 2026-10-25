@@ -20,6 +20,7 @@ title = "..."
 id = "lao-analysis"                  # what script lines cite
 kind = "official-fiscal-analysis"    # must be an allowed kind, below
 publisher = "..."                    # who issued it, as shown on the sources card
+credit = "..."                       # optional: a short form for under a chart; defaults to publisher
 url = "..."
 file = "sources/analysis.html"       # the archived copy, relative to the contest dir
 retrieved = "2026-10-24"
