@@ -28,6 +28,13 @@ class Source:
     url: str
     file: str
     retrieved: str
+    credit: str | None = None  # None when the key is absent
+
+    @property
+    def short_credit(self) -> str:
+        """How a chart names this source under it: `credit`, or the full
+        `publisher` when it has none (docs/SCRIPT-FORMAT.md)."""
+        return self.credit if self.credit is not None else self.publisher
 
 
 @dataclass(frozen=True)
@@ -148,7 +155,8 @@ def _load_sources(path: Path) -> tuple[dict[str, Any], tuple[Source, ...]]:
             raise ContestError(f"{where}: must be a table")
         src = Source(**{k: _get(raw, k, str, where) for k in
                         ("id", "kind", "publisher", "url", "file",
-                         "retrieved")})
+                         "retrieved")},
+                     credit=_get(raw, "credit", str, where, None))
         if src.id in seen:
             raise ContestError(f"{where}: duplicate source id {src.id!r}")
         seen.add(src.id)

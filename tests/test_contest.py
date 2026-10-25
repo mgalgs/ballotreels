@@ -44,6 +44,17 @@ class LoadProp2Test(unittest.TestCase):
                           ["Today", "Proposition 2"], [10, 20], None))
         self.assertIsNone(change.lines[1].visual)
 
+    def test_credit(self):
+        c = load_contest(PROP_2)
+        lao = c.source("lao-volatility")
+        self.assertEqual(lao.credit,
+                         "Legislative Analyst's Office, February 2026")
+        self.assertEqual(lao.short_credit, lao.credit)
+        # no credit: a chart names the full publisher
+        ts = c.source("title-summary")
+        self.assertIsNone(ts.credit)
+        self.assertEqual(ts.short_credit, ts.publisher)
+
     def test_side_field(self):
         sides = {s.id: s.side for s in load_contest(PROP_2).script.sections}
         self.assertEqual(sides["yes"], "yes")
@@ -89,6 +100,13 @@ class LoadErrorTest(ContestCopyTestCase):
                   'visual = "bars"\n[section.line.not_visual]\nkind = "bars"')
         with self.assertRaisesRegex(ContestError,
                                     "section 'change' line\\[0\\]: 'visual'"):
+            load_contest(self.dir)
+
+    def test_credit_must_be_a_string(self):
+        self.edit("sources.toml",
+                  "credit = \"Legislative Analyst's Office, February 2026\"",
+                  "credit = 2026")
+        with self.assertRaisesRegex(ContestError, "'credit' must be str"):
             load_contest(self.dir)
 
     def test_duplicate_source_id(self):
