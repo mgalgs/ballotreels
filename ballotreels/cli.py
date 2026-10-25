@@ -31,8 +31,8 @@ def _check_one(path: str, standard, out) -> bool:
     failures = check_contest(contest, standard)
     for f in failures:
         print(f"{path}: {f}", file=out)
-    words = " ".join(f"{s.id}={word_count(s)}"
-                     for s in contest.script.sections)
+    words = " ".join(f"{label}={word_count(s)}"
+                     for label, s in contest.script.labelled())
     status = (f"FAIL {contest.id}: {len(failures)} failure"
               f"{'' if len(failures) == 1 else 's'}"
               if failures else f"PASS {contest.id}")

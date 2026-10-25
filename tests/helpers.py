@@ -1,5 +1,6 @@
 """Shared test helpers: the real Prop 2 contest, and broken copies of it."""
 
+import re
 import shutil
 import tempfile
 import unittest
@@ -29,3 +30,14 @@ class ContestCopyTestCase(unittest.TestCase):
         self.assertEqual(text.count(old), count,
                          f"{old!r} occurs {text.count(old)} times in {name}")
         path.write_text(text.replace(old, new), encoding="utf-8")
+
+
+def drop_background(contest_dir):
+    """Remove every background section from `contest_dir`'s script.toml."""
+    path = Path(contest_dir) / "script.toml"
+    text = path.read_text(encoding="utf-8")
+    new, n = re.subn(r'\[\[section\]\]\nid = "background"\n.*?'
+                     r'(?=\[\[section\]\]\nid = "today")',
+                     "", text, flags=re.DOTALL)
+    assert n == 1 and new.count('id = "background"') == 0, "no background"
+    path.write_text(new, encoding="utf-8")

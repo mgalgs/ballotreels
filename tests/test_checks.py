@@ -7,7 +7,7 @@ from ballotreels import check_contest, load_contest, load_standard
 from ballotreels.standard import (REPO_ROOT, SOURCE_KINDS,
                                   judgment_word_pattern, read_judgment_words)
 
-from .helpers import PROP_2, ContestCopyTestCase
+from .helpers import PROP_2, ContestCopyTestCase, drop_background
 
 
 class Prop2PassesTest(unittest.TestCase):
@@ -116,8 +116,8 @@ class BrokenCopyTest(ContestCopyTestCase):
         self.assertOnly("template")
 
     def test_unknown_template_version(self):
-        self.edit("script.toml", "template_version = 1",
-                  "template_version = 2")
+        self.edit("script.toml", "template_version = 2",
+                  "template_version = 3")
         self.assertOnly("template")
 
     def test_sections_out_of_order(self):
@@ -125,7 +125,43 @@ class BrokenCopyTest(ContestCopyTestCase):
         self.edit("script.toml", 'id = "change"', 'id = "today"')
         self.edit("script.toml", 'id = "TMP"', 'id = "change"')
         [f] = self.assertOnly("template")
-        self.assertIn("what, change, today", f.message)
+        self.assertIn("background, change, today", f.message)
+        self.assertIn("requires what, background*, today", f.message)
+
+    def test_background_after_today(self):
+        self.edit("script.toml",
+                  'id = "background"\nheading = "How we got here"',
+                  'id = "today"\nheading = "How we got here"')
+        self.edit("script.toml",
+                  'id = "today"\nheading = "The rules today"',
+                  'id = "background"\nheading = "The rules today"')
+        got = self.failures()
+        # The moved section's lines cite a background-only source, now
+        # outside a background section.
+        self.assertEqual([(f.check, f.section, f.line) for f in got],
+                         [("background-only", "today", 0),
+                          ("background-only", "today", 1),
+                          ("template", None, None)])
+
+    def test_no_background_sections(self):
+        drop_background(self.dir)
+        self.assertEqual(self.failures(), [])
+
+    def test_version_1_script(self):
+        # A template 1 script loads and is checked; under Standard 2 it
+        # fails only the standard-version check.
+        drop_background(self.dir)
+        self.edit("script.toml", "template_version = 2",
+                  "template_version = 1")
+        self.edit("script.toml", "standard_version = 2",
+                  "standard_version = 1")
+        self.assertOnly("standard-version")
+
+    def test_background_in_version_1_script(self):
+        self.edit("script.toml", "template_version = 2",
+                  "template_version = 1")
+        [f] = self.assertOnly("template")
+        self.assertIn("v1 requires what, today, change", f.message)
 
     def test_missing_side(self):
         self.edit("script.toml", 'side = "no"\n', '')

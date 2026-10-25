@@ -1,8 +1,9 @@
 """Narration: script lines in playback order, and the sidecar phrases
 `videobuilder`'s `say` produced from them.
 
-Playback order is the measure template's section order (docs/SCRIPT-FORMAT.md)
-with its two side sections reordered by `side_order` (STANDARD.md rule 2.4):
+Playback order is the measure template's section order (docs/SCRIPT-FORMAT.md),
+background sections in file order, with its two side sections reordered by
+`side_order` (STANDARD.md rule 2.4):
 the order `python -m ballotreels narration` writes to `narration.txt`, and the
 order the renderer narrates in.
 
@@ -18,7 +19,7 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
-from .contest import Contest
+from .contest import Contest, Section
 from .standard import TEMPLATES, side_order
 
 
@@ -28,7 +29,7 @@ class NarrationError(Exception):
 
 @dataclass(frozen=True)
 class NarrationLine:
-    section: str
+    section: str  # the section's label (Script.labels)
     index: int  # 0-based index into that section's lines
     text: str
 
@@ -42,32 +43,42 @@ class NarrationSpan:
     end: float
 
 
-def section_order(contest: Contest) -> tuple[str, ...]:
-    """Section ids in narration/playback order: the template's fixed order,
-    with its two side sections reordered by `side_order`."""
-    ids, sides = TEMPLATES[contest.script.template][contest.script.template_version]
-    side_to_id = {label: sid for sid, label in sides.items()}
+def playback_sections(contest: Contest) -> tuple[tuple[str, Section], ...]:
+    """(label, section) pairs in narration/playback order: the template's
+    order, each slot taking the script's sections with that id in file order
+    (so template 2's background sections play as written), with the two side
+    sections reordered by `side_order`. Sections the template doesn't name
+    are left out; check_template reports them."""
+    t = TEMPLATES[contest.script.template][contest.script.template_version]
+    labelled = contest.script.labelled()
+    side_to_id = {label: sid for sid, label in t.sides.items()}
     first, second = side_order(contest.id)
     order = []
     placed_sides = False
-    for sid in ids:
-        if sid in sides:
-            if not placed_sides:
-                order += [side_to_id[first], side_to_id[second]]
-                placed_sides = True
-            continue
-        order.append(sid)
+    for sid in t.sections:
+        if sid in t.sides:
+            if placed_sides:
+                continue
+            placed_sides = True
+            want = [side_to_id[first], side_to_id[second]]
+        else:
+            want = [sid]
+        for w in want:
+            order += [(label, sec) for label, sec in labelled if sec.id == w]
     return tuple(order)
+
+
+def section_order(contest: Contest) -> tuple[str, ...]:
+    """Section labels (Script.labels) in narration/playback order; see
+    playback_sections."""
+    return tuple(label for label, _ in playback_sections(contest))
 
 
 def narration_lines(contest: Contest) -> tuple[NarrationLine, ...]:
     """Every script line, in playback order."""
-    by_id = {s.id: s for s in contest.script.sections}
-    out = []
-    for sid in section_order(contest):
-        for i, line in enumerate(by_id[sid].lines):
-            out.append(NarrationLine(sid, i, line.text))
-    return tuple(out)
+    return tuple(NarrationLine(label, i, line.text)
+                 for label, sec in playback_sections(contest)
+                 for i, line in enumerate(sec.lines))
 
 
 def narration_text(contest: Contest) -> str:
@@ -131,7 +142,8 @@ def side_durations(contest: Contest
     spans = match_phrases(contest)
     if spans is None:
         return None
-    side_ids = [s.id for s in contest.script.sections if s.side is not None]
+    side_ids = [label for label, s in contest.script.labelled()
+                if s.side is not None]
     if len(side_ids) != 2:
         return None
     bounds: dict[str, list[float]] = {}

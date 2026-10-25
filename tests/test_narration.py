@@ -20,8 +20,9 @@ class NarrationTextTest(unittest.TestCase):
         # ca-2026-11-03-prop-2 hashes to ("no", "yes"): "no" plays first.
         contest = load_contest(PROP_2)
         self.assertEqual(section_order(contest),
-                         ("what", "today", "change", "fiscal",
-                          "no", "yes", "vote"))
+                         ("what", "background[0]", "background[1]",
+                          "background[2]", "background[3]", "today",
+                          "change", "fiscal", "no", "yes", "vote"))
 
 
 class MatchPhrasesTest(unittest.TestCase):

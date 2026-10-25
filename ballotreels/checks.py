@@ -13,7 +13,7 @@ from dataclasses import dataclass
 from . import narration
 from .contest import Contest, Section
 from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, SOURCE_KINDS,
-                       TEMPLATES, Standard, judgment_word_pattern,
+                       TEMPLATES, Standard, Template, judgment_word_pattern,
                        load_standard)
 
 SIDE_TOLERANCE = 0.05
@@ -120,31 +120,49 @@ def check_sources(c: Contest) -> list[Failure]:
     return out
 
 
+def _fits(got: tuple[str, ...], t: Template) -> bool:
+    """Whether section ids `got` follow template `t`'s order, each repeated
+    id filling its slot with zero or more sections."""
+    pos = 0
+    for sid in t.sections:
+        if sid in t.repeated:
+            while pos < len(got) and got[pos] == sid:
+                pos += 1
+        elif pos < len(got) and got[pos] == sid:
+            pos += 1
+        else:
+            return False
+    return pos == len(got)
+
+
 def check_template(c: Contest) -> list[Failure]:
     sc = c.script
     versions = TEMPLATES.get(sc.template)
     if versions is None:
         return [Failure("template", f"unknown template {sc.template!r}")]
-    if sc.template_version not in versions:
+    t = versions.get(sc.template_version)
+    if t is None:
         return [Failure("template",
                         f"unknown version {sc.template_version} of template "
                         f"{sc.template!r}")]
-    ids, sides = versions[sc.template_version]
     out = []
     got = tuple(s.id for s in sc.sections)
-    if got != ids:
+    if not _fits(got, t):
+        want = ", ".join(f"{sid}*" if sid in t.repeated else sid
+                         for sid in t.sections)
+        note = " (* zero or more)" if t.repeated else ""
         out.append(Failure("template",
                            f"sections are {', '.join(got) or '(none)'}; "
                            f"{sc.template} v{sc.template_version} requires "
-                           f"{', '.join(ids)}"))
-    for sec in sc.sections:
-        want = sides.get(sec.id)
+                           f"{want}{note}"))
+    for label, sec in sc.labelled():
+        want = t.sides.get(sec.id)
         if sec.side != want:
             if want is None:
                 msg = f"has side = {sec.side!r} but is not a side section"
             else:
                 msg = f"must have side = {want!r}, has {sec.side!r}"
-            out.append(Failure("template", msg, sec.id))
+            out.append(Failure("template", msg, label))
     return out
 
 
