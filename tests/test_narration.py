@@ -88,13 +88,19 @@ class MatchPhrasesTest(ContestCopyTestCase):
             match_phrases(load_contest(self.dir))
 
 
-class NoNarrationTest(unittest.TestCase):
+class NoNarrationTest(ContestCopyTestCase):
     def test_no_sidecars_is_none(self):
-        # The committed contest has no narration: it is made on the host.
-        contest = load_contest(PROP_2)
-        self.assertFalse((PROP_2 / "narration.json").exists())
+        contest = load_contest(self.dir)
+        self.assertFalse((self.dir / "narration.json").exists())
         self.assertIsNone(match_phrases(contest))
         self.assertIsNone(side_durations(contest))
+
+
+class CommittedNarrationTest(unittest.TestCase):
+    def test_prop_2_sidecars_match_the_script(self):
+        spans = match_phrases(load_contest(PROP_2))
+        self.assertEqual(len(spans), 37)
+        self.assertEqual(spans[-1].section, "vote")
 
 
 if __name__ == "__main__":

@@ -1,4 +1,5 @@
 import io
+import shutil
 import subprocess
 import sys
 import unittest
@@ -7,7 +8,7 @@ from ballotreels.cli import main
 from ballotreels.contest import load_contest
 from ballotreels.narration import narration_text
 
-from .helpers import PROP_2, REPO, ContestCopyTestCase
+from .helpers import PROP_2, PROP_2_AIRTIME, REPO, ContestCopyTestCase
 
 
 class CliTest(ContestCopyTestCase):
@@ -19,20 +20,31 @@ class CliTest(ContestCopyTestCase):
     def run_cli(self, *dirs):
         return self.run_cli_cmd("check", *dirs)
 
-    def test_prop_2_passes(self):
-        code, lines = self.run_cli(PROP_2)
+    WORDS = ("words what=41 background[0]=70 background[1]=74 "
+             "background[2]=52 background[3]=27 today=81 change=97 fiscal=49 "
+             "yes=79 no=79 vote=43; no plays first")
+
+    def test_prop_2_script_passes(self):
+        # The copy has no narration sidecars, so airtime isn't measured.
+        code, lines = self.run_cli(self.dir)
         self.assertEqual(code, 0)
+        self.assertEqual(lines, [f"PASS ca-2026-11-03-prop-2; {self.WORDS}"])
+
+    def test_prop_2_with_its_narration(self):
+        code, lines = self.run_cli(PROP_2)
+        self.assertEqual(code, 1)
         self.assertEqual(lines, [
-            "PASS ca-2026-11-03-prop-2; words what=41 background[0]=70 "
-            "background[1]=74 background[2]=52 background[3]=27 today=81 "
-            "change=97 fiscal=49 yes=79 no=79 vote=43; no plays first"])
+            f"{PROP_2}: {PROP_2_AIRTIME}",
+            f"FAIL ca-2026-11-03-prop-2: 1 failure; {self.WORDS}"])
 
     def test_failures_one_per_line(self):
+        clean = self.dir.parent / "clean"  # an unbroken copy, to pass
+        shutil.copytree(self.dir, clean)
         self.edit("script.toml", "standard_version = 2",
                   "standard_version = 0")
         self.edit("script.toml", "The Legislature put it",
                   "The bold Legislature put it")
-        code, lines = self.run_cli(PROP_2, self.dir)
+        code, lines = self.run_cli(clean, self.dir)
         self.assertEqual(code, 1)
         self.assertEqual(len(lines), 4)
         self.assertTrue(lines[0].startswith("PASS"))
@@ -67,7 +79,7 @@ class CliTest(ContestCopyTestCase):
     def test_module_entry_point(self):
         r = subprocess.run(
             [sys.executable, "-m", "ballotreels", "check",
-             "data/ca-2026-11-03/prop-2"],
+             str(self.dir)],
             cwd=REPO, capture_output=True, text=True)
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         self.assertTrue(r.stdout.startswith("PASS "))

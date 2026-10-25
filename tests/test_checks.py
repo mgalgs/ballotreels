@@ -7,13 +7,14 @@ from ballotreels import check_contest, load_contest, load_standard
 from ballotreels.standard import (REPO_ROOT, SOURCE_KINDS,
                                   judgment_word_pattern, read_judgment_words)
 
-from .helpers import (PROP_2, ContestCopyTestCase, drop_background,
-                      write_narration)
+from .helpers import (PROP_2, PROP_2_AIRTIME, ContestCopyTestCase,
+                      drop_background, write_narration)
 
 
 class Prop2PassesTest(unittest.TestCase):
-    def test_no_failures(self):
-        self.assertEqual(check_contest(load_contest(PROP_2)), [])
+    def test_only_the_known_airtime_failure(self):
+        self.assertEqual([str(f) for f in check_contest(load_contest(PROP_2))],
+                         [PROP_2_AIRTIME])
 
 
 class BrokenCopyTest(ContestCopyTestCase):

@@ -11,14 +11,25 @@ REPO = Path(__file__).resolve().parent.parent
 PROP_2 = REPO / "data" / "ca-2026-11-03" / "prop-2"
 
 
+# The real Prop 2 narration was read in 23.3 s (yes) and 24.7 s (no): the
+# one failure the committed contest has until the operator decides the fix.
+PROP_2_AIRTIME = ("[airtime] side spoken durations differ by more than 5% "
+                  "of the larger: yes=23.3s, no=24.7s")
+
+NARRATION_SIDECARS = ("narration.json", "narration.wav", "narration.vtt")
+
+
 class ContestCopyTestCase(unittest.TestCase):
-    """Gives each test a scratch copy of Prop 2 to break."""
+    """Gives each test a scratch copy of Prop 2 to break, without its
+    narration sidecars: a test that needs them writes stand-ins with
+    write_narration."""
 
     def setUp(self):
         tmp = tempfile.TemporaryDirectory()
         self.addCleanup(tmp.cleanup)
         self.dir = Path(tmp.name) / "prop-2"
-        shutil.copytree(PROP_2, self.dir)
+        shutil.copytree(PROP_2, self.dir,
+                        ignore=shutil.ignore_patterns(*NARRATION_SIDECARS))
 
     def edit(self, name, old, new, count=1):
         """Replace `old` with `new` in the copy's file `name`.
