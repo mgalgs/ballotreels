@@ -119,8 +119,8 @@ def layout_9x16():
     return dict(
         W=1080, H=1920, u=1.0,
         safe=Box(70, 200, 940, 1340),
-        header=Box(70, 196, 940, 80),
-        heading=Box(70, 282, 940, 118),
+        header=Box(70, 204, 940, 76),
+        heading=Box(70, 292, 940, 118),
         stage=Box(70, 430, 940, 870),
         scrap=Box(78, 1336, 924, 196),
         cards=Box(70, 430, 940, 1100),
@@ -240,10 +240,11 @@ def paper(cx, cy, w, h, angle, dog=0, tape=True):
 
 
 class Mark:
-    """A named box for the checks, drawn while its items are."""
+    """A named box for the checks, drawn from frame `f0` while its layer is
+    not being rubbed out."""
 
-    def __init__(self, name, box):
-        self.name, self.box = name, box
+    def __init__(self, name, box, f0=0):
+        self.name, self.box, self.f0 = name, box, f0
 
 
 # ---- the page heading ----
@@ -399,8 +400,9 @@ def sheet_layout(sources, stage, L):
     gap = 30 * u
     h = stage.h * 0.97
     w = h * aspect
-    if n * w + (n - 1) * gap > stage.w:
-        w = (stage.w - (n - 1) * gap) / n
+    room = stage.w - 50 * u  # tilted sheets reach a little past their width
+    if n * w + (n - 1) * gap > room:
+        w = (room - (n - 1) * gap) / n
         h = min(h, w / aspect)
     total = n * w + (n - 1) * gap
     x0 = stage.cx - total / 2
@@ -820,7 +822,8 @@ class Layer:
 
         def mark():
             for m in self.marks:
-                cv.mark(m.name, *m.box)
+                if n >= m.f0:
+                    cv.mark(m.name, *m.box)
         self.rub.draw(cv, n, mark if live else None)
 
 
@@ -881,6 +884,8 @@ def build(fmt):
                 items, marks = ballot_run(lines, L, first_f)
             else:
                 items, marks = documents_run(lines, L, first_f)
+            for m in marks:
+                m.f0 = first_f
             if k + 1 < len(runs):
                 e0 = runs[k + 1][2][0].start
                 st = L['stage']
@@ -1099,7 +1104,7 @@ def draw(n, cv):
 
 
 SEGMENTS = [vb.Segment(s.label, s.start, s.end,
-                       data={'copy': [b.line.text for b in s.lines], 'heading': s.section.heading})
+                       data={'copy': [s.section.heading] + [b.line.text for b in s.lines]})
             for s in BOARD.sections]
 SEGMENTS.append(vb.Segment('sources', BOARD.narration_end, BOARD.end,
                            data={'copy': ['Sources'] + [s.publisher for s in BOARD.cited]}))
