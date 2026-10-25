@@ -19,7 +19,10 @@ invalidates the cache for every video made under an older one.
    - for a measure: the official title and summary, the full text, the
      official fiscal analysis (in California, the Legislative Analyst's
      Office), and the official arguments for and against as printed in
-     the voter guide;
+     the voter guide; and, for background only (section 6), reports and
+     published data from the state's nonpartisan fiscal offices (in
+     California, the Legislative Analyst's Office and the Department of
+     Finance);
    - for a candidate: the candidate's own ballot designation and
      statement as filed with the election official, the candidate's own
      website or published statements, and public records (FEC filings,
@@ -89,6 +92,52 @@ invalidates the cache for every video made under an older one.
 2. A confirmed error is fixed by regenerating the video, never by
    editing it by hand, and the page notes the correction and its date.
 
+## 6. Explaining
+
+A video explains what the contest is about before it says what anyone
+thinks of it. It tells the story a voter needs: what problem or
+situation the contest is about, how things work today and how they got
+that way, what would change, and what it would cost. Plain language,
+one idea per sentence, no legal terms a viewer has to already know.
+The rules below keep that story neutral.
+
+1. Background and context come from the official sources in rule 1.2:
+   the fiscal analysis, and the nonpartisan fiscal offices' reports and
+   data. They are limited to what those sources state as fact (how the
+   budget works, what happened in past years, what the numbers are).
+   An office's evaluations, recommendations and preferred options are
+   not background, even when that office is nonpartisan.
+2. A measure's purpose is stated as its authors' purpose ("The
+   Legislature placed it on the ballot to..."), never in the narrator's
+   voice as what the measure will achieve. What it would *do* is stated
+   as the fiscal analysis states it.
+3. A fact a side cites as part of its argument belongs to that side. It
+   appears in that side's section, attributed to that side, and is not
+   repeated, previewed or set up in a neutral section. Example: if
+   supporters cite the Legislative Analyst's recommendation to save
+   more, that recommendation is not mentioned in the background.
+4. Background treats both outcomes alike. It does not dwell on the
+   problem one side wants solved while passing over the cost the other
+   side objects to; where the fiscal analysis states both an effect and
+   its cost, the story states both.
+
+## 7. Charts and visuals
+
+1. Every number on screen comes from a cited source, and the source is
+   named on screen, under the chart, for as long as the chart is shown.
+2. Bar and area charts start at zero. No truncated or broken axes, no
+   3D, no dual axes. Time runs left to right at an even scale.
+3. Charts appear in neutral sections. A side's section shows only that
+   side's own words, unless both sides get a chart of the same kind and
+   size.
+4. The options on the ballot get identical visual treatment. "Today"
+   and "if it passes", or "yes" and "no", share one colour and weight;
+   neither is highlighted with the accent colour, drawn larger, or
+   animated differently.
+5. A chart shows what its source shows. It does not extend a series,
+   add a projection, or annotate a value with a judgment ("only",
+   "record", "dangerously low").
+
 ## Machine checks
 
 The pipeline rejects a script or render that fails any of these. They
@@ -103,5 +152,7 @@ human reading the video.
 | Candidate order matches the rule in 2.3 | 2.3 |
 | No word from the judgment-word list in narrator text | 3.1 |
 | Each candidate's or side's on-screen time within 5% | 2.2, 4.1 |
+| Every chart cites a source id that exists, of an allowed kind | 7.1 |
+| No chart in a side section unless both sides have one | 7.3 |
 
-Standard version: 1
+Standard version: 2
