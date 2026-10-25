@@ -637,9 +637,23 @@ def share_chart(chart, L, f0, f1):
     return items, [Mark('chart', Box(plot.x, tbox.y, plot.w, plot.bottom - tbox.y)), Mark('chart source', sbox)]
 
 
+def axis_ticks(lo, hi, most=5):
+    """Round values for a y axis over lo..hi: zero, and steps of 1, 2, 2.5 or
+    5 times a power of ten, at most `most` of them in all."""
+    span = hi - lo
+    mag = 10 ** math.floor(math.log10(span)) if span > 0 else 1
+    for m in (0.1, 0.2, 0.25, 0.5, 1, 2, 2.5, 5, 10):
+        step = m * mag
+        k0, k1 = math.ceil(lo / step - 1e-9), math.floor(hi / step + 1e-9)
+        if k1 - k0 + 1 <= most:
+            return [round(k * step, 10) for k in range(k0, k1 + 1)]
+    return [0.0]
+
+
 def series_chart(chart, L, f0, f1):
     """A line over time: x positions evenly spaced (rule 7.2), the y axis
-    running from zero (or the lowest value, if below zero) to the highest."""
+    running from zero (or the lowest value, if below zero) to the highest,
+    with its values at round steps, and the last point's value beside it."""
     v = chart.visual
     u = L['u']
     items, f, plot, tbox, sbox = chart_frame(chart, L, f0)
@@ -649,7 +663,10 @@ def series_chart(chart, L, f0, f1):
     if hi == lo:
         hi = lo + 1
     n = len(vals)
-    x0, x1 = plot.x + 70 * u, plot.right - 70 * u
+    ticks = axis_ticks(lo, hi)
+    tick_w = max(text.measure(with_unit(tv, v.unit), nf) for tv in ticks)
+    end_label = with_unit(vals[-1], v.unit)
+    x0, x1 = plot.x + 56 * u + tick_w, plot.right - 30 * u - text.measure(end_label, vf)
     base_lab = text.line_height(nf) + 10 * u
     yt, yb = plot.y + text.line_height(vf) + 10 * u, plot.bottom - base_lab - text.line_height(vf) * 0.6
     ys = lambda val: yb - (val - lo) / (hi - lo) * (yb - yt)  # noqa: E731
@@ -659,8 +676,15 @@ def series_chart(chart, L, f0, f1):
                                                passes=3, width=4 * u)))
     items.append(stroke_item(f, f + 12, Stroke([(x0 - 30 * u, yb + 10), (x0 - 30 * u, yt - 10)],
                                                seed_of('s yaxis'), passes=2, width=3 * u), pencil=False))
-    items.append(text_item(f + 8, f + 12, with_unit(0, v.unit), nf, x0 - 40 * u, zero - text.line_height(nf) / 2,
-                           alpha=0.8, align='right', pencil=False))
+    # value labels up the y axis: zero and round steps (rule 7.2)
+    for tv in ticks:
+        ty = ys(tv)
+        if tv:
+            tick = Stroke([(x0 - 40 * u, ty), (x0 - 20 * u, ty)], seed_of('tick', tv), passes=1, width=3 * u,
+                          overshoot=0)
+            items.append(stroke_item(f + 8, f + 10, tick, pencil=False))
+        items.append(text_item(f + 8, f + 12, with_unit(tv, v.unit), nf, x0 - 46 * u, ty - text.line_height(nf) / 2,
+                               alpha=0.8, align='right', pencil=False))
     f += 14
     step = max(1, math.ceil(n * 120 * u / (x1 - x0)))
     for i, lb in enumerate(v.labels):
@@ -674,16 +698,13 @@ def series_chart(chart, L, f0, f1):
     d = max(30, 6 * n)
     items.append(stroke_item(f, f + d, line))
     f += d
-    show = set(range(n)) if n <= 8 else {0, n - 1, vals.index(max(vals)), vals.index(min(vals))}
-    for i in sorted(show):
-        x, y = pts[i]
-        dot = Stroke(sp.ellipse(x, y, 7 * u, 7 * u, n=16), seed_of('dot', i), passes=2, width=3.6 * u,
-                     closed=True, overshoot=0)
-        items.append(stroke_item(f, f + 3, dot, pencil=False))
-        lab = with_unit(vals[i], v.unit)
-        ly = y - text.line_height(vf) - 8 * u if vals[i] >= 0 else y + 8 * u
-        li, f, _ = write_lines(f, [lab], vf, x - 100 * u, ly, align='center', width=200 * u)
-        items += li
+    # the last point's value, beside it, so the line's end can be read
+    x, y = pts[-1]
+    dot = Stroke(sp.ellipse(x, y, 7 * u, 7 * u, n=16), seed_of('dot', n - 1), passes=2, width=3.6 * u,
+                 closed=True, overshoot=0)
+    items.append(stroke_item(f, f + 3, dot, pencil=False))
+    li, f, _ = write_lines(f, [end_label], vf, x + 16 * u, y - text.line_height(vf) * 0.55)
+    items += li
     items = scaled(items, f0, draw_budget(f0, f1))
     return items, [Mark('chart', Box(plot.x, tbox.y, plot.w, plot.bottom - tbox.y)), Mark('chart source', sbox)]
 
@@ -956,12 +977,12 @@ def build(fmt):
     L = LAYOUTS[fmt]
     groups = []
     for sec in BOARD.sections:
-        h_items, h_end, h_box = heading_items(sec, L, sec.start + (FADE * 2 // 3 if sec.number else 4))
+        h_items, h_end, h_box = heading_items(sec, L, sec.start + (FADE if sec.number else 4))
         groups.append(Group(h_items, [Mark('heading', h_box, sec.start)], sec.start, sec.end))
         runs = runs_of(sec)
         for k, (kind, chart, lines) in enumerate(runs):
             start = lines[0].start
-            first_f = max(h_end + 2, start + (FADE // 2 if start > sec.start else 0))
+            first_f = max(h_end + 2, start + (FADE if start > sec.start else 0))
             end = lines[-1].end
             if kind == 'chart':
                 items, marks = chart_run(chart, lines, L, first_f)
