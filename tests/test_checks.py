@@ -110,6 +110,146 @@ class BrokenCopyTest(ContestCopyTestCase):
                   "bold trade-off: money that is saved")
         self.assertOnly("judgment-word", "background[2]", 2)
 
+    # 4c. charts (docs/SCRIPT-FORMAT.md, rule 7.1)
+    def assertVisual(self, section, line, *messages):
+        """The copy fails only on its chart there, once per message, each
+        failure's message containing the matching entry."""
+        got = self.assertOnly("visual", section, line, count=len(messages))
+        for f, want in zip(got, messages):
+            self.assertIn(want, f.message)
+
+    def test_bars_negative_value(self):
+        self.edit("script.toml", "values = [10, 20]", "values = [10, -1]")
+        self.assertVisual("change", 0, "values must be >= 0")
+
+    def test_series_allows_negative_values(self):
+        self.edit("script.toml", 'kind = "bars"', 'kind = "series"')
+        self.edit("script.toml", 'labels = ["Today", "Proposition 2"]',
+                  'labels = ["2024", "2026"]')
+        self.edit("script.toml", "values = [10, 20]", "values = [-10, 20]")
+        self.assertEqual(self.failures(), [])
+
+    def test_series_years_evenly_spaced(self):
+        self.edit("script.toml", 'kind = "bars"', 'kind = "series"')
+        self.assertVisual("change", 0, "labels must be years")
+        self.edit("script.toml", 'labels = ["Today", "Proposition 2"]',
+                  'labels = ["2020", "2021", "2023"]')
+        self.edit("script.toml", "values = [10, 20]", "values = [1, 2, 3]")
+        self.assertVisual("change", 0, "must increase evenly")
+
+    def test_labels_and_values_differ_in_length(self):
+        self.edit("script.toml", "values = [10, 20]", "values = [10, 20, 30]")
+        self.assertVisual("change", 0, "has 2 labels but 3 values")
+
+    def test_values_must_be_numbers(self):
+        self.edit("script.toml", "values = [10, 20]", 'values = ["10", 20]')
+        self.assertVisual("change", 0, "'values' must be a list of numbers")
+
+    def test_bars_missing_and_forbidden_fields(self):
+        self.edit("script.toml", 'unit = "%"\nlabels = ["Today"',
+                  'figure = "jar"\nlabels = ["Today"')
+        self.edit("script.toml",
+                  'title = "Rainy Day Fund target, as a share of General '
+                  'Fund taxes"\n', '')
+        self.assertVisual("change", 0, "has no 'title'",
+                          "may not have 'figure'", "has no 'unit'")
+
+    def test_unknown_kind(self):
+        self.edit("script.toml", 'kind = "bars"', 'kind = "pie"')
+        self.assertVisual("change", 0, "kind 'pie' is not one of")
+
+    def test_share_sums_to_at_most_100(self):
+        self.edit("script.toml", "values = [50, 33, 17]",
+                  "values = [33.3, 33.3, 33.4]")
+        self.assertEqual(self.failures(), [])
+        self.edit("script.toml", "values = [33.3, 33.3, 33.4]",
+                  "values = [50, 33, 27]")
+        self.assertVisual("background[0]", 1, "sum to 110, more than 100")
+
+    def test_figure_fields(self):
+        self.edit("script.toml",
+                  'figure = "steady-spending-volatile-revenue"\n',
+                  'labels = ["a"]\nvalues = [1]\nunit = ""\n')
+        self.assertVisual("background[1]", 3, "has no 'figure'",
+                          "may not have 'labels'", "may not have 'values'",
+                          "may not have 'unit'")
+
+    def test_chart_source_not_among_line_sources(self):
+        self.edit("script.toml", 'source = "lao-analysis"\nunit = "%"\n'
+                  'labels = ["Today"', 'source = "title-summary"\n'
+                  'unit = "%"\nlabels = ["Today"')
+        self.assertVisual("change", 0, "not among the line's sources")
+
+    def test_chart_source_unknown(self):
+        self.edit("script.toml", 'source = "lao-analysis"\nunit = "%"\n'
+                  'labels = ["Today"', 'source = "news-story"\n'
+                  'unit = "%"\nlabels = ["Today"')
+        self.assertVisual("change", 0, "'news-story', which is not in "
+                          "sources.toml")
+
+    def test_chart_source_disallowed_kind(self):
+        with open(self.dir / "sources.toml", "a", encoding="utf-8") as f:
+            f.write('\n[[source]]\nid = "poll"\nkind = "opinion-poll"\n'
+                    'publisher = "x"\nurl = "x"\n'
+                    'file = "sources/analysis.html"\nretrieved = "x"\n')
+        self.edit("script.toml", 'from 10 to 20 percent of General Fund '
+                  'taxes. The state would keep saving until the fund reaches '
+                  'it."\nsources = ["lao-analysis"]',
+                  'from 10 to 20 percent of General Fund taxes. The state '
+                  'would keep saving until the fund reaches it."\n'
+                  'sources = ["lao-analysis", "poll"]')
+        self.edit("script.toml", 'source = "lao-analysis"\nunit = "%"\n'
+                  'labels = ["Today"', 'source = "poll"\n'
+                  'unit = "%"\nlabels = ["Today"')
+        got = self.failures()
+        self.assertEqual([(f.check, f.section, f.line) for f in got],
+                         [("visual", "change", 0), ("source", None, None)])
+        self.assertIn("'opinion-poll', which is not an allowed kind",
+                      got[0].message)
+
+    def test_chart_background_only_source_outside_background(self):
+        self.edit("script.toml", 'from 10 to 20 percent of General Fund '
+                  'taxes. The state would keep saving until the fund reaches '
+                  'it."\nsources = ["lao-analysis"]',
+                  'from 10 to 20 percent of General Fund taxes. The state '
+                  'would keep saving until the fund reaches it."\n'
+                  'sources = ["lao-analysis", "lao-volatility"]')
+        self.edit("script.toml", 'source = "lao-analysis"\nunit = "%"\n'
+                  'labels = ["Today"', 'source = "lao-volatility"\n'
+                  'unit = "%"\nlabels = ["Today"')
+        got = self.assertOnly("background-only", "change", 0, count=2)
+        self.assertTrue(got[0].message.startswith("cites"))
+        self.assertTrue(got[1].message.startswith("has a chart citing"))
+
+    # 4d. charts in side sections (rule 7.3)
+    SIDE_LINE = {"yes": 'next downturn."\nsources = ["arguments"]',
+                 "no": 'less likely."\nsources = ["arguments"]'}
+
+    def add_side_chart(self, side, kind):
+        chart = (f'\n\n[section.line.visual]\nkind = "{kind}"\n'
+                 f'title = "x"\nsource = "arguments"\n')
+        chart += ('figure = "jar"\n' if kind == "figure" else
+                  'unit = ""\nlabels = ["a"]\nvalues = [1]\n')
+        self.edit("script.toml", self.SIDE_LINE[side],
+                  self.SIDE_LINE[side] + chart)
+
+    def test_chart_on_one_side(self):
+        self.add_side_chart("yes", "bars")
+        [f] = self.assertOnly("side-visual", "yes", 0)
+        self.assertIn("yes has bars, no has none", f.message)
+
+    def test_charts_of_same_kinds_on_both_sides(self):
+        self.add_side_chart("yes", "bars")
+        self.add_side_chart("no", "bars")
+        self.assertEqual(self.failures(), [])
+
+    def test_charts_of_different_kinds_on_the_sides(self):
+        self.add_side_chart("yes", "bars")
+        self.add_side_chart("no", "figure")
+        got = self.failures()
+        self.assertEqual([(f.check, f.section, f.line) for f in got],
+                         [("side-visual", "yes", 0), ("side-visual", "no", 0)])
+
     # 5. template
     def test_unknown_template(self):
         self.edit("script.toml", 'template = "measure"', 'template = "race"')

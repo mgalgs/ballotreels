@@ -31,10 +31,28 @@ class Source:
 
 
 @dataclass(frozen=True)
+class Visual:
+    """A line's chart, as written. Each field is None when its key is absent;
+    the values are not type-checked here, since a malformed chart is a check
+    failure (ballotreels.checks.check_visuals), not a load error."""
+    kind: Any = None
+    title: Any = None
+    source: Any = None
+    unit: Any = None
+    labels: Any = None
+    values: Any = None
+    figure: Any = None
+
+
+VISUAL_KEYS = tuple(Visual.__dataclass_fields__)
+
+
+@dataclass(frozen=True)
 class Line:
     text: str
     sources: tuple[str, ...] | None  # None when the key is absent
     connective: bool
+    visual: Visual | None = None
 
 
 @dataclass(frozen=True)
@@ -150,7 +168,15 @@ def _load_line(raw: Any, where: str) -> Line:
         text=_get(raw, "text", str, where),
         sources=sources,
         connective=_get(raw, "connective", bool, where, False),
+        visual=_load_visual(raw, where),
     )
+
+
+def _load_visual(line: dict[str, Any], where: str) -> Visual | None:
+    raw = _get(line, "visual", dict, where, None)
+    if raw is None:
+        return None
+    return Visual(**{k: raw[k] for k in VISUAL_KEYS if k in raw})
 
 
 def _load_script(path: Path) -> Script:

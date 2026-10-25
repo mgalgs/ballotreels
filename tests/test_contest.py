@@ -33,6 +33,15 @@ class LoadProp2Test(unittest.TestCase):
             "background[3]", "today", "change", "fiscal", "yes", "no",
             "vote"))
 
+    def test_visual_fields(self):
+        change = load_contest(PROP_2).script.sections[6]
+        v = change.lines[0].visual
+        self.assertEqual((v.kind, v.source, v.unit, v.labels, v.values,
+                          v.figure),
+                         ("bars", "lao-analysis", "%",
+                          ["Today", "Proposition 2"], [10, 20], None))
+        self.assertIsNone(change.lines[1].visual)
+
     def test_side_field(self):
         sides = {s.id: s.side for s in load_contest(PROP_2).script.sections}
         self.assertEqual(sides["yes"], "yes")
@@ -71,6 +80,13 @@ class LoadErrorTest(ContestCopyTestCase):
         self.edit("script.toml", 'text = "A no vote means',
                   'txt = "A no vote means')
         with self.assertRaisesRegex(ContestError, "section 'vote' line\\[1\\]"):
+            load_contest(self.dir)
+
+    def test_visual_must_be_a_table(self):
+        self.edit("script.toml", '[section.line.visual]\nkind = "bars"',
+                  'visual = "bars"\n[section.line.not_visual]\nkind = "bars"')
+        with self.assertRaisesRegex(ContestError,
+                                    "section 'change' line\\[0\\]: 'visual'"):
             load_contest(self.dir)
 
     def test_duplicate_source_id(self):
