@@ -6,7 +6,7 @@ import unittest
 from ballotreels.contest import load_contest
 from ballotreels.narration import (NarrationError, match_phrases,
                                    section_order)
-from ballotreels.storyboard import (cited_sources, frame, layout,
+from ballotreels.storyboard import (MIN_CHART, cited_sources, frame, layout,
                                     sources_card_seconds)
 
 from .helpers import PROP_2, ContestCopyTestCase, write_narration
@@ -59,7 +59,7 @@ class StandInLayoutTest(ContestCopyTestCase):
             self.assertLessEqual(s.start, frame(first_word))
             self.assertGreaterEqual(s.start, frame(last_word))
 
-    def test_charts_stay_up_until_their_section_ends(self):
+    def test_charts_show_while_their_line_is_narrated(self):
         charts = self.board.charts
         self.assertEqual([(c.section, c.index, c.visual.kind) for c in charts],
                          [("background[0]", 1, "share"),
@@ -67,8 +67,14 @@ class StandInLayoutTest(ContestCopyTestCase):
                           ("change", 0, "bars")])
         for c in charts:
             sec = next(s for s in self.board.sections if s.label == c.section)
-            self.assertEqual(c.start, sec.lines[c.index].start)
-            self.assertEqual(c.end, sec.end)
+            line = sec.lines[c.index]
+            self.assertEqual(c.start, line.start)
+            # its line, held to a line's end MIN_CHART on, within the section
+            self.assertGreaterEqual(c.end, line.end)
+            self.assertIn(c.end, [ln.end for ln in sec.lines])
+            held = [ln for ln in sec.lines[c.index:] if ln.end < c.end]
+            for ln in held:
+                self.assertLess(ln.end, line.start + frame(MIN_CHART))
             self.assertEqual(c.source.id, c.visual.source)
 
     def test_two_charts_in_a_section_hand_over(self):
@@ -81,7 +87,7 @@ class StandInLayoutTest(ContestCopyTestCase):
                   '[[section.line]]\ntext = "It extends the extra debt')
         board = layout(load_contest(self.dir), narration_seconds(self.dir))
         first, second = [c for c in board.charts if c.section == "change"]
-        self.assertEqual(first.end, second.start)
+        self.assertLessEqual(first.end, second.start)
         self.assertEqual(second.index, 1)
 
     def test_sources_card_follows_the_narration(self):

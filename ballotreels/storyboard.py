@@ -11,9 +11,10 @@ order (`playback_sections`), so the picture follows the voice:
 - A line runs from its first word until the next line's first word (the
   first line of a section from the section's start; the last line of the
   film until the narration's end plus a short hold).
-- A chart is shown from its line's start until its section ends, or until
-  the next chart in that section starts, so it stays up while the narrator
-  goes on about it; its source line is on screen for exactly that span
+- A chart is shown while its line is narrated (docs/SCRIPT-FORMAT.md),
+  held to the end of a later line when its own is shorter than MIN_CHART
+  seconds, so a short line's chart can be read, but never past its
+  section's end or the next chart's start. Its source line is on screen for exactly that span
   (STANDARD.md rule 7.1).
 - The closing sources card follows the narration, for as long as it takes
   to read (1 s plus its words at 3 words a second), listing every source
@@ -31,6 +32,7 @@ FPS = 30
 END_HOLD = 0.5  # s held on the last line before the sources card
 PAGE_LEAD = 0.25  # s before a section's first word that its page starts
 READ_WPS = 3.0  # words a second, the read-time floor
+MIN_CHART = 6.0  # s a chart stays up, at least, within its section
 
 
 def frame(seconds: float, fps: int = FPS) -> int:
@@ -145,7 +147,11 @@ def layout(contest: Contest, seconds: float, fps: int = FPS) -> Storyboard:
         with_charts = [b for b in lines if b.line.visual is not None]
         charts = []
         for k, b in enumerate(with_charts):
-            until = with_charts[k + 1].start if k + 1 < len(with_charts) else s1
+            cap = with_charts[k + 1].start if k + 1 < len(with_charts) else s1
+            # the end of the first line by which MIN_CHART has passed
+            until = next((ln.end for ln in lines[b.index:]
+                          if ln.end >= b.start + frame(MIN_CHART, fps)), s1)
+            until = min(cap, until)
             src = contest.source(b.line.visual.source)
             if src is None:
                 raise NarrationError(
