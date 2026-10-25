@@ -6,7 +6,7 @@ import unittest
 from ballotreels.contest import load_contest
 from ballotreels.narration import (NarrationError, match_phrases,
                                    section_order)
-from ballotreels.storyboard import (MIN_CHART, cited_sources, frame, layout,
+from ballotreels.storyboard import (cited_sources, frame, layout,
                                     sources_card_seconds)
 
 from .helpers import PROP_2, ContestCopyTestCase, write_narration
@@ -69,12 +69,8 @@ class StandInLayoutTest(ContestCopyTestCase):
             sec = next(s for s in self.board.sections if s.label == c.section)
             line = sec.lines[c.index]
             self.assertEqual(c.start, line.start)
-            # its line, held to a line's end MIN_CHART on, within the section
-            self.assertGreaterEqual(c.end, line.end)
-            self.assertIn(c.end, [ln.end for ln in sec.lines])
-            held = [ln for ln in sec.lines[c.index:] if ln.end < c.end]
-            for ln in held:
-                self.assertLess(ln.end, line.start + frame(MIN_CHART))
+            # up until the section ends: no later line brings a visual
+            self.assertEqual(c.end, sec.end)
             self.assertEqual(c.source.id, c.visual.source)
 
     def test_two_charts_in_a_section_hand_over(self):
@@ -87,8 +83,20 @@ class StandInLayoutTest(ContestCopyTestCase):
                   '[[section.line]]\ntext = "It extends the extra debt')
         board = layout(load_contest(self.dir), narration_seconds(self.dir))
         first, second = [c for c in board.charts if c.section == "change"]
-        self.assertLessEqual(first.end, second.start)
+        self.assertEqual(first.end, second.start)
         self.assertEqual(second.index, 1)
+
+    def test_words_have_no_source(self):
+        self.edit("script.toml", 'until 2030."\nsources = ["lao-analysis"]',
+                  'until 2030."\nsources = ["lao-analysis"]\n\n'
+                  '[section.line.visual]\nkind = "words"\n'
+                  'text = "until 2030"\n')
+        board = layout(load_contest(self.dir), narration_seconds(self.dir))
+        [w] = [c for c in board.charts if c.visual.kind == "words"]
+        self.assertIsNone(w.source)
+        today = next(s for s in board.sections if s.label == "today")
+        self.assertEqual((w.start, w.end),
+                         (today.lines[2].start, today.end))
 
     def test_sources_card_follows_the_narration(self):
         b = self.board

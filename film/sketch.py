@@ -2,9 +2,8 @@
 
 Copied from the approved style mock (film/mocks/sketchbook_pencil.py) and
 extended with the pieces the template needs on top: `Item`, one mark drawn
-on between two frames with a pencil tip to follow; `Rub`, an eraser pass
-that rubs a set of items out and leaves a ghost and a smudge; and a backdrop
-that lays out in any frame size.
+on between two frames with a pencil tip to follow, and a backdrop that lays
+out in any frame size.
 
 Everything here is geometry baked once at import (seeded, so every frame
 draws the same wobble) plus a few draw calls that take a progress 0..1:
@@ -16,7 +15,7 @@ draws the same wobble) plus a few draw calls that take a progress 0..1:
   up the paper's tooth instead of printing flat.
 - `pencil_text`: lettering drawn through that grain.
 - `backdrop()`: the cream grid page, its grain and its spiral binding.
-- `draw_pencil`, `draw_eraser`: the tools themselves, drawn in code.
+- `draw_pencil`: the pencil itself, drawn in code.
 """
 import math
 import random
@@ -394,42 +393,6 @@ def draw_pencil(cv, x, y, colour=None, lift=0.0, angle=-0.72):
     ctx.restore()
 
 
-def draw_eraser(cv, x, y, angle=-0.35):
-    """A block eraser centred on (x, y), with a card sleeve."""
-    ctx = cv.ctx
-    ctx.save()
-    ctx.translate(x, y)
-    ctx.rotate(angle)
-    w, h = 200, 92
-    ctx.save()
-    ctx.translate(14, 18)
-    _round(ctx, -w / 2, -h / 2, w, h, 12)
-    ctx.set_source_rgba(0.2, 0.14, 0.08, 0.16)
-    ctx.fill()
-    ctx.restore()
-    _round(ctx, -w / 2, -h / 2, w, h, 12)
-    ctx.set_source_rgb(0.95, 0.93, 0.88)
-    ctx.fill_preserve()
-    ctx.set_source_rgba(0.15, 0.12, 0.1, 0.5)
-    ctx.set_line_width(2)
-    ctx.stroke()
-    ctx.rectangle(-w / 2 + 70, -h / 2 - 2, w - 70, h + 4)
-    ctx.set_source_rgb(0.84, 0.6, 0.3)
-    ctx.fill_preserve()
-    ctx.set_source_rgba(0.15, 0.12, 0.1, 0.5)
-    ctx.stroke()
-    ctx.restore()
-
-
-def _round(ctx, x, y, w, h, r):
-    ctx.new_path()
-    ctx.arc(x + w - r, y + r, r, -math.pi / 2, 0)
-    ctx.arc(x + w - r, y + h - r, r, 0, math.pi / 2)
-    ctx.arc(x + r, y + h - r, r, math.pi / 2, math.pi)
-    ctx.arc(x + r, y + r, r, math.pi, 3 * math.pi / 2)
-    ctx.close_path()
-
-
 # ---- things drawn on between two frames ----
 DRAW = vb.bezier(0.42, 0, 0.3, 1)   # a hand: starts deliberately, eases into the end
 
@@ -514,115 +477,3 @@ def fade_item(f0, f1, draw):
         with cv.layer(opacity=p):
             draw(cv)
     return Item(f0, f1, d, None, ease=vb.ease_out_quint)
-
-
-# ---- the eraser ----
-ERASER_W = 190
-
-
-def zigzag(box, width=ERASER_W):
-    """The eraser's path over `box` = (x, y, w, h): side to side, top to bottom,
-    rows close enough that its `width` covers everything between them."""
-    x, y, w, h = box
-    rows = max(1, math.ceil(h / (width * 0.62)))
-    pts = []
-    for i in range(rows + 1):
-        yy = y + h * i / rows
-        a, b = (x - 20, x + w + 20) if i % 2 == 0 else (x + w + 20, x - 20)
-        pts += [(a, yy), (b, yy + width * 0.2)]
-    return catmull(pts, per=6)
-
-
-GHOST = 0.18      # how much of a rubbed-out mark is left at first
-GHOST_FADE = 40   # frames for the ghost to fade away
-
-
-class Rub:
-    """An eraser pass over `box` from frame `e0` to `e1`, rubbing out
-    `items`. Before `e0` the items draw as usual; after, a ghost of them and
-    a smudge fade away over GHOST_FADE frames."""
-
-    def __init__(self, items, e0, e1, box, seed, width=ERASER_W):
-        self.items, self.e0, self.e1, self.box, self.seed = items, e0, e1, box, seed
-        self.width = width
-        self.path = zigzag(box, width)
-
-    @property
-    def gone(self):
-        return math.inf if self.e1 is None else self.e1 + GHOST_FADE
-
-    def draw(self, cv, n, mark=None):
-        if self.e0 is None or n < self.e0:
-            for it in self.items:
-                it.draw(cv, n)
-            if mark:
-                mark()
-            return
-        if n >= self.gone:
-            return
-        e = vb.clamp01((n - self.e0) / max(1, self.e1 - self.e0))
-        ctx = cv.ctx
-        ctx.push_group()
-        for it in self.items:
-            it.draw(cv, n, full=n >= self.e1 or it.f1 <= self.e0)
-        rubbed = paths.reveal(self.path, e)
-        ctx.set_operator(cairo.OPERATOR_DEST_OUT)
-        ctx.set_line_cap(cairo.LINE_CAP_ROUND)
-        ctx.set_line_join(cairo.LINE_JOIN_ROUND)
-        if len(rubbed) >= 2:
-            ctx.new_path()
-            _path(ctx, rubbed)
-            ctx.set_line_width(self.width)
-            ctx.set_source_rgba(0, 0, 0, 1 - GHOST)
-            ctx.stroke()
-        ctx.set_operator(cairo.OPERATOR_OVER)
-        ctx.pop_group_to_source()
-        ghost = 1.0 if n < self.e1 else vb.interpolate(n, [self.e1, self.gone], [1, 0])
-        ctx.paint_with_alpha(ghost)
-        smudge = vb.clamp01(e * 1.2) * ghost
-        if smudge > 0:
-            surf, ox, oy = smudge_surface(tuple(round(v) for v in self.box), self.width, self.seed)
-            ctx.set_source_surface(surf, ox, oy)
-            ctx.paint_with_alpha(smudge)
-
-    def tool(self, n):
-        """(x, y, angle) of the eraser at frame n, or None when it's not rubbing."""
-        if self.e0 is None or not self.e0 <= n < self.e1:
-            return None
-        e = vb.clamp01((n - self.e0) / max(1, self.e1 - self.e0))
-        rubbed = paths.reveal(self.path, e)
-        x, y = rubbed[-1] if rubbed else self.path[0]
-        return x, y + 10 * math.sin(n * 1.7), -0.3 + 0.12 * math.sin(n * 0.9)
-
-
-_SMUDGES = {}
-
-
-def smudge_surface(box, width, seed):
-    """The grey smear an eraser leaves along its path over `box`: (surface, x, y)."""
-    key = (box, width, seed)
-    if key not in _SMUDGES:
-        from PIL import Image, ImageDraw, ImageFilter
-        x, y, w, h = box
-        pad = width
-        img = Image.new('L', (int(w + 2 * pad), int(h + 2 * pad)), 0)
-        d = ImageDraw.Draw(img)
-        rnd = random.Random(seed)
-        pts = paths.resample(zigzag(box, width), 60)
-        r0 = width / 190
-        for px, py in pts:
-            r = rnd.uniform(30, 70) * r0
-            cx, cy = px - x + pad, py - y + pad
-            d.ellipse([cx - r * 1.6, cy - r * 0.5, cx + r * 1.6, cy + r * 0.5], fill=rnd.randint(20, 46))
-        img = img.filter(ImageFilter.GaussianBlur(26 * r0))
-        a = np.asarray(img).astype('float32') / 255
-        grey = 70 / 255
-        px = np.empty(a.shape + (4,), np.uint8)
-        px[..., 0] = px[..., 1] = px[..., 2] = (grey * a * 255).astype(np.uint8)
-        px[..., 3] = (a * 255).astype(np.uint8)
-        data = bytearray(px.tobytes())
-        surf = cairo.ImageSurface.create_for_data(data, cairo.FORMAT_ARGB32, img.width, img.height,
-                                                  img.width * 4)
-        _BUFFERS.append(data)
-        _SMUDGES[key] = (surf, x - pad, y - pad)
-    return _SMUDGES[key]

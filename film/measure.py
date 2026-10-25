@@ -10,20 +10,23 @@ tools work with no setup) and its committed narration, and lays the film
 out on the narration's clock (`ballotreels.storyboard`).
 
 The look is the approved sketchbook mock (film/mocks/sketchbook.py):
-graphite on a cream grid page, things drawn on by a pencil as the narrator
-speaks, an eraser rubbing out each page when the film moves on, one orange
-coloured pencil for neutral marks only, Caveat for labels and Patrick Hand
-for captions and notes, captions on a taped paper scrap.
+graphite on a cream grid page, one orange coloured pencil for headings
+only (never a value, rule 7.4), Caveat for labels and Patrick Hand for
+captions and notes, captions on a taped paper scrap.
 
-Each section is a page: its heading, written and underlined, and a stage
-below it that shows, line by line,
-- the line's chart, if it has one (bars, share, series or a named figure),
-  with "Source: ..." under it for as long as it is up (rule 7.1);
-- in the `what` and `vote` sections, the ballot: the measure's title and
-  its two options, drawn alike;
-- otherwise the documents the line cites, each laid on the page the first
-  time a line in the section cites it, with the passage for each line
-  marked on it as the narrator speaks it.
+The motion is calm. Each section is a page: its heading, written and
+underlined, and a stage below it. A visual draws on once, in about a
+second, with a pencil that is on the page only while something is being
+drawn, and then holds still; it stays up through the lines after it until
+a later line in the section brings its own (the old one fades out) or the
+section ends (the whole page fades out, and the next heading draws on).
+The stage shows
+- the line's visual, if it has one (a chart, a number, a timeline, a
+  phrase of the line's words or a named figure), with "Source: ..." under
+  it for as long as it is up (rule 7.1);
+- in the `what` and `vote` sections, before any visual, the ballot: the
+  measure's title and its two options, drawn alike;
+- otherwise nothing: an empty page under the heading.
 The two sides get the same page whichever plays first (rules 2.2, 4.1);
 their pages are built by the same code from line positions, never from the
 side. The film closes on a card listing every cited source (rule 1.5).
@@ -49,7 +52,7 @@ import videobuilder as vb  # noqa: E402
 from videobuilder import Box, paths, text  # noqa: E402
 
 import sketch as sp  # noqa: E402
-from sketch import (DRAW, GRAPHITE, ORANGE, Hatch, Item, Rub, Stroke,  # noqa: E402
+from sketch import (DRAW, GRAPHITE, ORANGE, Hatch, Item, Stroke,  # noqa: E402
                     fade_item, hatch_item, stroke_item, text_item)
 
 from ballotreels.contest import load_contest  # noqa: E402
@@ -74,8 +77,10 @@ TRACK = VOICE.track_at(0, FPS)
 PAPER_SCRAP = '#fbf7ec'
 TAPE = (0.88, 0.82, 0.62, 0.62)
 
-ERASE = 16         # frames for the eraser to rub a page out
-ERASE_STAGE = 12   # ...or just the stage, between a line's documents and a chart
+FADE = 12          # frames for a page, or a visual, to fade out (0.4 s)
+DRAW_ON = 36       # frames a visual takes to draw on, at most (1.2 s)
+BRIDGE = 6         # frames of gap the pencil crosses between two marks
+PENCIL_FADE = 5    # frames for the pencil to fade in or out
 WRITE_PX = 1500    # px of lettering a second
 
 
@@ -85,15 +90,13 @@ def seed_of(*parts):
     return zlib.crc32('/'.join(map(str, parts)).encode())
 
 
-def page_seed_key(label):
-    """The part of a section's label that may seed its marks: the two
-    sides share one key, so neither page is drawn or rubbed out differently
-    from the other (rule 4.2)."""
-    return 'side' if label in ('yes', 'no') else label
-
-
 def font(size, weight=400, family=HAND, **kw):
     return vb.Font(family, size, weight=weight, **kw)
+
+
+def draw_budget(f0, f1):
+    """Frames a visual starting at f0, up until f1, has to draw on in."""
+    return min(DRAW_ON, (f1 - f0) * 0.8)
 
 
 def write_frames(px):
@@ -137,14 +140,11 @@ def layout_9x16():
         label_font=font(46, 600),
         value_font=font(58, 700),
         note_font=font(34, family=PRINT),
-        sheet_font=font(42, 700),
         ballot_title_font=font(52, family=PRINT),
         option_font=font(84, 700),
         caption_font=font(58, family=PRINT),
         caption_lines=2,
         sources_font=font(48, family=PRINT),
-        rest=(1250, 1500),
-        eraser=190,
     )
 
 
@@ -163,14 +163,11 @@ def layout_16x9():
         label_font=font(42, 600),
         value_font=font(52, 700),
         note_font=font(31, family=PRINT),
-        sheet_font=font(36, 700),
         ballot_title_font=font(42, family=PRINT),
         option_font=font(64, 700),
         caption_font=font(54, family=PRINT),
         caption_lines=2,
         sources_font=font(42, family=PRINT),
-        rest=(2100, 1000),
-        eraser=170,
     )
 
 
@@ -275,196 +272,6 @@ def heading_items(sec_beat, L, f0):
     return items, f + 9, Box(hb.cx - w / 2 - 10, drawn.y, w + 24, uy + 8 - drawn.y)
 
 
-# ---- the stage: the documents a line cites ----
-def doc_rows(w, h, top, u, seed):
-    """Scribbled lines of 'text' on a sheet, in its own space: a list of rows,
-    each a list of word strokes, and each row's (x0, x1, y)."""
-    rnd = random.Random(seed)
-    pad = 34 * u
-    gap = 34 * u
-    rows, extents = [], []
-    y = top
-    para = 0
-    while y < h / 2 - pad - 4:
-        x0 = -w / 2 + pad + (26 * u if para == 0 else 0)
-        last = para >= rnd.randint(3, 5)
-        x1 = w / 2 - pad - (rnd.uniform(0.25, 0.55) * (w - 2 * pad) if last else rnd.uniform(0, 18) * u)
-        words = []
-        x = x0
-        while x < x1 - 20 * u:
-            ln = min(x1 - x, rnd.uniform(26, 96) * u)
-            words.append(Stroke([(x, y), (x + ln, y + rnd.uniform(-1, 1))], seed + len(rows) * 50 + len(words),
-                                passes=1, width=3.2 * u, wobble=0.9, overshoot=2, alpha=0.55))
-            x += ln + 13 * u
-        rows.append(words)
-        extents.append((x0, x, y))
-        para = 0 if last else para + 1
-        y += gap * (1.5 if last else 1)
-    return rows, extents
-
-
-def row_item(f0, f1, words, at):
-    def draw(cv, p):
-        k = p * len(words)
-        for i, s in enumerate(words):
-            if i >= k:
-                break
-            s.draw(cv, min(1.0, k - i))
-
-    def head(p):
-        k = min(len(words) - 1, int(p * len(words)))
-        return words[k].head(min(1.0, p * len(words) - k))
-    return Item(f0, f1, draw, head, ease=vb.linear, at=at)
-
-
-class Sheet:
-    """One cited document on the stage."""
-
-    def __init__(self, source, cx, cy, w, h, angle, L):
-        self.source, self.cx, self.cy, self.w, self.h, self.angle, self.L = source, cx, cy, w, h, angle, L
-        self.at = (cx, cy, angle)
-        self.passages = 0
-        u = L['u']
-        fnt = L['sheet_font']
-        pad = 34 * u
-        while True:
-            lines = text.wrap(source.short_credit, fnt, w - 2 * pad - 30 * u, balance=True)
-            if len(lines) <= 3 or fnt.size < 24:
-                break
-            fnt = font(fnt.size * 0.9, 700)
-        self.head_font, self.head_lines = fnt, lines
-        self.head_y = -h / 2 + pad + 6 * u
-        self.rule_y = self.head_y + text.line_height(fnt) * len(lines) + 12 * u
-        self.rows, self.extents = doc_rows(w, h, self.rule_y + 34 * u, u, seed_of('rows', source.id))
-
-    def bbox(self):
-        r = abs(self.angle)
-        w = self.w * math.cos(r) + self.h * math.sin(r)
-        h = self.h * math.cos(r) + self.w * math.sin(r)
-        return Box(self.cx - w / 2, self.cy - h / 2, w, h)
-
-    def lay(self, f0):
-        """The sheet laid down and sketched in, from f0: (items, end)."""
-        u = self.L['u']
-        pts, draw_paper = paper(self.cx, self.cy, self.w, self.h, self.angle, dog=46 * u)
-        items = [fade_item(f0, f0 + 6, draw_paper)]
-        f = f0 + 4
-        outline = Stroke(pts, seed_of('sheet', self.source.id), passes=2, width=3 * u, closed=True,
-                         overshoot=0, alpha=0.7)
-        items.append(stroke_item(f, f + 10, outline, at=self.at))
-        x1, y0 = self.w / 2, -self.h / 2
-        d = 46 * u
-        fold = Stroke([(x1 - d, y0), (x1 - d + 4, y0 + d - 4), (x1, y0 + d)], seed_of('fold', self.source.id),
-                      passes=2, width=2.6 * u, overshoot=1)
-        items.append(stroke_item(f + 10, f + 13, fold, pencil=False, at=self.at))
-        f += 12
-        pad = 34 * u
-        hl, f, _ = write_lines(f, self.head_lines, self.head_font, -self.w / 2 + pad, self.head_y)
-        for it in hl:
-            it.at = self.at
-        items += hl
-        rule = Stroke([(-self.w / 2 + pad, self.rule_y), (self.w / 2 - pad, self.rule_y)],
-                      seed_of('rule', self.source.id), passes=2, width=2.8 * u, overshoot=3)
-        items.append(stroke_item(f, f + 5, rule, at=self.at))
-        f += 5
-        per = 2.2
-        for i, words in enumerate(self.rows):
-            if words:
-                items.append(row_item(f + i * per, f + (i + 1) * per + 1, words, self.at))
-        return items, f + len(self.rows) * per + 2
-
-    def mark_passage(self, f0, budget):
-        """The next passage on the sheet marked in orange: a bracket in the
-        margin and shading over its rows. Which rows depends only on how many
-        passages are already marked, so two sheets cited alike look alike."""
-        u = self.L['u']
-        n = len(self.rows)
-        span = 2 if n >= 6 else 1
-        r0 = (self.passages * (span + 1)) % max(1, n - span + 1)
-        self.passages += 1
-        rows = self.extents[r0:r0 + span]
-        top, bot = rows[0][2] - 14 * u, rows[-1][2] + 14 * u
-        bx = -self.w / 2 + 14 * u
-        bracket = Stroke([(bx + 9 * u, top), (bx, top + 6 * u), (bx, bot - 6 * u), (bx + 9 * u, bot)],
-                         seed_of('bracket', self.passages), passes=2, width=4 * u, overshoot=1)
-        d1 = min(10, budget * 0.3)
-        items = [stroke_item(f0, f0 + d1, bracket, ORANGE, at=self.at)]
-        f = f0 + d1
-        for k, (x0, x1, y) in enumerate(rows):
-            poly = box_pts(x0 - 4 * u, y - 13 * u, x1 - x0 + 8 * u, 26 * u)
-            h = Hatch(poly, seed_of('pass', self.passages, k), angle=68, spacing=7 * u, alpha=0.55, width=2.4 * u)
-            d = min(12, (budget - d1) / span)
-            items.append(hatch_item(f, f + d, h, ORANGE, at=self.at))
-            f += d
-        return items, f
-
-
-def sheet_layout(sources, stage, L):
-    """Where each cited document's sheet goes on the stage."""
-    n = len(sources)
-    u = L['u']
-    aspect = 0.74
-    gap = 30 * u
-    h = stage.h * 0.97
-    w = h * aspect
-    room = stage.w - 50 * u  # tilted sheets reach a little past their width
-    if n * w + (n - 1) * gap > room:
-        w = (room - (n - 1) * gap) / n
-        h = min(h, w / aspect)
-    total = n * w + (n - 1) * gap
-    x0 = stage.cx - total / 2
-    tilts = (-0.03, 0.025, -0.018, 0.02)
-    sheets = []
-    for i, src in enumerate(sources):
-        cx = x0 + w / 2 + i * (w + gap)
-        cy = stage.cy + (8 * u if i % 2 else -4 * u)
-        sheets.append(Sheet(src, cx, cy, w, h, tilts[i % 4], L))
-    return sheets
-
-
-def documents_run(lines, L, first_f):
-    """The stage for a run of lines without a chart: (items, marks)."""
-    stage = L['stage']
-    order = []
-    for b in lines:
-        for sid in (b.line.sources or ()):
-            src = CONTEST.source(sid)
-            if src and src not in order:
-                order.append(src)
-    if not order:
-        return [], []
-    sheets = sheet_layout(order[:4], stage, L)
-    by_id = {s.source.id: s for s in sheets}
-    laid = set()
-    items = []
-    for k, b in enumerate(lines):
-        f0 = first_f if k == 0 else b.start + 3
-        budget = (b.end - f0) * 0.8
-        line_items = []
-        f = f0
-        cited = [by_id[s] for s in (b.line.sources or ()) if s in by_id]
-        for sh in cited:
-            if sh.source.id not in laid:
-                laid.add(sh.source.id)
-                its, f = sh.lay(f)
-                line_items += its
-        per = max(8, (f0 + budget - f) / max(1, len(cited)))
-        for sh in cited:
-            its, f = sh.mark_passage(f, per)
-            line_items += its
-        items += scaled(line_items, f0, budget)
-    marks = [Mark('documents', _union([s.bbox() for s in sheets]))]
-    return items, marks
-
-
-def _union(boxes):
-    x0 = min(b.x for b in boxes)
-    y0 = min(b.y for b in boxes)
-    x1 = max(b.right for b in boxes)
-    y1 = max(b.bottom for b in boxes)
-    return Box(x0, y0, x1 - x0, y1 - y0)
-
-
 # ---- the stage: the ballot (the `what` and `vote` sections) ----
 def ballot_run(lines, L, first_f):
     """The measure's ballot entry, drawn during the run's first line: its
@@ -488,7 +295,7 @@ def ballot_run(lines, L, first_f):
     at = (cx, cy, angle)
     pts, draw_paper = paper(cx, cy, w, h, angle)
     f = first_f
-    budget0 = (lines[0].end - first_f) * 0.8
+    budget0 = draw_budget(first_f, lines[-1].end)
     items = [fade_item(f, f + 6, draw_paper)]
     outline = Stroke(pts, seed_of('ballot'), passes=2, width=3.2 * u, closed=True, overshoot=0, alpha=0.75)
     items.append(stroke_item(f + 3, f + 14, outline, at=at))
@@ -619,7 +426,7 @@ def bars_chart(chart, L, f0, f1):
                                base - val * scale - text.line_height(vf) - 4 * u, align='center', width=slot)
         items += vi
         f += 6
-    items = scaled(items, f0, (f1 - f0) * 0.8)
+    items = scaled(items, f0, draw_budget(f0, f1))
     return items, [Mark('chart', Box(plot.x, tbox.y, plot.w, plot.bottom - tbox.y)), Mark('chart source', sbox)]
 
 
@@ -695,7 +502,7 @@ def share_chart(chart, L, f0, f1):
                                b['ly'] + text.line_height(lf) * len(b['lines']))
         items += vi
         f += 6
-    items = scaled(items, f0, (f1 - f0) * 0.8)
+    items = scaled(items, f0, draw_budget(f0, f1))
     return items, [Mark('chart', Box(plot.x, tbox.y, plot.w, plot.bottom - tbox.y)), Mark('chart source', sbox)]
 
 
@@ -746,7 +553,7 @@ def series_chart(chart, L, f0, f1):
         ly = y - text.line_height(vf) - 8 * u if vals[i] >= 0 else y + 8 * u
         li, f, _ = write_lines(f, [lab], vf, x - 100 * u, ly, align='center', width=200 * u)
         items += li
-    items = scaled(items, f0, (f1 - f0) * 0.8)
+    items = scaled(items, f0, draw_budget(f0, f1))
     return items, [Mark('chart', Box(plot.x, tbox.y, plot.w, plot.bottom - tbox.y)), Mark('chart source', sbox)]
 
 
@@ -792,7 +599,7 @@ def figure_steady_spending_volatile_revenue(chart, L, f0, f1):
     ri, f, _ = write_lines(f + 2, ['Revenue'], lf, rx - text.measure('Revenue', lf) / 2,
                            ry - text.line_height(lf) - 12 * u)
     items += ri
-    items = scaled(items, f0, (f1 - f0) * 0.75)
+    items = scaled(items, f0, draw_budget(f0, f1))
     return items, [Mark('chart', Box(plot.x, tbox.y, plot.w, plot.bottom - tbox.y)), Mark('chart source', sbox)]
 
 
@@ -802,7 +609,9 @@ FIGURES = {
 CHARTS = {'bars': bars_chart, 'share': share_chart, 'series': series_chart}
 
 
-def chart_run(chart, L, first_f):
+def chart_run(chart, lines, L, first_f):
+    """The visual `chart` on the stage, for `lines` (its own and the ones
+    it stays up for): (items, marks)."""
     v = chart.visual
     if v.kind == 'figure':
         if v.figure not in FIGURES:
@@ -815,105 +624,73 @@ def chart_run(chart, L, first_f):
 
 
 # ---- a section's page ----
-class Layer:
-    """Items that draw together and are rubbed out together, with the
-    marks they show while not being rubbed out."""
+class Group:
+    """Items drawn on together and faded out together: on the page from
+    frame `f0`, fading out over FADE frames from `out` (None: never), with
+    the marks they show while fully up."""
 
-    def __init__(self, rub, marks, f0):
-        self.rub, self.marks, self.f0 = rub, marks, f0
+    def __init__(self, items, marks, f0, out=None):
+        self.items, self.marks, self.f0, self.out = items, marks, f0, out
 
     def draw(self, cv, n):
-        if n < self.f0 - 1 or n >= self.rub.gone:
+        if n < self.f0 - 1 or (self.out is not None and n >= self.out + FADE):
             return
-        live = self.rub.e0 is None or n < self.rub.e0
-
-        def mark():
+        if self.out is None or n < self.out:
+            for it in self.items:
+                it.draw(cv, n)
             for m in self.marks:
                 if n >= m.f0:
                     cv.mark(m.name, *m.box)
-        self.rub.draw(cv, n, mark if live else None)
+            return
+        with cv.layer(opacity=1 - (n - self.out) / FADE):
+            for it in self.items:
+                it.draw(cv, n)
 
 
 def runs_of(sec):
     """The section's stage, run by run: ('chart', ChartBeat, lines) for each
-    chart and the lines it is up for, and ('documents' or 'ballot', None,
-    lines) for the lines between. `what` opens on the ballot for its first
-    line; `vote` keeps it up for every line, so a line about either option
-    is shown alike."""
-    out = []
-    plain = 'ballot' if sec.section.id == 'vote' else 'documents'
-    charts = {c.index: c for c in sec.charts}
-    i = 0
+    visual and the lines it is up for (its own, and the ones after it until
+    the next visual or the section's end), and ('ballot', None, lines) for
+    the lines before the first visual in `what` and `vote`. Elsewhere the
+    lines before the first visual have nothing on the stage: just the
+    heading."""
     lines = sec.lines
-    while i < len(lines):
-        if i in charts:
-            c = charts[i]
-            j = i
-            while j < len(lines) and lines[j].start < c.end:
-                j += 1
-            out.append(('chart', c, lines[i:j]))
-            i = j
-        else:
-            j = i
-            while j < len(lines) and j not in charts:
-                j += 1
-            if i == 0 and sec.section.id == 'what' and plain != 'ballot':
-                out.append(('ballot', None, lines[:1]))
-                if j > 1:
-                    out.append((plain, None, lines[1:j]))
-            else:
-                out.append((plain, None, lines[i:j]))
-            i = j
+    at = [c.index for c in sec.charts]
+    out = []
+    if not at or at[0] > 0:
+        j = at[0] if at else len(lines)
+        if sec.section.id in ('what', 'vote'):
+            out.append(('ballot', None, lines[:j]))
+    for k, c in enumerate(sec.charts):
+        j = at[k + 1] if k + 1 < len(at) else len(lines)
+        out.append(('chart', c, lines[c.index:j]))
     return out
-
-
-def page_box(L):
-    hb, st = L['heading'], L['stage']
-    return (st.x - 20, hb.y, st.w + 40, st.bottom - hb.y)
 
 
 def build(fmt):
     L = LAYOUTS[fmt]
-    layers = []
-    rubs = []
+    groups = []
     for sec in BOARD.sections:
-        e_page = (sec.end, sec.end + ERASE)
-        h_items, h_end, h_box = heading_items(sec, L, sec.start + (8 if sec.number else 4))
+        h_items, h_end, h_box = heading_items(sec, L, sec.start + (FADE * 2 // 3 if sec.number else 4))
+        groups.append(Group(h_items, [Mark('heading', h_box, sec.start)], sec.start, sec.end))
         runs = runs_of(sec)
-        page_items = list(h_items)
-        page_marks = [Mark('heading', h_box)]
         for k, (kind, chart, lines) in enumerate(runs):
             start = lines[0].start
-            first_f = h_end + 2 if k == 0 else start + ERASE_STAGE - 2
+            first_f = max(h_end + 2, start + (FADE // 2 if start > sec.start else 0))
+            end = lines[-1].end
             if kind == 'chart':
-                items, marks = chart_run(chart, L, first_f)
-            elif kind == 'ballot':
-                items, marks = ballot_run(lines, L, first_f)
+                items, marks = chart_run(chart, lines, L, first_f)
             else:
-                items, marks = documents_run(lines, L, first_f)
+                items, marks = ballot_run(lines, L, first_f)
             for m in marks:
                 m.f0 = first_f
-            if k + 1 < len(runs):
-                e0 = runs[k + 1][2][0].start
-                st = L['stage']
-                rub = Rub(items, e0, e0 + ERASE_STAGE, (st.x - 20, st.y, st.w + 40, st.h),
-                          seed_of('rub', fmt, page_seed_key(sec.label), k), L['eraser'])
-                layers.append(Layer(rub, marks, start))
-                rubs.append(rub)
-            else:
-                page_items += items
-                page_marks += marks
-        rub = Rub(page_items, e_page[0], e_page[1], page_box(L),
-                  seed_of('page', fmt, page_seed_key(sec.label)), L['eraser'])
-        layers.append(Layer(rub, page_marks, sec.start))
-        rubs.append(rub)
-    # the closing sources card: never rubbed out
+            groups.append(Group(items, marks, start, end))
+    # the closing sources card: never fades
     card_items, card_marks = sources_card(L, BOARD.narration_end + 8)
-    card = Rub(card_items, None, None, page_box(L), 0, L['eraser'])
-    layers.append(Layer(card, card_marks, BOARD.narration_end))
-    items = [it for ly in layers for it in ly.rub.items]
+    groups.append(Group(card_items, card_marks, BOARD.narration_end))
+    items = [it for g in groups for it in g.items]
     schedule = sorted((it for it in items if it._head), key=lambda it: it.f0)
-    return dict(L=L, layers=layers, rubs=rubs, schedule=schedule, captions=caption_chunks(L))
+    return dict(L=L, groups=groups, schedule=schedule, captions=caption_chunks(L))
 
 
 def sources_card(L, f0):
@@ -1049,49 +826,49 @@ def draw_header(cv, L):
     cv.mark('header', *drawn)
 
 
-# ---- the tools ----
+# ---- the pencil: only while something is being drawn ----
 def pencil_at(n, P):
-    """(x, y, ink, lift) of the pencil tip at frame n, or None when it's off
-    the page: it follows whatever is being drawn and hops or lifts between."""
-    rest = P['L']['rest']
+    """(x, y, ink, alpha) of the pencil tip at frame n, or None. It follows
+    whatever is being drawn; across a short gap between two marks it moves
+    straight from one to the next, and otherwise it fades out where it
+    stopped (and in where it starts). It never travels or idles."""
     prev = nxt = None
     for it in P['schedule']:
         if it.f0 <= n <= it.f1:
             x, y = it.head(n)
-            return x, y, it.ink, 0.0
+            return x, y, it.ink, 1.0
         if it.f1 < n:
             if prev is None or it.f1 > prev.f1:
                 prev = it
-        elif nxt is None and it.f0 > n:
+        elif it.f0 > n:
             nxt = it
             break
-    a = prev.head(prev.f1) if prev else rest
-    b = nxt.head(nxt.f0) if nxt else rest
     fa = prev.f1 if prev else -1e9
     fb = nxt.f0 if nxt else 1e9
-    if fb - fa <= 30:
+    if fb - fa <= BRIDGE:
+        a, b = prev.head(fa), nxt.head(fb)
         q = DRAW(vb.clamp01((n - fa) / (fb - fa)))
-        ink = nxt.ink if q > 0.5 else prev.ink
-        return a[0] + (b[0] - a[0]) * q, a[1] + (b[1] - a[1]) * q, ink, math.sin(q * math.pi)
-    if n - fa <= 12:
-        q = DRAW((n - fa) / 12)
-        return a[0] + (rest[0] - a[0]) * q, a[1] + (rest[1] - a[1]) * q, prev.ink, q
-    if fb - n <= 12:
-        q = DRAW((fb - n) / 12)
-        return b[0] + (rest[0] - b[0]) * q, b[1] + (rest[1] - b[1]) * q, nxt.ink, q
+        return a[0] + (b[0] - a[0]) * q, a[1] + (b[1] - a[1]) * q, nxt.ink, 1.0
+    if n - fa < PENCIL_FADE:
+        x, y = prev.head(fa)
+        return x, y, prev.ink, 1 - (n - fa) / PENCIL_FADE
+    if fb - n < PENCIL_FADE:
+        x, y = nxt.head(fb)
+        return x, y, nxt.ink, 1 - (fb - n) / PENCIL_FADE
     return None
 
 
-def draw_tools(cv, n, P):
-    for rub in P['rubs']:
-        at = rub.tool(n)
-        if at:
-            sp.draw_eraser(cv, *at)
-            return
+def draw_pencil(cv, n, P):
     at = pencil_at(n, P)
-    if at:
-        x, y, ink, lift = at
-        sp.draw_pencil(cv, x, y, None if ink == GRAPHITE else ink, lift)
+    if not at:
+        return
+    x, y, ink, alpha = at
+    colour = None if ink == GRAPHITE else ink
+    if alpha >= 1:
+        sp.draw_pencil(cv, x, y, colour)
+        return
+    with cv.layer(opacity=alpha):
+        sp.draw_pencil(cv, x, y, colour)
 
 
 # ---- the frame ----
@@ -1104,9 +881,9 @@ def draw(n, cv):
     ctx.set_source_surface(sp.backdrop(cv.width, cv.height), 0, 0)
     ctx.paint()
     draw_header(cv, P['L'])
-    for ly in P['layers']:
-        ly.draw(cv, n)
-    draw_tools(cv, n, P)
+    for g in P['groups']:
+        g.draw(cv, n)
+    draw_pencil(cv, n, P)
     if n < BOARD.narration_end:
         draw_captions(cv, n, P)
 
