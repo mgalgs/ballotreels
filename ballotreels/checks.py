@@ -21,7 +21,9 @@ from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, SOURCE_KINDS,
 
 SIDE_TOLERANCE = 0.05
 AIRTIME_TOLERANCE = 0.05
-VISUAL_KINDS = ("bars", "share", "series", "figure")
+CHART_KINDS = ("bars", "share", "series", "figure")
+VISUAL_KINDS = (*CHART_KINDS, "number", "timeline", "words")
+MAX_SHOWN_WORDS = 6  # a number's label, a words visual's phrase
 
 
 @dataclass(frozen=True)
@@ -112,58 +114,145 @@ def _is_number(x: object) -> bool:
             and math.isfinite(x))
 
 
-def _visual_problems(c: Contest, line: Line, v: Visual) -> list[str]:
-    """Everything wrong with chart `v` on `line`, per docs/SCRIPT-FORMAT.md."""
+def _string_list(v: Visual, key: str, out: list[str]) -> bool:
+    """Whether `v`'s `key` is a list of strings; reports it to `out` if not."""
+    value = getattr(v, key)
+    if value is None:
+        out.append(f"has no {key!r}")
+    elif (not isinstance(value, list)
+          or not all(isinstance(x, str) for x in value)):
+        out.append(f"{key!r} must be a list of strings")
+    else:
+        return True
+    return False
+
+
+def _forbid(v: Visual, keys: tuple[str, ...], out: list[str]) -> None:
+    for key in keys:
+        if getattr(v, key) is not None:
+            out.append(f"a {v.kind!r} visual may not have {key!r}")
+
+
+def _short_text(v: Visual, key: str, out: list[str]) -> bool:
+    """`v`'s `key` is a non-empty string of at most MAX_SHOWN_WORDS words."""
+    value = getattr(v, key)
+    if value is None:
+        out.append(f"has no {key!r}")
+    elif not isinstance(value, str) or not value.strip():
+        out.append(f"{key!r} must be a non-empty string")
+    else:
+        n = len(value.split())
+        if n > MAX_SHOWN_WORDS:
+            out.append(f"{key!r} has {n} words, more than "
+                       f"{MAX_SHOWN_WORDS}")
+        return True
+    return False
+
+
+def _number_problems(line: Line, v: Visual) -> list[str]:
+    """A `number`: its figure says nothing the narrator does not."""
     out = []
-    for key in ("kind", "title", "source"):
-        value = getattr(v, key)
-        if value is None:
-            out.append(f"has no {key!r}")
-        elif not isinstance(value, str) or not value:
-            out.append(f"{key!r} must be a non-empty string")
+    _forbid(v, ("title", "unit", "labels", "values", "figure", "items"), out)
+    if _short_text(v, "text", out):
+        said = set(re.findall(r"\d+", line.text))
+        for run in re.findall(r"\d+", v.text):
+            if run not in said:
+                out.append(f"'text' {v.text!r} shows {run!r}, which the "
+                           f"line's text does not say")
+        if not re.search(r"\d", v.text):
+            out.append(f"'text' {v.text!r} has no number in it")
+    _short_text(v, "label", out)
+    return out
 
-    if isinstance(v.source, str) and v.source:
-        src = c.source(v.source)
-        if src is None:
-            out.append(f"cites {v.source!r}, which is not in sources.toml")
-        else:
-            if src.kind not in SOURCE_KINDS:
-                out.append(f"cites {v.source!r}, of kind {src.kind!r}, which "
-                           f"is not an allowed kind")
-            if v.source not in (line.sources or ()):
-                out.append(f"cites {v.source!r}, which is not among the "
-                           f"line's sources")
 
+def _words_problems(line: Line, v: Visual) -> list[str]:
+    """`words`: a phrase lifted verbatim from the line."""
+    out = []
+    _forbid(v, ("title", "source", "unit", "labels", "values", "figure",
+                "label", "items"), out)
+    if (_short_text(v, "text", out)
+            and v.text.casefold() not in line.text.casefold()):
+        out.append(f"'text' {v.text!r} is not in the line's text")
+    return out
+
+
+def _timeline_problems(v: Visual) -> list[str]:
+    out = []
+    _forbid(v, ("title", "unit", "values", "figure", "text", "label"), out)
+    labels_ok = _string_list(v, "labels", out)
+    items_ok = _string_list(v, "items", out)
+    if labels_ok and items_ok:
+        if len(v.labels) != len(v.items):
+            out.append(f"has {len(v.labels)} labels but {len(v.items)} "
+                       f"items")
+        elif len(v.labels) < 2:
+            out.append("a 'timeline' needs at least 2 entries")
+    return out
+
+
+def _source_problems(c: Contest, line: Line, v: Visual) -> list[str]:
+    out = []
+    if v.source is None:
+        return ["has no 'source'"]
+    if not isinstance(v.source, str) or not v.source:
+        return ["'source' must be a non-empty string"]
+    src = c.source(v.source)
+    if src is None:
+        out.append(f"cites {v.source!r}, which is not in sources.toml")
+    else:
+        if src.kind not in SOURCE_KINDS:
+            out.append(f"cites {v.source!r}, of kind {src.kind!r}, which "
+                       f"is not an allowed kind")
+        if v.source not in (line.sources or ()):
+            out.append(f"cites {v.source!r}, which is not among the "
+                       f"line's sources")
+    return out
+
+
+def _visual_problems(c: Contest, line: Line, v: Visual) -> list[str]:
+    """Everything wrong with visual `v` on `line`, per
+    docs/SCRIPT-FORMAT.md."""
+    if v.kind is None:
+        return ["has no 'kind'"]
     if v.kind not in VISUAL_KINDS:
         if isinstance(v.kind, str) and v.kind:
-            out.append(f"kind {v.kind!r} is not one of "
-                       f"{', '.join(VISUAL_KINDS)}")
-        return out
+            return [f"kind {v.kind!r} is not one of "
+                    f"{', '.join(VISUAL_KINDS)}"]
+        return ["'kind' must be a non-empty string"]
+
+    if v.kind == "words":  # no source of its own: the line cites
+        return _words_problems(line, v)
+    out = []
+    if v.kind in CHART_KINDS:
+        if v.title is None:
+            out.append("has no 'title'")
+        elif not isinstance(v.title, str) or not v.title:
+            out.append("'title' must be a non-empty string")
+    out += _source_problems(c, line, v)
+    if v.kind == "number":
+        return out + _number_problems(line, v)
+    if v.kind == "timeline":
+        return out + _timeline_problems(v)
 
     if v.kind == "figure":
         if v.figure is None:
             out.append("a 'figure' chart has no 'figure'")
         elif not isinstance(v.figure, str) or not v.figure:
             out.append("'figure' must be a non-empty string")
-        for key in ("labels", "values", "unit"):
+        for key in ("labels", "values", "unit", "text", "label", "items"):
             if getattr(v, key) is not None:
                 out.append(f"a 'figure' chart may not have {key!r}")
         return out
 
     if v.figure is not None:
         out.append(f"a {v.kind!r} chart may not have 'figure'")
+    _forbid(v, ("text", "label", "items"), out)
     if v.unit is None:
         out.append("has no 'unit'")
     elif not isinstance(v.unit, str):
         out.append("'unit' must be a string")
-    labels_ok = values_ok = False
-    if v.labels is None:
-        out.append("has no 'labels'")
-    elif (not isinstance(v.labels, list)
-          or not all(isinstance(x, str) for x in v.labels)):
-        out.append("'labels' must be a list of strings")
-    else:
-        labels_ok = True
+    labels_ok = _string_list(v, "labels", out)
+    values_ok = False
     if v.values is None:
         out.append("has no 'values'")
     elif (not isinstance(v.values, list)
@@ -190,15 +279,19 @@ def _visual_problems(c: Contest, line: Line, v: Visual) -> list[str]:
 
 
 def check_visuals(c: Contest) -> list[Failure]:
-    """Every chart is well formed and cites one of its line's sources
-    (docs/SCRIPT-FORMAT.md; STANDARD.md 7.1)."""
+    """Every visual is well formed, and every one but `words` cites one of
+    its line's sources (docs/SCRIPT-FORMAT.md; STANDARD.md 7.1). A number
+    or a words visual shows nothing the narrator does not say."""
     out = []
     for label, sec in c.script.labelled():
         for i, line in enumerate(sec.lines):
             if line.visual is None:
                 continue
+            what = ("chart" if line.visual.kind in CHART_KINDS
+                    or line.visual.kind not in VISUAL_KINDS
+                    else f"{line.visual.kind!r} visual")
             for msg in _visual_problems(c, line, line.visual):
-                out.append(Failure("visual", f"chart {msg}", label, i))
+                out.append(Failure("visual", f"{what} {msg}", label, i))
     return out
 
 
@@ -285,8 +378,9 @@ def check_side_parity(c: Contest) -> list[Failure]:
 
 
 def check_side_visuals(c: Contest) -> list[Failure]:
-    """STANDARD.md 7.3: a chart in a side section only if the other side has
-    charts of the same kinds (as many of each)."""
+    """STANDARD.md 7.3: a visual in a side section only if the other side
+    has visuals of the same kinds (as many of each): a chart, number or
+    timeline matched by one of its kind, words by as many words."""
     by_side: dict[str, list[tuple[str, Section]]] = {}
     for label, sec in c.script.labelled():
         if sec.side is not None:
@@ -313,7 +407,7 @@ def check_side_visuals(c: Contest) -> list[Failure]:
             if line.visual is not None:
                 out.append(Failure(
                     "side-visual",
-                    f"a chart in a side section needs charts of the same "
+                    f"a visual in a side section needs visuals of the same "
                     f"kinds on both sides: yes has {show(have['yes'])}, "
                     f"no has {show(have['no'])}",
                     label, i))
@@ -349,6 +443,8 @@ def check_airtime(c: Contest) -> list[Failure]:
 
 
 def check_judgment_words(c: Contest, words: tuple[str, ...]) -> list[Failure]:
+    """STANDARD.md 3.1: no judgment word in a heading, a line or anything
+    a visual shows."""
     if not words:
         return []
     pattern = judgment_word_pattern(words)
@@ -364,6 +460,20 @@ def check_judgment_words(c: Contest, words: tuple[str, ...]) -> list[Failure]:
         scan(sec.heading, "heading", label, None)
         for i, line in enumerate(sec.lines):
             scan(line.text, "text", label, i)
+            if line.visual is not None:
+                for key, value in _shown_text(line.visual):
+                    scan(value, f"visual {key}", label, i)
+    return out
+
+
+def _shown_text(v: Visual) -> list[tuple[str, str]]:
+    """The words a visual puts on screen, as (key, text) pairs."""
+    out = []
+    for key in ("title", "text", "label", "labels", "items"):
+        value = getattr(v, key)
+        for x in value if isinstance(value, list) else [value]:
+            if isinstance(x, str):
+                out.append((key, x))
     return out
 
 

@@ -39,7 +39,7 @@ class Source:
 
 @dataclass(frozen=True)
 class Visual:
-    """A line's chart, as written. Each field is None when its key is absent;
+    """A line's visual (a chart, number, timeline or words), as written. Each field is None when its key is absent;
     the values are not type-checked here, since a malformed chart is a check
     failure (ballotreels.checks.check_visuals), not a load error."""
     kind: Any = None
@@ -49,6 +49,9 @@ class Visual:
     labels: Any = None
     values: Any = None
     figure: Any = None
+    text: Any = None   # number, words: the figure or phrase shown large
+    label: Any = None  # number: the short label under it
+    items: Any = None  # timeline: one entry per label
 
 
 VISUAL_KEYS = tuple(Visual.__dataclass_fields__)
