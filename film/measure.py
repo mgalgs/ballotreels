@@ -85,6 +85,13 @@ def seed_of(*parts):
     return zlib.crc32('/'.join(map(str, parts)).encode())
 
 
+def page_seed_key(label):
+    """The part of a section's label that may seed its marks: the two
+    sides share one key, so neither page is drawn or rubbed out differently
+    from the other (rule 4.2)."""
+    return 'side' if label in ('yes', 'no') else label
+
+
 def font(size, weight=400, family=HAND, **kw):
     return vb.Font(family, size, weight=weight, **kw)
 
@@ -890,13 +897,14 @@ def build(fmt):
                 e0 = runs[k + 1][2][0].start
                 st = L['stage']
                 rub = Rub(items, e0, e0 + ERASE_STAGE, (st.x - 20, st.y, st.w + 40, st.h),
-                          seed_of('rub', fmt, sec.label, k), L['eraser'])
+                          seed_of('rub', fmt, page_seed_key(sec.label), k), L['eraser'])
                 layers.append(Layer(rub, marks, start))
                 rubs.append(rub)
             else:
                 page_items += items
                 page_marks += marks
-        rub = Rub(page_items, e_page[0], e_page[1], page_box(L), seed_of('page', fmt, sec.label), L['eraser'])
+        rub = Rub(page_items, e_page[0], e_page[1], page_box(L),
+                  seed_of('page', fmt, page_seed_key(sec.label)), L['eraser'])
         layers.append(Layer(rub, page_marks, sec.start))
         rubs.append(rub)
     # the closing sources card: never rubbed out
