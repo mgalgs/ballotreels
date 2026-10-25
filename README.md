@@ -50,12 +50,19 @@ its script as plain narration text:
 
 This writes `narration.txt` in the contest's directory: each script
 line's text, one per line, in the order the video will play them (the
-two side sections ordered by `ballotreels.side_order`). Then, on a
-machine with the Kokoro model files installed (see videobuilder's
-`speech` extra), turn it into audio:
+two side sections ordered by `ballotreels.side_order`). Then turn it
+into audio with videobuilder's Chatterbox engine, which runs in its own
+Python (videobuilder's README has the install):
 
     python -m videobuilder say data/ca-2026-11-03/prop-2/narration.txt \
-        --out data/ca-2026-11-03/prop-2/narration.wav
+        --engine chatterbox --out data/ca-2026-11-03/prop-2/narration.wav
+
+`scripts/narrate.sh <contest-dir>...` runs both steps, and finds the
+Chatterbox interpreter at `~/.local/chatterbox/bin/python` unless
+`VIDEOBUILDER_CHATTERBOX_PYTHON` says otherwise. Chatterbox, not
+Kokoro: Kokoro mis-phrases long noun-phrase subjects, and fixing that
+by rewording the script or adding break marks is not an option, since
+the script must say what the sources say.
 
 This writes `narration.wav` plus its `.vtt`/`.json` sidecars beside it;
 commit all three along with `narration.txt`. Re-run `narration` and `say`
