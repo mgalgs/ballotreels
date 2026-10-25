@@ -1,5 +1,6 @@
 """Shared test helpers: the real Prop 2 contest, and broken copies of it."""
 
+import json
 import re
 import shutil
 import tempfile
@@ -41,3 +42,28 @@ def drop_background(contest_dir):
                      "", text, flags=re.DOTALL)
     assert n == 1 and new.count('id = "background"') == 0, "no background"
     path.write_text(new, encoding="utf-8")
+
+
+def write_narration(contest_dir, stretch=None):
+    """Write a stand-in narration.json for `contest_dir`'s current script,
+    as `videobuilder say` would lay it out: each phrase 0.4s per word, 0.25s
+    apart. `stretch` maps a section label to a factor on its phrases'
+    lengths. The real sidecars are made on the host with a TTS model; these
+    only exercise the phrase<->line mapping and the airtime check."""
+    from videobuilder import speech
+
+    from ballotreels.contest import load_contest
+    from ballotreels.narration import narration_lines
+
+    stretch = stretch or {}
+    phrases = []
+    t = 0.0
+    for line in narration_lines(load_contest(contest_dir)):
+        for text in speech.phrases(line.text):
+            end = t + 0.4 * len(text.split()) * stretch.get(line.section, 1)
+            phrases.append({"text": text, "start": round(t, 2),
+                            "end": round(end, 2)})
+            t = end + 0.25
+    doc = {"phrases": phrases, "seconds": round(t, 2)}
+    (Path(contest_dir) / "narration.json").write_text(
+        json.dumps(doc, indent=2) + "\n", encoding="utf-8")

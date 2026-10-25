@@ -4,6 +4,8 @@ import sys
 import unittest
 
 from ballotreels.cli import main
+from ballotreels.contest import load_contest
+from ballotreels.narration import narration_text
 
 from .helpers import PROP_2, REPO, ContestCopyTestCase
 
@@ -21,14 +23,15 @@ class CliTest(ContestCopyTestCase):
         code, lines = self.run_cli(PROP_2)
         self.assertEqual(code, 0)
         self.assertEqual(lines, [
-            "PASS ca-2026-11-03-prop-2; words what=27 today=40 change=54 "
-            "fiscal=35 yes=79 no=79 vote=39; no plays first"])
+            "PASS ca-2026-11-03-prop-2; words what=41 background[0]=70 "
+            "background[1]=74 background[2]=52 background[3]=27 today=81 "
+            "change=97 fiscal=49 yes=79 no=79 vote=43; no plays first"])
 
     def test_failures_one_per_line(self):
-        self.edit("script.toml", "standard_version = 1",
+        self.edit("script.toml", "standard_version = 2",
                   "standard_version = 0")
-        self.edit("script.toml", "The Legislature placed",
-                  "The bold Legislature placed")
+        self.edit("script.toml", "The Legislature put it",
+                  "The bold Legislature put it")
         code, lines = self.run_cli(PROP_2, self.dir)
         self.assertEqual(code, 1)
         self.assertEqual(len(lines), 4)
@@ -46,12 +49,13 @@ class CliTest(ContestCopyTestCase):
         self.assertEqual(lines, [f"{self.dir}: script.toml: not found",
                                  f"FAIL {self.dir}: could not load"])
 
-    def test_narration_matches_committed_file(self):
+    def test_narration_writes_playback_order(self):
         code, lines = self.run_cli_cmd("narration", self.dir)
         self.assertEqual(code, 0)
-        self.assertEqual(len(lines), 1)
+        self.assertEqual(lines,
+                         [f"{self.dir / 'narration.txt'}: wrote 37 lines"])
         self.assertEqual((self.dir / "narration.txt").read_text(encoding="utf-8"),
-                         (PROP_2 / "narration.txt").read_text(encoding="utf-8"))
+                         narration_text(load_contest(self.dir)))
 
     def test_narration_unloadable_contest(self):
         (self.dir / "script.toml").unlink()

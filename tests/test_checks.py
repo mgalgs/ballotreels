@@ -7,7 +7,8 @@ from ballotreels import check_contest, load_contest, load_standard
 from ballotreels.standard import (REPO_ROOT, SOURCE_KINDS,
                                   judgment_word_pattern, read_judgment_words)
 
-from .helpers import PROP_2, ContestCopyTestCase, drop_background
+from .helpers import (PROP_2, ContestCopyTestCase, drop_background,
+                      write_narration)
 
 
 class Prop2PassesTest(unittest.TestCase):
@@ -41,8 +42,9 @@ class BrokenCopyTest(ContestCopyTestCase):
         self.assertOnly("line-citation", "vote", 2)
 
     def test_line_with_empty_sources(self):
-        self.edit("script.toml", 'sources = ["guide-section"]\n\n[[section]]\n'
-                  'id = "today"', 'sources = []\n\n[[section]]\nid = "today"')
+        self.edit("script.toml", 'sources = ["guide-section", "lao-analysis"]'
+                  '\n\n[[section]]\nid = "background"',
+                  'sources = []\n\n[[section]]\nid = "background"')
         [f] = self.assertOnly("line-citation", "what", 1)
         self.assertIn("empty", f.message)
 
@@ -341,8 +343,8 @@ class BrokenCopyTest(ContestCopyTestCase):
 
     # 7. judgment words
     def test_judgment_word_in_text(self):
-        self.edit("script.toml", "The Legislature placed",
-                  "The Legislature, in a FAIR process, placed")
+        self.edit("script.toml", "The Legislature put it",
+                  "The Legislature, in a FAIR process, put it")
         [f] = self.assertOnly("judgment-word", "what", 1)
         self.assertIn("'FAIR'", f.message)
 
@@ -352,10 +354,10 @@ class BrokenCopyTest(ContestCopyTestCase):
         self.assertOnly("judgment-word", "fiscal")
 
     def test_judgment_multiword_and_hyphenated(self):
-        self.edit("script.toml", "changes how much",
-                  "is a common-sense change to how much")
-        self.edit("script.toml", "The Legislature placed",
-                  "In common\tsense terms, the Legislature placed")
+        self.edit("script.toml", "Proposition 2 is about",
+                  "Proposition 2 is a common-sense change about")
+        self.edit("script.toml", "The Legislature put it",
+                  "In common\tsense terms, the Legislature put it")
         got = self.failures()
         self.assertEqual(
             sorted((f.section, f.line, f.message) for f in got),
@@ -363,45 +365,49 @@ class BrokenCopyTest(ContestCopyTestCase):
              ("what", 1, "judgment word 'common\\tsense' in text")])
 
     def test_judgment_word_not_inside_other_words(self):
-        self.edit("script.toml", "The Legislature placed",
-                  "The Legislature, a boldface affair, placed")
+        self.edit("script.toml", "The Legislature put it",
+                  "The Legislature, a boldface affair, put it")
         self.assertEqual(self.failures(), [])
 
     # 8. standard version
     def test_standard_version(self):
-        self.edit("script.toml", "standard_version = 1",
+        self.edit("script.toml", "standard_version = 2",
                   "standard_version = 0")
         self.assertOnly("standard-version")
 
     # 9. airtime
+    def test_airtime_balanced(self):
+        write_narration(self.dir)
+        self.assertEqual(self.failures(), [])
+
     def test_airtime_imbalance(self):
-        # Shrinks the "no" side's span from 30.07s to 25.26s (yes stays at
-        # 28.69s), past the 5% tolerance; see tests/test_narration.py for
-        # where those numbers come from.
-        self.edit("narration.json", '"end": 89.81', '"end": 85.0')
+        # Both sides have 79 words in 4 one-sentence lines: 32.35s each at
+        # the stand-in narration's pace. Shrinking "no" by 10% makes it
+        # 29.19s, past the 5% tolerance.
+        write_narration(self.dir, stretch={"no": 0.9})
         [f] = self.assertOnly("airtime")
-        self.assertIn("no=25.3", f.message)
-        self.assertIn("yes=28.7", f.message)
+        self.assertRegex(f.message, r"yes=32\.\ds, no=29\.2s")
 
     def test_airtime_skips_when_narration_is_stale(self):
         # "bold" is also a judgment word, so the edit still fails a check,
         # just not "airtime": the sidecars no longer match this line's text,
         # so airtime can't be measured from them and says nothing.
-        self.edit("script.toml", "The Legislature placed",
-                  "The Legislature, in a bold process, placed")
+        write_narration(self.dir, stretch={"no": 0.9})
+        self.edit("script.toml", "The Legislature put it",
+                  "The Legislature, in a bold process, put it")
         self.assertEqual({f.check for f in self.failures()}, {"judgment-word"})
 
     def test_airtime_skips_with_no_sidecars(self):
-        (self.dir / "narration.json").unlink()
+        self.assertFalse((self.dir / "narration.json").exists())
         self.assertEqual(self.failures(), [])
 
     def test_reports_every_failure(self):
         self.edit("script.toml", 'contest = "ca-2026-11-03-prop-2"',
                   'contest = "x"')
-        self.edit("script.toml", "standard_version = 1",
+        self.edit("script.toml", "standard_version = 2",
                   "standard_version = 0")
-        self.edit("script.toml", "The Legislature placed",
-                  "The bold Legislature placed")
+        self.edit("script.toml", "The Legislature put it",
+                  "The bold Legislature put it")
         self.assertEqual([f.check for f in self.failures()],
                          ["contest-id", "judgment-word", "standard-version"])
 

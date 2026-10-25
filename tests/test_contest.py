@@ -12,10 +12,12 @@ class LoadProp2Test(unittest.TestCase):
         self.assertEqual(c.kind, "measure")
         self.assertEqual(c.script.contest, c.id)
         self.assertEqual(c.script.template, "measure")
-        self.assertEqual(c.script.template_version, 1)
+        self.assertEqual(c.script.template_version, 2)
         self.assertEqual([s.id for s in c.script.sections],
-                         ["what", "today", "change", "fiscal", "yes", "no",
-                          "vote"])
+                         ["what", "background", "background", "background",
+                          "background", "today", "change", "fiscal", "yes",
+                          "no", "vote"])
+        self.assertEqual(c.source("lao-volatility").kind, "official-report")
         self.assertEqual(c.source("lao-analysis").kind,
                          "official-fiscal-analysis")
         self.assertIsNone(c.source("nope"))
@@ -65,13 +67,13 @@ class LoadErrorTest(ContestCopyTestCase):
             load_contest(self.dir)
 
     def test_wrong_type(self):
-        self.edit("script.toml", "template_version = 1",
-                  'template_version = "1"')
+        self.edit("script.toml", "template_version = 2",
+                  'template_version = "2"')
         with self.assertRaisesRegex(ContestError, "template_version"):
             load_contest(self.dir)
 
     def test_bool_is_not_an_int(self):
-        self.edit("script.toml", "standard_version = 1",
+        self.edit("script.toml", "standard_version = 2",
                   "standard_version = true")
         with self.assertRaisesRegex(ContestError, "standard_version"):
             load_contest(self.dir)
