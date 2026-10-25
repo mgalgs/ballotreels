@@ -53,6 +53,28 @@ class Script:
     standard_version: int
     sections: tuple[Section, ...]
 
+    def labels(self) -> tuple[str, ...]:
+        """Each section's label, in file order: its id, or `id[k]` for the
+        k-th (0-based) of several sections sharing an id (template 2's
+        background sections), so a failure can say which one it means."""
+        counts: dict[str, int] = {}
+        for sec in self.sections:
+            counts[sec.id] = counts.get(sec.id, 0) + 1
+        seen: dict[str, int] = {}
+        out = []
+        for sec in self.sections:
+            if counts[sec.id] == 1:
+                out.append(sec.id)
+            else:
+                k = seen.get(sec.id, 0)
+                seen[sec.id] = k + 1
+                out.append(f"{sec.id}[{k}]")
+        return tuple(out)
+
+    def labelled(self) -> tuple[tuple[str, Section], ...]:
+        """(label, section) pairs, in file order; see labels()."""
+        return tuple(zip(self.labels(), self.sections))
+
 
 @dataclass(frozen=True)
 class Contest:

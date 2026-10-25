@@ -27,6 +27,12 @@ class LoadProp2Test(unittest.TestCase):
         self.assertIsNone(vote.lines[-1].sources)
         self.assertTrue(vote.lines[-1].connective)
 
+    def test_section_labels(self):
+        self.assertEqual(load_contest(PROP_2).script.labels(), (
+            "what", "background[0]", "background[1]", "background[2]",
+            "background[3]", "today", "change", "fiscal", "yes", "no",
+            "vote"))
+
     def test_side_field(self):
         sides = {s.id: s.side for s in load_contest(PROP_2).script.sections}
         self.assertEqual(sides["yes"], "yes")

@@ -80,6 +80,36 @@ class BrokenCopyTest(ContestCopyTestCase):
         [f] = self.assertOnly("source")
         self.assertIn("outside", f.message)
 
+    # 4b. background-only kinds (rule 6.1)
+    TODAY_RESERVES = ('text = "Today, the state has about 20 billion dollars '
+                      'in reserves it can use for any program."\n'
+                      'sources = ["lao-analysis"]')
+
+    def test_official_report_outside_background(self):
+        self.edit("script.toml", self.TODAY_RESERVES,
+                  self.TODAY_RESERVES.replace('"lao-analysis"',
+                                              '"lao-analysis", '
+                                              '"lao-volatility"'))
+        [f] = self.assertOnly("background-only", "today", 3)
+        self.assertIn("lao-volatility", f.message)
+
+    def test_official_data_outside_background(self):
+        self.edit("sources.toml", 'kind = "official-report"',
+                  'kind = "official-data"')
+        self.assertEqual(self.failures(), [])  # all its uses are background
+        self.edit("script.toml", self.TODAY_RESERVES,
+                  self.TODAY_RESERVES.replace('"lao-analysis"',
+                                              '"lao-volatility"'))
+        [f] = self.assertOnly("background-only", "today", 3)
+        self.assertIn("'official-data'", f.message)
+
+    def test_background_failures_name_the_section(self):
+        # Prop 2 has four background sections; the third is labelled
+        # background[2].
+        self.edit("script.toml", "trade-off: money that is saved",
+                  "bold trade-off: money that is saved")
+        self.assertOnly("judgment-word", "background[2]", 2)
+
     # 5. template
     def test_unknown_template(self):
         self.edit("script.toml", 'template = "measure"', 'template = "race"')

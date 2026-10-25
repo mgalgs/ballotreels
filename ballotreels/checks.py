@@ -12,8 +12,9 @@ from dataclasses import dataclass
 
 from . import narration
 from .contest import Contest, Section
-from .standard import (SOURCE_KINDS, TEMPLATES, Standard,
-                       judgment_word_pattern, load_standard)
+from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, SOURCE_KINDS,
+                       TEMPLATES, Standard, judgment_word_pattern,
+                       load_standard)
 
 SIDE_TOLERANCE = 0.05
 AIRTIME_TOLERANCE = 0.05
@@ -23,7 +24,7 @@ AIRTIME_TOLERANCE = 0.05
 class Failure:
     check: str
     message: str
-    section: str | None = None  # section id, when the failure is in one
+    section: str | None = None  # section label (Script.labels), if in one
     line: int | None = None     # 0-based index into that section's lines
 
     def __str__(self) -> str:
@@ -51,7 +52,7 @@ def check_contest_id(c: Contest) -> list[Failure]:
 
 def check_line_citations(c: Contest) -> list[Failure]:
     out = []
-    for sec in c.script.sections:
+    for label, sec in c.script.labelled():
         for i, line in enumerate(sec.lines):
             cited = bool(line.sources)
             if cited and line.connective:
@@ -62,21 +63,40 @@ def check_line_citations(c: Contest) -> list[Failure]:
                        else "has neither sources nor connective = true")
             else:
                 continue
-            out.append(Failure("line-citation", msg, sec.id, i))
+            out.append(Failure("line-citation", msg, label, i))
     return out
 
 
 def check_cited_sources_exist(c: Contest) -> list[Failure]:
     known = {s.id for s in c.sources}
     out = []
-    for sec in c.script.sections:
+    for label, sec in c.script.labelled():
         for i, line in enumerate(sec.lines):
             for sid in line.sources or ():
                 if sid not in known:
                     out.append(Failure(
                         "cited-source",
                         f"cites {sid!r}, which is not in sources.toml",
-                        sec.id, i))
+                        label, i))
+    return out
+
+
+def check_background_only(c: Contest) -> list[Failure]:
+    """STANDARD.md 6.1: a line cites a background-only kind of source only
+    in a background section. Unknown ids are check_cited_sources_exist's."""
+    out = []
+    for label, sec in c.script.labelled():
+        if sec.id == BACKGROUND:
+            continue
+        for i, line in enumerate(sec.lines):
+            for sid in line.sources or ():
+                src = c.source(sid)
+                if src is not None and src.kind in BACKGROUND_ONLY_KINDS:
+                    out.append(Failure(
+                        "background-only",
+                        f"cites {sid!r}, of kind {src.kind!r}, which may be "
+                        f"cited only in a {BACKGROUND!r} section",
+                        label, i))
     return out
 
 
@@ -184,10 +204,10 @@ def check_judgment_words(c: Contest, words: tuple[str, ...]) -> list[Failure]:
                                f"judgment word {m.group(0)!r} in {what}",
                                section, line))
 
-    for sec in c.script.sections:
-        scan(sec.heading, "heading", sec.id, None)
+    for label, sec in c.script.labelled():
+        scan(sec.heading, "heading", label, None)
         for i, line in enumerate(sec.lines):
-            scan(line.text, "text", sec.id, i)
+            scan(line.text, "text", label, i)
     return out
 
 
@@ -209,6 +229,7 @@ def check_contest(c: Contest, standard: Standard | None = None
         *check_contest_id(c),
         *check_line_citations(c),
         *check_cited_sources_exist(c),
+        *check_background_only(c),
         *check_sources(c),
         *check_template(c),
         *check_side_parity(c),

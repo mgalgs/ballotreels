@@ -24,7 +24,14 @@ SOURCE_KINDS = frozenset({
     "candidate-statement",
     "candidate-website",
     "public-record",
+    "official-report",
+    "official-data",
 })
+
+# Kinds a line or chart may cite only in a `background` section
+# (STANDARD.md rule 6.1, docs/SCRIPT-FORMAT.md).
+BACKGROUND_ONLY_KINDS = frozenset({"official-report", "official-data"})
+BACKGROUND = "background"
 
 _VERSION_RE = re.compile(r"^Standard version:\s*(\d+)\s*$", re.MULTILINE)
 
