@@ -48,6 +48,8 @@ for _p in (REPO_ROOT, HERE):
     if str(_p) not in sys.path:
         sys.path.insert(0, str(_p))
 
+import cairo  # noqa: E402
+
 import videobuilder as vb  # noqa: E402
 from videobuilder import Box, paths, text  # noqa: E402
 
@@ -142,6 +144,10 @@ def layout_9x16():
         note_font=font(34, family=PRINT),
         ballot_title_font=font(52, family=PRINT),
         option_font=font(84, 700),
+        number_font=font(250, 700),
+        number_label_font=font(64, 600),
+        words_font=font(128, 700),
+        timeline_font=font(46, family=PRINT),
         caption_font=font(58, family=PRINT),
         caption_lines=2,
         sources_font=font(48, family=PRINT),
@@ -165,6 +171,10 @@ def layout_16x9():
         note_font=font(31, family=PRINT),
         ballot_title_font=font(42, family=PRINT),
         option_font=font(64, 700),
+        number_font=font(200, 700),
+        number_label_font=font(56, 600),
+        words_font=font(108, 700),
+        timeline_font=font(40, family=PRINT),
         caption_font=font(54, family=PRINT),
         caption_lines=2,
         sources_font=font(42, family=PRINT),
@@ -336,6 +346,21 @@ def _rot_bbox(cx, cy, w, h, a):
 
 
 # ---- the stage: charts ----
+def source_note(chart, L, f0):
+    """'Source: ...' along the stage's bottom, on the page from the visual's
+    first frame to its last (rule 7.1): (item, box)."""
+    stage = L['stage']
+    nf = L['note_font']
+    words = f'Source: {chart.source.short_credit}'
+    slines = text.wrap(words, nf, stage.w, balance=True)
+    sh = text.line_height(nf) * len(slines)
+    sy = stage.bottom - sh
+
+    def draw_source(cv, p):
+        sp.pencil_text(cv, slines, nf, stage.x, sy, GRAPHITE, 0.85, align='center', width=stage.w)
+    return Item(f0 - 1, f0, draw_source, None, ease=vb.linear), Box(stage.x, sy, stage.w, sh)
+
+
 def chart_frame(chart, L, f0):
     """The title above a chart and its source line below: (items, plot box,
     title box, source box). The source line is on the page from the chart's
@@ -348,16 +373,9 @@ def chart_frame(chart, L, f0):
         tf = font(tf.size * 0.85, 700)
         lines = text.wrap(chart.visual.title, tf, stage.w, balance=True)
     items, f, tbox = write_lines(f0 + 1, lines, tf, stage.x, stage.y, align='center', width=stage.w)
-    nf = L['note_font']
-    words = f'Source: {chart.source.short_credit}'
-    slines = text.wrap(words, nf, stage.w, balance=True)
-    sh = text.line_height(nf) * len(slines)
-    sy = stage.bottom - sh
-
-    def draw_source(cv, p):
-        sp.pencil_text(cv, slines, nf, stage.x, sy, GRAPHITE, 0.85, align='center', width=stage.w)
-    items.append(Item(f0 - 1, f0, draw_source, None, ease=vb.linear))
-    sbox = Box(stage.x, sy, stage.w, sh)
+    src, sbox = source_note(chart, L, f0)
+    items.append(src)
+    sy = sbox.y
     plot = Box(stage.x, tbox.bottom + 26 * u, stage.w, sy - 22 * u - (tbox.bottom + 26 * u))
     return items, f, plot, tbox, sbox
 
@@ -428,6 +446,119 @@ def bars_chart(chart, L, f0, f1):
         f += 6
     items = scaled(items, f0, draw_budget(f0, f1))
     return items, [Mark('chart', Box(plot.x, tbox.y, plot.w, plot.bottom - tbox.y)), Mark('chart source', sbox)]
+
+
+# ---- the stage: a number, a phrase, a timeline ----
+def fit_font(fnt, lines_of, width, max_lines, floor):
+    """`fnt`, made smaller only if `lines_of(fnt)` (its wrapped lines) runs
+    past `max_lines` lines or `width`: so two visuals of a kind share one
+    size unless one cannot fit it (rule 7.4)."""
+    while fnt.size > floor:
+        lines = lines_of(fnt)
+        if len(lines) <= max_lines and max(text.measure(ln, fnt) for ln in lines) <= width:
+            break
+        fnt = vb.Font(fnt.family, fnt.size * 0.92, weight=fnt.weight)
+    return fnt, lines_of(fnt)
+
+
+def number_visual(chart, lines, L, f0, f1):
+    """One figure, large, with its short label under it and its source along
+    the bottom. Every number is drawn alike: one ink, weight and size."""
+    v = chart.visual
+    stage = L['stage']
+    u = L['u']
+    src, sbox = source_note(chart, L, f0)
+    nf, nlines = fit_font(L['number_font'], lambda f: [v.text], stage.w, 1, 60)
+    lf, llines = fit_font(L['number_label_font'], lambda f: text.wrap(v.label, f, stage.w * 0.86, balance=True),
+                          stage.w, 2, 30)
+    nh, lh = text.line_height(nf), text.line_height(lf) * len(llines)
+    gap = 18 * u
+    y = stage.y + (sbox.y - stage.y - nh - gap - lh) / 2
+    items, f, nbox = write_lines(f0, nlines, nf, stage.x, y, align='center', width=stage.w, speed=0.6)
+    li, f, lbox = write_lines(f + 2, llines, lf, stage.x, y + nh + gap, align='center', width=stage.w)
+    items = scaled([src] + items + li, f0, draw_budget(f0, f1))
+    w = max(text.measure(ln, nf) for ln in nlines)
+    box = Box(stage.cx - w / 2, nbox.y, w, lbox.bottom - nbox.y)
+    return items, [Mark('chart', box), Mark('chart source', sbox)]
+
+
+def words_visual(chart, lines, L, f0, f1):
+    """A phrase of the line's own words, in large handwriting, centred on the
+    stage. It cites nothing of its own: the line does."""
+    v = chart.visual
+    stage = L['stage']
+    width = stage.w * 0.9
+    fnt, wl = fit_font(L['words_font'], lambda f: text.wrap(v.text, f, width, balance=True), width, 3, 40)
+    h = text.line_height(fnt) * len(wl)
+    y = stage.cy - h / 2
+    items, f, box = write_lines(f0, wl, fnt, stage.x, y, align='center', width=stage.w, speed=0.8)
+    items = scaled(items, f0, draw_budget(f0, f1))
+    w = max(text.measure(ln, fnt) for ln in wl)
+    return items, [Mark('chart', Box(stage.cx - w / 2, box.y, w, box.h))]
+
+
+def timeline_reveals(n, lines, f0):
+    """The frame each of a timeline's `n` entries starts drawing on: one per
+    line from the first, the rest together with the last line, a moment
+    apart."""
+    out = []
+    for i in range(n):
+        if i == 0:
+            out.append(f0)
+        elif i < len(lines):
+            out.append(max(out[-1] + 6, lines[i].start + 3))
+        else:
+            out.append(out[-1] + 18)
+    return out
+
+
+def timeline_visual(chart, lines, L, f0, f1):
+    """Dated entries in a column down a spine, top to bottom, each drawn on
+    with its line (docs/SCRIPT-FORMAT.md), and the source along the bottom."""
+    v = chart.visual
+    stage = L['stage']
+    u = L['u']
+    src, sbox = source_note(chart, L, f0)
+    df, itf = L['label_font'], L['timeline_font']
+    n = len(v.labels)
+    spine_x = stage.x + 50 * u
+    tx = spine_x + 50 * u
+    tw = stage.right - tx
+    while True:
+        blocks = [(text.wrap(d, df, tw, balance=True), text.wrap(it, itf, tw, balance=True))
+                  for d, it in zip(v.labels, v.items)]
+        heights = [len(a) * text.line_height(df) + len(b) * text.line_height(itf) for a, b in blocks]
+        room = sbox.y - 40 * u - stage.y
+        if sum(heights) + 40 * u * (n - 1) <= room or itf.size < 26:
+            break
+        df, itf = font(df.size * 0.92, 600), font(itf.size * 0.92, family=PRINT)
+    gap = max(40 * u, min(110 * u, (room - sum(heights)) / max(1, n - 1)))
+    y = stage.y + max(0, (room - sum(heights) - gap * (n - 1)) / 2)
+    starts = timeline_reveals(n, lines, f0)
+    items = [src]
+    prev_dot = None
+    top = y
+    for i, ((dl, il), h, s0) in enumerate(zip(blocks, heights, starts)):
+        dot_y = y + text.line_height(df) * 0.55
+        entry = []
+        f = s0
+        if prev_dot is not None:
+            spine = Stroke([(spine_x, prev_dot + 14 * u), (spine_x, dot_y - 14 * u)], seed_of('spine', i),
+                           passes=2, width=3.4 * u, overshoot=0)
+            entry.append(stroke_item(f, f + 8, spine))
+            f += 8
+        dot = Stroke(sp.ellipse(spine_x, dot_y, 10 * u, 10 * u, n=20), seed_of('tdot'), passes=2,
+                     width=4 * u, closed=True, overshoot=0)
+        entry.append(stroke_item(f, f + 5, dot))
+        di, f, _ = write_lines(f + 5, dl, df, tx, y)
+        ii, f, _ = write_lines(f + 2, il, itf, tx, y + len(dl) * text.line_height(df))
+        entry += di + ii
+        nxt = starts[i + 1] if i + 1 < n else f1
+        items += scaled(entry, s0, draw_budget(s0, nxt))
+        prev_dot = dot_y
+        y += h + gap
+    box = Box(spine_x - 14 * u, top, stage.right - spine_x + 14 * u, y - gap - top)
+    return items, [Mark('chart', box), Mark('chart source', sbox)]
 
 
 SHARE_HATCH = [dict(angle=45, spacing=11, cross=False, alpha=0.5),
@@ -603,10 +734,162 @@ def figure_steady_spending_volatile_revenue(chart, L, f0, f1):
     return items, [Mark('chart', Box(plot.x, tbox.y, plot.w, plot.bottom - tbox.y)), Mark('chart source', sbox)]
 
 
+# The Rainy Day Fund, as drawn in the style mock (film/mocks/sketchbook.py,
+# scene 2): an umbrella sheltering a jar of coins from the rain. The
+# geometry is the mock's, in its 1080x1920 page space; figure_rainy_day_fund
+# fits it to the plot box.
+FUND_C = (560, 540)    # canopy centre
+FUND_ROT = -0.24       # canopy tilted to shelter the jar
+FUND_RX, FUND_RY = 370, 290
+FUND_RIBS = 6
+FUND_COINS = [(1104, [318, 388, 456, 523]), (1060, [352, 422, 490]), (1018, [386, 456])]
+
+
+def _fund_geometry():
+    cr, sr = math.cos(FUND_ROT), math.sin(FUND_ROT)
+    cx, cy = FUND_C
+
+    def tilt(pts):
+        return [(cx + x * cr - y * sr, cy + x * sr + y * cr) for x, y in pts]
+
+    def rib(xk):
+        return [(xk * math.sin(t * math.pi / 2 / 20), -FUND_RY * math.cos(t * math.pi / 2 / 20)) for t in range(21)]
+
+    def scallop(xa, xb):
+        return [(xa + (xb - xa) * t / 12, -30 * math.sin(math.pi * t / 12)) for t in range(13)]
+
+    edges = [-FUND_RX + k * 2 * FUND_RX / FUND_RIBS for k in range(FUND_RIBS + 1)]
+    scallops = [tilt(scallop(a, b)) for a, b in zip(edges, edges[1:])]
+    hook = tilt([(0, 560)] + [(38 - 38 * math.cos(t * math.pi / 14), 560 + 38 * math.sin(t * math.pi / 14))
+                              for t in range(1, 15)] + [(76, 548)])
+    return dict(
+        top=tilt(sp.ellipse(0, 0, FUND_RX, FUND_RY, math.pi, 2 * math.pi, n=60)),
+        hem=[p for sc in scallops for p in sc[:-1]] + [scallops[-1][-1]],
+        ribs=[tilt(rib(x)) for x in edges[1:-1]],
+        panels=[tilt(rib(a) + scallop(a, b)[1:] + rib(b)[::-1][1:]) for a, b in zip(edges, edges[1:])],
+        shaft=(tilt([(0, -FUND_RY - 42), (0, -FUND_RY)]), tilt([(0, -8), (0, 560)]) + hook[1:]),
+        jar=sp.catmull([(300, 790), (300, 818), (276, 852), (274, 960), (274, 1108), (300, 1146), (420, 1150),
+                        (540, 1146), (566, 1108), (566, 960), (564, 852), (540, 818), (540, 790)], per=8),
+        rim=sp.ellipse(420, 790, 122, 17),
+        ground=[(190, 1160), (470, 1156), (840, 1161)],
+    )
+
+
+def figure_rainy_day_fund(chart, L, f0, f1):
+    """The Rainy Day Fund: rain falling, an umbrella over a jar, and coins
+    that drop into the jar as it is drawn. No numbers. Once drawn it holds
+    still: the rain is a few still pencil streaks, not a loop."""
+    u = L['u']
+    items, f, plot, tbox, sbox = chart_frame(chart, L, f0)
+    g = _fund_geometry()
+    # the mock's drawing spans x 150..950, y 200..1185; fit that to the plot
+    mx0, my0, mw, mh = 150, 200, 800, 985
+    k = min(plot.w / mw, plot.h / mh)
+    ox, oy = plot.cx - mw * k / 2, plot.y + (plot.h - mh * k) / 2
+    kw = max(k, 0.6) * u  # lines no thinner than a readable pencil
+
+    def P(pts):
+        return [(ox + (x - mx0) * k, oy + (y - my0) * k) for x, y in pts]
+
+    def S(pts, seed, passes=2, width=3.4, **kw_):
+        return Stroke(P(pts), seed_of('fund', seed), passes=passes, width=width * kw, **kw_)
+
+    t0 = f  # the mock's frame 258
+    def at(mock_frame):  # noqa: E306
+        return t0 + (mock_frame - 258)
+
+    # rain: still streaks, stopped by the canopy, faded in under the drawing
+    canopy = P(g['top'])
+
+    def canopy_y(x):
+        for (x0, y0), (x1, y1) in zip(canopy, canopy[1:]):
+            if x0 <= x <= x1:
+                return y0 + (y1 - y0) * (x - x0) / (x1 - x0)
+        return None
+    drops = []
+    ground = oy + (1150 - my0) * k
+    for i in range(40):
+        x = ox + random.Random(70 + i).uniform(0.02, 0.98) * mw * k
+        y = oy + random.Random(170 + i).uniform(0, 0.9) * (ground - oy)
+        stop = canopy_y(x)
+        if y + 26 * k > (stop if stop is not None else ground):
+            continue
+        drops.append((x, y))
+
+    def rain(cv, p):
+        ctx = cv.ctx
+        ctx.save()
+        ctx.new_path()
+        for x, y in drops:
+            ctx.move_to(x, y)
+            ctx.line_to(x - 5 * k, y + 26 * k)
+        ctx.set_line_width(2.6 * kw)
+        ctx.set_line_cap(cairo.LINE_CAP_ROUND)
+        ctx.set_source(sp.ink(GRAPHITE, 0.45 * p))
+        ctx.stroke()
+        ctx.restore()
+    items.append(Item(at(280), at(300), rain, None, ease=vb.linear))
+    # canopy: the top in one sweep, then the scalloped hem, ribs, shaft and hook
+    items.append(stroke_item(at(258), at(272), S(g['top'], 'top', passes=3, width=4.4)))
+    items.append(stroke_item(at(272), at(280), S(g['hem'], 'hem', width=3.8), pencil=False))
+    for i, r in enumerate(g['ribs']):
+        items.append(stroke_item(at(276 + 1.6 * i), at(279 + 1.6 * i), S(r, ('rib', i), width=3), pencil=False))
+    items.append(stroke_item(at(278), at(281), S(g['shaft'][0], 'tip', width=5), pencil=False))
+    items.append(stroke_item(at(280), at(288), S(g['shaft'][1], 'shaft', passes=3, width=5.4), pencil=False))
+    for i in (4, 5):
+        h = Hatch(P(g['panels'][i]), seed_of('fund panel', i), angle=-58, spacing=13 * kw, cross=i == 5,
+                  alpha=0.38, width=2.2 * kw)
+        items.append(hatch_item(at(282 + 4 * (i - 4)), at(296), h, pencil=False))
+    # the jar, its rim, a glint on the glass, its shadow on the ground
+    items.append(stroke_item(at(298), at(312), S(g['jar'], 'jar', passes=3, width=4)))
+    items.append(stroke_item(at(312), at(318), S(g['rim'], 'rim', width=3.4, closed=True)))
+    for i, (x0, y0, y1) in enumerate(((296, 880, 990), (304, 1010, 1040))):
+        items.append(stroke_item(at(318), at(320), S([(x0, y0), (x0 - 2, y1)], ('glint', i), passes=1, width=3,
+                                                      alpha=0.5), pencil=False))
+    items.append(hatch_item(at(318), at(330), Hatch(P([(530, 860), (556, 880), (556, 1100), (530, 1130)]),
+                                                     seed_of('fund glass'), angle=80, spacing=10 * kw, alpha=0.32,
+                                                     width=2.2 * kw), pencil=False))
+    items.append(stroke_item(at(316), at(324), S(g['ground'], 'ground', width=3), pencil=False))
+    items.append(hatch_item(at(320), at(332), Hatch(P(sp.ellipse(450, 1160, 200, 14)), seed_of('fund shadow'),
+                                                     angle=20, spacing=8 * kw, alpha=0.4, width=2.2 * kw),
+                            pencil=False))
+    # coins dropping into the jar, one after another, as it is drawn
+    rnd = random.Random(50)
+    j = 0
+    for y, xs in FUND_COINS:
+        for x in xs:
+            ry, rot = rnd.uniform(0.4, 0.95), rnd.uniform(-0.5, 0.5)
+            cx, cy = P([(x + rnd.uniform(-4, 4), y + rnd.uniform(-3, 3))])[0]
+            outer = Stroke(sp.ellipse(0, 0, 33 * k, 33 * k * ry, rot=rot, n=36), seed_of('coin', j), passes=2,
+                           width=3 * kw, closed=True)
+            inner = Stroke(sp.ellipse(0, 0, 22 * k, 22 * k * ry, rot=rot, n=30), seed_of('coin in', j), passes=1,
+                           width=2 * kw, alpha=0.5, closed=True)
+            fill = Hatch(sp.ellipse(0, 0, 30 * k, 30 * k * ry, rot=rot, n=24), seed_of('coin fill', j), angle=40,
+                         spacing=7 * kw, alpha=0.5, width=2 * kw)
+            drop = (y - 660) * k
+            spin = rnd.uniform(-3, 3)
+
+            def coin(cv, p, cx=cx, cy=cy, outer=outer, inner=inner, fill=fill, drop=drop, spin=spin):
+                ctx = cv.ctx
+                ctx.save()
+                ctx.translate(cx, cy - drop * (1 - p * p))  # falls with gravity
+                ctx.rotate((1 - p) * spin)
+                fill.draw(cv, 1.0, GRAPHITE, 0.9)
+                outer.draw(cv, 1.0)
+                inner.draw(cv, 1.0)
+                ctx.restore()
+            items.append(Item(at(306 + 2.6 * j), at(317 + 2.6 * j), coin, None, ease=vb.linear))
+            j += 1
+    items = scaled(items, f0, draw_budget(f0, f1))
+    return items, [Mark('chart', Box(plot.x, tbox.y, plot.w, plot.bottom - tbox.y)), Mark('chart source', sbox)]
+
+
 FIGURES = {
+    'rainy-day-fund': figure_rainy_day_fund,
     'steady-spending-volatile-revenue': figure_steady_spending_volatile_revenue,
 }
 CHARTS = {'bars': bars_chart, 'share': share_chart, 'series': series_chart}
+SHOWN = {'number': number_visual, 'words': words_visual, 'timeline': timeline_visual}
 
 
 def chart_run(chart, lines, L, first_f):
@@ -618,6 +901,8 @@ def chart_run(chart, lines, L, first_f):
             raise ValueError(f'{chart.section}.line[{chart.index}]: unknown figure {v.figure!r}; '
                              f'this template draws {sorted(FIGURES)}')
         return FIGURES[v.figure](chart, L, first_f, chart.end)
+    if v.kind in SHOWN:
+        return SHOWN[v.kind](chart, lines, L, first_f, chart.end)
     if v.kind not in CHARTS:
         raise ValueError(f'{chart.section}.line[{chart.index}]: unknown chart kind {v.kind!r}')
     return CHARTS[v.kind](chart, L, first_f, chart.end)
