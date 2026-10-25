@@ -124,18 +124,18 @@ def layout_9x16():
         stage=Box(70, 430, 940, 870),
         scrap=Box(78, 1336, 924, 196),
         cards=Box(70, 430, 940, 1100),
-        header_font=font(28, family=PRINT),
+        header_font=font(30, family=PRINT),
         heading_font=font(86, 700),
         chart_title_font=font(56, 700),
         label_font=font(46, 600),
         value_font=font(58, 700),
         note_font=font(34, family=PRINT),
         sheet_font=font(42, 700),
-        ballot_title_font=font(44, family=PRINT),
-        option_font=font(70, 700),
+        ballot_title_font=font(52, family=PRINT),
+        option_font=font(84, 700),
         caption_font=font(58, family=PRINT),
         caption_lines=2,
-        sources_font=font(38, family=PRINT),
+        sources_font=font(48, family=PRINT),
         rest=(1250, 1500),
         eraser=190,
     )
@@ -157,11 +157,11 @@ def layout_16x9():
         value_font=font(52, 700),
         note_font=font(31, family=PRINT),
         sheet_font=font(36, 700),
-        ballot_title_font=font(38, family=PRINT),
-        option_font=font(60, 700),
+        ballot_title_font=font(42, family=PRINT),
+        option_font=font(64, 700),
         caption_font=font(54, family=PRINT),
         caption_lines=2,
-        sources_font=font(34, family=PRINT),
+        sources_font=font(42, family=PRINT),
         rest=(2100, 1000),
         eraser=170,
     )
@@ -458,6 +458,8 @@ def _union(boxes):
 
 # ---- the stage: the ballot (the `what` and `vote` sections) ----
 def ballot_run(lines, L, first_f):
+    """The measure's ballot entry, drawn during the run's first line: its
+    title, and its two options drawn alike, neither marked."""
     stage = L['stage']
     u = L['u']
     tf = L['ballot_title_font']
@@ -486,13 +488,7 @@ def ballot_run(lines, L, first_f):
     for it in ti:
         it.at = at
     items += ti
-    items = scaled(items, first_f, budget0)
-    if len(lines) > 1:
-        f = lines[1].start + 3
-        budget = (lines[1].end - f) * 0.8
-    else:
-        f = max(it.f1 for it in items) + 4
-        budget = (lines[0].end - f) * 0.9
+    f = max(it.f1 for it in items) + 2
     opt_items = []
     f1 = f
     ry = -h / 2 + pad * 0.8 + title_h + 22 * u
@@ -511,7 +507,7 @@ def ballot_run(lines, L, first_f):
             it.at = at
         opt_items += li
         f1 += 4
-    items += scaled(opt_items, f, budget)
+    items = scaled(items + opt_items, first_f, budget0)
     bb = _rot_bbox(cx, cy, w, h, angle)
     return items, [Mark('ballot', bb)]
 
@@ -643,27 +639,29 @@ def share_chart(chart, L, f0, f1):
                      overshoot=2)
     items.append(stroke_item(f, f + 16, outline))
     f += 16
-    # where each label goes: beside its part, pushed apart if parts are thin
-    blocks = []
-    y = cy0
-    for i, (lb, val) in enumerate(zip(v.labels, v.values)):
-        h = ch * val / 100
-        ls = text.wrap(str(lb), lf, label_w, balance=True)
-        bh = text.line_height(lf) * len(ls) + text.line_height(vf)
-        blocks.append(dict(y=y, h=h, lines=ls, bh=bh, val=val, i=i))
-        y += h
-    ly = cy0
+    # where each label goes: beside its part, pushed apart if parts are thin,
+    # in type small enough that all of them fit beside the column
+    gap = 12 * u
+    while True:
+        blocks = []
+        y = cy0
+        for i, (lb, val) in enumerate(zip(v.labels, v.values)):
+            h = ch * val / 100
+            ls = text.wrap(str(lb), lf, label_w, balance=True)
+            bh = text.line_height(lf) * len(ls) + text.line_height(vf)
+            blocks.append(dict(y=y, h=h, lines=ls, bh=bh, val=val, i=i))
+            y += h
+        if sum(b['bh'] for b in blocks) + gap * (len(blocks) - 1) <= ch or lf.size < 22:
+            break
+        lf, vf = font(lf.size * 0.92, 600), font(vf.size * 0.92, 700)
+    floor = cy0
     for b in blocks:
-        b['ly'] = max(ly, b['y'] + b['h'] / 2 - b['bh'] / 2)
-        ly = b['ly'] + b['bh'] + 10 * u
-    over = ly - 10 * u - plot.bottom
-    if over > 0:
-        for b in blocks:
-            b['ly'] -= over
-        floor = cy0
-        for b in blocks:
-            b['ly'] = max(b['ly'], floor)
-            floor = b['ly'] + b['bh'] + 10 * u
+        b['ly'] = max(floor, b['y'] + b['h'] / 2 - b['bh'] / 2)
+        floor = b['ly'] + b['bh'] + gap
+    ceiling = cy0 + ch
+    for b in reversed(blocks):
+        b['ly'] = min(b['ly'], ceiling - b['bh'])
+        ceiling = b['ly'] - gap
     for b in blocks:
         y, h = b['y'], b['h']
         if b['i'] > 0:
@@ -829,9 +827,11 @@ class Layer:
 def runs_of(sec):
     """The section's stage, run by run: ('chart', ChartBeat, lines) for each
     chart and the lines it is up for, and ('documents' or 'ballot', None,
-    lines) for the lines between."""
+    lines) for the lines between. `what` opens on the ballot for its first
+    line; `vote` keeps it up for every line, so a line about either option
+    is shown alike."""
     out = []
-    plain = 'ballot' if sec.section.id in ('what', 'vote') else 'documents'
+    plain = 'ballot' if sec.section.id == 'vote' else 'documents'
     charts = {c.index: c for c in sec.charts}
     i = 0
     lines = sec.lines
@@ -847,7 +847,12 @@ def runs_of(sec):
             j = i
             while j < len(lines) and j not in charts:
                 j += 1
-            out.append((plain, None, lines[i:j]))
+            if i == 0 and sec.section.id == 'what' and plain != 'ballot':
+                out.append(('ballot', None, lines[:1]))
+                if j > 1:
+                    out.append((plain, None, lines[1:j]))
+            else:
+                out.append((plain, None, lines[i:j]))
             i = j
     return out
 
