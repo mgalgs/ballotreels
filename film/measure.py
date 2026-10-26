@@ -612,11 +612,12 @@ SHARE_HATCH = [dict(angle=45, spacing=11, cross=False, alpha=0.5),
 def share_chart(chart, L, f0, f1):
     """One column divided into parts, top to bottom in the labels' order,
     each labelled to its right with its value; it is the whole (100), so it
-    starts at zero (rule 7.2)."""
+    starts at zero (rule 7.2). A single part fills it from the bottom."""
     v = chart.visual
     u = L['u']
     items, f, plot, tbox, sbox = chart_frame(chart, L, f0)
     lf, vf = L['label_font'], L['value_font']
+    n = len(v.values)
     col_w = 210 * u
     gap = 70 * u
     label_w = min(plot.w - col_w - gap, 560 * u)
@@ -632,7 +633,8 @@ def share_chart(chart, L, f0, f1):
     gap = 12 * u
     while True:
         blocks = []
-        y = cy0
+        # one part alone sits at the bottom, a level: this much of the whole
+        y = cy0 + ch * (1 - v.values[0] / 100) if n == 1 else cy0
         for i, (lb, val) in enumerate(zip(v.labels, v.values)):
             h = ch * val / 100
             ls = text.wrap(str(lb), lf, label_w, balance=True)
