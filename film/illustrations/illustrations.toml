@@ -1,0 +1,59 @@
+# The illustration library: pictures a script line can show when there is
+# no data to chart (script kind "illustration", by name).
+#
+# Every entry is generated once with the style prompt below plus its
+# subject, reviewed by a person, and checked in. Keep to the style's rules
+# when adding one: objects and places only, no people, no text, no flags.
+
+style = "Pencil sketch illustration on plain off-white paper. Graphite pencil lines with light cross-hatching, hand-drawn, simple and clear, one centered subject with a wide empty margin. Grey graphite only, no color. No text, no letters, no numbers, no people, no faces, no flags, no logos."
+model = "gemini-2.5-flash-image"
+
+[[illustration]]
+name = "state-capitol"
+file = "state-capitol.png"
+subject = "a domed state capitol building with columns and steps, seen from the front, with a bare dome and an empty roof: no flag, no flagpole"
+
+[[illustration]]
+name = "state-budget"
+file = "state-budget.png"
+subject = "an open ledger book with ruled columns, a pen resting on it, and a small stack of coins beside it"
+
+[[illustration]]
+name = "income-taxes"
+file = "income-taxes.png"
+subject = "a paycheck envelope with a few coins and folded banknotes spilling out of it"
+
+[[illustration]]
+name = "revenue-drop"
+file = "revenue-drop.png"
+subject = "three stacks of coins getting shorter from left to right, with a downward arrow above them"
+
+[[illustration]]
+name = "save-more"
+file = "save-more.png"
+subject = "a glass jar half full of coins, with more coins falling into it from above"
+
+[[illustration]]
+name = "take-from-fund"
+file = "take-from-fund.png"
+subject = "a tipped glass jar with coins pouring out of it onto a table"
+
+[[illustration]]
+name = "trade-off"
+file = "trade-off.png"
+subject = "an old-fashioned balance scale holding a glass jar of coins on one pan and a small generic public building on the other, perfectly level"
+
+[[illustration]]
+name = "debt-payments"
+file = "debt-payments.png"
+subject = "a neat stack of sealed envelopes with a stack of coins on top and a wall calendar behind them"
+
+[[illustration]]
+name = "spending-limit"
+file = "spending-limit.png"
+subject = "several stacks of coins of different heights standing under a long horizontal ruler held level above them like a ceiling"
+
+[[illustration]]
+name = "analyst-review"
+file = "analyst-review.png"
+subject = "a magnifying glass lying on a ledger page full of ruled columns of lines"
