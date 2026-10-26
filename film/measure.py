@@ -21,9 +21,10 @@ drawn, and then holds still; it stays up through the lines after it until
 a later line in the section brings its own (the old one fades out) or the
 section ends (the whole page fades out, and the next heading draws on).
 The stage shows
-- the line's visual, if it has one (a chart, a number, a timeline, a
-  phrase of the line's words or a named figure), with "Source: ..." under
-  it for as long as it is up (rule 7.1);
+- the line's visual, if it has one: a chart, a timeline or a named
+  figure, with "Source: ..." under it for as long as it is up (rule 7.1),
+  or an illustration from the library (film/illustrations/), which wipes
+  on rather than being drawn line by line, and cites nothing of its own;
 - in the `what` and `vote` sections, before any visual, the ballot: the
   measure's title and its two options, drawn alike;
 - otherwise nothing: an empty page under the heading.
@@ -35,6 +36,7 @@ No music and no sound effects: the narration is the only sound.
 Time is in frames: one frame a beat, since cuts follow the narration, not
 a music grid.
 """
+import functools
 import math
 import os
 import random
@@ -49,6 +51,7 @@ for _p in (REPO_ROOT, HERE):
         sys.path.insert(0, str(_p))
 
 import cairo  # noqa: E402
+import numpy as np  # noqa: E402
 
 import videobuilder as vb  # noqa: E402
 from videobuilder import Box, paths, text  # noqa: E402
@@ -58,6 +61,7 @@ from sketch import (DRAW, GRAPHITE, ORANGE, Hatch, Item, Stroke,  # noqa: E402
                     fade_item, hatch_item, stroke_item, text_item)
 
 from ballotreels.contest import load_contest  # noqa: E402
+from ballotreels.illustrations import load_library  # noqa: E402
 from ballotreels.storyboard import layout as lay_out  # noqa: E402
 
 for _f in sorted((HERE / 'assets' / 'fonts').glob('*.[ot]tf')):
@@ -144,9 +148,6 @@ def layout_9x16():
         note_font=font(34, family=PRINT),
         ballot_title_font=font(52, family=PRINT),
         option_font=font(84, 700),
-        number_font=font(250, 700),
-        number_label_font=font(64, 600),
-        words_font=font(128, 700),
         timeline_font=font(46, family=PRINT),
         caption_font=font(58, family=PRINT),
         caption_lines=2,
@@ -171,9 +172,6 @@ def layout_16x9():
         note_font=font(31, family=PRINT),
         ballot_title_font=font(42, family=PRINT),
         option_font=font(64, 700),
-        number_font=font(200, 700),
-        number_label_font=font(56, 600),
-        words_font=font(108, 700),
         timeline_font=font(40, family=PRINT),
         caption_font=font(54, family=PRINT),
         caption_lines=2,
@@ -448,53 +446,91 @@ def bars_chart(chart, L, f0, f1):
     return items, [Mark('chart', Box(plot.x, tbox.y, plot.w, plot.bottom - tbox.y)), Mark('chart source', sbox)]
 
 
-# ---- the stage: a number, a phrase, a timeline ----
-def fit_font(fnt, lines_of, width, max_lines, floor):
-    """`fnt`, made smaller only if `lines_of(fnt)` (its wrapped lines) runs
-    past `max_lines` lines or `width`: so two visuals of a kind share one
-    size unless one cannot fit it (rule 7.4)."""
-    while fnt.size > floor:
-        lines = lines_of(fnt)
-        if len(lines) <= max_lines and max(text.measure(ln, fnt) for ln in lines) <= width:
-            break
-        fnt = vb.Font(fnt.family, fnt.size * 0.92, weight=fnt.weight)
-    return fnt, lines_of(fnt)
+# ---- the stage: a timeline, an illustration ----
+# An illustration's own paper is levelled away: tones at or above PAPER_LEVEL
+# of the paper's local brightness turn to nothing, INK_LEVEL and darker to
+# full graphite. The outer EDGE_FADE of the image (as fractions of its
+# sides) fades out, so a sheet's edge or a stray mark there never shows.
+PAPER_LEVEL = 0.9
+INK_LEVEL = 0.25
+EDGE_FADE = (0.025, 0.06)
+WIPE = 30          # frames an illustration takes to wipe on (1 s)
 
 
-def number_visual(chart, lines, L, f0, f1):
-    """One figure, large, with its short label under it and its source along
-    the bottom. Every number is drawn alike: one ink, weight and size."""
-    v = chart.visual
+@functools.lru_cache(maxsize=16)
+def illustration_ink(name):
+    """Illustration `name` as graphite alone: (a cairo surface of black ink
+    whose alpha is the drawing's darkness with its paper levelled to
+    nothing, cropped to the drawing; and its pixel buffer). Laid over the
+    page, this multiplies the page by the drawing's grey, so the lines look
+    drawn on the page."""
+    from PIL import Image, ImageFilter
+    im = Image.open(load_library()[name].path).convert('L')
+    grey = np.asarray(im, np.float32) / 255
+    # the paper's tone at each point: the lightest nearby, smoothed
+    small = im.resize((max(1, im.width // 8), max(1, im.height // 8)), Image.BILINEAR)
+    paper_ = small.filter(ImageFilter.MaxFilter(9)).filter(ImageFilter.GaussianBlur(6))
+    paper_ = np.asarray(paper_.resize(im.size, Image.BILINEAR), np.float32) / 255
+    flat = np.clip(grey / np.maximum(paper_, 0.3), 0, 1)
+    alpha = 1 - np.clip((flat - INK_LEVEL) / (PAPER_LEVEL - INK_LEVEL), 0, 1)
+
+    def ramp(n):
+        t = np.minimum(np.arange(n), np.arange(n)[::-1]) / n
+        return np.clip((t - EDGE_FADE[0]) / (EDGE_FADE[1] - EDGE_FADE[0]), 0, 1)
+    alpha *= ramp(alpha.shape[0])[:, None] * ramp(alpha.shape[1])[None, :]
+    ys, xs = np.nonzero(alpha > 0.06)
+    if len(xs):
+        pad = 8
+        alpha = alpha[max(0, ys.min() - pad):ys.max() + pad + 1, max(0, xs.min() - pad):xs.max() + pad + 1]
+    h, w = alpha.shape
+    stride = cairo.ImageSurface.format_stride_for_width(cairo.FORMAT_ARGB32, w)
+    px = np.zeros((h, stride // 4, 4), np.uint8)
+    px[:, :w, 3] = np.round(alpha * 255).astype(np.uint8)  # black, premultiplied
+    data = bytearray(px.tobytes())
+    surf = cairo.ImageSurface.create_for_data(data, cairo.FORMAT_ARGB32, w, h, stride)
+    return surf, data  # cairo borrows the buffer: keep it alive with the surface
+
+
+def illustration_visual(chart, lines, L, f0, f1):
+    """A pencil illustration from the library, centred on the stage as large
+    as it fits, wiped on top to bottom with a soft edge (the pencil riding
+    the edge) and then held still. It cites nothing of its own: the line
+    does."""
     stage = L['stage']
     u = L['u']
-    src, sbox = source_note(chart, L, f0)
-    nf, nlines = fit_font(L['number_font'], lambda f: [v.text], stage.w, 1, 60)
-    lf, llines = fit_font(L['number_label_font'], lambda f: text.wrap(v.label, f, stage.w * 0.86, balance=True),
-                          stage.w, 2, 30)
-    nh, lh = text.line_height(nf), text.line_height(lf) * len(llines)
-    gap = 18 * u
-    y = stage.y + (sbox.y - stage.y - nh - gap - lh) / 2
-    items, f, nbox = write_lines(f0, nlines, nf, stage.x, y, align='center', width=stage.w, speed=0.6)
-    li, f, lbox = write_lines(f + 2, llines, lf, stage.x, y + nh + gap, align='center', width=stage.w)
-    items = scaled([src] + items + li, f0, draw_budget(f0, f1))
-    w = max(text.measure(ln, nf) for ln in nlines)
-    box = Box(stage.cx - w / 2, nbox.y, w, lbox.bottom - nbox.y)
-    return items, [Mark('chart', box), Mark('chart source', sbox)]
+    surf, _ = illustration_ink(chart.visual.name)
+    iw, ih = surf.get_width(), surf.get_height()
+    room_w, room_h = stage.w * 0.96, stage.h - 40 * u
+    k = min(room_w / iw, room_h / ih)
+    w, h = iw * k, ih * k
+    x, y = stage.cx - w / 2, stage.cy - h / 2
+    feather = 0.12 * ih  # the wipe's soft edge, in the image's pixels
 
+    def draw(cv, p):
+        ctx = cv.ctx
+        ctx.save()
+        ctx.translate(x, y)
+        ctx.scale(k, k)
+        ctx.set_source_surface(surf, 0, 0)
+        ctx.get_source().set_filter(cairo.FILTER_GOOD)
+        if p >= 1:
+            ctx.paint()
+        else:
+            edge = p * (ih + feather)
+            g = cairo.LinearGradient(0, edge - feather, 0, edge)
+            g.add_color_stop_rgba(0, 0, 0, 0, 1)
+            g.add_color_stop_rgba(1, 0, 0, 0, 0)
+            ctx.mask(g)
+        ctx.restore()
 
-def words_visual(chart, lines, L, f0, f1):
-    """A phrase of the line's own words, in large handwriting, centred on the
-    stage. It cites nothing of its own: the line does."""
-    v = chart.visual
-    stage = L['stage']
-    width = stage.w * 0.9
-    fnt, wl = fit_font(L['words_font'], lambda f: text.wrap(v.text, f, width, balance=True), width, 3, 40)
-    h = text.line_height(fnt) * len(wl)
-    y = stage.cy - h / 2
-    items, f, box = write_lines(f0, wl, fnt, stage.x, y, align='center', width=stage.w, speed=0.8)
-    items = scaled(items, f0, draw_budget(f0, f1))
-    w = max(text.measure(ln, fnt) for ln in wl)
-    return items, [Mark('chart', Box(stage.cx - w / 2, box.y, w, box.h))]
+    def head(p):
+        # back and forth along the wipe's edge, as if shading it in
+        sweep = 0.5 - 0.42 * math.cos(p * math.pi * 7)
+        return (x + w * (0.06 + 0.88 * sweep), y + (p * (ih + feather) - feather * 0.5) * k)
+
+    d = min(WIPE, max(8, (f1 - f0) * 0.8))
+    items = [Item(f0, f0 + d, draw, head, ease=DRAW)]
+    return items, [Mark('chart', Box(x, y, w, h))]
 
 
 def timeline_reveals(n, lines, f0):
@@ -915,7 +951,7 @@ FIGURES = {
     'steady-spending-volatile-revenue': figure_steady_spending_volatile_revenue,
 }
 CHARTS = {'bars': bars_chart, 'share': share_chart, 'series': series_chart}
-SHOWN = {'number': number_visual, 'words': words_visual, 'timeline': timeline_visual}
+SHOWN = {'illustration': illustration_visual, 'timeline': timeline_visual}
 
 
 def chart_run(chart, lines, L, first_f):
