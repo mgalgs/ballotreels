@@ -55,7 +55,13 @@ into audio with videobuilder's Chatterbox engine, which runs in its own
 Python (videobuilder's README has the install):
 
     python -m videobuilder say data/ca-2026-11-03/prop-2/narration.txt \
-        --engine chatterbox --out data/ca-2026-11-03/prop-2/narration.wav
+        --engine chatterbox --voice voices/narrator.wav --gap 0.6 \
+        --out data/ca-2026-11-03/prop-2/narration.wav
+
+`voices/narrator.wav` is the narrator's voice: Chatterbox speaks in the
+voice of that clip. It is Kokoro's `am_michael` voice reading two
+sentences, chosen for a plain, neutral delivery. Every video uses it
+(STANDARD.md rule 4.1).
 
 `scripts/narrate.sh <contest-dir>...` runs both steps, and finds the
 Chatterbox interpreter at `~/.local/chatterbox/bin/python` unless
