@@ -57,10 +57,12 @@ connective = true                    # a line that makes no claim
 
 A line has `sources` (non-empty) or `connective = true`, never both.
 
-A line may carry one visual: a chart, a number, a timeline or a phrase
-of its own words. It appears as the line is narrated and stays up through
-the lines after it in the same section, until a later line brings its own
-visual or the section ends.
+A line may carry one visual: a chart, a timeline or an illustration.
+The centre of the frame shows only pictures: text that belongs to a
+picture (a chart's title, its labels, its source line) is fine, but no
+visual is only text. A visual appears as the line is narrated and
+stays up through the lines after it in the same section, until a later
+line brings its own visual or the section ends.
 
 ```toml
 [section.line.visual]
@@ -75,7 +77,8 @@ values = [10, 20]
 - `bars`: one bar per label, from zero. `values` are numbers >= 0, one
   per label.
 - `share`: one bar divided into parts, one per label; `values` are
-  numbers >= 0 summing to at most 100 (percent of the whole).
+  numbers >= 0 summing to at most 100 (percent of the whole). One part
+  is fine: it shows "this much of the whole".
 - `series`: a line over time; `labels` are the x positions (years, as
   strings, evenly spaced) and `values` the numbers, one per label.
 - `figure`: a fixed drawing with no numbers, named by `figure` (for
@@ -84,37 +87,37 @@ values = [10, 20]
 
 ```toml
 [section.line.visual]
-kind = "number"          # one big figure with a short label
-text = "10%"             # shown large
-label = "fund target"    # shown under it, at most 6 words
-source = "lao-analysis"  # named on screen, as for charts
-
-[section.line.visual]
 kind = "timeline"        # dated entries in a column, revealed one per line
 source = "lao-volatility"
 labels = ["1980 to 2014", "2014"]           # the dates
 items = ["The state saved very little", "Voters set up today's rules"]
 
 [section.line.visual]
-kind = "words"           # a key phrase from the line, in large handwriting
-text = "reserves would be higher"           # no source: the line cites
+kind = "illustration"    # a pencil drawing of the topic, from the library
+name = "save-more"       # no source: the line cites
 ```
 
-- `number`: every run of digits in `text` must appear, as a whole run of
-  digits, in the line's `text`, so the figure on screen says nothing the
-  narrator does not. `label` is at most 6 words. No `title`.
 - `timeline`: `labels` (the dates) and `items` (what happened), the same
   number of each and at least 2. The entries appear one per line: the
   first with the line that carries the timeline, the next with the
   following line of its section, and so on; if the section runs out of
   lines, the rest appear with its last line. No `title`.
-- `words`: `text` is a verbatim part of the line's `text` (ignoring
-  case), at most 6 words. It has no `source`: the line's own sources
-  cover it.
+- `illustration`: a picture of the line's topic when there is no data
+  to chart. `name` is an entry in the illustration library,
+  `film/illustrations/illustrations.toml`, and its file must exist.
+  Every entry is a pencil sketch made once with an image model in the
+  manifest's one style, approved by a person and checked in; the
+  library grows as new topics need pictures. No `title` and no
+  `source`: an illustration carries no facts, and the line's own
+  sources cover what is said.
 
-Every visual but `words` has a `source`, which must also be among the
-line's `sources`. Everything a visual shows (titles, labels, items,
-words) is held to the judgment-word check, like the narration.
+The `number` and `words` kinds of earlier versions only showed text;
+the check fails a script that uses either, and says to use an
+illustration or a chart instead.
+
+Every visual but an illustration has a `source`, which must also be
+among the line's `sources`. Everything a visual shows (titles, labels,
+items) is held to the judgment-word check, like the narration.
 
 ### The measure template, version 2
 
@@ -122,9 +125,9 @@ Sections, in this order: `what`, any number of `background` sections
 (zero or more, each with its own heading), `today`, `change`, `fiscal`,
 the two sides, `vote`. Background sections tell the story behind the
 contest (STANDARD.md section 6). Visuals may appear in any section. In
-the sides (STANDARD.md rule 7.3), a chart, number or timeline only when
-both sides have one of the same kind, and `words` only when both sides
-have the same number of them.
+the sides (STANDARD.md rule 7.3), a chart or timeline only when both
+sides have one of the same kind, and an illustration only when both
+sides have the same number of them.
 
 ### The measure template, version 1
 

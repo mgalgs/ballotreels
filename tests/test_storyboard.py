@@ -86,13 +86,13 @@ class StandInLayoutTest(ContestCopyTestCase):
         self.assertEqual(first.end, second.start)
         self.assertEqual(second.index, 1)
 
-    def test_words_have_no_source(self):
+    def test_illustrations_have_no_source(self):
         self.edit("script.toml", 'until 2030."\nsources = ["lao-analysis"]',
                   'until 2030."\nsources = ["lao-analysis"]\n\n'
-                  '[section.line.visual]\nkind = "words"\n'
-                  'text = "until 2030"\n')
+                  '[section.line.visual]\nkind = "illustration"\n'
+                  'name = "debt-payments"\n')
         board = layout(load_contest(self.dir), narration_seconds(self.dir))
-        [w] = [c for c in board.charts if c.visual.kind == "words"]
+        [w] = [c for c in board.charts if c.visual.kind == "illustration"]
         self.assertIsNone(w.source)
         today = next(s for s in board.sections if s.label == "today")
         self.assertEqual((w.start, w.end),

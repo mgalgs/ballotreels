@@ -52,7 +52,7 @@ class ChartBeat:
     section: str
     index: int  # the line that carries it
     visual: Visual
-    source: Source | None  # None for a `words` visual: its line cites
+    source: Source | None  # None for an illustration: its line cites
     start: int
     end: int
 

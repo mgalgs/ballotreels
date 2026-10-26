@@ -253,7 +253,7 @@ class BrokenCopyTest(ContestCopyTestCase):
         self.assertEqual([(f.check, f.section, f.line) for f in got],
                          [("side-visual", "yes", 0), ("side-visual", "no", 0)])
 
-    # 4e. numbers, words and timelines (docs/SCRIPT-FORMAT.md)
+    # 4e. timelines and illustrations (docs/SCRIPT-FORMAT.md)
     TODAY_LINE = ('deposits stop, and that money goes to infrastructure, like '
                   'highways and housing, instead."\nsources = ["lao-analysis"]')
 
@@ -264,61 +264,64 @@ class BrokenCopyTest(ContestCopyTestCase):
         self.edit("script.toml", after,
                   after + "\n\n[section.line.visual]\n" + body)
 
-    NUMBER = 'kind = "number"\ntext = "10%"\nlabel = "fund target"\n' \
-             'source = "lao-analysis"\n'
+    ILLUSTRATION = 'kind = "illustration"\nname = "save-more"\n'
     TIMELINE = ('kind = "timeline"\nsource = "lao-analysis"\n'
                 'labels = ["2014", "2030"]\nitems = ["Rules set", "Ends"]\n')
 
     def test_well_formed_new_visuals(self):
-        self.add_visual(self.NUMBER)
-        self.add_visual('kind = "words"\ntext = "RETIREE HEALTH DEBTS"\n',
-                        after='debts, until 2030."\nsources = ["lao-analysis"]')
+        self.add_visual(self.ILLUSTRATION)
         self.add_visual(self.TIMELINE, after='for any program."\n'
                         'sources = ["lao-analysis"]')
         self.assertEqual(self.failures(), [])
 
-    def test_number_shows_only_what_the_line_says(self):
-        self.add_visual(self.NUMBER.replace('"10%"', '"10.5%"'))
-        self.assertVisual("today", 1, "shows '5', which the line's text "
-                          "does not say")
+    def test_every_library_entry_is_usable(self):
+        from ballotreels.illustrations import load_library
+        library = load_library()
+        self.assertGreaterEqual(len(library), 10)
+        for entry in library.values():
+            self.assertTrue(entry.path.is_file(), entry.file)
 
-    def test_number_digit_runs_match_whole(self):
-        # "1" is inside "10" in the text, but is not a number the line says
-        self.add_visual(self.NUMBER.replace('"10%"', '"1%"'))
-        self.assertVisual("today", 1, "shows '1'")
+    def test_illustration_not_in_the_library(self):
+        self.add_visual(self.ILLUSTRATION.replace("save-more", "a-cat"))
+        self.assertVisual("today", 1, "names 'a-cat', which is not in "
+                          "film/illustrations/illustrations.toml")
 
-    def test_number_needs_a_number(self):
-        self.add_visual(self.NUMBER.replace('"10%"', '"ten"'))
-        self.assertVisual("today", 1, "has no number in it")
+    def test_illustration_file_missing(self):
+        from unittest import mock
 
-    def test_number_label_at_most_six_words(self):
-        self.add_visual(self.NUMBER.replace(
-            '"fund target"', '"one two three four five six seven"'))
-        self.assertVisual("today", 1, "'label' has 7 words, more than 6")
+        from ballotreels.illustrations import Illustration
+        missing = {"save-more": Illustration("save-more", "nowhere.png", "")}
+        self.add_visual(self.ILLUSTRATION)
+        with mock.patch("ballotreels.checks.load_library",
+                        return_value=missing):
+            self.assertVisual("today", 1, "whose file 'nowhere.png' does "
+                              "not exist")
 
-    def test_number_fields(self):
-        self.add_visual('kind = "number"\ntext = "10%"\ntitle = "x"\n')
-        self.assertVisual("today", 1, "has no 'source'",
-                          "may not have 'title'", "has no 'label'")
+    def test_illustration_needs_a_name(self):
+        self.add_visual('kind = "illustration"\n')
+        self.assertVisual("today", 1, "has no 'name'")
 
-    def test_number_source_among_line_sources(self):
-        self.add_visual(self.NUMBER.replace('"lao-analysis"',
-                                            '"title-summary"'))
-        self.assertVisual("today", 1, "not among the line's sources")
+    def test_illustration_has_no_source_or_title(self):
+        self.add_visual(self.ILLUSTRATION + 'source = "lao-analysis"\n'
+                        'title = "Saving"\n')
+        self.assertVisual("today", 1, "may not have 'title'",
+                          "may not have 'source'")
 
-    def test_words_verbatim_from_the_line(self):
-        self.add_visual('kind = "words"\ntext = "deposits halt"\n')
-        self.assertVisual("today", 1, "'deposits halt' is not in the line")
-
-    def test_words_at_most_six_words(self):
-        self.add_visual('kind = "words"\ntext = "and that money goes to '
-                        'infrastructure, like"\n')
-        self.assertVisual("today", 1, "'text' has 7 words, more than 6")
-
-    def test_words_have_no_source(self):
-        self.add_visual('kind = "words"\ntext = "deposits stop"\n'
-                        'source = "lao-analysis"\n')
-        self.assertVisual("today", 1, "may not have 'source'")
+    def test_words_and_number_are_gone(self):
+        self.add_visual('kind = "words"\ntext = "deposits stop"\n')
+        self.add_visual('kind = "number"\ntext = "10%"\nlabel = "target"\n'
+                        'source = "lao-analysis"\n',
+                        after='for any program."\nsources = ["lao-analysis"]')
+        got = self.failures()
+        self.assertEqual([(f.check, f.section, f.line) for f in got],
+                         [("visual", "today", 1), ("visual", "today", 3)])
+        self.assertTrue(got[0].message.startswith("'words' visual only "
+                                                  "shows text"))
+        self.assertTrue(got[1].message.startswith("'number' visual only "
+                                                  "shows text"))
+        for f in got:
+            self.assertIn("use an 'illustration' or a chart instead",
+                          f.message)
 
     def test_timeline_labels_and_items_match(self):
         self.add_visual(self.TIMELINE.replace('"Ends"]', '"Ends", "x"]'))
@@ -333,55 +336,44 @@ class BrokenCopyTest(ContestCopyTestCase):
         self.add_visual(self.TIMELINE.replace('"Ends"]', '3]'))
         self.assertVisual("today", 1, "'items' must be a list of strings")
 
+    def test_one_part_share(self):
+        self.add_visual('kind = "share"\ntitle = "Rainy Day Fund target"\n'
+                        'source = "lao-analysis"\nunit = "%"\n'
+                        'labels = ["Rainy Day Fund target"]\nvalues = [10]\n')
+        self.assertEqual(self.failures(), [])
+
     def test_judgment_words_on_screen(self):
-        self.add_visual(self.NUMBER.replace('"fund target"',
-                                            '"a bold target"'))
         self.add_visual(self.TIMELINE.replace('"Ends"', '"Sweeping end"'),
                         after='for any program."\n'
                         'sources = ["lao-analysis"]')
         got = self.failures()
         self.assertEqual([(f.check, f.section, f.line, f.message)
                           for f in got],
-                         [("judgment-word", "today", 1,
-                           "judgment word 'bold' in visual label"),
-                          ("judgment-word", "today", 3,
+                         [("judgment-word", "today", 3,
                            "judgment word 'Sweeping' in visual items")])
 
-    def test_judgment_words_in_words_visual(self):
-        self.edit("script.toml", "deposits stop, and",
-                  "deposits stop, a bold move, and")
-        self.add_visual('kind = "words"\ntext = "a bold move"\n',
-                        after='a bold move, and that money goes to '
-                        'infrastructure, like highways and housing, '
-                        'instead."\nsources = ["lao-analysis"]')
-        got = self.failures()
-        self.assertEqual(sorted(f.message for f in got),
-                         ["judgment word 'bold' in text",
-                          "judgment word 'bold' in visual text"])
-
-    def add_side_words(self, side, words):
+    def add_side_illustration(self, side, name):
         self.edit("script.toml", self.SIDE_LINE[side],
                   self.SIDE_LINE[side]
-                  + f'\n\n[section.line.visual]\nkind = "words"\n'
-                    f'text = "{words}"\n')
+                  + f'\n\n[section.line.visual]\nkind = "illustration"\n'
+                    f'name = "{name}"\n')
 
-    def test_words_on_one_side(self):
-        self.add_side_words("yes", "a larger reserve")
+    def test_illustration_on_one_side(self):
+        self.add_side_illustration("yes", "save-more")
         [f] = self.assertOnly("side-visual", "yes", 0)
-        self.assertIn("yes has words, no has none", f.message)
+        self.assertIn("yes has illustration, no has none", f.message)
 
-    def test_words_on_both_sides(self):
-        self.add_side_words("yes", "a larger reserve")
-        self.add_side_words("no", "the spending limit")
+    def test_illustrations_on_both_sides(self):
+        self.add_side_illustration("yes", "save-more")
+        self.add_side_illustration("no", "spending-limit")
         self.assertEqual(self.failures(), [])
 
-    def test_number_on_one_side(self):
+    def test_timeline_on_one_side(self):
         self.edit("script.toml", self.SIDE_LINE["no"],
                   self.SIDE_LINE["no"] + '\n\n[section.line.visual]\n'
-                  'kind = "number"\ntext = "1978"\nlabel = "limit"\n'
-                  'source = "arguments"\n')
+                  + self.TIMELINE.replace("lao-analysis", "arguments"))
         [f] = self.assertOnly("side-visual", "no", 0)
-        self.assertIn("yes has none, no has number", f.message)
+        self.assertIn("yes has none, no has timeline", f.message)
 
     # 5. template
     def test_unknown_template(self):
