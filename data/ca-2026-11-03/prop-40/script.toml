@@ -38,7 +38,7 @@ id = "background"
 heading = "California's billionaires"
 
 [[section.line]]
-text = "A few hundred Californians have a net worth of over 1 billion dollars."
+text = "A few hundred Californians are worth over 1 billion dollars."
 sources = ["lao-analysis"]
 
 [section.line.visual]
@@ -62,7 +62,7 @@ id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "Billionaires who lived in California on January 1, 2026 would owe a one-time tax of 5 percent of their net worth."
+text = "Billionaires living here on January 1, 2026 would owe a one-time 5 percent tax on their net worth."
 sources = ["lao-analysis"]
 
 [section.line.visual]
@@ -75,14 +75,14 @@ values = [5]
 
 [[section.line]]
 text = "Ninety percent of the money would go to health care."
-sources = ["lao-analysis"]
+sources = ["lao-analysis", "title-summary"]
 
 [section.line.visual]
 kind = "share"
 title = "Where the money would go"
-source = "lao-analysis"
+source = "title-summary"
 unit = "%"
-labels = ["Health care", "Education, food assistance and running the tax"]
+labels = ["Health care", "Food assistance or education"]
 values = [90, 10]
 
 [[section]]
@@ -90,7 +90,7 @@ id = "fiscal"
 heading = "What the state's analyst says"
 
 [[section.line]]
-text = "The Legislative Analyst's Office says the tax probably would raise tens of billions of dollars over several years."
+text = "The Legislative Analyst's Office expects the tax to raise tens of billions of dollars over several years."
 sources = ["lao-analysis"]
 
 [section.line.visual]
@@ -98,7 +98,7 @@ kind = "illustration"
 name = "analyst-review"
 
 [[section.line]]
-text = "The office also sees a possible yearly drop in income tax revenue, of less than 1 billion dollars."
+text = "It also sees a possible yearly drop in income taxes of under 1 billion dollars."
 sources = ["lao-analysis"]
 
 [section.line.visual]
