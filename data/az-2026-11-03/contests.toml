@@ -1,0 +1,66 @@
+# Contest index for the 2026-11-03 Arizona general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). Titles
+# pair the designation with the subject its ballot format names
+# ("relating to ..."), as printed in Arizona's General Election Guide.
+
+[election]
+id = "az-2026-11-03"
+state = "ocd-division/country:us/state:az"
+title = "Arizona General Election, November 3, 2026"
+
+[[contest]]
+id = "az-2026-11-03-prop-141"
+kind = "measure"
+division = "ocd-division/country:us/state:az"
+title = "Proposition 141: Taxation"
+number = "141"
+
+[[contest]]
+id = "az-2026-11-03-prop-142"
+kind = "measure"
+division = "ocd-division/country:us/state:az"
+title = "Proposition 142: Prohibition of Preferential Treatment and Discrimination"
+number = "142"
+
+[[contest]]
+id = "az-2026-11-03-prop-144"
+kind = "measure"
+division = "ocd-division/country:us/state:az"
+title = "Proposition 144: Election Requirements"
+number = "144"
+
+[[contest]]
+id = "az-2026-11-03-prop-316"
+kind = "measure"
+division = "ocd-division/country:us/state:az"
+title = "Proposition 316: Municipal Transaction Privilege Tax"
+number = "316"
+
+[[contest]]
+id = "az-2026-11-03-prop-317"
+kind = "measure"
+division = "ocd-division/country:us/state:az"
+title = "Proposition 317: Arizona Department of Homeland Security"
+number = "317"
+
+[[contest]]
+id = "az-2026-11-03-prop-318"
+kind = "measure"
+division = "ocd-division/country:us/state:az"
+title = "Proposition 318: Student Athletics"
+number = "318"
+
+[[contest]]
+id = "az-2026-11-03-prop-319"
+kind = "measure"
+division = "ocd-division/country:us/state:az"
+title = "Proposition 319: Photo Enforcement Systems"
+number = "319"
+
+[[contest]]
+id = "az-2026-11-03-prop-320"
+kind = "measure"
+division = "ocd-division/country:us/state:az"
+title = "Proposition 320: School District Budgets"
+number = "320"
