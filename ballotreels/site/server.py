@@ -270,32 +270,45 @@ def _serve_file_range(handler: _JsonHandler, path: Path, content_type: str,
             remaining -= len(chunk)
 
 
+def _contest_status(key, deps: Deps) -> tuple[str, Any, dict[str, Any] | None]:
+    """(status, video, job_view): status is "unavailable" (no key, e.g. a
+    race), "cached", "queued", "running" or "none"."""
+    if key is None:
+        return "unavailable", None, None
+    video = deps.queue.video_for(key)
+    if video is not None:
+        return "cached", video, None
+    job = deps.queue.find_live_job(key)
+    if job is not None:
+        return job["state"], None, _job_view(job, deps)
+    return "none", None, None
+
+
 def _contest_summary(entry, deps: Deps) -> dict[str, Any]:
     key = key_for(deps.index.election.id, entry, deps.standard)
-    video = deps.queue.video_for(key) if key is not None else None
+    status, video, job = _contest_status(key, deps)
     return {
         "id": entry.id,
         "kind": entry.kind,
         "title": entry.title,
         "number": entry.number,
         "office": entry.office,
-        "status": "unavailable" if key is None else
-                  ("cached" if video else "none"),
+        "status": status,
         "video_url": (video.urls.get("video") if video else None),
+        "job": job,
     }
 
 
 def _contest_detail(entry, deps: Deps) -> dict[str, Any]:
     key = key_for(deps.index.election.id, entry, deps.standard)
-    video = deps.queue.video_for(key) if key is not None else None
+    status, video, job = _contest_status(key, deps)
     return {
         "id": entry.id,
         "kind": entry.kind,
         "title": entry.title,
         "number": entry.number,
         "office": entry.office,
-        "status": "unavailable" if key is None else
-                  ("cached" if video else "none"),
+        "status": status,
         "video_url": (video.urls.get("video") if video else None),
         "poster_url": (video.urls.get("poster") if video else None),
         "sources": (video.sources if video else []),
@@ -304,6 +317,7 @@ def _contest_detail(entry, deps: Deps) -> dict[str, Any]:
         "corrections": [{"date": c.date, "note": c.note}
                         for c in entry.corrections],
         "report_url": REPORT_URL,
+        "job": job,
     }
 
 
@@ -381,6 +395,14 @@ class PublicHandler(_JsonHandler):
                              path)
             if m and method in ("GET", "HEAD"):
                 return self._video(m.group(1), m.group(2), method)
+            if path.startswith("/static/") and method in ("GET", "HEAD"):
+                if self._serve_static(path[len("/static/"):]):
+                    return
+                return self._not_found()
+            if path == "/" and method in ("GET", "HEAD"):
+                if self._serve_static("index.html"):
+                    return
+                return self._not_found()
             return self._not_found()
         except BadRequest as e:
             self._json(e.status, {"error": e.message})
