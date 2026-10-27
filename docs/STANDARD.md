@@ -17,9 +17,11 @@ invalidates the cache for every video made under an older one.
    marked as connective and carry no claim.
 2. A source is a **primary or official document**:
    - for a measure: the official title and summary, the full text, the
-     official fiscal analysis (in California, the Legislative Analyst's
-     Office), and the official arguments for and against as printed in
-     the voter guide; and, for background only (section 6), reports and
+     state's official fiscal statement (in California, the Legislative
+     Analyst's Office's fiscal analysis; in Utah, the "Fiscal Effects" in
+     the Voter Information Pamphlet), and the official arguments for and
+     against as printed in the state's official voter guide; and, for
+     background only (section 6), reports and
      published data from the state's nonpartisan fiscal offices (in
      California, the Legislative Analyst's Office and the Department of
      Finance);

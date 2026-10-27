@@ -31,8 +31,10 @@ before writing another.
 - **No word with a misleading second meaning nearby.** For example, do not
   say "limit" for a fund's cap in a script that also talks about the state
   spending limit.
-- **Name the fiscal office** ("The Legislative Analyst's Office says…"),
-  never "experts" or "analysts".
+- **Name the fiscal statement's author or publication** as the guide
+  does ("The Legislative Analyst's Office says…" in California; "The
+  Voter Information Pamphlet's analysis says…" in Utah, which names no
+  office), never "experts" or "analysts".
 - **State both the effect and the trade-off** wherever the analysis gives
   both (STANDARD rule 6.4). If one line says what the measure buys, another
   says what it costs.
@@ -56,10 +58,16 @@ before writing another.
 
 ## Vote lines
 
-Two lines, one per vote, each quoting the card's own words for what the
-vote means: "A yes vote means …" and "A no vote means …", with a `page`
-visual that highlights the quoted phrase in its box. The phrases come
-from the official yes/no statements, so the two lines stay parallel.
+Two lines, one per vote, in the ballot's own words for the choices
+("yes"/"no" in California, "for"/"against" in Utah), each saying what
+that vote means as the official page says it, with a `page` visual that
+highlights the phrase it quotes. Where the card has yes/no statements
+(California), quote them: "A yes vote means …" and "A no vote means …",
+each highlighted in its box. Where it has none (Utah), never invent
+them: take the two meanings from the card's own sentences (the ballot
+title or the summary), highlighting one phrase for each vote, so the two
+lines stay parallel. Side headings use the same words ("Why some vote
+for").
 
 ## Visuals
 

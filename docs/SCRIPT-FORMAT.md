@@ -31,6 +31,13 @@ Allowed source kinds (STANDARD.md section 1): `official-title-summary`,
 `candidate-statement`, `candidate-website`, `public-record`,
 `official-report`, `official-data`.
 
+`official-fiscal-analysis` is the state's official fiscal statement on
+the measure, whoever writes it: in California, the Legislative Analyst's
+Office's analysis; in Utah, the "Fiscal Effects" in the Voter
+Information Pamphlet's Impartial Analysis. One archived file may back
+several sources of different kinds (Utah prints the ballot title,
+analysis, arguments and text in one pamphlet section).
+
 `official-report` (a nonpartisan fiscal office's report or handout) and
 `official-data` (a published data file from one) are background-only
 (STANDARD.md rule 6.1): a line or chart may cite them only in a
@@ -60,30 +67,65 @@ A line has `sources` (non-empty) or `connective = true`, never both.
 ### The card: the measure's official page
 
 A script may open on a drawn copy of the top of the measure's page in
-the official voter guide, and come back to it to "click" the terms on
-it (the `page` visual, below). The optional top-level `[card]` table
-quotes that page:
+the state's official voter guide, and come back to it to "click" the
+terms on it (the `page` visual, below). The optional top-level `[card]`
+table quotes that page:
 
 ```toml
 [card]
-source = "quick-reference"   # a source of kind official-title-summary
-number = "2"                 # drawn as the "PROP 2" badge
+source = "quick-reference"   # a source of the kind the state's card quotes
+number = "2"                 # drawn under the badge word: "PROP 2"
 title = "INCREASES STATE’S RAINY DAY FUND. LEGISLATIVE CONSTITUTIONAL AMENDMENT."
 origin = "Put on the Ballot by the Legislature"
 summary = "Increases California's Rainy Day Fund, ... Fiscal Impact: State budget reserves would be higher."
-yes = "A YES vote on this measure means: ..."
+yes = "A YES vote on this measure means: ..."   # optional, with `no`
 no = "A NO vote on this measure means: ..."
 ```
 
-- All seven keys are required, each a non-empty string. `source` must be
-  in `sources.toml`, of kind `official-title-summary`.
-- **Verbatim**: `title`, `origin`, `summary`, `yes` and `no` must each
-  appear in the archived source's text, compared after stripping its
-  markup (and the contents of its scripts and styles), decoding
-  entities, collapsing whitespace and ignoring whitespace before
-  punctuation (the page renders as `Fiscal Impact : State`). Quotes and
-  case are compared as they are: the title is upper-case, with a curly
-  apostrophe, on the page. A failure names the field.
+Utah's card quotes its pamphlet section instead, and has a `fiscal`
+quote and no `yes`/`no` (its pamphlet prints no such lines):
+
+```toml
+[card]
+source = "pamphlet"
+number = "B"
+title = "Shall the Utah Constitution be amended to require ...?"   # the ballot title
+origin = "2025 Legislative General Session Senate Joint Resolution (S.J.R.) 2"
+summary = "Constitutional Amendment B would increase ..."   # its "Effect of" paragraphs
+fiscal = "Enactment of Constitutional Amendment B likely would not ..."   # optional
+```
+
+- `source`, `number`, `title`, `origin` and `summary` are required;
+  `fiscal`, `yes` and `no` are optional, and `yes` and `no` come
+  together or not at all. Each is a non-empty string. `source` must be
+  in `sources.toml`, of the kind the state's card quotes (below).
+- **Verbatim**: `title`, `origin`, `summary`, `fiscal`, `yes` and `no`
+  must each appear in the archived source's text. A page is compared
+  after stripping its markup (and the contents of its scripts and
+  styles) and decoding entities; a PDF by its text as poppler's
+  `pdftotext` extracts it (the check fails, saying so, where pdftotext is
+  not installed). Either way whitespace is collapsed and whitespace
+  before punctuation ignored (the page renders as `Fiscal Impact :
+  State`). Quotes and case are compared as they are: the title is
+  upper-case, with a curly apostrophe, on the page. A failure names the
+  field.
+- **The state's own words** come from its entry in
+  `ballotreels/ballots.py`, one per state, never per measure; a measure
+  in a state with no entry fails the check. The entry gives the guide's
+  name (California's Official Voter Information Guide, Utah's Voter
+  Information Pamphlet), the source kind its card quotes
+  (`official-title-summary` for both), the fiscal statement's heading as
+  printed (`Fiscal Impact:`, set in bold where the summary quotes it;
+  `Fiscal Effects`, set in bold over the `fiscal` quote), the ballot's
+  words for the two choices (`Yes`/`No`; `For`/`Against`), drawn as the
+  ballot's options and the YES/NO box labels, and any abbreviation the
+  guide prints on its badge (California's `PROP`).
+- **The badge** is the measure's designation word in its contest title
+  (`sources.toml`), the word just before its number ("Proposition 2:
+  ...", "Constitutional Amendment A: ..."), upper-case or as the state
+  abbreviates it: PROP 2, AMENDMENT A. A title with no such word fails.
+- With no `yes` and `no`, the page draws no WHAT YOUR VOTE MEANS heading
+  and no boxes, and leaves no room for them.
 - The card is exempt from the judgment-word check: it is a verbatim
   official quote, not the narrator's voice (STANDARD.md rule 3.1).
   Everything else in the script keeps the check.
@@ -245,7 +287,10 @@ fails the check rather than going undrawn.
 Sections, in this order: `what`, `today`, `change`, `fiscal`, the two
 sides, `vote`. A version 1 script fails the standard-version check
 under Standard 2. The rest of this section applies to both versions. The sides are `yes` (with `side = "yes"`) and `no` (with
-`side = "no"`). Which side plays first is decided at render time by a
+`side = "no"`), whatever the ballot calls them; their headings use the
+ballot's own words ("Why some vote yes", "Why some vote for"), and the
+check fails a side heading that says the other side's word or another
+state's. Which side plays first is decided at render time by a
 stable hash of the contest id (STANDARD.md rule 2.4): the SHA-256 of
 the UTF-8 contest id, `yes` first when its first byte is even and `no`
 first when it is odd (`ballotreels.side_order`). The script file always
