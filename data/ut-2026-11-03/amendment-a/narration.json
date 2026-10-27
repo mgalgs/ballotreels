@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 64.95,
+  "seconds": 65.15,
   "phrases": [
     {
       "text": "Amendment A is about how proposed changes to Utah's Constitution are published.",
@@ -24,34 +24,29 @@
       "end": 25.22
     },
     {
-      "text": "The Voter Information Pamphlet says the change could reduce state costs by up to $1.4 million every two years.",
+      "text": "The Voter Information Pamphlet says the change could reduce state costs by up to $1.4 million every two years; the state's General and Income Tax Funds budget is about $12.4 billion a year.",
       "start": 25.88,
-      "end": 33.61
-    },
-    {
-      "text": "The pamphlet says savings would vary with amendment length and newspaper rates.",
-      "start": 34.27,
-      "end": 39.4
+      "end": 39.59
     },
     {
       "text": "Supporters say Amendment A updates public notice for how Utahns get information and saves money.",
-      "start": 40.06,
-      "end": 46.65
+      "start": 40.25,
+      "end": 46.85
     },
     {
       "text": "The pamphlet says no argument against was submitted, because the Legislature adopted Amendment A unanimously.",
-      "start": 47.31,
-      "end": 54.65
+      "start": 47.51,
+      "end": 54.85
     },
     {
       "text": "A vote for means amendments would be published as state law sets.",
-      "start": 55.31,
-      "end": 60.04
+      "start": 55.51,
+      "end": 60.24
     },
     {
       "text": "A vote against means amendments would still be published in newspapers.",
-      "start": 60.7,
-      "end": 64.92
+      "start": 60.9,
+      "end": 65.12
     }
   ],
   "inputs": {
@@ -60,8 +55,7 @@
       "Today, each amendment must run in a newspaper in every county for two months.",
       "Amendment A would require 60 days of publication before the election, in a manner set by state law.",
       "Under a law already passed, the full text would go on two state websites.",
-      "The Voter Information Pamphlet says the change could reduce state costs by up to $1.4 million every two years.",
-      "The pamphlet says savings would vary with amendment length and newspaper rates.",
+      "The Voter Information Pamphlet says the change could reduce state costs by up to $1.4 million every two years; the state's General and Income Tax Funds budget is about $12.4 billion a year.",
       "Supporters say Amendment A updates public notice for how Utahns get information and saves money.",
       "The pamphlet says no argument against was submitted, because the Legislature adopted Amendment A unanimously.",
       "A vote for means amendments would be published as state law sets.",
@@ -151,11 +145,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The Voter Information Pamphlet says the change could reduce state costs by up to $1.4 million every two years."
+        "text": "The Voter Information Pamphlet says the change could reduce state costs by up to $1.4 million every two years; the state's General and Income Tax Funds budget is about $12.4 billion a year."
       },
       "bounds": [
         620400,
-        807360
+        950880
       ]
     },
     {
@@ -163,31 +157,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Voter Information Pamphlet says the change could reduce state costs by up to $1.4 million every two years.\"",
-        "convert_to_sha256": null,
-        "check": true,
-        "retries": 3,
-        "text": "The pamphlet says savings would vary with amendment length and newspaper rates."
-      },
-      "bounds": [
-        821760,
-        946320
-      ]
-    },
-    {
-      "key": {
-        "engine": "gemini",
-        "model": "gemini-3.8-flash-tts",
-        "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The pamphlet says savings would vary with amendment length and newspaper rates.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Voter Information Pamphlet says the change could reduce state costs by up to $1.4 million every two years; the state's General and Income Tax Funds budget is about $12.4 billion a year.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "Supporters say Amendment A updates public notice for how Utahns get information and saves money."
       },
       "bounds": [
-        960720,
-        1120320
+        965280,
+        1125120
       ]
     },
     {
@@ -202,8 +180,8 @@
         "text": "The pamphlet says no argument against was submitted, because the Legislature adopted Amendment A unanimously."
       },
       "bounds": [
-        1134720,
-        1312320
+        1139520,
+        1317120
       ]
     },
     {
@@ -218,8 +196,8 @@
         "text": "A vote for means amendments would be published as state law sets."
       },
       "bounds": [
-        1326720,
-        1441680
+        1331520,
+        1446480
       ]
     },
     {
@@ -234,10 +212,10 @@
         "text": "A vote against means amendments would still be published in newspapers."
       },
       "bounds": [
-        1456080,
-        1558800
+        1460880,
+        1563600
       ]
     }
   ],
-  "sha256": "062377c388c190ce0ce2b350872ef5bfa6b1a7c0a4032fd697727b3c40bc9b58"
+  "sha256": "5e19eec713eca7e0d19e439f5d86236a1e2e6610f1812f81db747c52633b4ec4"
 }
