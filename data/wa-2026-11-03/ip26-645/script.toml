@@ -4,8 +4,9 @@
 # state would lose, what that money pays for, and what the state would
 # save; one point per side; what a vote does.
 #
-# The card quotes the Attorney General's ballot title: its Statement of
-# Subject and Concise Description. Washington's pamphlet prints no "a YES
+# The card quotes the ballot as the Attorney General says it is displayed:
+# the ballot title plus the public investment impact disclosure that state
+# law prints with it (RCW 29A.72.050). Washington's pamphlet prints no "a YES
 # vote means" lines, so the card has none, and the two vote lines take
 # their meaning from one phrase of the Concise Description, highlighted
 # alike.
@@ -25,11 +26,11 @@ template_version = 2
 standard_version = 2
 
 [card]
-source = "ballot-title"
+source = "ballot"
 number = "IP26-645"
 title = "Initiative Measure No. IP26-645 concerns state and local taxes."
-origin = "Initiative No. IP26-645 to the People"
-summary = "This measure would repeal a 9.9% tax on annual individual income over $1,000,000; prohibit taxes measured by individual income and taxes on individual income or the receipt of individual income; and define “income.”"
+origin = "Initiative Measure IP26-645"
+summary = "This measure would repeal a 9.9% tax on annual individual income over $1,000,000; prohibit taxes measured by individual income and taxes on individual income or the receipt of individual income; and define “income.” This measure would decrease funding for public K-12 education, higher education (including universities and community colleges), and human services (primarily healthcare)."
 
 [[section]]
 id = "what"
@@ -37,11 +38,11 @@ heading = "Initiative Measure IP26-645"
 
 [[section.line]]
 text = "Initiative Measure IP26-645 is about taxes on individual income."
-sources = ["ballot-title"]
+sources = ["ballot"]
 
 [section.line.visual]
 kind = "page"
-source = "ballot-title"
+source = "ballot"
 highlight = ["concerns state and local taxes"]
 
 [[section]]
@@ -62,11 +63,11 @@ heading = "What would change"
 
 [[section.line]]
 text = "IP26-645 would repeal that tax, and bar state and local taxes on individual income."
-sources = ["ballot-title", "explanatory"]
+sources = ["ballot", "explanatory"]
 
 [section.line.visual]
 kind = "page"
-source = "ballot-title"
+source = "ballot"
 highlight = ["repeal a 9.9% tax", "prohibit taxes measured by individual income"]
 
 [[section]]
@@ -127,18 +128,18 @@ heading = "What your vote means"
 
 [[section.line]]
 text = "A yes vote means the 9.9 percent tax would be repealed."
-sources = ["ballot-title"]
+sources = ["ballot"]
 
 [section.line.visual]
 kind = "page"
-source = "ballot-title"
+source = "ballot"
 highlight = ["repeal a 9.9% tax"]
 
 [[section.line]]
 text = "A no vote means the 9.9 percent tax would not be repealed."
-sources = ["ballot-title"]
+sources = ["ballot"]
 
 [section.line.visual]
 kind = "page"
-source = "ballot-title"
+source = "ballot"
 highlight = ["repeal a 9.9% tax"]
