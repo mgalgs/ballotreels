@@ -198,13 +198,15 @@ def layout_9x16():
     return dict(
         W=1080, H=1920, u=1.0,
         safe=Box(70, 200, 940, 1340),
-        header=Box(70, 204, 940, 76),
+        # the running title's band: from under the binding's holes down to
+        # the heading, which the title fills (header_fit)
+        header=Box(70, 120, 940, 164),
         heading=Box(70, 292, 940, 118),
         # the stage runs down to just above the caption, which sits at the
         # page's bottom in every view, as in the full-page view
         stage=Box(70, 430, 940, 1166),
         scrap=Box(78, 1632, 924, 196),
-        header_font=font(30, family=PRINT),
+        header_font=font(52, family=PRINT),  # at most: header_fit shrinks it to fit
         heading_font=font(86, 700),
         # a chart's lettering, sized to read on a phone: its title, its
         # category and line labels, its values, and its axis values
@@ -239,11 +241,11 @@ def layout_16x9():
     return dict(
         W=1920, H=1080, u=0.9,
         safe=Box(120, 124, 1680, 906),
-        header=Box(120, 124, 1680, 40),
+        header=Box(120, 116, 1680, 48),
         heading=Box(120, 166, 1680, 96),
         stage=Box(150, 276, 1620, 540),
         scrap=Box(250, 842, 1420, 176),
-        header_font=font(26, family=PRINT),
+        header_font=font(44, family=PRINT),
         heading_font=font(74, 700),
         chart_title_font=font(57, 700),
         chart_label_font=font(51, 600),
@@ -726,6 +728,16 @@ def check_mark_pts(cx, cy, s):
 LIST_MAX_LINES = 2  # no item on the sides slide may take more lines than this
 
 
+def list_wrap(item, fnt, width):
+    """A sides-slide item's lines: filled out to `width` from the first
+    line, so the text runs to the card's right edge, unless that leaves a
+    lone word on the last line, when the lines are balanced instead."""
+    lines = text.wrap(item, fnt, width)
+    if len(lines) > 1 and ' ' not in lines[-1].strip():
+        return text.wrap(item, fnt, width, balance=True)
+    return lines
+
+
 def list_rows(every, L, width, fits, size):
     """The rows of one or more checklists laid out alike (rule 7.4): the
     largest item font (from `size` down) at which every item takes at most
@@ -733,15 +745,15 @@ def list_rows(every, L, width, fits, size):
     their least gap here, half a line of the item font; the caller may
     widen it. Returns a dict: the font, each row's height (the tallest of
     that row across `every`), the gap, the rows' total height, and the
-    check column's and text's offsets from the left edge (the column
-    centred in `width` on the widest line of all)."""
+    check column's and text's offsets from the left edge (the checks at
+    the edge, the text filling the rest of `width`: list_wrap)."""
     u = L['u']
     check = 40 * u
     tw = width - check - 30 * u
     itf = font(size, family=PRINT)
     n = max((len(its) for its in every), default=0)
     while True:
-        wrapped = [[text.wrap(it, itf, tw, balance=True) for it in its] for its in every]
+        wrapped = [[list_wrap(it, itf, tw) for it in its] for its in every]
         heights = [max(len(w[i]) for w in wrapped if i < len(w)) * text.line_height(itf) for i in range(n)]
         gap = round(text.line_height(itf) * 0.5)
         rows_h = sum(heights) + gap * max(0, n - 1)
@@ -750,9 +762,8 @@ def list_rows(every, L, width, fits, size):
             break
         itf = font(itf.size * 0.97, family=PRINT)
     widest = max((text.measure(ln, itf) for w in wrapped for b in w for ln in b), default=0)
-    shift = max(0, (width - check - 30 * u - widest) / 2)
     return dict(font=itf, heights=heights, gap=gap, rows_h=rows_h, wrapped=wrapped,
-                check=check, cx=shift, tx=shift + check + 30 * u, widest=widest)
+                check=check, cx=0, tx=check + 30 * u, widest=widest)
 
 
 def list_rows_items(items_text, rows, lines, L, x, y, f0, f1):
@@ -768,7 +779,7 @@ def list_rows_items(items_text, rows, lines, L, x, y, f0, f1):
     items = []
     top = y
     for i, (it, h, s0) in enumerate(zip(items_text, rows['heights'], starts)):
-        block = text.wrap(it, itf, rows['width'], balance=True)
+        block = list_wrap(it, itf, rows['width'])
         cy = y + text.line_height(itf) * 0.5
         mark = Stroke(check_mark_pts(cx0 + check / 2, cy, check), seed_of('check', i), passes=2,
                      width=4.6 * u, overshoot=0)
@@ -872,7 +883,7 @@ EDGE_GAP = 32   # px from the heading's underline to the first card, and from th
 CARD_GAP = 40   # px between the two cards
 LABEL_GAP = 22  # px between a block's label and its rows
 SOURCE_GAP = 30  # px above a source line
-CARD_PAD = 24   # px inside a card, at least, above and below its block (half as much again at its sides)
+CARD_PAD = 24   # px inside a card, at least, above and below its block, and exactly this at its sides
 ITEM_MAX = 0.7    # the items' font grows to at most this much of the page heading's...
 LABEL_SCALE = 1.25  # ...and the labels' to this much of the items', room allowing
 LABEL_MAX = 0.8   # but never past this much of the page heading's
@@ -938,10 +949,9 @@ def sides_plan(side_a, side_b, L, fmt):
     shared = len(charts) == 2 and charts[0].source.id == charts[1].source.id
     stacked = fmt == '9x16'
     pad = CARD_PAD * u
-    side_pad = pad * 1.5  # a card's text keeps further off its sides than off its top and bottom
     gap = CARD_GAP * u
     outer_w = st.w if stacked else (st.w - gap) / 2
-    bw = outer_w - 2 * side_pad
+    bw = outer_w - 2 * pad
     label_gap = LABEL_GAP * u
     src_gap = SOURCE_GAP * u
     src_h = max((source_lines(c, L, st.w if shared else bw)[1] for c in charts), default=0)
@@ -977,7 +987,7 @@ def sides_plan(side_a, side_b, L, fmt):
         cards = [Box(st.x, top, st.w, card_h), Box(st.x, top + card_h + gap, st.w, card_h)]
     else:
         cards = [Box(st.x, top, outer_w, card_h), Box(st.x + outer_w + gap, top, outer_w, card_h)]
-    blocks = [Box(c.x + side_pad, c.y + pad_y, c.w - 2 * side_pad, c.h - 2 * pad_y) for c in cards]
+    blocks = [Box(c.x + pad, c.y + pad_y, c.w - 2 * pad, c.h - 2 * pad_y) for c in cards]
     return dict(label_font=label_f, label_h=label_h, rows=rows, blocks=blocks, cards=cards,
                 source=Box(st.x, bottom - src_h, st.w, src_h) if shared else None)
 
@@ -2370,12 +2380,31 @@ def draw_captions(cv, n, P, s, mark=True):
 
 
 # ---- the running header: the measure's title, on every page ----
+HEADER_ALPHA = 0.8  # quieter than the heading, but dark enough to read on a phone
+HEADER_LINES = 2
+
+
+@functools.lru_cache(maxsize=None)
+def header_fit(title, band, size):
+    """The running title set to fill `band`: the largest font, from `size`
+    down, at which it takes at most HEADER_LINES lines across the band's
+    width and they fit its height. Returns (font, lines, top y), the lines
+    centred in the band's height."""
+    fnt = font(size, family=PRINT)
+    while True:
+        lines = text.wrap(title, fnt, band.w, balance=True)
+        h = text.line_height(fnt) * len(lines)
+        fits = len(lines) <= HEADER_LINES and h <= band.h
+        if fits or fnt.size < 12:
+            return fnt, lines, band.y + max(0, (band.h - h) / 2)
+        fnt = font(fnt.size * 0.97, family=PRINT)
+
+
 def draw_header(cv, L, alpha=1.0):
     """The running title, at `alpha`: it fades out in the full-page view."""
     hb = L['header']
-    fnt = L['header_font']
-    lines = text.wrap(CONTEST.title, fnt, hb.w, balance=True)
-    drawn = sp.pencil_text(cv, lines, fnt, hb.x, hb.y, GRAPHITE, 0.62 * alpha, align='center', width=hb.w)
+    fnt, lines, y = header_fit(CONTEST.title, hb, L['header_font'].size)
+    drawn = sp.pencil_text(cv, lines, fnt, hb.x, y, GRAPHITE, HEADER_ALPHA * alpha, align='center', width=hb.w)
     if alpha >= 1:
         cv.mark('header', *drawn)
 

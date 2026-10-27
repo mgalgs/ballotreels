@@ -217,3 +217,47 @@ class BuildHoldsSidesAsOneTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+    def test_the_cards_keep_the_same_small_even_margin_at_both_sides(self):
+        # the operator's markup: no wide gutter left of the checks or
+        # margin right of the text, and both cards alike (rule 7.4)
+        for fmt in ("9x16", "16x9"):
+            L, plan, marks = self._marks(fmt, items_a=["Short point", LONG],
+                                         items_b=[LONG, "Stops overspending"])
+            pad = m.CARD_PAD * L["u"]
+            for card, block in zip(plan["cards"], plan["blocks"]):
+                self.assertAlmostEqual(block.x - card.x, pad, places=3)
+                self.assertAlmostEqual(card.right - block.right, pad, places=3)
+            rows = plan["rows"]
+            self.assertEqual(rows["cx"], 0)  # the checks at the block's left edge
+            self.assertAlmostEqual(rows["tx"] + rows["width"], plan["blocks"][0].w, places=3)
+            # a long item's first line runs out close to the right edge
+            first = m.text.measure(m.list_wrap(LONG, rows["font"], rows["width"])[0], rows["font"])
+            self.assertGreater(first, rows["width"] * 0.85)
+            charts = [mk.box for mk in marks if mk.name == "chart"]
+            for card, chart in zip(plan["cards"], charts):
+                self.assertAlmostEqual(chart.x - card.x, pad, places=3)
+
+    def test_yes_and_no_cards_have_identical_geometry(self):
+        for fmt in ("9x16", "16x9"):
+            _, plan, marks = self._marks(fmt, items_a=["No argument against was submitted"],
+                                         items_b=[LONG, "Stops overspending"])
+            ca, cb = plan["cards"]
+            ba, bb = plan["blocks"]
+            self.assertEqual((ca.w, ca.h), (cb.w, cb.h))
+            self.assertEqual((ba.w, ba.h), (bb.w, bb.h))
+            self.assertEqual((ba.x - ca.x, ba.y - ca.y), (bb.x - cb.x, bb.y - cb.y))
+            a, b = [mk.box for mk in marks if mk.name == "chart"]
+            self.assertAlmostEqual(a.x - ba.x, b.x - bb.x, places=6)
+            self.assertAlmostEqual(a.y - ba.y, b.y - bb.y, places=6)
+
+
+class ListWrapTest(unittest.TestCase):
+    def test_fills_the_first_line_but_never_leaves_a_lone_word(self):
+        fnt = m.font(50, family=m.PRINT)
+        lines = m.list_wrap(LONG, fnt, 900)
+        self.assertGreater(m.text.measure(lines[0], fnt), 800)
+        for w in range(300, 1200, 7):
+            lines = m.list_wrap(LONG, fnt, w)
+            if len(lines) > 1:
+                self.assertIn(" ", lines[-1].strip(), w)
