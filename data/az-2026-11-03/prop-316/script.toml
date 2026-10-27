@@ -1,0 +1,147 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; how city grocery taxes work today; what Proposition 316 would
+# require (voter approval, a 2 percent cap, a retroactive pause); that the
+# guide prints no cost estimate; one point per side; what a vote does.
+#
+# The card quotes Arizona's General Election Guide: the ballot format's
+# descriptive title and its "yes"/"no" vote lines, and the Analysis by
+# Legislative Council. No fiscal statement exists for a measure the
+# Legislature refers, so the card has no fiscal quote and the fiscal
+# section says only that the guide prints no cost estimate. The dollar
+# figure one argument against cites is about a different, vetoed bill, so
+# the script does not use it.
+#
+# The sides are drawn from what the arguments filed most commonly say,
+# attributed to "supporters" and "opponents", with equal words.
+
+contest = "az-2026-11-03-prop-316"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide"
+number = "316"
+title = "RETROACTIVELY PROHIBITS LOCAL GOVERNMENTS FROM ADOPTING OR INCREASING A TAX ON GROCERIES WITHOUT VOTER APPROVAL AND SETS A MAXIMUM RATE OF 2%."
+origin = "REFERRED TO THE PEOPLE BY THE LEGISLATURE"
+summary = "Proposition 316 would limit the ability of a city, town or other taxing jurisdiction to impose a transaction privilege, sales, use, franchise or other similar tax or fee on food and certain nonalcoholic beverages (ready-to-drink and in a closed container) that are intended for home consumption as follows: 1. For a city, town or other taxing jurisdiction that approved the imposition of such a tax or fee on or before January 1, 2025, any increase in the rate of the tax or fee must be approved by the voters and may not be more than two percent of the tax base. However, if the rate of the tax or fee imposed on or before January 1, 2025 is two percent or more of the tax base, the city, town or other taxing jurisdiction may not increase the rate. Additionally, increases in the rate of the tax or fee may not occur between June 30, 2025 and June 30, 2027. 2. For a city, town or other taxing jurisdiction that has not approved the imposition of such a tax or fee on or before January 1, 2025, the adoption of a new tax or fee and any subsequent increase to the rate of the tax or fee must be approved by the voters and may not be more than two percent of the tax base. Additionally, the adoption of a new tax or fee and any subsequent increase to the rate of the tax or fee may not occur between June 30, 2025 and June 30, 2027."
+yes = "A “yes” vote shall have the effect of: (1) retroactively prohibiting local governments from adopting or increasing a tax on groceries from July 1, 2025, through June 30, 2027; and (2) after that time, prohibiting local governments from adopting or increasing a tax on groceries without voter approval and limiting any new or increased tax to a maximum rate of 2%."
+no = "A “no” vote shall have the effect of maintaining the current laws relating to local government taxation."
+
+[[section]]
+id = "what"
+heading = "Proposition 316"
+
+[[section.line]]
+text = "Proposition 316 is about city and town taxes on groceries."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["A TAX ON GROCERIES"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, cities and towns may tax groceries, if the tax applies to all food alike."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "grocery-bag"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Under Proposition 316, a new or higher grocery tax would need local voters' approval."
+sources = ["guide", "analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["must be approved by the voters"]
+
+[[section.line]]
+text = "The rate could not exceed 2 percent, and places already at 2 percent or more could not raise it."
+sources = ["guide", "analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["may not be more than two percent of the tax base", "may not increase the rate"]
+
+[[section.line]]
+text = "Proposition 316 is retroactive: no grocery tax could be adopted or raised from July 2025 through June 2027."
+sources = ["guide", "analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["RETROACTIVELY PROHIBITS"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Arizona's guide prints no cost estimate for Proposition 316."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say cities and towns keep the revenue they have, and local voters decide any increase."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Cities keep the revenue they have now", "Local voters approve any increase"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Proposition 316 takes local control from cities, risking service cuts and higher property taxes."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Takes local control from cities and towns", "Risks service cuts and property tax hikes"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means no new or higher grocery tax without voter approval."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["without voter approval"]
+
+[[section.line]]
+text = "A no vote means current local tax laws stay the same."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["maintaining the current laws relating to local government taxation"]
