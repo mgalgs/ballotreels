@@ -47,9 +47,10 @@ before writing another.
   than 1 percent of …" below 1). Per-person amounts, money the state
   neither pays nor receives, and figures with no matching total are
   exempt. If no archived source states the total, stop and ask for
-  one; never use a remembered figure. The check still allows an
-  `official-report` only in a `background` line (rule 6.1), so a total
-  that only a report states cannot yet be cited beside a `fiscal` line.
+  one; never use a remembered figure. STANDARD rule 1.2 allows a
+  fiscal office's report for that total, but `check` still allows an
+  `official-report` only in a `background` line, so a total that only
+  a report states cannot yet be cited beside a `fiscal` line.
   Pay for the added words within the same neutral section, never from
   a side.
 - Purpose is the authors' purpose ("The Legislature placed it on the

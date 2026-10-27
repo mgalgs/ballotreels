@@ -21,7 +21,8 @@ invalidates the cache for every video made under an older one.
      Analyst's Office's fiscal analysis; in Utah, the "Fiscal Effects" in
      the Voter Information Pamphlet), and the official arguments for and
      against as printed in the state's official voter guide; and, for
-     background only (section 6), reports and
+     background only (section 6) and for the budget total that gives a
+     dollar figure its scale (rule 6.5), reports and
      published data from the state's nonpartisan fiscal offices (in
      California, the Legislative Analyst's Office and the Department of
      Finance);
