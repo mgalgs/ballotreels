@@ -1,0 +1,133 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what a
+# recall is; the two questions on a recall ballot today; what dropping
+# the second question changes and how the office is filled instead; the
+# analyst's costs and savings; one point per side; what a vote does.
+
+contest = "ca-2026-11-03-prop-5"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "quick-reference"
+number = "5"
+title = "CHANGES RECALL ELECTION PROCESS FOR STATEWIDE OFFICERS. LEGISLATIVE CONSTITUTIONAL AMENDMENT."
+origin = "Put on the Ballot by the Legislature"
+summary = "Under current law, voters elect replacement candidates at the same time as the recall election. This measure instead fills recall vacancies by subsequent special election or appointment. Fiscal Impact: Net fiscal effect unknown. In the event of a recall, savings or costs of millions of dollars to administer the election depending on the office recalled."
+yes = "A YES vote on this measure means: Recall elections would no longer include a question about who should fill the vacancy. Instead, vacancies typically would be filled through special elections or appointments, depending on the office and timing."
+no = "A NO vote on this measure means: Voters would continue to be asked who should fill the vacancy as part of recall elections."
+
+[[section]]
+id = "what"
+heading = "Proposition 5"
+
+[[section.line]]
+text = "Proposition 5 is about recalls, which let voters remove a state official early."
+sources = ["quick-reference", "lao-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["CHANGES RECALL ELECTION PROCESS"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, a recall ballot asks two questions: remove the official, and if so, who replaces them?"
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-two-questions"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Proposition 5 would drop the replacement question, leaving only whether to remove the official."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-one-question"
+
+[[section.line]]
+text = "If the Governor is recalled, the Lieutenant Governor would serve as Governor."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-capitol"
+
+[[section.line]]
+text = "Other offices would be filled by special election or appointment, as vacancies are today."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "fiscal"
+heading = "What the state's analyst says"
+
+[[section.line]]
+text = "The Legislative Analyst's Office says special elections could cost millions, and shorter ballots could save millions."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Proposition 5 stops replacements winning office with a small fraction of the vote."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No replacement winning without majority support", "Stops recalls being used to redo elections"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Proposition 5 takes away voters' right to choose who replaces a recalled official."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Takes away voters' choice of a replacement", "Often politicians, not voters, would pick replacements"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means recall elections would no longer include a question about who should fill the vacancy."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["would no longer include a question about who should fill the vacancy"]
+
+[[section.line]]
+text = "A no vote means voters would continue to be asked who should fill the vacancy."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["would continue to be asked who should fill the vacancy"]
