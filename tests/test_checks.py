@@ -7,14 +7,14 @@ from ballotreels import check_contest, load_contest, load_standard
 from ballotreels.standard import (REPO_ROOT, SOURCE_KINDS,
                                   judgment_word_pattern, read_judgment_words)
 
-from .helpers import (PROP_2, PROP_2_AIRTIME, ContestCopyTestCase,
-                      drop_background, write_narration)
+from .helpers import PROP_2, ContestCopyTestCase, drop_background, write_narration
 
 
 class Prop2PassesTest(unittest.TestCase):
-    def test_only_the_known_airtime_failure(self):
-        self.assertEqual([str(f) for f in check_contest(load_contest(PROP_2))],
-                         [PROP_2_AIRTIME])
+    def test_passes_every_check(self):
+        # Its two sides' spoken durations differ by 1.4s, within the 2s
+        # pad cap, so check_airtime's padded layout now covers it.
+        self.assertEqual(check_contest(load_contest(PROP_2)), [])
 
 
 class BrokenCopyTest(ContestCopyTestCase):
@@ -558,10 +558,16 @@ class BrokenCopyTest(ContestCopyTestCase):
         write_narration(self.dir)
         self.assertEqual(self.failures(), [])
 
+    def test_airtime_within_the_pad_cap_passes(self):
+        # Shrinking "no" by 3% (32.35s -> ~31.4s) is a 0.95s gap, well
+        # within the 2s cap: padded, not failed.
+        write_narration(self.dir, stretch={"no": 0.97})
+        self.assertEqual(self.failures(), [])
+
     def test_airtime_imbalance(self):
         # Both sides have 79 words in 4 one-sentence lines: 32.35s each at
         # the stand-in narration's pace. Shrinking "no" by 10% makes it
-        # 29.19s, past the 5% tolerance.
+        # 29.19s, a 3.16s gap: past the 2s pad cap.
         write_narration(self.dir, stretch={"no": 0.9})
         [f] = self.assertOnly("airtime")
         self.assertRegex(f.message, r"yes=32\.\ds, no=29\.2s")

@@ -11,10 +11,8 @@ REPO = Path(__file__).resolve().parent.parent
 PROP_2 = REPO / "data" / "ca-2026-11-03" / "prop-2"
 
 
-# The real Prop 2 narration was read in 23.3 s (yes) and 24.7 s (no): the
-# one failure the committed contest has until the operator decides the fix.
-PROP_2_AIRTIME = ("[airtime] side spoken durations differ by more than 5% "
-                  "of the larger: yes=23.3s, no=24.7s")
+# The real Prop 2 narration was read in 23.3 s (yes) and 24.7 s (no): within
+# the 2s pad cap, so check_airtime pads it rather than failing.
 
 # The committed Prop 2 narration.wav's RMS (whole file, 16-bit samples
 # -1..1): what film/draw_sound.py's TARGET_RMS is calibrated to sit about

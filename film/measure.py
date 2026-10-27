@@ -90,7 +90,8 @@ from sketch import (BROWN, DRAW, GRAPHITE, HONEY, OCHRE, ORANGE, RESTING_ANGLE, 
 
 from ballotreels.contest import load_contest  # noqa: E402
 from ballotreels.illustrations import load_library  # noqa: E402
-from ballotreels.narration import match_phrases  # noqa: E402
+from ballotreels.narration import padded_phrases, padded_spans  # noqa: E402
+from ballotreels.narration import shift_track, side_pad  # noqa: E402
 from ballotreels.storyboard import frame as to_frame  # noqa: E402
 from ballotreels.storyboard import layout as lay_out  # noqa: E402
 
@@ -107,10 +108,16 @@ CONTEST_DIR = Path(os.environ.get(
     'BALLOTREELS_CONTEST', str(REPO_ROOT / 'data' / 'ca-2026-11-03' / 'prop-2')))
 CONTEST = load_contest(CONTEST_DIR)
 VOICE = vb.speech.load(CONTEST_DIR / 'narration.wav')
+# the shorter side (STANDARD.md 2.2) gets silence at its end so both sides
+# spend exactly the same time on screen; everything below follows the
+# padded clock, same as the padded audio built for FILM.sounds further down
+PAD = side_pad(CONTEST)
 BOARD = lay_out(CONTEST, VOICE.seconds, FPS)
-TRACK = VOICE.track_at(0, FPS)
+TRACK = shift_track(VOICE.track_at(0, FPS), PAD)
+PHRASES = padded_phrases(VOICE.phrases, PAD)
+VOICE_SECONDS = VOICE.seconds + (PAD.seconds if PAD else 0)
 # each line's spoken span, (first frame, last frame), by (section label, index)
-SPOKEN = {(s.section, s.index): (to_frame(s.start, FPS), to_frame(s.end, FPS)) for s in match_phrases(CONTEST)}
+SPOKEN = {(s.section, s.index): (to_frame(s.start, FPS), to_frame(s.end, FPS)) for s in padded_spans(CONTEST)}
 
 PAPER_SCRAP = '#fbf7ec'
 TAPE = (0.88, 0.82, 0.62, 0.62)
@@ -1944,7 +1951,7 @@ def caption_chunks(L):
     words = list(TRACK)
     wi = 0
     out = []
-    phrases = VOICE.phrases
+    phrases = PHRASES
     for pi, ph in enumerate(phrases):
         tokens = ph.text.split()
         mine = words[wi:wi + len(tokens)]
@@ -1963,7 +1970,7 @@ def caption_chunks(L):
                                    balance=True)) <= maxl for k in range(len(counts)))
             if not ok:
                 counts = [sum(len(ln.split()) for ln in g) for g in groups]
-        nxt = phrases[pi + 1].start if pi + 1 < len(phrases) else VOICE.seconds + 0.5
+        nxt = phrases[pi + 1].start if pi + 1 < len(phrases) else VOICE_SECONDS + 0.5
         end = min(nxt - 0.05, ph.end + 0.8)
         k0 = 0
         chunks = []
@@ -2247,12 +2254,31 @@ TIMELINE = vb.Timeline(GRID, SEGMENTS, end=BOARD.end)
 # every format, as the narration already does.
 DRAW_SOUND = dsnd.sound_for(PLANS['9x16']['schedule'], FPS, BOARD.end)
 
+
+def voice_sounds():
+    """VOICE as one `vb.Sound`, or, when a side needs padding (PAD), as two:
+    the narration up to the pad point, a silent gap of PAD.seconds, then the
+    rest of the narration — so the audio actually played carries the same
+    pad the picture does (storyboard.layout), to the frame."""
+    if PAD is None:
+        return (VOICE.sound(at=0, fps=FPS),)
+    at = to_frame(PAD.at, FPS)
+    gap = to_frame(PAD.seconds, FPS)
+    total = VOICE.frames(FPS)
+    return (
+        vb.Sound(path=VOICE.path, at=0, start=0.0, frames=at,
+                 fade_in_frames=0, fade_out_frames=3),
+        vb.Sound(path=VOICE.path, at=at + gap, start=PAD.at, frames=total - at,
+                 fade_in_frames=3, fade_out_frames=0),
+    )
+
+
 FILM = vb.Film(
     draw=draw,
     timeline=TIMELINE,
     formats=('9x16', '16x9'),
     background='#f2ebd8',
-    sounds=(VOICE.sound(at=0, fps=FPS), DRAW_SOUND),
+    sounds=(*voice_sounds(), DRAW_SOUND),
 )
 
 if __name__ == '__main__':

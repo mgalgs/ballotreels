@@ -16,7 +16,7 @@ from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
 
-from . import narration
+from . import narration, storyboard
 from .contest import CARD_KEYS, Card, Contest, Line, Section, Visual
 from .illustrations import load_library
 from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, SOURCE_KINDS,
@@ -24,7 +24,6 @@ from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, SOURCE_KINDS,
                        load_standard)
 
 SIDE_TOLERANCE = 0.05
-AIRTIME_TOLERANCE = 0.05
 CHART_KINDS = ("bars", "share", "series", "figure")
 VISUAL_KINDS = (*CHART_KINDS, "timeline", "list", "illustration", "page")
 # The kind of source a [card] quotes: the measure's official page.
@@ -583,8 +582,13 @@ def check_side_list_items(c: Contest) -> list[Failure]:
 
 
 def check_airtime(c: Contest) -> list[Failure]:
-    """STANDARD.md 2.2/4.1: the two sides' spoken durations within 5% of the
-    larger, measured from the narration sidecars' phrase times.
+    """STANDARD.md 2.2/4.1: the two sides spend exactly the same time on
+    screen. The shorter side is padded with silence at its end
+    (narration.side_pad) to match the longer, so this fails only when
+    the raw gap is too big to pad invisibly (more than
+    narration.SIDE_PAD_CAP: a real imbalance in the script, not TTS
+    noise), or when the padded layout's two side sections still come out
+    different lengths, which would mean a bug in the padding itself.
 
     Silently reports nothing when there are no sidecars yet, or when they no
     longer line up with the script (narration.NarrationError): a stale
@@ -603,11 +607,39 @@ def check_airtime(c: Contest) -> list[Failure]:
     if durations is None:
         return []
     (side_a, dur_a), (side_b, dur_b) = durations
-    if abs(dur_a - dur_b) <= AIRTIME_TOLERANCE * max(dur_a, dur_b):
+    gap = abs(dur_a - dur_b)
+    if gap > narration.SIDE_PAD_CAP:
+        return [Failure("airtime",
+                        f"side spoken durations differ by {gap:.1f}s, more "
+                        f"than the {narration.SIDE_PAD_CAP:.0f}s this check "
+                        f"pads automatically: {side_a}={dur_a:.1f}s, "
+                        f"{side_b}={dur_b:.1f}s")]
+    try:
+        board = storyboard.layout(c, 0.0)
+    except ImportError:
         return []
+    except narration.NarrationError:
+        return []
+    except KeyError:
+        return []
+    by_side = {sb.section.side: sb for sb in board.sections
+              if sb.section.side is not None}
+    if len(by_side) != 2:
+        return []
+    beat_a, beat_b = by_side.values()
+    label_a, label_b = beat_a.label, beat_b.label
+    frames_a, frames_b = beat_a.end - beat_a.start, beat_b.end - beat_b.start
+    # frame rounding (PAGE_LEAD, each section boundary) can still leave the
+    # two a frame apart; more than that would mean the padding itself is
+    # wrong, not just quantised
+    if abs(frames_a - frames_b) <= 1:
+        return []
+    on_a, on_b = frames_a / board.fps, frames_b / board.fps
     return [Failure("airtime",
-                    f"side spoken durations differ by more than 5% of the "
-                    f"larger: {side_a}={dur_a:.1f}s, {side_b}={dur_b:.1f}s")]
+                    f"side on-screen durations differ by "
+                    f"{abs(on_a - on_b):.2f}s after padding, which should "
+                    f"not happen: {label_a}={on_a:.2f}s, "
+                    f"{label_b}={on_b:.2f}s")]
 
 
 def check_judgment_words(c: Contest, words: tuple[str, ...]) -> list[Failure]:

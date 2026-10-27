@@ -24,7 +24,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from .contest import Contest, Line, Section, Source, Visual
-from .narration import NarrationError, match_phrases, playback_sections
+from .narration import (NarrationError, padded_spans, playback_sections,
+                        side_pad)
 
 FPS = 30
 END_HOLD = 0.5  # s held on the last line before the sources card
@@ -104,13 +105,23 @@ def cited_sources(contest: Contest) -> tuple[Source, ...]:
 
 def layout(contest: Contest, seconds: float, fps: int = FPS) -> Storyboard:
     """Lay the contest out on the narration's clock; `seconds` is the
-    narration audio's length. Raises NarrationError when the contest has no
-    narration sidecars, or they don't match the script."""
-    spans = match_phrases(contest)
+    narration audio's length (before any side pad: this adds the pad's own
+    length, so the sources card follows the padded audio actually played).
+    Raises NarrationError when the contest has no narration sidecars, or
+    they don't match the script.
+
+    The two side sections are padded to equal on-screen time (STANDARD.md
+    rule 2.2, narration.side_pad): every line after the shorter side's last
+    word is laid out `pad.seconds` later, same as the padded audio itself
+    (film/measure.py builds that audio from the same side_pad)."""
+    spans = padded_spans(contest)
     if spans is None:
         raise NarrationError(
             f"{contest.path}: no narration sidecars; run `python -m "
             f"ballotreels narration` then `videobuilder say` first")
+    pad = side_pad(contest)
+    if pad is not None:
+        seconds += pad.seconds
     by_line = {(s.section, s.index): s for s in spans}
     order = playback_sections(contest)
     narration_end = frame(seconds, fps) + frame(END_HOLD, fps)

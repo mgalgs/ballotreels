@@ -8,7 +8,7 @@ from ballotreels.cli import main
 from ballotreels.contest import load_contest
 from ballotreels.narration import narration_text
 
-from .helpers import PROP_2, PROP_2_AIRTIME, REPO, ContestCopyTestCase
+from .helpers import PROP_2, REPO, ContestCopyTestCase
 
 
 class CliTest(ContestCopyTestCase):
@@ -31,11 +31,11 @@ class CliTest(ContestCopyTestCase):
         self.assertEqual(lines, [f"PASS ca-2026-11-03-prop-2; {self.WORDS}"])
 
     def test_prop_2_with_its_narration(self):
+        # Its sides' spoken durations differ by 1.4s, within the pad cap,
+        # so check_airtime's padded layout covers it: a clean PASS.
         code, lines = self.run_cli(PROP_2)
-        self.assertEqual(code, 1)
-        self.assertEqual(lines, [
-            f"{PROP_2}: {PROP_2_AIRTIME}",
-            f"FAIL ca-2026-11-03-prop-2: 1 failure; {self.WORDS}"])
+        self.assertEqual(code, 0)
+        self.assertEqual(lines, [f"PASS ca-2026-11-03-prop-2; {self.WORDS}"])
 
     def test_failures_one_per_line(self):
         clean = self.dir.parent / "clean"  # an unbroken copy, to pass

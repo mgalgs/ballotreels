@@ -153,3 +153,81 @@ def side_durations(contest: Contest
         b = bounds.setdefault(span.section, [span.start, span.end])
         b[0], b[1] = min(b[0], span.start), max(b[1], span.end)
     return tuple((sid, bounds[sid][1] - bounds[sid][0]) for sid in side_ids)
+
+
+# More than this is a real imbalance in the script (STANDARD.md rule 2.2),
+# not TTS noise; check_airtime fails rather than padding past it.
+SIDE_PAD_CAP = 2.0
+
+
+@dataclass(frozen=True)
+class SidePad:
+    """The silence narration.padded_spans adds to make the two side
+    sections last exactly as long on screen (STANDARD.md rule 2.2): `side`
+    is the shorter one, whose last word falls at `at` seconds into the
+    narration; `seconds` of silence goes there, pushing everything after
+    it later by that much."""
+    side: str
+    at: float
+    seconds: float
+
+
+def side_pad(contest: Contest) -> SidePad | None:
+    """The pad that equalises the two side sections' spoken duration, or
+    None when there are no sidecars, the script isn't two-sided, or the
+    two sides already match to floating-point noise. Does not enforce
+    SIDE_PAD_CAP: check_airtime does, since this is used by the renderer
+    too, which must still lay out *something* for an over-cap script."""
+    durations = side_durations(contest)
+    if durations is None:
+        return None
+    (side_a, dur_a), (side_b, dur_b) = durations
+    if abs(dur_a - dur_b) < 1e-9:
+        return None
+    short, pad = (side_a, dur_b - dur_a) if dur_a < dur_b else (side_b, dur_a - dur_b)
+    spans = match_phrases(contest)
+    at = max(s.end for s in spans if s.section == short)
+    return SidePad(short, at, pad)
+
+
+def _shift(t: float, pad: SidePad | None) -> float:
+    """`t`, moved later by `pad`'s silence if `t` falls after the pad."""
+    return t if pad is None or t <= pad.at else t + pad.seconds
+
+
+def padded_spans(contest: Contest) -> tuple[NarrationSpan, ...] | None:
+    """match_phrases's spans with the side pad (side_pad) folded in: every
+    span after the pad point moved later by its length, so the picture
+    (and anything else on the narration's clock) follows the padded audio
+    actually played, not the original narration file's."""
+    spans = match_phrases(contest)
+    if spans is None:
+        return None
+    pad = side_pad(contest)
+    if pad is None:
+        return spans
+    return tuple(NarrationSpan(s.section, s.index, _shift(s.start, pad),
+                               _shift(s.end, pad))
+                for s in spans)
+
+
+def shift_track(track, pad: SidePad | None):
+    """A `videobuilder.captions.Track` with every word after the side
+    pad's point moved later by its length, the same way padded_spans
+    shifts script-line spans. `track` back unchanged when `pad` is None."""
+    if pad is None:
+        return track
+    from dataclasses import replace
+    return type(track)(replace(w, start=_shift(w.start, pad),
+                               end=_shift(w.end, pad))
+                       for w in track)
+
+
+def padded_phrases(phrases, pad: SidePad | None):
+    """`videobuilder.speech.Narration.phrases` shifted by the side pad, the
+    same way padded_spans shifts script-line spans."""
+    if pad is None:
+        return phrases
+    from dataclasses import replace
+    return tuple(replace(p, start=_shift(p.start, pad), end=_shift(p.end, pad))
+                for p in phrases)

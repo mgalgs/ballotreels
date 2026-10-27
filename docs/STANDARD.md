@@ -151,7 +151,7 @@ human reading the video.
 | Same sections per candidate / per side, word counts within 5% | 2.1, 2.2, 2.4 |
 | Candidate order matches the rule in 2.3 | 2.3 |
 | No word from the judgment-word list in narrator text | 3.1 |
-| Each candidate's or side's on-screen time within 5% | 2.2, 4.1 |
+| Each measure side's on-screen time exactly equal, the shorter one padded with trailing silence (padding over 2s fails instead, as too big to be TTS noise) | 2.2, 4.1 |
 | Every chart cites a source id that exists, of an allowed kind | 7.1 |
 | No chart in a side section unless both sides have one | 7.3 |
 
