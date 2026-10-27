@@ -202,7 +202,10 @@ name = "save-more"       # no source: the line cites
   counts. The exception is a side that submitted no argument (rule 2.5):
   its section sets `filed = false` and its list has the one item "No
   argument against was submitted" (or "for"), and the counts are not
-  compared, so the other side's points show as submitted. In the two side sections specifically, the list does not get
+  compared, so the other side's points show as submitted. Where the state publishes no
+  official argument on either side (DC, Florida), both sections set
+  `filed = false`, each listing the one item "No official argument for
+  was published" (or "against"), and each side's line says so once. In the two side sections specifically, the list does not get
   its own page: both sides share one slide, "What each side says" (see
   "the measure template" below for how the two sides share it).
 - `illustration`: a picture of the line's topic when there is no data
