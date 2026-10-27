@@ -1,6 +1,6 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
 # is about; what Idaho law allows today; what the initiative would create
-# before and after fetal viability, and what else it covers; what the
+# before and after fetal viability; what the
 # Division of Financial Management says it costs, with the statement's own
 # comparison to the Medicaid budget; one point per side; what a vote does.
 #
@@ -47,7 +47,7 @@ id = "what"
 heading = "Proposition 1"
 
 [[section.line]]
-text = "Proposition 1 is a ballot initiative about abortion and other reproductive care."
+text = "Proposition 1 is an initiative about abortion and reproductive care."
 sources = ["pamphlet", "title-notice"]
 
 [section.line.visual]
@@ -60,7 +60,7 @@ id = "today"
 heading = "Today"
 
 [[section.line]]
-text = "Today, Idaho law prohibits abortion except to prevent the pregnant woman's death, and in the first trimester for reported rape or incest."
+text = "Today, Idaho prohibits abortion except to prevent the pregnant woman's death, and in the first trimester for reported rape or incest."
 sources = ["pamphlet"]
 
 [section.line.visual]
@@ -73,7 +73,7 @@ id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "Proposition 1 would create a right to abortion until fetal viability, when a fetus has a significant likelihood of survival without extraordinary medical measures."
+text = "It would create a right to abortion before fetal viability: a fetus's ability to survive without extraordinary medical measures."
 sources = ["pamphlet", "text"]
 
 [section.line.visual]
@@ -82,7 +82,7 @@ source = "pamphlet"
 highlight = ["defined as a fetus’ ability to survive without extraordinary medical measures"]
 
 [[section.line]]
-text = "After viability, the right would apply only in medical emergencies threatening the woman's life or health."
+text = "After viability, only in medical emergencies threatening the woman's life or health."
 sources = ["pamphlet", "text"]
 
 [section.line.visual]
@@ -90,21 +90,12 @@ kind = "page"
 source = "pamphlet"
 highlight = ["no general right to abortion except in cases of", "threaten their life or health"]
 
-[[section.line]]
-text = "The measure also covers contraception and fertility treatment, and shields health care providers from penalties."
-sources = ["pamphlet", "text"]
-
-[section.line.visual]
-kind = "page"
-source = "pamphlet"
-highlight = ["contraception, fertility treatment, and prenatal and postpartum care", "prevent the state from penalizing patients, healthcare providers"]
-
 [[section]]
 id = "fiscal"
 heading = "What the fiscal statement says"
 
 [[section.line]]
-text = "The Division of Financial Management estimates state spending would rise $3,100 to $7,800 a year, less than 0.001 percent of the state's share of Idaho's Medicaid budget."
+text = "The state estimates added costs of $3,100 to $7,800 a year, less than 0.001 percent of its Medicaid share."
 sources = ["fiscal", "fiscal-impact", "pamphlet"]
 
 [section.line.visual]
@@ -145,7 +136,7 @@ id = "vote"
 heading = "What your vote means"
 
 [[section.line]]
-text = "A yes vote means a right to abortion before viability, and after it in medical emergencies."
+text = "A yes vote creates a right to abortion before viability, and after it in medical emergencies."
 sources = ["pamphlet"]
 
 [section.line.visual]
@@ -154,7 +145,7 @@ source = "pamphlet"
 highlight = ["creating a right to abortion before fetal viability"]
 
 [[section.line]]
-text = "A no vote means no change to Idaho's current abortion law."
+text = "A no vote keeps Idaho's current abortion law."
 sources = ["pamphlet"]
 
 [section.line.visual]
