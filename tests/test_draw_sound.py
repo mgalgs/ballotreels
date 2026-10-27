@@ -88,6 +88,21 @@ class StrokeTrackTest(unittest.TestCase):
         self.assertLess(float(np.abs(a).max()), 2.0)
 
 
+class RecordingTest(unittest.TestCase):
+    def test_no_slice_lands_on_the_tool_lifted_off(self):
+        # the marker recording lifts off the paper between sweeps; those
+        # gaps are cut out on load, so no stroke-length slice, wherever
+        # its offset, is mostly near-silence
+        for tool, rec in ds._RECORDINGS.items():
+            win = int(ds.RATE * 0.05)
+            n = len(rec) // win
+            rms = np.sqrt((rec[:n * win].astype("float64").reshape(n, win) ** 2).mean(1))
+            quiet = rms < np.median(rms) * 10 ** (-25 / 20)
+            for k in range(n - 12 + 1):  # every 0.6 s slice, on 50 ms steps
+                with self.subTest(tool=tool, at=k * 0.05):
+                    self.assertLessEqual(int(quiet[k:k + 12].sum()), 2)
+
+
 class BuildTrackTest(unittest.TestCase):
     def test_deterministic(self):
         items = [Stroke(0, 15, "pencil", (100, 100), (500, 100)),
@@ -113,20 +128,24 @@ class BuildTrackTest(unittest.TestCase):
 
     def test_level_is_well_under_the_narration(self):
         # the strokes themselves (ignoring the silence between them) sit
-        # close to TARGET_RMS, calibrated against the committed Prop 2
-        # narration's RMS (helpers.NARRATION_RMS): about 12-15dB under it
+        # about 12-15dB under the RMS of the narration they are mixed with,
+        # whatever its level: a typical recent one (helpers.NARRATION_RMS),
+        # the committed Prop 2 one (louder, from an earlier TTS pass), and
+        # with none given, TARGET_RMS under a typical one
         import math
 
-        from .helpers import NARRATION_RMS
+        from .helpers import NARRATION_RMS, PROP_2
         items = [Stroke(0, 20, "pencil", (100, 100), (600, 100)),
                  Stroke(30, 60, "highlighter", (50, 50), (50, 400))]
-        out = ds.build_track(items, 30, 90)
-        active = out[out != 0]
-        rms = float(np.sqrt(np.mean(active.astype("float64") ** 2)))
-        self.assertAlmostEqual(rms, ds.TARGET_RMS, delta=ds.TARGET_RMS * 0.05)
-        down_db = 20 * math.log10(NARRATION_RMS / rms)
-        self.assertGreaterEqual(down_db, 12.0)
-        self.assertLessEqual(down_db, 15.0)
+        prop_2 = ds.narration_rms(PROP_2 / "narration.wav")
+        for voice_rms in (None, NARRATION_RMS, prop_2):
+            with self.subTest(voice_rms=voice_rms):
+                out = ds.build_track(items, 30, 90, voice_rms)
+                active = out[out != 0]
+                rms = float(np.sqrt(np.mean(active.astype("float64") ** 2)))
+                down_db = 20 * math.log10((voice_rms or NARRATION_RMS) / rms)
+                self.assertGreaterEqual(down_db, 12.0)
+                self.assertLessEqual(down_db, 15.0)
 
     def test_write_wav_round_trips_the_sample_count(self):
         items = [Stroke(0, 15, "pencil", (100, 100), (500, 100))]

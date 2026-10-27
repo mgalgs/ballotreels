@@ -54,7 +54,8 @@ stale; they are regenerated on next request.
    and the closing sources card. A soft drawing sound, cut from two short
    recordings of a pencil and a felt-tip marker (film/draw_sound.py,
    film/sounds/) rather than synthesized, follows the pencil or
-   highlighter while it is actually drawing, under the narration. The
+   highlighter while it is actually drawing, levelled about 13.5 dB under
+   the narration's own RMS. The
    on-screen-time check runs on the rendered timeline.
 7. **Encode.** The worker keeps the full-quality render (the "master")
    to itself and makes a smaller web copy with ffmpeg (H.264/yuv420p/

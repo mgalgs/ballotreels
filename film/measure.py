@@ -2371,7 +2371,8 @@ TIMELINE = vb.Timeline(GRID, SEGMENTS, end=BOARD.end)
 # differs by at most a few frames (their layouts scale the same text, so
 # time differently by width), and the film has one shared audio track for
 # every format, as the narration already does.
-DRAW_SOUND = dsnd.sound_for(PLANS['9x16']['schedule'], FPS, BOARD.end)
+DRAW_SOUND = dsnd.sound_for(PLANS['9x16']['schedule'], FPS, BOARD.end,
+                            voice_rms=dsnd.narration_rms(VOICE.path))
 
 
 def voice_sounds():

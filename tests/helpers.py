@@ -15,8 +15,8 @@ PROP_2 = REPO / "data" / "ca-2026-11-03" / "prop-2"
 # the 2s pad cap, so check_airtime pads it rather than failing.
 
 # A typical narration's RMS (16-bit samples -1..1): what
-# film/draw_sound.py's TARGET_RMS is calibrated to sit about 13.5dB
-# under. Measured from two recent narrations (recipes e60-story and
+# film/draw_sound.py's TARGET_RMS (its level when no narration is given)
+# sits about 13.5dB under. Measured from two recent narrations (recipes e60-story and
 # e60b-breathe, 0.0663 and 0.0653); the committed Prop 2 narration.wav
 # is an outlier at 0.1252, from an earlier TTS pass with louder
 # normalisation, so it is not used here.

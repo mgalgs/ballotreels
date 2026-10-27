@@ -22,9 +22,10 @@ follows the stroke's speed, and gently.
 
 `build_track` mixes every stroke in a film's schedule into one buffer,
 levelled so the strokes themselves (not the silence between them) sit
-about 13.5dB under typical narration (RMS 0.066, measured from the
-e60-story and e60b-breathe recipes; see TARGET_RMS); `write_wav` and `sound_for` turn
-that into a cached WAV file and a `vb.Sound` placed on the whole film.
+UNDER_VOICE_DB (13.5dB) under the RMS of the narration they are mixed
+with (`narration_rms`), or, given no narration, under a typical one
+(TARGET_RMS); `write_wav` and `sound_for` turn that into a cached WAV
+file and a `vb.Sound` placed on the whole film.
 """
 from __future__ import annotations
 
@@ -42,7 +43,11 @@ CONTROL_HZ = 200           # how densely a stroke's motion is sampled for speed
 REF_SPEED = 550.0          # px/s a stroke at a "normal" pace moves; louder a little above it
 FADE_S = 0.015             # a slice's own fade in/out, so a cut into the recording never clicks
 XFADE_S = 0.08             # crossfade between successive slices on a stroke longer than the bed
-TARGET_RMS = 0.0139        # ~13.5dB under a typical narration's RMS (~0.066)
+UNDER_VOICE_DB = 13.5      # how far the strokes sit under the narration's RMS
+TARGET_RMS = 0.0139        # the strokes' RMS with no narration given: ~13.5dB under a typical one (~0.066)
+GAP_WINDOW_S = 0.01        # the window a recording's level is measured over for its gaps
+GAP_DB = -20.0             # a window this far under the recording's median is the tool lifted off
+GAP_MIN_S = 0.05           # ...and a run of such windows this long is a gap, cut out on load
 
 # One recording per tool (film/sounds/, see film/sounds/README.md for each
 # file's source and trim). The operator is auditioning other excerpts; try
@@ -65,7 +70,46 @@ def _load_recording(tool):
             raise ValueError(f'{path}: expected mono {RATE} Hz, got '
                              f'{w.getnchannels()}ch {w.getframerate()} Hz')
         pcm = np.frombuffer(w.readframes(w.getnframes()), dtype='<i2')
-    return (pcm.astype(np.float32) / 32768.0)
+    return _drop_gaps(pcm.astype(np.float32) / 32768.0)
+
+
+def _drop_gaps(rec):
+    """`rec` with every stretch where the tool is off the paper cut out
+    (at least GAP_MIN_S of windows GAP_DB or more under the recording's
+    median level, like the marker lifting between sweeps), the pieces
+    either side of each cut crossfaded over FADE_S, so any slice a stroke
+    takes from it is the tool actually moving. Short dips (a pencil
+    turning) stay: they are part of the texture."""
+    w = max(1, int(round(RATE * GAP_WINDOW_S)))
+    nwin = len(rec) // w
+    if nwin == 0:
+        return rec
+    rms = np.sqrt((rec[:nwin * w].astype(np.float64).reshape(nwin, w) ** 2).mean(1))
+    floor = np.median(rms) * 10 ** (GAP_DB / 20)
+    quiet = np.append(rms < floor, False)
+    min_run = max(1, int(round(GAP_MIN_S / GAP_WINDOW_S)))
+    keep, run0 = [], None
+    pos = 0
+    for i, q in enumerate(quiet):
+        if q and run0 is None:
+            run0 = i
+        elif not q and run0 is not None:
+            # a run at the very start or end is trimmed whatever its length
+            if i - run0 >= min_run or run0 == 0 or i == nwin:
+                if run0 * w > pos:
+                    keep.append(rec[pos:run0 * w])
+                pos = i * w if i < nwin else len(rec)
+            run0 = None
+    if pos < len(rec):
+        keep.append(rec[pos:])
+    fade = max(1, int(round(RATE * FADE_S)))
+    out = keep[0].copy()
+    ramp = np.linspace(0, 1, fade, dtype=np.float32)
+    for piece in keep[1:]:
+        f = min(fade, len(out), len(piece))
+        out[-f:] = out[-f:] * (1 - ramp[:f]) + piece[:f] * ramp[:f]
+        out = np.concatenate([out, piece[f:]])
+    return out.astype(np.float32)
 
 
 _RECORDINGS = {tool: _load_recording(tool) for tool in TOOL_FILES}
@@ -144,12 +188,30 @@ def stroke_track(head, f0, f1, fps, tool, seed):
     return out.astype(np.float32)
 
 
-def build_track(items, fps, total_frames):
+def narration_rms(path):
+    """The RMS (samples -1..1) of the 16-bit narration WAV at `path`, the
+    level build_track sets the strokes under."""
+    with wave.open(str(path), 'rb') as w:
+        pcm = np.frombuffer(w.readframes(w.getnframes()), dtype='<i2')
+    if not len(pcm):
+        return 0.0
+    return float(np.sqrt(np.mean((pcm.astype(np.float64) / 32768.0) ** 2)))
+
+
+def target_rms(voice_rms=None):
+    """The strokes' RMS: UNDER_VOICE_DB under `voice_rms`, or TARGET_RMS
+    when there is no narration level to follow."""
+    if not voice_rms:
+        return TARGET_RMS
+    return voice_rms * 10 ** (-UNDER_VOICE_DB / 20)
+
+
+def build_track(items, fps, total_frames, voice_rms=None):
     """The whole film's drawing-sound track: every scheduled item's stroke
     (an object with `.f0`, `.f1`, `.tool` and `.head(n)`, in
     `measure.pencil_at`'s sense) placed at its frame span and summed, then
-    levelled so the strokes themselves sit at TARGET_RMS. Float32 samples
-    at `RATE`."""
+    levelled so the strokes themselves sit at `target_rms(voice_rms)`:
+    UNDER_VOICE_DB under the narration's RMS. Float32 samples at `RATE`."""
     n_total = max(1, int(round(total_frames / fps * RATE)))
     buf = np.zeros(n_total, np.float32)
     for i, it in enumerate(items):
@@ -163,7 +225,7 @@ def build_track(items, fps, total_frames):
     active = buf[buf != 0]
     rms = float(np.sqrt(np.mean(active.astype(np.float64) ** 2))) if len(active) else 0.0
     if rms > 0:
-        buf *= TARGET_RMS / rms
+        buf *= target_rms(voice_rms) / rms
     return buf
 
 
@@ -183,15 +245,15 @@ def _cache_dir():
     return Path(tempfile.gettempdir()) / 'ballotreels-draw-sound'
 
 
-def sound_for(items, fps, total_frames, cache_dir=None):
-    """A `vb.Sound` of `build_track(items, fps, total_frames)`, written to
+def sound_for(items, fps, total_frames, cache_dir=None, voice_rms=None):
+    """A `vb.Sound` of `build_track(items, fps, total_frames, voice_rms)`, written to
     a WAV under `cache_dir` (default: a system temp directory, never the
     contest or repo) named by the hash of its own samples, so the same
     script always yields the same file and a changed stroke (a new shape
     at the same timing, say) never reuses an earlier script's sound."""
     import videobuilder as vb
 
-    samples = build_track(items, fps, total_frames)
+    samples = build_track(items, fps, total_frames, voice_rms)
     key = hashlib.sha256(samples.tobytes()).hexdigest()[:20]
     path = (Path(cache_dir) if cache_dir else _cache_dir()) / f'{key}.wav'
     if not path.is_file():
