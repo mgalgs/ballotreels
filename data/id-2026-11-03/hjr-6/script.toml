@@ -1,5 +1,5 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
-# is about; what Idaho's Constitution says today; what the resolution
+# is about; what Idaho's Constitution says today; what the amendment
 # would make English the language of, and its federal-law exception; what
 # its fiscal note says it costs; one point per side; what a vote does.
 #
@@ -14,7 +14,10 @@
 # That state law already names English the official language is the
 # against side's point, so it is said only in that side's section; the
 # neutral sections speak only of the Constitution, as the pamphlet's
-# "What your vote will do" does.
+# "What your vote will do" does. For length the fiscal note's cost and
+# its "occurs anyway" proviso share one line, so neither is heard
+# without the other. The designation is said once, in the opening
+# line; after that, "the amendment".
 #
 # Both sides filed a statement. Each side's line and list take its
 # central points as it states them: for, learning English, unity and
@@ -67,7 +70,7 @@ id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "The resolution would make English the official state language."
+text = "The amendment would make English the official state language."
 sources = ["pamphlet", "text"]
 
 [section.line.visual]
@@ -98,20 +101,12 @@ id = "fiscal"
 heading = "What the fiscal note says"
 
 [[section.line]]
-text = "The resolution's fiscal note estimates up to $300,000 to publish proposed amendments in the voter's pamphlet."
+text = "The fiscal note estimates up to $300,000 for the voter's pamphlet, a cost that occurs anyway if other measures qualify."
 sources = ["fiscal-note"]
 
 [section.line.visual]
 kind = "illustration"
 name = "pamphlet-mailing"
-
-[[section.line]]
-text = "The note says the cost occurs anyway if other measures are on the ballot."
-sources = ["fiscal-note"]
-
-[section.line.visual]
-kind = "illustration"
-name = "analyst-review"
 
 [[section]]
 id = "yes"
@@ -146,7 +141,7 @@ id = "vote"
 heading = "What your vote means"
 
 [[section.line]]
-text = "A yes vote means English would be Idaho's official state language."
+text = "A yes vote makes English Idaho's official state language."
 sources = ["pamphlet"]
 
 [section.line.visual]
@@ -155,7 +150,7 @@ source = "pamphlet"
 highlight = ["official state language of Idaho"]
 
 [[section.line]]
-text = "A no vote means the Constitution would still name no official state language."
+text = "A no vote leaves the Constitution naming no official state language."
 sources = ["pamphlet"]
 
 [section.line.visual]

@@ -10,13 +10,16 @@
 # Management's Summary of Fiscal Impact from page 7 under its heading.
 #
 # Wording: the neutral sections use the official statements' own terms
-# (abortion, fetal viability and its definition as the YES box gives it,
-# medical emergency, pregnant woman, health care providers) and neither
+# (abortion, fetal viability, medical emergency, pregnant woman, health care providers) and neither
 # side's vocabulary. Words only one side uses ("ban", "extreme",
 # "late-term", "unborn", "preborn", "on demand") appear nowhere in the
 # narration. Today's law is described from the NO box, today's exceptions
 # as it lists them; whether those exceptions are enough is each side's
-# argument, left to its section. The fiscal line quotes the statement's
+# argument, left to its section. The narration does not define
+# viability, since how to define it is part of the CON argument; the
+# change line's page visual highlights the YES box's own definition.
+# The designation is said once, in the opening line; after that, "the
+# measure", in both sides' lines alike. The fiscal line quotes the statement's
 # own scale ("less than 0.001%"), so it adds no comparison of its own.
 #
 # Both sides filed an argument and a rebuttal. Each side's line and list
@@ -47,7 +50,7 @@ id = "what"
 heading = "Proposition 1"
 
 [[section.line]]
-text = "Proposition 1 is an initiative about abortion and reproductive care."
+text = "Proposition 1 is about abortion and reproductive care."
 sources = ["pamphlet", "title-notice"]
 
 [section.line.visual]
@@ -73,7 +76,7 @@ id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "It would create a right to abortion before fetal viability: a fetus's ability to survive without extraordinary medical measures."
+text = "The measure would create a right to abortion before fetal viability."
 sources = ["pamphlet", "text"]
 
 [section.line.visual]
@@ -95,7 +98,7 @@ id = "fiscal"
 heading = "What the fiscal statement says"
 
 [[section.line]]
-text = "The state estimates added costs of $3,100 to $7,800 a year, less than 0.001 percent of its Medicaid share."
+text = "The Division of Financial Management estimates spending would rise $3,100 to $7,800 a year, less than 0.001 percent of the state's Medicaid share."
 sources = ["fiscal", "fiscal-impact", "pamphlet"]
 
 [section.line.visual]
@@ -109,7 +112,7 @@ heading = "Why some vote yes"
 side = "yes"
 
 [[section.line]]
-text = "Supporters say Proposition 1 lets patients and their doctors, not the government, make urgent decisions in medical emergencies."
+text = "Supporters say the measure lets patients and their doctors, not the government, make urgent decisions in medical emergencies."
 sources = ["arguments"]
 
 [section.line.visual]
@@ -123,7 +126,7 @@ heading = "Why some vote no"
 side = "no"
 
 [[section.line]]
-text = "Opponents say Proposition 1 would allow abortion until seven or eight months of pregnancy, and override parental consent."
+text = "Opponents say the measure would allow abortion until seven or eight months of pregnancy, and override parental consent."
 sources = ["arguments"]
 
 [section.line.visual]
@@ -145,7 +148,7 @@ source = "pamphlet"
 highlight = ["creating a right to abortion before fetal viability"]
 
 [[section.line]]
-text = "A no vote keeps Idaho's current abortion law."
+text = "A no vote keeps Idaho's current law."
 sources = ["pamphlet"]
 
 [section.line.visual]

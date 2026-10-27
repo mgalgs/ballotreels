@@ -1,8 +1,9 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
 # is about; how drug laws can be changed today; what the resolution would
-# change; what its fiscal note says it costs, beside the money the note
-# says the Secretary of State gets for ballot measures; one point per
-# side; what a vote does.
+# change; what its fiscal note says it costs (only putting it on the
+# ballot; the note's dollar figures are left out for length); one point
+# per side; what a vote does. The designation is said once, in the
+# opening line; after that, "the amendment".
 #
 # The card quotes page 4 of the Idaho Voter Pamphlet: the ballot
 # question, the Legislative Council's statement of meaning and the "What
@@ -62,7 +63,7 @@ id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "The resolution would give the Legislature exclusive authority to legalize marijuana, narcotics or other psychoactive substances."
+text = "The amendment would give the Legislature exclusive authority to legalize marijuana, narcotics or other psychoactive substances."
 sources = ["pamphlet", "text"]
 
 [section.line.visual]
@@ -75,24 +76,12 @@ id = "fiscal"
 heading = "What the fiscal note says"
 
 [[section.line]]
-text = "The resolution's fiscal note says its only cost is putting it on the ballot."
+text = "The amendment's fiscal note says its only cost is putting it on the ballot."
 sources = ["fiscal-note"]
 
 [section.line.visual]
 kind = "illustration"
 name = "analyst-review"
-
-[[section.line]]
-text = "The note puts a ballot measure's cost at up to $200,000, beside the usual $300,000 two-year budget for ballot measures."
-sources = ["fiscal-note"]
-
-[section.line.visual]
-kind = "bars"
-title = "Ballot measure costs in the fiscal note, dollars"
-source = "fiscal-note"
-unit = "thousand"
-labels = ["One ballot measure, at most", "Usual two-year budget for ballot measures"]
-values = [200, 300]
 
 [[section]]
 id = "yes"
