@@ -1,0 +1,143 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about (how voters prove who they are); how most Californians vote;
+# how voters identify themselves today; what would change at the polls
+# and by mail; the analyst's cost estimate; one point per side; what a
+# vote does. The free voter ID card, citizenship checks and audits are
+# left to the sides: supporters argue from them (rule 6.3).
+
+contest = "ca-2026-11-03-prop-39"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "quick-reference"
+number = "39"
+title = "PROHIBITS CITIZENS FROM VOTING UNLESS THEY PRESENT GOVERNMENT-ISSUED IDENTIFICATION. INITIATIVE CONSTITUTIONAL AMENDMENT."
+origin = "Put on the Ballot by Petition Signatures"
+summary = "Invalidates mail ballots that do not have last four digits of designated government-issued identification number written on envelope. Prohibits in-person voting without presenting government-issued identification. Fiscal Impact: Costs of between tens of millions of dollars and low hundreds of millions of dollars each year to implement new voting requirements."
+yes = "A YES vote on this measure means: Voters would be required to present additional identifying information to elections officials each time they vote."
+no = "A NO vote on this measure means: A voter’s identity would continue to be established with the voter’s signature."
+
+[[section]]
+id = "what"
+heading = "Proposition 39"
+
+[[section.line]]
+text = "Proposition 39 is about how voters prove who they are."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["government-issued identification"]
+
+[[section]]
+id = "background"
+heading = "How Californians vote"
+
+[[section.line]]
+text = "In 2024, about 13 million of the 16 million Californians who voted did so by mail."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Californians who voted in November 2024"
+source = "lao-analysis"
+unit = "million"
+labels = ["By mail", "In person"]
+values = [13, 3]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, voters identify themselves by signing: a list at the polls, or the mail ballot envelope."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "mail-ballot-envelope"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Proposition 39 would require voters at the polls to show government-issued identification."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "id-card"
+
+[[section.line]]
+text = "Mail voters would write the last four digits of their selected ID number on the envelope."
+sources = ["lao-analysis", "title-summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "id-number-envelope"
+
+[[section]]
+id = "fiscal"
+heading = "What the state's analyst says"
+
+[[section.line]]
+text = "The Legislative Analyst's Office puts yearly state and local costs at tens of millions to low hundreds of millions of dollars."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Proposition 39 would increase trust in elections, while keeping voting accessible."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Increases trust and participation in our elections", "Keeps voting accessible, with a free voter ID"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Proposition 39 adds costly hurdles that could block eligible California voters."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Adds hurdles that could block eligible voters", "Puts personal information at risk of identity theft"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means voters would present additional identifying information each time they vote."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["present additional identifying information"]
+
+[[section.line]]
+text = "A no vote means a voter's identity would continue to be established with their signature."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["would continue to be established with the voter’s signature"]
