@@ -4,6 +4,7 @@ from the same stroke motion, and stay under their target level."""
 import sys
 import unittest
 import wave
+from pathlib import Path
 
 import numpy as np
 
@@ -94,8 +95,10 @@ class BuildTrackTest(unittest.TestCase):
     def test_write_wav_round_trips_the_sample_count(self):
         items = [Stroke(0, 15, "pencil", (100, 100), (500, 100))]
         track = ds.build_track(items, 30, 30)
-        path = REPO / ".test-scratch-draw-sound.wav"
-        self.addCleanup(lambda: path.unlink(missing_ok=True))
+        import tempfile
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        path = Path(tmp.name) / "draw-sound.wav"
         ds.write_wav(path, track)
         with wave.open(str(path), "rb") as w:
             self.assertEqual(w.getnframes(), len(track))
