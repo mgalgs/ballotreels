@@ -1,8 +1,8 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
 # is about; who safety net clinics serve; how much of their revenue goes
 # to health care today; the minimum Proposition 44 would set, and the
-# penalty behind it; the analyst's cost estimate; one point per side;
-# what a vote does.
+# penalty behind it; the analyst's cost estimate, and the other costs
+# it calls uncertain; one point per side; what a vote does.
 
 contest = "ca-2026-11-03-prop-44"
 template = "measure"
@@ -23,7 +23,7 @@ id = "what"
 heading = "Proposition 44"
 
 [[section.line]]
-text = "Proposition 44 is about how community health clinics spend their money."
+text = "Proposition 44 is about how community health clinics spend money."
 sources = ["quick-reference"]
 
 [section.line.visual]
@@ -48,7 +48,7 @@ id = "today"
 heading = "Today"
 
 [[section.line]]
-text = "On average, private nonprofit clinics report spending about 80 percent of revenue on health care."
+text = "On average, nonprofit clinics report spending about 80 percent of revenue on health care."
 sources = ["lao-analysis"]
 
 [section.line.visual]
@@ -76,7 +76,7 @@ labels = ["Today, on average", "Proposition 44, at least"]
 values = [80, 90]
 
 [[section.line]]
-text = "Clinics that fall short would pay a penalty, refunded if they comply within five years."
+text = "Clinics falling short would pay a penalty, refunded if they comply within five years."
 sources = ["lao-analysis"]
 
 [section.line.visual]
@@ -88,7 +88,15 @@ id = "fiscal"
 heading = "What the state's analyst says"
 
 [[section.line]]
-text = "The Legislative Analyst's Office says state enforcement would cost in the low tens of millions of dollars a year, paid by clinic fees."
+text = "The Legislative Analyst's Office says enforcement would cost the state low tens of millions of dollars yearly, paid by clinic fees."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section.line]]
+text = "The Legislative Analyst's Office says other state and local costs are uncertain."
 sources = ["lao-analysis"]
 
 [section.line.visual]
@@ -101,7 +109,7 @@ heading = "Why some vote yes"
 side = "yes"
 
 [[section.line]]
-text = "Supporters say Proposition 44 directs clinic money to patient care instead of executive pay and overhead."
+text = "Supporters say Proposition 44 directs clinic money to patient care, not executive pay and overhead."
 sources = ["arguments"]
 
 [section.line.visual]
@@ -115,7 +123,7 @@ heading = "Why some vote no"
 side = "no"
 
 [[section.line]]
-text = "Opponents say Proposition 44 would force clinics to cut services or close, ending care for millions."
+text = "Opponents say Proposition 44 forces clinics to cut services or close, ending care for millions."
 sources = ["arguments"]
 
 [section.line.visual]
