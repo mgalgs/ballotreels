@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ballotreels queue monitor</title>
+<style>
+body { font-family: sans-serif; margin: 1.5rem; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #ccc; padding: 0.3rem 0.5rem; text-align: left;
+        font-size: 0.85rem; vertical-align: top; }
+.error { color: #900; white-space: pre-wrap; max-width: 24rem; }
+button { margin-right: 0.25rem; }
+.stages { white-space: pre; font-family: monospace; }
+</style>
+</head>
+<body>
+<h1>Queue monitor</h1>
+<div id="summary"></div>
+<div id="message" class="error"></div>
+<table id="jobs">
+  <thead>
+    <tr>
+      <th>id</th><th>key</th><th>state</th><th>stage</th><th>worker</th>
+      <th>last heartbeat</th><th>stages</th><th>error</th><th>actions</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+<script src="/admin/static/admin.js"></script>
+</body>
+</html>

@@ -32,6 +32,18 @@ REPORT_URL = "https://github.com/mgalgs/ballotreels/issues"
 
 UPLOAD_NAMES = ("video.mp4", "poster.jpg", "script.toml", "sources.json")
 
+STATIC_DIR = Path(__file__).resolve().parent / "static"
+
+CONTENT_TYPE_BY_EXT = {
+    ".html": "text/html; charset=utf-8",
+    ".js": "text/javascript; charset=utf-8",
+    ".css": "text/css; charset=utf-8",
+    ".json": "application/json",
+    ".svg": "image/svg+xml",
+}
+
+ADMIN_COOKIE = "ballotreels_admin"
+
 
 @dataclass
 class Deps:
@@ -161,6 +173,37 @@ class _JsonHandler(BaseHTTPRequestHandler):
         if not isinstance(doc, dict):
             raise BadRequest(400, "body must be a JSON object")
         return doc
+
+    def _read_form_or_json(self) -> dict[str, str]:
+        content_type = self.headers.get("Content-Type", "")
+        if "application/json" in content_type:
+            return self._read_json()
+        raw = self._read_body()
+        parsed = urllib.parse.parse_qs(raw.decode("utf-8", errors="replace"))
+        return {k: v[0] for k, v in parsed.items()}
+
+    def _serve_static(self, rel_path: str) -> bool:
+        """Serves `<STATIC_DIR>/rel_path` if it resolves inside
+        STATIC_DIR; returns False (the caller 404s) otherwise, so a
+        `..` path traversal cannot escape the static directory."""
+        rel_path = rel_path.lstrip("/") or "index.html"
+        try:
+            candidate = (STATIC_DIR / rel_path).resolve()
+            candidate.relative_to(STATIC_DIR.resolve())
+        except ValueError:
+            return False
+        if not candidate.is_file():
+            return False
+        data = candidate.read_bytes()
+        content_type = CONTENT_TYPE_BY_EXT.get(
+            candidate.suffix, "application/octet-stream")
+        self.send_response(200)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Content-Length", str(len(data)))
+        self.end_headers()
+        if self.command != "HEAD":
+            self.wfile.write(data)
+        return True
 
 
 class _DepsServer(ThreadingHTTPServer):
@@ -482,21 +525,37 @@ class PrivateHandler(_JsonHandler):
         cookie = self.headers.get("Cookie", "")
         for part in cookie.split(";"):
             part = part.strip()
-            if part.startswith("ballotreels_admin="):
-                cookie_token = part[len("ballotreels_admin="):]
-                if hmac.compare_digest(cookie_token.encode(), token.encode()):
+            if part.startswith(f"{ADMIN_COOKIE}="):
+                if hmac.compare_digest(part[len(ADMIN_COOKIE) + 1:].encode(),
+                                       token.encode()):
                     return True
         return False
 
     def _dispatch(self, method: str) -> None:
         try:
+            path = urllib.parse.urlsplit(self.path).path
+            if path == "/admin/login" and method in ("GET", "POST"):
+                return self._login(method)
             if not self._authorized():
                 self.send_response(401)
                 self.send_header("WWW-Authenticate", "Bearer")
                 self.send_header("Content-Length", "0")
                 self.end_headers()
                 return
-            path = urllib.parse.urlsplit(self.path).path
+            if path.startswith("/admin/static/"):
+                if self._serve_static(path[len("/admin/static/"):]):
+                    return
+                return self._not_found()
+            if path == "/admin/" and method == "GET":
+                if self._serve_static("admin.html"):
+                    return
+                return self._not_found()
+            m = re.fullmatch(r"/admin/api/jobs/(\d+)/(retry|cancel|requeue)",
+                             path)
+            if m and method == "POST":
+                return self._admin_action(int(m.group(1)), m.group(2))
+            if path == "/admin/api/jobs" and method == "GET":
+                return self._admin_jobs()
             if path == "/worker/claim" and method == "POST":
                 return self._claim()
             m = re.fullmatch(r"/worker/jobs/(\d+)/heartbeat", path)
@@ -519,11 +578,63 @@ class PrivateHandler(_JsonHandler):
             m = re.fullmatch(r"/worker/jobs/(\d+)/release", path)
             if m and method == "POST":
                 return self._release(int(m.group(1)))
-            self._not_found()  # admin routes added with the monitor (C7)
+            self._not_found()
         except BadRequest as e:
             self._json(e.status, {"error": e.message})
         except BrokenPipeError:
             pass
+
+    def _login(self, method: str) -> None:
+        if method == "GET":
+            if self._serve_static("login.html"):
+                return
+            return self._not_found()
+        form = self._read_form_or_json()
+        token = form.get("token", "")
+        if not token or not hmac.compare_digest(
+                token.encode(), self.server.deps.config.token.encode()):
+            self.send_response(401)
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+            return
+        self.send_response(302)
+        self.send_header("Location", "/admin/")
+        self.send_header(
+            "Set-Cookie",
+            f"{ADMIN_COOKIE}={token}; HttpOnly; SameSite=Strict; Path=/admin")
+        self.send_header("Content-Length", "0")
+        self.end_headers()
+
+    def _admin_jobs(self) -> None:
+        deps = self.server.deps
+        jobs = deps.queue.list_jobs()
+        out = []
+        for job in jobs:
+            stages: dict[str, dict[str, float]] = {}
+            for e in deps.queue.stage_events_for(job["id"]):
+                stages.setdefault(e["stage"], {})[e["event"]] = e["at"]
+            for times in stages.values():
+                if "start" in times and "finish" in times:
+                    times["duration"] = times["finish"] - times["start"]
+            out.append({
+                "id": job["id"], "key": job["key"], "state": job["state"],
+                "stage": job["stage"], "stages": stages,
+                "worker_id": job["worker_id"],
+                "last_heartbeat": job["last_heartbeat"],
+                "error": job["error"], "failed_stage": job["failed_stage"],
+                "queued_at": job["queued_at"], "started_at": job["started_at"],
+                "finished_at": job["finished_at"], "duration": job["duration"],
+            })
+        depth = sum(1 for j in jobs if j["state"] == "queued")
+        self._json(200, {"jobs": out, "depth": depth,
+                         "median_seconds": deps.queue.median_seconds(),
+                         "workers": deps.queue.workers()})
+
+    def _admin_action(self, job_id: int, action: str) -> None:
+        ok, message = self.server.deps.queue.transition(job_id, action)
+        if not ok:
+            return self._json(409, {"error": message})
+        self._json(200, {"ok": True})
 
     def _state_conflict(self, job_id: int) -> None:
         job = self.server.deps.queue.get_job(job_id)
