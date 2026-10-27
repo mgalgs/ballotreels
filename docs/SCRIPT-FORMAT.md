@@ -189,9 +189,11 @@ highlight = ["Increases California's Rainy Day Fund", "during economic downturns
 - **Timing:** the narration is timed per sentence only, so each phrase's
   sweep starts at its estimated spoken position in its line: if the
   phrase's words occur in the line's text (case-insensitive), at that
-  character offset's fraction of the line's duration; otherwise the
-  line's phrases that are not found are spread evenly through it, in
-  order.
+  character offset's fraction of the line's spoken duration (punctuation
+  ignored); otherwise the line's phrases are spread evenly through it,
+  in order: the k-th of n (counting from 0) at k/n of it. The
+  occurrences of one phrase sweep on one after another, about 0.5 s
+  each.
 - Consecutive `page` lines in a section are one continuous page: no
   fade, no redraw and no return to full view between them; each line
   adds its highlights or its click. Highlights stay up as long as the
