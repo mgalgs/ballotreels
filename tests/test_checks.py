@@ -424,6 +424,12 @@ class BrokenCopyTest(ContestCopyTestCase):
         self.assertIn("yes section's 'list' has 2 items", f.message)
         self.assertIn("no section's has 1", f.message)
 
+    def test_list_counts_not_compared_when_a_side_filed_nothing(self):
+        self.edit("script.toml", 'side = "no"', 'side = "no"\nfiled = false')
+        self.add_side_list("yes", self.LIST_YES)
+        self.add_side_list("no", ["No argument against was submitted"])
+        self.assertEqual(self.failures(), [])
+
     def test_list_on_one_side_fails(self):
         self.add_side_list("yes", self.LIST_YES)
         got = self.failures()

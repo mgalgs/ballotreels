@@ -573,7 +573,9 @@ def check_side_visuals(c: Contest) -> list[Failure]:
 def check_side_list_items(c: Contest) -> list[Failure]:
     """STANDARD.md 7.3: when a side section has a 'list' visual, the other
     side's must have the same number of items in all (check_side_visuals
-    already requires both sides to have a 'list' or neither)."""
+    already requires both sides to have a 'list' or neither). A side that
+    filed no argument (filed = false) lists only that fact, so the counts
+    are not compared."""
     by_side: dict[str, list[Section]] = {}
     for sec in c.script.sections:
         if sec.side is not None:
@@ -581,6 +583,8 @@ def check_side_list_items(c: Contest) -> list[Failure]:
     yes, no = by_side.get("yes", []), by_side.get("no", [])
     if len(yes) != 1 or len(no) != 1:
         return []  # a template failure; nothing to compare
+    if not (yes[0].filed and no[0].filed):
+        return []
 
     def count(sec: Section) -> int:
         return sum(len(ln.visual.items) for ln in sec.lines

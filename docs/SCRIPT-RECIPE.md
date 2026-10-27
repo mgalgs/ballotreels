@@ -49,9 +49,9 @@ before writing another.
   short form and about the same length as the other side's items.
 - Nothing a side argues appears in a neutral section (rule 6.3).
 - When one side filed no argument, say so plainly in that side's line;
-  never fill the gap with the narrator's own words. Both sides still get
-  a `list`, of **one item** each: the other side's strongest point, and
-  for the silent side "No argument against was submitted" (or "for").
+  never fill the gap with the narrator's own words. The other side keeps
+  its usual two-item list; the silent side's section sets `filed = false`
+  and lists one item, "No argument against was submitted" (or "for").
   Leaving the lists out draws two empty boxes.
 
 ## Vote lines

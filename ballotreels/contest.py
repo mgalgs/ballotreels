@@ -97,6 +97,7 @@ class Section:
     heading: str
     side: str | None
     lines: tuple[Line, ...]
+    filed: bool = True
 
 
 @dataclass(frozen=True)
@@ -235,6 +236,7 @@ def _load_script(path: Path) -> Script:
             heading=_get(raw, "heading", str, where),
             side=_get(raw, "side", str, where, None),
             lines=lines,
+            filed=_get(raw, "filed", bool, where, True),
         ))
     raw_card = _get(data, "card", dict, name, None)
     card = (None if raw_card is None else

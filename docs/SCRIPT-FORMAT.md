@@ -151,7 +151,10 @@ name = "save-more"       # no source: the line cites
   line the same way. Allowed in any section, not only a side's.
   **Balance (rule 7.3):** if either side section has a `list`, both
   must, with the same number of items in all; a failure names both
-  counts. In the two side sections specifically, the list does not get
+  counts. The exception is a side that submitted no argument (rule 2.5):
+  its section sets `filed = false` and its list has the one item "No
+  argument against was submitted" (or "for"), and the counts are not
+  compared, so the other side's points show as submitted. In the two side sections specifically, the list does not get
   its own page: both sides share one slide, "What each side says" (see
   "the measure template" below for how the two sides share it).
 - `illustration`: a picture of the line's topic when there is no data

@@ -5,9 +5,9 @@
 #
 # No argument against was filed (arguments page: "NO ARGUMENT AGAINST
 # PROPOSITION 37 WAS SUBMITTED."). Per SCRIPT-RECIPE.md, the no side says
-# so plainly. Each side's list has one item, so the sides keep equal
-# structure (STANDARD.md 2.5, 7.3); the no side's item says no argument
-# was submitted.
+# so plainly. The yes list shows the supporters' points as submitted; the
+# no section is marked filed = false and its list says nothing was filed
+# (STANDARD.md 2.5).
 
 contest = "ca-2026-11-03-prop-37"
 template = "measure"
@@ -100,12 +100,13 @@ sources = ["arguments"]
 [section.line.visual]
 kind = "list"
 source = "arguments"
-items = ["Down payment loans at zero cost to taxpayers"]
+items = ["Down payment help for working and middle-class buyers", "Zero cost to taxpayers: buyers repay the loans"]
 
 [[section]]
 id = "no"
 heading = "Why some vote no"
 side = "no"
+filed = false
 
 [[section.line]]
 text = "No argument against Proposition 37 was submitted to appear in the official voter guide."

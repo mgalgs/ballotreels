@@ -6,8 +6,8 @@
 #
 # No argument against Proposition 1 was submitted to the voter guide.
 # The no side says so plainly, in the same number of words as the yes
-# side. Each side's list has one item, so the boxes stay alike (rule
-# 7.3); the no side's item says no argument was submitted.
+# side. The yes list shows the supporters' points as submitted; the no
+# section is marked filed = false and its list says nothing was filed.
 
 contest = "ca-2026-11-03-prop-1"
 template = "measure"
@@ -112,12 +112,13 @@ sources = ["arguments"]
 [section.line.visual]
 kind = "list"
 source = "arguments"
-items = ["Builds affordable homes for veterans, seniors and families"]
+items = ["Affordable homes for veterans, seniors and working families", "Builds homes without raising taxes"]
 
 [[section]]
 id = "no"
 heading = "Why some vote no"
 side = "no"
+filed = false
 
 [[section.line]]
 text = "No argument against Proposition 1 was submitted for the state's official voter guide."
