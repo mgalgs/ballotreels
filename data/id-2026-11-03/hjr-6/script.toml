@@ -1,0 +1,164 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; what Idaho's Constitution says today; what the resolution
+# would make English the language of, and its federal-law exception; what
+# its fiscal note says it costs; one point per side; what a vote does.
+#
+# The card quotes page 5 of the Idaho Voter Pamphlet: the ballot
+# question, the Legislative Council's statement of meaning and the "What
+# your vote will do" lines. The pamphlet prints no fiscal statement for a
+# joint resolution, so the card has none; the fiscal section cites the
+# resolution's own fiscal note, by that name. The note's $300,000 is
+# stated without a scale: it compares it with no budget, and no archived
+# source gives Idaho's general fund total.
+#
+# That state law already names English the official language is the
+# against side's point, so it is said only in that side's section; the
+# neutral sections speak only of the Constitution, as the pamphlet's
+# "What your vote will do" does.
+#
+# Both sides filed a statement. Each side's line and list take its
+# central points as it states them: for, learning English, unity and
+# lower costs; against, that state law already does this, better, and
+# that the amendment could tell non-English speakers they are unwelcome.
+# Same words per line, same words per list item.
+
+contest = "id-2026-11-03-hjr-6"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "pamphlet"
+number = "6"
+title = "Shall Article X of the Constitution of the State of Idaho be amended by the addition of a new Section 8, to provide that the English language shall be the official language for the state of Idaho, and to further provide that, except as required by federal law, English shall be used in all public proceedings, public documents, public instruction, and any other public acts of any public institution in the state of Idaho?"
+origin = "Amendment to Idaho Constitution - House Joint Resolution 6"
+summary = "This proposed constitutional amendment would designate English as the official state language. All official speeches, meetings, and other proceedings of state and local governments, such as city council meetings and jury trials, would be conducted in English, and instruction in public schools would be provided in English. All documents of state and local government entities would be published in English. However, the amendment would allow languages other than English to be used when required by federal law."
+yes = "A YES vote would designate English the official state language of Idaho."
+no = "A NO vote would make no change to Idaho’s Constitution, which currently does not designate an official state language."
+
+[[section]]
+id = "what"
+heading = "House Joint Resolution 6"
+
+[[section.line]]
+text = "House Joint Resolution 6 is about an official language for Idaho."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["the official language for the state of Idaho"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, Idaho's Constitution does not name an official state language."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["currently does not designate an official state language"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The resolution would make English the official state language."
+sources = ["pamphlet", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["designate English the official state language"]
+
+[[section.line]]
+text = "Government meetings, from city councils to jury trials, and public school teaching would be in English."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["such as city council meetings and jury trials", "instruction in public schools would be provided in English"]
+
+[[section.line]]
+text = "Other languages could still be used where federal law requires them."
+sources = ["pamphlet", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["allow languages other than English to be used when required by federal law"]
+
+[[section]]
+id = "fiscal"
+heading = "What the fiscal note says"
+
+[[section.line]]
+text = "The resolution's fiscal note estimates up to $300,000 to publish proposed amendments in the voter's pamphlet."
+sources = ["fiscal-note"]
+
+[section.line.visual]
+kind = "illustration"
+name = "pamphlet-mailing"
+
+[[section.line]]
+text = "The note says the cost occurs anyway if other measures are on the ballot."
+sources = ["fiscal-note"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the amendment could encourage non-English speakers to learn English, and could promote unity and shared identity."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Encourages learning English to join in public life", "Limits government spending on communications in other languages"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say state law already makes English official, and the amendment might not let schools teach foreign languages."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["State law already makes English the official language", "Could signal to non-English speakers they are unwelcome"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means English would be Idaho's official state language."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["official state language of Idaho"]
+
+[[section.line]]
+text = "A no vote means the Constitution would still name no official state language."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["make no change to Idaho’s Constitution"]
