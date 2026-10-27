@@ -1203,10 +1203,15 @@ function hostOf(url) {
 // The video is the contest page's hero: its frame takes the height left
 // below the header, back link and title (which wraps to 1-3 lines), so
 // the whole frame, controls included, is on screen without scrolling.
+// On a wide screen the frame sits beside the page's text, at the top of
+// the contest section, and sticks while the text scrolls; a stuck
+// frame's own box has moved, so the section's top is measured there.
 function fitVideo() {
   const frame = app.querySelector(".video-frame:not(.empty)");
   if (!frame) return;
-  const top = frame.getBoundingClientRect().top + window.scrollY;
+  const placed = getComputedStyle(frame).position === "sticky" ?
+    frame.parentElement : frame;
+  const top = placed.getBoundingClientRect().top + window.scrollY;
   frame.style.setProperty("--above", `${Math.ceil(top)}px`);
 }
 
@@ -1273,10 +1278,17 @@ async function renderContest(apiPath) {
   showPath(body.path);
   const { eyebrow, title } = titleParts(body);
   document.title = `${eyebrow ? `${eyebrow}: ` : ""}${title} · ballotreels`;
-  const section = el("section", { class: "contest-page" }, [
-    back,
-    eyebrow ? el("p", { class: "contest-eyebrow", text: eyebrow }) : null,
-    heading("h1", title),
+  // The head and the rest are wrapped only for the wide-screen grid,
+  // which puts the video in a column of its own beside them; on a phone
+  // the wrappers are plain blocks and the page reads top to bottom.
+  const section = el("section", {
+    class: body.video_url ? "contest-page has-video" : "contest-page",
+  }, [
+    el("div", { class: "contest-head" }, [
+      back,
+      eyebrow ? el("p", { class: "contest-eyebrow", text: eyebrow }) : null,
+      heading("h1", title),
+    ]),
   ]);
 
   if (body.video_url) {
@@ -1314,7 +1326,9 @@ async function renderContest(apiPath) {
     section.appendChild(frame);
   }
 
-  section.appendChild(heading("h2", "Sources", { class: "section-title" }));
+  const rest = el("div", { class: "contest-rest" });
+  section.appendChild(rest);
+  rest.appendChild(heading("h2", "Sources", { class: "section-title" }));
   if (body.sources && body.sources.length) {
     const sourceList = el("ol", { class: "sources" });
     for (const source of body.sources) {
@@ -1326,9 +1340,9 @@ async function renderContest(apiPath) {
           el("span", { class: "source-host", text: host }) : null,
       ]));
     }
-    section.appendChild(sourceList);
+    rest.appendChild(sourceList);
   } else {
-    section.appendChild(el("p", { class: "muted",
+    rest.appendChild(el("p", { class: "muted",
       text: "Every source the video draws on is listed here once it's made." }));
   }
 
@@ -1351,9 +1365,9 @@ async function renderContest(apiPath) {
     el("a", { class: "btn btn-quiet", href: body.report_url || REPORT_URL,
               text: "Report an error with this video" }),
   ]));
-  section.appendChild(corrections);
+  rest.appendChild(corrections);
 
-  section.appendChild(el("p", { class: "fine-print" }, [
+  rest.appendChild(el("p", { class: "fine-print" }, [
     "Made under the ",
     el("a", { href: STANDARD_URL, text: "ballotreels standard" }),
     `, version ${body.standard_version}` +
