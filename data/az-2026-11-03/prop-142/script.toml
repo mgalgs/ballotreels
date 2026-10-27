@@ -1,0 +1,144 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; the ban the constitution already has (the ballot's own lines
+# say so); what Proposition 142 would add; that the guide prints no cost
+# estimate; one point per side; what a vote does.
+#
+# The card quotes Arizona's General Election Guide: the ballot format's
+# descriptive title and its "yes"/"no" vote lines, and the opening of the
+# Analysis by Legislative Council, through its first item (the whole
+# analysis set the card too small to read; the "yes" line, quoted whole,
+# lists the rest). No fiscal statement exists for a measure the
+# Legislature refers, so the card has no fiscal quote and the fiscal
+# section says only that the guide prints no cost estimate.
+#
+# The sides are drawn from what the arguments filed most commonly say,
+# attributed to "supporters" and "opponents", with equal words. The
+# existing ban appears in "today" because the ballot's own lines state
+# it; the opponents' point that the measure is unnecessary for that reason
+# is not used, so the fact is not argued in a neutral section.
+
+contest = "az-2026-11-03-prop-142"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide"
+number = "142"
+title = "ADDS FURTHER DETAILS TO THE CONSTITUTIONAL PROHIBITION AGAINST PREFERENTIAL TREATMENT OR DISCRIMINATION BY THE STATE BASED ON RACE, ETHNICITY, OR OTHER CLASSES."
+origin = "PROPOSED AMENDMENT TO THE CONSTITUTION BY THE LEGISLATURE"
+summary = "Proposition 142 would amend the Arizona Constitution to provide that this state and cities, towns, counties, public universities, community colleges, school districts and any other political subdivisions: 1. Are prohibited from granting preferential treatment to or discriminating against individuals or groups based on race, sex, color, ethnicity or national origin in public employment, education or contracting, even if a part of a federal program."
+yes = "A “yes” vote shall have the effect of amending the Arizona Constitution’s current prohibition against preferential treatment or discrimination by the state based on race, ethnicity, or other classes, to specifically prohibit: (1) compelling individuals to support preferential treatment or discrimination based on race or ethnicity as a condition of education, employment, or contract opportunities; (2) spending public money on positions in public education responsible for promoting preferential treatment or discrimination based on race or ethnicity; and (3) implementing disciplinary practices that treat students or employees differently based on race or ethnicity. Prohibited conduct includes requiring or asking an applicant, employee, student, or contractor to provide a statement in support of race-based diversity, equity, and inclusion beyond upholding the federal Equal Protection Clause or asking such a person to discuss the person’s race or ethnicity or experience with others’ race or ethnicity. The amendment contains certain exceptions for health services, legal, and other reasons."
+no = "A “no” vote shall have the effect of maintaining the current prohibition in the Arizona Constitution against preferential treatment or discrimination by the state based on race, ethnicity, or other classes."
+
+[[section]]
+id = "what"
+heading = "Proposition 142"
+
+[[section.line]]
+text = "Proposition 142 is about preferential treatment by race in Arizona's public institutions."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["PREFERENTIAL TREATMENT OR DISCRIMINATION BY THE STATE BASED ON RACE"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, Arizona's Constitution already bars the state from preferential treatment or discrimination based on race or ethnicity."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-capitol"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The measure would apply that ban even within federal programs."
+sources = ["guide", "analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["even if a part of a federal program"]
+
+[[section.line]]
+text = "Governments could not require or ask for statements supporting race-based diversity, equity and inclusion."
+sources = ["guide", "analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "job-application"
+
+[[section.line]]
+text = "Public schools and colleges could not fund offices that promote preferential treatment by race."
+sources = ["guide", "analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Arizona's guide prints no cost estimate for the measure."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the measure ensures equal treatment based on merit, and ends forced support for DEI."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Equal treatment, judged on merit", "No forced support for DEI"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the measure rolls back equal opportunity efforts, and invites confusion, fear and costly lawsuits."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Rolls back equal opportunity efforts", "Invites confusion and costly lawsuits"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means adding these specific bans to the constitution."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["to specifically prohibit"]
+
+[[section.line]]
+text = "A no vote means keeping the constitution's current ban as it is."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["maintaining the current prohibition"]
