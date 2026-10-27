@@ -375,6 +375,11 @@ input.zip-input {
   min-height: 64px;
 }
 
+input.zip-input::placeholder {
+  font-size: 1.4rem;
+  letter-spacing: normal;
+}
+
 .field-note {
   min-height: 1.5em;
   margin: 8px 0 0;

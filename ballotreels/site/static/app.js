@@ -40,8 +40,8 @@ function el(tag, attrs, children) {
 const ICONS = {
   play: '<svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" ' +
     'cy="11" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/>' +
-    '<path d="M9 7 L15.5 11 L9 15 Z" style="fill:var(--accent);' +
-    'stroke:var(--accent)" stroke-width="1.2" stroke-linejoin="round"/></svg>',
+    '<path d="M9 7 L15.5 11 L9 15 Z" fill="currentColor" ' +
+    'stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>',
   pencil: '<svg viewBox="0 0 30 30" aria-hidden="true"><path d="M6 24 ' +
     'L8 17 L20 5 L25 10 L13 22 Z M8 17 L13 22 M18 7 L23 12" ' +
     'fill="none" stroke="currentColor" stroke-width="1.7" ' +
@@ -354,7 +354,7 @@ function renderHome() {
   const input = el("input", {
     type: "text", id: "zip", class: "zip-input", inputmode: "numeric",
     pattern: "[0-9]*", autocomplete: "postal-code", maxlength: "5",
-    placeholder: "94110", autofocus: "autofocus",
+    placeholder: "5 digits", autofocus: "autofocus",
     "aria-describedby": "zip-note",
   });
   const note = el("p", { id: "zip-note", class: "field-note",
