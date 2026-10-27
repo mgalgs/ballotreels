@@ -1,0 +1,16 @@
+# A fixture election index for worker tests: one entry matching the
+# real Prop 2 contest's own metadata (data/ca-2026-11-03/prop-2), so
+# load_index's sources.toml cross-check passes against a real copy of
+# that directory.
+
+[election]
+id = "ca-2026-11-03"
+state = "ocd-division/country:us/state:ca"
+title = "Test Election"
+
+[[contest]]
+id = "ca-2026-11-03-prop-2"
+kind = "measure"
+division = "ocd-division/country:us/state:ca"
+title = "Proposition 2: Increases State's Rainy Day Fund. Legislative Constitutional Amendment."
+number = "2"

@@ -7,6 +7,7 @@
     python -m ballotreels geo build [--state ca] [--data-dir DIR]
     python -m ballotreels geo zip <zip> [--state ca] [--data-dir DIR]
     python -m ballotreels serve [--public-port PORT] [--private-port PORT]
+    python -m ballotreels worker --server URL [--runner fake|subprocess]
 """
 
 from __future__ import annotations
@@ -32,6 +33,11 @@ CA_SOS_BASE_URL = "https://voterguide.sos.ca.gov"
 def default_data_dir() -> Path:
     env = os.environ.get("BALLOTREELS_DATA_DIR")
     return Path(env) if env else REPO_ROOT / "var"
+
+
+def _default_worker_id() -> str:
+    import socket
+    return f"{socket.gethostname()}-{os.getpid()}"
 
 
 def _check_one(path: str, standard, out) -> bool:
@@ -170,6 +176,73 @@ def _serve(args, out, err) -> int:
     return 0
 
 
+def _build_storage(client):
+    storage_name = os.environ.get("BALLOTREELS_STORAGE", "local")
+    if storage_name == "local":
+        from .storage import LocalStorage
+        return LocalStorage(client)
+    raise SystemExit(f"unknown BALLOTREELS_STORAGE {storage_name!r}")
+
+
+def _worker_main(args, out, err) -> int:
+    server = args.server or os.environ.get("BALLOTREELS_SERVER")
+    token = os.environ.get("BALLOTREELS_TOKEN")
+    if token is not None and not token.strip():
+        token = None
+    if not server:
+        print("no server URL: pass --server or set BALLOTREELS_SERVER",
+             file=err)
+        return 2
+    if not token:
+        print("BALLOTREELS_TOKEN is not set", file=err)
+        return 2
+    from .pipeline import FakeRunner, HandWrittenScriptWriter, SubprocessRunner
+    from .standard import load_standard
+    from .worker import TransportError, Worker, WorkerApiError, WorkerClient
+
+    standard = load_standard()
+    ffmpeg = args.ffmpeg or os.environ.get("BALLOTREELS_FFMPEG", "ffmpeg")
+    crf = (args.crf if args.crf is not None
+          else int(os.environ.get("BALLOTREELS_CRF", "18")))
+    maxrate = args.maxrate or os.environ.get("BALLOTREELS_MAXRATE", "1500k")
+    masters_dir = Path(args.masters_dir or
+                       os.environ.get("BALLOTREELS_MASTERS_DIR",
+                                     str(REPO_ROOT / "var" / "masters")))
+    if args.runner == "fake":
+        runner = FakeRunner()
+    else:
+        runner = SubprocessRunner(args.repo, ffmpeg=ffmpeg, crf=crf,
+                                  maxrate=maxrate)
+    client = WorkerClient(server, token)
+    storage = _build_storage(client)
+    worker = Worker(client=client, worker_id=args.worker_id, repo=args.repo,
+                    runner=runner, writer=HandWrittenScriptWriter(),
+                    storage=storage, standard=standard,
+                    work_dir=Path(args.work_dir),
+                    masters_dir=masters_dir,
+                    poll_interval=args.poll_interval,
+                    heartbeat_interval=args.heartbeat_interval)
+    import signal
+    # Runner children (narrate.sh's TTS, the render, ffmpeg) run in their
+    # own session, so a terminal's Ctrl-C or hang-up no longer reaches
+    # them: route those signals through stop(), which kills the child's
+    # group and gives the job back, the same as SIGTERM.
+    try:
+        for signum in (signal.SIGTERM, signal.SIGINT, signal.SIGHUP):
+            signal.signal(signum, lambda *a: worker.stop())
+    except ValueError:
+        pass  # not the main thread (e.g. under a test runner)
+    if args.once:
+        try:
+            worker.run_once()
+        except (TransportError, WorkerApiError) as e:
+            print(f"worker: {e}", file=err)
+            return 1
+    else:
+        worker.run_forever()
+    return 0
+
+
 def _geo_zip(data_dir: str, state: str, zip_code: str, out) -> bool:
     from .geo.lookup import GeoData
     geo_dir = Path(data_dir) / "geo" / state
@@ -273,6 +346,32 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
                             "500)")
     serve.add_argument("--geocoder-url", default=None,
                        help="base URL of the Census Geocoder")
+    worker = sub.add_parser("worker", help="run a pull worker")
+    worker.add_argument("--server", default=None,
+                        help="the serve tier's private listener URL; "
+                             "default: $BALLOTREELS_SERVER")
+    worker.add_argument("--repo", default=str(REPO_ROOT),
+                        help="this worker's own checkout (scripts and "
+                             "sources come from here); default: this repo")
+    worker.add_argument("--worker-id", default=_default_worker_id())
+    worker.add_argument("--runner", choices=["subprocess", "fake"],
+                        default="subprocess")
+    worker.add_argument("--work-dir",
+                        default=str(default_data_dir() / "work"),
+                        help="default: <data-dir>/work")
+    worker.add_argument(
+        "--masters-dir", default=None,
+        help="default: $BALLOTREELS_MASTERS_DIR or <repo>/var/masters")
+    worker.add_argument("--ffmpeg", default=None,
+                        help="default: $BALLOTREELS_FFMPEG or 'ffmpeg'")
+    worker.add_argument("--crf", type=int, default=None,
+                        help="default: $BALLOTREELS_CRF or 18")
+    worker.add_argument("--maxrate", default=None,
+                        help="default: $BALLOTREELS_MAXRATE or '1500k'")
+    worker.add_argument("--poll-interval", type=float, default=2.0)
+    worker.add_argument("--heartbeat-interval", type=float, default=10.0)
+    worker.add_argument("--once", action="store_true",
+                        help="claim and work at most one job, then exit")
     args = parser.parse_args(argv)
 
     if args.command == "narration":
@@ -307,5 +406,8 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
 
     if args.command == "serve":
         return _serve(args, out, err)
+
+    if args.command == "worker":
+        return _worker_main(args, out, err)
 
     raise AssertionError(f"unhandled command {args.command!r}")
