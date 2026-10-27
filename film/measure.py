@@ -206,9 +206,13 @@ def layout_9x16():
         scrap=Box(78, 1632, 924, 196),
         header_font=font(30, family=PRINT),
         heading_font=font(86, 700),
-        chart_title_font=font(56, 700),
+        # a chart's lettering, sized to read on a phone: its title, its
+        # category and line labels, its values, and its axis values
+        chart_title_font=font(64, 700),
+        chart_label_font=font(56, 600),
+        value_font=font(64, 700),
+        axis_font=font(44, family=PRINT),
         label_font=font(46, 600),
-        value_font=font(58, 700),
         note_font=font(34, family=PRINT),
         ballot_title_font=font(52, family=PRINT),
         option_font=font(84, 700),
@@ -241,9 +245,11 @@ def layout_16x9():
         scrap=Box(250, 842, 1420, 176),
         header_font=font(26, family=PRINT),
         heading_font=font(74, 700),
-        chart_title_font=font(50, 700),
+        chart_title_font=font(57, 700),
+        chart_label_font=font(51, 600),
+        value_font=font(57, 700),
+        axis_font=font(40, family=PRINT),
         label_font=font(42, 600),
-        value_font=font(52, 700),
         note_font=font(31, family=PRINT),
         ballot_title_font=font(42, family=PRINT),
         option_font=font(64, 700),
@@ -500,21 +506,28 @@ def bars_chart(chart, L, f0, f1):
     v = chart.visual
     u = L['u']
     items, f, plot, tbox, sbox = chart_frame(chart, L, f0)
-    lf, vf, nf = L['label_font'], L['value_font'], L['note_font']
+    lf, vf, af = L['chart_label_font'], L['value_font'], L['axis_font']
     n = len(v.values)
     vmax = max(max(v.values), 1e-9)
-    slot = (plot.w - 120 * u) / n
+    zero = with_unit(0, v.unit)
+    axis_w = max(120 * u, text.measure(zero, af) + 60 * u)
+    slot = (plot.w - axis_w) / n
     bw = min(slot * 0.55, 250 * u)
-    lab_lines = [text.wrap(str(lb), lf, slot - 16 * u, balance=True) for lb in v.labels]
+    # one font for every label (rule 7.4), smaller only if a word would
+    # not fit its slot
+    while True:
+        lab_lines = [text.wrap(str(lb), lf, slot - 16 * u, balance=True) for lb in v.labels]
+        if max(text.measure(ln, lf) for ls in lab_lines for ln in ls) <= slot - 16 * u or lf.size < 22:
+            break
+        lf = font(lf.size * 0.94, 600)
     lab_h = max(len(ls) for ls in lab_lines) * text.line_height(lf)
     base = plot.bottom - lab_h - 14 * u
     top = plot.y + text.line_height(vf) + 8 * u
     scale = (base - top) / vmax
-    x0 = plot.x + 120 * u
+    x0 = plot.x + axis_w
     axis = Stroke([(x0 - 30 * u, base), (plot.right, base)], seed_of('axis'), passes=3, width=4.2 * u)
     items.append(stroke_item(f, f + 12, axis))
-    zero = with_unit(0, v.unit)
-    items.append(text_item(f + 8, f + 12, zero, nf, x0 - 40 * u, base - text.line_height(nf) * 0.55,
+    items.append(text_item(f + 8, f + 12, zero, af, x0 - 40 * u, base - text.line_height(af) * 0.55,
                            alpha=0.8, align='right', pencil=False))
     f += 14
     grow = 24
@@ -1046,11 +1059,11 @@ def share_chart(chart, L, f0, f1):
     v = chart.visual
     u = L['u']
     items, f, plot, tbox, sbox = chart_frame(chart, L, f0)
-    lf, vf = L['label_font'], L['value_font']
+    lf, vf = L['chart_label_font'], L['value_font']
     n = len(v.values)
     col_w = 210 * u
     gap = 70 * u
-    label_w = min(plot.w - col_w - gap, 560 * u)
+    label_w = min(plot.w - col_w - gap, 640 * u)
     gx = plot.cx - (col_w + gap + label_w) / 2
     ch = plot.h
     cy0 = plot.y
@@ -1130,7 +1143,7 @@ def series_chart(chart, L, f0, f1):
     v = chart.visual
     u = L['u']
     items, f, plot, tbox, sbox = chart_frame(chart, L, f0)
-    nf, vf = L['note_font'], L['label_font']
+    nf, vf = L['axis_font'], L['chart_label_font']
     vals = [float(x) for x in v.values]
     lo, hi = min(0.0, min(vals)), max(0.0, max(vals))
     if hi == lo:
@@ -1159,9 +1172,11 @@ def series_chart(chart, L, f0, f1):
         items.append(text_item(f + 8, f + 12, with_unit(tv, v.unit), nf, x0 - 46 * u, ty - text.line_height(nf) / 2,
                                alpha=0.8, align='right', pencil=False))
     f += 14
-    step = max(1, math.ceil(n * 120 * u / (x1 - x0)))
+    lab_w = max(text.measure(str(lb), nf) for lb in v.labels) + 30 * u
+    step = max(1, math.ceil(n * max(120 * u, lab_w) / (x1 - x0)))
     for i, lb in enumerate(v.labels):
-        if i % step and i != n - 1:
+        # every step-th label, and the last one, unless too close to it
+        if i != n - 1 and (i % step or xs(n - 1) - xs(i) < lab_w):
             continue
         items.append(text_item(f, f + 3, str(lb), nf, xs(i), yb + 14 * u, alpha=0.85, align='center',
                                pencil=False))
@@ -1188,7 +1203,7 @@ def figure_steady_spending_volatile_revenue(chart, L, f0, f1):
     years). No numbers and no axis values, as in the LAO's own figure."""
     u = L['u']
     items, f, plot, tbox, sbox = chart_frame(chart, L, f0)
-    lf = L['label_font']
+    lf = L['chart_label_font']
     lab_w = text.measure('Spending', lf) + 20 * u
     x0, x1 = plot.x + 40 * u, plot.right - lab_w - 10 * u
     yb, yt = plot.bottom - 10 * u, plot.y + 30 * u
