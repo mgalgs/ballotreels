@@ -4,6 +4,8 @@
     python -m ballotreels narration <contest-dir>...
     python -m ballotreels render <contest-dir> [--format 9x16|16x9|all]
     python -m ballotreels measures ca-sos <election-dir> [--base-url URL]
+    python -m ballotreels geo build [--state ca] [--data-dir DIR]
+    python -m ballotreels geo zip <zip> [--state ca] [--data-dir DIR]
 """
 
 from __future__ import annotations
@@ -11,7 +13,6 @@ from __future__ import annotations
 import argparse
 import os
 import sys
-import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -25,6 +26,11 @@ from .standard import load_standard, side_order
 REPO_ROOT = Path(__file__).resolve().parent.parent
 FILM_TEMPLATE = REPO_ROOT / "film" / "measure.py"
 CA_SOS_BASE_URL = "https://voterguide.sos.ca.gov"
+
+
+def default_data_dir() -> Path:
+    env = os.environ.get("BALLOTREELS_DATA_DIR")
+    return Path(env) if env else REPO_ROOT / "var"
 
 
 def _check_one(path: str, standard, out) -> bool:
@@ -113,6 +119,45 @@ def _measures_ca_sos(election_dir: str, base_url: str, start: str, out,
     return True
 
 
+def _fetch_bytes(url: str) -> bytes:
+    with urllib.request.urlopen(url, timeout=60) as resp:
+        return resp.read()
+
+
+def _geo_build(data_dir: str, state: str, min_overlap: float,
+               tolerance: float, url_overrides: list[str], out,
+               fetch=_fetch_bytes) -> bool:
+    from .geo.build import BuildError, build
+    urls = {}
+    for pair in url_overrides:
+        name, _, url = pair.partition("=")
+        urls[name] = url
+    try:
+        warnings = build(data_dir, state, fetch, urls=urls,
+                         min_overlap=min_overlap, tolerance=tolerance)
+    except BuildError as e:
+        print(str(e), file=out)
+        return False
+    for warning in warnings:
+        print(f"warning: {warning}", file=out)
+    print(f"{Path(data_dir) / 'geo' / state}: built", file=out)
+    return True
+
+
+def _geo_zip(data_dir: str, state: str, zip_code: str, out) -> bool:
+    from .geo.lookup import GeoData
+    geo_dir = Path(data_dir) / "geo" / state
+    geo = GeoData.load(geo_dir)
+    result = geo.zip_districts(zip_code)
+    if result is None:
+        print(f"{zip_code}: no district data for this zip", file=out)
+        return False
+    for kind, entries in result["kinds"].items():
+        for e in entries:
+            print(f"{kind}\t{e['ocd_id']}\t{e['name']}", file=out)
+    return True
+
+
 def main(argv: list[str] | None = None, out=sys.stdout) -> int:
     parser = argparse.ArgumentParser(prog="python -m ballotreels")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -144,6 +189,33 @@ def main(argv: list[str] | None = None, out=sys.stdout) -> int:
     ca_sos.add_argument("--start", default="1",
                         help="a known proposition number to start from "
                              "(default: 1)")
+    geo = sub.add_parser("geo", help="district and zip-code geo data")
+    geo_sub = geo.add_subparsers(dest="geo_command", required=True)
+    geo_build = geo_sub.add_parser(
+        "build", help="download and build geo data under --data-dir")
+    geo_build.add_argument("--state", default="ca",
+                           help="2-letter state abbreviation (default: ca)")
+    geo_build.add_argument("--data-dir", default=str(default_data_dir()),
+                           help="default: $BALLOTREELS_DATA_DIR or "
+                                "<repo>/var")
+    geo_build.add_argument("--min-overlap", type=float, default=0.0,
+                           metavar="FRACTION",
+                           help="drop a zip/district overlap smaller than "
+                                "this fraction of the zip's land area "
+                                "(default: 0, keep every sliver)")
+    geo_build.add_argument("--tolerance", type=float, default=0.001,
+                           metavar="DEGREES",
+                           help="Douglas-Peucker simplification tolerance, "
+                                "in degrees (default: 0.001)")
+    geo_build.add_argument("--url", action="append", default=[],
+                           metavar="NAME=URL",
+                           help="override one download, e.g. "
+                                "cd.zip=https://...")
+    geo_zip = geo_sub.add_parser(
+        "zip", help="print the candidate districts for a zip code")
+    geo_zip.add_argument("zip", metavar="zip-code")
+    geo_zip.add_argument("--state", default="ca")
+    geo_zip.add_argument("--data-dir", default=str(default_data_dir()))
     args = parser.parse_args(argv)
 
     if args.command == "narration":
@@ -166,6 +238,14 @@ def main(argv: list[str] | None = None, out=sys.stdout) -> int:
     if args.command == "measures":
         ok = _measures_ca_sos(args.election_dir, args.base_url, args.start,
                               out)
+        return 0 if ok else 1
+
+    if args.command == "geo":
+        if args.geo_command == "build":
+            ok = _geo_build(args.data_dir, args.state, args.min_overlap,
+                            args.tolerance, args.url, out)
+        else:
+            ok = _geo_zip(args.data_dir, args.state, args.zip, out)
         return 0 if ok else 1
 
     raise AssertionError(f"unhandled command {args.command!r}")
