@@ -1,0 +1,49 @@
+# Archived sources for Florida Amendment 2, 2026-11-03 general election.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+#
+# Florida publishes no official arguments for or against a legislative
+# amendment, so there is no source of kind official-argument: both side
+# sections say so, citing the Division of Elections' booklet, which
+# prints none. voter-guide.pdf is the whole booklet; Amendment 2 is on
+# its pages 9 to 11.
+#
+# The ballot measure is CS/HJR 1215 (2025), which exempts the property
+# itself. The fiscal analysis is the Senate's of an earlier companion,
+# SJR 318, which would only have let the Legislature exempt it; its
+# fiscal findings ("no impact ... not self-executing") rest on that
+# difference, so the script cites it only for how property is taxed
+# today, which the two versions share.
+
+[contest]
+id = "fl-2026-11-03-amendment-2"
+election = "fl-2026-11-03"
+division = "ocd-division/country:us/state:fl"
+kind = "measure"
+title = "Constitutional Amendment No. 2: Exemption of Tangible Personal Property on Agricultural Land from Taxation"
+
+[[source]]
+id = "booklet"
+kind = "official-title-summary"
+publisher = "Florida Department of State, Division of Elections, Proposed Constitutional Amendments for the General Election (November 3, 2026), No. 2 Constitutional Amendment, pages 9 to 11"
+credit = "Florida Division of Elections, Proposed Constitutional Amendments"
+url = "https://files.floridados.gov/media/711369/eng-2026-booklet-constitutional-amendpub-updated-20260903.pdf"
+file = "sources/voter-guide.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Florida House of Representatives, CS/HJR 1215, Enrolled (2025 Legislature)"
+url = "https://www.flsenate.gov/Session/Bill/2025/1215/BillText/er/PDF"
+file = "sources/text-proposed-law.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "analysis"
+kind = "official-fiscal-analysis"
+publisher = "The Florida Senate, Bill Analysis and Fiscal Impact Statement, SJR 318, Committee on Finance and Tax, April 14, 2025"
+credit = "Florida Senate, Bill Analysis and Fiscal Impact Statement"
+url = "https://www.flsenate.gov/Session/Bill/2025/318/Analyses/2025s00318.pre.ft.PDF"
+file = "sources/fiscal-analysis.pdf"
+retrieved = "2026-10-27"

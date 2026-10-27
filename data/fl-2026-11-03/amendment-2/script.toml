@@ -1,0 +1,153 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; who taxes such property, and how it is taxed today; what Amendment 2 would exempt, and from when; what the official
+# documents say about its cost; the two sides; what a vote does.
+#
+# The card quotes the Division of Elections' booklet: the ballot title
+# and summary. The booklet prints no "a YES vote means" lines and no
+# fiscal statement, so the card has neither, and the vote lines take
+# their two meanings from the summary's one sentence.
+#
+# The archived Senate analysis is of an earlier version (sources.toml),
+# so its fiscal findings are not this measure's: the fiscal line says
+# only that the booklet prints no estimate. No dollar figure about a
+# government's money appears, so none needs a scale; the $25,000 is a
+# per-owner amount.
+#
+# Florida publishes no official arguments for or against a legislative
+# amendment, so both sides are filed = false and each says so once, in
+# the same number of words.
+
+contest = "fl-2026-11-03-amendment-2"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "booklet"
+number = "2"
+title = "EXEMPTION OF TANGIBLE PERSONAL PROPERTY ON AGRICULTURAL LAND FROM TAXATION. —"
+origin = "ARTICLE VII, SECTION 3 ARTICLE XII"
+summary = "Proposing an amendment to the State Constitution to exempt tangible personal property habitually located or typically present on land classified as agricultural, used in the production of agricultural products or for agritourism activities, and owned by the landowner or leaseholder of the agricultural land from ad valorem taxation. If approved this amendment would first apply for tax years beginning January 1, 2027."
+
+[[section]]
+id = "what"
+heading = "Amendment 2"
+
+[[section.line]]
+text = "Amendment 2 is about property taxes on equipment and other movable property kept on Florida farmland."
+sources = ["booklet", "analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["tangible personal property"]
+
+[[section]]
+id = "background"
+heading = "Who taxes it"
+
+[[section.line]]
+text = "Only local governments, like counties, cities and school districts, tax this kind of property in Florida."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the first 25,000 dollars of this property's assessed value is exempt."
+sources = ["analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "farm-equipment"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Amendment 2 would exempt this property entirely if it is usually kept on farmland, used for farming or agritourism, and owned by the landowner or leaseholder."
+sources = ["booklet", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["habitually located or typically present on land classified as agricultural", "owned by the landowner or leaseholder"]
+
+[[section.line]]
+text = "The exemption would first apply to taxes for 2027."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["first apply for tax years beginning January 1, 2027"]
+
+[[section]]
+id = "fiscal"
+heading = "What the official documents say"
+
+[[section.line]]
+text = "Florida's amendment booklet prints no estimate of how Amendment 2 would change local tax revenue."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No official argument for Amendment 2 was published."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "list"
+source = "booklet"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No official argument against Amendment 2 was published."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "list"
+source = "booklet"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote exempts this farm property from property tax."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["to exempt tangible personal property"]
+
+[[section.line]]
+text = "A no vote keeps this farm property subject to property tax."
+sources = ["booklet", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["from ad valorem taxation"]
