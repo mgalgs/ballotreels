@@ -1,10 +1,16 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
-# is about; how the list of parents' rights came to be and was changed;
-# one change parents would see (the records deadline) and one thing the
-# list would lose (the 2025 entries), so the neutral sections state both
-# what the measure adds and what it removes (rule 6.4); what the Office
-# of Financial Management says it costs; one point per side; what a vote
-# does.
+# is about; how the list of parents' rights came to be; one change
+# parents would see (the records deadline) and one thing the list would
+# lose (the 2025 entries), so the neutral sections state both what the
+# measure adds and what it removes (rule 6.4); what the Office of
+# Financial Management says it costs the state; one point per side; what
+# a vote does.
+#
+# The full designation is said once, in the opening line; after that the
+# script says "the measure", which reads faster aloud. Cut for time: the
+# line that the Legislature changed the list in 2025 (the timeline still
+# shows it, and the change line names the 2025 entries) and the line on
+# school districts' minor, indeterminate costs.
 #
 # The card quotes the ballot title, as the Attorney General's letter
 # repeats it above the explanatory statement: its Statement of Subject and
@@ -54,10 +60,6 @@ source = "explanatory"
 labels = ["2024", "2025"]
 items = ["The Legislature passes Initiative 2081's list of parents' rights", "The Legislature changes the list"]
 
-[[section.line]]
-text = "In 2025, the Legislature changed the list."
-sources = ["explanatory"]
-
 [[section]]
 id = "today"
 heading = "Today"
@@ -75,7 +77,7 @@ id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "IL26-001 would restore the 2024 list, with records due in ten business days."
+text = "The measure would restore the 2024 list, with records due in ten business days."
 sources = ["ballot-title", "explanatory"]
 
 [section.line.visual]
@@ -99,17 +101,13 @@ sources = ["fiscal"]
 kind = "illustration"
 name = "analyst-review"
 
-[[section.line]]
-text = "School districts may have minor costs, which the Office calls indeterminate."
-sources = ["fiscal"]
-
 [[section]]
 id = "yes"
 heading = "Why some vote yes"
 side = "yes"
 
 [[section.line]]
-text = "Supporters say IL26-001 restores parents' rights to school information, and stops schools keeping secrets from families."
+text = "Supporters say the measure restores parents' rights to school information, and stops schools keeping secrets from families."
 sources = ["arguments"]
 
 [section.line.visual]
@@ -123,7 +121,7 @@ heading = "Why some vote no"
 side = "no"
 
 [[section.line]]
-text = "Opponents say IL26-001 endangers child abuse victims, and ends immediate parental notice of crimes against students."
+text = "Opponents say the measure endangers child abuse victims, and ends immediate parental notice of crimes against students."
 sources = ["arguments"]
 
 [section.line.visual]
