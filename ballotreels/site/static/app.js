@@ -1256,6 +1256,81 @@ function videoNodes(body) {
           el("div", { class: "fullscreen-row" }, [full])];
 }
 
+// -- chapters: a chip per section of the video -------------------------
+
+// "m:ss", or "h:mm:ss.mmm" for WebVTT.
+function clock(seconds) {
+  const s = Math.floor(seconds);
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+}
+
+function vttTime(seconds) {
+  const ms = Math.round(seconds * 1000);
+  const pad = (n, w) => String(n).padStart(w, "0");
+  return `${pad(Math.floor(ms / 3600000), 2)}:` +
+    `${pad(Math.floor(ms / 60000) % 60, 2)}:` +
+    `${pad(Math.floor(ms / 1000) % 60, 2)}.${pad(ms % 1000, 3)}`;
+}
+
+// The chapters as a WebVTT file: each runs until the next starts, the
+// last to the end of the video (or, before its length is known, far
+// past it).
+function chaptersVtt(chapters, duration) {
+  const end = isFinite(duration) && duration > 0 ? duration : 359999;
+  const cues = chapters.map((c, i) => {
+    const next = i + 1 < chapters.length ? chapters[i + 1].start : end;
+    return `${i + 1}\n${vttTime(c.start)} --> ` +
+      `${vttTime(Math.max(next, c.start))}\n` +
+      c.title.replace(/-->/g, "->").replace(/\s*\n\s*/g, " ");
+  });
+  return "WEBVTT\n\n" + cues.join("\n\n") + "\n";
+}
+
+// The chapter the playhead is in: the last one started by time `t`.
+function chapterAt(chapters, t) {
+  let at = -1;
+  chapters.forEach((c, i) => { if (t + 0.001 >= c.start) at = i; });
+  return at;
+}
+
+// The chapter chips for `video` (the contest's `chapters`: each
+// section's start and heading), and its kind="chapters" track; nothing
+// for a video made before chapters were recorded. Every chip is drawn
+// the same, whichever side's section it is (STANDARD rule 7.4); the only
+// one ever marked is the one the playhead is in, once the video has
+// started.
+function chapterNodes(chapters, video) {
+  if (!chapters || !chapters.length) return [];
+  const url = URL.createObjectURL(new Blob([chaptersVtt(chapters)],
+                                           { type: "text/vtt" }));
+  video.appendChild(el("track", { kind: "chapters", label: "Chapters",
+                                  srclang: "en", src: url, default: "" }));
+  const chips = chapters.map((c) => el("button", {
+    type: "button", class: "chapter-chip",
+    onclick: () => {
+      video.currentTime = c.start;
+      const playing = video.play();
+      if (playing && playing.catch) playing.catch(() => {});
+    },
+  }, [el("span", { class: "chapter-time", text: clock(c.start) }),
+      el("span", { class: "chapter-title", text: c.title })]));
+  const mark = () => {
+    const started = !video.paused || video.currentTime > 0;
+    const at = started ? chapterAt(chapters, video.currentTime) : -1;
+    chips.forEach((chip, i) => {
+      if (i === at) chip.setAttribute("aria-current", "true");
+      else chip.removeAttribute("aria-current");
+    });
+  };
+  for (const type of ["timeupdate", "seeked", "play"]) {
+    video.addEventListener(type, mark);
+  }
+  return [el("nav", { class: "chapters", "aria-label": "Chapters" }, [
+    el("p", { class: "chapters-title", text: "Jump to a part" }),
+    el("ol", {}, chips.map((chip) => el("li", {}, [chip]))),
+  ])];
+}
+
 // `apiPath`: the contest's API URL, by short path or (an old link) by id.
 async function renderContest(apiPath) {
   const token = routeToken;
@@ -1291,8 +1366,11 @@ async function renderContest(apiPath) {
     ]),
   ]);
 
+  let chapters = [];
   if (body.video_url) {
-    section.append(...videoNodes(body));
+    const nodes = videoNodes(body);
+    section.append(...nodes);
+    chapters = chapterNodes(body.chapters, nodes[0].querySelector("video"));
     // Fitted once the rest of the page is in and laid out below.
     requestAnimationFrame(fitVideo);
   } else {
@@ -1326,7 +1404,9 @@ async function renderContest(apiPath) {
     section.appendChild(frame);
   }
 
-  const rest = el("div", { class: "contest-rest" });
+  // Under the video on a phone; at the top of the text column beside it
+  // on a wide screen.
+  const rest = el("div", { class: "contest-rest" }, chapters);
   section.appendChild(rest);
   rest.appendChild(heading("h2", "Sources", { class: "section-title" }));
   if (body.sources && body.sources.length) {
