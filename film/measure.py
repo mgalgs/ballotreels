@@ -710,14 +710,17 @@ def check_mark_pts(cx, cy, s):
     return [(cx - s * 0.62, cy - s * 0.04), (cx - s * 0.14, cy + s * 0.46), (cx + s * 0.7, cy - s * 0.52)]
 
 
-def list_visual(chart, lines, L, f0, f1, stage=None):
+def list_visual(chart, lines, L, f0, f1, stage=None, peers=()):
     """A checklist in a column, top to bottom: a side's own points, in short
     form (the second exception to pictures-only on the stage, besides the
     page card). Each entry is a hand-drawn check mark then its text,
     revealed one per line like a `timeline` but with no dates
     (docs/SCRIPT-FORMAT.md), and the source along the bottom. `stage`
     overrides L['stage'], for a list confined to less than the whole
-    stage (the sides slide's two blocks, sides_group)."""
+    stage (the sides slide's two blocks, sides_group). `peers` are other
+    lists' items to lay out alike: the font, each row's height, the gaps
+    and the column's offsets are fitted to all of them together, so two
+    side blocks line up row for row whatever their words (rule 7.4)."""
     v = chart.visual
     stage = stage if stage is not None else L['stage']
     u = L['u']
@@ -727,16 +730,19 @@ def list_visual(chart, lines, L, f0, f1, stage=None):
     check = 40 * u
     tx0 = stage.x + check + 30 * u
     tw = stage.right - tx0
+    every = [v.items, *peers]
     while True:
         blocks = [text.wrap(it, itf, tw, balance=True) for it in v.items]
-        heights = [len(b) * text.line_height(itf) for b in blocks]
+        heights = [max(len(text.wrap(its[i], itf, tw, balance=True)) for its in every if i < len(its))
+                   * text.line_height(itf) for i in range(n)]
         room = sbox.y - 40 * u - stage.y
         if sum(heights) + 36 * u * (n - 1) <= room or itf.size < 26:
             break
         itf = font(itf.size * 0.92, family=PRINT)
     gap = max(36 * u, min(100 * u, (room - sum(heights)) / max(1, n - 1)))
     # centre the column on the stage, as timeline_visual does
-    widest = max(max(text.measure(ln, itf) for ln in b) for b in blocks)
+    widest = max(text.measure(ln, itf) for its in every for it in its
+                 for ln in text.wrap(it, itf, tw, balance=True))
     shift = max(0, (stage.w - (tx0 - stage.x) - widest) / 2 - 20 * u)
     cx0, tx = stage.x + shift, tx0 + shift
     y = stage.y + max(0, (room - sum(heights) - gap * (n - 1)) / 2)
@@ -802,14 +808,19 @@ def block_heading_items(sec, L, box, f0):
     return items, f + 7, Box(box.x, box.y, box.w, uy + 8 - box.y)
 
 
-def side_block(sec, L, box, label_f0):
+def side_list(sec):
+    """A side's 'list' run (kind, chart, lines), or None."""
+    return next((r for r in runs_of(sec) if r[0] == 'chart' and r[1].visual.kind == 'list'), None)
+
+
+def side_block(sec, L, box, label_f0, peers=()):
     """One side's whole block: its label, drawn at `label_f0` (the same
     frame for both sides, when the slide appears), and, if it has a
     'list' visual, that list ticking in on the side's own lines, exactly
     as runs_of/chart_run already schedule it for a single side."""
     items, label_end, label_box = block_heading_items(sec, L, box, label_f0)
     marks = [Mark('heading', label_box, label_f0)]
-    run = next((r for r in runs_of(sec) if r[0] == 'chart' and r[1].visual.kind == 'list'), None)
+    run = side_list(sec)
     if run is None:
         return items, marks
     _, chart, lines = run
@@ -817,7 +828,7 @@ def side_block(sec, L, box, label_f0):
     start = lines[0].start
     first_f = max(label_end + 2, start + (FADE if start > sec.start else 0))
     body = Box(box.x, label_box.bottom + 24 * u, box.w, box.bottom - label_box.bottom - 24 * u)
-    list_items, list_marks = list_visual(chart, lines, L, first_f, chart.end, stage=body)
+    list_items, list_marks = list_visual(chart, lines, L, first_f, chart.end, stage=body, peers=peers)
     for m in list_marks:
         m.f0 = first_f
     return items + list_items, marks + list_marks
@@ -830,8 +841,10 @@ def sides_group(side_a, side_b, L, fmt, h_f0):
     box_a, box_b = side_boxes(L, fmt)
     items = list(h_items)
     marks = [Mark('heading', h_box, side_a.start)]
-    for sec, box in ((side_a, box_a), (side_b, box_b)):
-        si, sm = side_block(sec, L, box, h_end + 2)
+    lists = {id(sec): side_list(sec) for sec in (side_a, side_b)}
+    for sec, other, box in ((side_a, side_b, box_a), (side_b, side_a, box_b)):
+        peer = lists[id(other)]
+        si, sm = side_block(sec, L, box, h_end + 2, peers=(peer[1].visual.items,) if peer else ())
         items += si
         marks += sm
     return items, marks

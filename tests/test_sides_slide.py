@@ -14,10 +14,10 @@ SOURCE = Source(id="arguments", kind="official-argument", publisher="Pub",
                 retrieved="2026-01-01")
 
 
-def _side_section(label, heading, side, start=100, end=300, with_list=True):
+def _side_section(label, heading, side, start=100, end=300, with_list=True, items=None):
     """A minimal SectionBeat for a side section, with or without a 'list'
     visual, for testing side_block/sides_group without a whole contest."""
-    items = ["Point one, stated plainly", "Point two, stated plainly"]
+    items = items or ["Point one, stated plainly", "Point two, stated plainly"]
     visual = Visual(kind="list", source="arguments", items=items) if with_list else None
     line = Line(text="Some say things about it.", sources=("arguments",),
                connective=False, visual=visual)
@@ -98,6 +98,27 @@ class SidesGroupTest(unittest.TestCase):
         items, marks = m.sides_group(side_a, side_b, L, "9x16", 104)
         self.assertTrue(items)
         self.assertEqual(sum(1 for mk in marks if mk.name == "heading"), 3)
+
+
+    def test_rows_line_up_when_one_side_wraps_and_the_other_does_not(self):
+        # STANDARD.md rule 7.4: the blocks' rows sit at the same place in
+        # each block even when one side's item takes two lines and the
+        # other's one (each list used to centre on its own height).
+        long = "Protects schools, health care and public safety in every single downturn ahead"
+        for fmt in ("9x16", "16x9"):
+            L = m.LAYOUTS[fmt]
+            box_a, box_b = m.side_boxes(L, fmt)
+            side_a = _side_section("no", "Why some vote no", "no", 100, 300,
+                                   items=["Short point", "Another short one"])
+            side_b = _side_section("yes", "Why some vote yes", "yes", 300, 500,
+                                   items=[long, "Stops overspending"])
+            _, marks = m.sides_group(side_a, side_b, L, fmt, 104)
+            charts = [mk.box for mk in marks if mk.name == "chart"]
+            self.assertEqual(len(charts), 2)
+            a, b = charts
+            self.assertAlmostEqual(a.y - box_a.y, b.y - box_b.y, places=3)
+            self.assertAlmostEqual(a.h, b.h, places=3)
+            self.assertAlmostEqual(a.x - box_a.x, b.x - box_b.x, places=3)
 
 
 class BuildHoldsSidesAsOneTest(unittest.TestCase):
