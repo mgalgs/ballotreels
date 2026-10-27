@@ -787,23 +787,60 @@ def source_at(chart, L, f0, box):
     return Item(f0 - 1, f0, draw_source, None, ease=vb.linear), Box(box.x, box.y, box.w, sh)
 
 
-def list_visual(chart, lines, L, f0, f1):
+def list_visual(chart, lines, L, f0, f1, stage=None, peers=()):
     """A checklist in a column, top to bottom: a side's own points, in short
     form (the second exception to pictures-only on the stage, besides the
-    page card), its rows packed (list_rows) and centred on the stage with
-    the source under them. The sides slide (sides_group) draws its two
-    lists itself; this is for a list anywhere else."""
-    stage = L['stage']
+    page card). Each entry is a hand-drawn check mark then its text,
+    revealed one per line like a `timeline` but with no dates
+    (docs/SCRIPT-FORMAT.md), and the source along the bottom. `stage`
+    overrides L['stage'], for a list confined to less than the whole
+    stage (the sides slide's two blocks, sides_group). `peers` are other
+    lists' items to lay out alike: the font, each row's height, the gaps
+    and the column's offsets are fitted to all of them together, so two
+    side blocks line up row for row whatever their words (rule 7.4)."""
+    v = chart.visual
+    stage = stage if stage is not None else L['stage']
     u = L['u']
-    _, sh = source_lines(chart, L, stage.w)
-    src_gap = 30 * u
-    rows = list_rows([chart.visual.items], L, stage.w,
-                     lambda rows_h, gap: rows_h + src_gap + sh <= stage.h)
-    rows['width'] = stage.w - rows['tx']
-    y = stage.y + (stage.h - rows['rows_h'] - src_gap - sh) / 2
-    items, box = list_rows_items(chart.visual.items, rows, lines, L, stage.x, y, f0, f1)
-    src, sbox = source_at(chart, L, f0, Box(stage.x, box.bottom + src_gap, stage.w, sh))
-    return [src] + items, [Mark('chart', box), Mark('chart source', sbox)]
+    src, sbox = source_note(chart, L, f0, stage)
+    itf = L['timeline_font']
+    n = len(v.items)
+    check = 40 * u
+    tx0 = stage.x + check + 30 * u
+    tw = stage.right - tx0
+    every = [v.items, *peers]
+    while True:
+        blocks = [text.wrap(it, itf, tw, balance=True) for it in v.items]
+        heights = [max(len(text.wrap(its[i], itf, tw, balance=True)) for its in every if i < len(its))
+                   * text.line_height(itf) for i in range(n)]
+        room = sbox.y - 40 * u - stage.y
+        if sum(heights) + 36 * u * (n - 1) <= room or itf.size < 26:
+            break
+        itf = font(itf.size * 0.92, family=PRINT)
+    gap = max(36 * u, min(100 * u, (room - sum(heights)) / max(1, n - 1)))
+    # centre the column on the stage, as timeline_visual does
+    widest = max(text.measure(ln, itf) for its in every for it in its
+                 for ln in text.wrap(it, itf, tw, balance=True))
+    shift = max(0, (stage.w - (tx0 - stage.x) - widest) / 2 - 20 * u)
+    cx0, tx = stage.x + shift, tx0 + shift
+    y = stage.y + max(0, (room - sum(heights) - gap * (n - 1)) / 2)
+    starts = timeline_reveals(n, lines, f0)
+    items = [src]
+    top = y
+    for i, (block, h, s0) in enumerate(zip(blocks, heights, starts)):
+        cy = y + text.line_height(itf) * 0.5
+        entry = []
+        f = s0
+        mark = Stroke(check_mark_pts(cx0 + check / 2, cy, check), seed_of('check', i), passes=2,
+                     width=4.6 * u, overshoot=0)
+        entry.append(stroke_item(f, f + 9, mark, ink=LIST_COLOUR))
+        f += 9
+        ti, f, _ = write_lines(f, block, itf, tx, y)
+        entry += ti
+        nxt = starts[i + 1] if i + 1 < n else f1
+        items += scaled(entry, s0, draw_budget(s0, nxt))
+        y += h + gap
+    box = Box(cx0, top, stage.right - cx0, y - gap - top)
+    return items, [Mark('chart', box), Mark('chart source', sbox)]
 
 
 # ---- the stage: both sides on one slide (STANDARD.md rule 2.2) ----
