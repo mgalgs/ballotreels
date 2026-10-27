@@ -1,0 +1,68 @@
+# Archived sources for Washington Initiative Measure IP26-645, 2026-11-03
+# general election. Every id here may be cited by script.toml. `kind` must
+# be one the standard allows (docs/STANDARD.md, section 1).
+#
+# The Attorney General's public investment impact disclosure is a
+# statement of the measure's fiscal effect that state law requires on the
+# ballot, so it is kept as a fiscal source beside the Office of Financial
+# Management's Fiscal Impact Statement.
+
+[contest]
+id = "wa-2026-11-03-ip26-645"
+election = "wa-2026-11-03"
+division = "ocd-division/country:us/state:wa"
+kind = "measure"
+title = "Initiative Measure IP26-645: State and local taxes"
+
+[[source]]
+id = "ballot-title"
+kind = "official-title-summary"
+publisher = "Attorney General of Washington, Ballot Title and Ballot Measure Summary for Initiative No. IP26-645, May 4, 2026"
+credit = "Ballot Title, Initiative IP26-645"
+url = "https://www.sos.wa.gov/sites/default/files/2026-07/IP26-645%20Ballot%20title%20&%20Summary.pdf"
+file = "sources/ballot-title.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "explanatory"
+kind = "official-title-summary"
+publisher = "Attorney General of Washington, Explanatory Statement for Initiative IP26-645, July 23, 2026"
+credit = "Explanatory Statement, Attorney General of Washington"
+url = "https://www.sos.wa.gov/sites/default/files/2026-07/ExStmt_IP26-645.pdf"
+file = "sources/explanatory-statement.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal"
+kind = "official-fiscal-analysis"
+publisher = "Office of Financial Management, Fiscal Impact Statement for Initiative 645"
+credit = "Fiscal Impact Statement, Office of Financial Management"
+url = "https://www.sos.wa.gov/sites/default/files/2026-07/FIS%20-%20Initiative%20645%20-%20FINAL.pdf"
+file = "sources/fiscal-impact.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "investment-disclosure"
+kind = "official-fiscal-analysis"
+publisher = "Attorney General of Washington, Public Investment Impact Disclosure for Initiative IP26-645, July 23, 2026"
+credit = "Public Investment Impact Disclosure, Attorney General of Washington"
+url = "https://www.sos.wa.gov/sites/default/files/2026-07/IP26-645_PIID.pdf"
+file = "sources/public-investment-impact.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments for and against Initiative Measure IP26-645 and rebuttals, as printed in the Voters' Pamphlet, page 14"
+credit = "Arguments for and against, Voters' Pamphlet"
+url = "https://www.sos.wa.gov/sites/default/files/2026-09/IP26-645%20VP%20page%209.17.pdf"
+file = "sources/arguments.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Washington Secretary of State, full text of Initiative Measure No. IP26-645"
+url = "https://www.sos.wa.gov/sites/default/files/2026-07/Finaltext_IP26-645_fulltext.pdf"
+file = "sources/text-proposed-law.pdf"
+retrieved = "2026-10-27"
