@@ -152,6 +152,8 @@ def layout_9x16():
         caption_font=font(58, family=PRINT),
         caption_lines=2,
         sources_font=font(48, family=PRINT),
+        footer=Box(70, 1574, 940, 40),
+        footer_font=font(30, family=PRINT),
     )
 
 
@@ -176,6 +178,8 @@ def layout_16x9():
         caption_font=font(54, family=PRINT),
         caption_lines=2,
         sources_font=font(42, family=PRINT),
+        footer=Box(250, 1034, 1420, 32),
+        footer_font=font(25, family=PRINT),
     )
 
 
@@ -1016,9 +1020,447 @@ def runs_of(sec):
     return out
 
 
+# ---- the stage: the official page (the `page` visual) ----
+# The measure's page in the official voter guide, drawn from the script's
+# [card] (docs/SCRIPT-FORMAT.md): the first `page` line draws it on, and
+# each one with a `focus` "clicks" a term on it: the pencil circles every
+# occurrence, then the camera eases in to frame them. A later `page` line
+# brings the page back at full view, every term clicked so far ticked off.
+CARD = CONTEST.script.card
+PAGE_DRAW = 30     # frames the page takes to draw on, the first time (1 s)
+CIRCLE = 30        # frames the pencil takes to circle a term, every occurrence (1 s)
+ZOOM = 24          # frames the camera takes to ease in on it (0.8 s)
+CAMERA = vb.bezier(0.45, 0, 0.55, 1)  # eases in and out
+PAGE_ZOOM_MAX = 3.2  # the most the camera magnifies the page
+SUMMARY_BOLD = 'Fiscal Impact:'       # bold on the official page
+
+
+def _space(fnt):
+    return text.measure('x x', fnt) - text.measure('xx', fnt)
+
+
+class Flow:
+    """One field of the card set as a paragraph: its words wrapped into
+    `width` from (x, y), each word in the plain or bold face. `runs` are
+    (text, font, x, y), a line's words of one face, to draw; `boxes(a, b)`
+    the boxes on the page of the field's characters a..b, one a line."""
+
+    def __init__(self, field, words, plain, bold=(), bold_font=None, x=0, y=0, width=100, lh=None):
+        self.field = field
+        self.lh = lh or text.line_height(plain)
+        toks = []
+        for m in re_words(words):
+            a, b = m.span()
+            fnt = bold_font if any(s <= a < e for s, e in bold) else plain
+            toks.append([a, b, m.group(0), fnt])
+        lines = [[]]
+        used = 0
+        for t in toks:
+            w = text.measure(t[2], t[3])
+            gap = _space(t[3]) if lines[-1] else 0
+            if lines[-1] and used + gap + w > width:
+                lines.append([])
+                used, gap = 0, 0
+            lines[-1].append(t)
+            used += gap + w
+        self.tokens = []  # (start, end, word, font, x, y)
+        self.runs = []
+        self.widest = 0
+        for i, ln in enumerate(lines):
+            ly = y + i * self.lh
+            rx = x
+            k = 0
+            while k < len(ln):
+                j = k
+                while j < len(ln) and ln[j][3] is ln[k][3]:
+                    j += 1
+                fnt = ln[k][3]
+                run = ' '.join(t[2] for t in ln[k:j])
+                for t in ln[k:j]:
+                    pre = ' '.join(u[2] for u in ln[k:ln.index(t) + 1])
+                    self.tokens.append((t[0], t[1], t[2], fnt, rx + text.measure(pre, fnt) - text.measure(t[2], fnt),
+                                        ly))
+                self.runs.append((run, fnt, rx, ly))
+                rx += text.measure(run, fnt) + (_space(fnt) if j < len(ln) else 0)
+                k = j
+            self.widest = max(self.widest, rx - x)
+        self.x, self.y, self.width = x, y, width
+        self.height = self.lh * len(lines)
+
+    def boxes(self, a, b):
+        """Boxes covering characters a..b of the field, one per line."""
+        by_line = {}
+        for s, e, word, fnt, x, y in self.tokens:
+            if e <= a or s >= b:
+                continue
+            la, lb = max(a, s) - s, min(b, e) - s
+            x0 = x + (text.measure(word[:la], fnt) if la else 0)
+            x1 = x + text.measure(word[:lb], fnt)
+            lo, hi = by_line.get(y, (x0, x1))
+            by_line[y] = (min(lo, x0), max(hi, x1))
+        return [Box(x0, y, x1 - x0, self.lh) for y, (x0, x1) in sorted(by_line.items())]
+
+
+def re_words(s):
+    import re
+    return re.finditer(r'\S+', s)
+
+
+def page_fonts(s):
+    return dict(
+        body=font(s, family=PRINT), bold=font(s, 700, family=PRINT),
+        title=font(s * 1.1, 700, family=PRINT), head=font(s * 0.95, 700, family=PRINT),
+        prop=font(s * 0.8, 700, family=PRINT), num=font(s * 2.0, 700, family=PRINT),
+        label=font(s * 1.15, 700, family=PRINT))
+
+
+def _layout_page(card, box, s, arrangement):
+    """The card's contents set at body size `s` inside `box`, in one of three
+    arrangements: 'stacked' (one column, the YES box over the NO box), 'side'
+    (one column, the boxes side by side) or 'columns' (the summary beside
+    the boxes). Returns (height used, parts)."""
+    F = page_fonts(s)
+    gap = s * 0.7
+    pad = s * 0.6           # inside a YES/NO box
+    parts = dict(fonts=F, flows=[], shapes=[], labels=[])
+    two = arrangement == 'columns'
+    colw = (box.w - gap * 1.5) / 2 if two else box.w
+    x, y = box.x, box.y
+    # the badge: PROP over the number, in a box, the title beside it
+    bw = max(text.measure('PROP', F['prop']), text.measure(card.number, F['num'])) + s * 0.8
+    bh = text.line_height(F['prop']) * 0.9 + text.line_height(F['num']) * 0.85 + s * 0.3
+    parts['badge'] = Box(x, y, bw, bh)
+    tx = x + bw + gap * 0.8
+    title = Flow('title', card.title, F['title'], x=tx, y=y, width=x + colw - tx)
+    title.y_shift = max(0, (bh - title.height) / 2)
+    title = Flow('title', card.title, F['title'], x=tx, y=y + title.y_shift, width=x + colw - tx)
+    parts['flows'].append(title)
+    y += max(bh, title.height) + gap * 0.8
+    # SUMMARY, and who put it on the ballot
+    sw = text.measure('SUMMARY', F['head'])
+    parts['labels'].append(('SUMMARY', F['head'], x, y))
+    origin = Flow('origin', card.origin, F['body'], x=x + sw + gap, y=y, width=colw - sw - gap)
+    parts['flows'].append(origin)
+    y += max(text.line_height(F['head']), origin.height) + gap * 0.25
+    parts['shapes'].append(('rule', (x, y, colw)))
+    y += gap * 0.45
+    k = card.summary.find(SUMMARY_BOLD)
+    bold = [(k, k + len(SUMMARY_BOLD))] if k >= 0 else []
+    summary = Flow('summary', card.summary, F['body'], bold, F['bold'], x=x, y=y, width=colw)
+    parts['flows'].append(summary)
+    y += summary.height
+    left_bottom = y
+    if two:
+        x, y = box.x + colw + gap * 1.5, box.y
+    else:
+        y += gap
+    # WHAT YOUR VOTE MEANS, then the YES and NO boxes, alike in every way (rule 7.4)
+    parts['labels'].append(('WHAT YOUR VOTE MEANS', F['head'], x, y))
+    y += text.line_height(F['head']) + gap * 0.1
+    parts['shapes'].append(('rule', (x, y, colw)))
+    y += gap * 0.6
+    side = arrangement == 'side'
+    vw = (colw - gap) / 2 if side else colw
+    lab_h = text.line_height(F['label'])
+    inner = vw - 2 * pad
+    flows = [Flow(key, getattr(card, key), F['body'], x=0, y=0, width=inner) for key in ('yes', 'no')]
+    vh = pad * 2 + lab_h + max(f.height for f in flows)
+    for i, (key, word) in enumerate((('yes', 'YES'), ('no', 'NO'))):
+        bx = x + (vw + gap) * i if side else x
+        by = y if side else y + (vh + gap * 0.6) * i
+        parts['shapes'].append(('vote', (bx, by, vw, vh)))
+        parts['labels'].append((word, F['label'], bx + pad, by + pad * 0.8))
+        parts['flows'].append(Flow(key, getattr(card, key), F['body'], x=bx + pad, y=by + pad * 0.8 + lab_h,
+                                   width=inner))
+    y += vh if side else vh * 2 + gap * 0.6
+    return max(y, left_bottom) - box.y, parts
+
+
+@functools.lru_cache(maxsize=4)
+def page_plan(fmt):
+    """The card laid out for format `fmt`, as large as it fits the stage, in
+    the arrangement for its shape that sets its words largest: (paper box,
+    parts)."""
+    L = LAYOUTS[fmt]
+    stage = L['stage']
+    u = L['u']
+    margin = 26 * u
+    inset = 36 * u
+    paper_box = Box(stage.x + margin * 0.3, stage.y + margin * 0.3, stage.w - margin * 0.6, stage.h - margin * 0.6)
+    content = Box(paper_box.x + inset, paper_box.y + inset * 1.2, paper_box.w - 2 * inset, paper_box.h - 2.2 * inset)
+    # Stacked boxes in a tall frame, the summary beside them in a wide one:
+    # either way a term in both boxes sits close to its twin, so the camera
+    # can frame the pair large.
+    best = None
+    for arrangement in (('stacked',) if L['H'] > L['W'] else ('columns', 'stacked')):
+        s = 60 * u
+        while s > 12:
+            h, parts = _layout_page(CARD, content, s, arrangement)
+            if h <= content.h:
+                break
+            s *= 0.97
+        if best is None or s > best[0]:
+            best = (s, h, parts, arrangement)
+    s, h, parts, arrangement = best
+    # centre the contents down the paper
+    dy = (content.h - h) / 2
+    _, parts = _layout_page(CARD, Box(content.x, content.y + dy, content.w, h), s, arrangement)
+    parts['arrangement'] = arrangement
+    parts['size'] = s
+    return paper_box, parts
+
+
+def focus_boxes(parts, focus):
+    """Every occurrence of `focus` on the card, in reading order: a list,
+    one entry per occurrence, of its boxes (one per line it spans)."""
+    out = []
+    for fl in parts['flows']:
+        words = getattr(CARD, fl.field)
+        k = words.find(focus)
+        while k >= 0:
+            out.append(fl.boxes(k, k + len(focus)))
+            k = words.find(focus, k + len(focus))
+    return out
+
+
+def _ring(b, u, seed):
+    """A quick hand's circle round box `b`: a loose ellipse, a little more than
+    once round, so its ends cross."""
+    rx, ry = b.w / 2 + 16 * u, b.h / 2 + 8 * u
+    a0 = -2.4 + random.Random(seed).uniform(-0.2, 0.2)
+    pts = sp.ellipse(b.cx, b.cy, rx, ry, a0, a0 + 2 * math.pi + 0.45, rot=-0.02, n=72)
+    return Stroke(pts, seed, passes=2, width=4.2 * u, wobble=2.2, overshoot=2, alpha=0.9)
+
+
+def _tick(b, u, seed):
+    """A small tick at the top right of the circle round box `b`."""
+    x, y = b.right + 14 * u, b.y - 4 * u
+    s = 15 * u
+    return Stroke([(x - s * 0.7, y), (x - s * 0.15, y + s * 0.6), (x + s, y - s * 0.9)], seed, passes=2,
+                  width=4 * u, wobble=0.8, overshoot=0)
+
+
+def page_static(paper_box, parts, L):
+    """The page, drawn whole: a draw function for its paper, and the lettering
+    and lines on it as (draw(cv, p), head) pairs, in reading order, for
+    drawing on."""
+    u = L['u']
+    F = parts['fonts']
+    marks = []
+
+    def paper_draw(cv):
+        ctx = cv.ctx
+        x, y, w, h = paper_box
+        cv.shape_shadow(box_pts(x, y, w, h), dx=5, dy=9, blur=16, color=(60, 40, 20, 0.2))
+        paths.draw(cv, box_pts(x, y, w, h), PAPER_SCRAP, fill=True)
+        ctx.save()
+        ctx.translate(paper_box.cx, y - 4)
+        ctx.rotate(0.03)
+        ctx.rectangle(-60, -17, 120, 34)
+        ctx.set_source_rgba(*TAPE)
+        ctx.fill()
+        ctx.restore()
+
+    def write(words, fnt, x, y, alpha=1.0):
+        marks.append(('text', words, fnt, x, y, alpha))
+
+    b = parts['badge']
+    marks.append(('stroke', Stroke(box_pts(*b), seed_of('page badge'), passes=2, width=3.6 * u, closed=True,
+                                   overshoot=0)))
+    write('PROP', F['prop'], b.cx - text.measure('PROP', F['prop']) / 2, b.y + 0.15 * F['prop'].size)
+    write(CARD.number, F['num'], b.cx - text.measure(CARD.number, F['num']) / 2,
+          b.y + text.line_height(F['prop']) * 0.8)
+    flows = {fl.field: fl for fl in parts['flows']}
+    for run in flows['title'].runs:
+        write(*run)
+    labels = iter(parts['labels'])
+    write(*next(labels), alpha=0.8)  # SUMMARY
+    for run in flows['origin'].runs:
+        write(*run, alpha=0.85)
+    shapes = iter(parts['shapes'])
+    kind, (x, y, w) = next(shapes)
+    marks.append(('stroke', Stroke([(x, y), (x + w, y)], seed_of('page rule', 0), passes=2, width=2.6 * u,
+                                   overshoot=2, alpha=0.6)))
+    for run in flows['summary'].runs:
+        write(*run)
+    write(*next(labels), alpha=0.8)  # WHAT YOUR VOTE MEANS
+    kind, (x, y, w) = next(shapes)
+    marks.append(('stroke', Stroke([(x, y), (x + w, y)], seed_of('page rule', 1), passes=2, width=2.6 * u,
+                                   overshoot=2, alpha=0.6)))
+    # the YES and NO boxes: the same outline, lettering and timing
+    for key in ('yes', 'no'):
+        kind, (x, y, w, h) = next(shapes)
+        marks.append(('stroke', Stroke(box_pts(x, y, w, h), seed_of('page vote box'), passes=2, width=3.2 * u,
+                                       closed=True, overshoot=0, alpha=0.75)))
+        write(*next(labels))
+        for run in flows[key].runs:
+            write(*run)
+    return paper_draw, marks
+
+
+def page_items(paper_box, parts, L, f0, budget, whole):
+    """The page's items from frame f0: drawn on within `budget` frames, or,
+    if `whole`, already drawn (the page coming back)."""
+    paper_draw, marks = page_static(paper_box, parts, L)
+    items = []
+    f = f0
+    if whole:
+        f0 = f = f0 - 2
+    items.append(fade_item(f, f + 6, paper_draw))
+    f += 4
+    for m in marks:
+        if m[0] == 'stroke':
+            st = m[1]
+            d = max(6, paths.length(st.passes[0][0]) / 120)
+            items.append(stroke_item(f, f + d, st, pencil=not whole))
+            f += d
+        else:
+            _, words, fnt, x, y, alpha = m
+            d = write_frames(text.measure(words, fnt))
+            items.append(text_item(f, f + d, words, fnt, x, y, alpha=alpha, pencil=not whole))
+            f += d
+    if whole:
+        for it in items:
+            it.f0, it.f1 = f0, f0 + 1
+        return items
+    return scaled(items, f0, budget)
+
+
+def _clamp(v, lo, hi):
+    """v within lo..hi; their midpoint if the range is empty."""
+    return (lo + hi) / 2 if lo > hi else min(max(v, lo), hi)
+
+
+class Camera:
+    """Where the stage looks on the page at frame n: identity until f0, then
+    easing over ZOOM frames to frame `target` (a Box on the page), at most
+    PAGE_ZOOM_MAX times larger, never past the paper's edge."""
+
+    def __init__(self, stage, paper_box, target=None, f0=None, f1=None):
+        self.stage, self.paper, self.f0, self.f1 = stage, paper_box, f0, f1
+        self.k, self.c = 1.0, (stage.cx, stage.cy)
+        if target is not None:
+            k = min(stage.w * 0.9 / target.w, stage.h * 0.7 / target.h, PAGE_ZOOM_MAX)
+            k = max(1.0, k)
+            hw, hh = stage.w / 2 / k, stage.h / 2 / k
+            cx = _clamp(target.cx, paper_box.x + hw, paper_box.right - hw)
+            cy = _clamp(target.cy, paper_box.y + hh, paper_box.bottom - hh)
+            self.k, self.c = k, (cx, cy)
+
+    def at(self, n):
+        if self.f0 is None or n <= self.f0:
+            return 1.0, (self.stage.cx, self.stage.cy)
+        e = CAMERA(vb.clamp01((n - self.f0) / (self.f1 - self.f0)))
+        # the scale eases geometrically, so the zoom feels even
+        k = self.k ** e
+        q = (k - 1) / (self.k - 1) if self.k > 1 else e
+        sx, sy = self.stage.cx, self.stage.cy
+        return k, (sx + (self.c[0] - sx) * q, sy + (self.c[1] - sy) * q)
+
+    def apply(self, cv, n):
+        k, (cx, cy) = self.at(n)
+        ctx = cv.ctx
+        ctx.translate(self.stage.cx, self.stage.cy)
+        ctx.scale(k, k)
+        ctx.translate(-cx, -cy)
+
+
+def _union(boxes):
+    x0 = min(b.x for b in boxes)
+    y0 = min(b.y for b in boxes)
+    x1 = max(b.right for b in boxes)
+    y1 = max(b.bottom for b in boxes)
+    return Box(x0, y0, x1 - x0, y1 - y0)
+
+
+def page_run(chart, lines, L, first_f, fmt, state):
+    """The page for a `page` line and the lines it stays up for: drawn on the
+    first time, faded back in (with every term clicked so far ticked off)
+    after that; then, with a `focus`, the term circled and zoomed in on.
+    `state` carries what earlier page runs did: (items, marks, camera,
+    fade-in frame or None)."""
+    stage = L['stage']
+    u = L['u']
+    paper_box, parts = page_plan(fmt)
+    end = lines[-1].end
+    first = not state['drawn']
+    room = end - first_f
+    if first:
+        items = page_items(paper_box, parts, L, first_f, min(PAGE_DRAW, room * 0.35), whole=False)
+        f = max(it.f1 for it in items) + 4
+        fade_in = None
+    else:
+        items = page_items(paper_box, parts, L, first_f, 0, whole=True)
+        f = first_f + FADE
+        fade_in = first_f
+    state['drawn'] = True
+    # the terms clicked so far: each circle, faint, with a tick
+    for t, focus in enumerate(state['clicked']):
+        for occ in focus_boxes(parts, focus):
+            for j, b in enumerate(occ):
+                ring = _ring(b, u, seed_of('ring', focus, b.x, b.y))
+                items.append(stroke_item(first_f - 2, first_f - 1, ring, alpha=0.3, pencil=False))
+            tick = _tick(occ[-1], u, seed_of('tick', focus))
+            items.append(stroke_item(first_f - 2, first_f - 1, tick, alpha=0.8, pencil=False))
+    camera = Camera(stage, paper_box)
+    focus = chart.visual.focus
+    if focus:
+        occs = focus_boxes(parts, focus)
+        rings = [b for occ in occs for b in occ]
+        k = min(1.0, (room * 0.6 - (f - first_f)) / (CIRCLE + ZOOM + 4)) if room > 0 else 1.0
+        k = max(k, 0.4)
+        per = CIRCLE * k / len(rings)
+        for b in rings:
+            ring = _ring(b, u, seed_of('ring', focus, b.x, b.y))
+            items.append(stroke_item(f, f + per, ring))
+            f += per
+        z0 = f + 3
+        camera = Camera(stage, paper_box, _union(rings), z0, z0 + ZOOM * k)
+        if focus not in state['clicked']:
+            state['clicked'].append(focus)
+    marks = [Mark('chart', paper_box)]
+    return items, marks, camera, fade_in
+
+
+class PageGroup(Group):
+    """A Group for the page: drawn through its camera, clipped to the stage,
+    and faded in from `fade_in` (None: drawn on instead)."""
+
+    def __init__(self, items, marks, f0, out, camera, fade_in):
+        super().__init__(items, marks, f0, out)
+        self.camera, self.fade_in = camera, fade_in
+
+    def draw(self, cv, n):
+        if n < self.f0 - 1 or (self.out is not None and n >= self.out + FADE):
+            return
+        opacity = 1.0
+        if self.fade_in is not None:
+            opacity = vb.clamp01((n - self.fade_in) / FADE)
+        if self.out is not None and n >= self.out:
+            opacity = min(opacity, 1 - (n - self.out) / FADE)
+        if opacity <= 0:
+            return
+        s = self.camera.stage
+        ctx = cv.ctx
+        # the zoomed page shows only within the stage; at full view, its shadow too
+        grow = 0 if self.camera.at(n)[0] > 1.0001 else 40
+        with cv.clip(s.x - grow, s.y - grow, s.w + 2 * grow, s.h + 2 * grow):
+            with cv.layer(opacity=opacity):
+                ctx.save()
+                self.camera.apply(cv, n)
+                for it in self.items:
+                    it.draw(cv, n)
+                ctx.restore()
+        if opacity >= 1:
+            for m in self.marks:
+                if n >= m.f0:
+                    cv.mark(m.name, *m.box)
+
+
 def build(fmt):
     L = LAYOUTS[fmt]
     groups = []
+    pages = dict(drawn=False, clicked=[])  # what earlier `page` lines did
     for sec in BOARD.sections:
         h_items, h_end, h_box = heading_items(sec, L, sec.start + (FADE if sec.number else 4))
         groups.append(Group(h_items, [Mark('heading', h_box, sec.start)], sec.start, sec.end))
@@ -1027,6 +1469,12 @@ def build(fmt):
             start = lines[0].start
             first_f = max(h_end + 2, start + (FADE if start > sec.start else 0))
             end = lines[-1].end
+            if kind == 'chart' and chart.visual.kind == 'page':
+                items, marks, camera, fade_in = page_run(chart, lines, L, first_f, fmt, pages)
+                for m in marks:
+                    m.f0 = first_f
+                groups.append(PageGroup(items, marks, start, end, camera, fade_in))
+                continue
             if kind == 'chart':
                 items, marks = chart_run(chart, lines, L, first_f)
             else:
@@ -1175,6 +1623,21 @@ def draw_header(cv, L):
     cv.mark('header', *drawn)
 
 
+# ---- the footer: how to report a bias, on every frame (rule 5.1) ----
+FOOTER = 'ballotreels · bias is a bug · report it at github.com/mgalgs/ballotreels'
+
+
+def draw_footer(cv, L):
+    """One quiet line under the caption, the same on every frame: never the
+    accent colour, and clear of the caption scrap and any source line."""
+    fb = L['footer']
+    fnt = L['footer_font']
+    while text.measure(FOOTER, fnt) > fb.w and fnt.size > 14:
+        fnt = font(fnt.size * 0.95, family=PRINT)
+    drawn = sp.pencil_text(cv, [FOOTER], fnt, fb.x, fb.y, GRAPHITE, 0.62, align='center', width=fb.w)
+    cv.mark('footer', *drawn)
+
+
 # ---- the pencil: only while something is being drawn ----
 def pencil_at(n, P):
     """(x, y, ink, alpha) of the pencil tip at frame n, or None. It follows
@@ -1230,6 +1693,7 @@ def draw(n, cv):
     ctx.set_source_surface(sp.backdrop(cv.width, cv.height), 0, 0)
     ctx.paint()
     draw_header(cv, P['L'])
+    draw_footer(cv, P['L'])
     for g in P['groups']:
         g.draw(cv, n)
     draw_pencil(cv, n, P)
