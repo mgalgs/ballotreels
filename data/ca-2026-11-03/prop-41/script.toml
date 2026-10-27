@@ -1,0 +1,142 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what a
+# special tax is; how the spending limit works today; the three changes
+# (audits before the vote, audits after, the limit); the analyst's cost,
+# who pays it and the possible savings; one point per side; what a vote
+# does. Prop 40 appears only in the opponents' section (rule 6.3).
+
+contest = "ca-2026-11-03-prop-41"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "quick-reference"
+number = "41"
+title = "PROHIBITS NEW STATE TAXES THAT EXCLUDE REVENUES FROM STATE SPENDING LIMIT. REQUIRES AUDITS FOR NEW STATE SPECIAL TAXES. INITIATIVE CONSTITUTIONAL AMENDMENT."
+origin = "Put on the Ballot by Petition Signatures"
+summary = "Nullifies state taxes enacted after January 1, 2026 that exempt their revenues from voter-approved state spending limit. Requires pre-election and recurring audits of programs funded by new special taxes. Fiscal Impact: The net fiscal effect is unknown as it depends on future decisions by voters, the Legislature, and other policymakers."
+yes = "A YES vote on this measure means: When special taxes are proposed by voter initiatives, the California State Auditor would review programs funded by the tax before the initiative appears on the ballot. The California State Auditor also would regularly review programs funded by special taxes approved by voters or the Legislature. In addition, the state might not be able to exclude any new special tax spending from its spending limit."
+no = "A NO vote on this measure means: The California State Auditor’s responsibility to review government programs would not change. The state spending limit requirements would not change."
+
+[[section]]
+id = "what"
+heading = "Proposition 41"
+
+[[section.line]]
+text = "Proposition 41 is about special taxes, whose money goes to one set purpose."
+sources = ["quick-reference", "lao-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["new special taxes"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the state constitution limits state spending each year, but some spending, like on infrastructure, is left out."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "spending-limit"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Under Proposition 41, a special tax initiative's programs would be audited before the vote."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section.line]]
+text = "Programs funded by new special taxes would be audited every four years."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "recurring-review"
+
+[[section.line]]
+text = "And new special tax spending might not be left out of the spending limit."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "spending-limit"
+
+[[section]]
+id = "fiscal"
+heading = "What the state's analyst says"
+
+[[section.line]]
+text = "The Legislative Analyst's Office says the audits would likely cost low millions of dollars a year, mostly paid by the new taxes."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "The office says savings are possible, and the net effect is unknown."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say public audits of programs funded by new taxes bring transparency and accountability."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Public audits before voters decide on new taxes", "Ongoing audits to find waste and fraud"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Proposition 41 is designed specifically to undo the Billionaire Tax, Proposition 40."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Designed to undo the Billionaire Tax, Proposition 40", "Billionaires should pay to keep hospitals open"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means the State Auditor would review special tax programs."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["California State Auditor would review programs funded by the tax"]
+
+[[section.line]]
+text = "A no vote means the State Auditor's reviews would not change."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["responsibility to review government programs would not change"]
