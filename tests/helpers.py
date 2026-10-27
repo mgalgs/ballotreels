@@ -1,4 +1,4 @@
-"""Shared test helpers: the real Prop 2 contest, and broken copies of it."""
+"""Shared test helpers: a frozen Prop 2 contest, and broken copies of it."""
 
 import json
 import re
@@ -8,7 +8,9 @@ import unittest
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-PROP_2 = REPO / "data" / "ca-2026-11-03" / "prop-2"
+# A frozen copy of Prop 2, not the live data/ contest: tests edit exact
+# strings in its script, so the live script stays free to change.
+PROP_2 = REPO / "tests" / "fixtures" / "prop-2"
 
 
 # The real Prop 2 narration was read in 23.3 s (yes) and 24.7 s (no): within

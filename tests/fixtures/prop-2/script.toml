@@ -1,0 +1,227 @@
+# Narration script for California Proposition 2, 2026-11-03.
+# Written by hand from the archived sources in sources.toml, as the
+# reference example for the measure template. Format: docs/SCRIPT-FORMAT.md.
+
+contest = "ca-2026-11-03-prop-2"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[[section]]
+id = "what"
+heading = "What it is"
+
+[[section.line]]
+text = "Proposition 2 is about California's savings account for hard times: the Rainy Day Fund."
+sources = ["title-summary", "lao-analysis"]
+
+[[section.line]]
+text = "The Legislature put it on the ballot. It would require the state to save more in the fund, and to keep making extra debt payments for longer."
+sources = ["guide-section", "lao-analysis"]
+
+[[section]]
+id = "background"
+heading = "Where the money comes from"
+
+[[section.line]]
+text = "Each year, the state spends about 250 billion dollars from its General Fund, the account that pays for most public services."
+sources = ["lao-analysis"]
+
+[[section.line]]
+text = "About half goes to schools, community colleges and universities. About a third goes to health and human services, mostly Medi-Cal."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "share"
+title = "Where General Fund money goes (approximate)"
+source = "lao-analysis"
+unit = "%"
+labels = ["Schools and colleges", "Health and human services", "Everything else"]
+values = [50, 33, 17]
+
+[[section.line]]
+text = "Most of that money comes from the income tax. And much of the income tax is paid by high earners, whose incomes include gains from stocks and other investments."
+sources = ["lao-analysis"]
+
+[[section]]
+id = "background"
+heading = "Why it swings"
+
+[[section.line]]
+text = "Those gains rise and fall with the stock market and the economy. So the state's revenue does too."
+sources = ["lao-analysis", "lao-volatility"]
+
+[[section.line]]
+text = "In good years, revenue can grow quickly. In a bad recession or a market crash, it can drop by tens of billions of dollars."
+sources = ["lao-analysis"]
+
+[[section.line]]
+text = "Over a few bad years, the losses can add up to half a year's revenue, or more."
+sources = ["lao-analysis"]
+
+[[section.line]]
+text = "But the cost of schools, health care and other services grows steadily, year after year."
+sources = ["lao-volatility"]
+
+[section.line.visual]
+kind = "figure"
+figure = "steady-spending-volatile-revenue"
+title = "Revenue swings; spending grows steadily"
+source = "lao-volatility"
+
+[[section]]
+id = "background"
+heading = "How a reserve helps"
+
+[[section.line]]
+text = "A reserve fills that gap. The state saves money when revenue is high, and spends it when revenue falls short."
+sources = ["lao-analysis", "lao-volatility"]
+
+[[section.line]]
+text = "That helps the state avoid some spending cuts, tax increases and borrowing in the bad years."
+sources = ["lao-analysis"]
+
+[[section.line]]
+text = "The trade-off: money that is saved is not spent on public programs in the good years."
+sources = ["lao-analysis"]
+
+[[section]]
+id = "background"
+heading = "How we got here"
+
+[[section.line]]
+text = "Before 1980, the state's surpluses and reserves varied widely. From 1980 to 2014, it saved very little."
+sources = ["lao-volatility"]
+
+[[section.line]]
+text = "In 2014, voters approved the rules the state follows today."
+sources = ["lao-volatility"]
+
+[[section]]
+id = "today"
+heading = "The rules today"
+
+[[section.line]]
+text = "Each year, the state must put part of its tax revenue into the Rainy Day Fund, and more when taxes on investment gains are higher than normal."
+sources = ["lao-analysis"]
+
+[[section.line]]
+text = "Once the fund holds 10 percent of General Fund taxes, deposits stop, and that money goes to infrastructure, like highways and housing, instead."
+sources = ["lao-analysis"]
+
+[[section.line]]
+text = "The state must also make extra payments on pension and retiree health debts, until 2030."
+sources = ["lao-analysis"]
+
+[[section.line]]
+text = "Today, the state has about 20 billion dollars in reserves it can use for any program."
+sources = ["lao-analysis"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Proposition 2 raises the target from 10 to 20 percent of General Fund taxes. The state would keep saving until the fund reaches it."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Rainy Day Fund target, as a share of General Fund taxes"
+source = "lao-analysis"
+unit = "%"
+labels = ["Today", "Proposition 2"]
+values = [10, 20]
+
+[[section.line]]
+text = "In years when the stock market is booming, it would save even more."
+sources = ["lao-analysis"]
+
+[[section.line]]
+text = "It extends the extra debt payments to 2040, and lets that money pay a wider set of debts."
+sources = ["lao-analysis"]
+
+[[section.line]]
+text = "The State Constitution also limits how much tax revenue the state can spend each year. Today, money put into reserves counts toward that limit when it is saved."
+sources = ["lao-analysis"]
+
+[[section.line]]
+text = "Under Proposition 2, it would count when it is taken out and spent instead."
+sources = ["lao-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "Fiscal effect"
+
+[[section.line]]
+text = "The Legislative Analyst's Office says reserves would be higher, which would make balancing the budget somewhat easier when revenue falls."
+sources = ["lao-analysis"]
+
+[[section.line]]
+text = "It says the state might also make more debt payments than it would otherwise."
+sources = ["lao-analysis"]
+
+[[section.line]]
+text = "The arguments that follow are their authors' opinions. No official agency checked them for accuracy."
+sources = ["guide-section"]
+
+# The yes and no sections are the two sides. The renderer decides which
+# plays first (STANDARD.md rule 2.4); their word counts must stay within 5%.
+
+[[section]]
+id = "yes"
+heading = "Supporters say"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say a larger reserve would protect schools, health care, and public safety from cuts in the next downturn."
+sources = ["arguments"]
+
+[[section.line]]
+text = "They say it makes the state save more of a revenue spike instead of spending it, and that the Legislative Analyst's Office recommends saving more."
+sources = ["arguments"]
+
+[[section.line]]
+text = "And they say the rebate rule opponents cite rewards spending over saving."
+sources = ["arguments"]
+
+[[section.line]]
+text = "Their argument is signed by leaders of the California Professional Firefighters, the Assembly Budget Committee, and the Los Angeles Area Chamber of Commerce."
+sources = ["arguments"]
+
+[[section]]
+id = "no"
+heading = "Opponents say"
+side = "no"
+
+[[section.line]]
+text = "Opponents say it weakens the spending limit voters approved in 1978, making the tax rebates that limit can trigger less likely."
+sources = ["arguments"]
+
+[[section.line]]
+text = "They say it adds no new money for schools, health care, or public safety, and the state should follow its existing rules."
+sources = ["arguments"]
+
+[[section.line]]
+text = "And they say its backers soon voted to suspend over 5 billion dollars in deposits."
+sources = ["arguments"]
+
+[[section.line]]
+text = "Their argument is signed by leaders of the Assembly Budget Committee, the Senate Elections and Constitutional Amendments Committee, and Reform California."
+sources = ["arguments"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means reserves would be higher, and extra debt payments would continue for longer."
+sources = ["quick-reference"]
+
+[[section.line]]
+text = "A no vote means the current rules would not change."
+sources = ["quick-reference"]
+
+[[section.line]]
+text = "Every fact here comes from California's official voter guide and the Legislative Analyst's Office, listed on screen."
+connective = true

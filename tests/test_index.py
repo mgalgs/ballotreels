@@ -37,8 +37,8 @@ class IndexTest(unittest.TestCase):
     def test_prop_2_seeded(self):
         index = load_index(REAL)
         self.assertEqual(index.election.id, "ca-2026-11-03")
-        self.assertEqual(len(index.entries), 1)
-        entry = index.entries[0]
+        entry = next(e for e in index.entries
+                     if e.id == "ca-2026-11-03-prop-2")
         self.assertEqual(entry.id, "ca-2026-11-03-prop-2")
         self.assertEqual(entry.division, "ocd-division/country:us/state:ca")
         self.assertEqual(entry.kind, "measure")

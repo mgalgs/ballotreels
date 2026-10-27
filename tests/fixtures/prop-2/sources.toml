@@ -1,0 +1,68 @@
+# Archived sources for California Proposition 2, 2026-11-03 general election.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+
+[contest]
+id = "ca-2026-11-03-prop-2"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca"
+kind = "measure"
+title = "Proposition 2: Increases State's Rainy Day Fund. Legislative Constitutional Amendment."
+
+[[source]]
+id = "title-summary"
+kind = "official-title-summary"
+publisher = "California Attorney General, in the Official Voter Information Guide"
+url = "https://voterguide.sos.ca.gov/propositions/2/title-summary.htm"
+file = "sources/title-summary.html"
+retrieved = "2026-10-24"
+
+[[source]]
+id = "lao-analysis"
+kind = "official-fiscal-analysis"
+publisher = "California Legislative Analyst's Office, in the Official Voter Information Guide"
+credit = "Legislative Analyst's Office, Official Voter Information Guide"
+url = "https://voterguide.sos.ca.gov/propositions/2/analysis.htm"
+file = "sources/analysis.html"
+retrieved = "2026-10-24"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Official arguments and rebuttals for and against, as printed in the Official Voter Information Guide"
+url = "https://voterguide.sos.ca.gov/propositions/2/arguments-rebuttals.htm"
+file = "sources/arguments-rebuttals.html"
+retrieved = "2026-10-24"
+
+[[source]]
+id = "quick-reference"
+kind = "official-title-summary"
+publisher = "California Secretary of State, Quick Reference Guide"
+url = "https://voterguide.sos.ca.gov/quick-reference-guide/2.htm"
+file = "sources/quick-reference.html"
+retrieved = "2026-10-24"
+
+[[source]]
+id = "guide-section"
+kind = "official-title-summary"
+publisher = "California Secretary of State, Official Voter Information Guide, pages 20 to 25"
+url = "https://vig.cdn.sos.ca.gov/2026/general/pdf/prop2.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-24"
+
+[[source]]
+id = "lao-volatility"
+kind = "official-report"
+publisher = "California Legislative Analyst's Office, \"Revenue Volatility and California's Reserve Policy\", handout to the Senate Budget Committee, February 18, 2026"
+credit = "Legislative Analyst's Office, February 2026"
+url = "https://lao.ca.gov/handouts/state_admin/2026/Revenue-Volatility-and-CA-Reserve-Policy-021826.pdf"
+file = "sources/lao-revenue-volatility-2026-02.pdf"
+retrieved = "2026-10-24"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Text of Proposed Laws, Official Voter Information Guide"
+url = "https://vig.cdn.sos.ca.gov/2026/general/pdf/prop2-text-proposed-laws.pdf"
+file = "sources/text-proposed-law.pdf"
+retrieved = "2026-10-24"
