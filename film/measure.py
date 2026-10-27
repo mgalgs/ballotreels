@@ -21,7 +21,10 @@ drawn, and then holds still; it stays up through the lines after it until
 a later line in the section brings its own (the old one fades out) or the
 section ends (the whole page fades out, and the next heading draws on).
 The pencil (or the highlighter, on the page card) leaves as soon as its
-own mark is drawn: it never sits over a finished picture.
+own mark is drawn: it never sits over a finished picture. While it draws,
+a soft sound follows it (film/draw_sound.py): dry graphite for the
+pencil, a softer felt-tip swish for the highlighter, well under the
+narration; otherwise the film has no music and no other sound effect.
 The stage shows
 - the line's visual, if it has one: a chart, a timeline, a list (a
   side's own points, as a checklist, drawn like a timeline but with a
@@ -53,7 +56,6 @@ A quiet footer under the caption, on every frame, says where to report a
 bias (rule 5.1). At its left end, while a picture is on the stage, a small
 graphite ring counts down to the picture changing: full as it appears,
 empty as it goes, with no numbers.
-No music and no sound effects: the narration is the only sound.
 
 Time is in frames: one frame a beat, since cuts follow the narration, not
 a music grid.
@@ -78,6 +80,7 @@ import numpy as np  # noqa: E402
 import videobuilder as vb  # noqa: E402
 from videobuilder import Box, paths, text  # noqa: E402
 
+import draw_sound as dsnd  # noqa: E402
 import sketch as sp  # noqa: E402
 from sketch import (DRAW, GRAPHITE, ORANGE, RESTING_ANGLE, Hatch, Item,  # noqa: E402
                     Stroke, fade_item, hatch_item, stroke_item, text_item)
@@ -2206,12 +2209,18 @@ SEGMENTS.append(vb.Segment('sources', BOARD.narration_end, BOARD.end,
                            data={'copy': ['Sources'] + [s.publisher for s in BOARD.cited]}))
 TIMELINE = vb.Timeline(GRID, SEGMENTS, end=BOARD.end)
 
+# The drawing sounds follow the 9x16 schedule: the two formats' choreography
+# differs by at most a few frames (their layouts scale the same text, so
+# time differently by width), and the film has one shared audio track for
+# every format, as the narration already does.
+DRAW_SOUND = dsnd.sound_for(PLANS['9x16']['schedule'], FPS, BOARD.end)
+
 FILM = vb.Film(
     draw=draw,
     timeline=TIMELINE,
     formats=('9x16', '16x9'),
     background='#f2ebd8',
-    sounds=(VOICE.sound(at=0, fps=FPS),),
+    sounds=(VOICE.sound(at=0, fps=FPS), DRAW_SOUND),
 )
 
 if __name__ == '__main__':
