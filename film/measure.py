@@ -734,10 +734,15 @@ LIST_MAX_LINES = 2  # no item on the sides slide may take more lines than this
 
 def list_wrap(item, fnt, width):
     """A sides-slide item's lines: filled out to `width` from the first
-    line, so the text runs to the card's right edge, unless that leaves a
-    lone word on the last line, when the lines are balanced instead."""
+    line, so the text runs to the card's right edge. A lone word left on
+    the last line takes the word before it with it, keeping the first line
+    as full as it can be; balancing would leave it half empty."""
     lines = text.wrap(item, fnt, width)
-    if len(lines) > 1 and ' ' not in lines[-1].strip():
+    if len(lines) == 2 and ' ' not in lines[-1].strip():
+        words = item.split()
+        if len(words) >= 3:
+            return [' '.join(words[:-2]), ' '.join(words[-2:])]
+    if len(lines) > 2 and ' ' not in lines[-1].strip():
         return text.wrap(item, fnt, width, balance=True)
     return lines
 

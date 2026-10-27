@@ -261,3 +261,12 @@ class ListWrapTest(unittest.TestCase):
             lines = m.list_wrap(LONG, fnt, w)
             if len(lines) > 1:
                 self.assertIn(" ", lines[-1].strip(), w)
+
+    def test_a_lone_word_takes_one_more_word_down_not_half_the_line(self):
+        fnt = m.font(50, family=m.PRINT)
+        item = "The state's problem is spending, not revenue"
+        full = m.text.measure(item, fnt)
+        last = m.text.measure("revenue", fnt)
+        # wide enough for all but the last word: greedy would strand it
+        lines = m.list_wrap(item, fnt, full - last / 2)
+        self.assertEqual(lines, ["The state's problem is spending,", "not revenue"])
