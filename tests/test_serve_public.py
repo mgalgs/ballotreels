@@ -306,9 +306,14 @@ class RefusesWithoutTokenTest(unittest.TestCase):
     def test_unresolvable_election_exits_2(self):
         import os
         root = Path(self.enterContext(tempfile.TemporaryDirectory()))
+        # Two elections for one state: every election is served at once
+        # now, but only one per state.
         for name in ("e1", "e2"):
             (root / name).mkdir()
-            (root / name / "contests.toml").write_text("", encoding="utf-8")
+            (root / name / "contests.toml").write_text(
+                f'[election]\nid = "{name}"\n'
+                f'state = "ocd-division/country:us/state:ca"\n'
+                f'title = "T"\n', encoding="utf-8")
         site_config.DATA_ROOT = root
         old = os.environ.get("BALLOTREELS_TOKEN")
         os.environ["BALLOTREELS_TOKEN"] = "t"
@@ -323,7 +328,9 @@ class RefusesWithoutTokenTest(unittest.TestCase):
             else:
                 os.environ["BALLOTREELS_TOKEN"] = old
         self.assertEqual(code, 2)
-        self.assertIn("several elections; pass --election", err.getvalue())
+        self.assertIn("two elections for state 'ca'", err.getvalue())
+        self.assertIn(str(root / "e1"), err.getvalue())
+        self.assertIn(str(root / "e2"), err.getvalue())
 
     def test_refuses_without_token(self):
         for token_env in (None, "   "):

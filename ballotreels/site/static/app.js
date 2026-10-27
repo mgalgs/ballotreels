@@ -441,7 +441,11 @@ async function renderAddress() {
       submit.disabled = false;
       submit.textContent = "Find my ballot";
       let message;
-      if (status === 404) {
+      if (status === 404 && body && body.covered === false) {
+        message = body.state_name ?
+          `We don't cover ${body.state_name} yet.` :
+          "We don't cover that address's state yet.";
+      } else if (status === 404) {
         message = "We couldn't find that address. Check the spelling " +
           "and include the city and zip.";
       } else if (status === 0) {
@@ -502,6 +506,12 @@ async function renderZip(zip) {
   if (!ok) {
     if (status === 0) {
       app.appendChild(offlineNotice());
+    } else if (status === 404 && body && body.covered === false) {
+      app.appendChild(notice(body.state_name ?
+          `We don't cover ${body.state_name} yet` :
+          "We don't cover this zip yet",
+        `Zip code ${zip} is outside the states ballotreels covers so far.`,
+        [linkButton("Try another zip code", "#/", "btn-primary")]));
     } else if (status === 404) {
       app.appendChild(notice(`No district data for ${zip}`,
         "We don't have this zip code's districts. Check the number, " +
@@ -512,6 +522,15 @@ async function renderZip(zip) {
           "Something went wrong on our side. Try again in a moment.",
         homeActions()));
     }
+    return;
+  }
+  if (body.needs_address) {
+    // A zip across a state line: the street address says which state.
+    app.appendChild(notice(`Zip code ${zip} crosses a state line`,
+      `It is partly in ${body.states.map((s) => s.name).join(" and ")}. ` +
+      "Your street address tells us which ballot is yours.",
+      [linkButton("Use my street address", "#/address", "btn-primary"),
+       linkButton("Change zip code", "#/", "btn-quiet")]));
     return;
   }
   if (body.ambiguous.length === 0) {
@@ -534,15 +553,21 @@ async function renderZip(zip) {
 
 const KIND_NAMES = {
   cd: "congressional district",
-  sldu: "State Senate district",
-  sldl: "State Assembly district",
   county: "county",
 };
+
+// What a state calls its legislative chambers comes with the zip and
+// ballot answers (`chambers`: { sldu: "State Senate", sldl: ... }).
+function kindLabel(kind, chambers) {
+  const chamber = (chambers || {})[kind];
+  if (chamber) return `${chamber} district`;
+  return KIND_NAMES[kind] || "district";
+}
 
 async function renderAmbiguousKind(zip, zipDoc, kind) {
   app.innerHTML = "";
   window.scrollTo(0, 0);
-  const kindName = KIND_NAMES[kind] || "district";
+  const kindName = kindLabel(kind, zipDoc.chambers);
   const entries = zipDoc.kinds[kind];
   const letters = {};
   entries.forEach((entry, i) => { letters[entry.ocd_id] = letterFor(i); });
@@ -615,10 +640,12 @@ function selectDistrict(zip, zipDoc, chosenKind, chosenOcdId) {
 const LEVEL_NAMES = {
   state: "Statewide",
   cd: "Congressional",
-  sldu: "State Senate",
-  sldl: "State Assembly",
   county: "County",
 };
+
+function levelName(level, chambers) {
+  return (chambers || {})[level] || LEVEL_NAMES[level] || level;
+}
 
 // "ca-2026-11-03" -> "Tuesday, November 3, 2026".
 function electionDate(electionId) {
@@ -709,7 +736,7 @@ async function renderBallot(divisions, matchedAddress) {
   }));
   for (const level of body.levels) {
     section.appendChild(el("h2", { class: "level-heading",
-                                   text: LEVEL_NAMES[level.level] || level.level }));
+                                   text: levelName(level.level, body.chambers) }));
     for (const contest of level.contests) {
       section.appendChild(renderContestCard(contest));
     }

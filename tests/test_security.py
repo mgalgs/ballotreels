@@ -149,7 +149,7 @@ class GeocoderErrorTextTest(ServerTestCaseWithConfig):
         with contextlib.redirect_stderr(err):
             with self.assertRaises(GeocoderError) as cm:
                 lookup_address("1 Fake St", lambda url: "<html>nope",
-                               "https://geocoder.example.test", None, "ca")
+                               "https://geocoder.example.test", {"ca": None})
         self.assertNotIn("html", str(cm.exception))
 
 

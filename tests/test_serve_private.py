@@ -172,8 +172,8 @@ class HeartbeatTimeoutTest(ServerTestCaseWithConfig):
 
 class UploadCompleteTest(ServerTestCaseWithConfig):
     def test_upload_and_complete(self):
-        entry = self.deps.index.get("ca-2026-11-03-prop-90")
-        key = key_for(self.deps.index.election.id, entry, self.deps.standard)
+        entry = self.deps.states["ca"].index.get("ca-2026-11-03-prop-90")
+        key = key_for(self.deps.states["ca"].index.election.id, entry, self.deps.standard)
         self.deps.queue.create_job(key)
         status, body, _ = self._private("POST", "/worker/claim", {"worker": "w1"})
         self.assertEqual(status, 200)
@@ -212,8 +212,8 @@ class UploadCompleteTest(ServerTestCaseWithConfig):
     def test_complete_loses_race_with_cancel(self):
         # A cancel landing after complete's claim check but before the job
         # is marked done must leave no video recorded and answer 409.
-        entry = self.deps.index.get("ca-2026-11-03-prop-91")
-        key = key_for(self.deps.index.election.id, entry, self.deps.standard)
+        entry = self.deps.states["ca"].index.get("ca-2026-11-03-prop-91")
+        key = key_for(self.deps.states["ca"].index.election.id, entry, self.deps.standard)
         self.deps.queue.create_job(key)
         status, body, _ = self._private("POST", "/worker/claim", {"worker": "w1"})
         job_id, claim = body["job"]["id"], body["job"]["claim"]

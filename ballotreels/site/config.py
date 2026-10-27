@@ -29,6 +29,13 @@ def _bool(value) -> bool:
     return str(value).strip().lower() in ("1", "true", "yes", "on")
 
 
+def _join(value):
+    """A repeatable flag's list as one comma-separated string."""
+    if isinstance(value, (list, tuple)):
+        return ",".join(value) if value else None
+    return value
+
+
 @dataclass(frozen=True)
 class Config:
     data_dir: Path
@@ -56,7 +63,8 @@ def load_config(args) -> Config:
     return Config(
         data_dir=Path(_resolve(args.data_dir, "BALLOTREELS_DATA_DIR",
                                str(REPO_ROOT / "var"), str)),
-        election=_resolve(args.election, "BALLOTREELS_ELECTION", None, str),
+        election=_resolve(_join(args.election), "BALLOTREELS_ELECTION",
+                          None, str),
         public_host=_resolve(args.public_host, "BALLOTREELS_PUBLIC_HOST",
                              "127.0.0.1", str),
         public_port=_resolve(args.public_port, "BALLOTREELS_PUBLIC_PORT",
@@ -92,29 +100,40 @@ def load_config(args) -> Config:
 
 
 class ElectionResolutionError(Exception):
-    """No election could be chosen (A21): none found, an unknown one
-    named, or several found with none named."""
+    """The elections to serve could not be chosen: none found, or an
+    unknown one named."""
 
 
-def resolve_election_dir(election: str | None,
-                         data_root: Path | None = None) -> Path:
+def election_names(election: str | None) -> list[str]:
+    """The names in a comma-separated --election / BALLOTREELS_ELECTION
+    value (empty: serve every election)."""
+    return [n.strip() for n in (election or "").split(",") if n.strip()]
+
+
+def resolve_election_dirs(election: str | None,
+                          data_root: Path | None = None) -> list[Path]:
+    """The election directories to serve: the ones named in `election`
+    (comma-separated), or else every `data/*/contests.toml`."""
     if data_root is None:
         data_root = DATA_ROOT  # a live lookup, so tests can monkeypatch it
-    if election:
-        path = data_root / election
-        if not (path / "contests.toml").is_file():
+    names = election_names(election)
+    if names:
+        missing = [n for n in names
+                   if not (data_root / n / "contests.toml").is_file()]
+        if missing:
             raise ElectionResolutionError(
-                f"no such election {election!r} under {data_root}")
-        return path
+                f"no such election {', '.join(map(repr, missing))} "
+                f"under {data_root}")
+        return [data_root / n for n in dict.fromkeys(names)]
     candidates = sorted(p.parent.name for p in data_root.glob("*/contests.toml"))
     if not candidates:
         raise ElectionResolutionError(f"no elections found under {data_root}")
-    if len(candidates) > 1:
-        raise ElectionResolutionError("several elections; pass --election")
-    return data_root / candidates[0]
+    return [data_root / c for c in candidates]
 
 
-_STATE_RE = re.compile(r"/state:([a-z]{2})(?:/|$)")
+# D.C.'s own OCD-ID is `district:dc`; the site uses `state:dc`, and
+# accepts either.
+_STATE_RE = re.compile(r"/(?:state|district):([a-z]{2})(?:/|$)")
 
 
 def state_abbr(division: str) -> str | None:

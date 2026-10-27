@@ -81,8 +81,8 @@ class WorkerTestCase(unittest.TestCase):
                      heartbeat_interval=heartbeat_interval)
 
     def prop2_key(self):
-        entry = self.deps.index.get("ca-2026-11-03-prop-2")
-        return key_for(self.deps.index.election.id, entry, self.deps.standard)
+        entry = self.deps.states["ca"].index.get("ca-2026-11-03-prop-2")
+        return key_for(self.deps.states["ca"].index.election.id, entry, self.deps.standard)
 
     def get_public(self, path, headers=None):
         conn = http.client.HTTPConnection(

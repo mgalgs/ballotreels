@@ -36,7 +36,7 @@ class AddressLookupTestCase(unittest.TestCase):
 class ExactMatchTest(AddressLookupTestCase):
     def test_address_exact(self):
         result = lookup_address("123 Fake St", _fetch_fixture("full.json"),
-                                BASE_URL, self.geo, "ca")
+                                BASE_URL, {"ca": self.geo})
         self.assertEqual(result["matched_address"],
                          "123 FAKE ST, EXAMPLE, CA, 99999")
         self.assertEqual(result["kinds"]["cd"],
@@ -57,7 +57,7 @@ class FallbackTest(AddressLookupTestCase):
     def test_address_fallback_point_in_polygon(self):
         result = lookup_address(
             "123 Fake St", _fetch_fixture("missing_sldl.json"), BASE_URL,
-            self.geo, "ca")
+            {"ca": self.geo})
         # The fixture point (5, 5) falls inside the fake sldl:1 square
         # (0,0)-(20,10); point-in-polygon fills in the missing layer.
         self.assertIn("sldl", result["kinds"])
@@ -80,7 +80,7 @@ class StateTest(AddressLookupTestCase):
             }}]}}
         with self.assertRaises(AddressNotFound):
             lookup_address("1 Fake St", lambda url: json.dumps(doc),
-                           BASE_URL, self.geo, "ca")
+                           BASE_URL, {"ca": self.geo})
 
 
 class ErrorsTest(AddressLookupTestCase):
@@ -91,21 +91,21 @@ class ErrorsTest(AddressLookupTestCase):
         with self.subTest("no match"):
             with self.assertRaises(AddressNotFound):
                 lookup_address("nowhere", _fetch_fixture("no_match.json"),
-                               BASE_URL, self.geo, "ca")
+                               BASE_URL, {"ca": self.geo})
 
         with self.subTest("geocoder error"):
             def failing_fetch(url):
                 raise OSError("connection refused")
             with self.assertRaises(GeocoderError):
                 lookup_address("123 Fake St", failing_fetch, BASE_URL,
-                               self.geo, "ca")
+                               {"ca": self.geo})
 
         with self.subTest("timeout"):
             def timeout_fetch(url):
                 raise TimeoutError("timed out")
             with self.assertRaises(GeocoderError):
                 lookup_address("123 Fake St", timeout_fetch, BASE_URL,
-                               self.geo, "ca")
+                               {"ca": self.geo})
 
 
 if __name__ == "__main__":

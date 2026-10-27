@@ -2,8 +2,8 @@
 private (the worker API and the queue monitor, token-guarded).
 
 Both are plain `http.server.ThreadingHTTPServer`s sharing one `Deps` (one
-job queue, one loaded contest index, one loaded geo lookup), since they
-read and write the same state.
+job queue, and one contest index and geo lookup per state served), since
+they read and write the same state.
 """
 
 from __future__ import annotations
@@ -23,12 +23,16 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any
 
-from ..geo.geocoder import AddressNotFound, GeocoderError, lookup_address
+from ..geo.geocoder import (AddressNotCovered, AddressNotFound, GeocoderError,
+                            lookup_address)
 from ..geo.lookup import GeoData
-from ..index import ContestIndex, ballot_order, key_for, level_of, load_index
+from ..geo.states import STATE_NAMES, chambers, state_for_zip
+from ..index import (ContestIndex, IndexEntry, ballot_order, key_for,
+                     level_of, load_index)
 from ..queue import JobQueue
 from ..standard import Standard, load_standard
-from .config import Config, resolve_election_dir, state_abbr
+from .config import (Config, ElectionResolutionError, resolve_election_dirs,
+                     state_abbr)
 
 REPORT_URL = "https://github.com/mgalgs/ballotreels/issues"
 
@@ -62,13 +66,22 @@ HOUR = 3600
 GLOBAL_BUCKET = "*"
 
 
+@dataclass(frozen=True)
+class StateElection:
+    """One state's election: its contest index and its geo lookup (None
+    if `geo build` has not been run for the state)."""
+    abbr: str
+    index: ContestIndex
+    geo: GeoData | None
+
+
 @dataclass
 class Deps:
     config: Config
     queue: JobQueue
-    index: ContestIndex
+    # Abbreviation -> that state's election, every state served.
+    states: dict[str, StateElection]
     standard: Standard
-    geo: GeoData | None
     rate_lock: threading.Lock = field(default_factory=threading.Lock)
     rate_hits: dict[str, list[float]] = field(default_factory=dict)
     global_hits: list[float] = field(default_factory=list)
@@ -83,6 +96,21 @@ class Deps:
             self.clock = time.time
         if self.geocoder_fetch is None:
             self.geocoder_fetch = _fetch_geocoder
+
+    def contest(self, contest_id: str
+                ) -> tuple[StateElection, IndexEntry] | None:
+        """The contest with this id, in whichever election has it (ids
+        start with their election's id, so at most one does)."""
+        for state in self.states.values():
+            entry = state.index.get(contest_id)
+            if entry is not None:
+                return state, entry
+        return None
+
+    def zip_states(self, zip_code: str) -> list[StateElection]:
+        """Every served state whose geo data has this zip."""
+        return [s for s in self.states.values()
+                if s.geo is not None and zip_code in s.geo.zips]
 
 
 def _fetch_geocoder(url: str) -> str:
@@ -138,24 +166,49 @@ def _drop_stale_job_dirs(hash_dir: Path, video) -> None:
             child.unlink(missing_ok=True)
 
 
-def build_deps(config: Config, clock=None) -> Deps:
-    election_dir = resolve_election_dir(config.election)
-    index = load_index(election_dir)
-    standard = load_standard()
-    geo = None
-    abbr = state_abbr(index.election.state)
-    if abbr:
+def load_states(config: Config, warn=None) -> dict[str, StateElection]:
+    """Every election to serve, by state. Two elections for one state is
+    an error; a state with no geo data is only a warning (its zips are
+    not found, the other states serve as usual)."""
+    if warn is None:
+        warn = lambda message: print(message, file=sys.stderr)
+    states: dict[str, StateElection] = {}
+    dirs: dict[str, Path] = {}
+    for election_dir in resolve_election_dirs(config.election):
+        index = load_index(election_dir)
+        abbr = state_abbr(index.election.state)
+        if abbr is None:
+            raise ElectionResolutionError(
+                f"{election_dir}: state {index.election.state!r} is not a "
+                f"state OCD-ID")
+        if abbr in dirs:
+            raise ElectionResolutionError(
+                f"two elections for state {abbr!r}: {dirs[abbr]} and "
+                f"{election_dir}; pass --election to choose")
+        dirs[abbr] = election_dir
+        geo = None
         geo_dir = config.data_dir / "geo" / abbr
         if (geo_dir / "zips.json").is_file():
             geo = GeoData.load(geo_dir)
+        else:
+            warn(f"warning: no geo data for {abbr!r} at {geo_dir} (run "
+                 f"`python -m ballotreels geo build --state {abbr}`); its "
+                 f"zips will not be found")
+        states[abbr] = StateElection(abbr=abbr, index=index, geo=geo)
+    return states
+
+
+def build_deps(config: Config, clock=None, warn=None) -> Deps:
+    states = load_states(config, warn)
+    standard = load_standard()
     queue = JobQueue(config.data_dir / "queue.sqlite3",
                      clock=clock or time.time,
                      heartbeat_timeout=config.heartbeat_timeout)
     queue.on_vacate = lambda job_id, claim: shutil.rmtree(
         _incoming_dir(config.data_dir, job_id, claim), ignore_errors=True)
     _sweep_orphaned_dirs(config.data_dir, queue)
-    return Deps(config=config, queue=queue, index=index, standard=standard,
-               geo=geo, clock=clock)
+    return Deps(config=config, queue=queue, states=states, standard=standard,
+               clock=clock)
 
 
 class BadRequest(Exception):
@@ -381,8 +434,8 @@ def _contest_status(key, deps: Deps) -> tuple[str, Any, dict[str, Any] | None]:
     return "none", None, None
 
 
-def _contest_summary(entry, deps: Deps) -> dict[str, Any]:
-    key = key_for(deps.index.election.id, entry, deps.standard)
+def _contest_summary(entry, election_id: str, deps: Deps) -> dict[str, Any]:
+    key = key_for(election_id, entry, deps.standard)
     status, video, job = _contest_status(key, deps)
     return {
         "id": entry.id,
@@ -396,8 +449,8 @@ def _contest_summary(entry, deps: Deps) -> dict[str, Any]:
     }
 
 
-def _contest_detail(entry, deps: Deps) -> dict[str, Any]:
-    key = key_for(deps.index.election.id, entry, deps.standard)
+def _contest_detail(entry, election_id: str, deps: Deps) -> dict[str, Any]:
+    key = key_for(election_id, entry, deps.standard)
     status, video, job = _contest_status(key, deps)
     return {
         "id": entry.id,
@@ -495,6 +548,25 @@ def _too_many(handler: "_JsonHandler", status: int, retry_after: int,
     handler.wfile.write(body)
 
 
+def _not_covered(state: str | None) -> dict[str, Any]:
+    """The 404 body for a place in no state served: names its state
+    when it is known."""
+    name = STATE_NAMES.get(state) if state else None
+    return {"error": (f"We don't cover {name} yet" if name
+                      else "We don't cover this zip yet"),
+            "covered": False, "state": state if name else None,
+            "state_name": name}
+
+
+def _uncovered_zip(zip_code: str, deps: Deps) -> dict[str, Any]:
+    """Why a zip has no data: its state (told by its first three digits)
+    is not served, or it is but has no data for this zip."""
+    state = state_for_zip(zip_code)
+    if state is not None and state in deps.states:
+        return {"error": "no district data for this zip", "covered": True}
+    return _not_covered(state)
+
+
 class PublicHandler(_JsonHandler):
     def do_GET(self):
         self._dispatch("GET")
@@ -549,20 +621,36 @@ class PublicHandler(_JsonHandler):
         if not re.fullmatch(r"\d{5}", zip_code):
             return self._json(400, {"error": "zip must be 5 digits"})
         deps = self.server.deps
-        result = deps.geo.zip_districts(zip_code) if deps.geo else None
-        if result is None:
-            return self._json(404, {"error": "no district data for this zip"})
+        found = deps.zip_states(zip_code)
+        if not found:
+            return self._json(404, _uncovered_zip(zip_code, deps))
+        if len(found) > 1:
+            # A zip across a state line: only an address can say which
+            # state's ballot it is (the geocoder names the state).
+            return self._json(200, {
+                "zip": zip_code, "needs_address": True,
+                "states": [{"state": s.abbr,
+                            "name": STATE_NAMES.get(s.abbr, s.abbr)}
+                           for s in found],
+                "kinds": {}, "ambiguous": []})
+        state = found[0]
+        result = state.geo.zip_districts(zip_code)
+        result["election"] = state.index.election.id
         self._json(200, result)
 
     def _zip_shapes(self, zip_code: str) -> None:
         if not re.fullmatch(r"\d{5}", zip_code):
             return self._json(400, {"error": "zip must be 5 digits"})
         deps = self.server.deps
-        if deps.geo is None or deps.geo.zip_districts(zip_code) is None:
-            return self._json(404, {"error": "no district data for this zip"})
+        found = deps.zip_states(zip_code)
+        if not found:
+            return self._json(404, _uncovered_zip(zip_code, deps))
+        if len(found) > 1:
+            return self._json(409, {"error": "this zip spans states; "
+                                             "look up an address"})
         kind = self._query().get("kind", [None])[0]
         kinds = [kind] if kind else None
-        self._json(200, deps.geo.zip_shapes(zip_code, kinds=kinds))
+        self._json(200, found[0].geo.zip_shapes(zip_code, kinds=kinds))
 
     def _address(self) -> None:
         deps = self.server.deps
@@ -581,15 +669,20 @@ class PublicHandler(_JsonHandler):
             return _too_many(self, 503, 5,
                              "the address lookup is busy; try again")
         try:
-            abbr = state_abbr(deps.index.election.state)
-            result = lookup_address(address, deps.geocoder_fetch,
-                                    deps.config.geocoder_url, deps.geo, abbr)
+            result = lookup_address(
+                address, deps.geocoder_fetch, deps.config.geocoder_url,
+                {abbr: s.geo for abbr, s in deps.states.items()})
+        except AddressNotCovered as e:
+            return self._json(404, _not_covered(e.state))
         except AddressNotFound as e:
             return self._json(404, {"error": str(e)})
         except GeocoderError as e:
             return self._json(502, {"error": str(e)})
         finally:
             deps.geocoder_slots.release()
+        state = deps.states[result["state"]]
+        result["election"] = state.index.election.id
+        result["chambers"] = chambers(state.abbr)
         self._json(200, result)
 
     def _ballot(self) -> None:
@@ -602,29 +695,43 @@ class PublicHandler(_JsonHandler):
                 divisions.append(d)
             if len(divisions) >= 10:
                 break
+        # The ballot is the state's whose division came with it (the
+        # statewide one always does); with one state served, that one.
+        state = next((deps.states[a] for a in map(state_abbr, divisions)
+                      if a in deps.states), None)
+        if state is None and len(deps.states) == 1:
+            state = next(iter(deps.states.values()))
+        if state is None:
+            return self._json(404, {"error": "no covered state in this "
+                                             "ballot"})
+        index = state.index
         wanted = set(divisions)
-        wanted.add(deps.index.election.state)
+        wanted.add(index.election.state)
         levels: list[dict[str, Any]] = []
         current = None
         bucket = None
-        for entry in ballot_order(deps.index):
+        for entry in ballot_order(index):
             if entry.division not in wanted:
                 continue
-            lvl = level_of(entry.division, deps.index.election.state)
+            lvl = level_of(entry.division, index.election.state)
             if lvl != current:
                 bucket = {"level": lvl, "contests": []}
                 levels.append(bucket)
                 current = lvl
-            bucket["contests"].append(_contest_summary(entry, deps))
-        self._json(200, {"election": deps.index.election.id,
+            bucket["contests"].append(
+                _contest_summary(entry, index.election.id, deps))
+        self._json(200, {"election": index.election.id,
+                         "state": state.abbr,
+                         "chambers": chambers(state.abbr),
                          "levels": levels})
 
     def _contest(self, contest_id: str) -> None:
         deps = self.server.deps
-        entry = deps.index.get(contest_id)
-        if entry is None:
+        found = deps.contest(contest_id)
+        if found is None:
             return self._not_found()
-        self._json(200, _contest_detail(entry, deps))
+        state, entry = found
+        self._json(200, _contest_detail(entry, state.index.election.id, deps))
 
     def _video(self, key_hash: str, job_id: str, name: str,
                method: str) -> None:
@@ -645,10 +752,12 @@ class PublicHandler(_JsonHandler):
         deps = self.server.deps
         body = self._read_json()
         contest_id = body.get("contest")
-        entry = deps.index.get(contest_id) if contest_id else None
-        if entry is None:
+        found = (deps.contest(contest_id)
+                 if isinstance(contest_id, str) else None)
+        if found is None:
             return self._json(404, {"error": "no such contest"})
-        key = key_for(deps.index.election.id, entry, deps.standard)
+        state, entry = found
+        key = key_for(state.index.election.id, entry, deps.standard)
         if key is None:
             return self._json(400, {"error": "not available yet"})
         video = deps.queue.video_for(key)

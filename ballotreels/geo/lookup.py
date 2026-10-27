@@ -11,26 +11,42 @@ from pathlib import Path
 from typing import Any
 
 from .shapes import point_in_polygon
+from .states import chambers
 
 KINDS = ("cd", "sldu", "sldl", "county")
 
-_DISPLAY = {
-    "cd": "Congressional District {}",
-    "sldu": "State Senate District {}",
-    "sldl": "State Assembly District {}",
+# TIGER's congressional district codes that are not a numbered district.
+_CD_LABELS = {
+    "00": "At-large Congressional District",
+    "98": "Delegate District (at large)",
 }
 
 
+def district_label(kind: str, district: str, state_abbr: str) -> str | None:
+    """The neutral display name of district code `district` (the GEOID
+    without its state digits), or None for a kind the state lacks."""
+    if kind == "cd":
+        return _CD_LABELS.get(district.zfill(2),
+                              f"Congressional District {int(district)}")
+    chamber = chambers(state_abbr).get(kind)
+    if chamber is None:
+        return None
+    return f"{chamber} District {int(district)}"
+
+
 def ocd_id(kind: str, geoid: str, state_abbr: str,
-          name: str | None = None) -> tuple[str, str] | None:
+          name: str | None = None,
+          display: str | None = None) -> tuple[str, str] | None:
     """(ocd-id, neutral display name) for one district feature's GEOID,
-    or None for an undefined area (district part ZZ/ZZZ)."""
+    or None for an undefined area (district part ZZ/ZZZ). A county's
+    display name is `display` when given (TIGER's NAMELSAD: "Sacramento
+    County", "District of Columbia"), else "<name> County"."""
     if kind == "county":
         if not name:
             return None
         slug = name.strip().lower().replace(" ", "_")
         return (f"ocd-division/country:us/state:{state_abbr}/county:{slug}",
-                f"{name} County")
+                display or f"{name} County")
     district = geoid[2:]
     if district.upper() in ("ZZ", "ZZZ"):
         return None
@@ -38,8 +54,11 @@ def ocd_id(kind: str, geoid: str, state_abbr: str,
         num = str(int(district))
     except ValueError:
         return None
+    label = district_label(kind, district, state_abbr)
+    if label is None:
+        return None
     return (f"ocd-division/country:us/state:{state_abbr}/{kind}:{num}",
-            _DISPLAY[kind].format(num))
+            label)
 
 
 @dataclass
@@ -81,7 +100,7 @@ class GeoData:
             kinds[k] = [{"ocd_id": oid, "name": self.names.get(oid, oid)}
                         for oid in ids]
         return {"zip": zip_code, "state": self.state, "kinds": kinds,
-               "ambiguous": ambiguous}
+               "ambiguous": ambiguous, "chambers": chambers(self.state)}
 
     def zip_shapes(self, zip_code: str,
                    kinds: list[str] | None = None) -> dict[str, Any]:

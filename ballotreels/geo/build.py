@@ -19,6 +19,7 @@ from typing import Callable
 from .lookup import ocd_id
 from .shapefile import iter_shapefile
 from .shapes import simplify_ring
+from .states import legislative_kinds
 
 KINDS = ("cd", "sldu", "sldl", "county")
 
@@ -52,9 +53,19 @@ SHAPE_ARCHIVES = ("cd", "sldu", "sldl", "county", "zcta")
 OPTIONAL_DOWNLOADS = ("sldu_rel.txt", "sldl_rel.txt")
 
 
+def kinds_for(state_abbr: str) -> tuple[str, ...]:
+    """The district kinds a state has: every KIND but the legislative
+    ones for a state with no legislature (D.C.)."""
+    sld = legislative_kinds(state_abbr)
+    return tuple(k for k in KINDS if k not in ("sldu", "sldl") or k in sld)
+
+
 def census_urls(state_abbr: str) -> dict[str, str]:
+    """Every download for a state, by name. D.C. has no state legislative
+    district files in TIGER, so it gets no sldu/sldl entries."""
     fips = STATE_FIPS[state_abbr]
-    return {
+    kinds = kinds_for(state_abbr)
+    urls = {
         "cd.zip": f"{TIGER_BASE}/CD/tl_2024_{fips}_cd119.zip",
         "sldu.zip": f"{TIGER_BASE}/SLDU/tl_2024_{fips}_sldu.zip",
         "sldl.zip": f"{TIGER_BASE}/SLDL/tl_2024_{fips}_sldl.zip",
@@ -68,6 +79,9 @@ def census_urls(state_abbr: str) -> dict[str, str]:
         "sldl_rel.txt":
             f"{REL_BASE}/cd-sld/tab20_sldl202420_zcta520_st{fips}.txt",
     }
+    # "sldu.zip" and "sldu_rel.txt" both belong to kind "sldu".
+    return {name: url for name, url in urls.items()
+            if name.split(".")[0].removesuffix("_rel") in kinds + ("zcta",)}
 
 
 class BuildError(Exception):
@@ -285,7 +299,7 @@ def _build_into(tmp_dir: Path, raw_dir: Path, fips: str, state_abbr: str,
     zip_kinds: dict[str, dict[str, list[str]]] = {}
     relevant_zips: set[str] = set()
 
-    for kind in KINDS:
+    for kind in kinds_for(state_abbr):
         records = iter_shapefile(_shp_base(raw_dir, kind),
                                  keep=lambda a: a.get("STATEFP") == fips)
         features = []
@@ -293,7 +307,8 @@ def _build_into(tmp_dir: Path, raw_dir: Path, fips: str, state_abbr: str,
         for rec in records:
             geoid = rec.attrs.get("GEOID", "")
             name = rec.attrs.get("NAME")
-            result = ocd_id(kind, geoid, state_abbr, name)
+            result = ocd_id(kind, geoid, state_abbr, name,
+                            rec.attrs.get("NAMELSAD") or None)
             if result is None:
                 continue
             division, display = result

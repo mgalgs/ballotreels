@@ -120,8 +120,8 @@ is safe and idempotent to re-run: a file already downloaded is not
 re-fetched, and the build only replaces the previous output once it has
 fully succeeded.
 
-Flags: `--state` (a two-letter abbreviation, default `ca`; only `ca` is
-tested), `--data-dir` (default `$BALLOTREELS_DATA_DIR` or `<repo>/var`),
+Flags: `--state` (a two-letter abbreviation, default `ca`; `dc` builds
+without state legislative districts, since D.C. has no legislature), `--data-dir` (default `$BALLOTREELS_DATA_DIR` or `<repo>/var`),
 `--min-overlap` (drop a zip/district overlap smaller than this fraction
 of the zip's land area; default `0`, keep every sliver), `--tolerance`
 (Douglas-Peucker simplification tolerance in degrees; default `0.001`),
@@ -161,10 +161,24 @@ otherwise be unguarded. Both listeners default to loopback addresses;
 put a real address only in your own deployment configuration, never in
 this repository.
 
+One process serves every election directory under `data/` (each
+`data/<election>/contests.toml`), one per state: two for the same state
+is a startup error naming both. Each state's zips come from its own
+`<data-dir>/geo/<st>/` (`geo build --state <st>`); a state without one
+is a startup warning, and only its zip lookups are affected. A zip is
+looked up in every served state: found in one, it answers with that
+state and election; found in two (a zip across a state line), the page
+asks for a street address, and the geocoder's state picks the ballot.
+A zip in a state not served gets "We don't cover <state> yet", the
+state told by the zip's first three digits. The ballot API serves the
+state of the statewide division it is given, and the district labels
+follow each state's chamber names (State Assembly in California and New
+York, State House in most others; none in D.C.).
+
 | Flag | Environment variable | Default |
 |---|---|---|
 | `--data-dir` | `BALLOTREELS_DATA_DIR` | `<repo>/var` |
-| `--election` | `BALLOTREELS_ELECTION` | the only election under `data/`, if there is just one |
+| `--election` | `BALLOTREELS_ELECTION` | every election under `data/`; repeat the flag, or comma-separate, to serve only those |
 | `--public-host` | `BALLOTREELS_PUBLIC_HOST` | `127.0.0.1` |
 | `--public-port` | `BALLOTREELS_PUBLIC_PORT` | `8080` |
 | `--private-host` | `BALLOTREELS_PRIVATE_HOST` | `127.0.0.1` |

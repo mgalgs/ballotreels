@@ -15,6 +15,7 @@ from typing import Any, Callable
 from .build import STATE_FIPS
 from .lookup import GeoData, ocd_id
 from .shapes import point_in_polygon
+from .states import legislative_kinds
 
 # Layer names are matched by substring, not equality, since the exact
 # name (e.g. "119th Congressional Districts") changes with the vintage.
@@ -39,6 +40,18 @@ class AddressNotFound(AddressLookupError):
 
 class GeocoderError(AddressLookupError):
     pass
+
+
+class AddressNotCovered(AddressNotFound):
+    """The address was found, in a state none of the loaded ones;
+    `state` is its abbreviation, or None if it is not a known one."""
+
+    def __init__(self, state: str | None):
+        super().__init__("We don't cover that address's state yet.")
+        self.state = state
+
+
+_ABBR_BY_FIPS = {fips: abbr for abbr, fips in STATE_FIPS.items()}
 
 
 def _find_layer(geographies: dict[str, Any], substring: str) -> list | None:
@@ -75,10 +88,26 @@ def _fallback_point_in_polygon(geo: GeoData, kind: str,
     return entries
 
 
+def _state_by_point(geos: dict[str, GeoData | None],
+                    point: tuple[float, float]) -> str | None:
+    """The one loaded state whose district shapes hold `point`, if the
+    geocoder named no state."""
+    if point[0] is None or point[1] is None:
+        return None
+    found = [abbr for abbr, geo in geos.items() if geo is not None and any(
+        point_in_polygon(point, [[tuple(p) for p in ring]
+                                 for ring in geom["coordinates"]])
+        for geom in geo.district_shapes.values())]
+    return found[0] if len(found) == 1 else None
+
+
 def lookup_address(address: str, fetch: Callable[[str], str], base_url: str,
-                   geo: GeoData | None, state_abbr: str) -> dict[str, Any]:
-    """`{"matched_address": str, "kinds": {kind: [{"ocd_id", "name"}]}}`,
-    or raises AddressNotFound / GeocoderError."""
+                   geos: dict[str, GeoData | None]) -> dict[str, Any]:
+    """`{"matched_address": str, "state": abbr, "kinds": {kind:
+    [{"ocd_id", "name"}]}}` for an address in any state of `geos`
+    (abbreviation -> its geo data, or None if it has none), or raises
+    AddressNotFound (AddressNotCovered for another state) /
+    GeocoderError."""
     query = urllib.parse.urlencode({
         "address": address,
         "benchmark": "Public_AR_Current",
@@ -108,27 +137,42 @@ def lookup_address(address: str, fetch: Callable[[str], str], base_url: str,
     coords = match.get("coordinates", {})
     point = (coords.get("x"), coords.get("y"))
 
-    # ocd_id() drops the GEOID's state digits, so an address in another
-    # state would otherwise resolve to this state's district numbers.
+    # ocd_id() drops the GEOID's state digits, so the state must come
+    # from the address itself, never be assumed.
     found_fips = _address_state_fips(geographies)
-    if found_fips is not None and found_fips != STATE_FIPS.get(state_abbr):
-        raise AddressNotFound("We couldn't find that address.")
+    if found_fips is not None:
+        state_abbr = _ABBR_BY_FIPS.get(found_fips)
+        if state_abbr not in geos:
+            raise AddressNotCovered(state_abbr)
+    elif len(geos) == 1:
+        state_abbr = next(iter(geos))
+    else:
+        state_abbr = _state_by_point(geos, point)
+        if state_abbr is None:
+            raise AddressNotFound("We couldn't find that address.")
+    geo = geos[state_abbr]
+    sld = legislative_kinds(state_abbr)
 
     kinds: dict[str, list[dict[str, str]]] = {
         "state": [{"ocd_id": f"ocd-division/country:us/state:{state_abbr}",
                   "name": "Statewide"}],
     }
     for kind, substring in LAYER_SUBSTRINGS.items():
+        if kind in ("sldu", "sldl") and kind not in sld:
+            continue
         features = _find_layer(geographies, substring)
         if features is not None:
             entries = []
             for feat in features:
                 # Counties: NAME is "Sacramento County", BASENAME is
                 # "Sacramento", which is what the TIGER shapefile's NAME
-                # (and so the zip path's OCD-ID) uses.
+                # (and so the zip path's OCD-ID) uses. NAME is the display
+                # name ("District of Columbia" has no "County").
                 name = (feat.get("BASENAME") or feat.get("NAME")
                         if kind == "county" else feat.get("NAME"))
-                result = ocd_id(kind, feat.get("GEOID", ""), state_abbr, name)
+                display = feat.get("NAME") if kind == "county" else None
+                result = ocd_id(kind, feat.get("GEOID", ""), state_abbr, name,
+                                display)
                 if result:
                     entries.append({"ocd_id": result[0], "name": result[1]})
             if entries:
@@ -138,4 +182,4 @@ def lookup_address(address: str, fetch: Callable[[str], str], base_url: str,
             if entries:
                 kinds[kind] = entries
     return {"matched_address": match.get("matchedAddress", address),
-           "kinds": kinds}
+           "state": state_abbr, "kinds": kinds}

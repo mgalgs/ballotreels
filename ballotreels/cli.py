@@ -163,7 +163,7 @@ def _serve(args, out, err) -> int:
     from .index import ContestIndexError
     from .site.config import ElectionResolutionError
     try:
-        deps = build_deps(config)
+        deps = build_deps(config, warn=lambda m: print(m, file=err))
     except (ElectionResolutionError, ContestIndexError) as e:
         print(str(e), file=err)
         return 2
@@ -328,9 +328,11 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
     serve = sub.add_parser("serve", help="run the serve tier")
     serve.add_argument("--data-dir", default=None,
                        help="default: $BALLOTREELS_DATA_DIR or <repo>/var")
-    serve.add_argument("--election", default=None,
-                       help="default: $BALLOTREELS_ELECTION, or the only "
-                            "election under data/ if there is just one")
+    serve.add_argument("--election", default=None, action="append",
+                       help="serve only this election (repeatable, or "
+                            "comma-separated); default: "
+                            "$BALLOTREELS_ELECTION, or every election "
+                            "under data/")
     serve.add_argument("--public-host", default=None)
     serve.add_argument("--public-port", default=None, type=int)
     serve.add_argument("--private-host", default=None)

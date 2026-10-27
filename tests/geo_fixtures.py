@@ -234,3 +234,67 @@ def build_fixture_geo(data_dir: Path, **build_kwargs) -> None:
         write_fixture_source(src_dir)
         build_kwargs.setdefault("urls", SLD_REL_URLS)
         build(data_dir, STATE, fetch_from(src_dir), **build_kwargs)
+
+
+# A one-district fake of any state, for the multi-state tests: one
+# congressional district (code `cd_code`), one district of each
+# legislative chamber the state has, and one county, all the square
+# (0,0)-(20,10); `zips` are small squares inside it, each in every one.
+def write_simple_state_source(src_dir: Path, state: str, zips: list[str],
+                              cd_code: str = "01",
+                              county_name: str = "Example",
+                              county_namelsad: str | None = None) -> None:
+    from ballotreels.geo.build import STATE_FIPS, kinds_for
+
+    fips = STATE_FIPS[state]
+    kinds = kinds_for(state)
+    square = [(0.0, 0.0), (20.0, 0.0), (20.0, 10.0), (0.0, 10.0), (0.0, 0.0)]
+    fields = [("GEOID", "C", 10), ("STATEFP", "C", 2), ("NAME", "C", 40)]
+    write_shapefile(src_dir / "cd", fields,
+                    [{"GEOID": fips + cd_code, "STATEFP": fips, "NAME": ""}],
+                    [[square]])
+    for kind in ("sldu", "sldl"):
+        if kind in kinds:
+            write_shapefile(src_dir / kind, fields,
+                            [{"GEOID": fips + "001", "STATEFP": fips,
+                              "NAME": ""}], [[square]])
+    county_fields = fields + [("NAMELSAD", "C", 60)]
+    write_shapefile(src_dir / "county", county_fields,
+                    [{"GEOID": fips + "999", "STATEFP": fips,
+                      "NAME": county_name,
+                      "NAMELSAD": county_namelsad or ""}], [[square]])
+    rings = [[(1.0 + i, 1.0), (1.5 + i, 1.0), (1.5 + i, 1.5), (1.0 + i, 1.5),
+              (1.0 + i, 1.0)] for i in range(len(zips))]
+    write_shapefile(src_dir / "zcta", [("GEOID20", "C", 10)],
+                    [{"GEOID20": z} for z in zips], [[r] for r in rings])
+    district = {"cd": fips + cd_code, "county": fips + "999",
+                "sldu": fips + "001", "sldl": fips + "001"}
+    for kind in kinds:
+        column = "GEOID_CD_20" if kind == "cd" else f"GEOID_{kind.upper()}_20"
+        lines = [f"GEOID_ZCTA5_20|{column}|AREALAND_PART"]
+        lines += [f"{z}|{district[kind]}|1000000" for z in zips]
+        (src_dir / f"{kind}_rel.txt").write_text("\n".join(lines) + "\n",
+                                                 encoding="utf-8")
+
+
+def build_simple_state_geo(data_dir: Path, state: str, zips: list[str],
+                           **source_kwargs) -> list[str]:
+    """Builds `write_simple_state_source`'s fake into
+    `<data_dir>/geo/<state>/`, fetching through the state's real
+    download names (and so its real list of downloads)."""
+    import tempfile
+
+    from ballotreels.geo.build import build, census_urls
+
+    with tempfile.TemporaryDirectory() as tmp:
+        src_dir = Path(tmp)
+        write_simple_state_source(src_dir, state, zips, **source_kwargs)
+        url_to_name = {url: name for name, url in census_urls(state).items()}
+
+        def fetch(url: str) -> bytes:
+            name = url_to_name[url]
+            if name.endswith(".zip"):
+                return _zip_shapes(src_dir, name[:-len(".zip")])
+            return (src_dir / name).read_bytes()
+
+        return build(data_dir, state, fetch)
