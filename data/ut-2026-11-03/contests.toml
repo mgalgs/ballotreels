@@ -1,0 +1,25 @@
+# Contest index for the 2026-11-03 Utah general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). Titles
+# pair the designation with the short title of the joint resolution
+# that placed it on the ballot, as printed in the Voter Information
+# Pamphlet.
+
+[election]
+id = "ut-2026-11-03"
+state = "ocd-division/country:us/state:ut"
+title = "Utah General Election, November 3, 2026"
+
+[[contest]]
+id = "ut-2026-11-03-amendment-a"
+kind = "measure"
+division = "ocd-division/country:us/state:ut"
+title = "Constitutional Amendment A: Publication Amendments"
+number = "A"
+
+[[contest]]
+id = "ut-2026-11-03-amendment-b"
+kind = "measure"
+division = "ocd-division/country:us/state:ut"
+title = "Constitutional Amendment B: Statewide Initiatives"
+number = "B"
