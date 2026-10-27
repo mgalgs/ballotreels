@@ -396,6 +396,16 @@ input.zip-input {
   color: var(--ink);
 }
 
+.icon {
+  display: inline-flex;
+}
+
+.icon svg {
+  display: block;
+  width: 1.15em;
+  height: 1.15em;
+}
+
 /* -- home ----------------------------------------------------------- */
 
 .hero h1 {
@@ -709,18 +719,6 @@ a.contest:hover {
   height: 30px;
 }
 
-.ready-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 1.25rem;
-}
-
-.ready-tag svg {
-  width: 22px;
-  height: 22px;
-}
-
 .wait-note {
   margin: 0 0 10px;
   font-size: 1rem;
@@ -864,7 +862,7 @@ a.contest:hover {
 /* -- contest page --------------------------------------------------- */
 
 .contest-page h1 {
-  font-size: 2.1rem;
+  font-size: 1.85rem;
   margin-top: 0.2rem;
 }
 
@@ -896,8 +894,12 @@ a.contest:hover {
   background: var(--paper);
 }
 
-/* The same frame before a video exists: an empty page waiting. */
+/* The same frame before a video exists: an empty page waiting, only
+   as tall as what it holds. */
 .video-frame.empty {
+  width: 100%;
+  aspect-ratio: auto;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -998,4 +1000,9 @@ a.contest:hover {
     animation: none !important;
     transition: none !important;
   }
+}
+
+.contest-page .section-title {
+  font-size: 1.7rem;
+  margin: 1.4rem 0 0.7rem;
 }
