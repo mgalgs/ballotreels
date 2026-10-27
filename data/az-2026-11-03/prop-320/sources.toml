@@ -1,0 +1,68 @@
+# Archived sources for Arizona Proposition 320, 2026-11-03 general
+# election. Every id here may be cited by script.toml. `kind` must be one
+# the standard allows (docs/STANDARD.md, section 1).
+#
+# Arizona prints a measure's full text, the Legislative Council's
+# analysis, the arguments for and against and its ballot format in one
+# section of its General Election Guide (the 2026 Publicity Pamphlet), so
+# several sources below share one archived file: that section's pages, cut
+# from the full guide. The Secretary of State also publishes the arguments
+# as filed, separately. No fiscal statement exists: the guide prints none
+# for a measure the Legislature refers.
+
+[contest]
+id = "az-2026-11-03-prop-320"
+election = "az-2026-11-03"
+division = "ocd-division/country:us/state:az"
+kind = "measure"
+title = "Proposition 320: School District Budgets"
+
+[[source]]
+id = "guide"
+kind = "official-title-summary"
+publisher = "Arizona Secretary of State, Arizona's General Election Guide, November 3, 2026, Proposition 320: ballot format, pages 138 to 152"
+credit = "Arizona's General Election Guide, Proposition 320"
+url = "https://apps.azsos.gov/election/BallotMeasures/2026/2026-AZ-Publicity-Pamphlet.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "analysis"
+kind = "official-title-summary"
+publisher = "Analysis by Legislative Council, Proposition 320, Arizona's General Election Guide, November 3, 2026, pages 138 to 152"
+credit = "Analysis by Legislative Council, Arizona's General Election Guide"
+url = "https://apps.azsos.gov/election/BallotMeasures/2026/2026-AZ-Publicity-Pamphlet.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments for and against Proposition 320, as printed in Arizona's General Election Guide, November 3, 2026, pages 138 to 152"
+url = "https://apps.azsos.gov/election/BallotMeasures/2026/2026-AZ-Publicity-Pamphlet.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Text of Proposition 320, Arizona's General Election Guide, November 3, 2026, pages 138 to 152"
+url = "https://apps.azsos.gov/election/BallotMeasures/2026/2026-AZ-Publicity-Pamphlet.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "arguments-for"
+kind = "official-argument"
+publisher = "Arizona Secretary of State, arguments for Proposition 320 as filed"
+url = "https://apps.azsos.gov/election/BallotMeasures/2026/Prop-320-SCR-1032-For-Arguments.pdf"
+file = "sources/arguments-for.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "arguments-against"
+kind = "official-argument"
+publisher = "Arizona Secretary of State, arguments against Proposition 320 as filed"
+url = "https://apps.azsos.gov/election/BallotMeasures/2026/Prop-320-SCR-1032-Against-Arguments.pdf"
+file = "sources/arguments-against.pdf"
+retrieved = "2026-10-27"

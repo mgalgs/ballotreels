@@ -1,0 +1,157 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; the state fund it ties to today; what Proposition 320 would
+# require, and of whom; the penalty in the Classroom Site Fund; what the
+# Legislative Council says happens to withheld money; one point per side;
+# what a vote does.
+#
+# The card quotes Arizona's General Election Guide: the ballot format's
+# descriptive title and its "yes"/"no" vote lines, and the first two
+# sentences of the Analysis by Legislative Council (the whole analysis
+# set the card too small to read; the penalty it goes on to describe is
+# on a chart from the measure's text instead). No fiscal statement exists for a measure the
+# Legislature refers, so the card has no fiscal quote; the fiscal section
+# gives only the money effect the Legislative Council's analysis itself
+# states (where withheld money goes). No dollar figure
+# is used: the analysis gives none, and the figures in the arguments
+# belong to the sides.
+#
+# The sides are drawn from what the arguments filed most commonly say,
+# attributed to "supporters" and "opponents", with equal words.
+
+contest = "az-2026-11-03-prop-320"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide"
+number = "320"
+title = "REQUIRES CERTAIN SCHOOL DISTRICTS TO SPEND AT LEAST SIXTY PERCENT OF THEIR OPERATIONAL SPENDING ON DIRECT INSTRUCTIONAL EXPENSES AS DEFINED BY THE AUDITOR GENERAL; REDUCES CERTAIN STATE FUNDING FOR NON-COMPLIANT DISTRICTS."
+origin = "REFERRED TO THE PEOPLE BY THE LEGISLATURE"
+summary = "Proposition 320 would require each school district that has a student count of at least 7,500 or that operates a school in a county with a population of at least 500,000 persons to spend at least 60 percent of the school district's operational spending on direct instructional expenses. The proposition would require the auditor general to define \"direct instructional expenses\" and \"operational spending\" for the purposes of this requirement."
+yes = "A “yes” vote shall have the effect of: (1) requiring school districts with 7,500 or more students in any county or that operate in a county with 500,000 or more people to spend at least 60% of their operational spending on direct instructional expenses; (2) requiring the state Auditor General to define “operational spending” and “direct instructional expenses”; (3) requiring non-compliant school districts to gradually adjust their spending each year until they are in compliance; and (4) requiring the state Department of Education to reduce funding from the state Classroom Site Fund by 25% each year for non-compliant districts, subject to limited waivers that the state Superintendent of Public Instruction may authorize."
+no = "A “no” vote shall have the effect of maintaining the current laws governing school district budgets."
+
+[[section]]
+id = "what"
+heading = "Proposition 320"
+
+[[section.line]]
+text = "Proposition 320 is about how school districts split their spending."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["OPERATIONAL SPENDING ON DIRECT INSTRUCTIONAL EXPENSES"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the state sends school districts money through its Classroom Site Fund."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Proposition 320 would require at least 60 percent of district operating spending to go to direct instruction."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "share"
+title = "Minimum share of operating spending on direct instruction"
+source = "analysis"
+unit = "%"
+labels = ["Direct instruction"]
+values = [60]
+
+[[section.line]]
+text = "The rule covers districts of 7,500 students or more, or in counties of 500,000 people or more."
+sources = ["guide", "analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["a student count of at least 7,500", "a population of at least 500,000 persons"]
+
+[[section.line]]
+text = "Districts falling short would lose 25 percent of their Classroom Site Fund money a year, up to all of it, unless granted a waiver."
+sources = ["analysis", "text"]
+
+[section.line.visual]
+kind = "bars"
+title = "Classroom Site Fund money withheld, by years out of compliance"
+source = "text"
+unit = "%"
+labels = ["1 year", "2 years", "3 years", "4 or more"]
+values = [25, 50, 75, 100]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Legislative Council says withheld money would go to districts that comply."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Proposition 320 sends school money to classrooms instead of bureaucracy, and supports teacher pay."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Money to classrooms, not bureaucracy", "Supports better pay for teachers"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Proposition 320 risks cuts to nurses, counselors and support staff, and overrides local control."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Risks cuts to nurses and counselors", "Overrides local school boards' choices"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means those districts must spend 60 percent on direct instruction."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["to spend at least 60% of their operational spending on direct instructional expenses"]
+
+[[section.line]]
+text = "A no vote means current school budget laws stay the same."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["maintaining the current laws governing school district budgets"]
