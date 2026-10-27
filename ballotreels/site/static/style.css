@@ -877,11 +877,13 @@ a.contest:hover {
   margin-top: 0.4rem;
 }
 
-/* The 9:16 video, as tall as the screen allows. */
+/* The 9:16 video, as tall as the screen allows. --above is the frame's
+   distance from the page top, measured by app.js (fitVideo); the 16px
+   keeps a little paper showing under it. */
 .video-frame {
   position: relative;
-  width: min(100%, calc((100svh - 150px) * 9 / 16));
-  min-width: min(100%, 260px);
+  width: min(100%, calc((100svh - var(--above, 230px) - 16px) * 9 / 16));
+  min-width: min(100%, 160px);
   aspect-ratio: 9 / 16;
   margin: 8px auto 20px;
   border: 2px solid var(--ink);

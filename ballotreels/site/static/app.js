@@ -334,7 +334,17 @@ function parseHash() {
   return { path, params };
 }
 
+// Bumped on every route() call. A render that awaits the server checks
+// it afterwards and drops its result if the voter has moved on, so a
+// late response never replaces the page they are now on.
+let routeToken = 0;
+
+function isStale(token) {
+  return token !== routeToken;
+}
+
 async function route() {
+  routeToken += 1;
   const { path, params } = parseHash();
   app.innerHTML = "";
   window.scrollTo(0, 0);
@@ -423,8 +433,10 @@ async function renderAddress() {
     submit.disabled = true;
     submit.textContent = "Looking it up...";
     result.replaceChildren();
+    const token = routeToken;
     const { ok, status, body } = await postJson("/api/address",
       { address: input.value });
+    if (isStale(token)) return;
     if (!ok) {
       submit.disabled = false;
       submit.textContent = "Find my ballot";
@@ -479,8 +491,10 @@ async function renderAddress() {
 }
 
 async function renderZip(zip) {
+  const token = routeToken;
   app.appendChild(loading(`Looking up ${zip}...`));
   const { ok, status, body } = await getJson(`/api/zip/${zip}`);
+  if (isStale(token)) return;
   app.innerHTML = "";
   if (!ok) {
     if (status === 0) {
@@ -646,8 +660,10 @@ function posterFor(videoUrl) {
 
 async function renderBallot(divisions, matchedAddress) {
   app.appendChild(loading("Getting your ballot..."));
+  const token = routeToken;
   const query = divisions.map((d) => `d=${encodeURIComponent(d)}`).join("&");
   const { ok, status, body } = await getJson(`/api/ballot?${query}`);
+  if (isStale(token)) return;
   app.innerHTML = "";
   if (!ok) {
     app.appendChild(status === 0 ? offlineNotice() :
@@ -829,8 +845,9 @@ function failureNode(stage) {
 }
 
 // The "Make the video" button and what replaces it: the live progress,
-// or a message if the queue says no.
-function generateControls(contest, full, onDone) {
+// or a message if the queue says no. onStarted, if given, runs once the
+// job is queued, before the progress view shows.
+function generateControls(contest, full, onDone, onStarted) {
   const wrap = el("div", {});
   const note = el("p", { class: "wait-note",
     text: "No video yet. Making one takes a few minutes." });
@@ -850,6 +867,7 @@ function generateControls(contest, full, onDone) {
     }
     if (body && body.job) {
       const progress = makeProgress(full);
+      if (onStarted) onStarted();
       wrap.replaceChildren(progress.node);
       progress.update(body.job);
       pollJob(contest.id, body.job.id, progress, onDone);
@@ -913,9 +931,26 @@ function hostOf(url) {
   }
 }
 
+// The video is the contest page's hero: its frame takes the height left
+// below the header, back link and title (which wraps to 1-3 lines), so
+// the whole frame, controls included, is on screen without scrolling.
+function fitVideo() {
+  const frame = app.querySelector(".video-frame:not(.empty)");
+  if (!frame) return;
+  const top = frame.getBoundingClientRect().top + window.scrollY;
+  frame.style.setProperty("--above", `${Math.ceil(top)}px`);
+}
+
+window.addEventListener("resize", fitVideo);
+// The hand-drawn fonts can land after the page renders and rewrap the
+// title, which moves the frame.
+if (document.fonts) document.fonts.addEventListener("loadingdone", fitVideo);
+
 async function renderContest(contestId) {
+  const token = routeToken;
   app.appendChild(loading("Loading..."));
   const { ok, status, body } = await getJson(`/api/contest/${contestId}`);
+  if (isStale(token)) return;
   app.innerHTML = "";
   let ballot = null;
   try {
@@ -944,6 +979,8 @@ async function renderContest(contestId) {
                                 preload: "metadata" });
     if (body.poster_url) video.setAttribute("poster", body.poster_url);
     section.appendChild(el("div", { class: "video-frame" }, [video]));
+    // Fitted once the rest of the page is in and laid out below.
+    requestAnimationFrame(fitVideo);
   } else {
     const frame = el("div", { class: "video-frame empty" });
     if (body.status === "unavailable") {
@@ -958,10 +995,14 @@ async function renderContest(contestId) {
       progress.update(body.job);
       pollJob(body.id, body.job.id, progress, route);
     } else {
-      frame.append(el("h2", { text: "No video yet" }),
-        el("p", { text: "Making one takes a few minutes. Once it's " +
-                        "made, it's here for everyone." }),
-        generateControls(body, true, route));
+      const title = el("h2", { text: "No video yet" });
+      const wait = el("p", { text: "Making one takes a few minutes. " +
+                                   "Once it's made, it's here for everyone." });
+      // Once started, the frame reads as the page-load generating state.
+      frame.append(title, wait, generateControls(body, true, route, () => {
+        title.textContent = "Making the video";
+        wait.remove();
+      }));
     }
     section.appendChild(frame);
   }
