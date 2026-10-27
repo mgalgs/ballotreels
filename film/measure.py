@@ -31,8 +31,11 @@ The stage shows
   binding to the caption, at the largest type that fits, and the caption
   and footer at the page's bottom. The first `page` line draws it on, and
   one with a `focus` "clicks" a term: the pencil circles it, and the page
-  holds still (PAGE_ZOOM_MAX); the page comes back at
-  full view with every term clicked so far ticked off;
+  holds still (PAGE_ZOOM_MAX); one with a `highlight` lays a soft graphite
+  band behind each phrase, swept on as the narrator reaches it. Consecutive
+  `page` lines are one page that stays up, each adding its highlights or
+  its click; the page comes back later at full view, its highlights gone
+  and every term clicked so far ticked off;
 - in the `what` and `vote` sections, before any visual, the ballot: the
   measure's title and its two options, drawn alike;
 - otherwise nothing: an empty page under the heading.
@@ -40,7 +43,9 @@ The two sides get the same page whichever plays first (rules 2.2, 4.1);
 their pages are built by the same code from line positions, never from the
 side. The film closes on a card listing every cited source (rule 1.5).
 A quiet footer under the caption, on every frame, says where to report a
-bias (rule 5.1).
+bias (rule 5.1). At its left end, while a picture is on the stage, a small
+graphite ring counts down to the picture changing: full as it appears,
+empty as it goes, with no numbers.
 No music and no sound effects: the narration is the only sound.
 
 Time is in frames: one frame a beat, since cuts follow the narration, not
