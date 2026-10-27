@@ -1039,6 +1039,9 @@ ZOOM = 24          # frames the camera takes to ease in on it (0.8 s)
 CAMERA = vb.bezier(0.45, 0, 0.55, 1)  # eases in and out
 PAGE_ZOOM_MAX = 3.2  # the most the camera magnifies the page
 SUMMARY_BOLD = 'Fiscal Impact:'       # bold on the official page
+# every term the script clicks
+PAGE_FOCI = tuple(dict.fromkeys(ln.visual.focus for sec in CONTEST.script.sections for ln in sec.lines
+                                if ln.visual is not None and ln.visual.kind == 'page' and ln.visual.focus))
 
 
 def _space(fnt):
@@ -1059,15 +1062,35 @@ class Flow:
             a, b = m.span()
             fnt = bold_font if any(s <= a < e for s, e in bold) else plain
             toks.append([a, b, m.group(0), fnt])
+        # A term the script clicks is kept on one line where it fits, so the
+        # camera can frame it, and its twin in the other box, large.
+        kept = []
+        for focus in PAGE_FOCI:
+            k = words.find(focus)
+            while k >= 0:
+                kept.append((k, k + len(focus)))
+                k = words.find(focus, k + len(focus))
+        units = []
+        for t in toks:
+            if units and any(a <= units[-1][-1][0] and t[1] <= b for a, b in kept):
+                units[-1].append(t)
+            else:
+                units.append([t])
+
+        def unit_width(u):
+            return text.measure(' '.join(t[2] for t in u), u[0][3]) if len({id(t[3]) for t in u}) == 1 \
+                else sum(text.measure(t[2], t[3]) + _space(t[3]) for t in u)
+        if any(unit_width(u) > width for u in units):  # too long to keep whole
+            units = [[t] for t in toks]
         lines = [[]]
         used = 0
-        for t in toks:
-            w = text.measure(t[2], t[3])
-            gap = _space(t[3]) if lines[-1] else 0
+        for unit in units:
+            w = unit_width(unit)
+            gap = _space(unit[0][3]) if lines[-1] else 0
             if lines[-1] and used + gap + w > width:
                 lines.append([])
                 used, gap = 0, 0
-            lines[-1].append(t)
+            lines[-1].extend(unit)
             used += gap + w
         self.tokens = []  # (start, end, word, font, x, y)
         self.runs = []
