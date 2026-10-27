@@ -30,8 +30,8 @@ The stage shows
   with the next visual), the page over the whole notebook page from the
   binding to the caption, at the largest type that fits, and the caption
   and footer at the page's bottom. The first `page` line draws it on, and
-  one with a `focus` "clicks" a term: the pencil circles it, then the
-  camera eases in on it a little, for emphasis; the page comes back at
+  one with a `focus` "clicks" a term: the pencil circles it, and the page
+  holds still (PAGE_ZOOM_MAX); the page comes back at
   full view with every term clicked so far ticked off;
 - in the `what` and `vote` sections, before any visual, the ballot: the
   measure's title and its two options, drawn alike;
@@ -1053,15 +1053,15 @@ def runs_of(sec):
 # The measure's page in the official voter guide, drawn from the script's
 # [card] (docs/SCRIPT-FORMAT.md): the first `page` line draws it on, and
 # each one with a `focus` "clicks" a term on it: the pencil circles every
-# occurrence, then the camera eases in a little to frame them (the page is
-# readable whole; the zoom is only emphasis). A later `page` line
+# occurrence, and the camera holds (PAGE_ZOOM_MAX is 1: the page is
+# readable whole). A later `page` line
 # brings the page back at full view, every term clicked so far ticked off.
 CARD = CONTEST.script.card
 PAGE_DRAW = 30     # frames the page takes to draw on, the first time (1 s)
 CIRCLE = 30        # frames the pencil takes to circle a term, every occurrence (1 s)
 ZOOM = 24          # frames the camera takes to ease in on it (0.8 s)
 CAMERA = vb.bezier(0.45, 0, 0.55, 1)  # eases in and out
-PAGE_ZOOM_MAX = 1.4  # the most the camera magnifies the page: a gentle ease in, for emphasis
+PAGE_ZOOM_MAX = 1.0  # no zoom: the page is readable whole, and any zoom crops its lines
 SUMMARY_BOLD = 'Fiscal Impact:'       # bold on the official page
 # every term the script clicks
 PAGE_FOCI = tuple(dict.fromkeys(ln.visual.focus for sec in CONTEST.script.sections for ln in sec.lines
