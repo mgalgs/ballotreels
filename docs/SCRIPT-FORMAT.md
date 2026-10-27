@@ -231,10 +231,11 @@ Sections, in this order: `what`, any number of `background` sections
 (zero or more, each with its own heading), `today`, `change`, `fiscal`,
 the two sides, `vote`. Background sections tell the story behind the
 contest (STANDARD.md section 6). Visuals may appear in any section. In
-the sides (STANDARD.md rule 7.3), a chart, timeline, list or page only
-when both sides have one of the same kind (a `list` also needing the
-same number of items in all), and an illustration only when both sides
-have the same number of them.
+the sides (STANDARD.md rule 7.3), the only visual is one `list` per side,
+and only when both sides have one with the same number of items in all:
+both sides share one slide, whose two blocks hold each side's checklist
+and nothing else, so a chart, timeline, page or illustration in a side
+fails the check rather than going undrawn.
 
 ### The measure template, version 1
 

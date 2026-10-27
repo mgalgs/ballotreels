@@ -239,12 +239,17 @@ class BrokenCopyTest(ContestCopyTestCase):
     def test_chart_on_one_side(self):
         self.add_side_chart("yes", "bars")
         [f] = self.assertOnly("side-visual", "yes", 0)
-        self.assertIn("yes has bars, no has none", f.message)
+        self.assertIn("one 'list' visual and no other", f.message)
 
     def test_charts_of_same_kinds_on_both_sides(self):
+        # matched, but the shared sides slide draws only a list, so a chart
+        # in a side would pass and then never be shown
         self.add_side_chart("yes", "bars")
         self.add_side_chart("no", "bars")
-        self.assertEqual(self.failures(), [])
+        got = self.failures()
+        self.assertEqual([(f.check, f.section, f.line) for f in got],
+                         [("side-visual", "yes", 0), ("side-visual", "no", 0)])
+        self.assertIn("this is a 'bars'", got[0].message)
 
     def test_charts_of_different_kinds_on_the_sides(self):
         self.add_side_chart("yes", "bars")
@@ -361,19 +366,21 @@ class BrokenCopyTest(ContestCopyTestCase):
     def test_illustration_on_one_side(self):
         self.add_side_illustration("yes", "save-more")
         [f] = self.assertOnly("side-visual", "yes", 0)
-        self.assertIn("yes has illustration, no has none", f.message)
+        self.assertIn("this is a 'illustration'", f.message)
 
     def test_illustrations_on_both_sides(self):
         self.add_side_illustration("yes", "save-more")
         self.add_side_illustration("no", "spending-limit")
-        self.assertEqual(self.failures(), [])
+        got = self.failures()
+        self.assertEqual([(f.check, f.section, f.line) for f in got],
+                         [("side-visual", "yes", 0), ("side-visual", "no", 0)])
 
     def test_timeline_on_one_side(self):
         self.edit("script.toml", self.SIDE_LINE["no"],
                   self.SIDE_LINE["no"] + '\n\n[section.line.visual]\n'
                   + self.TIMELINE.replace("lao-analysis", "arguments"))
         [f] = self.assertOnly("side-visual", "no", 0)
-        self.assertIn("yes has none, no has timeline", f.message)
+        self.assertIn("this is a 'timeline'", f.message)
 
     # 4f. the 'list' visual (docs/SCRIPT-FORMAT.md; rule 7.3)
     def add_side_list(self, side, items):

@@ -520,9 +520,11 @@ def check_side_parity(c: Contest) -> list[Failure]:
 
 def check_side_visuals(c: Contest) -> list[Failure]:
     """STANDARD.md 7.3: a visual in a side section only if the other side
-    has visuals of the same kinds (as many of each): a chart or timeline
-    matched by one of its kind, illustrations by as many
-    illustrations."""
+    has visuals of the same kinds (as many of each). And since both sides
+    share one slide (film/measure.py's sides slide), whose two blocks hold
+    each side's checklist and nothing else, the only visual a side may
+    have is one 'list': anything else would pass here and then never be
+    drawn."""
     by_side: dict[str, list[tuple[str, Section]]] = {}
     for label, sec in c.script.labelled():
         if sec.side is not None:
@@ -537,16 +539,28 @@ def check_side_visuals(c: Contest) -> list[Failure]:
                                  if ln.visual is not None))
 
     have = {"yes": kinds(yes[0][1]), "no": kinds(no[0][1])}
-    if have["yes"] == have["no"]:
-        return []
 
     def show(counts: Counter) -> str:
         return ", ".join(sorted(counts.elements())) or "none"
 
     out = []
     for label, sec in (yes[0], no[0]):
+        lists = 0
         for i, line in enumerate(sec.lines):
-            if line.visual is not None:
+            if line.visual is None:
+                continue
+            kind = line.visual.kind
+            if kind == "list":
+                lists += 1
+            if kind != "list" or lists > 1:
+                out.append(Failure(
+                    "side-visual",
+                    f"a side section may have one 'list' visual and no "
+                    f"other: both sides share one slide, which draws "
+                    f"nothing else (this is a {kind!r}"
+                    f"{' after the first' if kind == 'list' else ''})",
+                    label, i))
+            elif have["yes"] != have["no"]:
                 out.append(Failure(
                     "side-visual",
                     f"a visual in a side section needs visuals of the same "
