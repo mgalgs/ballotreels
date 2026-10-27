@@ -6,8 +6,8 @@ import unittest
 from ballotreels.contest import load_contest
 from ballotreels.narration import (NarrationError, match_phrases,
                                    section_order)
-from ballotreels.storyboard import (cited_sources, frame, layout,
-                                    sources_card_seconds)
+from ballotreels.storyboard import (SOURCES_CARD_SECONDS, cited_sources,
+                                    frame, layout)
 
 from .helpers import PROP_2, ContestCopyTestCase, write_narration
 
@@ -103,7 +103,7 @@ class StandInLayoutTest(ContestCopyTestCase):
         self.assertEqual(b.narration_end,
                          frame(narration_seconds(self.dir)) + frame(0.5))
         self.assertEqual(b.end - b.narration_end,
-                         frame(sources_card_seconds(b.cited)))
+                         frame(SOURCES_CARD_SECONDS))
         self.assertIsNone(b.section_at(b.narration_end))
         self.assertEqual(b.section_at(0).label, "what")
 
@@ -120,10 +120,8 @@ class CitedSourcesTest(unittest.TestCase):
                                  "quick-reference", "guide-section",
                                  "lao-volatility"])
 
-    def test_card_read_time(self):
-        cited = cited_sources(load_contest(PROP_2))
-        words = 1 + sum(len(s.publisher.split()) for s in cited)
-        self.assertAlmostEqual(sources_card_seconds(cited), 1 + words / 3)
+    def test_card_holds_five_seconds(self):
+        self.assertEqual(SOURCES_CARD_SECONDS, 5.0)
 
 
 class Prop2LayoutTest(unittest.TestCase):

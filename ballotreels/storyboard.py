@@ -15,9 +15,8 @@ order (`playback_sections`), so the picture follows the voice:
   in its section, until a later line brings its own visual or the section
   ends (docs/SCRIPT-FORMAT.md). Its source line, if it has one, is on
   screen for exactly that span (STANDARD.md rule 7.1).
-- The closing sources card follows the narration, for as long as it takes
-  to read (1 s plus its words at 3 words a second), listing every source
-  the script cites (rule 1.5).
+- The closing sources card follows the narration for SOURCES_CARD_SECONDS,
+  listing every source the script cites (rule 1.5).
 """
 
 from __future__ import annotations
@@ -30,7 +29,7 @@ from .narration import NarrationError, match_phrases, playback_sections
 FPS = 30
 END_HOLD = 0.5  # s held on the last line before the sources card
 PAGE_LEAD = 0.25  # s before a section's first word that its page starts
-READ_WPS = 3.0  # words a second, the read-time floor
+SOURCES_CARD_SECONDS = 5.0  # the sources stay listed on the video's page
 
 
 def frame(seconds: float, fps: int = FPS) -> int:
@@ -103,12 +102,6 @@ def cited_sources(contest: Contest) -> tuple[Source, ...]:
     return tuple(s for s in contest.sources if s.id in ids)
 
 
-def sources_card_seconds(sources: tuple[Source, ...]) -> float:
-    """Read time for the sources card: its heading and each publisher."""
-    words = 1 + sum(len(s.publisher.split()) for s in sources)
-    return 1 + words / READ_WPS
-
-
 def layout(contest: Contest, seconds: float, fps: int = FPS) -> Storyboard:
     """Lay the contest out on the narration's clock; `seconds` is the
     narration audio's length. Raises NarrationError when the contest has no
@@ -158,10 +151,9 @@ def layout(contest: Contest, seconds: float, fps: int = FPS) -> Storyboard:
                                     tuple(charts)))
 
     cited = cited_sources(contest)
-    end = narration_end + frame(sources_card_seconds(cited), fps)
+    end = narration_end + frame(SOURCES_CARD_SECONDS, fps)
     return Storyboard(fps, tuple(sections), narration_end, end, cited)
 
 
-__all__ = ["ChartBeat", "LineBeat", "NarrationError", "SectionBeat",
-           "Storyboard", "cited_sources", "frame", "layout",
-           "sources_card_seconds"]
+__all__ = ["SOURCES_CARD_SECONDS", "ChartBeat", "LineBeat", "NarrationError",
+           "SectionBeat", "Storyboard", "cited_sources", "frame", "layout"]
