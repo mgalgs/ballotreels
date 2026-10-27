@@ -50,7 +50,7 @@ id = "today"
 heading = "Today"
 
 [[section.line]]
-text = "Today, the state sends school districts money through its Classroom Site Fund."
+text = "Today, the state sends districts money through its Classroom Site Fund."
 sources = ["text"]
 
 [section.line.visual]
@@ -62,7 +62,16 @@ id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "The measure would require at least 60 percent of district operating spending to go to direct instruction."
+text = "The measure covers districts of 7,500 or more students, or in counties of 500,000 or more."
+sources = ["guide", "analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["a student count of at least 7,500", "a population of at least 500,000 persons"]
+
+[[section.line]]
+text = "They would have to put at least 60 percent of operating spending into direct instruction."
 sources = ["analysis"]
 
 [section.line.visual]
@@ -74,16 +83,7 @@ labels = ["Direct instruction"]
 values = [60]
 
 [[section.line]]
-text = "The rule covers districts of 7,500 or more students, or in counties of 500,000 or more."
-sources = ["guide", "analysis"]
-
-[section.line.visual]
-kind = "page"
-source = "guide"
-highlight = ["a student count of at least 7,500", "a population of at least 500,000 persons"]
-
-[[section.line]]
-text = "Districts falling short would lose a growing share of Classroom Site Fund money, unless granted a waiver."
+text = "Those below must raise their share at least half a percent yearly, or face growing Classroom Site Fund cuts, barring waivers."
 sources = ["analysis", "text"]
 
 [section.line.visual]
@@ -99,7 +99,7 @@ id = "fiscal"
 heading = "What it would cost"
 
 [[section.line]]
-text = "The Legislative Council says withheld money would go to districts that comply."
+text = "The Legislative Council says withheld money would go to complying districts."
 sources = ["analysis"]
 
 [section.line.visual]
@@ -139,7 +139,7 @@ id = "vote"
 heading = "What your vote means"
 
 [[section.line]]
-text = "A yes vote means those districts must spend 60 percent on direct instruction."
+text = "A yes vote sets a 60 percent direct instruction minimum for those districts."
 sources = ["guide"]
 
 [section.line.visual]
@@ -148,7 +148,7 @@ source = "guide"
 highlight = ["to spend at least 60% of their operational spending on direct instructional expenses"]
 
 [[section.line]]
-text = "A no vote means current school budget laws stay the same."
+text = "A no vote keeps current school budget laws."
 sources = ["guide"]
 
 [section.line.visual]
