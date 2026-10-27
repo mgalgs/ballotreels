@@ -38,6 +38,20 @@ before writing another.
 - **State both the effect and the trade-off** wherever the analysis gives
   both (STANDARD rule 6.4). If one line says what the measure buys, another
   says what it costs.
+- **Give every government dollar figure its scale** (rule 6.5), in the
+  same line as the figure: "…$500 million to $600 million a year, about
+  one-quarter of 1 percent of the state's General Fund budget." Use the
+  analysis's own comparison when it gives one; otherwise divide the
+  figure by the General Fund total for the same period, both cited
+  ("about 2 to 6 percent of the state's General Fund spending"; "less
+  than 1 percent of …" below 1). Per-person amounts, money the state
+  neither pays nor receives, and figures with no matching total are
+  exempt. If no archived source states the total, stop and ask for
+  one; never use a remembered figure. The check still allows an
+  `official-report` only in a `background` line (rule 6.1), so a total
+  that only a report states cannot yet be cited beside a `fiscal` line.
+  Pay for the added words within the same neutral section, never from
+  a side.
 - Purpose is the authors' purpose ("The Legislature placed it on the
   ballot to…"), never the narrator's claim (rule 6.2).
 

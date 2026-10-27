@@ -63,6 +63,9 @@ connective = true                    # a line that makes no claim
 ```
 
 A line has `sources` (non-empty) or `connective = true`, never both.
+A line that states a computed share of a budget (STANDARD.md rule 6.5)
+lists the source of the figure and the source of the total; when one
+source states both, that one id is enough.
 
 ### The card: the measure's official page
 

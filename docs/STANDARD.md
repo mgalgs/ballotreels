@@ -122,6 +122,37 @@ The rules below keep that story neutral.
    problem one side wants solved while passing over the cost the other
    side objects to; where the fiscal analysis states both an effect and
    its cost, the story states both.
+5. A dollar figure about a government's money (its revenue, spending,
+   costs, savings or borrowing) is stated with its scale: its share of
+   the relevant budget, or that budget's total beside it. A bare large
+   number reads as huge to one viewer and trivial to another, and which
+   way it reads tilts the contest.
+   - The total comes from a source in rule 1.2: the fiscal analysis
+     where it states one, otherwise the state's nonpartisan fiscal
+     offices.
+   - The budget compared against is fixed, never chosen per script: the
+     one the fiscal analysis itself compares the figure against; where
+     it names none, the government's main operating budget (in
+     California, the General Fund) for the matching period: a yearly
+     figure against a year's spending, a two-year figure against the
+     two-year budget.
+   - Where the analysis states the comparison in its own words ("about
+     one-quarter of 1 percent of the state's total General Fund
+     budget"), the script uses those words. Otherwise the share is
+     computed, and this is the one exception to rule 1.1's requirement
+     that a source state every claim: one cited figure divided by
+     another, rounded to a whole percent, with both sources cited; no
+     projection, adjustment or other step. A range stays a range ("about
+     2 to 6 percent of the state's General Fund spending"), and a share
+     under 1 percent is said as "less than 1 percent of ...".
+   - Exempt: a figure with no official total to compare against (one
+     spread over an unstated number of years has none); an amount per
+     person or household (an income threshold, a home price, a tax per
+     person); and money not paid from or into a government's budget
+     (bonds the analysis says homeowners repay, not the state).
+   - The rule covers the narration and every number on screen except
+     the card, which is quoted verbatim. A chart showing the figure may
+     show its share too, with both sources named under it (rule 7.1).
 
 ## 7. Charts and visuals
 
