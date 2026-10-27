@@ -160,6 +160,12 @@ def layout_9x16():
         sources_font=font(48, family=PRINT),
         footer=Box(70, 1574, 940, 40),
         footer_font=font(30, family=PRINT),
+        # the full-page view, while the official page is up: no running
+        # title or heading, the page from under the binding down to the
+        # caption, the caption and the footer at the bottom of the page
+        page_stage=Box(24, 136, 1032, 1468),
+        page_scrap=Box(78, 1632, 924, 196),
+        page_footer=Box(70, 1856, 940, 40),
     )
 
 
@@ -186,6 +192,9 @@ def layout_16x9():
         sources_font=font(42, family=PRINT),
         footer=Box(250, 1034, 1420, 32),
         footer_font=font(25, family=PRINT),
+        page_stage=Box(24, 128, 1872, 686),
+        page_scrap=Box(250, 842, 1420, 176),
+        page_footer=Box(250, 1034, 1420, 32),
     )
 
 
@@ -988,11 +997,21 @@ class Group:
     frame `f0`, fading out over FADE frames from `out` (None: never), with
     the marks they show while fully up."""
 
-    def __init__(self, items, marks, f0, out=None):
+    def __init__(self, items, marks, f0, out=None, hidden=None):
         self.items, self.marks, self.f0, self.out = items, marks, f0, out
+        self.hidden = hidden  # a heading: how far the full-page view hides it at frame n, 0..1
 
     def draw(self, cv, n):
         if n < self.f0 - 1 or (self.out is not None and n >= self.out + FADE):
+            return
+        h = self.hidden(n) if self.hidden else 0
+        if h >= 1:
+            return
+        if h > 0:
+            out = 1 if self.out is None or n < self.out else 1 - (n - self.out) / FADE
+            with cv.layer(opacity=(1 - h) * out):
+                for it in self.items:
+                    it.draw(cv, n)
             return
         if self.out is None or n < self.out:
             for it in self.items:
@@ -1141,41 +1160,43 @@ def re_words(s):
 def page_fonts(s):
     return dict(
         body=font(s, family=PRINT), bold=font(s, 700, family=PRINT),
-        title=font(s * 1.1, 700, family=PRINT), head=font(s * 0.95, 700, family=PRINT),
-        prop=font(s * 0.8, 700, family=PRINT), num=font(s * 2.0, 700, family=PRINT),
-        label=font(s * 1.15, 700, family=PRINT))
+        title=font(s * 1.1, 700, family=PRINT), head=font(s * 0.85, 700, family=PRINT),
+        prop=font(s * 0.62, 700, family=PRINT), num=font(s * 1.5, 700, family=PRINT),
+        label=font(s * 1.0, 700, family=PRINT))
 
 
-def _layout_page(card, box, s, arrangement):
+def _layout_page(card, box, s, arrangement, spread=0):
     """The card's contents set at body size `s` inside `box`, in one of three
     arrangements: 'stacked' (one column, the YES box over the NO box), 'side'
     (one column, the boxes side by side) or 'columns' (the summary beside
-    the boxes). Returns (height used, parts)."""
+    the boxes). `spread` px more go into each of the gaps between its blocks
+    (title, summary, vote boxes), so a page with room to spare fills it
+    evenly. Returns (height used, parts)."""
     F = page_fonts(s)
-    gap = s * 0.7
-    pad = s * 0.6           # inside a YES/NO box
+    gap = s * 0.55
+    pad = s * 0.4           # inside a YES/NO box
     parts = dict(fonts=F, flows=[], shapes=[], labels=[])
     two = arrangement == 'columns'
     colw = (box.w - gap * 1.5) / 2 if two else box.w
     x, y = box.x, box.y
     # the badge: PROP over the number, in a box, the title beside it
-    bw = max(text.measure('PROP', F['prop']), text.measure(card.number, F['num'])) + s * 0.8
-    bh = text.line_height(F['prop']) * 0.9 + text.line_height(F['num']) * 0.85 + s * 0.3
+    bw = max(text.measure('PROP', F['prop']), text.measure(card.number, F['num'])) + s * 0.5
+    bh = text.line_height(F['prop']) * 0.85 + text.line_height(F['num']) * 0.8 + s * 0.15
     parts['badge'] = Box(x, y, bw, bh)
     tx = x + bw + gap * 0.8
     title = Flow('title', card.title, F['title'], x=tx, y=y, width=x + colw - tx)
     title.y_shift = max(0, (bh - title.height) / 2)
     title = Flow('title', card.title, F['title'], x=tx, y=y + title.y_shift, width=x + colw - tx)
     parts['flows'].append(title)
-    y += max(bh, title.height) + gap * 0.8
+    y += max(bh, title.height) + gap * 0.8 + spread
     # SUMMARY, and who put it on the ballot
     sw = text.measure('SUMMARY', F['head'])
-    parts['labels'].append(('SUMMARY', F['head'], x, y))
+    parts['labels'].append(('SUMMARY', F['head'], x, y + (text.line_height(F['body']) - text.line_height(F['head']))))
     origin = Flow('origin', card.origin, F['body'], x=x + sw + gap, y=y, width=colw - sw - gap)
     parts['flows'].append(origin)
-    y += max(text.line_height(F['head']), origin.height) + gap * 0.25
+    y += max(text.line_height(F['head']), origin.height) + gap * 0.15
     parts['shapes'].append(('rule', (x, y, colw)))
-    y += gap * 0.45
+    y += gap * 0.35
     k = card.summary.find(SUMMARY_BOLD)
     bold = [(k, k + len(SUMMARY_BOLD))] if k >= 0 else []
     summary = Flow('summary', card.summary, F['body'], bold, F['bold'], x=x, y=y, width=colw)
@@ -1185,58 +1206,64 @@ def _layout_page(card, box, s, arrangement):
     if two:
         x, y = box.x + colw + gap * 1.5, box.y
     else:
-        y += gap
+        y += gap + spread
     # WHAT YOUR VOTE MEANS, then the YES and NO boxes, alike in every way (rule 7.4)
     parts['labels'].append(('WHAT YOUR VOTE MEANS', F['head'], x, y))
-    y += text.line_height(F['head']) + gap * 0.1
+    y += text.line_height(F['head']) + gap * 0.05
     parts['shapes'].append(('rule', (x, y, colw)))
-    y += gap * 0.6
+    y += gap * 0.5 + spread
     side = arrangement == 'side'
     vw = (colw - gap) / 2 if side else colw
-    lab_h = text.line_height(F['label'])
+    lab_h = text.line_height(F['label']) * 0.95
     inner = vw - 2 * pad
     flows = [Flow(key, getattr(card, key), F['body'], x=0, y=0, width=inner) for key in ('yes', 'no')]
-    vh = pad * 2 + lab_h + max(f.height for f in flows)
+    vh = pad * 1.6 + lab_h + max(f.height for f in flows)
+    step = vh + gap * 0.6 + spread
     for i, (key, word) in enumerate((('yes', 'YES'), ('no', 'NO'))):
         bx = x + (vw + gap) * i if side else x
-        by = y if side else y + (vh + gap * 0.6) * i
+        by = y if side else y + step * i
         parts['shapes'].append(('vote', (bx, by, vw, vh)))
-        parts['labels'].append((word, F['label'], bx + pad, by + pad * 0.8))
-        parts['flows'].append(Flow(key, getattr(card, key), F['body'], x=bx + pad, y=by + pad * 0.8 + lab_h,
+        parts['labels'].append((word, F['label'], bx + pad, by + pad * 0.6))
+        parts['flows'].append(Flow(key, getattr(card, key), F['body'], x=bx + pad, y=by + pad * 0.6 + lab_h,
                                    width=inner))
-    y += vh if side else vh * 2 + gap * 0.6
+    y += vh if side else vh + step
     return max(y, left_bottom) - box.y, parts
+
+
+PAGE_SPREADS = 4  # the gaps `spread` widens, in the stacked arrangement
 
 
 @functools.lru_cache(maxsize=4)
 def page_plan(fmt):
-    """The card laid out for format `fmt`, as large as it fits the stage, in
-    the arrangement for its shape that sets its words largest: (paper box,
-    parts)."""
+    """The card laid out for format `fmt` over the full-page view's whole
+    stage, at the largest body size that fits, in the arrangement for its
+    shape that sets its words largest: (paper box, parts). Room left over
+    goes evenly into the gaps between its blocks, and above and below."""
     L = LAYOUTS[fmt]
-    stage = L['stage']
+    paper_box = L['page_stage']
     u = L['u']
-    margin = 26 * u
-    inset = 36 * u
-    paper_box = Box(stage.x + margin * 0.3, stage.y + margin * 0.3, stage.w - margin * 0.6, stage.h - margin * 0.6)
-    content = Box(paper_box.x + inset, paper_box.y + inset * 1.2, paper_box.w - 2 * inset, paper_box.h - 2.2 * inset)
+    inset = 24 * u
+    content = Box(paper_box.x + inset, paper_box.y + inset * 1.3, paper_box.w - 2 * inset, paper_box.h - 2.3 * inset)
     # Stacked boxes in a tall frame, the summary beside them in a wide one:
     # either way a term in both boxes sits close to its twin, so the camera
-    # can frame the pair large.
+    # can frame the pair.
     best = None
     for arrangement in (('stacked',) if L['H'] > L['W'] else ('columns', 'stacked')):
-        s = 60 * u
+        s = 90 * u
         while s > 12:
             h, parts = _layout_page(CARD, content, s, arrangement)
             if h <= content.h:
                 break
-            s *= 0.97
+            s *= 0.99
         if best is None or s > best[0]:
             best = (s, h, parts, arrangement)
     s, h, parts, arrangement = best
-    # centre the contents down the paper
+    spread = 0
+    if arrangement == 'stacked':
+        spread = (content.h - h) / (PAGE_SPREADS + 1)
+        h += spread * PAGE_SPREADS
     dy = (content.h - h) / 2
-    _, parts = _layout_page(CARD, Box(content.x, content.y + dy, content.w, h), s, arrangement)
+    _, parts = _layout_page(CARD, Box(content.x, content.y + dy, content.w, h), s, arrangement, spread)
     parts['arrangement'] = arrangement
     parts['size'] = s
     return paper_box, parts
@@ -1297,7 +1324,7 @@ def page_static(paper_box, parts, L):
         marks.append(('text', words, fnt, x, y, alpha))
 
     b = parts['badge']
-    marks.append(('stroke', Stroke(box_pts(*b), seed_of('page badge'), passes=2, width=3.6 * u, closed=True,
+    marks.append(('stroke', Stroke(box_pts(*b), seed_of('page badge'), passes=2, width=2.8 * u, closed=True,
                                    overshoot=0)))
     write('PROP', F['prop'], b.cx - text.measure('PROP', F['prop']) / 2, b.y + 0.15 * F['prop'].size)
     write(CARD.number, F['num'], b.cx - text.measure(CARD.number, F['num']) / 2,
@@ -1311,18 +1338,18 @@ def page_static(paper_box, parts, L):
         write(*run, alpha=0.85)
     shapes = iter(parts['shapes'])
     kind, (x, y, w) = next(shapes)
-    marks.append(('stroke', Stroke([(x, y), (x + w, y)], seed_of('page rule', 0), passes=2, width=2.6 * u,
+    marks.append(('stroke', Stroke([(x, y), (x + w, y)], seed_of('page rule', 0), passes=2, width=2 * u,
                                    overshoot=2, alpha=0.6)))
     for run in flows['summary'].runs:
         write(*run)
     write(*next(labels), alpha=0.8)  # WHAT YOUR VOTE MEANS
     kind, (x, y, w) = next(shapes)
-    marks.append(('stroke', Stroke([(x, y), (x + w, y)], seed_of('page rule', 1), passes=2, width=2.6 * u,
+    marks.append(('stroke', Stroke([(x, y), (x + w, y)], seed_of('page rule', 1), passes=2, width=2 * u,
                                    overshoot=2, alpha=0.6)))
     # the YES and NO boxes: the same outline, lettering and timing
     for key in ('yes', 'no'):
         kind, (x, y, w, h) = next(shapes)
-        marks.append(('stroke', Stroke(box_pts(x, y, w, h), seed_of('page vote box'), passes=2, width=3.2 * u,
+        marks.append(('stroke', Stroke(box_pts(x, y, w, h), seed_of('page vote box'), passes=2, width=2.6 * u,
                                        closed=True, overshoot=0, alpha=0.75)))
         write(*next(labels))
         for run in flows[key].runs:
@@ -1411,7 +1438,7 @@ def page_run(chart, lines, L, first_f, fmt, state):
     after that; then, with a `focus`, the term circled and zoomed in on.
     `state` carries what earlier page runs did: (items, marks, camera,
     fade-in frame or None)."""
-    stage = L['stage']
+    stage = L['page_stage']
     u = L['u']
     paper_box, parts = page_plan(fmt)
     end = lines[-1].end
@@ -1491,14 +1518,54 @@ class PageGroup(Group):
                     cv.mark(m.name, *m.box)
 
 
+def is_page(run):
+    return run[0] == 'chart' and run[1].visual.kind == 'page'
+
+
+def page_spans():
+    """The stretches of the film in the full-page view, (start, end) frames:
+    from a page run's first line to its last, runs back to back joined."""
+    spans = []
+    for sec in BOARD.sections:
+        for run in runs_of(sec):
+            if not is_page(run):
+                continue
+            a, b = run[2][0].start, run[2][-1].end
+            if spans and a <= spans[-1][1] + 1:
+                spans[-1] = (spans[-1][0], b)
+            else:
+                spans.append((a, b))
+    return spans
+
+
+PAGE_SPANS = page_spans()
+
+
+def page_view(n):
+    """How far frame n is in the full-page view, 0..1: it fades in over FADE
+    frames as a page run starts, and out over FADE as it ends, alongside the
+    visuals' own fades."""
+    for a, b in PAGE_SPANS:
+        if a <= n < b + FADE:
+            return min(vb.clamp01((n - a) / FADE), 1 - vb.clamp01((n - b) / FADE))
+    return 0.0
+
+
 def build(fmt):
     L = LAYOUTS[fmt]
     groups = []
     pages = dict(drawn=False, clicked=[])  # what earlier `page` lines did
     for sec in BOARD.sections:
-        h_items, h_end, h_box = heading_items(sec, L, sec.start + (FADE if sec.number else 4))
-        groups.append(Group(h_items, [Mark('heading', h_box, sec.start)], sec.start, sec.end))
         runs = runs_of(sec)
+        h_f0 = sec.start + (FADE if sec.number else 4)
+        h_items, h_end, h_box = heading_items(sec, L, h_f0)
+        if runs and is_page(runs[0]) and runs[0][1].index == 0:
+            # The section opens in the full-page view: its heading is not
+            # written on, but fades in whole when a later visual leaves the view.
+            for it in h_items:
+                it.f0, it.f1, it._head = h_f0 + FADE, h_f0 + FADE + 1, None
+            h_end = h_f0 - 2
+        groups.append(Group(h_items, [Mark('heading', h_box, sec.start)], sec.start, sec.end, hidden=page_view))
         for k, (kind, chart, lines) in enumerate(runs):
             start = lines[0].start
             first_f = max(h_end + 2, start + (FADE if start > sec.start else 0))
@@ -1611,21 +1678,21 @@ def caption_chunks(L):
 _SCRAPS = {}
 
 
-def scrap_edge(L):
-    key = L['W']
+def scrap_edge(s):
+    key = tuple(s)
     if key not in _SCRAPS:
-        s = L['scrap']
         _SCRAPS[key] = paths.torn([(s.x, s.y), (s.right, s.y + 4), (s.right - 3, s.bottom), (s.x + 2, s.bottom - 3)],
                                   seed=91, amount=5, step=3)
     return _SCRAPS[key]
 
 
-def draw_captions(cv, n, P):
+def draw_captions(cv, n, P, s, mark=True):
+    """The caption scrap, at box `s`: the normal layout's, or the full-page
+    view's."""
     L = P['L']
     t = n / FPS
-    s = L['scrap']
     ctx = cv.ctx
-    edge = scrap_edge(L)
+    edge = scrap_edge(s)
     cv.shape_shadow(edge, dx=6, dy=10, blur=18, color=(60, 40, 20, 0.22))
     paths.draw(cv, edge, PAPER_SCRAP, fill=True)
     for x, y, a in ((s.x + 40, s.y - 6, -0.5), (s.right - 40, s.y - 2, 0.45)):
@@ -1645,31 +1712,35 @@ def draw_captions(cv, n, P):
     y0 = s.cy - lh * len(lines) / 2 + 2
     fade = vb.clamp01((t - ch['start']) / 0.08)
     sp.pencil_text(cv, lines, fnt, s.x, y0, GRAPHITE, fade, align='center', width=s.w)
-    cv.mark('caption', s.x, s.y, s.w, s.h)
+    if mark:
+        cv.mark('caption', s.x, s.y, s.w, s.h)
 
 
 # ---- the running header: the measure's title, on every page ----
-def draw_header(cv, L):
+def draw_header(cv, L, alpha=1.0):
+    """The running title, at `alpha`: it fades out in the full-page view."""
     hb = L['header']
     fnt = L['header_font']
     lines = text.wrap(CONTEST.title, fnt, hb.w, balance=True)
-    drawn = sp.pencil_text(cv, lines, fnt, hb.x, hb.y, GRAPHITE, 0.62, align='center', width=hb.w)
-    cv.mark('header', *drawn)
+    drawn = sp.pencil_text(cv, lines, fnt, hb.x, hb.y, GRAPHITE, 0.62 * alpha, align='center', width=hb.w)
+    if alpha >= 1:
+        cv.mark('header', *drawn)
 
 
 # ---- the footer: how to report a bias, on every frame (rule 5.1) ----
 FOOTER = 'ballotreels · bias is a bug · report it at github.com/mgalgs/ballotreels'
 
 
-def draw_footer(cv, L):
+def draw_footer(cv, L, fb, alpha=1.0):
     """One quiet line under the caption, the same on every frame: never the
-    accent colour, and clear of the caption scrap and any source line."""
-    fb = L['footer']
+    accent colour, and clear of the caption scrap and any source line. `fb`
+    is its box: the normal layout's, or the full-page view's."""
     fnt = L['footer_font']
     while text.measure(FOOTER, fnt) > fb.w and fnt.size > 14:
         fnt = font(fnt.size * 0.95, family=PRINT)
-    drawn = sp.pencil_text(cv, [FOOTER], fnt, fb.x, fb.y, GRAPHITE, 0.62, align='center', width=fb.w)
-    cv.mark('footer', *drawn)
+    drawn = sp.pencil_text(cv, [FOOTER], fnt, fb.x, fb.y, GRAPHITE, 0.62 * alpha, align='center', width=fb.w)
+    if alpha >= 1:
+        cv.mark('footer', *drawn)
 
 
 # ---- the pencil: only while something is being drawn ----
@@ -1726,13 +1797,31 @@ def draw(n, cv):
     ctx = cv.ctx
     ctx.set_source_surface(sp.backdrop(cv.width, cv.height), 0, 0)
     ctx.paint()
-    draw_header(cv, P['L'])
-    draw_footer(cv, P['L'])
+    L = P['L']
+    v = page_view(n)
+    # The full-page view: the running title fades out, and the caption and
+    # footer cross-fade to their places at the page's bottom.
+    if v < 1:
+        draw_header(cv, L, 1 - v)
+    for fb, a in ((L['footer'], 1 - v), (L['page_footer'], v)):
+        if L['footer'] == L['page_footer']:
+            draw_footer(cv, L, fb)
+            break
+        if a > 0:
+            draw_footer(cv, L, fb, a)
     for g in P['groups']:
         g.draw(cv, n)
     draw_pencil(cv, n, P)
     if n < BOARD.narration_end:
-        draw_captions(cv, n, P)
+        for s, a in ((L['scrap'], 1 - v), (L['page_scrap'], v)):
+            if L['scrap'] == L['page_scrap']:
+                draw_captions(cv, n, P, s)
+                break
+            if a >= 1:
+                draw_captions(cv, n, P, s)
+            elif a > 0:
+                with cv.layer(opacity=a):
+                    draw_captions(cv, n, P, s, mark=False)
 
 
 SEGMENTS = [vb.Segment(s.label, s.start, s.end,
