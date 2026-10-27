@@ -393,6 +393,20 @@ class SubprocessRunnerArgvTest(unittest.TestCase):
             "--format", "9x16", "--out", str(out_dir)])
         self.assertEqual(result, out_dir / "ca-2026-11-03-prop-2-9x16.mp4")
 
+    def test_render_passes_the_site_url_on(self):
+        calls = []
+
+        def fake_popen(argv, **kwargs):
+            calls.append(argv)
+            return FakePopenProcess(argv)
+
+        runner = SubprocessRunner("/repo", popen=fake_popen,
+                                  site_url="https://staging.example.org")
+        out_dir = Path("/tmp/does-not-need-to-exist-for-this-test")
+        runner.render(PROP_2, out_dir)
+        self.assertEqual(calls[-1][-2:],
+                         ["--site-url", "https://staging.example.org"])
+
     def test_encode_argv(self):
         calls = []
 

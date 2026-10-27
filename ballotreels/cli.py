@@ -76,7 +76,8 @@ def _narration_one(path: str, out) -> bool:
     return True
 
 
-def _render_one(path: str, fmt_arg: str, out_dir: Path, out) -> bool:
+def _render_one(path: str, fmt_arg: str, out_dir: Path, out,
+                site_url: str | None = None) -> bool:
     try:
         contest = load_contest(path)
     except ContestError as e:
@@ -91,6 +92,9 @@ def _render_one(path: str, fmt_arg: str, out_dir: Path, out) -> bool:
         return False
     # The film template reads the contest from this; see film/measure.py.
     os.environ["BALLOTREELS_CONTEST"] = str(Path(path).resolve())
+    # ...and the site's address, for the link it prints on every frame.
+    if site_url:
+        os.environ["BALLOTREELS_SITE_URL"] = site_url
     film = vb.load(str(FILM_TEMPLATE))
     fmts = film.formats if fmt_arg == "all" else [film.format(fmt_arg)]
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -216,8 +220,9 @@ def _worker_main(args, out, err) -> int:
     if args.runner == "fake":
         runner = FakeRunner()
     else:
+        site_url = args.site_url or os.environ.get("BALLOTREELS_SITE_URL")
         runner = SubprocessRunner(args.repo, ffmpeg=ffmpeg, crf=crf,
-                                  maxrate=maxrate)
+                                  maxrate=maxrate, site_url=site_url or None)
     client = WorkerClient(server, token)
     from .storage import S3ConfigError
     try:
@@ -285,6 +290,11 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
                         default="all")
     render.add_argument("--out", default="out", metavar="DIR",
                         help="output directory (default: out/)")
+    render.add_argument("--site-url", default=None,
+                        help="the site's public base URL, for the link to "
+                             "the measure's page on every frame (default: "
+                             "$BALLOTREELS_SITE_URL or "
+                             "https://ballotreels.org)")
     measures = sub.add_parser(
         "measures", help="build or extend a contest index from a source")
     measures_sub = measures.add_subparsers(dest="measures_command",
@@ -395,6 +405,11 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
                         help="default: $BALLOTREELS_CRF or 18")
     worker.add_argument("--maxrate", default=None,
                         help="default: $BALLOTREELS_MAXRATE or '1500k'")
+    worker.add_argument("--site-url", default=None,
+                        help="the site's public base URL, for the link "
+                             "every video prints (default: "
+                             "$BALLOTREELS_SITE_URL or "
+                             "https://ballotreels.org)")
     worker.add_argument("--poll-interval", type=float, default=2.0)
     worker.add_argument("--heartbeat-interval", type=float, default=10.0)
     worker.add_argument("--once", action="store_true",
@@ -408,7 +423,8 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
         return 0 if ok else 1
 
     if args.command == "render":
-        ok = _render_one(args.contest, args.format, Path(args.out), out)
+        ok = _render_one(args.contest, args.format, Path(args.out), out,
+                         site_url=args.site_url)
         return 0 if ok else 1
 
     if args.command == "check":

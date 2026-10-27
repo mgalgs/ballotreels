@@ -63,8 +63,10 @@ screen: narration.side_pad adds silence to the shorter side's spoken
 audio (both in the layout and in the audio actually played, below), so
 neither section is shorter on the page than the other. The film closes
 on a card listing every cited source (rule 1.5).
-A quiet footer under the caption, on every frame, says where to report a
-bias (rule 5.1). At its left end, while a picture is on the stage, a small
+Under the caption, on every frame from the first to the last, a quiet
+line gives the measure's own page on the site (LINK: the site's address
+without its scheme, so a repost or a clip leads back), and a quieter
+footer says where to report a bias (rule 5.1). At its left end, while a picture is on the stage, a small
 graphite ring counts down to the picture changing: full as it appears,
 empty as it goes, with no numbers.
 
@@ -103,6 +105,8 @@ from ballotreels.illustrations import load_library  # noqa: E402
 from ballotreels.narration import padded_phrases, padded_spans  # noqa: E402
 from ballotreels.narration import shift_track, side_pad  # noqa: E402
 from ballotreels.storyboard import frame as to_frame  # noqa: E402
+from ballotreels.site import pages  # noqa: E402
+from ballotreels.site.config import DEFAULT_SITE_URL, state_abbr  # noqa: E402
 from ballotreels.storyboard import layout as lay_out  # noqa: E402
 
 for _f in sorted((HERE / 'assets' / 'fonts').glob('*.[ot]tf')):
@@ -129,6 +133,12 @@ TRACK = shift_track(VOICE.track_at(0, FPS), PAD)
 PHRASES = padded_phrases(VOICE.phrases, PAD)
 VOICE_SECONDS = VOICE.seconds + (PAD.seconds if PAD else 0)
 # each line's spoken span, (first frame, last frame), by (section label, index)
+# the measure's page on the site, as printed under the caption: the site's
+# address from BALLOTREELS_SITE_URL (the serve tier's own setting; `render
+# --site-url` sets it), without its scheme
+SITE_URL = os.environ.get('BALLOTREELS_SITE_URL') or DEFAULT_SITE_URL
+LINK = pages.display_url(SITE_URL, pages.contest_path(
+    state_abbr(CONTEST.division) or CONTEST.election[:2], CONTEST.election, CONTEST.id))
 SPOKEN = {(s.section, s.index): (to_frame(s.start, FPS), to_frame(s.end, FPS)) for s in padded_spans(CONTEST)}
 
 PAPER_SCRAP = '#fbf7ec'
@@ -208,7 +218,7 @@ def layout_9x16():
         # the stage runs down to just above the caption, which sits at the
         # page's bottom in every view, as in the full-page view
         stage=Box(70, 430, 940, 1166),
-        scrap=Box(78, 1632, 924, 196),
+        scrap=Box(78, 1632, 924, 176),
         header_font=font(52, family=PRINT),  # at most: header_fit shrinks it to fit
         heading_font=font(86, 700),
         # a chart's lettering, sized to read on a phone: its title, its
@@ -225,18 +235,22 @@ def layout_9x16():
         caption_font=font(58, family=PRINT),
         caption_lines=2,
         sources_font=font(60, family=PRINT),  # at most: the sides slide's items' largest
-        footer=Box(70, 1856, 940, 40),
-        footer_font=font(30, family=PRINT),
+        # under the caption: the measure's own page link, then the footer
+        link=Box(70, 1814, 940, 48),
+        link_font=font(36, family=PRINT),
+        footer=Box(70, 1864, 940, 38),
+        footer_font=font(28, family=PRINT),
         # the full-page view, while the official page is up: no running
         # title or heading, the page from under the binding down to the
         # caption, the caption and the footer at the bottom of the page
         page_stage=Box(24, 136, 1032, 1468),
-        page_scrap=Box(78, 1632, 924, 196),
-        page_footer=Box(70, 1856, 940, 40),
+        page_scrap=Box(78, 1632, 924, 176),
+        page_link=Box(70, 1814, 940, 48),
+        page_footer=Box(70, 1864, 940, 38),
         # the countdown ring: (centre x, centre y, radius), at the footer
         # line's left end, in each view
-        ring=(100, 1876, 22),
-        page_ring=(100, 1876, 22),
+        ring=(100, 1883, 20),
+        page_ring=(100, 1883, 20),
     )
 
 
@@ -262,11 +276,16 @@ def layout_16x9():
         caption_font=font(54, family=PRINT),
         caption_lines=2,
         sources_font=font(52, family=PRINT),
-        footer=Box(250, 1034, 1420, 32),
+        # under the caption, side by side: the measure's own page link
+        # in the left half, the footer in the right
+        link=Box(250, 1030, 700, 40),
+        link_font=font(30, family=PRINT),
+        footer=Box(970, 1034, 700, 32),
         footer_font=font(25, family=PRINT),
         page_stage=Box(24, 128, 1872, 686),
         page_scrap=Box(250, 842, 1420, 176),
-        page_footer=Box(250, 1034, 1420, 32),
+        page_link=Box(250, 1030, 700, 40),
+        page_footer=Box(970, 1034, 700, 32),
         ring=(190, 1040, 20),
         page_ring=(190, 1040, 20),
     )
@@ -2469,6 +2488,23 @@ def draw_footer(cv, L, fb, alpha=1.0):
         cv.mark('footer', *drawn)
 
 
+# ---- the link: the measure's own page, on every frame ----
+LINK_ALPHA = 0.8  # the running title's graphite: quiet, but read on a phone
+
+
+def draw_link(cv, L, lb, alpha=1.0):
+    """The measure's page on the site (LINK), one line under the caption,
+    the same on every frame, so a repost, or a clip cut from it, leads
+    back to it. Never the accent colour. `lb` is its box: the normal
+    layout's, or the full-page view's."""
+    fnt = L['link_font']
+    while text.measure(LINK, fnt) > lb.w and fnt.size > 14:
+        fnt = font(fnt.size * 0.95, family=PRINT)
+    drawn = sp.pencil_text(cv, [LINK], fnt, lb.x, lb.y, GRAPHITE, LINK_ALPHA * alpha, align='center', width=lb.w)
+    if alpha >= 1:
+        cv.mark('link', *drawn)
+
+
 # ---- the countdown ring: how long until the picture changes ----
 RING_ALPHA = 0.62   # the footer's quiet graphite, never the accent colour
 RING_TRACK = 0.16   # the empty ring, faint
@@ -2623,12 +2659,13 @@ def draw(n, cv):
     # already are in 9:16.
     if v < 1:
         draw_header(cv, L, 1 - v)
-    for fb, a in ((L['footer'], 1 - v), (L['page_footer'], v)):
-        if L['footer'] == L['page_footer']:
-            draw_footer(cv, L, fb)
-            break
-        if a > 0:
-            draw_footer(cv, L, fb, a)
+    for key, line in (('footer', draw_footer), ('link', draw_link)):
+        for box, a in ((L[key], 1 - v), (L['page_' + key], v)):
+            if L[key] == L['page_' + key]:
+                line(cv, L, box)
+                break
+            if a > 0:
+                line(cv, L, box, a)
     for g in P['groups']:
         g.draw(cv, n)
     ring = ring_at(n, P['slides'])

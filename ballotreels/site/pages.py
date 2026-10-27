@@ -47,6 +47,30 @@ def absolute(site_url: str, url: str) -> str:
     return site_url.rstrip("/") + "/" + url.lstrip("/")
 
 
+_ELECTION_YEAR_RE = re.compile(r"-(\d{4})-\d{2}-\d{2}$")
+
+
+def election_year(election_id: str) -> str | None:
+    """"ut-2026-11-03" -> "2026"; None for an id without a date."""
+    m = _ELECTION_YEAR_RE.search(election_id)
+    return m.group(1) if m else None
+
+
+def contest_path(abbr: str, election_id: str, contest_id: str) -> str:
+    """A contest's short path: /<st>/<year>/<id without its election
+    prefix>, e.g. "/ut/2026/amendment-a". The site serves the contest's
+    page there, and the film prints it on every frame."""
+    slug = contest_id[len(election_id) + 1:]
+    return f"/{abbr}/{election_year(election_id)}/{slug.lower()}"
+
+
+def display_url(site_url: str, path: str) -> str:
+    """`path` on the site as a person would type it: no scheme, no
+    trailing slash ("ballotreels.org/ut/2026/amendment-a")."""
+    url = absolute(site_url, path)
+    return re.sub(r"^https?://", "", url).rstrip("/")
+
+
 def capitalize(text: str) -> str:
     """The first letter upper-cased ("the District of Columbia" leading a
     title), the rest as written."""

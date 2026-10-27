@@ -82,7 +82,7 @@ class StateElection:
     def year(self) -> str:
         """The year of the election's date (its id ends with it), the
         year in its pages' paths."""
-        return election_year(self.index.election.id)
+        return pages.election_year(self.index.election.id)
 
     def path(self) -> str:
         """The state page's short path, e.g. "/ut"."""
@@ -91,8 +91,7 @@ class StateElection:
     def contest_path(self, entry: IndexEntry) -> str:
         """A contest's short path: /<st>/<year>/<id without its election
         prefix>, e.g. "/ut/2026/amendment-a"."""
-        slug = entry.id[len(self.index.election.id) + 1:]
-        return f"/{self.abbr}/{self.year}/{slug.lower()}"
+        return pages.contest_path(self.abbr, self.index.election.id, entry.id)
 
     def contest_at(self, year: str, slug: str) -> IndexEntry | None:
         """The contest whose short path has this year and slug."""
@@ -101,15 +100,6 @@ class StateElection:
         wanted = f"/{self.abbr}/{year}/{slug}"
         return next((e for e in self.index.entries
                      if self.contest_path(e) == wanted), None)
-
-
-_ELECTION_YEAR_RE = re.compile(r"-(\d{4})-\d{2}-\d{2}$")
-
-
-def election_year(election_id: str) -> str | None:
-    """"ut-2026-11-03" -> "2026"; None for an id without a date."""
-    m = _ELECTION_YEAR_RE.search(election_id)
-    return m.group(1) if m else None
 
 
 @dataclass

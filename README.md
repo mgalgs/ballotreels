@@ -274,6 +274,7 @@ script) and, for a real render, the same `videobuilder` setup as
 | `--ffmpeg` | `BALLOTREELS_FFMPEG` | `ffmpeg` on `PATH` |
 | `--crf` | `BALLOTREELS_CRF` | `18` |
 | `--maxrate` | `BALLOTREELS_MAXRATE` | `1500k` |
+| `--site-url` | `BALLOTREELS_SITE_URL` | `https://ballotreels.org`; set it to the serve tier's own: every video prints its measure's page link (e.g. `ballotreels.org/ut/2026/amendment-a`) under the caption, on every frame |
 | `--poll-interval` | — | `2` seconds between claim attempts when idle |
 | `--heartbeat-interval` | — | `10` seconds between heartbeats |
 | `--once` | — | claim and work at most one job, then exit |

@@ -112,13 +112,16 @@ class SubprocessRunner:
 
     def __init__(self, repo: str | Path, ffmpeg: str = "ffmpeg",
                 crf: int = 18, maxrate: str = "1500k",
-                bufsize: str = "3000k",
+                bufsize: str = "3000k", site_url: str | None = None,
                 popen: Callable[..., Any] = subprocess.Popen):
         self.repo = Path(repo)
         self.ffmpeg = ffmpeg
         self.crf = crf
         self.maxrate = maxrate
         self.bufsize = bufsize
+        # The site's address for the link on every frame; None leaves it
+        # to the render's own default ($BALLOTREELS_SITE_URL, inherited).
+        self.site_url = site_url
         self._popen = popen
         self._lock = threading.Lock()
         self._current = None
@@ -130,9 +133,11 @@ class SubprocessRunner:
     def render(self, contest_dir: Path, out_dir: Path) -> Path:
         from .contest import load_contest
         contest = load_contest(contest_dir)
-        self._run([sys.executable, "-m", "ballotreels", "render",
-                   str(contest_dir), "--format", "9x16", "--out",
-                   str(out_dir)])
+        argv = [sys.executable, "-m", "ballotreels", "render",
+                str(contest_dir), "--format", "9x16", "--out", str(out_dir)]
+        if self.site_url:
+            argv += ["--site-url", self.site_url]
+        self._run(argv)
         return out_dir / f"{contest.id}-9x16.mp4"
 
     def encode(self, master: Path, web: Path, poster: Path) -> None:
