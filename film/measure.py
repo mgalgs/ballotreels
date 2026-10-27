@@ -1416,12 +1416,14 @@ def page_run(chart, lines, L, first_f, fmt, state):
         k = min(1.0, (room * 0.6 - (f - first_f)) / (CIRCLE + ZOOM + 4)) if room > 0 else 1.0
         k = max(k, 0.4)
         per = CIRCLE * k / len(rings)
+        circle = f
         for b in rings:
             ring = _ring(b, u, seed_of('ring', focus, b.x, b.y))
             items.append(stroke_item(f, f + per, ring))
             f += per
         z0 = f + 3
         camera = Camera(stage, paper_box, _union(rings), z0, z0 + ZOOM * k)
+        camera.circle = (circle, f)
         if focus not in state['clicked']:
             state['clicked'].append(focus)
     marks = [Mark('chart', paper_box)]
