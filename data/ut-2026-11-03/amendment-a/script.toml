@@ -1,0 +1,143 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; how amendments are published today; what Amendment A and its
+# implementing law would change; what the pamphlet's analysis says it
+# saves, and what the savings depend on; one point per side; what a vote
+# does.
+#
+# The card quotes the Voter Information Pamphlet: the ballot title, the
+# Impartial Analysis's "Effect of Constitutional Amendment A" and its
+# "Fiscal Effects". Utah's pamphlet prints no "a YES vote means" lines,
+# so the card has none, and the vote lines take their two meanings from
+# one sentence of the card's summary.
+#
+# No argument against Amendment A was submitted: the pamphlet says that
+# is because the Legislature adopted it unanimously, and the against side
+# says so once, in the pamphlet's words, in the same number of words as
+# the for side. The for list shows the supporters' points as submitted;
+# the against section is marked filed = false.
+
+contest = "ut-2026-11-03-amendment-a"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "pamphlet"
+number = "A"
+title = "Shall the Utah Constitution be amended to change how proposed constitutional amendments are published, requiring publication for 60 days immediately before the general election in a manner established by state law instead of in newspapers?"
+origin = "2025 Legislative General Session House Joint Resolution (H.J.R.) 10"
+summary = "Constitutional Amendment A would require publication of a proposed constitutional amendment for 60 calendar days immediately before the general election in a manner set by state law rather than requiring publication in newspapers for two months immediately before the general election. Constitutional Amendment A would not change how constitutional amendments are proposed or approved by voters."
+fiscal = "If approved, Constitutional Amendment A, together with H.B. 481, could reduce state costs by up to $1.4 million every two years, based on recent estimates. The savings from changing the publication requirement for proposed constitutional amendments from newspapers to publicly operated websites would vary depending on the length of each proposed constitutional amendment and newspaper publication rates."
+
+[[section]]
+id = "what"
+heading = "Amendment A"
+
+[[section.line]]
+text = "Amendment A is about how proposed changes to Utah's Constitution are published."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["change how proposed constitutional amendments are published"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, each amendment must run in a newspaper in every county for two months."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "newspaper-notices"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Amendment A would require 60 days of publication before the election, in a manner set by state law."
+sources = ["pamphlet", "analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["for 60 calendar days immediately before the general election in a manner set by state law"]
+
+[[section.line]]
+text = "Under a law already passed, the full text would go on two state websites."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "notice-website"
+
+[[section]]
+id = "fiscal"
+heading = "What the official analysis says"
+
+[[section.line]]
+text = "The Voter Information Pamphlet says the change could reduce state costs by up to $1.4 million every two years."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section.line]]
+text = "The pamphlet says savings would vary with amendment length and newspaper rates."
+sources = ["analysis"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Amendment A updates public notice for how Utahns get information and saves money."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Updates notices to how Utahns get information today", "Keeps the notice period and saves taxpayer money"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The pamphlet says no argument against was submitted, because the Legislature adopted Amendment A unanimously."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for means amendments would be published as state law sets."
+sources = ["pamphlet", "certification"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["in a manner set by state law"]
+
+[[section.line]]
+text = "A vote against means amendments would still be published in newspapers."
+sources = ["pamphlet", "analysis", "certification"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["requiring publication in newspapers"]
