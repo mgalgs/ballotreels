@@ -1,8 +1,13 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
 # is about; the tax the Legislature passed in 2026; what the measure would
 # repeal and prohibit; what the Office of Financial Management says the
-# state would lose, what that money pays for, and what the state would
-# save; one point per side; what a vote does.
+# state would lose, and what the state would save; one point per side;
+# what a vote does.
+#
+# The full designation is said once, in the opening line; after that the
+# script says "the measure", which reads faster aloud. Cut for time: the
+# line on what the general fund pays for (schools, colleges, health
+# care), which the card's public investment disclosure still shows.
 #
 # The card quotes the ballot as the Attorney General says it is displayed:
 # the ballot title plus the public investment impact disclosure that state
@@ -62,7 +67,7 @@ id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "IP26-645 would repeal that tax, and bar state and local taxes on individual income."
+text = "The measure would repeal that tax, and bar state and local taxes on individual income."
 sources = ["ballot", "explanatory"]
 
 [section.line.visual]
@@ -87,10 +92,6 @@ labels = ["2029", "2030", "2031"]
 values = [3.1, 4.4, 3.9]
 
 [[section.line]]
-text = "The Office says the general fund would have less money for schools, colleges and health care."
-sources = ["fiscal", "investment-disclosure"]
-
-[[section.line]]
 text = "The Office also expects state agencies to save about $150 million over the same five years."
 sources = ["fiscal"]
 
@@ -100,7 +101,7 @@ heading = "Why some vote yes"
 side = "yes"
 
 [[section.line]]
-text = "Supporters say IP26-645 repeals the income tax before it starts, so lawmakers can't expand it to everyone."
+text = "Supporters say the measure repeals the income tax before it starts, so lawmakers can't expand it to everyone."
 sources = ["arguments"]
 
 [section.line.visual]
@@ -114,7 +115,7 @@ heading = "Why some vote no"
 side = "no"
 
 [[section.line]]
-text = "Opponents say IP26-645 gives the wealthiest a tax break, and cuts funding for schools, healthcare and childcare."
+text = "Opponents say the measure gives the wealthiest a tax break, and cuts funding for schools, healthcare and childcare."
 sources = ["arguments"]
 
 [section.line.visual]
