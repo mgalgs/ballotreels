@@ -105,10 +105,11 @@ class EndToEndTest(unittest.TestCase):
         conn.close()
         return resp, body
 
-    def _post(self, port, path, data):
+    def _post(self, port, path, data, headers=None):
         conn = http.client.HTTPConnection("127.0.0.1", port, timeout=10)
         conn.request("POST", path, body=json.dumps(data).encode("utf-8"),
-                     headers={"Content-Type": "application/json"})
+                     headers={"Content-Type": "application/json",
+                              **(headers or {})})
         resp = conn.getresponse()
         body = resp.read()
         conn.close()
@@ -145,9 +146,17 @@ class EndToEndTest(unittest.TestCase):
         self.assertIn(resp.status, (200, 201))
         job_doc = json.loads(body)
         self.assertIsNotNone(job_doc["job"])
-        self.assertIn("position", job_doc["job"])
-        self.assertIn("eta_minutes", job_doc["job"])
+        # A visitor's request waits for the operator's approval.
+        self.assertEqual(job_doc["job"]["state"], "pending")
         job_id = job_doc["job"]["id"]
+        resp, _ = self._post(private_port, f"/admin/api/jobs/{job_id}/approve",
+                             {}, headers={"Authorization": f"Bearer {TOKEN}"})
+        self.assertEqual(resp.status, 200)
+        resp, body = self._get(public_port, f"/api/jobs/{job_id}")
+        job_doc = json.loads(body)
+        self.assertEqual(job_doc["state"], "queued")
+        self.assertIn("position", job_doc)
+        self.assertIn("eta_minutes", job_doc)
 
         self._run_worker_once(private_port)
 

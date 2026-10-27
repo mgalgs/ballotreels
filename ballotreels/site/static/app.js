@@ -800,8 +800,7 @@ function renderContestCard(contest) {
   ]);
   const onDone = (job) => card.replaceWith(renderContestCard({
     ...contest, status: "cached", video_url: job.video_url, job: null }));
-  if ((contest.status === "queued" || contest.status === "running") &&
-      contest.job) {
+  if (LIVE_STATES.includes(contest.status) && contest.job) {
     const progress = makeProgress(false);
     body.appendChild(progress.node);
     progress.update(contest.job);
@@ -826,13 +825,23 @@ const STAGES = [
   ["cache", "Saving it"],
 ];
 
+// A job that is on its way: "pending" (requested, waiting for the
+// operator's review), "queued" or "running".
+const LIVE_STATES = ["pending", "queued", "running"];
+
+// The contest page's heading over a live job's progress.
+function liveHeading(job) {
+  return job.state === "pending" ? "Video requested" : "Making the video";
+}
+
 function minutes(n) {
   return `${n} ${n === 1 ? "minute" : "minutes"}`;
 }
 
 // A live progress view for one job. `full` adds the list of steps (the
-// contest page); the ballot's cards show the short form.
-function makeProgress(full) {
+// contest page); the ballot's cards show the short form. `title`, if
+// given, is a heading kept in step with the job's state.
+function makeProgress(full, title) {
   const head = el("span", { text: "Starting..." });
   const fill = el("div", { class: "progress-fill" });
   const meta = el("p", { class: "progress-meta" });
@@ -851,7 +860,14 @@ function makeProgress(full) {
   const update = (job) => {
     const at = STAGES.findIndex(([name]) => name === job.stage);
     let done = 0;
-    if (job.state === "queued") {
+    if (title) title.textContent = liveHeading(job);
+    if (job.state === "pending") {
+      // No ETA: nothing is made until someone has reviewed the request.
+      head.textContent = "Requested: waiting for review";
+      meta.textContent = "Someone checks each request before the video " +
+        "is made.";
+      fill.style.width = "0%";
+    } else if (job.state === "queued") {
       head.textContent = "Waiting its turn";
       const ahead = (job.position || 1) - 1;
       meta.textContent = (ahead === 0 ? "Next in line" :
@@ -868,7 +884,7 @@ function makeProgress(full) {
     }
     if (full) {
       steps.replaceChildren(...STAGES.map(([, words], i) => el("li", {
-        class: job.state === "queued" ? "" :
+        class: job.state !== "running" ? "" :
           i < done ? "done" : i === done ? "now" : "",
         text: words,
       })));
@@ -892,8 +908,9 @@ function failureNode(stage) {
 
 // The "Make the video" button and what replaces it: the live progress,
 // or a message if the queue says no. onStarted, if given, runs once the
-// job is queued, before the progress view shows.
-function generateControls(contest, full, onDone, onStarted) {
+// job is queued, before the progress view shows; `title`, if given, is
+// the heading the progress view keeps in step with the job's state.
+function generateControls(contest, full, onDone, onStarted, title) {
   const wrap = el("div", {});
   const note = el("p", { class: "wait-note",
     text: "No video yet. Making one takes a few minutes." });
@@ -912,8 +929,8 @@ function generateControls(contest, full, onDone, onStarted) {
       return;
     }
     if (body && body.job) {
-      const progress = makeProgress(full);
-      if (onStarted) onStarted();
+      const progress = makeProgress(full, title);
+      if (onStarted) onStarted(body.job);
       wrap.replaceChildren(progress.node);
       progress.update(body.job);
       pollJob(contest.id, body.job.id, progress, onDone);
@@ -964,7 +981,7 @@ async function pollJob(contestId, jobId, progress, onDone) {
     progress.node.replaceWith(failureNode(body.failed_stage));
     return;
   }
-  if (body.state !== "queued" && body.state !== "running") {
+  if (!LIVE_STATES.includes(body.state)) {
     progress.node.replaceWith(el("p", { class: "wait-note",
       text: "This video was stopped before it was finished, so it " +
             "isn't available yet." }));
@@ -1039,10 +1056,10 @@ async function renderContest(contestId) {
         el("p", { text: body.kind === "race" ?
           "Candidate races aren't covered yet. Measures are." :
           "There's no video for this contest yet." }));
-    } else if ((body.status === "queued" || body.status === "running") &&
-               body.job) {
-      const progress = makeProgress(true);
-      frame.append(el("h2", { text: "Making the video" }), progress.node);
+    } else if (LIVE_STATES.includes(body.status) && body.job) {
+      const title = el("h2", { text: liveHeading(body.job) });
+      const progress = makeProgress(true, title);
+      frame.append(title, progress.node);
       progress.update(body.job);
       pollJob(body.id, body.job.id, progress, route);
     } else {
@@ -1051,9 +1068,8 @@ async function renderContest(contestId) {
                                    "Once it's made, it's here for everyone." });
       // Once started, the frame reads as the page-load generating state.
       frame.append(title, wait, generateControls(body, true, route, () => {
-        title.textContent = "Making the video";
         wait.remove();
-      }));
+      }, title));
     }
     section.appendChild(frame);
   }

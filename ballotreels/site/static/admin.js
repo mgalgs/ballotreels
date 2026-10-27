@@ -1,5 +1,6 @@
-// Queue monitor: polls /admin/api/jobs and lets the operator retry,
-// cancel, requeue or regenerate a job. The admin cookie set by /admin/login
+// Queue monitor: polls /admin/api/jobs and lets the operator approve or
+// reject a requested (pending) job, listed first, and retry, cancel,
+// requeue or regenerate the rest. The admin cookie set by /admin/login
 // authorises every fetch here automatically (same-origin).
 
 function clock(epoch) {
@@ -26,7 +27,7 @@ async function refresh() {
   const medianMinutes = doc.median_seconds == null
     ? "none yet" : Math.round(doc.median_seconds / 60) + " min";
   summary.textContent =
-    `queue depth: ${doc.depth} · median job time: ${medianMinutes} · ` +
+    `awaiting approval: ${doc.pending} · queue depth: ${doc.depth} · median job time: ${medianMinutes} · ` +
     `workers: ${doc.workers.map((w) => `${w.id} (last seen ${new Date(w.last_seen * 1000).toLocaleTimeString()})`).join(", ") || "none"}`;
 
   const tbody = document.querySelector("#jobs tbody");
@@ -52,7 +53,10 @@ async function refresh() {
     row.appendChild(errCell);
 
     const actionsCell = document.createElement("td");
-    for (const action of ["retry", "cancel", "requeue", "regenerate"]) {
+    const actions = job.state === "pending" ? ["approve", "reject"] :
+      ["retry", "cancel", "requeue", "regenerate"];
+    if (job.state === "pending") row.className = "pending";
+    for (const action of actions) {
       const button = document.createElement("button");
       button.textContent = action;
       button.onclick = () => act(job.id, action);

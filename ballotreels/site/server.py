@@ -422,7 +422,8 @@ def _serve_file_range(handler: _JsonHandler, path: Path, content_type: str,
 
 def _contest_status(key, deps: Deps) -> tuple[str, Any, dict[str, Any] | None]:
     """(status, video, job_view): status is "unavailable" (no key, e.g. a
-    race), "cached", "queued", "running" or "none"."""
+    race), "cached", "pending" (requested, awaiting approval), "queued",
+    "running" or "none"."""
     if key is None:
         return "unavailable", None, None
     video = deps.queue.video_for(key)
@@ -787,7 +788,9 @@ class PublicHandler(_JsonHandler):
             self.send_header("Content-Length", "0")
             self.end_headers()
             return
-        job, created = deps.queue.create_job(key)
+        # With approval on, a visitor's request waits for the operator.
+        job, created = deps.queue.create_job(
+            key, state="pending" if deps.config.require_approval else "queued")
         self._json(201 if created else 200, {"job": _job_view(job, deps)})
 
     def _job_status(self, job_id: int) -> None:
@@ -846,7 +849,8 @@ class PrivateHandler(_JsonHandler):
                     return
                 return self._not_found()
             m = re.fullmatch(
-                r"/admin/api/jobs/(\d+)/(retry|cancel|requeue|regenerate)",
+                r"/admin/api/jobs/(\d+)/"
+                r"(approve|reject|retry|cancel|requeue|regenerate)",
                 path)
             if m and method == "POST":
                 return self._admin_action(int(m.group(1)), m.group(2))
@@ -921,8 +925,11 @@ class PrivateHandler(_JsonHandler):
                 "queued_at": job["queued_at"], "started_at": job["started_at"],
                 "finished_at": job["finished_at"], "duration": job["duration"],
             })
+        # Pending jobs first: they are what the operator has to act on.
+        out.sort(key=lambda j: j["state"] != "pending")
         depth = sum(1 for j in jobs if j["state"] == "queued")
-        self._json(200, {"jobs": out, "depth": depth,
+        pending = sum(1 for j in jobs if j["state"] == "pending")
+        self._json(200, {"jobs": out, "depth": depth, "pending": pending,
                          "median_seconds": deps.queue.median_seconds(),
                          "workers": deps.queue.workers()})
 

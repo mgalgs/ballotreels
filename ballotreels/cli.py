@@ -346,6 +346,11 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
     serve.add_argument("--generate-global-limit", default=None, type=int,
                        help="max new public Generate jobs per hour across "
                             "every client (default: 30)")
+    serve.add_argument("--require-approval", default=None,
+                       action=argparse.BooleanOptionalAction,
+                       help="hold each video a visitor requests as pending "
+                            "until the operator approves it (default: on; "
+                            "--no-require-approval queues them directly)")
     serve.add_argument("--address-limit", default=None, type=int,
                        help="max address lookups per client IP per hour "
                             "(default: 30)")

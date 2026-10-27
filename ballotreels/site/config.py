@@ -54,6 +54,7 @@ class Config:
     geocoder_url: str
     generate_global_limit: int = 30
     address_limit: int = 30
+    require_approval: bool = True
 
 
 def load_config(args) -> Config:
@@ -96,6 +97,9 @@ def load_config(args) -> Config:
             "BALLOTREELS_GENERATE_GLOBAL_LIMIT", 30, int),
         address_limit=_resolve(getattr(args, "address_limit", None),
                                "BALLOTREELS_ADDRESS_LIMIT", 30, int),
+        require_approval=_resolve(getattr(args, "require_approval", None),
+                                  "BALLOTREELS_REQUIRE_APPROVAL", True,
+                                  _bool),
     )
 
 

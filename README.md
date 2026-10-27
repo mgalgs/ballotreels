@@ -187,6 +187,7 @@ York, State House in most others; none in D.C.).
 | `--generate-limit` | `BALLOTREELS_GENERATE_LIMIT` | `5` |
 | `--generate-window` | `BALLOTREELS_GENERATE_WINDOW` | `3600` (seconds) |
 | `--generate-global-limit` | `BALLOTREELS_GENERATE_GLOBAL_LIMIT` | `30` (new jobs per hour, every client together) |
+| `--require-approval` / `--no-require-approval` | `BALLOTREELS_REQUIRE_APPROVAL` | on |
 | `--address-limit` | `BALLOTREELS_ADDRESS_LIMIT` | `30` (address lookups per client IP per hour) |
 | `--trust-forwarded-for` | `BALLOTREELS_TRUST_FORWARDED_FOR` | off; set only behind a trusted reverse proxy |
 | `--heartbeat-timeout` | `BALLOTREELS_HEARTBEAT_TIMEOUT` | `120` (seconds) |
@@ -206,7 +207,18 @@ lookup takes at most 200 characters, is limited per client IP by
 (answering 503, "busy", past that). The queue
 monitor lives on the private listener at `/admin/`, signed in with the
 same token (as a cookie, via `/admin/login`, so a phone browser can use
-it too). Its actions are retry (a failed or cancelled job), cancel,
+it too).
+
+Every video a visitor asks for waits for the operator's approval: the
+request creates a "pending" job, which no worker claims; the page says
+it has been requested and is waiting for review, and a second visitor
+asking for the same contest joins it. The queue monitor lists pending
+jobs first, with approve (to the back of the queue) and reject (the job
+is cancelled, and stays that way for visitors). Pending requests count
+toward both Generate limits. `--no-require-approval` (or
+`BALLOTREELS_REQUIRE_APPROVAL=0`) queues visitors' requests directly.
+The monitor's other actions, whose jobs queue without approval (the
+operator acting is the approval), are retry (a failed or cancelled job), cancel,
 requeue (a running job, back to the front of the line) and regenerate
 (a done job: a new job for the same contest, used after a correction;
 the old video keeps serving until the new one is done, and the new one

@@ -81,8 +81,17 @@ CREATE TABLE IF NOT EXISTS workers (
 );
 """
 
+# A job's states: "pending" (a visitor asked for it; waiting for the
+# operator's approval, never claimed), "queued", "running", then "done",
+# "failed" or "cancelled". A key has at most one live job.
+LIVE_STATES = ("pending", "queued", "running")
+_LIVE_SQL = "(" + ", ".join(f"'{s}'" for s in LIVE_STATES) + ")"
+
 # Which states an admin action may start from (docs in the brief, A13).
 TRANSITIONS = {
+    "approve": {"pending"},
+    # A rejected job is cancelled, like any other the operator stops.
+    "reject": {"pending"},
     "retry": {"failed", "cancelled"},
     "cancel": {"queued", "running"},
     "requeue": {"running"},
@@ -177,10 +186,13 @@ class JobQueue:
     def find_live_job(self, key: tuple[str, str, str, int, int]
                       ) -> dict[str, Any] | None:
         with self._lock:
-            row = self._conn.execute(
-                "SELECT * FROM jobs WHERE key = ? AND state IN "
-                "('queued', 'running')", (key_string(key),)).fetchone()
+            row = self._find_live_locked(key_string(key))
         return dict(row) if row is not None else None
+
+    def _find_live_locked(self, key: str, exclude_id: int | None = None):
+        return self._conn.execute(
+            f"SELECT * FROM jobs WHERE key = ? AND state IN {_LIVE_SQL} "
+            f"AND id IS NOT ?", (key, exclude_id)).fetchone()
 
     def latest_job(self, key: tuple[str, str, str, int, int]
                    ) -> dict[str, Any] | None:
@@ -191,26 +203,32 @@ class JobQueue:
                 (key_string(key),)).fetchone()
         return dict(row) if row is not None else None
 
-    def create_job(self, key: tuple[str, str, str, int, int]
-                   ) -> tuple[dict[str, Any], bool]:
-        """Returns (job, created): created is False if another live job
-        for this key won the race (the unique index catches it)."""
+    def create_job(self, key: tuple[str, str, str, int, int],
+                   state: str = "queued") -> tuple[dict[str, Any], bool]:
+        """Returns (job, created): created is False if the key already has
+        a live job (pending, queued or running), which is returned. A
+        new job starts `state`: "queued", or "pending" to wait for the
+        operator's approval."""
+        assert state in ("pending", "queued")
         now = self.clock()
         with self._lock:
+            # Checked under the lock, since the unique index (which
+            # predates "pending") covers only queued and running.
+            live = self._find_live_locked(key_string(key))
+            if live is not None:
+                return dict(live), False
             try:
                 cur = self._conn.execute(
                     "INSERT INTO jobs (key, key_hash, election, division, "
                     "contest, standard_version, template_version, state, "
                     "stage, queued_at) VALUES (?, ?, ?, ?, ?, ?, ?, "
-                    "'queued', NULL, ?)",
-                    (key_string(key), hash_for_key(key), *key, now))
+                    "?, NULL, ?)",
+                    (key_string(key), hash_for_key(key), *key, state, now))
                 self._conn.commit()
                 job_id = cur.lastrowid
             except sqlite3.IntegrityError:
                 self._conn.rollback()
-                row = self._conn.execute(
-                    "SELECT * FROM jobs WHERE key = ? AND state IN "
-                    "('queued', 'running')", (key_string(key),)).fetchone()
+                row = self._find_live_locked(key_string(key))
                 return dict(row), False
             row = self._conn.execute(
                 "SELECT * FROM jobs WHERE id = ?", (job_id,)).fetchone()
@@ -424,10 +442,7 @@ class JobQueue:
                 self._notify_vacated(vacated)
                 return False, f"cannot {action} a {row['state']} job"
             if action in ("retry", "regenerate"):
-                live = self._conn.execute(
-                    "SELECT id, state FROM jobs WHERE key = ? AND state IN "
-                    "('queued', 'running') AND id != ?",
-                    (row["key"], job_id)).fetchone()
+                live = self._find_live_locked(row["key"], exclude_id=job_id)
                 if live is not None:
                     self._notify_vacated(vacated)
                     return False, (f"job #{live['id']} for this key is "
@@ -445,6 +460,14 @@ class JobQueue:
                     "claim = NULL, worker_id = NULL, last_heartbeat = NULL, "
                     "started_at = NULL, error = NULL, failed_stage = NULL, "
                     "stage = NULL WHERE id = ?", (now, job_id))
+            elif action == "approve":
+                self._conn.execute(
+                    "UPDATE jobs SET state = 'queued', queued_at = ? "
+                    "WHERE id = ?", (now, job_id))
+            elif action == "reject":
+                self._conn.execute(
+                    "UPDATE jobs SET state = 'cancelled', finished_at = ? "
+                    "WHERE id = ?", (now, job_id))
             elif action == "cancel":
                 if row["state"] == "running":
                     vacate = (job_id, row["claim"])

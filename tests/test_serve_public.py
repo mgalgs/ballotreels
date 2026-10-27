@@ -35,7 +35,10 @@ def _make_config(data_dir: Path, **overrides) -> Config:
         token="test-token", generate_limit=5, generate_window=3600,
         trust_forwarded_for=False, heartbeat_timeout=120.0,
         eta_default_minutes=10.0, max_upload_mb=500,
-        geocoder_url="https://example.test/geocoder")
+        geocoder_url="https://example.test/geocoder",
+        # The queue-flow tests start jobs directly; the approval queue
+        # (on by default) has its own tests in test_approval.
+        require_approval=False)
     fields.update(overrides)
     return Config(**fields)
 
