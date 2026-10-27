@@ -200,9 +200,11 @@ def layout_9x16():
         safe=Box(70, 200, 940, 1340),
         header=Box(70, 204, 940, 76),
         heading=Box(70, 292, 940, 118),
-        stage=Box(70, 430, 940, 870),
-        scrap=Box(78, 1336, 924, 196),
-        cards=Box(70, 430, 940, 1100),
+        # the stage runs down to just above the caption, which sits at the
+        # page's bottom in every view, as in the full-page view
+        stage=Box(70, 430, 940, 1166),
+        scrap=Box(78, 1632, 924, 196),
+        cards=Box(70, 430, 940, 1166),
         header_font=font(30, family=PRINT),
         heading_font=font(86, 700),
         chart_title_font=font(56, 700),
@@ -215,7 +217,7 @@ def layout_9x16():
         caption_font=font(58, family=PRINT),
         caption_lines=2,
         sources_font=font(48, family=PRINT),
-        footer=Box(70, 1574, 940, 40),
+        footer=Box(70, 1856, 940, 40),
         footer_font=font(30, family=PRINT),
         # the full-page view, while the official page is up: no running
         # title or heading, the page from under the binding down to the
@@ -225,7 +227,7 @@ def layout_9x16():
         page_footer=Box(70, 1856, 940, 40),
         # the countdown ring: (centre x, centre y, radius), at the footer
         # line's left end, in each view
-        ring=(100, 1594, 22),
+        ring=(100, 1876, 22),
         page_ring=(100, 1876, 22),
     )
 
@@ -2509,7 +2511,8 @@ def draw(n, cv):
     L = P['L']
     v = page_view(n)
     # The full-page view: the running title fades out, and the caption and
-    # footer cross-fade to their places at the page's bottom.
+    # footer cross-fade to their places at the page's bottom, where they
+    # already are in 9:16.
     if v < 1:
         draw_header(cv, L, 1 - v)
     for fb, a in ((L['footer'], 1 - v), (L['page_footer'], v)):
