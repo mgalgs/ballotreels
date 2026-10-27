@@ -14,10 +14,13 @@ PROP_2 = REPO / "data" / "ca-2026-11-03" / "prop-2"
 # The real Prop 2 narration was read in 23.3 s (yes) and 24.7 s (no): within
 # the 2s pad cap, so check_airtime pads it rather than failing.
 
-# The committed Prop 2 narration.wav's RMS (whole file, 16-bit samples
-# -1..1): what film/draw_sound.py's TARGET_RMS is calibrated to sit about
-# 13dB under.
-NARRATION_RMS = 0.1252
+# A typical narration's RMS (16-bit samples -1..1): what
+# film/draw_sound.py's TARGET_RMS is calibrated to sit about 13.5dB
+# under. Measured from two recent narrations (recipes e60-story and
+# e60b-breathe, 0.0663 and 0.0653); the committed Prop 2 narration.wav
+# is an outlier at 0.1252, from an earlier TTS pass with louder
+# normalisation, so it is not used here.
+NARRATION_RMS = 0.0658
 
 NARRATION_SIDECARS = ("narration.json", "narration.wav", "narration.vtt")
 

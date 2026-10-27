@@ -22,8 +22,8 @@ follows the stroke's speed, and gently.
 
 `build_track` mixes every stroke in a film's schedule into one buffer,
 levelled so the strokes themselves (not the silence between them) sit
-about 13dB under typical narration, measured against the committed Prop 2
-narration (RMS 0.123; see TARGET_RMS); `write_wav` and `sound_for` turn
+about 13.5dB under typical narration (RMS 0.066, measured from the
+e60-story and e60b-breathe recipes; see TARGET_RMS); `write_wav` and `sound_for` turn
 that into a cached WAV file and a `vb.Sound` placed on the whole film.
 """
 from __future__ import annotations
@@ -42,7 +42,7 @@ CONTROL_HZ = 200           # how densely a stroke's motion is sampled for speed
 REF_SPEED = 550.0          # px/s a stroke at a "normal" pace moves; louder a little above it
 FADE_S = 0.015             # a slice's own fade in/out, so a cut into the recording never clicks
 XFADE_S = 0.08             # crossfade between successive slices on a stroke longer than the bed
-TARGET_RMS = 0.026         # ~13dB under narration.wav's RMS (0.123) for the committed Prop 2 contest
+TARGET_RMS = 0.0139        # ~13.5dB under a typical narration's RMS (~0.066)
 
 # One recording per tool (film/sounds/, see film/sounds/README.md for each
 # file's source and trim). The operator is auditioning other excerpts; try
