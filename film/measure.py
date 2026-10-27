@@ -25,10 +25,14 @@ The stage shows
   figure, with "Source: ..." under it for as long as it is up (rule 7.1),
   or an illustration from the library (film/illustrations/), which wipes
   on rather than being drawn line by line, and cites nothing of its own;
-- or the measure's official page, drawn from the script's [card]: the
-  first `page` line draws it on, and one with a `focus` "clicks" a term:
-  the pencil circles it, then the camera eases in on it; the page comes
-  back at full view with every term clicked so far ticked off;
+- or the measure's official page, drawn from the script's [card], in the
+  full-page view: no running title or heading (they fade out, and back in
+  with the next visual), the page over the whole notebook page from the
+  binding to the caption, at the largest type that fits, and the caption
+  and footer at the page's bottom. The first `page` line draws it on, and
+  one with a `focus` "clicks" a term: the pencil circles it, then the
+  camera eases in on it a little, for emphasis; the page comes back at
+  full view with every term clicked so far ticked off;
 - in the `what` and `vote` sections, before any visual, the ballot: the
   measure's title and its two options, drawn alike;
 - otherwise nothing: an empty page under the heading.
@@ -1049,7 +1053,8 @@ def runs_of(sec):
 # The measure's page in the official voter guide, drawn from the script's
 # [card] (docs/SCRIPT-FORMAT.md): the first `page` line draws it on, and
 # each one with a `focus` "clicks" a term on it: the pencil circles every
-# occurrence, then the camera eases in to frame them. A later `page` line
+# occurrence, then the camera eases in a little to frame them (the page is
+# readable whole; the zoom is only emphasis). A later `page` line
 # brings the page back at full view, every term clicked so far ticked off.
 CARD = CONTEST.script.card
 PAGE_DRAW = 30     # frames the page takes to draw on, the first time (1 s)
@@ -1392,8 +1397,8 @@ def _clamp(v, lo, hi):
 
 class Camera:
     """Where the stage looks on the page at frame n: identity until f0, then
-    easing over ZOOM frames to frame `target` (a Box on the page), at most
-    PAGE_ZOOM_MAX times larger, never past the paper's edge."""
+    easing over ZOOM frames to frame `target` (a Box on the page) whole, at
+    most PAGE_ZOOM_MAX times larger, never past the paper's edge."""
 
     def __init__(self, stage, paper_box, target=None, f0=None, f1=None):
         self.stage, self.paper, self.f0, self.f1 = stage, paper_box, f0, f1
