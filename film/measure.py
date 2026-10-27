@@ -25,12 +25,18 @@ The stage shows
   figure, with "Source: ..." under it for as long as it is up (rule 7.1),
   or an illustration from the library (film/illustrations/), which wipes
   on rather than being drawn line by line, and cites nothing of its own;
+- or the measure's official page, drawn from the script's [card]: the
+  first `page` line draws it on, and one with a `focus` "clicks" a term:
+  the pencil circles it, then the camera eases in on it; the page comes
+  back at full view with every term clicked so far ticked off;
 - in the `what` and `vote` sections, before any visual, the ballot: the
   measure's title and its two options, drawn alike;
 - otherwise nothing: an empty page under the heading.
 The two sides get the same page whichever plays first (rules 2.2, 4.1);
 their pages are built by the same code from line positions, never from the
 side. The film closes on a card listing every cited source (rule 1.5).
+A quiet footer under the caption, on every frame, says where to report a
+bias (rule 5.1).
 No music and no sound effects: the narration is the only sound.
 
 Time is in frames: one frame a beat, since cuts follow the narration, not
@@ -1400,7 +1406,7 @@ def page_run(chart, lines, L, first_f, fmt, state):
             for j, b in enumerate(occ):
                 ring = _ring(b, u, seed_of('ring', focus, b.x, b.y))
                 items.append(stroke_item(first_f - 2, first_f - 1, ring, alpha=0.3, pencil=False))
-            tick = _tick(occ[-1], u, seed_of('tick', focus))
+            tick = _tick(occ[0], u, seed_of('tick', focus))
             items.append(stroke_item(first_f - 2, first_f - 1, tick, alpha=0.8, pencil=False))
     camera = Camera(stage, paper_box)
     focus = chart.visual.focus
