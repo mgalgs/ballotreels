@@ -20,6 +20,8 @@ second, with a pencil that is on the page only while something is being
 drawn, and then holds still; it stays up through the lines after it until
 a later line in the section brings its own (the old one fades out) or the
 section ends (the whole page fades out, and the next heading draws on).
+The pencil (or the highlighter, on the page card) leaves as soon as its
+own mark is drawn: it never sits over a finished picture.
 The stage shows
 - the line's visual, if it has one: a chart, a timeline or a named
   figure, with "Source: ..." under it for as long as it is up (rule 7.1),
@@ -75,8 +77,8 @@ import videobuilder as vb  # noqa: E402
 from videobuilder import Box, paths, text  # noqa: E402
 
 import sketch as sp  # noqa: E402
-from sketch import (DRAW, GRAPHITE, ORANGE, Hatch, Item, Stroke,  # noqa: E402
-                    fade_item, hatch_item, stroke_item, text_item)
+from sketch import (DRAW, GRAPHITE, ORANGE, RESTING_ANGLE, Hatch, Item,  # noqa: E402
+                    Stroke, fade_item, hatch_item, stroke_item, text_item)
 
 from ballotreels.contest import load_contest  # noqa: E402
 from ballotreels.illustrations import load_library  # noqa: E402
@@ -2031,12 +2033,24 @@ def draw_ring(cv, ring, fill, alpha):
 
 
 # ---- the pencil, or the highlighter: only while something is being drawn ----
+LIFT = 46   # px a fading tool lifts along its own resting angle, so it visibly leaves
+
+
+def _lift(x, y, t):
+    """(x, y) nudged `t` (0..1) of the way off the page along the tool's own
+    resting angle (sketch.RESTING_ANGLE, the pencil and highlighter body's
+    own tilt), so a fade out reads as the tool lifting away rather than
+    hovering in place over a finished mark."""
+    return x + LIFT * t * math.cos(RESTING_ANGLE), y + LIFT * t * math.sin(RESTING_ANGLE)
+
+
 def pencil_at(n, P):
     """(x, y, ink, tool, alpha) of the pencil (or highlighter) tip at frame
     n, or None. It follows whatever is being drawn; across a short gap
     between two marks by the same tool it moves straight from one to the
-    next, and otherwise it fades out where it stopped (and in where it
-    starts). It never travels or idles."""
+    next, and otherwise it lifts off and fades out where it stopped (and
+    in where it starts, the same way in reverse). It never travels or
+    idles, and it never sits still, fully drawn, over a finished mark."""
     prev = nxt = None
     for it in P['schedule']:
         if it.f0 <= n <= it.f1:
@@ -2055,11 +2069,13 @@ def pencil_at(n, P):
         q = DRAW(vb.clamp01((n - fa) / (fb - fa)))
         return a[0] + (b[0] - a[0]) * q, a[1] + (b[1] - a[1]) * q, nxt.ink, nxt.tool, 1.0
     if n - fa < PENCIL_FADE:
-        x, y = prev.head(fa)
-        return x, y, prev.ink, prev.tool, 1 - (n - fa) / PENCIL_FADE
+        t = (n - fa) / PENCIL_FADE
+        x, y = _lift(*prev.head(fa), t)
+        return x, y, prev.ink, prev.tool, 1 - t
     if fb - n < PENCIL_FADE:
-        x, y = nxt.head(fb)
-        return x, y, nxt.ink, nxt.tool, 1 - (fb - n) / PENCIL_FADE
+        t = (fb - n) / PENCIL_FADE
+        x, y = _lift(*nxt.head(fb), t)
+        return x, y, nxt.ink, nxt.tool, 1 - t
     return None
 
 

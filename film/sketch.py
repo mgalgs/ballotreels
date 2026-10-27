@@ -33,6 +33,8 @@ ORANGE = (214, 118, 38)   # the one coloured pencil
 PAPER = (242, 235, 216)
 GRID = (176, 164, 136)
 
+RESTING_ANGLE = -0.72  # a pencil or highlighter at rest: body up and to the right
+
 
 # ---- grainy ink ----
 _BUFFERS = []
@@ -331,7 +333,7 @@ def _poly(ctx, pts):
     ctx.close_path()
 
 
-def draw_pencil(cv, x, y, colour=None, lift=0.0, angle=-0.72):
+def draw_pencil(cv, x, y, colour=None, lift=0.0, angle=RESTING_ANGLE):
     """A pencil, tip at (x, y), body up and to the right. `colour` None is a
     yellow graphite pencil; an RGB tuple paints a coloured pencil that colour.
     `lift` 0..1 raises it off the page (a bigger, softer shadow)."""
@@ -394,7 +396,7 @@ def draw_pencil(cv, x, y, colour=None, lift=0.0, angle=-0.72):
     ctx.restore()
 
 
-def draw_highlighter(cv, x, y, colour, lift=0.0, angle=-0.72):
+def draw_highlighter(cv, x, y, colour, lift=0.0, angle=RESTING_ANGLE):
     """A highlighter pen, its chisel nib at (x, y), body up and to the right,
     drawn like `draw_pencil`: flat facets and a soft outline. `colour` is its
     ink, an RGB tuple: the nib and the barrel are that colour. `lift` 0..1
