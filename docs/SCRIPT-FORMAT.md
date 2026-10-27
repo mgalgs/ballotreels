@@ -92,12 +92,13 @@ no = "A NO vote on this measure means: ..."
   and the page's "Opponents: None submitted" sits beside a filed
   argument against.
 
-A line may carry one visual: a chart, a timeline, an illustration or
-the page card. The centre of the frame shows only pictures: text that
-belongs to a picture (a chart's title, its labels, its source line) is
-fine, but no visual is only text. The one exception is the page card,
-which is a picture of the official ballot document, as the ballot card
-is. A visual appears as the line is narrated and
+A line may carry one visual: a chart, a timeline, a list, an
+illustration or the page card. The centre of the frame shows only
+pictures: text that belongs to a picture (a chart's title, its labels,
+its source line) is fine, but no visual is only text. There are two
+exceptions: the page card, which is a picture of the official ballot
+document, as the ballot card is; and a `list`, a side's own points, in
+short form, as a checklist. A visual appears as the line is narrated and
 stays up through the lines after it in the same section, until a later
 line brings its own visual or the section ends.
 
@@ -130,6 +131,11 @@ labels = ["1980 to 2014", "2014"]           # the dates
 items = ["The state saved very little", "Voters set up today's rules"]
 
 [section.line.visual]
+kind = "list"             # a side's own points, as a checklist
+source = "arguments"
+items = ["Stops overspending when there is a surplus", "Protects schools, health care and public safety in downturns"]
+
+[section.line.visual]
 kind = "illustration"    # a pencil drawing of the topic, from the library
 name = "save-more"       # no source: the line cites
 ```
@@ -139,6 +145,13 @@ name = "save-more"       # no source: the line cites
   first with the line that carries the timeline, the next with the
   following line of its section, and so on; if the section runs out of
   lines, the rest appear with its last line. No `title`.
+- `list`: a checklist of the side's own points, in short form: `items`,
+  at least 1, each drawn with a hand-drawn check mark. No `title` and
+  no `labels`: it is a `timeline` without dates, revealed one entry per
+  line the same way. Allowed in any section, not only a side's.
+  **Balance (rule 7.3):** if either side section has a `list`, both
+  must, with the same number of items in all; a failure names both
+  counts.
 - `illustration`: a picture of the line's topic when there is no data
   to chart. `name` is an entry in the illustration library,
   `film/illustrations/illustrations.toml`, and its file must exist.
@@ -216,9 +229,10 @@ Sections, in this order: `what`, any number of `background` sections
 (zero or more, each with its own heading), `today`, `change`, `fiscal`,
 the two sides, `vote`. Background sections tell the story behind the
 contest (STANDARD.md section 6). Visuals may appear in any section. In
-the sides (STANDARD.md rule 7.3), a chart, timeline or page only when
-both sides have one of the same kind, and an illustration only when both
-sides have the same number of them.
+the sides (STANDARD.md rule 7.3), a chart, timeline, list or page only
+when both sides have one of the same kind (a `list` also needing the
+same number of items in all), and an illustration only when both sides
+have the same number of them.
 
 ### The measure template, version 1
 

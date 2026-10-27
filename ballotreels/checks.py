@@ -26,7 +26,7 @@ from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, SOURCE_KINDS,
 SIDE_TOLERANCE = 0.05
 AIRTIME_TOLERANCE = 0.05
 CHART_KINDS = ("bars", "share", "series", "figure")
-VISUAL_KINDS = (*CHART_KINDS, "timeline", "illustration", "page")
+VISUAL_KINDS = (*CHART_KINDS, "timeline", "list", "illustration", "page")
 # The kind of source a [card] quotes: the measure's official page.
 CARD_SOURCE_KIND = "official-title-summary"
 # Kinds that only put text on screen: the centre of the frame is for
@@ -175,6 +175,16 @@ def _timeline_problems(v: Visual) -> list[str]:
     return out
 
 
+def _list_problems(v: Visual) -> list[str]:
+    """A `list`: a checklist of `items`, at least 1. No `title` or
+    `labels`: it has no dates to carry a `timeline`'s date column."""
+    out = []
+    _forbid(v, ("title", "unit", "labels", "values", "figure", "name"), out)
+    if _string_list(v, "items", out) and len(v.items) < 1:
+        out.append("a 'list' needs at least 1 item")
+    return out
+
+
 def _source_problems(c: Contest, line: Line, v: Visual) -> list[str]:
     out = []
     if v.source is None:
@@ -266,6 +276,8 @@ def _visual_problems(c: Contest, line: Line, v: Visual) -> list[str]:
     out += _source_problems(c, line, v)
     if v.kind == "timeline":
         return out + _timeline_problems(v)
+    if v.kind == "list":
+        return out + _list_problems(v)
 
     if v.kind == "figure":
         if v.figure is None:
@@ -545,6 +557,31 @@ def check_side_visuals(c: Contest) -> list[Failure]:
     return out
 
 
+def check_side_list_items(c: Contest) -> list[Failure]:
+    """STANDARD.md 7.3: when a side section has a 'list' visual, the other
+    side's must have the same number of items in all (check_side_visuals
+    already requires both sides to have a 'list' or neither)."""
+    by_side: dict[str, list[Section]] = {}
+    for sec in c.script.sections:
+        if sec.side is not None:
+            by_side.setdefault(sec.side, []).append(sec)
+    yes, no = by_side.get("yes", []), by_side.get("no", [])
+    if len(yes) != 1 or len(no) != 1:
+        return []  # a template failure; nothing to compare
+
+    def count(sec: Section) -> int:
+        return sum(len(ln.visual.items) for ln in sec.lines
+                   if ln.visual is not None and ln.visual.kind == "list"
+                   and isinstance(ln.visual.items, list))
+
+    n_yes, n_no = count(yes[0]), count(no[0])
+    if n_yes == n_no:
+        return []
+    return [Failure("side-list-items",
+                    f"the yes section's 'list' has {n_yes} items in all; "
+                    f"the no section's has {n_no}; they must match")]
+
+
 def check_airtime(c: Contest) -> list[Failure]:
     """STANDARD.md 2.2/4.1: the two sides' spoken durations within 5% of the
     larger, measured from the narration sidecars' phrase times.
@@ -635,6 +672,7 @@ def check_contest(c: Contest, standard: Standard | None = None
         *check_template(c),
         *check_side_parity(c),
         *check_side_visuals(c),
+        *check_side_list_items(c),
         *check_airtime(c),
         *check_judgment_words(c, standard.judgment_words),
         *check_standard_version(c, standard.version),

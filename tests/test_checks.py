@@ -375,6 +375,61 @@ class BrokenCopyTest(ContestCopyTestCase):
         [f] = self.assertOnly("side-visual", "no", 0)
         self.assertIn("yes has none, no has timeline", f.message)
 
+    # 4f. the 'list' visual (docs/SCRIPT-FORMAT.md; rule 7.3)
+    def add_side_list(self, side, items):
+        body = ", ".join(f'"{x}"' for x in items)
+        self.edit("script.toml", self.SIDE_LINE[side],
+                  self.SIDE_LINE[side] + '\n\n[section.line.visual]\n'
+                  f'kind = "list"\nsource = "arguments"\nitems = [{body}]\n')
+
+    LIST_YES = ["Protects schools, health care and public safety in downturns",
+               "Stops overspending when there is a surplus"]
+    LIST_NO = ["Weakens the spending limit and makes tax rebates less likely",
+              "Adds no new money for schools, health care or public safety"]
+    LIST = 'kind = "list"\nsource = "lao-analysis"\nitems = ["Rules set", "Ends"]\n'
+
+    def test_well_formed_list(self):
+        self.add_visual(self.LIST)
+        self.assertEqual(self.failures(), [])
+
+    def test_list_needs_at_least_one_item(self):
+        self.add_visual(self.LIST.replace('items = ["Rules set", "Ends"]',
+                                          'items = []'))
+        self.assertVisual("today", 1, "needs at least 1 item")
+
+    def test_list_judgment_word_in_item_fails(self):
+        self.add_visual(self.LIST.replace("Ends", "Sweeping end"))
+        got = self.failures()
+        self.assertEqual([(f.check, f.section, f.line, f.message)
+                          for f in got],
+                         [("judgment-word", "today", 1,
+                           "judgment word 'Sweeping' in visual items")])
+
+    def test_list_equal_item_counts_on_both_sides_passes(self):
+        self.add_side_list("yes", self.LIST_YES)
+        self.add_side_list("no", self.LIST_NO)
+        self.assertEqual(self.failures(), [])
+
+    def test_list_unequal_item_counts_fail_naming_both_counts(self):
+        self.add_side_list("yes", self.LIST_YES)
+        self.add_side_list("no", self.LIST_NO[:1])
+        [f] = self.assertOnly("side-list-items")
+        self.assertIn("yes section's 'list' has 2 items", f.message)
+        self.assertIn("no section's has 1", f.message)
+
+    def test_list_on_one_side_fails(self):
+        self.add_side_list("yes", self.LIST_YES)
+        got = self.failures()
+        self.assertEqual([(f.check, f.section, f.line) for f in got],
+                         [("side-visual", "yes", 0),
+                          ("side-list-items", None, None)])
+
+    def test_judgment_word_in_list_item_fails(self):
+        self.add_side_list("yes", ["Stops wasteful overspending"])
+        self.add_side_list("no", self.LIST_NO[:1])
+        [f] = self.assertOnly("judgment-word", "yes", 0)
+        self.assertIn("judgment word 'wasteful' in visual items", f.message)
+
     # 5. template
     def test_unknown_template(self):
         self.edit("script.toml", 'template = "measure"', 'template = "race"')

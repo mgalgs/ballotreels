@@ -23,10 +23,12 @@ section ends (the whole page fades out, and the next heading draws on).
 The pencil (or the highlighter, on the page card) leaves as soon as its
 own mark is drawn: it never sits over a finished picture.
 The stage shows
-- the line's visual, if it has one: a chart, a timeline or a named
-  figure, with "Source: ..." under it for as long as it is up (rule 7.1),
-  or an illustration from the library (film/illustrations/), which wipes
-  on rather than being drawn line by line, and cites nothing of its own;
+- the line's visual, if it has one: a chart, a timeline, a list (a
+  side's own points, as a checklist, drawn like a timeline but with a
+  check instead of a date) or a named figure, with "Source: ..." under
+  it for as long as it is up (rule 7.1), or an illustration from the
+  library (film/illustrations/), which wipes on rather than being drawn
+  line by line, and cites nothing of its own;
 - or the measure's official page, drawn from the script's [card], in the
   full-page view: no running title or heading (they fade out, and back in
   with the next visual), the page over the whole notebook page from the
@@ -645,6 +647,61 @@ def timeline_visual(chart, lines, L, f0, f1):
     return items, [Mark('chart', box), Mark('chart source', sbox)]
 
 
+def check_mark_pts(cx, cy, s):
+    """A hand-drawn check mark centred near (cx, cy), `s` px across: a short
+    downstroke then a longer upstroke, one polyline with a corner at its
+    low point."""
+    return [(cx - s * 0.62, cy - s * 0.04), (cx - s * 0.14, cy + s * 0.46), (cx + s * 0.7, cy - s * 0.52)]
+
+
+def list_visual(chart, lines, L, f0, f1):
+    """A checklist in a column, top to bottom: a side's own points, in short
+    form (the second exception to pictures-only on the stage, besides the
+    page card). Each entry is a hand-drawn check mark then its text,
+    revealed one per line like a `timeline` but with no dates
+    (docs/SCRIPT-FORMAT.md), and the source along the bottom."""
+    v = chart.visual
+    stage = L['stage']
+    u = L['u']
+    src, sbox = source_note(chart, L, f0)
+    itf = L['timeline_font']
+    n = len(v.items)
+    check = 40 * u
+    tx0 = stage.x + check + 30 * u
+    tw = stage.right - tx0
+    while True:
+        blocks = [text.wrap(it, itf, tw, balance=True) for it in v.items]
+        heights = [len(b) * text.line_height(itf) for b in blocks]
+        room = sbox.y - 40 * u - stage.y
+        if sum(heights) + 36 * u * (n - 1) <= room or itf.size < 26:
+            break
+        itf = font(itf.size * 0.92, family=PRINT)
+    gap = max(36 * u, min(100 * u, (room - sum(heights)) / max(1, n - 1)))
+    # centre the column on the stage, as timeline_visual does
+    widest = max(max(text.measure(ln, itf) for ln in b) for b in blocks)
+    shift = max(0, (stage.w - (tx0 - stage.x) - widest) / 2 - 20 * u)
+    cx0, tx = stage.x + shift, tx0 + shift
+    y = stage.y + max(0, (room - sum(heights) - gap * (n - 1)) / 2)
+    starts = timeline_reveals(n, lines, f0)
+    items = [src]
+    top = y
+    for i, (block, h, s0) in enumerate(zip(blocks, heights, starts)):
+        cy = y + text.line_height(itf) * 0.5
+        entry = []
+        f = s0
+        mark = Stroke(check_mark_pts(cx0 + check / 2, cy, check), seed_of('check', i), passes=2,
+                     width=4.6 * u, overshoot=0)
+        entry.append(stroke_item(f, f + 9, mark))
+        f += 9
+        ti, f, _ = write_lines(f, block, itf, tx, y)
+        entry += ti
+        nxt = starts[i + 1] if i + 1 < n else f1
+        items += scaled(entry, s0, draw_budget(s0, nxt))
+        y += h + gap
+    box = Box(cx0, top, stage.right - cx0, y - gap - top)
+    return items, [Mark('chart', box), Mark('chart source', sbox)]
+
+
 SHARE_HATCH = [dict(angle=45, spacing=11, cross=False, alpha=0.5),
                dict(angle=-35, spacing=8, cross=True, alpha=0.36),
                dict(angle=0, spacing=13, cross=False, alpha=0.5),
@@ -996,7 +1053,7 @@ FIGURES = {
     'steady-spending-volatile-revenue': figure_steady_spending_volatile_revenue,
 }
 CHARTS = {'bars': bars_chart, 'share': share_chart, 'series': series_chart}
-SHOWN = {'illustration': illustration_visual, 'timeline': timeline_visual}
+SHOWN = {'illustration': illustration_visual, 'timeline': timeline_visual, 'list': list_visual}
 
 
 def chart_run(chart, lines, L, first_f):
