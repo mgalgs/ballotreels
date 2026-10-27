@@ -1,0 +1,162 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; how homes are taxed today; what
+# Amendment 3 would change; what the Revenue Estimating Conference
+# estimates it would do to local tax revenue; the two sides; what a vote
+# does.
+#
+# The card quotes the Division of Elections' booklet: the ballot title
+# and its whole summary. The booklet prints no "a YES vote means" lines
+# and no fiscal statement, so the card has neither, and the vote lines
+# take their two meanings from the summary's own words.
+#
+# The booklet's PDF draws the summary's second line ("taxes, to $150,000
+# in 2027 and $250,000 in 2028, and adjusts for") in a font with no text
+# mapping, so pdftotext reads it as stray glyphs and the card's
+# verbatim check fails on `summary`. The line is quoted as the page
+# prints it (checked against a render of page 12).
+#
+# Left out for time: the summary's rule for people not resident on
+# December 31, 2026 (it stays on the card).
+#
+# The revenue figures are shown without their share of local
+# non-school property tax revenue: no archived source states that total.
+#
+# Florida publishes no official arguments for or against a legislative
+# amendment, so both sides are filed = false and each says so once, in
+# the same number of words.
+
+contest = "fl-2026-11-03-amendment-3"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "booklet"
+number = "3"
+title = "INCREASED HOMESTEAD EXEMPTION; LOWER CAP ON INCREASES IN NON-HOMESTEAD PROPERTY ASSESSMENTS.—"
+origin = "ARTICLE VII, SECTIONS 4, 6, AND 9 ARTICLE XII"
+summary = "This amendment increases the homestead exemption, for all non-school taxes, to $150,000 in 2027 and $250,000 in 2028, and adjusts for inflation thereafter. It requires the Legislature to prescribe a uniform procedure for counties and municipalities, for their respective levies, to increase the homestead exemption up to full assessed value, and allows special districts, subject to referendum approval, to do the same. Persons who are not Florida residents on December 31, 2026, will receive the existing homestead exemption upon qualifying for a homestead exemption, with the increased homestead exemption beginning with the fifth year of exemption, to the extent permitted by the U.S. Constitution. This amendment reduces the annual cap on assessment increases for non-homestead properties from 10% to 5%. This amendment requires counties and municipalities to use property taxes solely for public safety, education and schools, infrastructure, natural resources, bond debt service, retirement benefits for employees, and operations and administration. Other expenditures may be approved by county officers or county or municipal governing bodies unless prohibited by general law, notwithstanding Article VII, Section 9(a) of the Florida Constitution, which allows counties and municipalities to levy property taxes for their respective purposes. This amendment takes effect January 1, 2027."
+
+[[section]]
+id = "what"
+heading = "Amendment 3"
+
+[[section.line]]
+text = "Amendment 3 is about local property taxes on homes and other property in Florida."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["INCREASED HOMESTEAD EXEMPTION"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, a home its owner lives in, a homestead, has up to about 50,000 dollars of its value exempt."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "down-payment"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Amendment 3 would exempt 150,000 dollars of a homestead's value from non-school taxes in 2027, and 250,000 in 2028."
+sources = ["booklet", "analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["to $150,000 in 2027 and $250,000 in 2028"]
+
+[[section.line]]
+text = "For non-school taxes, the yearly cap on increases in other property's assessed value would drop from 10 to 5 percent."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["from 10% to 5%"]
+
+[[section.line]]
+text = "Counties and cities would have to spend property taxes on listed purposes, or others their officials approve."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["solely for public safety, education and schools"]
+
+[[section]]
+id = "fiscal"
+heading = "What the official estimate says"
+
+[[section.line]]
+text = "The Revenue Estimating Conference estimates local non-school property tax revenue would drop 4.95 billion dollars in the 2027-28 year, and 11.86 billion a year once fully in effect."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Drop in local non-school property tax revenue, dollars"
+source = "analysis"
+unit = "billion"
+labels = ["2027-28", "2028-29", "Each year, in full"]
+values = [4.95, 8.78, 11.86]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No official argument for Amendment 3 was published."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "list"
+source = "booklet"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No official argument against Amendment 3 was published."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "list"
+source = "booklet"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote raises the homestead exemption and lowers the cap."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["increases the homestead exemption", "to 5%"]
+
+[[section.line]]
+text = "A no vote keeps the existing homestead exemption and cap."
+sources = ["booklet", "analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["the existing homestead exemption", "from 10%"]

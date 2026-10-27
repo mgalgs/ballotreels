@@ -1,0 +1,48 @@
+# Archived sources for Florida Amendment 3, 2026-11-03 general election.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+#
+# Florida publishes no official arguments for or against a legislative
+# amendment, so there is no source of kind official-argument: both side
+# sections say so, citing the Division of Elections' booklet, which
+# prints none. voter-guide.pdf is the whole booklet; Amendment 3 is on
+# its pages 12 to 23.
+#
+# The ballot measure is CS/HJR 1F (2026 Special Session F). Its enrolled
+# text ends with a ballot statement ("SAVE OUR HOMES FROM EXCESSIVE
+# PROPERTY TAXES") that differs from the title and summary the booklet
+# (updated September 3, 2026) prints; the card and the script quote the
+# booklet's.
+
+[contest]
+id = "fl-2026-11-03-amendment-3"
+election = "fl-2026-11-03"
+division = "ocd-division/country:us/state:fl"
+kind = "measure"
+title = "Constitutional Amendment No. 3: Increased Homestead Exemption; Lower Cap on Increases in Non-Homestead Property Assessments"
+
+[[source]]
+id = "booklet"
+kind = "official-title-summary"
+publisher = "Florida Department of State, Division of Elections, Proposed Constitutional Amendments for the General Election (November 3, 2026), No. 3 Constitutional Amendment, pages 12 to 23"
+credit = "Florida Division of Elections, Proposed Constitutional Amendments"
+url = "https://files.floridados.gov/media/711369/eng-2026-booklet-constitutional-amendpub-updated-20260903.pdf"
+file = "sources/voter-guide.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Florida House of Representatives, CS/HJR 1F, Enrolled (2026F Legislature)"
+url = "https://www.flsenate.gov/Session/Bill/2026F/1F/BillText/er/PDF"
+file = "sources/text-proposed-law.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "analysis"
+kind = "official-fiscal-analysis"
+publisher = "Florida House of Representatives, Final Bill Analysis, CS/HJR 1F, June 16, 2026"
+credit = "Florida House, Final Bill Analysis"
+url = "https://flsenate.gov/Session/Bill/2026F/1F/Analyses/h0001z.SAC.PDF"
+file = "sources/fiscal-analysis.pdf"
+retrieved = "2026-10-27"
