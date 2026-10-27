@@ -1,0 +1,21 @@
+# Contest index for the 2026-11-03 Idaho general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). Titles
+# pair the designation with the measure's short title as the 2026 Idaho
+# Voter Pamphlet prints it: for a joint resolution, the subject it is
+# "relating to"; for the initiative, the name of the act.
+#
+# Advisory Question H.B. 932 is on the ballot too, but is not listed yet:
+# it asks voters to choose among options, and needs its own template.
+
+[election]
+id = "id-2026-11-03"
+state = "ocd-division/country:us/state:id"
+title = "Idaho General Election, November 3, 2026"
+
+[[contest]]
+id = "id-2026-11-03-hjr-4"
+kind = "measure"
+division = "ocd-division/country:us/state:id"
+title = "House Joint Resolution 4: Psychoactive Substances"
+number = "4"
