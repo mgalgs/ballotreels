@@ -221,3 +221,16 @@ def fetch_from(src_dir: Path, raise_for: str | None = None, calls=None):
 
     return fetch
 
+
+def build_fixture_geo(data_dir: Path, **build_kwargs) -> None:
+    """Writes the fake source files to a scratch directory and builds
+    them into `<data_dir>/geo/ca/`."""
+    import tempfile
+
+    from ballotreels.geo.build import build
+
+    with tempfile.TemporaryDirectory() as tmp:
+        src_dir = Path(tmp)
+        write_fixture_source(src_dir)
+        build_kwargs.setdefault("urls", SLD_REL_URLS)
+        build(data_dir, STATE, fetch_from(src_dir), **build_kwargs)

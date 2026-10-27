@@ -10,4 +10,8 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["ballotreels", "ballotreels.adapters", "ballotreels.geo"]
+packages = ["ballotreels", "ballotreels.adapters", "ballotreels.geo",
+           "ballotreels.site"]
+
+[tool.setuptools.package-data]
+"ballotreels.site" = ["static/*"]

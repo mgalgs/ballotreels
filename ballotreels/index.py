@@ -217,7 +217,9 @@ def key_string(key: tuple[str, str, str, int, int]) -> str:
     return f"{election_id}|{division}|{contest_id}|s{standard_version}|t{template_version}"
 
 
-def _level(division: str, state_division: str) -> str:
+def level_of(division: str, state_division: str) -> str:
+    """Which ballot level `division` belongs to: one of LEVELS, or
+    "other" if it matches none of them."""
     if division == state_division:
         return "state"
     for level in ("cd", "sldu", "sldl", "county"):
@@ -238,7 +240,7 @@ def ballot_order(index: ContestIndex) -> tuple[IndexEntry, ...]:
     file_order = {entry.id: i for i, entry in enumerate(index.entries)}
 
     def key(entry: IndexEntry):
-        level = _level(entry.division, index.election.state)
+        level = level_of(entry.division, index.election.state)
         lrank = level_rank.get(level, len(LEVELS))
         if entry.kind == "race":
             return (lrank, 0, file_order[entry.id])

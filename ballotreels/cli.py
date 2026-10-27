@@ -6,6 +6,7 @@
     python -m ballotreels measures ca-sos <election-dir> [--base-url URL]
     python -m ballotreels geo build [--state ca] [--data-dir DIR]
     python -m ballotreels geo zip <zip> [--state ca] [--data-dir DIR]
+    python -m ballotreels serve [--public-port PORT] [--private-port PORT]
 """
 
 from __future__ import annotations
@@ -144,6 +145,31 @@ def _geo_build(data_dir: str, state: str, min_overlap: float,
     return True
 
 
+def _serve(args, out, err) -> int:
+    from .site.config import load_config
+    from .site.server import build_deps, make_servers, run_forever
+
+    config = load_config(args)
+    if not config.token:
+        print("BALLOTREELS_TOKEN is not set: refusing to start the "
+             "private listener", file=err)
+        return 2
+    from .index import ContestIndexError
+    from .site.config import ElectionResolutionError
+    try:
+        deps = build_deps(config)
+    except (ElectionResolutionError, ContestIndexError) as e:
+        print(str(e), file=err)
+        return 2
+    public, private = make_servers(deps)
+    print(f"public listening on http://{public.server_address[0]}:"
+         f"{public.server_address[1]}", file=out)
+    print(f"private listening on http://{private.server_address[0]}:"
+         f"{private.server_address[1]}", file=out)
+    run_forever(public, private)
+    return 0
+
+
 def _geo_zip(data_dir: str, state: str, zip_code: str, out) -> bool:
     from .geo.lookup import GeoData
     geo_dir = Path(data_dir) / "geo" / state
@@ -158,7 +184,7 @@ def _geo_zip(data_dir: str, state: str, zip_code: str, out) -> bool:
     return True
 
 
-def main(argv: list[str] | None = None, out=sys.stdout) -> int:
+def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
     parser = argparse.ArgumentParser(prog="python -m ballotreels")
     sub = parser.add_subparsers(dest="command", required=True)
     check = sub.add_parser(
@@ -216,6 +242,37 @@ def main(argv: list[str] | None = None, out=sys.stdout) -> int:
     geo_zip.add_argument("zip", metavar="zip-code")
     geo_zip.add_argument("--state", default="ca")
     geo_zip.add_argument("--data-dir", default=str(default_data_dir()))
+    serve = sub.add_parser("serve", help="run the serve tier")
+    serve.add_argument("--data-dir", default=None,
+                       help="default: $BALLOTREELS_DATA_DIR or <repo>/var")
+    serve.add_argument("--election", default=None,
+                       help="default: $BALLOTREELS_ELECTION, or the only "
+                            "election under data/ if there is just one")
+    serve.add_argument("--public-host", default=None)
+    serve.add_argument("--public-port", default=None, type=int)
+    serve.add_argument("--private-host", default=None)
+    serve.add_argument("--private-port", default=None, type=int)
+    serve.add_argument("--generate-limit", default=None, type=int,
+                       help="max Generate requests per client IP per "
+                            "window (default: 5)")
+    serve.add_argument("--generate-window", default=None, type=int,
+                       help="seconds in the Generate rate-limit window "
+                            "(default: 3600)")
+    serve.add_argument("--trust-forwarded-for", action="store_true",
+                       default=None,
+                       help="use the rightmost X-Forwarded-For entry as "
+                            "the client IP (only behind a trusted proxy)")
+    serve.add_argument("--heartbeat-timeout", default=None, type=float,
+                       help="seconds without a worker heartbeat before a "
+                            "running job is requeued (default: 120)")
+    serve.add_argument("--eta-default-minutes", default=None, type=float,
+                       help="ETA to show until any job has completed "
+                            "(default: 10)")
+    serve.add_argument("--max-upload-mb", default=None, type=int,
+                       help="largest file a worker may upload (default: "
+                            "500)")
+    serve.add_argument("--geocoder-url", default=None,
+                       help="base URL of the Census Geocoder")
     args = parser.parse_args(argv)
 
     if args.command == "narration":
@@ -247,5 +304,8 @@ def main(argv: list[str] | None = None, out=sys.stdout) -> int:
         else:
             ok = _geo_zip(args.data_dir, args.state, args.zip, out)
         return 0 if ok else 1
+
+    if args.command == "serve":
+        return _serve(args, out, err)
 
     raise AssertionError(f"unhandled command {args.command!r}")
