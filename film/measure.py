@@ -34,7 +34,8 @@ The stage shows
   page holds still (PAGE_ZOOM_MAX); one with a `highlight` sweeps the same
   highlighter over each phrase as the narrator reaches it. Every mark on
   the page is that highlighter's: a translucent yellow (never the headings'
-  orange) behind the words. Consecutive `page` lines are one page that stays up, each adding
+  orange) behind the words, made by a highlighter pen in place of the
+  pencil. Consecutive `page` lines are one page that stays up, each adding
   its highlights or its click; the page comes back later at full view, its
   highlights gone and every term clicked so far faintly highlighted and
   ticked off;
@@ -2066,12 +2067,17 @@ def draw_pencil(cv, n, P):
     if not at:
         return
     x, y, ink, tool, alpha = at
-    colour = None if ink == GRAPHITE else ink
+    if tool == 'highlighter':
+        def sprite():
+            sp.draw_highlighter(cv, x, y, ink)
+    else:
+        def sprite():
+            sp.draw_pencil(cv, x, y, None if ink == GRAPHITE else ink)
     if alpha >= 1:
-        sp.draw_pencil(cv, x, y, colour)
+        sprite()
         return
     with cv.layer(opacity=alpha):
-        sp.draw_pencil(cv, x, y, colour)
+        sprite()
 
 
 # ---- the frame ----

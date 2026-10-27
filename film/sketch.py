@@ -16,6 +16,7 @@ draws the same wobble) plus a few draw calls that take a progress 0..1:
 - `pencil_text`: lettering drawn through that grain.
 - `backdrop()`: the cream grid page, its grain and its spiral binding.
 - `draw_pencil`: the pencil itself, drawn in code.
+- `draw_highlighter`: the highlighter pen that marks the official page.
 """
 import math
 import random
@@ -387,6 +388,80 @@ def draw_pencil(cv, x, y, colour=None, lift=0.0, angle=-0.72):
     ctx.fill()
     # outline
     _poly(ctx, [(0, 0), (64, -half), (L, -half), (L, half), (64, half)])
+    ctx.set_source_rgba(0.15, 0.12, 0.1, 0.55)
+    ctx.set_line_width(2)
+    ctx.stroke()
+    ctx.restore()
+
+
+def draw_highlighter(cv, x, y, colour, lift=0.0, angle=-0.72):
+    """A highlighter pen, its chisel nib at (x, y), body up and to the right,
+    drawn like `draw_pencil`: flat facets and a soft outline. `colour` is its
+    ink, an RGB tuple: the nib and the barrel are that colour. `lift` 0..1
+    raises it off the page (a bigger, softer shadow)."""
+    ctx = cv.ctx
+    ctx.save()
+    ctx.translate(x, y)
+    ctx.rotate(angle)
+    s = 1 + 0.05 * lift
+    ctx.scale(s, s)
+    half, L = 25, 400
+    r, g, b = (c / 255 for c in colour)
+    outline = [(0, -9), (26, -12), (34, -13), (70, -half), (L - 8, -half), (L, -half + 8), (L, half - 8),
+               (L - 8, half), (70, half), (34, 13), (26, 12), (6, 9)]
+    # shadow
+    ctx.save()
+    sx, sy = 10 + 30 * lift, 16 + 34 * lift
+    ctx.rotate(-angle)
+    ctx.translate(sx, sy)
+    ctx.rotate(angle)
+    _poly(ctx, outline)
+    ctx.set_source_rgba(0.2, 0.14, 0.08, 0.16 - 0.06 * lift)
+    ctx.fill()
+    ctx.restore()
+    # the chisel nib: felt, cut flat at a slant, soaked in the ink
+    _poly(ctx, [(0, -9), (26, -12), (26, 12), (6, 9)])
+    ctx.set_source_rgb(r * 0.95, g * 0.88, b * 0.7)
+    ctx.fill()
+    _poly(ctx, [(0, -9), (6, 9), (11, 9.5), (5, -9.5)])  # the flat face, lit
+    ctx.set_source_rgb(min(1, r * 1.05), min(1, g * 1.02), min(1, b * 1.4 + 0.1))
+    ctx.fill()
+    # the grip: a grey cone holding the nib
+    _poly(ctx, [(26, -12), (34, -13), (70, -half), (70, half), (34, 13), (26, 12)])
+    lg = cairo.LinearGradient(0, -half, 0, half)
+    lg.add_color_stop_rgb(0, 0.62, 0.61, 0.58)
+    lg.add_color_stop_rgb(0.45, 0.46, 0.45, 0.43)
+    lg.add_color_stop_rgb(1, 0.3, 0.29, 0.28)
+    ctx.set_source(lg)
+    ctx.fill()
+    # the barrel, the ink's colour, three facets
+    for y0, y1, k in ((-half, -half / 3, 1.08), (-half / 3, half / 3, 0.97), (half / 3, half, 0.8)):
+        ctx.rectangle(70, y0, L - 70 - 40, y1 - y0)
+        ctx.set_source_rgb(min(1, r * k), min(1, g * k), min(1, b * k))
+        ctx.fill()
+    # a pale label round its middle, a few marks of print on it
+    ctx.rectangle(150, -half, 110, 2 * half)
+    ctx.set_source_rgba(0.98, 0.96, 0.9, 0.85)
+    ctx.fill()
+    ctx.set_source_rgba(0.15, 0.12, 0.1, 0.35)
+    ctx.set_line_width(2.4)
+    for x0, x1, yy in ((166, 236, -6), (166, 214, 4)):
+        ctx.move_to(x0, yy)
+        ctx.line_to(x1, yy)
+        ctx.stroke()
+    # the cap's end, a shade deeper
+    ctx.new_path()
+    _path(ctx, [(L - 40, -half), (L - 8, -half), (L, -half + 8), (L, half - 8), (L - 8, half), (L - 40, half)])
+    ctx.close_path()
+    ctx.set_source_rgb(r * 0.88, g * 0.82, b * 0.6)
+    ctx.fill()
+    ctx.move_to(L - 40, -half)
+    ctx.line_to(L - 40, half)
+    ctx.set_source_rgba(0.15, 0.12, 0.1, 0.35)
+    ctx.set_line_width(1.6)
+    ctx.stroke()
+    # outline
+    _poly(ctx, outline)
     ctx.set_source_rgba(0.15, 0.12, 0.1, 0.55)
     ctx.set_line_width(2)
     ctx.stroke()
