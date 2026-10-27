@@ -182,6 +182,15 @@ class JobQueue:
                 "('queued', 'running')", (key_string(key),)).fetchone()
         return dict(row) if row is not None else None
 
+    def latest_job(self, key: tuple[str, str, str, int, int]
+                   ) -> dict[str, Any] | None:
+        """The key's most recent job in any state, or None."""
+        with self._lock:
+            row = self._conn.execute(
+                "SELECT * FROM jobs WHERE key = ? ORDER BY id DESC LIMIT 1",
+                (key_string(key),)).fetchone()
+        return dict(row) if row is not None else None
+
     def create_job(self, key: tuple[str, str, str, int, int]
                    ) -> tuple[dict[str, Any], bool]:
         """Returns (job, created): created is False if another live job

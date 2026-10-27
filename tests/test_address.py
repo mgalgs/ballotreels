@@ -1,3 +1,5 @@
+import contextlib
+import io
 import tempfile
 import unittest
 from pathlib import Path
@@ -83,6 +85,9 @@ class StateTest(AddressLookupTestCase):
 
 class ErrorsTest(AddressLookupTestCase):
     def test_address_errors(self):
+        # The geocoder's error detail is logged to stderr; keep it out of
+        # the test output.
+        self.enterContext(contextlib.redirect_stderr(io.StringIO()))
         with self.subTest("no match"):
             with self.assertRaises(AddressNotFound):
                 lookup_address("nowhere", _fetch_fixture("no_match.json"),

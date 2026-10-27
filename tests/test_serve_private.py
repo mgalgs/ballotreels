@@ -276,13 +276,29 @@ class UploadRejectionsTest(ServerTestCaseWithConfig):
 
     def test_upload_over_limit(self):
         job_id, claim = self._claim_job("rej-toobig")
+        # Only the headers are sent: the server must answer (and close)
+        # without waiting for a body it is not going to read.
         conn = http.client.HTTPConnection("127.0.0.1", self.private_port, timeout=5)
-        body = b"x" * (2 * 1024 * 1024)
-        conn.request("PUT", f"/worker/jobs/{job_id}/files/video.mp4?claim={claim}",
-                     body=body, headers=dict(TOKEN_HEADERS))
+        conn.putrequest("PUT", f"/worker/jobs/{job_id}/files/video.mp4?claim={claim}")
+        conn.putheader("Authorization", "Bearer test-token")
+        conn.putheader("Content-Length", str(2 * 1024 * 1024))
+        conn.endheaders()
         resp = conn.getresponse()
         resp.read()
         self.assertEqual(resp.status, 413)
+        self.assertEqual(resp.getheader("Connection"), "close")
+        conn.close()
+
+    def test_upload_negative_length(self):
+        job_id, claim = self._claim_job("rej-negative")
+        conn = http.client.HTTPConnection("127.0.0.1", self.private_port, timeout=5)
+        conn.putrequest("PUT", f"/worker/jobs/{job_id}/files/video.mp4?claim={claim}")
+        conn.putheader("Authorization", "Bearer test-token")
+        conn.putheader("Content-Length", "-5")
+        conn.endheaders()
+        resp = conn.getresponse()
+        resp.read()
+        self.assertEqual(resp.status, 400)
         conn.close()
 
     def test_upload_claim_must_be_current_and_hex(self):
@@ -428,10 +444,6 @@ class RateLimitTrustedTest(ServerTestCaseWithConfig):
 
         # A different rightmost entry is a different bucket, so it is not
         # blocked even though the first bucket is already over the limit.
-        job, _ = self.deps.queue.create_job(key_for(
-            self.deps.index.election.id,
-            self.deps.index.get("ca-2026-11-03-prop-92"), self.deps.standard))
-        self.deps.queue.transition(job["id"], "cancel")
         s4, _, _ = self._public(
             "POST", "/api/generate", {"contest": "ca-2026-11-03-prop-92"},
             headers={"X-Forwarded-For": "9.9.9.9, 5.6.7.8"})

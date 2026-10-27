@@ -172,6 +172,8 @@ this repository.
 | (none) | `BALLOTREELS_TOKEN` | required; the shared bearer token for the private listener |
 | `--generate-limit` | `BALLOTREELS_GENERATE_LIMIT` | `5` |
 | `--generate-window` | `BALLOTREELS_GENERATE_WINDOW` | `3600` (seconds) |
+| `--generate-global-limit` | `BALLOTREELS_GENERATE_GLOBAL_LIMIT` | `30` (new jobs per hour, every client together) |
+| `--address-limit` | `BALLOTREELS_ADDRESS_LIMIT` | `30` (address lookups per client IP per hour) |
 | `--trust-forwarded-for` | `BALLOTREELS_TRUST_FORWARDED_FOR` | off; set only behind a trusted reverse proxy |
 | `--heartbeat-timeout` | `BALLOTREELS_HEARTBEAT_TIMEOUT` | `120` (seconds) |
 | `--eta-default-minutes` | `BALLOTREELS_ETA_DEFAULT_MINUTES` | `10` |
@@ -180,7 +182,14 @@ this repository.
 
 `--generate-limit` and `--generate-window` bound how many videos one
 client IP may start generating in a rolling window (joining an
-already-queued or already-cached contest is always free). The queue
+already-queued or already-cached contest is always free);
+`--generate-global-limit` caps new jobs per hour across every client,
+since a per-IP limit alone is beaten by rotating IPv6 addresses. A
+contest whose latest job failed or was cancelled is not re-queued by a
+visitor: only the queue monitor's retry starts it again. The address
+lookup takes at most 200 characters, is limited per client IP by
+`--address-limit`, and makes at most 4 geocoder calls at once
+(answering 503, "busy", past that). The queue
 monitor lives on the private listener at `/admin/`, signed in with the
 same token (as a cookie, via `/admin/login`, so a phone browser can use
 it too). Its actions are retry (a failed or cancelled job), cancel,

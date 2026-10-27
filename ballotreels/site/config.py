@@ -45,6 +45,8 @@ class Config:
     eta_default_minutes: float
     max_upload_mb: int
     geocoder_url: str
+    generate_global_limit: int = 30
+    address_limit: int = 30
 
 
 def load_config(args) -> Config:
@@ -81,6 +83,11 @@ def load_config(args) -> Config:
                                500, int),
         geocoder_url=_resolve(args.geocoder_url, "BALLOTREELS_GEOCODER_URL",
                               DEFAULT_GEOCODER_URL, str),
+        generate_global_limit=_resolve(
+            getattr(args, "generate_global_limit", None),
+            "BALLOTREELS_GENERATE_GLOBAL_LIMIT", 30, int),
+        address_limit=_resolve(getattr(args, "address_limit", None),
+                               "BALLOTREELS_ADDRESS_LIMIT", 30, int),
     )
 
 

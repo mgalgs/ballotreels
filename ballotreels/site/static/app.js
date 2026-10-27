@@ -447,9 +447,12 @@ async function renderAddress() {
       } else if (status === 0) {
         message = "We couldn't reach ballotreels. Check your connection " +
           "and try again.";
-      } else if (status === 502) {
+      } else if (status === 502 || status === 503) {
         message = "The address lookup isn't answering right now. Try " +
           "again in a minute, or use your zip code.";
+      } else if (status === 429) {
+        message = "You've looked up several addresses in a short time. " +
+          "Try again later, or use your zip code.";
       } else {
         message = body && body.error ? body.error :
           "We couldn't find that address.";
@@ -876,7 +879,12 @@ function generateControls(contest, full, onDone, onStarted) {
     start.disabled = false;
     start.textContent = "Make the video";
     let text;
-    if (httpStatus === 429) {
+    if (body && (body.status === "failed" || body.status === "cancelled")) {
+      text = "This video isn't available yet.";
+    } else if (httpStatus === 429 && body && body.limit === "global") {
+      text = "Many videos have been requested this hour. Please try " +
+        "again later.";
+    } else if (httpStatus === 429) {
       const wait = Math.ceil(Number(headers.get("Retry-After")) / 60);
       text = "You've started several videos in a short time. Please try " +
         "again" + (wait > 0 ? ` in about ${minutes(wait)}.` : " later.");
@@ -915,8 +923,8 @@ async function pollJob(contestId, jobId, progress, onDone) {
   }
   if (body.state !== "queued" && body.state !== "running") {
     progress.node.replaceWith(el("p", { class: "wait-note",
-      text: "This video was stopped before it was finished. Reload the " +
-            "page to start it again." }));
+      text: "This video was stopped before it was finished, so it " +
+            "isn't available yet." }));
     return;
   }
   progress.update(body);

@@ -9,9 +9,11 @@ read and write the same state.
 from __future__ import annotations
 
 import hmac
+import io
 import json
 import re
 import shutil
+import sys
 import threading
 import time
 import urllib.parse
@@ -50,6 +52,15 @@ CONTENT_TYPE_BY_EXT = {
 
 ADMIN_COOKIE = "ballotreels_admin"
 
+# Longest address /api/address passes on to the geocoder.
+MAX_ADDRESS_CHARS = 200
+# Geocoder calls in flight at once; past this the lookup answers 503.
+MAX_GEOCODER_CALLS = 4
+# The window of the global Generate cap and the per-IP address limit.
+HOUR = 3600
+# A rate-limit bucket that is not a client IP.
+GLOBAL_BUCKET = "*"
+
 
 @dataclass
 class Deps:
@@ -60,6 +71,10 @@ class Deps:
     geo: GeoData | None
     rate_lock: threading.Lock = field(default_factory=threading.Lock)
     rate_hits: dict[str, list[float]] = field(default_factory=dict)
+    global_hits: list[float] = field(default_factory=list)
+    address_hits: dict[str, list[float]] = field(default_factory=dict)
+    geocoder_slots: threading.BoundedSemaphore = field(
+        default_factory=lambda: threading.BoundedSemaphore(MAX_GEOCODER_CALLS))
     clock: Any = None
     geocoder_fetch: Any = None
 
@@ -153,12 +168,62 @@ class BadRequest(Exception):
         self.message = message
 
 
+class _DeadlineReader(io.RawIOBase):
+    """The handler's socket as a raw stream whose every recv is bounded
+    by both the handler's idle timeout and its request deadline, so a
+    client that sends one byte just inside the idle timeout still runs
+    out of time on the request as a whole."""
+
+    def __init__(self, handler: "_JsonHandler"):
+        super().__init__()
+        self._handler = handler
+
+    def readable(self) -> bool:
+        return True
+
+    def readinto(self, buf) -> int:
+        handler = self._handler
+        sock = handler.connection
+        timeout = handler.timeout
+        deadline = handler.read_deadline
+        if deadline is not None:
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                raise TimeoutError("request deadline passed")
+            timeout = remaining if timeout is None else min(timeout,
+                                                            remaining)
+        sock.settimeout(timeout)
+        try:
+            return sock.recv_into(buf)
+        finally:
+            # Writes keep the plain idle timeout.
+            sock.settimeout(handler.timeout)
+
+
 class _JsonHandler(BaseHTTPRequestHandler):
     # Largest JSON or form body read into memory. The public listener only
     # takes a contest id or an address; the private one also takes a
     # failed job's check output.
     max_body_bytes = 16 * 1024
+    # Seconds a read or write on the connection may block, so a client
+    # that trickles its request cannot hold a handler thread forever.
+    timeout = 30
+    # Seconds from the start of a request to the end of reading its
+    # headers and body: the idle timeout alone resets on every byte.
+    request_deadline = 30
+    read_deadline: float | None = None
     server: "_DepsServer"
+
+    def setup(self) -> None:
+        super().setup()
+        self.rfile.close()
+        self.rfile = io.BufferedReader(_DeadlineReader(self))
+
+    def handle_one_request(self) -> None:
+        # Starts when the server begins waiting for the request line, so
+        # it bounds a trickled header block as well as the body.
+        self.read_deadline = time.monotonic() + self.request_deadline
+        super().handle_one_request()
 
     def log_message(self, *a):  # keep test/CI output quiet
         pass
@@ -376,19 +441,58 @@ def _client_ip(handler: _JsonHandler, deps: Deps) -> str:
     return handler.client_address[0]
 
 
-def _check_rate_limit(deps: Deps, ip: str) -> tuple[bool, int]:
+def _over_limit(hits: list[float], limit: int, window: float,
+                now: float) -> int:
+    """Drops hits older than the window; 0 if another fits under
+    `limit`, else the seconds until one does. Call with rate_lock held."""
+    hits[:] = [t for t in hits if t > now - window]
+    if len(hits) < limit:
+        return 0
+    return max(int(hits[0] + window - now) + 1, 1)
+
+
+def _check_rate_limit(deps: Deps, ip: str) -> tuple[bool, int, bool]:
     """True if a new job may be created for this client now; otherwise
-    False and the number of seconds to suggest waiting."""
+    False, the number of seconds to suggest waiting, and whether the cap
+    across every client (rather than the client's own limit) is what
+    refused it. Both must allow it (a per-IP limit alone is beaten by
+    rotating IPv6 addresses)."""
     now = deps.clock()
+    config = deps.config
     with deps.rate_lock:
         hits = deps.rate_hits.setdefault(ip, [])
-        window_start = now - deps.config.generate_window
-        hits[:] = [t for t in hits if t > window_start]
-        if len(hits) >= deps.config.generate_limit:
-            retry_after = int(hits[0] + deps.config.generate_window - now) + 1
-            return False, max(retry_after, 1)
+        own_wait = _over_limit(hits, config.generate_limit,
+                               config.generate_window, now)
+        global_wait = _over_limit(deps.global_hits,
+                                  config.generate_global_limit, HOUR, now)
+        if own_wait or global_wait:
+            return False, max(own_wait, global_wait), bool(global_wait)
+        hits.append(now)
+        deps.global_hits.append(now)
+        return True, 0, False
+
+
+def _check_address_limit(deps: Deps, ip: str) -> tuple[bool, int]:
+    """As _check_rate_limit, for address lookups (their own bucket)."""
+    now = deps.clock()
+    with deps.rate_lock:
+        hits = deps.address_hits.setdefault(ip, [])
+        wait = _over_limit(hits, deps.config.address_limit, HOUR, now)
+        if wait:
+            return False, wait
         hits.append(now)
         return True, 0
+
+
+def _too_many(handler: "_JsonHandler", status: int, retry_after: int,
+              message: str, **extra: Any) -> None:
+    body = json.dumps({"error": message, **extra}).encode("utf-8")
+    handler.send_response(status)
+    handler.send_header("Retry-After", str(retry_after))
+    handler.send_header("Content-Type", "application/json")
+    handler.send_header("Content-Length", str(len(body)))
+    handler.end_headers()
+    handler.wfile.write(body)
 
 
 class PublicHandler(_JsonHandler):
@@ -466,14 +570,26 @@ class PublicHandler(_JsonHandler):
         address = body.get("address")
         if not address or not isinstance(address, str):
             return self._json(400, {"error": "address is required"})
-        abbr = state_abbr(deps.index.election.state)
+        if len(address) > MAX_ADDRESS_CHARS:
+            return self._json(400, {"error": "address is too long"})
+        allowed, retry_after = _check_address_limit(
+            deps, _client_ip(self, deps))
+        if not allowed:
+            return _too_many(self, 429, retry_after,
+                             "too many address lookups; try again later")
+        if not deps.geocoder_slots.acquire(blocking=False):
+            return _too_many(self, 503, 5,
+                             "the address lookup is busy; try again")
         try:
+            abbr = state_abbr(deps.index.election.state)
             result = lookup_address(address, deps.geocoder_fetch,
                                     deps.config.geocoder_url, deps.geo, abbr)
         except AddressNotFound as e:
             return self._json(404, {"error": str(e)})
         except GeocoderError as e:
             return self._json(502, {"error": str(e)})
+        finally:
+            deps.geocoder_slots.release()
         self._json(200, result)
 
     def _ballot(self) -> None:
@@ -542,8 +658,20 @@ class PublicHandler(_JsonHandler):
         existing = deps.queue.find_live_job(key)
         if existing is not None:
             return self._json(200, {"job": _job_view(existing, deps)})
+        # A job that failed or was cancelled stays that way until the
+        # operator retries it from the queue monitor: each new attempt
+        # spends paid narration.
+        latest = deps.queue.latest_job(key)
+        if latest is not None and latest["state"] in ("failed", "cancelled"):
+            return self._json(409, {"job": None, "status": latest["state"],
+                                    "error": "not available yet"})
         ip = _client_ip(self, deps)
-        allowed, retry_after = _check_rate_limit(deps, ip)
+        allowed, retry_after, everyone = _check_rate_limit(deps, ip)
+        if everyone:
+            # Named, so the page does not blame this visitor for it.
+            return _too_many(self, 429, retry_after,
+                             "too many videos requested this hour",
+                             limit="global")
         if not allowed:
             self.send_response(429)
             self.send_header("Retry-After", str(retry_after))
@@ -751,14 +879,25 @@ class PrivateHandler(_JsonHandler):
             self.send_header("Content-Length", "0")
             self.end_headers()
             return
-        length = int(length_header)
+        try:
+            length = int(length_header)
+        except ValueError:
+            length = -1
+        if length < 0:
+            self.close_connection = True
+            return self._json(400, {"error": "bad Content-Length"})
         max_bytes = deps.config.max_upload_mb * 1024 * 1024
         if length > max_bytes:
-            self.rfile.read(length)
+            # Close rather than read (and drop) the body: reading it would
+            # let a client tie the connection up for as long as it likes.
             self.send_response(413)
+            self.send_header("Connection", "close")
             self.send_header("Content-Length", "0")
             self.end_headers()
             return
+        # An authorized worker's upload may be large and slow; only the
+        # idle timeout applies to it.
+        self.read_deadline = None
         body = self.rfile.read(length)
         dest_dir = _incoming_dir(deps.config.data_dir, job_id, claim)
         dest_dir.mkdir(parents=True, exist_ok=True)

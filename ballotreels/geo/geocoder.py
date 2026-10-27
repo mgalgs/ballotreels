@@ -8,6 +8,7 @@ border, which is why it is a fallback and not the primary path.
 from __future__ import annotations
 
 import json
+import sys
 import urllib.parse
 from typing import Any, Callable
 
@@ -23,6 +24,9 @@ LAYER_SUBSTRINGS = {
     "sldl": "Legislative Districts - Lower",
     "county": "Counties",
 }
+
+
+GEOCODER_DOWN = "The address lookup isn't answering right now."
 
 
 class AddressLookupError(Exception):
@@ -83,14 +87,18 @@ def lookup_address(address: str, fetch: Callable[[str], str], base_url: str,
         "format": "json",
     })
     url = f"{base_url}/geographies/onelineaddress?{query}"
+    # The detail goes to the log, not the visitor: it can carry the
+    # geocoder's URL and internal error text.
     try:
         text = fetch(url)
     except Exception as e:
-        raise GeocoderError(f"the geocoder could not be reached: {e}") from None
+        print(f"geocoder: could not be reached: {e}", file=sys.stderr)
+        raise GeocoderError(GEOCODER_DOWN) from None
     try:
         doc = json.loads(text)
     except ValueError as e:
-        raise GeocoderError(f"bad geocoder response: {e}") from None
+        print(f"geocoder: bad response: {e}", file=sys.stderr)
+        raise GeocoderError(GEOCODER_DOWN) from None
 
     matches = doc.get("result", {}).get("addressMatches", [])
     if not matches:
