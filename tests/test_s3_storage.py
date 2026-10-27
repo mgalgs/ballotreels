@@ -213,7 +213,7 @@ class NoRealEndpointsTest(unittest.TestCase):
                                capture_output=True, text=True, check=True)
         files = [f for f in result.stdout.splitlines()
                 if not f.startswith("tests/")]
-        pattern = re.compile(r"[a-z0-9.-]*\.digitaloceanspaces\.com")
+        pattern = re.compile(r"[a-z0-9.<>-]*\.digitaloceanspaces\.com")
         violations = []
         for f in files:
             path = REPO / f
