@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+
+<style>
+    .body {
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.428571429;
+        color: #333;
+        background-color: #d9d5d5 !important;
+    }
+
+    dl {
+        margin-top: 1rem !important;
+        margin-bottom: 0rem !important;
+    }
+
+    #public-header-title-seal {
+        height: 6rem;
+        margin-top: -3rem;
+        padding: .4rem;
+        border-radius: 3rem;
+        background-color: #fff;
+    }
+
+    input, select, textarea {
+        max-width: 100% !important; /* or a specific larger value like 500px */
+    }
+</style>
+
+<html lang="en" class="h-100">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Constitutional Initiatives</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/site.css?v=j074dwRchcwDYnUHqNpk7ZqKvxBv1BgJZ4WrI2wpcrk" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- DataTables FixedColumns CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/4.2.2/css/fixedColumns.dataTables.min.css">
+    <!-- DataTables FixedColumns JS -->
+    <script src="https://cdn.datatables.net/fixedcolumns/4.2.2/js/dataTables.fixedColumns.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdn.datatables.net/datetime/1.6.1/js/dataTables.dateTime.min.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/1.10.12/sorting/datetime-moment.js"></script>
+
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo"></script>
+
+</head>
+<body class="d-flex flex-column bg-color1 h-100">
+    <header b-0a9qnrasqi>
+        <div b-0a9qnrasqi class="d-flex justify-content-between align-items-center bg-black px-4 py-2">
+            <a b-0a9qnrasqi href="https://dos.fl.gov/">
+                <img style="height: 1.75rem;" src="/Images/fldos_logo_header.png" alt="Logo">
+            </a>
+            <a b-0a9qnrasqi class="link-light text-decoration-none fw-bold" href="https://dos.fl.gov/elections/">
+                Division of Elections
+            </a>
+        </div>
+        <div b-0a9qnrasqi class="bg-white">
+            <div b-0a9qnrasqi class="container d-flex flex-wrap justify-content-center" style="width:fit-content">
+                <img id="public-header-title-seal" src="/Images/StateSeal_135x135.png" alt="State Seal">
+            </div>
+        </div>
+        <div b-0a9qnrasqi class="bg-white">
+            <div b-0a9qnrasqi class="container d-flex flex-wrap justify-content-center" style="width:fit-content">
+                <h3 b-0a9qnrasqi style="color: #04488d !important;">Initiatives / Amendments / Revisions Database</h3>
+            </div>
+        </div>
+    </header>
+    <div b-0a9qnrasqi class="container-fluid">
+        <main b-0a9qnrasqi role="main" class="pb-3">
+            <style>
+    .table-responsive {
+        overflow-x: auto !important;
+        overflow-y: auto !important;
+        max-height: none;
+    }
+
+    .dataTables_wrapper {
+        overflow-x: auto;
+    }
+</style>
+<div class="alert alert-primary" role="alert" style="white-space: normal !important; margin-bottom: 0.5rem; margin-top: 0.5rem;">
+    <h5 class="text-sm-center"> INCREASED HOMESTEAD EXEMPTION; LOWER CAP ON INCREASES IN NON-HOMESTEAD PROPERTY ASSESSMENTS</h5>
+    <h6 class="text-sm-center"></h6>
+    <h6 class="text-sm-center">Status - Active</h6>
+    <h6 class="text-sm-left"> <a href='https://constitutionalinitiatives.dos.fl.gov/' target="_self"> Return to home page</a></h6>
+</div>
+
+<div class="row">
+    <div class="col-md-1 d-none d-md-block">
+    </div>
+    <div class="col-md-10">
+        <div class="card">
+
+            <div class="card-body">
+
+                <dl class="row">
+                    <dt class="col-sm-1  text-truncate">Reference</dt>
+                    <dd class="col-sm-11">Article VII, Sections 4, 6, and 9, and Article XII, Florida Constitution</dd>
+                    <dt class="col-sm-1  text-truncate">Summary</dt>
+                    <dd class="col-sm-11">
+                        <p class="text-wrap">
+
+
+                                <a class="link-opacity-50-hover" href="https://initiativepetitions.dos.fl.gov/InitiativeForms/FulltextPDF/10-110.pdf" target="_blank"> View Full Text</a>
+
+                        </p>
+                        <p class="text-wrap">
+                            This amendment increases the homestead exemption, for all non-school taxes, to $150,000 in 2027 and $250,000 in 2028, and adjusts for inflation thereafter. It requires the Legislature to prescribe a uniform procedure for counties and municipalities, for their respective levies, to increase the homestead exemption up to full assessed value, and allows special districts, subject to referendum approval, to do the same.&#xD;&#xA;Persons who are not Florida residents on December 31, 2026, will receive the existing homestead exemption upon qualifying for a homestead exemption, with the increased homestead exemption beginning with the fifth year of exemption, to the extent permitted by the U.S. Constitution.&#xD;&#xA;This amendment reduces the annual cap on assessment increases for non-homestead properties from 10% to 5%.&#xD;&#xA;This amendment requires counties and municipalities to use property taxes solely for public safety, education and schools, infrastructure, natural resources, bond debt service, retirement benefits for employees, and operations and administration. Other expenditures may be approved by county officers or county or municipal governing bodies unless prohibited by general law, notwithstanding Article VII, Section 9(a) of the Florida Constitution, which allows counties and municipalities to levy property taxes for their respective purposes.&#xD;&#xA;This amendment takes effect January 1, 2027.
+                        </p>
+
+                    </dd>
+                        <dt class="col-sm-1  text-truncate">Related Links:</dt>
+                        <dd class="col-sm-11">
+                                <a class="link-opacity-50-hover" href="https://initiativepetitions.dos.fl.gov/InitiativeForms/FulltextPDF/10-110_AG.pdf" target="_blank"><span> AG Letter (Title &amp; Summary rewritten)</span> </a>
+                                <br />
+                                <a class="link-opacity-50-hover" href="https://www.flhouse.gov/Sections/Documents/loaddoc.aspx?FileName=h0001z.SAC.DOCX&amp;DocumentType=Analysis&amp;BillNumber=1&amp;Session=2026F" target="_blank"><span> HJR 1F (Bill Analysis)</span> </a>
+                                <br />
+                                <a class="link-opacity-50-hover" href="https://www.flhouse.gov/Sections/Bills/billsdetail.aspx?BillId=84452" target="_blank"><span> HJR 1F (Bill History)</span> </a>
+                                <br />
+                                <a class="link-opacity-50-hover" href="https://www.flhouse.gov/Sections/Documents/loaddoc.aspx?FileName=_h0001Fer.docx&amp;DocumentType=Bill&amp;BillNumber=1&amp;Session=2026F" target="_blank"><span> HJR 1F (Bill)</span> </a>
+                                <br />
+
+                        </dd>
+
+                    <dt class="col-sm-1  text-truncate">Sponsor</dt>
+                    <dd class="col-sm-11">
+
+                        <div class="row">
+                                <a class="link-opacity-50-hover" href="http://www.myfloridahouse.gov/" target="_blank">The Florida Legislature/House</a>
+                        </div>
+
+
+                        <dl class="row">
+                            <dd><strong>Contact: </strong>   </dd>
+
+                        </dl>
+
+                        
+                        <br /> 
+                        <br /> ,    -
+                        <br />  
+
+
+                    </dd>
+                    <dt class="col-sm-1 text-truncate">&nbsp;</dt>
+                    <dd class="col-sm-11">
+                        <div class="row">
+                            <strong>Status: Active</strong>
+                        </div>
+                        <div class="row">
+
+                            <table id="tableResult" class="display table table-striped table-bordered" style="width:60%">
+
+                                <tbody>
+
+                                    <tr>
+                                        <td class="text-wrap" width="30%">
+                                            Approval Date:
+                                        </td>
+                                        <td class="text-wrap">
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-wrap">
+                                            Undue Burden:
+                                        </td>
+                                        <td class="text-wrap">
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-wrap">
+                                            Last Made Review:
+                                        </td>
+                                        <td class="text-wrap">
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-wrap">
+                                            Attorney General:
+                                        </td>
+                                        <td class="text-wrap">
+                                            
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-wrap">
+                                            Sent to Supreme Court:
+                                        </td>
+                                        <td class="text-wrap">
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-wrap">
+                                            Supreme Court Ruling:
+                                        </td>
+                                        <td class="text-wrap">
+                                             
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-wrap">
+                                            SC Ruling Date:
+                                        </td>
+                                        <td class="text-wrap">
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-wrap">
+                                            Financial Impact Statement Date:
+                                        </td>
+                                        <td class="text-wrap">
+                                                      
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-wrap">
+                                            SC Approval of Financial Impact Statement:
+                                        </td>
+                                        <td class="text-wrap">
+                                                      
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-wrap">
+                                            Made Ballot:
+                                        </td>
+                                        <td class="text-wrap">
+                                            06/16/2026
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="text-wrap">
+                                            Ballot Number:
+                                        </td>
+                                        <td class="text-wrap">
+                                            3
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="text-wrap">
+                                            Election Year:
+                                        </td>
+                                        <td class="text-wrap">
+                                            2026
+                                        </td>
+
+                                    </tr>
+
+
+
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </dd>
+
+
+                </dl>
+
+
+
+
+
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-1 d-none d-md-block">
+    </div>
+</div>
+
+
+
+<div id="tab1">
+</div>
+<script>
+    $(document).ready(function () {
+
+
+
+
+    });
+</script>
+
+        </main>
+    </div>
+
+    <footer b-0a9qnrasqi class="footer bg-black text-light small py-2 mt-auto">
+        <div b-0a9qnrasqi class="container d-flex flex-nowrap justify-content-between align-items-start">
+            <div b-0a9qnrasqi class="flex-fill col-md-5">
+                <div b-0a9qnrasqi class="d-flex align-items-center">
+                    <img class="img-fluid" style="height:100px" src="/Images/StateSeal_135x135.png" alt="Seal of the State of Florida">
+                    <div b-0a9qnrasqi class="ml-2">
+                        <p b-0a9qnrasqi style="margin-bottom: 0px !important;">
+                            
+                            An official site of the <b b-0a9qnrasqi>Florida Department of State</b><br b-0a9qnrasqi>
+                            Phone: (850) 245-6200 (Monday to Friday) <br b-0a9qnrasqi>
+                            Fax: (850) 245-6217 <br b-0a9qnrasqi>
+                            E-mail:  <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="660f080f120f07120f1003152602091548000a48010910">[email&#160;protected]</a>
+                        </p>
+                        <p b-0a9qnrasqi style="margin-bottom: 0px !important;">
+                            <small b-0a9qnrasqi>&copy; 2026 Florida Department of State. All rights reserved.</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div b-0a9qnrasqi class="flex-fill col-md-4 text-end" style="text-align: right !important;">
+                <p b-0a9qnrasqi>
+                    <b b-0a9qnrasqi>Division of Elections</b><br b-0a9qnrasqi>
+                    R.A. Gray Building, Room 316<br b-0a9qnrasqi>
+                    500 S. Bronough Street<br b-0a9qnrasqi>
+                    Tallahassee, Florida 32399-0250<br b-0a9qnrasqi>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
+
+
+<style>
+
+    body {
+        padding-bottom: 20px;
+        background-color: #d9d5d5 !important;
+    }
+
+    /* Set padding to keep content from hitting the edges */
+    .body-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Override the default bootstrap behavior where horizontal description lists
+                   will truncate terms that are too long to fit in the left column
+                */
+    .dl-horizontal dt {
+        white-space: normal;
+    }
+
+    .nav-link {
+        color: #999 !important;
+    }
+
+    .navbar-brand {
+        color: #999 !important;
+    }
+
+    .navbar-light .navbar-text {
+        color: #999;
+    }
+
+    .rcorners3 {
+        padding: 0px;
+    }
+
+    .rcorners2 {
+        border-radius: 25px;
+        border: 2px solid black;
+        padding: 20px;
+    }
+
+    .rcorners1 {
+        border-radius: 25px;
+        border: 1px solid black !important;
+        padding: 5px;
+    }
+
+    .bg-black {
+        background-color: black;
+    }
+
+    .bg-lightblue {
+        background-color: #e2f1ff;
+    }
+
+    .bg-accent1 {
+        background-color: #002649 !important;
+    }
+
+    .bg-color1 {
+        background-color: var(--background-color1);
+    }
+
+    .bg-color2 {
+        background-color: var(--background-color2);
+    }
+
+    .bg-golden {
+        background-color: #F8AF00;
+    }
+
+    .text-decoration-none {
+        text-decoration: none !important;
+    }
+
+
+    .bg-black {
+        background-color: black;
+    }
+
+    .dl {
+        margin-top: 0.5rem !important;
+        margin-bottom: 0rem !important;
+    }
+
+    .dataTables_wrapper {
+        margin: 5px;
+    }
+
+    .disabled {
+        pointer-events: none;
+        color: gray !important;
+        text-decoration: none;
+    }
+
+    /* Set padding to keep content from hitting the edges */
+    .body-content {
+        margin-top: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Override the default bootstrap behavior where horizontal description lists
+           will truncate terms that are too long to fit in the left column
+        */
+    .dl-horizontal dt {
+        white-space: normal;
+    }
+
+    /* Set width on the form input elements since they're 100% wide by default */
+    input,
+    select,
+    textarea {
+        max-width: 280px;
+    }
+
+    .link-light {
+        color: #f8f9fa !important;
+    }
+
+    .bg-info {
+        background-color: #0dcaf0 !important;
+    }
+
+    .p {
+        margin-bottom: 0px !important;
+    }
+</style>
