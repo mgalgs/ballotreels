@@ -1,10 +1,9 @@
-"""Deterministic drawing sounds for the sketchbook template: a soft, dry
-graphite scratch while the pencil draws, a softer felt-tip swish while the
-highlighter sweeps (film/measure.py's `page` visual). Neither sound is in
-the bundled sound bank (`vb.sfx`) and the sandbox has no network, so both
-are synthesized here from the stroke's own motion (shaped, filtered noise
-with a bit of paper grain), seeded from the stroke's own timing and tool so
-the same script renders the same audio, byte for byte.
+"""Deterministic drawing sounds for the sketchbook template: the real sound
+of a pencil or a felt-tip marker moving on paper, cut from two short
+recordings (`film/sounds/`, CC0 from BigSoundBank; see
+`film/sounds/README.md`) rather than synthesized, since synthesized
+graphite scratch never sounded like graphite. Which file plays for which
+tool is the one line each in `TOOL_FILES`.
 
 A sound covers exactly the frame span its `Item` is in contact with the
 page (`measure.pencil_at`'s "current" case): nothing plays while the tool
@@ -12,9 +11,20 @@ only travels between two marks, or fades in or out at one. It is one fixed
 rule for every stroke, so the YES and NO sections, whose visuals are
 already identical in kind and size, sound alike (rule 4.2).
 
-`build_track` mixes every stroke in a film's schedule into one buffer;
-`write_wav` and `sound_for` turn that into a cached WAV file and a
-`vb.Sound` placed on the whole film.
+Each stroke takes a slice of its tool's recording as long as the stroke,
+at an offset chosen deterministically from the stroke's own seed (so the
+same script renders the same audio, byte for byte), with a short fade at
+each end so a cut into the recording never clicks. A stroke longer than
+the recording (a long illustration wipe) is built from several slices,
+each its own offset, crossfaded end to end rather than looped audibly. The
+recording's own texture carries the sound's character; only its level
+follows the stroke's speed, and gently.
+
+`build_track` mixes every stroke in a film's schedule into one buffer,
+levelled so the strokes themselves (not the silence between them) sit
+about 13dB under typical narration, measured against the committed Prop 2
+narration (RMS 0.123; see TARGET_RMS); `write_wav` and `sound_for` turn
+that into a cached WAV file and a `vb.Sound` placed on the whole film.
 """
 from __future__ import annotations
 
@@ -26,19 +36,20 @@ from pathlib import Path
 
 import numpy as np
 
-RATE = 24000               # the drawing-sound track's sample rate
-CONTROL_HZ = 200           # how densely a stroke's motion is sampled for speed and corners
-REF_SPEED = 550.0          # px/s a stroke at a "normal" pace moves; louder and brighter above it
-CORNER_ANGLE = math.radians(55)   # a turn sharper than this, at speed, gets a tick
-TICK_MS = 18
-FADE_S = 0.004             # a stroke's own fade in/out, so it never clicks on or off
-TARGET_PEAK = 0.16         # the whole track's peak, well under the narration's
+HERE = Path(__file__).resolve().parent
+RATE = 24000               # the drawing-sound track's sample rate: both recordings already are
+CONTROL_HZ = 200           # how densely a stroke's motion is sampled for speed
+REF_SPEED = 550.0          # px/s a stroke at a "normal" pace moves; louder a little above it
+FADE_S = 0.015             # a slice's own fade in/out, so a cut into the recording never clicks
+XFADE_S = 0.08             # crossfade between successive slices on a stroke longer than the bed
+TARGET_RMS = 0.026         # ~13dB under narration.wav's RMS (0.123) for the committed Prop 2 contest
 
-# Each tool's noise band (Hz): a dark half and a bright half, cross-faded by
-# speed, plus whether it carries graphite's grain (an amplitude flutter).
-TOOLS = {
-    'pencil': dict(lo=1300, mid=2800, hi=5400, grain=True),
-    'highlighter': dict(lo=450, mid=1100, hi=2100, grain=False),
+# One recording per tool (film/sounds/, see film/sounds/README.md for each
+# file's source and trim). The operator is auditioning other excerpts; try
+# one by changing its line here.
+TOOL_FILES = {
+    'pencil': 'pencil.wav',            # bigsoundbank 3234-pencil-3, trimmed
+    'highlighter': 'highlighter.wav',  # bigsoundbank 0220-marker, trimmed
 }
 
 
@@ -47,19 +58,47 @@ def _rng(*parts):
     return np.random.default_rng(int.from_bytes(digest[:8], 'big'))
 
 
-def _band_noise(n, rng, lo, hi, rate=RATE):
-    """`n` samples of noise with energy only between `lo` and `hi` Hz (a
-    soft-edged band, built in the frequency domain so it needs no filter
-    design), peak-normalised to 1."""
-    if n <= 0:
-        return np.zeros(0, np.float32)
-    spec = np.fft.rfft(rng.standard_normal(n))
-    freqs = np.fft.rfftfreq(n, 1 / rate)
-    edge = max(1.0, (hi - lo) * 0.3)
-    mask = np.clip(np.minimum((freqs - lo) / edge, (hi - freqs) / edge), 0, 1)
-    out = np.fft.irfft(spec * mask, n).astype(np.float32)
-    peak = float(np.abs(out).max())
-    return out / peak if peak > 0 else out
+def _load_recording(tool):
+    path = HERE / 'sounds' / TOOL_FILES[tool]
+    with wave.open(str(path), 'rb') as w:
+        if w.getframerate() != RATE or w.getnchannels() != 1:
+            raise ValueError(f'{path}: expected mono {RATE} Hz, got '
+                             f'{w.getnchannels()}ch {w.getframerate()} Hz')
+        pcm = np.frombuffer(w.readframes(w.getnframes()), dtype='<i2')
+    return (pcm.astype(np.float32) / 32768.0)
+
+
+_RECORDINGS = {tool: _load_recording(tool) for tool in TOOL_FILES}
+
+
+def _bed_slice(tool, seed, n):
+    """`n` samples cut from `tool`'s recording: one contiguous slice at a
+    deterministic offset from `seed`, when the recording is at least that
+    long. A longer stroke is built from several full, randomly rotated
+    copies of the recording (each its own offset, from `seed` and its
+    position), crossfaded end to end over XFADE_S, so it never repeats the
+    same seam or loops audibly."""
+    rec = _RECORDINGS[tool]
+    rlen = len(rec)
+    if n <= rlen:
+        rng = _rng('draw-sound-bed', tool, seed, 0)
+        start = int(rng.integers(0, rlen - n + 1))
+        return rec[start:start + n].copy()
+    xfade = max(1, min(int(round(RATE * XFADE_S)), rlen // 4))
+    step = rlen - xfade
+    nseg = 1 + math.ceil((n - rlen) / step)
+    ramp = np.linspace(0, 1, xfade, dtype=np.float32)
+    out = np.zeros(step * (nseg - 1) + rlen, np.float32)
+    for k in range(nseg):
+        rng = _rng('draw-sound-bed', tool, seed, k)
+        seg = np.roll(rec, int(rng.integers(0, rlen)))
+        a = k * step
+        if k == 0:
+            out[a:a + rlen] = seg
+        else:
+            out[a:a + xfade] = out[a:a + xfade] * (1 - ramp) + seg[:xfade] * ramp
+            out[a + xfade:a + rlen] = seg[xfade:]
+    return out[:n]
 
 
 def _motion(head, f0, f1, steps):
@@ -82,8 +121,6 @@ def stroke_track(head, f0, f1, fps, tool, seed):
     n = int(round(dur * RATE))
     if n < 8:
         return np.zeros(0, np.float32)
-    cfg = TOOLS[tool]
-    rng = _rng('draw-sound', tool, seed, round(f0, 3), round(f1, 3))
     steps = max(2, round(dur * CONTROL_HZ))
     pts = _motion(head, f0, f1, steps)
     vel = np.diff(pts, axis=0) * (fps * steps / max(1e-9, f1 - f0))
@@ -92,42 +129,18 @@ def stroke_track(head, f0, f1, fps, tool, seed):
     t_audio = np.linspace(0, 1, n)
     t_ctrl = np.linspace(0, 1, steps + 1)
     speed_audio = np.interp(t_audio, t_ctrl, speed)
-    norm = np.clip(speed_audio / REF_SPEED, 0.15, 2.6)
-    amp = np.clip(norm ** 0.5, 0.35, 1.4)
-    bright = np.clip((norm - 0.3) / 2.0, 0.0, 1.0)
+    # the level follows speed gently; the recording's own texture, not the
+    # stroke's motion, carries everything else (no synthesized noise)
+    norm = np.clip(speed_audio / REF_SPEED, 0.4, 2.2)
+    amp = np.clip(norm ** 0.35, 0.65, 1.25)
 
-    dark = _band_noise(n, rng, cfg['lo'], cfg['mid'])
-    light = _band_noise(n, rng, cfg['mid'], cfg['hi'])
-    out = (dark * (1 - bright) + light * bright) * amp
-    if cfg['grain']:
-        grain = _band_noise(n, rng, 70, 170)
-        out *= np.clip(0.6 + 0.75 * np.abs(grain), 0.45, 1.25)
-
-    if steps >= 2:
-        v = np.diff(pts, axis=0)
-        mags = np.hypot(v[:, 0], v[:, 1])
-        tick_n = max(1, round(RATE * TICK_MS / 1000))
-        decay = np.exp(-np.linspace(0, 7, tick_n))
-        for i in range(1, len(v)):
-            if mags[i - 1] < 1.0 or mags[i] < 1.0:
-                continue
-            cos_a = np.dot(v[i - 1], v[i]) / (mags[i - 1] * mags[i])
-            if math.acos(np.clip(cos_a, -1.0, 1.0)) <= CORNER_ANGLE:
-                continue
-            c = int(round((i / steps) * n))
-            tick = _band_noise(tick_n, rng, cfg['hi'] * 0.55, cfg['hi'] * 1.5) * decay
-            a0, a1 = max(0, c), min(n, c + tick_n)
-            if a1 > a0:
-                out[a0:a1] += tick[:a1 - a0] * 0.55
+    out = _bed_slice(tool, seed, n) * amp
 
     fade = max(1, round(RATE * FADE_S))
     if 2 * fade < n:
         ramp = np.linspace(0, 1, fade, dtype=np.float32)
         out[:fade] *= ramp
         out[-fade:] *= ramp[::-1]
-    # left at its `amp`-scaled level, not renormalised to its own peak, so a
-    # fast stroke is louder than a slow one once build_track mixes them;
-    # only the whole track's peak is brought down, by build_track.
     return out.astype(np.float32)
 
 
@@ -135,7 +148,8 @@ def build_track(items, fps, total_frames):
     """The whole film's drawing-sound track: every scheduled item's stroke
     (an object with `.f0`, `.f1`, `.tool` and `.head(n)`, in
     `measure.pencil_at`'s sense) placed at its frame span and summed, then
-    brought to `TARGET_PEAK`. Float32 samples at `RATE`."""
+    levelled so the strokes themselves sit at TARGET_RMS. Float32 samples
+    at `RATE`."""
     n_total = max(1, int(round(total_frames / fps * RATE)))
     buf = np.zeros(n_total, np.float32)
     for i, it in enumerate(items):
@@ -146,9 +160,10 @@ def build_track(items, fps, total_frames):
         a, b = max(0, start), min(n_total, start + len(clip))
         if b > a:
             buf[a:b] += clip[a - start:b - start]
-    peak = float(np.abs(buf).max())
-    if peak > TARGET_PEAK:
-        buf *= TARGET_PEAK / peak
+    active = buf[buf != 0]
+    rms = float(np.sqrt(np.mean(active.astype(np.float64) ** 2))) if len(active) else 0.0
+    if rms > 0:
+        buf *= TARGET_RMS / rms
     return buf
 
 

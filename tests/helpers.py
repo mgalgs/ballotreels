@@ -16,6 +16,11 @@ PROP_2 = REPO / "data" / "ca-2026-11-03" / "prop-2"
 PROP_2_AIRTIME = ("[airtime] side spoken durations differ by more than 5% "
                   "of the larger: yes=23.3s, no=24.7s")
 
+# The committed Prop 2 narration.wav's RMS (whole file, 16-bit samples
+# -1..1): what film/draw_sound.py's TARGET_RMS is calibrated to sit about
+# 13dB under.
+NARRATION_RMS = 0.1252
+
 NARRATION_SIDECARS = ("narration.json", "narration.wav", "narration.vtt")
 
 
