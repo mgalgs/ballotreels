@@ -32,6 +32,7 @@ SOURCE_KINDS = frozenset({
 # (STANDARD.md rule 6.1, docs/SCRIPT-FORMAT.md).
 BACKGROUND_ONLY_KINDS = frozenset({"official-report", "official-data"})
 BACKGROUND = "background"
+FISCAL = "fiscal"
 
 _VERSION_RE = re.compile(r"^Standard version:\s*(\d+)\s*$", re.MULTILINE)
 

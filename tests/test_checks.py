@@ -106,6 +106,23 @@ class BrokenCopyTest(ContestCopyTestCase):
         [f] = self.assertOnly("background-only", "today", 3)
         self.assertIn("'official-data'", f.message)
 
+    FISCAL_LINE = ('somewhat easier when revenue falls."\n'
+                   'sources = ["lao-analysis"]')
+
+    def test_official_report_beside_the_fiscal_analysis(self):
+        # rule 6.5: the budget total that gives a fiscal figure its scale
+        self.edit("script.toml", self.FISCAL_LINE,
+                  self.FISCAL_LINE.replace('"lao-analysis"',
+                                           '"lao-analysis", '
+                                           '"lao-volatility"'))
+        self.assertEqual(self.failures(), [])
+
+    def test_official_report_alone_on_a_fiscal_line(self):
+        self.edit("script.toml", self.FISCAL_LINE,
+                  self.FISCAL_LINE.replace('"lao-analysis"',
+                                           '"lao-volatility"'))
+        self.assertOnly("background-only", "fiscal", 0)
+
     def test_background_failures_name_the_section(self):
         # Prop 2 has four background sections; the third is labelled
         # background[2].

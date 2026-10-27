@@ -42,9 +42,8 @@ analysis, arguments and text in one pamphlet section).
 `official-data` (a published data file from one) are background-only
 (STANDARD.md rule 6.1): a line or chart may cite them only in a
 `background` section. The one other use is the budget total behind a
-scale (STANDARD.md rule 6.5), cited on the line that states the
-figure; `check` does not allow that yet (`BACKGROUND_ONLY_KINDS` in
-`ballotreels/standard.py`), so such a line waits for that change.
+scale (STANDARD.md rule 6.5): a line in the `fiscal` section may cite
+one beside the `official-fiscal-analysis` that states the figure.
 
 ## script.toml
 

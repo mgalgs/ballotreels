@@ -22,7 +22,7 @@ from . import narration, storyboard
 from .ballots import BALLOTS, Ballot, badge, ballot_for
 from .contest import CARD_KEYS, Card, Contest, Line, Section, Visual
 from .illustrations import load_library
-from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, SOURCE_KINDS,
+from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, FISCAL, SOURCE_KINDS,
                        TEMPLATES, Standard, Template, judgment_word_pattern,
                        load_standard)
 
@@ -97,13 +97,20 @@ def check_cited_sources_exist(c: Contest) -> list[Failure]:
 
 def check_background_only(c: Contest) -> list[Failure]:
     """STANDARD.md 6.1: a line cites a background-only kind of source only
-    in a background section. Unknown ids are check_cited_sources_exist's."""
+    in a background section, or (6.5) on a `fiscal` line beside the
+    fiscal analysis whose figure it gives a scale to. Unknown ids are
+    check_cited_sources_exist's."""
     out = []
     for label, sec in c.script.labelled():
         if sec.id == BACKGROUND:
             continue
         for i, line in enumerate(sec.lines):
-            cited = [("cites", sid) for sid in line.sources or ()]
+            scales = sec.id == FISCAL and any(
+                (s := c.source(sid)) is not None
+                and s.kind == "official-fiscal-analysis"
+                for sid in line.sources or ())
+            cited = [] if scales else \
+                [("cites", sid) for sid in line.sources or ()]
             if line.visual is not None and isinstance(line.visual.source, str):
                 cited.append(("has a chart citing", line.visual.source))
             for verb, sid in cited:
