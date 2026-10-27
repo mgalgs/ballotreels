@@ -63,15 +63,19 @@ class StrokeTrackTest(unittest.TestCase):
         self.assertTrue(np.isfinite(out).all())
         self.assertLess(float(abs(out).max()), 10.0)
 
-    def test_a_faster_stroke_is_louder(self):
+    def test_a_faster_stroke_is_louder_and_brighter(self):
         slow = Stroke(0, 60, "pencil", (100, 100), (200, 100))
         fast = Stroke(0, 10, "pencil", (100, 100), (900, 100))
         slow_out = ds.stroke_track(slow.head, slow.f0, slow.f1, 30, "pencil", 0)
         fast_out = ds.stroke_track(fast.head, fast.f0, fast.f1, 30, "pencil", 0)
         rms = lambda x: (x.astype("float64") ** 2).mean() ** 0.5  # noqa: E731
-        # both are peak-normalised to 1, so compare their RMS, which the
-        # faster stroke's higher amplitude envelope should raise
-        self.assertGreater(rms(fast_out), rms(slow_out) * 0.9)
+
+        def treble(x):  # the share of the energy above 4 kHz
+            spec = np.abs(np.fft.rfft(x.astype("float64"))) ** 2
+            return spec[np.fft.rfftfreq(len(x), 1 / ds.RATE) > 4000].sum() / spec.sum()
+        # the clips are not normalised, so the speed shows in the level
+        self.assertGreater(rms(fast_out), rms(slow_out) * 2)
+        self.assertGreater(treble(fast_out), treble(slow_out) + 0.2)
 
 
 class BuildTrackTest(unittest.TestCase):

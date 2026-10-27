@@ -527,39 +527,40 @@ WIPE = 30          # frames an illustration takes to wipe on (1 s)
 @functools.lru_cache(maxsize=16)
 def illustration_ink(name):
     """Illustration `name` as ink alone, its own colour kept: (a cairo
-    surface whose alpha is the drawing's darkness with its paper levelled
-    to nothing (as a graphite file always was) and whose colour is the
-    drawing's own, cropped to the drawing; and its pixel buffer). Laid over
-    the page, this paints the drawing's ink (black for a graphite line, a
-    palette colour for a coloured one) at that darkness, so the lines look
-    drawn on the page. A graphite file (R = G = B throughout) renders
-    exactly as it always did."""
+    surface to lay on the page with OPERATOR_MULTIPLY, cropped to the
+    drawing; and its pixel buffer). Each channel's paper is levelled to
+    nothing as a graphite file's grey always was, giving the factor
+    `keep` (1 on paper, 0 at INK_LEVEL and darker) the page's channel is
+    multiplied by, so the strokes look drawn on the page in colour. The
+    surface has alpha A = 1 - min(keep) and premultiplied colour
+    keep - (1 - A): multiplied onto an opaque page that gives page * keep.
+    For a graphite file (R = G = B) the colour is 0: black ink at the
+    darkness it always had, so it renders exactly as before."""
     from PIL import Image, ImageFilter
     im = Image.open(load_library()[name].path).convert('RGB')
     rgb = np.asarray(im, np.float32) / 255
-    grey = rgb @ np.array([0.299, 0.587, 0.114], np.float32)  # PIL's own 'L' weights
-    # the paper's tone at each point: the lightest nearby, smoothed
+    # the paper's tone at each point and in each channel: the lightest nearby, smoothed
     small = im.resize((max(1, im.width // 8), max(1, im.height // 8)), Image.BILINEAR)
     paper_ = small.filter(ImageFilter.MaxFilter(9)).filter(ImageFilter.GaussianBlur(6))
     paper_ = np.asarray(paper_.resize(im.size, Image.BILINEAR), np.float32) / 255
-    paper_grey = paper_ @ np.array([0.299, 0.587, 0.114], np.float32)
-    flat = np.clip(grey / np.maximum(paper_grey, 0.3), 0, 1)
-    alpha = 1 - np.clip((flat - INK_LEVEL) / (PAPER_LEVEL - INK_LEVEL), 0, 1)
+    flat = np.clip(rgb / np.maximum(paper_, 0.3), 0, 1)
+    dark = 1 - np.clip((flat - INK_LEVEL) / (PAPER_LEVEL - INK_LEVEL), 0, 1)  # per channel
 
     def ramp(n):
         t = np.minimum(np.arange(n), np.arange(n)[::-1]) / n
         return np.clip((t - EDGE_FADE[0]) / (EDGE_FADE[1] - EDGE_FADE[0]), 0, 1)
-    alpha *= ramp(alpha.shape[0])[:, None] * ramp(alpha.shape[1])[None, :]
+    dark *= (ramp(dark.shape[0])[:, None] * ramp(dark.shape[1])[None, :])[..., None]
+    alpha = dark.max(axis=2)
     ys, xs = np.nonzero(alpha > 0.06)
     if len(xs):
         pad = 8
         box = (max(0, ys.min() - pad), ys.max() + pad + 1, max(0, xs.min() - pad), xs.max() + pad + 1)
         alpha = alpha[box[0]:box[1], box[2]:box[3]]
-        rgb = rgb[box[0]:box[1], box[2]:box[3]]
+        dark = dark[box[0]:box[1], box[2]:box[3]]
     h, w = alpha.shape
     stride = cairo.ImageSurface.format_stride_for_width(cairo.FORMAT_ARGB32, w)
     px = np.zeros((h, stride // 4, 4), np.uint8)
-    premult = rgb * alpha[..., None]  # the ink's own colour, premultiplied by its coverage
+    premult = alpha[..., None] - dark  # in [0, alpha]: 0 (black) wherever a channel is darkest
     px[:, :w, 0] = np.round(premult[..., 2] * 255).astype(np.uint8)  # cairo's byte order is BGRA
     px[:, :w, 1] = np.round(premult[..., 1] * 255).astype(np.uint8)
     px[:, :w, 2] = np.round(premult[..., 0] * 255).astype(np.uint8)
@@ -589,6 +590,7 @@ def illustration_visual(chart, lines, L, f0, f1):
         ctx.save()
         ctx.translate(x, y)
         ctx.scale(k, k)
+        ctx.set_operator(cairo.OPERATOR_MULTIPLY)
         ctx.set_source_surface(surf, 0, 0)
         ctx.get_source().set_filter(cairo.FILTER_GOOD)
         if p >= 1:
