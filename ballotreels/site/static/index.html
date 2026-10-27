@@ -2,22 +2,36 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f3eedf">
+<meta name="description" content="Short, even-handed videos on everything on your ballot. Every claim is sourced.">
 <title>ballotreels</title>
-<link rel="stylesheet" href="/static/style.css">
+<link rel="preload" href="/static/fonts/Caveat-Variable.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/static/fonts/PatrickHand-Regular.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin="anonymous">
+<link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-<header>
-  <h1><a href="#/" style="text-decoration:none;color:inherit">ballotreels</a></h1>
+<div class="page">
+<header class="site-header">
+  <a class="brand" href="#/" aria-label="ballotreels, home">
+    <svg class="brand-mark" viewBox="0 0 26 26" aria-hidden="true">
+      <rect x="6" y="2.5" width="14" height="21" rx="2.5" fill="none"
+            stroke="currentColor" stroke-width="2"/>
+      <path d="M11 9.5 L16.5 13 L11 16.5 Z" fill="#e07b33"
+            stroke="#e07b33" stroke-width="1.2" stroke-linejoin="round"/>
+    </svg>
+    <span>ballotreels</span>
+  </a>
 </header>
 <main id="app"></main>
-<footer>
-  <p>ballotreels · bias is a bug · report it at github.com/mgalgs/ballotreels</p>
-  <p class="osm-note">Map data &copy; OpenStreetMap contributors</p>
+<footer class="site-footer">
+  <p><a href="https://github.com/mgalgs/ballotreels/issues">ballotreels · bias is a bug · report it at github.com/mgalgs/ballotreels</a></p>
+  <p class="osm-note">Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a></p>
 </footer>
+</div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
        crossorigin="anonymous"></script>
