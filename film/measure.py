@@ -11,8 +11,10 @@ out on the narration's clock (`ballotreels.storyboard`).
 
 The look is the approved sketchbook mock (film/mocks/sketchbook.py):
 graphite on a cream grid page, one orange coloured pencil for headings
-only (never a value, rule 7.4), Caveat for labels and Patrick Hand for
-captions and notes, captions on a taped paper scrap.
+only (never a value, rule 7.4), coloured pencil (sketch.PALETTE: ochre,
+honey, teal, sage, brown; never red, rule 4.1) for every chart, figure,
+timeline and list mark, over graphite outlines, Caveat for labels and
+Patrick Hand for captions and notes, captions on a taped paper scrap.
 
 The motion is calm. Each section is a page: its heading, written and
 underlined, and a stage below it. A visual draws on once, in about a
@@ -82,8 +84,9 @@ from videobuilder import Box, paths, text  # noqa: E402
 
 import draw_sound as dsnd  # noqa: E402
 import sketch as sp  # noqa: E402
-from sketch import (DRAW, GRAPHITE, ORANGE, RESTING_ANGLE, Hatch, Item,  # noqa: E402
-                    Stroke, fade_item, hatch_item, stroke_item, text_item)
+from sketch import (BROWN, DRAW, GRAPHITE, HONEY, OCHRE, ORANGE, RESTING_ANGLE,  # noqa: E402
+                    SAGE, TEAL, Hatch, Item, Stroke, fade_item, hatch_item,
+                    stroke_item, text_item)
 
 from ballotreels.contest import load_contest  # noqa: E402
 from ballotreels.illustrations import load_library  # noqa: E402
@@ -117,6 +120,21 @@ DRAW_ON = 36       # frames a visual takes to draw on, at most (1.2 s)
 BRIDGE = 6         # frames of gap the pencil crosses between two marks
 PENCIL_FADE = 5    # frames for the pencil to fade in or out
 WRITE_PX = 1500    # px of lettering a second
+
+# Coloured-pencil assignments (sketch.PALETTE): one fixed colour per kind of
+# mark, so every bar, segment, timeline entry and check is the same colour
+# as every other of its kind (rule 7.4) and the same on both sides (rule
+# 4.2). The two lines of the steady-spending figure differ, since neither
+# is a ballot option. Text and outlines stay GRAPHITE throughout.
+BARS_COLOUR = OCHRE
+SHARE_COLOUR = SAGE
+SERIES_COLOUR = TEAL
+SPENDING_COLOUR = TEAL
+REVENUE_COLOUR = BROWN
+FUND_CANOPY_COLOUR = TEAL
+FUND_COIN_COLOUR = HONEY
+TIMELINE_COLOUR = BROWN
+LIST_COLOUR = SAGE
 
 
 def seed_of(*parts):
@@ -427,15 +445,16 @@ def chart_frame(chart, L, f0):
 
 
 class GrowBar:
-    """A bar that grows up from the baseline, its hatching revealed with it."""
+    """A bar that grows up from the baseline, its hatching revealed with it:
+    a coloured-pencil fill (`colour`) over a graphite outline."""
 
-    def __init__(self, x, base, w, h, seed, u):
-        self.x, self.base, self.w, self.h = x, base, w, h
+    def __init__(self, x, base, w, h, seed, u, colour=GRAPHITE):
+        self.x, self.base, self.w, self.h, self.colour = x, base, w, h, colour
         top = base - h
         self.left = Stroke([(x, base), (x, top)], seed, passes=3, width=4.2 * u, overshoot=4)
         self.right = Stroke([(x + w, base), (x + w, top)], seed + 1, passes=3, width=4.2 * u, overshoot=4)
         self.top = Stroke([(x - 4, 0), (x + w + 6, 0)], seed + 2, passes=3, width=4.2 * u)
-        self.fill = Hatch(box_pts(x, top, w, h), seed + 3, angle=52, spacing=13 * u, cross=True, alpha=0.42)
+        self.fill = Hatch(box_pts(x, top, w, h), seed + 3, angle=52, spacing=13 * u, cross=True, alpha=0.65)
 
     def draw(self, cv, p):
         h = self.h * p
@@ -443,7 +462,7 @@ class GrowBar:
             return
         top = self.base - h
         with cv.clip(self.x - 40, top - 6, self.w + 80, h + 30):
-            self.fill.draw(cv, 1.0, GRAPHITE, 0.9)
+            self.fill.draw(cv, 1.0, self.colour, 0.85)
             self.left.draw(cv, 1.0)
             self.right.draw(cv, 1.0)
         ctx = cv.ctx
@@ -483,8 +502,8 @@ def bars_chart(chart, L, f0, f1):
         cx = x0 + slot * (i + 0.5)
         li, f, _ = write_lines(f, ls, lf, cx - slot / 2, base + 10 * u, align='center', width=slot)
         items += li
-        bar = GrowBar(cx - bw / 2, base, bw, val * scale, seed_of('bar', i), u)
-        items.append(Item(f + 2, f + 2 + grow, bar.draw, bar.head))
+        bar = GrowBar(cx - bw / 2, base, bw, val * scale, seed_of('bar', i), u, colour=BARS_COLOUR)
+        items.append(Item(f + 2, f + 2 + grow, bar.draw, bar.head, ink=BARS_COLOUR))
         f += 2 + grow
         vi, f, _ = write_lines(f + 2, [with_unit(val, v.unit)], vf, cx - slot / 2,
                                base - val * scale - text.line_height(vf) - 4 * u, align='center', width=slot)
@@ -507,19 +526,24 @@ WIPE = 30          # frames an illustration takes to wipe on (1 s)
 
 @functools.lru_cache(maxsize=16)
 def illustration_ink(name):
-    """Illustration `name` as graphite alone: (a cairo surface of black ink
-    whose alpha is the drawing's darkness with its paper levelled to
-    nothing, cropped to the drawing; and its pixel buffer). Laid over the
-    page, this multiplies the page by the drawing's grey, so the lines look
-    drawn on the page."""
+    """Illustration `name` as ink alone, its own colour kept: (a cairo
+    surface whose alpha is the drawing's darkness with its paper levelled
+    to nothing (as a graphite file always was) and whose colour is the
+    drawing's own, cropped to the drawing; and its pixel buffer). Laid over
+    the page, this paints the drawing's ink (black for a graphite line, a
+    palette colour for a coloured one) at that darkness, so the lines look
+    drawn on the page. A graphite file (R = G = B throughout) renders
+    exactly as it always did."""
     from PIL import Image, ImageFilter
-    im = Image.open(load_library()[name].path).convert('L')
-    grey = np.asarray(im, np.float32) / 255
+    im = Image.open(load_library()[name].path).convert('RGB')
+    rgb = np.asarray(im, np.float32) / 255
+    grey = rgb @ np.array([0.299, 0.587, 0.114], np.float32)  # PIL's own 'L' weights
     # the paper's tone at each point: the lightest nearby, smoothed
     small = im.resize((max(1, im.width // 8), max(1, im.height // 8)), Image.BILINEAR)
     paper_ = small.filter(ImageFilter.MaxFilter(9)).filter(ImageFilter.GaussianBlur(6))
     paper_ = np.asarray(paper_.resize(im.size, Image.BILINEAR), np.float32) / 255
-    flat = np.clip(grey / np.maximum(paper_, 0.3), 0, 1)
+    paper_grey = paper_ @ np.array([0.299, 0.587, 0.114], np.float32)
+    flat = np.clip(grey / np.maximum(paper_grey, 0.3), 0, 1)
     alpha = 1 - np.clip((flat - INK_LEVEL) / (PAPER_LEVEL - INK_LEVEL), 0, 1)
 
     def ramp(n):
@@ -529,11 +553,17 @@ def illustration_ink(name):
     ys, xs = np.nonzero(alpha > 0.06)
     if len(xs):
         pad = 8
-        alpha = alpha[max(0, ys.min() - pad):ys.max() + pad + 1, max(0, xs.min() - pad):xs.max() + pad + 1]
+        box = (max(0, ys.min() - pad), ys.max() + pad + 1, max(0, xs.min() - pad), xs.max() + pad + 1)
+        alpha = alpha[box[0]:box[1], box[2]:box[3]]
+        rgb = rgb[box[0]:box[1], box[2]:box[3]]
     h, w = alpha.shape
     stride = cairo.ImageSurface.format_stride_for_width(cairo.FORMAT_ARGB32, w)
     px = np.zeros((h, stride // 4, 4), np.uint8)
-    px[:, :w, 3] = np.round(alpha * 255).astype(np.uint8)  # black, premultiplied
+    premult = rgb * alpha[..., None]  # the ink's own colour, premultiplied by its coverage
+    px[:, :w, 0] = np.round(premult[..., 2] * 255).astype(np.uint8)  # cairo's byte order is BGRA
+    px[:, :w, 1] = np.round(premult[..., 1] * 255).astype(np.uint8)
+    px[:, :w, 2] = np.round(premult[..., 0] * 255).astype(np.uint8)
+    px[:, :w, 3] = np.round(alpha * 255).astype(np.uint8)
     data = bytearray(px.tobytes())
     surf = cairo.ImageSurface.create_for_data(data, cairo.FORMAT_ARGB32, w, h, stride)
     return surf, data  # cairo borrows the buffer: keep it alive with the surface
@@ -634,11 +664,11 @@ def timeline_visual(chart, lines, L, f0, f1):
         if prev_dot is not None:
             spine = Stroke([(spine_x, prev_dot + 14 * u), (spine_x, dot_y - 14 * u)], seed_of('spine', i),
                            passes=2, width=3.4 * u, overshoot=0)
-            entry.append(stroke_item(f, f + 8, spine))
+            entry.append(stroke_item(f, f + 8, spine, ink=TIMELINE_COLOUR))
             f += 8
         dot = Stroke(sp.ellipse(spine_x, dot_y, 10 * u, 10 * u, n=20), seed_of('tdot'), passes=2,
                      width=4 * u, closed=True, overshoot=0)
-        entry.append(stroke_item(f, f + 5, dot))
+        entry.append(stroke_item(f, f + 5, dot, ink=TIMELINE_COLOUR))
         di, f, _ = write_lines(f + 5, dl, df, tx, y)
         ii, f, _ = write_lines(f + 2, il, itf, tx, y + len(dl) * text.line_height(df))
         entry += di + ii
@@ -694,7 +724,7 @@ def list_visual(chart, lines, L, f0, f1):
         f = s0
         mark = Stroke(check_mark_pts(cx0 + check / 2, cy, check), seed_of('check', i), passes=2,
                      width=4.6 * u, overshoot=0)
-        entry.append(stroke_item(f, f + 9, mark))
+        entry.append(stroke_item(f, f + 9, mark, ink=LIST_COLOUR))
         f += 9
         ti, f, _ = write_lines(f, block, itf, tx, y)
         entry += ti
@@ -765,7 +795,7 @@ def share_chart(chart, L, f0, f1):
         if h > 4:
             hatch = Hatch(box_pts(gx, y, col_w, h), seed_of('share', b['i']), angle=hs['angle'],
                           spacing=hs['spacing'] * u, cross=hs['cross'], alpha=hs['alpha'], width=2.2 * u)
-            items.append(hatch_item(f, f + 16, hatch))
+            items.append(hatch_item(f, f + 16, hatch, ink=SHARE_COLOUR))
             f += 16
         lx = gx + col_w + gap
         mid = y + h / 2
@@ -842,13 +872,13 @@ def series_chart(chart, L, f0, f1):
     pts = [(xs(i), ys(val)) for i, val in enumerate(vals)]
     line = Stroke(pts, seed_of('series'), passes=3, width=4.4 * u, wobble=1.2, overshoot=0)
     d = max(30, 6 * n)
-    items.append(stroke_item(f, f + d, line))
+    items.append(stroke_item(f, f + d, line, ink=SERIES_COLOUR))
     f += d
     # the last point's value, beside it, so the line's end can be read
     x, y = pts[-1]
     dot = Stroke(sp.ellipse(x, y, 7 * u, 7 * u, n=16), seed_of('dot', n - 1), passes=2, width=3.6 * u,
                  closed=True, overshoot=0)
-    items.append(stroke_item(f, f + 3, dot, pencil=False))
+    items.append(stroke_item(f, f + 3, dot, ink=SERIES_COLOUR, pencil=False))
     li, f, _ = write_lines(f, [end_label], vf, x + 16 * u, y - text.line_height(vf) * 0.55)
     items += li
     items = scaled(items, f0, draw_budget(f0, f1))
@@ -882,13 +912,13 @@ def figure_steady_spending_volatile_revenue(chart, L, f0, f1):
     items.append(stroke_item(f, f + 14, ax))
     f += 16
     sl = Stroke(spend, seed_of('spend'), passes=3, width=5 * u, wobble=0.8, overshoot=0)
-    items.append(stroke_item(f, f + 26, sl))
+    items.append(stroke_item(f, f + 26, sl, ink=SPENDING_COLOUR))
     f += 26
     ex, ey = spend[-1]
     si, f, sbx = write_lines(f + 2, ['Spending'], lf, ex + 14 * u, ey - text.line_height(lf) * 0.55)
     items += si
     rl = Stroke(rev, seed_of('rev'), passes=3, width=4.4 * u, wobble=1.2, overshoot=0)
-    items.append(stroke_item(f + 4, f + 44, rl))
+    items.append(stroke_item(f + 4, f + 44, rl, ink=REVENUE_COLOUR))
     f += 46
     # the revenue label beside the line's highest swing, above it
     k = max(range(N + 1), key=lambda i: rev_v(i / N) - (0.34 + 0.26 * i / N + 0.03 * (i / N) ** 2)
@@ -1006,7 +1036,7 @@ def figure_rainy_day_fund(chart, L, f0, f1):
     for i in (4, 5):
         h = Hatch(P(g['panels'][i]), seed_of('fund panel', i), angle=-58, spacing=13 * kw, cross=i == 5,
                   alpha=0.38, width=2.2 * kw)
-        items.append(hatch_item(at(282 + 4 * (i - 4)), at(296), h, pencil=False))
+        items.append(hatch_item(at(282 + 4 * (i - 4)), at(296), h, ink=FUND_CANOPY_COLOUR, pencil=False))
     # the jar, its rim, a glint on the glass, its shadow on the ground
     items.append(stroke_item(at(298), at(312), S(g['jar'], 'jar', passes=3, width=4)))
     items.append(stroke_item(at(312), at(318), S(g['rim'], 'rim', width=3.4, closed=True)))
@@ -1041,7 +1071,7 @@ def figure_rainy_day_fund(chart, L, f0, f1):
                 ctx.save()
                 ctx.translate(cx, cy - drop * (1 - p * p))  # falls with gravity
                 ctx.rotate((1 - p) * spin)
-                fill.draw(cv, 1.0, GRAPHITE, 0.9)
+                fill.draw(cv, 1.0, FUND_COIN_COLOUR, 0.9)
                 outer.draw(cv, 1.0)
                 inner.draw(cv, 1.0)
                 ctx.restore()

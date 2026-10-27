@@ -15,8 +15,12 @@ draws the same wobble) plus a few draw calls that take a progress 0..1:
   up the paper's tooth instead of printing flat.
 - `pencil_text`: lettering drawn through that grain.
 - `backdrop()`: the cream grid page, its grain and its spiral binding.
-- `draw_pencil`: the pencil itself, drawn in code.
+- `draw_pencil`: the pencil itself, drawn in code; it paints `colour` when
+  given one, so a coloured mark is drawn by a pencil of the same colour.
 - `draw_highlighter`: the highlighter pen that marks the official page.
+- `PALETTE`: the coloured-pencil colours (`OCHRE`, `HONEY`, `TEAL`, `SAGE`,
+  `BROWN`) charts, figures, timeline and list marks and checks are drawn
+  in, over graphite outlines; text stays `GRAPHITE`.
 """
 import math
 import random
@@ -29,9 +33,19 @@ import videobuilder as vb
 from videobuilder import paths, text
 
 GRAPHITE = (58, 55, 52)
-ORANGE = (214, 118, 38)   # the one coloured pencil
+ORANGE = (214, 118, 38)   # the heading accent
 PAPER = (242, 235, 216)
 GRID = (176, 164, 136)
+
+# The coloured-pencil palette for charts, figures, timeline and list marks,
+# checks and hatching: ochre, honey yellow, teal, sage green and warm
+# brown, never red (rule 4.1). Text and outlines stay GRAPHITE.
+OCHRE = (196, 140, 70)
+HONEY = (222, 178, 90)
+TEAL = (104, 148, 142)
+SAGE = (150, 178, 140)
+BROWN = (120, 80, 50)
+PALETTE = (OCHRE, HONEY, TEAL, SAGE, BROWN)
 
 RESTING_ANGLE = -0.72  # a pencil or highlighter at rest: body up and to the right
 
