@@ -1,62 +1,62 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 61.17,
+  "seconds": 57.84,
   "phrases": [
     {
       "text": "Proposition 2 is about California's Rainy Day Fund.",
       "start": 0.03,
-      "end": 3.95
+      "end": 3.43
     },
     {
       "text": "California's tax money rises and falls with the stock market, but its budget has to balance every year.",
-      "start": 5.01,
-      "end": 11.07
+      "start": 4.09,
+      "end": 10.77
     },
     {
       "text": "So the state puts money into the fund in good years, to use in bad years.",
-      "start": 12.13,
-      "end": 16.86
+      "start": 11.43,
+      "end": 15.64
     },
     {
       "text": "The trade-off is that money in the fund isn't spent on programs that year.",
-      "start": 17.92,
-      "end": 22.09
+      "start": 16.3,
+      "end": 21.08
     },
     {
       "text": "Today, required deposits stop once the fund reaches 10 percent.",
-      "start": 23.15,
-      "end": 27.57
+      "start": 21.74,
+      "end": 25.88
     },
     {
       "text": "Under Proposition 2, deposits would continue until the fund reaches 20 percent.",
-      "start": 28.63,
-      "end": 33.53
+      "start": 26.54,
+      "end": 31.86
     },
     {
       "text": "The Legislative Analyst's Office says budgets would be somewhat easier to balance in downturns.",
-      "start": 34.59,
-      "end": 39.99
+      "start": 32.52,
+      "end": 37.99
     },
     {
       "text": "Opponents say Proposition 2 weakens the spending limit and makes tax rebates less likely.",
-      "start": 41.05,
-      "end": 46.84
+      "start": 38.65,
+      "end": 44.82
     },
     {
       "text": "Supporters say Proposition 2's bigger fund would protect schools and services in a downturn.",
-      "start": 47.9,
-      "end": 53.59
+      "start": 45.48,
+      "end": 51.33
     },
     {
       "text": "A yes vote means the rules would change.",
-      "start": 54.65,
-      "end": 57.55
+      "start": 51.99,
+      "end": 54.51
     },
     {
       "text": "A no vote means the rules would not change.",
-      "start": 58.61,
-      "end": 61.14
+      "start": 55.17,
+      "end": 57.81
     }
   ],
   "inputs": {
@@ -73,14 +73,193 @@
       "A yes vote means the rules would change.",
       "A no vote means the rules would not change."
     ],
-    "gap": 1.0,
-    "engine": "chatterbox",
-    "model": "ResembleAI/chatterbox@5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
-    "seed": 0,
-    "exaggeration": 0.4,
-    "cfg_weight": 0.3,
-    "voice": "voices/narrator.wav",
-    "voice_sha256": "554c10f307082eb41a201d9caa5855baad50b0640cc2aa76cd0eda1cfba7b609"
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
   },
-  "sha256": "e7e62697b8936ed2e94c19ac06863160bb277efa5db36561a412e58c27c77c43"
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Proposition 2 is about California's Rainy Day Fund."
+      },
+      "bounds": [
+        0,
+        83040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Proposition 2 is about California's Rainy Day Fund.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "California's tax money rises and falls with the stock market, but its budget has to balance every year."
+      },
+      "bounds": [
+        97440,
+        259200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"California's tax money rises and falls with the stock market, but its budget has to balance every year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "So the state puts money into the fund in good years, to use in bad years."
+      },
+      "bounds": [
+        273600,
+        376080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"So the state puts money into the fund in good years, to use in bad years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The trade-off is that money in the fund isn't spent on programs that year."
+      },
+      "bounds": [
+        390480,
+        506640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The trade-off is that money in the fund isn't spent on programs that year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, required deposits stop once the fund reaches 10 percent."
+      },
+      "bounds": [
+        521040,
+        621840
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, required deposits stop once the fund reaches 10 percent.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Under Proposition 2, deposits would continue until the fund reaches 20 percent."
+      },
+      "bounds": [
+        636240,
+        765360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Under Proposition 2, deposits would continue until the fund reaches 20 percent.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The Legislative Analyst's Office says budgets would be somewhat easier to balance in downturns."
+      },
+      "bounds": [
+        779760,
+        912480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Legislative Analyst's Office says budgets would be somewhat easier to balance in downturns.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say Proposition 2 weakens the spending limit and makes tax rebates less likely."
+      },
+      "bounds": [
+        926880,
+        1076400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say Proposition 2 weakens the spending limit and makes tax rebates less likely.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say Proposition 2's bigger fund would protect schools and services in a downturn."
+      },
+      "bounds": [
+        1090800,
+        1232640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Proposition 2's bigger fund would protect schools and services in a downturn.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote means the rules would change."
+      },
+      "bounds": [
+        1247040,
+        1308960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote means the rules would change.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote means the rules would not change."
+      },
+      "bounds": [
+        1323360,
+        1388160
+      ]
+    }
+  ],
+  "sha256": "b858edbf80f88ce3ccad25b0188a362ca05c3ffbb21e785f3ea4c992854849cc"
 }

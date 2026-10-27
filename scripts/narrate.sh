@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 # Narrate one or more contests: export each script's narration text, then
-# synthesize it with videobuilder's Chatterbox engine.
+# synthesize it with videobuilder's Gemini engine in the one narrator voice.
 #
 # Usage: scripts/narrate.sh <contest-dir>...
 #
-# Needs the project .venv (see README.md) and a Chatterbox interpreter, found
-# at $VIDEOBUILDER_CHATTERBOX_PYTHON or else ~/.local/chatterbox/bin/python
-# (videobuilder's README has the install).
+# Needs the project .venv (see README.md) and GEMINI_API_KEY. The transcript
+# check that catches a reworded take runs faster-whisper in the Chatterbox
+# interpreter, found at $VIDEOBUILDER_CHATTERBOX_PYTHON or else
+# ~/.local/chatterbox/bin/python (videobuilder's README has the install).
 set -euo pipefail
 
 repo=$(cd "$(dirname "$(readlink -f "$0")")/.." && pwd)
@@ -18,9 +19,11 @@ if [ $# -eq 0 ]; then
     exit 2
 fi
 
+style=$(cat "$repo/voices/narration-style.txt")
+
 for dir in "$@"; do
     "$python" -m ballotreels narration "$dir"
     "$python" -m videobuilder say "$dir/narration.txt" \
-        --engine chatterbox --voice "$repo/voices/narrator.wav" --gap 1.0 --cfg-weight 0.3 \
+        --engine gemini --voice Rasalgethi --style "$style" --gap 0.6 \
         --out "$dir/narration.wav"
 done
