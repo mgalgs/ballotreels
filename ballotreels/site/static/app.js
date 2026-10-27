@@ -406,7 +406,7 @@ function renderHome() {
     el("p", { class: "promise-title", text: "How the videos are made" }),
     el("ul", { class: "promise" }, [
       el("li", { text: "Every claim names its source, listed under the video." }),
-      el("li", { text: "Both sides get the same time and the same words." }),
+      el("li", { text: "Both sides get the same time and the same number of words." }),
       el("li", { text: "Bias is a bug: if you spot it, report it." }),
     ]),
   ]));
