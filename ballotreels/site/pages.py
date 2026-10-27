@@ -60,7 +60,7 @@ def measure_meta(state_name: str, title: str, path: str,
     return PageMeta(
         title=f"{capitalize(state_name)} {title}, explained in 60 seconds",
         description=(f"A short, even-handed explainer of {state_name} "
-                     f"{title}: what it would do and what each side says, "
+                     f"{title}. What it would do and what each side says, "
                      f"every claim sourced."),
         path=path, image=poster or DEFAULT_IMAGE)
 
