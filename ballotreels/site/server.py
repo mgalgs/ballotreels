@@ -15,11 +15,13 @@ import shutil
 import threading
 import time
 import urllib.parse
+import urllib.request
 from dataclasses import dataclass, field
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any
 
+from ..geo.geocoder import AddressNotFound, GeocoderError, lookup_address
 from ..geo.lookup import GeoData
 from ..index import ContestIndex, ballot_order, key_for, level_of, load_index
 from ..queue import JobQueue
@@ -41,10 +43,18 @@ class Deps:
     rate_lock: threading.Lock = field(default_factory=threading.Lock)
     rate_hits: dict[str, list[float]] = field(default_factory=dict)
     clock: Any = None
+    geocoder_fetch: Any = None
 
     def __post_init__(self):
         if self.clock is None:
             self.clock = time.time
+        if self.geocoder_fetch is None:
+            self.geocoder_fetch = _fetch_geocoder
+
+
+def _fetch_geocoder(url: str) -> str:
+    with urllib.request.urlopen(url, timeout=15) as resp:
+        return resp.read().decode("utf-8")
 
 
 def _incoming_dir(data_dir: Path, job_id: int, claim: str) -> Path:
@@ -322,6 +332,8 @@ class PublicHandler(_JsonHandler):
                 return self._job_status(int(m.group(1)))
             if path == "/api/generate" and method == "POST":
                 return self._generate()
+            if path == "/api/address" and method == "POST":
+                return self._address()
             m = re.fullmatch(r"/v/([0-9a-f]{16})/(video\.mp4|poster\.jpg)",
                              path)
             if m and method in ("GET", "HEAD"):
@@ -350,6 +362,22 @@ class PublicHandler(_JsonHandler):
         kind = self._query().get("kind", [None])[0]
         kinds = [kind] if kind else None
         self._json(200, deps.geo.zip_shapes(zip_code, kinds=kinds))
+
+    def _address(self) -> None:
+        deps = self.server.deps
+        body = self._read_json()
+        address = body.get("address")
+        if not address or not isinstance(address, str):
+            return self._json(400, {"error": "address is required"})
+        abbr = state_abbr(deps.index.election.state)
+        try:
+            result = lookup_address(address, deps.geocoder_fetch,
+                                    deps.config.geocoder_url, deps.geo, abbr)
+        except AddressNotFound as e:
+            return self._json(404, {"error": str(e)})
+        except GeocoderError as e:
+            return self._json(502, {"error": str(e)})
+        self._json(200, result)
 
     def _ballot(self) -> None:
         deps = self.server.deps

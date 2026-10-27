@@ -1,0 +1,39 @@
+{
+  "result": {
+    "input": {
+      "address": {
+        "address": "123 Fake St, Example, CA"
+      }
+    },
+    "addressMatches": [
+      {
+        "matchedAddress": "123 FAKE ST, EXAMPLE, CA, 99999",
+        "coordinates": {
+          "x": 5.0,
+          "y": 5.0
+        },
+        "geographies": {
+          "119th Congressional Districts": [
+            {
+              "GEOID": "0601",
+              "NAME": "Congressional District 1"
+            }
+          ],
+          "State Legislative Districts - Upper": [
+            {
+              "GEOID": "06001",
+              "NAME": "State Senate District 1"
+            }
+          ],
+          "Counties": [
+            {
+              "GEOID": "06999",
+              "NAME": "Example County",
+              "BASENAME": "Example"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
