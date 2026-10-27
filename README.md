@@ -176,8 +176,24 @@ follow each state's chamber names (State Assembly in California and New
 York, State House in most others; none in D.C.).
 
 The home page also lists every served state, by name; each links to
-`/state/<st>` (e.g. `/state/ut`), a shareable page of that state's
-statewide measures, without a district lookup. An election whose
+`/<st>` (e.g. `/ut`), a shareable page of that state's statewide
+measures, without a district lookup. `/<st>/<year>` (e.g. `/ut/2026`)
+is the same page for that year's election, and a measure's page is
+`/<st>/<year>/<measure>` (e.g. `/ut/2026/amendment-a`, `/ca/2026/prop-3`):
+the contest id without its election prefix, under the year of the
+election's date, so a later election can never reuse a link. The app
+keeps these paths in the address bar as it navigates, so any page can
+be copied and shared; the zip and street-address ballot pages stay on
+`/#/...` routes, since they are personal. Each of these pages is
+answered with its own `<title>`, description and link-preview tags
+(Open Graph and Twitter card), with absolute URLs under `--site-url`;
+a measure's preview image is its current video's poster, or else the
+site-wide `static/og-card.png` (drawn by `scripts/og_card.py`). Old
+links keep working: `/state/<st>` redirects to `/<st>`, and the app
+takes `#/contest/<id>`, `#/state/<st>` and the other old hash routes to
+the right page, showing its short path. A path naming no served state,
+or no contest in it, is a 404 with the app's not-found view. Paths under
+`/api/`, `/static/`, `/v/`, `/admin` and `/worker/` are never pages. An election whose
 `contests.toml` has the `[election]` table and no contests (New York,
 Oregon and Texas in 2026) is still covered: its state page, and the
 ballot for any zip in it (no geo data needed), say it has no statewide
@@ -202,6 +218,7 @@ measures on that election day.
 | `--eta-default-minutes` | `BALLOTREELS_ETA_DEFAULT_MINUTES` | `10` |
 | `--max-upload-mb` | `BALLOTREELS_MAX_UPLOAD_MB` | `500` |
 | `--geocoder-url` | `BALLOTREELS_GEOCODER_URL` | the Census Geocoder |
+| `--site-url` | `BALLOTREELS_SITE_URL` | `https://ballotreels.org`; the base of the absolute URLs in link previews (never taken from the request's `Host`) |
 
 `--generate-limit` and `--generate-window` bound how many videos one
 client IP may start generating in a rolling window (joining an

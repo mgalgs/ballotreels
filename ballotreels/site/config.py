@@ -12,6 +12,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 DATA_ROOT = REPO_ROOT / "data"
 
 DEFAULT_GEOCODER_URL = "https://geocoding.geo.census.gov/geocoder"
+DEFAULT_SITE_URL = "https://ballotreels.org"
 
 
 def _resolve(flag, env_name: str, default, cast):
@@ -55,6 +56,9 @@ class Config:
     generate_global_limit: int = 30
     address_limit: int = 30
     require_approval: bool = True
+    # The base of the absolute URLs in link-preview tags; never taken
+    # from a request's Host header.
+    site_url: str = DEFAULT_SITE_URL
 
 
 def load_config(args) -> Config:
@@ -100,6 +104,9 @@ def load_config(args) -> Config:
         require_approval=_resolve(getattr(args, "require_approval", None),
                                   "BALLOTREELS_REQUIRE_APPROVAL", True,
                                   _bool),
+        site_url=_resolve(getattr(args, "site_url", None),
+                          "BALLOTREELS_SITE_URL", DEFAULT_SITE_URL,
+                          str).rstrip("/"),
     )
 
 

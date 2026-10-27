@@ -1,5 +1,7 @@
-// ballotreels phone UI: a hash router over the public JSON API. No
-// build step, no framework. Map drawing uses Leaflet when it is loaded
+// ballotreels phone UI: a router over the public JSON API, on short
+// paths (/ut, /ut/2026/amendment-a) kept in the address bar with the
+// History API, so it can be copied and shared. No build step, no
+// framework. Map drawing uses Leaflet when it is loaded
 // (see index.html) and falls back to a plain inline SVG when it is
 // not, e.g. offline.
 
@@ -101,8 +103,8 @@ function notice(title, message, actions) {
 
 function homeActions() {
   return [
-    linkButton("Try another zip", "#/", "btn-primary"),
-    linkButton("Use my address", "#/address", "btn-quiet"),
+    linkButton("Try another zip", "/", "btn-primary"),
+    linkButton("Use my address", "/#/address", "btn-quiet"),
   ];
 }
 
@@ -136,7 +138,7 @@ function offlineNotice() {
   return notice("We couldn't reach ballotreels",
     "Check your connection and try again.",
     [button("Try again", { class: "btn btn-primary", onclick: route }),
-     linkButton("Start over", "#/", "btn-quiet")]);
+     linkButton("Start over", "/", "btn-quiet")]);
 }
 
 // -- map drawing -----------------------------------------------------
@@ -331,12 +333,59 @@ function drawFallbackSvg(container, featureCollection, onSelect, letters) {
 
 // -- routes -----------------------------------------------------------
 
-function parseHash() {
-  const hash = location.hash.replace(/^#/, "") || "/";
-  const [path, query] = hash.split("?");
-  const params = new URLSearchParams(query || "");
-  return { path, params };
+// The page's route: a hash route (the zip and address flow, which are
+// personal and not shared, and every link from before the short paths)
+// wins over the path.
+function currentRoute() {
+  const hash = location.hash.replace(/^#/, "");
+  if (hash) {
+    const [path, query] = hash.split("?");
+    return { path, params: new URLSearchParams(query || ""), hash: true };
+  }
+  return { path: location.pathname,
+           params: new URLSearchParams(location.search), hash: false };
 }
+
+// The address bar's URL when route() last ran: a popstate or hashchange
+// for the URL already shown (both fire for one hash navigation) is not
+// routed again.
+let routedHref = null;
+
+// Navigates within the app: a new history entry (or, with `replace`,
+// the current one rewritten) and the page for it.
+function go(href, replace) {
+  if (replace) history.replaceState(null, "", href);
+  else history.pushState(null, "", href);
+  route();
+}
+
+// Shows the short path for the page already on screen (an old link's
+// page, once its short path is known).
+function showPath(href) {
+  if (location.pathname + location.search + location.hash === href) return;
+  history.replaceState(null, "", href);
+  routedHref = location.href;
+}
+
+// Paths the server answers itself: a link to one is a real page load.
+const SERVER_PATHS = /^\/(?:api|static|v|admin)(?:\/|$)/;
+
+// Same-site links navigate in the app rather than reloading the page.
+// An old-style "#/..." href is taken from the site root, so it never
+// lands on top of a short path (/ut#/address).
+document.addEventListener("click", (event) => {
+  if (event.defaultPrevented || event.button !== 0 || event.metaKey ||
+      event.ctrlKey || event.shiftKey || event.altKey) return;
+  const link = event.target.closest("a[href]");
+  if (!link || link.target || link.hasAttribute("download")) return;
+  const raw = link.getAttribute("href");
+  const url = new URL(raw.startsWith("#") ? `/${raw}` : raw, location.href);
+  if (url.origin !== location.origin || SERVER_PATHS.test(url.pathname)) {
+    return;
+  }
+  event.preventDefault();
+  go(url.pathname + url.search + url.hash);
+});
 
 // Bumped on every route() call. A render that awaits the server checks
 // it afterwards and drops its result if the voter has moved on, so a
@@ -347,34 +396,41 @@ function isStale(token) {
   return token !== routeToken;
 }
 
-// A state's page is shared as /state/<st>; any hash route on top of it
-// (the header's home link, a contest) wins.
-function statePath() {
-  if (location.hash && location.hash !== "#") return null;
-  const m = location.pathname.match(/^\/state\/([a-z]{2})$/);
-  return m ? m[1] : null;
+function notFound() {
+  app.appendChild(notice("Page not found",
+    "That link doesn't go anywhere on ballotreels.",
+    [linkButton("Find your ballot", "/", "btn-primary")]));
 }
 
 async function route() {
   routeToken += 1;
-  const { path, params } = parseHash();
+  routedHref = location.href;
+  const { path, params, hash } = currentRoute();
   app.innerHTML = "";
   window.scrollTo(0, 0);
   document.title = "ballotreels";
-  const shared = statePath();
-  if (shared) return renderState(shared);
-  if (path === "/" || path === "") return renderHome();
+  if (path === "/" || path === "") {
+    showPath("/");
+    return renderHome();
+  }
+  // A state's page: /ut, its election by year (/ut/2026), and the
+  // old /state/ut and #/state/ut, which show as /ut once loaded.
   let m = path.match(/^\/state\/([a-z]{2})$/);
-  if (m) return renderState(m[1]);
-  m = path.match(/^\/zip\/([0-9]+)$/);
+  if (m) return renderState(m[1], null, true);
+  m = !hash && path.match(/^\/([a-z]{2})(?:\/(\d{4}))?$/);
+  if (m) return renderState(m[1], m[2] || null, false);
+  // A measure's page: /ut/2026/amendment-a, and the old #/contest/<id>.
+  m = !hash && path.match(/^\/([a-z]{2})\/(\d{4})\/([^/]+)$/);
+  if (m) return renderContest(`/api/contest/${m[1]}/${m[2]}/${m[3]}`);
+  m = hash && path.match(/^\/contest\/(.+)$/);
+  if (m) return renderContest(`/api/contest/${m[1]}`);
+  m = hash && path.match(/^\/zip\/([0-9]+)$/);
   if (m) return renderZip(m[1]);
-  if (path === "/address") return renderAddress();
-  if (path === "/ballot") return renderBallot(params.getAll("d"), params.get("addr"));
-  m = path.match(/^\/contest\/(.+)$/);
-  if (m) return renderContest(m[1]);
-  app.appendChild(notice("Page not found",
-    "That link doesn't go anywhere on ballotreels.",
-    [linkButton("Find your ballot", "#/", "btn-primary")]));
+  if (hash && path === "/address") return renderAddress();
+  if (hash && path === "/ballot") {
+    return renderBallot(params.getAll("d"), params.get("addr"));
+  }
+  notFound();
 }
 
 function renderHome() {
@@ -392,7 +448,7 @@ function renderHome() {
       event.preventDefault();
       const zip = input.value.trim();
       if (/^\d{5}$/.test(zip)) {
-        location.hash = `#/zip/${zip}`;
+        go(`/#/zip/${zip}`);
       } else {
         note.textContent = "A zip code is 5 digits.";
         input.focus();
@@ -414,7 +470,7 @@ function renderHome() {
                     "ballot, with every claim sourced." }),
     form,
     el("div", { class: "or-rule", text: "or" }),
-    linkButton("Use my street address", "#/address", "btn-quiet btn-block"),
+    linkButton("Use my street address", "/#/address", "btn-quiet btn-block"),
     el("p", { class: "field-note",
               text: "Pins down your exact districts when a zip code " +
                     "spans more than one." }),
@@ -443,7 +499,7 @@ async function fillStates(list, section, token) {
   const { ok, body } = await getJson("/api/states");
   if (isStale(token) || !ok || !body.states.length) return;
   list.replaceChildren(...body.states.map((s) => el("li", {}, [
-    el("a", { class: "btn btn-quiet state-link", href: `/state/${s.state}`,
+    el("a", { class: "btn btn-quiet state-link", href: `/${s.state}`,
               text: s.name.replace(/^the /, "") }),
   ])));
   section.hidden = false;
@@ -542,10 +598,10 @@ async function renderAddress() {
     const params = divisions.map((d) => `d=${encodeURIComponent(d)}`)
       .concat([`addr=${encodeURIComponent(body.matched_address || "")}`])
       .join("&");
-    location.hash = `#/ballot?${params}`;
+    go(`/#/ballot?${params}`);
   };
   app.appendChild(el("section", {}, [
-    backLink("Use a zip code instead", "#/"),
+    backLink("Use a zip code instead", "/"),
     heading("h1", "Your street address"),
     el("p", { class: "lead",
               text: "Your address pins down exactly which districts " +
@@ -580,7 +636,7 @@ async function renderZip(zip) {
           `We don't cover ${body.state_name} yet` :
           "We don't cover this zip yet",
         `Zip code ${zip} is outside the states ballotreels covers so far.`,
-        [linkButton("Try another zip code", "#/", "btn-primary")]));
+        [linkButton("Try another zip code", "/", "btn-primary")]));
     } else if (status === 404) {
       app.appendChild(notice(`No district data for ${zip}`,
         "We don't have this zip code's districts. Check the number, " +
@@ -598,8 +654,8 @@ async function renderZip(zip) {
     app.appendChild(notice(`Zip code ${zip} crosses a state line`,
       `It is partly in ${body.states.map((s) => s.name).join(" and ")}. ` +
       "Your street address tells us which ballot is yours.",
-      [linkButton("Use my street address", "#/address", "btn-primary"),
-       linkButton("Change zip code", "#/", "btn-quiet")]));
+      [linkButton("Use my street address", "/#/address", "btn-primary"),
+       linkButton("Change zip code", "/", "btn-quiet")]));
     return;
   }
   if (body.ambiguous.length === 0) {
@@ -614,7 +670,7 @@ async function renderZip(zip) {
       .join("&");
     // Replace, so Back from the ballot returns home, not to a page
     // that would forward straight back here.
-    location.replace(`#/ballot?${params}`);
+    go(`/#/ballot?${params}`, true);
     return;
   }
   await renderAmbiguousKind(zip, body, body.ambiguous[0]);
@@ -658,7 +714,7 @@ async function renderAmbiguousKind(zip, zipDoc, kind) {
   }
   const more = zipDoc.ambiguous.length - 1;
   app.appendChild(el("section", {}, [
-    backLink("Change zip code", "#/"),
+    backLink("Change zip code", "/"),
     heading("h1", `Which ${kindName} are you in?`),
     el("p", {}, [
       `Zip code ${zip} is split between ${entries.length} ${kindName}s. ` +
@@ -673,7 +729,7 @@ async function renderAmbiguousKind(zip, zipDoc, kind) {
     list,
     el("p", { class: "muted" }, [
       "Not sure which? ",
-      el("a", { href: "#/address", text: "Look up your street address" }),
+      el("a", { href: "/#/address", text: "Look up your street address" }),
       " and we'll work it out.",
     ]),
   ]));
@@ -703,7 +759,7 @@ function selectDistrict(zip, zipDoc, chosenKind, chosenOcdId) {
     for (const entry of entries) divisions.push(entry.ocd_id);
   }
   const params = divisions.map((d) => `d=${encodeURIComponent(d)}`).join("&");
-  location.hash = `#/ballot?${params}`;
+  go(`/#/ballot?${params}`);
 }
 
 const LEVEL_NAMES = {
@@ -786,29 +842,29 @@ async function renderBallot(divisions, matchedAddress) {
         "Something went wrong on our side. Try again in a moment, or " +
         "start over with your zip code.",
         [button("Try again", { class: "btn btn-primary", onclick: route }),
-         linkButton("Start over", "#/", "btn-quiet")]));
+         linkButton("Start over", "/", "btn-quiet")]));
     return;
   }
   // The contest page's back link returns to this ballot.
-  rememberBack(location.hash, "Your ballot");
+  rememberBack(`/${location.hash}`, "Your ballot");
 
   const contests = body.levels.flatMap((level) => level.contests);
   const ready = contests.filter((c) => c.status === "cached").length;
   const when = electionDate(body.election);
   const section = el("section", {}, [
-    backLink("Change zip code", "#/"),
+    backLink("Change zip code", "/"),
     heading("h1", "Your ballot"),
     when ? el("p", { class: "muted", text: `Election day: ${when}` }) : null,
   ]);
   if (matchedAddress) {
     section.appendChild(el("p", { class: "box matched" }, [
       el("span", { text: `Matched address: ${matchedAddress}. ` }),
-      el("a", { href: "#/address", text: "Not your address? Try again" }),
+      el("a", { href: "/#/address", text: "Not your address? Try again" }),
     ]));
   }
   if (contests.length === 0 && body.empty_election) {
     section.appendChild(noMeasuresNotice(body, [
-      linkButton("Try another zip", "#/", "btn-primary")]));
+      linkButton("Try another zip", "/", "btn-primary")]));
     app.appendChild(section);
     return;
   }
@@ -833,7 +889,9 @@ async function renderBallot(divisions, matchedAddress) {
   app.appendChild(section);
 }
 
-async function renderState(abbr) {
+// `year`, if given, must be the year of the state's election; `old`: an
+// old link, which shows as the short path once the page is in.
+async function renderState(abbr, year, old) {
   app.appendChild(loading("Getting the measures..."));
   const token = routeToken;
   const { ok, status, body } = await getJson(`/api/state/${abbr}`);
@@ -847,29 +905,34 @@ async function renderState(abbr) {
           `We don't cover ${body.state_name} yet` :
           "We don't cover that state yet",
         "ballotreels doesn't have this state's ballot so far.",
-        [linkButton("Find your ballot", "#/", "btn-primary")]));
+        [linkButton("Find your ballot", "/", "btn-primary")]));
     } else {
       app.appendChild(notice("We couldn't load these measures",
         "Something went wrong on our side. Try again in a moment.",
         [button("Try again", { class: "btn btn-primary", onclick: route }),
-         linkButton("Start over", "#/", "btn-quiet")]));
+         linkButton("Start over", "/", "btn-quiet")]));
     }
     return;
   }
+  if (year && body.year !== year) {
+    notFound();
+    return;
+  }
+  if (old) showPath(`/${body.state}`);
   const name = body.state_name.replace(/^the /, "");
   document.title = `${name} measures · ballotreels`;
-  rememberBack(`/state/${body.state}`, `${name} measures`);
+  rememberBack(location.pathname, `${name} measures`);
   const contests = body.levels.flatMap((level) => level.contests);
   const ready = contests.filter((c) => c.status === "cached").length;
   const when = electionDate(body.election);
   const section = el("section", {}, [
-    backLink("Find your ballot", "#/"),
+    backLink("Find your ballot", "/"),
     heading("h1", `${name} statewide measures`),
     when ? el("p", { class: "muted", text: `Election day: ${when}` }) : null,
   ]);
   if (contests.length === 0) {
     section.appendChild(noMeasuresNotice(body, [
-      linkButton("Find your ballot", "#/", "btn-primary")]));
+      linkButton("Find your ballot", "/", "btn-primary")]));
     app.appendChild(section);
     return;
   }
@@ -882,7 +945,7 @@ async function renderState(abbr) {
   }
   section.appendChild(el("p", { class: "muted small" }, [
     "Your own ballot may also have district and county measures. ",
-    el("a", { href: "#/", text: "Find it by zip code" }),
+    el("a", { href: "/", text: "Find it by zip code" }),
     ".",
   ]));
   app.appendChild(section);
@@ -923,7 +986,7 @@ function renderContestCard(contest) {
     } else {
       thumb = el("span", { class: "thumb thumb-blank" }, [icon("play")]);
     }
-    return el("a", { class: "box contest", href: `#/contest/${contest.id}` }, [
+    return el("a", { class: "box contest", href: contest.path }, [
       thumb,
       el("div", { class: "contest-body" }, [
         ...contestHeading(contest),
@@ -1063,7 +1126,7 @@ function generateControls(contest, full, onDone, onStarted, title) {
     const { status: httpStatus, body, headers } = await postJson(
       "/api/generate", { contest: contest.id });
     if (body && body.status === "cached") {
-      location.hash = `#/contest/${contest.id}`;
+      go(contest.path);
       return;
     }
     if (body && body.job) {
@@ -1188,25 +1251,28 @@ function videoNodes(body) {
           el("div", { class: "fullscreen-row" }, [full])];
 }
 
-async function renderContest(contestId) {
+// `apiPath`: the contest's API URL, by short path or (an old link) by id.
+async function renderContest(apiPath) {
   const token = routeToken;
   app.appendChild(loading("Loading..."));
-  const { ok, status, body } = await getJson(`/api/contest/${contestId}`);
+  const { ok, status, body } = await getJson(apiPath);
   if (isStale(token)) return;
   app.innerHTML = "";
   const recalled = recalledBack();
   const back = recalled ? backLink(recalled.label, recalled.href) :
-    backLink("Find your ballot", "#/");
+    backLink("Find your ballot", "/");
   if (!ok) {
     app.appendChild(status === 0 ? offlineNotice() :
       notice("We couldn't find that contest",
         "The link may be old, or the contest may have been renamed.",
         [linkButton(recalled ? `Back to ${recalled.label}` :
                       "Find your ballot",
-                    recalled ? recalled.href : "#/", "btn-primary")]));
+                    recalled ? recalled.href : "/", "btn-primary")]));
     return;
   }
+  showPath(body.path);
   const { eyebrow, title } = titleParts(body);
+  document.title = `${eyebrow ? `${eyebrow}: ` : ""}${title} · ballotreels`;
   const section = el("section", { class: "contest-page" }, [
     back,
     eyebrow ? el("p", { class: "contest-eyebrow", text: eyebrow }) : null,
@@ -1298,7 +1364,11 @@ async function renderContest(contestId) {
 }
 
 // The script tag is the last thing in <body>, so the DOM (and #app) is
-// already parsed by the time this runs; only hash changes need a
-// listener after the first route().
-window.addEventListener("hashchange", route);
+// already parsed by the time this runs; after the first route(), only
+// Back, Forward and a hash typed into the address bar need a listener.
+function onHistory() {
+  if (location.href !== routedHref) route();
+}
+window.addEventListener("popstate", onHistory);
+window.addEventListener("hashchange", onHistory);
 route();

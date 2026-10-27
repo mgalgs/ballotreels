@@ -132,10 +132,22 @@ class StatePageTest(BrowseTestCase):
         self.assertEqual(status, 404)
 
     def test_state_url_serves_the_page(self):
-        for path in ("/state/ca", "/state/tx", "/state/fl"):
+        for path in ("/ca", "/tx"):
             with self.subTest(path):
                 status, raw, headers = self._public_raw(path)
                 self.assertEqual(status, 200)
+                self.assertIn(b"/static/app.js", raw)
+        # The old /state/<st> link goes to the short one.
+        for path in ("/state/ca", "/state/tx"):
+            with self.subTest(path):
+                status, _, headers = self._public_raw(path)
+                self.assertEqual(status, 301)
+                self.assertEqual(headers["Location"], path[len("/state"):])
+        # A state not served: the app says so, as a 404.
+        for path in ("/fl", "/state/fl"):
+            with self.subTest(path):
+                status, raw, _ = self._public_raw(path)
+                self.assertEqual(status, 404)
                 self.assertIn(b"/static/app.js", raw)
         for path in ("/state/california", "/state/ca/x", "/states"):
             with self.subTest(path):
@@ -235,7 +247,7 @@ class AppJsTest(unittest.TestCase):
     def test_app_handles_states_and_unavailable(self):
         app_js = (STATIC_DIR / "app.js").read_text(encoding="utf-8")
         for needle in ("/api/states", "/api/state/${abbr}",
-                       "href: `/state/${s.state}`", "body.empty_election",
+                       "href: `/${s.state}`", "body.empty_election",
                        "There are no statewide measures on ${name}'s ballot"):
             self.assertIn(needle, app_js)
         m = re.search(r"const UNAVAILABLE_STATES = (\[[^\]]*\]);", app_js)

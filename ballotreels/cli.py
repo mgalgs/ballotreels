@@ -369,6 +369,10 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
                             "500)")
     serve.add_argument("--geocoder-url", default=None,
                        help="base URL of the Census Geocoder")
+    serve.add_argument("--site-url", default=None,
+                       help="the site's public base URL, for the absolute "
+                            "URLs in link previews (default: "
+                            "https://ballotreels.org)")
     worker = sub.add_parser("worker", help="run a pull worker")
     worker.add_argument("--server", default=None,
                         help="the serve tier's private listener URL; "

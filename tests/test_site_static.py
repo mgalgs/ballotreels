@@ -151,6 +151,7 @@ SELECT_DISTRICT_HARNESS = r"""
 const src = require("fs").readFileSync(process.argv[1], "utf8");
 const fn = src.match(/function selectDistrict[\s\S]*?\n}\n/)[0];
 const location = { hash: "" };
+const go = (href) => { location.hash = href.replace(/^\//, ""); };
 let next = null;
 const renderAmbiguousKind = (zip, doc, kind) => { next = [doc, kind]; };
 eval(fn);

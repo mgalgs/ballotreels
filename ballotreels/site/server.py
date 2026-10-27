@@ -31,6 +31,7 @@ from ..index import (ContestIndex, IndexEntry, ballot_order, key_for,
                      level_of, load_index)
 from ..queue import JobQueue
 from ..standard import Standard, load_standard
+from . import pages
 from .config import (Config, ElectionResolutionError, resolve_election_dirs,
                      state_abbr)
 
@@ -65,6 +66,9 @@ HOUR = 3600
 # A rate-limit bucket that is not a client IP.
 GLOBAL_BUCKET = "*"
 
+# Paths that are never a state's or a measure's page, whatever follows.
+RESERVED_PREFIXES = ("/api/", "/static/", "/v/", "/admin", "/worker/")
+
 
 @dataclass(frozen=True)
 class StateElection:
@@ -73,6 +77,39 @@ class StateElection:
     abbr: str
     index: ContestIndex
     geo: GeoData | None
+
+    @property
+    def year(self) -> str:
+        """The year of the election's date (its id ends with it), the
+        year in its pages' paths."""
+        return election_year(self.index.election.id)
+
+    def path(self) -> str:
+        """The state page's short path, e.g. "/ut"."""
+        return f"/{self.abbr}"
+
+    def contest_path(self, entry: IndexEntry) -> str:
+        """A contest's short path: /<st>/<year>/<id without its election
+        prefix>, e.g. "/ut/2026/amendment-a"."""
+        slug = entry.id[len(self.index.election.id) + 1:]
+        return f"/{self.abbr}/{self.year}/{slug.lower()}"
+
+    def contest_at(self, year: str, slug: str) -> IndexEntry | None:
+        """The contest whose short path has this year and slug."""
+        if year != self.year:
+            return None
+        wanted = f"/{self.abbr}/{year}/{slug}"
+        return next((e for e in self.index.entries
+                     if self.contest_path(e) == wanted), None)
+
+
+_ELECTION_YEAR_RE = re.compile(r"-(\d{4})-\d{2}-\d{2}$")
+
+
+def election_year(election_id: str) -> str | None:
+    """"ut-2026-11-03" -> "2026"; None for an id without a date."""
+    m = _ELECTION_YEAR_RE.search(election_id)
+    return m.group(1) if m else None
 
 
 @dataclass
@@ -182,6 +219,8 @@ def load_states(config: Config, warn=None) -> dict[str, StateElection]:
                 f"{election_dir}: state {index.election.state!r} is not a "
                 f"state OCD-ID")
         if abbr in dirs:
+            # One per state, so one per state and year: page paths
+            # (/<st>/<year>/...) never have to guess between two.
             raise ElectionResolutionError(
                 f"two elections for state {abbr!r}: {dirs[abbr]} and "
                 f"{election_dir}; pass --election to choose")
@@ -195,6 +234,12 @@ def load_states(config: Config, warn=None) -> dict[str, StateElection]:
                  f"`python -m ballotreels geo build --state {abbr}`); its "
                  f"zips will not be found")
         states[abbr] = StateElection(abbr=abbr, index=index, geo=geo)
+    for abbr, state in states.items():
+        if state.year is None:
+            # The year is part of every page path of the election.
+            raise ElectionResolutionError(
+                f"{dirs[abbr]}: election id {state.index.election.id!r} "
+                f"does not end with its date (YYYY-MM-DD)")
     return states
 
 
@@ -439,8 +484,9 @@ def _contest_status(key, deps: Deps) -> tuple[str, Any, dict[str, Any] | None]:
     return "none", None, None
 
 
-def _contest_summary(entry, election_id: str, deps: Deps) -> dict[str, Any]:
-    key = key_for(election_id, entry, deps.standard)
+def _contest_summary(entry, state: StateElection,
+                     deps: Deps) -> dict[str, Any]:
+    key = key_for(state.index.election.id, entry, deps.standard)
     status, video, job = _contest_status(key, deps)
     return {
         "id": entry.id,
@@ -448,14 +494,16 @@ def _contest_summary(entry, election_id: str, deps: Deps) -> dict[str, Any]:
         "title": entry.title,
         "number": entry.number,
         "office": entry.office,
+        "path": state.contest_path(entry),
         "status": status,
         "video_url": (video.urls.get("video") if video else None),
         "job": job,
     }
 
 
-def _contest_detail(entry, election_id: str, deps: Deps) -> dict[str, Any]:
-    key = key_for(election_id, entry, deps.standard)
+def _contest_detail(entry, state: StateElection,
+                    deps: Deps) -> dict[str, Any]:
+    key = key_for(state.index.election.id, entry, deps.standard)
     status, video, job = _contest_status(key, deps)
     return {
         "id": entry.id,
@@ -463,6 +511,10 @@ def _contest_detail(entry, election_id: str, deps: Deps) -> dict[str, Any]:
         "title": entry.title,
         "number": entry.number,
         "office": entry.office,
+        "path": state.contest_path(entry),
+        "state": state.abbr,
+        "state_name": _state_name(state.abbr),
+        "election": state.index.election.id,
         "status": status,
         "video_url": (video.urls.get("video") if video else None),
         "poster_url": (video.urls.get("poster") if video else None),
@@ -628,6 +680,9 @@ class PublicHandler(_JsonHandler):
             m = re.fullmatch(r"/api/contest/([^/]+)", path)
             if m and method == "GET":
                 return self._contest(m.group(1))
+            m = re.fullmatch(r"/api/contest/([a-z]{2})/(\d{4})/([^/]+)", path)
+            if m and method == "GET":
+                return self._contest_at(*m.groups())
             m = re.fullmatch(r"/api/jobs/(\d+)", path)
             if m and method == "GET":
                 return self._job_status(int(m.group(1)))
@@ -643,18 +698,80 @@ class PublicHandler(_JsonHandler):
                 if self._serve_static(path[len("/static/"):]):
                     return
                 return self._not_found()
-            # A state's page has its own URL to share; the page itself
-            # is the one-page app, which reads the path.
-            if ((path == "/" or re.fullmatch(r"/state/[a-z]{2}", path))
-                    and method in ("GET", "HEAD")):
-                if self._serve_static("index.html"):
-                    return
-                return self._not_found()
+            if (method in ("GET", "HEAD") and
+                    not path.startswith(RESERVED_PREFIXES)):
+                return self._page(path)
             return self._not_found()
         except BadRequest as e:
             self._json(e.status, {"error": e.message})
         except BrokenPipeError:
             pass
+
+    def _page(self, path: str) -> None:
+        """A page of the one-page app (which reads the path): its own
+        title and link-preview tags for the home, a state's and a
+        measure's page; the app's not-found view, as a 404, for a path
+        that names no served state or no contest in it."""
+        deps = self.server.deps
+        # Typed by hand from a video: /UT/ is /ut.
+        normal = path.lower().rstrip("/") or "/"
+        if normal != path and self._page_meta(normal) is not None:
+            return self._redirect(normal)
+        # The old shared link of a state's page.
+        m = re.fullmatch(r"/state/([a-z]{2})", normal)
+        if m and m.group(1) in deps.states:
+            return self._redirect(deps.states[m.group(1)].path())
+        meta = self._page_meta(path)
+        if meta is None:
+            return self._html(404, pages.not_found_meta(path))
+        self._html(200, meta)
+
+    def _page_meta(self, path: str) -> pages.PageMeta | None:
+        """The tags of the page at `path`, or None if there is none."""
+        deps = self.server.deps
+        if path == "/":
+            return pages.home_meta()
+        m = re.fullmatch(r"/([a-z]{2})(?:/(\d{4}))?", path)
+        if m:
+            state = deps.states.get(m.group(1))
+            if state is None or m.group(2) not in (None, state.year):
+                return None
+            return pages.state_meta(_state_name(state.abbr), path,
+                                    len(_statewide_measures(state)))
+        m = re.fullmatch(r"/([a-z]{2})/(\d{4})/([^/]+)", path)
+        if m:
+            state = deps.states.get(m.group(1))
+            entry = state.contest_at(m.group(2), m.group(3)) if state else None
+            if entry is None:
+                return None
+            key = key_for(state.index.election.id, entry, deps.standard)
+            video = deps.queue.video_for(key) if key is not None else None
+            poster = video.urls.get("poster") if video else None
+            return pages.measure_meta(_state_name(state.abbr), entry.title,
+                                      path, poster)
+        return None
+
+    def _html(self, status: int, meta: pages.PageMeta) -> None:
+        template = (STATIC_DIR / "index.html").read_text(encoding="utf-8")
+        body = pages.render_page(template, meta,
+                                 self.server.deps.config.site_url
+                                 ).encode("utf-8")
+        self.send_response(status)
+        self.send_header("Content-Type", CONTENT_TYPE_BY_EXT[".html"])
+        self.send_header("Content-Length", str(len(body)))
+        # The tags follow the video (its poster), so always revalidate.
+        self.send_header("Cache-Control", "no-cache")
+        self.end_headers()
+        if self.command != "HEAD":
+            self.wfile.write(body)
+
+    def _redirect(self, path: str) -> None:
+        query = urllib.parse.urlsplit(self.path).query
+        self.send_response(301)
+        # Site-relative: the configured site URL is for previews only.
+        self.send_header("Location", path + (f"?{query}" if query else ""))
+        self.send_header("Content-Length", "0")
+        self.end_headers()
 
     def _zip(self, zip_code: str) -> None:
         if not re.fullmatch(r"\d{5}", zip_code):
@@ -763,7 +880,7 @@ class PublicHandler(_JsonHandler):
                 levels.append(bucket)
                 current = lvl
             bucket["contests"].append(
-                _contest_summary(entry, index.election.id, deps))
+                _contest_summary(entry, state, deps))
         self._json(200, {"election": index.election.id,
                          "state": state.abbr,
                          "state_name": _state_name(state.abbr),
@@ -786,9 +903,10 @@ class PublicHandler(_JsonHandler):
         if state is None:
             return self._json(404, _not_covered(abbr))
         index = state.index
-        contests = [_contest_summary(e, index.election.id, deps)
+        contests = [_contest_summary(e, state, deps)
                     for e in _statewide_measures(state)]
         self._json(200, {"election": index.election.id,
+                         "year": state.year,
                          "state": abbr, "state_name": _state_name(abbr),
                          "empty_election": not index.entries,
                          "chambers": chambers(abbr),
@@ -801,7 +919,15 @@ class PublicHandler(_JsonHandler):
         if found is None:
             return self._not_found()
         state, entry = found
-        self._json(200, _contest_detail(entry, state.index.election.id, deps))
+        self._json(200, _contest_detail(entry, state, deps))
+
+    def _contest_at(self, abbr: str, year: str, slug: str) -> None:
+        """A contest by its short path's parts (/ut/2026/amendment-a)."""
+        state = self.server.deps.states.get(abbr)
+        entry = state.contest_at(year, slug) if state else None
+        if entry is None:
+            return self._not_found()
+        self._json(200, _contest_detail(entry, state, self.server.deps))
 
     def _video(self, key_hash: str, job_id: str, name: str,
                method: str) -> None:
