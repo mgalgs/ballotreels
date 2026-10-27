@@ -30,12 +30,14 @@ The stage shows
   with the next visual), the page over the whole notebook page from the
   binding to the caption, at the largest type that fits, and the caption
   and footer at the page's bottom. The first `page` line draws it on, and
-  one with a `focus` "clicks" a term: the pencil circles it, and the page
-  holds still (PAGE_ZOOM_MAX); one with a `highlight` lays a soft graphite
-  band behind each phrase, swept on as the narrator reaches it. Consecutive
-  `page` lines are one page that stays up, each adding its highlights or
-  its click; the page comes back later at full view, its highlights gone
-  and every term clicked so far ticked off;
+  one with a `focus` "clicks" a term: a highlighter sweeps over it, and the
+  page holds still (PAGE_ZOOM_MAX); one with a `highlight` sweeps the same
+  highlighter over each phrase as the narrator reaches it. Every mark on
+  the page is that highlighter's: a translucent yellow (never the headings'
+  orange) behind the words. Consecutive `page` lines are one page that stays up, each adding
+  its highlights or its click; the page comes back later at full view, its
+  highlights gone and every term clicked so far faintly highlighted and
+  ticked off;
 - in the `what` and `vote` sections, before any visual, the ballot: the
   measure's title and its two options, drawn alike;
 - otherwise nothing: an empty page under the heading.
@@ -1067,13 +1069,13 @@ def runs_of(sec):
 # ---- the stage: the official page (the `page` visual) ----
 # The measure's page in the official voter guide, drawn from the script's
 # [card] (docs/SCRIPT-FORMAT.md): the first `page` line draws it on, and
-# each one with a `focus` "clicks" a term on it: the pencil circles every
-# occurrence, and the camera holds (PAGE_ZOOM_MAX is 1: the page is
+# each one with a `focus` "clicks" a term on it: the highlighter sweeps over
+# every occurrence, and the camera holds (PAGE_ZOOM_MAX is 1: the page is
 # readable whole). A later `page` line
 # brings the page back at full view, every term clicked so far ticked off.
 CARD = CONTEST.script.card
 PAGE_DRAW = 30     # frames the page takes to draw on, the first time (1 s)
-CIRCLE = 30        # frames the pencil takes to circle a term, every occurrence (1 s)
+CLICK = 18         # frames the highlighter takes to sweep a term, every occurrence (0.6 s)
 ZOOM = 24          # frames the camera takes to ease in on it (0.8 s)
 CAMERA = vb.bezier(0.45, 0, 0.55, 1)  # eases in and out
 PAGE_ZOOM_MAX = 1.0  # no zoom: the page is readable whole, and any zoom crops its lines
@@ -1302,17 +1304,8 @@ def focus_boxes(parts, focus):
     return out
 
 
-def _ring(b, u, seed):
-    """A quick hand's circle round box `b`: a loose ellipse, a little more than
-    once round, so its ends cross."""
-    rx, ry = b.w / 2 + 16 * u, b.h / 2 + 8 * u
-    a0 = -2.4 + random.Random(seed).uniform(-0.2, 0.2)
-    pts = sp.ellipse(b.cx, b.cy, rx, ry, a0, a0 + 2 * math.pi + 0.45, rot=-0.02, n=72)
-    return Stroke(pts, seed, passes=2, width=4.2 * u, wobble=2.2, overshoot=2, alpha=0.9)
-
-
 def _tick(b, u, seed):
-    """A small tick at the top right of the circle round box `b`."""
+    """A small tick at the top right of the highlight on box `b`."""
     x, y = b.right + 14 * u, b.y - 4 * u
     s = 15 * u
     return Stroke([(x - s * 0.7, y), (x - s * 0.15, y + s * 0.6), (x + s, y - s * 0.9)], seed, passes=2,
@@ -1452,9 +1445,15 @@ def _union(boxes):
     return Box(x0, y0, x1 - x0, y1 - y0)
 
 
-# ---- highlights: phrases on the page, laid over with a soft pencil ----
+# ---- highlights: phrases on the page, marked with a highlighter ----
 SWEEP = 15         # frames one occurrence of a phrase takes to sweep on (0.5 s)
-BAND_ALPHA = 0.2   # the band's graphite: light, so the words read through it
+# The highlighter's ink: one yellow for every mark on the card, never the
+# headings' orange (rule 7.4), multiplied onto the paper so the words over it
+# stay dark and crisp. Its alpha leaves the band clearly darker than the paper
+# in greyscale too, so it reads without colour.
+HIGHLIGHTER = (255, 221, 48)
+BAND_ALPHA = 0.62
+FAINT = 0.3        # a band, as a page comes back with its clicked terms
 
 
 def _norm(words):
@@ -1488,76 +1487,102 @@ def highlight_starts(beat, phrases):
 
 
 class Band:
-    """A highlighter band laid behind a phrase's words: one soft, slightly
-    uneven graphite stroke along each of its boxes (one a line), like the
-    side of a soft pencil laid flat, swept on left to right, box after box."""
+    """A highlighter band laid behind a phrase's words, one a line (its
+    `boxes`), swept on left to right, box after box: a translucent yellow
+    multiplied onto the paper, so the lettering over it stays as dark as
+    before. A chisel tip's mark: its ends cut flat at a slant, its ink a
+    little uneven along the stroke and a touch heavier at its edges, and at
+    its last box the tip going back over the end, which lays the ink twice
+    there, a shade darker."""
 
-    def __init__(self, boxes, u, seed):
+    def __init__(self, boxes, u, seed, alpha=BAND_ALPHA):
         rnd = random.Random(seed)
+        self.alpha = alpha
         self.segs = []
-        for b in boxes:
-            x0, x1 = b.x - 5 * u, b.right + 5 * u
-            yc = b.y + b.h * 0.56 + rnd.uniform(-1, 1) * u
-            hh = b.h * 0.27
-            n = max(2, int((x1 - x0) / (14 * u)))
-            tilt = rnd.uniform(-1.5, 1.5) * u
-            top, bot = [], []
-            for i in range(n + 1):
-                t = i / n
-                x = x0 + (x1 - x0) * t
-                y = yc + tilt * (t - 0.5)
-                top.append((x, y - hh + rnd.uniform(-1.6, 1.6) * u))
-                bot.append((x, y + hh + rnd.uniform(-1.6, 1.6) * u))
-            # the ends a little ragged, as a stroke starts and lifts
-            body = [(x0 + rnd.uniform(0, 3) * u, yc)] + top + [(x1 + rnd.uniform(0, 4) * u, yc + tilt / 2)] \
-                + bot[::-1]
-            # a second, lighter pass over it, a little off, as a hand goes back over
-            dy, cut0, cut1 = rnd.uniform(-0.25, 0.25) * hh, rnd.uniform(0, 0.15), rnd.uniform(0, 0.2)
-            xa, xb = x0 + (x1 - x0) * cut0, x1 - (x1 - x0) * cut1
-            again = [(xa + (xb - xa) * t, y + dy) for (_, y), t in zip(top, (i / n for i in range(n + 1)))] \
-                + [(xa + (xb - xa) * t, y + dy) for (_, y), t in zip(bot[::-1], (1 - i / n for i in range(n + 1)))]
-            body = (body, again)
-            # the pencil's grain along the stroke: a few lighter and darker streaks
-            streaks = [(yc + hh * rnd.uniform(-0.8, 0.8), rnd.uniform(0.25, 0.6) * hh, rnd.uniform(0.05, 0.12))
-                       for _ in range(4)]
-            self.segs.append((x0, x1, yc, hh, body, streaks))
-        self.total = sum(x1 - x0 for x0, x1, *_ in self.segs) or 1
+        for i, b in enumerate(boxes):
+            x0 = b.x - rnd.uniform(3, 6) * u
+            x1 = b.right + rnd.uniform(3, 6) * u
+            yc = b.y + b.h * 0.56 + rnd.uniform(-0.6, 0.6) * u
+            hh = b.h * 0.3
+            lean = hh * 0.55  # the chisel's slant: its ends' tops a little ahead
+            rise = rnd.uniform(-1.2, 1.2) * u  # the stroke not quite level
+            # the density along the stroke: a few soft stops, heavier where the nib lands
+            n = max(2, int((x1 - x0) / (40 * u)))
+            dens = [1.0] + [rnd.uniform(0.84, 0.98) for _ in range(n)]
+            back = min((x1 - x0) * 0.3, 70 * u) if i == len(boxes) - 1 else 0
+            self.segs.append(dict(x0=x0, x1=x1, yc=yc, hh=hh, lean=lean, rise=rise, dens=dens, back=back,
+                                  dy=rnd.uniform(-0.12, 0.12) * hh))
+        self.total = sum(s['x1'] - s['x0'] + s['back'] for s in self.segs) or 1
+
+    @staticmethod
+    def _quad(s, xa, xb, dy=0.0):
+        """The band from xa to xb (its centre line), its ends cut at the
+        chisel's slant."""
+        x0, x1, yc, hh, lean, rise = s['x0'], s['x1'], s['yc'] + dy, s['hh'], s['lean'], s['rise']
+
+        def y(x):
+            return yc + rise * ((x - x0) / max(1, x1 - x0) - 0.5)
+        return [(xa + lean, y(xa) - hh), (xb + lean, y(xb) - hh), (xb - lean, y(xb) + hh), (xa - lean, y(xa) + hh)]
+
+    def _lay(self, ctx, s, quad, k=1.0):
+        """Fill `quad` with the band's ink: multiplied, a little uneven."""
+        x0, x1 = s['x0'], s['x1']
+        r, g, b = (c / 255 for c in HIGHLIGHTER)
+        grad = cairo.LinearGradient(x0, 0, x1, 0)
+        for j, d in enumerate(s['dens']):
+            grad.add_color_stop_rgba(j / (len(s['dens']) - 1), r, g, b, self.alpha * k * d)
+        sp._poly(ctx, quad)
+        ctx.set_source(grad)
+        ctx.fill()
+        # the felt's edges carry a little more ink than its middle
+        ctx.set_line_width(max(1.0, s['hh'] * 0.08))
+        ctx.set_source_rgba(r, g, b, self.alpha * k * 0.35)
+        for a, z in ((0, 1), (3, 2)):
+            ctx.move_to(*quad[a])
+            ctx.line_to(*quad[z])
+            ctx.stroke()
 
     def draw(self, cv, p):
         ctx = cv.ctx
         left = p * self.total
-        for x0, x1, yc, hh, body, streaks in self.segs:
+        ctx.save()
+        ctx.set_operator(cairo.OPERATOR_MULTIPLY)
+        for s in self.segs:
             if left <= 0:
                 break
-            w = min(x1 - x0, left)
-            left -= x1 - x0
-            ctx.save()
-            ctx.rectangle(x0 - 10, yc - hh * 2, w + 10 + (8 if w >= x1 - x0 else 0), hh * 4)
-            ctx.clip()
-            for poly, a in zip(body, (BAND_ALPHA, BAND_ALPHA * 0.45)):
-                ctx.new_path()
-                sp._path(ctx, poly)
-                ctx.close_path()
-                ctx.set_source(sp.ink(GRAPHITE, a))
-                ctx.fill()
-            ctx.set_line_cap(cairo.LINE_CAP_ROUND)
-            for y, lw, a in streaks:
-                ctx.new_path()
-                ctx.move_to(x0 + 4, y)
-                ctx.line_to(x1 - 2, y)
-                ctx.set_line_width(lw)
-                ctx.set_source(sp.ink(GRAPHITE, a))
-                ctx.stroke()
-            ctx.restore()
+            x0, x1, back = s['x0'], s['x1'], s['back']
+            if left < x1 - x0:
+                # sweeping: the band so far, its leading end cut at the chisel's slant
+                self._lay(ctx, s, self._quad(s, x0, x0 + left))
+            else:
+                self._lay(ctx, s, self._quad(s, x0, x1))
+                if back and left > x1 - x0:
+                    # the nib going back over the end: the ink laid twice
+                    xb = x1 - min(back, left - (x1 - x0))
+                    self._lay(ctx, s, self._quad(s, xb, x1, s['dy']), 0.55)
+            left -= x1 - x0 + back
+        ctx.restore()
 
     def head(self, p):
+        """The nib's middle: at the band's leading end, or coming back over it."""
         left = p * self.total
-        for x0, x1, yc, hh, *_ in self.segs:
-            if left <= x1 - x0:
-                return x0 + left, yc + hh * 0.4
-            left -= x1 - x0
-        x0, x1, yc, hh, *_ = self.segs[-1]
-        return x1, yc + hh * 0.4
+        for s in self.segs:
+            run = s['x1'] - s['x0']
+            if left <= run:
+                return s['x0'] + left, s['yc']
+            if left <= run + s['back']:
+                return s['x1'] - (left - run), s['yc'] + s['dy']
+            left -= run + s['back']
+        s = self.segs[-1]
+        return s['x1'] - s['back'], s['yc'] + s['dy']
+
+
+def band_item(f0, f1, occ, phrase, u, alpha=BAND_ALPHA, tool=True):
+    """One occurrence `occ` (its boxes) of `phrase` highlighted over f0..f1,
+    the highlighter on it (unless not `tool`). Seeded by the phrase alone, so
+    its occurrences in the YES and NO boxes are marked alike (rule 7.4)."""
+    band = Band(occ, u, seed_of('band', phrase), alpha)
+    return Item(f0, f1, band.draw, band.head if tool else None, HIGHLIGHTER, tool='highlighter')
 
 
 def highlight_items(parts, beat, ready, u):
@@ -1570,8 +1595,7 @@ def highlight_items(parts, beat, ready, u):
     for phrase, at in zip(phrases, highlight_starts(beat, phrases)):
         f = max(f, at)
         for occ in focus_boxes(parts, phrase):
-            band = Band(occ, u, seed_of('band', phrase, occ[0].x, occ[0].y))
-            items.append(Item(f, f + SWEEP, band.draw, band.head))
+            items.append(band_item(f, f + SWEEP, occ, phrase, u))
             f += SWEEP
     return items
 
@@ -1581,8 +1605,8 @@ def page_run(runs, L, first_f, fmt, state):
     up for, one continuous page (`runs`: the runs_of entries, in order):
     drawn on the first time, faded back in (with every term clicked so far
     ticked off) after that; then each `page` line, as it is narrated, adds
-    its highlights or its click: the term circled, and, with a single click
-    in the run, zoomed in on. `state` carries what earlier page runs did:
+    its highlights or its click: the term highlighted, and, with a single
+    click in the run, zoomed in on. `state` carries what earlier page runs did:
     whether the page was drawn, and the terms clicked. Returns (items,
     marks, camera, fade-in frame or None)."""
     stage = L['page_stage']
@@ -1599,17 +1623,15 @@ def page_run(runs, L, first_f, fmt, state):
         f = first_f + FADE
         fade_in = first_f
     state['drawn'] = True
-    # the terms clicked before this run: each circle, faint, with a tick
-    for t, focus in enumerate(state['clicked']):
+    bands = []  # laid behind the lettering
+    # the terms clicked before this run: each highlighted, faint, with a tick
+    for focus in state['clicked']:
         for occ in focus_boxes(parts, focus):
-            for j, b in enumerate(occ):
-                ring = _ring(b, u, seed_of('ring', focus, b.x, b.y))
-                items.append(stroke_item(first_f - 2, first_f - 1, ring, alpha=0.3, pencil=False))
+            bands.append(band_item(first_f - 2, first_f - 1, occ, focus, u, BAND_ALPHA * FAINT, tool=False))
             tick = _tick(occ[0], u, seed_of('tick', focus))
             items.append(stroke_item(first_f - 2, first_f - 1, tick, alpha=0.8, pencil=False))
     camera = Camera(stage, paper_box)
     cameras = []
-    bands = []  # laid behind the lettering
     for r, (_, chart, lines) in enumerate(runs):
         run_f0 = first_f if r == 0 else lines[0].start
         if r:
@@ -1622,22 +1644,21 @@ def page_run(runs, L, first_f, fmt, state):
         if v.focus:
             focus = v.focus
             occs = focus_boxes(parts, focus)
-            rings = [b for occ in occs for b in occ]
+            boxes = [b for occ in occs for b in occ]
             room = lines[-1].end - run_f0
-            k = min(1.0, (room * 0.6 - (f - run_f0)) / (CIRCLE + ZOOM + 4)) if room > 0 else 1.0
+            k = min(1.0, (room * 0.6 - (f - run_f0)) / (CLICK + ZOOM + 4)) if room > 0 else 1.0
             k = max(k, 0.4)
-            per = CIRCLE * k / len(rings)
-            circle = f
-            for b in rings:
-                ring = _ring(b, u, seed_of('ring', focus, b.x, b.y))
-                items.append(stroke_item(f, f + per, ring))
-                f += per
+            # one sweep over every occurrence, at the highlighter's one pace
+            length = sum(b.w for b in boxes)
+            for occ in occs:
+                d = CLICK * k * sum(b.w for b in occ) / length
+                bands.append(band_item(f, f + d, occ, focus, u))
+                f += d
             z0 = f + 3
-            # frame the circles whole, not just the words in them
-            t = _union(rings)
+            # frame the highlights whole, not just the words in them
+            t = _union(boxes)
             mx, my = 24 * u, 16 * u
             cam = Camera(stage, paper_box, Box(t.x - mx, t.y - my, t.w + 2 * mx, t.h + 2 * my), z0, z0 + ZOOM * k)
-            cam.circle = (circle, f)
             cameras.append(cam)
     for _, chart, _ in runs:
         focus = chart.visual.focus
@@ -2007,17 +2028,18 @@ def draw_ring(cv, ring, fill, alpha):
         cv.mark('ring', cx - r - w, cy - r - w, 2 * (r + w), 2 * (r + w))
 
 
-# ---- the pencil: only while something is being drawn ----
+# ---- the pencil, or the highlighter: only while something is being drawn ----
 def pencil_at(n, P):
-    """(x, y, ink, alpha) of the pencil tip at frame n, or None. It follows
-    whatever is being drawn; across a short gap between two marks it moves
-    straight from one to the next, and otherwise it fades out where it
-    stopped (and in where it starts). It never travels or idles."""
+    """(x, y, ink, tool, alpha) of the pencil (or highlighter) tip at frame
+    n, or None. It follows whatever is being drawn; across a short gap
+    between two marks by the same tool it moves straight from one to the
+    next, and otherwise it fades out where it stopped (and in where it
+    starts). It never travels or idles."""
     prev = nxt = None
     for it in P['schedule']:
         if it.f0 <= n <= it.f1:
             x, y = it.head(n)
-            return x, y, it.ink, 1.0
+            return x, y, it.ink, it.tool, 1.0
         if it.f1 < n:
             if prev is None or it.f1 > prev.f1:
                 prev = it
@@ -2026,16 +2048,16 @@ def pencil_at(n, P):
             break
     fa = prev.f1 if prev else -1e9
     fb = nxt.f0 if nxt else 1e9
-    if fb - fa <= BRIDGE:
+    if fb - fa <= BRIDGE and prev.tool == nxt.tool:
         a, b = prev.head(fa), nxt.head(fb)
         q = DRAW(vb.clamp01((n - fa) / (fb - fa)))
-        return a[0] + (b[0] - a[0]) * q, a[1] + (b[1] - a[1]) * q, nxt.ink, 1.0
+        return a[0] + (b[0] - a[0]) * q, a[1] + (b[1] - a[1]) * q, nxt.ink, nxt.tool, 1.0
     if n - fa < PENCIL_FADE:
         x, y = prev.head(fa)
-        return x, y, prev.ink, 1 - (n - fa) / PENCIL_FADE
+        return x, y, prev.ink, prev.tool, 1 - (n - fa) / PENCIL_FADE
     if fb - n < PENCIL_FADE:
         x, y = nxt.head(fb)
-        return x, y, nxt.ink, 1 - (fb - n) / PENCIL_FADE
+        return x, y, nxt.ink, nxt.tool, 1 - (fb - n) / PENCIL_FADE
     return None
 
 
@@ -2043,7 +2065,7 @@ def draw_pencil(cv, n, P):
     at = pencil_at(n, P)
     if not at:
         return
-    x, y, ink, alpha = at
+    x, y, ink, tool, alpha = at
     colour = None if ink == GRAPHITE else ink
     if alpha >= 1:
         sp.draw_pencil(cv, x, y, colour)

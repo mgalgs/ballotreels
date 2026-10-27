@@ -401,12 +401,14 @@ class Item:
     """One mark on the page, drawn on from frame `f0` to `f1`. `draw(cv, p)`
     draws it at progress p (0..1); `head(p)` is where the pencil tip is (None:
     no pencil follows it, e.g. a fade or shading laid in behind the line);
-    `ink` the pencil's colour. `at` = (x, y, angle) draws it rotated by
-    `angle` about (x, y), its points given in that rotated space."""
+    `ink` the pencil's colour; `tool` what draws it, 'pencil' or
+    'highlighter'. `at` = (x, y, angle) draws it rotated by `angle` about
+    (x, y), its points given in that rotated space."""
 
-    def __init__(self, f0, f1, draw, head=None, ink=GRAPHITE, ease=DRAW, at=None):
+    def __init__(self, f0, f1, draw, head=None, ink=GRAPHITE, ease=DRAW, at=None, tool='pencil'):
         self.f0, self.f1 = f0, max(f0 + 1, f1)
         self._draw, self._head, self.ink, self.ease, self.at = draw, head, ink, ease, at
+        self.tool = tool
 
     def p(self, n):
         return self.ease(vb.clamp01((n - self.f0) / (self.f1 - self.f0)))
