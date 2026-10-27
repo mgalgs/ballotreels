@@ -10,9 +10,13 @@
 #
 # The ballot measure is CS/HJR 1F (2026 Special Session F). Its enrolled
 # text ends with a ballot statement ("SAVE OUR HOMES FROM EXCESSIVE
-# PROPERTY TAXES") that differs from the title and summary the booklet
-# (updated September 3, 2026) prints; the card and the script quote the
-# booklet's.
+# PROPERTY TAXES") that the court struck; the Attorney General's revised
+# title and summary of August 13, 2026 replaced it. The card and the
+# script quote that revised statement from the Division of Elections'
+# amendment database page (ballot-summary.html), which carries it as
+# text. The Attorney General's letter itself
+# (revised-ballot-statement.pdf) is a scanned image with no text, kept
+# for the record.
 
 [contest]
 id = "fl-2026-11-03-amendment-3"
@@ -45,4 +49,22 @@ publisher = "Florida House of Representatives, Final Bill Analysis, CS/HJR 1F, J
 credit = "Florida House, Final Bill Analysis"
 url = "https://flsenate.gov/Session/Bill/2026F/1F/Analyses/h0001z.SAC.PDF"
 file = "sources/fiscal-analysis.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "ballot-summary"
+kind = "official-title-summary"
+publisher = "Florida Department of State, Division of Elections, Initiatives/Amendments/Revisions Database: Increased Homestead Exemption; Lower Cap on Increases in Non-Homestead Property Assessments (Ballot Number 3, 2026)"
+credit = "Florida Division of Elections, Initiatives/Amendments Database"
+url = "https://constitutionalinitiatives.dos.fl.gov/Home/InitDetail?account=10&seqnum=110"
+file = "sources/ballot-summary.html"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "levies"
+kind = "official-report"
+publisher = "Florida Department of Revenue, Property Tax Oversight, 2025 County Profiles, Statewide Property Tax Overview (2025), page 1"
+credit = "Florida Department of Revenue, 2025 County Profiles"
+url = "https://floridarevenue.com/property/Documents/2025_County_Profiles.pdf"
+file = "sources/property-taxes-levied.pdf"
 retrieved = "2026-10-27"
