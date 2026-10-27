@@ -159,12 +159,12 @@ focus = "Rainy Day Fund"     # optional: the term to click
   the script has a card; no `title`. `focus`, if given, is a phrase
   that must occur in the card's text (its title, origin, summary, yes
   and no), matched case-sensitively, so `"Rainy Day Fund"` picks the
-  summary's words over the upper-case title's. The pencil circles
-  every occurrence and the camera eases in to frame them all
-  together: a term in both the YES and NO boxes is circled in both
-  at once, keeping the two boxes alike (rule 7.4). When a later `page`
-  line brings the page back, it shows at full view with every term
-  clicked so far ticked off, and then clicks its own. Without `focus`
+  summary's words over the upper-case title's. A highlighter pen
+  sweeps over every occurrence in one stroke: a term in both the YES
+  and NO boxes is highlighted in both, keeping the two boxes alike
+  (rule 7.4). When a later `page` line brings the page back, it shows
+  at full view with every term clicked so far faintly highlighted and
+  ticked off, and then clicks its own. Without `focus`
   the page shows at full view, with those ticks.
 
 ```toml
@@ -176,8 +176,9 @@ highlight = ["Increases California's Rainy Day Fund", "during economic downturns
 
 - `highlight`, on a `page` only: a non-empty list of phrases on the
   card, each matched case-sensitively like `focus`; every occurrence of
-  each is highlighted, with a soft graphite band laid behind the words
-  (never the accent colour) that sweeps on left to right. Each phrase
+  each is highlighted, with a translucent yellow highlighter band laid
+  behind the words (never the accent colour, and the same in the YES
+  and NO boxes) that sweeps on left to right. Each phrase
   must occur in the card's text. A line has `focus` or `highlight`, not
   both.
 - **Balance (rule 7.4):** across the whole script, the number of
