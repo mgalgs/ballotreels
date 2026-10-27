@@ -430,6 +430,15 @@ class BrokenCopyTest(ContestCopyTestCase):
         self.add_side_list("no", ["No argument against was submitted"])
         self.assertEqual(self.failures(), [])
 
+    def test_both_sides_may_have_filed_nothing(self):
+        # A state that publishes no official arguments (DC, Florida): each
+        # side says so once, with its one-item list, and nothing fails.
+        self.edit("script.toml", 'side = "yes"', 'side = "yes"\nfiled = false')
+        self.edit("script.toml", 'side = "no"', 'side = "no"\nfiled = false')
+        self.add_side_list("yes", ["No official argument for was published"])
+        self.add_side_list("no", ["No official argument against was published"])
+        self.assertEqual(self.failures(), [])
+
     def test_list_on_one_side_fails(self):
         self.add_side_list("yes", self.LIST_YES)
         got = self.failures()
@@ -589,6 +598,12 @@ class BrokenCopyTest(ContestCopyTestCase):
         # The same 3.16s gap passes when the short side filed no argument:
         # its one line saying so can't be as long as the other side's case.
         write_narration(self.dir, stretch={"no": 0.9})
+        self.edit("script.toml", 'side = "no"\n', 'side = "no"\nfiled = false\n')
+        self.assertNotIn("airtime", {f.check for f in self.failures()})
+
+    def test_airtime_pads_any_gap_when_both_sides_filed_nothing(self):
+        write_narration(self.dir, stretch={"no": 0.9})
+        self.edit("script.toml", 'side = "yes"\n', 'side = "yes"\nfiled = false\n')
         self.edit("script.toml", 'side = "no"\n', 'side = "no"\nfiled = false\n')
         self.assertNotIn("airtime", {f.check for f in self.failures()})
 

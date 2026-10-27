@@ -105,6 +105,23 @@ class SidesGroupTest(unittest.TestCase):
             self.assertAlmostEqual(srcs[0].y - a.y, srcs[1].y - b.y, places=3)
             self.assertAlmostEqual(srcs[0].x - a.x, srcs[1].x - b.x, places=3)
 
+    def test_two_unfiled_sides_get_congruent_blocks_and_one_source(self):
+        # Neither side filed an argument (DC, Florida): each lists the one
+        # item saying so, and the slide draws them exactly as any two lists.
+        for fmt in ("9x16", "16x9"):
+            L, plan, marks = self._marks(fmt,
+                                         items_a=["No official argument against was published"],
+                                         items_b=["No official argument for was published"])
+            box_a, box_b = plan["blocks"]
+            self.assertAlmostEqual(box_a.w, box_b.w, places=3)
+            self.assertAlmostEqual(box_a.h, box_b.h, places=3)
+            charts = [mk.box for mk in marks if mk.name == "chart"]
+            self.assertEqual(len(charts), 2, fmt)
+            a, b = charts
+            self.assertAlmostEqual(a.y - box_a.y, b.y - box_b.y, places=3)
+            self.assertAlmostEqual(a.h, b.h, places=3)
+            self.assertEqual(sum(1 for mk in marks if mk.name == "chart source"), 1, fmt)
+
     def test_blocks_are_congruent_and_on_the_stage(self):
         # STANDARD.md rule 7.4: the blocks' rows sit at the same place in
         # each block, the same size, even when one side's item takes two
