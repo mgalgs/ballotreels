@@ -1056,7 +1056,7 @@ PAGE_DRAW = 30     # frames the page takes to draw on, the first time (1 s)
 CIRCLE = 30        # frames the pencil takes to circle a term, every occurrence (1 s)
 ZOOM = 24          # frames the camera takes to ease in on it (0.8 s)
 CAMERA = vb.bezier(0.45, 0, 0.55, 1)  # eases in and out
-PAGE_ZOOM_MAX = 3.2  # the most the camera magnifies the page
+PAGE_ZOOM_MAX = 1.4  # the most the camera magnifies the page: a gentle ease in, for emphasis
 SUMMARY_BOLD = 'Fiscal Impact:'       # bold on the official page
 # every term the script clicks
 PAGE_FOCI = tuple(dict.fromkeys(ln.visual.focus for sec in CONTEST.script.sections for ln in sec.lines
@@ -1475,7 +1475,10 @@ def page_run(chart, lines, L, first_f, fmt, state):
             items.append(stroke_item(f, f + per, ring))
             f += per
         z0 = f + 3
-        camera = Camera(stage, paper_box, _union(rings), z0, z0 + ZOOM * k)
+        # frame the circles whole, not just the words in them
+        t = _union(rings)
+        mx, my = 24 * u, 16 * u
+        camera = Camera(stage, paper_box, Box(t.x - mx, t.y - my, t.w + 2 * mx, t.h + 2 * my), z0, z0 + ZOOM * k)
         camera.circle = (circle, f)
         if focus not in state['clicked']:
             state['clicked'].append(focus)
