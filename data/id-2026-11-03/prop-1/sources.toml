@@ -1,0 +1,74 @@
+# Archived sources for Idaho Proposition 1, the Reproductive Freedom &
+# Privacy Act, 2026-11-03 general election. Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Idaho prints an initiative's short and long ballot titles, "What your
+# vote will do", the sponsors' funding source statement, the Division of
+# Financial Management's fiscal impact statement, the arguments and
+# rebuttals and the full text in one section of the Voter Pamphlet
+# (pages 6 to 13), so several sources below share one archived file.
+#
+# title-and-text.pdf is the Secretary of State's notice of the short
+# ballot title and fiscal impact statement as revised after Idahoans
+# United for Women and Families v. Labrador. It also carries the earlier,
+# superseded 100-word fiscal impact statement of December 17, 2024 (under
+# $20,000 a year); the script cites only the revised statement.
+
+[contest]
+id = "id-2026-11-03-prop-1"
+election = "id-2026-11-03"
+division = "ocd-division/country:us/state:id"
+kind = "measure"
+title = "Proposition 1: Reproductive Freedom & Privacy Act"
+
+[[source]]
+id = "pamphlet"
+kind = "official-title-summary"
+publisher = "Idaho Secretary of State, 2026 Idaho Voter Pamphlet, page 6: Proposition One short and long ballot titles, and What Your Vote Will Do"
+credit = "Idaho Voter Pamphlet, Proposition One"
+url = "https://archive.voteidaho.gov/download/2026_Voter_Pamphlet.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "title-notice"
+kind = "official-title-summary"
+publisher = "Idaho Secretary of State, Change to Short Ballot Title and Fiscal Impact Statement, Reproductive Freedom and Privacy Act"
+url = "https://archive.sos.idaho.gov/elections/initiatives/2026/RFPA.pdf"
+file = "sources/title-and-text.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal"
+kind = "official-fiscal-analysis"
+publisher = "Idaho Division of Financial Management, Fiscal Impact Statement, 2026 Idaho Voter Pamphlet, page 7"
+credit = "Division of Financial Management, Idaho Voter Pamphlet"
+url = "https://archive.voteidaho.gov/download/2026_Voter_Pamphlet.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal-impact"
+kind = "official-fiscal-analysis"
+publisher = "Idaho Division of Financial Management, Ballot Initiative: Reproductive Freedom & Privacy Act, Summary of Fiscal Impact Statement"
+credit = "Division of Financial Management"
+url = "https://archive.sos.idaho.gov/elections/initiatives/2026/RFPA-FiscalImpact.pdf"
+file = "sources/fiscal-impact.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments for and against Proposition One, and rebuttals, as printed in the 2026 Idaho Voter Pamphlet, pages 8 to 10"
+url = "https://archive.voteidaho.gov/download/2026_Voter_Pamphlet.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Proposed Law for Proposition One, 2026 Idaho Voter Pamphlet, pages 11 to 13"
+url = "https://archive.voteidaho.gov/download/2026_Voter_Pamphlet.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
