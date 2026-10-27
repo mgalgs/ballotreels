@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 67.39,
+  "seconds": 71.75,
   "phrases": [
     {
       "text": "Proposition 39 is about how voters prove who they are.",
@@ -29,29 +29,29 @@
       "end": 32.37
     },
     {
-      "text": "The Legislative Analyst's Office puts yearly state and local costs at tens of millions to low hundreds of millions of dollars.",
+      "text": "The Legislative Analyst's Office puts yearly state and local costs at tens to low hundreds of millions, less than one-quarter of 1 percent of the state's General Fund.",
       "start": 33.03,
-      "end": 40.9
+      "end": 44.33
     },
     {
       "text": "Supporters say Proposition 39 would increase trust in elections, while keeping voting accessible.",
-      "start": 41.56,
-      "end": 47.73
+      "start": 44.99,
+      "end": 52.09
     },
     {
       "text": "Opponents say Proposition 39 adds costly hurdles that could block eligible California voters.",
-      "start": 48.39,
-      "end": 55.64
+      "start": 52.75,
+      "end": 60.0
     },
     {
       "text": "A yes vote means voters would present additional identifying information each time they vote.",
-      "start": 56.3,
-      "end": 61.83
+      "start": 60.66,
+      "end": 66.19
     },
     {
       "text": "A no vote means a voter's identity would continue to be established with their signature.",
-      "start": 62.49,
-      "end": 67.36
+      "start": 66.85,
+      "end": 71.72
     }
   ],
   "inputs": {
@@ -61,7 +61,7 @@
       "Today, voters identify themselves by signing: a list at the polls, or the mail ballot envelope.",
       "Proposition 39 would require voters at the polls to show government-issued identification.",
       "Voters who mail their ballots would write the last four digits of their selected ID number on the envelope.",
-      "The Legislative Analyst's Office puts yearly state and local costs at tens of millions to low hundreds of millions of dollars.",
+      "The Legislative Analyst's Office puts yearly state and local costs at tens to low hundreds of millions, less than one-quarter of 1 percent of the state's General Fund.",
       "Supporters say Proposition 39 would increase trust in elections, while keeping voting accessible.",
       "Opponents say Proposition 39 adds costly hurdles that could block eligible California voters.",
       "A yes vote means voters would present additional identifying information each time they vote.",
@@ -167,11 +167,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The Legislative Analyst's Office puts yearly state and local costs at tens of millions to low hundreds of millions of dollars."
+        "text": "The Legislative Analyst's Office puts yearly state and local costs at tens to low hundreds of millions, less than one-quarter of 1 percent of the state's General Fund."
       },
       "bounds": [
         792000,
-        982320
+        1064640
       ]
     },
     {
@@ -179,15 +179,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Legislative Analyst's Office puts yearly state and local costs at tens of millions to low hundreds of millions of dollars.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Legislative Analyst's Office puts yearly state and local costs at tens to low hundreds of millions, less than one-quarter of 1 percent of the state's General Fund.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "Supporters say Proposition 39 would increase trust in elections, while keeping voting accessible."
       },
       "bounds": [
-        996720,
-        1146240
+        1079040,
+        1250880
       ]
     },
     {
@@ -202,8 +202,8 @@
         "text": "Opponents say Proposition 39 adds costly hurdles that could block eligible California voters."
       },
       "bounds": [
-        1160640,
-        1336080
+        1265280,
+        1440720
       ]
     },
     {
@@ -218,8 +218,8 @@
         "text": "A yes vote means voters would present additional identifying information each time they vote."
       },
       "bounds": [
-        1350480,
-        1484640
+        1455120,
+        1589280
       ]
     },
     {
@@ -234,10 +234,10 @@
         "text": "A no vote means a voter's identity would continue to be established with their signature."
       },
       "bounds": [
-        1499040,
-        1617360
+        1603680,
+        1722000
       ]
     }
   ],
-  "sha256": "b2ce9e5edcf1399812ec080924b71f9be34fc5f40f1959c41f7ebb4c8941533a"
+  "sha256": "4ae9a083782ab1a937be9ebba18815333449533be6bf563af5db68258d542f12"
 }

@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 62.82,
+  "seconds": 66.9,
   "phrases": [
     {
       "text": "Proposition 5 is about recalls, which let voters remove state officials early.",
@@ -29,29 +29,29 @@
       "end": 26.87
     },
     {
-      "text": "The Legislative Analyst's Office says special elections could cost millions, and shorter ballots could save millions.",
+      "text": "The Legislative Analyst's Office says special elections could cost millions and shorter ballots could save millions, netting less than one-tenth of 1 percent of the state's General Fund.",
       "start": 27.53,
-      "end": 34.92
+      "end": 38.79
     },
     {
       "text": "Supporters say Proposition 5 stops replacements winning office with a small fraction of the vote.",
-      "start": 35.58,
-      "end": 41.81
+      "start": 39.45,
+      "end": 45.89
     },
     {
       "text": "Opponents say Proposition 5 takes away voters' right to choose who replaces a recalled official.",
-      "start": 42.47,
-      "end": 48.52
+      "start": 46.55,
+      "end": 52.6
     },
     {
       "text": "A yes vote means recall elections would no longer include a question about who should fill the vacancy.",
-      "start": 49.18,
-      "end": 55.64
+      "start": 53.26,
+      "end": 59.72
     },
     {
       "text": "A no vote means voters would continue to be asked who should fill the vacancy as part of recall elections.",
-      "start": 56.3,
-      "end": 62.79
+      "start": 60.38,
+      "end": 66.87
     }
   ],
   "inputs": {
@@ -61,7 +61,7 @@
       "Proposition 5 would drop the second question.",
       "If the Governor is recalled, the Lieutenant Governor would serve until voters elect a new one.",
       "Other offices would be filled by special election or appointment, as today.",
-      "The Legislative Analyst's Office says special elections could cost millions, and shorter ballots could save millions.",
+      "The Legislative Analyst's Office says special elections could cost millions and shorter ballots could save millions, netting less than one-tenth of 1 percent of the state's General Fund.",
       "Supporters say Proposition 5 stops replacements winning office with a small fraction of the vote.",
       "Opponents say Proposition 5 takes away voters' right to choose who replaces a recalled official.",
       "A yes vote means recall elections would no longer include a question about who should fill the vacancy.",
@@ -167,11 +167,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The Legislative Analyst's Office says special elections could cost millions, and shorter ballots could save millions."
+        "text": "The Legislative Analyst's Office says special elections could cost millions and shorter ballots could save millions, netting less than one-tenth of 1 percent of the state's General Fund."
       },
       "bounds": [
         660000,
-        838800
+        931680
       ]
     },
     {
@@ -179,15 +179,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Legislative Analyst's Office says special elections could cost millions, and shorter ballots could save millions.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Legislative Analyst's Office says special elections could cost millions and shorter ballots could save millions, netting less than one-tenth of 1 percent of the state's General Fund.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "Supporters say Proposition 5 stops replacements winning office with a small fraction of the vote."
       },
       "bounds": [
-        853200,
-        1004160
+        946080,
+        1102080
       ]
     },
     {
@@ -202,8 +202,8 @@
         "text": "Opponents say Proposition 5 takes away voters' right to choose who replaces a recalled official."
       },
       "bounds": [
-        1018560,
-        1165200
+        1116480,
+        1263120
       ]
     },
     {
@@ -218,8 +218,8 @@
         "text": "A yes vote means recall elections would no longer include a question about who should fill the vacancy."
       },
       "bounds": [
-        1179600,
-        1336080
+        1277520,
+        1434000
       ]
     },
     {
@@ -234,10 +234,10 @@
         "text": "A no vote means voters would continue to be asked who should fill the vacancy as part of recall elections."
       },
       "bounds": [
-        1350480,
-        1507680
+        1448400,
+        1605600
       ]
     }
   ],
-  "sha256": "b655fcd2e2e0aa694271cb40480b9859dabeeabe62a9ff452b890332cca3ca4b"
+  "sha256": "5ac9fdec7c1e662da2b350355ff0cb1e80e7fb3786727cca80a46ec22edbc1c4"
 }

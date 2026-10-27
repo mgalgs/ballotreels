@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 65.3,
+  "seconds": 68.24,
   "phrases": [
     {
       "text": "Proposition 3 is about income tax rates for people earning over $371,000 a year.",
@@ -29,34 +29,34 @@
       "end": 24.45
     },
     {
-      "text": "The Legislative Analyst's Office says the higher rates would bring in $5 billion to $15 billion a year, depending on the stock market.",
+      "text": "The Legislative Analyst's Office says the higher rates would raise $5 billion to $15 billion a year, about 2 to 6 percent of this year's General Fund spending, depending on the stock market.",
       "start": 25.11,
-      "end": 33.56
+      "end": 38.86
     },
     {
-      "text": "The Office says about 40 percent would go to schools and community colleges, and the rest to other state programs.",
-      "start": 34.22,
-      "end": 41.3
+      "text": "About 40 percent would go to schools and community colleges, it says.",
+      "start": 39.52,
+      "end": 43.88
     },
     {
       "text": "Supporters say Proposition 3 raises no one's taxes and prevents cuts to schools and health care.",
-      "start": 41.96,
-      "end": 48.36
+      "start": 44.54,
+      "end": 51.3
     },
     {
       "text": "Opponents say Proposition 3 makes temporary taxes permanent, and the state should fix its spending first.",
-      "start": 49.02,
-      "end": 56.41
+      "start": 51.96,
+      "end": 59.35
     },
     {
       "text": "A yes vote means the tax increase would become permanent.",
-      "start": 57.07,
-      "end": 60.32
+      "start": 60.01,
+      "end": 63.26
     },
     {
       "text": "A no vote means the tax increase would expire in 2031.",
-      "start": 60.98,
-      "end": 65.27
+      "start": 63.92,
+      "end": 68.21
     }
   ],
   "inputs": {
@@ -66,8 +66,8 @@
       "In 2016, voters extended those higher rates.",
       "Today, the higher rates are set to end in 2031.",
       "Proposition 3 would make the higher rates permanent.",
-      "The Legislative Analyst's Office says the higher rates would bring in $5 billion to $15 billion a year, depending on the stock market.",
-      "The Office says about 40 percent would go to schools and community colleges, and the rest to other state programs.",
+      "The Legislative Analyst's Office says the higher rates would raise $5 billion to $15 billion a year, about 2 to 6 percent of this year's General Fund spending, depending on the stock market.",
+      "About 40 percent would go to schools and community colleges, it says.",
       "Supporters say Proposition 3 raises no one's taxes and prevents cuts to schools and health care.",
       "Opponents say Proposition 3 makes temporary taxes permanent, and the state should fix its spending first.",
       "A yes vote means the tax increase would become permanent.",
@@ -173,11 +173,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The Legislative Analyst's Office says the higher rates would bring in $5 billion to $15 billion a year, depending on the stock market."
+        "text": "The Legislative Analyst's Office says the higher rates would raise $5 billion to $15 billion a year, about 2 to 6 percent of this year's General Fund spending, depending on the stock market."
       },
       "bounds": [
         601920,
-        806160
+        933360
       ]
     },
     {
@@ -185,15 +185,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Legislative Analyst's Office says the higher rates would bring in $5 billion to $15 billion a year, depending on the stock market.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Legislative Analyst's Office says the higher rates would raise $5 billion to $15 billion a year, about 2 to 6 percent of this year's General Fund spending, depending on the stock market.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The Office says about 40 percent would go to schools and community colleges, and the rest to other state programs."
+        "text": "About 40 percent would go to schools and community colleges, it says."
       },
       "bounds": [
-        820560,
-        991920
+        947760,
+        1053840
       ]
     },
     {
@@ -201,15 +201,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Office says about 40 percent would go to schools and community colleges, and the rest to other state programs.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"About 40 percent would go to schools and community colleges, it says.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "Supporters say Proposition 3 raises no one's taxes and prevents cuts to schools and health care."
       },
       "bounds": [
-        1006320,
-        1161360
+        1068240,
+        1231920
       ]
     },
     {
@@ -224,8 +224,8 @@
         "text": "Opponents say Proposition 3 makes temporary taxes permanent, and the state should fix its spending first."
       },
       "bounds": [
-        1175760,
-        1354560
+        1246320,
+        1425120
       ]
     },
     {
@@ -240,8 +240,8 @@
         "text": "A yes vote means the tax increase would become permanent."
       },
       "bounds": [
-        1368960,
-        1448400
+        1439520,
+        1518960
       ]
     },
     {
@@ -256,10 +256,10 @@
         "text": "A no vote means the tax increase would expire in 2031."
       },
       "bounds": [
-        1462800,
-        1567200
+        1533360,
+        1637760
       ]
     }
   ],
-  "sha256": "8dab33ac51cac53c3215cf44f1f6a4d523b2e4a90d0930e576182881a8b98fd9"
+  "sha256": "556c66484b7c8f8deaf8518e90a69c4c1a69d7343c7ead429b67192eabf9e1d1"
 }
