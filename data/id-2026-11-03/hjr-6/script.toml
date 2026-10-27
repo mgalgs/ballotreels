@@ -7,9 +7,10 @@
 # question, the Legislative Council's statement of meaning and the "What
 # your vote will do" lines. The pamphlet prints no fiscal statement for a
 # joint resolution, so the card has none; the fiscal section cites the
-# resolution's own fiscal note, by that name. The note's $300,000 is
-# stated without a scale: it compares it with no budget, and no archived
-# source gives Idaho's general fund total.
+# resolution's own fiscal note, by that name. The note compares its
+# $300,000 with no budget, so its scale (rule 6.5) is its share of the
+# FY 2027 General Fund original appropriations, $5,621,837,100 (Legislative
+# Fiscal Report): the pamphlet is mailed in September 2026, in FY 2027.
 #
 # That state law already names English the official language is the
 # against side's point, so it is said only in that side's section; the
@@ -101,8 +102,8 @@ id = "fiscal"
 heading = "What the fiscal note says"
 
 [[section.line]]
-text = "The fiscal note estimates up to $300,000 for the voter's pamphlet, a cost that occurs anyway if other measures qualify."
-sources = ["fiscal-note"]
+text = "The fiscal note estimates up to $300,000 for the voter's pamphlet, less than 1 percent of this year's General Fund budget, a cost that occurs anyway if other measures qualify."
+sources = ["fiscal-note", "budget"]
 
 [section.line.visual]
 kind = "illustration"
