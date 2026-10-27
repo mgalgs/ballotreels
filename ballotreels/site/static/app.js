@@ -658,11 +658,27 @@ function electionDate(electionId) {
   });
 }
 
-// Splits "Proposition 2: Increases ..." into a short name to lead with
-// and the rest; a measure without one is led by its number.
+// A ballot measure's designation, as states write it: "Proposition",
+// "Amendment", "Issue", "Question", "Initiative Measure No.",
+// "Constitutional Amendment", "Charter Amendment", "Referendum", ...
+const DESIGNATION = String.raw`(?:(?:Constitutional|Charter|Legislative|` +
+  String.raw`Legislatively\s+Referred|Citizen|Ballot|State)\s+)*` +
+  String.raw`(?:Proposition|Proposal|Prop\.?|Measure|Amendment|Issue|` +
+  String.raw`Question|Initiative|Referendum)` +
+  String.raw`(?:\s+(?:Measure|Petition))?(?:\s+No\.)?`;
+// Its number or code: "2", "1A", "HJR 1", "2117", or a letter code
+// ("A", "ULT") when a colon or dash follows.
+const DESIGNATION_CODE = String.raw`(?:(?:[A-Z]{1,4}[- ]?)?\d+[A-Z]?` +
+  String.raw`(?:-\d+)?|[A-Z]{1,8}(?=\s*[:\u2013\u2014]|\s+-\s))`;
+const TITLE_RE = new RegExp(
+  String.raw`^(${DESIGNATION}\s*${DESIGNATION_CODE})` +
+  String.raw`(?:\s*[:\u2013\u2014]\s*|\s+-\s+|\s+)(\S.*)$`);
+
+// Splits "Proposition 2: Increases ..." (or "Amendment 4 - Limits ...",
+// "Initiative Measure No. 2117: Concerns ...") into a short name to lead
+// with and the rest; a measure without one is led by its number.
 function titleParts(contest) {
-  const m = /^((?:Proposition|Measure|Prop\.?)\s+[^:]+):\s*(.+)$/.exec(
-    contest.title);
+  const m = TITLE_RE.exec(contest.title);
   if (m) return { eyebrow: m[1], title: m[2] };
   if (contest.kind === "measure" && contest.number &&
       !contest.title.includes(contest.number)) {

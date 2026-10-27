@@ -177,3 +177,53 @@ class SelectDistrictTest(unittest.TestCase):
         self.assertEqual(result["kind"], "sldl")
         params = urllib.parse.parse_qs(result["hash"].split("?", 1)[1])
         self.assertEqual(sorted(params["d"]), ["S", "cd:1", "sldl:2"])
+
+
+# Runs app.js's titleParts under node over every designation style the
+# states served write, printing {title: [eyebrow, rest]}.
+TITLE_PARTS_HARNESS = r"""
+const src = require("fs").readFileSync(process.argv[1], "utf8");
+const start = src.indexOf("const DESIGNATION =");
+const end = src.indexOf("function contestHeading");
+eval(src.slice(start, end) + "; globalThis.titleParts = titleParts;");
+const out = {};
+for (const title of JSON.parse(process.argv[2])) {
+  const parts = titleParts({ title, kind: "measure", number: null });
+  out[title] = [parts.eyebrow, parts.title];
+}
+console.log(JSON.stringify(out));
+"""
+
+TITLE_CASES = {
+    "Proposition 2: Increases Funding": ["Proposition 2", "Increases Funding"],
+    "Prop. 50: Elections": ["Prop. 50", "Elections"],
+    "Measure A: Roads": ["Measure A", "Roads"],
+    "Measure 114: Firearms": ["Measure 114", "Firearms"],
+    "Amendment 4: Limits Government": ["Amendment 4", "Limits Government"],
+    "Amendment 4 - Limits Government": ["Amendment 4", "Limits Government"],
+    "Issue 1 Establishes a Right": ["Issue 1", "Establishes a Right"],
+    "Question 2: Funds Schools": ["Question 2", "Funds Schools"],
+    "Initiative 82: Wages": ["Initiative 82", "Wages"],
+    "Initiative Measure No. 2117: Concerns Carbon":
+        ["Initiative Measure No. 2117", "Concerns Carbon"],
+    "Referendum 1: Repeals a Law": ["Referendum 1", "Repeals a Law"],
+    "Constitutional Amendment 3: Judges":
+        ["Constitutional Amendment 3", "Judges"],
+    "Charter Amendment B: Mayor": ["Charter Amendment B", "Mayor"],
+    "Measure ULT: Parcel tax": ["Measure ULT", "Parcel tax"],
+    "Amendment A - Lowers taxes": ["Amendment A", "Lowers taxes"],
+    "Measure A Roads": [None, "Measure A Roads"],
+    "Proposition 2 — Water Bonds": ["Proposition 2", "Water Bonds"],
+    "Fake Congressional Measure": [None, "Fake Congressional Measure"],
+    "Measure to Fund Parks": [None, "Measure to Fund Parks"],
+}
+
+
+@unittest.skipUnless(shutil.which("node"), "node is not on PATH")
+class TitlePartsTest(unittest.TestCase):
+    def test_designations(self):
+        out = subprocess.run(
+            ["node", "-e", TITLE_PARTS_HARNESS, str(STATIC_DIR / "app.js"),
+             json.dumps(list(TITLE_CASES))],
+            check=True, capture_output=True, text=True).stdout
+        self.assertEqual(json.loads(out), TITLE_CASES)
