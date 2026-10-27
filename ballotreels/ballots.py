@@ -38,6 +38,10 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label="Fiscal Effects",
                  choices=("For", "Against"),
                  card_source_kind="official-title-summary"),
+    "wa": Ballot(guide="Voters' Pamphlet",
+                 fiscal_label="Fiscal Impact Statement",
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")

@@ -47,6 +47,16 @@ class BallotTest(unittest.TestCase):
                          ("Voter Information Pamphlet", "Fiscal Effects",
                           ("For", "Against")))
 
+    def test_washington_uses_its_pamphlets_words(self):
+        wa = BALLOTS["wa"]
+        self.assertEqual((wa.guide, wa.fiscal_label, wa.choices,
+                          wa.card_source_kind),
+                         ("Voters' Pamphlet", "Fiscal Impact Statement",
+                          ("Yes", "No"), "official-title-summary"))
+        # "Initiative Measure IL26-638", as the pamphlet heads its page
+        self.assertEqual(badge(wa, "Initiative Measure IL26-638: X",
+                               "IL26-638"), "MEASURE")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):
