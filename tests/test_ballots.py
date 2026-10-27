@@ -19,6 +19,10 @@ class BallotTest(unittest.TestCase):
             "Constitutional Amendment A: Publication Amendments", "A"),
             "Amendment")
         self.assertEqual(designation("Issue 1", "1"), "Issue")
+        # a "No." between the word and the number is skipped
+        self.assertEqual(designation(
+            "Initiative Measure No. 86: Prohibiting Force-Feeding of Birds "
+            "Act of 2026", "86"), "Measure")
         self.assertIsNone(designation("2: Untitled", "2"))
         # the number in the title's body, not its lead, does not count
         self.assertIsNone(designation("Taxes: Amendment A", "A"))
@@ -27,6 +31,12 @@ class BallotTest(unittest.TestCase):
         self.assertEqual(badge(BALLOTS["ca"], "Proposition 2: X", "2"), "PROP")
         self.assertEqual(badge(BALLOTS["ut"], "Constitutional Amendment B: X",
                                "B"), "AMENDMENT")
+
+    def test_dc_and_florida_badges(self):
+        self.assertEqual(badge(BALLOTS["dc"], "Initiative Measure No. 86: X",
+                               "86"), "INITIATIVE")
+        self.assertEqual(badge(BALLOTS["fl"], "Amendment 1: X", "1"),
+                         "AMENDMENT")
 
     def test_ballot_for_reads_the_divisions_state(self):
         self.assertIs(ballot_for("ocd-division/country:us/state:ut"),

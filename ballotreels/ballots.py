@@ -42,6 +42,27 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label="Fiscal Impact Statement",
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+    # The District of Columbia, under the state:dc id the site uses
+    # (ballotreels/site/config.py). The Board of Elections' Voter Guide
+    # prints "INITIATIVE MEASURE NO. 86" (the badge says INITIATIVE, as
+    # its Spanish page's "INICIATIVA NO. 86" shortens it) and the choices
+    # "Yes, to approve" and "No, to reject"; the Chief Financial
+    # Officer's statement is headed "Fiscal Impact Statement".
+    "dc": Ballot(guide="Voter Guide",
+                 fiscal_label="Fiscal Impact Statement",
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary",
+                 badges={"Measure": "INITIATIVE"}),
+    # Florida's Division of Elections booklet, "Proposed Constitutional
+    # Amendments for the General Election", prints each amendment's
+    # ballot title and summary and no fiscal statement; the Legislature's
+    # bill analyses carry one, headed "Fiscal Impact Statement" (the
+    # Senate's) or "FISCAL OR ECONOMIC IMPACT" (the House's). No card
+    # quotes it, so the one heading here is never drawn.
+    "fl": Ballot(guide="Proposed Constitutional Amendments",
+                 fiscal_label="Fiscal Impact Statement",
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
@@ -62,9 +83,12 @@ def designation(title: str, number: str) -> str | None:
     """The word `title` uses for its measures, from the word just before
     `number` in its lead (before any colon): "Proposition" in
     "Proposition 2: ...", "Amendment" in "Constitutional Amendment A:
-    ...". None when the lead has no word before the number."""
+    ...", "Measure" in "Initiative Measure No. 86: ..." (a "No." before
+    the number is skipped). None when the lead has no word before the
+    number."""
     lead = title.split(":", 1)[0]
-    m = re.search(rf"([A-Za-z]+)\s+{re.escape(number)}\s*$", lead)
+    m = re.search(rf"([A-Za-z]+)\s+(?:No\.\s*)?{re.escape(number)}\s*$",
+                  lead)
     return m.group(1) if m else None
 
 
