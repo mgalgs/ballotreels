@@ -50,6 +50,31 @@ class Runner(Protocol):
     def kill(self) -> None: ...
 
 
+def chapters_path(video: Path) -> Path:
+    """Where a rendered video's chapters are written: beside it, as
+    `<name>.chapters.json`."""
+    video = Path(video)
+    return video.with_name(video.stem + ".chapters.json")
+
+
+def write_chapters(video: Path, chapters: list[dict[str, Any]]) -> Path:
+    """Write `chapters` (storyboard.chapters: each section's start in
+    seconds and its heading) beside `video`; returns the path."""
+    dest = chapters_path(video)
+    dest.write_text(json.dumps({"chapters": chapters}, ensure_ascii=False)
+                    + "\n", encoding="utf-8")
+    return dest
+
+
+def read_chapters(video: Path) -> list[dict[str, Any]] | None:
+    """The chapters written beside `video`, or None if there are none (a
+    render from before they were written)."""
+    path = chapters_path(video)
+    if not path.is_file():
+        return None
+    return json.loads(path.read_text(encoding="utf-8"))["chapters"]
+
+
 def run_sources(contest_dir: Path) -> None:
     contest_dir = Path(contest_dir)
     if not (contest_dir / "sources.toml").is_file() or \
@@ -256,6 +281,17 @@ class FakeRunner:
         body = (b"\x00\x00\x00\x18ftypisom" +
                bytes((i % 256 for i in range(64 * 1024 - 16))))
         dest.write_bytes(body)
+        # Chapters as the real render writes them, on the fake narration's
+        # clock (none without one, as from a render that predates them).
+        from .narration import NarrationError
+        from .storyboard import chapters, layout
+        try:
+            doc = json.loads((Path(contest_dir) / "narration.json")
+                             .read_text(encoding="utf-8"))
+            board = layout(contest, doc["seconds"])
+        except (OSError, NarrationError):
+            return dest
+        write_chapters(dest, chapters(board))
         return dest
 
     def encode(self, master: Path, web: Path, poster: Path) -> None:

@@ -95,13 +95,16 @@ def _render_one(path: str, fmt_arg: str, out_dir: Path, out,
     # ...and the site's address, for the link it prints on every frame.
     if site_url:
         os.environ["BALLOTREELS_SITE_URL"] = site_url
-    film = vb.load(str(FILM_TEMPLATE))
+    from .pipeline import write_chapters
+    module = vb.load_module(str(FILM_TEMPLATE))
+    film = module.FILM
     fmts = film.formats if fmt_arg == "all" else [film.format(fmt_arg)]
     out_dir.mkdir(parents=True, exist_ok=True)
     for fmt in fmts:
         dest = out_dir / f"{contest.id}-{fmt.name}.mp4"
         render(film, str(dest), format=fmt, log=out)
         print(f"wrote {dest}", file=out)
+        print(f"wrote {write_chapters(dest, module.CHAPTERS)}", file=out)
     return True
 
 

@@ -17,9 +17,9 @@ from pathlib import Path
 from typing import Any
 
 from .contest import load_contest
-from .pipeline import (PipelineError, Runner, ScriptWriter, run_check,
-                       run_encode, run_narrate, run_render, run_script,
-                       run_sources)
+from .pipeline import (PipelineError, Runner, ScriptWriter, read_chapters,
+                       run_check, run_encode, run_narrate, run_render,
+                       run_script, run_sources)
 from .queue import hash_for_key
 from .standard import Standard
 
@@ -135,11 +135,14 @@ class WorkerClient:
 
     def complete(self, job_id: int, claim: str, storage: str,
                 sources: list[dict[str, Any]],
-                objects: dict[str, Any] | None = None) -> None:
+                objects: dict[str, Any] | None = None,
+                chapters: list[dict[str, Any]] | None = None) -> None:
         payload: dict[str, Any] = {"claim": claim, "storage": storage,
                                    "sources": sources}
         if objects is not None:
             payload["objects"] = objects
+        if chapters is not None:
+            payload["chapters"] = chapters
         status, body = self._request(
             "POST", f"/worker/jobs/{job_id}/complete", json_body=payload)
         if status == 409:
@@ -289,7 +292,9 @@ class Worker:
         return result
 
     def _upload_and_complete(self, job: dict[str, Any], contest_dir: Path,
-                             web: Path, poster: Path) -> None:
+                             web: Path, poster: Path,
+                             chapters: list[dict[str, Any]] | None = None
+                             ) -> None:
         contest = load_contest(contest_dir)
         sources = _source_dicts(contest)
         files = {
@@ -300,10 +305,12 @@ class Worker:
         }
         published = self.storage.put_all(job, files)
         if published["storage"] == "local":
-            self.client.complete(job["id"], job["claim"], "local", sources)
+            self.client.complete(job["id"], job["claim"], "local", sources,
+                                 chapters=chapters)
         else:
             self.client.complete(job["id"], job["claim"], "s3", sources,
-                                 objects=published["objects"])
+                                 objects=published["objects"],
+                                 chapters=chapters)
 
     def _work(self, job: dict[str, Any]) -> None:
         job_id, claim = job["id"], job["claim"]
@@ -330,6 +337,8 @@ class Worker:
             rendered = self._run_stage(
                 job_id, claim, "render",
                 lambda: run_render(contest_dir, self.runner, out_dir))
+            # Each section's start, written beside the render.
+            chapters = read_chapters(rendered)
             master_path = self._master_path(job)
             master_path.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(rendered, master_path)
@@ -340,7 +349,8 @@ class Worker:
             self._current_stage = "cache"
             self.client.stage_event(job_id, claim, "cache", "start")
             try:
-                self._upload_and_complete(job, contest_dir, web, poster)
+                self._upload_and_complete(job, contest_dir, web, poster,
+                                          chapters)
             except ClaimConflict:
                 raise
             except Exception as e:

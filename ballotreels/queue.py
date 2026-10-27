@@ -39,7 +39,8 @@ CREATE TABLE IF NOT EXISTS videos (
     storage TEXT NOT NULL,
     urls TEXT NOT NULL,
     sources TEXT NOT NULL,
-    created_at REAL NOT NULL
+    created_at REAL NOT NULL,
+    chapters TEXT
 );
 
 CREATE TABLE IF NOT EXISTS jobs (
@@ -117,6 +118,9 @@ class Video:
     urls: dict[str, str]
     sources: list[dict[str, Any]]
     created_at: float
+    # Each section's start, [{"start": seconds, "title": heading}], in
+    # order; None for a video rendered before the render wrote them.
+    chapters: list[dict[str, Any]] | None = None
 
 
 class JobQueue:
@@ -136,6 +140,10 @@ class JobQueue:
         self._conn.row_factory = sqlite3.Row
         self._conn.execute("PRAGMA journal_mode=WAL")
         self._conn.executescript(SCHEMA)
+        columns = {r["name"] for r in
+                   self._conn.execute("PRAGMA table_info(videos)")}
+        if "chapters" not in columns:  # a queue made before chapters
+            self._conn.execute("ALTER TABLE videos ADD COLUMN chapters TEXT")
         self._conn.commit()
 
     def close(self) -> None:
@@ -145,21 +153,26 @@ class JobQueue:
 
     def record_video(self, key: tuple[str, str, str, int, int], storage: str,
                      urls: dict[str, str],
-                     sources: list[dict[str, Any]]) -> None:
+                     sources: list[dict[str, Any]],
+                     chapters: list[dict[str, Any]] | None = None) -> None:
         with self._lock:
-            self._insert_video_locked(key, storage, urls, sources)
+            self._insert_video_locked(key, storage, urls, sources, chapters)
             self._conn.commit()
 
     def _insert_video_locked(self, key: tuple[str, str, str, int, int],
                              storage: str, urls: dict[str, str],
-                             sources: list[dict[str, Any]]) -> None:
+                             sources: list[dict[str, Any]],
+                             chapters: list[dict[str, Any]] | None = None
+                             ) -> None:
         self._conn.execute(
             "INSERT OR REPLACE INTO videos "
             "(key_hash, key, election, division, contest, "
             "standard_version, template_version, storage, urls, "
-            "sources, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+            "sources, created_at, chapters) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             (hash_for_key(key), key_string(key), *key, storage,
-             json.dumps(urls), json.dumps(sources), self.clock()))
+             json.dumps(urls), json.dumps(sources), self.clock(),
+             None if chapters is None else json.dumps(chapters)))
 
     def video_for(self, key: tuple[str, str, str, int, int]) -> Video | None:
         return self.video_for_hash(hash_for_key(key))
@@ -167,14 +180,16 @@ class JobQueue:
     def video_for_hash(self, key_hash: str) -> Video | None:
         with self._lock:
             row = self._conn.execute(
-                "SELECT key_hash, key, storage, urls, sources, created_at "
-                "FROM videos WHERE key_hash = ?", (key_hash,)).fetchone()
+                "SELECT key_hash, key, storage, urls, sources, created_at, "
+                "chapters FROM videos WHERE key_hash = ?", (key_hash,)).fetchone()
         if row is None:
             return None
         return Video(key_hash=row["key_hash"], key=row["key"],
                     storage=row["storage"], urls=json.loads(row["urls"]),
                     sources=json.loads(row["sources"]),
-                    created_at=row["created_at"])
+                    created_at=row["created_at"],
+                    chapters=(json.loads(row["chapters"])
+                              if row["chapters"] else None))
 
     def known_hashes(self) -> set[str]:
         with self._lock:
@@ -368,11 +383,9 @@ class JobQueue:
         return ok
 
     def complete(self, job_id: int, claim: str,
-                 video: tuple[tuple[str, str, str, int, int], str,
-                              dict[str, str], list[dict[str, Any]]]
-                 | None = None) -> bool:
+                 video: tuple | None = None) -> bool:
         """Mark a running job done. With `video` (key, storage, urls,
-        sources), its `videos` row is written in the same transaction,
+        sources[, chapters]), its `videos` row is written in the same transaction,
         so a cancel, requeue or timeout sweep that wins the race leaves
         no video recorded for a job that isn't done."""
         now = self.clock()

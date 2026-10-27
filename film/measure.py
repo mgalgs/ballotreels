@@ -107,6 +107,7 @@ from ballotreels.narration import shift_track, side_pad  # noqa: E402
 from ballotreels.storyboard import frame as to_frame  # noqa: E402
 from ballotreels.site import pages  # noqa: E402
 from ballotreels.site.config import DEFAULT_SITE_URL, state_abbr  # noqa: E402
+from ballotreels.storyboard import chapters  # noqa: E402
 from ballotreels.storyboard import layout as lay_out  # noqa: E402
 
 for _f in sorted((HERE / 'assets' / 'fonts').glob('*.[ot]tf')):
@@ -2696,6 +2697,9 @@ SEGMENTS = [vb.Segment(s.label, s.start, s.end,
 SEGMENTS.append(vb.Segment('sources', BOARD.narration_end, BOARD.end,
                            data={'copy': ['Sources'] + [s.publisher for s in BOARD.cited]}))
 TIMELINE = vb.Timeline(GRID, SEGMENTS, end=BOARD.end)
+# each section's start and heading, which `render` writes next to the video
+# for its page's chapter list
+CHAPTERS = chapters(BOARD)
 
 # The drawing sounds follow the 9x16 schedule: the two formats' choreography
 # differs by at most a few frames (their layouts scale the same text, so

@@ -11,6 +11,7 @@ from __future__ import annotations
 import hmac
 import io
 import json
+import math
 import re
 import shutil
 import sys
@@ -509,6 +510,9 @@ def _contest_detail(entry, state: StateElection,
         "video_url": (video.urls.get("video") if video else None),
         "poster_url": (video.urls.get("poster") if video else None),
         "sources": (video.sources if video else []),
+        # Each section's start, for the page's chapter list: none for a
+        # video rendered before the render wrote them.
+        "chapters": ((video.chapters or []) if video else []),
         "standard_version": deps.standard.version,
         "template_version": key[4] if key is not None else None,
         "corrections": [{"date": c.date, "note": c.note}
@@ -516,6 +520,30 @@ def _contest_detail(entry, state: StateElection,
         "report_url": REPORT_URL,
         "job": job,
     }
+
+
+MAX_CHAPTERS = 64
+MAX_CHAPTER_TITLE = 200
+
+
+def _valid_chapters(chapters: Any) -> bool:
+    """A worker's chapters: a list of {"start": seconds, "title": text},
+    starts from zero, in order."""
+    if not isinstance(chapters, list) or len(chapters) > MAX_CHAPTERS:
+        return False
+    last = 0.0
+    for c in chapters:
+        if not isinstance(c, dict) or set(c) != {"start", "title"}:
+            return False
+        start, title = c["start"], c["title"]
+        if (isinstance(start, bool) or not isinstance(start, (int, float))
+                or not math.isfinite(start) or start < last):
+            return False
+        if (not isinstance(title, str) or not title.strip()
+                or len(title) > MAX_CHAPTER_TITLE):
+            return False
+        last = start
+    return True
 
 
 def _job_view(job: dict[str, Any], deps: Deps) -> dict[str, Any]:
@@ -1214,6 +1242,9 @@ class PrivateHandler(_JsonHandler):
             return self._state_conflict(job_id)
         storage = body.get("storage", "local")
         sources = body.get("sources", [])
+        chapters = body.get("chapters")
+        if chapters is not None and not _valid_chapters(chapters):
+            return self._json(400, {"error": "bad chapters"})
         key_hash = job["key_hash"]
         if storage == "local":
             incoming = _incoming_dir(deps.config.data_dir, job_id, claim)
@@ -1243,7 +1274,8 @@ class PrivateHandler(_JsonHandler):
         # committed, so a job that lost its claim meanwhile leaves the
         # cache as it was.
         if not deps.queue.complete(job_id, claim,
-                                   video=(key, storage, urls, sources)):
+                                   video=(key, storage, urls, sources,
+                                          chapters)):
             return self._state_conflict(job_id)
         if storage == "local":
             hash_dir = deps.config.data_dir / "cache" / key_hash

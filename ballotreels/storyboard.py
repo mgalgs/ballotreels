@@ -21,6 +21,7 @@ order (`playback_sections`), so the picture follows the voice:
 
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass
 
 from .contest import Contest, Line, Section, Source, Visual
@@ -90,6 +91,16 @@ class Storyboard:
             if s.start <= n < s.end:
                 return s
         return None
+
+
+def chapters(board: Storyboard) -> list[dict[str, object]]:
+    """One chapter per section, in playback order: where its page starts,
+    in seconds, and its heading as the film writes it. The video's page
+    lists them, to jump to a section; the sources card is not one. A start
+    is rounded up to the millisecond, so seeking to it never lands on the
+    previous section's last frame."""
+    return [{"start": math.ceil(s.start * 1000 / board.fps - 1e-6) / 1000,
+             "title": s.section.heading} for s in board.sections]
 
 
 def cited_sources(contest: Contest) -> tuple[Source, ...]:
