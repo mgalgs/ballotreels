@@ -934,6 +934,24 @@ a.contest:hover {
   background: var(--paper);
 }
 
+/* With the full-screen button under it: the frame leaves room for
+   the button too, so both are on screen without scrolling. */
+.video-frame.has-fullscreen {
+  width: min(100%, calc((100svh - var(--above, 230px) - 78px) * 9 / 16));
+  margin-bottom: 10px;
+}
+
+.fullscreen-row {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 18px;
+}
+
+.fullscreen-btn {
+  min-height: 46px;
+  font-size: 1.2rem;
+}
+
 /* The same frame before a video exists: an empty page waiting, only
    as tall as what it holds. */
 .video-frame.empty {

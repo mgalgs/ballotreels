@@ -227,3 +227,87 @@ class TitlePartsTest(unittest.TestCase):
              json.dumps(list(TITLE_CASES))],
             check=True, capture_output=True, text=True).stdout
         self.assertEqual(json.loads(out), TITLE_CASES)
+
+
+# Runs app.js's videoNodes under node with a minimal stand-in for the
+# DOM, with and without a video, and taps the full-screen button with
+# each browser's fullscreen API (iPhone Safari has only
+# webkitEnterFullscreen on a <video>).
+FULLSCREEN_HARNESS = r"""
+const src = require("fs").readFileSync(process.argv[1], "utf8");
+function node(tag) {
+  return {
+    tag, attrs: {}, children: [], listeners: {}, textContent: "",
+    setAttribute(k, v) { this.attrs[k] = v; },
+    appendChild(c) { this.children.push(c); return c; },
+    append(...cs) { this.children.push(...cs); },
+    addEventListener(t, f) { this.listeners[t] = f; },
+    set innerHTML(v) { this.html = v; },
+  };
+}
+globalThis.document = {
+  createElement: node,
+  createTextNode: (text) => ({ tag: "#text", text, children: [] }),
+};
+const helpers = src.slice(src.indexOf("function el("),
+                          src.indexOf("// -- map drawing"));
+const video = src.slice(
+  src.indexOf("// -- the video and its full-screen button"),
+  src.indexOf("async function renderContest"));
+eval(helpers + video + "; globalThis.videoNodes = videoNodes;");
+function find(n, pred) {
+  if (pred(n)) return n;
+  for (const c of n.children || []) {
+    const hit = find(c, pred);
+    if (hit) return hit;
+  }
+  return null;
+}
+const text = (n) => n.tag === "#text" ? n.text :
+  (n.textContent || "") + (n.children || []).map(text).join("");
+const out = { without: videoNodes({ video_url: null }).length };
+for (const api of ["iphone", "standard"]) {
+  const nodes = videoNodes({ video_url: "/v/abc/1/video.mp4",
+                             poster_url: "/v/abc/1/poster.jpg" });
+  const root = { children: nodes };
+  const v = find(root, (n) => n.tag === "video");
+  const btn = find(root, (n) => n.tag === "button");
+  const calls = [];
+  if (api === "iphone") {
+    v.webkitEnterFullscreen = () => calls.push("webkitEnterFullscreen");
+  } else {
+    v.requestFullscreen = () => { calls.push("requestFullscreen");
+                                  return Promise.resolve(); };
+    v.webkitEnterFullscreen = () => calls.push("webkitEnterFullscreen");
+  }
+  btn.listeners.click();
+  out[api] = { count: nodes.length, order: nodes.map((n) => n.attrs.class),
+               label: text(btn).trim(), cls: btn.attrs.class, calls };
+}
+console.log(JSON.stringify(out));
+"""
+
+
+@unittest.skipUnless(shutil.which("node"), "node is not on PATH")
+class FullscreenButtonTest(unittest.TestCase):
+    def test_button_only_with_a_video(self):
+        out = json.loads(subprocess.run(
+            ["node", "-e", FULLSCREEN_HARNESS, str(STATIC_DIR / "app.js")],
+            check=True, capture_output=True, text=True).stdout)
+        self.assertEqual(out["without"], 0)
+        for api, call in (("iphone", "webkitEnterFullscreen"),
+                          ("standard", "requestFullscreen")):
+            with self.subTest(api):
+                got = out[api]
+                # The button sits directly under the video's frame.
+                self.assertEqual(got["order"], ["video-frame has-fullscreen",
+                                                "fullscreen-row"])
+                self.assertEqual(got["label"], "Full screen")
+                self.assertIn("btn", got["cls"].split())
+                self.assertEqual(got["calls"], [call])
+
+    def test_tap_target(self):
+        css = (STATIC_DIR / "style.css").read_text(encoding="utf-8")
+        m = re.search(r"\.fullscreen-btn \{[^}]*min-height: (\d+)px", css)
+        self.assertIsNotNone(m)
+        self.assertGreaterEqual(int(m.group(1)), 44)

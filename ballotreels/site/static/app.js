@@ -46,6 +46,10 @@ const ICONS = {
     'L8 17 L20 5 L25 10 L13 22 Z M8 17 L13 22 M18 7 L23 12" ' +
     'fill="none" stroke="currentColor" stroke-width="1.7" ' +
     'stroke-linejoin="round" stroke-linecap="round" opacity="0.6"/></svg>',
+  fullscreen: '<svg viewBox="0 0 22 22" aria-hidden="true"><path d="M3 8 ' +
+    'L3 3 L8 3 M14 3 L19 3 L19 8 M19 14 L19 19 L14 19 M8 19 L3 19 L3 14" ' +
+    'fill="none" stroke="currentColor" stroke-width="2" ' +
+    'stroke-linecap="round" stroke-linejoin="round"/></svg>',
   lost: '<svg viewBox="0 0 54 54" aria-hidden="true"><path d="M27 4 C 13 ' +
     '5, 5 14, 5 27 C 6 41, 15 49, 28 49 C 41 48, 49 39, 49 26 C 48 13, ' +
     '39 5, 26 5" fill="none" stroke="currentColor" stroke-width="2" ' +
@@ -1148,6 +1152,42 @@ window.addEventListener("resize", fitVideo);
 // title, which moves the frame.
 if (document.fonts) document.fonts.addEventListener("loadingdone", fitVideo);
 
+// -- the video and its full-screen button ------------------------------
+
+// iPhone Safari has no requestFullscreen for a <video>, only its own
+// webkitEnterFullscreen; elsewhere the standard call (or its webkit
+// prefix, older desktop Safari).
+function enterFullscreen(video) {
+  if (video.requestFullscreen) {
+    const done = video.requestFullscreen();
+    if (done && done.catch) {
+      done.catch(() => {
+        if (video.webkitEnterFullscreen) video.webkitEnterFullscreen();
+      });
+    }
+  } else if (video.webkitEnterFullscreen) {
+    video.webkitEnterFullscreen();
+  } else if (video.webkitRequestFullscreen) {
+    video.webkitRequestFullscreen();
+  }
+}
+
+// The contest page's video frame and the full-screen button under it;
+// nothing when there is no video yet.
+function videoNodes(body) {
+  if (!body.video_url) return [];
+  const video = el("video", { src: body.video_url, controls: "controls",
+                              playsinline: "playsinline",
+                              preload: "metadata" });
+  if (body.poster_url) video.setAttribute("poster", body.poster_url);
+  const full = el("button", {
+    type: "button", class: "btn btn-quiet fullscreen-btn",
+    onclick: () => enterFullscreen(video),
+  }, [icon("fullscreen"), "Full screen"]);
+  return [el("div", { class: "video-frame has-fullscreen" }, [video]),
+          el("div", { class: "fullscreen-row" }, [full])];
+}
+
 async function renderContest(contestId) {
   const token = routeToken;
   app.appendChild(loading("Loading..."));
@@ -1174,11 +1214,7 @@ async function renderContest(contestId) {
   ]);
 
   if (body.video_url) {
-    const video = el("video", { src: body.video_url, controls: "controls",
-                                playsinline: "playsinline",
-                                preload: "metadata" });
-    if (body.poster_url) video.setAttribute("poster", body.poster_url);
-    section.appendChild(el("div", { class: "video-frame" }, [video]));
+    section.append(...videoNodes(body));
     // Fitted once the rest of the page is in and laid out below.
     requestAnimationFrame(fitVideo);
   } else {
