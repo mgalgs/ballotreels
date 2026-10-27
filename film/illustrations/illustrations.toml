@@ -5,7 +5,7 @@
 # subject, reviewed by a person, and checked in. Keep to the style's rules
 # when adding one: objects and places only, no people, no text, no flags.
 
-style = "Pencil sketch illustration on plain off-white paper. Graphite pencil lines with light cross-hatching, hand-drawn, simple and clear, one centered subject with a wide empty margin. Grey graphite only, no color. No text, no letters, no numbers, no people, no faces, no flags, no logos."
+style = "Coloured pencil illustration on plain off-white paper. Confident graphite outlines with soft coloured-pencil shading and visible pencil strokes, warm and lively, in a limited palette of ochre, honey yellow, teal, sage green and warm brown. Hand-drawn, simple and clear, one centered subject with a wide empty margin. No red, no text, no letters, no numbers, no people, no faces, no flags, no logos."
 model = "gemini-2.5-flash-image"
 
 [[illustration]]
@@ -56,4 +56,34 @@ subject = "several stacks of coins of different heights standing under a long ho
 [[illustration]]
 name = "analyst-review"
 file = "analyst-review.png"
-subject = "a magnifying glass lying on a ledger page full of ruled columns of lines"
+subject = "a magnifying glass lying on a ledger page of ruled columns, the columns filled only with plain short horizontal lines, no writing or scribbles at all"
+
+[[illustration]]
+name = "rainy-day"
+file = "rainy-day.png"
+subject = "a glass jar of coins sheltered under a small open umbrella, with rain falling around it and dry ground beneath the umbrella"
+
+[[illustration]]
+name = "market-swings"
+file = "market-swings.png"
+subject = "a long zig-zag line on a sheet of graph paper that rises and falls in sharp peaks and deep dips around a flat middle, ending at about the same height it started"
+
+[[illustration]]
+name = "balanced-budget"
+file = "balanced-budget.png"
+subject = "a carpenter's spirit level lying perfectly level across the top of a closed ledger book, its bubble centred"
+
+[[illustration]]
+name = "fund-target"
+file = "fund-target.png"
+subject = "a tall glass jar with two short bold tick marks on its side, one a third of the way up and one two thirds of the way up, coins filling it to the lower tick and clear empty glass above"
+
+[[illustration]]
+name = "ballot-box"
+file = "ballot-box.png"
+subject = "a plain wooden ballot box with a blank folded paper ballot halfway into the slot on its lid"
+
+[[illustration]]
+name = "extend-deadline"
+file = "extend-deadline.png"
+subject = "a wall calendar whose pages are blank empty grids with no writing at all, several pages flipping forward, and a stack of sealed envelopes tied with string in front of it"
