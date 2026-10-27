@@ -52,7 +52,18 @@ class LayoutPadTest(ContestCopyTestCase):
         by_side = {sb.section.side: sb for sb in board.sections
                   if sb.section.side is not None}
         a, b = by_side.values()
-        self.assertLessEqual(abs((a.end - a.start) - (b.end - b.start)), 1)
+        self.assertEqual(a.end - a.start, b.end - b.start)
+
+    def test_side_sections_match_to_the_frame_whatever_the_stretch(self):
+        # the pad is sized in whole frames from the unpadded layout, so no
+        # stretch leaves the two a frame apart from rounding each boundary
+        for stretch in (0.97, 0.985, 0.991, 0.996, 1.004, 1.013):
+            with self.subTest(stretch=stretch):
+                write_narration(self.dir, stretch={"no": stretch})
+                board = layout(load_contest(self.dir), 0.0)
+                a, b = (sb for sb in board.sections
+                        if sb.section.side is not None)
+                self.assertEqual(a.end - a.start, b.end - b.start)
 
     def test_narration_end_follows_the_padded_audio(self):
         # `seconds` is the narration file's own length, before the pad;
@@ -88,7 +99,7 @@ class CommittedProp2Test(unittest.TestCase):
         by_side = {sb.section.side: sb for sb in m.BOARD.sections
                   if sb.section.side is not None}
         a, b = by_side.values()
-        self.assertLessEqual(abs((a.end - a.start) - (b.end - b.start)), 1)
+        self.assertEqual(a.end - a.start, b.end - b.start)
 
 
 if __name__ == "__main__":

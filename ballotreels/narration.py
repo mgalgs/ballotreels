@@ -172,22 +172,43 @@ class SidePad:
     seconds: float
 
 
-def side_pad(contest: Contest) -> SidePad | None:
-    """The pad that equalises the two side sections' spoken duration, or
-    None when there are no sidecars, the script isn't two-sided, or the
-    two sides already match to floating-point noise. Does not enforce
-    SIDE_PAD_CAP: check_airtime does, since this is used by the renderer
-    too, which must still lay out *something* for an over-cap script."""
-    durations = side_durations(contest)
-    if durations is None:
+def side_pad(contest: Contest, fps: int = 30) -> SidePad | None:
+    """The pad that makes the two side sections last exactly the same
+    number of frames on screen, or None when there are no sidecars, the
+    script isn't two-sided, or the two already match to the frame. Does
+    not enforce SIDE_PAD_CAP: check_airtime does, since this is used by the
+    renderer too, which must still lay out *something* for an over-cap
+    script.
+
+    The pad is a whole number of frames, sized from the unpadded layout's
+    own two section lengths (storyboard.side_frames) rather than from the
+    spoken durations in seconds, so that the padded section boundaries,
+    each rounded to a frame on its own, still come out equal: the side
+    with fewer frames is padded by the difference. That is re-measured
+    with the pad in place, a few times at most, for the rare boundary that
+    does not move by exactly the pad (a page lead pinned to the previous
+    section's last word, or a float landing on a half frame)."""
+    from .storyboard import side_frames  # storyboard imports this module
+
+    if side_durations(contest) is None:
         return None
-    (side_a, dur_a), (side_b, dur_b) = durations
-    if abs(dur_a - dur_b) < 1e-9:
+    frames = side_frames(contest, None, fps)
+    if frames is None:
         return None
-    short, pad = (side_a, dur_b - dur_a) if dur_a < dur_b else (side_b, dur_a - dur_b)
-    spans = match_phrases(contest)
-    at = max(s.end for s in spans if s.section == short)
-    return SidePad(short, at, pad)
+    (side_a, fa), (side_b, fb) = frames
+    if fa == fb:
+        return None
+    short = side_a if fa < fb else side_b
+    at = max(s.end for s in match_phrases(contest) if s.section == short)
+    k = abs(fa - fb)
+    for _ in range(4):
+        pad = SidePad(short, at, k / fps)
+        got = dict(side_frames(contest, pad, fps))
+        diff = got[side_b if short == side_a else side_a] - got[short]
+        if diff == 0 or k + diff <= 0:
+            break
+        k += diff
+    return pad
 
 
 def _shift(t: float, pad: SidePad | None) -> float:
@@ -195,15 +216,19 @@ def _shift(t: float, pad: SidePad | None) -> float:
     return t if pad is None or t <= pad.at else t + pad.seconds
 
 
-def padded_spans(contest: Contest) -> tuple[NarrationSpan, ...] | None:
+def padded_spans(contest: Contest, fps: int = 30,
+                 pad: SidePad | None | bool = True
+                 ) -> tuple[NarrationSpan, ...] | None:
     """match_phrases's spans with the side pad (side_pad) folded in: every
     span after the pad point moved later by its length, so the picture
     (and anything else on the narration's clock) follows the padded audio
-    actually played, not the original narration file's."""
+    actually played, not the original narration file's. `pad` is the pad
+    to fold in, or True (the default) for side_pad's own."""
     spans = match_phrases(contest)
     if spans is None:
         return None
-    pad = side_pad(contest)
+    if pad is True:
+        pad = side_pad(contest, fps)
     if pad is None:
         return spans
     return tuple(NarrationSpan(s.section, s.index, _shift(s.start, pad),

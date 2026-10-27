@@ -24,8 +24,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from .contest import Contest, Line, Section, Source, Visual
-from .narration import (NarrationError, padded_spans, playback_sections,
-                        side_pad)
+from .narration import (NarrationError, SidePad, padded_spans,
+                        playback_sections, side_pad)
 
 FPS = 30
 END_HOLD = 0.5  # s held on the last line before the sources card
@@ -114,12 +114,27 @@ def layout(contest: Contest, seconds: float, fps: int = FPS) -> Storyboard:
     rule 2.2, narration.side_pad): every line after the shorter side's last
     word is laid out `pad.seconds` later, same as the padded audio itself
     (film/measure.py builds that audio from the same side_pad)."""
-    spans = padded_spans(contest)
+    return _layout(contest, seconds, fps, side_pad(contest, fps))
+
+
+def side_frames(contest: Contest, pad: SidePad | None, fps: int = FPS
+                ) -> tuple[tuple[str, int], tuple[str, int]] | None:
+    """Each side section's length in frames, in playback order, laid out
+    with `pad` (None: unpadded), or None if the script isn't two-sided.
+    narration.side_pad sizes its pad from this."""
+    board = _layout(contest, 0.0, fps, pad)
+    sides = tuple((sb.label, sb.end - sb.start) for sb in board.sections
+                  if sb.section.side is not None)
+    return sides if len(sides) == 2 else None
+
+
+def _layout(contest: Contest, seconds: float, fps: int,
+            pad: SidePad | None) -> Storyboard:
+    spans = padded_spans(contest, fps, pad)
     if spans is None:
         raise NarrationError(
             f"{contest.path}: no narration sidecars; run `python -m "
             f"ballotreels narration` then `videobuilder say` first")
-    pad = side_pad(contest)
     if pad is not None:
         seconds += pad.seconds
     by_line = {(s.section, s.index): s for s in spans}
@@ -167,4 +182,5 @@ def layout(contest: Contest, seconds: float, fps: int = FPS) -> Storyboard:
 
 
 __all__ = ["SOURCES_CARD_SECONDS", "ChartBeat", "LineBeat", "NarrationError",
-           "SectionBeat", "Storyboard", "cited_sources", "frame", "layout"]
+           "SectionBeat", "Storyboard", "cited_sources", "frame", "layout",
+           "side_frames"]

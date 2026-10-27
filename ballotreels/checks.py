@@ -629,10 +629,9 @@ def check_airtime(c: Contest) -> list[Failure]:
     beat_a, beat_b = by_side.values()
     label_a, label_b = beat_a.label, beat_b.label
     frames_a, frames_b = beat_a.end - beat_a.start, beat_b.end - beat_b.start
-    # frame rounding (PAGE_LEAD, each section boundary) can still leave the
-    # two a frame apart; more than that would mean the padding itself is
-    # wrong, not just quantised
-    if abs(frames_a - frames_b) <= 1:
+    # narration.side_pad sizes the pad in whole frames from these same
+    # section lengths, so any difference at all is a bug in the padding
+    if frames_a == frames_b:
         return []
     on_a, on_b = frames_a / board.fps, frames_b / board.fps
     return [Failure("airtime",
