@@ -831,7 +831,7 @@ SIDES_LAYOUT = 'compact'
 BLOCK_GAP = 28  # px between the two blocks' halves (16:9 columns, 'halves'), before the format's own scale
 LABEL_GAP = 22  # px between a block's label and its rows
 SOURCE_GAP = 34  # px above a source line
-CARD_PAD = 24   # px inside a card, around its block
+CARD_PAD = 24   # px inside a card, above and below its block (half as much again at its sides)
 
 
 def side_boxes(L, fmt):
@@ -887,9 +887,10 @@ def sides_plan(side_a, side_b, L, fmt, layout=None):
     shared = len(charts) == 2 and charts[0].source.id == charts[1].source.id
     stacked = fmt == '9x16'
     pad = CARD_PAD * u if layout == 'cards' else 0
+    side_pad = pad * 1.5  # a card's text keeps further off its sides than off its top and bottom
     col_gap = BLOCK_GAP * u if layout == 'halves' else (BLOCK_GAP + 20) * u
     outer_w = st.w if stacked else (st.w - col_gap) / 2
-    bw = outer_w - 2 * pad
+    bw = outer_w - 2 * side_pad
     label_f, label_h = block_label_font(secs, L, bw)
     label_gap = LABEL_GAP * u
     src_gap = SOURCE_GAP * u
@@ -936,7 +937,7 @@ def sides_plan(side_a, side_b, L, fmt, layout=None):
             y0 = st.y + (st.h - card_h - foot) / 2
             cards = [Box(st.x, y0, outer_w, card_h), Box(st.x + outer_w + col_gap, y0, outer_w, card_h)]
         foot_y = cards[1].bottom + src_gap
-    blocks = [Box(c.x + pad, c.y + pad, c.w - 2 * pad, c.h - 2 * pad) for c in cards]
+    blocks = [Box(c.x + side_pad, c.y + pad, c.w - 2 * side_pad, c.h - 2 * pad) for c in cards]
     return dict(layout=layout, label_font=label_f, label_h=label_h, rows=rows, blocks=blocks,
                 cards=cards if layout == 'cards' else None,
                 source=Box(st.x, foot_y, st.w, src_h) if shared else None)
