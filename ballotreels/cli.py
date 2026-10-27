@@ -177,10 +177,15 @@ def _serve(args, out, err) -> int:
 
 
 def _build_storage(client):
+    """The worker's storage backend, or raises S3ConfigError naming
+    every missing variable (the caller turns that into exit 2)."""
     storage_name = os.environ.get("BALLOTREELS_STORAGE", "local")
     if storage_name == "local":
         from .storage import LocalStorage
         return LocalStorage(client)
+    if storage_name == "s3":
+        from .storage import S3Storage
+        return S3Storage.from_env(os.environ)
     raise SystemExit(f"unknown BALLOTREELS_STORAGE {storage_name!r}")
 
 
@@ -214,7 +219,12 @@ def _worker_main(args, out, err) -> int:
         runner = SubprocessRunner(args.repo, ffmpeg=ffmpeg, crf=crf,
                                   maxrate=maxrate)
     client = WorkerClient(server, token)
-    storage = _build_storage(client)
+    from .storage import S3ConfigError
+    try:
+        storage = _build_storage(client)
+    except S3ConfigError as e:
+        print(str(e), file=err)
+        return 2
     worker = Worker(client=client, worker_id=args.worker_id, repo=args.repo,
                     runner=runner, writer=HandWrittenScriptWriter(),
                     storage=storage, standard=standard,
