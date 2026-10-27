@@ -112,8 +112,11 @@ def main(argv: list[str] | None = None, out=sys.stdout) -> int:
         ok = _render_one(args.contest, args.format, Path(args.out), out)
         return 0 if ok else 1
 
-    standard = load_standard()
-    ok = True
-    for path in args.contests:
-        ok = _check_one(path, standard, out) and ok
-    return 0 if ok else 1
+    if args.command == "check":
+        standard = load_standard()
+        ok = True
+        for path in args.contests:
+            ok = _check_one(path, standard, out) and ok
+        return 0 if ok else 1
+
+    raise AssertionError(f"unhandled command {args.command!r}")
