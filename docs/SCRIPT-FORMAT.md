@@ -57,10 +57,47 @@ connective = true                    # a line that makes no claim
 
 A line has `sources` (non-empty) or `connective = true`, never both.
 
-A line may carry one visual: a chart, a timeline or an illustration.
-The centre of the frame shows only pictures: text that belongs to a
-picture (a chart's title, its labels, its source line) is fine, but no
-visual is only text. A visual appears as the line is narrated and
+### The card: the measure's official page
+
+A script may open on a drawn copy of the top of the measure's page in
+the official voter guide, and come back to it to "click" the terms on
+it (the `page` visual, below). The optional top-level `[card]` table
+quotes that page:
+
+```toml
+[card]
+source = "quick-reference"   # a source of kind official-title-summary
+number = "2"                 # drawn as the "PROP 2" badge
+title = "INCREASES STATE’S RAINY DAY FUND. LEGISLATIVE CONSTITUTIONAL AMENDMENT."
+origin = "Put on the Ballot by the Legislature"
+summary = "Increases California's Rainy Day Fund, ... Fiscal Impact: State budget reserves would be higher."
+yes = "A YES vote on this measure means: ..."
+no = "A NO vote on this measure means: ..."
+```
+
+- All seven keys are required, each a non-empty string. `source` must be
+  in `sources.toml`, of kind `official-title-summary`.
+- **Verbatim**: `title`, `origin`, `summary`, `yes` and `no` must each
+  appear in the archived source's text, compared after stripping its
+  markup (and the contents of its scripts and styles), decoding
+  entities, collapsing whitespace and ignoring whitespace before
+  punctuation (the page renders as `Fiscal Impact : State`). Quotes and
+  case are compared as they are: the title is upper-case, with a curly
+  apostrophe, on the page. A failure names the field.
+- The card is exempt from the judgment-word check: it is a verbatim
+  official quote, not the narrator's voice (STANDARD.md rule 3.1).
+  Everything else in the script keeps the check.
+- The card has no supporters or opponents line and no arguments, on
+  purpose: the arguments belong only to the side sections (rule 6.3),
+  and the page's "Opponents: None submitted" sits beside a filed
+  argument against.
+
+A line may carry one visual: a chart, a timeline, an illustration or
+the page card. The centre of the frame shows only pictures: text that
+belongs to a picture (a chart's title, its labels, its source line) is
+fine, but no visual is only text. The one exception is the page card,
+which is a picture of the official ballot document, as the ballot card
+is. A visual appears as the line is narrated and
 stays up through the lines after it in the same section, until a later
 line brings its own visual or the section ends.
 
@@ -111,13 +148,33 @@ name = "save-more"       # no source: the line cites
   `source`: an illustration carries no facts, and the line's own
   sources cover what is said.
 
+```toml
+[section.line.visual]
+kind = "page"            # the card: the measure's official page
+source = "quick-reference"   # must equal card.source, and be among the line's sources
+focus = "Rainy Day Fund"     # optional: the term to click
+```
+
+- `page`: the `[card]`, drawn as the official page. Allowed only when
+  the script has a card; no `title`. `focus`, if given, is a phrase
+  that must occur in the card's text (its title, origin, summary, yes
+  and no), matched case-sensitively, so `"Rainy Day Fund"` picks the
+  summary's words over the upper-case title's. The pencil circles
+  every occurrence and the camera eases in to frame them all
+  together: a term in both the YES and NO boxes is circled in both
+  at once, keeping the two boxes alike (rule 7.4). When a later `page`
+  line brings the page back, it shows at full view with every term
+  clicked so far ticked off, and then clicks its own. Without `focus`
+  the page shows at full view, with those ticks.
+
 The `number` and `words` kinds of earlier versions only showed text;
 the check fails a script that uses either, and says to use an
 illustration or a chart instead.
 
 Every visual but an illustration has a `source`, which must also be
 among the line's `sources`. Everything a visual shows (titles, labels,
-items) is held to the judgment-word check, like the narration.
+items) is held to the judgment-word check, like the narration; the
+card's quoted text is the one exception (above).
 
 ### The measure template, version 2
 
@@ -125,8 +182,8 @@ Sections, in this order: `what`, any number of `background` sections
 (zero or more, each with its own heading), `today`, `change`, `fiscal`,
 the two sides, `vote`. Background sections tell the story behind the
 contest (STANDARD.md section 6). Visuals may appear in any section. In
-the sides (STANDARD.md rule 7.3), a chart or timeline only when both
-sides have one of the same kind, and an illustration only when both
+the sides (STANDARD.md rule 7.3), a chart, timeline or page only when
+both sides have one of the same kind, and an illustration only when both
 sides have the same number of them.
 
 ### The measure template, version 1

@@ -8,13 +8,16 @@ skip that part rather than report the same defect twice.
 
 from __future__ import annotations
 
+import html
 import math
 import re
 from collections import Counter
 from dataclasses import dataclass
+from functools import lru_cache
+from pathlib import Path
 
 from . import narration
-from .contest import Contest, Line, Section, Visual
+from .contest import CARD_KEYS, Card, Contest, Line, Section, Visual
 from .illustrations import load_library
 from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, SOURCE_KINDS,
                        TEMPLATES, Standard, Template, judgment_word_pattern,
@@ -23,7 +26,9 @@ from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, SOURCE_KINDS,
 SIDE_TOLERANCE = 0.05
 AIRTIME_TOLERANCE = 0.05
 CHART_KINDS = ("bars", "share", "series", "figure")
-VISUAL_KINDS = (*CHART_KINDS, "timeline", "illustration")
+VISUAL_KINDS = (*CHART_KINDS, "timeline", "illustration", "page")
+# The kind of source a [card] quotes: the measure's official page.
+CARD_SOURCE_KIND = "official-title-summary"
 # Kinds that only put text on screen: the centre of the frame is for
 # pictures, so a script may no longer use them.
 REMOVED_KINDS = ("number", "words")
@@ -189,6 +194,34 @@ def _source_problems(c: Contest, line: Line, v: Visual) -> list[str]:
     return out
 
 
+def card_text(card: Card) -> str:
+    """Everything the card shows that a `page` visual may click: its quoted
+    fields, one per line."""
+    return "\n".join(v for _, v in card.quoted() if isinstance(v, str))
+
+
+def _page_problems(c: Contest, line: Line, v: Visual) -> list[str]:
+    """A `page`: the script's card, its source cited by the line, and an
+    optional `focus` phrase found on the card."""
+    card = c.script.card
+    if card is None:
+        return ["needs a [card] table in script.toml"]
+    out = []
+    _forbid(v, ("title", "unit", "labels", "values", "figure", "items",
+                "name"), out)
+    out += _source_problems(c, line, v)
+    if isinstance(v.source, str) and v.source != card.source:
+        out.append(f"cites {v.source!r}, but the card quotes "
+                   f"{card.source!r}")
+    if v.focus is not None:
+        if not isinstance(v.focus, str) or not v.focus.strip():
+            out.append("'focus' must be a non-empty string")
+        elif v.focus not in card_text(card):
+            out.append(f"focus {v.focus!r} does not occur in the card's "
+                       f"text")
+    return out
+
+
 def _visual_problems(c: Contest, line: Line, v: Visual) -> list[str]:
     """Everything wrong with visual `v` on `line`, per
     docs/SCRIPT-FORMAT.md."""
@@ -205,6 +238,10 @@ def _visual_problems(c: Contest, line: Line, v: Visual) -> list[str]:
 
     if v.kind == "illustration":  # no source of its own: the line cites
         return _illustration_problems(v)
+    if v.kind == "page":
+        return _page_problems(c, line, v)
+    if v.focus is not None:
+        return [f"a {v.kind!r} visual may not have 'focus'"]
     out = []
     if v.kind in CHART_KINDS:
         if v.title is None:
@@ -274,6 +311,69 @@ def check_visuals(c: Contest) -> list[Failure]:
                     else f"{kind!r} visual")
             for msg in _visual_problems(c, line, line.visual):
                 out.append(Failure("visual", f"{what} {msg}", label, i))
+    return out
+
+
+_STRIP = re.compile(r"(?is)<(script|style)\b.*?</\1\s*>|<!--.*?-->|<[^>]*>")
+_SPACE_BEFORE_PUNCT = re.compile(r"\s+(?=[.,:;!?)\]])")
+
+
+def plain_text(raw: str) -> str:
+    """An archived page's text as a reader sees it, for the verbatim check:
+    markup (and script and style contents) stripped, entities decoded,
+    whitespace collapsed, and no space before punctuation. Quotes and case
+    are kept as they are."""
+    s = html.unescape(_STRIP.sub(" ", raw))
+    return _normalise(s)
+
+
+def _normalise(s: str) -> str:
+    s = re.sub(r"\s+", " ", s).strip()
+    return _SPACE_BEFORE_PUNCT.sub("", s)
+
+
+@lru_cache(maxsize=8)
+def _archived_text(path: Path) -> str:
+    return plain_text(path.read_text(encoding="utf-8", errors="replace"))
+
+
+def check_card(c: Contest) -> list[Failure]:
+    """The `[card]`, if any: every key present, a source of the official
+    page's kind, and each quoted field verbatim in that source's archived
+    text (docs/SCRIPT-FORMAT.md)."""
+    card = c.script.card
+    if card is None:
+        return []
+    out = []
+
+    def fail(msg):
+        out.append(Failure("card", msg))
+
+    for key in CARD_KEYS:
+        value = getattr(card, key)
+        if value is None:
+            fail(f"has no {key!r}")
+        elif not isinstance(value, str) or not value.strip():
+            fail(f"{key!r} must be a non-empty string")
+    if not isinstance(card.source, str) or not card.source:
+        return out
+    src = c.source(card.source)
+    if src is None:
+        fail(f"source {card.source!r} is not in sources.toml")
+        return out
+    if src.kind != CARD_SOURCE_KIND:
+        fail(f"source {card.source!r} is of kind {src.kind!r}; a card "
+             f"quotes a source of kind {CARD_SOURCE_KIND!r}")
+        return out
+    path = (c.path / src.file).resolve()
+    if not path.is_relative_to(c.path.resolve()) or not path.is_file():
+        return out  # check_sources reports it
+    archived = _archived_text(path)
+    for key, value in card.quoted():
+        if isinstance(value, str) and value.strip() \
+                and _normalise(value) not in archived:
+            fail(f"{key!r} does not appear verbatim in source "
+                 f"{card.source!r} ({src.file})")
     return out
 
 
@@ -427,7 +527,8 @@ def check_airtime(c: Contest) -> list[Failure]:
 
 def check_judgment_words(c: Contest, words: tuple[str, ...]) -> list[Failure]:
     """STANDARD.md 3.1: no judgment word in a heading, a line or anything
-    a visual shows."""
+    a visual shows. The `[card]` is exempt: it quotes the official page
+    verbatim, and is not the narrator's voice."""
     if not words:
         return []
     pattern = judgment_word_pattern(words)
@@ -480,6 +581,7 @@ def check_contest(c: Contest, standard: Standard | None = None
         *check_cited_sources_exist(c),
         *check_background_only(c),
         *check_visuals(c),
+        *check_card(c),
         *check_sources(c),
         *check_template(c),
         *check_side_parity(c),

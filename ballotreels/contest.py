@@ -52,9 +52,34 @@ class Visual:
     figure: Any = None
     items: Any = None  # timeline: one entry per label
     name: Any = None   # illustration: an entry in the illustration library
+    focus: Any = None  # page: the phrase on the card to circle
 
 
 VISUAL_KEYS = tuple(Visual.__dataclass_fields__)
+
+
+@dataclass(frozen=True)
+class Card:
+    """The script's `[card]`: the top of the measure's official page,
+    quoted verbatim (docs/SCRIPT-FORMAT.md). As with Visual, each field is
+    None when its key is absent, and the checks judge the values."""
+    source: Any = None
+    number: Any = None
+    title: Any = None
+    origin: Any = None
+    summary: Any = None
+    yes: Any = None
+    no: Any = None
+
+    # The fields quoted from the source, in the order the page shows them.
+    QUOTED = ("title", "origin", "summary", "yes", "no")
+
+    def quoted(self) -> tuple[tuple[str, Any], ...]:
+        """(key, value) for each quoted field, in page order."""
+        return tuple((k, getattr(self, k)) for k in self.QUOTED)
+
+
+CARD_KEYS = tuple(Card.__dataclass_fields__)
 
 
 @dataclass(frozen=True)
@@ -80,6 +105,7 @@ class Script:
     template_version: int
     standard_version: int
     sections: tuple[Section, ...]
+    card: Card | None = None  # None when there is no [card] table
 
     def labels(self) -> tuple[str, ...]:
         """Each section's label, in file order: its id, or `id[k]` for the
@@ -209,12 +235,16 @@ def _load_script(path: Path) -> Script:
             side=_get(raw, "side", str, where, None),
             lines=lines,
         ))
+    raw_card = _get(data, "card", dict, name, None)
+    card = (None if raw_card is None else
+            Card(**{k: raw_card[k] for k in CARD_KEYS if k in raw_card}))
     return Script(
         contest=_get(data, "contest", str, name),
         template=_get(data, "template", str, name),
         template_version=_get(data, "template_version", int, name),
         standard_version=_get(data, "standard_version", int, name),
         sections=tuple(sections),
+        card=card,
     )
 
 
