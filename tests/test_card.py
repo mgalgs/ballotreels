@@ -173,6 +173,80 @@ class CardTest(ContestCopyTestCase):
         self.assertEqual(len(got), 1, got)
         self.assertIn("may not have 'focus'", got[0])
 
+    def test_highlight(self):
+        self.add_page('highlight = ["Rainy Day Fund", "economic downturns"]\n')
+        self.assertEqual(self.failures(), [])
+        v = load_contest(self.dir).script.sections[-1].lines[0].visual
+        self.assertEqual(v.highlight, ["Rainy Day Fund", "economic downturns"])
+
+    def test_highlight_passes(self):
+        self.add_page('highlight = ["Rainy Day Fund", "during economic '
+                      'downturns", "paying down extra state debts"]\n')
+        self.assertEqual(self.failures(), [])
+
+    def test_highlight_not_found(self):
+        self.add_page('highlight = ["Rainy Day Fund", "rainy day fund"]\n')
+        self.assertEqual(self.failures(), [
+            "[visual] vote.line[0]: 'page' visual highlight 'rainy day fund' "
+            "does not occur in the card's text"])
+
+    def test_highlight_must_be_a_list_of_strings(self):
+        for bad in ('"Rainy Day Fund"', "[]", '[""]', "[2]"):
+            with self.subTest(bad=bad):
+                text = (self.dir / "script.toml").read_text()
+                self.add_page(f"highlight = {bad}\n")
+                self.assertEqual(self.failures(), [
+                    "[visual] vote.line[0]: 'page' visual 'highlight' must "
+                    "be a non-empty list of non-empty strings"])
+                (self.dir / "script.toml").write_text(text)
+
+    def test_focus_and_highlight_refused(self):
+        self.add_page('focus = "Rainy Day Fund"\n'
+                      'highlight = ["during economic downturns"]\n')
+        self.assertEqual(self.failures(), [
+            "[visual] vote.line[0]: 'page' visual has both 'focus' and "
+            "'highlight': a line clicks a term or highlights phrases, not "
+            "both"])
+
+    def test_highlight_only_on_a_page(self):
+        self.edit("script.toml", 'kind = "bars"',
+                  'kind = "bars"\nhighlight = ["Rainy Day Fund"]')
+        got = self.failures()
+        self.assertEqual(len(got), 1, got)
+        self.assertIn("may not have 'highlight'", got[0])
+
+    def test_highlight_balance_fails(self):
+        # "would change" is in the YES box, "As a result" too; the NO box has
+        # "would not change" only
+        self.add_page('highlight = ["would change", "As a result", '
+                      '"would not change"]\n')
+        self.assertEqual(self.failures(), [
+            "[highlight-balance] highlights fall 2 times in the card's YES "
+            "box and 1 times in its NO box; they must be equal"])
+
+    def test_highlight_balance_passes(self):
+        self.add_page('highlight = ["would change", "would not change"]\n')
+        self.assertEqual(self.failures(), [])
+
+    def test_highlight_balance_counts_the_whole_script(self):
+        # the YES box's phrase on one line, the NO box's on another
+        self.add_page('highlight = ["would change"]\n')
+        self.assertEqual(self.failures(), [
+            "[highlight-balance] highlights fall 1 times in the card's YES "
+            "box and 0 times in its NO box; they must be equal"])
+        no_line = ('text = "A no vote means the current rules would not '
+                   'change."\nsources = ["quick-reference"]\n')
+        self.edit("script.toml", no_line,
+                  no_line + '\n[section.line.visual]\nkind = "page"\n'
+                            'source = "quick-reference"\n'
+                            'highlight = ["would not change"]\n')
+        self.assertEqual(self.failures(), [])
+
+    def test_highlight_shared_by_both_boxes_balances_itself(self):
+        self.add_page('highlight = ["Rules for building state budget '
+                      'reserves", "vote on this measure means"]\n')
+        self.assertEqual(self.failures(), [])
+
 
 if __name__ == "__main__":
     unittest.main()

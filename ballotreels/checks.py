@@ -145,7 +145,7 @@ def _illustration_problems(v: Visual) -> list[str]:
     """An `illustration`: a name in the library, whose file exists."""
     out = []
     _forbid(v, ("title", "source", "unit", "labels", "values", "figure",
-                "items"), out)
+                "items", "focus", "highlight"), out)
     if v.name is None:
         out.append("has no 'name'")
     elif not isinstance(v.name, str) or not v.name:
@@ -219,6 +219,20 @@ def _page_problems(c: Contest, line: Line, v: Visual) -> list[str]:
         elif v.focus not in card_text(card):
             out.append(f"focus {v.focus!r} does not occur in the card's "
                        f"text")
+    if v.highlight is not None:
+        if v.focus is not None:
+            out.append("has both 'focus' and 'highlight': a line clicks a "
+                       "term or highlights phrases, not both")
+        if (not isinstance(v.highlight, list) or not v.highlight
+                or not all(isinstance(x, str) and x.strip()
+                           for x in v.highlight)):
+            out.append("'highlight' must be a non-empty list of non-empty "
+                       "strings")
+        else:
+            for phrase in v.highlight:
+                if phrase not in card_text(card):
+                    out.append(f"highlight {phrase!r} does not occur in the "
+                               f"card's text")
     return out
 
 
@@ -240,8 +254,9 @@ def _visual_problems(c: Contest, line: Line, v: Visual) -> list[str]:
         return _illustration_problems(v)
     if v.kind == "page":
         return _page_problems(c, line, v)
-    if v.focus is not None:
-        return [f"a {v.kind!r} visual may not have 'focus'"]
+    for key in ("focus", "highlight"):
+        if getattr(v, key) is not None:
+            return [f"a {v.kind!r} visual may not have {key!r}"]
     out = []
     if v.kind in CHART_KINDS:
         if v.title is None:
@@ -335,6 +350,39 @@ def _normalise(s: str) -> str:
 @lru_cache(maxsize=8)
 def _archived_text(path: Path) -> str:
     return plain_text(path.read_text(encoding="utf-8", errors="replace"))
+
+
+def highlight_counts(c: Contest) -> tuple[int, int]:
+    """How many highlighted occurrences, over the whole script, fall in the
+    card's YES box and in its NO box: each well-formed `highlight` phrase
+    counts once for every time it occurs in each box."""
+    card = c.script.card
+    yes = card.yes if card is not None and isinstance(card.yes, str) else ""
+    no = card.no if card is not None and isinstance(card.no, str) else ""
+    n_yes = n_no = 0
+    for sec in c.script.sections:
+        for line in sec.lines:
+            v = line.visual
+            if v is None or v.kind != "page" or not isinstance(v.highlight,
+                                                               list):
+                continue
+            for phrase in v.highlight:
+                if isinstance(phrase, str) and phrase:
+                    n_yes += yes.count(phrase)
+                    n_no += no.count(phrase)
+    return n_yes, n_no
+
+
+def check_highlight_balance(c: Contest) -> list[Failure]:
+    """STANDARD.md 7.4: the page's YES and NO boxes are highlighted alike:
+    as many highlighted occurrences in one as in the other, over the whole
+    script."""
+    n_yes, n_no = highlight_counts(c)
+    if n_yes == n_no:
+        return []
+    return [Failure("highlight-balance",
+                    f"highlights fall {n_yes} times in the card's YES box "
+                    f"and {n_no} times in its NO box; they must be equal")]
 
 
 def check_card(c: Contest) -> list[Failure]:
@@ -582,6 +630,7 @@ def check_contest(c: Contest, standard: Standard | None = None
         *check_background_only(c),
         *check_visuals(c),
         *check_card(c),
+        *check_highlight_balance(c),
         *check_sources(c),
         *check_template(c),
         *check_side_parity(c),

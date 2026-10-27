@@ -167,6 +167,37 @@ focus = "Rainy Day Fund"     # optional: the term to click
   clicked so far ticked off, and then clicks its own. Without `focus`
   the page shows at full view, with those ticks.
 
+```toml
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["Increases California's Rainy Day Fund", "during economic downturns"]
+```
+
+- `highlight`, on a `page` only: a non-empty list of phrases on the
+  card, each matched case-sensitively like `focus`; every occurrence of
+  each is highlighted, with a soft graphite band laid behind the words
+  (never the accent colour) that sweeps on left to right. Each phrase
+  must occur in the card's text. A line has `focus` or `highlight`, not
+  both.
+- **Balance (rule 7.4):** across the whole script, the number of
+  highlighted occurrences inside the YES box must equal the number
+  inside the NO box; the check fails with both counts otherwise. Each
+  phrase counts once for every time it occurs in each box, so a phrase
+  the two boxes share (`"Rules for building state budget reserves"`)
+  balances itself.
+- **Timing:** the narration is timed per sentence only, so each phrase's
+  sweep starts at its estimated spoken position in its line: if the
+  phrase's words occur in the line's text (case-insensitive), at that
+  character offset's fraction of the line's duration; otherwise the
+  line's phrases that are not found are spread evenly through it, in
+  order.
+- Consecutive `page` lines in a section are one continuous page: no
+  fade, no redraw and no return to full view between them; each line
+  adds its highlights or its click. Highlights stay up as long as the
+  page does; when the page comes back later they are gone (the ticks
+  for clicked terms stay).
+
 The `number` and `words` kinds of earlier versions only showed text;
 the check fails a script that uses either, and says to use an
 illustration or a chart instead.
