@@ -1,8 +1,9 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what
-# personal property is; what is taxed already and what is not; the two
-# changes (new property taxes, retroactive taxes); the analyst's effect
-# and its cost in revenue; one point per side; what a vote does. Prop 40
-# appears only in the opponents' section (rule 6.3).
+# personal property is; what is taxed already and what is not; the three
+# changes (new property taxes, retroactive taxes, conflicting measures
+# void); the analyst's effect and its cost in revenue; one point per
+# side; what a vote does. Prop 40 appears only in the opponents' section
+# (rule 6.3).
 
 contest = "ca-2026-11-03-prop-42"
 template = "measure"
@@ -23,7 +24,7 @@ id = "what"
 heading = "Proposition 42"
 
 [[section.line]]
-text = "Proposition 42 is about taxes on personal property: everything people own other than real estate."
+text = "Proposition 42 is about taxes on personal property: what people own besides real estate."
 sources = ["quick-reference", "lao-analysis"]
 
 [section.line.visual]
@@ -32,11 +33,11 @@ source = "quick-reference"
 highlight = ["ownership of personal property", "all things people own other than real estate"]
 
 [[section]]
-id = "background"
-heading = "Taxes on what people own"
+id = "today"
+heading = "Today"
 
 [[section.line]]
-text = "Owning some personal property is already taxed, like cars through the yearly vehicle license fee."
+text = "Today, some personal property, like cars, is taxed, but simply owning financial assets is not."
 sources = ["lao-analysis"]
 
 [section.line.visual]
@@ -44,23 +45,11 @@ kind = "illustration"
 name = "personal-property"
 
 [[section]]
-id = "today"
-heading = "Today"
-
-[[section.line]]
-text = "Today, there is no tax for simply owning financial assets, like stocks and investment accounts."
-sources = ["lao-analysis"]
-
-[section.line.visual]
-kind = "illustration"
-name = "savings-investments"
-
-[[section]]
 id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "Proposition 42 would not allow new taxes on owning financial assets or other personal property."
+text = "New taxes on owning financial assets or other personal property would be banned."
 sources = ["lao-analysis", "quick-reference"]
 
 [section.line.visual]
@@ -69,19 +58,28 @@ source = "quick-reference"
 highlight = ["Prohibits any new state tax"]
 
 [[section.line]]
-text = "Proposition 42 would also limit retroactive taxes, on things that happened in the past."
+text = "Retroactive taxes, on past events, would be limited."
 sources = ["lao-analysis"]
 
 [section.line.visual]
 kind = "illustration"
 name = "retroactive-tax"
 
+[[section.line]]
+text = "Conflicting measures on this ballot would be void if Proposition 42 got more yes votes."
+sources = ["title-summary", "quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["Nullifies taxes enacted after January 1, 2026 that conflict with this measure"]
+
 [[section]]
 id = "fiscal"
 heading = "What the state's analyst says"
 
 [[section.line]]
-text = "The Legislative Analyst's Office says Proposition 42 could make raising taxes somewhat harder for the state."
+text = "The Legislative Analyst's Office says raising state taxes could become somewhat harder."
 sources = ["lao-analysis"]
 
 [section.line.visual]
@@ -89,7 +87,7 @@ kind = "illustration"
 name = "analyst-review"
 
 [[section.line]]
-text = "The office says future tax revenues could be lower, by an unclear amount."
+text = "The office says future revenues could be lower, by an unclear amount."
 sources = ["lao-analysis"]
 
 [section.line.visual]
@@ -138,7 +136,7 @@ source = "quick-reference"
 highlight = ["could not establish new taxes"]
 
 [[section.line]]
-text = "A no vote means the state would continue to have the option to establish them."
+text = "A no vote means the state keeps the option to establish new personal property taxes."
 sources = ["quick-reference"]
 
 [section.line.visual]

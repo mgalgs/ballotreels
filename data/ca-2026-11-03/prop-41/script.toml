@@ -1,6 +1,6 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what a
 # special tax is; how the spending limit works today; the three changes
-# (audits before the vote, audits after, the limit); the analyst's cost,
+# (audits, the limit, conflicting measures void); the analyst's cost,
 # who pays it and the possible savings; one point per side; what a vote
 # does. Prop 40 appears only in the opponents' section (rule 6.3).
 
@@ -23,7 +23,7 @@ id = "what"
 heading = "Proposition 41"
 
 [[section.line]]
-text = "Proposition 41 is about special taxes, whose money goes to one set purpose."
+text = "Proposition 41 is about special taxes, which fund one set purpose."
 sources = ["quick-reference", "lao-analysis"]
 
 [section.line.visual]
@@ -36,7 +36,7 @@ id = "today"
 heading = "Today"
 
 [[section.line]]
-text = "Today, the state constitution limits state spending each year, but some spending, like on infrastructure, is left out."
+text = "Today, the state's yearly spending limit leaves out some spending, like infrastructure."
 sources = ["lao-analysis"]
 
 [section.line.visual]
@@ -48,15 +48,7 @@ id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "Under Proposition 41, a special tax initiative's programs would be audited before the vote."
-sources = ["lao-analysis"]
-
-[section.line.visual]
-kind = "illustration"
-name = "ballot-box"
-
-[[section.line]]
-text = "Programs funded by new special taxes would be audited every four years."
+text = "Special tax programs would be audited before an initiative's vote and every four years."
 sources = ["lao-analysis"]
 
 [section.line.visual]
@@ -64,19 +56,28 @@ kind = "illustration"
 name = "recurring-review"
 
 [[section.line]]
-text = "And new special tax spending might not be left out of the spending limit."
+text = "New special tax spending might count toward the limit."
 sources = ["lao-analysis"]
 
 [section.line.visual]
 kind = "illustration"
 name = "spending-limit"
 
+[[section.line]]
+text = "Conflicting measures on this ballot would be void if Proposition 41 got more yes votes."
+sources = ["title-summary", "quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["Nullifies state taxes enacted after January 1, 2026"]
+
 [[section]]
 id = "fiscal"
 heading = "What the state's analyst says"
 
 [[section.line]]
-text = "The Legislative Analyst's Office says the audits would likely cost low millions of dollars a year, mostly paid by the new taxes."
+text = "The Legislative Analyst's Office expects audit costs of low millions a year, mostly paid by new taxes."
 sources = ["lao-analysis"]
 
 [section.line.visual]
@@ -84,7 +85,7 @@ kind = "illustration"
 name = "state-budget"
 
 [[section.line]]
-text = "The office says savings are possible, and the net effect is unknown."
+text = "The office says savings are possible and the net effect unknown."
 sources = ["lao-analysis"]
 
 [section.line.visual]
