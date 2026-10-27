@@ -1070,9 +1070,12 @@ class Flow:
             while k >= 0:
                 kept.append((k, k + len(focus)))
                 k = words.find(focus, k + len(focus))
+        # (A word belongs to a term when it overlaps it: "2014," still ends
+        # "approved by voters in 2014".)
         units = []
         for t in toks:
-            if units and any(a <= units[-1][-1][0] and t[1] <= b for a, b in kept):
+            if units and any(units[-1][-1][0] < b and units[-1][-1][1] > a and t[0] < b and t[1] > a
+                             for a, b in kept):
                 units[-1].append(t)
             else:
                 units.append([t])
@@ -1080,8 +1083,8 @@ class Flow:
         def unit_width(u):
             return text.measure(' '.join(t[2] for t in u), u[0][3]) if len({id(t[3]) for t in u}) == 1 \
                 else sum(text.measure(t[2], t[3]) + _space(t[3]) for t in u)
-        if any(unit_width(u) > width for u in units):  # too long to keep whole
-            units = [[t] for t in toks]
+        # a term too long to keep whole wraps as plain words; the others stay kept
+        units = [v for u in units for v in ([[t] for t in u] if len(u) > 1 and unit_width(u) > width else [u])]
         lines = [[]]
         used = 0
         for unit in units:
