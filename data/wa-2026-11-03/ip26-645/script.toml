@@ -20,10 +20,15 @@
 # leaves in place, are argued over by both sides (kept, or put at risk),
 # so they are left to the sides (rule 6.3).
 #
-# Scale (dollar figures about the state's money): the Fiscal Impact
-# Statement compares its $11.4 billion and $150 million to no budget
-# total, and the archive holds no general fund total for state fiscal
-# years 2027 to 2031, so both are stated without a share for now.
+# Scale (rule 6.5): the Fiscal Impact Statement compares its $11.4
+# billion and $150 million to no budget total. The Forecast Council's
+# September 2026 forecast prints revenue for the funds subject to the
+# budget outlook by fiscal year (Table 3.17) but no five-year sum, so
+# each figure is compared year by year: the statement's yearly losses
+# (Table 1) are 7 to 10 percent of each year's forecast for 2029 to
+# 2031, when the tax would be collected (3,108/43,652; 4,432/46,604;
+# 3,892/47,517), and its largest yearly saving (Table 2, $53.9 million
+# in 2028) is under 1 percent of that year's $38,942 million.
 
 contest = "wa-2026-11-03-ip26-645"
 template = "measure"
@@ -80,8 +85,8 @@ id = "fiscal"
 heading = "What the state's fiscal statement says"
 
 [[section.line]]
-text = "The Office of Financial Management estimates the state would lose $11.4 billion in revenue over budget years 2027 to 2031."
-sources = ["fiscal"]
+text = "The Office of Financial Management estimates the state would lose $11.4 billion in revenue over budget years 2027 to 2031, about 7 to 10 percent of forecast revenue in each year from 2029."
+sources = ["fiscal", "forecast"]
 
 [section.line.visual]
 kind = "bars"
@@ -92,8 +97,8 @@ labels = ["2029", "2030", "2031"]
 values = [3.1, 4.4, 3.9]
 
 [[section.line]]
-text = "The Office also expects state agencies to save about $150 million over the same five years."
-sources = ["fiscal"]
+text = "The Office also expects state agencies to save about $150 million over those years, less than 1 percent of any year's forecast revenue."
+sources = ["fiscal", "forecast"]
 
 [[section]]
 id = "yes"
