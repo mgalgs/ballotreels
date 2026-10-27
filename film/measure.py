@@ -51,9 +51,18 @@ The stage shows
 - in the `what` and `vote` sections, before any visual, the ballot: the
   measure's title and its two options, drawn alike;
 - otherwise nothing: an empty page under the heading.
-The two sides get the same page whichever plays first (rules 2.2, 4.1);
-their pages are built by the same code from line positions, never from the
-side. The film closes on a card listing every cited source (rule 1.5).
+The two side sections are the one exception to one-section-one-page: they
+share a single slide, "What each side says" (sides_group), that stays up
+through both of them with no redraw in between. Under the fixed heading,
+two congruent blocks (side_boxes: top/bottom in 9:16, left/right in
+16:9) hold the sides in play order, each labelled with its own section's
+heading and ticking its own `list` in on its own lines (side_block, the
+same code for both, built from line positions, never from the side —
+rules 2.2, 4.1, 7.4). The two sides also get exactly the same time on
+screen: narration.side_pad adds silence to the shorter side's spoken
+audio (both in the layout and in the audio actually played, below), so
+neither section is shorter on the page than the other. The film closes
+on a card listing every cited source (rule 1.5).
 A quiet footer under the caption, on every frame, says where to report a
 bias (rule 5.1). At its left end, while a picture is on the stage, a small
 graphite ring counts down to the picture changing: full as it appears,
@@ -334,9 +343,12 @@ class Mark:
 
 # ---- the page heading ----
 def heading_items(sec_beat, L, f0):
+    return heading_text_items(sec_beat.section.heading, L, f0)
+
+
+def heading_text_items(words, L, f0):
     hb = L['heading']
     fnt = L['heading_font']
-    words = sec_beat.section.heading
     while True:
         lines = text.wrap(words, fnt, hb.w, balance=True)
         if len(lines) * text.line_height(fnt) <= hb.h - 14 or fnt.size < 40:
@@ -417,10 +429,12 @@ def _rot_bbox(cx, cy, w, h, a):
 
 
 # ---- the stage: charts ----
-def source_note(chart, L, f0):
+def source_note(chart, L, f0, stage=None):
     """'Source: ...' along the stage's bottom, on the page from the visual's
-    first frame to its last (rule 7.1): (item, box)."""
-    stage = L['stage']
+    first frame to its last (rule 7.1): (item, box). `stage` overrides
+    L['stage'], for a visual confined to less than the whole stage (the
+    sides slide's two blocks)."""
+    stage = stage if stage is not None else L['stage']
     nf = L['note_font']
     words = f'Source: {chart.source.short_credit}'
     slines = text.wrap(words, nf, stage.w, balance=True)
@@ -696,16 +710,18 @@ def check_mark_pts(cx, cy, s):
     return [(cx - s * 0.62, cy - s * 0.04), (cx - s * 0.14, cy + s * 0.46), (cx + s * 0.7, cy - s * 0.52)]
 
 
-def list_visual(chart, lines, L, f0, f1):
+def list_visual(chart, lines, L, f0, f1, stage=None):
     """A checklist in a column, top to bottom: a side's own points, in short
     form (the second exception to pictures-only on the stage, besides the
     page card). Each entry is a hand-drawn check mark then its text,
     revealed one per line like a `timeline` but with no dates
-    (docs/SCRIPT-FORMAT.md), and the source along the bottom."""
+    (docs/SCRIPT-FORMAT.md), and the source along the bottom. `stage`
+    overrides L['stage'], for a list confined to less than the whole
+    stage (the sides slide's two blocks, sides_group)."""
     v = chart.visual
-    stage = L['stage']
+    stage = stage if stage is not None else L['stage']
     u = L['u']
-    src, sbox = source_note(chart, L, f0)
+    src, sbox = source_note(chart, L, f0, stage)
     itf = L['timeline_font']
     n = len(v.items)
     check = 40 * u
@@ -742,6 +758,83 @@ def list_visual(chart, lines, L, f0, f1):
         y += h + gap
     box = Box(cx0, top, stage.right - cx0, y - gap - top)
     return items, [Mark('chart', box), Mark('chart source', sbox)]
+
+
+# ---- the stage: both sides on one slide (STANDARD.md rule 2.2) ----
+# A fixed heading (not the sections' own: this slide covers both of them)
+# over two congruent blocks, one per side, in play order: top/bottom in
+# 9:16, left/right in 16:9. Each block is labelled with its own section's
+# heading and, if it has one, draws its own 'list' on its own narration's
+# clock, exactly as a single side's list did before (list_visual); a side
+# with none shows just its label over an empty block. Nothing here may
+# differ between the two calls but the section passed in (rule 7.4).
+SIDES_HEADING = 'What each side says'
+BLOCK_GAP = 28  # px between the two blocks, before the format's own scale
+
+
+def side_boxes(L, fmt):
+    """The two side blocks' boxes, in play order."""
+    st, u = L['stage'], L['u']
+    gap = BLOCK_GAP * u
+    if fmt == '9x16':
+        h = (st.h - gap) / 2
+        return Box(st.x, st.y, st.w, h), Box(st.x, st.y + h + gap, st.w, h)
+    w = (st.w - gap) / 2
+    return Box(st.x, st.y, w, st.h), Box(st.x + w + gap, st.y, w, st.h)
+
+
+def block_heading_items(sec, L, box, f0):
+    """A block's own label: the same layout as heading_text_items, scaled
+    to `box` instead of the page heading's box."""
+    fnt = font(L['heading_font'].size * 0.52, 700)
+    words = sec.section.heading
+    while True:
+        lines = text.wrap(words, fnt, box.w, balance=True)
+        if len(lines) * text.line_height(fnt) <= box.h * 0.3 or fnt.size < 24:
+            break
+        fnt = font(fnt.size * 0.92, 700)
+    items, f, drawn = write_lines(f0, lines, fnt, box.x, box.y, align='center', width=box.w, speed=1.4)
+    w = max(text.measure(ln, fnt) for ln in lines)
+    uy = drawn.bottom + 2
+    under = Stroke(sp.catmull([(box.cx - w / 2 - 5, uy + 1), (box.cx, uy - 1), (box.cx + w / 2 + 8, uy + 2)],
+                              per=10), seed_of('block-underline', sec.label), passes=2, width=4 * L['u'])
+    items.append(stroke_item(f + 1, f + 7, under, ORANGE))
+    return items, f + 7, Box(box.x, box.y, box.w, uy + 8 - box.y)
+
+
+def side_block(sec, L, box, label_f0):
+    """One side's whole block: its label, drawn at `label_f0` (the same
+    frame for both sides, when the slide appears), and, if it has a
+    'list' visual, that list ticking in on the side's own lines, exactly
+    as runs_of/chart_run already schedule it for a single side."""
+    items, label_end, label_box = block_heading_items(sec, L, box, label_f0)
+    marks = [Mark('heading', label_box, label_f0)]
+    run = next((r for r in runs_of(sec) if r[0] == 'chart' and r[1].visual.kind == 'list'), None)
+    if run is None:
+        return items, marks
+    _, chart, lines = run
+    u = L['u']
+    start = lines[0].start
+    first_f = max(label_end + 2, start + (FADE if start > sec.start else 0))
+    body = Box(box.x, label_box.bottom + 24 * u, box.w, box.bottom - label_box.bottom - 24 * u)
+    list_items, list_marks = list_visual(chart, lines, L, first_f, chart.end, stage=body)
+    for m in list_marks:
+        m.f0 = first_f
+    return items + list_items, marks + list_marks
+
+
+def sides_group(side_a, side_b, L, fmt, h_f0):
+    """Both side sections as one slide: the fixed heading, then the two
+    blocks (side_block) in play order (side_boxes), side_a first."""
+    h_items, h_end, h_box = heading_text_items(SIDES_HEADING, L, h_f0)
+    box_a, box_b = side_boxes(L, fmt)
+    items = list(h_items)
+    marks = [Mark('heading', h_box, side_a.start)]
+    for sec, box in ((side_a, box_a), (side_b, box_b)):
+        si, sm = side_block(sec, L, box, h_end + 2)
+        items += si
+        marks += sm
+    return items, marks
 
 
 SHARE_HATCH = [dict(angle=45, spacing=11, cross=False, alpha=0.5),
@@ -1864,7 +1957,20 @@ def build(fmt):
         slides.append((max(start, first_f - FADE), end))
         pending.clear()
 
+    side_secs = [sb for sb in BOARD.sections if sb.section.side is not None]
+
     for sec in BOARD.sections:
+        if sec.section.side is not None:
+            # both sides live on one slide (STANDARD.md rule 2.2): built
+            # once, when the first one begins, and held through the second
+            if side_secs and sec is side_secs[0]:
+                flush()
+                side_a, side_b = side_secs
+                h_f0 = side_a.start + (FADE if side_a.number else 4)
+                items, marks = sides_group(side_a, side_b, L, fmt, h_f0)
+                groups.append(Group(items, marks, side_a.start, side_b.end))
+                slides.append((max(side_a.start, h_f0 - FADE), side_b.end))
+            continue
         runs = runs_of(sec)
         h_f0 = sec.start + (FADE if sec.number else 4)
         h_items, h_end, h_box = heading_items(sec, L, h_f0)

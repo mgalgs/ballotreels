@@ -151,7 +151,9 @@ name = "save-more"       # no source: the line cites
   line the same way. Allowed in any section, not only a side's.
   **Balance (rule 7.3):** if either side section has a `list`, both
   must, with the same number of items in all; a failure names both
-  counts.
+  counts. In the two side sections specifically, the list does not get
+  its own page: both sides share one slide, "What each side says" (see
+  "the measure template" below for how the two sides share it).
 - `illustration`: a picture of the line's topic when there is no data
   to chart. `name` is an entry in the illustration library,
   `film/illustrations/illustrations.toml`, and its file must exist.
@@ -244,4 +246,13 @@ stable hash of the contest id (STANDARD.md rule 2.4): the SHA-256 of
 the UTF-8 contest id, `yes` first when its first byte is even and `no`
 first when it is odd (`ballotreels.side_order`). The script file always
 lists `yes` then `no`. Their word counts must be within 5% of
-each other.
+each other, and their time on screen is made exactly equal: the shorter
+side's narration gets trailing silence to match the longer (STANDARD.md
+rule 2.2), which is why the rendered video can run a couple of seconds
+longer than the raw narration. On screen, the two sides share one
+slide, "What each side says" (fixed template text, not from the
+script), that stays up through both sections: two congruent blocks, one
+per side in play order (top/bottom in the 9:16 format, left/right in
+16:9), each labelled with its own section's heading and, if it has a
+`list`, ticking that list in on its own lines; a side with none shows
+just its label over an empty block.
