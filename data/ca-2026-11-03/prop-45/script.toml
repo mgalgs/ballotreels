@@ -1,6 +1,11 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
 # is about; the review today; the tighter time limits and the narrower
 # court review; the analyst's early costs and the uncertain longer term; one point per side; what a vote does.
+#
+# Scale (rule 6.5): the early costs fall on the state and local
+# governments, and "possibly over $100 million" has no upper end, so no
+# share of the state's General Fund is computed; the line states the
+# General Fund's 2026-27 spending beside the figure instead.
 
 contest = "ca-2026-11-03-prop-45"
 template = "measure"
@@ -66,8 +71,8 @@ id = "fiscal"
 heading = "What the state's analyst says"
 
 [[section.line]]
-text = "The Legislative Analyst's Office expects early costs in the high tens of millions of dollars a year, possibly over $100 million, partly paid by fees."
-sources = ["lao-analysis"]
+text = "The Legislative Analyst's Office expects early state and local costs in the high tens of millions a year, possibly over $100 million, partly paid by fees; the state's General Fund spends $252 billion this year."
+sources = ["lao-analysis", "budget"]
 
 [section.line.visual]
 kind = "illustration"
