@@ -1,0 +1,56 @@
+# Archived sources for Utah Constitutional Amendment B, 2026-11-03 general
+# election. Every id here may be cited by script.toml. `kind` must be one
+# the standard allows (docs/STANDARD.md, section 1).
+#
+# Utah prints a measure's ballot title, Impartial Analysis (with its
+# "Fiscal Effects"), arguments and full text in one section of the Voter
+# Information Pamphlet, so several sources below share one archived file.
+
+[contest]
+id = "ut-2026-11-03-amendment-b"
+election = "ut-2026-11-03"
+division = "ocd-division/country:us/state:ut"
+kind = "measure"
+title = "Constitutional Amendment B: Statewide Initiatives"
+
+[[source]]
+id = "pamphlet"
+kind = "official-title-summary"
+publisher = "Utah Lieutenant Governor's Office, 2026 Utah Voter Information Pamphlet, Constitutional Amendment B: ballot title and Impartial Analysis"
+credit = "Utah Voter Information Pamphlet, Constitutional Amendment B"
+url = "https://vote.utah.gov/wp-content/uploads/2026/10/2026-Voter-Information-Pamphlet-Ballot-Questions-Amendment-B.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "analysis"
+kind = "official-fiscal-analysis"
+publisher = "Impartial Analysis and Fiscal Effects of Constitutional Amendment B, 2026 Utah Voter Information Pamphlet, Utah Lieutenant Governor's Office"
+credit = "Impartial Analysis, Utah Voter Information Pamphlet"
+url = "https://vote.utah.gov/wp-content/uploads/2026/10/2026-Voter-Information-Pamphlet-Ballot-Questions-Amendment-B.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments and rebuttals for and against Constitutional Amendment B, as printed in the 2026 Utah Voter Information Pamphlet"
+url = "https://vote.utah.gov/wp-content/uploads/2026/10/2026-Voter-Information-Pamphlet-Ballot-Questions-Amendment-B.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Constitutional Amendment B (S.J.R. 2, 2025 General Session), 2026 Utah Voter Information Pamphlet"
+url = "https://vote.utah.gov/wp-content/uploads/2026/10/2026-Voter-Information-Pamphlet-Ballot-Questions-Amendment-B.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "certification"
+kind = "official-title-summary"
+publisher = "Utah Lieutenant Governor's Office, 2026 General Election Certification, amended September 21, 2026"
+url = "https://vote.utah.gov/wp-content/uploads/2026/09/2026-General-Election-Certification-Amended-09-21.pdf"
+file = "sources/certification.pdf"
+retrieved = "2026-10-27"

@@ -1,0 +1,165 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; what a statewide initiative is; the vote one needs today; what
+# Amendment B would require, of which initiatives, and what it leaves
+# alone; what the pamphlet's analysis says it costs; one point per side;
+# what a vote does.
+#
+# The card quotes the Voter Information Pamphlet: the ballot title, the
+# Impartial Analysis's "Effect of Constitutional Amendment B" and its
+# "Fiscal Effects". Utah's pamphlet prints no "a YES vote means" lines,
+# so the card has none, and the vote lines take their two meanings from
+# the ballot title's "at least 60% of voters, instead of a simple
+# majority".
+#
+# Both sides filed an argument and a rebuttal. Each side's line and list
+# take its central point as it states it: for, that tax increases should
+# have broad support from the voters who pay them and that an initiative
+# tax is hard to undo; against, that voters should have the same simple
+# majority as lawmakers and that the change makes initiatives harder and
+# sets a precedent. Same words per line, same words per list item.
+
+contest = "ut-2026-11-03-amendment-b"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "pamphlet"
+number = "B"
+title = "Shall the Utah Constitution be amended to require that citizen-proposed laws that increase taxes compared to existing law be approved by at least 60% of voters, instead of a simple majority?"
+origin = "2025 Legislative General Session Senate Joint Resolution (S.J.R.) 2"
+summary = "Constitutional Amendment B would increase the voter approval required for statewide initiatives that increase taxes compared to existing law. Statewide initiatives voted on after November 1, 2026, would require approval by at least 60% of voters if the statewide initiative: Creates a new tax; Expands an existing tax to cover additional items or transactions; Increases an existing tax rate; or Changes a property tax rate in a way that results in a smaller decrease in the property tax rate than would occur under existing law. Constitutional Amendment B would not change the vote required to approve any other type of statewide initiative."
+fiscal = "Enactment of Constitutional Amendment B likely would not materially impact current state revenues or expenditures."
+
+[[section]]
+id = "what"
+heading = "Amendment B"
+
+[[section.line]]
+text = "Amendment B is about passing citizen initiatives that raise taxes."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["citizen-proposed laws that increase taxes"]
+
+[[section]]
+id = "background"
+heading = "Citizen initiatives"
+
+[[section.line]]
+text = "In Utah, voters can propose and pass a state law through a statewide initiative."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-one-question"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, most initiatives need more than half of the votes to pass."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Amendment B would require at least 60 percent for an initiative that raises taxes."
+sources = ["pamphlet", "analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Share of votes an initiative needs to pass"
+source = "analysis"
+unit = "%"
+labels = ["Most initiatives today", "Tax increases, Amendment B"]
+values = [50, 60]
+
+[[section.line]]
+text = "The rule covers new taxes, expanded taxes, higher rates and some property tax changes."
+sources = ["pamphlet", "analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["Creates a new tax", "Expands an existing tax", "Increases an existing tax rate", "Changes a property tax rate"]
+
+[[section.line]]
+text = "It would not change the vote needed for any other initiative."
+sources = ["pamphlet", "analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["would not change the vote required to approve any other type of statewide initiative"]
+
+[[section]]
+id = "fiscal"
+heading = "What the official analysis says"
+
+[[section.line]]
+text = "The Voter Information Pamphlet says Amendment B likely would not materially affect state revenues or spending."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say tax increases should need broad agreement from the voters who will pay them."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Tax increases should need broad support from those who pay", "Initiative tax laws can only be undone by another initiative"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Utah voters should get the same simple majority lawmakers use to raise taxes."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Voters should get the same majority rule as lawmakers have", "Makes initiatives harder and sets a precedent for more limits"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for means tax-raising initiatives would need at least 60 percent."
+sources = ["pamphlet", "certification"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["at least 60% of voters"]
+
+[[section.line]]
+text = "A vote against means tax-raising initiatives would still need a simple majority."
+sources = ["pamphlet", "certification"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["a simple majority"]
