@@ -63,6 +63,10 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label="Fiscal Impact Statement",
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+    "id": Ballot(guide="Idaho Voter Pamphlet",
+                 fiscal_label="FISCAL IMPACT STATEMENT",
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")

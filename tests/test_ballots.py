@@ -67,6 +67,15 @@ class BallotTest(unittest.TestCase):
         self.assertEqual(badge(wa, "Initiative Measure IL26-638: X",
                                "IL26-638"), "MEASURE")
 
+    def test_idaho_uses_its_pamphlets_words(self):
+        id_ = BALLOTS["id"]
+        self.assertEqual((id_.guide, id_.fiscal_label, id_.choices),
+                         ("Idaho Voter Pamphlet", "FISCAL IMPACT STATEMENT",
+                          ("Yes", "No")))
+        self.assertEqual(badge(id_, "Proposition 1: X", "1"), "PROPOSITION")
+        self.assertEqual(badge(id_, "House Joint Resolution 4: X", "4"),
+                         "RESOLUTION")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):
