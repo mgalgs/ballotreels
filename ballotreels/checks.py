@@ -626,7 +626,10 @@ def check_airtime(c: Contest) -> list[Failure]:
         return []
     (side_a, dur_a), (side_b, dur_b) = durations
     gap = abs(dur_a - dur_b)
-    if gap > narration.SIDE_PAD_CAP:
+    # a side that filed nothing says only that, so its shortness is not an
+    # imbalance in the script: pad it whatever the gap
+    filed = all(s.filed for s in c.script.sections if s.side is not None)
+    if filed and gap > narration.SIDE_PAD_CAP:
         return [Failure("airtime",
                         f"side spoken durations differ by {gap:.1f}s, more "
                         f"than the {narration.SIDE_PAD_CAP:.0f}s this check "

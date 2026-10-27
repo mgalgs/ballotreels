@@ -585,6 +585,13 @@ class BrokenCopyTest(ContestCopyTestCase):
         [f] = self.assertOnly("airtime")
         self.assertRegex(f.message, r"yes=32\.\ds, no=29\.2s")
 
+    def test_airtime_pads_any_gap_when_a_side_filed_nothing(self):
+        # The same 3.16s gap passes when the short side filed no argument:
+        # its one line saying so can't be as long as the other side's case.
+        write_narration(self.dir, stretch={"no": 0.9})
+        self.edit("script.toml", 'side = "no"\n', 'side = "no"\nfiled = false\n')
+        self.assertNotIn("airtime", {f.check for f in self.failures()})
+
     def test_airtime_skips_when_narration_is_stale(self):
         # "bold" is also a judgment word, so the edit still fails a check,
         # just not "airtime": the sidecars no longer match this line's text,
