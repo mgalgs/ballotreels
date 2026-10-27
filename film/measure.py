@@ -72,6 +72,8 @@ from sketch import (DRAW, GRAPHITE, ORANGE, Hatch, Item, Stroke,  # noqa: E402
 
 from ballotreels.contest import load_contest  # noqa: E402
 from ballotreels.illustrations import load_library  # noqa: E402
+from ballotreels.narration import match_phrases  # noqa: E402
+from ballotreels.storyboard import frame as to_frame  # noqa: E402
 from ballotreels.storyboard import layout as lay_out  # noqa: E402
 
 for _f in sorted((HERE / 'assets' / 'fonts').glob('*.[ot]tf')):
@@ -89,6 +91,8 @@ CONTEST = load_contest(CONTEST_DIR)
 VOICE = vb.speech.load(CONTEST_DIR / 'narration.wav')
 BOARD = lay_out(CONTEST, VOICE.seconds, FPS)
 TRACK = VOICE.track_at(0, FPS)
+# each line's spoken span, (first frame, last frame), by (section label, index)
+SPOKEN = {(s.section, s.index): (to_frame(s.start, FPS), to_frame(s.end, FPS)) for s in match_phrases(CONTEST)}
 
 PAPER_SCRAP = '#fbf7ec'
 TAPE = (0.88, 0.82, 0.62, 0.62)
@@ -170,6 +174,10 @@ def layout_9x16():
         page_stage=Box(24, 136, 1032, 1468),
         page_scrap=Box(78, 1632, 924, 196),
         page_footer=Box(70, 1856, 940, 40),
+        # the countdown ring: (centre x, centre y, radius), at the footer
+        # line's left end, in each view
+        ring=(100, 1594, 22),
+        page_ring=(100, 1876, 22),
     )
 
 
@@ -199,6 +207,8 @@ def layout_16x9():
         page_stage=Box(24, 128, 1872, 686),
         page_scrap=Box(250, 842, 1420, 176),
         page_footer=Box(250, 1034, 1420, 32),
+        ring=(190, 1040, 20),
+        page_ring=(190, 1040, 20),
     )
 
 
@@ -1437,18 +1447,137 @@ def _union(boxes):
     return Box(x0, y0, x1 - x0, y1 - y0)
 
 
-def page_run(chart, lines, L, first_f, fmt, state):
-    """The page for a `page` line and the lines it stays up for: drawn on the
-    first time, faded back in (with every term clicked so far ticked off)
-    after that; then, with a `focus`, the term circled and zoomed in on.
-    `state` carries what earlier page runs did: (items, marks, camera,
-    fade-in frame or None)."""
+# ---- highlights: phrases on the page, laid over with a soft pencil ----
+SWEEP = 15         # frames one occurrence of a phrase takes to sweep on (0.5 s)
+BAND_ALPHA = 0.2   # the band's graphite: light, so the words read through it
+
+
+def _norm(words):
+    """`words` lower-cased with its punctuation dropped, for finding a phrase
+    in a line's narration: (text, offsets of each kept character)."""
+    import re
+    out, at = [], []
+    for m in re.finditer(r"[\w']+", words.lower()):
+        if out:
+            out.append(' ')
+            at.append(m.start())
+        out.extend(m.group(0))
+        at.extend(range(m.start(), m.end()))
+    return ''.join(out), at
+
+
+def highlight_starts(beat, phrases):
+    """The frame each of a line's highlight `phrases` starts sweeping on: at
+    its estimated spoken position (narration is timed per line, not per
+    word): where the phrase's words occur in the line's text, that
+    character offset's fraction of the line's spoken span; otherwise the
+    k-th of n phrases at k/n of it (docs/SCRIPT-FORMAT.md)."""
+    a, b = SPOKEN.get((beat.section, beat.index), (beat.start, beat.end))
+    said, _ = _norm(beat.line.text)
+    out = []
+    for k, phrase in enumerate(phrases):
+        at = said.find(_norm(phrase)[0])
+        frac = at / max(1, len(said)) if at >= 0 else k / len(phrases)
+        out.append(a + (b - a) * frac)
+    return out
+
+
+class Band:
+    """A highlighter band laid behind a phrase's words: one soft, slightly
+    uneven graphite stroke along each of its boxes (one a line), like the
+    side of a soft pencil laid flat, swept on left to right, box after box."""
+
+    def __init__(self, boxes, u, seed):
+        rnd = random.Random(seed)
+        self.segs = []
+        for b in boxes:
+            x0, x1 = b.x - 5 * u, b.right + 5 * u
+            yc = b.y + b.h * 0.56 + rnd.uniform(-1, 1) * u
+            hh = b.h * 0.27
+            n = max(2, int((x1 - x0) / (14 * u)))
+            tilt = rnd.uniform(-1.5, 1.5) * u
+            top, bot = [], []
+            for i in range(n + 1):
+                t = i / n
+                x = x0 + (x1 - x0) * t
+                y = yc + tilt * (t - 0.5)
+                top.append((x, y - hh + rnd.uniform(-1.6, 1.6) * u))
+                bot.append((x, y + hh + rnd.uniform(-1.6, 1.6) * u))
+            # the ends a little ragged, as a stroke starts and lifts
+            body = [(x0 + rnd.uniform(0, 3) * u, yc)] + top + [(x1 + rnd.uniform(0, 4) * u, yc + tilt / 2)] \
+                + bot[::-1]
+            # the pencil's grain along the stroke: a few lighter and darker streaks
+            streaks = [(yc + hh * rnd.uniform(-0.8, 0.8), rnd.uniform(0.25, 0.6) * hh, rnd.uniform(0.05, 0.12))
+                       for _ in range(4)]
+            self.segs.append((x0, x1, yc, hh, body, streaks))
+        self.total = sum(x1 - x0 for x0, x1, *_ in self.segs) or 1
+
+    def draw(self, cv, p):
+        ctx = cv.ctx
+        left = p * self.total
+        for x0, x1, yc, hh, body, streaks in self.segs:
+            if left <= 0:
+                break
+            w = min(x1 - x0, left)
+            left -= x1 - x0
+            ctx.save()
+            ctx.rectangle(x0 - 10, yc - hh * 2, w + 10 + (8 if w >= x1 - x0 else 0), hh * 4)
+            ctx.clip()
+            ctx.new_path()
+            sp._path(ctx, body)
+            ctx.close_path()
+            ctx.set_source(sp.ink(GRAPHITE, BAND_ALPHA))
+            ctx.fill()
+            ctx.set_line_cap(cairo.LINE_CAP_ROUND)
+            for y, lw, a in streaks:
+                ctx.new_path()
+                ctx.move_to(x0 + 4, y)
+                ctx.line_to(x1 - 2, y)
+                ctx.set_line_width(lw)
+                ctx.set_source(sp.ink(GRAPHITE, a))
+                ctx.stroke()
+            ctx.restore()
+
+    def head(self, p):
+        left = p * self.total
+        for x0, x1, yc, hh, *_ in self.segs:
+            if left <= x1 - x0:
+                return x0 + left, yc + hh * 0.4
+            left -= x1 - x0
+        x0, x1, yc, hh, *_ = self.segs[-1]
+        return x1, yc + hh * 0.4
+
+
+def highlight_items(parts, beat, ready, u):
+    """The bands for a line's `highlight` phrases: each starting at its
+    estimated spoken position (no earlier than frame `ready`, when the page
+    is up), its occurrences swept on one after another, alike."""
+    phrases = beat.line.visual.highlight
+    items = []
+    f = ready
+    for phrase, at in zip(phrases, highlight_starts(beat, phrases)):
+        f = max(f, at)
+        for occ in focus_boxes(parts, phrase):
+            band = Band(occ, u, seed_of('band', phrase, occ[0].x, occ[0].y))
+            items.append(Item(f, f + SWEEP, band.draw, band.head))
+            f += SWEEP
+    return items
+
+
+def page_run(runs, L, first_f, fmt, state):
+    """The page for a run of consecutive `page` lines and the lines they stay
+    up for, one continuous page (`runs`: the runs_of entries, in order):
+    drawn on the first time, faded back in (with every term clicked so far
+    ticked off) after that; then each `page` line, as it is narrated, adds
+    its highlights or its click: the term circled, and, with a single click
+    in the run, zoomed in on. `state` carries what earlier page runs did:
+    whether the page was drawn, and the terms clicked. Returns (items,
+    marks, camera, fade-in frame or None)."""
     stage = L['page_stage']
     u = L['u']
     paper_box, parts = page_plan(fmt)
-    end = lines[-1].end
     first = not state['drawn']
-    room = end - first_f
+    room = runs[0][2][-1].end - first_f
     if first:
         items = page_items(paper_box, parts, L, first_f, min(PAGE_DRAW, room * 0.35), whole=False)
         f = max(it.f1 for it in items) + 4
@@ -1458,7 +1587,7 @@ def page_run(chart, lines, L, first_f, fmt, state):
         f = first_f + FADE
         fade_in = first_f
     state['drawn'] = True
-    # the terms clicked so far: each circle, faint, with a tick
+    # the terms clicked before this run: each circle, faint, with a tick
     for t, focus in enumerate(state['clicked']):
         for occ in focus_boxes(parts, focus):
             for j, b in enumerate(occ):
@@ -1467,26 +1596,46 @@ def page_run(chart, lines, L, first_f, fmt, state):
             tick = _tick(occ[0], u, seed_of('tick', focus))
             items.append(stroke_item(first_f - 2, first_f - 1, tick, alpha=0.8, pencil=False))
     camera = Camera(stage, paper_box)
-    focus = chart.visual.focus
-    if focus:
-        occs = focus_boxes(parts, focus)
-        rings = [b for occ in occs for b in occ]
-        k = min(1.0, (room * 0.6 - (f - first_f)) / (CIRCLE + ZOOM + 4)) if room > 0 else 1.0
-        k = max(k, 0.4)
-        per = CIRCLE * k / len(rings)
-        circle = f
-        for b in rings:
-            ring = _ring(b, u, seed_of('ring', focus, b.x, b.y))
-            items.append(stroke_item(f, f + per, ring))
-            f += per
-        z0 = f + 3
-        # frame the circles whole, not just the words in them
-        t = _union(rings)
-        mx, my = 24 * u, 16 * u
-        camera = Camera(stage, paper_box, Box(t.x - mx, t.y - my, t.w + 2 * mx, t.h + 2 * my), z0, z0 + ZOOM * k)
-        camera.circle = (circle, f)
-        if focus not in state['clicked']:
+    cameras = []
+    bands = []  # laid behind the lettering
+    for r, (_, chart, lines) in enumerate(runs):
+        run_f0 = first_f if r == 0 else lines[0].start
+        if r:
+            f = max(f, run_f0 + 2)
+        v = chart.visual
+        if v.highlight:
+            hi = highlight_items(parts, lines[0], f, u)
+            bands += hi
+            f = max([f] + [it.f1 for it in hi])
+        if v.focus:
+            focus = v.focus
+            occs = focus_boxes(parts, focus)
+            rings = [b for occ in occs for b in occ]
+            room = lines[-1].end - run_f0
+            k = min(1.0, (room * 0.6 - (f - run_f0)) / (CIRCLE + ZOOM + 4)) if room > 0 else 1.0
+            k = max(k, 0.4)
+            per = CIRCLE * k / len(rings)
+            circle = f
+            for b in rings:
+                ring = _ring(b, u, seed_of('ring', focus, b.x, b.y))
+                items.append(stroke_item(f, f + per, ring))
+                f += per
+            z0 = f + 3
+            # frame the circles whole, not just the words in them
+            t = _union(rings)
+            mx, my = 24 * u, 16 * u
+            cam = Camera(stage, paper_box, Box(t.x - mx, t.y - my, t.w + 2 * mx, t.h + 2 * my), z0, z0 + ZOOM * k)
+            cam.circle = (circle, f)
+            cameras.append(cam)
+    for _, chart, _ in runs:
+        focus = chart.visual.focus
+        if focus and focus not in state['clicked']:
             state['clicked'].append(focus)
+    # One click holds the camera on it; several in one run keep the page whole
+    # (PAGE_ZOOM_MAX is 1 in any case: the page is readable whole).
+    if len(cameras) == 1:
+        camera = cameras[0]
+    items = items[:1] + bands + items[1:]  # the paper first, then the bands under the words
     marks = [Mark('chart', paper_box)]
     return items, marks, camera, fade_in
 
@@ -1562,28 +1711,48 @@ def page_view(n):
 def build(fmt):
     L = LAYOUTS[fmt]
     groups = []
+    slides = []  # (frame the ring starts refilling, frame it is empty): one per picture on the stage
     pages = dict(drawn=False, clicked=[])  # what earlier `page` lines did
+    pending = []  # consecutive `page` runs, one continuous page: [(run, first_f)]
+
+    def flush():
+        if not pending:
+            return
+        runs = [r for r, _ in pending]
+        first_f = pending[0][1]
+        start, end = runs[0][2][0].start, runs[-1][2][-1].end
+        items, marks, camera, fade_in = page_run(runs, L, first_f, fmt, pages)
+        for m in marks:
+            m.f0 = first_f
+        groups.append(PageGroup(items, marks, start, end, camera, fade_in))
+        slides.append((max(start, first_f - FADE), end))
+        pending.clear()
+
     for sec in BOARD.sections:
         runs = runs_of(sec)
         h_f0 = sec.start + (FADE if sec.number else 4)
         h_items, h_end, h_box = heading_items(sec, L, h_f0)
-        if runs and is_page(runs[0]) and runs[0][1].index == 0:
+        opens_on_page = bool(runs) and is_page(runs[0]) and runs[0][1].index == 0
+        if opens_on_page:
             # The section opens in the full-page view: its heading is not
             # written on, but fades in whole when a later visual leaves the view.
             for it in h_items:
                 it.f0, it.f1, it._head = h_f0 + FADE, h_f0 + FADE + 1, None
             h_end = h_f0 - 2
+        else:
+            flush()  # the stage clears between the sections
         groups.append(Group(h_items, [Mark('heading', h_box, sec.start)], sec.start, sec.end, hidden=page_view))
-        for k, (kind, chart, lines) in enumerate(runs):
+        for k, run in enumerate(runs):
+            kind, chart, lines = run
             start = lines[0].start
             first_f = max(h_end + 2, start + (FADE if start > sec.start else 0))
             end = lines[-1].end
-            if kind == 'chart' and chart.visual.kind == 'page':
-                items, marks, camera, fade_in = page_run(chart, lines, L, first_f, fmt, pages)
-                for m in marks:
-                    m.f0 = first_f
-                groups.append(PageGroup(items, marks, start, end, camera, fade_in))
+            if is_page(run):
+                # a page carries on from a page just before it, even across a
+                # section's start: it stays up, and adds its highlights or click
+                pending.append((run, first_f))
                 continue
+            flush()
             if kind == 'chart':
                 items, marks = chart_run(chart, lines, L, first_f)
             else:
@@ -1591,12 +1760,14 @@ def build(fmt):
             for m in marks:
                 m.f0 = first_f
             groups.append(Group(items, marks, start, end))
+            slides.append((max(start, first_f - FADE), end))
+    flush()
     # the closing sources card: never fades
     card_items, card_marks = sources_card(L, BOARD.narration_end + 8)
     groups.append(Group(card_items, card_marks, BOARD.narration_end))
     items = [it for g in groups for it in g.items]
     schedule = sorted((it for it in items if it._head), key=lambda it: it.f0)
-    return dict(L=L, groups=groups, schedule=schedule, captions=caption_chunks(L))
+    return dict(L=L, groups=groups, schedule=schedule, captions=caption_chunks(L), slides=sorted(slides))
 
 
 def sources_card(L, f0):
@@ -1751,6 +1922,79 @@ def draw_footer(cv, L, fb, alpha=1.0):
         cv.mark('footer', *drawn)
 
 
+# ---- the countdown ring: how long until the picture changes ----
+RING_ALPHA = 0.62   # the footer's quiet graphite, never the accent colour
+RING_TRACK = 0.16   # the empty ring, faint
+
+
+def ring_at(n, slides):
+    """(fill 0..1, opacity 0..1) of the countdown ring at frame n, or None
+    when the stage is empty. Each picture on the stage, (a, b) in `slides`,
+    refills it over FADE frames from a, and it then empties steadily to
+    nothing at b, when the picture starts to go. It fades in with a picture
+    that follows an empty stage, and out, empty, when the stage clears."""
+    for i, (a, b) in enumerate(slides):
+        if a <= n < b:
+            full = min(b, a + FADE)
+            if n < full:
+                fill = (n - a) / FADE
+            else:
+                fill = 1 - (n - full) / max(1, b - full)
+            follows = i > 0 and a - slides[i - 1][1] <= 1
+            return fill, 1.0 if follows else vb.clamp01((n - a) / FADE)
+    for a, b in slides:
+        if b <= n < b + FADE:
+            return 0.0, 1 - (n - b) / FADE
+    return None
+
+
+@functools.lru_cache(maxsize=8)
+def _ring_path(cx, cy, r):
+    """The ring as a hand draws it, from the top counter-clockwise round to
+    the top again: a polyline with a slight seeded wobble."""
+    rnd = random.Random(seed_of('countdown', cx, cy))
+    ph = rnd.uniform(0, 6.3)
+    n = 96
+    pts = []
+    for i in range(n + 1):
+        a = -math.pi / 2 - 2 * math.pi * i / n
+        rr = r * (1 + 0.025 * math.sin(3 * a + ph))
+        pts.append((cx + rr * math.cos(a), cy + rr * math.sin(a)))
+    return pts
+
+
+def draw_ring(cv, ring, fill, alpha):
+    """The countdown ring at (cx, cy, r): the part still to run, from the
+    top round clockwise to `fill` of the way, over a faint full ring."""
+    cx, cy, r = ring
+    if alpha <= 0:
+        return
+    ctx = cv.ctx
+    pts = _ring_path(cx, cy, r)
+    ctx.save()
+    ctx.set_line_cap(cairo.LINE_CAP_ROUND)
+    ctx.set_line_join(cairo.LINE_JOIN_ROUND)
+    w = r * 0.2
+    ctx.new_path()
+    sp._path(ctx, pts)
+    ctx.set_line_width(w)
+    ctx.set_source(sp.ink(GRAPHITE, RING_TRACK * alpha))
+    ctx.stroke()
+    if fill > 0.002:
+        # the stroke runs counter-clockwise from the top: revealing `fill`
+        # of it leaves the gap opening clockwise from the top
+        shown = paths.reveal(pts, min(1.0, fill))
+        if len(shown) >= 2:
+            ctx.new_path()
+            sp._path(ctx, shown)
+            ctx.set_line_width(w)
+            ctx.set_source(sp.ink(GRAPHITE, RING_ALPHA * alpha))
+            ctx.stroke()
+    ctx.restore()
+    if alpha >= 1:
+        cv.mark('ring', cx - r - w, cy - r - w, 2 * (r + w), 2 * (r + w))
+
+
 # ---- the pencil: only while something is being drawn ----
 def pencil_at(n, P):
     """(x, y, ink, alpha) of the pencil tip at frame n, or None. It follows
@@ -1819,6 +2063,15 @@ def draw(n, cv):
             draw_footer(cv, L, fb, a)
     for g in P['groups']:
         g.draw(cv, n)
+    ring = ring_at(n, P['slides'])
+    if ring is not None:
+        fill, alpha = ring
+        for at, a in ((L['ring'], 1 - v), (L['page_ring'], v)):
+            if L['ring'] == L['page_ring']:
+                draw_ring(cv, at, fill, alpha)
+                break
+            if a > 0:
+                draw_ring(cv, at, fill, alpha * a)
     draw_pencil(cv, n, P)
     if n < BOARD.narration_end:
         for s, a in ((L['scrap'], 1 - v), (L['page_scrap'], v)):
