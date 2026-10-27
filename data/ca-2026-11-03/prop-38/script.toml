@@ -1,0 +1,129 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; who pays for medical research today; what the measure would
+# do (the borrowing, where it goes); the analyst's view, the cost and
+# the possible payback; one point per side; what a vote does.
+#
+# Left out of the neutral sections because a side argues them (STANDARD.md
+# 6.3): the money set aside for cancer, heart disease and Alzheimer's, the
+# 20 percent patient discount, the earlier stem cell bonds, federal cuts.
+
+contest = "ca-2026-11-03-prop-38"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "quick-reference"
+number = "38"
+title = "AUTHORIZES BONDS FOR IMMUNOLOGY MEDICAL RESEARCH. INITIATIVE STATUTE."
+origin = "Put on the Ballot by Petition Signatures"
+summary = "Authorizes $8.4 billion in general obligation bonds for immunology and immunotherapy research, half to a single University of California-affiliated nonprofit medical research institute, half to research grants. Fiscal Impact: Increased state cost of $500 million to $600 million annually for about 20 years to repay the research bond, with some or all of the cost offset if the funded research generates revenue."
+yes = "A YES vote on this measure means: The state could borrow $8.4 billion to support medical research in immunology and immunotherapy conducted by California research institutes and universities."
+no = "A NO vote on this measure means: The state could not borrow $8.4 billion to support medical research in immunology and immunotherapy conducted by California research institutes and universities."
+
+[[section]]
+id = "what"
+heading = "Proposition 38"
+
+[[section.line]]
+text = "Proposition 38 is about borrowing to pay for immunology medical research."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["immunology and immunotherapy research"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, companies and government agencies are the main funders of medical research."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "research-lab"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Proposition 38 would let the state borrow 8.4 billion dollars for research on the immune system."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "About half would go to one research institute, and half to research grants."
+sources = ["lao-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What the state's analyst says"
+
+[[section.line]]
+text = "The Legislative Analyst's Office says repaying the bonds would cost 500 to 600 million dollars a year for about 20 years."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section.line]]
+text = "The office says research discoveries could repay part or all of that cost, in later decades."
+sources = ["lao-analysis", "title-summary"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Proposition 38 funds research to cure and prevent diseases like cancer and Alzheimer's."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Funds research to cure cancer, heart disease and Alzheimer's", "Designed to pay for itself, at no net cost"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Proposition 38 locks taxpayers into decades of debt for one field of research."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Would commit taxpayers to decades of new bond debt", "Research funding should go through the normal budget process"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means the state could borrow 8.4 billion dollars."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["could borrow"]
+
+[[section.line]]
+text = "A no vote means the state could not borrow that money."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["could not borrow"]
