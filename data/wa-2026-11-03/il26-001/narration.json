@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 81.18,
+  "seconds": 68.92,
   "phrases": [
     {
       "text": "Initiative Measure IL26-001 is about parents' rights in public schools.",
@@ -14,68 +14,56 @@
       "end": 15.2
     },
     {
-      "text": "In 2025, the Legislature changed the list.",
-      "start": 15.86,
-      "end": 19.1
-    },
-    {
       "text": "Today, schools have up to 45 days to provide a child's records.",
-      "start": 19.76,
-      "end": 24.14
+      "start": 15.86,
+      "end": 20.46
     },
     {
-      "text": "IL26-001 would restore the 2024 list, with records due in ten business days.",
-      "start": 24.8,
-      "end": 32.6
+      "text": "The measure would restore the 2024 list, with records due in ten business days.",
+      "start": 21.12,
+      "end": 26.81
     },
     {
       "text": "The 2025 entries on language access and special education would come off the list.",
-      "start": 33.26,
-      "end": 40.06
+      "start": 27.47,
+      "end": 33.89
     },
     {
-      "text": "The Office of Financial Management says there would be no fiscal impact on the state.",
-      "start": 40.72,
-      "end": 45.39
+      "text": "The Office of Financial Management sees no cost to the state, and minor, uncertain costs for school districts.",
+      "start": 34.55,
+      "end": 41.95
     },
     {
-      "text": "School districts may have minor costs, which the Office calls indeterminate.",
-      "start": 46.05,
-      "end": 51.2
+      "text": "Supporters say the measure restores parents' rights to school information, and stops schools keeping secrets from families.",
+      "start": 42.61,
+      "end": 50.6
     },
     {
-      "text": "Supporters say IL26-001 restores parents' rights to school information, and stops schools keeping secrets from families.",
-      "start": 51.86,
-      "end": 61.63
-    },
-    {
-      "text": "Opponents say IL26-001 endangers child abuse victims, and ends immediate parental notice of crimes against students.",
-      "start": 62.29,
-      "end": 71.53
+      "text": "Opponents say the measure endangers child abuse victims, and ends immediate parental notice of crimes against students.",
+      "start": 51.26,
+      "end": 59.32
     },
     {
       "text": "A yes vote means the 2025 amendments would be repealed.",
-      "start": 72.19,
-      "end": 76.14
+      "start": 59.98,
+      "end": 63.88
     },
     {
       "text": "A no vote means the 2025 amendments would not be repealed.",
-      "start": 76.8,
-      "end": 81.15
+      "start": 64.54,
+      "end": 68.89
     }
   ],
   "inputs": {
     "phrases": [
       "Initiative Measure IL26-001 is about parents' rights in public schools.",
       "In 2024, the Legislature passed Initiative 2081, a list of parents' rights at school.",
-      "In 2025, the Legislature changed the list.",
       "Today, schools have up to 45 days to provide a child's records.",
-      "IL26-001 would restore the 2024 list, with records due in ten business days.",
+      "The measure would restore the 2024 list, with records due in ten business days.",
       "The 2025 entries on language access and special education would come off the list.",
-      "The Office of Financial Management says there would be no fiscal impact on the state.",
-      "School districts may have minor costs, which the Office calls indeterminate.",
-      "Supporters say IL26-001 restores parents' rights to school information, and stops schools keeping secrets from families.",
-      "Opponents say IL26-001 endangers child abuse victims, and ends immediate parental notice of crimes against students.",
+      "The Office of Financial Management sees no cost to the state, and minor, uncertain costs for school districts.",
+      "Supporters say the measure restores parents' rights to school information, and stops schools keeping secrets from families.",
+      "Opponents say the measure endangers child abuse victims, and ends immediate parental notice of crimes against students.",
       "A yes vote means the 2025 amendments would be repealed.",
       "A no vote means the 2025 amendments would not be repealed."
     ],
@@ -131,27 +119,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "In 2025, the Legislature changed the list."
-      },
-      "bounds": [
-        379920,
-        459120
-      ]
-    },
-    {
-      "key": {
-        "engine": "gemini",
-        "model": "gemini-3.8-flash-tts",
-        "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"In 2025, the Legislature changed the list.\"",
-        "convert_to_sha256": null,
-        "check": true,
-        "retries": 3,
         "text": "Today, schools have up to 45 days to provide a child's records."
       },
       "bounds": [
-        473520,
-        580080
+        379920,
+        491760
       ]
     },
     {
@@ -163,11 +135,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "IL26-001 would restore the 2024 list, with records due in ten business days."
+        "text": "The measure would restore the 2024 list, with records due in ten business days."
       },
       "bounds": [
-        594480,
-        783120
+        506160,
+        644160
       ]
     },
     {
@@ -175,15 +147,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"IL26-001 would restore the 2024 list, with records due in ten business days.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The measure would restore the 2024 list, with records due in ten business days.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "The 2025 entries on language access and special education would come off the list."
       },
       "bounds": [
-        797520,
-        962160
+        658560,
+        814080
       ]
     },
     {
@@ -195,11 +167,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The Office of Financial Management says there would be no fiscal impact on the state."
+        "text": "The Office of Financial Management sees no cost to the state, and minor, uncertain costs for school districts."
       },
       "bounds": [
-        976560,
-        1090080
+        828480,
+        1007520
       ]
     },
     {
@@ -207,15 +179,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Office of Financial Management says there would be no fiscal impact on the state.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Office of Financial Management sees no cost to the state, and minor, uncertain costs for school districts.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "School districts may have minor costs, which the Office calls indeterminate."
+        "text": "Supporters say the measure restores parents' rights to school information, and stops schools keeping secrets from families."
       },
       "bounds": [
-        1104480,
-        1229520
+        1021920,
+        1215120
       ]
     },
     {
@@ -223,15 +195,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"School districts may have minor costs, which the Office calls indeterminate.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the measure restores parents' rights to school information, and stops schools keeping secrets from families.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Supporters say IL26-001 restores parents' rights to school information, and stops schools keeping secrets from families."
+        "text": "Opponents say the measure endangers child abuse victims, and ends immediate parental notice of crimes against students."
       },
       "bounds": [
-        1243920,
-        1479840
+        1229520,
+        1424400
       ]
     },
     {
@@ -239,31 +211,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say IL26-001 restores parents' rights to school information, and stops schools keeping secrets from families.\"",
-        "convert_to_sha256": null,
-        "check": true,
-        "retries": 3,
-        "text": "Opponents say IL26-001 endangers child abuse victims, and ends immediate parental notice of crimes against students."
-      },
-      "bounds": [
-        1494240,
-        1717440
-      ]
-    },
-    {
-      "key": {
-        "engine": "gemini",
-        "model": "gemini-3.8-flash-tts",
-        "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say IL26-001 endangers child abuse victims, and ends immediate parental notice of crimes against students.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say the measure endangers child abuse victims, and ends immediate parental notice of crimes against students.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote means the 2025 amendments would be repealed."
       },
       "bounds": [
-        1731840,
-        1828080
+        1438800,
+        1533840
       ]
     },
     {
@@ -278,10 +234,10 @@
         "text": "A no vote means the 2025 amendments would not be repealed."
       },
       "bounds": [
-        1842480,
-        1948320
+        1548240,
+        1654080
       ]
     }
   ],
-  "sha256": "a45939668bf1e0309a28813f19840c2c34aae1ea42afd1f9f9b61dd0d983d148"
+  "sha256": "bb1980b72d9d8ec72c3ee782d3a588f64285611a291a76aa99fe9af5f44b2434"
 }

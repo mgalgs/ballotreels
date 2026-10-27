@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 82.52,
+  "seconds": 67.52,
   "phrases": [
     {
       "text": "Initiative Measure IP26-645 is about taxes on individual income.",
@@ -14,56 +14,50 @@
       "end": 17.47
     },
     {
-      "text": "IP26-645 would repeal that tax, and bar state and local taxes on individual income.",
+      "text": "The measure would repeal that tax, and bar state and local taxes on individual income.",
       "start": 18.13,
-      "end": 26.79
+      "end": 24.33
     },
     {
       "text": "The Office of Financial Management estimates the state would lose $11.4 billion in revenue over budget years 2027 to 2031.",
-      "start": 27.45,
-      "end": 37.42
-    },
-    {
-      "text": "The Office says the general fund would have less money for schools, colleges and health care.",
-      "start": 38.08,
-      "end": 43.88
+      "start": 24.99,
+      "end": 34.59
     },
     {
       "text": "The Office also expects state agencies to save about $150 million over the same five years.",
-      "start": 44.54,
-      "end": 51.81
+      "start": 35.25,
+      "end": 42.0
     },
     {
-      "text": "Opponents say IP26-645 gives the wealthiest a tax break, and cuts funding for schools, healthcare and childcare.",
-      "start": 52.47,
-      "end": 62.29
+      "text": "Opponents say the measure gives the wealthiest a tax break, and cuts funding for schools, healthcare and childcare.",
+      "start": 42.66,
+      "end": 50.02
     },
     {
-      "text": "Supporters say IP26-645 repeals the income tax before it starts, so lawmakers can't expand it to everyone.",
-      "start": 62.95,
-      "end": 72.36
+      "text": "Supporters say the measure repeals the income tax before it starts, so lawmakers can't expand it to everyone.",
+      "start": 50.68,
+      "end": 57.66
     },
     {
       "text": "A yes vote means the 9.9 percent tax would be repealed.",
-      "start": 73.02,
-      "end": 77.28
+      "start": 58.32,
+      "end": 62.28
     },
     {
       "text": "A no vote means the 9.9 percent tax would not be repealed.",
-      "start": 77.94,
-      "end": 82.49
+      "start": 62.94,
+      "end": 67.49
     }
   ],
   "inputs": {
     "phrases": [
       "Initiative Measure IP26-645 is about taxes on individual income.",
       "In 2026, the Legislature passed a 9.9 percent tax on yearly income over a million dollars, starting in 2028.",
-      "IP26-645 would repeal that tax, and bar state and local taxes on individual income.",
+      "The measure would repeal that tax, and bar state and local taxes on individual income.",
       "The Office of Financial Management estimates the state would lose $11.4 billion in revenue over budget years 2027 to 2031.",
-      "The Office says the general fund would have less money for schools, colleges and health care.",
       "The Office also expects state agencies to save about $150 million over the same five years.",
-      "Opponents say IP26-645 gives the wealthiest a tax break, and cuts funding for schools, healthcare and childcare.",
-      "Supporters say IP26-645 repeals the income tax before it starts, so lawmakers can't expand it to everyone.",
+      "Opponents say the measure gives the wealthiest a tax break, and cuts funding for schools, healthcare and childcare.",
+      "Supporters say the measure repeals the income tax before it starts, so lawmakers can't expand it to everyone.",
       "A yes vote means the 9.9 percent tax would be repealed.",
       "A no vote means the 9.9 percent tax would not be repealed."
     ],
@@ -119,11 +113,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "IP26-645 would repeal that tax, and bar state and local taxes on individual income."
+        "text": "The measure would repeal that tax, and bar state and local taxes on individual income."
       },
       "bounds": [
         434400,
-        643680
+        584640
       ]
     },
     {
@@ -131,15 +125,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"IP26-645 would repeal that tax, and bar state and local taxes on individual income.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The measure would repeal that tax, and bar state and local taxes on individual income.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "The Office of Financial Management estimates the state would lose $11.4 billion in revenue over budget years 2027 to 2031."
       },
       "bounds": [
-        658080,
-        898800
+        599040,
+        830880
       ]
     },
     {
@@ -151,27 +145,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The Office says the general fund would have less money for schools, colleges and health care."
-      },
-      "bounds": [
-        913200,
-        1053840
-      ]
-    },
-    {
-      "key": {
-        "engine": "gemini",
-        "model": "gemini-3.8-flash-tts",
-        "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Office says the general fund would have less money for schools, colleges and health care.\"",
-        "convert_to_sha256": null,
-        "check": true,
-        "retries": 3,
         "text": "The Office also expects state agencies to save about $150 million over the same five years."
       },
       "bounds": [
-        1068240,
-        1244160
+        845280,
+        1008720
       ]
     },
     {
@@ -183,11 +161,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Opponents say IP26-645 gives the wealthiest a tax break, and cuts funding for schools, healthcare and childcare."
+        "text": "Opponents say the measure gives the wealthiest a tax break, and cuts funding for schools, healthcare and childcare."
       },
       "bounds": [
-        1258560,
-        1495680
+        1023120,
+        1201200
       ]
     },
     {
@@ -195,15 +173,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say IP26-645 gives the wealthiest a tax break, and cuts funding for schools, healthcare and childcare.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say the measure gives the wealthiest a tax break, and cuts funding for schools, healthcare and childcare.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Supporters say IP26-645 repeals the income tax before it starts, so lawmakers can't expand it to everyone."
+        "text": "Supporters say the measure repeals the income tax before it starts, so lawmakers can't expand it to everyone."
       },
       "bounds": [
-        1510080,
-        1737360
+        1215600,
+        1384560
       ]
     },
     {
@@ -211,15 +189,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say IP26-645 repeals the income tax before it starts, so lawmakers can't expand it to everyone.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the measure repeals the income tax before it starts, so lawmakers can't expand it to everyone.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote means the 9.9 percent tax would be repealed."
       },
       "bounds": [
-        1751760,
-        1855440
+        1398960,
+        1495440
       ]
     },
     {
@@ -234,10 +212,10 @@
         "text": "A no vote means the 9.9 percent tax would not be repealed."
       },
       "bounds": [
-        1869840,
-        1980480
+        1509840,
+        1620480
       ]
     }
   ],
-  "sha256": "0e65f6a58f009a69a2f135dd586d656c71997c08e4364c6ab74da98dd9db9b71"
+  "sha256": "dbaf271ee9d95c2876a135795740a45254bf2ee3f8abaaba2558e789c6b3fe94"
 }
