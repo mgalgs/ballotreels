@@ -252,8 +252,11 @@ side's narration gets trailing silence to match the longer (STANDARD.md
 rule 2.2), which is why the rendered video can run a couple of seconds
 longer than the raw narration. On screen, the two sides share one
 slide, "What each side says" (fixed template text, not from the
-script), that stays up through both sections: two congruent blocks, one
-per side in play order (top/bottom in the 9:16 format, left/right in
-16:9), each labelled with its own section's heading and, if it has a
-`list`, ticking that list in on its own lines; a side with none shows
-just its label over an empty block.
+script), that stays up through both sections: two equal pencilled
+boxes, one per side in play order (top/bottom in the 9:16 format,
+left/right in 16:9), filling the page between the heading and the
+caption. Each box is labelled with its own section's heading and, if
+the side has a `list`, ticks that list in on its own lines, in the same
+type, row heights and spacing in both boxes; a side with none shows just
+its label. When both lists cite the same source, one source line sits
+under both boxes; otherwise each box carries its own.

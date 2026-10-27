@@ -54,8 +54,8 @@ The stage shows
 The two side sections are the one exception to one-section-one-page: they
 share a single slide, "What each side says" (sides_group), that stays up
 through both of them with no redraw in between. Under the fixed heading,
-two congruent blocks (sides_plan: top/bottom in 9:16, left/right in
-16:9, laid out as SIDES_LAYOUT picks) hold the sides in play order, each labelled with its own section's
+two congruent cards (sides_plan: top/bottom in 9:16, left/right in
+16:9) hold the sides in play order, each labelled with its own section's
 heading and ticking its own `list` in on its own lines (side_block, the
 same code for both, built from line positions, never from the side —
 rules 2.2, 4.1, 7.4). The two sides also get exactly the same time on
@@ -853,33 +853,13 @@ def list_visual(chart, lines, L, f0, f1, stage=None, peers=()):
 # words and order: the same label and item font, row heights, gaps and
 # offsets (rule 7.4). When both lists cite the same source, the slide
 # prints it once, under both blocks; otherwise each block prints its own,
-# in the same place in each.
-#
-# SIDES_LAYOUT picks how the blocks sit on the stage (the operator is
-# choosing between them; the other two go once one is picked):
-# - 'compact': the two blocks as one group, a clear gap between them, the
-#   whole centred on the stage with the shared source under it;
-# - 'cards': as compact, each block in its own pencilled box, both the
-#   same size;
-# - 'halves': each block in a fixed half of the stage, packed at the top
-#   of it, the shared source at the stage's bottom.
+# in the same place in each. Each block sits in its own pencilled card,
+# both the same size.
 SIDES_HEADING = 'What each side says'
-SIDES_LAYOUT = 'compact'
-BLOCK_GAP = 28  # px between the two blocks' halves (16:9 columns, 'halves'), before the format's own scale
+CARD_GAP = 48   # px between the two cards
 LABEL_GAP = 22  # px between a block's label and its rows
 SOURCE_GAP = 34  # px above a source line
 CARD_PAD = 24   # px inside a card, above and below its block (half as much again at its sides)
-
-
-def side_boxes(L, fmt):
-    """The two halves of the stage, in play order."""
-    st, u = L['stage'], L['u']
-    gap = BLOCK_GAP * u
-    if fmt == '9x16':
-        h = (st.h - gap) / 2
-        return Box(st.x, st.y, st.w, h), Box(st.x, st.y + h + gap, st.w, h)
-    w = (st.w - gap) / 2
-    return Box(st.x, st.y, w, st.h), Box(st.x + w + gap, st.y, w, st.h)
 
 
 def block_label_font(secs, L, width):
@@ -911,22 +891,21 @@ def side_list(sec):
     return next((r for r in runs_of(sec) if r[0] == 'chart' and r[1].visual.kind == 'list'), None)
 
 
-def sides_plan(side_a, side_b, L, fmt, layout=None):
+def sides_plan(side_a, side_b, L, fmt):
     """Where everything on the sides slide goes, both blocks fitted
     together: a dict of the label font and height, the rows (list_rows),
-    each block's box (the label at its top, the rows under it), each
-    card's box ('cards' only), and the shared source's box, if any."""
-    layout = layout or SIDES_LAYOUT
+    each card's box, each block's box inside its card (the label at its
+    top, the rows under it), and the shared source's box, if any."""
     st, u = L['stage'], L['u']
     secs = (side_a, side_b)
     runs = [side_list(s) for s in secs]
     charts = [r[1] for r in runs if r]
     shared = len(charts) == 2 and charts[0].source.id == charts[1].source.id
     stacked = fmt == '9x16'
-    pad = CARD_PAD * u if layout == 'cards' else 0
+    pad = CARD_PAD * u
     side_pad = pad * 1.5  # a card's text keeps further off its sides than off its top and bottom
-    col_gap = BLOCK_GAP * u if layout == 'halves' else (BLOCK_GAP + 20) * u
-    outer_w = st.w if stacked else (st.w - col_gap) / 2
+    gap = CARD_GAP * u
+    outer_w = st.w if stacked else (st.w - gap) / 2
     bw = outer_w - 2 * side_pad
     label_f, label_h = block_label_font(secs, L, bw)
     label_gap = LABEL_GAP * u
@@ -939,44 +918,23 @@ def sides_plan(side_a, side_b, L, fmt, layout=None):
     def block_h(rows_h):
         return label_h + (label_gap + rows_h + own_src if charts else 0)
 
-    def between(gap):
-        # 'compact': the gap between the two blocks reads as clearly more
-        # than the rows' own; 'cards' are already apart by their outlines
-        if layout == 'cards':
-            return max(gap, 28 * u)
-        return max(2 * gap, 36 * u) if charts else 48 * u
-
-    def fits(rows_h, gap):
+    def fits(rows_h, row_gap):
         card_h = block_h(rows_h) + 2 * pad
-        if layout == 'halves':
-            half = (st.h - foot - (BLOCK_GAP * u if stacked else 0)) / (2 if stacked else 1)
-            return card_h <= half
-        total = (2 * card_h + between(gap) if stacked else card_h) + foot
-        return total <= st.h
+        return (2 * card_h + max(row_gap, gap) if stacked else card_h) + foot <= st.h
 
     rows = list_rows([c.visual.items for c in charts], L, bw, fits)
     rows['width'] = bw - rows['tx']
     card_h = block_h(rows['rows_h']) + 2 * pad
-    if layout == 'halves':
-        half_a, half_b = side_boxes(L, fmt)
-        if stacked:
-            half_h = (st.h - foot - BLOCK_GAP * u) / 2
-            half_a = Box(st.x, st.y, st.w, half_h)
-            half_b = Box(st.x, st.y + half_h + BLOCK_GAP * u, st.w, half_h)
-        cards = [Box(h.x, h.y, h.w, card_h) for h in (half_a, half_b)]
-        foot_y = st.bottom - src_h
+    if stacked:
+        between = max(rows['gap'], gap)
+        y0 = st.y + (st.h - 2 * card_h - between - foot) / 2
+        cards = [Box(st.x, y0, st.w, card_h), Box(st.x, y0 + card_h + between, st.w, card_h)]
     else:
-        if stacked:
-            total = 2 * card_h + between(rows['gap'])
-            y0 = st.y + (st.h - total - foot) / 2
-            cards = [Box(st.x, y0, st.w, card_h), Box(st.x, y0 + card_h + between(rows['gap']), st.w, card_h)]
-        else:
-            y0 = st.y + (st.h - card_h - foot) / 2
-            cards = [Box(st.x, y0, outer_w, card_h), Box(st.x + outer_w + col_gap, y0, outer_w, card_h)]
-        foot_y = cards[1].bottom + src_gap
+        y0 = st.y + (st.h - card_h - foot) / 2
+        cards = [Box(st.x, y0, outer_w, card_h), Box(st.x + outer_w + gap, y0, outer_w, card_h)]
+    foot_y = cards[1].bottom + src_gap
     blocks = [Box(c.x + side_pad, c.y + pad, c.w - 2 * side_pad, c.h - 2 * pad) for c in cards]
-    return dict(layout=layout, label_font=label_f, label_h=label_h, rows=rows, blocks=blocks,
-                cards=cards if layout == 'cards' else None,
+    return dict(label_font=label_f, label_h=label_h, rows=rows, blocks=blocks, cards=cards,
                 source=Box(st.x, foot_y, st.w, src_h) if shared else None)
 
 
@@ -1009,26 +967,25 @@ def side_block(sec, L, box, label_f0, plan):
 
 
 def card_items(box, L, f0):
-    """A light pencilled box around a block ('cards'), seeded alike for
+    """A light pencilled box around a block, seeded alike for
     both so the two come out the same shape."""
     outline = Stroke(box_pts(box.x, box.y, box.w, box.h), seed_of('side card'), passes=2,
                      width=3 * L['u'], closed=True, overshoot=0, alpha=0.5)
     return [stroke_item(f0, f0 + 14, outline)]
 
 
-def sides_group(side_a, side_b, L, fmt, h_f0, layout=None):
+def sides_group(side_a, side_b, L, fmt, h_f0):
     """Both side sections as one slide: the fixed heading, then the two
     blocks (side_block) in play order where sides_plan puts them, side_a
     first, and the shared source line under both if they share one."""
     h_items, h_end, h_box = heading_text_items(SIDES_HEADING, L, h_f0)
-    plan = sides_plan(side_a, side_b, L, fmt, layout)
+    plan = sides_plan(side_a, side_b, L, fmt)
     items = list(h_items)
     marks = [Mark('heading', h_box, side_a.start)]
     label_f0 = h_end + 2
-    if plan['cards']:
-        for card in plan['cards']:
-            items += card_items(card, L, label_f0)
-        label_f0 += 14
+    for card in plan['cards']:
+        items += card_items(card, L, label_f0)
+    label_f0 += 14
     firsts = []
     for sec, box in zip((side_a, side_b), plan['blocks']):
         si, sm, first = side_block(sec, L, box, label_f0, plan)
