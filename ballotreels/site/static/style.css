@@ -461,6 +461,38 @@ input.zip-input::placeholder {
   margin: 0 0 6px;
 }
 
+/* Browse a state: its name as a quiet pencil button, a few to a row. */
+.browse {
+  margin: 26px 0 8px;
+}
+
+.browse-title {
+  font-family: var(--body);
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+}
+
+.state-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.state-list li {
+  flex: 1 1 140px;
+}
+
+.state-link {
+  width: 100%;
+  min-height: 46px;
+  font-size: 1.2rem;
+}
+
 /* -- loading -------------------------------------------------------- */
 
 .loading {
@@ -730,7 +762,8 @@ a.contest:hover {
   color: var(--ink-soft);
 }
 
-/* Not available (candidate races, for now): drawn but inert. */
+/* Not available (candidate races, or a video stopped or not made):
+   drawn but inert. */
 .contest.inert {
   background: transparent;
   border-style: dashed;

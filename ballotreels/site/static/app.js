@@ -343,13 +343,26 @@ function isStale(token) {
   return token !== routeToken;
 }
 
+// A state's page is shared as /state/<st>; any hash route on top of it
+// (the header's home link, a contest) wins.
+function statePath() {
+  if (location.hash && location.hash !== "#") return null;
+  const m = location.pathname.match(/^\/state\/([a-z]{2})$/);
+  return m ? m[1] : null;
+}
+
 async function route() {
   routeToken += 1;
   const { path, params } = parseHash();
   app.innerHTML = "";
   window.scrollTo(0, 0);
+  document.title = "ballotreels";
+  const shared = statePath();
+  if (shared) return renderState(shared);
   if (path === "/" || path === "") return renderHome();
-  let m = path.match(/^\/zip\/([0-9]+)$/);
+  let m = path.match(/^\/state\/([a-z]{2})$/);
+  if (m) return renderState(m[1]);
+  m = path.match(/^\/zip\/([0-9]+)$/);
   if (m) return renderZip(m[1]);
   if (path === "/address") return renderAddress();
   if (path === "/ballot") return renderBallot(params.getAll("d"), params.get("addr"));
@@ -402,6 +415,13 @@ function renderHome() {
               text: "Pins down your exact districts when a zip code " +
                     "spans more than one." }),
   ]));
+  const states = el("ul", { class: "state-list" });
+  const browse = el("section", { class: "browse", hidden: "hidden" }, [
+    el("h2", { class: "browse-title", text: "Or browse a state's measures" }),
+    states,
+  ]);
+  app.appendChild(browse);
+  fillStates(states, browse, routeToken);
   app.appendChild(el("section", { class: "scrap" }, [
     el("p", { class: "promise-title", text: "How the videos are made" }),
     el("ul", { class: "promise" }, [
@@ -411,6 +431,51 @@ function renderHome() {
     ]),
   ]));
   input.focus();
+}
+
+// The states served, as links to their statewide measures; the section
+// stays hidden if the list can't be had.
+async function fillStates(list, section, token) {
+  const { ok, body } = await getJson("/api/states");
+  if (isStale(token) || !ok || !body.states.length) return;
+  list.replaceChildren(...body.states.map((s) => el("li", {}, [
+    el("a", { class: "btn btn-quiet state-link", href: `/state/${s.state}`,
+              text: s.name.replace(/^the /, "") }),
+  ])));
+  section.hidden = false;
+}
+
+// Where the contest page's back link goes: the ballot or state page
+// the voter came from.
+function rememberBack(href, label) {
+  try {
+    sessionStorage.setItem("ballotreels.back",
+      JSON.stringify({ href, label }));
+  } catch (e) { /* private mode: the back link falls back to home */ }
+}
+
+function recalledBack() {
+  try {
+    const back = JSON.parse(sessionStorage.getItem("ballotreels.back"));
+    if (back && back.href && back.label) return back;
+  } catch (e) { /* no storage, or nothing stored */ }
+  return null;
+}
+
+// "ca-2026-11-03" -> "November 3".
+function electionDay(electionId) {
+  const m = /(\d{4})-(\d{2})-(\d{2})$/.exec(electionId || "");
+  if (!m) return "election day";
+  return new Date(Date.UTC(+m[1], +m[2] - 1, +m[3])).toLocaleDateString(
+    "en-US", { month: "long", day: "numeric", timeZone: "UTC" });
+}
+
+// A state whose election has nothing on it at all.
+function noMeasuresNotice(body, actions) {
+  const name = body.state_name.replace(/^the /, "");
+  return notice(`No statewide measures in ${name}`,
+    `There are no statewide measures on ${name}'s ballot on ` +
+    `${electionDay(body.election)}.`, actions);
 }
 
 async function renderAddress() {
@@ -721,9 +786,7 @@ async function renderBallot(divisions, matchedAddress) {
     return;
   }
   // The contest page's back link returns to this ballot.
-  try {
-    sessionStorage.setItem("ballotreels.ballot", location.hash);
-  } catch (e) { /* private mode: the back link falls back to home */ }
+  rememberBack(location.hash, "Your ballot");
 
   const contests = body.levels.flatMap((level) => level.contests);
   const ready = contests.filter((c) => c.status === "cached").length;
@@ -738,6 +801,12 @@ async function renderBallot(divisions, matchedAddress) {
       el("span", { text: `Matched address: ${matchedAddress}. ` }),
       el("a", { href: "#/address", text: "Not your address? Try again" }),
     ]));
+  }
+  if (contests.length === 0 && body.empty_election) {
+    section.appendChild(noMeasuresNotice(body, [
+      linkButton("Try another zip", "#/", "btn-primary")]));
+    app.appendChild(section);
+    return;
   }
   if (contests.length === 0) {
     section.appendChild(notice("Nothing on this ballot yet",
@@ -760,15 +829,80 @@ async function renderBallot(divisions, matchedAddress) {
   app.appendChild(section);
 }
 
+async function renderState(abbr) {
+  app.appendChild(loading("Getting the measures..."));
+  const token = routeToken;
+  const { ok, status, body } = await getJson(`/api/state/${abbr}`);
+  if (isStale(token)) return;
+  app.innerHTML = "";
+  if (!ok) {
+    if (status === 0) {
+      app.appendChild(offlineNotice());
+    } else if (status === 404) {
+      app.appendChild(notice(body && body.state_name ?
+          `We don't cover ${body.state_name} yet` :
+          "We don't cover that state yet",
+        "ballotreels doesn't have this state's ballot so far.",
+        [linkButton("Find your ballot", "#/", "btn-primary")]));
+    } else {
+      app.appendChild(notice("We couldn't load these measures",
+        "Something went wrong on our side. Try again in a moment.",
+        [button("Try again", { class: "btn btn-primary", onclick: route }),
+         linkButton("Start over", "#/", "btn-quiet")]));
+    }
+    return;
+  }
+  const name = body.state_name.replace(/^the /, "");
+  document.title = `${name} measures · ballotreels`;
+  rememberBack(`/state/${body.state}`, `${name} measures`);
+  const contests = body.levels.flatMap((level) => level.contests);
+  const ready = contests.filter((c) => c.status === "cached").length;
+  const when = electionDate(body.election);
+  const section = el("section", {}, [
+    backLink("Find your ballot", "#/"),
+    heading("h1", `${name} statewide measures`),
+    when ? el("p", { class: "muted", text: `Election day: ${when}` }) : null,
+  ]);
+  if (contests.length === 0) {
+    section.appendChild(noMeasuresNotice(body, [
+      linkButton("Find your ballot", "#/", "btn-primary")]));
+    app.appendChild(section);
+    return;
+  }
+  section.appendChild(el("p", {
+    text: `${contests.length} ${contests.length === 1 ? "measure" : "measures"}` +
+      ` · ${ready} ${ready === 1 ? "video" : "videos"} ready to watch`,
+  }));
+  for (const contest of contests) {
+    section.appendChild(renderContestCard(contest));
+  }
+  section.appendChild(el("p", { class: "muted small" }, [
+    "Your own ballot may also have district and county measures. ",
+    el("a", { href: "#/", text: "Find it by zip code" }),
+    ".",
+  ]));
+  app.appendChild(section);
+}
+
+// A contest the public can't start a video for: a race, or one whose
+// latest video was stopped or couldn't be made (only the operator
+// retries those).
+const UNAVAILABLE_STATES = ["unavailable", "failed", "cancelled"];
+
+function unavailableNote(contest) {
+  if (contest.kind === "race") {
+    return "No video: candidate races aren't covered yet.";
+  }
+  return contest.status === "unavailable" ? "No video for this one yet." :
+    "This video isn't available yet.";
+}
+
 function renderContestCard(contest) {
-  if (contest.status === "unavailable") {
+  if (UNAVAILABLE_STATES.includes(contest.status)) {
     return el("div", { class: "box contest inert", "aria-disabled": "true" }, [
       el("div", { class: "contest-body" }, [
         ...contestHeading(contest),
-        el("p", { class: "inert-note",
-                  text: contest.kind === "race" ?
-                    "No video: candidate races aren't covered yet." :
-                    "No video for this one yet." }),
+        el("p", { class: "inert-note", text: unavailableNote(contest) }),
       ]),
     ]);
   }
@@ -1020,18 +1154,16 @@ async function renderContest(contestId) {
   const { ok, status, body } = await getJson(`/api/contest/${contestId}`);
   if (isStale(token)) return;
   app.innerHTML = "";
-  let ballot = null;
-  try {
-    ballot = sessionStorage.getItem("ballotreels.ballot");
-  } catch (e) { /* no storage: back goes home */ }
-  const back = ballot ? backLink("Your ballot", ballot) :
+  const recalled = recalledBack();
+  const back = recalled ? backLink(recalled.label, recalled.href) :
     backLink("Find your ballot", "#/");
   if (!ok) {
     app.appendChild(status === 0 ? offlineNotice() :
       notice("We couldn't find that contest",
         "The link may be old, or the contest may have been renamed.",
-        [linkButton(ballot ? "Back to your ballot" : "Find your ballot",
-                    ballot || "#/", "btn-primary")]));
+        [linkButton(recalled ? `Back to ${recalled.label}` :
+                      "Find your ballot",
+                    recalled ? recalled.href : "#/", "btn-primary")]));
     return;
   }
   const { eyebrow, title } = titleParts(body);
@@ -1056,6 +1188,12 @@ async function renderContest(contestId) {
         el("p", { text: body.kind === "race" ?
           "Candidate races aren't covered yet. Measures are." :
           "There's no video for this contest yet." }));
+    } else if (UNAVAILABLE_STATES.includes(body.status)) {
+      // Failed or cancelled: only the operator can start it again.
+      frame.append(el("h2", { text: "Not available yet" }),
+        el("p", { text: "This video isn't available yet." }),
+        el("a", { href: body.report_url || REPORT_URL,
+                  text: "Tell us about it" }));
     } else if (LIVE_STATES.includes(body.status) && body.job) {
       const title = el("h2", { text: liveHeading(body.job) });
       const progress = makeProgress(true, title);

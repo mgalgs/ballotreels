@@ -423,7 +423,8 @@ def _serve_file_range(handler: _JsonHandler, path: Path, content_type: str,
 def _contest_status(key, deps: Deps) -> tuple[str, Any, dict[str, Any] | None]:
     """(status, video, job_view): status is "unavailable" (no key, e.g. a
     race), "cached", "pending" (requested, awaiting approval), "queued",
-    "running" or "none"."""
+    "running", "failed" or "cancelled" (its latest job, which only the
+    operator can retry), or "none"."""
     if key is None:
         return "unavailable", None, None
     video = deps.queue.video_for(key)
@@ -432,6 +433,9 @@ def _contest_status(key, deps: Deps) -> tuple[str, Any, dict[str, Any] | None]:
     job = deps.queue.find_live_job(key)
     if job is not None:
         return job["state"], None, _job_view(job, deps)
+    latest = deps.queue.latest_job(key)
+    if latest is not None and latest["state"] in ("failed", "cancelled"):
+        return latest["state"], None, None
     return "none", None, None
 
 
@@ -559,6 +563,32 @@ def _not_covered(state: str | None) -> dict[str, Any]:
             "state_name": name}
 
 
+def _state_name(abbr: str) -> str:
+    return STATE_NAMES.get(abbr, abbr.upper())
+
+
+def _sort_name(abbr: str) -> str:
+    """A state's name to sort by ("the District of Columbia" under D)."""
+    return _state_name(abbr).removeprefix("the ")
+
+
+def _statewide_measures(state: StateElection) -> list[IndexEntry]:
+    index = state.index
+    return [e for e in ballot_order(index)
+            if e.kind == "measure" and e.division == index.election.state]
+
+
+def _statewide_only(zip_code: str, state: StateElection) -> dict[str, Any]:
+    """A zip answer with only the statewide division: enough for the
+    ballot of a state whose election has nothing on it, whose zips need
+    no district data."""
+    return {"zip": zip_code, "state": state.abbr,
+            "election": state.index.election.id,
+            "kinds": {"state": [{"ocd_id": state.index.election.state,
+                                 "name": "Statewide"}]},
+            "ambiguous": [], "chambers": chambers(state.abbr)}
+
+
 def _uncovered_zip(zip_code: str, deps: Deps) -> dict[str, Any]:
     """Why a zip has no data: its state (told by its first three digits)
     is not served, or it is but has no data for this zip."""
@@ -590,6 +620,11 @@ class PublicHandler(_JsonHandler):
                 return self._zip(m.group(1))
             if path == "/api/ballot" and method == "GET":
                 return self._ballot()
+            if path == "/api/states" and method == "GET":
+                return self._states()
+            m = re.fullmatch(r"/api/state/([a-z]{2})", path)
+            if m and method == "GET":
+                return self._state(m.group(1))
             m = re.fullmatch(r"/api/contest/([^/]+)", path)
             if m and method == "GET":
                 return self._contest(m.group(1))
@@ -608,7 +643,10 @@ class PublicHandler(_JsonHandler):
                 if self._serve_static(path[len("/static/"):]):
                     return
                 return self._not_found()
-            if path == "/" and method in ("GET", "HEAD"):
+            # A state's page has its own URL to share; the page itself
+            # is the one-page app, which reads the path.
+            if ((path == "/" or re.fullmatch(r"/state/[a-z]{2}", path))
+                    and method in ("GET", "HEAD")):
                 if self._serve_static("index.html"):
                     return
                 return self._not_found()
@@ -624,6 +662,11 @@ class PublicHandler(_JsonHandler):
         deps = self.server.deps
         found = deps.zip_states(zip_code)
         if not found:
+            # A served state with nothing on its ballot needs no district
+            # data: every zip in it has the same, empty, ballot.
+            state = deps.states.get(state_for_zip(zip_code) or "")
+            if state is not None and not state.index.entries:
+                return self._json(200, _statewide_only(zip_code, state))
             return self._json(404, _uncovered_zip(zip_code, deps))
         if len(found) > 1:
             # A zip across a state line: only an address can say which
@@ -723,8 +766,34 @@ class PublicHandler(_JsonHandler):
                 _contest_summary(entry, index.election.id, deps))
         self._json(200, {"election": index.election.id,
                          "state": state.abbr,
+                         "state_name": _state_name(state.abbr),
+                         # Nothing at all on this state's ballot (not
+                         # just nothing for these districts).
+                         "empty_election": not index.entries,
                          "chambers": chambers(state.abbr),
                          "levels": levels})
+
+    def _states(self) -> None:
+        deps = self.server.deps
+        self._json(200, {"states": [
+            {"state": abbr, "name": _state_name(abbr),
+             "election": deps.states[abbr].index.election.id}
+            for abbr in sorted(deps.states, key=_sort_name)]})
+
+    def _state(self, abbr: str) -> None:
+        deps = self.server.deps
+        state = deps.states.get(abbr)
+        if state is None:
+            return self._json(404, _not_covered(abbr))
+        index = state.index
+        contests = [_contest_summary(e, index.election.id, deps)
+                    for e in _statewide_measures(state)]
+        self._json(200, {"election": index.election.id,
+                         "state": abbr, "state_name": _state_name(abbr),
+                         "empty_election": not index.entries,
+                         "chambers": chambers(abbr),
+                         "levels": ([{"level": "state", "contests": contests}]
+                                    if contests else [])})
 
     def _contest(self, contest_id: str) -> None:
         deps = self.server.deps
