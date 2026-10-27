@@ -1506,6 +1506,12 @@ class Band:
             # the ends a little ragged, as a stroke starts and lifts
             body = [(x0 + rnd.uniform(0, 3) * u, yc)] + top + [(x1 + rnd.uniform(0, 4) * u, yc + tilt / 2)] \
                 + bot[::-1]
+            # a second, lighter pass over it, a little off, as a hand goes back over
+            dy, cut0, cut1 = rnd.uniform(-0.25, 0.25) * hh, rnd.uniform(0, 0.15), rnd.uniform(0, 0.2)
+            xa, xb = x0 + (x1 - x0) * cut0, x1 - (x1 - x0) * cut1
+            again = [(xa + (xb - xa) * t, y + dy) for (_, y), t in zip(top, (i / n for i in range(n + 1)))] \
+                + [(xa + (xb - xa) * t, y + dy) for (_, y), t in zip(bot[::-1], (1 - i / n for i in range(n + 1)))]
+            body = (body, again)
             # the pencil's grain along the stroke: a few lighter and darker streaks
             streaks = [(yc + hh * rnd.uniform(-0.8, 0.8), rnd.uniform(0.25, 0.6) * hh, rnd.uniform(0.05, 0.12))
                        for _ in range(4)]
@@ -1523,11 +1529,12 @@ class Band:
             ctx.save()
             ctx.rectangle(x0 - 10, yc - hh * 2, w + 10 + (8 if w >= x1 - x0 else 0), hh * 4)
             ctx.clip()
-            ctx.new_path()
-            sp._path(ctx, body)
-            ctx.close_path()
-            ctx.set_source(sp.ink(GRAPHITE, BAND_ALPHA))
-            ctx.fill()
+            for poly, a in zip(body, (BAND_ALPHA, BAND_ALPHA * 0.45)):
+                ctx.new_path()
+                sp._path(ctx, poly)
+                ctx.close_path()
+                ctx.set_source(sp.ink(GRAPHITE, a))
+                ctx.fill()
             ctx.set_line_cap(cairo.LINE_CAP_ROUND)
             for y, lw, a in streaks:
                 ctx.new_path()
