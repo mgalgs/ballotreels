@@ -1,0 +1,59 @@
+# Archived sources for Washington Initiative Measure IL26-001, 2026-11-03
+# general election. Every id here may be cited by script.toml. `kind` must
+# be one the standard allows (docs/STANDARD.md, section 1).
+#
+# The Attorney General's letter supplying the ballot title and explanatory
+# statement backs two sources: the ballot title the card quotes, and the
+# explanatory statement (how the law stands today and what the measure
+# would change).
+
+[contest]
+id = "wa-2026-11-03-il26-001"
+election = "wa-2026-11-03"
+division = "ocd-division/country:us/state:wa"
+kind = "measure"
+title = "Initiative Measure IL26-001: Parental rights relating to their children in public school"
+
+[[source]]
+id = "ballot-title"
+kind = "official-title-summary"
+publisher = "Attorney General of Washington, Ballot Title for Initiative IL26-001, July 21, 2026"
+credit = "Ballot Title, Initiative IL26-001"
+url = "https://www.sos.wa.gov/sites/default/files/2026-07/ExStat_IL26-001.pdf"
+file = "sources/explanatory-statement.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "explanatory"
+kind = "official-title-summary"
+publisher = "Attorney General of Washington, Explanatory Statement for Initiative IL26-001, July 21, 2026"
+credit = "Explanatory Statement, Attorney General of Washington"
+url = "https://www.sos.wa.gov/sites/default/files/2026-07/ExStat_IL26-001.pdf"
+file = "sources/explanatory-statement.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal"
+kind = "official-fiscal-analysis"
+publisher = "Office of Financial Management, Fiscal Impact Statement for Initiative Measure No. IL26-001"
+credit = "Fiscal Impact Statement, Office of Financial Management"
+url = "https://www.sos.wa.gov/sites/default/files/2026-07/Initiative%20Measure%20NoIL26-001_FIS_FINAL.pdf"
+file = "sources/fiscal-impact.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments for and against Initiative Measure IL26-001 and rebuttals, as printed in the Voters' Pamphlet, page 19"
+credit = "Arguments for and against, Voters' Pamphlet"
+url = "https://www.sos.wa.gov/sites/default/files/2026-08/IL26-001%20VP%20page.pdf"
+file = "sources/arguments.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Washington Secretary of State, full text of Initiative IL26-001"
+url = "https://www.sos.wa.gov/sites/default/files/2026-03/INITIATIVE%20IL26-001%20fulltext.pdf"
+file = "sources/text-proposed-law.pdf"
+retrieved = "2026-10-27"

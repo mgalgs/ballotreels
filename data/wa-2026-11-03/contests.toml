@@ -1,0 +1,33 @@
+# Contest index for the 2026-11-03 Washington general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string), as the
+# Voters' Pamphlet heads its page ("Initiative Measure IL26-001"). Titles
+# pair that designation with the measure's subject, in the words of its
+# ballot title's Statement of Subject ("... concerns state and local
+# taxes").
+
+[election]
+id = "wa-2026-11-03"
+state = "ocd-division/country:us/state:wa"
+title = "Washington General Election, November 3, 2026"
+
+[[contest]]
+id = "wa-2026-11-03-il26-001"
+kind = "measure"
+division = "ocd-division/country:us/state:wa"
+title = "Initiative Measure IL26-001: Parental rights relating to their children in public school"
+number = "IL26-001"
+
+[[contest]]
+id = "wa-2026-11-03-il26-638"
+kind = "measure"
+division = "ocd-division/country:us/state:wa"
+title = "Initiative Measure IL26-638: Participation in athletics at K-12 schools"
+number = "IL26-638"
+
+[[contest]]
+id = "wa-2026-11-03-ip26-645"
+kind = "measure"
+division = "ocd-division/country:us/state:wa"
+title = "Initiative Measure IP26-645: State and local taxes"
+number = "IP26-645"
