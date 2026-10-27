@@ -1,0 +1,18 @@
+# Contest index for the 2026-11-03 California general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot; not every entry has sources or a script yet. `number` is a
+# measure's ballot number (a string); a race uses `office` instead.
+# `python -m ballotreels measures ca-sos` appends statewide measures
+# here from the Secretary of State's voter guide.
+
+[election]
+id = "ca-2026-11-03"
+state = "ocd-division/country:us/state:ca"
+title = "California General Election, November 3, 2026"
+
+[[contest]]
+id = "ca-2026-11-03-prop-2"
+kind = "measure"
+division = "ocd-division/country:us/state:ca"
+title = "Proposition 2: Increases State's Rainy Day Fund. Legislative Constitutional Amendment."
+number = "2"

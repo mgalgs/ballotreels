@@ -3,6 +3,7 @@
     python -m ballotreels check <contest-dir>...
     python -m ballotreels narration <contest-dir>...
     python -m ballotreels render <contest-dir> [--format 9x16|16x9|all]
+    python -m ballotreels measures ca-sos <election-dir> [--base-url URL]
 """
 
 from __future__ import annotations
@@ -10,15 +11,20 @@ from __future__ import annotations
 import argparse
 import os
 import sys
+import urllib.error
+import urllib.request
 from pathlib import Path
 
+from .adapters.ca_sos import append_entries, build_contest_entries, fetch_measures
 from .checks import check_contest, word_count
 from .contest import ContestError, load_contest
+from .index import ContestIndexError, load_index
 from .narration import narration_text
 from .standard import load_standard, side_order
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 FILM_TEMPLATE = REPO_ROOT / "film" / "measure.py"
+CA_SOS_BASE_URL = "https://voterguide.sos.ca.gov"
 
 
 def _check_one(path: str, standard, out) -> bool:
@@ -82,6 +88,31 @@ def _render_one(path: str, fmt_arg: str, out_dir: Path, out) -> bool:
     return True
 
 
+def _fetch_url(url: str) -> str:
+    with urllib.request.urlopen(url, timeout=30) as resp:
+        return resp.read().decode("utf-8")
+
+
+def _measures_ca_sos(election_dir: str, base_url: str, start: str, out,
+                     fetch=_fetch_url) -> bool:
+    try:
+        index = load_index(election_dir)
+    except ContestIndexError as e:
+        print(f"{election_dir}: {e}", file=out)
+        return False
+    try:
+        measures = fetch_measures(fetch, base_url, start)
+    except Exception as e:
+        print(f"could not fetch measures: {e}", file=out)
+        return False
+    entries = build_contest_entries(
+        index.election.id, index.election.state, measures)
+    path = Path(election_dir) / "contests.toml"
+    n = append_entries(path, entries)
+    print(f"{path}: appended {n} measure(s)", file=out)
+    return True
+
+
 def main(argv: list[str] | None = None, out=sys.stdout) -> int:
     parser = argparse.ArgumentParser(prog="python -m ballotreels")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -100,6 +131,19 @@ def main(argv: list[str] | None = None, out=sys.stdout) -> int:
                         default="all")
     render.add_argument("--out", default="out", metavar="DIR",
                         help="output directory (default: out/)")
+    measures = sub.add_parser(
+        "measures", help="build or extend a contest index from a source")
+    measures_sub = measures.add_subparsers(dest="measures_command",
+                                            required=True)
+    ca_sos = measures_sub.add_parser(
+        "ca-sos",
+        help="add California statewide measures from the Secretary of "
+             "State's official voter information guide")
+    ca_sos.add_argument("election_dir", metavar="election-dir")
+    ca_sos.add_argument("--base-url", default=CA_SOS_BASE_URL)
+    ca_sos.add_argument("--start", default="1",
+                        help="a known proposition number to start from "
+                             "(default: 1)")
     args = parser.parse_args(argv)
 
     if args.command == "narration":
@@ -117,6 +161,11 @@ def main(argv: list[str] | None = None, out=sys.stdout) -> int:
         ok = True
         for path in args.contests:
             ok = _check_one(path, standard, out) and ok
+        return 0 if ok else 1
+
+    if args.command == "measures":
+        ok = _measures_ca_sos(args.election_dir, args.base_url, args.start,
+                              out)
         return 0 if ok else 1
 
     raise AssertionError(f"unhandled command {args.command!r}")

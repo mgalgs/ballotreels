@@ -1,0 +1,34 @@
+# Fake fixture election index for tests. None of this is real data.
+
+[election]
+id = "ca-2026-11-03"
+state = "ocd-division/country:us/state:ca"
+title = "Test Election"
+
+[[contest]]
+id = "ca-2026-11-03-prop-90"
+kind = "measure"
+division = "ocd-division/country:us/state:ca"
+title = "Proposition 90: Fake Measure A"
+number = "90"
+
+[[contest]]
+id = "ca-2026-11-03-prop-91"
+kind = "measure"
+division = "ocd-division/country:us/state:ca/cd:1"
+title = "Fake Congressional Measure"
+number = "1A"
+
+[[contest]]
+id = "ca-2026-11-03-prop-92"
+kind = "measure"
+division = "ocd-division/country:us/state:ca"
+title = "Proposition 92: Fake Measure C"
+number = "10"
+
+[[contest]]
+id = "ca-2026-11-03-assembly-17"
+kind = "race"
+division = "ocd-division/country:us/state:ca/sldl:17"
+title = "State Assembly District 17"
+office = "State Assembly District 17"
