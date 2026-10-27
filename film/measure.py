@@ -54,8 +54,8 @@ The stage shows
 The two side sections are the one exception to one-section-one-page: they
 share a single slide, "What each side says" (sides_group), that stays up
 through both of them with no redraw in between. Under the fixed heading,
-two congruent blocks (side_boxes: top/bottom in 9:16, left/right in
-16:9) hold the sides in play order, each labelled with its own section's
+two congruent blocks (sides_plan: top/bottom in 9:16, left/right in
+16:9, laid out as SIDES_LAYOUT picks) hold the sides in play order, each labelled with its own section's
 heading and ticking its own `list` in on its own lines (side_block, the
 same code for both, built from line positions, never from the side —
 rules 2.2, 4.1, 7.4). The two sides also get exactly the same time on
@@ -710,60 +710,100 @@ def check_mark_pts(cx, cy, s):
     return [(cx - s * 0.62, cy - s * 0.04), (cx - s * 0.14, cy + s * 0.46), (cx + s * 0.7, cy - s * 0.52)]
 
 
-def list_visual(chart, lines, L, f0, f1, stage=None, peers=()):
-    """A checklist in a column, top to bottom: a side's own points, in short
-    form (the second exception to pictures-only on the stage, besides the
-    page card). Each entry is a hand-drawn check mark then its text,
-    revealed one per line like a `timeline` but with no dates
-    (docs/SCRIPT-FORMAT.md), and the source along the bottom. `stage`
-    overrides L['stage'], for a list confined to less than the whole
-    stage (the sides slide's two blocks, sides_group). `peers` are other
-    lists' items to lay out alike: the font, each row's height, the gaps
-    and the column's offsets are fitted to all of them together, so two
-    side blocks line up row for row whatever their words (rule 7.4)."""
-    v = chart.visual
-    stage = stage if stage is not None else L['stage']
+LIST_ITEM_SCALE = 1.2  # a list's items may grow to this much of timeline_font, room allowing
+LIST_MAX_LINES = 2     # ...but no item may take more lines than this
+
+
+def list_rows(every, L, width, fits):
+    """The rows of one or more checklists laid out alike (rule 7.4): the
+    largest item font (from LIST_ITEM_SCALE x timeline_font down) at which
+    every item takes at most LIST_MAX_LINES lines and `fits(rows_h, gap)`.
+    Rows pack at a fixed gap, half a line of the item font, never
+    stretched to fill room. Returns a dict: the font, each row's height
+    (the tallest of that row across `every`), the gap, the rows' total
+    height, and the check column's and text's offsets from the left
+    edge (the column centred in `width` on the widest line of all)."""
     u = L['u']
-    src, sbox = source_note(chart, L, f0, stage)
-    itf = L['timeline_font']
-    n = len(v.items)
     check = 40 * u
-    tx0 = stage.x + check + 30 * u
-    tw = stage.right - tx0
-    every = [v.items, *peers]
+    tw = width - check - 30 * u
+    itf = font(L['timeline_font'].size * LIST_ITEM_SCALE, family=PRINT)
+    n = max((len(its) for its in every), default=0)
     while True:
-        blocks = [text.wrap(it, itf, tw, balance=True) for it in v.items]
-        heights = [max(len(text.wrap(its[i], itf, tw, balance=True)) for its in every if i < len(its))
-                   * text.line_height(itf) for i in range(n)]
-        room = sbox.y - 40 * u - stage.y
-        if sum(heights) + 36 * u * (n - 1) <= room or itf.size < 26:
+        wrapped = [[text.wrap(it, itf, tw, balance=True) for it in its] for its in every]
+        heights = [max(len(w[i]) for w in wrapped if i < len(w)) * text.line_height(itf) for i in range(n)]
+        gap = round(text.line_height(itf) * 0.5)
+        rows_h = sum(heights) + gap * max(0, n - 1)
+        tall = max((len(b) for w in wrapped for b in w), default=0)
+        if (tall <= LIST_MAX_LINES and fits(rows_h, gap)) or itf.size < 26:
             break
-        itf = font(itf.size * 0.92, family=PRINT)
-    gap = max(36 * u, min(100 * u, (room - sum(heights)) / max(1, n - 1)))
-    # centre the column on the stage, as timeline_visual does
-    widest = max(text.measure(ln, itf) for its in every for it in its
-                 for ln in text.wrap(it, itf, tw, balance=True))
-    shift = max(0, (stage.w - (tx0 - stage.x) - widest) / 2 - 20 * u)
-    cx0, tx = stage.x + shift, tx0 + shift
-    y = stage.y + max(0, (room - sum(heights) - gap * (n - 1)) / 2)
+        itf = font(itf.size * 0.94, family=PRINT)
+    widest = max((text.measure(ln, itf) for w in wrapped for b in w for ln in b), default=0)
+    shift = max(0, (width - check - 30 * u - widest) / 2)
+    return dict(font=itf, heights=heights, gap=gap, rows_h=rows_h, wrapped=wrapped,
+                check=check, cx=shift, tx=shift + check + 30 * u, widest=widest)
+
+
+def list_rows_items(items_text, rows, lines, L, x, y, f0, f1):
+    """A checklist's rows drawn at (x, y) in the shape `rows` (list_rows):
+    each a hand-drawn check mark then its text, revealed one per line like
+    a `timeline` but with no dates (docs/SCRIPT-FORMAT.md). Returns (items,
+    Box of the rows, the same size for every list laid out by `rows`)."""
+    u = L['u']
+    itf, check = rows['font'], rows['check']
+    n = len(items_text)
     starts = timeline_reveals(n, lines, f0)
-    items = [src]
+    cx0, tx = x + rows['cx'], x + rows['tx']
+    items = []
     top = y
-    for i, (block, h, s0) in enumerate(zip(blocks, heights, starts)):
+    for i, (it, h, s0) in enumerate(zip(items_text, rows['heights'], starts)):
+        block = text.wrap(it, itf, rows['width'], balance=True)
         cy = y + text.line_height(itf) * 0.5
-        entry = []
-        f = s0
         mark = Stroke(check_mark_pts(cx0 + check / 2, cy, check), seed_of('check', i), passes=2,
                      width=4.6 * u, overshoot=0)
-        entry.append(stroke_item(f, f + 9, mark, ink=LIST_COLOUR))
-        f += 9
-        ti, f, _ = write_lines(f, block, itf, tx, y)
+        entry = [stroke_item(s0, s0 + 9, mark, ink=LIST_COLOUR)]
+        ti, _, _ = write_lines(s0 + 9, block, itf, tx, y)
         entry += ti
         nxt = starts[i + 1] if i + 1 < n else f1
         items += scaled(entry, s0, draw_budget(s0, nxt))
-        y += h + gap
-    box = Box(cx0, top, stage.right - cx0, y - gap - top)
-    return items, [Mark('chart', box), Mark('chart source', sbox)]
+        y += h + rows['gap']
+    return items, Box(cx0, top, tx + rows['widest'] - cx0, rows['rows_h'])
+
+
+def source_lines(chart, L, width):
+    """'Source: ...' wrapped to `width`: (lines, height)."""
+    nf = L['note_font']
+    slines = text.wrap(f'Source: {chart.source.short_credit}', nf, width, balance=True)
+    return slines, text.line_height(nf) * len(slines)
+
+
+def source_at(chart, L, f0, box):
+    """'Source: ...' centred in `box` from its top, on the page from f0 for
+    as long as its visual is (rule 7.1): (item, box)."""
+    nf = L['note_font']
+    slines, sh = source_lines(chart, L, box.w)
+
+    def draw_source(cv, p):
+        sp.pencil_text(cv, slines, nf, box.x, box.y, GRAPHITE, 0.85, align='center', width=box.w)
+    return Item(f0 - 1, f0, draw_source, None, ease=vb.linear), Box(box.x, box.y, box.w, sh)
+
+
+def list_visual(chart, lines, L, f0, f1):
+    """A checklist in a column, top to bottom: a side's own points, in short
+    form (the second exception to pictures-only on the stage, besides the
+    page card), its rows packed (list_rows) and centred on the stage with
+    the source under them. The sides slide (sides_group) draws its two
+    lists itself; this is for a list anywhere else."""
+    stage = L['stage']
+    u = L['u']
+    _, sh = source_lines(chart, L, stage.w)
+    src_gap = 30 * u
+    rows = list_rows([chart.visual.items], L, stage.w,
+                     lambda rows_h, gap: rows_h + src_gap + sh <= stage.h)
+    rows['width'] = stage.w - rows['tx']
+    y = stage.y + (stage.h - rows['rows_h'] - src_gap - sh) / 2
+    items, box = list_rows_items(chart.visual.items, rows, lines, L, stage.x, y, f0, f1)
+    src, sbox = source_at(chart, L, f0, Box(stage.x, box.bottom + src_gap, stage.w, sh))
+    return [src] + items, [Mark('chart', box), Mark('chart source', sbox)]
 
 
 # ---- the stage: both sides on one slide (STANDARD.md rule 2.2) ----
@@ -771,15 +811,31 @@ def list_visual(chart, lines, L, f0, f1, stage=None, peers=()):
 # over two congruent blocks, one per side, in play order: top/bottom in
 # 9:16, left/right in 16:9. Each block is labelled with its own section's
 # heading and, if it has one, draws its own 'list' on its own narration's
-# clock, exactly as a single side's list did before (list_visual); a side
-# with none shows just its label over an empty block. Nothing here may
-# differ between the two calls but the section passed in (rule 7.4).
+# clock; a side with none shows just its label. The two blocks are laid
+# out together (sides_plan), so nothing about them differs but their
+# words and order: the same label and item font, row heights, gaps and
+# offsets (rule 7.4). When both lists cite the same source, the slide
+# prints it once, under both blocks; otherwise each block prints its own,
+# in the same place in each.
+#
+# SIDES_LAYOUT picks how the blocks sit on the stage (the operator is
+# choosing between them; the other two go once one is picked):
+# - 'compact': the two blocks as one group, a clear gap between them, the
+#   whole centred on the stage with the shared source under it;
+# - 'cards': as compact, each block in its own pencilled box, both the
+#   same size;
+# - 'halves': each block in a fixed half of the stage, packed at the top
+#   of it, the shared source at the stage's bottom.
 SIDES_HEADING = 'What each side says'
-BLOCK_GAP = 28  # px between the two blocks, before the format's own scale
+SIDES_LAYOUT = 'compact'
+BLOCK_GAP = 28  # px between the two blocks' halves (16:9 columns, 'halves'), before the format's own scale
+LABEL_GAP = 22  # px between a block's label and its rows
+SOURCE_GAP = 34  # px above a source line
+CARD_PAD = 24   # px inside a card, around its block
 
 
 def side_boxes(L, fmt):
-    """The two side blocks' boxes, in play order."""
+    """The two halves of the stage, in play order."""
     st, u = L['stage'], L['u']
     gap = BLOCK_GAP * u
     if fmt == '9x16':
@@ -789,23 +845,28 @@ def side_boxes(L, fmt):
     return Box(st.x, st.y, w, st.h), Box(st.x + w + gap, st.y, w, st.h)
 
 
-def block_heading_items(sec, L, box, f0):
-    """A block's own label: the same layout as heading_text_items, scaled
-    to `box` instead of the page heading's box."""
-    fnt = font(L['heading_font'].size * 0.52, 700)
-    words = sec.section.heading
+def block_label_font(secs, L, width):
+    """The block labels' font, one for both: the largest at which neither
+    takes more than two lines across `width`."""
+    fnt = font(L['heading_font'].size * 0.6, 700)
     while True:
-        lines = text.wrap(words, fnt, box.w, balance=True)
-        if len(lines) * text.line_height(fnt) <= box.h * 0.3 or fnt.size < 24:
-            break
+        n = max(len(text.wrap(s.section.heading, fnt, width, balance=True)) for s in secs)
+        if n <= 2 or fnt.size < 24:
+            return fnt, n * text.line_height(fnt)
         fnt = font(fnt.size * 0.92, 700)
+
+
+def block_heading_items(sec, L, box, f0, fnt):
+    """A block's own label, centred along the top of `box` and underlined
+    in orange, as heading_text_items does for the page heading."""
+    lines = text.wrap(sec.section.heading, fnt, box.w, balance=True)
     items, f, drawn = write_lines(f0, lines, fnt, box.x, box.y, align='center', width=box.w, speed=1.4)
     w = max(text.measure(ln, fnt) for ln in lines)
     uy = drawn.bottom + 2
     under = Stroke(sp.catmull([(box.cx - w / 2 - 5, uy + 1), (box.cx, uy - 1), (box.cx + w / 2 + 8, uy + 2)],
-                              per=10), seed_of('block-underline', sec.label), passes=2, width=4 * L['u'])
+                              per=10), seed_of('block-underline'), passes=2, width=4 * L['u'])
     items.append(stroke_item(f + 1, f + 7, under, ORANGE))
-    return items, f + 7, Box(box.x, box.y, box.w, uy + 8 - box.y)
+    return items, f + 7, Box(box.cx - w / 2 - 5, box.y, w + 13, uy + 8 - box.y)
 
 
 def side_list(sec):
@@ -813,40 +874,135 @@ def side_list(sec):
     return next((r for r in runs_of(sec) if r[0] == 'chart' and r[1].visual.kind == 'list'), None)
 
 
-def side_block(sec, L, box, label_f0, peers=()):
-    """One side's whole block: its label, drawn at `label_f0` (the same
-    frame for both sides, when the slide appears), and, if it has a
-    'list' visual, that list ticking in on the side's own lines, exactly
-    as runs_of/chart_run already schedule it for a single side."""
-    items, label_end, label_box = block_heading_items(sec, L, box, label_f0)
+def sides_plan(side_a, side_b, L, fmt, layout=None):
+    """Where everything on the sides slide goes, both blocks fitted
+    together: a dict of the label font and height, the rows (list_rows),
+    each block's box (the label at its top, the rows under it), each
+    card's box ('cards' only), and the shared source's box, if any."""
+    layout = layout or SIDES_LAYOUT
+    st, u = L['stage'], L['u']
+    secs = (side_a, side_b)
+    runs = [side_list(s) for s in secs]
+    charts = [r[1] for r in runs if r]
+    shared = len(charts) == 2 and charts[0].source.id == charts[1].source.id
+    stacked = fmt == '9x16'
+    pad = CARD_PAD * u if layout == 'cards' else 0
+    col_gap = BLOCK_GAP * u if layout == 'halves' else (BLOCK_GAP + 20) * u
+    outer_w = st.w if stacked else (st.w - col_gap) / 2
+    bw = outer_w - 2 * pad
+    label_f, label_h = block_label_font(secs, L, bw)
+    label_gap = LABEL_GAP * u
+    src_gap = SOURCE_GAP * u
+    src_h = max((source_lines(c, L, st.w if shared else bw)[1] for c in charts), default=0)
+    # what goes under the rows in each block, and under both blocks
+    own_src = src_gap + src_h if charts and not shared else 0
+    foot = src_gap + src_h if shared else 0
+
+    def block_h(rows_h):
+        return label_h + (label_gap + rows_h + own_src if charts else 0)
+
+    def between(gap):
+        # 'compact': the gap between the two blocks reads as clearly more
+        # than the rows' own; 'cards' are already apart by their outlines
+        if layout == 'cards':
+            return max(gap, 28 * u)
+        return max(2 * gap, 36 * u) if charts else 48 * u
+
+    def fits(rows_h, gap):
+        card_h = block_h(rows_h) + 2 * pad
+        if layout == 'halves':
+            half = (st.h - foot - (BLOCK_GAP * u if stacked else 0)) / (2 if stacked else 1)
+            return card_h <= half
+        total = (2 * card_h + between(gap) if stacked else card_h) + foot
+        return total <= st.h
+
+    rows = list_rows([c.visual.items for c in charts], L, bw, fits)
+    rows['width'] = bw - rows['tx']
+    card_h = block_h(rows['rows_h']) + 2 * pad
+    if layout == 'halves':
+        half_a, half_b = side_boxes(L, fmt)
+        if stacked:
+            half_h = (st.h - foot - BLOCK_GAP * u) / 2
+            half_a = Box(st.x, st.y, st.w, half_h)
+            half_b = Box(st.x, st.y + half_h + BLOCK_GAP * u, st.w, half_h)
+        cards = [Box(h.x, h.y, h.w, card_h) for h in (half_a, half_b)]
+        foot_y = st.bottom - src_h
+    else:
+        if stacked:
+            total = 2 * card_h + between(rows['gap'])
+            y0 = st.y + (st.h - total - foot) / 2
+            cards = [Box(st.x, y0, st.w, card_h), Box(st.x, y0 + card_h + between(rows['gap']), st.w, card_h)]
+        else:
+            y0 = st.y + (st.h - card_h - foot) / 2
+            cards = [Box(st.x, y0, outer_w, card_h), Box(st.x + outer_w + col_gap, y0, outer_w, card_h)]
+        foot_y = cards[1].bottom + src_gap
+    blocks = [Box(c.x + pad, c.y + pad, c.w - 2 * pad, c.h - 2 * pad) for c in cards]
+    return dict(layout=layout, label_font=label_f, label_h=label_h, rows=rows, blocks=blocks,
+                cards=cards if layout == 'cards' else None,
+                source=Box(st.x, foot_y, st.w, src_h) if shared else None)
+
+
+def side_block(sec, L, box, label_f0, plan):
+    """One side's whole block in `box` (sides_plan): its label, drawn at
+    `label_f0` (the same frame for both sides, when the slide appears),
+    and, if it has a 'list' visual, that list ticking in on the side's own
+    lines under it, exactly as runs_of/chart_run schedule it for a single
+    side, and its own source under the rows unless the slide prints one
+    for both. Returns (items, marks, the list's first frame or None)."""
+    u = L['u']
+    items, label_end, label_box = block_heading_items(sec, L, box, label_f0, plan['label_font'])
     marks = [Mark('heading', label_box, label_f0)]
     run = side_list(sec)
     if run is None:
-        return items, marks
+        return items, marks, None
     _, chart, lines = run
-    u = L['u']
     start = lines[0].start
     first_f = max(label_end + 2, start + (FADE if start > sec.start else 0))
-    body = Box(box.x, label_box.bottom + 24 * u, box.w, box.bottom - label_box.bottom - 24 * u)
-    list_items, list_marks = list_visual(chart, lines, L, first_f, chart.end, stage=body, peers=peers)
-    for m in list_marks:
-        m.f0 = first_f
-    return items + list_items, marks + list_marks
+    rows = plan['rows']
+    y = box.y + plan['label_h'] + LABEL_GAP * u
+    list_items, rbox = list_rows_items(chart.visual.items, rows, lines, L, box.x, y, first_f, chart.end)
+    items += list_items
+    marks.append(Mark('chart', rbox, first_f))
+    if plan['source'] is None:
+        src, sbox = source_at(chart, L, first_f, Box(box.x, y + rows['rows_h'] + SOURCE_GAP * u, box.w, 0))
+        items.append(src)
+        marks.append(Mark('chart source', sbox, first_f))
+    return items, marks, first_f
 
 
-def sides_group(side_a, side_b, L, fmt, h_f0):
+def card_items(box, L, f0):
+    """A light pencilled box around a block ('cards'), seeded alike for
+    both so the two come out the same shape."""
+    outline = Stroke(box_pts(box.x, box.y, box.w, box.h), seed_of('side card'), passes=2,
+                     width=3 * L['u'], closed=True, overshoot=0, alpha=0.5)
+    return [stroke_item(f0, f0 + 14, outline)]
+
+
+def sides_group(side_a, side_b, L, fmt, h_f0, layout=None):
     """Both side sections as one slide: the fixed heading, then the two
-    blocks (side_block) in play order (side_boxes), side_a first."""
+    blocks (side_block) in play order where sides_plan puts them, side_a
+    first, and the shared source line under both if they share one."""
     h_items, h_end, h_box = heading_text_items(SIDES_HEADING, L, h_f0)
-    box_a, box_b = side_boxes(L, fmt)
+    plan = sides_plan(side_a, side_b, L, fmt, layout)
     items = list(h_items)
     marks = [Mark('heading', h_box, side_a.start)]
-    lists = {id(sec): side_list(sec) for sec in (side_a, side_b)}
-    for sec, other, box in ((side_a, side_b, box_a), (side_b, side_a, box_b)):
-        peer = lists[id(other)]
-        si, sm = side_block(sec, L, box, h_end + 2, peers=(peer[1].visual.items,) if peer else ())
+    label_f0 = h_end + 2
+    if plan['cards']:
+        for card in plan['cards']:
+            items += card_items(card, L, label_f0)
+        label_f0 += 14
+    firsts = []
+    for sec, box in zip((side_a, side_b), plan['blocks']):
+        si, sm, first = side_block(sec, L, box, label_f0, plan)
         items += si
         marks += sm
+        if first is not None:
+            firsts.append(first)
+    if plan['source'] is not None:
+        f0 = min(firsts)
+        src, sbox = source_at(side_list(side_a)[1], L, f0, plan['source'])
+        items.append(src)
+        marks.append(Mark('chart source', sbox, f0))
     return items, marks
 
 
