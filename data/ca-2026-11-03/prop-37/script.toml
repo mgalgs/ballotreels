@@ -1,0 +1,128 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; how down payment help works today; what the measure would
+# add (the bonds, the size of each loan); the analyst's view, its finding
+# on cost and what it leaves unknown; one line per side; what a vote does.
+#
+# No argument against was filed (arguments page: "NO ARGUMENT AGAINST
+# PROPOSITION 37 WAS SUBMITTED."). Per SCRIPT-RECIPE.md, the no side says
+# so plainly. Neither side has a `list`: the no side has no points to
+# list, and the sides keep equal structure (STANDARD.md 2.5, 7.3).
+
+contest = "ca-2026-11-03-prop-37"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "quick-reference"
+number = "37"
+title = "CREATES LOAN PROGRAM FOR MIDDLE-INCOME BUYERS OF QUALIFIED NEW HOMES. INITIATIVE STATUTE."
+origin = "Put on the Ballot by Petition Signatures"
+summary = "Authorizes $25 billion in bonds to offer eligible buyers fixed-rate mortgages for up to 17% of purchase price of a newly constructed home priced below about $1.5 million. Borrowers must be California residents, occupy the home, meet income limits, and pay at least 3% down. Bonds repaid by mortgage payments, not State. Fiscal Impact: No direct state or local costs."
+yes = "A YES vote on this measure means: The state would create a new homebuying assistance program. The state could sell up to $25 billion in revenue bonds to fund the program. Bonds would be paid back by homeowners’ payments on their home loans."
+no = "A NO vote on this measure means: The state would not be required to create a new homebuying assistance program."
+
+[[section]]
+id = "what"
+heading = "Proposition 37"
+
+[[section.line]]
+text = "Proposition 37 is about loans for middle-income buyers of new homes."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["LOAN PROGRAM FOR MIDDLE-INCOME BUYERS OF QUALIFIED NEW HOMES"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, a state agency lends some buyers part of the down payment they pay up front."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "down-payment"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Proposition 37 would let that agency sell up to 25 billion dollars in bonds."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Each loan could cover up to 17 percent of a new home's price."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "share"
+title = "Share of a new home's price"
+source = "lao-analysis"
+unit = "%"
+labels = ["Buyer's down payment, at least", "Proposition 37 loan, up to"]
+values = [3, 17]
+
+[[section]]
+id = "fiscal"
+heading = "What the state's analyst says"
+
+[[section.line]]
+text = "The Legislative Analyst's Office says buyers' payments would repay the bonds, with no direct state or local costs."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section.line]]
+text = "The office says the program's scope depends on unknowns, such as investor demand for the bonds."
+sources = ["lao-analysis"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Proposition 37 makes buying homes more affordable, at zero cost to taxpayers."
+sources = ["arguments"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "No argument against Proposition 37 was submitted to appear in the official voter guide."
+sources = ["arguments"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means the state would create a new homebuying assistance program."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["would create a new homebuying assistance program"]
+
+[[section.line]]
+text = "A no vote means the state would not be required to create that program."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["would not be required to create"]
