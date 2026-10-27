@@ -69,11 +69,14 @@ class Card:
     title: Any = None
     origin: Any = None
     summary: Any = None
-    yes: Any = None
+    fiscal: Any = None  # optional: the fiscal statement, under its own heading
+    yes: Any = None     # optional, with `no`: what each vote means
     no: Any = None
 
     # The fields quoted from the source, in the order the page shows them.
-    QUOTED = ("title", "origin", "summary", "yes", "no")
+    QUOTED = ("title", "origin", "summary", "fiscal", "yes", "no")
+    # The fields a card may leave out.
+    OPTIONAL = ("fiscal", "yes", "no")
 
     def quoted(self) -> tuple[tuple[str, Any], ...]:
         """(key, value) for each quoted field, in page order."""

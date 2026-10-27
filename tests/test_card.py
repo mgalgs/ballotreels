@@ -51,18 +51,60 @@ class CardTest(ContestCopyTestCase):
         self.assertIsNone(load_contest(self.dir).script.card)
         self.assertEqual(self.failures(), [])
 
+    def drop_key(self, key):
+        text = (self.dir / "script.toml").read_text()
+        start = text.index(f"\n{key} = ", text.index("[card]"))
+        end = text.index("\n", start + 1)
+        (self.dir / "script.toml").write_text(text[:start] + text[end:])
+        return text
+
     def test_every_key_required(self):
-        for key in ("source", "number", "title", "origin", "summary", "yes",
-                    "no"):
+        for key in ("source", "number", "title", "origin", "summary"):
             with self.subTest(key=key):
-                text = (self.dir / "script.toml").read_text()
-                start = text.index(f"\n{key} = ", text.index("[card]"))
-                end = text.index("\n", start + 1)
-                (self.dir / "script.toml").write_text(text[:start]
-                                                      + text[end:])
+                text = self.drop_key(key)
                 got = self.failures()
                 self.assertIn(f"[card] has no {key!r}", got)
                 (self.dir / "script.toml").write_text(text)
+
+    def test_yes_and_no_together_or_neither(self):
+        for key, other in (("yes", "no"), ("no", "yes")):
+            with self.subTest(key=key):
+                text = self.drop_key(key)
+                self.assertEqual(self.failures(), [
+                    f"[card] has {other!r} but no {key!r}: the two votes' "
+                    f"meanings come together or not at all"])
+                (self.dir / "script.toml").write_text(text)
+        self.drop_key("yes")
+        self.drop_key("no")
+        self.assertEqual(self.failures(), [])
+        self.assertIsNone(load_contest(self.dir).script.card.yes)
+
+    def test_fiscal_is_quoted_verbatim(self):
+        self.edit("script.toml", 'origin = "Put',
+                  'fiscal = "State budget reserves would be higher."\n'
+                  'origin = "Put')
+        self.assertEqual(self.failures(), [])
+        self.edit("script.toml", "would be higher.\"\norigin",
+                  "would be much higher.\"\norigin")
+        self.assertEqual(self.failures(), [
+            "[card] 'fiscal' does not appear verbatim in source "
+            "'quick-reference' (sources/quick-reference.html)"])
+
+    def test_badge_needs_a_designation_in_the_title(self):
+        self.edit("sources.toml",
+                  'title = "Proposition 2: Increases',
+                  'title = "2: Increases')
+        self.assertEqual(self.failures(), [
+            "[card] the contest title \"2: Increases State's Rainy Day Fund. "
+            "Legislative Constitutional Amendment.\" has no designation word "
+            "just before the number '2', for the card's badge"])
+
+    def test_a_state_without_ballot_wording_fails(self):
+        self.edit("sources.toml", "state:ca", "state:zz")
+        self.assertEqual(self.failures(), [
+            "[ballot] no ballot wording for the state of "
+            "'ocd-division/country:us/state:zz'; add it to "
+            "ballotreels/ballots.py"])
 
     def test_key_must_be_a_string(self):
         self.edit("script.toml", 'number = "2"', "number = 2")
@@ -80,7 +122,8 @@ class CardTest(ContestCopyTestCase):
                   'source = "lao-analysis"\nnumber')
         self.assertEqual(self.failures(), [
             "[card] source 'lao-analysis' is of kind "
-            "'official-fiscal-analysis'; a card quotes a source of kind "
+            "'official-fiscal-analysis'; a card quotes the measure's page "
+            "in the Official Voter Information Guide, a source of kind "
             "'official-title-summary'"])
 
     def test_verbatim_fails_naming_the_field(self):

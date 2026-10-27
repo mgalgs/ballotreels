@@ -97,6 +97,7 @@ from sketch import (BROWN, DRAW, GRAPHITE, HONEY, OCHRE, ORANGE, RESTING_ANGLE, 
                     SAGE, TEAL, Hatch, Item, Stroke, fade_item, hatch_item,
                     stroke_item, text_item)
 
+from ballotreels.ballots import badge, ballot_for  # noqa: E402
 from ballotreels.contest import load_contest  # noqa: E402
 from ballotreels.illustrations import load_library  # noqa: E402
 from ballotreels.narration import padded_phrases, padded_spans  # noqa: E402
@@ -116,6 +117,8 @@ GRID = vb.Grid(fps=FPS, bpm=FPS * 60)  # one frame a beat
 CONTEST_DIR = Path(os.environ.get(
     'BALLOTREELS_CONTEST', str(REPO_ROOT / 'data' / 'ca-2026-11-03' / 'prop-2')))
 CONTEST = load_contest(CONTEST_DIR)
+# the state's own words for its ballot and its guide (ballotreels.ballots)
+BALLOT = ballot_for(CONTEST.division)
 VOICE = vb.speech.load(CONTEST_DIR / 'narration.wav')
 # the shorter side (STANDARD.md 2.2) gets silence at its end so both sides
 # spend exactly the same time on screen; everything below follows the
@@ -412,8 +415,9 @@ def ballot_run(lines, L, first_f):
     rule = Stroke([(-w / 2 + pad, ry), (w / 2 - pad, ry)], seed_of('ballot rule'), passes=2, width=2.6 * u)
     opt_items.append(stroke_item(f1, f1 + 6, rule, at=at))
     f1 += 6
-    # The two options, drawn alike: same oval, same lettering, same timing.
-    for i, word in enumerate(('Yes', 'No')):
+    # The two options, in the ballot's own words, drawn alike: same oval,
+    # same lettering, same timing.
+    for i, word in enumerate(BALLOT.choices):
         y = ry + 18 * u + row_h * (i + 0.5)
         ox = -w / 2 + pad + 60 * u
         oval = Stroke(sp.ellipse(ox, y, 46 * u, 26 * u, n=40), seed_of('oval'), passes=2, width=3.4 * u,
@@ -1482,7 +1486,7 @@ def runs_of(sec):
 
 
 # ---- the stage: the official page (the `page` visual) ----
-# The measure's page in the official voter guide, drawn from the script's
+# The measure's page in the state's official guide (BALLOT.guide), drawn from the script's
 # [card] (docs/SCRIPT-FORMAT.md): the first `page` line draws it on, and
 # each one with a `focus` "clicks" a term on it: the highlighter sweeps over
 # every occurrence, and the camera holds (PAGE_ZOOM_MAX is 1: the page is
@@ -1494,7 +1498,12 @@ CLICK = 18         # frames the highlighter takes to sweep a term, every occurre
 ZOOM = 24          # frames the camera takes to ease in on it (0.8 s)
 CAMERA = vb.bezier(0.45, 0, 0.55, 1)  # eases in and out
 PAGE_ZOOM_MAX = 1.0  # no zoom: the page is readable whole, and any zoom crops its lines
-SUMMARY_BOLD = 'Fiscal Impact:'       # bold on the official page
+# the badge over the measure's number: its designation, as the guide prints it
+BADGE = badge(BALLOT, CONTEST.title, CARD.number) if CARD is not None else None
+# the fiscal statement's heading, as the guide prints it: bold where the
+# summary quotes it (California's "Fiscal Impact:"), or set over the card's
+# own `fiscal` field (Utah's "Fiscal Effects")
+FISCAL_LABEL = BALLOT.fiscal_label
 # every term the script clicks
 PAGE_FOCI = tuple(dict.fromkeys(ln.visual.focus for sec in CONTEST.script.sections for ln in sec.lines
                                 if ln.visual is not None and ln.visual.kind == 'page' and ln.visual.focus))
@@ -1602,13 +1611,23 @@ def page_fonts(s):
         label=font(s * 1.0, 700, family=PRINT))
 
 
+def page_spreads(card):
+    """How many gaps `spread` widens in the stacked arrangement: under the
+    title, before the fiscal statement and the vote boxes, between those
+    two, and, with the boxes, under their heading and between them."""
+    fiscal, votes = card.fiscal is not None, card.yes is not None
+    return 1 + (fiscal or votes) + (fiscal and votes) + 2 * votes
+
+
 def _layout_page(card, box, s, arrangement, spread=0):
     """The card's contents set at body size `s` inside `box`, in one of three
     arrangements: 'stacked' (one column, the YES box over the NO box), 'side'
     (one column, the boxes side by side) or 'columns' (the summary beside
-    the boxes). `spread` px more go into each of the gaps between its blocks
-    (title, summary, vote boxes), so a page with room to spare fills it
-    evenly. Returns (height used, parts)."""
+    the fiscal statement and the boxes). `spread` px more go into each of
+    the gaps between its blocks (title, summary, fiscal statement, vote
+    boxes), so a page with room to spare fills it evenly. The fiscal
+    statement and the vote boxes are drawn only when the card has them.
+    Returns (height used, parts)."""
     F = page_fonts(s)
     gap = s * 0.55
     pad = s * 0.4           # inside a YES/NO box
@@ -1616,8 +1635,8 @@ def _layout_page(card, box, s, arrangement, spread=0):
     two = arrangement == 'columns'
     colw = (box.w - gap * 1.5) / 2 if two else box.w
     x, y = box.x, box.y
-    # the badge: PROP over the number, in a box, the title beside it
-    bw = max(text.measure('PROP', F['prop']), text.measure(card.number, F['num'])) + s * 0.5
+    # the badge: the designation (PROP, AMENDMENT) over the number, in a box, the title beside it
+    bw = max(text.measure(BADGE, F['prop']), text.measure(card.number, F['num'])) + s * 0.5
     bh = text.line_height(F['prop']) * 0.85 + text.line_height(F['num']) * 0.8 + s * 0.15
     parts['badge'] = Box(x, y, bw, bh)
     tx = x + bw + gap * 0.8
@@ -1634,15 +1653,28 @@ def _layout_page(card, box, s, arrangement, spread=0):
     y += max(text.line_height(F['head']), origin.height) + gap * 0.15
     parts['shapes'].append(('rule', (x, y, colw)))
     y += gap * 0.35
-    k = card.summary.find(SUMMARY_BOLD)
-    bold = [(k, k + len(SUMMARY_BOLD))] if k >= 0 else []
+    k = card.summary.find(FISCAL_LABEL)
+    bold = [(k, k + len(FISCAL_LABEL))] if k >= 0 else []
     summary = Flow('summary', card.summary, F['body'], bold, F['bold'], x=x, y=y, width=colw)
     parts['flows'].append(summary)
     y += summary.height
     left_bottom = y
+    votes = card.yes is not None
+    if card.fiscal is None and not votes:
+        return y - box.y, parts
     if two:
         x, y = box.x + colw + gap * 1.5, box.y
     else:
+        y += gap + spread
+    if card.fiscal is not None:
+        # the fiscal statement, under the guide's own heading for it, in bold
+        parts['labels'].append((FISCAL_LABEL, F['bold'], x, y))
+        y += text.line_height(F['bold'])
+        fiscal = Flow('fiscal', card.fiscal, F['body'], x=x, y=y, width=colw)
+        parts['flows'].append(fiscal)
+        y += fiscal.height
+        if not votes:
+            return max(y, left_bottom) - box.y, parts
         y += gap + spread
     # WHAT YOUR VOTE MEANS, then the YES and NO boxes, alike in every way (rule 7.4)
     parts['labels'].append(('WHAT YOUR VOTE MEANS', F['head'], x, y))
@@ -1656,7 +1688,7 @@ def _layout_page(card, box, s, arrangement, spread=0):
     flows = [Flow(key, getattr(card, key), F['body'], x=0, y=0, width=inner) for key in ('yes', 'no')]
     vh = pad * 1.6 + lab_h + max(f.height for f in flows)
     step = vh + gap * 0.6 + spread
-    for i, (key, word) in enumerate((('yes', 'YES'), ('no', 'NO'))):
+    for i, (key, word) in enumerate(zip(('yes', 'no'), (w.upper() for w in BALLOT.choices))):
         bx = x + (vw + gap) * i if side else x
         by = y if side else y + step * i
         parts['shapes'].append(('vote', (bx, by, vw, vh)))
@@ -1665,9 +1697,6 @@ def _layout_page(card, box, s, arrangement, spread=0):
                                    width=inner))
     y += vh if side else vh + step
     return max(y, left_bottom) - box.y, parts
-
-
-PAGE_SPREADS = 4  # the gaps `spread` widens, in the stacked arrangement
 
 
 @functools.lru_cache(maxsize=4)
@@ -1685,7 +1714,9 @@ def page_plan(fmt):
     # either way a term in both boxes sits close to its twin, so the camera
     # can frame the pair.
     best = None
-    for arrangement in (('stacked',) if L['H'] > L['W'] else ('columns', 'stacked')):
+    # (A card with only a summary has nothing to set beside it.)
+    beside = CARD.fiscal is not None or CARD.yes is not None
+    for arrangement in (('columns', 'stacked') if L['H'] <= L['W'] and beside else ('stacked',)):
         s = 90 * u
         while s > 12:
             h, parts = _layout_page(CARD, content, s, arrangement)
@@ -1697,8 +1728,9 @@ def page_plan(fmt):
     s, h, parts, arrangement = best
     spread = 0
     if arrangement == 'stacked':
-        spread = (content.h - h) / (PAGE_SPREADS + 1)
-        h += spread * PAGE_SPREADS
+        n = page_spreads(CARD)
+        spread = (content.h - h) / (n + 1)
+        h += spread * n
     dy = (content.h - h) / 2
     _, parts = _layout_page(CARD, Box(content.x, content.y + dy, content.w, h), s, arrangement, spread)
     parts['arrangement'] = arrangement
@@ -1754,7 +1786,7 @@ def page_static(paper_box, parts, L):
     b = parts['badge']
     marks.append(('stroke', Stroke(box_pts(*b), seed_of('page badge'), passes=2, width=2.8 * u, closed=True,
                                    overshoot=0)))
-    write('PROP', F['prop'], b.cx - text.measure('PROP', F['prop']) / 2, b.y + 0.15 * F['prop'].size)
+    write(BADGE, F['prop'], b.cx - text.measure(BADGE, F['prop']) / 2, b.y + 0.15 * F['prop'].size)
     write(CARD.number, F['num'], b.cx - text.measure(CARD.number, F['num']) / 2,
           b.y + text.line_height(F['prop']) * 0.8)
     flows = {fl.field: fl for fl in parts['flows']}
@@ -1770,6 +1802,12 @@ def page_static(paper_box, parts, L):
                                    overshoot=2, alpha=0.6)))
     for run in flows['summary'].runs:
         write(*run)
+    if 'fiscal' in flows:
+        write(*next(labels))  # the fiscal statement's heading
+        for run in flows['fiscal'].runs:
+            write(*run)
+    if 'yes' not in flows:
+        return paper_draw, marks
     write(*next(labels), alpha=0.8)  # WHAT YOUR VOTE MEANS
     kind, (x, y, w) = next(shapes)
     marks.append(('stroke', Stroke([(x, y), (x + w, y)], seed_of('page rule', 1), passes=2, width=2 * u,

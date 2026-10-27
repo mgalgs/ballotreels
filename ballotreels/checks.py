@@ -11,12 +11,15 @@ from __future__ import annotations
 import html
 import math
 import re
+import shutil
+import subprocess
 from collections import Counter
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
 
 from . import narration, storyboard
+from .ballots import BALLOTS, Ballot, badge, ballot_for
 from .contest import CARD_KEYS, Card, Contest, Line, Section, Visual
 from .illustrations import load_library
 from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, SOURCE_KINDS,
@@ -26,8 +29,6 @@ from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, SOURCE_KINDS,
 SIDE_TOLERANCE = 0.05
 CHART_KINDS = ("bars", "share", "series", "figure")
 VISUAL_KINDS = (*CHART_KINDS, "timeline", "list", "illustration", "page")
-# The kind of source a [card] quotes: the measure's official page.
-CARD_SOURCE_KIND = "official-title-summary"
 # Kinds that only put text on screen: the centre of the frame is for
 # pictures, so a script may no longer use them.
 REMOVED_KINDS = ("number", "words")
@@ -358,9 +359,26 @@ def _normalise(s: str) -> str:
     return _SPACE_BEFORE_PUNCT.sub("", s)
 
 
+class UnreadableSource(Exception):
+    """An archived source whose text cannot be extracted here."""
+
+
 @lru_cache(maxsize=8)
 def _archived_text(path: Path) -> str:
-    return plain_text(path.read_text(encoding="utf-8", errors="replace"))
+    """An archived source's text, for the verbatim check: a page's
+    plain_text, or a PDF's text as poppler's pdftotext extracts it,
+    whitespace collapsed alike."""
+    if path.suffix.lower() != ".pdf":
+        return plain_text(path.read_text(encoding="utf-8", errors="replace"))
+    if shutil.which("pdftotext") is None:
+        raise UnreadableSource("pdftotext (poppler) is not installed")
+    try:
+        out = subprocess.run(["pdftotext", "-enc", "UTF-8", str(path), "-"],
+                             capture_output=True, check=True, timeout=60)
+    except (subprocess.CalledProcessError,
+            subprocess.TimeoutExpired) as e:
+        raise UnreadableSource(f"pdftotext failed: {e}") from None
+    return _normalise(out.stdout.decode("utf-8", errors="replace"))
 
 
 def highlight_counts(c: Contest) -> tuple[int, int]:
@@ -396,10 +414,21 @@ def check_highlight_balance(c: Contest) -> list[Failure]:
                     f"and {n_no} times in its NO box; they must be equal")]
 
 
+def check_ballot(c: Contest) -> list[Failure]:
+    """A measure's state has its ballot's wording in ballotreels.ballots,
+    so the film never borrows another state's."""
+    if c.kind != "measure" or ballot_for(c.division) is not None:
+        return []
+    return [Failure("ballot",
+                    f"no ballot wording for the state of {c.division!r}; "
+                    f"add it to ballotreels/ballots.py")]
+
+
 def check_card(c: Contest) -> list[Failure]:
-    """The `[card]`, if any: every key present, a source of the official
-    page's kind, and each quoted field verbatim in that source's archived
-    text (docs/SCRIPT-FORMAT.md)."""
+    """The `[card]`, if any: every required key present, `yes` and `no`
+    together or neither, a badge word from the contest's title, a source
+    of the kind the state's card quotes, and each quoted field verbatim in
+    that source's archived text (docs/SCRIPT-FORMAT.md)."""
     card = c.script.card
     if card is None:
         return []
@@ -411,23 +440,41 @@ def check_card(c: Contest) -> list[Failure]:
     for key in CARD_KEYS:
         value = getattr(card, key)
         if value is None:
-            fail(f"has no {key!r}")
+            if key not in Card.OPTIONAL:
+                fail(f"has no {key!r}")
         elif not isinstance(value, str) or not value.strip():
             fail(f"{key!r} must be a non-empty string")
+    if (card.yes is None) != (card.no is None):
+        have, lack = ("yes", "no") if card.no is None else ("no", "yes")
+        fail(f"has {have!r} but no {lack!r}: the two votes' meanings come "
+             f"together or not at all")
+    ballot: Ballot | None = ballot_for(c.division)
+    if ballot is None:
+        return out  # check_ballot reports it
+    if isinstance(card.number, str) and card.number.strip() \
+            and badge(ballot, c.title, card.number) is None:
+        fail(f"the contest title {c.title!r} has no designation word just "
+             f"before the number {card.number!r}, for the card's badge")
     if not isinstance(card.source, str) or not card.source:
         return out
     src = c.source(card.source)
     if src is None:
         fail(f"source {card.source!r} is not in sources.toml")
         return out
-    if src.kind != CARD_SOURCE_KIND:
+    if src.kind != ballot.card_source_kind:
         fail(f"source {card.source!r} is of kind {src.kind!r}; a card "
-             f"quotes a source of kind {CARD_SOURCE_KIND!r}")
+             f"quotes the measure's page in the {ballot.guide}, a source "
+             f"of kind {ballot.card_source_kind!r}")
         return out
     path = (c.path / src.file).resolve()
     if not path.is_relative_to(c.path.resolve()) or not path.is_file():
         return out  # check_sources reports it
-    archived = _archived_text(path)
+    try:
+        archived = _archived_text(path)
+    except UnreadableSource as e:
+        fail(f"cannot read source {card.source!r} ({src.file}) to check "
+             f"the card's quotes: {e}")
+        return out
     for key, value in card.quoted():
         if isinstance(value, str) and value.strip() \
                 and _normalise(value) not in archived:
@@ -499,6 +546,30 @@ def check_template(c: Contest) -> list[Failure]:
             else:
                 msg = f"must have side = {want!r}, has {sec.side!r}"
             out.append(Failure("template", msg, label))
+    return out
+
+
+def check_side_headings(c: Contest) -> list[Failure]:
+    """A side's heading uses only the ballot's own word for its choice
+    ("Why some vote yes" in California, "Why some vote for" in Utah):
+    never the other side's word, nor another state's words for either
+    (ballotreels.ballots). A heading may name no choice at all."""
+    ballot = ballot_for(c.division)
+    if ballot is None:
+        return []  # check_ballot reports it
+    every = {w.lower() for b in BALLOTS.values() for w in b.choices}
+    out = []
+    for label, sec in c.script.labelled():
+        if sec.side not in ("yes", "no"):
+            continue
+        own = ballot.choices[0 if sec.side == "yes" else 1]
+        for word in sorted(every - {own.lower()}):
+            if re.search(rf"\b{re.escape(word)}\b", sec.heading,
+                         re.IGNORECASE):
+                out.append(Failure(
+                    "side-heading",
+                    f"heading {sec.heading!r} says {word!r}; the ballot's "
+                    f"word for this side is {own!r}", label))
     return out
 
 
@@ -718,10 +789,12 @@ def check_contest(c: Contest, standard: Standard | None = None
         *check_cited_sources_exist(c),
         *check_background_only(c),
         *check_visuals(c),
+        *check_ballot(c),
         *check_card(c),
         *check_highlight_balance(c),
         *check_sources(c),
         *check_template(c),
+        *check_side_headings(c),
         *check_side_parity(c),
         *check_side_visuals(c),
         *check_side_list_items(c),
