@@ -21,6 +21,6 @@ fi
 for dir in "$@"; do
     "$python" -m ballotreels narration "$dir"
     "$python" -m videobuilder say "$dir/narration.txt" \
-        --engine chatterbox --voice "$repo/voices/narrator.wav" --gap 0.6 \
+        --engine chatterbox --voice "$repo/voices/narrator.wav" --gap 1.0 --cfg-weight 0.3 \
         --out "$dir/narration.wav"
 done
