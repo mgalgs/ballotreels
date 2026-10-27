@@ -63,9 +63,8 @@ def _band_noise(n, rng, lo, hi, rate=RATE):
 
 
 def _motion(head, f0, f1, steps):
-    """(points, speed) of `head(t)` sampled at `steps + 1` frames across
-    f0..f1: speed is px/s between consecutive samples, one shorter than
-    points, padded to match by repeating its last value."""
+    """`head(t)` sampled at `steps + 1` evenly spaced frames across
+    f0..f1, as an array of (x, y) points."""
     ts = np.linspace(f0, f1, steps + 1)
     pts = np.array([head(t) for t in ts], np.float64)
     return pts
@@ -170,18 +169,17 @@ def _cache_dir():
 
 
 def sound_for(items, fps, total_frames, cache_dir=None):
-    """A `vb.Sound` of `build_track(items, fps, total_frames)`, written once
-    to a content-addressed WAV under `cache_dir` (default: a system temp
-    directory, never the contest or repo) and reused by its hash on a
-    later call with the same items, so re-rendering the same script is
-    byte-for-byte the same without resynthesising it."""
+    """A `vb.Sound` of `build_track(items, fps, total_frames)`, written to
+    a WAV under `cache_dir` (default: a system temp directory, never the
+    contest or repo) named by the hash of its own samples, so the same
+    script always yields the same file and a changed stroke (a new shape
+    at the same timing, say) never reuses an earlier script's sound."""
     import videobuilder as vb
 
-    key = hashlib.sha256(
-        repr([(round(it.f0, 3), round(it.f1, 3), it.tool) for it in items]).encode()
-    ).hexdigest()[:20]
+    samples = build_track(items, fps, total_frames)
+    key = hashlib.sha256(samples.tobytes()).hexdigest()[:20]
     path = (Path(cache_dir) if cache_dir else _cache_dir()) / f'{key}.wav'
     if not path.is_file():
-        write_wav(path, build_track(items, fps, total_frames))
+        write_wav(path, samples)
     return vb.Sound(path=str(path), at=0, start=0.0, frames=total_frames, gain_db=0.0,
                     fade_in_frames=0, fade_out_frames=0, ducks=False)

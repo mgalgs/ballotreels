@@ -99,5 +99,16 @@ class BuildTrackTest(unittest.TestCase):
             self.assertEqual(w.getnchannels(), 1)
 
 
+    def test_sound_for_caches_by_content_not_timing(self):
+        import tempfile
+        tmp = tempfile.mkdtemp()
+        slow = [Stroke(0, 15, "pencil", (100, 100), (140, 100))]
+        fast = [Stroke(0, 15, "pencil", (100, 100), (900, 100))]
+        a = ds.sound_for(slow, 30, 30, cache_dir=tmp)
+        b = ds.sound_for(fast, 30, 30, cache_dir=tmp)
+        again = ds.sound_for(slow, 30, 30, cache_dir=tmp)
+        self.assertNotEqual(a.path, b.path)
+        self.assertEqual(a.path, again.path)
+
 if __name__ == "__main__":
     unittest.main()
