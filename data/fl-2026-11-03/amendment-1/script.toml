@@ -12,11 +12,12 @@
 # amendment, so both sides are filed = false and each says so once, in
 # the same number of words.
 #
-# Scale (dollar figures): the $750 million yearly transfer has no share
-# yet. The analysis states no general revenue total, and deriving one
-# from "25 percent is $12.2 billion" is a step STANDARD 6.5 does not
-# allow; it waits for a cited total. No line says what the transfer is
-# traded against: the analysis does not say.
+# Scale (rule 6.5): the amendment sets the fund's ceiling as a share of
+# general revenue collections, so the $750 million yearly transfer is
+# compared with general revenue: about 1 percent of the $52,339.9 million
+# the August 2026 outlook estimates for 2026-27 (page 2). No total is
+# derived from "25 percent is $12.2 billion". No line says what the
+# transfer is traded against: the analysis does not say.
 
 contest = "fl-2026-11-03-amendment-1"
 template = "measure"
@@ -106,8 +107,8 @@ id = "fiscal"
 heading = "What the official analysis says"
 
 [[section.line]]
-text = "The Senate's analysis says that, with revenue unchanged, the state would add $750 million a year for at least 10 years."
-sources = ["analysis"]
+text = "The Senate's analysis says that, with revenue unchanged, the state would add $750 million a year for at least 10 years, about 1 percent of this year's estimated general revenue."
+sources = ["analysis", "revenue-outlook"]
 
 [section.line.visual]
 kind = "illustration"
