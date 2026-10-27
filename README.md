@@ -175,6 +175,14 @@ state of the statewide division it is given, and the district labels
 follow each state's chamber names (State Assembly in California and New
 York, State House in most others; none in D.C.).
 
+The home page also lists every served state, by name; each links to
+`/state/<st>` (e.g. `/state/ut`), a shareable page of that state's
+statewide measures, without a district lookup. An election whose
+`contests.toml` has the `[election]` table and no contests (New York,
+Oregon and Texas in 2026) is still covered: its state page, and the
+ballot for any zip in it (no geo data needed), say it has no statewide
+measures on that election day.
+
 | Flag | Environment variable | Default |
 |---|---|---|
 | `--data-dir` | `BALLOTREELS_DATA_DIR` | `<repo>/var` |
@@ -201,7 +209,8 @@ already-queued or already-cached contest is always free);
 `--generate-global-limit` caps new jobs per hour across every client,
 since a per-IP limit alone is beaten by rotating IPv6 addresses. A
 contest whose latest job failed or was cancelled is not re-queued by a
-visitor: only the queue monitor's retry starts it again. The address
+visitor (its page says the video isn't available, with no button): only
+the queue monitor's retry starts it again. The address
 lookup takes at most 200 characters, is limited per client IP by
 `--address-limit`, and makes at most 4 geocoder calls at once
 (answering 503, "busy", past that). The queue
