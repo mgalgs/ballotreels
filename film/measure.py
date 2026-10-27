@@ -204,7 +204,6 @@ def layout_9x16():
         # page's bottom in every view, as in the full-page view
         stage=Box(70, 430, 940, 1166),
         scrap=Box(78, 1632, 924, 196),
-        cards=Box(70, 430, 940, 1166),
         header_font=font(30, family=PRINT),
         heading_font=font(86, 700),
         chart_title_font=font(56, 700),
@@ -216,7 +215,7 @@ def layout_9x16():
         timeline_font=font(46, family=PRINT),
         caption_font=font(58, family=PRINT),
         caption_lines=2,
-        sources_font=font(48, family=PRINT),
+        sources_font=font(60, family=PRINT),  # at most: the sides slide's items' largest
         footer=Box(70, 1856, 940, 40),
         footer_font=font(30, family=PRINT),
         # the full-page view, while the official page is up: no running
@@ -240,7 +239,6 @@ def layout_16x9():
         heading=Box(120, 166, 1680, 96),
         stage=Box(150, 276, 1620, 540),
         scrap=Box(250, 842, 1420, 176),
-        cards=Box(150, 276, 1620, 740),
         header_font=font(26, family=PRINT),
         heading_font=font(74, 700),
         chart_title_font=font(50, 700),
@@ -252,7 +250,7 @@ def layout_16x9():
         timeline_font=font(40, family=PRINT),
         caption_font=font(54, family=PRINT),
         caption_lines=2,
-        sources_font=font(42, family=PRINT),
+        sources_font=font(52, family=PRINT),
         footer=Box(250, 1034, 1420, 32),
         footer_font=font(25, family=PRINT),
         page_stage=Box(24, 128, 1872, 686),
@@ -2209,9 +2207,18 @@ def build(fmt):
     return dict(L=L, groups=groups, schedule=schedule, captions=caption_chunks(L), slides=sorted(slides))
 
 
+SOURCES_GAP = 0.45  # the least gap between two sources, as a share of the list's line height
+
+
 def sources_card(L, f0):
+    """The closing card: 'Sources' as a heading, and every cited source,
+    numbered, in a list that fills the page from under the heading down to
+    the bottom of where the caption would be (the card has none), as the
+    sides slide's cards do: its height goes to the type first, the largest
+    (up to L['sources_font']) at which the list fits with the sources at
+    their least gap; what is left is shared out evenly between the gaps
+    between the sources and the room above and below the list."""
     hb = L['heading']
-    box = L['cards']
     u = L['u']
     fnt = L['heading_font']
     items, f, hbox = write_lines(f0, ['Sources'], fnt, hb.x, hb.y + 6, align='center', width=hb.w)
@@ -2220,25 +2227,38 @@ def sources_card(L, f0):
                    seed_of('underline'), passes=2, width=5 * u)
     items.append(stroke_item(f + 1, f + 9, under, ORANGE))
     f += 10
+    box = sources_room(L, hbox)
+    n = len(BOARD.cited)
     sf = L['sources_font']
-    num_w = 50 * u
     while True:
+        num_w = text.measure(f'{n}.', sf) + 0.4 * sf.size
         blocks = [text.wrap(s.publisher, sf, box.w - num_w, balance=True) for s in BOARD.cited]
-        gap = text.line_height(sf) * 0.45
-        total = sum(len(b) * text.line_height(sf) for b in blocks) + gap * (len(blocks) - 1)
-        if total <= box.h - 20 * u or sf.size < 22:
+        lh = text.line_height(sf)
+        gap = lh * SOURCES_GAP
+        total = sum(len(b) * lh for b in blocks) + gap * (n - 1)
+        if total <= box.h or sf.size < 22:
             break
-        sf = font(sf.size * 0.94, family=PRINT)
-    y = box.y + max(0, (box.h - total) / 2 - 30 * u)
+        sf = font(sf.size * 0.97, family=PRINT)
+    share = max(0, box.h - total) / (n + 1)
+    gap += share
+    y = box.y + share
     top = y
     for i, lines in enumerate(blocks):
         ni, _, _ = write_lines(f, [f'{i + 1}.'], sf, box.x, y, speed=2)
         items += ni
         li, f, _ = write_lines(f + 2, lines, sf, box.x + num_w, y, speed=2.2)
         items += li
-        y += len(lines) * text.line_height(sf) + gap
+        y += len(lines) * lh + gap
         f += 3
     return items, [Mark('heading', hbox), Mark('sources', Box(box.x, top, box.w, y - gap - top))]
+
+
+def sources_room(L, hbox):
+    """The room the sources list fills: the stage's width, from EDGE_GAP
+    under the heading's underline down to the bottom of the caption's scrap."""
+    st = L['stage']
+    y = hbox.bottom + 4 + EDGE_GAP * L['u']
+    return Box(st.x, y, st.w, L['scrap'].bottom - y)
 
 
 # ---- captions: the current phrase on a taped scrap, fully legible ----
