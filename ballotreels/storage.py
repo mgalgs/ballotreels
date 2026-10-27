@@ -67,7 +67,9 @@ class S3Storage:
     """PUTs each file to an S3-compatible bucket (DigitalOcean Spaces),
     path-style (`PUT <endpoint>/<bucket>/<key>`), public-read, with a
     long cache lifetime. The object key is deterministic from the cache
-    key (A26), so a retried upload overwrites rather than duplicates."""
+    key (A26) and the job id, so a retried upload of a job overwrites
+    rather than duplicates, while a regenerated video (a new job) gets a
+    new key instead of one the CDN holds as `immutable`."""
 
     def __init__(self, endpoint: str, region: str, bucket: str,
                 public_base: str, access_key_id: str,
@@ -96,11 +98,12 @@ class S3Storage:
             secret_access_key=env["BALLOTREELS_S3_SECRET_ACCESS_KEY"],
             prefix=env.get("BALLOTREELS_S3_PREFIX", "ballotreels"))
 
-    def _object_key(self, key_hash: str, name: str) -> str:
-        return f"{self.prefix}/{key_hash}/{name}"
+    def _object_key(self, key_hash: str, job_id: int, name: str) -> str:
+        return f"{self.prefix}/{key_hash}/{job_id}/{name}"
 
-    def _put_one(self, key_hash: str, name: str, data: bytes) -> dict[str, str]:
-        object_key = self._object_key(key_hash, name)
+    def _put_one(self, key_hash: str, job_id: int, name: str,
+                 data: bytes) -> dict[str, str]:
+        object_key = self._object_key(key_hash, job_id, name)
         parts = urllib.parse.urlsplit(self.endpoint)
         host = parts.netloc
         uri = f"/{self.bucket}/{object_key}"
@@ -145,5 +148,5 @@ class S3Storage:
         objects = {}
         for name, data in files.items():
             objects[OBJECT_NAMES.get(name, name)] = self._put_one(
-                key_hash, name, data)
+                key_hash, job["id"], name, data)
         return {"storage": "s3", "objects": objects}

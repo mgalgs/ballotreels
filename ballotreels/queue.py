@@ -86,6 +86,10 @@ TRANSITIONS = {
     "retry": {"failed", "cancelled"},
     "cancel": {"queued", "running"},
     "requeue": {"running"},
+    # A new job for a done job's key (STANDARD.md rule 5.2: a confirmed
+    # error is fixed by regenerating). The old video keeps serving until
+    # the new job completes and replaces its `videos` row.
+    "regenerate": {"done"},
 }
 
 
@@ -410,7 +414,7 @@ class JobQueue:
             if row["state"] not in TRANSITIONS[action]:
                 self._notify_vacated(vacated)
                 return False, f"cannot {action} a {row['state']} job"
-            if action == "retry":
+            if action in ("retry", "regenerate"):
                 live = self._conn.execute(
                     "SELECT id, state FROM jobs WHERE key = ? AND state IN "
                     "('queued', 'running') AND id != ?",
@@ -419,6 +423,14 @@ class JobQueue:
                     self._notify_vacated(vacated)
                     return False, (f"job #{live['id']} for this key is "
                                   f"already {live['state']}")
+            if action == "regenerate":
+                self._conn.execute(
+                    "INSERT INTO jobs (key, key_hash, election, division, "
+                    "contest, standard_version, template_version, state, "
+                    "stage, queued_at) SELECT key, key_hash, election, "
+                    "division, contest, standard_version, template_version, "
+                    "'queued', NULL, ? FROM jobs WHERE id = ?", (now, job_id))
+            elif action == "retry":
                 self._conn.execute(
                     "UPDATE jobs SET state = 'queued', queued_at = ?, "
                     "claim = NULL, worker_id = NULL, last_heartbeat = NULL, "

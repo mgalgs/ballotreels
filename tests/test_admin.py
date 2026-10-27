@@ -123,6 +123,46 @@ class RequeueTest(AdminTestCase):
             claimed["id"], claimed["claim"], "render"))
 
 
+class RegenerateTest(AdminTestCase):
+    def _done_job(self, contest):
+        key = _key_for(contest)
+        job, _ = self.deps.queue.create_job(key)
+        claimed = self.deps.queue.claim("w1")
+        self.assertTrue(self.deps.queue.complete(
+            claimed["id"], claimed["claim"],
+            video=(key, "local", {"video": "/v/old/1/video.mp4"}, [])))
+        return key, job
+
+    def test_regenerate_done(self):
+        # STANDARD.md rule 5.2: a correction is fixed by regenerating; the
+        # old video keeps serving until the new job replaces it.
+        key, job = self._done_job("regen-done")
+        resp, doc = self._admin_json(
+            "POST", f"/admin/api/jobs/{job['id']}/regenerate")
+        self.assertEqual(resp.status, 200, doc)
+        self.assertEqual(self.deps.queue.get_job(job["id"])["state"], "done")
+        live = self.deps.queue.find_live_job(key)
+        self.assertIsNotNone(live)
+        self.assertNotEqual(live["id"], job["id"])
+        self.assertEqual(live["state"], "queued")
+        self.assertEqual(self.deps.queue.video_for(key).urls["video"],
+                         "/v/old/1/video.mp4")
+
+        resp, doc = self._admin_json(
+            "POST", f"/admin/api/jobs/{job['id']}/regenerate")
+        self.assertEqual(resp.status, 409)
+        self.assertEqual(doc["error"],
+                         f"job #{live['id']} for this key is already queued")
+
+    def test_regenerate_only_from_done(self):
+        job, _ = self.deps.queue.create_job(_key_for("regen-queued"))
+        resp, doc = self._admin_json(
+            "POST", f"/admin/api/jobs/{job['id']}/regenerate")
+        self.assertEqual(resp.status, 409)
+        self.assertEqual(doc["error"], "cannot regenerate a queued job")
+        self.deps.queue.transition(job["id"], "cancel")
+
+
 class InvalidTransitionsTest(AdminTestCase):
     def test_invalid_transitions(self):
         with self.subTest("retry on done"):

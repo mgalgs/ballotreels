@@ -58,7 +58,7 @@ class S3EndToEndTest(S3WorkerTestCase):
         self.assertEqual(row["state"], "done")
 
         key_hash = hash_for_key(key)
-        expected = {f"/ballotreels-test/ballotreels/{key_hash}/{n}"
+        expected = {f"/ballotreels-test/ballotreels/{key_hash}/{job['id']}/{n}"
                    for n in ("video.mp4", "poster.jpg", "script.toml",
                             "sources.json")}
         self.assertEqual(set(self.s3.objects.keys()), expected)
@@ -205,6 +205,22 @@ class S3ReuploadTest(S3WorkerTestCase):
         self.assertEqual(keys1, keys2)
         self.assertEqual(self.s3.put_count, 8)
         self.assertEqual(len(self.s3.objects), 4)
+
+    def test_s3_regenerated_job_gets_new_keys(self):
+        # A new job for the same cache key (a regeneration) must not
+        # overwrite objects the CDN serves as immutable.
+        key = self.prop2_key()
+        files = {"video.mp4": b"v", "poster.jpg": b"p",
+                 "script.toml": b"s", "sources.json": b"[]"}
+        keys = []
+        for job_id in (1, 2):
+            job = {"id": job_id, "claim": "c", "election": key[0],
+                  "division": key[1], "contest": key[2],
+                  "standard_version": key[3], "template_version": key[4]}
+            result = self.storage.put_all(job, files)
+            keys.append({v["key"] for v in result["objects"].values()})
+        self.assertEqual(keys[0] & keys[1], set())
+        self.assertEqual(len(self.s3.objects), 8)
 
 
 class NoRealEndpointsTest(unittest.TestCase):

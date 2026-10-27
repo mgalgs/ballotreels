@@ -73,10 +73,17 @@ def _incoming_dir(data_dir: Path, job_id: int, claim: str) -> Path:
     return data_dir / "cache" / ".incoming" / f"{job_id}-{claim}"
 
 
+def _local_video_path(key_hash: str, job_id: int | str, name: str) -> str:
+    """The public path of a locally stored file. The job id is part of
+    it, so a regenerated video gets a new URL rather than one that
+    browsers already hold as `immutable`."""
+    return f"/v/{key_hash}/{job_id}/{name}"
+
+
 def _sweep_orphaned_dirs(data_dir: Path, queue: JobQueue) -> None:
     """On every start: drop an `.incoming/` upload directory whose job is
-    no longer running under that claim, and a `cache/` directory with no
-    matching `videos` row (R-Q8)."""
+    no longer running under that claim, and anything under `cache/` that
+    is not the current local video for a `videos` row (R-Q8)."""
     incoming_root = data_dir / "cache" / ".incoming"
     if incoming_root.is_dir():
         live = queue.live_claims()
@@ -87,8 +94,27 @@ def _sweep_orphaned_dirs(data_dir: Path, queue: JobQueue) -> None:
     if cache_root.is_dir():
         known = queue.known_hashes()
         for d in cache_root.iterdir():
-            if d.is_dir() and d.name != ".incoming" and d.name not in known:
+            if not d.is_dir() or d.name == ".incoming":
+                continue
+            if d.name not in known:
                 shutil.rmtree(d, ignore_errors=True)
+                continue
+            _drop_stale_job_dirs(d, queue.video_for_hash(d.name))
+
+
+def _drop_stale_job_dirs(hash_dir: Path, video) -> None:
+    """Remove every entry under `cache/<hash>/` except the job directory
+    the key's current local video is served from."""
+    for child in hash_dir.iterdir():
+        current = (video is not None and video.storage == "local" and
+                   video.urls.get("video") == _local_video_path(
+                       hash_dir.name, child.name, "video.mp4"))
+        if current:
+            continue
+        if child.is_dir():
+            shutil.rmtree(child, ignore_errors=True)
+        else:
+            child.unlink(missing_ok=True)
 
 
 def build_deps(config: Config, clock=None) -> Deps:
@@ -391,10 +417,10 @@ class PublicHandler(_JsonHandler):
                 return self._generate()
             if path == "/api/address" and method == "POST":
                 return self._address()
-            m = re.fullmatch(r"/v/([0-9a-f]{16})/(video\.mp4|poster\.jpg)",
-                             path)
+            m = re.fullmatch(
+                r"/v/([0-9a-f]{16})/(\d+)/(video\.mp4|poster\.jpg)", path)
             if m and method in ("GET", "HEAD"):
-                return self._video(m.group(1), m.group(2), method)
+                return self._video(m.group(1), m.group(2), m.group(3), method)
             if path.startswith("/static/") and method in ("GET", "HEAD"):
                 if self._serve_static(path[len("/static/"):]):
                     return
@@ -478,12 +504,16 @@ class PublicHandler(_JsonHandler):
             return self._not_found()
         self._json(200, _contest_detail(entry, deps))
 
-    def _video(self, key_hash: str, name: str, method: str) -> None:
+    def _video(self, key_hash: str, job_id: str, name: str,
+               method: str) -> None:
         deps = self.server.deps
         video = deps.queue.video_for_hash(key_hash)
-        if video is None:
+        # Only the key's current video: a superseded one is gone.
+        if (video is None or video.storage != "local" or
+                video.urls.get("video") != _local_video_path(
+                    key_hash, job_id, "video.mp4")):
             return self._not_found()
-        path = deps.config.data_dir / "cache" / key_hash / name
+        path = deps.config.data_dir / "cache" / key_hash / job_id / name
         if not path.is_file():
             return self._not_found()
         content_type = "video/mp4" if name == "video.mp4" else "image/jpeg"
@@ -572,8 +602,9 @@ class PrivateHandler(_JsonHandler):
                 if self._serve_static("admin.html"):
                     return
                 return self._not_found()
-            m = re.fullmatch(r"/admin/api/jobs/(\d+)/(retry|cancel|requeue)",
-                             path)
+            m = re.fullmatch(
+                r"/admin/api/jobs/(\d+)/(retry|cancel|requeue|regenerate)",
+                path)
             if m and method == "POST":
                 return self._admin_action(int(m.group(1)), m.group(2))
             if path == "/admin/api/jobs" and method == "GET":
@@ -744,8 +775,9 @@ class PrivateHandler(_JsonHandler):
             if missing:
                 return self._json(
                     400, {"error": f"missing upload(s): {', '.join(missing)}"})
-            urls = {"video": f"/v/{key_hash}/video.mp4",
-                   "poster": f"/v/{key_hash}/poster.jpg"}
+            urls = {"video": _local_video_path(key_hash, job_id, "video.mp4"),
+                   "poster": _local_video_path(key_hash, job_id,
+                                               "poster.jpg")}
         elif storage == "s3":
             objects = body.get("objects")
             if not objects:
@@ -768,11 +800,14 @@ class PrivateHandler(_JsonHandler):
                                    video=(key, storage, urls, sources)):
             return self._state_conflict(job_id)
         if storage == "local":
-            dest = deps.config.data_dir / "cache" / key_hash
+            hash_dir = deps.config.data_dir / "cache" / key_hash
+            dest = hash_dir / str(job_id)
             if dest.exists():
                 shutil.rmtree(dest)
-            dest.parent.mkdir(parents=True, exist_ok=True)
+            hash_dir.mkdir(parents=True, exist_ok=True)
             incoming.replace(dest)
+            # The video this one replaces (an earlier job for the key).
+            _drop_stale_job_dirs(hash_dir, deps.queue.video_for_hash(key_hash))
         self._json(200, {"ok": True})
 
     def _fail(self, job_id: int) -> None:

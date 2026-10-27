@@ -133,6 +133,19 @@ cache, plus the operator's queue monitor:
   heartbeat and error output, and lets the operator retry, cancel or
   requeue one; it also shows queue depth and the median job time, which
   the ETA shown to voters is based on.
+- **Corrections** (STANDARD.md rule 5.2) are fixed by regenerating: the
+  operator fixes the contest's script or sources, adds a
+  `[[contest.correction]]` note to the contest index, and presses
+  "regenerate" on the contest's done job in the queue monitor. That
+  queues a new job for the same cache key; the old video keeps serving
+  until the new one completes and replaces it. Each job's files are
+  published under a path that includes the job id
+  (`/v/<hash>/<job-id>/video.mp4` locally,
+  `<prefix>/<hash>/<job-id>/<name>` in the bucket), so a regenerated
+  video gets a new URL, and the year-long `immutable` caching of the old
+  one in browsers and the CDN never hides the fix. A retried upload of
+  the same job still overwrites its own objects. Superseded objects in
+  the bucket are not deleted.
 - No accounts: the public site asks for nothing but a zip code or an
   address, and the operator's queue monitor is the only gated page,
   signed in with the one shared token.

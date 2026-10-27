@@ -148,17 +148,17 @@ class VideoServingTest(ServerTestCase):
                     "ocd-division/country:us/state:ca",
                     "ca-2026-11-03-prop-90", 2, 2)
         self.key_hash = hash_for_key(self.key)
-        cache_dir = self.data_dir / "cache" / self.key_hash
+        cache_dir = self.data_dir / "cache" / self.key_hash / "1"
         cache_dir.mkdir(parents=True)
         self.content = b"0123456789" * 10
         (cache_dir / "video.mp4").write_bytes(self.content)
         self.deps.queue.record_video(
             self.key, "local",
-            {"video": f"/v/{self.key_hash}/video.mp4"}, [])
+            {"video": f"/v/{self.key_hash}/1/video.mp4"}, [])
 
     def test_video_full(self):
         resp, body = self.get(self.public_port,
-                              f"/v/{self.key_hash}/video.mp4")
+                              f"/v/{self.key_hash}/1/video.mp4")
         self.assertEqual(resp.status, 200)
         self.assertEqual(resp.getheader("Content-Type"), "video/mp4")
         self.assertEqual(resp.getheader("Accept-Ranges"), "bytes")
@@ -170,7 +170,7 @@ class VideoServingTest(ServerTestCase):
 
     def test_video_range_prefix(self):
         resp, body = self.get(self.public_port,
-                              f"/v/{self.key_hash}/video.mp4",
+                              f"/v/{self.key_hash}/1/video.mp4",
                               {"Range": "bytes=0-99"})
         self.assertEqual(resp.status, 206)
         self.assertEqual(resp.getheader("Content-Range"),
@@ -180,14 +180,14 @@ class VideoServingTest(ServerTestCase):
 
     def test_video_range_suffix_from_start(self):
         resp, body = self.get(self.public_port,
-                              f"/v/{self.key_hash}/video.mp4",
+                              f"/v/{self.key_hash}/1/video.mp4",
                               {"Range": "bytes=50-"})
         self.assertEqual(resp.status, 206)
         self.assertEqual(body, self.content[50:])
 
     def test_video_range_last_n(self):
         resp, body = self.get(self.public_port,
-                              f"/v/{self.key_hash}/video.mp4",
+                              f"/v/{self.key_hash}/1/video.mp4",
                               {"Range": "bytes=-10"})
         self.assertEqual(resp.status, 206)
         self.assertEqual(body, self.content[-10:])
@@ -198,14 +198,14 @@ class VideoServingTest(ServerTestCase):
     def test_video_range_out_of_bounds(self):
         n = len(self.content)
         resp, body = self.get(self.public_port,
-                              f"/v/{self.key_hash}/video.mp4",
+                              f"/v/{self.key_hash}/1/video.mp4",
                               {"Range": f"bytes={n + 10}-"})
         self.assertEqual(resp.status, 416)
         self.assertEqual(resp.getheader("Content-Range"), f"bytes */{n}")
 
     def test_video_inverted_range_serves_full(self):
         resp, body = self.get(self.public_port,
-                              f"/v/{self.key_hash}/video.mp4",
+                              f"/v/{self.key_hash}/1/video.mp4",
                               {"Range": "bytes=50-10"})
         self.assertEqual(resp.status, 200)
         self.assertEqual(resp.getheader("Content-Length"),
@@ -214,20 +214,20 @@ class VideoServingTest(ServerTestCase):
 
     def test_video_multi_range_serves_full(self):
         resp, body = self.get(self.public_port,
-                              f"/v/{self.key_hash}/video.mp4",
+                              f"/v/{self.key_hash}/1/video.mp4",
                               {"Range": "bytes=0-9,20-29"})
         self.assertEqual(resp.status, 200)
         self.assertEqual(body, self.content)
 
     def test_video_head(self):
         resp, body = self.head(self.public_port,
-                               f"/v/{self.key_hash}/video.mp4")
+                               f"/v/{self.key_hash}/1/video.mp4")
         self.assertEqual(resp.status, 200)
         self.assertEqual(body, b"")
         self.assertEqual(resp.getheader("Content-Length"), str(len(self.content)))
 
     def test_video_unknown_hash(self):
-        resp, body = self.get(self.public_port, "/v/" + "0" * 16 + "/video.mp4")
+        resp, body = self.get(self.public_port, "/v/" + "0" * 16 + "/1/video.mp4")
         self.assertEqual(resp.status, 404)
 
 

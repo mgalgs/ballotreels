@@ -111,14 +111,43 @@ class EndToEndTest(WorkerTestCase):
         self.assertIsNotNone(video)
         key_hash = hash_for_key(key)
 
-        resp, body = self.get_public(f"/v/{key_hash}/video.mp4",
+        resp, body = self.get_public(f"/v/{key_hash}/{job['id']}/video.mp4",
                                      {"Range": "bytes=0-9"})
         self.assertEqual(resp.status, 206)
         self.assertEqual(len(body), 10)
 
-        resp, body = self.get_public(f"/v/{key_hash}/poster.jpg")
+        resp, body = self.get_public(f"/v/{key_hash}/{job['id']}/poster.jpg")
         self.assertEqual(resp.status, 200)
         self.assertEqual(resp.getheader("Content-Type"), "image/jpeg")
+
+
+class RegenerateTest(WorkerTestCase):
+    def test_regenerated_video_gets_a_new_url(self):
+        key = self.prop2_key()
+        key_hash = hash_for_key(key)
+        job, _ = self.deps.queue.create_job(key)
+        worker = self.make_worker()
+        self.assertTrue(worker.run_once())
+        old_url = self.deps.queue.video_for(key).urls["video"]
+        self.assertEqual(old_url, f"/v/{key_hash}/{job['id']}/video.mp4")
+
+        ok, message = self.deps.queue.transition(job["id"], "regenerate")
+        self.assertTrue(ok, message)
+        # While the new job waits, the old video still serves.
+        resp, _ = self.get_public(old_url)
+        self.assertEqual(resp.status, 200)
+
+        self.assertTrue(worker.run_once())
+        new_url = self.deps.queue.video_for(key).urls["video"]
+        self.assertNotEqual(new_url, old_url)
+        resp, _ = self.get_public(new_url, {"Range": "bytes=0-9"})
+        self.assertEqual(resp.status, 206)
+        resp, _ = self.get_public(old_url)
+        self.assertEqual(resp.status, 404)
+        new_job_id = new_url.split("/")[3]
+        self.assertEqual(
+            [p.name for p in (self.data_dir / "cache" / key_hash).iterdir()],
+            [new_job_id])
 
 
 class FailsWithoutSourcesTest(WorkerTestCase):
@@ -291,11 +320,11 @@ class EncodeOutputsTest(WorkerTestCase):
         master_path = worker.masters_dir / key_hash / "master.mp4"
         self.assertTrue(master_path.is_file())
 
-        resp, served = self.get_public(f"/v/{key_hash}/video.mp4")
+        resp, served = self.get_public(f"/v/{key_hash}/{job['id']}/video.mp4")
         self.assertEqual(resp.status, 200)
         self.assertNotEqual(served, master_path.read_bytes())
 
-        resp, poster_bytes = self.get_public(f"/v/{key_hash}/poster.jpg")
+        resp, poster_bytes = self.get_public(f"/v/{key_hash}/{job['id']}/poster.jpg")
         self.assertEqual(resp.getheader("Content-Type"), "image/jpeg")
         self.assertTrue(poster_bytes.startswith(b"\xff\xd8"))
 

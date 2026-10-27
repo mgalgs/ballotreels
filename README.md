@@ -183,7 +183,11 @@ client IP may start generating in a rolling window (joining an
 already-queued or already-cached contest is always free). The queue
 monitor lives on the private listener at `/admin/`, signed in with the
 same token (as a cookie, via `/admin/login`, so a phone browser can use
-it too).
+it too). Its actions are retry (a failed or cancelled job), cancel,
+requeue (a running job, back to the front of the line) and regenerate
+(a done job: a new job for the same contest, used after a correction;
+the old video keeps serving until the new one is done, and the new one
+gets its own URL).
 
 ## Running a worker
 

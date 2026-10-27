@@ -347,10 +347,23 @@ class IncomingCleanupTest(ServerTestCaseWithConfig):
         orphan_cache = self.data_dir / "cache" / ("0" * 16)
         orphan_cache.mkdir(parents=True)
 
+        # A key whose video was regenerated: only the current job's
+        # directory is still referenced.
+        key = _key("sweep-regen")
+        key_hash = hash_for_key(key)
+        self.deps.queue.record_video(
+            key, "local", {"video": f"/v/{key_hash}/7/video.mp4"}, [])
+        current = self.data_dir / "cache" / key_hash / "7"
+        superseded = self.data_dir / "cache" / key_hash / "3"
+        current.mkdir(parents=True)
+        superseded.mkdir()
+
         deps2 = build_deps(self._make_test_config_for_sweep())
         self.addCleanup(deps2.queue.close)
         self.assertFalse(orphan_incoming.exists())
         self.assertFalse(orphan_cache.exists())
+        self.assertTrue(current.is_dir())
+        self.assertFalse(superseded.exists())
 
     def _make_test_config_for_sweep(self):
         from .test_serve_public import _make_config

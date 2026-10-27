@@ -1,5 +1,5 @@
 // Queue monitor: polls /admin/api/jobs and lets the operator retry,
-// cancel or requeue a job. The admin cookie set by /admin/login
+// cancel, requeue or regenerate a job. The admin cookie set by /admin/login
 // authorises every fetch here automatically (same-origin).
 
 function clock(epoch) {
@@ -52,7 +52,7 @@ async function refresh() {
     row.appendChild(errCell);
 
     const actionsCell = document.createElement("td");
-    for (const action of ["retry", "cancel", "requeue"]) {
+    for (const action of ["retry", "cancel", "requeue", "regenerate"]) {
       const button = document.createElement("button");
       button.textContent = action;
       button.onclick = () => act(job.id, action);
