@@ -1578,11 +1578,12 @@ class Band:
         return s['x1'] - s['back'], s['yc'] + s['dy']
 
 
-def band_item(f0, f1, occ, phrase, u, alpha=BAND_ALPHA, tool=True):
-    """One occurrence `occ` (its boxes) of `phrase` highlighted over f0..f1,
-    the highlighter on it (unless not `tool`). Seeded by the phrase alone, so
-    its occurrences in the YES and NO boxes are marked alike (rule 7.4)."""
-    band = Band(occ, u, seed_of('band', phrase), alpha)
+def band_item(f0, f1, occ, u, alpha=BAND_ALPHA, tool=True):
+    """One occurrence `occ` (its boxes) of a phrase highlighted over f0..f1,
+    the highlighter on it (unless not `tool`). Every band has the same
+    seed, so a hand's unevenness never tells the YES box's marks from the
+    NO box's (rule 7.4)."""
+    band = Band(occ, u, seed_of('band'), alpha)
     return Item(f0, f1, band.draw, band.head if tool else None, HIGHLIGHTER, tool='highlighter')
 
 
@@ -1596,7 +1597,7 @@ def highlight_items(parts, beat, ready, u):
     for phrase, at in zip(phrases, highlight_starts(beat, phrases)):
         f = max(f, at)
         for occ in focus_boxes(parts, phrase):
-            items.append(band_item(f, f + SWEEP, occ, phrase, u))
+            items.append(band_item(f, f + SWEEP, occ, u))
             f += SWEEP
     return items
 
@@ -1628,7 +1629,7 @@ def page_run(runs, L, first_f, fmt, state):
     # the terms clicked before this run: each highlighted, faint, with a tick
     for focus in state['clicked']:
         for occ in focus_boxes(parts, focus):
-            bands.append(band_item(first_f - 2, first_f - 1, occ, focus, u, BAND_ALPHA * FAINT, tool=False))
+            bands.append(band_item(first_f - 2, first_f - 1, occ, u, BAND_ALPHA * FAINT, tool=False))
             tick = _tick(occ[0], u, seed_of('tick', focus))
             items.append(stroke_item(first_f - 2, first_f - 1, tick, alpha=0.8, pencil=False))
     camera = Camera(stage, paper_box)
@@ -1653,7 +1654,7 @@ def page_run(runs, L, first_f, fmt, state):
             length = sum(b.w for b in boxes)
             for occ in occs:
                 d = CLICK * k * sum(b.w for b in occ) / length
-                bands.append(band_item(f, f + d, occ, focus, u))
+                bands.append(band_item(f, f + d, occ, u))
                 f += d
             z0 = f + 3
             # frame the highlights whole, not just the words in them
