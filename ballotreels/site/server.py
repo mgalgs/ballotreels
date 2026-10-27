@@ -40,6 +40,12 @@ CONTENT_TYPE_BY_EXT = {
     ".css": "text/css; charset=utf-8",
     ".json": "application/json",
     ".svg": "image/svg+xml",
+    ".ttf": "font/ttf",
+    ".woff2": "font/woff2",
+    ".png": "image/png",
+    ".jpg": "image/jpeg",
+    ".ico": "image/x-icon",
+    ".txt": "text/plain; charset=utf-8",
 }
 
 ADMIN_COOKIE = "ballotreels_admin"
