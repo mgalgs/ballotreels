@@ -1,0 +1,155 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; who would enforce it, and how that works today; what the
+# initiative would ban and how it is enforced; what the Chief Financial
+# Officer says it costs, and what that cost depends on; the two sides;
+# what a vote does.
+#
+# The card quotes the Voter Guide's page: the short title, the summary
+# statement, and the ballot's two choices, "Yes, to approve" and "No, to
+# reject", which the card draws in its YES and NO boxes.
+#
+# The District publishes no official arguments for or against an
+# initiative, so both sides are filed = false and each says so once, in
+# the same number of words. The initiative's own findings (sec. 2 of its
+# text) are its authors' case for it and are left out of the neutral
+# sections (STANDARD.md 6.3), as campaign arguments are left out
+# everywhere.
+#
+# The $314,000 is shown without its share of the District's budget: no
+# archived source states the budget total it would be compared against.
+
+contest = "dc-2026-11-03-initiative-86"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide"
+number = "86"
+title = "Prohibiting Force-Feeding of Birds Act of 2026."
+origin = "BALLOT INITIATIVE"
+summary = "If enacted, this Initiative would: (a) Prohibit any person from force-feeding a bird for the purpose of enlarging the bird’s liver beyond normal size; (b) Ban the sale or distribution of any product resulting from force-feeding a bird, including foie gras; (c) Define force-feeding as inserting a tube into the bird’s throat to deliver excessive feed; (d) Provide for enforcement by the Department of Energy and Environment during routine food safety inspections; and (e) Provide for civil penalties."
+yes = "Yes, to approve"
+no = "No, to reject"
+
+[[section]]
+id = "what"
+heading = "Initiative 86"
+
+[[section.line]]
+text = "Initiative 86 is about force-feeding birds to enlarge their livers, and foods like foie gras."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["force-feeding a bird for the purpose of enlarging the bird’s liver"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "The District's Office of Revenue Analysis knows of no bird farms in the District."
+sources = ["fiscal"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section.line]]
+text = "The District's environment department already inspects shops and restaurants under bans on foam containers and straws."
+sources = ["fiscal"]
+
+[section.line.visual]
+kind = "illustration"
+name = "inspection-clipboard"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Initiative 86 would ban force-feeding a bird to enlarge its liver, and selling the products, including foie gras."
+sources = ["guide", "formulation"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["Ban the sale or distribution"]
+
+[[section.line]]
+text = "From July 2027, violations would bring fines of 1,000 to 5,000 dollars a day."
+sources = ["fiscal", "formulation"]
+
+[[section]]
+id = "fiscal"
+heading = "What the official estimate says"
+
+[[section.line]]
+text = "The Chief Financial Officer estimates that carrying out the ban would cost 314,000 dollars over four years."
+sources = ["fiscal"]
+
+[section.line.visual]
+kind = "bars"
+title = "Yearly cost of Initiative 86, dollars"
+source = "fiscal"
+unit = "thousand"
+labels = ["FY 2026", "FY 2027", "FY 2028", "FY 2029"]
+values = [0, 109, 101, 104]
+
+[[section.line]]
+text = "The Chief Financial Officer says the money is not yet budgeted, and carrying out the ban depends on it."
+sources = ["fiscal"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No official argument for Initiative 86 was published."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "list"
+source = "guide"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No official argument against Initiative 86 was published."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "list"
+source = "guide"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves the ban."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["Yes, to approve"]
+
+[[section.line]]
+text = "A no vote rejects the ban."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["No, to reject"]

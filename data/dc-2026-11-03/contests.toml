@@ -1,0 +1,18 @@
+# Contest index for the 2026-11-03 District of Columbia general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). Titles
+# pair the designation with the initiative's short title, as printed in
+# the Board of Elections' Voter Guide. The District's own OCD id is
+# district:dc; the site files it under state:dc (ballotreels/site/config.py).
+
+[election]
+id = "dc-2026-11-03"
+state = "ocd-division/country:us/state:dc"
+title = "District of Columbia General Election, November 3, 2026"
+
+[[contest]]
+id = "dc-2026-11-03-initiative-86"
+kind = "measure"
+division = "ocd-division/country:us/state:dc"
+title = "Initiative Measure No. 86: Prohibiting Force-Feeding of Birds Act of 2026"
+number = "86"

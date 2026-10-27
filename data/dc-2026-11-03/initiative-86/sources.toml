@@ -1,0 +1,43 @@
+# Archived sources for DC Initiative Measure No. 86, 2026-11-03 general
+# election. Every id here may be cited by script.toml. `kind` must be one
+# the standard allows (docs/STANDARD.md, section 1).
+#
+# The District publishes no official arguments for or against an
+# initiative, so there is no source of kind official-argument: both side
+# sections say so, citing the Voter Guide's page, which prints none.
+# guide-section.pdf is the measure's page (page 18) cut from the Board of
+# Elections' full Voter Guide, whose URL is given.
+
+[contest]
+id = "dc-2026-11-03-initiative-86"
+election = "dc-2026-11-03"
+division = "ocd-division/country:us/state:dc"
+kind = "measure"
+title = "Initiative Measure No. 86: Prohibiting Force-Feeding of Birds Act of 2026"
+
+[[source]]
+id = "guide"
+kind = "official-title-summary"
+publisher = "District of Columbia Board of Elections, 2026 General Election Voter Guide, Ballot Initiative: Initiative Measure No. 86, page 18"
+credit = "DC Board of Elections Voter Guide"
+url = "https://www.dcboe.org/getContentAsset/5a9ceeda-114c-4171-810d-1317c9e06b0e/5ebbd046-860b-4ee1-81c8-43d0e3bc446e/_-DCBOE-Voter-Guide-Web-Smaller-File.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "formulation"
+kind = "official-text"
+publisher = "District of Columbia Board of Elections, short title, summary statement and legislative text of Initiative Measure No. 86, prepared February 3, 2026"
+credit = "DC Board of Elections, Initiative Measure No. 86 text"
+url = "https://www.dcboe.org/getmedia/05df694b-6e6a-44af-93d5-d7266bd6cd4c/Notice-of-Meeting-on-Bird-I86-formulations.pdf"
+file = "sources/formulation-and-text.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal"
+kind = "official-fiscal-analysis"
+publisher = "Government of the District of Columbia, Office of the Chief Financial Officer, Fiscal Impact Statement – Prohibiting the Force-Feeding of Birds Act of 2026, January 21, 2026"
+credit = "DC Chief Financial Officer, Fiscal Impact Statement"
+url = "https://dcboe.org/getmedia/8ed77952-835c-4a11-9fa2-2ad447d82643/Final-FIS-Initiative-Prohibiting-the-Force-Feeding-of-Birds-Act-of-2026.pdf"
+file = "sources/fiscal-impact.pdf"
+retrieved = "2026-10-27"
