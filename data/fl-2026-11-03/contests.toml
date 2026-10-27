@@ -1,0 +1,17 @@
+# Contest index for the 2026-11-03 Florida general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). Titles
+# pair the designation with the ballot title, as printed in the Division
+# of Elections' booklet of Proposed Constitutional Amendments.
+
+[election]
+id = "fl-2026-11-03"
+state = "ocd-division/country:us/state:fl"
+title = "Florida General Election, November 3, 2026"
+
+[[contest]]
+id = "fl-2026-11-03-amendment-1"
+kind = "measure"
+division = "ocd-division/country:us/state:fl"
+title = "Constitutional Amendment No. 1: Budget Stabilization Fund"
+number = "1"

@@ -1,0 +1,166 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; what the fund is for; how big it may be today; what
+# Amendment 1 would change; what the Senate's analysis says that means
+# each year, and its scale; the two sides; what a vote does.
+#
+# The card quotes the Division of Elections' booklet: the ballot title
+# and summary. The booklet prints no "a YES vote means" lines and no
+# fiscal statement, so the card has neither, and the vote lines take
+# their two meanings from the summary's "from 10% to 25%".
+#
+# Florida publishes no official arguments for or against a legislative
+# amendment, so both sides are filed = false and each says so once, in
+# the same number of words.
+#
+# Scale (dollar figures): the analysis puts 10 percent of a year's
+# general revenue collections at $4.9 billion and 25 percent at $12.2
+# billion, so the $750 million yearly transfer is 0.75 / 12.2 x 25 =
+# 1.5 percent of them, said as "about 2 percent". No line says what
+# the transfer is traded against: the analysis does not say.
+
+contest = "fl-2026-11-03-amendment-1"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "booklet"
+number = "1"
+title = "BUDGET STABILIZATION FUND.—"
+origin = "ARTICLE III, SECTION 19"
+summary = "Proposing an amendment to the State Constitution to increase the amount of funds that may be retained in the budget stabilization fund from 10% to 25% of general revenue collections, require the legislature to transfer the lesser of $750 million or the amount required to reach 25% of the general revenue collections each year unless certain conditions are met, and allow the legislature to withdraw funds for critical state needs."
+
+[[section]]
+id = "what"
+heading = "Amendment 1"
+
+[[section.line]]
+text = "Amendment 1 is about Florida's Budget Stabilization Fund, money the state sets aside."
+sources = ["booklet", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["budget stabilization fund"]
+
+[[section]]
+id = "background"
+heading = "What the fund is for"
+
+[[section.line]]
+text = "The state can draw on the fund for a revenue shortfall or an emergency."
+sources = ["analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "rainy-day"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "In 2025 the fund held 4.4 billion dollars; its ceiling is 10 percent of yearly general revenue."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Budget Stabilization Fund, 2025 dollars"
+source = "analysis"
+unit = "billion"
+labels = ["Balance, 2025", "Ceiling today", "Ceiling under Amendment 1"]
+values = [4.4, 4.9, 12.2]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Amendment 1 would raise the ceiling to 25 percent, 12.2 billion dollars."
+sources = ["booklet", "analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["from 10% to 25% of general revenue collections"]
+
+[[section.line]]
+text = "The Legislature would have to add money every year, unless certain conditions are met."
+sources = ["booklet", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["the lesser of $750 million"]
+
+[[section.line]]
+text = "The Legislature could also withdraw money for critical state needs."
+sources = ["booklet", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "take-from-fund"
+
+[[section]]
+id = "fiscal"
+heading = "What the official analysis says"
+
+[[section.line]]
+text = "The Senate's analysis says that, with revenue unchanged, the state would add 750 million dollars a year, about 2 percent of general revenue, for at least 10 years."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "save-more"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No official argument for Amendment 1 was published."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "list"
+source = "booklet"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No official argument against Amendment 1 was published."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "list"
+source = "booklet"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote raises the fund's ceiling to 25 percent."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["to 25%"]
+
+[[section.line]]
+text = "A no vote keeps the fund's ceiling at 10 percent."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["from 10%"]
