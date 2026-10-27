@@ -15,8 +15,11 @@
 # sections (STANDARD.md 6.3), as campaign arguments are left out
 # everywhere.
 #
-# The $314,000 is shown without its share of the District's budget: no
-# archived source states the budget total it would be compared against.
+# Scale (rule 6.5): the $314,000 spans fiscal years 2026 to 2029, and the
+# Chief Financial Officer's budget prints Local Funds expenditures and
+# commitments for each of those years (Table 1) but no four-year sum, so
+# it is compared year by year: the largest yearly cost, $109,000 in FY
+# 2027, is under 1 percent of that year's $11,339.5 million.
 
 contest = "dc-2026-11-03-initiative-86"
 template = "measure"
@@ -87,8 +90,8 @@ id = "fiscal"
 heading = "What the official estimate says"
 
 [[section.line]]
-text = "The Chief Financial Officer estimates that carrying out the ban would cost $314,000 over four years."
-sources = ["fiscal"]
+text = "The Chief Financial Officer estimates that carrying out the ban would cost $314,000 over four years, less than 1 percent of any year's local spending."
+sources = ["fiscal", "budget"]
 
 [section.line.visual]
 kind = "bars"
