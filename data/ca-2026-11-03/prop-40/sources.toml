@@ -1,0 +1,59 @@
+# Archived sources for California Proposition 40, 2026-11-03 general election.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+
+[contest]
+id = "ca-2026-11-03-prop-40"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca"
+kind = "measure"
+title = "Proposition 40: Imposes One-Time Tax on Certain Taxpayers. Initiative Constitutional Amendment and Statute."
+
+[[source]]
+id = "title-summary"
+kind = "official-title-summary"
+publisher = "California Attorney General, in the Official Voter Information Guide"
+url = "https://voterguide.sos.ca.gov/propositions/40/title-summary.htm"
+file = "sources/title-summary.html"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "lao-analysis"
+kind = "official-fiscal-analysis"
+publisher = "California Legislative Analyst's Office, in the Official Voter Information Guide"
+credit = "Legislative Analyst's Office, Official Voter Information Guide"
+url = "https://voterguide.sos.ca.gov/propositions/40/analysis.htm"
+file = "sources/analysis.html"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Official arguments and rebuttals for and against, as printed in the Official Voter Information Guide"
+url = "https://voterguide.sos.ca.gov/propositions/40/arguments-rebuttals.htm"
+file = "sources/arguments-rebuttals.html"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "quick-reference"
+kind = "official-title-summary"
+publisher = "California Secretary of State, Quick Reference Guide"
+url = "https://voterguide.sos.ca.gov/quick-reference-guide/40.htm"
+file = "sources/quick-reference.html"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "guide-section"
+kind = "official-title-summary"
+publisher = "California Secretary of State, Official Voter Information Guide, pages 54 to 57"
+url = "https://vig.cdn.sos.ca.gov/2026/general/pdf/prop40.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Text of Proposed Laws, Official Voter Information Guide"
+url = "https://vig.cdn.sos.ca.gov/2026/general/pdf/prop40-text-proposed-laws.pdf"
+file = "sources/text-proposed-law.pdf"
+retrieved = "2026-10-27"

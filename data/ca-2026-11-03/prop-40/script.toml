@@ -1,0 +1,156 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about (a one-time tax on billionaires); who would pay it; how
+# income is taxed today; how much, and where the money would go; the analyst's
+# view of both the revenue it raises and the income tax it may cost; one
+# point per side; what a vote does. The school-funding and spending-limit
+# exemptions and the retirement-account rules are left to the sides:
+# opponents argue from them (rule 6.3); the card shows the exemptions.
+
+contest = "ca-2026-11-03-prop-40"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "quick-reference"
+number = "40"
+title = "IMPOSES ONE-TIME TAX ON CERTAIN TAXPAYERS. INITIATIVE CONSTITUTIONAL AMENDMENT AND STATUTE."
+origin = "Put on the Ballot by Petition Signatures"
+summary = "Imposes 5% tax on certain taxpayers with assets over $1 billion; revenue primarily for health care. Exempts revenues from constitutional requirements for school funding and spending limit. Fiscal Impact: Temporary revenue increase of tens of billions of dollars spread over several years from wealth tax on billionaires. Possible ongoing decrease of less than $1 billion per year in income tax revenue from billionaires."
+yes = "A YES vote on this measure means: The state would collect a one-time tax from billionaires equal to 5 percent of their wealth."
+no = "A NO vote on this measure means: The state would not collect a one-time tax from billionaires equal to 5 percent of their wealth."
+
+[[section]]
+id = "what"
+heading = "Proposition 40"
+
+[[section.line]]
+text = "Proposition 40 is about a one-time tax on billionaires."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["wealth tax on billionaires"]
+
+[[section]]
+id = "background"
+heading = "California's billionaires"
+
+[[section.line]]
+text = "A few hundred Californians have a net worth of over 1 billion dollars."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "net-worth"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, billionaires pay state income tax, like everyone who earns money here."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "income-taxes"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Billionaires who lived in California on January 1, 2026 would owe a one-time tax of 5 percent of their net worth."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "share"
+title = "One-time tax, share of a billionaire's net worth"
+source = "lao-analysis"
+unit = "%"
+labels = ["Tax"]
+values = [5]
+
+[[section.line]]
+text = "Ninety percent of the money would go to health care."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "share"
+title = "Where the money would go"
+source = "lao-analysis"
+unit = "%"
+labels = ["Health care", "Education, food assistance and running the tax"]
+values = [90, 10]
+
+[[section]]
+id = "fiscal"
+heading = "What the state's analyst says"
+
+[[section.line]]
+text = "The Legislative Analyst's Office says the tax probably would raise tens of billions of dollars over several years."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section.line]]
+text = "The office also sees a possible yearly drop in income tax revenue, of less than 1 billion dollars."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "revenue-drop"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Proposition 40 would tax billionaires to replace federal health care cuts."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Keeps hospitals open and health care affordable", "Billionaires pay lower tax rates than working families"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Proposition 40 would drive wealthy residents away, costing the state billions."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Drives wealthy residents away, costing state revenue", "Lets the Legislature expand the tax to others"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means the state would collect the one-time tax."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["would collect"]
+
+[[section.line]]
+text = "A no vote means the state would not collect the one-time tax."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["would not collect"]
