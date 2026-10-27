@@ -458,6 +458,9 @@ def check_card(c: Contest) -> list[Failure]:
     ballot: Ballot | None = ballot_for(c.division)
     if ballot is None:
         return out  # check_ballot reports it
+    if card.fiscal is not None and ballot.fiscal_label is None:
+        fail("has a 'fiscal' quote, but the state's guide prints no "
+             "fiscal statement to quote")
     if isinstance(card.number, str) and card.number.strip() \
             and badge(ballot, c.title, card.number) is None:
         fail(f"the contest title {c.title!r} has no designation word just "

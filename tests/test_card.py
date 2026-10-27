@@ -90,6 +90,15 @@ class CardTest(ContestCopyTestCase):
             "[card] 'fiscal' does not appear verbatim in source "
             "'quick-reference' (sources/quick-reference.html)"])
 
+    def test_no_fiscal_where_the_guide_prints_none(self):
+        self.edit("script.toml", 'origin = "Put',
+                  'fiscal = "State budget reserves would be higher."\n'
+                  'origin = "Put')
+        self.edit("sources.toml", "state:ca", "state:az")
+        self.assertEqual(self.failures(), [
+            "[card] has a 'fiscal' quote, but the state's guide prints no "
+            "fiscal statement to quote"])
+
     def test_badge_needs_a_designation_in_the_title(self):
         self.edit("sources.toml",
                   'title = "Proposition 2: Increases',

@@ -76,6 +76,15 @@ class BallotTest(unittest.TestCase):
         self.assertEqual(badge(id_, "House Joint Resolution 4: X", "4"),
                          "RESOLUTION")
 
+    def test_arizona_uses_its_guides_words(self):
+        az = BALLOTS["az"]
+        self.assertEqual((az.guide, az.fiscal_label, az.choices,
+                          az.card_source_kind),
+                         ("Arizona's General Election Guide", None,
+                          ("Yes", "No"), "official-title-summary"))
+        self.assertEqual(badge(az, "Proposition 317: X", "317"),
+                         "PROPOSITION")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):

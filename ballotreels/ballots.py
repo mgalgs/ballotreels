@@ -21,7 +21,10 @@ from dataclasses import dataclass, field
 @dataclass(frozen=True)
 class Ballot:
     guide: str               # the official publication the card is a page of
-    fiscal_label: str        # the heading of its fiscal statement, as printed
+    # the heading of its fiscal statement, as printed; None where the
+    # guide prints none (Arizona's legislative referrals have no fiscal
+    # summary), so a card there has no `fiscal` quote
+    fiscal_label: str | None
     choices: tuple[str, str]  # the ballot's words for the yes and no sides
     card_source_kind: str    # the source kind a `[card]` quotes
     # designation words the guide abbreviates on its badge, as printed
@@ -65,6 +68,10 @@ BALLOTS: dict[str, Ballot] = {
                  card_source_kind="official-title-summary"),
     "id": Ballot(guide="Idaho Voter Pamphlet",
                  fiscal_label="FISCAL IMPACT STATEMENT",
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
+    "az": Ballot(guide="Arizona's General Election Guide",
+                 fiscal_label=None,
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
 }

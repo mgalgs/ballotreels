@@ -1507,7 +1507,8 @@ PAGE_ZOOM_MAX = 1.0  # no zoom: the page is readable whole, and any zoom crops i
 BADGE = badge(BALLOT, CONTEST.title, CARD.number) if CARD is not None else None
 # the fiscal statement's heading, as the guide prints it: bold where the
 # summary quotes it (California's "Fiscal Impact:"), or set over the card's
-# own `fiscal` field (Utah's "Fiscal Effects")
+# own `fiscal` field (Utah's "Fiscal Effects"); None where the guide prints
+# no fiscal statement (Arizona)
 FISCAL_LABEL = BALLOT.fiscal_label
 # every term the script clicks
 PAGE_FOCI = tuple(dict.fromkeys(ln.visual.focus for sec in CONTEST.script.sections for ln in sec.lines
@@ -1658,7 +1659,7 @@ def _layout_page(card, box, s, arrangement, spread=0):
     y += max(text.line_height(F['head']), origin.height) + gap * 0.15
     parts['shapes'].append(('rule', (x, y, colw)))
     y += gap * 0.35
-    k = card.summary.find(FISCAL_LABEL)
+    k = card.summary.find(FISCAL_LABEL) if FISCAL_LABEL else -1
     bold = [(k, k + len(FISCAL_LABEL))] if k >= 0 else []
     summary = Flow('summary', card.summary, F['body'], bold, F['bold'], x=x, y=y, width=colw)
     parts['flows'].append(summary)
