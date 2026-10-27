@@ -94,7 +94,7 @@ class SidesGroupTest(unittest.TestCase):
             self.assertEqual(len(srcs), 1, fmt)
             below = max(mk.box.bottom for mk in marks if mk.name == "chart")
             self.assertGreater(srcs[0].y, below)
-            _inside(self, srcs[0], L["stage"])
+            self.assertGreater(srcs[0].y, plan["cards"][1].bottom)
 
     def test_each_its_own_source_in_the_same_place_when_they_differ(self):
         for fmt in ("9x16", "16x9"):
@@ -125,26 +125,66 @@ class SidesGroupTest(unittest.TestCase):
             self.assertAlmostEqual(a.w, b.w, places=3)
             labels = [mk.box for mk in marks if mk.name == "heading"][1:]
             self.assertAlmostEqual(labels[0].y - box_a.y, labels[1].y - box_b.y, places=3)
+            top, bottom = m.sides_room(L)
             for box in plan["cards"]:
-                _inside(self, box, L["stage"])
+                _inside(self, box, m.Box(0, top, L["W"], bottom - top))
             if fmt == "9x16":
                 self.assertGreater(box_b.y, box_a.bottom)
             else:
                 self.assertAlmostEqual(box_a.y, box_b.y, places=3)  # top-aligned
                 self.assertGreater(box_b.x, box_a.right)
 
-    def test_rows_pack_at_half_a_line_and_take_at_most_two_lines(self):
+    def test_rows_take_at_most_two_lines_at_a_gap_of_half_a_line_or_more(self):
         for fmt in ("9x16", "16x9"):
             _, plan, marks = self._marks(fmt)
             rows = plan["rows"]
             lh = m.text.line_height(rows["font"])
-            self.assertEqual(rows["gap"], round(lh * 0.5))
+            self.assertGreaterEqual(rows["gap"], round(lh * 0.5))
             self.assertAlmostEqual(rows["rows_h"], sum(rows["heights"]) + rows["gap"], places=3)
             self.assertTrue(all(len(b) <= m.LIST_MAX_LINES for w in rows["wrapped"] for b in w))
-            # short items: one line each, however much room is left
             for mk in marks:
                 if mk.name == "chart":
-                    self.assertAlmostEqual(mk.box.h, 2 * lh + rows["gap"], places=3)
+                    self.assertAlmostEqual(mk.box.h, rows["rows_h"], places=3)
+
+    def test_cards_span_the_room_between_heading_and_caption(self):
+        for fmt in ("9x16", "16x9"):
+            for kw in ({}, dict(source_b=OTHER), dict(with_list=False)):
+                L, plan, marks = self._marks(fmt, **kw)
+                heading = marks[0].box
+                caption = L["scrap"]
+                gap = m.EDGE_GAP * L["u"]
+                ca, cb = plan["cards"]
+                self.assertAlmostEqual(ca.y - heading.bottom, gap, places=3, msg=(fmt, kw))
+                last = plan["source"].bottom if plan["source"] else cb.bottom
+                self.assertAlmostEqual(caption.y - last, gap, places=3, msg=(fmt, kw))
+                if fmt == "9x16":
+                    self.assertAlmostEqual(cb.y - ca.bottom, m.CARD_GAP * L["u"], places=3)
+                else:
+                    self.assertAlmostEqual(ca.y, cb.y, places=3)
+                    self.assertAlmostEqual(ca.h, cb.h, places=3)
+
+    def test_spare_height_goes_evenly_to_the_row_gaps_and_padding(self):
+        # no band of empty paper in one place: what the text leaves is
+        # added alike above and below each block and between its rows
+        for fmt in ("9x16", "16x9"):
+            L, plan, _ = self._marks(fmt)
+            rows = plan["rows"]
+            least_gap = round(m.text.line_height(rows["font"]) * 0.5)
+            extra_gap = rows["gap"] - least_gap
+            for card, block in zip(plan["cards"], plan["blocks"]):
+                self.assertAlmostEqual(block.y - card.y - m.CARD_PAD * L["u"], extra_gap, places=3)
+                self.assertAlmostEqual(card.bottom - block.bottom - m.CARD_PAD * L["u"], extra_gap,
+                                       places=3)
+            # and the block's contents end at its own bottom
+            block = plan["blocks"][0]
+            used = plan["label_h"] + m.LABEL_GAP * L["u"] + rows["rows_h"]
+            self.assertAlmostEqual(used, block.h, places=3)
+
+    def test_short_items_grow_past_the_page_lists_type(self):
+        for fmt in ("9x16", "16x9"):
+            L, plan, _ = self._marks(fmt)
+            self.assertGreater(plan["rows"]["font"].size, L["timeline_font"].size * 1.2)
+            self.assertGreater(plan["label_font"].size, plan["rows"]["font"].size)
 
     def test_cards_are_the_same_size_and_hold_their_blocks(self):
         for fmt in ("9x16", "16x9"):

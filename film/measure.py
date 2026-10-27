@@ -710,23 +710,22 @@ def check_mark_pts(cx, cy, s):
     return [(cx - s * 0.62, cy - s * 0.04), (cx - s * 0.14, cy + s * 0.46), (cx + s * 0.7, cy - s * 0.52)]
 
 
-LIST_ITEM_SCALE = 1.2  # a list's items may grow to this much of timeline_font, room allowing
-LIST_MAX_LINES = 2     # ...but no item may take more lines than this
+LIST_MAX_LINES = 2  # no item on the sides slide may take more lines than this
 
 
-def list_rows(every, L, width, fits):
+def list_rows(every, L, width, fits, size):
     """The rows of one or more checklists laid out alike (rule 7.4): the
-    largest item font (from LIST_ITEM_SCALE x timeline_font down) at which
-    every item takes at most LIST_MAX_LINES lines and `fits(rows_h, gap)`.
-    Rows pack at a fixed gap, half a line of the item font, never
-    stretched to fill room. Returns a dict: the font, each row's height
-    (the tallest of that row across `every`), the gap, the rows' total
-    height, and the check column's and text's offsets from the left
-    edge (the column centred in `width` on the widest line of all)."""
+    largest item font (from `size` down) at which every item takes at most
+    LIST_MAX_LINES lines and `fits(rows_h, gap, font)`. Rows are packed at
+    their least gap here, half a line of the item font; the caller may
+    widen it. Returns a dict: the font, each row's height (the tallest of
+    that row across `every`), the gap, the rows' total height, and the
+    check column's and text's offsets from the left edge (the column
+    centred in `width` on the widest line of all)."""
     u = L['u']
     check = 40 * u
     tw = width - check - 30 * u
-    itf = font(L['timeline_font'].size * LIST_ITEM_SCALE, family=PRINT)
+    itf = font(size, family=PRINT)
     n = max((len(its) for its in every), default=0)
     while True:
         wrapped = [[text.wrap(it, itf, tw, balance=True) for it in its] for its in every]
@@ -734,9 +733,9 @@ def list_rows(every, L, width, fits):
         gap = round(text.line_height(itf) * 0.5)
         rows_h = sum(heights) + gap * max(0, n - 1)
         tall = max((len(b) for w in wrapped for b in w), default=0)
-        if (tall <= LIST_MAX_LINES and fits(rows_h, gap)) or itf.size < 26:
+        if (tall <= LIST_MAX_LINES and fits(rows_h, gap, itf)) or itf.size < 26:
             break
-        itf = font(itf.size * 0.94, family=PRINT)
+        itf = font(itf.size * 0.97, family=PRINT)
     widest = max((text.measure(ln, itf) for w in wrapped for b in w for ln in b), default=0)
     shift = max(0, (width - check - 30 * u - widest) / 2)
     return dict(font=itf, heights=heights, gap=gap, rows_h=rows_h, wrapped=wrapped,
@@ -856,16 +855,28 @@ def list_visual(chart, lines, L, f0, f1, stage=None, peers=()):
 # in the same place in each. Each block sits in its own pencilled card,
 # both the same size.
 SIDES_HEADING = 'What each side says'
-CARD_GAP = 48   # px between the two cards
+EDGE_GAP = 32   # px from the heading's underline to the first card, and from the source line to the caption
+CARD_GAP = 40   # px between the two cards
 LABEL_GAP = 22  # px between a block's label and its rows
-SOURCE_GAP = 34  # px above a source line
-CARD_PAD = 24   # px inside a card, above and below its block (half as much again at its sides)
+SOURCE_GAP = 30  # px above a source line
+CARD_PAD = 24   # px inside a card, at least, above and below its block (half as much again at its sides)
+ITEM_MAX = 0.7    # the items' font grows to at most this much of the page heading's...
+LABEL_SCALE = 1.25  # ...and the labels' to this much of the items', room allowing
+LABEL_MAX = 0.8   # but never past this much of the page heading's
 
 
-def block_label_font(secs, L, width):
-    """The block labels' font, one for both: the largest at which neither
-    takes more than two lines across `width`."""
-    fnt = font(L['heading_font'].size * 0.6, 700)
+def sides_room(L):
+    """The top and bottom of the room the sides slide fills: from just
+    under the fixed heading's underline to just above the caption."""
+    _, _, h_box = heading_text_items(SIDES_HEADING, L, 0)
+    gap = EDGE_GAP * L['u']
+    return h_box.bottom + gap, L['scrap'].y - gap
+
+
+def block_label_font(secs, L, width, size):
+    """The block labels' font, one for both: the largest, from `size`
+    down, at which neither takes more than two lines across `width`."""
+    fnt = font(size, 700)
     while True:
         n = max(len(text.wrap(s.section.heading, fnt, width, balance=True)) for s in secs)
         if n <= 2 or fnt.size < 24:
@@ -895,8 +906,19 @@ def sides_plan(side_a, side_b, L, fmt):
     """Where everything on the sides slide goes, both blocks fitted
     together: a dict of the label font and height, the rows (list_rows),
     each card's box, each block's box inside its card (the label at its
-    top, the rows under it), and the shared source's box, if any."""
-    st, u = L['stage'], L['u']
+    top, the rows under it), and the shared source's box, if any.
+
+    The two cards fill the room between the heading and the caption
+    (sides_room), the same size, CARD_GAP apart; the shared source line,
+    if any, ends at the room's bottom. Their height goes to the text
+    first: the largest item font (the labels' growing with it) at which
+    everything fits with the rows at their least gap and the cards at
+    their least padding; what height is left is shared out evenly
+    between the gaps between rows and the cards' padding above and below,
+    so none of it collects in one place."""
+    u = L['u']
+    st = L['stage']
+    top, bottom = sides_room(L)
     secs = (side_a, side_b)
     runs = [side_list(s) for s in secs]
     charts = [r[1] for r in runs if r]
@@ -907,35 +929,44 @@ def sides_plan(side_a, side_b, L, fmt):
     gap = CARD_GAP * u
     outer_w = st.w if stacked else (st.w - gap) / 2
     bw = outer_w - 2 * side_pad
-    label_f, label_h = block_label_font(secs, L, bw)
     label_gap = LABEL_GAP * u
     src_gap = SOURCE_GAP * u
     src_h = max((source_lines(c, L, st.w if shared else bw)[1] for c in charts), default=0)
     # what goes under the rows in each block, and under both blocks
     own_src = src_gap + src_h if charts and not shared else 0
     foot = src_gap + src_h if shared else 0
+    room = bottom - top - foot
+    card_h = (room - gap) / 2 if stacked else room
+    heading = L['heading_font'].size
 
-    def block_h(rows_h):
-        return label_h + (label_gap + rows_h + own_src if charts else 0)
+    def label_for(itf):
+        return block_label_font(secs, L, bw, min(itf.size * LABEL_SCALE, heading * LABEL_MAX))
 
-    def fits(rows_h, row_gap):
-        card_h = block_h(rows_h) + 2 * pad
-        return (2 * card_h + max(row_gap, gap) if stacked else card_h) + foot <= st.h
+    def block_h(rows_h, itf):
+        return label_for(itf)[1] + (label_gap + rows_h + own_src if charts else 0)
 
-    rows = list_rows([c.visual.items for c in charts], L, bw, fits)
+    def fits(rows_h, row_gap, itf):
+        return block_h(rows_h, itf) + 2 * pad <= card_h
+
+    rows = list_rows([c.visual.items for c in charts], L, bw, fits, heading * ITEM_MAX)
     rows['width'] = bw - rows['tx']
-    card_h = block_h(rows['rows_h']) + 2 * pad
+    label_f, label_h = label_for(rows['font'])
+    # the height left over, shared out between the padding above and
+    # below each block and the gaps between its rows
+    n = len(rows['heights'])
+    spare = max(0, card_h - 2 * pad - block_h(rows['rows_h'], rows['font']))
+    share = spare / (n + 1) if charts else spare / 2
+    if charts and n > 1:
+        rows['gap'] += share
+        rows['rows_h'] += share * (n - 1)
+    pad_y = pad + share
     if stacked:
-        between = max(rows['gap'], gap)
-        y0 = st.y + (st.h - 2 * card_h - between - foot) / 2
-        cards = [Box(st.x, y0, st.w, card_h), Box(st.x, y0 + card_h + between, st.w, card_h)]
+        cards = [Box(st.x, top, st.w, card_h), Box(st.x, top + card_h + gap, st.w, card_h)]
     else:
-        y0 = st.y + (st.h - card_h - foot) / 2
-        cards = [Box(st.x, y0, outer_w, card_h), Box(st.x + outer_w + gap, y0, outer_w, card_h)]
-    foot_y = cards[1].bottom + src_gap
-    blocks = [Box(c.x + side_pad, c.y + pad, c.w - 2 * side_pad, c.h - 2 * pad) for c in cards]
+        cards = [Box(st.x, top, outer_w, card_h), Box(st.x + outer_w + gap, top, outer_w, card_h)]
+    blocks = [Box(c.x + side_pad, c.y + pad_y, c.w - 2 * side_pad, c.h - 2 * pad_y) for c in cards]
     return dict(label_font=label_f, label_h=label_h, rows=rows, blocks=blocks, cards=cards,
-                source=Box(st.x, foot_y, st.w, src_h) if shared else None)
+                source=Box(st.x, bottom - src_h, st.w, src_h) if shared else None)
 
 
 def side_block(sec, L, box, label_f0, plan):
