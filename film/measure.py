@@ -1453,7 +1453,7 @@ SWEEP = 15         # frames one occurrence of a phrase takes to sweep on (0.5 s)
 # stay dark and crisp. Its alpha leaves the band clearly darker than the paper
 # in greyscale too, so it reads without colour.
 HIGHLIGHTER = (255, 221, 48)
-BAND_ALPHA = 0.62
+BAND_ALPHA = 0.75
 FAINT = 0.3        # a band, as a page comes back with its clicked terms
 
 
