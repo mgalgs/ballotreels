@@ -1,0 +1,147 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what
+# personal property is; what is taxed already and what is not; the two
+# changes (new property taxes, retroactive taxes); the analyst's effect
+# and its cost in revenue; one point per side; what a vote does. Prop 40
+# appears only in the opponents' section (rule 6.3).
+
+contest = "ca-2026-11-03-prop-42"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "quick-reference"
+number = "42"
+title = "PROHIBITS NEW STATE PERSONAL PROPERTY TAXES AND CERTAIN RETROACTIVE STATE TAXES. INITIATIVE CONSTITUTIONAL AMENDMENT."
+origin = "Put on the Ballot by Petition Signatures"
+summary = "Prohibits any new state tax (1) imposed on the ownership of personal property (all things people own other than real estate), or (2) that applies retroactively based on taxpayer’s past activities. Nullifies taxes enacted after January 1, 2026 that conflict with this measure. Fiscal Impact: Possibility that tax revenues will not go up as much in the future."
+yes = "A YES vote on this measure means: The state could not establish new taxes on the ownership of financial assets or other personal property."
+no = "A NO vote on this measure means: The state would continue to have the option to establish new taxes on the ownership of financial assets or other personal property."
+
+[[section]]
+id = "what"
+heading = "Proposition 42"
+
+[[section.line]]
+text = "Proposition 42 is about taxes on personal property: everything people own other than real estate."
+sources = ["quick-reference", "lao-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["ownership of personal property", "all things people own other than real estate"]
+
+[[section]]
+id = "background"
+heading = "Taxes on what people own"
+
+[[section.line]]
+text = "Owning some personal property is already taxed, like cars through the yearly vehicle license fee."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "personal-property"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, there is no tax for simply owning financial assets, like stocks and investment accounts."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "savings-investments"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Proposition 42 would not allow new taxes on owning financial assets or other personal property."
+sources = ["lao-analysis", "quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["Prohibits any new state tax"]
+
+[[section.line]]
+text = "Proposition 42 would also limit retroactive taxes, on things that happened in the past."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "retroactive-tax"
+
+[[section]]
+id = "fiscal"
+heading = "What the state's analyst says"
+
+[[section.line]]
+text = "The Legislative Analyst's Office says Proposition 42 could make raising taxes somewhat harder for the state."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section.line]]
+text = "The office says future tax revenues could be lower, by an unclear amount."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "revenue-drop"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Proposition 42 protects retirement and savings from being taxed a second time."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Stops double taxation of retirement and savings", "Prohibits retroactive taxes on money already earned"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Proposition 42 is designed specifically to undo the Billionaire Tax, Proposition 40."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Designed to undo the Billionaire Tax, Proposition 40", "Billionaires should pay to keep hospitals open"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means the state could not establish new personal property taxes."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["could not establish new taxes"]
+
+[[section.line]]
+text = "A no vote means the state would continue to have the option to establish them."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["would continue to have the option"]
