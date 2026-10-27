@@ -1,0 +1,156 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what
+# it is about; how the higher rates came about (2012, 2016); when they
+# end today; what the measure would change; the analyst's revenue range
+# and where the money would go; one point per side; what a vote does.
+#
+# Contested framings stay with their sides (rule 6.3): "temporary" is the
+# opponents', "the top 2 percent", "15 years" and "not a new tax" the
+# supporters'. The neutral sections say only when the rates began, were
+# extended and are set to end; the vote lines quote the card's own words.
+
+contest = "ca-2026-11-03-prop-3"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "quick-reference"
+number = "3"
+title = "PROVIDES PERMANENT FUNDING FOR SCHOOLS AND HEALTH CARE BY EXTENDING EXISTING TAX ON HIGH INCOMES. INITIATIVE CONSTITUTIONAL AMENDMENT."
+origin = "Put on the Ballot by Petition Signatures"
+summary = "Makes permanent existing voter-approved tax rates for individuals earning over $371,000 (adjusted annually for inflation). Allocates tax revenues to public education. Fiscal Impact: Maintains $5 billion to $15 billion of annual state income tax revenue by making a temporary tax increase on high-income earners permanent instead of letting it expire in 2031."
+yes = "A YES vote on this measure means: An income tax increase on high-income earners in place since 2012 would become permanent instead of expiring in 2031."
+no = "A NO vote on this measure means: An income tax increase on high-income earners in place since 2012 would expire in 2031."
+
+[[section]]
+id = "what"
+heading = "Proposition 3"
+
+[[section.line]]
+text = "Proposition 3 is about income tax rates for people earning over 371,000 dollars a year."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["individuals earning over $371,000"]
+
+[[section]]
+id = "background"
+heading = "How the higher rates began"
+
+[[section.line]]
+text = "In 2012, voters approved higher income tax rates on high incomes."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "timeline"
+source = "lao-analysis"
+labels = ["2012", "2016"]
+items = ["Voters approve higher rates on high incomes", "Voters extend the higher rates"]
+
+[[section.line]]
+text = "In 2016, voters extended those higher rates."
+sources = ["lao-analysis"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the higher rates are set to end in 2031."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Proposition 3 would make the higher rates permanent."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "income-taxes"
+
+[[section]]
+id = "fiscal"
+heading = "What the state's analyst says"
+
+[[section.line]]
+text = "The Legislative Analyst's Office says the higher rates would bring in 5 to 15 billion dollars a year, depending on the stock market."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Yearly revenue from Proposition 3, dollars"
+source = "lao-analysis"
+unit = "billion"
+labels = ["Weak year", "Strong year"]
+values = [5, 15]
+
+[[section.line]]
+text = "The Office says about 40 percent would go to schools and community colleges, and the rest to other state programs."
+sources = ["lao-analysis"]
+
+[section.line.visual]
+kind = "share"
+title = "Rough share for schools and community colleges"
+source = "lao-analysis"
+unit = "%"
+labels = ["Schools and community colleges"]
+values = [40]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Proposition 3 raises no one's taxes and prevents cuts to schools and health care."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Keeps today's rates, raising no one's taxes", "Prevents cuts to schools and health care"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Proposition 3 makes temporary taxes permanent, and the state should fix its spending first."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Turns temporary income taxes into permanent ones", "The state's problem is spending, not revenue"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means the tax increase would become permanent."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["would become permanent"]
+
+[[section.line]]
+text = "A no vote means the tax increase would expire in 2031."
+sources = ["quick-reference"]
+
+[section.line.visual]
+kind = "page"
+source = "quick-reference"
+highlight = ["would expire in 2031"]
