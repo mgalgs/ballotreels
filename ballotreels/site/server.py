@@ -29,7 +29,7 @@ from ..geo.geocoder import (AddressNotCovered, AddressNotFound, GeocoderError,
 from ..geo.lookup import GeoData
 from ..geo.states import STATE_NAMES, chambers, state_for_zip
 from ..index import (ContestIndex, IndexEntry, ballot_order, key_for,
-                     level_of, load_index)
+                     level_of, load_index, voters_line)
 from ..queue import JobQueue
 from ..related import load_related, related_to
 from ..standard import Standard, load_standard
@@ -515,7 +515,15 @@ def _contest_summary(entry, state: StateElection,
         "status": status,
         "video_url": (video.urls.get("video") if video else None),
         "job": job,
+        **_voters(entry),
     }
+
+
+def _voters(entry: IndexEntry) -> dict[str, str]:
+    """A contest voted on in only part of its county says so: "Only
+    voters in the Helix Water District vote on this." (ballotreels.index.
+    voters_problem); any other has no `voters`."""
+    return {"voters": voters_line(entry.voters)} if entry.voters else {}
 
 
 def _crash_course(state: StateElection, deps: Deps) -> dict[str, Any] | None:
@@ -602,6 +610,7 @@ def _contest_detail(entry, state: StateElection,
         # only a choice question says so: a yes/no measure's detail is
         # as it always was
         **({"choice": True} if entry.choice else {}),
+        **_voters(entry),
     }
 
 

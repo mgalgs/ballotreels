@@ -223,6 +223,10 @@ class Contest:
     title: str
     sources: tuple[Source, ...]
     script: Script
+    # who votes on it, where that is less than its whole division (a
+    # special district's measure under its county): "the Helix Water
+    # District" (docs/SCRIPT-FORMAT.md, ballotreels.index.voters_problem)
+    voters: Any = None
 
     def source(self, source_id: str) -> Source | None:
         for s in self.sources:
@@ -386,4 +390,5 @@ def load_contest(path: str | Path) -> Contest:
         title=_get(meta, "title", str, where),
         sources=sources,
         script=_load_script(path / "script.toml"),
+        voters=meta.get("voters"),
     )

@@ -904,11 +904,20 @@ function contestHeading(contest) {
           ...localNotes(contest)];
 }
 
-// A ballot's local contest that the zip alone can't place on it: one of
-// a city or school district covering only part of the zip.
+// A local contest's notes: who votes on it, where that is less than its
+// whole county (a special district's: "Only voters in the Helix Water
+// District vote on this."); and on a ballot, one the zip alone can't
+// place on it, of a city or school district covering only part of it.
 function localNotes(contest) {
-  return contest.maybe ? [el("p", { class: "local-note",
-    text: "May be on your ballot, depending on your address." })] : [];
+  const notes = [];
+  if (contest.voters) {
+    notes.push(el("p", { class: "local-note voters", text: contest.voters }));
+  }
+  if (contest.maybe) {
+    notes.push(el("p", { class: "local-note",
+      text: "May be on your ballot, depending on your address." }));
+  }
+  return notes;
 }
 
 // The ballot list does not carry poster URLs; a local video's poster
@@ -1527,6 +1536,7 @@ async function renderContest(apiPath) {
       back,
       eyebrow ? el("p", { class: "contest-eyebrow", text: eyebrow }) : null,
       heading("h1", title),
+      ...localNotes(body),
     ]),
   ]);
 

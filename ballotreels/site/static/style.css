@@ -811,6 +811,11 @@ a.contest:hover {
   color: var(--ink-soft);
 }
 
+.local-note.voters {
+  font-weight: 700;
+  color: var(--ink);
+}
+
 .wait-note {
   margin: 0 0 10px;
   font-size: 1rem;

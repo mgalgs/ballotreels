@@ -234,6 +234,7 @@ class CountyIndexTest(unittest.TestCase):
              "ca-2026-11-03-sd-county-measure-a",
              "ca-2026-11-03-sd-county-measure-b",
              "ca-2026-11-03-imperial-county-measure-c",
+             "ca-2026-11-03-helix-water-measure-h",
              "ca-2026-11-03-san-diego-city-measure-d",
              "ca-2026-11-03-el-cajon-city-measure-e",
              "ca-2026-11-03-sd-unified-measure-f",
@@ -260,7 +261,8 @@ class CountyEndToEndTest(LocalServerTestCase):
         doc = self.ballot_for_zip("92101")
         self.assertEqual(_ids(doc["levels"][1:2]),
                          ["ca-2026-11-03-sd-county-measure-a",
-                          "ca-2026-11-03-sd-county-measure-b"])
+                          "ca-2026-11-03-sd-county-measure-b",
+                          "ca-2026-11-03-helix-water-measure-h"])
         doc = self.ballot_for_zip("92250")
         self.assertEqual(_ids(doc["levels"][1:]),
                          ["ca-2026-11-03-imperial-county-measure-c"])
@@ -333,3 +335,155 @@ class LocalBallotTest(LocalServerTestCase):
         self.assertIn('params.getAll("p")', app)
         self.assertIn("ballotParams(body.kinds, body.partial)", app)
         self.assertIn("depending on your address", app)
+
+
+class VotersRuleTest(unittest.TestCase):
+    def problem(self, slug, voters=None, division=SAN_DIEGO, kind="measure"):
+        from ballotreels.index import voters_problem
+        return voters_problem(kind, division, slug, voters)
+
+    def test_the_county_s_own_measure_needs_none(self):
+        self.assertIsNone(self.problem("sd-county-measure-a"))
+        self.assertIsNone(self.problem("san-diego-county-measure-b"))
+
+    def test_a_special_district_s_measure_needs_one(self):
+        self.assertIn("'voters'", self.problem("helix-water-measure-c"))
+        self.assertIn("'voters'",
+                      self.problem("orange-county-water-measure-x"))
+        self.assertIsNone(self.problem("helix-water-measure-c",
+                                       "the Helix Water District"))
+
+    def test_only_under_a_county(self):
+        self.assertIsNone(self.problem("san-diego-city-measure-d",
+                                       division=SD_CITY))
+        self.assertIn("not a county", self.problem(
+            "san-diego-city-measure-d", "the City of San Diego",
+            division=SD_CITY))
+        self.assertIsNone(self.problem("supervisor-3", kind="race"))
+
+    def test_said_inside_a_sentence(self):
+        self.assertIn("period", self.problem(
+            "helix-water-measure-c", "the Helix Water District."))
+        self.assertIn("non-empty", self.problem("helix-water-measure-c", ""))
+
+    def test_the_index_refuses_a_measure_without_one(self):
+        import shutil
+        from ballotreels.index import ContestIndexError
+        with tempfile.TemporaryDirectory() as tmp:
+            election = Path(tmp) / "ca-2026-11-03"
+            shutil.copytree(ELECTION_DIR, election)
+            sources = election / "helix-water-measure-h" / "sources.toml"
+            sources.write_text(sources.read_text().replace(
+                'voters = "the Helix Water District"\n', ""))
+            with self.assertRaises(ContestIndexError) as cm:
+                load_index(election)
+            self.assertIn("helix-water-measure-h", str(cm.exception))
+        self.assertEqual(
+            load_index(ELECTION_DIR).get(
+                "ca-2026-11-03-helix-water-measure-h").voters,
+            "the Helix Water District")
+
+
+class VotersCheckTest(unittest.TestCase):
+    """The check, and the film's card, on a copy of the frozen Prop 2
+    given a card (as tests/test_card.py's) and moved under a county."""
+
+    def setUp(self):
+        import shutil
+
+        from .helpers import PROP_2
+        from .test_card import CARD, VERSION
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        self.dir = Path(tmp.name) / "helix-water-measure-c"
+        shutil.copytree(PROP_2, self.dir)
+        self.script = self.dir / "script.toml"
+        text = self.script.read_text(encoding="utf-8")
+        self.assertEqual(text.count(VERSION), 1)
+        self.script.write_text(text.replace(VERSION, VERSION + CARD),
+                               encoding="utf-8")
+        self.card = CARD
+        self.sources = self.dir / "sources.toml"
+        text = self.sources.read_text(encoding="utf-8")
+        for old, new in (
+                ('id = "ca-2026-11-03-prop-2"',
+                 'id = "ca-2026-11-03-helix-water-measure-c"'),
+                (f'division = "{STATE}"', f'division = "{SAN_DIEGO}"')):
+            self.assertEqual(text.count(old), 1, old)
+            text = text.replace(old, new)
+        self.sources.write_text(text, encoding="utf-8")
+
+    def failures(self):
+        from ballotreels import load_contest
+        from ballotreels.checks import check_voters
+        return [str(f) for f in check_voters(load_contest(self.dir))]
+
+    def set_voters(self, voters):
+        text = self.sources.read_text(encoding="utf-8")
+        self.sources.write_text(text.replace(
+            f'division = "{SAN_DIEGO}"\n',
+            f'division = "{SAN_DIEGO}"\nvoters = "{voters}"\n'),
+            encoding="utf-8")
+
+    def test_missing(self):
+        self.assertEqual(len(self.failures()), 1)
+        self.assertIn("[voters]", self.failures()[0])
+
+    def test_present(self):
+        self.set_voters("the Helix Water District")
+        self.assertEqual(self.failures(), [])
+
+    def test_needs_a_card(self):
+        self.set_voters("the Helix Water District")
+        text = self.script.read_text(encoding="utf-8")
+        self.script.write_text(text.replace(self.card, ""), encoding="utf-8")
+        self.assertEqual(len(self.failures()), 1)
+        self.assertIn("no [card]", self.failures()[0])
+
+    def test_film_card_says_who_votes(self):
+        from .choice_fixture import load_film
+        self.set_voters("the Helix Water District")
+        # Prop 2's own id again: the id picks which side plays first
+        # (STANDARD.md rule 2.4), and its narration is in Prop 2's order.
+        text = self.sources.read_text(encoding="utf-8")
+        self.sources.write_text(text.replace(
+            "helix-water-measure-c", "prop-2"), encoding="utf-8")
+        film = load_film(self.dir)
+        line = "Only voters in the Helix Water District vote on this."
+        self.assertEqual(film.VOTERS, line)
+        for fmt, L in film.LAYOUTS.items():
+            paper_box, parts = film.page_plan(fmt)
+            note, (x, y, w) = parts["voters"]
+            self.assertEqual(" ".join(r[0] for r in note.runs), line)
+            title = next(f for f in parts["flows"] if f.field == "title")
+            self.assertGreater(title.y, y, fmt)
+            self.assertLessEqual(note.y + note.height, y, fmt)
+            _, marks = film.page_static(paper_box, parts, L)
+            self.assertEqual(marks[0][1], line, fmt)
+            # still on the paper
+            self.assertLessEqual(max(f.y + f.height for f in parts["flows"]),
+                                 paper_box.bottom, fmt)
+
+
+class VotersOnTheSiteTest(LocalServerTestCase):
+    LINE = "Only voters in the Helix Water District vote on this."
+
+    def test_ballot_and_contest_page(self):
+        doc = self.ballot_for_zip("92101")
+        county = next(lvl for lvl in doc["levels"]
+                      if lvl["level"] == "county")
+        voters = {c["id"]: c.get("voters") for c in county["contests"]}
+        self.assertEqual(voters, {
+            "ca-2026-11-03-sd-county-measure-a": None,
+            "ca-2026-11-03-sd-county-measure-b": None,
+            "ca-2026-11-03-helix-water-measure-h": self.LINE})
+        doc = self.get_json("/api/contest/ca/2026/helix-water-measure-h")
+        self.assertEqual(doc["voters"], self.LINE)
+        doc = self.get_json("/api/contest/ca/2026/sd-county-measure-a")
+        self.assertNotIn("voters", doc)
+
+    def test_app_shows_it(self):
+        app = (REPO / "ballotreels" / "site" / "static" /
+               "app.js").read_text(encoding="utf-8")
+        self.assertIn("contest.voters", app)
+        self.assertIn("...localNotes(body)", app)
