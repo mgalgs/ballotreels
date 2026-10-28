@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 61.2,
+  "seconds": 65.61,
   "phrases": [
     {
       "text": "House Joint Resolution 6 is about an official language for Idaho.",
@@ -29,29 +29,29 @@
       "end": 26.86
     },
     {
-      "text": "The fiscal note estimates up to $300,000 for the voter's pamphlet, a cost that occurs anyway if other measures qualify.",
+      "text": "The fiscal note estimates up to $300,000 for the voter's pamphlet, less than 1 percent of this year's General Fund budget, a cost that occurs anyway if other measures qualify.",
       "start": 27.52,
-      "end": 35.16
+      "end": 39.57
     },
     {
       "text": "Opponents say state law already makes English official, and the amendment might not let schools teach foreign languages.",
-      "start": 35.82,
-      "end": 43.4
+      "start": 40.23,
+      "end": 47.81
     },
     {
       "text": "Supporters say the amendment could encourage non-English speakers to learn English, and could promote unity and shared identity.",
-      "start": 44.06,
-      "end": 51.54
+      "start": 48.47,
+      "end": 55.95
     },
     {
       "text": "A yes vote makes English Idaho's official state language.",
-      "start": 52.2,
-      "end": 56.18
+      "start": 56.61,
+      "end": 60.59
     },
     {
       "text": "A no vote leaves the Constitution naming no official state language.",
-      "start": 56.84,
-      "end": 61.17
+      "start": 61.25,
+      "end": 65.58
     }
   ],
   "inputs": {
@@ -61,7 +61,7 @@
       "The amendment would make English the official state language.",
       "Government proceedings, from city council meetings to jury trials, and public school teaching would be in English.",
       "Other languages could still be used where federal law requires them.",
-      "The fiscal note estimates up to $300,000 for the voter's pamphlet, a cost that occurs anyway if other measures qualify.",
+      "The fiscal note estimates up to $300,000 for the voter's pamphlet, less than 1 percent of this year's General Fund budget, a cost that occurs anyway if other measures qualify.",
       "Opponents say state law already makes English official, and the amendment might not let schools teach foreign languages.",
       "Supporters say the amendment could encourage non-English speakers to learn English, and could promote unity and shared identity.",
       "A yes vote makes English Idaho's official state language.",
@@ -167,11 +167,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The fiscal note estimates up to $300,000 for the voter's pamphlet, a cost that occurs anyway if other measures qualify."
+        "text": "The fiscal note estimates up to $300,000 for the voter's pamphlet, less than 1 percent of this year's General Fund budget, a cost that occurs anyway if other measures qualify."
       },
       "bounds": [
         659760,
-        844560
+        950400
       ]
     },
     {
@@ -179,15 +179,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The fiscal note estimates up to $300,000 for the voter's pamphlet, a cost that occurs anyway if other measures qualify.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The fiscal note estimates up to $300,000 for the voter's pamphlet, less than 1 percent of this year's General Fund budget, a cost that occurs anyway if other measures qualify.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "Opponents say state law already makes English official, and the amendment might not let schools teach foreign languages."
       },
       "bounds": [
-        858960,
-        1042320
+        964800,
+        1148160
       ]
     },
     {
@@ -202,8 +202,8 @@
         "text": "Supporters say the amendment could encourage non-English speakers to learn English, and could promote unity and shared identity."
       },
       "bounds": [
-        1056720,
-        1237680
+        1162560,
+        1343520
       ]
     },
     {
@@ -218,8 +218,8 @@
         "text": "A yes vote makes English Idaho's official state language."
       },
       "bounds": [
-        1252080,
-        1349040
+        1357920,
+        1454880
       ]
     },
     {
@@ -234,10 +234,10 @@
         "text": "A no vote leaves the Constitution naming no official state language."
       },
       "bounds": [
-        1363440,
-        1468800
+        1469280,
+        1574640
       ]
     }
   ],
-  "sha256": "a5788d186559f675b720fc047f38dc862cbb66476089b551e7df149a133f48f6"
+  "sha256": "8378b3e1347ef7090c781de941cf6da88d74706bc5ec9d5d2994291ddd3f7977"
 }

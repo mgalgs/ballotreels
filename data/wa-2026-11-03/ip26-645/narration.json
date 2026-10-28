@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 67.52,
+  "seconds": 76.97,
   "phrases": [
     {
       "text": "Initiative Measure IP26-645 is about taxes on individual income.",
@@ -19,34 +19,34 @@
       "end": 24.33
     },
     {
-      "text": "The Office of Financial Management estimates the state would lose $11.4 billion in revenue over budget years 2027 to 2031.",
+      "text": "The Office of Financial Management estimates the state would lose $11.4 billion in revenue over budget years 2027 to 2031, about 7 to 10 percent of forecast revenue in each year from 2029.",
       "start": 24.99,
-      "end": 34.59
+      "end": 40.2
     },
     {
-      "text": "The Office also expects state agencies to save about $150 million over the same five years.",
-      "start": 35.25,
-      "end": 42.0
+      "text": "The Office also expects state agencies to save about $150 million over those years, less than 1 percent of any year's forecast revenue.",
+      "start": 40.86,
+      "end": 51.47
     },
     {
       "text": "Opponents say the measure gives the wealthiest a tax break, and cuts funding for schools, healthcare and childcare.",
-      "start": 42.66,
-      "end": 50.02
+      "start": 52.13,
+      "end": 59.47
     },
     {
       "text": "Supporters say the measure repeals the income tax before it starts, so lawmakers can't expand it to everyone.",
-      "start": 50.68,
-      "end": 57.66
+      "start": 60.13,
+      "end": 67.11
     },
     {
       "text": "A yes vote means the 9.9 percent tax would be repealed.",
-      "start": 58.32,
-      "end": 62.28
+      "start": 67.77,
+      "end": 71.73
     },
     {
       "text": "A no vote means the 9.9 percent tax would not be repealed.",
-      "start": 62.94,
-      "end": 67.49
+      "start": 72.39,
+      "end": 76.94
     }
   ],
   "inputs": {
@@ -54,8 +54,8 @@
       "Initiative Measure IP26-645 is about taxes on individual income.",
       "In 2026, the Legislature passed a 9.9 percent tax on yearly income over a million dollars, starting in 2028.",
       "The measure would repeal that tax, and bar state and local taxes on individual income.",
-      "The Office of Financial Management estimates the state would lose $11.4 billion in revenue over budget years 2027 to 2031.",
-      "The Office also expects state agencies to save about $150 million over the same five years.",
+      "The Office of Financial Management estimates the state would lose $11.4 billion in revenue over budget years 2027 to 2031, about 7 to 10 percent of forecast revenue in each year from 2029.",
+      "The Office also expects state agencies to save about $150 million over those years, less than 1 percent of any year's forecast revenue.",
       "Opponents say the measure gives the wealthiest a tax break, and cuts funding for schools, healthcare and childcare.",
       "Supporters say the measure repeals the income tax before it starts, so lawmakers can't expand it to everyone.",
       "A yes vote means the 9.9 percent tax would be repealed.",
@@ -129,11 +129,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The Office of Financial Management estimates the state would lose $11.4 billion in revenue over budget years 2027 to 2031."
+        "text": "The Office of Financial Management estimates the state would lose $11.4 billion in revenue over budget years 2027 to 2031, about 7 to 10 percent of forecast revenue in each year from 2029."
       },
       "bounds": [
         599040,
-        830880
+        965520
       ]
     },
     {
@@ -141,15 +141,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Office of Financial Management estimates the state would lose $11.4 billion in revenue over budget years 2027 to 2031.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Office of Financial Management estimates the state would lose $11.4 billion in revenue over budget years 2027 to 2031, about 7 to 10 percent of forecast revenue in each year from 2029.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The Office also expects state agencies to save about $150 million over the same five years."
+        "text": "The Office also expects state agencies to save about $150 million over those years, less than 1 percent of any year's forecast revenue."
       },
       "bounds": [
-        845280,
-        1008720
+        979920,
+        1236000
       ]
     },
     {
@@ -157,15 +157,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Office also expects state agencies to save about $150 million over the same five years.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Office also expects state agencies to save about $150 million over those years, less than 1 percent of any year's forecast revenue.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "Opponents say the measure gives the wealthiest a tax break, and cuts funding for schools, healthcare and childcare."
       },
       "bounds": [
-        1023120,
-        1201200
+        1250400,
+        1428000
       ]
     },
     {
@@ -180,8 +180,8 @@
         "text": "Supporters say the measure repeals the income tax before it starts, so lawmakers can't expand it to everyone."
       },
       "bounds": [
-        1215600,
-        1384560
+        1442400,
+        1611360
       ]
     },
     {
@@ -196,8 +196,8 @@
         "text": "A yes vote means the 9.9 percent tax would be repealed."
       },
       "bounds": [
-        1398960,
-        1495440
+        1625760,
+        1722240
       ]
     },
     {
@@ -212,10 +212,10 @@
         "text": "A no vote means the 9.9 percent tax would not be repealed."
       },
       "bounds": [
-        1509840,
-        1620480
+        1736640,
+        1847280
       ]
     }
   ],
-  "sha256": "dbaf271ee9d95c2876a135795740a45254bf2ee3f8abaaba2558e789c6b3fe94"
+  "sha256": "92d1526886fae7f60625ebaa73076df64c72d6ff9a82597a9b34fa435c3dd756"
 }

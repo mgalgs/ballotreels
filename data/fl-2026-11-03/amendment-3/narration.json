@@ -1,0 +1,243 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 69.25,
+  "phrases": [
+    {
+      "text": "Amendment 3 is about local property taxes in Florida.",
+      "start": 0.03,
+      "end": 3.75
+    },
+    {
+      "text": "Today, a homestead, a home its owner lives in, has up to about $50,000 exempt.",
+      "start": 4.41,
+      "end": 10.39
+    },
+    {
+      "text": "The amendment would raise that to $150,000 for non-school taxes in 2027, and $250,000 in 2028.",
+      "start": 11.05,
+      "end": 21.01
+    },
+    {
+      "text": "For other property, the cap on yearly assessment increases would fall from 10 to 5 percent.",
+      "start": 21.67,
+      "end": 27.65
+    },
+    {
+      "text": "Counties and cities could spend property taxes only on listed purposes, or others officials approve.",
+      "start": 28.31,
+      "end": 34.85
+    },
+    {
+      "text": "The Revenue Estimating Conference expects non-school property tax revenue to fall $11.86 billion a year once fully in effect; in 2025, counties levied $20.7 billion, cities $9.4 billion, other districts $6.2 billion.",
+      "start": 35.51,
+      "end": 54.01
+    },
+    {
+      "text": "No official argument against the amendment was published.",
+      "start": 54.67,
+      "end": 58.15
+    },
+    {
+      "text": "No official argument for the amendment was published.",
+      "start": 58.81,
+      "end": 61.59
+    },
+    {
+      "text": "A yes vote raises the exemption and lowers the cap.",
+      "start": 62.25,
+      "end": 65.65
+    },
+    {
+      "text": "A no vote keeps today's exemption and cap.",
+      "start": 66.31,
+      "end": 69.22
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Amendment 3 is about local property taxes in Florida.",
+      "Today, a homestead, a home its owner lives in, has up to about $50,000 exempt.",
+      "The amendment would raise that to $150,000 for non-school taxes in 2027, and $250,000 in 2028.",
+      "For other property, the cap on yearly assessment increases would fall from 10 to 5 percent.",
+      "Counties and cities could spend property taxes only on listed purposes, or others officials approve.",
+      "The Revenue Estimating Conference expects non-school property tax revenue to fall $11.86 billion a year once fully in effect; in 2025, counties levied $20.7 billion, cities $9.4 billion, other districts $6.2 billion.",
+      "No official argument against the amendment was published.",
+      "No official argument for the amendment was published.",
+      "A yes vote raises the exemption and lowers the cap.",
+      "A no vote keeps today's exemption and cap."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Amendment 3 is about local property taxes in Florida."
+      },
+      "bounds": [
+        0,
+        90720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Amendment 3 is about local property taxes in Florida.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, a homestead, a home its owner lives in, has up to about $50,000 exempt."
+      },
+      "bounds": [
+        105120,
+        250080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, a homestead, a home its owner lives in, has up to about $50,000 exempt.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The amendment would raise that to $150,000 for non-school taxes in 2027, and $250,000 in 2028."
+      },
+      "bounds": [
+        264480,
+        504960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The amendment would raise that to $150,000 for non-school taxes in 2027, and $250,000 in 2028.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "For other property, the cap on yearly assessment increases would fall from 10 to 5 percent."
+      },
+      "bounds": [
+        519360,
+        664320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"For other property, the cap on yearly assessment increases would fall from 10 to 5 percent.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Counties and cities could spend property taxes only on listed purposes, or others officials approve."
+      },
+      "bounds": [
+        678720,
+        837120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Counties and cities could spend property taxes only on listed purposes, or others officials approve.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The Revenue Estimating Conference expects non-school property tax revenue to fall $11.86 billion a year once fully in effect; in 2025, counties levied $20.7 billion, cities $9.4 billion, other districts $6.2 billion."
+      },
+      "bounds": [
+        851520,
+        1296960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Revenue Estimating Conference expects non-school property tax revenue to fall $11.86 billion a year once fully in effect; in 2025, counties levied $20.7 billion, cities $9.4 billion, other districts $6.2 billion.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No official argument against the amendment was published."
+      },
+      "bounds": [
+        1311360,
+        1396320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No official argument against the amendment was published.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No official argument for the amendment was published."
+      },
+      "bounds": [
+        1410720,
+        1478880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No official argument for the amendment was published.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote raises the exemption and lowers the cap."
+      },
+      "bounds": [
+        1493280,
+        1576320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote raises the exemption and lowers the cap.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote keeps today's exemption and cap."
+      },
+      "bounds": [
+        1590720,
+        1662000
+      ]
+    }
+  ],
+  "sha256": "44fe4d38a781b894a30f226521a4a4989bfab47d3b13f2a70459df159a3b029c"
+}

@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 77.95,
+  "seconds": 83.83,
   "phrases": [
     {
       "text": "Proposition 45 is about environmental review for certain building projects.",
@@ -24,34 +24,34 @@
       "end": 30.94
     },
     {
-      "text": "The Legislative Analyst's Office expects early costs in the high tens of millions of dollars a year, possibly over $100 million, partly paid by fees.",
+      "text": "The Legislative Analyst's Office expects early state and local costs in the high tens of millions a year, possibly over $100 million, partly paid by fees; the state's General Fund spends $252 billion this year.",
       "start": 31.6,
-      "end": 41.32
+      "end": 47.35
     },
     {
       "text": "The office says longer-term effects are uncertain, either positive or negative, and could be larger.",
-      "start": 41.98,
-      "end": 48.94
+      "start": 48.01,
+      "end": 54.82
     },
     {
       "text": "Supporters say Proposition 45 cuts red tape to build essential projects faster, lowering living costs.",
-      "start": 49.6,
-      "end": 56.86
+      "start": 55.48,
+      "end": 62.74
     },
     {
       "text": "Opponents say Proposition 45 limits environmental and public review, risking air, water and public health.",
-      "start": 57.52,
-      "end": 65.74
+      "start": 63.4,
+      "end": 71.62
     },
     {
       "text": "A yes vote means certain projects would be eligible for new review and court procedures.",
-      "start": 66.4,
-      "end": 71.63
+      "start": 72.28,
+      "end": 77.51
     },
     {
       "text": "A no vote means projects would continue to use existing review and court procedures.",
-      "start": 72.29,
-      "end": 77.92
+      "start": 78.17,
+      "end": 83.8
     }
   ],
   "inputs": {
@@ -60,7 +60,7 @@
       "Today, state law requires agencies to weigh a project's effects on the environment before approving it.",
       "Applicants for most housing, transportation, water and health projects could choose new procedures with tighter time limits on reviews and court challenges.",
       "Under them, courts could consider less in a lawsuit, and could stop only part of a project, not all of it.",
-      "The Legislative Analyst's Office expects early costs in the high tens of millions of dollars a year, possibly over $100 million, partly paid by fees.",
+      "The Legislative Analyst's Office expects early state and local costs in the high tens of millions a year, possibly over $100 million, partly paid by fees; the state's General Fund spends $252 billion this year.",
       "The office says longer-term effects are uncertain, either positive or negative, and could be larger.",
       "Supporters say Proposition 45 cuts red tape to build essential projects faster, lowering living costs.",
       "Opponents say Proposition 45 limits environmental and public review, risking air, water and public health.",
@@ -151,11 +151,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The Legislative Analyst's Office expects early costs in the high tens of millions of dollars a year, possibly over $100 million, partly paid by fees."
+        "text": "The Legislative Analyst's Office expects early state and local costs in the high tens of millions a year, possibly over $100 million, partly paid by fees; the state's General Fund spends $252 billion this year."
       },
       "bounds": [
         757680,
-        992400
+        1137120
       ]
     },
     {
@@ -163,15 +163,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Legislative Analyst's Office expects early costs in the high tens of millions of dollars a year, possibly over $100 million, partly paid by fees.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Legislative Analyst's Office expects early state and local costs in the high tens of millions a year, possibly over $100 million, partly paid by fees; the state's General Fund spends $252 billion this year.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "The office says longer-term effects are uncertain, either positive or negative, and could be larger."
       },
       "bounds": [
-        1006800,
-        1175280
+        1151520,
+        1316400
       ]
     },
     {
@@ -186,8 +186,8 @@
         "text": "Supporters say Proposition 45 cuts red tape to build essential projects faster, lowering living costs."
       },
       "bounds": [
-        1189680,
-        1365360
+        1330800,
+        1506480
       ]
     },
     {
@@ -202,8 +202,8 @@
         "text": "Opponents say Proposition 45 limits environmental and public review, risking air, water and public health."
       },
       "bounds": [
-        1379760,
-        1578480
+        1520880,
+        1719600
       ]
     },
     {
@@ -218,8 +218,8 @@
         "text": "A yes vote means certain projects would be eligible for new review and court procedures."
       },
       "bounds": [
-        1592880,
-        1719840
+        1734000,
+        1860960
       ]
     },
     {
@@ -234,10 +234,10 @@
         "text": "A no vote means projects would continue to use existing review and court procedures."
       },
       "bounds": [
-        1734240,
-        1870800
+        1875360,
+        2011920
       ]
     }
   ],
-  "sha256": "6be7ea351872a8deafe36636399ed120765c3273b85993b31bf1e11e0cac6eb8"
+  "sha256": "003188000635fa7aa01c59398a58e8fa074b66918fb93410fe7c8e9ccbf141b1"
 }
