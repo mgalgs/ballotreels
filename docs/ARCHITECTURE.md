@@ -211,8 +211,8 @@ member's `script.toml`, `sources.toml`, `narration.json` and
 crash course is never shown beside measure videos it disagrees with.
 
 The operator queues it like any contest: `POST /api/generate` with its
-id, approved in the queue monitor, under the same per-IP and global
-limits. The worker copies the election's `contests.toml` and every
+id (or `/admin/api/generate`, outside the public limits), approved in
+the queue monitor. The worker copies the election's `contests.toml` and every
 member's directory into its scratch directory and runs the usual stages
 over them: each member's sources and checks; the job's digest checked
 against the worker's own copy (a worker whose checkout differs from the

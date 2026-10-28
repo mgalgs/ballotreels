@@ -285,6 +285,11 @@ jobs first, with approve (to the back of the queue) and reject (the job
 is cancelled, and stays that way for visitors). Pending requests count
 toward both Generate limits. `--no-require-approval` (or
 `BALLOTREELS_REQUIRE_APPROVAL=0`) queues visitors' requests directly.
+To queue many contests at once (after a data update), `POST
+/admin/api/generate` on the private listener, with the token and the
+same `{"contest": "<id>"}` body: it makes the same job `/api/generate`
+would, but neither limit refuses it or counts it. Its jobs still wait
+for approval like a visitor's.
 The monitor's other actions, whose jobs queue without approval (the
 operator acting is the approval), are retry (a failed or cancelled job), cancel,
 requeue (a running job, back to the front of the line) and regenerate
