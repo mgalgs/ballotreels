@@ -129,3 +129,12 @@ source = "fiscal-statement"
 quote = "This measure requires the County Board of Supervisors (Board) to appropriate a minimum of $14.3 million for the Ethics Commission's and Office of Ethics Compliance's annual operating budget, beginning in Fiscal Year 2027-28."
 amount = 14300000
 period = "per-year"
+
+# City of Santee Measure Y: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is in its ballot label (and the City
+# Attorney's Impartial Analysis).
+[santee-measure-y]
+source = "guide-page"
+quote = "providing approximately $14,000,000 annually for city services for 10 years"
+amount = 14000000
+period = "per-year"

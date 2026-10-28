@@ -59,6 +59,8 @@ BALLOTS: dict[str, Ballot] = {
                          "Proposed Ordinance of Measure A",
                      "ca-2026-11-03-la-county-measure-e":
                          "Proposed Ordinance of Measure E",
+                     "ca-2026-11-03-santee-measure-y":
+                         "San Diego County Voter Information Guide",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",
