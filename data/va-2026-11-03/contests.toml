@@ -1,0 +1,32 @@
+# Contest index for the 2026-11-03 Virginia general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). Titles
+# pair the designation, "Question 1", with the section heading of the
+# amendment as the special explanation for voters prints it (Code
+# § 30-19.9).
+
+[election]
+id = "va-2026-11-03"
+state = "ocd-division/country:us/state:va"
+title = "Virginia General Election, November 3, 2026"
+
+[[contest]]
+id = "va-2026-11-03-question-1"
+kind = "measure"
+division = "ocd-division/country:us/state:va"
+title = "Question 1: Fundamental right to reproductive freedom"
+number = "1"
+
+[[contest]]
+id = "va-2026-11-03-question-2"
+kind = "measure"
+division = "ocd-division/country:us/state:va"
+title = "Question 2: Marriage"
+number = "2"
+
+[[contest]]
+id = "va-2026-11-03-question-3"
+kind = "measure"
+division = "ocd-division/country:us/state:va"
+title = "Question 3: Qualifications of voters"
+number = "3"

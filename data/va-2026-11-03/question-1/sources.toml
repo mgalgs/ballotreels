@@ -1,0 +1,75 @@
+# Archived sources for Virginia Question 1, 2026-11-03 general election.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+#
+# Virginia publishes, for each proposed amendment, a neutral special
+# explanation (Code § 30-19.9): the "EXPLANATION FOR VOTERS", the ballot
+# question and the full text. The card quotes it. The Department of
+# Elections' brochure prints the same wording; its text layer prints
+# each word several times, so nothing is quoted from it. Virginia
+# publishes no official arguments for or against an amendment, so there
+# is no source of kind official-argument.
+#
+# The General Assembly passed two identical referendum acts, Chapter 2
+# (HB 781) and Chapter 3 (SB 449); the script cites the House's.
+
+[contest]
+id = "va-2026-11-03-question-1"
+election = "va-2026-11-03"
+division = "ocd-division/country:us/state:va"
+kind = "measure"
+title = "Question 1: Fundamental right to reproductive freedom"
+
+[[source]]
+id = "explanation"
+kind = "official-title-summary"
+publisher = "Virginia Department of Elections, Explanation for Proposed Constitutional Amendment to Be Voted On at the November 3, 2026, Election, Question 1 (approved by the Joint Privileges and Elections Committee, June 22, 2026)"
+credit = "Virginia Department of Elections, Explanation for Voters"
+url = "https://www.elections.virginia.gov/media/electionadministration/electionlaw/11-3-26-Special-Explanation-for-Q1-Repro.pdf"
+file = "sources/special-explanation.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "brochure"
+kind = "official-title-summary"
+publisher = "Virginia Department of Elections, Proposed Constitutional Amendments To be voted on at the November 3, 2026 Election, Question 1, pages 1 to 2"
+credit = "Virginia Department of Elections, Proposed Constitutional Amendments"
+url = "https://www.elections.virginia.gov/media/formswarehouse/print-ready-materials-artwork/november-2026-proposed-constitutional-amendments/2026-Nov-Proposed-Constitution-Amendments-Brochure---EN.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "act"
+kind = "official-text"
+publisher = "Virginia Acts of Assembly, 2026 Session, Chapter 2 (HB 781), approved February 6, 2026"
+credit = "Virginia Acts of Assembly, 2026, Chapter 2"
+url = "https://lis.blob.core.windows.net/files/1169226.PDF"
+file = "sources/chapter-2-hb781-referendum-act.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "senate-act"
+kind = "official-text"
+publisher = "Virginia Acts of Assembly, 2026 Session, Chapter 3 (SB 449)"
+credit = "Virginia Acts of Assembly, 2026, Chapter 3"
+url = "https://lis.blob.core.windows.net/files/1169212.PDF"
+file = "sources/chapter-3-sb449-referendum-act.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Virginia Acts of Assembly, 2026 Session, Chapter 973, House Joint Resolution No. 1"
+credit = "Virginia Acts of Assembly, 2026, Chapter 973"
+url = "https://lis.blob.core.windows.net/files/1224850.PDF"
+file = "sources/chapter-973-hj1-resolution.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal"
+kind = "official-fiscal-analysis"
+publisher = "Virginia Department of Planning and Budget, 2026 General Assembly Session, State Fiscal Impact Statement, HB781ER"
+credit = "Virginia Department of Planning and Budget"
+url = "https://lis.blob.core.windows.net/files/1141203.PDF"
+file = "sources/hb781er-fiscal-impact-statement.pdf"
+retrieved = "2026-10-27"
