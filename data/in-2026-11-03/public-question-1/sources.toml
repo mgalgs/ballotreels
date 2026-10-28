@@ -1,0 +1,72 @@
+# Archived sources for Indiana Public Question 1, 2026-11-03 general
+# election. Every id here may be cited by script.toml. `kind` must be one
+# the standard allows (docs/STANDARD.md, section 1).
+#
+# Indiana publishes no voter pamphlet and no statutory explanation for
+# voters. The closest official explanation is the Indiana Election
+# Division's "2026 Indiana Election Legislation Summary", written for
+# election administrators; ied-summary-section.pdf is its page 1 (title,
+# purpose and its caveat that "where your legal rights are involved, do
+# not rely on this document") and page 21 (the amendment's explanation,
+# history and ballot text). It backs the card and the explanation; the
+# enrolled resolution backs what the amendment's words are. Indiana
+# publishes no official arguments for or against an amendment and no
+# cost estimate, so there is no source of kind official-argument or
+# official-fiscal-analysis: the side and fiscal sections cite the
+# summary, which prints none.
+#
+# iga.in.gov serves a JavaScript shell to scripted fetches, so the
+# enrolled resolution and Senate Enrolled Act 3 are the Internet
+# Archive's raw captures of the official files (SJR 1 captured
+# 2026-02-19, SEA 3 2026-03-27; each file's SHA-1 matches the capture's
+# digest), not compared with the live files. The urls are the official
+# ones. In the resolution, bold marks the words the amendment adds:
+# "unless the accused poses a substantial risk to any other person or
+# the community" and the new final sentence with its two conditions.
+#
+# The Hendricks County notice prints the certified wording of both
+# public questions, and three judicial retention questions this script
+# does not use.
+
+[contest]
+id = "in-2026-11-03-public-question-1"
+election = "in-2026-11-03"
+division = "ocd-division/country:us/state:in"
+kind = "measure"
+title = "Public Question 1: Limitations on the Right to Bail"
+
+[[source]]
+id = "summary"
+kind = "official-title-summary"
+publisher = "Indiana Election Division, 2026 Indiana Election Legislation Summary, Indiana Constitutional Amendments: Limitations on the Right to Bail, pages 1 and 21"
+credit = "2026 Indiana Election Legislation Summary"
+url = "https://www.in.gov/sos/elections/files/2026-Indiana-Election-Legislation-Summary.FINAL.pdf"
+file = "sources/ied-summary-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Indiana General Assembly, Senate Enrolled Joint Resolution 1 (2026), amending Article 1, Section 17 of the Constitution of the State of Indiana"
+credit = "Senate Enrolled Joint Resolution 1"
+url = "https://iga.in.gov/pdf-documents/124/2026/senate/resolutions/SJ0001/SJ0001.04.ENRH.pdf"
+file = "sources/sjr1-2026-enrolled.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "ballot-act"
+kind = "legislative-record"
+publisher = "Indiana General Assembly, Senate Enrolled Act 3 (2026), Section 1: ballot form of the public question"
+credit = "Senate Enrolled Act 3"
+url = "https://iga.in.gov/pdf-documents/124/2026/senate/bills/SB0003/SB0003.04.ENRH.pdf"
+file = "sources/sea3-2026-ballot-language.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "county-notice"
+kind = "official-title-summary"
+publisher = "Hendricks County, 2026 General Election Public Questions to Be on Your Ballot"
+credit = "Hendricks County, Public Questions"
+url = "https://www.co.hendricks.in.us/egov/documents/1786722790_88313.pdf"
+file = "sources/hendricks-county-public-questions.pdf"
+retrieved = "2026-10-27"

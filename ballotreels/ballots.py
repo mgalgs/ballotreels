@@ -349,6 +349,19 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label=None,
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+
+    # Indiana publishes no voter pamphlet. Its closest official
+    # explanation is the Indiana Election Division's "2026 Indiana
+    # Election Legislation Summary", written for election administrators:
+    # each constitutional amendment's explanation, history and the ballot
+    # text as the General Assembly prescribed it, headed "Public Question
+    # #1" (the contest title drops the "#" so designation() finds
+    # "Question"; badge QUESTION). It prints no fiscal statement, and the
+    # ballot's choices are "Yes" and "No".
+    "in": Ballot(guide="2026 Indiana Election Legislation Summary",
+                 fiscal_label=None,
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
