@@ -54,6 +54,17 @@ CONTENT_TYPE_BY_EXT = {
     ".jpg": "image/jpeg",
     ".ico": "image/x-icon",
     ".txt": "text/plain; charset=utf-8",
+    ".xml": "application/xml; charset=utf-8",
+    ".webmanifest": "application/manifest+json",
+}
+
+# Files browsers and crawlers ask for at the site root, without reading
+# the page's head; each is served from static/.
+ROOT_FILES = {
+    "/favicon.ico": "favicon.ico",
+    "/favicon.svg": "favicon.svg",
+    "/apple-touch-icon.png": "apple-touch-icon.png",
+    "/site.webmanifest": "site.webmanifest",
 }
 
 ADMIN_COOKIE = "ballotreels_admin"
@@ -503,6 +514,10 @@ def _contest_detail(entry, state: StateElection,
         "number": entry.number,
         "office": entry.office,
         "path": state.contest_path(entry),
+        # The tab title the server renders for this page, so an in-app
+        # visit and a fresh load show the same one.
+        "page_title": pages.measure_meta(
+            _state_name(state.abbr), entry.title, "", None).title,
         "state": state.abbr,
         "state_name": _state_name(state.abbr),
         "election": state.index.election.id,
@@ -719,6 +734,15 @@ class PublicHandler(_JsonHandler):
                 if self._serve_static(path[len("/static/"):]):
                     return
                 return self._not_found()
+            if path in ROOT_FILES and method in ("GET", "HEAD"):
+                self._serve_static(ROOT_FILES[path])
+                return
+            if path == "/robots.txt" and method in ("GET", "HEAD"):
+                return self._text(".txt", pages.robots_txt(
+                    deps.config.site_url))
+            if path == "/sitemap.xml" and method in ("GET", "HEAD"):
+                return self._text(".xml", pages.sitemap_xml(
+                    deps.config.site_url, self._sitemap_paths()))
             if (method in ("GET", "HEAD") and
                     not path.startswith(RESERVED_PREFIXES)):
                 return self._page(path)
@@ -768,8 +792,11 @@ class PublicHandler(_JsonHandler):
             key = key_for(state.index.election.id, entry, deps.standard)
             video = deps.queue.video_for(key) if key is not None else None
             poster = video.urls.get("poster") if video else None
-            return pages.measure_meta(_state_name(state.abbr), entry.title,
-                                      path, poster, choice=entry.choice)
+            return pages.measure_meta(
+                _state_name(state.abbr), entry.title, path, poster,
+                choice=entry.choice,
+                video=video.urls.get("video") if video else None,
+                video_made=video.created_at if video else None)
         return None
 
     def _html(self, status: int, meta: pages.PageMeta) -> None:
@@ -781,6 +808,28 @@ class PublicHandler(_JsonHandler):
         self.send_header("Content-Type", CONTENT_TYPE_BY_EXT[".html"])
         self.send_header("Content-Length", str(len(body)))
         # The tags follow the video (its poster), so always revalidate.
+        self.send_header("Cache-Control", "no-cache")
+        self.end_headers()
+        if self.command != "HEAD":
+            self.wfile.write(body)
+
+    def _sitemap_paths(self) -> list[str]:
+        """Every page worth indexing: the home page, each served state's
+        page, and each measure's page, in the states' name order."""
+        deps = self.server.deps
+        paths = ["/"]
+        for abbr in sorted(deps.states, key=_sort_name):
+            state = deps.states[abbr]
+            paths.append(state.path())
+            paths.extend(state.contest_path(e) for e in ballot_order(state.index)
+                         if e.kind == "measure")
+        return paths
+
+    def _text(self, ext: str, text: str) -> None:
+        body = text.encode("utf-8")
+        self.send_response(200)
+        self.send_header("Content-Type", CONTENT_TYPE_BY_EXT[ext])
+        self.send_header("Content-Length", str(len(body)))
         self.send_header("Cache-Control", "no-cache")
         self.end_headers()
         if self.command != "HEAD":
@@ -929,6 +978,9 @@ class PublicHandler(_JsonHandler):
         self._json(200, {"election": index.election.id,
                          "year": state.year,
                          "state": abbr, "state_name": _state_name(abbr),
+                         "page_title": pages.state_meta(
+                             _state_name(abbr), state.path(),
+                             len(contests)).title,
                          "empty_election": not index.entries,
                          "chambers": chambers(abbr),
                          "levels": ([{"level": "state", "contests": contests}]

@@ -8,7 +8,9 @@ data files and may hold quotes, ampersands or angle brackets.
 
 from __future__ import annotations
 
+import datetime
 import html
+import json
 import re
 from dataclasses import dataclass
 
@@ -37,6 +39,10 @@ class PageMeta:
     path: str
     image: str = DEFAULT_IMAGE
     noindex: bool = False
+    # A measure page's video, for its VideoObject structured data: the
+    # video's URL and when it was made (epoch seconds).
+    video: str | None = None
+    video_made: float | None = None
 
 
 def absolute(site_url: str, url: str) -> str:
@@ -78,7 +84,9 @@ def capitalize(text: str) -> str:
 
 
 def measure_meta(state_name: str, title: str, path: str,
-                 poster: str | None, choice: bool = False) -> PageMeta:
+                 poster: str | None, choice: bool = False,
+                 video: str | None = None,
+                 video_made: float | None = None) -> PageMeta:
     """A measure's page: its state and ballot title, read neutrally. A
     choice question has no sides: its page says it lists the choices."""
     title = title.strip().rstrip(".").strip()
@@ -88,7 +96,9 @@ def measure_meta(state_name: str, title: str, path: str,
         title=f"{capitalize(state_name)} {title}, explained in 60 seconds",
         description=(f"A short, even-handed explainer of {state_name} "
                      f"{title}. {what}, every claim sourced."),
-        path=path, image=poster or DEFAULT_IMAGE)
+        path=path, image=poster or DEFAULT_IMAGE,
+        video=video if poster else None,
+        video_made=video_made if poster else None)
 
 
 def state_meta(state_name: str, path: str, measures: int) -> PageMeta:
@@ -129,6 +139,7 @@ def meta_tags(meta: PageMeta, site_url: str) -> str:
     else:
         tags.append(("link", ("rel", "canonical"), url))
     for prop, value in (("og:site_name", SITE_NAME), ("og:type", "website"),
+                        ("og:locale", "en_US"),
                         ("og:title", meta.title),
                         ("og:description", meta.description),
                         ("og:url", url), ("og:image", image)):
@@ -151,7 +162,44 @@ def meta_tags(meta: PageMeta, site_url: str) -> str:
             lines.append(f'<link {attr[0]}="{attr[1]}" href="{esc}">')
         else:
             lines.append(f'<meta {attr[0]}="{attr[1]}" content="{esc}">')
+    if meta.video and meta.video_made is not None:
+        lines.append(video_json_ld(meta, site_url))
     return "\n".join(lines)
+
+
+def video_json_ld(meta: PageMeta, site_url: str) -> str:
+    """A measure video's schema.org VideoObject, so search can list it as
+    a video result."""
+    made = datetime.datetime.fromtimestamp(meta.video_made,
+                                           datetime.timezone.utc)
+    doc = {"@context": "https://schema.org", "@type": "VideoObject",
+           "name": meta.title, "description": meta.description,
+           "thumbnailUrl": absolute(site_url, meta.image),
+           "contentUrl": absolute(site_url, meta.video),
+           "uploadDate": made.isoformat(timespec="seconds"),
+           "url": absolute(site_url, meta.path)}
+    # "</" never appears raw inside the script element: a title holding
+    # "</script>" must not end it.
+    body = json.dumps(doc, ensure_ascii=False).replace("</", "<\\/")
+    return f'<script type="application/ld+json">{body}</script>'
+
+
+def robots_txt(site_url: str) -> str:
+    return ("User-agent: *\n"
+            "Disallow: /admin\n"
+            "Disallow: /api/\n"
+            "Disallow: /worker/\n"
+            f"Sitemap: {absolute(site_url, '/sitemap.xml')}\n")
+
+
+def sitemap_xml(site_url: str, paths: list[str]) -> str:
+    """A sitemap of `paths` (site-relative), in the order given."""
+    urls = "".join(
+        f"<url><loc>{html.escape(absolute(site_url, p))}</loc></url>\n"
+        for p in paths)
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+            f"{urls}</urlset>\n")
 
 
 def render_page(template: str, meta: PageMeta, site_url: str) -> str:

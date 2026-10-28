@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Square, no corner radius, mark inside the central 80%: the source of
+       the apple-touch and manifest icons, whose platforms round or mask
+       the corners themselves. -->
+  <rect width="32" height="32" fill="#f3eedf"/>
+  <rect x="10.6" y="6.6" width="10.8" height="18.8" rx="2.4" fill="#fbf8ef"
+        stroke="#2e2b27" stroke-width="1.9"/>
+  <path d="M14 11.6 L19.6 16 L14 20.4 Z" fill="#e07b33" stroke="#e07b33"
+        stroke-width="1.2" stroke-linejoin="round"/>
+</svg>

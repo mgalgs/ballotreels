@@ -408,7 +408,8 @@ async function route() {
   const { path, params, hash } = currentRoute();
   app.innerHTML = "";
   window.scrollTo(0, 0);
-  document.title = "ballotreels";
+  // Must match pages.HOME_TITLE, the title a fresh load of / shows.
+  document.title = "ballotreels: your ballot, explained";
   if (path === "/" || path === "") {
     showPath("/");
     return renderHome();
@@ -920,7 +921,7 @@ async function renderState(abbr, year, old) {
   }
   if (old) showPath(`/${body.state}`);
   const name = body.state_name.replace(/^the /, "");
-  document.title = `${name} measures · ballotreels`;
+  document.title = body.page_title || `${name} measures · ballotreels`;
   rememberBack(location.pathname, `${name} measures`);
   const contests = body.levels.flatMap((level) => level.contests);
   const ready = contests.filter((c) => c.status === "cached").length;
@@ -1352,7 +1353,8 @@ async function renderContest(apiPath) {
   }
   showPath(body.path);
   const { eyebrow, title } = titleParts(body);
-  document.title = `${eyebrow ? `${eyebrow}: ` : ""}${title} · ballotreels`;
+  document.title = body.page_title ||
+    `${eyebrow ? `${eyebrow}: ` : ""}${title} · ballotreels`;
   // The head and the rest are wrapped only for the wide-screen grid,
   // which puts the video in a column of its own beside them; on a phone
   // the wrappers are plain blocks and the page reads top to bottom.
