@@ -16,8 +16,11 @@
 # Neutral lines keep to the ballot statement's terms; neither side's
 # framing ("government interference", "trojan horse", "special
 # interests") is used outside its own section. The ballot statement's
-# "fundamental right" and "interference by the government" are its own
-# words; the script uses the second, as what the amendment would do. Each side gets its two
+# "interference by the government" states the amendment's purpose and
+# is the supporters' theme, so the narration does not use it; the
+# "change" line says what the complete text does instead (a fundamental
+# right the government may not burden without a compelling interest),
+# and puts the 90-day deadline on the government. Each side gets its two
 # most concrete points, in its own words, with equal words. No person
 # the arguments name is named.
 
@@ -66,16 +69,16 @@ id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "The amendment would secure those powers from interference by the government."
+text = "They would become a fundamental right, burdened only for a compelling government interest."
 sources = ["pamphlet", "text"]
 
 [section.line.visual]
 kind = "page"
 source = "pamphlet"
-highlight = ["secure this fundamental right from interference by the government"]
+highlight = ["this fundamental right"]
 
 [[section.line]]
-text = "Petitions would need approval within 90 days, and could not be disqualified over minor or technical issues."
+text = "The government would have 90 days to approve petitions, which could not be disqualified over minor or technical issues."
 sources = ["pamphlet", "text"]
 
 [section.line.visual]
