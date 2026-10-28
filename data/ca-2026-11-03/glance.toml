@@ -144,3 +144,12 @@ period = "per-year"
 [lemon-grove-measure-e]
 source = "guide-page"
 status = "none-printed"
+
+# City of Solana Beach Measure C: the guide prints no fiscal analysis or
+# tax rate statement; the one estimate is in its ballot label (and the
+# City Attorney's Impartial Analysis).
+[solana-beach-measure-c]
+source = "guide-page"
+quote = "providing approximately $250,000 annually until ended by voters"
+amount = 250000
+period = "per-year"

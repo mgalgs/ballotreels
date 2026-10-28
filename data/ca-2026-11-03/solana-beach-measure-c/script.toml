@@ -1,0 +1,153 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; the hotel tax today and who pays it; who put it on the ballot and
+# what it needs to pass; what would change (the rate and its use, what
+# counts as rent, booking sites collecting it, no end date); the
+# impartial analysis's revenue estimate; one line per side; what a vote
+# does.
+#
+# The guide prints no fiscal analysis or tax rate statement (not a
+# bond); the one revenue estimate is the City Attorney's, in the ballot
+# label and the Impartial Analysis. No archived source states the
+# city's general fund budget, so the $250,000 has no scale (STANDARD.md
+# 6.5; left open). The page prints no subject heading over the ballot
+# label, so the card's title is the page's own head, the city's name.
+#
+# The guide prints an argument in favor and no argument against: the no
+# side is filed = false, as for Proposition 37. The guide prints no "no
+# argument was submitted" notice, so the no line says only that none
+# appears in the guide.
+
+contest = "ca-2026-11-03-solana-beach-measure-c"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "C"
+title = "CITY OF SOLANA BEACH"
+origin = "The Solana Beach City Council placed Measure C on the ballot."
+summary = "To provide general city services such as keeping beaches, parks, trails, and restrooms safe, clean and well-maintained; preventing trash from entering local beaches/lagoons; upgrading emergency response/safety facilities, shall City of Solana Beach’s measure updating the 20-year-old transient occupancy tax (paid only by hotel/short-term vacation rental guests as specified in ordinance) and increasing the rate by 1% be adopted, providing approximately $250,000 annually until ended by voters, with all money locally controlled?"
+yes = "A “yes” vote favors the Measure."
+no = "A “no” vote opposes the Measure."
+
+[[section]]
+id = "what"
+heading = "Measure C"
+
+[[section.line]]
+text = "City of Solana Beach Measure C asks voters in the city whether to raise the hotel tax from 13 percent to 14 percent."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["increasing the rate by 1%"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, guests at hotels and short-term rentals pay the city a 13 percent tax on their rent."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "beach-hotel"
+
+[[section.line]]
+text = "The City Council placed Measure C on the ballot, and it needs a simple majority to pass."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The rate would rise to 14 percent, and the added money could pay for any city purpose."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "Cleaning, resort, parking and other fees would count as rent, so the tax would apply to them too."
+sources = ["guide-page"]
+
+[[section.line]]
+text = "Online booking companies would collect the tax for the city, and the tax would last until voters end it."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "notice-website"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The City Attorney's impartial analysis estimates the increase would raise about $250,000 a year."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say only visitors pay the tax, and it helps keep lifeguards on beaches and restrooms clean."
+sources = ["arguments"]
+basis = ["which is paid for entirely by visitors and", "It is not a tax on Solana Beach residents or property owners.", "Only visitors who rent a hotel room or a short term vacation rental pay TOT.", "Measure C will help the City keep lifeguards on our beaches, keep public restrooms clean and well-maintained"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Paid by visitors, not residents", "Lifeguards, clean restrooms, trash kept off beaches"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure C appears in the San Diego County Voter Information Guide for this election."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "list"
+source = "guide-page"
+items = ["No argument against was printed"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote favors Measure C and its 1 percent increase in the hotel tax."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["favors"]
+
+[[section.line]]
+text = "A no vote opposes Measure C and its 1 percent increase in the hotel tax."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["opposes"]
