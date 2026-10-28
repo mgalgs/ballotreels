@@ -1,0 +1,144 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; who may vote today; what the amendment would add; that no
+# cost estimate exists; one line per side; what a vote does.
+#
+# Arkansas publishes no official voter guide. The card quotes the
+# Secretary of State's Notice to the Public: the popular name as its
+# title, the ballot title as its summary; the notice prints no "a FOR
+# vote means" lines, so the card has none, and the vote lines take their
+# meanings from the popular name. Neutral lines use the ballot title's
+# own terms ("a citizen of the United States meeting the qualifications
+# of an elector").
+#
+# The sides come from the University of Arkansas Division of
+# Agriculture's guide, "What do supporters say?" and "What do opponents
+# say?" (STANDARD.md rule 1.2): unattributed examples of what each side
+# has made public, which the Division does not endorse. Each side's line
+# names the guide the same way. For: only-citizen wording sets a ceiling,
+# and it is easier to act before any Arkansas city allows noncitizen
+# voting. Against: the Constitution already limits voting to citizens,
+# and it could prompt proof-of-citizenship laws many
+# qualified voters could not meet.
+
+contest = "ar-2026-11-03-issue-1"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "notice"
+number = "1"
+title = "A Constitutional Amendment to be Known as \"The Citizens Only Voting Amendment\" and Providing That Only a Citizen of the United States Meeting the Qualifications of an Elector Under the Arkansas Constitution May Vote in an Election in this State."
+origin = "the 95th General Assembly refers the following constitutional amendment to a vote of the people on November 3, 2026"
+summary = "AN AMENDMENT TO THE ARKANSAS CONSTITUTION TO CREATE \"THE CITIZENS ONLY VOTING AMENDMENT\"; TO PROVIDE THAT ONLY A CITIZEN OF THE UNITED STATES MEETING THE QUALIFICATIONS OF AN ELECTOR UNDER THE ARKANSAS CONSTITUTION MAY VOTE IN AN ELECTION IN THIS STATE; AND PROVIDING THAT A PERSON WHO DOES NOT MEET THE QUALIFICATIONS OF AN ELECTOR UNDER THE ARKANSAS CONSTITUTION SHALL NOT BE PERMITTED TO VOTE IN ANY STATE OR LOCAL ELECTION HELD IN THIS STATE."
+
+[[section]]
+id = "what"
+heading = "Issue 1"
+
+[[section.line]]
+text = "Issue 1 is about who may vote in Arkansas."
+sources = ["notice"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["The Citizens Only Voting Amendment"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the Arkansas Constitution says voters must be citizens, state residents, at least 18, and registered."
+sources = ["text", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would say only citizens meeting those qualifications may vote."
+sources = ["notice", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["ONLY A CITIZEN OF THE UNITED STATES MEETING THE QUALIFICATIONS OF AN ELECTOR"]
+
+[[section.line]]
+text = "Anyone who does not meet the qualifications could not vote in any state or local election."
+sources = ["notice", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["SHALL NOT BE PERMITTED TO VOTE IN ANY STATE OR LOCAL ELECTION"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Arkansas does not publish a cost estimate for the amendment."
+sources = ["notice"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say, according to the University of Arkansas guide, only-citizen wording sets a clear ceiling on who votes, and acts before any Arkansas city allows noncitizen voting."
+sources = ["uaex-guide"]
+basis = ["By moving to only-citizen language we’re setting a ceiling for eligibility that only citizens may vote and nobody else.", "Even though cities in Arkansas have not yet taken that step, it is much easier to address before that happens here."]
+
+[section.line.visual]
+kind = "list"
+source = "uaex-guide"
+items = ["Sets a clear ceiling: only citizens may vote", "Acts before any Arkansas city allows noncitizen voting"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say, according to the University of Arkansas guide, voting is already limited to citizens, and it could prompt proof-of-citizenship laws many qualified voters could not meet."
+sources = ["uaex-guide"]
+basis = ["The Arkansas Constitution already restricts the right to vote to U.S. citizens who are residents of Arkansas.", "the General Assembly could use the amendment as the impetus to pass new restrictive proof of citizenship legislation in 2027, establishing requirements that many qualified voters could not meet."]
+
+[section.line.visual]
+kind = "list"
+source = "uaex-guide"
+items = ["The Constitution already limits voting to citizens", "Could prompt proof-of-citizenship laws voters can't meet"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for means only qualified citizens may vote."
+sources = ["notice"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["Only a Citizen of the United States Meeting the Qualifications of an Elector"]
+
+[[section.line]]
+text = "A vote against means the current wording would stay."
+sources = ["notice", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"

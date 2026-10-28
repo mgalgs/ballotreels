@@ -31,6 +31,7 @@ SOURCE_KINDS = frozenset({
     "official-data",
     "election-filing",
     "legislative-record",
+    "university-guide",
 })
 
 # Kinds a declared name may come from (STANDARD.md rule 9.1): the official
@@ -38,6 +39,13 @@ SOURCE_KINDS = frozenset({
 # official, and the legislative record.
 NAMING_KINDS = frozenset({"official-argument", "election-filing",
                           "legislative-record"})
+
+# A public university's nonpartisan ballot guide, allowed only where the
+# state publishes no official voter guide (STANDARD.md rule 1.2), and
+# only for explanation and the sides: never the opening, a cost or the
+# vote lines (checks.check_university_guide).
+UNIVERSITY_GUIDE = "university-guide"
+UNIVERSITY_GUIDE_SECTIONS = frozenset({"background", "today", "change"})
 
 # Kinds a line or chart may cite only in a `background` section
 # (STANDARD.md rule 6.1, docs/SCRIPT-FORMAT.md).

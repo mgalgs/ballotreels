@@ -187,6 +187,18 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label="Total cost:",
                  choices=("Approve", "Reject"),
                  card_source_kind="official-title-summary"),
+
+    # Arkansas publishes no official voter guide. The Secretary of State
+    # prints each referred measure in a "NOTICE TO THE PUBLIC" (its popular
+    # name, ballot title and text, or for a bond act its ballot title and
+    # ballot question), headed "ISSUE NO. 1" (badge ISSUE, from the title's
+    # designation; the "No." is skipped). Each elector "shall vote for or
+    # against", and the ballot prints "FOR" and "AGAINST". No fiscal
+    # statement exists for any of them.
+    "ar": Ballot(guide="Notice to the Public",
+                 fiscal_label=None,
+                 choices=("For", "Against"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")

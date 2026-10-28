@@ -261,6 +261,7 @@ human reading the video.
 |---|---|
 | Every non-connective sentence cites a source id that exists in the contest's archived sources | 1.1, 1.4 |
 | Every cited source is of an allowed kind | 1.2, 1.3 |
+| A university ballot guide is cited only where the contest has no official argument, only in the explanation (background, today, change) and the sides, and only by a line that names its publisher | 1.2 |
 | Same sections per candidate / per side, word counts within 5% | 2.1, 2.2, 2.4 |
 | Candidate order matches the rule in 2.3 | 2.3 |
 | No word from the judgment-word list in narrator text | 3.1 |

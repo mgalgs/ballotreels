@@ -1,0 +1,151 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; the right as the Constitution states it today; the purposes,
+# items and wording the amendment would add; that no cost estimate
+# exists; one line per side; what a vote does.
+#
+# Arkansas publishes no official voter guide. The card quotes the
+# Secretary of State's Notice to the Public: the popular name as its
+# title, the ballot title as its summary; the notice prints no "a FOR
+# vote means" lines, so the card has none. Neutral lines use the ballot
+# title's own terms.
+#
+# The sides come from the University of Arkansas Division of
+# Agriculture's guide, "What do supporters say?" and "What do opponents
+# say?" (STANDARD.md rule 1.2): unattributed examples of what each side
+# has made public, which the Division does not endorse. Each side's line
+# names the guide the same way. For: the amendment makes it clear the
+# right covers ammunition, accessories and components, and strengthens
+# it against calls to disarm law-abiding citizens. Against: the right is
+# already protected, and the amendment could make firearm-safety laws
+# harder to defend and enforce.
+
+contest = "ar-2026-11-03-issue-2"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "notice"
+number = "2"
+title = "A Constitutional Amendment to Amend Arkansas Constitution, Article 2, § 5, to Protect the Right to Keep and Bear Arms."
+origin = "the 95th General Assembly refers the following constitutional amendment to a vote of the people on November 3, 2026"
+summary = "AN AMENDMENT TO THE ARKANSAS CONSTITUTION TO PROVIDE THAT THE CITIZENS OF THE STATE OF ARKANSAS SHALL HAVE THE RIGHT TO KEEP AND BEAR ARMS FOR THEIR COMMON DEFENSE, FOR LAWFUL HUNTING AND RECREATIONAL USE, AND FOR ANY OTHER LAWFUL PURPOSE; PROVIDING THAT THE RIGHT TO KEEP AND BEAR ARMS INCLUDES WITHOUT LIMITATION THE POSSESSION AND USE OF AMMUNITION, FIREARM ACCESSORIES, AND FIREARM COMPONENTS; AND PROVIDING THAT THE RIGHT TO KEEP AND BEAR ARMS IS A NATURAL, FUNDAMENTAL, AND INDIVIDUAL RIGHT THAT SHALL NOT BE INFRINGED."
+
+[[section]]
+id = "what"
+heading = "Issue 2"
+
+[[section.line]]
+text = "Issue 2 is about the right to keep and bear arms."
+sources = ["notice"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["Right to Keep and Bear Arms"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the Constitution gives citizens that right for their common defense."
+sources = ["text", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would add hunting, recreation, and any other lawful purpose."
+sources = ["notice", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["FOR LAWFUL HUNTING AND RECREATIONAL USE, AND FOR ANY OTHER LAWFUL PURPOSE"]
+
+[[section.line]]
+text = "The right would include ammunition, firearm accessories, and components, without limitation."
+sources = ["notice", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["INCLUDES WITHOUT LIMITATION THE POSSESSION AND USE OF AMMUNITION, FIREARM ACCESSORIES, AND FIREARM COMPONENTS"]
+
+[[section.line]]
+text = "The right would be called natural, fundamental, and individual."
+sources = ["notice", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["A NATURAL, FUNDAMENTAL, AND INDIVIDUAL RIGHT THAT SHALL NOT BE INFRINGED"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Arkansas does not publish a cost estimate for the amendment."
+sources = ["notice"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say, according to the University of Arkansas guide, the amendment clearly covers ammunition, accessories and components, and guards against renewed calls to disarm law-abiding citizens."
+sources = ["uaex-guide"]
+basis = ["What this does is it is very clear that it includes ammunition, accessories and components, and it’s very clear that it’s recognized as an individual right.", "In a time when every tragedy results in renewed calls to disarm law-abiding citizens, SJR11 strengthens our Arkansas Constitution to protect our freedom to keep and bear arms."]
+
+[section.line.visual]
+kind = "list"
+source = "uaex-guide"
+items = ["Clearly covers ammunition, accessories and components", "Guards against calls to disarm law-abiding citizens"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say, according to the University of Arkansas guide, the constitution already protects the right, and the amendment could make firearm-safety laws harder to defend and enforce."
+sources = ["uaex-guide"]
+basis = ["Our current state constitution already protects an individual’s right to bear arms.", "The addition of this amendment, could make reasonable firearm-safety regulations more difficult to defend.", "By using absolute language this amendment could make it harder to enforce existing commonsense gun laws"]
+
+[section.line.visual]
+kind = "list"
+source = "uaex-guide"
+items = ["The Constitution already protects the right", "Could make firearm-safety laws harder to enforce"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for means the new wording would be added."
+sources = ["notice", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+
+[[section.line]]
+text = "A vote against means the current wording would stay."
+sources = ["notice", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
