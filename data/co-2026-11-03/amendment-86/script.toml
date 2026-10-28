@@ -1,0 +1,143 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; how districts are drawn today, and that the constitution sets
+# no process between those years; what the amendment would require of
+# any change between them; what Legislative Council Staff says it costs;
+# one point per side; what a vote does.
+#
+# The card quotes the State Ballot Information Booklet: the ballot title
+# as printed in its Text & Titles section, its origin and vote-needed
+# line, its answer to "What does Amendment 86 do?" (first two sentences)
+# as the summary and its YES/NO lines.
+#
+# That voters created the commission in 2018 is the supporters' point,
+# and other states' recent redistricting is cited by both sides; neither
+# appears in a neutral line (rule 6.3). The booklet prints one argument
+# for and one against; each side's list takes two points from its one
+# argument. The $370,000 is cash-funded and recurs only in a year the
+# commission convenes; no archived source gives a total to scale it by.
+
+contest = "co-2026-11-03-amendment-86"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "blue-book"
+number = "86"
+title = "Shall there be an amendment to the Colorado Constitution concerning congressional redistricting, and, in connection therewith, reenacting the current process for congressional redistricting in the Colorado Constitution and prohibiting modifications to a final map unless at least three public meetings are held, the modifications do not have the effect of dividing communities of interest or purposefully favoring one political party, and are approved by the congressional redistricting commission and the Colorado Supreme Court?"
+origin = "Placed on the ballot by citizen initiative • Passes with 55 percent of the vote"
+summary = "Amendment 86 requires that any off-cycle redistricting, if it were to occur, be approved by the commission and adopted by the Colorado Supreme Court. Before approving any changes, the commission must hold at least three public hearings."
+yes = "A “yes” vote on Amendment 86 requires the Colorado Independent Congressional Redistricting Commission to approve any new congressional districts proposed outside of a scheduled redistricting year."
+no = "A “no” vote on Amendment 86 continues the current requirements for changing congressional districts every ten years."
+
+[[section]]
+id = "what"
+heading = "Amendment 86"
+
+[[section.line]]
+text = "Amendment 86 is about redrawing congressional districts between census years."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["concerning congressional redistricting"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, an independent commission redraws Colorado's congressional districts every ten years."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "district-map"
+
+[[section.line]]
+text = "The constitution sets no process for redrawing them between those years."
+sources = ["blue-book"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Under the amendment, any change between those years would need approval from the commission and the Colorado Supreme Court."
+sources = ["blue-book", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["approved by the commission and adopted by the Colorado Supreme Court"]
+
+[[section.line]]
+text = "Those new districts could not intentionally favor a political party or unnecessarily divide communities."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Legislative Council Staff estimates about $370,000 in state costs for each year the commission reviews new maps."
+sources = ["fiscal-impact", "fiscal-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes/for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the amendment keeps partisan politics out of redistricting, and protects public input in any changes."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Keeps partisan politics out of the process", "Protects public participation in any changes"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no/against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the amendment creates an unnecessary constitutional barrier, and voters should always have the final word."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Creates an unnecessary constitutional barrier", "Voters should always have the final word"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote requires the commission to approve any new districts between scheduled years."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["to approve any new congressional districts"]
+
+[[section.line]]
+text = "A no vote continues the current rules for changing districts every ten years."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["continues the current requirements"]
