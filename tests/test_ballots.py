@@ -358,6 +358,15 @@ class LouisianaStatementsStitchTest(unittest.TestCase):
         self.assertEqual(guide_of(ne, "ne-2026-11-03-amendment-1"),
                          "Legislative Resolution 19CA")
 
+    def test_west_virginia_uses_its_notices_words(self):
+        wv = BALLOTS["wv"]
+        self.assertEqual((wv.guide, wv.fiscal_label, wv.choices,
+                          wv.card_source_kind),
+                         ("Public Notice", None,
+                          ("For", "Against"), "official-title-summary"))
+        # "Amendment No. 1: Citizenship Requirement ...", as the ballot heads it
+        self.assertEqual(badge(wv, "Amendment No. 1: X", "1"), "AMENDMENT")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):
