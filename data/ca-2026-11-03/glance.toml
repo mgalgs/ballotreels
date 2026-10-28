@@ -283,3 +283,19 @@ status = "none-printed"
 [coronado-measure-d]
 source = "guide-page"
 status = "none-printed"
+
+# Westminster School District Measure B: the district's Tax Rate
+# Statement, its total debt service.
+[westminster-school-measure-b]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $276 million."
+amount = 276000000
+period = "unstated"
+
+# Laguna Beach Unified School District Measure A: the district's Tax
+# Rate Statement, its total debt service.
+[laguna-beach-unified-measure-a]
+source = "tax-statement"
+quote = "The best estimate from official sources of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $157,260,047."
+amount = 157260047
+period = "unstated"
