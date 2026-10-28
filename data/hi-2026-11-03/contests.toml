@@ -1,0 +1,26 @@
+# Contest index for the 2026-11-03 Hawaii general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). The
+# Office of Elections' 2026 Voter Guide heads each proposed amendment
+# "QUESTION #1: ..."; titles pair the designation, without the "#", with
+# the guide's title, its final period dropped. The two are all of the
+# statewide questions, in ballot order.
+
+[election]
+id = "hi-2026-11-03"
+state = "ocd-division/country:us/state:hi"
+title = "Hawaii General Election, November 3, 2026"
+
+[[contest]]
+id = "hi-2026-11-03-question-1"
+kind = "measure"
+division = "ocd-division/country:us/state:hi"
+title = "Question 1: Increasing the Timeframe for the Hawaii Senate to Consider and Act on Judicial Appointments"
+number = "1"
+
+[[contest]]
+id = "hi-2026-11-03-question-2"
+kind = "measure"
+division = "ocd-division/country:us/state:hi"
+title = "Question 2: Directing the Hawaii State Legislature to Establish Procedures for Counties to Issue RISE Bonds, Exempt from County Debt Limits"
+number = "2"
