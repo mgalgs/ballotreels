@@ -1,0 +1,154 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and that it is one package; what the Charter is and how the
+# measure reached the ballot; the main changes the impartial analysis
+# names; that the guide gives no cost; one line per side; what a vote
+# does.
+#
+# The ballot question lists the sections; the analysis calls them "the
+# 17 sections" and the argument against "21 changes", so the narration
+# gives no count. The "electors" change to Section 10-6 is not in the
+# impartial analysis; both sides argue over it, so it appears only in the
+# no side's line, as that side's point (STANDARD.md 6.3). The guide
+# prints no fiscal analysis, so the fiscal line says it includes no cost
+# estimate. The card's yes/no lines are the analysis's own sentences on
+# approval and rejection.
+
+contest = "ca-2026-11-03-alameda-measure-m"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "M"
+title = "Proposed City Charter Amendment Ballot Measure"
+origin = "The Alameda City Council placed this Measure on the November 3 ballot to allow voters to amend numerous sections of the City Charter"
+summary = "Shall the measure amending City Charter Sections 2-1.1, 2-3, 2-10, 3-7(G), 3-14, 7-2(J), 8-2, 8-5, 10-3, 10-6, 10-7, 10-12, 12-4(A) and (B), 14-1, 17-10, 28-2, 28-3 and 28-4, and repealing Sections 12-3(D) and 23-3 to conform to existing practices and amend and repeal outdated provisions be adopted?"
+yes = "If approved by the voters, this Measure would conform the City Charter to existing City and City Council practices and amend and repeal outdated provisions in the Charter."
+no = "If the voters do not approve the Measure, all the Charter provisions referenced in this Measure will remain the same."
+
+[[section]]
+id = "what"
+heading = "Measure M"
+
+[[section.line]]
+text = "City of Alameda Measure M asks voters in the city whether to amend and repeal a group of City Charter sections, all as one package."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["amending City Charter Sections"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "The City Charter is the highest level policy and governance document of the city."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "law-book"
+
+[[section.line]]
+text = "The City Council placed Measure M on the ballot, and it needs a simple majority to pass."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Department heads and other top employees would serve at the pleasure of whoever appoints them, as they do in practice now."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section.line]]
+text = "Only the City Council could authorize the City Attorney to file lawsuits for the city."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section.line]]
+text = "Other changes cover filling vacancies in top city offices, qualifications for some city boards, and duties of the City Auditor."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "amended-page"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Alameda County Composite Voter Information Guide does not include a cost estimate for the measure."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the measure removes obsolete dates and references to agencies that no longer exist, and that it is careful housekeeping, not a restructuring of city government."
+sources = ["arguments"]
+basis = ["The measure removes obsolete dates and transition language, replaces references to agencies that no longer exist", "This measure is careful housekeeping—not a restructuring of City government."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Removes obsolete and outdated language", "Housekeeping, not a restructuring"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the public and the full Council did not adequately vet the changes, and some, like ending the citizenship rule for city boards, are not simple cleanup."
+sources = ["arguments"]
+basis = ["the City Council as a whole and the public had not adequately vetted the proposed changes.", "some are not the simple “cleanup of outdated language and provisions” proponents claim.", "removes citizenship and eligibility-to-vote as requirements to serve on many City Hall boards."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Not vetted by the public or full Council", "Some changes are not simple cleanup"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote would conform the City Charter to existing practices and amend and repeal outdated provisions."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["conform the City Charter to existing City and City Council practices"]
+
+[[section.line]]
+text = "A no vote means the Charter provisions in Measure M remain the same."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["will remain the same"]

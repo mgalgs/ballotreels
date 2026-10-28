@@ -330,3 +330,9 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $662,197,756."
 amount = 662197756
 period = "unstated"
+
+# City of Alameda Measure M: the guide prints no fiscal analysis (not a
+# tax measure).
+[alameda-measure-m]
+source = "guide-page"
+status = "none-printed"
