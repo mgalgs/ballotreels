@@ -312,3 +312,12 @@ status = "none-printed"
 [berkeley-measure-x]
 source = "guide-page"
 status = "none-printed"
+
+# City of Berkeley Measure Y: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is in its ballot question (and the
+# City Attorney's Impartial Analysis).
+[berkeley-measure-y]
+source = "guide-page"
+quote = "estimated to generate approximately $6,300,000 annually and $84,800,000 over its twelve-year duration"
+amount = 84800000
+period = "over 12 years"
