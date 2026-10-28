@@ -1318,20 +1318,57 @@ function enterFullscreen(video) {
   }
 }
 
-// The contest page's video frame and the full-screen button under it;
-// nothing when there is no video yet.
+// Playback speeds the speed button steps through, and the viewer's last
+// choice, remembered across pages (storage may be blocked: then 1×).
+const SPEEDS = [1, 1.25, 1.5, 2];
+const SPEED_KEY = "ballotreels.speed";
+
+function savedSpeed() {
+  try {
+    const speed = Number(localStorage.getItem(SPEED_KEY));
+    return SPEEDS.includes(speed) ? speed : 1;
+  } catch (e) {
+    return 1;
+  }
+}
+
+function speedLabel(speed) {
+  return `Speed ${speed}×`;
+}
+
+// The contest page's video frame and the full-screen and speed buttons
+// under it; nothing when there is no video yet.
 function videoNodes(body) {
   if (!body.video_url) return [];
   const video = el("video", { src: body.video_url, controls: "controls",
                               playsinline: "playsinline",
                               preload: "metadata" });
   if (body.poster_url) video.setAttribute("poster", body.poster_url);
+  let speed = savedSpeed();
+  // A browser resets playbackRate when it loads the source; the default
+  // rate survives that, and loadedmetadata re-applies it either way.
+  const applySpeed = () => {
+    video.defaultPlaybackRate = speed;
+    video.playbackRate = speed;
+  };
+  applySpeed();
+  video.addEventListener("loadedmetadata", applySpeed);
   const full = el("button", {
     type: "button", class: "btn btn-quiet fullscreen-btn",
     onclick: () => enterFullscreen(video),
   }, [icon("fullscreen"), "Full screen"]);
+  const speedBtn = el("button", {
+    type: "button", class: "btn btn-quiet fullscreen-btn speed-btn",
+    "aria-label": "Playback speed", text: speedLabel(speed),
+  });
+  speedBtn.addEventListener("click", () => {
+    speed = SPEEDS[(SPEEDS.indexOf(speed) + 1) % SPEEDS.length];
+    applySpeed();
+    speedBtn.textContent = speedLabel(speed);
+    try { localStorage.setItem(SPEED_KEY, String(speed)); } catch (e) { /* not remembered */ }
+  });
   return [el("div", { class: "video-frame has-fullscreen" }, [video]),
-          el("div", { class: "fullscreen-row" }, [full])];
+          el("div", { class: "fullscreen-row" }, [full, speedBtn])];
 }
 
 // -- chapters: a chip per section of the video -------------------------

@@ -994,7 +994,15 @@ a.contest:hover {
 .fullscreen-row {
   display: flex;
   justify-content: center;
+  gap: 12px;
   margin: 0 0 18px;
+}
+
+/* Wide enough for "Speed 1.25×", so the button keeps its size as it
+   cycles. */
+.speed-btn {
+  min-width: 9.5em;
+  font-variant-numeric: tabular-nums;
 }
 
 .fullscreen-btn {
