@@ -605,50 +605,7 @@ def _pdftotext(path: Path) -> str:
     except (subprocess.CalledProcessError,
             subprocess.TimeoutExpired) as e:
         raise UnreadableSource(f"pdftotext failed: {e}") from None
-    return _unshifted(out.stdout.decode("utf-8", errors="replace"))
-
-
-# Alameda County's Composite Voter Information Guide sets some lines in a
-# Times New Roman subset embedded with Identity-H encoding and no
-# ToUnicode map, so pdftotext prints each glyph's index in the font, not
-# its character: a printable ASCII character's code less 29 ("WUD൶F" for
-# "traffic", a control character for a space or a digit), and the
-# indices below for the rest. The glyph order is the font's, so the
-# table is as observed in that guide.
-_GLYPH_SHIFT = 29
-_SHIFTED_GLYPHS = {"\u0086": "§", "«": "…", "±": "–", "²": "—", "³": "“",
-                   "´": "”", "µ": "‘", "¶": "’", "¿": "fi", "À": "fl",
-                   "൵": "ff", "൶": "ffi", "භ": "•"}
-# a control character pdftotext never prints for itself (it does print
-# tab, line feed, form feed and carriage return), or a glyph above
-_SHIFT_SIGN = re.compile("[\x03-\x08\x0e-\x1c" + "".join(_SHIFTED_GLYPHS)
-                         + "]")
-
-
-def _unshifted(text: str) -> str:
-    """`text` with each line set in such a font decoded. A line is taken
-    to be one where it has a control character or a glyph from the table
-    and no lower-case letter (the shifted alphabet has none: "a" is
-    printed "D"). Text without the sign is returned as it is."""
-    if not _SHIFT_SIGN.search(text):
-        return text
-    lines = text.split("\n")
-    for i, line in enumerate(lines):
-        if _SHIFT_SIGN.search(line) and not re.search("[a-z]", line):
-            lines[i] = "".join(_unshift(ch, j == 0)
-                               for j, ch in enumerate(line))
-    return "\n".join(lines)
-
-
-def _unshift(ch: str, first: bool) -> str:
-    if ch in _SHIFTED_GLYPHS:
-        return _SHIFTED_GLYPHS[ch]
-    code = ord(ch)
-    # a space pdftotext puts between words stays one; so does a form
-    # feed opening a line, which is its page break
-    if ch == " " or (ch == "\f" and first) or not 3 <= code <= 97:
-        return ch
-    return chr(code + _GLYPH_SHIFT)
+    return out.stdout.decode("utf-8", errors="replace")
 
 
 _WHITESPACE = re.compile(r"\s+")
@@ -674,8 +631,7 @@ def _unspaced_raw_text(path: Path) -> str | None:
                              capture_output=True, check=True, timeout=60)
     except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
         return None
-    return _WHITESPACE.sub(
-        "", _unshifted(out.stdout.decode("utf-8", errors="replace")))
+    return _WHITESPACE.sub("", out.stdout.decode("utf-8", errors="replace"))
 
 
 def _in_raw_columns(value: str, path: Path) -> bool:
