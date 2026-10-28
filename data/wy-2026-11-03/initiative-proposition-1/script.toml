@@ -25,12 +25,14 @@
 # General Fund (or School Foundation Program) total for fiscal year 2028,
 # so the figure is stated without a scale; left open. The text's "tax
 # year 2025" against the statement's "earliest applicable tax year would
-# be 2027" is left on the card, unresolved, and not narrated, for time.
+# be 2027" is not resolved: the narration gives the statement's 2027,
+# attributed to the estimate, and the card carries both.
 #
 # Wyoming publishes no official arguments for or against an initiative,
 # so both sides are filed = false and each says so once, in the same
 # number of words. The pass rule is said once, in the Voter's Guide's
-# words.
+# words ("approved by a majority of those voting in the General
+# Election").
 #
 # Left out for time: the one-exemption-per-owner rule, the sworn claim
 # with the county assessor and the yearly confirmation, the penalty for
@@ -67,7 +69,7 @@ id = "today"
 heading = "Today"
 
 [[section.line]]
-text = "Today, Wyoming law lists the property exempt from property tax."
+text = "Wyoming law today lists property exempt from tax."
 sources = ["text"]
 
 [section.line.visual]
@@ -79,7 +81,7 @@ id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "The proposition would add fifty percent of the assessed value of a qualifying primary residence."
+text = "The proposition would exempt fifty percent of the assessed value of a qualifying primary residence from property tax."
 sources = ["propositions", "text"]
 
 [section.line.visual]
@@ -101,7 +103,7 @@ id = "fiscal"
 heading = "What the official estimate says"
 
 [[section.line]]
-text = "The ballot's estimated fiscal impact says state revenue would fall about $92.6 million in fiscal year 2028, and $95.9 million in 2029."
+text = "The ballot's estimate says state revenue would fall about $92.6 million in fiscal year 2028, and $95.9 million in 2029."
 sources = ["fiscal"]
 
 [section.line.visual]
@@ -114,6 +116,10 @@ values = [92.6, 95.9]
 
 [[section.line]]
 text = "That estimate covers the state only, not local governments."
+sources = ["fiscal"]
+
+[[section.line]]
+text = "It says the earliest tax year would be 2027."
 sources = ["fiscal"]
 
 [[section]]
@@ -168,7 +174,7 @@ kind = "page"
 source = "propositions"
 
 [[section.line]]
-text = "To pass, the Voter's Guide says, a proposition must be approved by a majority of those voting in the General Election."
+text = "It passes if approved by a majority of those voting in the General Election."
 sources = ["guide"]
 
 [section.line.visual]
