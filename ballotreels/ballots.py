@@ -310,6 +310,19 @@ BALLOTS: dict[str, Ballot] = {
                  badges={"Measure": "INITIATIVE MEASURE"},
                  guides={"ne-2026-11-03-amendment-1":
                          "Legislative Resolution 19CA"}),
+
+    # West Virginia has no voter pamphlet. The Legislature's resolution
+    # numbers and designates each amendment and summarises its purpose,
+    # and the Secretary of State prints them in a "Public Notice"
+    # ("Title of Amendment: “Amendment 1: ...”", "Summary of Purpose:"),
+    # the same words the ballot prints over its choices "FOR" and
+    # "AGAINST". The ballot heads it "Amendment No. 1" (designation()
+    # skips the "No.", so the badge reads AMENDMENT). No fiscal
+    # statement exists for it.
+    "wv": Ballot(guide="Public Notice",
+                 fiscal_label=None,
+                 choices=("For", "Against"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")

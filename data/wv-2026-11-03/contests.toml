@@ -1,0 +1,18 @@
+# Contest index for the 2026-11-03 West Virginia general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). West
+# Virginia has no voter pamphlet; the title pairs the designation with
+# the amendment's name as the ballot and the Secretary of State's Public
+# Notice print it.
+
+[election]
+id = "wv-2026-11-03"
+state = "ocd-division/country:us/state:wv"
+title = "West Virginia General Election, November 3, 2026"
+
+[[contest]]
+id = "wv-2026-11-03-amendment-1"
+kind = "measure"
+division = "ocd-division/country:us/state:wv"
+title = "Amendment No. 1: Citizenship Requirement to Vote in West Virginia Elections Amendment"
+number = "1"

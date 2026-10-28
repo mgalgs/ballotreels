@@ -1,0 +1,75 @@
+# Archived sources for West Virginia Amendment 1, 2026-11-03 general
+# election. Every id here may be cited by script.toml. `kind` must be one
+# the standard allows (docs/STANDARD.md, section 1).
+#
+# West Virginia has no voter pamphlet and no official arguments for or
+# against an amendment, so there is no source of kind official-argument.
+# The Legislature's enrolled resolution numbers and designates the
+# amendment and states its Summary of Purpose; the Secretary of State's
+# Public Notice prints the same title, summary and full text, and the
+# ballot prints them over the choices FOR and AGAINST.
+#
+# The enrolled resolution prints only the new text of Article IV,
+# section 1; the old text is the Constitution as it stands. The
+# introduced resolution (sources/sjr9-introduced.html) and the Secretary
+# of State's release of an explainer video (sources/sos-video-press-release.html)
+# are archived for reference and not cited: the video was not
+# transcribed. The Legislature's status URL with btype=res serves Senate
+# Bill 9; the resolution's own page is Resolution_History.cfm.
+#
+# sample-ballot-wood-precinct-8.pdf is page 1 of Wood County's sample
+# ballots (one ballot style); every style ends with the same
+# "Amendment No. 1". No fiscal note for SJR 9 is on the Legislature's
+# 2026 list.
+
+[contest]
+id = "wv-2026-11-03-amendment-1"
+election = "wv-2026-11-03"
+division = "ocd-division/country:us/state:wv"
+kind = "measure"
+title = "Amendment No. 1: Citizenship Requirement to Vote in West Virginia Elections Amendment"
+
+[[source]]
+id = "notice"
+kind = "official-title-summary"
+publisher = "West Virginia Secretary of State, Public Notice of a proposed Amendment to the West Virginia Constitution, July 23, 2026"
+credit = "West Virginia Secretary of State, Public Notice"
+url = "https://sos.wv.gov/article/secretary-warner-issues-public-notice-proposed-amendment-west-virginia-constitution-will"
+file = "sources/sos-public-notice-press-release.html"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "West Virginia Secretary of State, Sample Ballot, Wood County, General Election, November 3, 2026, Precinct 8, page 1"
+credit = "West Virginia Secretary of State, Sample Ballot"
+url = "https://apps.sos.wv.gov/elections/2026GeneralSampleBallots/SAMPLE%20-%20WV%20Wood%20261103%20General%20-%2014inch.pdf"
+file = "sources/sample-ballot-wood-precinct-8.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "West Virginia Legislature, Enrolled Committee Substitute for Senate Joint Resolution 9, 2026 Regular Session"
+credit = "West Virginia Legislature, Senate Joint Resolution 9"
+url = "https://www.wvlegislature.gov/Bill_Status/bills_text.cfm?billdoc=sjr9%20sub1%20enr.htm&yr=2026&sesstype=RS&i=9&houseorig=s&billtype=jr"
+file = "sources/sjr9-sub1-enrolled.html"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "status"
+kind = "legislative-record"
+publisher = "West Virginia Legislature, Bill Status, Senate Joint Resolution 9, 2026 Regular Session"
+credit = "West Virginia Legislature, Bill Status"
+url = "https://www.wvlegislature.gov/Bill_Status/Resolution_History.cfm?year=2026&sessiontype=RS&input4=9&billtype=jr&houseorig=s&btype=res"
+file = "sources/sjr9-bill-status.html"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "constitution"
+kind = "official-text"
+publisher = "West Virginia Legislature, West Virginia Constitution, Article IV, section 1"
+credit = "West Virginia Legislature, West Virginia Constitution"
+url = "https://www.wvlegislature.gov/WVCODE/WV_CON.cfm"
+file = "sources/wv-constitution-current.html"
+retrieved = "2026-10-27"
