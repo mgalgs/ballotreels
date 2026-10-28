@@ -59,12 +59,19 @@ class CardTest(ContestCopyTestCase):
         return text
 
     def test_every_key_required(self):
-        for key in ("source", "number", "title", "origin", "summary"):
+        for key in ("source", "title", "origin", "summary"):
             with self.subTest(key=key):
                 text = self.drop_key(key)
                 got = self.failures()
                 self.assertIn(f"[card] has no {key!r}", got)
                 (self.dir / "script.toml").write_text(text)
+
+    def test_number_optional(self):
+        """A ballot that numbers no measure (North Carolina's) leaves the
+        card's number out, and the card draws no badge."""
+        self.drop_key("number")
+        self.assertEqual(self.failures(), [])
+        self.assertIsNone(load_contest(self.dir).script.card.number)
 
     def test_yes_and_no_together_or_neither(self):
         for key, other in (("yes", "no"), ("no", "yes")):

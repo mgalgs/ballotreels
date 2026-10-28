@@ -170,8 +170,9 @@ def _load_entry(raw: dict[str, Any], i: int, election: Election,
     number = _get(raw, "number", str, where, None)
     office = _get(raw, "office", str, where, None)
     if kind == "measure":
-        if number is None:
-            raise ContestIndexError(f"{where}: measure needs 'number'")
+        # A measure's `number` is its ballot designation; a ballot that
+        # numbers none (North Carolina heads each only "Constitutional
+        # Amendment") leaves it out, and its measures keep file order.
         if office is not None:
             raise ContestIndexError(f"{where}: measure must not set 'office'")
     else:
@@ -243,14 +244,17 @@ def level_of(division: str, state_division: str) -> str:
     return "other"
 
 
-def _number_key(number: str) -> tuple[int, Any]:
+def _number_key(number: str | None, position: int) -> tuple[int, Any]:
+    if number is None:
+        return (2, position)
     return (0, int(number)) if number.isdigit() else (1, number)
 
 
 def ballot_order(index: ContestIndex) -> tuple[IndexEntry, ...]:
     """Every entry, grouped by level in the fixed order the brief gives
     (statewide, congressional, legislative, county), races in file order
-    then measures in natural number order within each level."""
+    then measures in natural number order within each level (any
+    unnumbered ones after, in file order)."""
     level_rank = {level: i for i, level in enumerate(LEVELS)}
     file_order = {entry.id: i for i, entry in enumerate(index.entries)}
 
@@ -259,6 +263,6 @@ def ballot_order(index: ContestIndex) -> tuple[IndexEntry, ...]:
         lrank = level_rank.get(level, len(LEVELS))
         if entry.kind == "race":
             return (lrank, 0, file_order[entry.id])
-        return (lrank, 1, _number_key(entry.number))
+        return (lrank, 1, _number_key(entry.number, file_order[entry.id]))
 
     return tuple(sorted(index.entries, key=key))

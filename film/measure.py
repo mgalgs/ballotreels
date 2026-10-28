@@ -1800,7 +1800,7 @@ ZOOM = 24          # frames the camera takes to ease in on it (0.8 s)
 CAMERA = vb.bezier(0.45, 0, 0.55, 1)  # eases in and out
 PAGE_ZOOM_MAX = 1.0  # no zoom: the page is readable whole, and any zoom crops its lines
 # the badge over the measure's number: its designation, as the guide prints it
-BADGE = badge(BALLOT, CONTEST.title, CARD.number) if CARD is not None else None
+BADGE = badge(BALLOT, CONTEST.title, CARD.number) if CARD is not None and CARD.number is not None else None
 # the fiscal statement's heading, as the guide prints it: bold where the
 # summary quotes it (California's "Fiscal Impact:"), or set over the card's
 # own `fiscal` field (Utah's "Fiscal Effects"); None where the guide prints
@@ -1941,11 +1941,17 @@ def _layout_page(card, box, s, arrangement, spread=0):
     two = arrangement == 'columns'
     colw = (box.w - gap * 1.5) / 2 if two else box.w
     x, y = box.x, box.y
-    # the badge: the designation (PROP, AMENDMENT) over the number, in a box, the title beside it
-    bw = max(text.measure(BADGE, F['prop']), text.measure(card.number, F['num'])) + s * 0.5
-    bh = text.line_height(F['prop']) * 0.85 + text.line_height(F['num']) * 0.8 + s * 0.15
-    parts['badge'] = Box(x, y, bw, bh)
-    tx = x + bw + gap * 0.8
+    # the badge: the designation (PROP, AMENDMENT) over the number, in a box, the title beside it;
+    # no badge where the ballot numbers no measure (North Carolina), the title alone
+    if BADGE is None:
+        bw = bh = 0
+        parts['badge'] = None
+        tx = x
+    else:
+        bw = max(text.measure(BADGE, F['prop']), text.measure(card.number, F['num'])) + s * 0.5
+        bh = text.line_height(F['prop']) * 0.85 + text.line_height(F['num']) * 0.8 + s * 0.15
+        parts['badge'] = Box(x, y, bw, bh)
+        tx = x + bw + gap * 0.8
     title = Flow('title', card.title, F['title'], x=tx, y=y, width=x + colw - tx)
     title.y_shift = max(0, (bh - title.height) / 2)
     title = Flow('title', card.title, F['title'], x=tx, y=y + title.y_shift, width=x + colw - tx)
@@ -2122,11 +2128,12 @@ def page_static(paper_box, parts, L):
         marks.append(('text', words, fnt, x, y, alpha))
 
     b = parts['badge']
-    marks.append(('stroke', Stroke(box_pts(*b), seed_of('page badge'), passes=2, width=2.8 * u, closed=True,
-                                   overshoot=0)))
-    write(BADGE, F['prop'], b.cx - text.measure(BADGE, F['prop']) / 2, b.y + 0.15 * F['prop'].size)
-    write(CARD.number, F['num'], b.cx - text.measure(CARD.number, F['num']) / 2,
-          b.y + text.line_height(F['prop']) * 0.8)
+    if b is not None:
+        marks.append(('stroke', Stroke(box_pts(*b), seed_of('page badge'), passes=2, width=2.8 * u, closed=True,
+                                       overshoot=0)))
+        write(BADGE, F['prop'], b.cx - text.measure(BADGE, F['prop']) / 2, b.y + 0.15 * F['prop'].size)
+        write(CARD.number, F['num'], b.cx - text.measure(CARD.number, F['num']) / 2,
+              b.y + text.line_height(F['prop']) * 0.8)
     flows = {fl.field: fl for fl in parts['flows']}
     for run in flows['title'].runs:
         write(*run)
