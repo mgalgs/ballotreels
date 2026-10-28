@@ -1,0 +1,145 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; how a bond is repaid and what it needs to pass; what
+# the money would pay for; the district's tax statement; one line per
+# side; what a vote does.
+#
+# "Counsel" is heard as "Council" (standard/speakability.txt). The bond
+# total and the debt service are repaid from a tax on property in the
+# district, and no archived source states the district's budget, so they
+# have no budget scale (STANDARD.md 6.5; left open). The fiscal line
+# gives the tax statement's highest rate beside its average, as it prints
+# both. The supporters' "Measure G will NOT raise our taxes" is their
+# argument, so the neutral sections leave out the tax statement's like
+# sentence on the earlier bonds' rate and keep to the new bonds' own
+# figures (STANDARD.md 6.3); the card quotes the label's "NO tax rate
+# increase" as printed.
+#
+# No argument against Measure G was filed. The no side says so plainly;
+# its section is marked filed = false.
+
+contest = "ca-2026-11-03-grossmont-cuyamaca-measure-g"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-label"
+number = "G"
+title = "Grossmont-Cuyamaca Community College District Fire Safety, Job Training, College Affordability, No Tax Rate Increase"
+origin = "The Governing Board for the Grossmont-Cuyamaca Community College District (“District”) placed this measure on the ballot."
+summary = "With funds that cannot be taken by the State and spent elsewhere and NO tax rate increase, shall Grossmont-Cuyamaca Community College District’s measure to • improve/expand career training classrooms • remove asbestos/mold • reduce wildfire threats • maintain college affordability be adopted, authorizing $624 million of bonds with legal rates, levies below $25/$100,000 assessed valuation while outstanding ($45 million annually), audits, taxpayer oversight, full disclosure of all spending?"
+yes = "A “YES” vote is in favor of authorizing the District to issue and sell $624,000,000 in general obligation bonds."
+no = "A “NO” vote is against authorizing the District to issue and sell $624,000,000 in general obligation bonds."
+
+[[section]]
+id = "what"
+heading = "Measure G"
+
+[[section.line]]
+text = "Grossmont-Cuyamaca Community College District Measure G asks the district's voters whether to approve $624 million in college bonds."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["$624 million of bonds"]
+
+[[section]]
+id = "today"
+heading = "How a college bond works"
+
+[[section.line]]
+text = "The district would borrow the money and repay it from a tax on property in the district."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure G needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The money would expand career training classrooms, remove asbestos and mold, and reduce wildfire threats at the colleges."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "illustration"
+name = "university-hall"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+text = "The district's tax statement estimates an average tax of $24.67 per $100,000 of assessed value, and at most $24.98, through 2058-59."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section.line]]
+text = "The statement estimates the total to repay, with interest, at about $1.25 billion."
+sources = ["tax-statement"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure G funds urgent repairs and fire safety upgrades without raising taxes."
+sources = ["arguments"]
+basis = ["URGENTLY NEEDED REPAIRS WITHOUT RAISING TAXES", "Measure G will NOT raise our taxes.", "authorized by voters in 2002, enabling our Colleges to make fire safety"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Fire safety repairs and wildfire protection", "Keeps college affordable, without raising taxes"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure G was filed for the San Diego County voter guide."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is in favor of letting the district sell the bonds."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["in favor of authorizing the District"]
+
+[[section.line]]
+text = "A no vote is against letting the district sell the bonds."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["against authorizing the District"]
