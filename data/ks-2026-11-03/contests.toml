@@ -1,0 +1,18 @@
+# Contest index for the 2026-11-03 Kansas general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. Kansas's ballot heads its one amendment only "Constitutional
+# Amendment", with no number, so the entry has no `number`. The title
+# pairs that heading with the subject the Kansas Legislative Research
+# Department's 2025 Summary of Legislation gives the resolution,
+# "Citizenship Requirement for Voting".
+
+[election]
+id = "ks-2026-11-03"
+state = "ocd-division/country:us/state:ks"
+title = "Kansas General Election, November 3, 2026"
+
+[[contest]]
+id = "ks-2026-11-03-constitutional-amendment"
+kind = "measure"
+division = "ocd-division/country:us/state:ks"
+title = "Constitutional Amendment: Citizenship Requirement for Voting"
