@@ -134,6 +134,15 @@ class BallotTest(unittest.TestCase):
         self.assertEqual(badge(nd, "Initiated Constitutional Measure No. 2: X",
                                "2"), "MEASURE")
 
+    def test_alabama_uses_its_ballot_statements_words(self):
+        al = BALLOTS["al"]
+        self.assertEqual((al.guide, al.fiscal_label, al.choices,
+                          al.card_source_kind),
+                         ("Fair Ballot Commission Ballot Statement", None,
+                          ("Yes", "No"), "official-title-summary"))
+        self.assertEqual(badge(al, "Statewide Amendment 1: X", "1"),
+                         "AMENDMENT")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):

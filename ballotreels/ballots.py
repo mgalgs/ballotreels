@@ -128,6 +128,17 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label="FISCAL IMPACT",
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+    # Alabama publishes no voter pamphlet. Its Fair Ballot Commission
+    # approves a "BALLOT STATEMENT" for each statewide amendment (Ala.
+    # Code 17-6-81): the ballot text, sponsor, placement ("Statewide
+    # Amendment 1", badge AMENDMENT) and a plain-language summary, whose
+    # cost sentence ("There are no costs or taxes associated with
+    # Amendment 1.") sits under no heading of its own, so there is no
+    # fiscal label. The ballot prints the choices "Yes ( ) No ( )".
+    "al": Ballot(guide="Fair Ballot Commission Ballot Statement",
+                 fiscal_label=None,
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
