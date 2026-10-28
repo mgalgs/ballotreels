@@ -1,0 +1,62 @@
+# Archived sources for City of Irvine Measure D, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1). Every source is a page of the Measure D section ("Ballot
+# Measures-D", Section 11) of the Orange County Registrar of Voters'
+# Voter Information Guide, one archived PDF; "page" is the section's own.
+#
+# The City Attorney's Impartial Analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is. No tax rate statement or fiscal analysis is printed (it
+# is not a tax measure).
+
+[contest]
+id = "ca-2026-11-03-irvine-measure-d"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:irvine"
+kind = "measure"
+title = "Irvine Measure D: Ranked Choice Voting for City Council Member and Mayoral Elections"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "Orange County Registrar of Voters, Voter Information Guide, Ballot Measures-D, page 1: ballot question and what your vote means"
+credit = "Ballot question, Orange County Voter Information Guide"
+url = "https://ocvote.gov/sites/default/files/2026-09/D-IRVI%20-%20LAYOUT%20(2).pdf"
+file = "sources/voter-guide-section.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Jeffrey Melching, City Attorney, Impartial Analysis of Measure D (July 27, 2026), Orange County Voter Information Guide, Ballot Measures-D, page 5"
+credit = "City Attorney's Impartial Analysis, Orange County Voter Information Guide"
+url = "https://ocvote.gov/sites/default/files/2026-09/D-IRVI%20-%20LAYOUT%20(2).pdf"
+file = "sources/voter-guide-section.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure D and Rebuttal to it, as printed in the Orange County Voter Information Guide, Ballot Measures-D, page 6"
+credit = "Argument in favor, Orange County Voter Information Guide"
+url = "https://ocvote.gov/sites/default/files/2026-09/D-IRVI%20-%20LAYOUT%20(2).pdf"
+file = "sources/voter-guide-section.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure D and Rebuttal to it, as printed in the Orange County Voter Information Guide, Ballot Measures-D, page 7"
+credit = "Argument against, Orange County Voter Information Guide"
+url = "https://ocvote.gov/sites/default/files/2026-09/D-IRVI%20-%20LAYOUT%20(2).pdf"
+file = "sources/voter-guide-section.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure D, City of Irvine, Orange County Voter Information Guide, Ballot Measures-D, pages 2 to 5"
+url = "https://ocvote.gov/sites/default/files/2026-09/D-IRVI%20-%20LAYOUT%20(2).pdf"
+file = "sources/voter-guide-section.pdf"
+retrieved = "2026-10-28"

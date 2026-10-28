@@ -246,3 +246,10 @@ source = "impartial-analysis"
 quote = "Measure N will continue the local transactions and use tax at a rate of 1.5 cents generating approximately $84,000,000 every year for general city services."
 amount = 84000000
 period = "per-year"
+
+# Irvine Measure D: not a tax measure; the guide prints no fiscal
+# statement or cost estimate (the impartial analysis states a cost cap,
+# not an estimate).
+[irvine-measure-d]
+source = "guide-page"
+status = "none-printed"
