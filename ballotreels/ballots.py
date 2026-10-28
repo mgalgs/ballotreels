@@ -44,7 +44,9 @@ BALLOTS: dict[str, Ballot] = {
     # A county measure's card is a page of its county's publication, not
     # the state's guide: San Diego's Voter Information Guide prints each
     # measure's ballot label and impartial analysis; Los Angeles prints
-    # its ballot label only in the measure's proposed ordinance.
+    # its ballot label only in the measure's proposed ordinance; Alameda's
+    # Composite Voter Information Guide prints each measure's ballot
+    # question and impartial analysis.
     "ca": Ballot(guide="Official Voter Information Guide",
                  fiscal_label="Fiscal Impact:",
                  choices=("Yes", "No"),
@@ -95,6 +97,20 @@ BALLOTS: dict[str, Ballot] = {
                          "San Diego County Voter Information Guide",
                      "ca-2026-11-03-coronado-measure-d":
                          "San Diego County Voter Information Guide",
+                     "ca-2026-11-03-albany-measure-o":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-albany-measure-p":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-albany-measure-q":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-albany-measure-r":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-albany-measure-s":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-albany-measure-t":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-piedmont-measure-gg":
+                         "Alameda County Composite Voter Information Guide",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",
