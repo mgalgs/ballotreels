@@ -1,0 +1,142 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; the limit today; what
+# would change, and how it applies to members serving now; that the guide
+# gives no cost estimate; one line per side; what a vote does.
+#
+# The City Attorney's Impartial Analysis is cited as the guide page. The
+# guide prints no fiscal statement (not a tax measure): the fiscal line
+# follows the no-cost-estimate wording. The line on members serving now
+# gives both halves of the analysis's sentence (no added consecutive
+# terms; eligible again after the break), so it neither previews nor
+# answers the opponents' point (STANDARD.md 6.3, 6.4). The argument
+# against names two councilmembers; the script names no one. That the
+# limit dates from a 2018 measure is the opponents' point, so it stays
+# out of the neutral sections (STANDARD.md 6.3).
+#
+# No argument in favor was submitted ("No argument in favor of this
+# measure was submitted."): the yes side says so, filed = false
+# (STANDARD.md 2.5).
+
+contest = "ca-2026-11-03-lake-forest-measure-f"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "F"
+title = "City of Lake Forest, Lake Forest Election Reform and Voter Choice Measure"
+origin = "Measure F was placed on the ballot by the Lake Forest City Council."
+summary = "Shall the measure limiting city council members to two consecutive terms in office with a mandatory four-year out of office period before being eligible to serve for another two consecutive terms in office, be adopted?"
+yes = "A “Yes” vote on Measure F will approve the Measure and prohibit City Council Members or the Mayor from serving more than two four-year terms without a four more consecutive years break in service."
+no = "A “No” vote on Measure F will not approve the Measure and will prohibit the City Council members or Mayor from serving more than two four-year terms."
+
+[[section]]
+id = "what"
+heading = "Measure F"
+
+[[section.line]]
+text = "Lake Forest Measure F asks the voters of Lake Forest whether to change the term limits for City Council members."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["limiting city council members to two consecutive terms"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, no one may serve on the City Council, or as mayor, for more than two four-year terms."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure F would allow two terms in a row, then require a break of at least four years."
+sources = ["guide-page", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "extend-deadline"
+
+[[section.line]]
+text = "After each break, a person could serve two more terms, with no limit on how many times."
+sources = ["text"]
+
+[[section.line]]
+text = "Members serving now would get no added terms in a row, but could serve again after a four-year break."
+sources = ["guide-page"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Orange County Voter Information Guide does not include a cost estimate for the measure."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument in favor of Measure F was submitted to the Orange County Voter Information Guide."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument for was submitted"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure F replaces the lifetime limit voters passed in 2018, turning limits into careers."
+sources = ["arguments"]
+basis = ["we passed a measure to establish strict lifetime term limits of two four-year terms for Lake Forest City Council Members.", "Their new measure, if passed, will replace the current term limits", "That isn’t a limit -- that’s a career"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Replaces the lifetime limit voters passed in 2018", "Lets members serve two terms, break, and return"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means no more than two four-year terms in a row without a four-year break."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["without a four more consecutive years break in service"]
+
+[[section.line]]
+text = "A no vote keeps the limit of two four-year terms on council members and the mayor."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["will prohibit the City Council members or Mayor from serving more than two four-year terms"]

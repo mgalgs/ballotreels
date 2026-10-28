@@ -454,3 +454,48 @@ period = "per-year"
 [colton-measure-o]
 source = "impartial-analysis"
 status = "none-printed"
+
+# Lake Forest Measure F: not a tax measure; the guide prints no fiscal
+# statement.
+[lake-forest-measure-f]
+source = "guide-page"
+status = "none-printed"
+
+# Newport Beach Measure H: not a tax measure; the guide prints no fiscal
+# statement.
+[newport-beach-measure-h]
+source = "guide-page"
+status = "none-printed"
+
+# San Clemente Measure M: the guide prints no fiscal statement; the one
+# estimate is the city's, as the City Attorney's Impartial Analysis
+# reports it.
+[san-clemente-measure-m]
+source = "guide-page"
+quote = "The City estimates a new 1% sales tax would result in additional revenue of approximately $15 million annually to the City of San Clemente for 10 years"
+amount = 15000000
+period = "per-year"
+direction = "revenue-gain"
+
+# Placentia Measure L: the guide prints no fiscal statement; the one
+# estimate is the ballot question's.
+[placentia-measure-l]
+source = "guide-page"
+quote = "generating about $715,000 annually"
+amount = 715000
+period = "per-year"
+
+# Laguna Beach Measure E: not a tax measure; the guide prints no fiscal
+# statement.
+[laguna-beach-measure-e]
+source = "guide-page"
+status = "none-printed"
+
+# Los Alamitos Measure G: the guide prints no fiscal statement; the one
+# estimate with a period is the ballot question's (the City Attorney's
+# Impartial Analysis gives the same $300,000 without one).
+[los-alamitos-measure-g]
+source = "guide-page"
+quote = "providing approximately $300,000 annually"
+amount = 300000
+period = "per-year"

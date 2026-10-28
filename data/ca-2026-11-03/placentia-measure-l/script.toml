@@ -1,0 +1,143 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; the hotel tax today and where its money goes; what would
+# change (the rate, and when);
+# the ballot question's revenue estimate; one line per side; what a vote
+# does.
+#
+# The City Attorney's Impartial Analysis is cited as the guide page. The
+# guide prints no tax rate statement or fiscal analysis; the one revenue
+# estimate is the ballot question's. It is city revenue, and no archived
+# source states the city's general fund budget, so it has no scale
+# (STANDARD.md 6.5; left open). That the rate is below other Orange
+# County cities' is the supporters' point, so it stays out of the neutral
+# sections (STANDARD.md 6.3). The script names no one.
+#
+# No argument against was submitted ("No argument against this measure
+# was submitted."): the no side says so, filed = false (STANDARD.md 2.5).
+
+contest = "ca-2026-11-03-placentia-measure-l"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "L"
+title = "City of Placentia, Placentia Hotel Tax Measure"
+origin = "The measure was placed on the ballot by the City Council of the City of Placentia."
+summary = "Shall the measure increasing the rate of the City of Placentia’s existing transient occupancy tax (hotel tax), paid only by hotel guests, to 14%, funding city services such as police patrols, fire protection, 911 response, and road repairs; requiring citizen oversight and annual audits, generating about $715,000 annually, until ended by voters, be adopted?"
+yes = "A YES vote approves the ordinance increasing the rate of the Hotel Tax to 14%."
+no = "A NO vote rejects the ordinance, and would leave the Hotel Tax at 10%."
+
+[[section]]
+id = "what"
+heading = "Measure L"
+
+[[section.line]]
+text = "Placentia Measure L asks the voters of Placentia whether to raise the hotel tax from 10 percent to 14 percent."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["existing transient occupancy tax (hotel tax)"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, hotel guests in Placentia pay a 10 percent tax on their room rent, for stays of 30 days or less."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "bars"
+title = "Placentia hotel tax rate"
+source = "guide-page"
+unit = "%"
+labels = ["Today", "With Measure L"]
+values = [10, 14]
+
+[[section.line]]
+text = "The money goes into the general fund, which pays for services such as police patrols and road repairs."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure L would raise the rate to 14 percent, starting January 1, 2027."
+sources = ["guide-page", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+text = "The ballot question says the higher rate would bring in about $715,000 a year."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say visitors pay the tax, not residents, and the rate trails other Orange County rates."
+sources = ["arguments"]
+basis = ["Placentia’s hotel tax is paid only by guests who stay in local hotels, motels, and short-term rentals.", "It is not a tax on Placentia residents’ property, income, or everyday expenses.", "Placentia’s current hotel tax rate has not kept pace with inflation and is below other Orange County rates."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Paid by visitors, not residents", "Below other Orange County rates"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure L was submitted to appear in the Orange County Voter Information Guide."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves raising the hotel tax to 14 percent."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["increasing the rate of the Hotel Tax to 14%"]
+
+[[section.line]]
+text = "A no vote rejects the increase, leaving the hotel tax at 10 percent."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["would leave the Hotel Tax at 10%"]
