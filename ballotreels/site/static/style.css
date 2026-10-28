@@ -1225,6 +1225,22 @@ a.contest:hover {
     max-width: 760px;
   }
 
+  /* A ballot or state page: its contest cards two to a row. */
+  .page:has(.card-grid) {
+    max-width: 1100px;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 18px;
+    margin-bottom: 14px;
+  }
+
+  .card-grid > .box {
+    margin: 0;
+  }
+
   /* html's overflow-x reaches the viewport; on body it would make body
      a scroll box that never scrolls, and the video below never stick. */
   body {

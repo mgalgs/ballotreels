@@ -987,9 +987,8 @@ async function renderBallot(divisions, matchedAddress, partial) {
   for (const level of body.levels) {
     section.appendChild(el("h2", { class: "level-heading",
                                    text: levelName(level.level, body.chambers) }));
-    for (const contest of level.contests) {
-      section.appendChild(renderContestCard(contest));
-    }
+    section.appendChild(el("div", { class: "card-grid" },
+                           level.contests.map(renderContestCard)));
   }
   app.appendChild(section);
 }
@@ -1050,9 +1049,8 @@ async function renderState(abbr, year, old) {
     text: `${contests.length} ${contests.length === 1 ? "measure" : "measures"}` +
       ` · ${ready} ${ready === 1 ? "video" : "videos"} ready to watch`,
   }));
-  for (const contest of contests) {
-    section.appendChild(renderContestCard(contest));
-  }
+  section.appendChild(el("div", { class: "card-grid" },
+                         contests.map(renderContestCard)));
   section.appendChild(el("p", { class: "muted small" }, [
     "Your own ballot may also have district and county measures. ",
     el("a", { href: "/", text: "Find it by zip code" }),
