@@ -1,8 +1,18 @@
-# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
-# is about; who would enforce it, and how that works today; what the
-# initiative would ban and how it is enforced; what the Chief Financial
-# Officer says it costs, and what that cost depends on; the two sides;
-# what a vote does.
+# Recipe E, 60 seconds, distilled. The chain: what it is about; where a
+# law like it has been tried, and what happened to it; who it would reach
+# today; what the initiative would ban and who would be fined; what the
+# Chief Financial Officer says it costs, and what that cost depends on;
+# the two sides; what a vote does.
+#
+# Precedent (STANDARD.md section 10) is California's law, the one law in
+# the archived records (sources/precedent/README.md) that, like Initiative
+# 86, bans the force-feeding itself as well as sales, told with each court
+# outcome the records show. The city laws there (New York City, Chicago,
+# Pittsburgh, Portland, Oregon) ban sales only, and telling each with all
+# its outcomes does not fit the length budget (rule 10.5). Who it affects
+# comes only from the initiative's text and the Chief Financial Officer;
+# no official record says how many businesses sell these products, so the
+# questions record says so and the script does not.
 #
 # The card quotes the Voter Guide's page: the short title, the summary
 # statement, and the ballot's two choices, "Yes, to approve" and "No, to
@@ -49,10 +59,33 @@ source = "guide"
 highlight = ["force-feeding a bird for the purpose of enlarging the bird’s liver"]
 
 [[section]]
+id = "background"
+heading = "A similar law elsewhere"
+
+[[section.line]]
+id = "california-law"
+text = "California passed a law in 2004 banning the force-feeding, and selling the products."
+sources = ["ca-law"]
+
+[section.line.visual]
+kind = "illustration"
+name = "law-book"
+
+[[section.line]]
+id = "california-courts"
+text = "A court struck down the California sales ban in 2015, then an appeals court upheld it."
+sources = ["ca-court-2017", "ca-court-2022"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section]]
 id = "today"
 heading = "Today"
 
 [[section.line]]
+id = "no-bird-farms"
 text = "The District's Office of Revenue Analysis knows of no bird farms in the District."
 sources = ["fiscal"]
 
@@ -60,20 +93,13 @@ sources = ["fiscal"]
 kind = "illustration"
 name = "city-storefronts"
 
-[[section.line]]
-text = "The District's environment department already inspects shops and restaurants under bans on foam containers and straws."
-sources = ["fiscal"]
-
-[section.line.visual]
-kind = "illustration"
-name = "inspection-clipboard"
-
 [[section]]
 id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "Initiative 86 would ban force-feeding a bird to enlarge its liver, and selling the products, including foie gras."
+id = "bans"
+text = "Initiative 86 would ban the force-feeding, and selling the products or bringing them in for business."
 sources = ["guide", "formulation"]
 
 [section.line.visual]
@@ -82,15 +108,20 @@ source = "guide"
 highlight = ["Ban the sale or distribution"]
 
 [[section.line]]
-text = "From July 2027, violations would bring fines of $1,000 to $5,000 a day."
+id = "fines"
+text = "From July 2027, restaurants, stores or anyone else breaking the ban could be fined $1,000 to $5,000 a day."
 sources = ["fiscal", "formulation"]
+
+[section.line.visual]
+kind = "illustration"
+name = "inspection-clipboard"
 
 [[section]]
 id = "fiscal"
 heading = "What the official estimate says"
 
 [[section.line]]
-text = "The Chief Financial Officer estimates that carrying out the ban would cost $314,000 over four years, less than 1 percent of any year's local spending."
+text = "The Chief Financial Officer estimates the ban would cost $314,000 over four years, less than 1 percent of any year's local spending."
 sources = ["fiscal", "budget"]
 
 [section.line.visual]
@@ -102,7 +133,7 @@ labels = ["FY 2026", "FY 2027", "FY 2028", "FY 2029"]
 values = [0, 109, 101, 104]
 
 [[section.line]]
-text = "The Chief Financial Officer says the money is not yet budgeted, and carrying out the ban depends on it."
+text = "Carrying out the ban waits until its cost is budgeted."
 sources = ["fiscal"]
 
 [[section]]
@@ -156,3 +187,19 @@ sources = ["guide"]
 kind = "page"
 source = "guide"
 highlight = ["No, to reject"]
+
+# The questions a first-time DC voter is left with (STANDARD.md rule
+# 10.1), each with the lines that answer it or marked as answered by no
+# official source.
+
+[[question]]
+ask = "Has anywhere else done this, and what happened?"
+lines = ["california-law", "california-courts"]
+
+[[question]]
+ask = "Who would this affect?"
+lines = ["no-bird-farms", "bans", "fines"]
+
+[[question]]
+ask = "How many restaurants and stores in the District sell these products?"
+unanswered = true
