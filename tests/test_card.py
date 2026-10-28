@@ -6,8 +6,8 @@ import unittest
 from pathlib import Path
 
 from ballotreels import check_contest, load_contest
-from ballotreels.checks import (_archived_text, _in_raw_columns, _unshifted,
-                                plain_text)
+from ballotreels.checks import (_archived_text, _in_raw_columns, _in_unshifted,
+                                _unshifted, plain_text)
 
 from .helpers import ContestCopyTestCase, unlinted_standard
 
@@ -405,3 +405,22 @@ class ShiftedGlyphTest(unittest.TestCase):
                       "Caltrain, VTA", text)
         self.assertIn("It is estimated that the tax would raise "
                       "approximately $980 million per year.", text)
+
+    @unittest.skipUnless(shutil.which("pdftotext"),
+                         "needs poppler's pdftotext")
+    def test_lost_parentheses_and_apostrophes(self):
+        # pdftotext prints "(2)" and "Councilmembers' right" in the
+        # shifted font with spaces for the marks
+        guide = (ALAMEDA_GUIDE.parent.parent.parent / "oakland-measure-ee" /
+                 "sources" / "vig-pp933-946.pdf")
+        quote = ("(1) make the Mayor the City's chief executive with a "
+                 "legislative veto, (2) empower the Council to override "
+                 "vetoes, confirm appointments of certain directors, and "
+                 "appoint an Independent Budget and Legislative Analyst, "
+                 "(3) affirm Councilmembers' right to acquire information")
+        self.assertNotIn(quote, _archived_text(guide))
+        self.assertTrue(_in_unshifted(quote, guide))
+        self.assertFalse(_in_unshifted(quote.replace("(3) affirm",
+                                                     "(3) confirm"), guide))
+        # a source without the shifted font gets no such allowance
+        self.assertFalse(_in_unshifted("Increases the maximum", GA_BOOKLET))

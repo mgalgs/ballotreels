@@ -595,8 +595,12 @@ def _archived_blocks(path: Path) -> tuple[str, ...]:
     return tuple(b for b in blocks if b)
 
 
-@lru_cache(maxsize=8)
 def _pdftotext(path: Path) -> str:
+    return _unshifted(_pdftotext_raw(path))
+
+
+@lru_cache(maxsize=8)
+def _pdftotext_raw(path: Path) -> str:
     if shutil.which("pdftotext") is None:
         raise UnreadableSource("pdftotext (poppler) is not installed")
     try:
@@ -605,7 +609,7 @@ def _pdftotext(path: Path) -> str:
     except (subprocess.CalledProcessError,
             subprocess.TimeoutExpired) as e:
         raise UnreadableSource(f"pdftotext failed: {e}") from None
-    return _unshifted(out.stdout.decode("utf-8", errors="replace"))
+    return out.stdout.decode("utf-8", errors="replace")
 
 
 # Alameda County's Composite Voter Information Guide sets some lines in a
@@ -614,11 +618,13 @@ def _pdftotext(path: Path) -> str:
 # its character: a printable ASCII character's code less 29 ("WUD൶F" for
 # "traffic", a control character for a space or a digit), and the
 # indices below for the rest. The glyph order is the font's, so the
-# table is as observed in that guide.
+# table is as observed in that guide (its subsets number "ffi" three
+# ways).
 _GLYPH_SHIFT = 29
 _SHIFTED_GLYPHS = {"\u0086": "§", "«": "…", "±": "–", "²": "—", "³": "“",
                    "´": "”", "µ": "‘", "¶": "’", "¿": "fi", "À": "fl",
-                   "൵": "ff", "൶": "ffi", "භ": "•"}
+                   "൵": "ff", "൶": "ffi", "௖": "ffi",
+                   "৽": "ffi", "භ": "•"}
 # a control character pdftotext never prints for itself (it does print
 # tab, line feed, form feed and carriage return), or a glyph above
 _SHIFT_SIGN = re.compile("[\x03-\x08\x0e-\x1c" + "".join(_SHIFTED_GLYPHS)
@@ -638,6 +644,31 @@ def _unshifted(text: str) -> str:
             lines[i] = "".join(_unshift(ch, j == 0)
                                for j, ch in enumerate(line))
     return "\n".join(lines)
+
+
+# In such a line pdftotext prints a parenthesis or a straight apostrophe
+# (glyph indices 11, 12 and 10: a vertical tab, a form feed and a line
+# feed) as a space, so a card quote is also looked for with these left
+# out of both.
+_LOST_MARKS = re.compile(r"[()']")
+
+
+def _in_unshifted(value: str, path: Path) -> bool:
+    """Whether card quote `value` is in the PDF at `path`, one with lines
+    in such a font, with parentheses and straight apostrophes left out
+    of both; the words and their order still match exactly."""
+    if path.suffix.lower() != ".pdf":
+        return False
+    try:
+        raw = _pdftotext_raw(path)
+    except UnreadableSource:
+        return False
+    if not _SHIFT_SIGN.search(raw):
+        return False
+
+    def unmarked(s: str) -> str:
+        return _normalise(_LOST_MARKS.sub(" ", s))
+    return unmarked(value) in unmarked(_unshifted(raw))
 
 
 def _unshift(ch: str, first: bool) -> str:
@@ -792,6 +823,7 @@ def check_card(c: Contest) -> list[Failure]:
                 and not _in_text(value, archived) \
                 and not _in_raw_columns(value, path) \
                 and not _card_quote_in(value, archived, blocks) \
+                and not _in_unshifted(value, path) \
                 and _normalise(value) not in _digit_one_read_as_l(archived):
             fail(f"{key!r} does not appear verbatim in source "
                  f"{card.source!r} ({src.file})")
