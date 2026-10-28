@@ -1,0 +1,53 @@
+# Archived sources for City of Union City Measure II, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. The guide's pages are cut from the Alameda County
+# Registrar of Voters' Composite Voter Information Guide (965 pages);
+# "pages" are the PDF's page numbers, with the printed footer (UMII-1 to
+# UMII-5) beside them.
+#
+# The guide prints the ballot question, the City Attorney's Impartial
+# Analysis, an argument in favor, the notice "NO ARGUMENT AGAINST MEASURE
+# II WAS SUBMITTED", a rebuttal to the argument in favor, and the full
+# text of the ordinance. It prints no tax rate statement.
+
+[contest]
+id = "ca-2026-11-03-union-city-measure-ii"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:union_city"
+kind = "measure"
+title = "City of Union City Measure II: Utility Users Tax Extension"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "Alameda County Registrar of Voters, Composite Voter Information Guide, November 3, 2026, page 959 (UMII-1): ballot question of Measure II"
+credit = "Ballot question, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp959-963.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "City Attorney's Impartial Analysis of Measure II, Alameda County Composite Voter Information Guide, page 959 (UMII-1)"
+credit = "City Attorney's Impartial Analysis, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp959-963.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in favor of Measure II and the rebuttal to it, with the notice that no argument against was submitted, as printed in the Alameda County Composite Voter Information Guide, pages 960 to 961 (UMII-2 to UMII-3)"
+credit = "Arguments, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp959-963.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure II, an ordinance amending Chapter 3.28 of the Union City Municipal Code, Alameda County Composite Voter Information Guide, pages 962 to 963 (UMII-4 to UMII-5)"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp959-963.pdf"
+retrieved = "2026-10-28"
