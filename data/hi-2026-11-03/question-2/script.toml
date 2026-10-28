@@ -1,0 +1,168 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; how county debt is limited today; what Question 2 would
+# change (what the bonds pay for, what repays them, the debt limit); that
+# the guide gives no cost estimate; the two sides; what a vote does, and
+# what it takes to pass.
+#
+# The card quotes the 2026 Voter Guide's page for Question 2, statements
+# the Department of the Attorney General provided: the title line as the
+# origin, the ballot question as the title, the explanation's first three
+# paragraphs as the summary (its last sentence sits after the page footer
+# in the PDF's text, so it is not quoted; the ballot question says the
+# same), and its MEANING OF "YES" VOTE / "NO" VOTE sentences. No fiscal
+# statement exists, so the card has no fiscal quote.
+#
+# The amendment borrows nothing and names no amount: it directs the
+# Legislature to allow counties to issue the bonds. No line gives a
+# dollar figure or says the state or a county borrows by passing it.
+# Neutral lines keep to the guide's terms ("growth in property tax
+# revenue"), not the bill's "tax increment financing".
+#
+# Hawaii publishes no official arguments for or against a proposed
+# amendment, so both sides are filed = false and each says so once, in
+# the same number of words. The bill's findings and the conference
+# report state the Legislature's purpose; they are not arguments and are
+# not on the yes side. Hawaii's ratification rule is unusual, so the vote
+# section states it once, in the guide's terms, worded as Question 1's.
+
+contest = "hi-2026-11-03-question-2"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide"
+number = "2"
+title = "Shall the Hawaii State Constitution be amended to direct the legislature to authorize the counties to issue resilient infrastructure for shelter and equity bonds to fund public improvements in designated districts, repaid solely by future growth in property tax revenues within those districts, not by increasing real property tax rates, where such bonds are excluded from the counties’ debt limit and are subject to accountability and oversight requirements as may be provided by law?"
+origin = "QUESTION #2: Directing the Hawaii State Legislature to Establish Procedures for Counties to Issue RISE Bonds, Exempt from County Debt Limits."
+summary = "Article VII, section 12, of the Hawaii State Constitution directs the Hawaii State Legislature to authorize the counties to issue several types of bonds. This amendment to Article VII, section 12, of the Constitution would create a new type of bond called a resilient infrastructure for shelter and equity (RISE) bond and direct the Hawaii State Legislature to establish laws that would allow the counties to issue RISE bonds. Article VII, section 13, of the Hawaii State Constitution excludes certain types of bonds from the maximum amount of debt that a county is allowed to issue. This amendment to Article VII, section 13, of the Hawaii State Constitution would add RISE bonds to the list of bonds that are excluded when calculating a county’s maximum debt level, making RISE bonds exempt from the counties’ debt limits. RISE bonds are a form of financing payable solely from incremental increases in real property tax revenue received by a county from designated districts that result from the natural growth of real property values in those districts."
+yes = "A “yes” vote would direct the Legislature to establish laws allowing the counties to issue RISE Bonds, which would be excluded from county debt limits, and authorize their repayment only from the future real property tax growth in the areas they help develop."
+no = "A “no” vote would make no change to the Hawaii State Constitution, which currently does not allow the issuance of RISE Bonds."
+
+[[section]]
+id = "what"
+heading = "Question 2"
+
+[[section.line]]
+text = "Question 2 is about resilient infrastructure for shelter and equity bonds, or RISE bonds."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["resilient infrastructure for shelter and equity bonds"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the constitution limits county debt, but excludes some kinds of bonds from the limit."
+sources = ["guide", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "spending-limit"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would direct the Legislature to let counties issue RISE bonds for public improvements in designated districts."
+sources = ["guide", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["to fund public improvements in designated districts"]
+
+[[section.line]]
+text = "The bonds would be repaid only by future growth in property tax revenue within each district, not by higher tax rates."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["repaid solely by future growth in property tax revenues", "not by increasing real property tax rates"]
+
+[[section.line]]
+text = "RISE bonds would not count toward county debt limits."
+sources = ["guide", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The 2026 Voter Guide does not include a cost estimate for the amendment."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Hawaii's voter guide includes no official argument for the amendment."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "list"
+source = "guide"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Hawaii's voter guide includes no official argument against the amendment."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "list"
+source = "guide"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote directs the Legislature to allow RISE bonds."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["direct the Legislature to establish laws allowing the counties to issue"]
+
+[[section.line]]
+text = "A no vote makes no change; the constitution does not allow RISE bonds today."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["currently does not allow the issuance of RISE Bonds"]
+
+[[section.line]]
+text = "To pass, yes votes need a majority of yes and no votes, and at least half of all votes cast, including blank votes and overvotes."
+sources = ["guide", "elections-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
