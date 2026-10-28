@@ -52,6 +52,13 @@ before writing another.
   beside the fiscal analysis.
   Pay for the added words within the same neutral section, never from
   a side.
+- **Write for the transcript check.** The narration is the script word
+  for word, and a take whose transcript differs is rejected, so avoid
+  what it mishears: an acronym as a plural or a word ("PACs"), an
+  abbreviation with periods ("U.S."), "consents", a possessive that
+  sounds like a plural ("property's"). `standard/speakability.txt` lists
+  them, with what to write instead; `check` enforces it until the script
+  is narrated.
 - Purpose is the authors' purpose ("The Legislature placed it on the
   ballot to…"), never the narrator's claim (rule 6.2).
 
@@ -60,7 +67,19 @@ before writing another.
 - One line per side, attributed ("Supporters say…", "Opponents say…"),
   each the side's strongest point as the side itself states it in the
   official arguments.
-- **Equal word counts** (the check allows 5%; aim for exact).
+- **Say what the side said.** Give each side's line a `basis`
+  (SCRIPT-FORMAT.md): the sentences of its argument the line distils,
+  copied verbatim. The line must say what its basis says, as that side's
+  claim, in its own sense: a reader of the basis would recognise the
+  line as their point. It may compress, but never invert or weaken a
+  claim, or turn it into a complaint. "Montana grants them every power
+  they have" (so the state may limit them) is not "Montana grants
+  artificial persons every power", which sounds like an objection.
+- **Equal word counts** (the check allows 5%; aim for exact), and
+  **equal spoken length**: a number is said in full ("nearly $90,000" is
+  two words, said as five), so balance what is heard. Until the script
+  is narrated, `check` estimates each side's spoken time and fails a
+  gap over 1.1 s.
 - Each side gets a `list` of **two items**, its two strongest points, in
   short form and about the same length as the other side's items.
 - Nothing a side argues appears in a neutral section (rule 6.3).

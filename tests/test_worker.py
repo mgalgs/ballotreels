@@ -10,7 +10,9 @@ from pathlib import Path
 
 import ballotreels.site.config as site_config
 from ballotreels.cli import main
+from ballotreels.contest import load_contest
 from ballotreels.index import key_for
+from ballotreels.narration import CURRENT, narration_state
 from ballotreels.pipeline import (STAGES, FakeRunner, HandWrittenScriptWriter,
                                   PipelineError, SubprocessRunner, run_check)
 from ballotreels.queue import hash_for_key
@@ -638,3 +640,86 @@ class UnreachableServerTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class NoTTSRunner(FakeRunner):
+    """A FakeRunner whose narrate must not be called: standing in for the
+    real TTS, which a committed, current narration never needs."""
+
+    def __init__(self):
+        super().__init__()
+        self.narrated = []
+
+    def narrate(self, contest_dir):
+        self.narrated.append(Path(contest_dir))
+        raise AssertionError("TTS called for a contest whose committed "
+                             "narration matches its script")
+
+
+class CommittedNarrationReusedTest(WorkerTestCase):
+    """Arizona Proposition 141's render re-synthesised a narration already
+    narrated, transcript-checked and committed on the host, and the new take
+    failed the transcript check: the scratch copy dropped the sidecars, so
+    `say` had no phrase_cache to reuse. A committed narration that matches
+    the script is reused byte for byte, with no TTS call."""
+
+    def setUp(self):
+        super().setUp()
+        dest = self.fake_repo / "data" / "ca-2026-11-03" / "prop-2"
+        for name in NARRATION_SIDECARS + ("narration.txt",):
+            shutil.copy2(PROP_2 / name, dest / name)
+        self.dest = dest
+
+    def test_scratch_copy_keeps_the_sidecars(self):
+        job, _ = self.deps.queue.create_job(self.prop2_key())
+        worker = self.make_worker()
+        contest_dir = worker._prepare_scratch(
+            job, worker._job_work_dir(job["id"]))
+        for name in NARRATION_SIDECARS:
+            self.assertEqual((contest_dir / name).read_bytes(),
+                             (self.dest / name).read_bytes(), name)
+
+    def test_current_narration_never_calls_tts(self):
+        job, _ = self.deps.queue.create_job(self.prop2_key())
+        runner = NoTTSRunner()
+        self.make_worker(runner=runner).run_once()
+        row = self.deps.queue.get_job(job["id"])
+        self.assertEqual(row["state"], "done", row["error"])
+        self.assertEqual(runner.narrated, [])
+
+    def test_visual_only_edit_never_calls_tts(self):
+        # Montana CI-132's render re-synthesised its yes side after an edit
+        # to an illustration only: what is on screen is not spoken, so the
+        # committed narration stays current and is reused as it is.
+        script = self.dest / "script.toml"
+        script.write_text(script.read_text(encoding="utf-8").replace(
+            'title = "Where General Fund money goes (approximate)"',
+            'title = "Where the General Fund goes (approximate)"'),
+            encoding="utf-8")
+        self.assertIn("Where the General Fund goes",
+                      script.read_text(encoding="utf-8"))
+        self.assertEqual(narration_state(load_contest(self.dest)), CURRENT)
+        job, _ = self.deps.queue.create_job(self.prop2_key())
+        runner = NoTTSRunner()
+        self.make_worker(runner=runner).run_once()
+        row = self.deps.queue.get_job(job["id"])
+        self.assertEqual(row["state"], "done", row["error"])
+        self.assertEqual(runner.narrated, [])
+
+    def test_stale_narration_fails_fast(self):
+        # An edited script's committed narration is not re-made on the
+        # worker: `say` would re-speak the edited line and the unchanged
+        # line after it, and either new take can fail its transcript check.
+        script = self.dest / "script.toml"
+        script.write_text(script.read_text(encoding="utf-8").replace(
+            "A no vote means the current rules would not change.",
+            "A no vote means the current rules would stay the same."),
+            encoding="utf-8")
+        job, _ = self.deps.queue.create_job(self.prop2_key())
+        runner = NoTTSRunner()
+        self.make_worker(runner=runner).run_once()
+        row = self.deps.queue.get_job(job["id"])
+        self.assertEqual(row["state"], "failed")
+        self.assertEqual(row["failed_stage"], "narrate")
+        self.assertIn("scripts/narrate.sh", row["error"])
+        self.assertEqual(runner.narrated, [])

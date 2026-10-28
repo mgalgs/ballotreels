@@ -114,7 +114,29 @@ def run_check(contest_dir: Path, standard: Standard) -> None:
 
 
 def run_narrate(contest_dir: Path, runner: Runner, standard: Standard) -> None:
-    runner.narrate(contest_dir)
+    from .contest import ContestError, load_contest
+    from .narration import MISSING, STALE, narration_state
+    try:
+        state = narration_state(load_contest(contest_dir))
+    except ContestError as e:
+        raise PipelineError(str(e)) from None
+    # A narration committed for exactly this script was made and
+    # transcript-checked on the host: use it as it is. Asking the TTS
+    # again would only risk a new take failing the transcript check.
+    if state == STALE:
+        # Nor is a committed narration re-made here once the script has
+        # moved on: `say` keys each phrase's audio on its own text and the
+        # phrase before it (the style's context clause), so an edited
+        # line re-speaks the unchanged line after it too, and any new take
+        # can fail the transcript check. That belongs on the host, where
+        # the operator sees it and commits the result.
+        raise PipelineError(
+            "the committed narration (narration.json) no longer matches "
+            "this script; re-narrate it on the host with scripts/narrate.sh "
+            "and commit the sidecars, rather than re-synthesising a "
+            "committed narration here")
+    if state == MISSING:
+        runner.narrate(contest_dir)
     # STANDARD.md rule 7 ("A video that fails any rule is not published"):
     # re-check now that the sidecars exist, since airtime can only be
     # measured once they do.

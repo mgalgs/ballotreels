@@ -127,6 +127,9 @@ class Line:
     sources: tuple[str, ...] | None  # None when the key is absent
     connective: bool
     visual: Visual | None = None
+    # A side's line: the passages of its cited argument it distils, each
+    # verbatim (docs/SCRIPT-FORMAT.md). None when the key is absent.
+    basis: tuple[str, ...] | None = None
 
 
 @dataclass(frozen=True)
@@ -243,11 +246,17 @@ def _load_line(raw: Any, where: str) -> Line:
         if not all(isinstance(s, str) for s in sources):
             raise ContestError(f"{where}: 'sources' must be a list of strings")
         sources = tuple(sources)
+    basis = _get(raw, "basis", list, where, None)
+    if basis is not None:
+        if not all(isinstance(b, str) for b in basis):
+            raise ContestError(f"{where}: 'basis' must be a list of strings")
+        basis = tuple(basis)
     return Line(
         text=_get(raw, "text", str, where),
         sources=sources,
         connective=_get(raw, "connective", bool, where, False),
         visual=_load_visual(raw, where),
+        basis=basis,
     )
 
 

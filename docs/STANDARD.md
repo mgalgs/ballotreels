@@ -255,7 +255,10 @@ human reading the video.
 | Same sections per candidate / per side, word counts within 5% | 2.1, 2.2, 2.4 |
 | Candidate order matches the rule in 2.3 | 2.3 |
 | No word from the judgment-word list in narrator text | 3.1 |
+| Before narration (a script whose narration is missing or stale): no phrase the narration would speak afresh (an edited one, or the one right after it; a reused phrase already passed) uses a spelling the narration's transcript check mishears (`standard/speakability.txt`), so the narration can stay the script verbatim | none: a production check |
+| Before narration: the two measure sides' estimated spoken durations (numbers, money and symbols said in full, timed from syllables, letters and pauses fitted to the committed narrations) within 1.1s of each other, so the narration will not need more than the airtime check's 2s of padding | 2.2 |
 | Each measure side's on-screen time exactly equal, the shorter one padded with trailing silence (padding over 2s fails instead, as too big to be TTS noise) | 2.2, 4.1 |
+| Each measure side's line quotes, as its `basis`, the passages of its cited official argument it distils, each verbatim in that source; required before narration (a script whose narration is missing or stale) | 3.3 |
 | Every chart cites a source id that exists, of an allowed kind | 7.1 |
 | No chart in a side section unless both sides have one | 7.3 |
 | A choice question's options: letters in ballot order, each letter and label verbatim in the cited source, each spoken name the label with or without its parenthesised parts, the narration naming each once, in ballot order, on its own grid page, and every option as often as every other; no sides, no yes/no lines on its card | 8.1-8.4 |

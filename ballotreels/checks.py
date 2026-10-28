@@ -13,18 +13,20 @@ import math
 import re
 import shutil
 import subprocess
+import unicodedata
 from collections import Counter
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
 
-from . import grid, narration, storyboard
+from . import grid, narration, spoken, storyboard
 from .ballots import BALLOTS, Ballot, badge, ballot_for
 from .contest import CARD_KEYS, Card, Choice, Contest, Line, Section, Visual
 from .illustrations import load_library
 from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, CHOICE_TEMPLATES,
-                       CHOICES, FISCAL, SOURCE_KINDS, TEMPLATES, Standard,
-                       Template, judgment_word_pattern, load_standard)
+                       CHOICES, FISCAL, SOURCE_KINDS, TEMPLATES, Risk,
+                       Standard, Template, judgment_word_pattern,
+                       load_standard)
 
 SIDE_TOLERANCE = 0.05
 CHART_KINDS = ("bars", "share", "series", "figure")
@@ -740,6 +742,68 @@ def check_side_list_items(c: Contest) -> list[Failure]:
                     f"the no section's has {n_no}; they must match")]
 
 
+# The most the two sides' estimated spoken durations may differ before
+# narration: check_airtime pads up to narration.SIDE_PAD_CAP (2 s) after
+# it, and spoken.seconds's estimate of the difference is off by 0.55 s
+# RMS, so the margin is 0.9 s. It flags Montana CI-132's first draft
+# (1.31 s estimated, 2.1 s when narrated), and 3 of the 31 committed pairs
+# with both sides filed, if their sides were narrated again (an edit
+# elsewhere re-speaks no side, so is not estimated): I-194 (1.14 s
+# narrated), Arizona 142 (1.15 s) and CI-132 as committed (1.74 s, the
+# nearest of all to the cap).
+SPOKEN_PARITY_LIMIT = 1.1
+
+
+def check_spoken_parity(c: Contest,
+                        pieces: tuple[narration.NarrationLine, ...] | None = None
+                        ) -> list[Failure]:
+    """STANDARD.md 2.2, before narration: the two sides' estimated spoken
+    durations (spoken.seconds: numbers, money and symbols said in full)
+    differ by at most SPOKEN_PARITY_LIMIT, so the narration will pass
+    check_airtime. Equal word counts are not enough: "nearly $90,000" is
+    two words, said as five. A side that filed no argument is exempt, as
+    from check_airtime.
+
+    `pieces` is what `say` would synthesise afresh (default: everything);
+    check_contest passes narration.unreused_phrases. When none of it is in
+    a side section, both sides are said exactly as they were when they
+    passed check_airtime, so there is nothing to estimate. Otherwise both
+    sides are estimated whole, recorded phrases too: the estimate's error
+    is mostly the take's pace, which cancels only between two estimates,
+    so a recorded side against an estimated one would miss CI-132's
+    draft."""
+    by_side: dict[str, list[tuple[str, Section]]] = {}
+    for label, sec in c.script.labelled():
+        if sec.side is not None:
+            by_side.setdefault(sec.side, []).append((label, sec))
+    yes, no = by_side.get("yes", []), by_side.get("no", [])
+    if len(yes) != 1 or len(no) != 1:
+        return []  # a template failure; nothing to compare
+    if not (yes[0][1].filed and no[0][1].filed):
+        return []
+    if pieces is not None and not any(p.section in (yes[0][0], no[0][0])
+                                      for p in pieces):
+        return []
+    est = {label: spoken.seconds("\n".join(ln.text for ln in sec.lines))
+           for label, sec in (yes[0], no[0])}
+    (la, a), (lb, b) = est.items()
+    if abs(a - b) <= SPOKEN_PARITY_LIMIT:
+        return []
+    longer = la if a > b else lb
+    said = [f"{label}: {spoken.spoken_text(ln.text)!r}"
+            for label, sec in (yes[0], no[0]) for ln in sec.lines
+            if spoken.spoken_text(ln.text) != " ".join(ln.text.split())]
+    return [Failure(
+        "spoken-parity",
+        f"the sides' estimated spoken durations differ by {abs(a - b):.2f}s "
+        f"({la}={a:.2f}s, {lb}={b:.2f}s), more than the "
+        f"{SPOKEN_PARITY_LIMIT:.2f}s allowed before narration (the airtime "
+        f"check pads at most {narration.SIDE_PAD_CAP:.0f}s, and this "
+        f"estimate can be off by half a second); shorten {longer} or "
+        f"lengthen the other, counting numbers as said"
+        + (f" ({'; '.join(said)})" if said else ""))]
+
+
 def check_airtime(c: Contest) -> list[Failure]:
     """STANDARD.md 2.2/4.1: the two sides spend exactly the same time on
     screen. The shorter side is padded with silence at its end
@@ -849,6 +913,95 @@ def _in_text(phrase: str, archived: str) -> bool:
         return True
     parts = [re.escape(p) for p in want.split("-")]
     return re.search("-?".join(parts), archived) is not None
+
+
+# A basis is compared looser than a card quote: a side's argument is
+# often a PDF, whose text breaks words across lines ("con- sents",
+# "social- media" -> "socialmedia"), prints ligatures ("ﬁ") and curly
+# quotes, where the script types straight ones.
+_QUOTES = str.maketrans({"‘": "'", "’": "'", "‚": "'", "‛": "'",
+                         "“": '"', "”": '"', "„": '"', "‟": '"',
+                         "\u00ad": None})
+BASIS_MIN_WORDS = 6
+
+
+def _loose(s: str) -> str:
+    """`s` for a basis comparison: ligatures and other compatibility
+    characters unfolded (NFKC), quotes straightened, soft hyphens dropped,
+    whitespace collapsed, and every hyphen or dash, with the spaces
+    around it, removed, so a word hyphenated across a line matches it
+    whole and a compound split at a hyphen matches it joined."""
+    s = unicodedata.normalize("NFKC", s).translate(_QUOTES)
+    s = re.sub(r"\s*[-‐‑–—]\s*", "", _normalise(s))
+    return s
+
+
+@lru_cache(maxsize=8)
+def _loose_archived(path: Path) -> str:
+    return _loose(_archived_text(path))
+
+
+def check_side_basis(c: Contest, required: bool) -> list[Failure]:
+    """docs/SCRIPT-FORMAT.md's `basis`: each entry of a line's `basis` is
+    a passage of at least BASIS_MIN_WORDS words that appears verbatim in
+    an `official-argument` source the line cites, so a reader can hold the
+    line against the point it distils (SCRIPT-RECIPE.md, "Sides"). Only a
+    side's lines may have one. With `required` (a script still to be
+    narrated), every line of a side that filed an argument must have
+    one."""
+    sides = Counter(sec.side for sec in c.script.sections
+                    if sec.side is not None)
+    if sides != Counter({"yes": 1, "no": 1}):
+        return []  # a template failure; which lines are a side's is unclear
+    out = []
+    for label, sec in c.script.labelled():
+        for i, line in enumerate(sec.lines):
+            def fail(msg):
+                out.append(Failure("side-basis", msg, label, i))
+
+            if sec.side is None:
+                if line.basis is not None:
+                    fail("has a 'basis', but only a side's lines distil "
+                         "an argument")
+                continue
+            if line.basis is None:
+                if required and sec.filed and not line.connective:
+                    fail("has no 'basis': quote the passage of the side's "
+                         "official argument this line distils (needed "
+                         "until the script is narrated)")
+                continue
+            if not line.basis:
+                fail("'basis' is empty: quote at least one passage")
+                continue
+            args = [s for sid in line.sources or ()
+                    if (s := c.source(sid)) is not None
+                    and s.kind == "official-argument"]
+            if not args:
+                fail("has a 'basis' but cites no 'official-argument' source "
+                     "to quote it from")
+                continue
+            texts = []
+            for src in args:
+                path = (c.path / src.file).resolve()
+                if not path.is_relative_to(c.path.resolve()) \
+                        or not path.is_file():
+                    continue  # check_sources reports it
+                try:
+                    texts.append(_loose_archived(path))
+                except UnreadableSource as e:
+                    fail(f"cannot read source {src.id!r} ({src.file}) to "
+                         f"check the basis: {e}")
+            if not texts:
+                continue
+            for passage in line.basis:
+                if len(passage.split()) < BASIS_MIN_WORDS:
+                    fail(f"basis {passage!r} is under {BASIS_MIN_WORDS} "
+                         f"words: quote enough to show the point")
+                elif not any(_loose(passage) in t for t in texts):
+                    ids = ", ".join(repr(s.id) for s in args)
+                    fail(f"basis {passage!r} does not appear verbatim in "
+                         f"the argument it cites ({ids})")
+    return out
 
 
 def _occurrences(text: str, names: list[str]) -> list[tuple[int, int]]:
@@ -1061,6 +1214,45 @@ def check_judgment_words(c: Contest, words: tuple[str, ...]) -> list[Failure]:
     return out
 
 
+def needs_narration(c: Contest) -> bool:
+    """Whether `c`'s script is still to be narrated: its narration is
+    missing, or stale for the current script. The checks that stand in for
+    what only narrating would otherwise reveal (check_speakability,
+    check_spoken_parity, check_side_basis's requirement) apply only then:
+    a current narration already passed the real transcript and airtime
+    checks."""
+    return narration.narration_state(c) != narration.CURRENT
+
+
+def check_speakability(c: Contest, risks: tuple[Risk, ...],
+                       pieces: tuple[narration.NarrationLine, ...] | None = None
+                       ) -> list[Failure]:
+    """No narrated line uses a spelling the narration's transcript check
+    mishears (standard/speakability.txt). Only the narration: the card and
+    on-screen items are not spoken. `pieces` is the text to lint, each
+    piece tagged with its line (default: every line); check_contest passes
+    only the phrases `say` would synthesise afresh
+    (narration.unreused_phrases), since a reused phrase already passed the
+    real transcript check."""
+    if pieces is None:
+        pieces = tuple(narration.NarrationLine(label, i, line.text)
+                       for label, sec in c.script.labelled()
+                       for i, line in enumerate(sec.lines))
+    out = []
+    for piece in pieces:
+        taken: list[tuple[int, int]] = []  # one report per token
+        for risk in risks:
+            for m in risk.pattern.finditer(piece.text):
+                if any(m.start() < e and s < m.end() for s, e in taken):
+                    continue
+                taken.append(m.span())
+                out.append(Failure(
+                    "speakability",
+                    f"{m.group(0)!r} in {piece.text!r}: {risk.reason}; "
+                    f"instead, {risk.suggestion}", piece.section, piece.index))
+    return out
+
+
 def _shown_text(v: Visual) -> list[tuple[str, str]]:
     """The words a visual puts on screen, as (key, text) pairs."""
     out = []
@@ -1086,6 +1278,8 @@ def check_contest(c: Contest, standard: Standard | None = None
     """Run every machine check on `c`; return all failures, in check order."""
     if standard is None:
         standard = load_standard()
+    fresh = needs_narration(c)
+    unreused = narration.unreused_phrases(c) if fresh else None
     return [
         *check_contest_id(c),
         *check_line_citations(c),
@@ -1103,6 +1297,10 @@ def check_contest(c: Contest, standard: Standard | None = None
         *check_side_visuals(c),
         *check_side_list_items(c),
         *check_airtime(c),
+        *(check_spoken_parity(c, unreused) if fresh else ()),
+        *check_side_basis(c, required=fresh),
         *check_judgment_words(c, standard.judgment_words),
+        *(check_speakability(c, standard.speakability, unreused)
+          if fresh else ()),
         *check_standard_version(c, standard.version),
     ]
