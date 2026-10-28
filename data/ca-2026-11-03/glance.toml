@@ -136,3 +136,15 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest that would be required to be repaid if all of the bonds are issued and sold is approximately $8,100,000,000."
 amount = 8100000000
 period = "unstated"
+
+# Vista Unified Measure N: the district's Tax Rate Statement, its total
+# debt service ("The best estimate from official sources of the total
+# debt service, including the principal and interest, that would be
+# required to be repaid if all the bonds are issued and sold is ...").
+# pdftotext interleaves the page's two columns, so the quote is the
+# line's end, the one run it keeps whole.
+[vista-unified-measure-n]
+source = "tax-statement"
+quote = "the bonds are issued and sold is $1,154,254,750."
+amount = 1154254750
+period = "unstated"
