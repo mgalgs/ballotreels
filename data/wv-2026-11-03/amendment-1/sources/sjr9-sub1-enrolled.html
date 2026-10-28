@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="/js/md5.js"></script>
+<script type="text/javascript" src="/js/bpopup-0.11.0.min.js"></script>
+<style>
+.keytext{
+	display:hidden;
+	font-size:13px;
+	margin: 0 0 20px;
+}
+</style>
+
+
+
+<title>SJR 9 Text</title>
+<meta name="description" content="Bill Status - Bill Text">
+<meta name="keywords" content="Legislation, Bill, bill text, West Virginia Bills, West Virginia Bill, West Virginia Legislature, West Virginia, Legislature, WV">
+<LINK REL="SHORTCUT ICON" HREF="../images/home_link.gif">
+
+<style type="text/css">
+	body,p {margin: 10px 0 0 15px !important;
+	padding: 0px !important;
+	font-size: 100% !important;
+	font: inherit !important;
+	font-family: Arial, Helvetica, sans-serif !important;
+	vertical-align: baseline !important;
+}
+#pod-icon{
+padding: 5px 5px 12px 10px;
+width: 460px;
+border: 1px solid black;
+border-radius: 10px;
+margin-top:8px;
+}
+#pod-popup{
+    background-color:#fff;
+    border-radius:5px;
+    color:#000;
+    display:none;
+    padding:20px;
+    min-width:400px;
+    min-height: 180px;
+}
+#pod-popup h3{padding: 0px 10px 10px 0px}
+.pod-meta{width:400px;font-size:15px;background-color:#eee;padding:5px;margin:0 0 4px;float:left}
+.b-close{
+    cursor:pointer;
+    position:absolute;
+    right:10px;
+    top:5px;
+}
+.b-close img{
+width: 40px;
+height: auto;
+}
+ span {font-family: Arial, Helvetica, sans-serif !important;}
+
+ p {text-indent: 15px !important;
+ line-height:24px !important;}
+ .meta-input{
+ float:right;
+ width:300px;
+ font-size:14px;
+ }
+ #pod-minus{
+ margin-left:5px!important;
+ width:40px;height:auto
+ }
+ #pod-plus{
+ margin:10px 0 0 0;
+ width:40px;
+ height:auto
+ }
+ #pod-count{
+ font-size:15px;
+ padding:6px;
+ }
+ #pod-ok{
+ width:28px;
+ height:auto;
+ margin-top:5px;
+ }
+ #pod-go{
+ float:right;
+ }
+ .pod-input-error{
+ border:2px solid red;
+ }
+ .pod-row{
+ vertical-align:middle;
+ height:24px;
+ padding:0;
+ margin:2px 0 4px;
+ }
+ .del-pod{
+ float:left;
+ margin:0 4px 0}
+</style>
+
+<link rel="stylesheet" type="text/css" href="../styletest1.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../stylebillstatus.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../printbstat.css" media="print">
+
+
+<nav><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://cse.google.com/cse.js?cx=5c3144a0752ec82d3"></script>
+<script type="text/javascript">
+
+function _autoLayers() {
+  var g,b,k,f,args=_autoLayers.arguments;a=parseInt(args[0]);if(isNaN(a))a=0;
+  if(!document.setc){c=new Array();document.setc=true;for(var u=0;u<10;u++){
+  c[u]=new Array();}}for(k=0;k<c[a].length;k++){if((g=MM_findObj(c[a][k]))!=null){
+  b=(document.layers)?g:g.style;b.visibility="hidden";}}for(k=1;k<args.length;k++){
+  if((g=MM_findObj(args[k]))!=null){b=(document.layers)?g:g.style;b.visibility="visible";f=false;
+  for(var j=0;j<c[a].length;j++){if(args[k]==c[a][j]) {f=true;}}
+  if(!f){c[a][c[a].length++]=args[k];}}}
+}
+
+function _hideDiv(evt) {
+  var b,relT,mT=false;
+  if(document.layers){b=evt.target;if(b.aHide){
+    b.visibility="hidden";}else{routeEvent(evt);}
+  }else if(document.all&&!window.opera){b=event.srcElement;
+    while(b!=null){if(b.tagName=="DIV" && b.ahD){mT=true;break;}b=b.parentElement;}
+    if(!b.contains(event.toElement)){b.style.visibility="hidden";}
+  }else if(document.getElementById){b=evt.currentTarget;relT=evt.relatedTarget;
+    while(relT!=null){if(b==relT){mT=true;break;}
+    relT=relT.parentNode;}if(!mT){b.style.visibility="hidden";}}
+}
+
+function _autoHide() {
+  var i,g,args=_autoHide.arguments;
+  for(i=0;i<args.length;i++){if((g=MM_findObj(args[i]))!=null){
+    g.aHide=true;if(document.layers){
+    g.captureEvents(Event.MOUSEOUT);}g.onmouseout=_hideDiv;g.ahD=true;}}
+}
+
+function MM_findObj(n, d) {
+  var p,i,x; if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() {
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+  if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function hideAllSubmenus() {
+  var ids = ['subs1','subs2','subs3','subs4','subs5','subs6','subs7','subs8'];
+  ids.forEach(function(id) {
+    var sub = document.getElementById(id);
+    if (sub) {
+      sub.style.visibility = 'hidden';
+      sub.querySelectorAll('a').forEach(function(a) {
+        a.setAttribute('tabindex', '-1');
+      });
+    }
+  });
+  document.querySelectorAll('#trigger1 a,#trigger2 a,#trigger3 a,#trigger4 a,#trigger5 a,#trigger6 a,#trigger7 a,#trigger8 a').forEach(function(t) {
+    t.setAttribute('aria-expanded', 'false');
+  });
+}
+
+function openMenu(triggerId, subsId) {
+  hideAllSubmenus();
+  var trigger = document.querySelector('#' + triggerId + ' a');
+  trigger.setAttribute('aria-expanded', 'true');
+  var sub = document.getElementById(subsId);
+  if (sub) {
+    sub.style.visibility = 'visible';
+    sub.querySelectorAll('a').forEach(function(a) {
+      a.setAttribute('tabindex', '0');
+    });
+  }
+}
+
+function toggleMenu(triggerId, subsId) {
+  var trigger = document.querySelector('#' + triggerId + ' a');
+  var isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+  hideAllSubmenus();
+  if (!isExpanded) {
+    trigger.setAttribute('aria-expanded', 'true');
+    var sub = document.getElementById(subsId);
+    if (sub) {
+      sub.style.visibility = 'visible';
+      sub.querySelectorAll('a').forEach(function(a) {
+        a.setAttribute('tabindex', '0');
+      });
+    }
+  }
+}
+
+function init() {
+  _autoHide('subs1','subs2','subs3','subs4','subs5','subs6','subs7','subs8');
+  document.querySelectorAll('.submenus a').forEach(function(a) {
+    a.setAttribute('tabindex', '-1');
+  });
+}
+
+window.onload = init;
+
+document.addEventListener('focusin', function(e) {
+  var triggerIds = ['trigger1','trigger2','trigger3','trigger4','trigger5','trigger6','trigger7','trigger8'];
+  var subIds     = ['subs1',  'subs2',  'subs3',  'subs4',  'subs5',  'subs6',  'subs7',  'subs8'];
+
+  // If focus landed on a trigger link â€” open that menu
+  for (var i = 0; i < triggerIds.length; i++) {
+    var triggerLink = document.querySelector('#' + triggerIds[i] + ' a');
+    if (e.target === triggerLink) {
+      openMenu(triggerIds[i], subIds[i]);
+      return;
+    }
+  }
+
+  // If focus is still inside a submenu â€” leave it alone
+  var inSub = e.target.closest('#subs1,#subs2,#subs3,#subs4,#subs5,#subs6,#subs7,#subs8');
+  if (inSub) return;
+
+  // Focus is outside nav entirely â€” close everything
+  hideAllSubmenus();
+});
+
+</script>
+
+
+<!-- Google tag (gtag.js) edited 12-11-2023 JDT//DO NOT TOUCH-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EED2LTLF4G "></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EED2LTLF4G ');
+</script>
+<!-- edited 12-11-2023 JDT//DO NOT TOUCH-->
+
+</head>
+<body>
+<div id="navskip"><a href="#main" name="begin">skip navigation</a></div>
+
+<div id="mainsearch">
+
+	
+		<div class="gcse-searchbox-only" data-resultsUrl="https://www.wvlegislature.gov/search.cfm" data-enableHistory="true"></div>
+
+</div>
+
+
+<div id="logo"><img src="/images/header.png" usemap="#m_header" alt="West Virginia Legislature" name="header" width="878" height="80" onMouseOver="_autoLayers(0)" >
+<map name="m_header"><area shape="rect" coords="0,0,1843,168" href="/index.cfm" alt="Return to West Virginia Legislature homepage"></map></div>
+
+<div id="trigger1"><a href="#" aria-haspopup="true" aria-expanded="false" onKeyDown="if(event.key==='Enter'||event.key===' '){toggleMenu('trigger1','subs1'); return false;}" onMouseOver="toggleMenu('trigger1','subs1')" onclick="return false;">SENATE</a></div>
+<div id="subs1" class="submenus">
+<a href="/Senate1/president.cfm">PRESIDENT</a>
+<a href="/Senate1/roster.cfm">SENATORS</a>
+<a href="/committees/senate/main.cfm">COMMITTEES</a>
+<a href="/live.cfm">VIDEO/AUDIO</a>
+<a href="/redistricting.cfm">DISTRICT MAPS</a>
+<a href="/Senate1/clerk.cfm">SENATE CLERK</a>
+<a href="/Senate1/rules.cfm">SENATE RULES</a>
+</div>
+
+<div id="trigger2"><a href="#" aria-haspopup="true" aria-expanded="false" onKeyDown="if(event.key==='Enter'||event.key===' '){toggleMenu('trigger2','subs2'); return false;}" onMouseOver="toggleMenu('trigger2','subs2')" onclick="return false;">HOUSE</a></div>
+
+<div id="subs2" class="submenus">
+<a href="/House/speaker.cfm">SPEAKER</a>
+<a href="/House/roster.cfm">DELEGATES</a>
+<a href="/committees/house/main.cfm">COMMITTEES</a>
+<a href="/live.cfm">VIDEO/AUDIO</a>
+<a href="/redistricting.cfm">DISTRICT MAPS</a>
+<a href="/House/clerk.cfm">HOUSE CLERK</a>
+<a href="/House/rules.cfm">HOUSE RULES</a>
+<a href="//house.wvlegislature.gov/">HOUSE STAFF</a>
+</div>
+
+<div id="trigger3"><a href="#" aria-haspopup="true" aria-expanded="false" onKeyDown="if(event.key==='Enter'||event.key===' '){toggleMenu('trigger3','subs3'); return false;}" onMouseOver="toggleMenu('trigger3','subs3')" onclick="return false;">JOINT</a></div>
+
+<div id="subs3" class="submenus">
+<a href="/committees/interims/interims.cfm">INTERIM COMMITTEES</a>
+<a href="/Joint/administrator.cfm">LEGISLATIVE ADMINISTRATOR</a>
+<a href="/Joint/legis_services.cfm">LEGISLATIVE SERVICES DIVISION</a>
+<a href="/Joint/legisinfo.cfm">PUBLIC INFORMATION</a>
+<a href="/Joint/computercenter.cfm">LEGISLATIVE AUTOMATED SYSTEMS DIVISION</a>
+<a href="/Joint/legislative-auditor.cfm">LEGISLATIVE AUDITOR'S OFFICE</a>
+<a href="/Joint/perd.cfm">PERFORMANCE EVALUATION & RESEARCH DIVISION</a>
+<a href="/Joint/postaudit.cfm">POST AUDIT DIVISION</a>
+<a href="/Joint/budget.cfm">BUDGET DIVISION</a>
+<a href="/Joint/fiscal-regulatory.cfm">REGULATORY AND FISCAL AFFAIRS DIVISION</a>
+<a href="//claims.wvlegislature.gov/">CLAIMS COMMISSION</a>
+<a href="/Joint/victims.cfm">CRIME VICTIMS</a>
+<a href="/Joint/rule_making.cfm">RULE-MAKING REVIEW</a>
+<a href="/Joint/csi.cfm">SPECIAL INVESTIGATIONS</a>
+<a href="/Interims/judicial_comp.cfm">JUDICIAL COMP. COMMISSION</a>
+<a href="/Joint/rules.cfm">JOINT RULES</a>
+<a href="//staff.wvlegislature.gov/"><strong>STAFF INFO</strong></a></div>
+
+
+<div id="trigger4"><a href="#" aria-haspopup="true" aria-expanded="false" onKeyDown="if(event.key==='Enter'||event.key===' '){toggleMenu('trigger4','subs4'); return false;}" onMouseOver="toggleMenu('trigger4','subs4')" onclick="return false;">BILL STATUS</a></div>
+
+<div id="subs4" class="submenus">
+<a href="/Bill_Status/bill_status.cfm">BILL STATUS</a>
+<a href="/bill-track/login.cfm">BILL TRACKING</a></div>
+
+<div id="trigger5"><a href="#" aria-haspopup="true" aria-expanded="false" onKeyDown="if(event.key==='Enter'||event.key===' '){toggleMenu('trigger5','subs5'); return false;}" onMouseOver="toggleMenu('trigger5','subs5')" onclick="return false;">STATE LAW</a></div>
+
+<div id="subs5" class="submenus">
+
+<a href="//code.wvlegislature.gov">WEST VIRGINIA CODE</a>
+<a href="/Educational/publications.cfm#acts">ACTS OF THE LEGISLATURE</a>
+<a href="/Educational/publications/WVCode1931.cfm">CODE OF 1931</a>
+<a href="//home.wvlegislature.gov/constitution-of-west-virginia/">WV CONSTITUTION</a>
+<a href="//home.wvlegislature.gov/constitution-of-the-united-states/">US CONSTITUTION</a>
+</div>
+
+<div id="trigger6"><a href="#" aria-haspopup="true" aria-expanded="false" onKeyDown="if(event.key==='Enter'||event.key===' '){toggleMenu('trigger6','subs6'); return false;}" onMouseOver="toggleMenu('trigger6','subs6')" onclick="return false;">REPORTS</a></div>
+
+<div id="subs6" class="submenus">
+<a href="/Reports/Agency_Reports/agencylist_all.cfm">AGENCY REPORTS</a>
+<a href="/SAGA/Agency.cfm">AGENCY GRANT AWARDS</a>
+<a href="/Joint/PERD/reports.cfm">PERFORMANCE EVALUATIONS</a>
+<a href="/Joint/Postaudit/reports.cfm">POST AUDITS</a>
+
+</div>
+
+<div id="trigger7"><a href="#" aria-haspopup="true" aria-expanded="false" onKeyDown="if(event.key==='Enter'||event.key===' '){toggleMenu('trigger7','subs7'); return false;}" onMouseOver="toggleMenu('trigger7','subs7')" onclick="return false;">EDUCATIONAL</a></div>
+
+<div id="subs7" class="submenus">
+<a href="/Educational/citizens/guide.cfm">CITIZEN&#8217;S GUIDE</a>
+<a href="/Educational/internship.cfm">INTERNSHIP PROGRAM</a>
+<a href="//home.wvlegislature.gov/page-program/">PAGE PROGRAM</a>
+
+<a href="/Educational/publications.cfm">PUBLICATIONS</a>
+<a href="/photos" title="Visit the Legislature's Capitol Photo Gallery">PHOTO GALLERY</a>
+<a href="/Educational/Capitol_History/cap.cfm">CAPITOL HISTORY</a>
+<a href="/Educational/Bill_Becomes_Law/Bill_Becomes_Law.cfm">HOW A BILL BECOMES LAW</a>
+<!--<a href="/Educational/Kids_Page/kids.html">Kids&#8217; Page</a>--></div>
+
+<div id="trigger8"><a href="#" aria-haspopup="true" aria-expanded="false" onKeyDown="if(event.key==='Enter'||event.key===' '){toggleMenu('trigger8','subs8'); return false;}" onMouseOver="toggleMenu('trigger8','subs8')" onclick="return false;">CONTACT</a></div>
+
+<div id="subs8" class="submenus">
+<a href="/Senate1/roster.cfm">SENATE ROSTER</a>
+<a href="/House/roster.cfm">HOUSE ROSTER</a>
+<!--<a href="/Contact/capmail.cfm">All Members List</a>-->
+<a href="/Joint/legisinfo.cfm">PUBLIC INFO.</a>
+<a href="/News_release/news.cfm">NEWS RELEASES</a>
+<a href="/Contact/Links/links.cfm">HELPFUL LINKS</a></div>
+
+<div id="triggerhome">
+<img name="Home" src="/images/Home.gif" usemap="#m_Home" alt="home" height="21" width="26"></div>
+
+<map name="m_Home">
+<area shape="rect" coords="0,0,26,21" href="/index.cfm" alt="home" onMouseOut="MM_swapImage('Home','','/images/Home.gif',1);"  onMouseOver="MM_swapImage('Home','','/images/Home_f2.gif',1);_autoLayers(0)">
+</map>
+
+<a name="main" id="main"></a>
+</nav>
+<script>
+(function () {
+  var ua = navigator.userAgent;
+  if (ua.indexOf("Firefox") !== -1 && ua.indexOf("Windows") !== -1) {
+    document.documentElement.className += " windows-firefox";
+  }
+})();
+</script>
+
+<main id="wrapper">
+
+<span id='billversion' class="boldtxthead">
+Enrolled Version  - Final Version
+
+</span>
+
+
+
+
+<span class="billemail">
+
+
+<a href="resolution_history.cfm?year=2026&sessiontype=RS&input4=9&billtype=jr&houseorig=s">&laquo; Senate Joint Resolution 9 History</a>
+
+</span><br>
+
+<div class='noprint' id='pod-icon' data-qty='0' data-version='' data-remoteip='68.7.161.56' data-billchamber='Senate' data-year='2026' data-billnumber='Joint Resolution 9'>
+</div>
+
+<br>
+
+
+
+
+<strong style="font-size:11px;">OTHER VERSIONS</strong> &nbsp;&mdash;&nbsp;
+
+<a href="bills_text.cfm?billdoc=sjr9 sub1.htm&yr=2026&sesstype=RS&billtype=JR&houseorig=S&i=9" title="HTML  - Committee Substitute (1)
+ - Resolutions Bill 9">
+Committee Substitute (1)
+</a>&nbsp;|&nbsp;
+
+<a href="bills_text.cfm?billdoc=sjr9 intr.htm&yr=2026&sesstype=RS&billtype=JR&houseorig=S&i=9" title="HTML  - Introduced Version
+ - Resolutions Bill 9">
+Introduced Version
+</a>&nbsp;|&nbsp;
+
+
+
+<span class="billemail">
+
+
+ <!--EMAIL-->&nbsp;|&nbsp;<a href="mailto:?subject=SJR 9 - Citizenship Requirement to Vote in West Virginia Elections Amendment&amp;body=https://www.wvlegislature.gov/bill_status/bills_text.cfm?billdoc=sjr9+sub1+enr.htm%26yr=2026%26sesstype=RS%26billtype=JR%26houseorig=S%26i=9"><img src="../images/mail_icon.gif"> Email</a><!--EMAIL-->
+
+</span>
+
+
+
+
+<hr style="width:880px; margin-left:0; border:none; border-top:1px solid #000;">
+
+
+
+ <div class='keytext'>Key: <span style='color:green'>Green</span> = existing Code. <span style='color:red'>Red</span> = new code to be enacted</div>
+<div class='textcontainer'>
+
+
+
+
+
+	<style type="text/css">
+		.cs709C557D{text-align:center;text-indent:0pt;margin:0pt 0pt 0pt 0pt;line-height:2}
+		.cs5E1DB61D{color:#000000;background-color:transparent;font-family:Arial;font-size:22pt;font-weight:bold;font-style:normal;text-transform:uppercase;}
+		.cs1CE9D70E{text-align:center;text-indent:0pt;margin:0pt 0pt 48pt 0pt;line-height:2}
+		.csB0C9F1E0{color:#000000;background-color:transparent;font-family:Arial;font-size:18pt;font-weight:bold;font-style:normal;text-transform:uppercase;}
+		.csC2FEE544{color:#000000;background-color:transparent;font-family:Arial;font-size:18pt;font-weight:bold;font-style:normal;}
+		.cs3E63B65{text-align:center;text-indent:0pt;margin:0pt 0pt 18pt 0pt;line-height:2}
+		.cs8BEF69CE{text-align:center;text-indent:0pt;margin:0pt 90pt 0pt 90pt;line-height:2}
+		.csADC6E5DB{color:#000000;background-color:transparent;font-family:Arial;font-size:12pt;font-weight:normal;font-style:normal;font-variant:small-caps;}
+		.cs7B75DFFE{color:#000000;background-color:transparent;font-family:Arial;font-size:12pt;font-weight:normal;font-style:normal;}
+		.cs29F66C3F{text-align:justify;text-indent:-36pt;margin:0pt 0pt 0pt 36pt;line-height:2;page-break-before:always}
+		.csEF05ACC{color:#000000;background-color:transparent;font-family:Arial;font-size:11pt;font-weight:normal;font-style:normal;}
+		.cs9A0FB74B{text-align:left;text-indent:36pt;margin:0pt 0pt 0pt 0pt;line-height:2}
+		.cs93AB6E8B{color:#000000;background-color:transparent;font-family:Arial;font-size:11pt;font-weight:normal;font-style:italic;}
+		.cs53FB8D75{text-align:justify;text-indent:36pt;margin:0pt 0pt 0pt 0pt;line-height:2}
+		.cs63FD752D{text-align:left;text-indent:0pt;margin:0pt 0pt 0pt 0pt;line-height:2}
+		.cs7A33E2F1{color:#000000;background-color:transparent;font-family:Arial;font-size:12pt;font-weight:bold;font-style:normal;text-transform:uppercase;}
+		.cs89687900{text-align:justify;text-indent:-36pt;margin:0pt 0pt 0pt 36pt;line-height:2}
+		.csB9803513{color:#000000;background-color:transparent;font-family:Arial;font-size:11pt;font-weight:bold;font-style:normal;}
+		.cs2CFA8611{text-align:left;text-indent:18pt;margin:0pt 36pt 0pt 36pt}
+		.cs53BAC856{text-align:left;text-indent:0pt;margin:0pt 36pt 0pt 36pt}
+		.csF24B3FE4{text-align:left;text-indent:0pt;margin:0pt 36pt 0pt 0pt}
+		.csF5AA9F8B{text-align:center;text-indent:0pt;margin:0pt 36pt 0pt 36pt}
+		.cs74A86F32{text-align:justify;text-indent:0pt;margin:0pt 36pt 0pt 0pt}
+		.cs51F7D470{text-align:justify;text-indent:0pt;margin:0pt 36pt 0pt 36pt}
+		.cs93FA44A8{text-align:right;text-indent:0pt;margin:0pt 36pt 0pt 36pt}
+		.cs49AF4BA5{text-align:justify;text-indent:36pt;margin:0pt 0pt 0pt 0pt;line-height:1.9}
+	</style>
+	<p class="cs709C557D"><span class="cs5E1DB61D">WEST virginia legislature</span></p><p class="cs1CE9D70E"><span class="csB0C9F1E0">2026 regular session</span></p><p class="cs709C557D"><span class="csC2FEE544">Enrolled</span></p><p class="cs709C557D"><span class="csC2FEE544">Committee Substitute</span></p><p class="cs709C557D"><span class="csC2FEE544">for</span></p><p class="cs3E63B65"><span class="csC2FEE544">Senate Joint Resolution 9</span></p><p class="cs8BEF69CE"><span class="csADC6E5DB">By Senators Rucker, Rose, Thorne, Grady, Hart, Chapman, Smith (Mr. President), Roberts, Tarr, Taylor, Clements, Barnhart, and M. Maynard</span></p><p class="cs8BEF69CE"><span class="cs7B75DFFE">[Adopted March 14, 2026]</span></p><p class="cs8BEF69CE"><span class="cs7B75DFFE">&nbsp;</span></p><p class="cs709C557D"><span class="cs5E1DB61D">&nbsp;</span></p><p class="cs709C557D"><span class="cs5E1DB61D">&nbsp;</span></p><p class="cs29F66C3F"><span class="csEF05ACC">Proposing an amendment to the Constitution of the State of West Virginia, amending section one, article IV thereof, relating to the right to vote in elections held in West Virginia; numbering and designating such proposed amendment; and providing a summarized statement of the purpose of such proposed amendment.</span></p><p class="cs9A0FB74B"><span class="cs93AB6E8B">Resolved by the Legislature of West Virginia, two thirds of the members elected to each house agreeing thereto:</span></p><p class="cs53FB8D75"><span class="csEF05ACC">That the question of ratification or rejection of an amendment to the Constitution of the State of West Virginia be submitted to the voters of the state at the next general election to be held in the year 2026, which proposed amendment is that section one, article IV thereof, be amended to read as follows:</span></p><p class="cs63FD752D"><span class="cs7A33E2F1">ARTICLE IV. Elections and Officers.</span></p><h4 class="cs89687900">
+		<span class="csB9803513">&sect;1. Elections and Officers.</span></h4>
+	<p class="cs63FD752D"><span class="csEF05ACC">&nbsp; &nbsp;&nbsp;&nbsp;Only citizens of the United States who are citizens of this state shall be entitled to vote at all elections held within the counties in which they respectively reside; but a person who is a minor, or who has been declared mentally incompetent by a court of competent jurisdiction, or who is under conviction of treason, felony or bribery in an election, or who has not been a resident of the state and of the county in which he or she offers to vote, for 30 days next preceding such offer, shall not be permitted to vote while such disability continues; and, a person in the military, naval, or marine service of the United States shall not be deemed a resident of this state by reason of being stationed therein.</span></p><p class="cs53FB8D75"><span class="cs93AB6E8B">Resolved further</span><span class="csEF05ACC">, That in accordance with the provisions of article eleven, chapter three of the Code of West Virginia, 1931, as amended, such amendment is hereby numbered &quot;Amendment 1&quot; and designated as the &quot;Citizenship Requirement to Vote in West Virginia Elections Amendment&quot; and the purpose of the proposed amendment is summarized as follows: &nbsp;&quot;This amendment provides that in all elections held in West Virginia only citizens of the United States who are citizens of this state are qualified to vote.&quot;</span></p><p class="cs53FB8D75"><span class="csEF05ACC">&nbsp;</span></p><p class="cs2CFA8611"><span class="csEF05ACC">The Clerk of the Senate and the Clerk of the House of Delegates hereby certify that the foregoing bill is correctly enrolled.</span></p><p class="cs53BAC856"><span class="csEF05ACC">&nbsp;</span></p><p class="cs53BAC856"><span class="csEF05ACC">&nbsp;</span></p><p class="cs53BAC856"><span class="csEF05ACC">...............................................................</span></p><p class="cs53BAC856" style="tab-stops:center 130.5pt;"><span class="csEF05ACC">	</span><span class="cs93AB6E8B">Clerk of the Senate</span></p><p class="cs53BAC856"><span class="csEF05ACC">&nbsp;</span></p><p class="cs53BAC856"><span class="csEF05ACC">&nbsp;</span></p><p class="cs53BAC856" style="tab-stops:left -62.75pt left -36pt left 0pt left 22.1pt left 72pt left 98.6pt left 108pt left 144pt left 180pt left 216pt left 252pt left 288pt left 324pt left 360pt left 396pt left 432pt left 468pt left 504pt left 540pt left 576pt left 612pt left 648pt left 684pt left 720pt left 756pt left 792pt left 828pt left 864pt left 900pt left 936pt;"><span class="csEF05ACC">		...............................................................</span></p><p class="cs53BAC856" style="tab-stops:center 193.5pt;"><span class="csEF05ACC">	</span><span class="cs93AB6E8B">Clerk of the House of Delegates</span></p><p class="cs53BAC856" style="tab-stops:left -62.75pt left -36pt left 0pt left 22.1pt left 72pt left 98.6pt left 108pt left 144pt left 180pt left 216pt left 252pt left 288pt left 324pt left 360pt left 396pt left 432pt left 468pt left 504pt left 540pt left 576pt left 612pt left 648pt left 684pt left 720pt left 756pt left 792pt left 828pt left 864pt left 900pt left 936pt;"><span class="cs93AB6E8B">				 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p><p class="cs53BAC856" style="tab-stops:left -62.75pt left -36pt left 0pt left 18pt left 72pt left 98.6pt left 108pt left 144pt left 180pt left 216pt left 252pt left 288pt left 324pt left 360pt left 396pt left 432pt left 468pt left 504pt left 540pt left 576pt left 612pt left 648pt left 684pt left 720pt left 756pt left 792pt left 828pt left 864pt left 900pt left 936pt;"><span class="csEF05ACC">&nbsp;</span></p><p class="cs53BAC856" style="tab-stops:left -62.75pt left -36pt left 0pt left 18pt left 72pt left 98.6pt left 108pt left 144pt left 180pt left 216pt left 252pt left 288pt left 324pt left 360pt left 396pt left 432pt left 468pt left 504pt left 540pt left 576pt left 612pt left 648pt left 684pt left 720pt left 756pt left 792pt left 828pt left 864pt left 900pt left 936pt;"><span class="csEF05ACC">&nbsp;</span></p><p class="cs53BAC856" style="tab-stops:left -62.75pt left -36pt left 0pt left 18pt left 72pt left 98.6pt left 108pt left 144pt left 180pt left 216pt left 252pt left 288pt left 324pt left 360pt left 396pt left 432pt left 468pt left 504pt left 540pt left 576pt left 612pt left 648pt left 684pt left 720pt left 756pt left 792pt left 828pt left 864pt left 900pt left 936pt;"><span class="csEF05ACC">Originated in the Senate.</span></p><p class="cs53BAC856" style="tab-stops:left -62.75pt left -36pt left 0pt left 18pt left 72pt left 98.6pt left 108pt left 144pt left 180pt left 216pt left 252pt left 288pt left 324pt left 360pt left 396pt left 432pt left 468pt left 504pt left 540pt left 576pt left 612pt left 648pt left 684pt left 720pt left 756pt left 792pt left 828pt left 864pt left 900pt left 936pt;"><span class="csEF05ACC">&nbsp;</span></p><p class="cs53BAC856"><span class="csEF05ACC">Adopted March 14, 2026.</span></p><p class="cs53BAC856" style="tab-stops:left -62.75pt left -36pt left 0pt left 18pt left 72pt left 98.6pt left 108pt left 144pt left 180pt left 216pt left 252pt left 288pt left 324pt left 360pt left 396pt left 432pt left 468pt left 504pt left 540pt left 576pt left 612pt left 648pt left 684pt left 720pt left 756pt left 792pt left 828pt left 864pt left 900pt left 936pt;"><span class="csEF05ACC">&nbsp;</span></p><p class="cs53BAC856" style="tab-stops:left -62.75pt left -36pt left 0pt left 18pt left 72pt left 98.6pt left 108pt left 144pt left 180pt left 216pt left 252pt left 288pt left 324pt left 360pt left 396pt left 432pt left 468pt left 504pt left 540pt left 576pt left 612pt left 648pt left 684pt left 720pt left 756pt left 792pt left 828pt left 864pt left 900pt left 936pt;"><span class="csEF05ACC">&nbsp;</span></p><p class="cs53BAC856" style="tab-stops:left -62.75pt left -36pt left 0pt left 22.1pt left 36pt left 72pt left 98.6pt left 108pt left 144pt left 180pt left 216pt left 252pt left 288pt left 324pt left 360pt left 396pt left 432pt left 468pt left 504pt left 540pt left 576pt left 612pt left 648pt left 684pt left 720pt left 756pt left 792pt left 828pt left 864pt left 900pt left 936pt;"><span class="csEF05ACC">&nbsp;</span></p><p class="cs53BAC856" style="tab-stops:left -62.75pt left -36pt left 0pt left 22.1pt left 36pt left 72pt left 98.6pt left 108pt left 144pt left 180pt left 216pt left 252pt left 288pt left 324pt left 360pt left 396pt left 432pt left 468pt left 504pt left 540pt left 576pt left 612pt left 648pt left 684pt left 720pt left 756pt left 792pt left 828pt left 864pt left 900pt left 936pt;"><span class="csEF05ACC">&nbsp;</span></p><p class="cs53BAC856" style="tab-stops:left -62.75pt left -36pt left 0pt left 22.1pt left 36pt left 72pt left 98.6pt left 108pt left 144pt left 180pt left 216pt left 252pt left 288pt left 324pt left 360pt left 396pt left 432pt left 468pt left 504pt left 540pt left 576pt left 612pt left 648pt left 684pt left 720pt left 756pt left 792pt left 828pt left 864pt left 900pt left 936pt;"><span class="csEF05ACC">				...............................................................</span></p><p class="csF24B3FE4" style="tab-stops:center 238.5pt;"><span class="csEF05ACC">	</span><span class="cs93AB6E8B">President of the Senate</span></p><p class="cs53BAC856" style="tab-stops:left -62.75pt left -36pt left 0pt left 22.1pt left 36pt left 72pt left 98.6pt left 108pt left 144pt left 180pt left 216pt left 252pt left 288pt left 324pt left 360pt left 396pt left 432pt left 468pt left 504pt left 540pt left 576pt left 612pt left 648pt left 684pt left 720pt left 756pt left 792pt left 828pt left 864pt left 900pt left 936pt;"><span class="csEF05ACC">&nbsp;</span></p><p class="cs53BAC856" style="tab-stops:left -62.75pt left -36pt left 0pt left 22.1pt left 36pt left 72pt left 98.6pt left 108pt left 144pt left 180pt left 216pt left 252pt left 288pt left 324pt left 360pt left 396pt left 432pt left 468pt left 504pt left 540pt left 576pt left 612pt left 648pt left 684pt left 720pt left 756pt left 792pt left 828pt left 864pt left 900pt left 936pt;"><span class="csEF05ACC">&nbsp;</span></p><p class="cs53BAC856" style="tab-stops:left -62.75pt left -36pt left 0pt left 22.1pt left 36pt left 72pt left 98.6pt left 108pt left 144pt left 180pt left 216pt left 252pt left 288pt left 324pt left 360pt left 396pt left 432pt left 468pt left 504pt left 540pt left 576pt left 612pt left 648pt left 684pt left 720pt left 756pt left 792pt left 828pt left 864pt left 900pt left 936pt;"><span class="csEF05ACC">						...............................................................</span></p><p class="csF24B3FE4" style="tab-stops:center 310.5pt;"><span class="csEF05ACC">	</span><span class="cs93AB6E8B">Speaker of the House of Delegates</span></p><p class="cs53BAC856" style="tab-stops:left -62.75pt left -36pt left 0pt left 22.1pt left 36pt left 72pt left 98.6pt left 108pt left 144pt left 180pt left 216pt left 252pt left 288pt left 324pt left 360pt left 396pt left 432pt left 468pt left 504pt left 540pt left 576pt left 612pt left 648pt left 684pt left 720pt left 756pt left 792pt left 828pt left 864pt left 900pt left 936pt;"><span class="csEF05ACC">&nbsp;</span></p><p class="cs53BAC856" style="tab-stops:left -62.75pt left -36pt left 0pt left 22.1pt left 36pt left 72pt left 98.6pt left 108pt left 144pt left 180pt left 216pt left 252pt left 288pt left 324pt left 360pt left 396pt left 432pt left 468pt left 504pt left 540pt left 576pt left 612pt left 648pt left 684pt left 720pt left 756pt left 792pt left 828pt left 864pt left 900pt left 936pt;"><span class="csEF05ACC">&nbsp;</span></p><p class="csF5AA9F8B" style="tab-stops:left -62.75pt left -36pt left 0pt left 22.1pt left 72pt left 98.6pt left 108pt left 144pt left 180pt left 216pt left 252pt left 288pt left 324pt left 360pt left 396pt left 432pt left 468pt left 504pt left 540pt left 576pt left 612pt left 648pt left 684pt left 720pt left 756pt left 792pt left 828pt left 864pt left 900pt left 936pt;"><span class="csEF05ACC">__________</span></p><p class="cs74A86F32"><span class="csEF05ACC">&nbsp;</span></p><p class="cs74A86F32"><span class="csEF05ACC">&nbsp;</span></p><p class="cs51F7D470"><span class="csEF05ACC">&nbsp;</span></p><p class="cs51F7D470" style="tab-stops:left 54pt;"><span class="csEF05ACC">	The within is ................................................ this the...........................................</span></p><p class="cs51F7D470" style="tab-stops:left 54pt;"><span class="csEF05ACC">&nbsp;</span></p><p class="cs51F7D470"><span class="csEF05ACC">Day of ..........................................................................................................., 2026.</span></p><p class="cs51F7D470"><span class="csEF05ACC">&nbsp;</span></p><p class="cs51F7D470"><span class="csEF05ACC">&nbsp;</span></p><p class="cs93FA44A8"><span class="csEF05ACC">				.............................................................</span></p><p class="cs49AF4BA5"><span class="cs93AB6E8B">								Governor</span></p><p class="cs53FB8D75"><span class="csEF05ACC">&nbsp;</span></p>
+
+
+</div>
+
+
+</main><!--wrapper-->
+
+
+<script src="/js/pdf-accessibility.js"></script>
+<footer><div id="footer">
+
+<div class="footerlinks">
+<a href="/bill_status/bill_status.cfm">Bill Status</a>&nbsp;&nbsp;|&nbsp;
+<a href="/bill-track/login.cfm">Bill Tracking</a>&nbsp;&nbsp;|&nbsp;
+<a href="/wvcodeentire.htm">Legacy WV Code</a>&nbsp;&nbsp;|&nbsp;
+<a href="https://www.wvlegislature.gov/Bulletin_Board/Bulletin_Board_menu.cfm">Bulletin Board</a>&nbsp;&nbsp;|&nbsp;
+<a href="/redistricting.cfm">District Maps</a>&nbsp;&nbsp;|&nbsp;
+<a href="/Senate1/roster.cfm">Senate Roster</a>&nbsp;&nbsp;|&nbsp;
+<a href="/House/roster.cfm">House Roster</a>&nbsp;&nbsp;|&nbsp;
+<a href="/live.cfm">Live</a>&nbsp;&nbsp;|&nbsp;
+<a href="//blog.wvlegislature.gov/">Blog</a>&nbsp;&nbsp;|&nbsp;
+<a href="//jobs.wvlegislature.gov/">Jobs</a>&nbsp;&nbsp;|&nbsp;
+<a href="/Contact/Links/links.cfm">Links</a>&nbsp;&nbsp;|&nbsp;
+<!--<a href="/FAQs/FAQ.cfm">FAQ</a>&nbsp;&nbsp;|&nbsp;
+<a href="/site_map.cfm">Site Map</a>&nbsp;&nbsp;|&nbsp;-->
+<a href="/index.cfm">Home</a>
+</div>
+<div class="social">
+<span>
+<a href="https://www.facebook.com/wvlegislature"><img src="/images/SOCIAL-ICON-SET/512x512/facebook.png" alt="Find on Facebook" width="24" height="24" style="vertical-align:middle" title="Find on Facebook"></a>
+<a href="https://twitter.com/wvlegislature"><img src="/images/SOCIAL-ICON-SET/512x512/twitter.png" alt="Follow on Twitter" width="24" height="24" style="vertical-align:middle" title="Follow on Twitter"></a>
+<a href="https://www.youtube.com/wvlegislature/"><img src="/images/SOCIAL-ICON-SET/512x512/utube.png" alt="Watch on YouTube" width="24" height="24" style="vertical-align:middle" title="Watch on YouTube"></a>
+</span>
+</div>
+</div>
+<div class="baseline">This Web site is maintained by the <a href="/Joint/legisinfo.cfm">West Virginia Legislature's Office of Reference &amp; Information.</a> &nbsp;|&nbsp; <a href="/termsofuse.cfm"> Terms of Use</a>  &nbsp;| &nbsp; <a href="mailto:webmaster@wvlegislature.gov"> <img src="/images/mail_icon.png" alt="Email Webmaster" style="vertical-align:top">Webmaster</a> &nbsp;  | &nbsp;  &copy; 2026 West Virginia Legislature  ** 
+</div><br /><br />
+<script>
+if (window.location.search.indexOf('sortby') !== -1) {
+  setTimeout(function() {
+    var target = document.getElementById('results');
+    if (target) { target.scrollIntoView({ behavior: 'smooth' }); }
+  }, 300);
+}
+</script>
+</footer>
+
+<div id='pod-popup' class='noprint'>
+	<a class="b-close"><img src='/js/images/close-icon128x128.png' alt='X'></a>
+	<h3>Print On Demand</h3>
+	<div class='pod-meta'>Name:<input type='text' value='' id='pod-name' class='meta-input'></div>
+	<div style='clear:both'></div>
+    <div class='pod-meta'>Email:<input type='text' value='' id='pod-email' class='meta-input'></div>
+	<div style='clear:both'></div>
+    <div class='pod-meta'>Phone:<input type='text' value='' id='pod-phone' class='meta-input'></div>
+	<div style='clear:both'></div>
+	<div id='pod-content'></div>
+	<hr>
+	<a><img id='pod-go' src='/js/images/print-request159x50.png' alt='Print'></a>
+</div>
+<script>
+	$('div.textcontainer a').replaceWith(function(){
+		return this.childNodes;
+	});
+</script>
+<script type="text/javascript" src="/js/validcodecheck.js"></script>
+<script type="text/javascript" src="/js/pod.js"></script>
+<script type="text/javascript" src="/js/codedetect.js"></script>
+<script type="text/javascript" src="/js/cleanfiscalnote.js"></script>
+</body>
+</html>
