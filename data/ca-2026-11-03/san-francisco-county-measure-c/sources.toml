@@ -1,0 +1,53 @@
+# Archived sources for San Francisco Proposition C, 2026-11-03 general
+# election (sources/sources.md). San Francisco is a consolidated city and
+# county, so its propositions are countywide: the division is the
+# county. "page" is the Voter Information Pamphlet & Sample Ballot's
+# printed page number (the PDF's page less 2).
+#
+# The pamphlet's impartial materials are the Ballot Simplification
+# Council's digest and the Controller's Statement, on one cut of pages;
+# the Controller's Statement gives the General Fund total ("approximately
+# $7 billion General Fund sources") that scales its figures. The paid
+# arguments (pages 82 to 83) are not cited.
+
+[contest]
+id = "ca-2026-11-03-san-francisco-county-measure-c"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:san_francisco"
+kind = "measure"
+title = "San Francisco Proposition C: Contributions to the Housing Trust Fund"
+
+[[source]]
+id = "digest"
+kind = "official-title-summary"
+publisher = "San Francisco Department of Elections, Voter Information Pamphlet & Sample Ballot, November 3, 2026, pages 78 to 79: ballot question, Digest by the Ballot Simplification Council, and how C got on the ballot"
+credit = "Ballot Simplification Council digest, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/ballot-question-digest-controller-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "controller"
+kind = "official-fiscal-analysis"
+publisher = "City Controller, Controller's Statement on “C”, San Francisco Voter Information Pamphlet & Sample Ballot, page 79"
+credit = "Controller's Statement, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/ballot-question-digest-controller-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Proponent's and Opponent's Arguments on Proposition C and their rebuttals, San Francisco Voter Information Pamphlet & Sample Ballot, pages 80 to 81"
+credit = "Arguments, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/arguments-and-rebuttals.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Legal Text of Proposition C (proposed Charter amendment), San Francisco Voter Information Pamphlet & Sample Ballot, pages 187 to 190"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/legal-text.pdf"
+retrieved = "2026-10-28"
