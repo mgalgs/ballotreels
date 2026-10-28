@@ -32,12 +32,28 @@ DIRECTIONS = frozenset({"cost", "revenue-loss", "revenue-gain", "savings",
 # Why an entry has no amount: the statement prints no dollar figure, sizes
 # the effect only in words ("tens of millions of dollars"), says the
 # effect cannot be determined, or says there is no material effect.
-STATUSES = frozenset({"none-printed", "in-words", "not-determined",
+STATUSES = frozenset({"none-printed", "words", "not-determined",
                       "no-material-impact"})
 PERIODS = frozenset({"per-year", "one-time", "unstated"})
 _PERIOD_SPAN = re.compile(r"^(over|every) ([2-9]|[1-9]\d+) years$")
-KEYS = frozenset({"source", "quote", "amount", "period", "direction",
-                  "status"})
+KEYS = frozenset({"source", "quote", "amount", "magnitude", "period",
+                  "direction", "status"})
+
+# The sizes a statement may give in words, as the lower bound each names,
+# in dollars. "a few <unit>" names its unit's bound: "a few hundred
+# thousand" is 100000. Nothing else counts.
+MAGNITUDES = {"thousands": 10**3, "tens of thousands": 10**4,
+              "hundreds of thousands": 10**5, "millions": 10**6,
+              "tens of millions": 10**7, "hundreds of millions": 10**8,
+              "billions": 10**9, "tens of billions": 10**10}
+_A_FEW = {"thousands": "thousand", "hundreds of thousands": "hundred thousand",
+          "millions": "million", "hundreds of millions": "hundred million",
+          "billions": "billion"}
+_WORDS = [(re.compile(r"\b(?:" + "|".join(
+              r"\s+".join(map(re.escape, alt.split()))
+              for alt in (phrase, "a few " + _A_FEW.get(phrase, phrase)))
+              + r")\b", re.IGNORECASE), value)
+          for phrase, value in MAGNITUDES.items()]
 
 _SCALES = {None: 1, "thousand": 10**3, "million": 10**6,
            "billion": 10**9, "trillion": 10**12}
@@ -57,9 +73,17 @@ class GlanceEntry:
     source: str
     quote: str | None = None
     amount: int | None = None     # dollars; None when `status` is set
-    period: str | None = None     # with `amount`, or status "in-words"
+    magnitude: int | None = None  # with `amount`, or status "words"
+    period: str | None = None     # with `amount`, or status "words"
     direction: str | None = None  # only as the quote states it
     status: str | None = None     # None when `amount` is set
+
+    @property
+    def sort_value(self) -> int | None:
+        """The size the list sorts by: the larger of `amount` and
+        `magnitude`; None when the entry has neither."""
+        sizes = [v for v in (self.amount, self.magnitude) if v is not None]
+        return max(sizes, default=None)
 
 
 def valid_period(period: str) -> bool:
@@ -82,6 +106,13 @@ def dollar_figures(quote: str) -> list[int]:
     return out
 
 
+def word_magnitudes(quote: str) -> list[int]:
+    """The MAGNITUDES whose phrase `quote` prints, smallest first: "tens
+    of millions of dollars" is 10000000 (and 1000000, for "millions")."""
+    s = unicodedata.normalize("NFKC", quote)
+    return [value for pattern, value in _WORDS if pattern.search(s)]
+
+
 def _entry(slug: str, raw: object, where: str) -> GlanceEntry:
     if not isinstance(raw, dict):
         raise GlanceError(f"{where}: must be a table")
@@ -99,6 +130,11 @@ def _entry(slug: str, raw: object, where: str) -> GlanceEntry:
                                or amount <= 0):
         raise GlanceError(f"{where}: 'amount' must be a whole number of "
                           f"dollars, above zero")
+    magnitude = raw.get("magnitude")
+    if magnitude is not None and (isinstance(magnitude, bool)
+                                  or magnitude not in MAGNITUDES.values()):
+        raise GlanceError(f"{where}: 'magnitude' must be one of "
+                          f"{sorted(MAGNITUDES.values())}")
     status, period = raw.get("status"), raw.get("period")
     direction, quote = raw.get("direction"), raw.get("quote")
     if (amount is None) == (status is None):
@@ -118,9 +154,12 @@ def _entry(slug: str, raw: object, where: str) -> GlanceEntry:
         if status not in STATUSES:
             raise GlanceError(f"{where}: 'status' must be one of "
                               f"{sorted(STATUSES)}, got {status!r}")
-        if status == "in-words":
+        if status == "words":
+            if magnitude is None:
+                raise GlanceError(f"{where}: status 'words' needs its "
+                                  f"'magnitude'")
             if period is None:
-                raise GlanceError(f"{where}: status 'in-words' needs its "
+                raise GlanceError(f"{where}: status 'words' needs its "
                                   f"'period'")
             if not valid_period(period):
                 raise GlanceError(
@@ -128,7 +167,10 @@ def _entry(slug: str, raw: object, where: str) -> GlanceEntry:
                     f"'over N years' or 'every N years', got {period!r}")
         elif period is not None:
             raise GlanceError(f"{where}: 'period' goes with an 'amount' "
-                              f"or status 'in-words' only")
+                              f"or status 'words' only")
+        if magnitude is not None and status != "words":
+            raise GlanceError(f"{where}: 'magnitude' goes with an 'amount' "
+                              f"or status 'words' only")
         if quote is None and status != "none-printed":
             raise GlanceError(f"{where}: status {status!r} needs the "
                               f"'quote' that says so")
@@ -139,7 +181,8 @@ def _entry(slug: str, raw: object, where: str) -> GlanceEntry:
         raise GlanceError(f"{where}: a 'direction' needs the 'quote' that "
                           f"states it")
     return GlanceEntry(slug=slug, source=raw["source"], quote=quote,
-                       amount=amount, period=period, direction=direction,
+                       amount=amount, magnitude=magnitude,
+                       period=period, direction=direction,
                        status=status)
 
 
@@ -163,8 +206,10 @@ def check_glance(election_dir: str | Path) -> list[Failure] | None:
     measure in the election's contests.toml has an entry and every entry
     is such a measure; each entry's source is one of its contest's
     sources, of a kind in GLANCE_KINDS; its quote appears verbatim in that
-    source's archived text (compared as a side's basis is); and its
-    amount is the largest dollar figure the quote prints."""
+    source's archived text (compared as a side's basis is); its amount is
+    the largest dollar figure the quote prints, and its magnitude the
+    largest size it names in words (MAGNITUDES), given wherever the quote
+    of an amount or a "words" entry names one."""
     election_dir = Path(election_dir)
     try:
         entries = load_glance(election_dir)
@@ -225,8 +270,20 @@ def check_glance(election_dir: str | Path) -> list[Failure] | None:
             elif entry.amount != max(figures):
                 fail(f"amount {entry.amount} is not the quote's largest "
                      f"dollar figure ({max(figures)})")
-        elif entry.status in ("none-printed", "in-words") \
+        elif entry.status in ("none-printed", "words") \
                 and (figures := dollar_figures(entry.quote)):
             fail(f"status is {entry.status!r}, but the quote prints "
                  f"{figures}: give the largest as 'amount'")
+        if entry.amount is not None or entry.status == "words":
+            words = word_magnitudes(entry.quote)
+            if entry.magnitude is None:
+                if words:
+                    fail(f"the quote names a size in words ({max(words)}): "
+                         f"give it as 'magnitude'")
+            elif entry.magnitude not in words:
+                fail(f"magnitude {entry.magnitude} is not a size the quote "
+                     f"names in words ({words or 'none'})")
+            elif entry.magnitude != max(words):
+                fail(f"magnitude {entry.magnitude} is not the largest size "
+                     f"the quote names in words ({max(words)})")
     return out
