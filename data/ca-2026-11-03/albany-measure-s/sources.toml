@@ -1,0 +1,50 @@
+# Archived sources for City of Albany Measure S, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the
+# Alameda County Registrar of Voters' Composite Voter Information Guide
+# (965 pages); "PDF page" is the full guide's page number, and the
+# pages' printed footers are AMS-1 onward.
+#
+# The guide prints an argument in favor, an argument against and a
+# rebuttal to each.
+#
+# The guide prints no tax rate statement or fiscal analysis; the City
+# Attorney's Impartial Analysis is the measure's neutral explanation.
+#
+# Some lines of these pages are set in a font whose text layer is
+# shifted (checks._unshift_line); quotes from them are checked against
+# that text decoded.
+
+[contest]
+id = "ca-2026-11-03-albany-measure-s"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:albany"
+kind = "measure"
+title = "City of Albany Measure S: Adjusting the Real Property Transfer Tax Rate by Purchase Price"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "Alameda County Registrar of Voters, Composite Voter Information Guide, PDF page 831 (AMS-1): ballot question and City Attorney's Impartial Analysis"
+credit = "City Attorney's Impartial Analysis, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp831-835.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments in favor of and against Measure S and their rebuttals, as printed in the Alameda County Composite Voter Information Guide, PDF pages 832 to 833"
+credit = "Arguments and rebuttals, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp831-835.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure S, Ordinance No. 2026-05, Alameda County Composite Voter Information Guide, PDF pages 834 to 835"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp831-835.pdf"
+retrieved = "2026-10-28"
