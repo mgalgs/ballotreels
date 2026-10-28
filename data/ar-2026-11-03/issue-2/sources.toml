@@ -1,0 +1,52 @@
+# Archived sources for Arkansas Issue 2, 2026-11-03 general election.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+#
+# Arkansas publishes no official voter guide and no official arguments.
+# The Secretary of State's Notice to the Public prints the popular name,
+# ballot title and full text; the University of Arkansas Division of
+# Agriculture's ballot guide (STANDARD.md rule 1.2) is cited only for
+# what supporters and opponents say.
+
+[contest]
+id = "ar-2026-11-03-issue-2"
+election = "ar-2026-11-03"
+division = "ocd-division/country:us/state:ar"
+kind = "measure"
+title = "Issue 2: Right to Keep and Bear Arms"
+
+[[source]]
+id = "notice"
+kind = "official-title-summary"
+publisher = "Arkansas Secretary of State, Notice to the Public, Issue No. 2: popular name and ballot title"
+credit = "Arkansas Secretary of State, Issue No. 2"
+url = "https://www.sos.arkansas.gov/uploads/elections/Issue_No._2_SJR_11_of_2026_.pdf"
+file = "sources/sos-issue-2-certified.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full text of Issue No. 2 (Senate Joint Resolution 11 of 2025), Arkansas Secretary of State, Notice to the Public"
+credit = "Arkansas Secretary of State, Issue No. 2"
+url = "https://www.sos.arkansas.gov/uploads/elections/Issue_No._2_SJR_11_of_2026_.pdf"
+file = "sources/sos-issue-2-certified.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Arkansas General Assembly, Senate Joint Resolution 11, Regular Session 2025, as engrossed"
+url = "https://arkleg.state.ar.us/Home/FTPDocument?path=%2FBills%2F2025R%2FPublic%2FSJR11.pdf"
+file = "sources/sjr11.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "uaex-guide"
+kind = "university-guide"
+publisher = "University of Arkansas System Division of Agriculture, Public Policy Center, 2026 Arkansas Ballot Issues Voter Guide, Issue 2 (pages 10 to 12)"
+credit = "University of Arkansas Division of Agriculture, 2026 voter guide"
+short_name = "University of Arkansas"
+url = "https://www.uaex.uada.edu/business-communities/voter-education/docs/2026-Arkansas-Ballot-Issues-Voter-Guide.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
