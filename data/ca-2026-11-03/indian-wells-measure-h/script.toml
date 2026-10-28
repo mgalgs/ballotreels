@@ -4,10 +4,12 @@
 # does.
 #
 # Today's exemptions and the new ones are each said as the City
-# Attorney's Impartial Analysis lists them, and the script draws no
-# comparison between the two lists: the analysis states none, so who
-# would gain or lose an exemption is left to the two lists (STANDARD.md
-# 10.2).
+# Attorney's Impartial Analysis lists them. The ordinance's text amends
+# section 3.14.040 "to read as follows" and exempts events "conducted
+# only by the following organizations", so the script says the new list
+# replaces the old one; it draws no further comparison between the two
+# lists (the analysis states none), so who would gain or lose an
+# exemption is left to the two lists (STANDARD.md 10.2).
 #
 # The guide prints no fiscal analysis (it is not a new tax), so the
 # fiscal line says the guide does not include a cost estimate.
@@ -63,7 +65,7 @@ id = "today"
 heading = "Today"
 
 [[section.line]]
-text = "Today, events by nonprofit groups such as country clubs, tennis clubs and schools are exempt."
+text = "Today, events by nonprofit groups such as country clubs, social clubs, tennis clubs, government agencies and schools are exempt."
 sources = ["analysis"]
 
 [section.line.visual]
@@ -83,7 +85,7 @@ id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "Measure H would exempt events run by government agencies, tax-exempt political groups, and federally tax-exempt charities, religious and educational groups."
+text = "Measure H would replace that list: only events run by government agencies, tax-exempt political groups, or federally tax-exempt charities, religious and educational groups would be exempt."
 sources = ["analysis", "text"]
 
 [section.line.visual]
