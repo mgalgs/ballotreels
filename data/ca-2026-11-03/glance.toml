@@ -313,3 +313,12 @@ quote = "would generate between $10.4 and $13.8 million of revenue in the first 
 amount = 13800000
 period = "per-year"
 direction = "revenue-gain"
+
+# City of Hayward Measure CC: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is in its ballot question (and the City
+# Attorney's Impartial Analysis).
+[hayward-measure-cc]
+source = "guide-page"
+quote = "generating an additional $12 million annually until repealed"
+amount = 12000000
+period = "per-year"

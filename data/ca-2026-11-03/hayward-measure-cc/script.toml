@@ -1,0 +1,162 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; the tax today (who pays it, how it is set, its age) and how the
+# measure reached the ballot; what would change (gross-receipts rates,
+# the minimum, who pays, where the money goes); the analysis's revenue
+# estimate; one line per side; what a vote does.
+#
+# The guide prints no fiscal analysis, tax rate statement or full text;
+# everything neutral here is from the ballot question and the City
+# Attorney's Impartial Analysis, which describes the ordinance's rates
+# and minimum. No archived source states the city's general fund budget,
+# so the $12 million has no scale (STANDARD.md 6.5; left open).
+#
+# No argument against was submitted (the guide says so), so the no side
+# says that and nothing more (filed = false). The card's yes/no lines are
+# the analysis's own.
+
+contest = "ca-2026-11-03-hayward-measure-cc"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "CC"
+title = "CITY OF HAYWARD"
+origin = "The Hayward City Council directed this Measure to be placed on the ballot at the General Municipal Election to be held on November 3, 2026."
+summary = "Shall the measure updating the Hayward Business License Tax for the first time since 1978, to support general city services, including neighborhood police protection, firefighting, 911 response, libraries, and pothole repair, generating an additional $12 million annually until repealed, with a minimum tax of $60 and rates from $.30 to $3.75 per $1,000 of gross receipts, with higher rates for higher-grossing businesses, as stated in the ordinance, be adopted?"
+yes = "A YES vote would update and amend the City’s BLT fee schedule."
+no = "A NO vote means the 1978 fee schedule would remain in place."
+
+[[section]]
+id = "what"
+heading = "Measure CC"
+
+[[section.line]]
+text = "City of Hayward Measure CC asks voters in the city whether to update the business license tax that businesses in Hayward pay."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["updating the Hayward Business License Tax"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Every business in Hayward pays the tax, which the city has not updated since 1978."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section.line]]
+text = "Today the tax is set mainly by flat fees and the number of employees."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "The City Council placed Measure CC on the ballot, and it needs a simple majority to pass."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Most businesses would pay by their gross receipts, from 30 cents to $3.75 per $1,000, with higher rates for higher-grossing businesses."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section.line]]
+text = "Every business would pay a minimum tax of $60, and residents who do not run a business would not pay it."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "homestead"
+
+[[section.line]]
+text = "The money could be used for any city purpose, starting in January 2027."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The City Attorney's impartial analysis estimates the update would raise an additional $12 million a year."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the tax, unchanged since 1978, no longer keeps pace with costs, and larger businesses would pay higher rates."
+sources = ["arguments"]
+basis = ["But the tax itself hasn’t changed in 48 years", "no longer raises enough revenue to keep pace with the true cost of providing these city services.", "higher rates for higher-grossing, typically larger businesses"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["The tax is unchanged since 1978", "Higher rates for larger businesses"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure CC was submitted, and none appears in the Alameda County Composite Voter Information Guide for this election."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote would update and amend the fee schedule of the business license tax."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["would update and amend"]
+
+[[section.line]]
+text = "A no vote means the 1978 fee schedule would stay in place."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["the 1978 fee schedule would remain in place"]
