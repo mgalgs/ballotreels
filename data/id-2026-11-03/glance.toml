@@ -1,0 +1,32 @@
+# "Ballot at a glance" figures for the 2026-11-03 Idaho general election
+# (docs/SCRIPT-FORMAT.md, "glance.toml"): the Division of Financial
+# Management's fiscal impact statement for the initiative, and each
+# legislative measure's fiscal note.
+
+[advisory-hb-932]
+source = "fiscal-note"
+status = "no-material-impact"
+quote = "This legislation is expected to have no direct impact on the General Fund or local government revenues."
+
+# The note's other figure, the Secretary of State's biennial ballot
+# appropriation, is not this measure's cost, so the quote stops before it.
+[hjr-4]
+source = "fiscal-note"
+quote = "Hence, there is no fiscal impact, except the cost of placing this on the ballot. According to the Secretary of State, the approximate cost of any ballot measure is not more than $200,000.00."
+amount = 200000
+period = "unstated"
+direction = "cost"
+
+[hjr-6]
+source = "fiscal-note"
+quote = "There is an estimated cost of up to $300,000 for the Secretary of State to publish proposed constitutional amendments and arguments in a voter's pamphlet as required by law."
+amount = 300000
+period = "unstated"
+direction = "cost"
+
+[prop-1]
+source = "fiscal"
+quote = "The State estimates the initiative would increase state expenditures between $3,100 and $7,800 annually"
+amount = 7800
+period = "per-year"
+direction = "cost"
