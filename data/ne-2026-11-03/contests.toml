@@ -1,0 +1,41 @@
+# Contest index for the 2026-11-03 Nebraska general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot, in ballot order (the county sample ballots). `number` is a
+# measure's ballot designation (a string). The initiatives' titles pair
+# the designation with the name the Secretary of State gives each. No
+# official source prints a short title for Proposed Amendment No. 1, so
+# its title is paired with words from its own ballot question ("the limit
+# on legislative terms").
+
+[election]
+id = "ne-2026-11-03"
+state = "ocd-division/country:us/state:ne"
+title = "Nebraska General Election, November 3, 2026"
+
+[[contest]]
+id = "ne-2026-11-03-amendment-1"
+kind = "measure"
+division = "ocd-division/country:us/state:ne"
+title = "Proposed Amendment No. 1: Limit on Legislative Terms"
+number = "1"
+
+[[contest]]
+id = "ne-2026-11-03-initiative-440"
+kind = "measure"
+division = "ocd-division/country:us/state:ne"
+title = "Initiative Measure 440: Online Sports Wagering Authorization"
+number = "440"
+
+[[contest]]
+id = "ne-2026-11-03-initiative-441"
+kind = "measure"
+division = "ocd-division/country:us/state:ne"
+title = "Initiative Measure 441: Online Sports Wagering Regulation"
+number = "441"
+
+[[contest]]
+id = "ne-2026-11-03-initiative-442"
+kind = "measure"
+division = "ocd-division/country:us/state:ne"
+title = "Initiative Measure 442: Fairness for Girls"
+number = "442"
