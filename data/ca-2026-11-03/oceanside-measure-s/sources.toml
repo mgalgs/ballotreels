@@ -1,0 +1,44 @@
+# Archived sources for City of Oceanside Measure S, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Diego County Registrar of Voters' Voter Information Guide (ballot type
+# 160, an Oceanside precinct); "page" is the guide's printed footer
+# number.
+#
+# The City Clerk's site refused downloads (HTTP 403), so every source is
+# the guide's. It prints an argument against and no argument in favor,
+# and no rebuttals.
+
+[contest]
+id = "ca-2026-11-03-oceanside-measure-s"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:oceanside"
+kind = "measure"
+title = "City of Oceanside Measure S: Half Cent Sales Tax for City Services"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Voter Information Guide, page SD 160-078: ballot label and City Attorney Impartial Analysis"
+credit = "City Attorney Impartial Analysis, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-160.pdf"
+file = "sources/vig160-p80-ballot-label-impartial-analysis-argument-against.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument against Measure S, as printed in the San Diego County Voter Information Guide, page SD 160-078 (the guide prints no argument in favor)"
+credit = "Argument against, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-160.pdf"
+file = "sources/vig160-p80-ballot-label-impartial-analysis-argument-against.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure S, Ordinance No. 26-OR0505-1, San Diego County Voter Information Guide, pages SD 160-079 to SD 160-082"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-160.pdf"
+file = "sources/vig160-p81-84-full-text-ordinance-26-OR0505-1.pdf"
+retrieved = "2026-10-28"

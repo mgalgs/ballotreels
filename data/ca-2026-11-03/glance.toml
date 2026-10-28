@@ -153,3 +153,12 @@ source = "guide-page"
 quote = "providing approximately $250,000 annually until ended by voters"
 amount = 250000
 period = "per-year"
+
+# City of Oceanside Measure S: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is in its ballot label (and the City
+# Attorney's Impartial Analysis).
+[oceanside-measure-s]
+source = "guide-page"
+quote = "providing $20,000,000 annually for general government use for 10 years"
+amount = 20000000
+period = "per-year"

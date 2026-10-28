@@ -65,6 +65,8 @@ BALLOTS: dict[str, Ballot] = {
                          "San Diego County Voter Information Guide",
                      "ca-2026-11-03-solana-beach-measure-c":
                          "San Diego County Voter Information Guide",
+                     "ca-2026-11-03-oceanside-measure-s":
+                         "San Diego County Voter Information Guide",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",
