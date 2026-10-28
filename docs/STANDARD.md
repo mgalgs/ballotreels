@@ -201,6 +201,43 @@ questions, and no video of one was made before it.)
 5. **No ranking.** Nothing says or implies that one option is more
    popular, more fitting, more historic or more likely than another.
 
+## 9. Naming people
+
+Some measures have well-known authors and opponents: a governor who put
+one on the ballot, a legislator who sponsored it. Leaving them out can
+leave a viewer knowing less than the news would tell them. These rules
+let a script name them without taking a side. (Added under version 2
+without a new version: it permits naming and never requires it, so
+every video made before it still meets the standard.)
+
+1. **Named only from the record.** A person, organisation, law, court
+   case or event is named only where an official record states its role
+   in this measure: its filing with the election official (its
+   proponents or sponsoring committee), the legislative record (sponsors,
+   the roll-call vote, a governor's signature or veto), the official
+   voter guide (the signers of each argument), or a statement by an
+   officeholder on that office's official website. That last is a source
+   kind for one fact only, that the officeholder holds a stated position
+   on the measure; the claims inside the statement are not sources.
+   Being in the news about a measure is never enough, for anyone.
+2. **Role, nothing more.** A name comes with its role in the record:
+   "Governor X, who signed the resolution placing it on the ballot". No
+   motive, no description, no adjective; party only in rule 3.5's fixed
+   form.
+3. **Each side's most prominent, the same way.** Where a script names
+   the most prominent supporter, it names the most prominent opponent in
+   the same form of words, in the same kind of section, as many times.
+   "Most prominent" is fixed, not chosen: an elected official acting in
+   office, highest office first; then the official proponent or
+   sponsoring committee; then the first signer of the official argument.
+4. **No one on the record, said plainly.** Where the record names no one
+   on one side, the script may still name the other side's, and says
+   that the record names no one on the other.
+5. **Where names go.** In the background, as a fact of the record
+   ("Governor X signed the resolution placing it on the ballot"), or in
+   a side's own section ("Supporters, including Governor X, say..."); never
+   in the opening line or the vote lines.
+
 ## Machine checks
 
 The pipeline rejects a script or render that fails any of these. They
