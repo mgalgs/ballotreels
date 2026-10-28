@@ -277,3 +277,14 @@ period = "per-year"
 [orange-city-measure-k]
 source = "guide-page"
 status = "none-printed"
+
+# Costa Mesa Measure C: the guide prints no fiscal analysis or tax rate
+# statement. Its ballot question gives the larger of the guide's two
+# revenue figures (the City Attorney's Impartial Analysis gives "an
+# additional $4.6 million dollars annually" beside current receipts of
+# about $1 million).
+[costa-mesa-measure-c]
+source = "guide-page"
+quote = "generating approximately $5,600,000 annually until ended by voters"
+amount = 5600000
+period = "per-year"
