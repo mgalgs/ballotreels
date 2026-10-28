@@ -1,0 +1,59 @@
+# Archived sources for Vermont Proposal 3, 2026-11-03 general election.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+#
+# Vermont prints no voter guide, no explanation and no arguments for or
+# against a proposal of amendment, so there is no source of kind
+# official-argument; both side sections say so, citing the ballot. The
+# card quotes the ballot's "OFFICIAL STATE CONSTITUTIONAL AMENDMENT
+# BALLOT" panel, as printed on the City of Burlington's sample ballot for
+# Chittenden-17 (page 1, left column).
+#
+# The adopted text is quoted from the ballot and the Senate Journal of
+# March 20, 2025 only. The legislature's "As adopted by the Senate,
+# Official" PDF (sources/pr3-as-adopted-official.pdf) lays the adopted
+# text over a struck-through 2023 draft whose dues clause the enacted
+# text does not have, so it is not cited.
+
+[contest]
+id = "vt-2026-11-03-proposal-3"
+election = "vt-2026-11-03"
+division = "ocd-division/country:us/state:vt"
+kind = "measure"
+title = "Proposal 3: Right to Collectively Bargain"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "City of Burlington, Official Vermont General Election Ballot, November 3, 2026, Burlington, Chittenden-17 (sample ballot), page 1"
+credit = "Official Vermont General Election Ballot"
+url = "https://burlingtonvt.gov/DocumentCenter/View/12827/Chi-17-Sample?bidId="
+file = "sources/burlington-sample-ballot-chittenden-17.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "journal"
+kind = "official-text"
+publisher = "Vermont General Assembly, Journal of the Senate, Thursday, March 20, 2025, pages 308-309"
+credit = "Journal of the Senate, March 20, 2025"
+url = "https://legislature.vermont.gov/Documents/2026/Docs/JOURNAL/sj250320.pdf#page=6"
+file = "sources/senate-journal-2025-03-20-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "status-2026"
+kind = "legislative-record"
+publisher = "Vermont General Assembly, PR.3, 2025-2026 session, detailed status"
+credit = "Vermont General Assembly, PR.3 status"
+url = "https://legislature.vermont.gov/bill/loadBillDetailedStatus/2026/1103"
+file = "sources/pr3-detailed-status.json"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "status-2024"
+kind = "legislative-record"
+publisher = "Vermont General Assembly, PR.3, 2023-2024 session, detailed status"
+credit = "Vermont General Assembly, PR.3 status, 2023-2024"
+url = "https://legislature.vermont.gov/bill/loadBillDetailedStatus/2024/655"
+file = "sources/pr3-2024-detailed-status.json"
+retrieved = "2026-10-27"

@@ -1,0 +1,177 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; how it reached the ballot (adopted in 2024, and again in
+# 2025); that it adds a new article; what the new article says, in its
+# own terms; that the ballot gives no cost estimate; that neither side
+# has an official argument; what a vote does.
+#
+# The card quotes the ballot's panel: the article's heading as printed,
+# "Article 23. [Right to collectively bargain]", as its title; the ballot
+# question's lead-in as its origin; and the article's whole text as its
+# summary. The ballot prints no explanation, no "a YES vote means" lines
+# and no fiscal statement, so the card has none of them, and the vote
+# lines take their two meanings from the card's title and lead-in.
+#
+# The adopted text is quoted from the ballot and the Senate Journal,
+# never from the "As adopted" PDF, whose struck 2023 draft has a dues
+# clause the enacted text does not. Both proposals add an "Article 23",
+# and no source says how they would be numbered if both pass, so the
+# narration says "a new article". The last clause (agreements requiring
+# membership as a condition of employment) is said in the article's own
+# words. Sec. 1's purpose is not on the ballot and is not used.
+#
+# Vermont publishes no official arguments for or against a proposal, so
+# both sides are filed = false and each says so once, in the same number
+# of words.
+
+contest = "vt-2026-11-03-proposal-3"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot"
+number = "3"
+title = "Article 23. [Right to collectively bargain]"
+origin = "To see if the voters will amend the Vermont Constitution by adding Article 23 to read:"
+summary = "That employees have a right to organize or join a labor organization for the purpose of collectively bargaining with their employer through an exclusive representative of their choosing for the purpose of negotiating wages, hours, and working conditions and to protect their economic welfare and safety in the workplace. Therefore, no law shall be adopted that interferes with, negates, or diminishes the right of employees to collectively bargain with respect to wages, hours, and other terms and conditions of employment and workplace safety, or that prohibits the application or execution of an agreement between an employer and a labor organization representing the employer’s employees that requires membership in the labor organization as a condition of employment."
+
+[[section]]
+id = "what"
+heading = "Proposal 3"
+
+[[section.line]]
+text = "Proposal 3 is about a right to collectively bargain."
+sources = ["ballot"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["Right to collectively bargain"]
+
+[[section]]
+id = "background"
+heading = "How it got here"
+
+[[section.line]]
+text = "The Legislature adopted the amendment in 2024, and again in 2025."
+sources = ["status-2024", "status-2026"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-capitol"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "The amendment adds a new article to the Constitution."
+sources = ["ballot", "journal"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Employees would have a right to organize or join a labor organization."
+sources = ["ballot", "journal"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["a right to organize or join a labor organization"]
+
+[[section.line]]
+text = "Employees would bargain through an exclusive representative of their choosing, over wages, hours and working conditions."
+sources = ["ballot", "journal"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bargaining-table"
+
+[[section.line]]
+text = "No law could interfere with, negate, or diminish the right to bargain."
+sources = ["ballot", "journal"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["no law shall be adopted that interferes with, negates, or diminishes"]
+
+[[section.line]]
+text = "Nor could a law prohibit agreements requiring membership in the labor organization as a condition of employment."
+sources = ["ballot", "journal"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["requires membership in the labor organization as a condition of employment"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Vermont's ballot does not include a cost estimate for the amendment."
+sources = ["ballot"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Vermont publishes no official argument for the amendment."
+sources = ["ballot"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Vermont publishes no official argument against the amendment."
+sources = ["ballot"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adds the right to collectively bargain to the Constitution."
+sources = ["ballot"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["[Right to collectively bargain]"]
+
+[[section.line]]
+text = "A no vote does not add the right to collectively bargain to the Constitution."
+sources = ["ballot"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["To see if the voters will amend the Vermont Constitution"]

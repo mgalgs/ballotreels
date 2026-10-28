@@ -392,6 +392,15 @@ class LouisianaStatementsStitchTest(unittest.TestCase):
         self.assertEqual(badge(in_, "Public Question 1: X", "1"),
                          "QUESTION")
 
+    def test_vermont_uses_its_ballots_words(self):
+        vt = BALLOTS["vt"]
+        self.assertEqual((vt.guide, vt.fiscal_label, vt.choices,
+                          vt.card_source_kind),
+                         ("Official State Constitutional Amendment Ballot",
+                          None, ("Yes", "No"), "official-title-summary"))
+        # "PROPOSAL 3", as the ballot prints it
+        self.assertEqual(badge(vt, "Proposal 3: X", "3"), "PROPOSAL")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):

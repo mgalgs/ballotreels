@@ -1,0 +1,25 @@
+# Contest index for the 2026-11-03 Vermont general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). Vermont
+# prints no voter guide; titles pair the ballot's designation
+# ("PROPOSAL 3") with the bracketed heading of the article each proposal
+# adds, as the ballot prints it, in title case.
+
+[election]
+id = "vt-2026-11-03"
+state = "ocd-division/country:us/state:vt"
+title = "Vermont General Election, November 3, 2026"
+
+[[contest]]
+id = "vt-2026-11-03-proposal-3"
+kind = "measure"
+division = "ocd-division/country:us/state:vt"
+title = "Proposal 3: Right to Collectively Bargain"
+number = "3"
+
+[[contest]]
+id = "vt-2026-11-03-proposal-4"
+kind = "measure"
+division = "ocd-division/country:us/state:vt"
+title = "Proposal 4: Equality of Rights"
+number = "4"
