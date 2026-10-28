@@ -3,7 +3,8 @@
     python -m ballotreels check <contest-dir>...
     python -m ballotreels narration <contest-dir>...
     python -m ballotreels render <contest-dir> [--format 9x16|16x9|all]
-    python -m ballotreels render <election-dir>   (its crash course, 9x16)
+    python -m ballotreels render <election-dir> [--format 9x16|16x9|all]
+                                  (its crash course; 9x16 unless asked)
     python -m ballotreels measures ca-sos <election-dir> [--base-url URL]
     python -m ballotreels geo build [--state ca] [--data-dir DIR]
     python -m ballotreels geo zip <zip> [--state ca] [--data-dir DIR]
@@ -94,18 +95,17 @@ def _narration_one(path: str, out) -> bool:
     return True
 
 
-def _render_crash_course(path: str, fmt_arg: str, out_dir: Path, out,
-                         site_url: str | None = None) -> bool:
-    """Render the crash course of the election in `path` (9x16 only)."""
+def _render_crash_course(path: str, fmt_arg: str | None, out_dir: Path,
+                         out, site_url: str | None = None) -> bool:
+    """Render the crash course of the election in `path`: in 9x16, the
+    format the pipeline serves, unless `fmt_arg` asks for 16x9 (the YouTube
+    copy, made only here) or all of them."""
     from .crash_course import CrashCourseError, plan
     try:
         course = plan(path)
     except (CrashCourseError, ContestIndexError) as e:
         print(f"{path}: {e}", file=out)
         print(f"FAIL {path}: could not lay out its crash course", file=out)
-        return False
-    if fmt_arg not in ("9x16", "all"):
-        print(f"{path}: a crash course is 9x16 only", file=out)
         return False
     try:
         import videobuilder as vb
@@ -118,15 +118,19 @@ def _render_crash_course(path: str, fmt_arg: str, out_dir: Path, out,
         os.environ["BALLOTREELS_SITE_URL"] = site_url
     from .pipeline import write_chapters
     module = vb.load_module(str(CRASH_COURSE_FILM))
+    film = module.FILM
+    fmts = (film.formats if fmt_arg == "all"
+            else [film.format(fmt_arg or "9x16")])
     out_dir.mkdir(parents=True, exist_ok=True)
-    dest = out_dir / f"{course.entry.id}-9x16.mp4"
-    render(module.FILM, str(dest), format="9x16", log=out)
-    print(f"wrote {dest}", file=out)
-    print(f"wrote {write_chapters(dest, module.CHAPTERS)}", file=out)
+    for fmt in fmts:
+        dest = out_dir / f"{course.entry.id}-{fmt.name}.mp4"
+        render(film, str(dest), format=fmt, log=out)
+        print(f"wrote {dest}", file=out)
+        print(f"wrote {write_chapters(dest, module.CHAPTERS)}", file=out)
     return True
 
 
-def _render_one(path: str, fmt_arg: str, out_dir: Path, out,
+def _render_one(path: str, fmt_arg: str | None, out_dir: Path, out,
                 site_url: str | None = None) -> bool:
     from .crash_course import is_election_dir
     if is_election_dir(path):
@@ -151,7 +155,8 @@ def _render_one(path: str, fmt_arg: str, out_dir: Path, out,
     from .pipeline import write_chapters
     module = vb.load_module(str(FILM_TEMPLATE))
     film = module.FILM
-    fmts = film.formats if fmt_arg == "all" else [film.format(fmt_arg)]
+    fmts = (film.formats if fmt_arg in (None, "all")
+            else [film.format(fmt_arg)])
     out_dir.mkdir(parents=True, exist_ok=True)
     for fmt in fmts:
         dest = out_dir / f"{contest.id}-{fmt.name}.mp4"
@@ -344,7 +349,10 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
                        "given an election's directory, its crash course")
     render.add_argument("contest", metavar="contest-dir")
     render.add_argument("--format", choices=["9x16", "16x9", "all"],
-                        default="all")
+                        default=None,
+                        help="the format(s) to render (default: all of a "
+                             "contest's; a crash course's 9x16, the one the "
+                             "site serves)")
     render.add_argument("--out", default="out", metavar="DIR",
                         help="output directory (default: out/)")
     render.add_argument("--site-url", default=None,

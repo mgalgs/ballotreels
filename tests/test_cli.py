@@ -3,6 +3,7 @@ import shutil
 import subprocess
 import sys
 import unittest
+from pathlib import Path
 from unittest import mock
 
 from ballotreels.cli import main
@@ -10,6 +11,7 @@ from ballotreels.contest import load_contest
 from ballotreels.narration import narration_text
 
 from .helpers import PROP_2, REPO, ContestCopyTestCase, unlinted_standard
+from .test_crash_course import UT
 
 
 class CliTest(ContestCopyTestCase):
@@ -88,6 +90,58 @@ class CliTest(ContestCopyTestCase):
             cwd=REPO, capture_output=True, text=True)
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         self.assertTrue(r.stdout.startswith("PASS "))
+
+
+class RenderCrashCourseTest(unittest.TestCase):
+    """`render <election-dir>`: its crash course, in the formats asked for,
+    each written as <id>-<format>.mp4 with its chapters. The film and the
+    renderer are stand-ins: what is checked is what the command asks of
+    them."""
+
+    def render(self, *args):
+        import tempfile
+
+        import videobuilder as vb
+        from videobuilder import render as vb_render
+
+        from ballotreels import crash_course as cc
+
+        film = vb.Film(draw=lambda n, cv: None, fps=30, frames=1,
+                       formats=("9x16", "16x9"))
+        module = mock.Mock(FILM=film, CHAPTERS=[{"start": 0.0, "title": "x"}])
+        calls = []
+
+        def fake_render(film_, dest, format=None, log=None):
+            calls.append((Path(dest).name, getattr(format, "name", format)))
+
+        out_dir = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, out_dir)
+        out = io.StringIO()
+        with mock.patch.object(vb, "load_module", return_value=module), \
+                mock.patch.object(vb_render, "render", fake_render), \
+                mock.patch.dict("os.environ"):
+            code = main(["render", str(UT), "--out", str(out_dir), *args],
+                        out=out)
+        cid = cc.crash_course_id("ut-2026-11-03")
+        return code, calls, cid, out_dir
+
+    def test_16x9(self):
+        code, calls, cid, out_dir = self.render("--format", "16x9")
+        self.assertEqual(code, 0)
+        self.assertEqual(calls, [(f"{cid}-16x9.mp4", "16x9")])
+        self.assertTrue((out_dir / f"{cid}-16x9.chapters.json").is_file())
+
+    def test_all_writes_both(self):
+        code, calls, cid, _ = self.render("--format", "all")
+        self.assertEqual(code, 0)
+        self.assertEqual(calls, [(f"{cid}-9x16.mp4", "9x16"),
+                                 (f"{cid}-16x9.mp4", "16x9")])
+
+    def test_9x16_and_the_default_are_9x16_only(self):
+        for args in (("--format", "9x16"), ()):
+            code, calls, cid, _ = self.render(*args)
+            self.assertEqual(code, 0)
+            self.assertEqual(calls, [(f"{cid}-9x16.mp4", "9x16")], args)
 
 
 if __name__ == "__main__":
