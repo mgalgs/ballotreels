@@ -1,0 +1,63 @@
+# Archived sources for City of Adelanto Measure P, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Bernardino County Registrar of Voters' Voter Information Guide; "page"
+# is the guide's printed footer number (its PDF pages are two higher).
+#
+# The guide does not print the ballot question; it is printed only in the
+# City Council's resolution (its Section 3.C, "The question to be
+# presented to the voters"), so the resolution backs two sources: the
+# ballot question the card quotes, and the Council's text.
+
+[contest]
+id = "ca-2026-11-03-adelanto-measure-p"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:adelanto"
+kind = "measure"
+title = "City of Adelanto Measure P: 1% Transactions and Use Tax for City Services"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Adelanto, Resolution No. 26-37, Section 3.C: the question to be presented to the voters, as posted by the San Bernardino County Registrar of Voters"
+credit = "Ballot question, City of Adelanto Resolution No. 26-37"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofAdelanto/RES_CityofAdelanto.pdf"
+file = "sources/RES_CityofAdelanto.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City of Adelanto, Resolution No. 26-37, ordering that the City of Adelanto Services Measure be submitted to the voters, as posted by the San Bernardino County Registrar of Voters"
+credit = "City of Adelanto Resolution No. 26-37"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofAdelanto/RES_CityofAdelanto.pdf"
+file = "sources/RES_CityofAdelanto.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "San Bernardino County Registrar of Voters, Voter Information Guide, page SB COMPREHENSIVE-242: City Attorney's Impartial Analysis of Measure P"
+credit = "City Attorney's Impartial Analysis, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp244-249.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure P, as printed in the San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-242 to 243"
+credit = "Argument in favor, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp244-249.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "full-text"
+kind = "official-text"
+publisher = "Full Text for Measure P, Ordinance No. 667, San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-243 to 247"
+credit = "Full text of Measure P, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp244-249.pdf"
+retrieved = "2026-10-28"
