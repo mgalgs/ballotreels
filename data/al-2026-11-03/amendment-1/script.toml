@@ -1,0 +1,175 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; how a vacancy and the pay of these officers work today; what
+# the amendment would change (an election, pay set by joint resolution,
+# travel approval); what the two official cost statements say; the two
+# sides; what a vote does.
+#
+# The card quotes the Fair Ballot Commission's ballot statement: the
+# ballot text as title, the Act it was proposed by as origin, the
+# plain-language summary's three "If approved" paragraphs as summary,
+# and its yes and no sentences. The statement's cost sentence sits under
+# no heading, so the card has no fiscal quote (ballots.py).
+#
+# The ballot text says "during the first two years of a term"; the
+# amendment and the statement's summary say "more than 60 days before
+# the next general election in which state officers are elected". The
+# script states the rule as the summary does; the card title keeps the
+# ballot text verbatim.
+#
+# The two official cost statements differ, and both are given,
+# attributed: the Commission says no costs or taxes; the Legislative
+# Services Agency's fiscal note estimates $100,000 of proclamation
+# expenses from the State General Fund. No archived source states the
+# State General Fund total for fiscal year 2027, so the figure is stated
+# without its scale (left open). The notes predate the pay and travel
+# provisions, and the script says what they cover.
+#
+# Alabama publishes no official arguments for or against an amendment:
+# both sides are filed = false and each says so once, in the same number
+# of words. No person is named.
+
+contest = "al-2026-11-03-amendment-1"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "fbc"
+number = "1"
+title = "Proposing an amendment to the Constitution of Alabama of 2022, to provide for the election of a Lieutenant Governor if the Office of Lieutenant Governor becomes vacant during the first two years of a term, to authorize the Legislature to set the salary of the Lieutenant Governor and officers of the Legislature, and to require any expenditure of legislative funds for travel to be approved by a legislative officer."
+origin = "Proposed by Act No. 2026-341 (Senate Bill 271, 2026 Regular Legislative Session)"
+summary = "If approved, this amendment would require an election to fill the office of Lieutenant Governor for the remainder of an unexpired term if the office becomes vacant more than 60 days before the next general election in which state officers are elected. The amendment would also authorize the Legislature to set the pay of the Lieutenant Governor and officers of the Legislature by joint resolution. In addition, the amendment would require expenditures of legislative funds for travel by members of the Legislature to be approved by an officer elected by the members of that legislative chamber."
+yes = "If the majority of voters vote “yes” on Amendment 1, the Alabama Constitution will be changed."
+no = "If the majority of voters vote “no” on Amendment 1, the Alabama Constitution will not be changed."
+
+[[section]]
+id = "what"
+heading = "Amendment 1"
+
+[[section.line]]
+text = "Amendment 1 covers the Lieutenant Governor, and legislative pay and travel."
+sources = ["fbc"]
+
+[section.line.visual]
+kind = "page"
+source = "fbc"
+highlight = ["election to fill the office of Lieutenant Governor"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, a Lieutenant Governor vacancy generally lasts until the next regular election for that office."
+sources = ["fbc"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-capitol"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "A vacancy more than 60 days before the next general election for state officers would require an election."
+sources = ["fbc", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "fbc"
+highlight = ["more than 60 days before the next general election"]
+
+[[section.line]]
+text = "The Legislature would set pay for the Lieutenant Governor and legislative officers."
+sources = ["fbc", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "fbc"
+highlight = ["by joint resolution"]
+
+[[section.line]]
+text = "Legislative travel spending would need a legislative officer's approval."
+sources = ["fbc", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "travel-receipts"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Alabama's ballot statement says there are no costs or taxes."
+sources = ["fbc-cost"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "No costs or taxes"
+
+[[section.line]]
+text = "A Legislative Services Agency fiscal note estimates $100,000 in proclamation expenses for the 2027 state fiscal year."
+sources = ["fiscal-note-2"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "That note covers only the election."
+sources = ["fiscal-note-2"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Alabama publishes no official argument for the amendment."
+sources = ["fbc"]
+
+[section.line.visual]
+kind = "list"
+source = "fbc"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Alabama publishes no official argument against the amendment."
+sources = ["fbc"]
+
+[section.line.visual]
+kind = "list"
+source = "fbc"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means the Alabama Constitution will be changed."
+sources = ["fbc"]
+
+[section.line.visual]
+kind = "page"
+source = "fbc"
+highlight = ["the Alabama Constitution will be changed"]
+
+[[section.line]]
+text = "A no vote means the Alabama Constitution will not be changed."
+sources = ["fbc"]
+
+[section.line.visual]
+kind = "page"
+source = "fbc"
+highlight = ["the Alabama Constitution will not be changed"]

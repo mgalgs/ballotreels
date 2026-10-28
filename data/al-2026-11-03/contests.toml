@@ -1,0 +1,40 @@
+# Contest index for the 2026-11-03 Alabama general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot: the four statewide amendments (local amendments are out of
+# scope). `number` is a measure's ballot designation (a string). The
+# ballot prints "Statewide Amendment 1"; the Fair Ballot Commission's
+# ballot statements print no short title, so each title pairs the
+# designation with a short neutral subject.
+
+[election]
+id = "al-2026-11-03"
+state = "ocd-division/country:us/state:al"
+title = "Alabama General Election, November 3, 2026"
+
+[[contest]]
+id = "al-2026-11-03-amendment-1"
+kind = "measure"
+division = "ocd-division/country:us/state:al"
+title = "Statewide Amendment 1: Lieutenant Governor Vacancy, Legislative Pay and Travel"
+number = "1"
+
+[[contest]]
+id = "al-2026-11-03-amendment-2"
+kind = "measure"
+division = "ocd-division/country:us/state:al"
+title = "Statewide Amendment 2: Consolidating County School Systems"
+number = "2"
+
+[[contest]]
+id = "al-2026-11-03-amendment-3"
+kind = "measure"
+division = "ocd-division/country:us/state:al"
+title = "Statewide Amendment 3: Pledge of Allegiance and Student-Led Prayer in Public Schools"
+number = "3"
+
+[[contest]]
+id = "al-2026-11-03-amendment-4"
+kind = "measure"
+division = "ocd-division/country:us/state:al"
+title = "Statewide Amendment 4: The Star-Spangled Banner in Public Schools"
+number = "4"

@@ -1,0 +1,92 @@
+# Archived sources for Alabama Statewide Amendment 3, 2026-11-03
+# general election. Every id here may be cited by script.toml. `kind`
+# must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# Alabama publishes no voter pamphlet. The official explanation is the
+# Fair Ballot Commission's ballot statement (Ala. Code 17-6-81): the
+# ballot text, placement and a plain-language summary, ending with the
+# effect of a yes and a no vote and a one-line cost statement. It backs
+# two sources: fbc (the card) and fbc-cost (its cost sentence, Alabama's
+# one official fiscal statement printed for voters). Alabama publishes
+# no official arguments for or against an amendment, so there is no
+# source of kind official-argument: both side sections say so, citing
+# the statement, which prints none.
+#
+# Of the Legislative Services Agency's three fiscal notes on House Bill
+# 511, only the third (as passed the House, 03/13/2026) describes the
+# enacted text; the first two described earlier versions and are not
+# archived or cited.
+#
+# act-2026-379-sos-signed.pdf is the signed Act as filed with the
+# Secretary of State, a scan with an OCR layer; the script quotes the
+# enrolled copy from ALISON instead and cites the scan by no line.
+
+[contest]
+id = "al-2026-11-03-amendment-3"
+election = "al-2026-11-03"
+division = "ocd-division/country:us/state:al"
+kind = "measure"
+title = "Statewide Amendment 3: Pledge of Allegiance and Student-Led Prayer in Public Schools"
+
+[[source]]
+id = "fbc"
+kind = "official-title-summary"
+publisher = "Alabama Fair Ballot Commission, Ballot Statement for Statewide Amendment 3, November 3, 2026 Statewide General Election"
+credit = "Alabama Fair Ballot Commission, Ballot Statement"
+url = "https://www.sos.alabama.gov/sites/default/files/2026-08/FBCStatewideAmendment-3.pdf"
+file = "sources/fbc-statewide-amendment-3.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fbc-cost"
+kind = "official-fiscal-analysis"
+publisher = "Alabama Fair Ballot Commission, Ballot Statement for Statewide Amendment 3, plain language summary: cost"
+credit = "Alabama Fair Ballot Commission, Ballot Statement"
+url = "https://www.sos.alabama.gov/sites/default/files/2026-08/FBCStatewideAmendment-3.pdf"
+file = "sources/fbc-statewide-amendment-3.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Legislature of Alabama, House Bill 511, Enrolled (Act 2026-379, 2026 Regular Session)"
+credit = "House Bill 511, Enrolled"
+url = "https://alison.legislature.state.al.us/files/pdf/SearchableInstruments/2026RS/HB511-enr.pdf"
+file = "sources/hb511-enrolled-act-2026-379.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "act-signed"
+kind = "official-text"
+publisher = "Alabama Secretary of State, Act No. 2026-379 as signed and filed (image scan)"
+credit = "Act No. 2026-379, as filed"
+url = "https://arc-sos.state.al.us/ucp/L2116401.AI1.pdf"
+file = "sources/act-2026-379-sos-signed.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal-note"
+kind = "official-fiscal-analysis"
+publisher = "Alabama Legislative Services Agency, Fiscal Note, House Bill 511 as passed the House of Representatives, March 13, 2026"
+credit = "Legislative Services Agency, Fiscal Note"
+url = "https://alison.legislature.state.al.us/files/pdf/SearchableInstruments/2026RS/FiscalNotes/FN-4UBFPRR-3.pdf"
+file = "sources/hb511-fiscal-note-3.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "sample-ballot"
+kind = "official-title-summary"
+publisher = "Alabama Secretary of State, Sample Ballot, November 3, 2026 General Election, Montgomery County"
+credit = "Montgomery County Sample Ballot"
+url = "https://www.sos.alabama.gov/sites/default/files/sample-ballots/2026/gen/Montgomery-Sample.pdf"
+file = "sources/sample-ballot-montgomery.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "sos-page"
+kind = "public-record"
+publisher = "Alabama Secretary of State, Statewide Ballot Measures: Fair Ballot Commission 2026 Statewide Constitutional Amendment Ballot Statements"
+credit = "Alabama Secretary of State, Statewide Ballot Measures"
+url = "https://www.sos.alabama.gov/alabama-votes/voter/ballot-measures/statewide"
+file = "sources/sos-statewide-ballot-measures.html"
+retrieved = "2026-10-27"

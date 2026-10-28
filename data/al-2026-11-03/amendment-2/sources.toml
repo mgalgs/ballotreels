@@ -1,0 +1,105 @@
+# Archived sources for Alabama Statewide Amendment 2, 2026-11-03
+# general election. Every id here may be cited by script.toml. `kind`
+# must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# Alabama publishes no voter pamphlet. The official explanation is the
+# Fair Ballot Commission's ballot statement (Ala. Code 17-6-81): the
+# ballot text, placement and a plain-language summary, ending with the
+# effect of a yes and a no vote and a one-line cost statement. It backs
+# two sources: fbc (the card) and fbc-cost (its cost sentence, Alabama's
+# one official fiscal statement printed for voters). Alabama publishes
+# no official arguments for or against an amendment, so there is no
+# source of kind official-argument: both side sections say so, citing
+# the statement, which prints none.
+#
+# The statement misprints "potential" as "potentia1" in the ballot text;
+# the sample ballot and the enrolled act print "potential", and the card
+# quotes it so (checks.py allows a "1" misprinted for an "l").
+#
+# The Legislative Services Agency's two fiscal notes describe the bill
+# as introduced (02/16/2026) and as passed the House (04/01/2026); none
+# describes the final version as passed by the Senate, and the script
+# says the notes are on earlier versions.
+#
+# act-2026-378-sos-signed.pdf is the signed Act as filed with the
+# Secretary of State, a scan with an OCR layer; the script quotes the
+# enrolled copy from ALISON instead and cites the scan by no line.
+
+[contest]
+id = "al-2026-11-03-amendment-2"
+election = "al-2026-11-03"
+division = "ocd-division/country:us/state:al"
+kind = "measure"
+title = "Statewide Amendment 2: Consolidating County School Systems"
+
+[[source]]
+id = "fbc"
+kind = "official-title-summary"
+publisher = "Alabama Fair Ballot Commission, Ballot Statement for Statewide Amendment 2, November 3, 2026 Statewide General Election"
+credit = "Alabama Fair Ballot Commission, Ballot Statement"
+url = "https://www.sos.alabama.gov/sites/default/files/2026-08/FBCStatewideAmendment-2.pdf"
+file = "sources/fbc-statewide-amendment-2.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fbc-cost"
+kind = "official-fiscal-analysis"
+publisher = "Alabama Fair Ballot Commission, Ballot Statement for Statewide Amendment 2, plain language summary: cost"
+credit = "Alabama Fair Ballot Commission, Ballot Statement"
+url = "https://www.sos.alabama.gov/sites/default/files/2026-08/FBCStatewideAmendment-2.pdf"
+file = "sources/fbc-statewide-amendment-2.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Legislature of Alabama, House Bill 380, Enrolled (Act 2026-378, 2026 Regular Session)"
+credit = "House Bill 380, Enrolled"
+url = "https://alison.legislature.state.al.us/files/pdf/SearchableInstruments/2026RS/HB380-enr.pdf"
+file = "sources/hb380-enrolled-act-2026-378.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "act-signed"
+kind = "official-text"
+publisher = "Alabama Secretary of State, Act No. 2026-378 as signed and filed (image scan)"
+credit = "Act No. 2026-378, as filed"
+url = "https://arc-sos.state.al.us/ucp/L2116402.AI1.pdf"
+file = "sources/act-2026-378-sos-signed.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal-note-1"
+kind = "official-fiscal-analysis"
+publisher = "Alabama Legislative Services Agency, Fiscal Note, House Bill 380 as introduced, February 16, 2026"
+credit = "Legislative Services Agency, Fiscal Note"
+url = "https://alison.legislature.state.al.us/files/pdf/SearchableInstruments/2026RS/FiscalNotes/FN-YMW7Z26-1.pdf"
+file = "sources/hb380-fiscal-note-1.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal-note-2"
+kind = "official-fiscal-analysis"
+publisher = "Alabama Legislative Services Agency, Fiscal Note, House Bill 380 as passed the House of Representatives, April 1, 2026"
+credit = "Legislative Services Agency, Fiscal Note"
+url = "https://alison.legislature.state.al.us/files/pdf/SearchableInstruments/2026RS/FiscalNotes/FN-YMW7Z26-2.pdf"
+file = "sources/hb380-fiscal-note-2.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "sample-ballot"
+kind = "official-title-summary"
+publisher = "Alabama Secretary of State, Sample Ballot, November 3, 2026 General Election, Montgomery County"
+credit = "Montgomery County Sample Ballot"
+url = "https://www.sos.alabama.gov/sites/default/files/sample-ballots/2026/gen/Montgomery-Sample.pdf"
+file = "sources/sample-ballot-montgomery.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "sos-page"
+kind = "public-record"
+publisher = "Alabama Secretary of State, Statewide Ballot Measures: Fair Ballot Commission 2026 Statewide Constitutional Amendment Ballot Statements"
+credit = "Alabama Secretary of State, Statewide Ballot Measures"
+url = "https://www.sos.alabama.gov/alabama-votes/voter/ballot-measures/statewide"
+file = "sources/sos-statewide-ballot-measures.html"
+retrieved = "2026-10-27"
