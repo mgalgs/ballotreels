@@ -265,3 +265,13 @@ quote = "It is estimated that this tax will generate approximately $1,200,000 an
 amount = 1200000
 period = "per-year"
 direction = "revenue-gain"
+
+# City of Needles Measure D: the guide prints no fiscal statement; the
+# one estimate is the City Attorney's Impartial Analysis's (the argument
+# in favor's "$12,600 per year" is the supporters').
+[needles-measure-d]
+source = "impartial-analysis"
+quote = "If approved, the City has determined Measure D would result in an additional annual cost of $20,916 to the City."
+amount = 20916
+period = "per-year"
+direction = "cost"

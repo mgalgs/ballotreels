@@ -1,0 +1,54 @@
+# Archived sources for City of Needles Measure D, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Bernardino County Registrar of Voters' Voter Information Guide; "page"
+# is the guide's printed footer number (its PDF pages are two higher).
+#
+# The guide prints neither the ballot question nor the full text: the
+# question is in the City Council's resolution (its Section 3), which
+# the card quotes, and the amendment is in the full text posted beside
+# it.
+
+[contest]
+id = "ca-2026-11-03-needles-measure-d"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:needles"
+kind = "measure"
+title = "City of Needles Measure D: Charter Amendment Raising City Council Compensation"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Needles, Resolution No. 2026-29, Section 3: the ballot question, as posted by the San Bernardino County Registrar of Voters"
+credit = "Ballot question, City of Needles Resolution No. 2026-29"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofNeedles/29/RES_CityofNeedles.pdf"
+file = "sources/RES_CityofNeedles.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "San Bernardino County Registrar of Voters, Voter Information Guide, page SB COMPREHENSIVE-187: City Attorney's Impartial Analysis of Measure D"
+credit = "City Attorney's Impartial Analysis, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp189-190.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure D, as printed in the San Bernardino County Voter Information Guide, page SB COMPREHENSIVE-188"
+credit = "Argument in favor, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp189-190.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "full-text"
+kind = "official-text"
+publisher = "City of Needles, Proposed Amendment to the Needles City Charter, Section 503 (Exhibit A to Resolution No. 2026-29), as posted by the San Bernardino County Registrar of Voters"
+credit = "Full text of Measure D, City of Needles"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofNeedles/29/FT_CityofNeedles.pdf"
+file = "sources/FT_CityofNeedles.pdf"
+retrieved = "2026-10-28"
