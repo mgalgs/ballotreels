@@ -128,7 +128,7 @@ class RealDataApiTest(unittest.TestCase):
 
     def test_fields(self):
         state, entry = self.deps.contest("ca-2026-11-03-prop-39")
-        [az, _] = _contest_detail(entry, state, self.deps)["related"]
+        [az, _, _] = _contest_detail(entry, state, self.deps)["related"]
         other_state, other = self.deps.contest("az-2026-11-03-prop-144")
         self.assertEqual(az, {
             "id": "az-2026-11-03-prop-144", "state": "az",
