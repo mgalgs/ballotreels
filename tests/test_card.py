@@ -174,6 +174,18 @@ class CardTest(ContestCopyTestCase):
             "[card] 'summary' does not appear verbatim in source "
             "'quick-reference' (sources/quick-reference.html)"])
 
+    def test_verbatim_allows_a_dash_dropped_at_a_line_break(self):
+        # pdftotext drops a dash standing alone at a line's end with the
+        # break ("$0.60 -" / "$1.50" -> "$0.60 $1.50", Chino's Measure F);
+        # the card keeps the dash as printed.
+        self.edit("script.toml", "during economic downturns. Fiscal",
+                  "during economic - downturns. Fiscal")
+        self.assertEqual(self.failures(), [])
+        self.edit("script.toml", "economic - downturns", "economic - Downturns")
+        self.assertEqual(self.failures(), [
+            "[card] 'summary' does not appear verbatim in source "
+            "'quick-reference' (sources/quick-reference.html)"])
+
     def test_a_one_misprinted_for_an_l_may_be_corrected(self):
         # "potentia1" in Alabama's ballot statement for Amendment 2
         self.edit("sources/quick-reference.html", "essential services",
