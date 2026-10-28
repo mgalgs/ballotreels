@@ -42,7 +42,9 @@ stale; they are regenerated on next request.
    Today's only writer returns the contest's hand-written `script.toml`,
    or fails plainly if there is none yet; a script writer that drafts
    one automatically (a language model, or otherwise) is future work,
-   not built in this round.
+   not built in this round. A script records the questions a reader
+   asked of it and the lines that answer each (STANDARD.md section 10,
+   `[[question]]` in SCRIPT-FORMAT.md).
 5. **Checks.** The machine checks in the standard run on the script,
    and again once narration exists (airtime can only be measured then).
    A failure fails the job with the check's output, shown to the

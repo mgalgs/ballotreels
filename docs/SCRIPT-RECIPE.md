@@ -141,6 +141,25 @@ says; how to vote. A shorter film is fine; padding is not.
 - Read it as someone who favours each choice in turn. If any would
   call a line unfair to theirs, rewrite it.
 
+## The questions it raises
+
+Before the script is final, have someone who did not write it read it
+as a first-time voter and list the questions it leaves open (STANDARD.md
+section 10); keep the two or three that matter most. A narrow measure
+always raises two: who would it affect, and has anywhere else done
+this? Answer each from an official record, in the usual word budget
+(tighten other lines to make room), and record it in `[[question]]`
+(SCRIPT-FORMAT.md).
+
+- **Who it affects**: only as the measure's text, the fiscal statement
+  or an agency's record says it. Where none gives a number, mark that
+  question `unanswered` and say nothing.
+- **Precedent**: another government's law that does the same thing, in
+  a `background` line, as legal history: when it passed, and every
+  court ruling, repeal or start date its records show, each said as
+  plainly as the passing. Never whether it worked or what it caused.
+  Name only what an archived record confirms.
+
 ## Before it is done
 
 - `python -m ballotreels check <contest-dir>` passes.

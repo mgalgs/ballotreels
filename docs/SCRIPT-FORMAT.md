@@ -78,6 +78,16 @@ University of Arkansas guide says"), so a viewer never takes it for the
 state's own words. A side's `basis` quotes it as it would an official
 argument: its "what supporters say" and "what opponents say".
 
+`precedent-record` is another government's official record of a similar
+law: its enacted text, its legislative record, or a court's opinion on
+it (STANDARD.md rule 1.2, for precedent only). `check` fails a line or
+chart citing it outside a `background` section (rule 10.5). List only
+the records the script cites: the video's page lists every source in
+`sources.toml` as one the video used. That the law is similar (it does
+what this measure does, judged from the two texts) and that every
+outcome its records show is told (rule 10.3) is for the writer and the
+reviewer.
+
 ## script.toml
 
 ```toml
@@ -169,6 +179,36 @@ names = [{ name = "Lincoln Fillmore", role = "the measure's chief sponsor", sour
 A line that states a computed share of a budget (STANDARD.md rule 6.5)
 lists the source of the figure and the source of the total; when one
 source states both, that one id is enough.
+
+### The questions record: `[[question]]`
+
+The questions a reader who did not write the script is left with, each
+with its answer (STANDARD.md rule 10.1). Optional under standard
+version 2; required from version 3. A line a question points to has an
+`id`, unique in the script:
+
+```toml
+[[section.line]]
+id = "california-courts"
+text = "A court struck down the California sales ban in 2015, then an appeals court upheld it."
+sources = ["ca-court-2017", "ca-court-2022"]
+
+[[question]]
+ask = "Has anywhere else done this, and what happened?"
+lines = ["california-law", "california-courts"]   # the lines that answer it
+
+[[question]]
+ask = "How many restaurants and stores in the District sell these products?"
+unanswered = true                                 # no official source does
+```
+
+- `ask` is the question in plain words, as a first-time voter would put
+  it.
+- Each question has `lines`, a non-empty list of line ids, every one a
+  line's `id`, or `unanswered = true`; never both, never neither.
+- A question no official source answers is marked `unanswered`, and the
+  script says nothing about it: the narrator's own knowledge never
+  answers it. Whether the lines do answer it is for the reviewer.
 
 ### The card: the measure's official page
 
