@@ -1,0 +1,162 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; what a general obligation bond is; that none can be issued
+# without the voters; what Bond Question 1 would allow; the scale of the
+# borrowing and who sets the tax; that no official argument exists for
+# either side; what a vote does.
+#
+# The card quotes the Secretary of State's 2026 General Election Voter
+# Guide: the bond question as the ballot prints it, "The New Mexico
+# Legislature passed the 2026 Capital Projects General Obligation Bond
+# Act" as the origin line, and the guide's explanation of how the bonds
+# are repaid as the summary. The guide prints no "a vote for means"
+# lines, so the vote lines take their two meanings from one phrase of
+# the question, the same for each.
+#
+# Fiscal: the principal is the ballot's. No official estimate of the
+# interest or the total repaid exists, so none is given; the guide says
+# the State Board of Finance will set the tax rate and the yearly cost
+# to property owners after the election, and the script says so. The
+# guide states no budget to scale the borrowing by; the Legislative
+# Finance Committee's fiscal impact report compares the three bond
+# questions together with the net taxable value of property, and that
+# comparison is quoted. No archived source states a General Fund total,
+# so this question's own amount has no share (rule 6.5): the total
+# needed is the General Fund's recurring appropriations for fiscal year
+# 2027, from the Legislative Finance Committee.
+#
+# New Mexico publishes no official arguments for or against a bond
+# question, so both sides are filed = false and each says so once, in
+# the same number of words. No person is named.
+
+contest = "nm-2026-11-03-bond-question-1"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide"
+number = "1"
+title = "The 2026 Capital Projects General Obligation Bond Act authorizes the issuance and sale of senior citizen facility improvement, construction and equipment acquisition bonds. Shall the state be authorized to issue general obligation bonds in an amount not to exceed twenty-one million five hundred eighty-two thousand two hundred thirteen dollars ($21,582,213) to make capital expenditures for certain senior citizen facility improvement, construction and equipment acquisition projects and provide for a general property tax imposition and levy for the payment of principal of, interest on and expenses incurred in connection with the issuance of the bonds and the collection of the tax as permitted by law?"
+origin = "The New Mexico Legislature passed the 2026 Capital Projects General Obligation Bond Act"
+summary = "A General Obligation (GO) bond represents a debt for money borrowed by the State of New Mexico to finance capital improvement projects that benefit communities throughout the state. If approved by voters, the State promises to repay the amount borrowed, plus interest, over a period of time for each series of General Obligation bonds issued. These bonds are called \"General Obligation\" bonds because repayment of the principal and interest is backed by the full faith and credit of the State of New Mexico. The debt service is paid through a statewide property tax levy on taxable property, as authorized by the 2026 Capital Projects General Obligation Bond Act."
+
+[[section]]
+id = "what"
+heading = "Bond Question 1"
+
+[[section.line]]
+text = "Bond Question 1 is about borrowing for senior citizen facilities."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["senior citizen facility improvement, construction and equipment acquisition bonds"]
+
+[[section]]
+id = "background"
+heading = "What a bond is"
+
+[[section.line]]
+text = "A general obligation bond is money the state borrows and repays with interest, generally over up to eleven years."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the bonds cannot be issued without voter approval."
+sources = ["guide", "act"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Bond Question 1 would allow up to $21,582,213 for senior citizen facility improvements, construction and equipment."
+sources = ["guide", "act"]
+
+[section.line.visual]
+kind = "illustration"
+name = "senior-center"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Legislative Finance Committee puts all three bond questions at about 0.136 percent of the net taxable value of property."
+sources = ["fir"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section.line]]
+text = "The State Board of Finance will set the tax rate and yearly cost to property owners after the election."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "illustration"
+name = "homestead"
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "New Mexico's voter guide includes no official argument for the bond question."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "list"
+source = "guide"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "New Mexico's voter guide includes no official argument against the bond question."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "list"
+source = "guide"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for authorizes the bonds, and the property tax to repay them."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["Shall the state be authorized to issue general obligation bonds"]
+
+[[section.line]]
+text = "A vote against means the bonds would not be issued."
+sources = ["guide", "act"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["Shall the state be authorized to issue general obligation bonds"]
