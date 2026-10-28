@@ -4,16 +4,18 @@ spoken lengths differ too much, and side lines with no verbatim basis in
 their argument. They apply only to a script whose narration is missing or
 stale."""
 
+import io
 import re
 import shutil
 import unittest
 from dataclasses import replace
 
 from ballotreels import check_contest, load_contest, load_standard
+from ballotreels.cli import main
 from ballotreels.checks import check_speakability, needs_narration
 from ballotreels.standard import REPO_ROOT, Risk, read_speakability
 
-from .helpers import PROP_2, ContestCopyTestCase
+from .helpers import PROP_2, ContestCopyTestCase, write_committed_narration
 
 NO_LINE = ('text = "A no vote means the current rules would not change."')
 STANDARD = load_standard()
@@ -42,6 +44,14 @@ class SpeakabilityListTest(unittest.TestCase):
 
 
 class SpeakabilityTest(ContestCopyTestCase):
+    """Each case edits one line of a copy whose narration is committed, so
+    only that line (and the phrase after it) is fresh and linted, whatever
+    else the real list would flag in the rest of the script."""
+
+    def setUp(self):
+        super().setUp()
+        write_committed_narration(self.dir)
+
     def speak(self, text):
         self.edit("script.toml", NO_LINE, f'text = "{text}"')
         return only(check_contest(load_contest(self.dir), STANDARD),
@@ -104,12 +114,49 @@ class SpeakabilityTest(ContestCopyTestCase):
                          [])
 
     def test_on_screen_text_not_checked(self):
-        # Only narration is spoken: a chart title may say "PACs".
+        # Only narration is spoken: a chart title may say "PACs". Every
+        # line is linted here, so only the title's words are looked for.
         self.edit("script.toml",
                   'title = "Where General Fund money goes (approximate)"',
                   'title = "Where U.S. PACs money goes (approximate)"')
-        self.assertEqual(only(check_contest(load_contest(self.dir), STANDARD),
-                              "speakability"), [])
+        got = check_speakability(load_contest(self.dir), STANDARD.speakability)
+        self.assertEqual([str(f) for f in got
+                          if "U.S." in f.message or "PACs" in f.message], [])
+
+
+class CheckCommandFreshnessTest(ContestCopyTestCase):
+    """`python -m ballotreels check` judges a line fresh against the
+    contest's committed narration: a phrase it would reuse is not linted,
+    even where the real list matches it (Prop 2's "From 1980 to 2014"), and
+    an edited line is."""
+
+    YEARS = "'1980 to 2014'"
+
+    def setUp(self):
+        super().setUp()
+        write_committed_narration(self.dir)
+
+    def check(self):
+        out = io.StringIO()
+        code = main(["check", str(self.dir)], out=out)
+        return code, out.getvalue()
+
+    def test_current_narration_passes(self):
+        self.assertTrue(any(self.YEARS in f.message for f in
+                            check_speakability(load_contest(self.dir),
+                                               STANDARD.speakability)))
+        code, out = self.check()
+        self.assertEqual(code, 0, out)
+        self.assertTrue(out.startswith("PASS "), out)
+
+    def test_fresh_line_is_linted(self):
+        self.edit("script.toml", NO_LINE,
+                  'text = "A no vote means the rules stay, unless a driver '
+                  'consents."')
+        code, out = self.check()
+        self.assertEqual(code, 1, out)
+        self.assertIn("[speakability] vote.line[1]: 'consents'", out)
+        self.assertNotIn(self.YEARS, out)
 
 
 class GateTest(unittest.TestCase):

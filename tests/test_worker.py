@@ -1,11 +1,13 @@
 import http.client
 import io
+import re
 import shutil
 import sys
 import tempfile
 import threading
 import time
 import unittest
+from dataclasses import replace
 from pathlib import Path
 
 import ballotreels.site.config as site_config
@@ -17,10 +19,12 @@ from ballotreels.pipeline import (STAGES, FakeRunner, HandWrittenScriptWriter,
                                   PipelineError, SubprocessRunner, run_check)
 from ballotreels.queue import hash_for_key
 from ballotreels.site.server import build_deps, make_servers
+from ballotreels.standard import Risk
 from ballotreels.storage import LocalStorage
 from ballotreels.worker import Worker, WorkerClient
 
-from .helpers import NARRATION_SIDECARS, PROP_2, REPO
+from .helpers import (NARRATION_SIDECARS, PROP_2, REPO,
+                      write_committed_narration)
 from .test_serve_public import _make_config
 
 WORKER_FIXTURE_ELECTION = REPO / "tests" / "fixtures" / "worker_election"
@@ -49,6 +53,9 @@ class WorkerTestCase(unittest.TestCase):
         self.config = _make_config(self.data_dir, election="ca-2026-11-03",
                                    **self.config_overrides)
         self.deps = build_deps(self.config)
+        # The fake repo's Prop 2 has no narration, so every line is fresh:
+        # the worker's checks here do not depend on speakability.txt.
+        self.standard = replace(self.deps.standard, speakability=())
         self.public, self.private = make_servers(self.deps)
         self.addCleanup(self.deps.queue.close)
         for srv in (self.public, self.private):
@@ -70,13 +77,13 @@ class WorkerTestCase(unittest.TestCase):
         self.private.server_close()
 
     def make_worker(self, runner=None, worker_id="w1",
-                    heartbeat_interval=0.2):
+                    heartbeat_interval=0.2, standard=None):
         runner = runner if runner is not None else FakeRunner()
         return Worker(client=self.client, worker_id=worker_id,
                      repo=self.fake_repo, runner=runner,
                      writer=HandWrittenScriptWriter(),
                      storage=LocalStorage(self.client),
-                     standard=self.deps.standard,
+                     standard=standard or self.standard,
                      work_dir=self.tmp / "work",
                      masters_dir=self.tmp / "masters",
                      poll_interval=0.05,
@@ -214,7 +221,7 @@ class CheckRunsWithoutSidecarsTest(WorkerTestCase):
         worker = self.make_worker()
         contest_dir = worker._prepare_scratch(job, worker._job_work_dir(job["id"]))
         self.assertFalse((contest_dir / "narration.json").exists())
-        run_check(contest_dir, self.deps.standard)  # must not raise
+        run_check(contest_dir, self.standard)  # must not raise
 
 
 class NarrateRechecksAirtimeTest(WorkerTestCase):
@@ -722,4 +729,43 @@ class CommittedNarrationReusedTest(WorkerTestCase):
         self.assertEqual(row["state"], "failed")
         self.assertEqual(row["failed_stage"], "narrate")
         self.assertIn("scripts/narrate.sh", row["error"])
+        self.assertEqual(runner.narrated, [])
+
+
+class CheckJudgesFreshnessTest(WorkerTestCase):
+    """The check stage runs on the scratch copy, which carries the
+    contest's committed sidecars, so it judges a phrase fresh exactly as
+    `python -m ballotreels check` does in the repo: a narration current for
+    its script is never linted, and an edited line is."""
+
+    def setUp(self):
+        super().setUp()
+        self.dest = self.fake_repo / "data" / "ca-2026-11-03" / "prop-2"
+        write_committed_narration(self.dest)
+
+    def run_job(self, standard=None):
+        job, _ = self.deps.queue.create_job(self.prop2_key())
+        runner = NoTTSRunner()
+        self.make_worker(runner=runner, standard=standard).run_once()
+        return self.deps.queue.get_job(job["id"]), runner
+
+    def test_current_narration_passes_whatever_the_list(self):
+        every_word = replace(self.deps.standard, speakability=(
+            Risk(re.compile(r"\w+"), "test reason", "test suggestion"),))
+        row, runner = self.run_job(every_word)
+        self.assertEqual(row["state"], "done", row["error"])
+        self.assertEqual(runner.narrated, [])
+
+    def test_fresh_line_fails_check(self):
+        script = self.dest / "script.toml"
+        script.write_text(script.read_text(encoding="utf-8").replace(
+            "A no vote means the current rules would not change.",
+            "A no vote means the rules stay, unless a driver consents."),
+            encoding="utf-8")
+        row, runner = self.run_job(self.deps.standard)
+        self.assertEqual(row["state"], "failed")
+        self.assertEqual(row["failed_stage"], "check")
+        self.assertIn("[speakability] vote.line[1]: 'consents'", row["error"])
+        # The committed narration still covers every other phrase.
+        self.assertNotIn("1980 to 2014", row["error"])
         self.assertEqual(runner.narrated, [])

@@ -1,5 +1,6 @@
 """Shared test helpers: a frozen Prop 2 contest, and broken copies of it."""
 
+import functools
 import json
 import re
 import shutil
@@ -25,6 +26,18 @@ PROP_2 = REPO / "tests" / "fixtures" / "prop-2"
 NARRATION_RMS = 0.0658
 
 NARRATION_SIDECARS = ("narration.json", "narration.wav", "narration.vtt")
+
+
+@functools.cache
+def unlinted_standard():
+    """The standard with an empty speakability list. A copy of Prop 2
+    without its sidecars has no narration, so every line is fresh and
+    linted; a test of some other check's exact failures uses this so it
+    does not depend on what standard/speakability.txt lists."""
+    from dataclasses import replace
+
+    from ballotreels.standard import load_standard
+    return replace(load_standard(), speakability=())
 
 
 class ContestCopyTestCase(unittest.TestCase):
@@ -86,3 +99,18 @@ def write_narration(contest_dir, stretch=None):
     doc = {"phrases": phrases, "seconds": round(t, 2)}
     (Path(contest_dir) / "narration.json").write_text(
         json.dumps(doc, indent=2) + "\n", encoding="utf-8")
+
+
+def write_committed_narration(contest_dir):
+    """Stand in for a narration committed for `contest_dir`'s current
+    script: write_narration's narration.json, with a phrase_cache keyed as
+    `say` records one, beside an empty narration.wav. Editing a line
+    afterwards leaves only its phrases, and the phrase after them, to be
+    synthesised afresh (narration.unreused_phrases)."""
+    write_narration(contest_dir)
+    path = Path(contest_dir) / "narration.json"
+    doc = json.loads(path.read_text(encoding="utf-8"))
+    doc["phrase_cache"] = [{"key": {"text": p["text"]}}
+                           for p in doc["phrases"]]
+    path.write_text(json.dumps(doc, indent=2) + "\n", encoding="utf-8")
+    (Path(contest_dir) / "narration.wav").write_bytes(b"")
