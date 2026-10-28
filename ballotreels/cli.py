@@ -8,6 +8,7 @@
     python -m ballotreels measures ca-sos <election-dir> [--base-url URL]
     python -m ballotreels geo build [--state ca] [--data-dir DIR]
     python -m ballotreels geo zip <zip> [--state ca] [--data-dir DIR]
+    python -m ballotreels geo divisions <election-dir> [--data-dir DIR]
     python -m ballotreels serve [--public-port PORT] [--private-port PORT]
     python -m ballotreels worker --server URL [--runner fake|subprocess]
 """
@@ -333,6 +334,20 @@ def _geo_zip(data_dir: str, state: str, zip_code: str, out) -> bool:
     return True
 
 
+def _geo_divisions(data_dir: str, election_dir: str, state: str | None,
+                   out) -> bool:
+    from .geo.divisions import DivisionsError, write_divisions
+    # An election directory is named <st>-<date> (ca-2026-11-03).
+    state = state or Path(election_dir).resolve().name.split("-", 1)[0]
+    try:
+        path = write_divisions(Path(data_dir) / "geo" / state, election_dir)
+    except DivisionsError as e:
+        print(str(e), file=out)
+        return False
+    print(f"{path}: written", file=out)
+    return True
+
+
 def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
     parser = argparse.ArgumentParser(prog="python -m ballotreels")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -400,6 +415,14 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
     geo_zip.add_argument("zip", metavar="zip-code")
     geo_zip.add_argument("--state", default="ca")
     geo_zip.add_argument("--data-dir", default=str(default_data_dir()))
+    geo_divisions = geo_sub.add_parser(
+        "divisions", help="write an election's divisions.tsv from the geo "
+                          "build under --data-dir")
+    geo_divisions.add_argument("election_dir", metavar="election-dir")
+    geo_divisions.add_argument("--state", default=None,
+                               help="default: the election directory's "
+                                    "prefix (ca-2026-11-03 -> ca)")
+    geo_divisions.add_argument("--data-dir", default=str(default_data_dir()))
     serve = sub.add_parser("serve", help="run the serve tier")
     serve.add_argument("--data-dir", default=None,
                        help="default: $BALLOTREELS_DATA_DIR or <repo>/var")
@@ -508,6 +531,9 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
         if args.geo_command == "build":
             ok = _geo_build(args.data_dir, args.state, args.min_overlap,
                             args.tolerance, args.url, out)
+        elif args.geo_command == "divisions":
+            ok = _geo_divisions(args.data_dir, args.election_dir, args.state,
+                                out)
         else:
             ok = _geo_zip(args.data_dir, args.state, args.zip, out)
         return 0 if ok else 1
