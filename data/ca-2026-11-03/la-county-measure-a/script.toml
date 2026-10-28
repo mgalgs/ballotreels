@@ -1,0 +1,150 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; the rules today (no strikes, good-faith bargaining); what would
+# change (more workers barred from striking, a panel picks between final
+# offers, its decision binding); the Auditor-Controller's fiscal
+# statement, its cost and what it cannot predict; one line per side; what
+# a vote does.
+#
+# The card quotes the ballot label, printed only in the ordinance, which
+# prints no yes/no lines (County Counsel's analysis has them, on another
+# document). So, as for Utah, the card has no YES/NO boxes, the vote
+# lines give the analysis's meanings, and both highlight the one phrase
+# of the question they turn on.
+#
+# "Counsel" is heard as "Council" and "county's" as "counties"
+# (standard/speakability.txt), so the narration says neither. The
+# fiscal statement's $4.1 billion (current pay for covered employees) is
+# left out: no archived source states the county budget that would give
+# it its scale (STANDARD.md 6.5).
+#
+# No argument against was submitted ("NO ARGUMENT AGAINST THIS MEASURE
+# WAS SUBMITTED"): the no side is filed = false, as for Proposition 37.
+
+contest = "ca-2026-11-03-la-county-measure-a"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-label"
+number = "A"
+title = "LOS ANGELES COUNTY CHARTER AMENDMENT REITERATING GOOD FAITH NEGOTIATION OBLIGATIONS AND ESTABLISHING IMPARTIAL BINDING ARBITRATION FOR CERTIFIED PUBLIC SAFETY EMPLOYEE DISPUTES"
+origin = "The Board of Supervisors of the County of Los Angeles ordains as follows:"
+summary = "Shall the measure amending the Los Angeles County Charter to prohibit strikes by district attorney investigators, medical examiners, and lifeguards; their supervisors; and nonadministrative civilian employees working in the Fire Department, Sheriff's Department, and the Department of Medical Examiner, reiterate existing legal obligations for good faith negotiations, and establish an impartial binding arbitration process for resolving labor disputes with certified public safety employee organizations representing County employees including firefighters, sheriffs, and the abovementioned employees, as specified in the charter amendment ordinance, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure A"
+
+[[section.line]]
+text = "Los Angeles County Measure A asks county voters whether to amend the County Charter to add binding arbitration for public safety labor disputes."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["IMPARTIAL BINDING ARBITRATION FOR CERTIFIED PUBLIC SAFETY EMPLOYEE DISPUTES"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, firefighters and deputy sheriffs may not strike, and the county and their unions must negotiate pay in good faith."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bargaining-table"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure A would also bar strikes by district attorney investigators, medical examiners and lifeguards."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "law-book"
+
+[[section.line]]
+text = "When talks fail, a three-member panel would pick one side's final offer on each issue."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section.line]]
+text = "The panel's decision would be binding, with no approval needed from the Board of Supervisors or voters."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What the Auditor-Controller says"
+
+[[section.line]]
+text = "The Auditor-Controller says an arbitration could cost tens of thousands to millions of dollars, depending on how complex it is."
+sources = ["fiscal-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section.line]]
+text = "The office says it has no basis to predict whether labor costs would be higher or lower."
+sources = ["fiscal-statement"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say neutral experts would decide pay, not politics, helping departments recruit and keep safety workers."
+sources = ["argument"]
+basis = ["Binding arbitration puts pay decisions in the hands of neutral experts who can focus on what's fair and keep politics out of fair pay decisions.", "Binding arbitration helps ensure departments can offer fair pay and benefits, making it easier to recruit and retain the"]
+
+[section.line.visual]
+kind = "list"
+source = "argument"
+items = ["Neutral experts decide pay, not politics", "Helps recruit and keep firefighters and deputies"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure A was submitted, so the official materials print only the supporters' argument."
+sources = ["argument"]
+
+[section.line.visual]
+kind = "list"
+source = "argument"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means the charter would set up binding arbitration for these disputes."
+sources = ["impartial-analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["impartial binding arbitration process"]
+
+[[section.line]]
+text = "A no vote means no binding arbitration, and the labor negotiation process would remain unchanged."
+sources = ["impartial-analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["impartial binding arbitration process"]

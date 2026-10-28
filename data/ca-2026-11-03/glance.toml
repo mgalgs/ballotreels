@@ -111,3 +111,14 @@ source = "guide-page"
 quote = "a half-cent sales tax raising an estimated $400,000,000 to $450,000,000 annually"
 amount = 450000000
 period = "per-year"
+
+# Los Angeles County Measure A: the Auditor-Controller's statement sizes
+# only the cost of an arbitration, and only in words; it says it cannot
+# predict the effect on labor costs.
+[la-county-measure-a]
+source = "fiscal-statement"
+status = "words"
+magnitude = 1000000
+quote = "direct administrative costs of arbitration, including arbitrator fees, legal fees, and staff support, which could total tens of thousands to millions of dollars depending on the complexity and duration of the arbitration."
+period = "unstated"
+direction = "cost"

@@ -1,0 +1,70 @@
+# Archived sources for Los Angeles County Measure A, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). Each is the Registrar-Recorder/County
+# Clerk's own web copy of the measure's document; no page range of the
+# printed Sample Ballot and Voter Information Pamphlet was archived.
+#
+# The ballot label is printed only in the ordinance (its Section 2, "The
+# exact form of the measure as it is to appear on the ballot"), so the
+# ordinance backs two sources: the ballot label the card quotes, and the
+# full text.
+
+[contest]
+id = "ca-2026-11-03-la-county-measure-a"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:los_angeles"
+kind = "measure"
+title = "Los Angeles County Measure A: Charter Amendment Establishing Impartial Binding Arbitration for Certified Public Safety Employee Disputes"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Proposed Ordinance of Measure A, Section 2: the measure as it is to appear on the ballot"
+credit = "Ballot label, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/m0001053440e.pdf"
+file = "sources/m0001053440e.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure A, by Dawyn R. Harrison, County Counsel, Los Angeles County Registrar-Recorder/County Clerk"
+credit = "County Counsel Impartial Analysis"
+url = "https://content.lavote.gov/docs/rrcc/documents/m0001053410e.pdf"
+file = "sources/m0001053410e.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "fiscal-statement"
+kind = "official-fiscal-analysis"
+publisher = "County Auditor-Controller's Fiscal Impact Statement – Measure A, Los Angeles County Registrar-Recorder/County Clerk"
+credit = "Los Angeles County Auditor-Controller"
+url = "https://content.lavote.gov/docs/rrcc/documents/m0001053475e.pdf"
+file = "sources/m0001053475e.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure A (no argument against was submitted), Los Angeles County Registrar-Recorder/County Clerk"
+credit = "Argument in favor, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/m0001053415e.pdf"
+file = "sources/m0001053415e.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Proposed Ordinance of Measure A, full text, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/m0001053440e.pdf"
+file = "sources/m0001053440e.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "board-ordinance"
+kind = "legislative-record"
+publisher = "Los Angeles County Board of Supervisors, supporting document 219372: County Counsel's analysis and the ordinance calling the election"
+url = "https://file.lacounty.gov/SDSInter/bos/supdocs/219372.pdf"
+file = "sources/bos-supdoc-219372.pdf"
+retrieved = "2026-10-28"
