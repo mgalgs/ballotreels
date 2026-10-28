@@ -516,7 +516,40 @@ def _contest_summary(entry, state: StateElection,
         "video_url": (video.urls.get("video") if video else None),
         "job": job,
         **_voters(entry),
+        **_jurisdiction(entry, state),
     }
+
+
+def _local_name(entry: IndexEntry, state: StateElection) -> str | None:
+    """The display name of a county, city or school-district contest's
+    division ("City of San Diego", from the geo build), or None for any
+    other contest. Without geo data, a name made from the OCD-ID."""
+    level = level_of(entry.division, state.index.election.state)
+    if level not in ("county", "place", "school_district"):
+        return None
+    name = state.geo.names.get(entry.division) if state.geo else None
+    if name:
+        return name
+    name = entry.division.rsplit(":", 1)[1].replace("_", " ").title()
+    return f"{name} County" if level == "county" else name
+
+
+def _jurisdiction(entry: IndexEntry,
+                  state: StateElection) -> dict[str, str]:
+    """A local contest names whose it is, so a voter told it "may be on
+    your ballot" can settle that with their own address; any other has
+    no `jurisdiction`."""
+    name = _local_name(entry, state)
+    return {"jurisdiction": name} if name else {}
+
+
+def _where(entry: IndexEntry, state: StateElection) -> str:
+    """Whose measure a page's title says it is: a special district's own
+    name (its `voters`), a county's, city's or school district's, or the
+    state's, never implying a local measure is statewide."""
+    if entry.voters:
+        return entry.voters.removeprefix("the ")
+    return _local_name(entry, state) or _state_name(state.abbr)
 
 
 def _voters(entry: IndexEntry) -> dict[str, str]:
@@ -588,7 +621,7 @@ def _contest_detail(entry, state: StateElection,
         # The tab title the server renders for this page, so an in-app
         # visit and a fresh load show the same one.
         "page_title": pages.measure_meta(
-            _state_name(state.abbr), entry.title, "", None).title,
+            _where(entry, state), entry.title, "", None).title,
         "state": state.abbr,
         "state_name": _state_name(state.abbr),
         "election": state.index.election.id,
@@ -611,6 +644,7 @@ def _contest_detail(entry, state: StateElection,
         # as it always was
         **({"choice": True} if entry.choice else {}),
         **_voters(entry),
+        **_jurisdiction(entry, state),
     }
 
 
@@ -878,7 +912,7 @@ class PublicHandler(_JsonHandler):
             video = deps.queue.video_for(key) if key is not None else None
             poster = video.urls.get("poster") if video else None
             return pages.measure_meta(
-                _state_name(state.abbr), entry.title, path, poster,
+                _where(entry, state), entry.title, path, poster,
                 choice=entry.choice,
                 video=video.urls.get("video") if video else None,
                 video_made=video.created_at if video else None)

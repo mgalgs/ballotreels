@@ -904,12 +904,17 @@ function contestHeading(contest) {
           ...localNotes(contest)];
 }
 
-// A local contest's notes: who votes on it, where that is less than its
-// whole county (a special district's: "Only voters in the Helix Water
+// A local contest's notes: whose it is (its county, city or school
+// district, so a voter told it may be on their ballot can tell which);
+// who votes on it, where that is less than its whole county (a special district's: "Only voters in the Helix Water
 // District vote on this."); and on a ballot, one the zip alone can't
 // place on it, of a city or school district covering only part of it.
 function localNotes(contest) {
   const notes = [];
+  if (contest.jurisdiction) {
+    notes.push(el("p", { class: "local-note jurisdiction",
+                         text: contest.jurisdiction }));
+  }
   if (contest.voters) {
     notes.push(el("p", { class: "local-note voters", text: contest.voters }));
   }

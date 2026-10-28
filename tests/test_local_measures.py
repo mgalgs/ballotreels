@@ -486,4 +486,44 @@ class VotersOnTheSiteTest(LocalServerTestCase):
         app = (REPO / "ballotreels" / "site" / "static" /
                "app.js").read_text(encoding="utf-8")
         self.assertIn("contest.voters", app)
+
+
+class JurisdictionOnTheSiteTest(LocalServerTestCase):
+    """A local contest names whose it is, on the ballot, its page and its
+    tags, so a zip across two cities says which measure is which."""
+
+    def test_ballot_names_each_city_and_district(self):
+        doc = self.ballot_for_zip("92102")
+        names = {c["id"]: c.get("jurisdiction")
+                 for lvl in doc["levels"] for c in lvl["contests"]}
+        self.assertEqual(names["ca-2026-11-03-prop-90"], None)
+        self.assertEqual(names["ca-2026-11-03-sd-county-measure-a"],
+                         "San Diego County")
+        self.assertEqual(names["ca-2026-11-03-san-diego-city-measure-d"],
+                         "City of San Diego")
+        self.assertEqual(names["ca-2026-11-03-el-cajon-city-measure-e"],
+                         "City of El Cajon")
+        self.assertEqual(names["ca-2026-11-03-grossmont-measure-g"],
+                         "Grossmont Union High School District")
+
+    def test_contest_page_and_tags(self):
+        for path, where in (
+                ("sd-county-measure-a", "San Diego County"),
+                ("san-diego-city-measure-d", "City of San Diego"),
+                ("helix-water-measure-h", "Helix Water District")):
+            doc = self.get_json(f"/api/contest/ca/2026/{path}")
+            self.assertTrue(doc["page_title"].startswith(f"{where} Measure"),
+                            doc["page_title"])
+            resp, body = self.get(self.public_port, f"/ca/2026/{path}")
+            self.assertEqual(resp.status, 200)
+            self.assertIn(f"<title>{where} Measure".encode(), body)
+            self.assertNotIn(b"California Measure", body)
+        doc = self.get_json("/api/contest/ca/2026/prop-90")
+        self.assertNotIn("jurisdiction", doc)
+        self.assertTrue(doc["page_title"].startswith("California Prop"))
+
+    def test_app_shows_it(self):
+        app = (REPO / "ballotreels" / "site" / "static" /
+               "app.js").read_text(encoding="utf-8")
+        self.assertIn("contest.jurisdiction", app)
         self.assertIn("...localNotes(body)", app)
