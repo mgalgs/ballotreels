@@ -1,0 +1,143 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; the rate today; what the proposition would set, and that the
+# rate itself would not change; what happens if Amendment 87 also
+# passes; what Legislative Council Staff says it costs; one point per
+# side; what a vote does.
+#
+# The card quotes the State Ballot Information Booklet: the ballot title
+# as printed in its Text & Titles section, its origin and vote-needed
+# line, its answer to "What does Proposition 136 do?" as the summary and
+# its YES/NO lines.
+#
+# The conflict with Amendment 87 is stated once, in the booklet's words
+# ("the exact outcome is unclear"; "the state legislature or a court
+# will determine how to resolve any conflicts"). That the constitution
+# already requires voters to approve a tax rate increase is a fact the
+# opponents' argument rests on, so it stays in their section (rule 6.3).
+# The booklet prints one argument for and one against; each side's list
+# takes two points from its one argument.
+
+contest = "co-2026-11-03-proposition-136"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "blue-book"
+number = "136"
+title = "Shall there be a change to the Colorado Revised Statutes capping the state income tax rate at 4.4% of federal taxable income for individuals and corporations?"
+origin = "Placed on the ballot by citizen initiative • Passes with a majority vote"
+summary = "The measure limits the state income tax rate for individuals and corporations to the current rate of 4.4 percent of taxable income beginning on January 1, 2027."
+yes = "A “yes” vote on Proposition 136 establishes the current state income tax rate of 4.4 percent as the maximum rate."
+no = "A “no” vote on Proposition 136 keeps the current state income tax rate of 4.4 percent without establishing a new limit in statute."
+
+[[section]]
+id = "what"
+heading = "Proposition 136"
+
+[[section.line]]
+text = "Proposition 136 is about Colorado's state income tax rate."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["capping the state income tax rate at 4.4%"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the state income tax rate is 4.4 percent, for individuals and corporations."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "income-taxes"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The proposition would set that rate as the maximum in state law, starting in 2027."
+sources = ["blue-book", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "spending-limit"
+
+[[section.line]]
+text = "The current rate itself would not change."
+sources = ["blue-book"]
+
+[[section.line]]
+text = "If Amendment 87 also passes, the exact outcome is unclear; the legislature or a court would determine how to resolve it."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Legislative Council Staff says the proposition has no fiscal impact."
+sources = ["fiscal-impact", "fiscal-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes/for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the proposition reinforces voter support for the current rate, and that rate is among the lowest nationally."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Reinforces voter support for the current rate", "Keeps the rate among the lowest nationally"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no/against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the proposition is designed to put Amendment 87 in legal jeopardy, with no effect after the election."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Designed to put Amendment 87 in legal jeopardy", "Has no effect after the 2026 election"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote establishes the current 4.4 percent rate as the maximum rate."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["as the maximum rate"]
+
+[[section.line]]
+text = "A no vote keeps the current rate without a new limit in state law."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["without establishing a new limit in statute"]
