@@ -1,0 +1,154 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; how it got on the ballot; who the Constitution says may vote
+# today; the words the amendment would put in their place, and what it
+# leaves alone; that no cost estimate exists; the two sides; what a vote
+# does.
+#
+# West Virginia has no voter pamphlet. The card quotes the Secretary of
+# State's Public Notice: the amendment's designation as its title and
+# the Summary of Purpose as its summary, the words the ballot prints.
+# Neither prints "a FOR vote means" lines, so the card has none, and the
+# vote lines take their meanings from the summary's words and the
+# Constitution's current ones.
+#
+# The lines describe the change of wording only, from "The citizens of
+# the state" to "Only citizens of the United States who are citizens of
+# this state". No source here says whether anyone who is not a citizen
+# may vote in a West Virginia election today, so no line says either.
+#
+# Fiscal: no fiscal note exists for SJR 9 and the ballot prints no cost;
+# no dollar figure appears, so none needs a scale.
+#
+# West Virginia publishes no official arguments for or against an
+# amendment, so both sides are filed = false and each says so once, in
+# the same number of words.
+
+contest = "wv-2026-11-03-amendment-1"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "notice"
+number = "1"
+title = "Citizenship Requirement to Vote in West Virginia Elections Amendment"
+origin = "Senate Joint Resolution 9"
+summary = "This amendment provides that in all elections held in West Virginia only citizens of the United States who are citizens of this state are qualified to vote."
+
+[[section]]
+id = "what"
+heading = "Amendment 1"
+
+[[section.line]]
+text = "Amendment 1 is about who may vote in West Virginia."
+sources = ["notice", "ballot"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["Citizenship Requirement to Vote"]
+
+[[section]]
+id = "background"
+heading = "How it got on the ballot"
+
+[[section.line]]
+text = "The Legislature placed the amendment on the ballot, with two-thirds of each house agreeing."
+sources = ["resolution", "status"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-capitol"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the state Constitution says the citizens of the state are entitled to vote."
+sources = ["constitution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would instead say only citizens of the United States who are citizens of this state are entitled to vote."
+sources = ["resolution", "notice"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["only citizens of the United States who are citizens of this state"]
+
+[[section.line]]
+text = "The section's other rules, including the 30-day residence requirement, would stay the same."
+sources = ["resolution", "constitution"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "West Virginia's ballot does not include a cost estimate for the amendment."
+sources = ["ballot"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "West Virginia publishes no official argument for the amendment."
+sources = ["notice"]
+
+[section.line.visual]
+kind = "list"
+source = "notice"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "West Virginia publishes no official argument against the amendment."
+sources = ["notice"]
+
+[section.line.visual]
+kind = "list"
+source = "notice"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for changes the wording to only citizens of the United States who are citizens of this state."
+sources = ["notice", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["only citizens of the United States who are citizens of this state"]
+
+[[section.line]]
+text = "A vote against keeps the current wording, the citizens of the state."
+sources = ["notice", "constitution"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
