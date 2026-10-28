@@ -1,0 +1,150 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; what state law says today; how teams would be designated and
+# who would play on them, and what the booklet says is unclear; what
+# Legislative Council Staff says it costs; one point per side; what a
+# vote does.
+#
+# The card quotes the State Ballot Information Booklet: the ballot title
+# as printed in its Text & Titles section, its origin and vote-needed
+# line, its answer to "What does the measure do?" as the summary (its
+# list of the three designations cannot be quoted whole: the bullets
+# print as a letter in the PDF's text, so the summary is its next
+# sentences) and its YES/NO lines.
+#
+# Neutral lines use the booklet's own terms: "biological sex",
+# "biological males", "biological females", "coeducational" and "gender
+# identity". Each side's points use its own section's words. Federal
+# developments the booklet reports (an executive order, a court ruling,
+# a lawsuit and settlement) are left out for length; none is named in
+# either side's argument.
+
+contest = "co-2026-11-03-proposition-134"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "blue-book"
+number = "134"
+title = "Shall there be a change to the Colorado Revised Statutes creating new law restricting participation in all K-12 and collegiate school sports based on the participant’s sex as determined by certain aspects of their biological reproductive system, and, in connection therewith, requiring a school, institution of higher education, or athletic association to designate each school or intramural athletic team or sport as male, female, or coeducational; only allowing participants to compete on the team or sport of their designated sex or to compete on a coeducational team; creating an exception to allow a female to participate on a male-designated team or sport if there is no female team available; prohibiting a government entity, licensing or accrediting organization, or athletic association from entertaining a complaint, opening an investigation, or taking other adverse action against a school for maintaining separate teams or sports for females; and providing the commissioner of education with the authority to enforce the proposed initiative for K-12 school districts?"
+origin = "Placed on the ballot by citizen initiative • Passes with a majority vote"
+summary = "Under the measure, students must compete on teams that match their biological sex or on a coeducational team. Biological females are allowed to participate on a team or sport designated for biological males if there is no equivalent female team offered for that sport. Participation on a coeducational or mixed team or sport is open to all."
+yes = "A “yes” vote on Proposition 134 means that all school-based athletic teams and sports must be designated as being for biological males or biological females only, or as mixed, and requires schools and school districts to adopt policies on sex eligibility for sports."
+no = "A “no” vote on Proposition 134 means that individual schools, school districts, and athletic associations may continue to set their own policies in alignment with current state and federal law about who is eligible to participate on a team or in a sport."
+
+[[section]]
+id = "what"
+heading = "Proposition 134"
+
+[[section.line]]
+text = "Proposition 134 is about who may play on school sports teams."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["restricting participation in all K-12 and collegiate school sports"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, state law bars public schools and colleges from excluding students from activities matching their gender identity."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-gym"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Every school team would be designated for biological males, biological females, or as coeducational."
+sources = ["blue-book", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["designate each school or intramural athletic team or sport as male, female, or coeducational"]
+
+[[section.line]]
+text = "Students would play on teams matching their biological sex, or on coeducational teams."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["students must compete on teams that match their biological sex or on a coeducational team"]
+
+[[section.line]]
+text = "Legislative Council Staff says it is unclear how this would affect current state law."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Legislative Council Staff expects minimal school costs, and state legal costs it cannot determine."
+sources = ["fiscal-impact", "fiscal-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes/for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say females should be able to compete against other females, and the proposition protects the safety of female athletes."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Females should compete against other females", "Protects the safety of female athletes"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no/against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the proposition could subject many athletes to physical inspections, and that targeting at-risk students leads to harassment."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Could subject many athletes to physical inspections", "Targeting at-risk students leads to harassment"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means every school team must be for biological males or biological females only, or mixed."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["must be designated as being for biological males or biological females only, or as mixed"]
+
+[[section.line]]
+text = "A no vote means schools may continue to set their own policies."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["may continue to set their own policies"]
