@@ -134,6 +134,11 @@ voter in the county gets. A county's own measure has an id of the form
 `<county>-county-measure-<letter>`; any other measure under a county
 must have `voters`, which both `check` and the contest index enforce
 (docs/SCRIPT-FORMAT.md).
+A district that crosses county lines gets one contest per county it
+reaches, each under its county and with the same `voters`
+(`sierra-ccd-measure-x-placer`, `sierra-ccd-measure-x-nevada`): a
+contest has one division, and one filed under a single county is
+missing from every other county's ballots.
 
 The crash course stays statewide: its members are the state's own
 measures, never a local one.

@@ -52,6 +52,14 @@ contest:
 The contest index refuses the same missing or misplaced `voters`, so
 the site never lists such a measure as on every ballot in its county.
 
+A contest has one division, and the ballot lists it only for voters in
+that division. So a special district that crosses county lines (many
+community college districts do) gets one contest per county it reaches,
+each with that county as its division and the same `voters`, its id
+ending in the county: `sierra-ccd-measure-x-placer`,
+`sierra-ccd-measure-x-nevada`. File it under one county only and the
+voters in the others never see it.
+
 Allowed source kinds (STANDARD.md section 1): `official-title-summary`,
 `official-fiscal-analysis`, `official-argument`, `official-text`,
 `candidate-statement`, `candidate-website`, `public-record`,
