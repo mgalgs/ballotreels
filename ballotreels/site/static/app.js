@@ -1014,6 +1014,11 @@ async function renderState(abbr, year, old) {
     app.appendChild(section);
     return;
   }
+  const course = crashCourseNodes(body.crash_course);
+  if (course.length) {
+    section.append(...course);
+    requestAnimationFrame(fitVideo);
+  }
   section.appendChild(el("p", {
     text: `${contests.length} ${contests.length === 1 ? "measure" : "measures"}` +
       ` · ${ready} ${ready === 1 ? "video" : "videos"} ready to watch`,
@@ -1334,6 +1339,19 @@ function savedSpeed() {
 
 function speedLabel(speed) {
   return `Speed ${speed}×`;
+}
+
+// The state's crash course, at the top of its page: one video through
+// every statewide measure, with a chip per measure to jump to it.
+// Nothing until one has been made: the page is then as it always was.
+function crashCourseNodes(course) {
+  if (!course || !course.video_url) return [];
+  const nodes = videoNodes(course);
+  const chips = chapterNodes(course.chapters,
+                             nodes[0].querySelector("video"));
+  return [el("div", { class: "crash-course" }, [
+    el("h2", { text: `All ${course.measures} measures in one video` }),
+    ...nodes, ...chips])];
 }
 
 // The contest page's video frame and the full-screen and speed buttons
