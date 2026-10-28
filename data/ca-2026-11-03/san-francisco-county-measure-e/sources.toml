@@ -1,0 +1,51 @@
+# Archived sources for San Francisco Proposition E, 2026-11-03 general
+# election (sources/sources.md). San Francisco is a consolidated city and
+# county, so its propositions are countywide: the division is the
+# county. "page" is the Voter Information Pamphlet & Sample Ballot's
+# printed page number (the PDF's page less 2).
+#
+# The pamphlet's impartial materials are the Ballot Simplification
+# Council's digest and the Controller's Statement, on one cut of pages.
+# The paid arguments (pages 98 to 99) are not cited.
+
+[contest]
+id = "ca-2026-11-03-san-francisco-county-measure-e"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:san_francisco"
+kind = "measure"
+title = "San Francisco Proposition E: City Administrator's Authority and Changes to City Contracting"
+
+[[source]]
+id = "digest"
+kind = "official-title-summary"
+publisher = "San Francisco Department of Elections, Voter Information Pamphlet & Sample Ballot, November 3, 2026, pages 94 to 95: ballot question, Digest by the Ballot Simplification Council, and how E got on the ballot"
+credit = "Ballot Simplification Council digest, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/ballot-question-digest-controller-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "controller"
+kind = "official-fiscal-analysis"
+publisher = "City Controller, Controller's Statement on “E”, San Francisco Voter Information Pamphlet & Sample Ballot, page 95"
+credit = "Controller's Statement, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/ballot-question-digest-controller-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Proponent's and Opponent's Arguments on Proposition E and their rebuttals, San Francisco Voter Information Pamphlet & Sample Ballot, pages 96 to 97"
+credit = "Arguments, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/arguments-and-rebuttals.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Legal Text of Proposition E (initiative Charter amendment), San Francisco Voter Information Pamphlet & Sample Ballot, pages 193 to 201"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/legal-text.pdf"
+retrieved = "2026-10-28"
