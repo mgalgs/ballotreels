@@ -668,14 +668,7 @@ def _in_unshifted(value: str, path: Path) -> bool:
 
     def unmarked(s: str) -> str:
         return _normalise(_LOST_MARKS.sub(" ", s))
-    if unmarked(value) in unmarked(_unshifted(raw)):
-        return True
-    # or read column by column, as _in_raw_columns does: the guide sets
-    # the YES and NO boxes beside the ballot question's first lines
-    columns = _unspaced_raw_text(path)
-    return columns is not None and \
-        _WHITESPACE.sub("", _LOST_MARKS.sub("", value)) \
-        in _LOST_MARKS.sub("", columns)
+    return unmarked(value) in unmarked(_unshifted(raw))
 
 
 def _unshift(ch: str, first: bool) -> str:

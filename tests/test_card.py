@@ -422,10 +422,5 @@ class ShiftedGlyphTest(unittest.TestCase):
         self.assertTrue(_in_unshifted(quote, guide))
         self.assertFalse(_in_unshifted(quote.replace("(3) affirm",
                                                      "(3) confirm"), guide))
-        # read column by column, past the YES and NO boxes beside it
-        self.assertTrue(_in_unshifted(
-            "Shall the measure to amend Oakland's City Charter to, among "
-            "other things, (1) make the Mayor the City's chief executive",
-            guide))
         # a source without the shifted font gets no such allowance
         self.assertFalse(_in_unshifted("Increases the maximum", GA_BOOKLET))
