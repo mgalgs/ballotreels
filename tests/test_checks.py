@@ -545,7 +545,13 @@ class BrokenCopyTest(ContestCopyTestCase):
         self.edit("script.toml", 'text = "And they say its backers soon '
                   'voted to suspend over 5 billion dollars in deposits."',
                   'text = "And they say its backers voted."')
-        [f] = self.assertOnly("side-parity")
+        # Nine words shorter is short in spoken time too, and the copy
+        # has no narration yet, so the estimate (check_spoken_parity) says
+        # so beside the word count.
+        got = self.failures()
+        self.assertEqual(sorted(f.check for f in got),
+                         ["side-parity", "spoken-parity"], [str(f) for f in got])
+        [f] = [f for f in got if f.check == "side-parity"]
         self.assertIn("yes=79, no=70", f.message)
 
     def test_side_parity_boundary(self):

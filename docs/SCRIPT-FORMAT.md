@@ -386,7 +386,10 @@ stable hash of the contest id (STANDARD.md rule 2.4): the SHA-256 of
 the UTF-8 contest id, `yes` first when its first byte is even and `no`
 first when it is odd (`ballotreels.side_order`). The script file always
 lists `yes` then `no`. Their word counts must be within 5% of
-each other, and their time on screen is made exactly equal: the shorter
+each other; until the script is narrated (its narration missing or
+stale), their estimated spoken durations must be within 1.1 s
+(`ballotreels.spoken`, numbers said in full); and their time on screen is
+made exactly equal: the shorter
 side's narration gets trailing silence to match the longer (STANDARD.md
 rule 2.2), which is why the rendered video can run a couple of seconds
 longer than the raw narration. On screen, the two sides share one

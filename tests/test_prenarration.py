@@ -150,3 +150,117 @@ class GateTest(unittest.TestCase):
             self.assertTrue(needs_narration(c))
             self.assertTrue(only(check_contest(c, self.risky),
                                  "speakability"))
+
+
+CI_132 = REPO_ROOT / "data" / "mt-2026-11-03" / "ci-132"
+CI_132_YES = ("Supporters say judges should be elected on their record and "
+              "qualifications, not politics, and a recent law lets political "
+              "parties give judicial candidates nearly $90,000.")
+# The opponents' line as first written: 25 words each side, but narrated
+# 2.1 s shorter than the supporters', past the 2 s the airtime check pads.
+CI_132_NO_DRAFT = ("Opponents say voters are entitled to know the party "
+                   "preferences of judicial candidates, and out-of-state "
+                   "special interests have spent over $2 million on the "
+                   "amendment.")
+
+
+class SpokenTextTest(unittest.TestCase):
+    def test_numbers_said_in_full(self):
+        from ballotreels.spoken import spoken_text
+        for written, said in [
+                ("nearly $90,000.", "nearly ninety thousand dollars ."),
+                ("over $2 million on", "over two million dollars on"),
+                ("$1.4 billion", "one point four billion dollars"),
+                ("20%", "twenty percent"), ("10 percent", "ten percent"),
+                ("in 1978,", "in nineteen seventy-eight ,"),
+                ("by 2026", "by twenty twenty-six"),
+                ("in 2005", "in two thousand five"),
+                ("about 1,500 clinics", "about one thousand five hundred "
+                 "clinics"),
+                ("DEI & ID", "D E I and I D")]:
+            self.assertEqual(spoken_text(written), said, written)
+
+    def test_syllables(self):
+        from ballotreels.spoken import word_syllables
+        for word, n in [("judges", 2), ("qualifications", 5), ("the", 1),
+                        ("make", 1), ("little", 2), ("voted", 2),
+                        ("passed", 1), ("w", 3)]:
+            self.assertEqual(word_syllables(word), n, word)
+
+    def test_fit_to_committed_narrations(self):
+        # The coefficients were fitted to every committed narration's
+        # per-phrase timings; they should still describe them.
+        import glob
+        import json
+        from ballotreels.spoken import phrase_seconds
+        errs = []
+        for path in glob.glob(str(REPO_ROOT / "data" / "*" / "*" /
+                                  "narration.json")):
+            doc = json.loads(open(path, encoding="utf-8").read())
+            if doc.get("inputs", {}).get("engine") != "gemini":
+                continue
+            errs += [phrase_seconds(p["text"]) - (p["end"] - p["start"])
+                     for p in doc["phrases"]]
+        self.assertGreater(len(errs), 100)
+        rms = (sum(e * e for e in errs) / len(errs)) ** 0.5
+        self.assertLess(rms, 0.55)
+        self.assertLess(abs(sum(errs) / len(errs)), 0.1)
+
+
+class SpokenParityTest(unittest.TestCase):
+    """Montana CI-132's sides, copied without their narration."""
+
+    def setUp(self):
+        import tempfile
+        from pathlib import Path
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        self.dir = Path(tmp.name) / "ci-132"
+        shutil.copytree(CI_132, self.dir,
+                        ignore=shutil.ignore_patterns("narration.*"))
+
+    def set_no(self, text):
+        path = self.dir / "script.toml"
+        old = path.read_text(encoding="utf-8")
+        start = old.index('text = "Opponents say')
+        end = old.index("\n", start)
+        path.write_text(old[:start] + f'text = "{text}"' + old[end:],
+                        encoding="utf-8")
+
+    def parity(self):
+        return only(check_contest(load_contest(self.dir), STANDARD),
+                    "spoken-parity")
+
+    def test_ci_132_draft_is_caught(self):
+        self.set_no(CI_132_NO_DRAFT)
+        c = load_contest(self.dir)
+        yes = [ln.text for s in c.script.sections if s.side == "yes"
+               for ln in s.lines]
+        self.assertEqual(yes, [CI_132_YES])
+        [f] = self.parity()
+        self.assertIn("ninety thousand dollars", f.message)
+        self.assertIn("shorten yes", f.message)
+
+    def test_balanced_sides_pass(self):
+        self.set_no("Opponents say voters are entitled to know the party "
+                    "preferences of judicial candidates, and out-of-state "
+                    "special interests have already spent more than two "
+                    "million dollars on the amendment.")
+        self.assertEqual(self.parity(), [])
+
+    def test_unfiled_side_is_exempt(self):
+        self.set_no("Opponents say no.")
+        self.assertTrue(self.parity())
+        path = self.dir / "script.toml"
+        path.write_text(path.read_text(encoding="utf-8").replace(
+            'side = "no"\n', 'side = "no"\nfiled = false\n'),
+            encoding="utf-8")
+        self.assertEqual(self.parity(), [])
+
+    def test_committed_narration_is_not_estimated(self):
+        # Narrated and committed, CI-132 passed the real airtime check
+        # (1.7 s): the estimate does not second-guess it.
+        c = load_contest(CI_132)
+        self.assertFalse(needs_narration(c))
+        self.assertEqual(only(check_contest(c, STANDARD), "spoken-parity"),
+                         [])

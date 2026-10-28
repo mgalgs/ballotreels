@@ -67,7 +67,11 @@ before writing another.
 - One line per side, attributed ("Supporters say…", "Opponents say…"),
   each the side's strongest point as the side itself states it in the
   official arguments.
-- **Equal word counts** (the check allows 5%; aim for exact).
+- **Equal word counts** (the check allows 5%; aim for exact), and
+  **equal spoken length**: a number is said in full ("nearly $90,000" is
+  two words, said as five), so balance what is heard. Until the script
+  is narrated, `check` estimates each side's spoken time and fails a
+  gap over 1.1 s.
 - Each side gets a `list` of **two items**, its two strongest points, in
   short form and about the same length as the other side's items.
 - Nothing a side argues appears in a neutral section (rule 6.3).

@@ -18,7 +18,7 @@ from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
 
-from . import grid, narration, storyboard
+from . import grid, narration, spoken, storyboard
 from .ballots import BALLOTS, Ballot, badge, ballot_for
 from .contest import CARD_KEYS, Card, Choice, Contest, Line, Section, Visual
 from .illustrations import load_library
@@ -720,6 +720,53 @@ def check_side_list_items(c: Contest) -> list[Failure]:
                     f"the no section's has {n_no}; they must match")]
 
 
+# The most the two sides' estimated spoken durations may differ before
+# narration: check_airtime pads up to narration.SIDE_PAD_CAP (2 s) after
+# it, and spoken.seconds's estimate of the difference is off by 0.55 s
+# RMS, so the margin is 0.9 s. It flags Montana CI-132's first draft
+# (1.31 s estimated, 2.1 s when narrated), and 3 of the 31 committed pairs
+# with both sides filed, if they were narrated again: I-194 (1.14 s
+# narrated), Arizona 142 (1.15 s) and CI-132 as committed (1.74 s, the
+# nearest of all to the cap).
+SPOKEN_PARITY_LIMIT = 1.1
+
+
+def check_spoken_parity(c: Contest) -> list[Failure]:
+    """STANDARD.md 2.2, before narration: the two sides' estimated spoken
+    durations (spoken.seconds: numbers, money and symbols said in full)
+    differ by at most SPOKEN_PARITY_LIMIT, so the narration will pass
+    check_airtime. Equal word counts are not enough: "nearly $90,000" is
+    two words, said as five. A side that filed no argument is exempt, as
+    from check_airtime."""
+    by_side: dict[str, list[tuple[str, Section]]] = {}
+    for label, sec in c.script.labelled():
+        if sec.side is not None:
+            by_side.setdefault(sec.side, []).append((label, sec))
+    yes, no = by_side.get("yes", []), by_side.get("no", [])
+    if len(yes) != 1 or len(no) != 1:
+        return []  # a template failure; nothing to compare
+    if not (yes[0][1].filed and no[0][1].filed):
+        return []
+    est = {label: spoken.seconds("\n".join(ln.text for ln in sec.lines))
+           for label, sec in (yes[0], no[0])}
+    (la, a), (lb, b) = est.items()
+    if abs(a - b) <= SPOKEN_PARITY_LIMIT:
+        return []
+    longer = la if a > b else lb
+    said = [f"{label}: {spoken.spoken_text(ln.text)!r}"
+            for label, sec in (yes[0], no[0]) for ln in sec.lines
+            if spoken.spoken_text(ln.text) != " ".join(ln.text.split())]
+    return [Failure(
+        "spoken-parity",
+        f"the sides' estimated spoken durations differ by {abs(a - b):.1f}s "
+        f"({la}={a:.1f}s, {lb}={b:.1f}s), more than the "
+        f"{SPOKEN_PARITY_LIMIT:.1f}s allowed before narration (the airtime "
+        f"check pads at most {narration.SIDE_PAD_CAP:.0f}s, and this "
+        f"estimate can be off by half a second); shorten {longer} or "
+        f"lengthen the other, counting numbers as said"
+        + (f" ({'; '.join(said)})" if said else ""))]
+
+
 def check_airtime(c: Contest) -> list[Failure]:
     """STANDARD.md 2.2/4.1: the two sides spend exactly the same time on
     screen. The shorter side is padded with silence at its end
@@ -1114,6 +1161,7 @@ def check_contest(c: Contest, standard: Standard | None = None
         *check_side_visuals(c),
         *check_side_list_items(c),
         *check_airtime(c),
+        *(check_spoken_parity(c) if fresh else ()),
         *check_judgment_words(c, standard.judgment_words),
         *(check_speakability(c, standard.speakability) if fresh else ()),
         *check_standard_version(c, standard.version),

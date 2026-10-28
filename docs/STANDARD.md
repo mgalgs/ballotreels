@@ -256,6 +256,7 @@ human reading the video.
 | Candidate order matches the rule in 2.3 | 2.3 |
 | No word from the judgment-word list in narrator text | 3.1 |
 | Before narration (a script whose narration is missing or stale): no narrated line uses a spelling the narration's transcript check mishears (`standard/speakability.txt`), so the narration can stay the script verbatim | none: a production check |
+| Before narration: the two measure sides' estimated spoken durations (numbers, money and symbols said in full, timed from syllables, letters and pauses fitted to the committed narrations) within 1.1s of each other, so the narration will not need more than the airtime check's 2s of padding | 2.2 |
 | Each measure side's on-screen time exactly equal, the shorter one padded with trailing silence (padding over 2s fails instead, as too big to be TTS noise) | 2.2, 4.1 |
 | Every chart cites a source id that exists, of an allowed kind | 7.1 |
 | No chart in a side section unless both sides have one | 7.3 |
