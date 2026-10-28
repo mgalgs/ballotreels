@@ -1,8 +1,9 @@
 """The even-handedness standard's machine-readable parts.
 
 docs/STANDARD.md is the one home for the standard's version number and
-standard/judgment-words.txt for the judgment-word list; this module reads
-them rather than repeating them.
+standard/judgment-words.txt for the judgment-word list, and
+standard/speakability.txt for the spellings the narration's transcript
+check mishears; this module reads them rather than repeating them.
 """
 
 from __future__ import annotations
@@ -87,9 +88,19 @@ def template_for(script) -> Template:
 
 
 @dataclass(frozen=True)
+class Risk:
+    """One entry of standard/speakability.txt: text the narration's
+    transcript check mishears, why, and what to write instead."""
+    pattern: re.Pattern[str]
+    reason: str
+    suggestion: str
+
+
+@dataclass(frozen=True)
 class Standard:
     version: int
     judgment_words: tuple[str, ...]
+    speakability: tuple[Risk, ...] = ()
 
 
 def read_version(path: Path) -> int:
@@ -111,12 +122,36 @@ def read_judgment_words(path: Path) -> tuple[str, ...]:
     return tuple(words)
 
 
+def read_speakability(path: Path) -> tuple[Risk, ...]:
+    """The entries of a speakability list: `pattern | reason | suggestion`
+    one per line, `#` and blank lines skipped. Raises ValueError, naming
+    the line, for an entry without three parts or with a bad pattern."""
+    risks = []
+    for n, line in enumerate(path.read_text(encoding="utf-8").splitlines(),
+                             1):
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        parts = [p.strip() for p in line.split(" | ")]
+        if len(parts) != 3 or not all(parts):
+            raise ValueError(f"{path}:{n}: want 'pattern | reason | "
+                             f"suggestion', got {line!r}")
+        try:
+            pattern = re.compile(parts[0])
+        except re.error as e:
+            raise ValueError(f"{path}:{n}: bad pattern {parts[0]!r}: {e}"
+                             ) from None
+        risks.append(Risk(pattern, parts[1], parts[2]))
+    return tuple(risks)
+
+
 def load_standard(root: str | Path = REPO_ROOT) -> Standard:
     root = Path(root)
     return Standard(
         version=read_version(root / "docs" / "STANDARD.md"),
         judgment_words=read_judgment_words(
             root / "standard" / "judgment-words.txt"),
+        speakability=read_speakability(root / "standard" / "speakability.txt"),
     )
 
 

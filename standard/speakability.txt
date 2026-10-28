@@ -1,0 +1,17 @@
+# Words and spellings the narration's transcript check mishears (`say`
+# re-transcribes every phrase it synthesises and fails a take whose words
+# differ from the script's). The narration is the script verbatim, so these
+# are caught when the script is written: `python -m ballotreels check`
+# fails a narrated line that matches an entry, but only in a script whose
+# narration is missing or stale (every committed narration already passed
+# the real transcript check). Card quotes and on-screen list items are not
+# narrated and are not checked.
+#
+# One entry per line: a Python regular expression (case-sensitive; start
+# it with (?i) for any case), " | ", why it is misheard, " | ", what to
+# write instead. A pattern may use "|" for alternation, but not " | ".
+\b[A-Z]{2,}s\b | an acronym written as a plural is heard as a word ("PACs" as "packs" or "pacts") | write out what it stands for ("political committees")
+\bPACs?\b | "PAC" is said as a word and heard as "pack" | write out what it stands for ("political committee")
+(?<!\w)(?:[A-Za-z]\.){2,} | an abbreviation with internal periods splits the phrase or is read letter by letter ("U.S.", "e.g.") | write the words ("United States", "for example")
+(?i)\bconsents?\b | "consents" was heard as "can sense" | say "agrees" or "permission"
+(?i)\b\w*[b-df-hj-np-tv-z]y['’]s\b | a possessive of a word ending in a consonant and "y" sounds just like its plural ("property's" is heard as "properties") | rephrase with "of" ("the value of the property")

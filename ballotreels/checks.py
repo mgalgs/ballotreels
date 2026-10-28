@@ -23,8 +23,9 @@ from .ballots import BALLOTS, Ballot, badge, ballot_for
 from .contest import CARD_KEYS, Card, Choice, Contest, Line, Section, Visual
 from .illustrations import load_library
 from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, CHOICE_TEMPLATES,
-                       CHOICES, FISCAL, SOURCE_KINDS, TEMPLATES, Standard,
-                       Template, judgment_word_pattern, load_standard)
+                       CHOICES, FISCAL, SOURCE_KINDS, TEMPLATES, Risk,
+                       Standard, Template, judgment_word_pattern,
+                       load_standard)
 
 SIDE_TOLERANCE = 0.05
 CHART_KINDS = ("bars", "share", "series", "figure")
@@ -1040,6 +1041,36 @@ def check_judgment_words(c: Contest, words: tuple[str, ...]) -> list[Failure]:
     return out
 
 
+def needs_narration(c: Contest) -> bool:
+    """Whether `c`'s script is still to be narrated: its narration is
+    missing, or stale for the current script. The checks that stand in for
+    what only narrating would otherwise reveal (check_speakability,
+    check_spoken_parity, check_side_basis's requirement) apply only then:
+    a current narration already passed the real transcript and airtime
+    checks."""
+    return narration.narration_state(c) != narration.CURRENT
+
+
+def check_speakability(c: Contest, risks: tuple[Risk, ...]) -> list[Failure]:
+    """No narrated line uses a spelling the narration's transcript check
+    mishears (standard/speakability.txt). Only the narration: the card and
+    on-screen items are not spoken."""
+    out = []
+    for label, sec in c.script.labelled():
+        for i, line in enumerate(sec.lines):
+            taken: list[tuple[int, int]] = []  # one report per token
+            for risk in risks:
+                for m in risk.pattern.finditer(line.text):
+                    if any(m.start() < e and s < m.end() for s, e in taken):
+                        continue
+                    taken.append(m.span())
+                    out.append(Failure(
+                        "speakability",
+                        f"{m.group(0)!r} in {line.text!r}: {risk.reason}; "
+                        f"instead, {risk.suggestion}", label, i))
+    return out
+
+
 def _shown_text(v: Visual) -> list[tuple[str, str]]:
     """The words a visual puts on screen, as (key, text) pairs."""
     out = []
@@ -1065,6 +1096,7 @@ def check_contest(c: Contest, standard: Standard | None = None
     """Run every machine check on `c`; return all failures, in check order."""
     if standard is None:
         standard = load_standard()
+    fresh = needs_narration(c)
     return [
         *check_contest_id(c),
         *check_line_citations(c),
@@ -1083,5 +1115,6 @@ def check_contest(c: Contest, standard: Standard | None = None
         *check_side_list_items(c),
         *check_airtime(c),
         *check_judgment_words(c, standard.judgment_words),
+        *(check_speakability(c, standard.speakability) if fresh else ()),
         *check_standard_version(c, standard.version),
     ]

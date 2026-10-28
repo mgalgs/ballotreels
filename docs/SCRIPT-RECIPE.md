@@ -52,6 +52,13 @@ before writing another.
   beside the fiscal analysis.
   Pay for the added words within the same neutral section, never from
   a side.
+- **Write for the transcript check.** The narration is the script word
+  for word, and a take whose transcript differs is rejected, so avoid
+  what it mishears: an acronym as a plural or a word ("PACs"), an
+  abbreviation with periods ("U.S."), "consents", a possessive that
+  sounds like a plural ("property's"). `standard/speakability.txt` lists
+  them, with what to write instead; `check` enforces it until the script
+  is narrated.
 - Purpose is the authors' purpose ("The Legislature placed it on the
   ballot to…"), never the narrator's claim (rule 6.2).
 
