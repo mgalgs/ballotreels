@@ -169,6 +169,22 @@ still built). Pass
 the same pipe-delimited format (`GEOID_ZCTA5_20`, a `GEOID_*` district
 column, `AREALAND_PART`); a URL given that way must work.
 
+An election with county, city or school district contests needs a
+`divisions.tsv` beside its `contests.toml`, written from that build
+(no download):
+
+    python -m ballotreels geo divisions data/ca-2026-11-03
+
+It lists every county, incorporated place and school district shape
+the build has, one `<ocd-id>\t<name>` line per shape, sorted, and is
+committed. `check` fails a contest of one of those levels whose
+division is not listed (the zip lookup could never show it to a
+voter), naming the closest listed ones, since the usual cause is the
+ballot's name typed for TIGER's; it fails one in an election with no
+`divisions.tsv` too. `--state` defaults to the election directory's
+prefix and `--data-dir` to the build's default. Rerun it after each
+`geo build`.
+
 Look up what a zip code resolves to:
 
     python -m ballotreels geo zip 90001 --state ca --data-dir var
