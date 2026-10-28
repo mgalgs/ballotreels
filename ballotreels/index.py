@@ -9,6 +9,7 @@ later concern (ballotreels.contest).
 
 from __future__ import annotations
 
+import re
 import tomllib
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -27,8 +28,50 @@ CRASH_COURSE = "crash-course"
 
 # Division substrings, in ballot order (docs/ARCHITECTURE.md divisions are
 # OCD-IDs; "state" is matched by equality with the election's own state
-# division, the rest by substring).
-LEVELS = ("state", "cd", "sldu", "sldl", "county")
+# division, the rest by substring): statewide, congressional, legislative,
+# then the local ones, county, city ("place") and school district.
+LEVELS = ("state", "cd", "sldu", "sldl", "county", "place",
+          "school_district")
+
+
+# A county's own measure, voted on countywide: its contest id, less the
+# election's, is `<county>-county-measure-<letter>` (sd-county-measure-a).
+# Any other measure under a county is voted on in part of it (a special
+# district's: a water, fire, health care or community college district),
+# and names who votes on it in `voters`.
+COUNTY_MEASURE = re.compile(r"[a-z0-9-]+-county-measure-[a-z0-9]+")
+
+
+def voters_line(voters: str) -> str:
+    """What the site and the film's card say of a contest with `voters`."""
+    return f"Only voters in {voters} vote on this."
+
+
+def voters_problem(kind: str, division: str, slug: str,
+                   voters: Any) -> str | None:
+    """What is wrong with a contest's `voters` (sources.toml), or None:
+    a measure under a county that is not the county's own (COUNTY_MEASURE,
+    by its id less the election's, `slug`) must have one, so the site
+    never shows it as on every ballot in the county; and only such a
+    contest may have one."""
+    under_county = division.rsplit("/", 1)[-1].startswith("county:")
+    if voters is not None:
+        if not isinstance(voters, str) or not voters.strip():
+            return "'voters' must be a non-empty string"
+        if voters.rstrip() != voters or voters.endswith("."):
+            return (f"'voters' {voters!r} is said inside a sentence "
+                    f"({voters_line('...')!r}): no trailing space or period")
+        if not under_county:
+            return ("'voters' is only for a contest voted on in part of "
+                    "its county; its division is not a county")
+        return None
+    if kind == "measure" and under_county and \
+            not COUNTY_MEASURE.fullmatch(slug):
+        return (f"a measure under a county whose id is not "
+                f"'<county>-county-measure-<letter>' is voted on in only "
+                f"part of it: name who votes on it in sources.toml's "
+                f"[contest] 'voters' (\"the Helix Water District\")")
+    return None
 
 
 class ContestIndexError(Exception):
@@ -66,6 +109,8 @@ class IndexEntry:
     members: tuple[str, ...] = ()
     election_dir: str | None = field(default=None, compare=False,
                                      repr=False)
+    # who votes on it, from its sources.toml: see voters_problem
+    voters: str | None = None
 
 
 @dataclass(frozen=True)
@@ -134,18 +179,22 @@ def _load_corrections(raw: dict[str, Any], where: str) -> tuple[Correction, ...]
     return tuple(out)
 
 
+def _sources_contest(contest_dir: Path) -> dict[str, Any] | None:
+    """The [contest] table of `contest_dir`'s sources.toml, or None if it
+    has none (no file, or one that does not parse: ballotreels.contest
+    reports that)."""
+    try:
+        with (contest_dir / "sources.toml").open("rb") as f:
+            contest = tomllib.load(f).get("contest")
+    except (OSError, tomllib.TOMLDecodeError):
+        return None
+    return contest if isinstance(contest, dict) else None
+
+
 def _check_sources_match(entry: IndexEntry, election: Election,
                          contest_dir: Path, where: str) -> None:
-    sources_path = contest_dir / "sources.toml"
-    if not sources_path.is_file():
-        return
-    try:
-        with sources_path.open("rb") as f:
-            data = tomllib.load(f)
-    except tomllib.TOMLDecodeError:
-        return  # ballotreels.contest will report the real error
-    contest = data.get("contest")
-    if not isinstance(contest, dict):
+    contest = _sources_contest(contest_dir)
+    if contest is None:
         return
     for key, expect in (("id", entry.id), ("election", election.id),
                         ("division", entry.division), ("kind", entry.kind)):
@@ -202,6 +251,10 @@ def _load_entry(raw: dict[str, Any], i: int, election: Election,
         raise ContestIndexError(
             f"{where}: {CRASH_COURSE!r} is the crash course's id, derived "
             f"from the statewide measures; it is not listed here")
+    voters = (_sources_contest(election_dir / dir_name) or {}).get("voters")
+    problem = voters_problem(kind, division, dir_name, voters)
+    if problem is not None:
+        raise ContestIndexError(f"{where}: {problem}")
     entry = IndexEntry(
         id=cid,
         kind=kind,
@@ -211,6 +264,7 @@ def _load_entry(raw: dict[str, Any], i: int, election: Election,
         office=office,
         corrections=_load_corrections(raw, where),
         choice=_is_choice_question(election_dir / dir_name),
+        voters=voters,
     )
     _check_sources_match(entry, election, election_dir / dir_name, where)
     return entry
@@ -270,7 +324,7 @@ def level_of(division: str, state_division: str) -> str:
     "other" if it matches none of them."""
     if division == state_division:
         return "state"
-    for level in ("cd", "sldu", "sldl", "county"):
+    for level in LEVELS[1:]:
         if f"/{level}:" in division:
             return level
     return "other"
@@ -283,8 +337,9 @@ def _number_key(number: str | None, position: int) -> tuple[int, Any]:
 
 
 def ballot_order(index: ContestIndex) -> tuple[IndexEntry, ...]:
-    """Every entry, grouped by level in the fixed order the brief gives
-    (statewide, congressional, legislative, county), races in file order
+    """Every entry, grouped by level in LEVELS' order (statewide,
+    congressional, legislative, county, city, school district), races in
+    file order
     then measures in natural number order within each level (any
     unnumbered ones after, in file order)."""
     level_rank = {level: i for i, level in enumerate(LEVELS)}

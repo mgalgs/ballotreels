@@ -29,7 +29,7 @@ from ..geo.geocoder import (AddressNotCovered, AddressNotFound, GeocoderError,
 from ..geo.lookup import GeoData
 from ..geo.states import STATE_NAMES, chambers, state_for_zip
 from ..index import (ContestIndex, IndexEntry, ballot_order, key_for,
-                     level_of, load_index)
+                     level_of, load_index, voters_line)
 from ..queue import JobQueue
 from ..related import load_related, related_to
 from ..standard import Standard, load_standard
@@ -77,6 +77,11 @@ MAX_ADDRESS_CHARS = 200
 MAX_GEOCODER_CALLS = 4
 # The window of the global Generate cap and the per-IP address limit.
 HOUR = 3600
+# The most divisions one ballot request may name: a zip's statewide,
+# congressional, legislative and county ones, and every city and school
+# district it overlaps.
+MAX_BALLOT_DIVISIONS = 40
+
 # A rate-limit bucket that is not a client IP.
 GLOBAL_BUCKET = "*"
 
@@ -510,7 +515,48 @@ def _contest_summary(entry, state: StateElection,
         "status": status,
         "video_url": (video.urls.get("video") if video else None),
         "job": job,
+        **_voters(entry),
+        **_jurisdiction(entry, state),
     }
+
+
+def _local_name(entry: IndexEntry, state: StateElection) -> str | None:
+    """The display name of a county, city or school-district contest's
+    division ("City of San Diego", from the geo build), or None for any
+    other contest. Without geo data, a name made from the OCD-ID."""
+    level = level_of(entry.division, state.index.election.state)
+    if level not in ("county", "place", "school_district"):
+        return None
+    name = state.geo.names.get(entry.division) if state.geo else None
+    if name:
+        return name
+    name = entry.division.rsplit(":", 1)[1].replace("_", " ").title()
+    return f"{name} County" if level == "county" else name
+
+
+def _jurisdiction(entry: IndexEntry,
+                  state: StateElection) -> dict[str, str]:
+    """A local contest names whose it is, so a voter told it "may be on
+    your ballot" can settle that with their own address; any other has
+    no `jurisdiction`."""
+    name = _local_name(entry, state)
+    return {"jurisdiction": name} if name else {}
+
+
+def _where(entry: IndexEntry, state: StateElection) -> str:
+    """Whose measure a page's title says it is: a special district's own
+    name (its `voters`), a county's, city's or school district's, or the
+    state's, never implying a local measure is statewide."""
+    if entry.voters:
+        return entry.voters.removeprefix("the ")
+    return _local_name(entry, state) or _state_name(state.abbr)
+
+
+def _voters(entry: IndexEntry) -> dict[str, str]:
+    """A contest voted on in only part of its county says so: "Only
+    voters in the Helix Water District vote on this." (ballotreels.index.
+    voters_problem); any other has no `voters`."""
+    return {"voters": voters_line(entry.voters)} if entry.voters else {}
 
 
 def _crash_course(state: StateElection, deps: Deps) -> dict[str, Any] | None:
@@ -575,7 +621,7 @@ def _contest_detail(entry, state: StateElection,
         # The tab title the server renders for this page, so an in-app
         # visit and a fresh load show the same one.
         "page_title": pages.measure_meta(
-            _state_name(state.abbr), entry.title, "", None).title,
+            _where(entry, state), entry.title, "", None).title,
         "state": state.abbr,
         "state_name": _state_name(state.abbr),
         "election": state.index.election.id,
@@ -597,6 +643,8 @@ def _contest_detail(entry, state: StateElection,
         # only a choice question says so: a yes/no measure's detail is
         # as it always was
         **({"choice": True} if entry.choice else {}),
+        **_voters(entry),
+        **_jurisdiction(entry, state),
     }
 
 
@@ -864,7 +912,7 @@ class PublicHandler(_JsonHandler):
             video = deps.queue.video_for(key) if key is not None else None
             poster = video.urls.get("poster") if video else None
             return pages.measure_meta(
-                _state_name(state.abbr), entry.title, path, poster,
+                _where(entry, state), entry.title, path, poster,
                 choice=entry.choice,
                 video=video.urls.get("video") if video else None,
                 video_made=video.created_at if video else None)
@@ -989,15 +1037,20 @@ class PublicHandler(_JsonHandler):
         self._json(200, result)
 
     def _ballot(self) -> None:
+        """The contests of the divisions `d`; those of the divisions also
+        given as `p` (a zip's partial ones: ballotreels.geo.lookup) are
+        marked `maybe`, on the ballot or not depending on the address."""
         deps = self.server.deps
         divisions: list[str] = []
         seen = set()
-        for d in self._query().get("d", []):
+        query = self._query()
+        for d in query.get("d", []):
             if d not in seen:
                 seen.add(d)
                 divisions.append(d)
-            if len(divisions) >= 10:
+            if len(divisions) >= MAX_BALLOT_DIVISIONS:
                 break
+        partial = set(query.get("p", [])[:MAX_BALLOT_DIVISIONS])
         # The ballot is the state's whose division came with it (the
         # statewide one always does); with one state served, that one.
         state = next((deps.states[a] for a in map(state_abbr, divisions)
@@ -1021,8 +1074,10 @@ class PublicHandler(_JsonHandler):
                 bucket = {"level": lvl, "contests": []}
                 levels.append(bucket)
                 current = lvl
-            bucket["contests"].append(
-                _contest_summary(entry, state, deps))
+            summary = _contest_summary(entry, state, deps)
+            if entry.division in partial:
+                summary["maybe"] = True
+            bucket["contests"].append(summary)
         self._json(200, {"election": index.election.id,
                          "state": state.abbr,
                          "state_name": _state_name(state.abbr),

@@ -393,7 +393,9 @@ ROUTES = {
         ["contest", "/api/contest/ut-2026-11-03-amendment-a"],
     "/#/zip/84101": ["zip", "84101"],
     "/#/address": ["address"],
-    "/#/ballot?d=a&d=b&addr=x": ["ballot", ["a", "b"], "x"],
+    "/#/ballot?d=a&d=b&addr=x": ["ballot", ["a", "b"], "x", []],
+    # a zip's cities and school districts that cover only part of it
+    "/#/ballot?d=a&d=p1&p=p1": ["ballot", ["a", "p1"], None, ["p1"]],
     "/zip/84101": ["notFound"],
     "/ut/2026/amendment-a/x": ["notFound"],
 }

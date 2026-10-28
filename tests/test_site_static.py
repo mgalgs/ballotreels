@@ -147,10 +147,12 @@ if __name__ == "__main__":
 
 
 # Runs app.js's selectDistrict under node with stubbed routing, for a zip
-# ambiguous on two kinds: the first choice must reach the ballot.
+# ambiguous on two kinds: the first choice must reach the ballot, and so
+# must the zip's partial cities and school districts.
 SELECT_DISTRICT_HARNESS = r"""
 const src = require("fs").readFileSync(process.argv[1], "utf8");
-const fn = src.match(/function selectDistrict[\s\S]*?\n}\n/)[0];
+const fn = src.match(/function selectDistrict[\s\S]*?\n}\n/)[0] +
+  src.match(/function ballotParams[\s\S]*?\n}\n/)[0];
 const location = { hash: "" };
 const go = (href) => { location.hash = href.replace(/^\//, ""); };
 let next = null;
@@ -159,8 +161,10 @@ eval(fn);
 const doc = {
   kinds: { state: [{ ocd_id: "S" }],
            cd: [{ ocd_id: "cd:1" }, { ocd_id: "cd:2" }],
-           sldl: [{ ocd_id: "sldl:1" }, { ocd_id: "sldl:2" }] },
+           sldl: [{ ocd_id: "sldl:1" }, { ocd_id: "sldl:2" }],
+           place: [{ ocd_id: "place:a" }, { ocd_id: "place:b" }] },
   ambiguous: ["cd", "sldl"],
+  partial: ["place:a", "place:b"],
 };
 selectDistrict("99903", doc, "cd", "cd:1");
 selectDistrict("99903", next[0], next[1], "sldl:2");
@@ -178,7 +182,9 @@ class SelectDistrictTest(unittest.TestCase):
         result = json.loads(out)
         self.assertEqual(result["kind"], "sldl")
         params = urllib.parse.parse_qs(result["hash"].split("?", 1)[1])
-        self.assertEqual(sorted(params["d"]), ["S", "cd:1", "sldl:2"])
+        self.assertEqual(sorted(params["d"]),
+                         ["S", "cd:1", "place:a", "place:b", "sldl:2"])
+        self.assertEqual(sorted(params["p"]), ["place:a", "place:b"])
 
 
 # Runs app.js's titleParts under node over every designation style the

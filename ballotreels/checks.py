@@ -23,6 +23,7 @@ from . import grid, narration, spoken, storyboard
 from .ballots import BALLOTS, Ballot, badge, ballot_for, guide_of
 from .contest import CARD_KEYS, Card, Choice, Contest, Line, Section, Visual
 from .illustrations import load_library
+from .index import voters_problem
 from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, CHOICE_TEMPLATES,
                        CHOICES, FISCAL, NAMING_KINDS, PRECEDENT_RECORD,
                        SOURCE_KINDS, TEMPLATES, UNIVERSITY_GUIDE,
@@ -67,6 +68,22 @@ def check_contest_id(c: Contest) -> list[Failure]:
     return [Failure("contest-id",
                     f"script.toml contest {c.script.contest!r} does not "
                     f"match sources.toml id {c.id!r}")]
+
+
+def check_voters(c: Contest) -> list[Failure]:
+    """A measure under a county that is not the county's own names who
+    votes on it, in sources.toml's [contest] `voters`, and a contest with
+    `voters` has a `[card]`, where the film says so
+    (ballotreels.index.voters_problem)."""
+    slug = c.id.removeprefix(f"{c.election}-")
+    problem = voters_problem(c.kind, c.division, slug, c.voters)
+    if problem is not None:
+        return [Failure("voters", problem)]
+    if c.voters is not None and c.script.card is None:
+        return [Failure("voters",
+                        "has 'voters' but no [card]: the card is where the "
+                        "film says who votes on it")]
+    return []
 
 
 def check_line_citations(c: Contest) -> list[Failure]:
@@ -1713,6 +1730,7 @@ def check_contest(c: Contest, standard: Standard | None = None
     unreused = narration.unreused_phrases(c) if fresh else None
     return [
         *check_contest_id(c),
+        *check_voters(c),
         *check_line_citations(c),
         *check_cited_sources_exist(c),
         *check_background_only(c),

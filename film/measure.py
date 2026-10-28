@@ -108,6 +108,7 @@ from ballotreels import grid  # noqa: E402
 from ballotreels.ballots import badge, ballot_for  # noqa: E402
 from ballotreels.contest import load_contest  # noqa: E402
 from ballotreels.illustrations import load_library  # noqa: E402
+from ballotreels.index import voters_line  # noqa: E402
 from ballotreels.narration import padded_phrases, padded_spans  # noqa: E402
 from ballotreels.narration import shift_track, side_pad  # noqa: E402
 from ballotreels.storyboard import frame as to_frame  # noqa: E402
@@ -1816,6 +1817,11 @@ BADGE = badge(BALLOT, CONTEST.title, CARD.number) if CARD is not None and CARD.n
 # own `fiscal` field (Utah's "Fiscal Effects"); None where the guide prints
 # no fiscal statement (Arizona)
 FISCAL_LABEL = BALLOT.fiscal_label
+# who votes on it, where that is less than its whole county (a special
+# district's measure: "Only voters in the Helix Water District vote on
+# this."), set over the top of the page in bold, apart from the quoted
+# page by a rule; None for any other measure (ballotreels.index.voters_problem)
+VOTERS = voters_line(CONTEST.voters) if CONTEST.voters else None
 # every term the script clicks
 PAGE_FOCI = tuple(dict.fromkeys(ln.visual.focus for sec in CONTEST.script.sections for ln in sec.lines
                                 if ln.visual is not None and ln.visual.kind == 'page' and ln.visual.focus))
@@ -1947,10 +1953,18 @@ def _layout_page(card, box, s, arrangement, spread=0):
     F = page_fonts(s)
     gap = s * 0.55
     pad = s * 0.4           # inside a YES/NO box
-    parts = dict(fonts=F, flows=[], shapes=[], labels=[])
+    parts = dict(fonts=F, flows=[], shapes=[], labels=[], voters=None)
     two = arrangement == 'columns'
     colw = (box.w - gap * 1.5) / 2 if two else box.w
     x, y = box.x, box.y
+    if VOTERS is not None:
+        # across the whole page, over both columns; not one of `flows`,
+        # which are the page's own quoted words
+        note = Flow('voters', VOTERS, F['bold'], x=x, y=y, width=box.w)
+        y += note.height + gap * 0.3
+        parts['voters'] = (note, (x, y, box.w))
+        y += gap * 0.7
+    top = y
     # the badge: the designation (PROP, AMENDMENT) over the number, in a box, the title beside it;
     # no badge where the ballot numbers no measure (North Carolina), the title alone
     if BADGE is None:
@@ -1983,11 +1997,11 @@ def _layout_page(card, box, s, arrangement, spread=0):
     left_bottom = y
     votes = card.yes is not None
     if CHOICES is not None:
-        return _layout_choices(card, box, s, two, colw, x, y, gap, spread, F, parts, left_bottom)
+        return _layout_choices(card, box, s, two, colw, x, y, gap, spread, F, parts, left_bottom, top)
     if card.fiscal is None and not votes:
         return y - box.y, parts
     if two:
-        x, y = box.x + colw + gap * 1.5, box.y
+        x, y = box.x + colw + gap * 1.5, top
     else:
         y += gap + spread
     if card.fiscal is not None:
@@ -2023,14 +2037,14 @@ def _layout_page(card, box, s, arrangement, spread=0):
     return max(y, left_bottom) - box.y, parts
 
 
-def _layout_choices(card, box, s, two, colw, x, y, gap, spread, F, parts, left_bottom):
+def _layout_choices(card, box, s, two, colw, x, y, gap, spread, F, parts, left_bottom, top):
     """The rest of a choice question's card, from _layout_page: the fiscal
     statement, if any, then THE CHOICES and every choice on a row of its
     own, letter and label as the ballot prints them, all in one face and
     size (rule 7.4, STANDARD.md section 8): the list in the YES/NO boxes'
     place."""
     if two:
-        x, y = box.x + colw + gap * 1.5, box.y
+        x, y = box.x + colw + gap * 1.5, top
     else:
         y += gap + spread
     if card.fiscal is not None:
@@ -2137,6 +2151,12 @@ def page_static(paper_box, parts, L):
     def write(words, fnt, x, y, alpha=1.0):
         marks.append(('text', words, fnt, x, y, alpha))
 
+    if parts['voters'] is not None:
+        note, (x, y, w) = parts['voters']
+        for run in note.runs:
+            write(*run)
+        marks.append(('stroke', Stroke([(x, y), (x + w, y)], seed_of('page voters rule'), passes=2,
+                                       width=2 * u, overshoot=2, alpha=0.6)))
     b = parts['badge']
     if b is not None:
         marks.append(('stroke', Stroke(box_pts(*b), seed_of('page badge'), passes=2, width=2.8 * u, closed=True,

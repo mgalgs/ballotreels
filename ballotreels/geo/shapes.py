@@ -88,3 +88,52 @@ def bbox(rings: list[Ring]) -> tuple[float, float, float, float]:
     xs = [x for ring in rings for x, _ in ring]
     ys = [y for ring in rings for _, y in ring]
     return (min(xs), min(ys), max(xs), max(ys))
+
+
+def row_intervals(rings, step: float) -> dict[int, list[tuple[float, float]]]:
+    """Where a shape crosses each horizontal line y = (k + 0.5) * step:
+    row k -> the x intervals inside it, by the even-odd rule over all its
+    rings (as point_in_polygon), so holes and several parts need no
+    telling apart. Two shapes' overlap, summed over their common rows,
+    times `step`, is close to the area they share; a shape no line
+    crosses has no rows."""
+    crossings: dict[int, list[float]] = {}
+    for ring in rings:
+        n = len(ring)
+        for i in range(n):
+            x1, y1 = ring[i]
+            x2, y2 = ring[(i + 1) % n]
+            if y1 == y2:
+                continue
+            lo, hi = (y1, y2) if y1 < y2 else (y2, y1)
+            # the rows whose line lies in [lo, hi): a vertex on a line is
+            # counted by one of its two edges only
+            first = math.ceil(lo / step - 0.5)
+            last = math.ceil(hi / step - 0.5) - 1
+            slope = (x2 - x1) / (y2 - y1)
+            for k in range(first, last + 1):
+                y = (k + 0.5) * step
+                crossings.setdefault(k, []).append(x1 + (y - y1) * slope)
+    out = {}
+    for k, xs in crossings.items():
+        xs.sort()
+        out[k] = [(xs[i], xs[i + 1]) for i in range(0, len(xs) - 1, 2)
+                  if xs[i + 1] > xs[i]]
+    return out
+
+
+def overlap_length(a: list[tuple[float, float]],
+                   b: list[tuple[float, float]]) -> float:
+    """The total length two sorted lists of disjoint intervals share."""
+    total = 0.0
+    i = j = 0
+    while i < len(a) and j < len(b):
+        lo = max(a[i][0], b[j][0])
+        hi = min(a[i][1], b[j][1])
+        if hi > lo:
+            total += hi - lo
+        if a[i][1] < b[j][1]:
+            i += 1
+        else:
+            j += 1
+    return total

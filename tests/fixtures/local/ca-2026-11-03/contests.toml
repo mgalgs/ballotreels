@@ -1,0 +1,79 @@
+# Fake fixture election for the local-measure tests
+# (tests/test_local_measures.py): statewide measures beside county,
+# city, school-district and special-district ones. None of this is real
+# data; the geography is tests/geo_fixtures.py's fake San Diego.
+
+[election]
+id = "ca-2026-11-03"
+state = "ocd-division/country:us/state:ca"
+title = "Test Election"
+
+[[contest]]
+id = "ca-2026-11-03-prop-90"
+kind = "measure"
+division = "ocd-division/country:us/state:ca"
+title = "Proposition 90: Fake Statewide Measure"
+number = "90"
+
+[[contest]]
+id = "ca-2026-11-03-prop-91"
+kind = "measure"
+division = "ocd-division/country:us/state:ca"
+title = "Proposition 91: Another Fake Statewide Measure"
+number = "91"
+
+[[contest]]
+id = "ca-2026-11-03-sd-county-measure-b"
+kind = "measure"
+division = "ocd-division/country:us/state:ca/county:san_diego"
+title = "Measure B: Fake County Measure"
+number = "B"
+
+[[contest]]
+id = "ca-2026-11-03-sd-county-measure-a"
+kind = "measure"
+division = "ocd-division/country:us/state:ca/county:san_diego"
+title = "Measure A: Fake County Sales Tax"
+number = "A"
+
+[[contest]]
+id = "ca-2026-11-03-imperial-county-measure-c"
+kind = "measure"
+division = "ocd-division/country:us/state:ca/county:imperial"
+title = "Measure C: Fake Imperial County Measure"
+number = "C"
+
+[[contest]]
+id = "ca-2026-11-03-el-cajon-city-measure-e"
+kind = "measure"
+division = "ocd-division/country:us/state:ca/place:el_cajon"
+title = "Measure E: Fake El Cajon Measure"
+number = "E"
+
+[[contest]]
+id = "ca-2026-11-03-san-diego-city-measure-d"
+kind = "measure"
+division = "ocd-division/country:us/state:ca/place:san_diego"
+title = "Measure D: Fake San Diego City Measure"
+number = "D"
+
+[[contest]]
+id = "ca-2026-11-03-sd-unified-measure-f"
+kind = "measure"
+division = "ocd-division/country:us/state:ca/school_district:san_diego_unified_school_district"
+title = "Measure F: Fake San Diego Unified Bond"
+number = "F"
+
+[[contest]]
+id = "ca-2026-11-03-grossmont-measure-g"
+kind = "measure"
+division = "ocd-division/country:us/state:ca/school_district:grossmont_union_high_school_district"
+title = "Measure G: Fake Grossmont Union High Bond"
+number = "G"
+
+[[contest]]
+id = "ca-2026-11-03-helix-water-measure-h"
+kind = "measure"
+division = "ocd-division/country:us/state:ca/county:san_diego"
+title = "Measure H: Fake Water District Measure"
+number = "H"
