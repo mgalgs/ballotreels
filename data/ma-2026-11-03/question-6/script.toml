@@ -14,8 +14,9 @@
 # government money, compared with the state operating budget it names,
 # but no archived source states that budget's total, so the figure is
 # stated without a scale (left open for the host to add one). That the
-# money is subject to appropriation is on the card, and the argument
-# against's point; the narration leaves it to that section (rule 6.3).
+# money is subject to appropriation is in the summary, so the change
+# line states it in the summary's words; the argument against's point
+# that the Legislature may not fund it stays in that section.
 # The supporters' "$100 million/year" is left off for the same want of a
 # scale.
 #
@@ -70,12 +71,12 @@ id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "A new Nature for All Fund would get half of those taxes at first, then all of them after July 2028."
+text = "Subject to appropriation by the Legislature, a new Nature for All Fund would get half of those taxes at first, then all after July 2028."
 sources = ["booklet"]
 
 [section.line.visual]
 kind = "bars"
-title = "Share of the sporting goods taxes going to the fund"
+title = "Share of the sporting goods taxes for the fund, subject to appropriation"
 source = "booklet"
 unit = "%"
 labels = ["First year", "After July 1, 2028"]
