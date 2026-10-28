@@ -1,0 +1,77 @@
+# Contest index for the 2026-11-03 Massachusetts state election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a ballot question's number (a string), as the
+# Secretary of the Commonwealth's Information for Voters prints it
+# ("QUESTION 1"); the Attorney General's petition numbers (25-14 and so
+# on) appear nowhere. Titles pair the designation with the question's
+# short title as the booklet prints it. The nine are all of the
+# statewide ballot questions, in ballot order: eight laws proposed by
+# initiative petition and one referendum on an existing law.
+
+[election]
+id = "ma-2026-11-03"
+state = "ocd-division/country:us/state:ma"
+title = "Massachusetts State Election, November 3, 2026"
+
+[[contest]]
+id = "ma-2026-11-03-question-1"
+kind = "measure"
+division = "ocd-division/country:us/state:ma"
+title = "Question 1: Expanding the Public Records Law"
+number = "1"
+
+[[contest]]
+id = "ma-2026-11-03-question-2"
+kind = "measure"
+division = "ocd-division/country:us/state:ma"
+title = "Question 2: Collective Bargaining for CPCS Employees"
+number = "2"
+
+[[contest]]
+id = "ma-2026-11-03-question-3"
+kind = "measure"
+division = "ocd-division/country:us/state:ma"
+title = "Question 3: State Primary Elections"
+number = "3"
+
+[[contest]]
+id = "ma-2026-11-03-question-4"
+kind = "measure"
+division = "ocd-division/country:us/state:ma"
+title = "Question 4: Election Day Registration"
+number = "4"
+
+[[contest]]
+id = "ma-2026-11-03-question-5"
+kind = "measure"
+division = "ocd-division/country:us/state:ma"
+title = "Question 5: State Revenue Limit & Rebate"
+number = "5"
+
+[[contest]]
+id = "ma-2026-11-03-question-6"
+kind = "measure"
+division = "ocd-division/country:us/state:ma"
+title = "Question 6: Natural Resource Conservation Fund"
+number = "6"
+
+[[contest]]
+id = "ma-2026-11-03-question-7"
+kind = "measure"
+division = "ocd-division/country:us/state:ma"
+title = "Question 7: Single Family Homes"
+number = "7"
+
+[[contest]]
+id = "ma-2026-11-03-question-8"
+kind = "measure"
+division = "ocd-division/country:us/state:ma"
+title = "Question 8: Prohibit Retail Sale of Adult Recreational Use Marijuana"
+number = "8"
+
+[[contest]]
+id = "ma-2026-11-03-question-9"
+kind = "measure"
+division = "ocd-division/country:us/state:ma"
+title = "Question 9: Firearms Regulation"
+number = "9"
