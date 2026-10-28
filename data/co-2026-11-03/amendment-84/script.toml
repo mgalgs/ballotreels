@@ -1,0 +1,139 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; how a mail ballot is checked today; the number the amendment would add, and what happens
+# when it is missing; what Legislative Council Staff says it costs; one
+# point per side; what a vote does.
+#
+# The card quotes the State Ballot Information Booklet: the ballot title
+# as printed in its Text & Titles section, its origin and vote-needed
+# line, the first paragraph of its "What does this measure do?" as the
+# summary and its YES/NO lines.
+#
+# The booklet's share of ballots cast by mail (92 percent in 2024) stays
+# out: the opponents' argument calls mail Colorado's most commonly used
+# way to vote, so the figure would preview their point (rule 6.3). The
+# booklet prints one argument for and one against; each side's list
+# takes two points from its one argument. The costs are state and county
+# money together, the state's share from fees rather than the General
+# Fund; no archived source gives a total to scale them by, so they are
+# stated without one.
+
+contest = "co-2026-11-03-amendment-84"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "blue-book"
+number = "84"
+title = "Shall there be an amendment to the Colorado Constitution requiring a voter to sign and include the last four digits of their social security number or their Colorado driver’s license or identification card number on the outside of their mail ballot for any federal or state election, and, in connection therewith, allowing the voter to correct missing or incorrect information, including with alternative forms of identification; and prohibiting a county clerk and recorder from counting the mail ballot unless the problem is fixed?"
+origin = "Placed on the ballot by citizen initiative • Passes with 55 percent of the vote"
+summary = "For federal and statewide elections, the measure requires voters to include the last four digits of a government-issued identification number when submitting their mail ballot. Acceptable forms of identification are a social security number, a Colorado driver’s license number, or a Colorado identification card number."
+yes = "A “yes” vote on Amendment 84 requires voters to provide identification information with their mail ballot, in addition to their signature."
+no = "A “no” vote on Amendment 84 continues the current signature-only verification system for mail ballots."
+
+[[section]]
+id = "what"
+heading = "Amendment 84"
+
+[[section.line]]
+text = "Amendment 84 is about how Colorado checks mail ballots."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["on the outside of their mail ballot"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, counties compare the signature on each mail ballot envelope with the voter's signature on file."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "mail-ballot-envelope"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would add the last four digits of a Social Security, driver's license or state ID number."
+sources = ["blue-book", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "id-number-envelope"
+
+[[section.line]]
+text = "A ballot without a matching number would count only if the voter fixes it within eight days."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Legislative Council Staff estimates state and local costs of up to $2.7 million the first year, then $1.2 million a year."
+sources = ["fiscal-impact", "fiscal-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes/for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say identification numbers strengthen election security and are less subjective than signature checks, while keeping voting convenient."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Strengthens security while keeping voting convenient", "ID numbers less subjective than signature checks"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no/against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the amendment burdens voters without meaningfully improving security, and minor mistakes could keep eligible ballots uncounted."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Adds a burden without meaningfully improving security", "Minor mistakes could leave eligible ballots uncounted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote requires identification information with mail ballots, plus a signature."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["requires voters to provide identification information"]
+
+[[section.line]]
+text = "A no vote continues the signature-only system."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["continues the current signature-only verification system"]
