@@ -1,0 +1,53 @@
+# Archived sources for City of Banning Measure V, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the
+# Riverside County Registrar of Voters' County Voter Information Guide
+# (ballot type 404, a Banning precinct); "page" is the guide's printed
+# footer number.
+#
+# The sample ballot prints the City of Banning's header ("CITY OF
+# BANNING") on page RV 404-020, over Measure U, and Measures V and W on
+# the next page, RV 404-021. sources/sample-ballot-pages-020-021.pdf is
+# the two archived pages joined (banning-measure-u's
+# sample-ballot-page.pdf, then this measure's), so the card can quote
+# the header and the question from one source.
+#
+# Measure V is a referendum on Ordinance No. 1619, one of three (with
+# Measures U and W) on the same project. The guide does not print the
+# ordinance; the City's copy was not retrieved, so no official-text
+# source is listed. The guide prints no fiscal analysis.
+
+[contest]
+id = "ca-2026-11-03-banning-measure-v"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:banning"
+kind = "measure"
+title = "City of Banning Measure V: Rezoning a Site for Very High Density Housing"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "Riverside County Registrar of Voters, County Voter Information Guide, pages RV 404-020 to RV 404-021: sample ballot, City of Banning measures"
+credit = "Sample ballot, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000404.pdf"
+file = "sources/sample-ballot-pages-020-021.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney, Impartial Analysis of Measure V, Riverside County Voter Information Guide, page RV 404-044"
+credit = "City Attorney Impartial Analysis, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000404.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments for and against Measure V and rebuttals, as printed in the Riverside County Voter Information Guide, pages RV 404-045 to RV 404-046"
+credit = "Arguments, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000404.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
