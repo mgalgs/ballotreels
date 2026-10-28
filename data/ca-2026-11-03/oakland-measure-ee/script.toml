@@ -1,0 +1,160 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; how the city is run today and how the measure reached the
+# ballot; what would change (who runs departments, the veto and its
+# override, the Council's new tools, full-time Council work); the City
+# Auditor's cost estimate; one line per side; what a vote does.
+#
+# The City Auditor's Impartial Analysis is the fiscal statement. No
+# archived source states the city's general fund budget, so its $2.0
+# million to $2.6 million has no scale (STANDARD.md 6.5; left open).
+#
+# The guide's analysis prints no "yes" and "no" statements, so the vote
+# lines take their meanings from the ballot question, as Utah's do.
+# Sides come from the argument in favor and the argument against, not the
+# rebuttals; some of their lines are set in the guide's unmapped font
+# and mixed with ordinary text, so the bases quote the lines that read.
+
+contest = "ca-2026-11-03-oakland-measure-ee"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "EE"
+title = "CITY OF OAKLAND"
+origin = "This measure was placed on the ballot by the City Council and will take effect only if a majority of voters voting on the measure vote “Yes.”"
+summary = "Shall the measure to amend Oakland's City Charter to, among other things, (1) make the Mayor the City's chief executive with a legislative veto, (2) empower the Council to override vetoes, confirm appointments of certain directors, and appoint an Independent Budget and Legislative Analyst, (3) affirm Councilmembers' right to acquire information from other City officials, (4) require Councilmembers to work full-time, and (5) empower the Public Ethics Commission to set salaries for all City elected officials using similar formulas, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure EE"
+
+[[section.line]]
+text = "City of Oakland Measure EE asks voters in the city whether to change the City Charter to make the Mayor the chief executive of the city."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["make the Mayor the City's chief executive"]
+
+[[section]]
+id = "today"
+heading = "How the city is run today"
+
+[[section.line]]
+text = "Today, the city administrator manages most city departments, and the Mayor can cast a tie-breaking vote on the Council."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section.line]]
+text = "The City Council placed Measure EE on the ballot, and it needs a simple majority to pass."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The Mayor would manage most departments and could veto Council laws and budget items, but would no longer break ties."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "veto-letter"
+
+[[section.line]]
+text = "Six members of the Council could override a veto."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "legislative-chamber"
+
+[[section.line]]
+text = "The Council could create an independent budget analyst office and confirm some department heads."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section.line]]
+text = "Council members would work full time, with pay for them and the Mayor set by the Public Ethics Commission."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "empty-commission-seat"
+
+[[section]]
+id = "fiscal"
+heading = "What the City Auditor says"
+
+[[section.line]]
+text = "The City Auditor estimates a first-year cost to the city between 2 and 2.6 million dollars, including the analyst office and higher Council pay."
+sources = ["auditor"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say department heads would answer to one leader, the Mayor, and voters could keep or replace that leader based on results."
+sources = ["arguments"]
+basis = ["Reforming Oakland’s system so city department heads answer to one executive leader", "giving voters the power to retain or replace that leader based on results."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["One leader answers for city departments", "Voters can keep or replace that leader"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the measure makes government less transparent, raises the risk of corruption, and lets the Mayor block almost any Council action."
+sources = ["arguments"]
+basis = ["It makes our government less transparent, increases the risks of corruption, and drives political gridlock.", "lets the mayor block almost any council action if only a small minority of councilmembers agree with them."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Less transparent, more risk of corruption", "Mayor could block almost any Council action"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means the Mayor would become the chief executive of the city, with a veto."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["chief executive with a legislative veto"]
+
+[[section.line]]
+text = "A no vote means the City Charter stays as it is."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["amend Oakland's City Charter"]

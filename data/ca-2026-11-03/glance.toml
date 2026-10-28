@@ -293,3 +293,13 @@ source = "guide-page"
 quote = "generating approximately $980,000,000 annually"
 amount = 980000000
 period = "per-year"
+
+# City of Oakland Measure EE: the City Auditor's Impartial Analysis is the
+# fiscal statement; its total is a first-year cost, with ongoing costs
+# after it.
+[oakland-measure-ee]
+source = "auditor"
+quote = "the overall cost to the City ranges from $2.0 million to $2.6 million for the first year"
+amount = 2600000
+period = "per-year"
+direction = "cost"
