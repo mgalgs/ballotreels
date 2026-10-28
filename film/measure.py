@@ -2627,7 +2627,7 @@ def build(fmt):
             slides.append((max(start, first_f - FADE), end))
     flush()
     # the closing sources card: never fades
-    card_items, card_marks = sources_card(L, BOARD.narration_end + 8)
+    card_items, card_marks = sources_card(L, BOARD.narration_end + 8, BOARD.end)
     groups.append(Group(card_items, card_marks, BOARD.narration_end))
     items = [it for g in groups for it in g.items]
     schedule = sorted((it for it in items if it._head), key=lambda it: it.f0)
@@ -2635,16 +2635,22 @@ def build(fmt):
 
 
 SOURCES_GAP = 0.45  # the least gap between two sources, as a share of the list's line height
+SOURCES_HOLD = 1.5  # s the whole list stays still before the film's last frame
 
 
-def sources_card(L, f0):
+def sources_card(L, f0, end):
     """The closing card: 'Sources' as a heading, and every cited source,
     numbered, in a list that fills the page from under the heading down to
     the bottom of where the caption would be (the card has none), as the
     sides slide's cards do: its height goes to the type first, the largest
     (up to L['sources_font']) at which the list fits with the sources at
     their least gap; what is left is shared out evenly between the gaps
-    between the sources and the room above and below the list."""
+    between the sources and the room above and below the list.
+
+    `end` is the film's length in frames. A list too long to write at its
+    usual speed is written faster, so the last source is done
+    SOURCES_HOLD before the film's last frame; one that is done in time
+    keeps its usual speed."""
     hb = L['heading']
     u = L['u']
     fnt = L['heading_font']
@@ -2670,13 +2676,17 @@ def sources_card(L, f0):
     gap += share
     y = box.y + share
     top = y
+    f_list = f
+    listed = []
     for i, lines in enumerate(blocks):
         ni, _, _ = write_lines(f, [f'{i + 1}.'], sf, box.x, y, speed=2)
-        items += ni
+        listed += ni
         li, f, _ = write_lines(f + 2, lines, sf, box.x + num_w, y, speed=2.2)
-        items += li
+        listed += li
         y += len(lines) * lh + gap
         f += 3
+    done_by = end - 1 - to_frame(SOURCES_HOLD, FPS)
+    items += scaled(listed, f_list, max(1, done_by - f_list))
     return items, [Mark('heading', hbox), Mark('sources', Box(box.x, top, box.w, y - gap - top))]
 
 

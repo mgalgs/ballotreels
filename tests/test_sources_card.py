@@ -90,14 +90,16 @@ class SourcesCardTest(unittest.TestCase):
                 self.assertGreater(len(items), 2 * len(cited), fmt)
 
     def test_a_card_that_finishes_in_time_is_unchanged(self):
-        # Prop 2's few sources finish well inside the card: their timing
-        # is what it would be with all the time in the world
-        for fmt in ("9x16", "16x9"):
-            L = m.LAYOUTS[fmt]
-            items, _ = self.card(L)
-            free, _ = m.sources_card(L, 16, 10 ** 6)
-            self.assertEqual([(it.f0, it.f1) for it in items],
-                             [(it.f0, it.f1) for it in free], fmt)
+        # two sources finish well inside the card: their timing is what
+        # it would be with all the time in the world
+        few = m.BOARD.cited[:2]
+        with mock.patch.object(m, "BOARD", SimpleNamespace(cited=few)):
+            for fmt in ("9x16", "16x9"):
+                L = m.LAYOUTS[fmt]
+                items, _ = self.card(L)
+                free, _ = m.sources_card(L, 16, 10 ** 6)
+                self.assertEqual([(it.f0, it.f1) for it in items],
+                                 [(it.f0, it.f1) for it in free], fmt)
 
 
 if __name__ == "__main__":
