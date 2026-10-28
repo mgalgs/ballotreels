@@ -97,3 +97,35 @@ amount = 100000000
 magnitude = 10000000
 period = "per-year"
 direction = "cost"
+
+# San Diego County Measure A: the guide prints no fiscal statement.
+[sd-county-measure-a]
+source = "guide-page"
+status = "none-printed"
+
+# San Diego County Measure B: the guide prints no fiscal analysis; the
+# one estimate is in its ballot label (and County Counsel's Impartial
+# Analysis, whose sentence pdftotext interleaves with the next column).
+[sd-county-measure-b]
+source = "guide-page"
+quote = "a half-cent sales tax raising an estimated $400,000,000 to $450,000,000 annually"
+amount = 450000000
+period = "per-year"
+
+# Los Angeles County Measure A: the Auditor-Controller's statement sizes
+# only the cost of an arbitration, and only in words; it says it cannot
+# predict the effect on labor costs.
+[la-county-measure-a]
+source = "fiscal-statement"
+status = "words"
+magnitude = 1000000
+quote = "direct administrative costs of arbitration, including arbitrator fees, legal fees, and staff support, which could total tens of thousands to millions of dollars depending on the complexity and duration of the arbitration."
+period = "unstated"
+direction = "cost"
+
+# Los Angeles County Measure E: the Auditor-Controller's statement.
+[la-county-measure-e]
+source = "fiscal-statement"
+quote = "This measure requires the County Board of Supervisors (Board) to appropriate a minimum of $14.3 million for the Ethics Commission's and Office of Ethics Compliance's annual operating budget, beginning in Fiscal Year 2027-28."
+amount = 14300000
+period = "per-year"

@@ -1,0 +1,64 @@
+# Archived sources for San Diego County Measure B, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Diego County Registrar of Voters' Voter Information Guide (ballot type
+# 001); "page" is the guide's printed footer number.
+
+[contest]
+id = "ca-2026-11-03-sd-county-measure-b"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:san_diego"
+kind = "measure"
+title = "San Diego County Measure B: Measure to Fund San Diego County Health & Safety Services"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Voter Information Guide, page SD 001-065: ballot label and County Counsel Impartial Analysis"
+credit = "County Counsel Impartial Analysis, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-001.pdf"
+file = "sources/vig-p67-ballot-label-impartial-analysis-argument-for.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure B, as printed in the San Diego County Voter Information Guide, page SD 001-065"
+credit = "Argument in favor, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-001.pdf"
+file = "sources/vig-p67-ballot-label-impartial-analysis-argument-for.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument against Measure B and rebuttal to it, as printed in the San Diego County Voter Information Guide, page SD 001-066"
+credit = "Argument against, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-001.pdf"
+file = "sources/vig-p68-argument-against-and-rebuttal.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure B, San Diego County Voter Information Guide, pages SD 001-067 to SD 001-072"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-001.pdf"
+file = "sources/vig-p69-74-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Composite Ballot, General 2026"
+url = "https://www.sdvote.com/content/dam/rov/en/election/facsimile-reference-ballot/english-reference-ballot.pdf"
+file = "sources/composite-ballot-p20.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "petition-status"
+kind = "election-filing"
+publisher = "San Diego County Registrar of Voters, Countywide Petition Status"
+url = "https://www.sdvote.com/content/dam/rov/shared/petition/countywide-petition-status.pdf"
+file = "sources/rov-countywide-petition-status.pdf"
+retrieved = "2026-10-28"

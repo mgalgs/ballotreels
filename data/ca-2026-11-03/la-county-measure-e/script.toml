@@ -1,0 +1,151 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain: what it
+# asks; what the charter has today (an ethics commission, a 10 percent
+# set-aside); what would change (a more independent commission with set
+# funding, the set-aside kept under the new County Executive); the
+# Auditor-Controller's statement, the cost and how it would be paid; one
+# line per side; what a vote does.
+#
+# The card quotes the ballot label, printed only in the ordinance, which
+# prints no yes/no lines (County Counsel's analysis has them, on another
+# document). So, as for Utah, the card has no YES/NO boxes, the vote
+# lines give the analysis's meanings, and both highlight the same two
+# phrases of the question.
+#
+# "Counsel" is heard as "Council" and "county's" as "counties"
+# (standard/speakability.txt), so the narration says neither. No
+# archived source states the county budget that would give the $14.3
+# million its scale (STANDARD.md 6.5; left open). The supporters'
+# "no new cost to the taxpayers" and their account of why the set-aside
+# needs restoring are theirs, so they stay out of the neutral sections.
+#
+# No argument against was submitted ("NO ARGUMENT AGAINST THIS MEASURE
+# WAS SUBMITTED"): the no side is filed = false, as for Proposition 37.
+
+contest = "ca-2026-11-03-la-county-measure-e"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-label"
+number = "E"
+title = "PROPOSED COUNTY CHARTER AMENDMENT. COUNTY OF LOS ANGELES ETHICS COMMISSION AND COMMUNITY INVESTMENT CHARTER AMENDMENT."
+origin = "The Board of Supervisors of the County of Los Angeles ordains as follows:"
+summary = "Shall the measure, amending the Los Angeles County Charter to provide greater independence and structure for the County of Los Angeles Ethics Commission, Office of Ethics Compliance, and Ethics Compliance Officer, including appointment processes, qualifications, term, duties, and responsibilities, and to continue uninterrupted the County's commitment to community investment and alternatives to incarceration, as specified in the charter amendment ordinance, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure E"
+
+[[section.line]]
+text = "Los Angeles County Measure E asks county voters whether to change the County Charter on ethics and community investment."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["ETHICS COMMISSION AND COMMUNITY INVESTMENT"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the county has an ethics commission and sets aside at least 10 percent of locally raised general revenue for community investment."
+sources = ["impartial-analysis", "fiscal-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "set-aside-funds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure E would make the ethics commission and its office more independent."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "empty-commission-seat"
+
+[[section.line]]
+text = "The commission could investigate violations of county ethics laws and impose penalties."
+sources = ["fiscal-statement", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "inspection-clipboard"
+
+[[section.line]]
+text = "The set-aside would continue after an elected county executive takes office in 2028."
+sources = ["impartial-analysis", "fiscal-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "set-aside-funds"
+
+[[section]]
+id = "fiscal"
+heading = "What the Auditor-Controller says"
+
+[[section.line]]
+text = "The Auditor-Controller says the county must budget at least $14.3 million a year for ethics oversight, from new revenue, other programs, or both."
+sources = ["fiscal-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say an independent ethics commission would have power to prevent corruption and hold officials accountable."
+sources = ["argument"]
+basis = ["Measure E creates an independent Los Angeles County Ethics Commission. It will have the authority to prevent corruption, increase transparency, and hold officials accountable in the largest county in the nation."]
+
+[section.line.visual]
+kind = "list"
+source = "argument"
+items = ["Real power to investigate and punish violations", "Funding the officials it oversees cannot cut"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure E was submitted, so the official materials print only the supporters' argument."
+sources = ["argument"]
+
+[section.line.visual]
+kind = "list"
+source = "argument"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means a more independent ethics commission, and the set-aside continues."
+sources = ["impartial-analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["greater independence and structure", "commitment to community investment"]
+
+[[section.line]]
+text = "A no vote means the commission stays as it is, and the set-aside is not required after 2028."
+sources = ["impartial-analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["greater independence and structure", "commitment to community investment"]
