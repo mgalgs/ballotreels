@@ -1,0 +1,76 @@
+# Archived sources for Santee School District Measure BB,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Diego County Registrar of Voters' Voter Information Guide (ballot type
+# 365); "page" is the guide's printed footer number.
+#
+# One guide page prints the ballot label, County Counsel's Impartial
+# Analysis and the Tax Rate Statement; each is its own source.
+
+[contest]
+id = "ca-2026-11-03-santee-school-measure-bb"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:santee_school_district"
+kind = "measure"
+title = "Santee School District Measure BB: School Repair Bonds"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Voter Information Guide, page SD 365-084: ballot label of Measure BB"
+credit = "Ballot label, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-365.pdf"
+file = "sources/vig365-p86-ballot-label-impartial-analysis-tax-rate-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "County Counsel Impartial Analysis of Measure BB, San Diego County Voter Information Guide, page SD 365-084"
+credit = "Impartial Analysis, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-365.pdf"
+file = "sources/vig365-p86-ballot-label-impartial-analysis-tax-rate-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Santee School District, Tax Rate Statement for Measure BB, San Diego County Voter Information Guide, page SD 365-084"
+credit = "Tax Rate Statement, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-365.pdf"
+file = "sources/vig365-p86-ballot-label-impartial-analysis-tax-rate-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in favor of Measure BB, and the notice that no argument against was filed, as printed in the San Diego County Voter Information Guide, page SD 365-085"
+credit = "Arguments, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-365.pdf"
+file = "sources/vig365-p87-argument-in-favor-no-argument-against.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure BB, San Diego County Voter Information Guide, pages SD 365-085 to SD 365-087"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-365.pdf"
+file = "sources/vig365-p87-89-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Composite Ballot, General 2026"
+url = "https://www.sdvote.com/content/dam/rov/en/election/facsimile-reference-ballot/english-reference-ballot.pdf"
+file = "sources/composite-ballot-p22.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "legislative-record"
+publisher = "Board of Education of the Santee School District, Resolution No. 2526-24 (June 16, 2026) and the District cover letter, as posted by the Registrar of Voters"
+url = "https://www.sdvote.com/content/dam/rov/en/election/nov-3-2026-gubernatorial-general-election/santee-school-district.pdf"
+file = "sources/rov-board-resolution-2526-24-and-cover-letter.pdf"
+retrieved = "2026-10-28"

@@ -1,0 +1,83 @@
+# Archived sources for Grossmont-Cuyamaca Community College District Measure G,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Diego County Registrar of Voters' Voter Information Guide (ballot type
+# 365); "page" is the guide's printed footer number.
+#
+# One guide page prints the ballot label, County Counsel's Impartial
+# Analysis and the Tax Rate Statement; each is its own source.
+#
+# A community college district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md). The district lies in San Diego County only, as
+# its resolution names it ("Grossmont-Cuyamaca Community College District
+# of San Diego County"), so it has one contest.
+
+[contest]
+id = "ca-2026-11-03-grossmont-cuyamaca-measure-g"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:san_diego"
+kind = "measure"
+title = "Grossmont-Cuyamaca Community College District Measure G: College Facility Bonds"
+voters = "the Grossmont-Cuyamaca Community College District"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Voter Information Guide, page SD 365-080: ballot label of Measure G"
+credit = "Ballot label, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-365.pdf"
+file = "sources/vig365-p82-ballot-label-impartial-analysis-tax-rate-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "County Counsel Impartial Analysis of Measure G, San Diego County Voter Information Guide, page SD 365-080"
+credit = "Impartial Analysis, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-365.pdf"
+file = "sources/vig365-p82-ballot-label-impartial-analysis-tax-rate-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Grossmont-Cuyamaca Community College District, Tax Rate Statement for Measure G, San Diego County Voter Information Guide, page SD 365-080"
+credit = "Tax Rate Statement, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-365.pdf"
+file = "sources/vig365-p82-ballot-label-impartial-analysis-tax-rate-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in favor of Measure G, and the notice that no argument against was filed, as printed in the San Diego County Voter Information Guide, page SD 365-081"
+credit = "Arguments, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-365.pdf"
+file = "sources/vig365-p83-argument-in-favor-no-argument-against.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure G, San Diego County Voter Information Guide, pages SD 365-081 to SD 365-083"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-365.pdf"
+file = "sources/vig365-p83-85-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Composite Ballot, General 2026"
+url = "https://www.sdvote.com/content/dam/rov/en/election/facsimile-reference-ballot/english-reference-ballot.pdf"
+file = "sources/composite-ballot-p21.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "legislative-record"
+publisher = "Governing Board of the Grossmont-Cuyamaca Community College District, Resolution No. 26-007 (July 27, 2026), with its appendices, as posted by the Registrar of Voters"
+url = "https://www.sdvote.com/content/dam/rov/en/election/nov-3-2026-gubernatorial-general-election/grossmont-cuyamaca-ccd.pdf"
+file = "sources/rov-governing-board-resolution-26-007.pdf"
+retrieved = "2026-10-28"

@@ -1,0 +1,76 @@
+# Archived sources for Fallbrook Union Elementary School District Measure K,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Diego County Registrar of Voters' Voter Information Guide (ballot type
+# 259); "page" is the guide's printed footer number.
+#
+# One guide page prints the ballot label, County Counsel's Impartial
+# Analysis and the Tax Rate Statement; each is its own source.
+
+[contest]
+id = "ca-2026-11-03-fallbrook-elementary-measure-k"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:fallbrook_union_elementary_school_district"
+kind = "measure"
+title = "Fallbrook Union Elementary School District Measure K: School Repair Bonds"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Voter Information Guide, page SD 259-076: ballot label of Measure K"
+credit = "Ballot label, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-259.pdf"
+file = "sources/vig259-p78-ballot-label-impartial-analysis-tax-rate-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "County Counsel Impartial Analysis of Measure K, San Diego County Voter Information Guide, page SD 259-076"
+credit = "Impartial Analysis, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-259.pdf"
+file = "sources/vig259-p78-ballot-label-impartial-analysis-tax-rate-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Fallbrook Union Elementary School District, Tax Rate Statement for Measure K, San Diego County Voter Information Guide, page SD 259-076"
+credit = "Tax Rate Statement, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-259.pdf"
+file = "sources/vig259-p78-ballot-label-impartial-analysis-tax-rate-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in favor of Measure K, and the notice that no argument against was filed, as printed in the San Diego County Voter Information Guide, page SD 259-077"
+credit = "Arguments, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-259.pdf"
+file = "sources/vig259-p79-argument-in-favor-no-argument-against.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure K, San Diego County Voter Information Guide, pages SD 259-077 to SD 259-079"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-259.pdf"
+file = "sources/vig259-p79-81-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Composite Ballot, General 2026"
+url = "https://www.sdvote.com/content/dam/rov/en/election/facsimile-reference-ballot/english-reference-ballot.pdf"
+file = "sources/composite-ballot-p21.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "legislative-record"
+publisher = "Governing Board of the Fallbrook Union Elementary School District, Resolution No. 01-26/27 (August 6, 2026), with the District cover letter and tax rate statement, as posted by the Registrar of Voters"
+url = "https://www.sdvote.com/content/dam/rov/en/election/nov-3-2026-gubernatorial-general-election/fallbrook-uesd.pdf"
+file = "sources/rov-governing-board-resolution-01-26-27-and-cover-letter.pdf"
+retrieved = "2026-10-28"
