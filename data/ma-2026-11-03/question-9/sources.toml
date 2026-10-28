@@ -1,0 +1,55 @@
+# Archived sources for Massachusetts Question 9, 2026-11-03 state
+# election. Every id here may be cited by script.toml. `kind` must be one
+# the standard allows (docs/STANDARD.md, section 1).
+#
+# The Secretary of the Commonwealth prints a question's wording, the
+# Attorney General's summary, "What your vote will do", the Executive
+# Office of Administration and Finance's statement of fiscal
+# consequences, the 150-word arguments and the
+# full text in its Information for Voters, so several sources below
+# share one archived file: those pages, cut from the full booklet. The
+# booklet is cited by the Secretary's own URL; sec.state.ma.us blocks
+# scripted fetches, so the archived copy came from an Internet Archive
+# capture of that PDF.
+
+[contest]
+id = "ma-2026-11-03-question-9"
+election = "ma-2026-11-03"
+division = "ocd-division/country:us/state:ma"
+kind = "measure"
+title = "Question 9: Firearms Regulation"
+
+[[source]]
+id = "booklet"
+kind = "official-title-summary"
+publisher = "Secretary of the Commonwealth of Massachusetts, Information for Voters, 2026 Ballot Questions, Question 9: ballot question, summary and What Your Vote Will Do, pages 22 to 23"
+credit = "Massachusetts Information for Voters, Question 9"
+url = "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal"
+kind = "official-fiscal-analysis"
+publisher = "Executive Office of Administration and Finance, Statement of Fiscal Consequences of Question 9, in the Secretary of the Commonwealth's Information for Voters, page 23"
+credit = "Statement of Fiscal Consequences, Information for Voters"
+url = "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments in favor of and against Question 9, as printed in the Secretary of the Commonwealth's Information for Voters, page 23"
+credit = "Arguments, Information for Voters"
+url = "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Existing Law, Question 9, in the Secretary of the Commonwealth's Information for Voters, pages 45 to 85"
+url = "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
