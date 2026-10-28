@@ -1,0 +1,148 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; the penalty today; the penalty and the added act under the
+# proposition; when Legislative Council Staff says its costs begin and
+# how they grow; one point per side; what a vote does.
+#
+# The card quotes the State Ballot Information Booklet: the ballot title
+# as printed in its Text & Titles section, its origin and vote-needed
+# line, the first sentence of its "How does Proposition 133 change the
+# crime of child sex trafficking?" as the summary and its YES/NO lines.
+#
+# The narration says "trading anything of value for" where the booklet
+# says "to buy or sell" (a listener hears "buy" as "by"). That judges
+# could no longer weigh the facts of a case is the opponents' point and
+# stays in their section. The costs begin in budget year 2041-42, about
+# 14 years out, as the fiscal statement says; no official total exists
+# for that year to scale them by. The booklet prints one argument for
+# and one against; each side's list takes two points from its one
+# argument.
+
+contest = "co-2026-11-03-proposition-133"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "blue-book"
+number = "133"
+title = "Shall there be a change to the Colorado Revised Statutes modifying existing law concerning human trafficking of a minor for sexual servitude, and, in connection therewith, creating new law expanding human trafficking of a minor for sexual servitude to include knowingly trading anything of monetary value to buy or sell sexual activity with a minor and increasing the penalty to be life in prison without parole or release?"
+origin = "Placed on the ballot by citizen initiative • Passes with a majority vote"
+summary = "Proposition 133 increases the penalty for child sex trafficking to life in prison without the possibility of parole, and removes judicial discretion in sentencing."
+yes = "A “yes” vote on Proposition 133 increases the penalties for child sex trafficking to life in prison without parole, and expands child sex trafficking to include buying sexual activity with a minor."
+no = "A “no” vote on Proposition 133 keeps the existing felony criminal penalties for child sex trafficking with a sentencing range of 8 to 48 years in prison plus a mandatory parole period."
+
+[[section]]
+id = "what"
+heading = "Proposition 133"
+
+[[section.line]]
+text = "Proposition 133 is about penalties for child sex trafficking."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["human trafficking of a minor for sexual servitude"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the crime carries 8 to 48 years in prison, plus five years of parole."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The proposition would make the penalty life in prison without parole."
+sources = ["blue-book", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["life in prison without parole or release"]
+
+[[section.line]]
+text = "The crime would also include trading anything of value for sexual activity with a minor."
+sources = ["blue-book"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Legislative Council Staff says state prison costs would begin in about 14 years."
+sources = ["fiscal-impact", "fiscal-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section.line]]
+text = "Those costs start at about $180,000 a year, and grow by that amount each year for several years."
+sources = ["fiscal-impact", "fiscal-statement"]
+
+[section.line.visual]
+kind = "bars"
+title = "Added prison costs, thousands of dollars"
+source = "fiscal-impact"
+unit = ""
+labels = ["2041-42", "2042-43", "2043-44"]
+values = [180, 360, 540]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes/for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say this crime causes serious, long-lasting harm, and a life sentence ensures offenders cannot hurt more children."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Serious, long-lasting harm deserves a life sentence", "Ensures offenders cannot hurt more children"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no/against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say harsher sentences are unlikely to deter trafficking, and may punish the victims forced to help traffickers."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Harsher sentences are unlikely to deter trafficking", "May punish victims forced to help traffickers"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote raises the penalty to life in prison without parole."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["increases the penalties for child sex trafficking"]
+
+[[section.line]]
+text = "A no vote keeps the existing range of 8 to 48 years in prison."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["keeps the existing felony criminal penalties"]
