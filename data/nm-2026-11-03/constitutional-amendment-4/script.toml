@@ -1,0 +1,161 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; what legislators are paid today; what Amendment 4 would
+# allow, how much, and from when; that the guide includes no cost
+# estimate, and what the Legislative Finance Committee's analysis put
+# the cost at; one point per side; what a vote does.
+#
+# The card quotes the Secretary of State's 2026 General Election Voter
+# Guide: the ballot title, and the amendment's "Purpose", whose opening
+# words are the origin line and whose last three sentences are the
+# summary. The guide prints no "a vote for means" lines, so the vote
+# lines take their two meanings from one phrase of the summary, the same
+# for each, so the two stay parallel.
+#
+# The guide's reprint of the full text predates the resolution's
+# amendment ("2028 general election"); every full-text claim is cited
+# from the Legislative Council Service's booklet and the resolution as
+# passed. The median household income ("approximately $68,000 in 2026")
+# and the start in 2029 are said as the guide says them.
+#
+# Fiscal: the guide includes no cost estimate, and says so in the
+# standard's words. The Legislative Finance Committee's fiscal impact
+# report, the Legislature's own analysis of the resolution, puts the
+# yearly cost to the general fund at about $7.6 million, before payroll
+# taxes and benefits; it is named as that report, not as a ballot
+# statement. No archived source states the general fund's total, so the
+# figure is given without a share (rule 6.5): the total needed is the
+# General Fund's recurring appropriations for fiscal year 2029, from the
+# Legislative Finance Committee.
+#
+# The arguments are the Legislative Council Service's: four for and
+# three against. Each side's list is its two of most equal weight: the
+# work (more time for it; pay out of line with other states for no more
+# service) and who runs (more New Mexicans; an incumbent's advantage).
+# The neutral lines leave out the background a side argues from (outside
+# jobs, other states' pay, the pension). No person is named.
+
+contest = "nm-2026-11-03-constitutional-amendment-4"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide"
+number = "4"
+title = "PROPOSING TO AMEND ARTICLE 4, SECTION 10 OF THE CONSTITUTION OF NEW MEXICO TO ALLOW LEGISLATIVE COMPENSATION THAT IS LIMITED TO THE MEDIAN HOUSEHOLD INCOME FOR NEW MEXICO, TO REQUIRE LEGISLATIVE COMPENSATION TO BE REDUCED IF THE MEDIAN HOUSEHOLD INCOME FOR NEW MEXICO FALLS, TO ALLOW LEGISLATIVE COMPENSATION TO BE INCREASED ONLY IF THE MEDIAN HOUSEHOLD INCOME FOR NEW MEXICO RISES AND TO PROVIDE FOR DELAYED IMPLEMENTATION."
+origin = "Constitutional Amendment 4 proposes to amend Article 4, Section 10 of the Constitution of New Mexico"
+summary = "The proposed amendment would go into effect when the members of the Fifty-Ninth Legislature are sworn in and seated in 2029 and would allow the legislature to enact a law that provides compensation for each legislator in an amount equal to the annual median household income for New Mexico, which is approximately $68,000 in 2026. Also, the proposed amendment would remove the prohibition on legislators receiving other perquisites or allowances."
+
+[[section]]
+id = "what"
+heading = "Amendment 4"
+
+[[section.line]]
+text = "Constitutional Amendment 4 is about salaries for legislators."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["ALLOW LEGISLATIVE COMPENSATION"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, New Mexico's legislators get no salary, only per diem and mileage."
+sources = ["guide", "lcs-summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-capitol"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Amendment 4 would let the Legislature pay each member the state's median household income, approximately $68,000 in 2026."
+sources = ["guide", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["an amount equal to the annual median household income for New Mexico, which is approximately $68,000 in 2026"]
+
+[[section.line]]
+text = "Pay could begin in 2029, rising or falling with that income."
+sources = ["guide", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The 2026 General Election Voter Guide does not include a cost estimate for the amendment."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "The Legislative Finance Committee's analysis put the general fund cost at about $7.6 million a year, before payroll taxes and benefits."
+sources = ["fir"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say pay could give legislators more time for their work, and let more New Mexicans run."
+sources = ["arguments"]
+basis = ["Legislative compensation could result in legislators spending more time on legislative work and less time on outside employment.", "allow for more New Mexicans to run for seats in the legislature"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Could give legislators more time for their work", "Could let more New Mexicans run"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say salaries could give incumbents an edge, and be out of line with most other states."
+sources = ["arguments"]
+basis = ["Legislative salaries could provide legislators with incumbency advantages not available to other candidates.", "Constitutional Amendment 4 would provide legislative salaries that may be disproportionate to legislative salaries in most other states."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Could give incumbents an edge over other candidates", "Could be out of line with most states"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for allows legislator salaries equal to the median household income."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["compensation for each legislator in an amount equal to the annual median household income"]
+
+[[section.line]]
+text = "A vote against means legislators would still receive no salary."
+sources = ["guide", "lcs-summary"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["compensation for each legislator in an amount equal to the annual median household income"]

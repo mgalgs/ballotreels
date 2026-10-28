@@ -1,0 +1,149 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; the constitution's rule today; what Amendment 2 would let
+# school districts and the Legislature do; that the guide includes no
+# cost estimate; one point per side; what a vote does.
+#
+# The card quotes the Secretary of State's 2026 General Election Voter
+# Guide: the ballot title, and the amendment's "Purpose", whose first
+# words ("Constitutional Amendment 2, passed by the legislature in
+# 2026") are the origin line and whose last two sentences are the
+# summary (its middle sentence repeats the ballot title). The guide
+# prints no "a vote for means" lines, so the vote lines take their two
+# meanings from the summary and the title.
+#
+# The full text is cited from the Legislative Council Service's booklet
+# and the resolution as passed. The booklet's background (the rule's
+# origin in 1910, the 2008 amendment, and the aim to "remove politics
+# from education") is left out: the 2008 vote is part of the opponents'
+# argument (rule 6.3), and the rest bears on one side's case. The
+# arguments are the Legislative Council Service's: five for and four
+# against. Each side's list is its two of most equal weight: cost (all-
+# mail elections; voter fatigue and ballot costs) and who takes part
+# (more voters; politicized elections). The for side's cost of a special
+# election is a school district's, with no official total to scale it
+# by, so the line names no figure. The Legislative Finance Committee's
+# report finds only election costs, so the fiscal line says the guide
+# includes no cost estimate. No person is named.
+
+contest = "nm-2026-11-03-constitutional-amendment-2"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide"
+number = "2"
+title = "PROPOSING TO AMEND ARTICLE 7, SECTION 1 OF THE CONSTITUTION OF NEW MEXICO TO REMOVE THE REQUIREMENT THAT SCHOOL ELECTIONS BE SEPARATE FROM PARTISAN ELECTIONS."
+origin = "Constitutional Amendment 2, passed by the legislature in 2026"
+summary = "If the amendment is approved, school districts would have the opportunity to add bond and mill levy questions to ballots in a partisan election such as the regular general election. It would also give the legislature the authority to allow local school board elections to be held with partisan elections."
+
+[[section]]
+id = "what"
+heading = "Amendment 2"
+
+[[section.line]]
+text = "Constitutional Amendment 2 is about when school elections can be held."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["SCHOOL ELECTIONS BE SEPARATE FROM PARTISAN ELECTIONS"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the state constitution requires school elections to be held at different times from partisan elections."
+sources = ["text", "lcs-summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Amendment 2 would let school districts put bond and property tax questions on a partisan ballot, like the general election."
+sources = ["guide", "lcs-summary"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["add bond and mill levy questions to ballots in a partisan election"]
+
+[[section.line]]
+text = "The Legislature could also let school board elections be held with partisan elections."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-board-room"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The 2026 General Election Voter Guide does not include a cost estimate for the amendment."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say school districts would save the cost of all-mail elections, and more voters would take part."
+sources = ["arguments"]
+basis = ["School districts will save the cost of expensive all-mail ballots.", "would increase the number of voters who participate in school elections"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Saves school districts the cost of all-mail ballots", "More voters take part in school elections"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say school questions could cause voter fatigue and higher ballot costs, and could politicize school elections."
+sources = ["arguments"]
+basis = ["Adding school questions to the general election ballot could create voter fatigue and increased costs.", "The amendment may lead to politicizing school district elections."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Could cause voter fatigue and higher ballot costs", "May politicize school district elections"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for means school questions could go on partisan ballots."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["ballots in a partisan election"]
+
+[[section.line]]
+text = "A vote against means school elections stay separate from partisan elections."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["SCHOOL ELECTIONS BE SEPARATE FROM PARTISAN ELECTIONS"]

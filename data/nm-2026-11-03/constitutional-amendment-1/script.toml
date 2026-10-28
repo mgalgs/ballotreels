@@ -1,0 +1,160 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; the pocket veto today, and how often governors have used it; what Amendment 1 would change;
+# that the guide includes no cost estimate; one point per side; what a
+# vote does.
+#
+# The card quotes the Secretary of State's 2026 General Election Voter
+# Guide: the ballot title, and the amendment's "Purpose", whose first
+# words ("In 2025, the New Mexico Legislature passed Constitutional
+# Amendment 1") are the origin line and whose rest is the summary. The
+# guide prints no "a vote for means" lines, only the ballot's "For:" and
+# "Against:", so the card has no yes/no and the vote lines take their
+# two meanings from the purpose's "would by default become law" and
+# "the bill does not become law".
+#
+# The guide's reprint of the full text predates the resolution's
+# amendment ("an explanation"), so the text is cited only from the
+# Legislative Council Service's booklet and the resolution as passed,
+# which say "a substantive explanation". That the Legislature can
+# override a veto is part of the opponents' argument (rule 6.3), so no
+# neutral line says it. The pocket-veto count is the booklet's
+# background, both numbers on one chart. The arguments are the
+# Legislative Council Service's, two a side, each side's two as its
+# list. The Legislative Finance Committee's report finds only election
+# costs, not the amendment's, so the fiscal line says the guide includes
+# no cost estimate. No person is named.
+
+contest = "nm-2026-11-03-constitutional-amendment-1"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide"
+number = "1"
+title = "PROPOSING AN AMENDMENT TO ARTICLE 4, SECTION 22 OF THE CONSTITUTION OF NEW MEXICO TO REQUIRE THE GOVERNOR TO PROVIDE VETO MESSAGES ON ALL BILLS VETOED IN WHOLE OR IN PART AND TO PROVIDE THAT ALL BILLS PASSED BY THE LEGISLATURE AND NOT ACTED ON BY THE GOVERNOR WILL BECOME LAW."
+origin = "In 2025, the New Mexico Legislature passed Constitutional Amendment 1"
+summary = "The pocket veto occurs when, after the adjournment of the legislature, the governor does not sign a bill that was presented to the governor during the last three days of session. By not acting on the bill, the bill does not become law. Constitutional Amendment 1 proposes to flip this dynamic. If this proposed amendment is approved by voters, a bill presented to the governor during the last three days of the session would by default become law if the governor does not issue a veto message within 20 days after the legislature's adjournment. In order to veto a bill passed by the legislature, the governor would be required to provide a written, substantive explanation for the veto."
+
+[[section]]
+id = "what"
+heading = "Amendment 1"
+
+[[section.line]]
+text = "Constitutional Amendment 1 is about the governor's pocket veto."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["pocket veto"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, a bill sent in a session's last three days becomes law only if the governor signs it."
+sources = ["guide", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "unsigned-bill"
+
+[[section.line]]
+text = "From 2014 through 2026, governors pocket vetoed 166 bills and vetoed 180."
+sources = ["lcs-summary"]
+
+[section.line.visual]
+kind = "bars"
+title = "Bills vetoed, 2014 through 2026"
+source = "lcs-summary"
+unit = ""
+labels = ["Pocket vetoed", "Vetoed"]
+values = [166, 180]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Under Amendment 1, a bill not vetoed within 20 days would become law."
+sources = ["guide", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["would by default become law"]
+
+[[section.line]]
+text = "Every veto would also need a written, substantive explanation."
+sources = ["guide", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "veto-letter"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The 2026 General Election Voter Guide does not include a cost estimate for the amendment."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the amendment shows the public why bills are vetoed, and could balance the branches."
+sources = ["arguments"]
+basis = ["Provides greater transparency to the public and the legislature regarding why a governor vetoed a bill.", "Potentially brings greater balance among the branches of government."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Shows the public why a governor vetoed a bill", "Could bring greater balance among the branches"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the amendment is not needed, could be a burden, and leaves the explanation undefined."
+sources = ["arguments"]
+basis = ["This proposed amendment is unnecessary and could be overly burdensome.", "The requirement to provide a \"substantive explanation\" is undefined."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Unnecessary, and could be overly burdensome", "Leaves the required explanation undefined"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for means bills sent in a session's last three days and not acted on would become law."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["would by default become law"]
+
+[[section.line]]
+text = "A vote against means bills sent in a session's last three days and not acted on would not become law."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["the bill does not become law"]

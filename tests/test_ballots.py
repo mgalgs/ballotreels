@@ -186,6 +186,17 @@ class BallotTest(unittest.TestCase):
                           ("For", "Against"), "official-title-summary"))
         self.assertEqual(badge(ar, "Issue 1: X", "1"), "ISSUE")
 
+    def test_new_mexico_uses_its_voter_guides_words(self):
+        nm = BALLOTS["nm"]
+        self.assertEqual((nm.guide, nm.fiscal_label, nm.choices,
+                          nm.card_source_kind),
+                         ("General Election Voter Guide", None,
+                          ("For", "Against"), "official-title-summary"))
+        self.assertEqual(badge(nm, "Constitutional Amendment 1: X", "1"),
+                         "AMENDMENT")
+        self.assertEqual(badge(nm, "Bond Question 1: X", "1"),
+                         "BOND QUESTION")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):

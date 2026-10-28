@@ -1,0 +1,78 @@
+# Archived sources for New Mexico Constitutional Amendment 4 (House Joint
+# Resolution 5, 2026), 2026-11-03 general election. Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Secretary of State's 2026 General Election Voter Guide prints the
+# amendment's ballot title, purpose and arguments for and against;
+# sources/guide-section.pdf is pages 5 and 27 to 32 of it. The guide's
+# reprint of the full text, which begins at the foot of page 32, is a
+# version from before the resolution was amended (its Section 2 says
+# "2028 general election"), so nothing is cited from it: the full text
+# is cited only from the Legislative Council Service's booklet
+# (sources/lcs-section.pdf: its pages 1 to 2 and 22 to 28) and the
+# resolution as passed. The guide prints no fiscal statement; the
+# Legislative Finance Committee's fiscal impact report on the
+# resolution, the Legislature's own bill-stage analysis, is the one
+# official estimate of its cost, and is named as such.
+
+[contest]
+id = "nm-2026-11-03-constitutional-amendment-4"
+election = "nm-2026-11-03"
+division = "ocd-division/country:us/state:nm"
+kind = "measure"
+title = "Constitutional Amendment 4: PROPOSING TO AMEND ARTICLE 4, SECTION 10 OF THE CONSTITUTION OF NEW MEXICO TO ALLOW LEGISLATIVE COMPENSATION THAT IS LIMITED TO THE MEDIAN HOUSEHOLD INCOME FOR NEW MEXICO, TO REQUIRE LEGISLATIVE COMPENSATION TO BE REDUCED IF THE MEDIAN HOUSEHOLD INCOME FOR NEW MEXICO FALLS, TO ALLOW LEGISLATIVE COMPENSATION TO BE INCREASED ONLY IF THE MEDIAN HOUSEHOLD INCOME FOR NEW MEXICO RISES AND TO PROVIDE FOR DELAYED IMPLEMENTATION."
+
+[[source]]
+id = "guide"
+kind = "official-title-summary"
+publisher = "New Mexico Secretary of State, 2026 General Election Voter Guide, Constitutional Amendment 4: ballot title and purpose, pages 5 and 27"
+credit = "New Mexico 2026 General Election Voter Guide"
+url = "https://www.sos.nm.gov/wp-content/uploads/2026/09/2026-Voter-Guide-English.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments for and against Constitutional Amendment 4, by the Legislative Council Service, as printed in the New Mexico Secretary of State's 2026 General Election Voter Guide, pages 28 to 32"
+credit = "Arguments, 2026 General Election Voter Guide"
+url = "https://www.sos.nm.gov/wp-content/uploads/2026/09/2026-Voter-Guide-English.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "lcs-summary"
+kind = "official-title-summary"
+publisher = "New Mexico Legislative Council Service, Summary of and Arguments For and Against the Constitutional Amendments Proposed by the Legislature in 2025 and 2026: Constitutional Amendment 4, summary and background, pages 1 to 2 and 23 to 24"
+credit = "Legislative Council Service, Constitutional Amendments 2025 and 2026"
+url = "https://www.nmlegis.gov/Publications/New_Mexico_State_Government/Constitutional_Amendment/Constitutional_Amendments_2026.pdf"
+file = "sources/lcs-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full text of House Joint Resolution 5 (2026), Constitutional Amendment 4, in the New Mexico Legislative Council Service's Summary of and Arguments For and Against the Constitutional Amendments Proposed by the Legislature in 2025 and 2026, page 22"
+credit = "House Joint Resolution 5, Legislative Council Service"
+url = "https://www.nmlegis.gov/Publications/New_Mexico_State_Government/Constitutional_Amendment/Constitutional_Amendments_2026.pdf"
+file = "sources/lcs-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "New Mexico Legislature, House Joint Resolution 5, 57th Legislature, Second Session, 2026, as passed"
+credit = "House Joint Resolution 5, as passed"
+url = "https://www.nmlegis.gov/Sessions/26%20Regular/final/HJR05.pdf"
+file = "sources/hjr05-2026-final.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fir"
+kind = "official-fiscal-analysis"
+publisher = "New Mexico Legislative Finance Committee, Fiscal Impact Report on House Joint Resolution 5 (2026), as amended, February 16, 2026"
+credit = "Legislative Finance Committee, Fiscal Impact Report"
+url = "https://www.nmlegis.gov/Sessions/26%20Regular/firs/HJR05.PDF"
+file = "sources/hjr05-2026-lfc-fir.pdf"
+retrieved = "2026-10-27"

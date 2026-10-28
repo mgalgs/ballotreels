@@ -1,0 +1,74 @@
+# Archived sources for New Mexico Constitutional Amendment 2 (Senate Joint
+# Resolution 1, 2026), 2026-11-03 general election. Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Secretary of State's 2026 General Election Voter Guide prints the
+# amendment's ballot title, purpose, arguments for and against and full
+# text; sources/guide-section.pdf is pages 5 and 13 to 19 of it. As for
+# the other amendments, the full text is cited only from the Legislative
+# Council Service's booklet (sources/lcs-section.pdf: its pages 1 to 2
+# and 9 to 14) and the resolution as passed. The Legislative Finance
+# Committee's report (whose "November 2027" for the next general
+# election is a slip) finds only election costs and is cited nowhere.
+
+[contest]
+id = "nm-2026-11-03-constitutional-amendment-2"
+election = "nm-2026-11-03"
+division = "ocd-division/country:us/state:nm"
+kind = "measure"
+title = "Constitutional Amendment 2: PROPOSING TO AMEND ARTICLE 7, SECTION 1 OF THE CONSTITUTION OF NEW MEXICO TO REMOVE THE REQUIREMENT THAT SCHOOL ELECTIONS BE SEPARATE FROM PARTISAN ELECTIONS."
+
+[[source]]
+id = "guide"
+kind = "official-title-summary"
+publisher = "New Mexico Secretary of State, 2026 General Election Voter Guide, Constitutional Amendment 2: ballot title and purpose, pages 5 and 13"
+credit = "New Mexico 2026 General Election Voter Guide"
+url = "https://www.sos.nm.gov/wp-content/uploads/2026/09/2026-Voter-Guide-English.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments for and against Constitutional Amendment 2, by the Legislative Council Service, as printed in the New Mexico Secretary of State's 2026 General Election Voter Guide, pages 14 to 18"
+credit = "Arguments, 2026 General Election Voter Guide"
+url = "https://www.sos.nm.gov/wp-content/uploads/2026/09/2026-Voter-Guide-English.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "lcs-summary"
+kind = "official-title-summary"
+publisher = "New Mexico Legislative Council Service, Summary of and Arguments For and Against the Constitutional Amendments Proposed by the Legislature in 2025 and 2026: Constitutional Amendment 2, summary and background, pages 1 to 2 and 10"
+credit = "Legislative Council Service, Constitutional Amendments 2025 and 2026"
+url = "https://www.nmlegis.gov/Publications/New_Mexico_State_Government/Constitutional_Amendment/Constitutional_Amendments_2026.pdf"
+file = "sources/lcs-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full text of Senate Joint Resolution 1 (2026), Constitutional Amendment 2, in the New Mexico Legislative Council Service's Summary of and Arguments For and Against the Constitutional Amendments Proposed by the Legislature in 2025 and 2026, page 9"
+credit = "Senate Joint Resolution 1, Legislative Council Service"
+url = "https://www.nmlegis.gov/Publications/New_Mexico_State_Government/Constitutional_Amendment/Constitutional_Amendments_2026.pdf"
+file = "sources/lcs-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "New Mexico Legislature, Senate Joint Resolution 1, 57th Legislature, Second Session, 2026, as passed"
+credit = "Senate Joint Resolution 1, as passed"
+url = "https://www.nmlegis.gov/Sessions/26%20Regular/final/SJR01.pdf"
+file = "sources/sjr01-2026-final.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fir"
+kind = "official-report"
+publisher = "New Mexico Legislative Finance Committee, Fiscal Impact Report on Senate Joint Resolution 1 (2026)"
+credit = "Legislative Finance Committee"
+url = "https://www.nmlegis.gov/Sessions/26%20Regular/firs/SJR01.PDF"
+file = "sources/sjr01-2026-lfc-fir.pdf"
+retrieved = "2026-10-27"

@@ -626,8 +626,10 @@ def check_card(c: Contest) -> list[Failure]:
              f"the card's quotes: {e}")
         return out
     for key, value in card.quoted():
+        # a hyphen may be missing where pdftotext joined a word hyphenated
+        # across a line break ("eighty-" / "two" -> "eightytwo")
         if isinstance(value, str) and value.strip() \
-                and _normalise(value) not in archived \
+                and not _in_text(value, archived) \
                 and not _in_raw_columns(value, path):
             fail(f"{key!r} does not appear verbatim in source "
                  f"{card.source!r} ({src.file})")
