@@ -1,0 +1,15 @@
+# "Ballot at a glance" figures for the 2026-11-03 Utah general election
+# (docs/SCRIPT-FORMAT.md, "glance.toml"), quoted from the "Fiscal
+# Effects" in the Voter Information Pamphlet's Impartial Analysis.
+
+[amendment-a]
+source = "analysis"
+quote = "If approved, Constitutional Amendment A, together with H.B. 481, could reduce state costs by up to $1.4 million every two years, based on recent estimates."
+amount = 1400000
+period = "every 2 years"
+direction = "savings"
+
+[amendment-b]
+source = "analysis"
+status = "no-material-impact"
+quote = "Enactment of Constitutional Amendment B likely would not materially impact current state revenues or expenditures."
