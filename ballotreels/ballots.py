@@ -107,6 +107,18 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label="Fiscal Note",
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+    # Rhode Island's Secretary of State prints each bond question's
+    # ballot label, its "Your vote to “Approve” means" and "Your vote to
+    # “Reject” means" lines, its explanation and its cost in the "Voter
+    # Information Handbook" ("Rhode Island Voter Information Handbook
+    # 2026" in its page footers). Each question is "Question 1" (badge
+    # QUESTION, from the title's designation), its cost table is headed
+    # "Total cost:", and the ballot prints the choices "Approve" and
+    # "Reject".
+    "ri": Ballot(guide="Voter Information Handbook",
+                 fiscal_label="Total cost:",
+                 choices=("Approve", "Reject"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
