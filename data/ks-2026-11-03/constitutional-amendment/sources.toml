@@ -1,0 +1,74 @@
+# Archived sources for Kansas's constitutional amendment on voter
+# citizenship, 2026-11-03 general election. Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Kansas prints no voter pamphlet. The official statement is the ballot
+# itself: the Secretary of State's one-page ballot carries the
+# explanatory statement and the "A vote for / A vote against this
+# proposition" lines that House Concurrent Resolution No. 5004 (Sec. 2)
+# orders printed on it, the question and the amended section, so the
+# card quotes it. The Secretary of State's web page prints the same
+# words. The ballot strikes deleted words and italicises new ones, which
+# pdftotext loses; no line quotes the amended section from its text.
+#
+# The enrolled resolution is the current copy (created 2026-09-08), whose
+# explanatory statement matches the ballot; an earlier copy of April 2,
+# 2025, not archived, differs from it. The Legislative Research
+# Department's Supplemental Note and 2025 Summary of Legislation state
+# the section's current wording; supplemental notes "do not express
+# legislative intent". Kansas has no official arguments for or against an
+# amendment, and no fiscal note was available when the House Committee
+# acted.
+
+[contest]
+id = "ks-2026-11-03-constitutional-amendment"
+election = "ks-2026-11-03"
+division = "ocd-division/country:us/state:ks"
+kind = "measure"
+title = "Constitutional Amendment: Citizenship Requirement for Voting"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "Kansas Secretary of State, State of Kansas Official General Election Ballot, Constitutional Amendment, November 3, 2026"
+credit = "Kansas Secretary of State, Official General Election Ballot"
+url = "https://sos.ks.gov/elections/26elec/2026-General-Election-Constitutional-Amendment-Citizen-Clarification.pdf"
+file = "sources/sos-ballot-constitutional-amendment.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "sos-page"
+kind = "official-title-summary"
+publisher = "Kansas Secretary of State, Proposed Constitutional Amendments: 2026 General Election Constitutional Amendment"
+credit = "Kansas Secretary of State"
+url = "https://sos.ks.gov/elections/proposed-constitutional-amendments.html"
+file = "sources/sos-proposed-constitutional-amendments.html"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Kansas Legislature, House Concurrent Resolution No. 5004 (2025 Session), enrolled"
+credit = "Kansas Legislature, HCR 5004"
+url = "https://kslegislature.gov/b2025_26/bills/download/?apn=b2025_26/year2/ready_for_publication/hcr_5004/hcr5004_enrolled.pdf"
+file = "sources/hcr5004-enrolled.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "supplemental-note"
+kind = "official-title-summary"
+publisher = "Kansas Legislative Research Department, Supplemental Note on House Concurrent Resolution No. 5004, Session of 2025, as amended by House Committee on Elections"
+credit = "Kansas Legislative Research Department, Supplemental Note"
+url = "https://www.kslegislature.gov/b2025_26/bills/download/?apn=b2025_26%2Fds_docs_li%2Fsupp_note_hcr5004_01_0000.pdf"
+file = "sources/hcr5004-supplemental-note.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "klrd-summary"
+kind = "official-title-summary"
+publisher = "Kansas Legislative Research Department, 2025 Summary of Legislation: Citizenship Requirement for Voting; HCR 5004"
+credit = "Kansas Legislative Research Department, 2025 Summary of Legislation"
+url = "https://kslegislature.gov/b2025_26/bills/download/?apn=b2025_26%2Fds_docs_li%2Fsummary_hcr_5004_2025.pdf"
+file = "sources/hcr5004-klrd-summary.pdf"
+retrieved = "2026-10-27"

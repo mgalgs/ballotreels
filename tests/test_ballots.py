@@ -367,6 +367,13 @@ class LouisianaStatementsStitchTest(unittest.TestCase):
         # "Amendment No. 1: Citizenship Requirement ...", as the ballot heads it
         self.assertEqual(badge(wv, "Amendment No. 1: X", "1"), "AMENDMENT")
 
+    def test_kansas_uses_its_ballots_words(self):
+        ks = BALLOTS["ks"]
+        self.assertEqual((ks.guide, ks.fiscal_label, ks.choices,
+                          ks.card_source_kind),
+                         ("Official General Election Ballot", None,
+                          ("Yes", "No"), "official-title-summary"))
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):

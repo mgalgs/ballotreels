@@ -323,6 +323,20 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label=None,
                  choices=("For", "Against"),
                  card_source_kind="official-title-summary"),
+
+    # Kansas has no voter pamphlet. Its one official statement is the
+    # ballot itself, the Secretary of State's "State of Kansas Official
+    # General Election Ballot" for the amendment: the explanatory
+    # statement and "A vote for / A vote against this proposition" lines
+    # House Concurrent Resolution No. 5004 orders printed on it, the
+    # question "Shall the following be adopted?", the amended section and
+    # the choices "Yes" and "No". It prints no fiscal statement. The
+    # ballot heads the amendment only "Constitutional Amendment", with no
+    # number, so its card has no number and draws no badge.
+    "ks": Ballot(guide="Official General Election Ballot",
+                 fiscal_label=None,
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
