@@ -329,3 +329,12 @@ status = "none-printed"
 [banning-measure-v]
 source = "impartial-analysis"
 status = "none-printed"
+
+# City of Banning Measure W: the guide prints no fiscal analysis; the one
+# figure is the public benefits its ballot question gives the
+# development agreement.
+[banning-measure-w]
+source = "ballot"
+quote = "over $40,000,000 in public benefits"
+amount = 40000000
+period = "unstated"

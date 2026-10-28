@@ -1,0 +1,154 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; how a council ordinance came to the ballot (a referendum
+# petition); what the agreement would do (rights for the owner, land
+# and payments for the city, and the credit the owner may claim); no
+# cost estimate, and the ballot's own public-benefits figure; one line
+# per side; what a vote does.
+#
+# The guide prints no fiscal analysis, and neither the ordinance nor the
+# agreement was archived; the City Attorney's Impartial Analysis is the
+# neutral explanation. It names no total for the payments and gives no
+# city budget, so the ballot's $40 million and the analysis's $2 million
+# credit have no scale (STANDARD.md 6.5; left open). This analysis does
+# not name the Sunset Crossroads project (Measure U's and V's do), so
+# this script does not either; the arguments' project figures stay in
+# the sides. The card is the sample ballot's question; see
+# sources.toml for its joined pages. The vote lines take their words
+# from the Impartial Analysis.
+#
+# Sides come from the argument in favor and the argument against, not
+# the rebuttals.
+
+contest = "ca-2026-11-03-banning-measure-w"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot"
+number = "W"
+title = "CITY OF BANNING"
+origin = "SAMPLE BALLOT"
+summary = "Shall Ordinance No.1620, approving a development agreement with NP Banning Industrial to develop a master planned project including commercial and industrial uses, various public facilities with on and off-site related improvements subject to the terms of the agreement which includes dedicating over 68 acres of land to the City for open space, a fire station, parks, and public utilities and over $40,000,000 in public benefits to the City, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure W"
+
+[[section.line]]
+text = "City of Banning Measure W asks voters in the city whether to approve a development agreement for a master planned project of commercial and industrial uses."
+sources = ["ballot", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["approving a development agreement"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The City Council approved the agreement in April 2026."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section.line]]
+text = "Voters then signed a referendum petition, so the agreement takes effect only if voters approve it."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The agreement would give the property owner set rights to develop, in exchange for public benefits."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bargaining-table"
+
+[[section.line]]
+text = "The owner would give the city land for open space, a park and a fire station, and pay toward roads, a fire station and an electrical substation."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "project-site"
+
+[[section.line]]
+text = "The owner could count up to $2 million of sales tax from the property against those benefits."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Riverside County guide does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section.line]]
+text = "The ballot question says the agreement includes over $40 million in public benefits to the city."
+sources = ["ballot"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the agreement guarantees more than $40 million in public benefits, and nearly $3 million a year for the city."
+sources = ["arguments"]
+basis = ["$40 million in public benefits for the City, along with land for parks and", "Yes on W also generates nearly $3 million in annual revenue for the City"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["More than $40 million in public benefits", "Nearly $3 million a year for the city"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say it gives the developer a 30-year deal for nearly 5 million square feet of warehouses, which Banning cannot change alone."
+sources = ["arguments"]
+basis = ["It gives an out-of-state developer a 30-year deal for nearly 5 million", "The world will change over the next 30 years. But Banning can’t change"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["A 30-year deal for the developer", "Banning cannot change it on its own"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means Ordinance 1620 and the development agreement will take effect."
+sources = ["impartial-analysis", "ballot"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["Shall Ordinance No.1620"]
+
+[[section.line]]
+text = "A no vote means Ordinance 1620 and the development agreement will not take effect."
+sources = ["impartial-analysis", "ballot"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["Shall Ordinance No.1620"]
