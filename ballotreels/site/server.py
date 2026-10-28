@@ -404,6 +404,9 @@ class _JsonHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-Type", content_type)
         self.send_header("Content-Length", str(len(data)))
+        # Unversioned URLs: without this a browser may keep serving the
+        # style.css or app.js from before a deploy.
+        self.send_header("Cache-Control", "no-cache")
         self.end_headers()
         if self.command != "HEAD":
             self.wfile.write(data)

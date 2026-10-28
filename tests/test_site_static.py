@@ -35,6 +35,7 @@ class StaticFilesTest(ServerTestCase):
         resp, body = self.get(self.public_port, "/static/style.css")
         self.assertEqual(resp.status, 200)
         self.assertIn("text/css", resp.getheader("Content-Type"))
+        self.assertEqual(resp.getheader("Cache-Control"), "no-cache")
 
     def test_static_traversal(self):
         resp, body = self.get(self.public_port, "/static/../server.py")
