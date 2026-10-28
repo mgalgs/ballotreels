@@ -283,3 +283,12 @@ status = "none-printed"
 [coronado-measure-d]
 source = "guide-page"
 status = "none-printed"
+
+# City of Rancho Mirage Measure R: the Riverside County guide prints no
+# fiscal analysis or tax rate statement; the one estimate is the city's,
+# in the City Attorney's Impartial Analysis (and the ballot question).
+[rancho-mirage-measure-r]
+source = "analysis"
+quote = "The City estimates that the Measure could generate approximately $7,500,000 annually in additional revenue."
+amount = 7500000
+period = "per-year"
