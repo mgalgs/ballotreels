@@ -283,3 +283,11 @@ source = "impartial-analysis"
 quote = "the City has determined that Measure K would generate approximately $200,000 annually beginning in 2027, $300,000 annually beginning in 2029, and approximately $400,000 annually upon full implementation beginning in 2030."
 amount = 400000
 period = "per-year"
+
+# City of Needles Measure L: the Tax Rate Statement's total debt service
+# (the bonds are $11,200,000).
+[needles-measure-l]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $25.16 million."
+amount = 25160000
+period = "unstated"

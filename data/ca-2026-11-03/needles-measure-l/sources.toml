@@ -1,0 +1,74 @@
+# Archived sources for City of Needles Measure L, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Bernardino County Registrar of Voters' Voter Information Guide; "page"
+# is the guide's printed footer number (its PDF pages are two higher).
+#
+# The guide prints no ballot question. The question is in the City
+# Council's ordinance (its Section 7, "Ballot Proposition"), but the
+# ordinance's text runs a document footer into the middle of it, so no
+# card can quote it verbatim; the card quotes the guide's own page
+# instead: the City Attorney's Impartial Analysis and its yes/no
+# statements.
+
+[contest]
+id = "ca-2026-11-03-needles-measure-l"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:needles"
+kind = "measure"
+title = "City of Needles Measure L: $11,200,000 in General Obligation Bonds for Streets, Parks and Public Infrastructure"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "San Bernardino County Registrar of Voters, Voter Information Guide, page SB COMPREHENSIVE-230: City Attorney's Impartial Analysis of Bond Measure L"
+credit = "City Attorney's Impartial Analysis, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp232-235.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Bond Measure L, as printed in the San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-230 to 231"
+credit = "Argument in favor, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp232-235.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Tax Rate Statement for Bond Measure L, San Bernardino County Voter Information Guide, page SB COMPREHENSIVE-231"
+credit = "Tax Rate Statement, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp232-235.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "full-text"
+kind = "official-text"
+publisher = "Full Text for Bond Measure L, San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-231 to 233"
+credit = "Full text of Measure L, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp232-235.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ordinance"
+kind = "official-text"
+publisher = "City of Needles, Ordinance 684-AC, ordering the submission of a proposition incurring bonded indebtedness, as posted by the San Bernardino County Registrar of Voters"
+credit = "City of Needles Ordinance 684-AC"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofNeedles/30/FT_CityofNeedles.pdf"
+file = "sources/FT_CityofNeedles.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City of Needles, Resolution 2026-30, determining the necessity of issuing general obligation bonds for municipal improvements, as posted by the San Bernardino County Registrar of Voters"
+credit = "City of Needles Resolution 2026-30"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofNeedles/30/RES_CityofNeedles.pdf"
+file = "sources/RES_CityofNeedles.pdf"
+retrieved = "2026-10-28"
