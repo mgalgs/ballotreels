@@ -31,6 +31,9 @@ stale; they are regenerated on next request.
 1. **Location to divisions.** An address resolves to an exact set of
    divisions. A zip code may span several, so the UI shows a map of the
    candidate districts and asks the user to pick, or to enter an address.
+   A zip's cities and school districts are never asked about: the ballot
+   lists every one overlapping it, marking those that cover only part
+   of it (see "Local contests" below).
 2. **Divisions to contests.** For each division, the contests on this
    election's ballot.
 3. **Sources.** For each contest, fetch and archive the primary
@@ -79,6 +82,61 @@ is and never asks the TTS again. A stale one fails the job, asking for
 it to be re-narrated on the host: the worker never re-makes a committed
 narration, since `say` re-speaks an edited line and the unchanged line
 after it (its context), and any new take can fail the transcript check.
+
+## Local contests
+
+A ballot's divisions run, in ballot order: the state, the congressional
+district, the state senate and house (or assembly) districts, then the
+local ones: the **county**, the **city** and the **school district**.
+Their OCD-IDs are the state's followed by the level and the name, lower
+case, spaces as underscores, nothing but letters, digits and `. _ ~ -`:
+
+    ocd-division/country:us/state:ca/county:san_diego
+    ocd-division/country:us/state:ca/place:san_diego
+    ocd-division/country:us/state:ca/school_district:san_diego_unified_school_district
+
+A city is a TIGER/Line incorporated place (a census-designated place
+has no government, and so no measures); its name is TIGER's (`San
+Diego`, shown as "City of San Diego"). A school district is a unified,
+elementary or secondary one, named as TIGER names it ("San Diego
+Unified School District"); an address in both an elementary and a
+secondary district is in both.
+
+Local contests live in the state's election directory beside the
+statewide ones, listed in its `contests.toml` like any other, with
+their own division: the same election, the same ballot. A contest's id
+starts with its jurisdiction, so its directory name is unique and
+readable (`sd-county-measure-a`, `san-diego-city-measure-b`,
+`helix-water-measure-c`), and local measure numbers are letters.
+
+**Zips.** The Census publishes ZCTA relationship files for
+congressional districts and counties but none for cities or school
+districts, so `geo build` measures each zip's share of every city and
+school district from the shapes themselves, along horizontal lines
+about 220 m apart. A district covering under 1% of a zip is left off it
+(the zip and district outlines come from different years' boundaries,
+which may disagree by a sliver); one covering under 99% of it is
+listed in the zip's `partial`. A zip split between counties asks which,
+as for any district; a zip's cities and school districts are not asked
+about. The ballot lists the contests of every one overlapping the zip,
+and those of a `partial` one say "May be on your ballot, depending on
+your address." An address resolves them exactly (the Census Geocoder's
+incorporated places and school district layers), so its ballot marks
+none.
+
+**Special districts.** A water, fire, health care, community services
+or community college district has no free statewide boundary layer.
+Its contest's division is its county, and its `sources.toml` names who
+votes on it in `voters` ("the Helix Water District"): the site's ballot
+and contest page and the film's card say "Only voters in the Helix
+Water District vote on this.", so no one takes it for a measure every
+voter in the county gets. A county's own measure has an id of the form
+`<county>-county-measure-<letter>`; any other measure under a county
+must have `voters`, which both `check` and the contest index enforce
+(docs/SCRIPT-FORMAT.md).
+
+The crash course stays statewide: its members are the state's own
+measures, never a local one.
 
 ## The crash course
 
@@ -147,15 +205,16 @@ measure each is cited for.
 
 ## Data sources (pilot: California, free sources only)
 
-The pilot covers federal, state-legislative and statewide contests.
-County, city and school contests need a paid sample-ballot source and
-are out of scope until one is chosen.
+The pilot covers federal, state-legislative and statewide contests,
+and local measures (county, city, school district and special
+district) from each county's own official sources, added by hand per
+county.
 
 | Need | Source |
 |---|---|
-| District shapes for the map | Census TIGER/Line: congressional districts, state legislative districts (upper and lower), counties, places |
+| District shapes for the map | Census TIGER/Line: congressional districts, state legislative districts (upper and lower), counties, incorporated places, unified, elementary and secondary school districts |
 | Address to districts | Census Geocoder (free, no key; returns the districts above for an address). Google Civic Information divisions endpoint as a cross-check and for OCD-IDs |
-| Zip to candidate districts | Census ZCTA relationship files, intersected with the TIGER shapes |
+| Zip to candidate districts | Census ZCTA relationship files, intersected with the TIGER shapes; for cities and school districts, which have none, the ZCTA shapes measured against theirs |
 | Statewide measures: title, summary, text, fiscal analysis, arguments | California Secretary of State official voter information guide (the analysis there is the Legislative Analyst's Office's) |
 | Certified candidate list, ballot designations | California Secretary of State certified list of candidates |
 | Federal candidates, filings | FEC API |

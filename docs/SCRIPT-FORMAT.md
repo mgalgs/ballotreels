@@ -15,6 +15,7 @@ election = "ca-2026-11-03"
 division = "ocd-division/country:us/state:ca"
 kind = "measure"                     # or "race"
 title = "..."
+voters = "the Helix Water District"  # only for a measure voted on in part of its county
 
 [[source]]
 id = "lao-analysis"                  # what script lines cite
@@ -25,6 +26,31 @@ url = "..."
 file = "sources/analysis.html"       # the archived copy, relative to the contest dir
 retrieved = "2026-10-24"
 ```
+
+`division` is the OCD-ID of the jurisdiction that votes on the contest:
+the state's, a congressional or legislative district's, or a local
+one's, a county's (`.../county:san_diego`), a city's
+(`.../place:san_diego`) or a school district's
+(`.../school_district:san_diego_unified_school_district`)
+(docs/ARCHITECTURE.md, "Local contests").
+
+`voters` names who votes on a measure whose division is a county but
+that only part of the county votes on: a special district's (water,
+fire, health care, community services, community college), which has no
+boundary layer of its own. It is said inside a sentence, "Only voters in
+<voters> vote on this.", on the site's ballot and contest page and over
+the top of the film's card, so it starts as that sentence needs ("the
+Helix Water District") and has no closing period. `check` fails a
+contest:
+
+- whose division is a county, that is a measure, whose id (less the
+  election's) is not `<county>-county-measure-<letter>` (a county's own,
+  voted on countywide: `sd-county-measure-a`), and that has no `voters`;
+- that has `voters` but whose division is not a county;
+- that has `voters` but no `[card]` to show it on.
+
+The contest index refuses the same missing or misplaced `voters`, so
+the site never lists such a measure as on every ballot in its county.
 
 Allowed source kinds (STANDARD.md section 1): `official-title-summary`,
 `official-fiscal-analysis`, `official-argument`, `official-text`,
