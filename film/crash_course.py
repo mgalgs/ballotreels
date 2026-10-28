@@ -1,6 +1,7 @@
 """The state crash course film, template version 2 (ballotreels.crash_course).
 
     python -m ballotreels render data/ut-2026-11-03 --format 9x16
+    python -m ballotreels render data/ut-2026-11-03 --format 16x9
     BALLOTREELS_CRASH_COURSE=data/ut-2026-11-03 python film/crash_course.py sheet
 
 One video through every statewide measure on a state's ballot, in
@@ -27,7 +28,15 @@ over from the sections the slot skips: no page fading out from the one
 before, no caption, pencil or countdown ring of another section (Part
 below). On every frame, the link under the caption is the state's page
 (ballotreels.org/<st>/<year>), where the crash course is shown, not a
-measure's own. Phone-first: 9:16 only.
+measure's own.
+
+Phone-first: 9:16 is the default format, and the only one the pipeline
+renders. The 16:9 format, for YouTube, is rendered from the command line
+only. It has the same frames, sound and chapters: each slot replays the
+member film's own 16x9 plan, and the opening card and sources pages are
+laid out for landscape, the sources pages being 9:16's pages (so each
+comes on at the same moment), with two or more groups set in two columns.
+The drawing sounds stay the 9x16 schedule's, as the measure film's do.
 """
 import os
 import sys
@@ -91,18 +100,20 @@ def load_member(member):
 
 FILMS = tuple(load_member(m) for m in COURSE.members)
 T = FILMS[0]  # the template's helpers and layout, the same in every member's film
-FMT = '9x16'
-L = T.LAYOUTS[FMT]
+# 9x16 first: the default, and the only one the pipeline renders; 16x9 is
+# rendered from the command line (`render <election-dir> --format 16x9`)
+FORMATS = ('9x16', '16x9')
 
 
 class Part:
-    """One replayed section of a member's film: its plan (the film's own,
-    PLANS) cut down to what is on the page within frames [start, end) of
-    that film, so nothing from the sections the slot skips shows. `hold`:
-    the frame held after the part, with no caption, pencil or ring."""
+    """One replayed section of a member's film: its plan for `fmt` (the
+    film's own, PLANS) cut down to what is on the page within frames
+    [start, end) of that film, so nothing from the sections the slot skips
+    shows. `hold`: the frame held after the part, with no caption, pencil
+    or ring."""
 
-    def __init__(self, mod, part, hold=False):
-        P = mod.PLANS[FMT]
+    def __init__(self, mod, part, fmt, hold=False):
+        P = mod.PLANS[fmt]
         a, b = part.start, part.end
         groups = [g for g in P['groups']
                   if g.f0 < b and (g.out is None or g.out > a)]
@@ -128,13 +139,15 @@ class Part:
             self.mod.PAGE_SPANS = self.own_spans
 
 
-# (member film, its parts' views, and the view holding the last frame)
-SLOTS = [(mod, [Part(mod, p) for p in m.parts], Part(mod, m.parts[-1], hold=True))
-         for m, mod in zip(COURSE.members, FILMS)]
+def slots(fmt):
+    """Each slot's (member film, its parts' views, and the view holding the
+    last frame), in `fmt`."""
+    return [(mod, [Part(mod, p, fmt) for p in m.parts], Part(mod, m.parts[-1], fmt, hold=True))
+            for m, mod in zip(COURSE.members, FILMS)]
 
 
 # ---- the opening card: on screen only ----
-def heading_items(words, f0, y, fnt=None):
+def heading_items(L, words, f0, y, fnt=None):
     """A heading written on centred at `y`, underlined in the headings'
     orange, as the measure film's sources card heads itself."""
     fnt = fnt or L['heading_font']
@@ -147,18 +160,19 @@ def heading_items(words, f0, y, fnt=None):
     return items, f + 10, hbox
 
 
-def opening_card():
+def opening_card(L):
     """The state's name, "N statewide measures" and the election's date,
     centred on the stage: words from the contest index, nothing else."""
     st = L['stage']
+    u = L['u']
     big = T.font(L['heading_font'].size * 1.4, 700)
-    mid = T.font(72, family=T.PRINT)
-    small = T.font(60, family=T.PRINT)
+    mid = T.font(72 * u, family=T.PRINT)
+    small = T.font(60 * u, family=T.PRINT)
     lh_big, lh_mid, lh_small = (text.line_height(f) for f in (big, mid, small))
-    gap = 36 * L['u']
+    gap = 36 * u
     total = lh_big + 14 + gap + lh_mid + gap * 0.5 + lh_small
     y = st.y + (st.h - total) / 2
-    items, f, hbox = heading_items(COURSE.state_name, 4, y, big)
+    items, f, hbox = heading_items(L, COURSE.state_name, 4, y, big)
     y = hbox.bottom + 14 + gap
     more, f, _ = T.write_lines(f, [COURSE.headline], mid, st.x, y, align='center', width=st.w)
     items += more
@@ -175,6 +189,7 @@ SOURCES_PAGE = to_frame(SOURCES_CARD_SECONDS, FPS)  # each page's frames
 GROUP_GAP = 0.9   # between two measures' groups, at least, in line heights
 TITLE_GAP = 0.25  # under a measure's title, in line heights
 PACK_SCALE = 0.8  # the type size, of the sources card's largest, pages are packed at
+COLUMN_GAP = 80   # px between a 16x9 page's two columns, before L['u']
 
 
 def title_font(sf):
@@ -197,15 +212,19 @@ def group_height(member, sf, width):
             + sum(len(b) for b in blocks) * lh + T.SOURCES_GAP * lh * (len(blocks) - 1))
 
 
-def room():
-    _, _, hbox = heading_items('Sources', 0, L['heading'].y + 6)
+def room(L):
+    _, _, hbox = heading_items(L, 'Sources', 0, L['heading'].y + 6)
     return T.sources_room(L, hbox)
 
 
 def pack_pages():
     """The members' groups, in ballot order, packed onto pages: as many to a
-    page as fit at PACK_SCALE of the card's largest type."""
-    box = room()
+    page as fit at PACK_SCALE of the card's largest type, in 9x16. The
+    16x9 card has the same pages, so both formats are the same length and
+    each page comes on at the same moment (sources_page lays a landscape
+    page out in two columns)."""
+    L = T.LAYOUTS['9x16']
+    box = room(L)
     sf = T.font(L['sources_font'].size * PACK_SCALE, family=T.PRINT)
     gap = GROUP_GAP * text.line_height(sf)
     pages_, page, used = [], [], 0.0
@@ -220,13 +239,33 @@ def pack_pages():
     return pages_
 
 
-def sources_page(members, f0, k, of):
+def columns(L, members, box):
+    """A page's groups split into columns, each [(x, width, members)]: one
+    column the stage's width in 9x16; in 16x9, a page of two or more groups
+    goes in two side by side, split in ballot order where the taller of
+    the two is least."""
+    if L['W'] < L['H'] or len(members) < 2:
+        return [(box.x, box.w, members)]
+    gap = COLUMN_GAP * L['u']
+    w = (box.w - gap) / 2
+    sf = L['sources_font']
+    g = GROUP_GAP * text.line_height(sf)
+
+    def height(ms):
+        return sum(group_height(m, sf, w) for m in ms) + g * (len(ms) - 1)
+
+    k = min(range(1, len(members)),
+            key=lambda k: max(height(members[:k]), height(members[k:])))
+    return [(box.x, w, members[:k]), (box.x + w + gap, w, members[k:])]
+
+
+def sources_page(L, members, f0, k, of):
     """One page of the sources card: 'Sources' as its heading (with "k of
     n" under it when there are several), and each measure's title over
     its sources, numbered, at the largest type up to the card's that fits,
-    the room left shared out between the groups."""
+    the room left shared out between the groups (columns)."""
     hb = L['heading']
-    items, f, hbox = heading_items('Sources', f0, hb.y + 6)
+    items, f, hbox = heading_items(L, 'Sources', f0, hb.y + 6)
     marks = [T.Mark('heading', hbox)]
     box = T.sources_room(L, hbox)
     if of > 1:
@@ -234,34 +273,42 @@ def sources_page(members, f0, k, of):
         more, _, _ = T.write_lines(f, [f'{k} of {of}'], nf, box.x, box.y - text.line_height(nf) - 6,
                                    align='right', width=box.w, speed=2)
         items += more
+    cols = columns(L, members, box)
     sf = L['sources_font']
     while True:
         lh = text.line_height(sf)
         gap = GROUP_GAP * lh
-        total = sum(group_height(m, sf, box.w) for m in members) + gap * (len(members) - 1)
+        heights = [sum(group_height(m, sf, w) for m in ms) + gap * (len(ms) - 1) for _, w, ms in cols]
+        total = max(heights)
         if total <= box.h or sf.size < 22:
             break
         sf = T.font(sf.size * 0.97, family=T.PRINT)
-    share = max(0, box.h - total) / (len(members) + 1)
-    y = box.y + share
-    top = y
+    # the tallest column's spare room, shared out between its groups; the
+    # other column (16x9) starts level with it, spaced alike
+    tallest = cols[heights.index(total)][2]
+    share = max(0, box.h - total) / (len(tallest) + 1)
+    top = box.y + share
+    bottom = top
     tf = title_font(sf)
-    for m in members:
-        title, num_w, blocks = group_lines(m, sf, box.w)
-        more, f, tbox = T.write_lines(f, title, tf, box.x, y, speed=2.2)
-        items += more
-        y = tbox.bottom + TITLE_GAP * lh
-        for i, lines in enumerate(blocks):
-            ni, _, _ = T.write_lines(f, [f'{i + 1}.'], sf, box.x, y, speed=2)
-            items += ni
-            li, f, _ = T.write_lines(f + 2, lines, sf, box.x + num_w, y, speed=2.2)
-            items += li
-            y += len(lines) * lh + T.SOURCES_GAP * lh
-            f += 3
-        y += gap + share - T.SOURCES_GAP * lh
+    for x, w, ms in cols:
+        y = top
+        for m in ms:
+            title, num_w, blocks = group_lines(m, sf, w)
+            more, f, tbox = T.write_lines(f, title, tf, x, y, speed=2.2)
+            items += more
+            y = tbox.bottom + TITLE_GAP * lh
+            for i, lines in enumerate(blocks):
+                ni, _, _ = T.write_lines(f, [f'{i + 1}.'], sf, x, y, speed=2)
+                items += ni
+                li, f, _ = T.write_lines(f + 2, lines, sf, x + num_w, y, speed=2.2)
+                items += li
+                y += len(lines) * lh + T.SOURCES_GAP * lh
+                f += 3
+            y += gap + share - T.SOURCES_GAP * lh
+        bottom = max(bottom, y)
     # every page's writing done well inside its time on screen
     items = T.scaled(items, f0, SOURCES_PAGE * 0.6)
-    marks.append(T.Mark('sources', Box(box.x, top, box.w, max(1, y - share - gap - top))))
+    marks.append(T.Mark('sources', Box(box.x, top, box.w, max(1, bottom - share - gap - top))))
     return items, marks
 
 
@@ -269,45 +316,48 @@ PAGES = pack_pages()
 FRAMES = COURSE.slots_end + SOURCES_PAGE * len(PAGES)
 
 
-def build():
-    """The film's own groups: the opening card, and the sources pages, each
-    page fading out as the next comes on."""
-    groups = [T.Group(opening_card(), [], 0, COURSE.opening - T.FADE)]
+def build(L):
+    """The film's own groups in L's format: the opening card, and the
+    sources pages, each page fading out as the next comes on."""
+    groups = [T.Group(opening_card(L), [], 0, COURSE.opening - T.FADE)]
     for k, members in enumerate(PAGES):
         f0 = COURSE.slots_end + k * SOURCES_PAGE
-        items, marks = sources_page(members, f0 + 8, k + 1, len(PAGES))
+        items, marks = sources_page(L, members, f0 + 8, k + 1, len(PAGES))
         last = k + 1 == len(PAGES)
         groups.append(T.Group(items, marks, f0, None if last else f0 + SOURCES_PAGE - T.FADE))
     schedule = sorted((it for g in groups for it in g.items if it._head), key=lambda it: it.f0)
-    return dict(groups=groups, schedule=schedule)
+    return dict(L=L, groups=groups, schedule=schedule)
 
 
-OWN = build()
+# each format's own cards and slots
+VIEWS = {fmt: dict(own=build(T.LAYOUTS[fmt]), slots=slots(fmt)) for fmt in FORMATS}
+OWN = VIEWS['9x16']['own']  # whose lettering the cards' drawing sound follows (sounds)
 
 
-def draw_own(n, cv):
+def draw_own(n, cv, own):
     """A frame of the opening card or the sources card: the notebook page,
     the link and the footer, and the card's own lettering."""
     ctx = cv.ctx
+    L = own['L']
     ctx.set_source_surface(sp.backdrop(cv.width, cv.height), 0, 0)
     ctx.paint()
     T.draw_footer(cv, L, L['footer'])
     T.draw_link(cv, L, L['link'])
-    for g in OWN['groups']:
+    for g in own['groups']:
         g.draw(cv, n)
-    T.draw_pencil(cv, n, OWN)
+    T.draw_pencil(cv, n, own)
 
 
-def at(n):
-    """What frame n shows: (view, frame of its film), or None for the
-    film's own cards."""
+def at(n, fmt='9x16'):
+    """What frame n shows in `fmt`: (view, frame of its film), or None for
+    the film's own cards."""
     if n < COURSE.opening or n >= COURSE.slots_end:
         return None
     i = 0
     while n >= COURSE.slot_start(i + 1):
         i += 1
     k = n - COURSE.slot_start(i)
-    mod, parts, hold = SLOTS[i]
+    mod, parts, hold = VIEWS[fmt]['slots'][i]
     for view, p in zip(parts, COURSE.members[i].parts):
         if k < p.frames:
             return view, p.start + k
@@ -316,13 +366,13 @@ def at(n):
 
 
 def draw(n, cv):
-    shown = at(n)
+    fmt = cv.format.name
+    shown = at(n, fmt)
     if shown is None:
-        draw_own(n, cv)
+        draw_own(n, cv, VIEWS[fmt]['own'])
         return
     view, m = shown
     view.draw(m, cv)
-
 
 SEGMENTS = [vb.Segment('opening', 0, COURSE.opening,
                        data={'copy': [COURSE.state_name, COURSE.headline, COURSE.date]})]
@@ -366,7 +416,7 @@ KEYFRAMES = ((COURSE.opening - 1, 'opening'),
 FILM = vb.Film(
     draw=draw,
     timeline=TIMELINE,
-    formats=(FMT,),
+    formats=FORMATS,
     background='#f2ebd8',
     sounds=SOUNDS,
     keyframes=tuple(sorted(KEYFRAMES)),
