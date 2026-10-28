@@ -1,0 +1,141 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; where that tax goes today, and what happens above the
+# revenue limit; where the proposition would send it, and what that does
+# to refunds; what Legislative Council Staff estimates it moves; one
+# point per side; what a vote does.
+#
+# The card quotes the State Ballot Information Booklet: the ballot title
+# as printed in its Text & Titles section, its origin and vote-needed
+# line, the first two paragraphs of its "What does Proposition 137 do?"
+# (its list of programs cannot be quoted whole, so the summary is the
+# sentences after it) and its YES/NO lines.
+#
+# That the proposition does not change prices or tax rates is the
+# supporters' point (their first argument opens with it), so it stays in
+# their section (rule 6.3). The $175.0 million moves from the General
+# Fund; no archived source gives the General Fund's 2027-28 total, so it
+# is stated without a scale. The booklet notes the proposition would
+# reduce what the state keeps under Proposition NN if both pass; that is
+# left out for length (no conflict needs resolving).
+
+contest = "co-2026-11-03-proposition-137"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "blue-book"
+number = "137"
+title = "Shall there be a change to the Colorado Revised Statutes creating new law to increase water and land conservation funding without raising taxes, and, in connection therewith, through a voter-approved revenue change, allowing the state to keep and spend a portion of revenue from the state sales tax on sporting goods and equipment to conserve and protect Colorado’s water, land, and forests, prevent wildfires, support outdoor recreation training and activities, and reduce revenue spent on these conservation purposes if necessary to preserve funding for certain tax credits?"
+origin = "Placed on the ballot by citizen initiative • Passes with a majority vote"
+summary = "The measure exempts this portion of state sales tax revenue from the state’s constitutional revenue limit, known as the Taxpayer’s Bill of Rights (TABOR) limit."
+yes = "A “yes” vote on Proposition 137 directs existing sales tax revenue collected from sales of sporting goods to be spent on certain conservation, wildfire risk mitigation, and outdoor recreation programs, and exempts it from state revenue limitations."
+no = "A “no” vote on Proposition 137 keeps the sales tax revenue collected from sporting goods in the state’s general budget and subject to the state’s revenue limit, with the revenue either spent on priorities decided annually by the legislature or refunded to taxpayers when required."
+
+[[section]]
+id = "what"
+heading = "Proposition 137"
+
+[[section.line]]
+text = "Proposition 137 is about the state sales tax collected on sporting goods."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["a portion of revenue from the state sales tax on sporting goods and equipment"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, that tax goes into the general state budget, and revenue above the state limit is refunded."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The proposition would direct that money to conservation, wildfire risk mitigation, and outdoor recreation programs."
+sources = ["blue-book", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "set-aside-funds"
+
+[[section.line]]
+text = "The money would be exempt from the limit, reducing refunds in years when revenue exceeds it."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["exempts this portion of state sales tax revenue"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Legislative Council Staff estimates $175 million would move from the General Fund in the 2027 to 2028 budget year."
+sources = ["fiscal-impact", "fiscal-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes/for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the proposition funds conservation and wildfire mitigation without raising tax rates, through a user-based model."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Funds conservation and wildfire mitigation", "A user-based model, without raising tax rates"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no/against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the proposition is a tax increase in disguise, and constrains how legislators balance budget priorities."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["A tax increase in disguise that cuts refunds", "Constrains how legislators balance priorities"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote directs this revenue to conservation, wildfire, and outdoor recreation programs."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["directs existing sales tax revenue"]
+
+[[section.line]]
+text = "A no vote keeps the revenue in the general budget."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["in the state’s general budget"]

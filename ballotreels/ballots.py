@@ -162,6 +162,18 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label=None,
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+
+    # Colorado's Legislative Council Staff prints each measure's Quick
+    # Reference entry, analysis and ballot title in the 2026 Colorado
+    # State Ballot Information Booklet (the Blue Book), and its full
+    # statement on each headed "Fiscal Impact Statement". The ballot
+    # prints the choices "Yes/For" and "No/Against" (SB 26-135, section
+    # 9); the badge is the designation as printed: AMENDMENT 81,
+    # PROPOSITION NN.
+    "co": Ballot(guide="State Ballot Information Booklet",
+                 fiscal_label="Fiscal Impact Statement",
+                 choices=("Yes/For", "No/Against"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")

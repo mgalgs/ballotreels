@@ -1,0 +1,147 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; who writes an initiative's ballot title; what the law asks of
+# titles today, and the wording some laws add; the standard and the bar
+# the amendment would add; what Legislative Council Staff says it costs;
+# one point per side; what a vote does.
+#
+# The card quotes the State Ballot Information Booklet: the ballot title
+# as printed in its Text & Titles section, its origin and vote-needed
+# line, the first two sentences of its "What does Amendment 85 do?" as
+# the summary and its YES/NO lines.
+#
+# "Today" takes the NO box's own words (plain language, no grade-level
+# standard), not the opponents' "already provides ample guidance".
+
+contest = "co-2026-11-03-amendment-85"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "blue-book"
+number = "85"
+title = "Shall there be an amendment to the Colorado Constitution concerning ballot question language, and, in connection therewith, requiring all state and local ballot questions to be written in plain language and at no more than an 8th grade reading level and prohibiting a state statute from requiring language that conflicts with these requirements in ballot questions for citizen-initiated measures?"
+origin = "Placed on the ballot by citizen initiative • Passes with 55 percent of the vote"
+summary = "Amendment 85 requires that all ballot titles be in plain language, written at no more than an eighth-grade reading level. The measure does not define plain language or designate who will determine if ballot titles meet the standard."
+yes = "A “yes” vote on Amendment 85 requires that ballot titles be written in plain language, defined as an eighth-grade reading level, and prohibits any law from interfering with this requirement."
+no = "A “no” vote on Amendment 85 maintains current law, which requires plain language for ballot titles, but does not specify a particular grade-level reading standard."
+
+[[section]]
+id = "what"
+heading = "Amendment 85"
+
+[[section.line]]
+text = "Amendment 85 is about how ballot titles are written."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["concerning ballot question language"]
+
+[[section]]
+id = "background"
+heading = "Ballot titles"
+
+[[section.line]]
+text = "The state Title Board writes the ballot title for each citizen initiative."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-one-question"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the law requires plain language in ballot titles, but no grade-level standard."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "newspaper-notices"
+
+[[section.line]]
+text = "Some laws require added wording, like how a tax change affects taxpayers."
+sources = ["blue-book"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would require ballot titles at no more than an eighth-grade reading level."
+sources = ["blue-book", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["at no more than an eighth-grade reading level"]
+
+[[section.line]]
+text = "Laws requiring wording in initiative titles that conflicts with that standard would be barred."
+sources = ["blue-book"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Legislative Council Staff says workload for the Title Board may increase minimally."
+sources = ["fiscal-impact", "fiscal-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes/for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say an eighth-grade standard helps craft simpler titles, and protects initiative titles from interference by legislators."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["An eighth-grade standard helps craft simpler titles", "Protects initiative titles from legislative interference"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no/against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say current law provides ample guidance, and undefined terms could block laws giving voters critical information."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Unnecessary: current law provides ample guidance", "Could block laws giving voters critical information"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote requires plain-language titles, defined as an eighth-grade reading level."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["defined as an eighth-grade reading level"]
+
+[[section.line]]
+text = "A no vote maintains current law, with no grade-level standard."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["does not specify a particular grade-level reading standard"]

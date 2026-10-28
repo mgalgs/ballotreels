@@ -1,0 +1,146 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; how penalties work today; the three changes the proposition
+# would make; what Legislative Council Staff says it costs; one point per
+# side; what a vote does.
+#
+# The card quotes the State Ballot Information Booklet: the ballot title
+# as printed in its Text & Titles section, its origin and vote-needed
+# line, the first paragraph of its "How will penalties change under
+# Proposition 132?" as the summary and its YES/NO lines.
+#
+# That fentanyl is the leading cause of overdose deaths sits close to
+# both sides' points on overdose deaths, so it is left out of the
+# neutral lines. The booklet prints one argument for and one against;
+# each side's list takes two points from its one argument. The General
+# Fund costs are stated without a scale: no archived source gives the
+# General Fund's total.
+
+contest = "co-2026-11-03-proposition-132"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "blue-book"
+number = "132"
+title = "Shall there be a change to the Colorado Revised Statutes concerning criminal penalties for fentanyl and certain synthetic opioids, and, in connection therewith, increasing the felony classifications of drug-related crimes for distribution, manufacturing, dispensing, sale, or possession of fentanyl and certain synthetic opioids; creating mandated treatment for certain drug felony violations based on possession amount; and changing sentencing provisions to narrow or eliminate exemptions for crimes related to fentanyl and certain synthetic opioids and drug-related deaths?"
+origin = "Placed on the ballot by citizen initiative • Passes with a majority vote"
+summary = "Proposition 132 increases criminal penalties for fentanyl offenses by expanding felony charges for possession and distribution, imposing longer prison sentences, and limiting judicial discretion."
+yes = "A “yes” vote on Proposition 132 makes possession of any amount of fentanyl a felony, requires a mandatory minimum 8-year prison sentence for any quantity of fentanyl distribution, and eliminates options to reduce penalties for certain possession and distribution offenses."
+no = "A “no” vote on Proposition 132 keeps minor possession charges of fentanyl a misdemeanor, maintains tiered felony penalties for fentanyl distribution based on drug quantity, and keeps options to reduce penalties for certain possession and distribution offenses."
+
+[[section]]
+id = "what"
+heading = "Proposition 132"
+
+[[section.line]]
+text = "Proposition 132 is about criminal penalties for fentanyl."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["criminal penalties for fentanyl and certain synthetic opioids"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, penalties depend on the amount and intent, and possessing a small amount is a misdemeanor."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The proposition would make possessing any amount of fentanyl a felony."
+sources = ["blue-book", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["expanding felony charges for possession and distribution"]
+
+[[section.line]]
+text = "Distributing any amount would carry a mandatory 8 to 32 years in prison."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+text = "Judges could no longer reduce penalties for certain mitigating circumstances."
+sources = ["blue-book"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Legislative Council Staff estimates General Fund costs of $0.9 million the first year, rising to $68.2 million by year five."
+sources = ["fiscal-impact", "fiscal-statement"]
+
+[section.line.visual]
+kind = "bars"
+title = "Added state spending, millions of dollars"
+source = "fiscal-impact"
+unit = ""
+labels = ["Year one", "Year two", "Year five"]
+values = [0.9, 8.9, 68.2]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes/for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say fentanyl warrants stronger penalties, and mandated prison for dealers will likely make the public safer."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Fentanyl warrants stronger penalties than other drugs", "Prison for dealers likely enhances public safety"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no/against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the proposition is unlikely to prevent overdose deaths, and may discourage people from seeking treatment."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Unlikely to reduce use, crime or overdose deaths", "May discourage seeking treatment or calling for help"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote makes possession of any amount of fentanyl a felony."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["makes possession of any amount of fentanyl a felony"]
+
+[[section.line]]
+text = "A no vote keeps minor possession charges a misdemeanor."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["keeps minor possession charges of fentanyl a misdemeanor"]

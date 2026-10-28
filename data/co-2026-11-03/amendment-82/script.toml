@@ -1,0 +1,144 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; how natural gas is regulated today; the
+# right the amendment would add, and what Legislative Council Staff says
+# that may do to regulation; the costs it lists; one point per side; what
+# a vote does.
+#
+# The card quotes the State Ballot Information Booklet: the ballot title
+# as printed in its Text & Titles section, its origin and vote-needed
+# line, its answer to "Will the measure change natural gas laws in
+# Colorado?" as the summary and its YES/NO lines.
+#
+# The booklet prints one argument for and one against; each side's list
+# takes two points from its one argument. The booklet gives no dollar
+# figure, so the fiscal lines give none.
+
+contest = "co-2026-11-03-amendment-82"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "blue-book"
+number = "82"
+title = "Shall there be an amendment to the Colorado Constitution creating new law granting the right for consumers to purchase natural gas for cooking or heating in homes or businesses and for distributors and utilities to sell natural gas to consumers?"
+origin = "Placed on the ballot by citizen initiative • Passes with 55 percent of the vote"
+summary = "This measure will establish the right to purchase and sell natural gas for homes and businesses in the state constitution. By doing so, it may limit the ability for state or local governments to enforce existing or future regulations related to natural gas."
+yes = "A “yes” vote on Amendment 82 establishes a state constitutional right to purchase and sell natural gas for use in homes and businesses."
+no = "A “no” vote on Amendment 82 maintains current law and regulations related to the purchase and sale of natural gas."
+
+[[section]]
+id = "what"
+heading = "Amendment 82"
+
+[[section.line]]
+text = "Amendment 82 is about natural gas for cooking and heating."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["natural gas for cooking or heating"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the state regulates investor-owned natural gas utilities, and some towns restrict gas appliances in new buildings."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "home-building"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would add a constitutional right to purchase and sell natural gas for homes and businesses."
+sources = ["blue-book", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section.line]]
+text = "Legislative Council Staff says this may limit natural gas rules by state and local governments."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["it may limit the ability for state or local governments"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Legislative Council Staff says state costs may increase minimally."
+sources = ["fiscal-impact", "fiscal-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section.line]]
+text = "Local governments that restrict gas in building codes may face legal costs."
+sources = ["fiscal-impact"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes/for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say natural gas reliably heats homes in the coldest weather, and access should face no government interference."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Reliable heat, even in the coldest weather", "Continued access without government interference"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no/against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say natural gas adds to climate change and air pollution, and local communities should make energy decisions."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Contributes to climate change and air pollution", "Local communities should decide their energy needs"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote establishes a constitutional right to purchase and sell natural gas."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["establishes a state constitutional right"]
+
+[[section.line]]
+text = "A no vote maintains current law and regulations."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["maintains current law and regulations"]

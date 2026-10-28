@@ -1,0 +1,147 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; that no law requires such a notice today; whom the amendment
+# covers; what law enforcement would have to do; what Legislative Council
+# Staff says it costs; one point per side; what a vote does.
+#
+# The card quotes the State Ballot Information Booklet: the ballot title
+# as printed in its Text & Titles section, its origin and vote-needed
+# line, the first paragraph of its "What does the measure do?" as the
+# summary (its bulleted overview cannot be quoted whole: the bullets
+# print as a letter in the PDF's text) and its YES/NO lines.
+#
+# Neutral lines keep to the ballot title's and the booklet's own terms
+# ("lawfully present", "violent crime"). That the notice comes before a
+# court rules is the opponents' point, and that one statewide standard
+# replaces local policies the supporters'; each stays in its side. The
+# state's $60,000 is stated without a scale: no archived source gives
+# the General Fund's 2026-27 total.
+
+contest = "co-2026-11-03-amendment-81"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "blue-book"
+number = "81"
+title = "Shall there be an amendment to the Colorado Constitution requiring law enforcement to notify the department of homeland security when a person is charged with either a violent crime or any crime if the person has a prior felony conviction if law enforcement cannot determine that the person is lawfully present in the United States?"
+origin = "Placed on the ballot by citizen initiative • Passes with 55 percent of the vote"
+summary = "Amendment 81 requires certified peace officers employed by a law enforcement agency, correctional officers, and district attorney personnel to notify the federal Department of Homeland Security (DHS) within 72 hours of charging someone with a crime if the charge is a crime of violence or if the individual has a prior felony conviction. The notification requirement applies if the charged individual is not lawfully present in the United States, or if their lawful status cannot be determined."
+yes = "A “yes” vote on Amendment 81 requires law enforcement to notify federal immigration authorities after filing certain criminal charges against individuals who are not confirmed to be lawfully present."
+no = "A “no” vote on Amendment 81 maintains current law, which allows cooperation with federal immigration authorities in some criminal matters, but limits state and local law enforcement involvement in civil immigration enforcement."
+
+[[section]]
+id = "what"
+heading = "Amendment 81"
+
+[[section.line]]
+text = "Amendment 81 is about law enforcement notifying federal immigration authorities."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["requiring law enforcement to notify the department of homeland security"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, no law requires notifying immigration authorities when someone unlawfully present is charged with a crime."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "case-file-phone"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment covers people charged with a violent crime, or any crime after a prior felony."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section.line]]
+text = "If law enforcement cannot determine that such a person is lawfully present, it must notify the Department of Homeland Security within 72 hours."
+sources = ["blue-book", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["within 72 hours"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Legislative Council Staff estimates $60,000 in state costs, for computer updates."
+sources = ["fiscal-impact", "fiscal-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section.line]]
+text = "Local law enforcement would have more work, mostly in district attorney offices."
+sources = ["fiscal-impact"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes/for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say violent and repeat offenders who are here unlawfully should be reported, under one statewide standard."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Report violent and repeat offenders here unlawfully", "One uniform standard across every jurisdiction"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no/against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say reporting people before a court decides undermines due process, and erodes trust in law enforcement."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Reporting before a court decides undermines due process", "Erodes trust between law enforcement and communities"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote requires notifying federal immigration authorities after certain charges."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["requires law enforcement to notify federal immigration authorities"]
+
+[[section.line]]
+text = "A no vote maintains current law."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["maintains current law"]

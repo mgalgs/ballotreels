@@ -669,8 +669,12 @@ def check_side_headings(c: Contest) -> list[Failure]:
         if sec.side not in ("yes", "no"):
             continue
         own = ballot.choices[0 if sec.side == "yes" else 1]
+        # the side's own word set aside first, so the words inside a
+        # choice of two ("Yes/For" in Colorado) are not taken for others
+        heading = re.sub(rf"\b{re.escape(own)}\b", " ", sec.heading,
+                         flags=re.IGNORECASE)
         for word in sorted(every - {own.lower()}):
-            if re.search(rf"\b{re.escape(word)}\b", sec.heading,
+            if re.search(rf"\b{re.escape(word)}\b", heading,
                          re.IGNORECASE):
                 out.append(Failure(
                     "side-heading",

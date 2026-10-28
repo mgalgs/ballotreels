@@ -1,0 +1,181 @@
+# Recipe E, 60 seconds, distilled as far as this measure allows: one
+# claim per line. The chain: what it is about; the flat rate today; the
+# graduated rates and where the added money would go; what happens if
+# Proposition 136 also passes; what Legislative Council Staff estimates
+# it raises, and what the ballot title's figure is; one point per side;
+# what a vote does. It runs longer than most (about 170 words): the
+# conflict with Proposition 136 and both revenue figures each need a
+# line.
+#
+# The card quotes the State Ballot Information Booklet: the ballot title
+# as printed in its Text & Titles section (the table of average changes
+# it refers to is printed after it, and is not quoted), its origin and
+# vote-needed line, the first sentence of its "What does Amendment 87
+# do?" as the summary and its YES/NO lines.
+#
+# Figures: the ballot title's "$2.7 billion annually" is, the booklet
+# explains (pages 39 to 40), the maximum estimate state law requires for
+# budget year 2027-28, allowing for forecast error; its own estimate is
+# about $2 billion in the first full year. The narration gives both, each
+# as the booklet explains it, and never one as the other. The $2 billion
+# takes the booklet's own comparison (income tax revenue of $15 billion
+# under current law in 2028, $17 billion under the measure), from its
+# analysis ("Does Amendment 87 impact TABOR refunds?", page 35), not its
+# Fiscal Impact section, so it cites the booklet; the $2.7 billion is set against the
+# booklet's own Table 5, fiscal year spending without the increase of
+# $24.62 billion for 2027-28: 2.7 / 24.62 = 11 percent.
+#
+# The conflict with Proposition 136 is stated once, in the booklet's
+# words ("the exact outcome is unclear"; "the state legislature or a
+# court will need to determine"). The lower and higher rates are stated
+# as the booklet states them, by taxable income; how many taxpayers pay
+# less is the supporters' point and stays in their section.
+
+contest = "co-2026-11-03-amendment-87"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "blue-book"
+number = "87"
+title = "SHALL STATE TAXES BE INCREASED $2.7 BILLION ANNUALLY, IN ORDER TO INCREASE OR IMPROVE LEVELS OF PUBLIC SERVICES, INCLUDING K-12 PUBLIC SCHOOL EDUCATION, HEALTH CARE, AND EARLY CHILD CARE AND EDUCATION SERVICES, BY AN AMENDMENT TO THE COLORADO CONSTITUTION AND A CHANGE TO THE COLORADO REVISED STATUTES REPEALING EXISTING LAW AND CREATING NEW LAW TO REPLACE THE UNIFORM STATE INCOME TAX RATE WITH A GRADUATED INCOME TAX STRUCTURE, AND, IN CONNECTION THEREWITH, AMENDING THE TAXPAYER’S BILL OF RIGHTS TO ELIMINATE THE CONSTITUTIONAL REQUIREMENT FOR ALL TAXABLE NET INCOME TO BE TAXED AT ONE RATE WITH NO ADDED TAX ON INCOME; ESTABLISHING VARIOUS INCOME TAX RATES BASED ON THE AMOUNT OF TAXABLE INCOME EARNED BY INDIVIDUALS, ESTATES, TRUSTS, AND CORPORATIONS, WHILE MAINTAINING THE CURRENT 4.4% TAX ON INCOME FROM THE SALE OF A PRINCIPAL RESIDENCE, WHICH WILL RESULT IN THE ESTIMATED CHANGE IN INCOME TAXES OWED BY INDIVIDUALS AS IDENTIFIED IN THE FOLLOWING TABLE; AND AUTHORIZING THE STATE TO RETAIN AND SPEND ANY INCREASED REVENUE FROM THE NEW TAX STRUCTURE, AS A VOTER-APPROVED REVENUE CHANGE, TO SUPPLEMENT CURRENT LEVELS OF FUNDING FOR K-12 PUBLIC SCHOOL EDUCATION, HEALTH CARE, AND EARLY CHILD CARE AND EDUCATION PROGRAMS?"
+origin = "Placed on the ballot by citizen initiative • Passes with a majority vote"
+summary = "The measure replaces the state’s current flat income tax rate for individuals and businesses with a graduated income tax that lowers taxes for taxable income below $500,000 and raises taxes for taxable income above $500,000."
+yes = "A “yes” vote on Amendment 87 creates a graduated state income tax that increases revenue; uses the additional money for K-12 education, health care, and early childhood care and education; and exempts additional revenue collected from the state’s constitutional revenue limit."
+no = "A “no” vote on Amendment 87 keeps the current constitutional requirement for a flat state income tax rate."
+
+[[section]]
+id = "what"
+heading = "Amendment 87"
+
+[[section.line]]
+text = "Amendment 87 is about Colorado's state income tax."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["REPLACE THE UNIFORM STATE INCOME TAX RATE WITH A GRADUATED INCOME TAX STRUCTURE"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the constitution requires one flat income tax rate, now 4.4 percent."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "income-taxes"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would set graduated rates, lowering taxes on taxable income below $500,000 and raising them above."
+sources = ["blue-book", "text"]
+
+[section.line.visual]
+kind = "bars"
+title = "Income tax rate by bracket of taxable income"
+source = "blue-book"
+unit = "%"
+labels = ["Up to $25,000", "To $100,000", "To $500,000", "To $750,000", "To $1 million", "Over $1 million"]
+values = [3.7, 4.2, 4.4, 7.4, 7.9, 8.4]
+
+[[section.line]]
+text = "The added revenue would go to K through 12 education, health care, and early childhood care and education."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "set-aside-funds"
+
+[[section.line]]
+text = "If Proposition 136 also passes, the exact outcome is unclear, for the legislature or a court to determine."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+text = "Legislative Council Staff estimates income tax revenue of $17 billion in 2028, up $2 billion from current law."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "bars"
+title = "State income tax revenue in 2028, billions of dollars"
+source = "blue-book"
+unit = ""
+labels = ["Current law", "Amendment 87"]
+values = [15, 17]
+
+[[section.line]]
+text = "The ballot title's $2.7 billion is a required maximum estimate, about 11 percent of expected state spending without the increase."
+sources = ["fiscal-impact", "fiscal-statement"]
+
+[section.line.visual]
+kind = "share"
+title = "The $2.7 billion maximum estimate, as a share of 2027-28 state fiscal year spending without the increase"
+source = "fiscal-impact"
+unit = "%"
+labels = ["$2.7 billion"]
+values = [11]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes/for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the amendment cuts taxes for 97 percent of taxpayers, and funds education, health care, and child care."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Cuts taxes for 97 percent of taxpayers", "Funds education, health care, and child care"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no/against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say this multibillion-dollar tax increase will harm the economy, and more taxpayers will pay higher taxes each year."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["A multibillion-dollar tax increase harms the economy", "More taxpayers pay higher taxes each year"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote creates a graduated state income tax that increases revenue."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["creates a graduated state income tax"]
+
+[[section.line]]
+text = "A no vote keeps the requirement for a flat state income tax rate."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["keeps the current constitutional requirement"]

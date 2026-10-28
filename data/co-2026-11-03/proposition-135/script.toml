@@ -1,0 +1,144 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; how such surgery is paid for today; what the proposition
+# would ban, what it would still allow, and what could no longer pay;
+# what Legislative Council Staff says it costs; one point per side; what
+# a vote does.
+#
+# The card quotes the State Ballot Information Booklet: the ballot title
+# as printed in its Text & Titles section, its origin and vote-needed
+# line, the first sentence of its "What medical treatments are
+# prohibited by Proposition 135?" as the summary and its YES/NO lines.
+#
+# Neutral lines keep to the ballot title's and the booklet's own terms
+# ("surgery on minors to alter their biological sex characteristics",
+# "perception of sex or gender"). The booklet's figures on how rarely
+# such surgery is performed, and its report that three pediatric
+# providers do not perform it, are left out: each reads as support for
+# one side or the other, and neither side's argument cites them. The
+# narration avoids "minor's" beside "minors" (they sound alike).
+
+contest = "co-2026-11-03-proposition-135"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "blue-book"
+number = "135"
+title = "Shall there be a change to the Colorado Revised Statutes modifying existing law by prohibiting surgery on a minor for the purpose of altering the minor’s biological sex characteristics, and, in connection therewith, prohibiting any health-care professional or other person from knowingly performing, prescribing, administering, or providing any surgery to a minor for the purpose of altering the minor’s biological sex characteristics and prohibiting the use of state or federal funds, Medicaid reimbursement, or insurance coverage to pay for this type of surgery?"
+origin = "Placed on the ballot by citizen initiative • Passes with a majority vote"
+summary = "The measure prohibits surgery on minors for the purpose of altering biological sex characteristics as a treatment in response to a minor’s perception of sex or gender."
+yes = "A “yes” vote on Proposition 135 prohibits surgeries on minors that would alter their biological sex characteristics as a treatment in response to a minor’s perception of sex or gender, and prohibits the use of government funds or health insurance to pay for the surgeries."
+no = "A “no” vote on Proposition 135 maintains Colorado law, which protects access to surgery altering minors’ biological sex characteristics and allows public and private health insurance programs to pay for these surgeries."
+
+[[section]]
+id = "what"
+heading = "Proposition 135"
+
+[[section.line]]
+text = "Proposition 135 is about surgery on minors to alter their biological sex characteristics."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["prohibiting surgery on a minor for the purpose of altering the minor’s biological sex characteristics"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, such surgery that is medically necessary may be covered by private insurance or a public health care program."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "health-form"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The proposition would ban such surgery on minors as a treatment in response to their perception of sex or gender."
+sources = ["blue-book", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["for the purpose of altering biological sex characteristics"]
+
+[[section.line]]
+text = "Male circumcision, treatment of medically verifiable disorders of sex development, and non-surgical care like counseling would still be allowed."
+sources = ["blue-book"]
+
+[[section.line]]
+text = "Government funds and insurance could not pay for the banned surgeries."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "public-funds-locked"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Legislative Council Staff expects any change in state and local spending to be minimal."
+sources = ["fiscal-impact", "fiscal-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes/for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say minors lack the maturity for permanent, life-altering decisions, and some may regret surgery they cannot undo."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Minors lack the maturity for permanent decisions", "Some minors may regret irreversible surgery"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no/against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the overly broad ban interferes with needed care, and medical decisions belong to families and providers."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Overly broad ban interferes with needed care", "Decisions belong to patients, families and providers"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote prohibits these surgeries on minors."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["prohibits surgeries on minors"]
+
+[[section.line]]
+text = "A no vote maintains current Colorado law."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["maintains Colorado law"]

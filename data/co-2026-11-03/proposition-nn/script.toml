@@ -1,0 +1,156 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; the revenue limit and its refunds today; what the
+# proposition would let the state keep, and where the money would go;
+# how much Legislative Council Staff expects it to reduce refunds, and
+# that this eliminates them; one point per side; what a vote does.
+#
+# The card quotes the State Ballot Information Booklet: the ballot title
+# as printed in its Text & Titles section, its origin and vote-needed
+# line ("Placed on the ballot by the legislature"), the first paragraph
+# of its "What does Proposition NN do?" as the summary and its YES/NO
+# lines. Senate Bill 26-135, the bill that referred it, is cited as the
+# text but named nowhere on screen or in the narration.
+#
+# The fiscal line uses the booklet's own framing, "reduce the amount
+# refunded to taxpayers by $329.9 million ... $521.0 million": these are
+# not what the state keeps (the booklet puts that at about $500 million
+# in the first year), since $153.1 million already goes unrefunded under
+# current law.
+#
+# Scale: the fiscal impact statement (page 6) sets the refunds the
+# measure removes beside the revenue subject to the limit the state
+# expects: $329.9 million of $20.99 billion in 2026-27 (2 percent) and
+# $521.0 million of $22.08 billion in 2027-28 (2 percent). That a state
+# study finds schools underfunded is the supporters' point, and that
+# school funding has grown while enrollment falls the opponents'; each
+# stays in its side.
+
+contest = "co-2026-11-03-proposition-nn"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "blue-book"
+number = "NN"
+title = "Shall state investment in K-12 public education increase two percent each year for the next ten years, with investments used to increase teacher pay, improve teacher retention, lower class sizes, and increase access to career and technical courses, without raising taxes but instead funded by raising the annual limit on state fiscal year spending only by the amount spent on public K-12 education as a voter-approved revenue change, and requiring an annual publicly released, independent audit to show how the new investments are spent?"
+origin = "Placed on the ballot by the legislature • Passes with a majority vote"
+summary = "Proposition NN allows the state to keep and spend revenue that would otherwise be refunded to taxpayers under TABOR, up to a newly established limit. The new limit is higher than the current limit and is based on the amount the state government spends on public education."
+yes = "A “yes” vote on Proposition NN allows the state to keep some or all of the revenue that otherwise would be refunded to taxpayers under TABOR. The retained revenue must be spent on K-12 education, programs that support children, and any other purposes."
+no = "A “no” vote on Proposition NN maintains current TABOR refunds and funding levels for K-12 education, programs that support children, and other state purposes."
+
+[[section]]
+id = "what"
+heading = "Proposition NN"
+
+[[section.line]]
+text = "Proposition NN is about state revenue above Colorado's constitutional limit."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["raising the annual limit on state fiscal year spending"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the Taxpayer's Bill of Rights requires the state to refund revenue above a yearly limit."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "spending-limit"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The proposition would let the state keep that money instead, up to the amount it spends on public education."
+sources = ["blue-book", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["based on the amount the state government spends on public education"]
+
+[[section.line]]
+text = "For ten years, the money would fund K through 12 education and children's programs, then other purposes too."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Legislative Council Staff expects refunds to fall by $329.9 million this budget year and $521.0 million the next, each about 2 percent of revenue subject to the limit."
+sources = ["fiscal-impact", "fiscal-statement"]
+
+[section.line.visual]
+kind = "bars"
+title = "Reduction in refunds to taxpayers, millions of dollars"
+source = "fiscal-impact"
+unit = ""
+labels = ["2026-27", "2027-28"]
+values = [329.9, 521.0]
+
+[[section.line]]
+text = "That would eliminate refunds in both years."
+sources = ["fiscal-impact"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes/for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the proposition raises teacher pay and reduces class sizes, using money the state already collects."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Raises teacher pay and reduces class sizes", "Uses money the state already collects"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no/against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the proposition is essentially a tax increase, letting government keep more of what families earn."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Essentially a tax increase that ends refunds", "Government keeps more of what families earn"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote allows the state to keep revenue that otherwise would be refunded to taxpayers."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["allows the state to keep some or all of the revenue"]
+
+[[section.line]]
+text = "A no vote maintains current refunds and funding levels."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["maintains current TABOR refunds and funding levels"]

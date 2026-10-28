@@ -97,19 +97,28 @@ class RealDataApiTest(unittest.TestCase):
     def test_voter_identification_links_both_ways(self):
         self.assertEqual(self.related("ca-2026-11-03-prop-39"),
                          [("Arizona", "az-2026-11-03-prop-144"),
+                          ("Colorado", "co-2026-11-03-amendment-84"),
                           ("Nevada", "nv-2026-11-03-question-7"),
                           ("Ohio", "oh-2026-11-03-issue-3")])
         self.assertEqual(self.related("oh-2026-11-03-issue-3"),
                          [("Arizona", "az-2026-11-03-prop-144"),
                           ("California", "ca-2026-11-03-prop-39"),
+                          ("Colorado", "co-2026-11-03-amendment-84"),
                           ("Nevada", "nv-2026-11-03-question-7")])
         self.assertEqual(self.related("az-2026-11-03-prop-144"),
                          [("California", "ca-2026-11-03-prop-39"),
+                          ("Colorado", "co-2026-11-03-amendment-84"),
                           ("Nevada", "nv-2026-11-03-question-7"),
                           ("Ohio", "oh-2026-11-03-issue-3")])
         self.assertEqual(self.related("nv-2026-11-03-question-7"),
                          [("Arizona", "az-2026-11-03-prop-144"),
                           ("California", "ca-2026-11-03-prop-39"),
+                          ("Colorado", "co-2026-11-03-amendment-84"),
+                          ("Ohio", "oh-2026-11-03-issue-3")])
+        self.assertEqual(self.related("co-2026-11-03-amendment-84"),
+                         [("Arizona", "az-2026-11-03-prop-144"),
+                          ("California", "ca-2026-11-03-prop-39"),
+                          ("Nevada", "nv-2026-11-03-question-7"),
                           ("Ohio", "oh-2026-11-03-issue-3")])
 
     def test_own_state_first(self):
@@ -120,9 +129,11 @@ class RealDataApiTest(unittest.TestCase):
                           ("Wyoming", "wy-2026-11-03-initiative-proposition-1")])
 
     def test_two_groups(self):
-        # Utah's Amendment B is in two groups, one link from each.
+        # Utah's Amendment B is in two groups: a link from one, two from the
+        # other.
         self.assertEqual(self.related("ut-2026-11-03-amendment-b"),
                          [("California", "ca-2026-11-03-prop-43"),
+                          ("Colorado", "co-2026-11-03-amendment-85"),
                           ("Montana", "mt-2026-11-03-ci-133"),
                           ("North Dakota", "nd-2026-11-03-measure-1")])
 
