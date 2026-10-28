@@ -149,6 +149,8 @@ class Line:
     basis: tuple[str, ...] | None = None
     # Every person or organisation the line names (STANDARD.md section 9).
     names: tuple[Name, ...] = ()
+    # What a question's `lines` call the line by; None when absent.
+    id: str | None = None
 
 
 @dataclass(frozen=True)
@@ -161,6 +163,21 @@ class Section:
 
 
 @dataclass(frozen=True)
+class Question:
+    """A question a reader of the script asked, with its answer: the ids of
+    the lines that answer it, or `unanswered` where no official source
+    does (docs/SCRIPT-FORMAT.md, STANDARD.md rule 10.1). As with Visual,
+    each field is None when its key is absent, and the checks judge the
+    values."""
+    ask: Any = None         # the question, in plain words
+    lines: Any = None       # the ids of the lines that answer it
+    unanswered: Any = None  # true: no official source answers it
+
+
+QUESTION_KEYS = tuple(Question.__dataclass_fields__)
+
+
+@dataclass(frozen=True)
 class Script:
     contest: str
     template: str
@@ -170,6 +187,8 @@ class Script:
     card: Card | None = None  # None when there is no [card] table
     # None when there is no [choices] table: a yes/no question
     choices: Choices | None = None
+    # The questions a reader asked of it, with their answers ([[question]])
+    questions: tuple[Question, ...] = ()
 
     def labels(self) -> tuple[str, ...]:
         """Each section's label, in file order: its id, or `id[k]` for the
@@ -283,6 +302,7 @@ def _load_line(raw: Any, where: str) -> Line:
         visual=_load_visual(raw, where),
         basis=basis,
         names=tuple(names),
+        id=_get(raw, "id", str, where, None),
     )
 
 
@@ -324,7 +344,17 @@ def _load_script(path: Path) -> Script:
         standard_version=_get(data, "standard_version", int, name),
         sections=tuple(sections),
         card=card,
+        questions=_load_questions(data, name),
     )
+
+
+def _load_questions(data: dict[str, Any], name: str) -> tuple[Question, ...]:
+    out = []
+    for i, q in enumerate(_get(data, "question", list, name, [])):
+        if not isinstance(q, dict):
+            raise ContestError(f"{name}: question[{i}] must be a table")
+        out.append(Question(**{k: q[k] for k in QUESTION_KEYS if k in q}))
+    return tuple(out)
 
 
 def _load_choices(data: dict[str, Any], name: str) -> Choices | None:

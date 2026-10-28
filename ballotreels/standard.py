@@ -32,6 +32,7 @@ SOURCE_KINDS = frozenset({
     "election-filing",
     "legislative-record",
     "university-guide",
+    "precedent-record",
 })
 
 # Kinds a declared name may come from (STANDARD.md rule 9.1): the official
@@ -46,6 +47,12 @@ NAMING_KINDS = frozenset({"official-argument", "election-filing",
 # vote lines (checks.check_university_guide).
 UNIVERSITY_GUIDE = "university-guide"
 UNIVERSITY_GUIDE_SECTIONS = frozenset({"background", "today", "change"})
+
+# Another government's official record of a similar law (its enacted
+# text, its legislative record, a court's opinion on it), allowed for
+# precedent only and so only in a `background` section (STANDARD.md rules
+# 1.2 and 10.5; checks.check_questions).
+PRECEDENT_RECORD = "precedent-record"
 
 # Kinds a line or chart may cite only in a `background` section
 # (STANDARD.md rule 6.1, docs/SCRIPT-FORMAT.md).

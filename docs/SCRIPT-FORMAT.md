@@ -30,7 +30,7 @@ Allowed source kinds (STANDARD.md section 1): `official-title-summary`,
 `official-fiscal-analysis`, `official-argument`, `official-text`,
 `candidate-statement`, `candidate-website`, `public-record`,
 `official-report`, `official-data`, `election-filing`,
-`legislative-record`, `university-guide`.
+`legislative-record`, `university-guide`, `precedent-record`.
 
 `election-filing` is a measure's filing with the election official or
 that official's notice of it (an initiative's filing naming its
