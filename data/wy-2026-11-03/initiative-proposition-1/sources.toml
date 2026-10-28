@@ -1,0 +1,98 @@
+# Archived sources for Wyoming's Proposed Initiative Proposition Number
+# One, 2026-11-03 general election. Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Wyoming prints no voter pamphlet with explanations or arguments. The
+# Secretary of State's "2026 General Election Statewide Ballot
+# Propositions" (statewide-ballot-propositions.pdf, 5 pages) prints, on
+# page 1, the ballot language as it will appear, its Estimated Fiscal
+# Impact and the choices FOR and AGAINST, and on pages 2 to 5 the full
+# text of the initiated bill. It prints no argument for or against, so
+# there is no source of kind official-argument: both side sections say
+# so, citing it.
+#
+# guide-section.pdf is pages 3 and 4 of the Secretary of State's 2026
+# Wyoming Voter's Guide (printed "Page 2" and "Page 3"): the pass rule,
+# and a reprint of the ballot language and fiscal impact.
+#
+# lso-memo-section.pdf is packet pages 1, 5 and 94 to 98 of a Legislative
+# Service Office memo to the Joint Revenue Interim Committee (May 20,
+# 2026). Its estimate including local levies (Appendix 13, packet page
+# 98) measures something other than the ballot's state-only estimate;
+# the script does not use it. Its summary matrix (packet page 5) labels
+# the initiative "(Constitutional Amendment)", which the ballot's "Shall
+# a law be enacted" contradicts: the proposition is a statute, and
+# nothing cites the matrix for its type.
+#
+# certification-of-initiative.pdf is an image scan with no text, kept for
+# the record.
+
+[contest]
+id = "wy-2026-11-03-initiative-proposition-1"
+election = "wy-2026-11-03"
+division = "ocd-division/country:us/state:wy"
+kind = "measure"
+title = "Proposed Initiative Proposition Number One: People’s Initiative to Limit Property Tax in Wyoming through a Homeowner’s Property Exemption"
+
+[[source]]
+id = "propositions"
+kind = "official-title-summary"
+publisher = "Wyoming Secretary of State, 2026 General Election Statewide Ballot Propositions, Proposed Initiative Proposition Number One: ballot language, page 1"
+credit = "Wyoming Secretary of State, 2026 General Election Statewide Ballot Propositions"
+url = "https://sos.wyo.gov/Elections/Docs/2026/2026_Statewide_Ballot_Propositions.pdf"
+file = "sources/statewide-ballot-propositions.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal"
+kind = "official-fiscal-analysis"
+publisher = "Wyoming Secretary of State, 2026 General Election Statewide Ballot Propositions, Proposed Initiative Proposition Number One: Estimated Fiscal Impact, page 1"
+credit = "Estimated Fiscal Impact, 2026 General Election Statewide Ballot Propositions"
+url = "https://sos.wyo.gov/Elections/Docs/2026/2026_Statewide_Ballot_Propositions.pdf"
+file = "sources/statewide-ballot-propositions.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Wyoming Secretary of State, 2026 General Election Statewide Ballot Propositions: full text of the People’s Initiative to Limit Property Tax in Wyoming through a Homeowner’s Property Exemption, pages 2 to 5"
+credit = "Full text, 2026 General Election Statewide Ballot Propositions"
+url = "https://sos.wyo.gov/Elections/Docs/2026/2026_Statewide_Ballot_Propositions.pdf"
+file = "sources/statewide-ballot-propositions.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "guide"
+kind = "official-title-summary"
+publisher = "Wyoming Secretary of State, 2026 Wyoming Voter’s Guide, pages 3 to 4"
+credit = "Wyoming Secretary of State, 2026 Wyoming Voter’s Guide"
+url = "https://sos.wyo.gov/Elections/Docs/2026/2026_Voter_Guide.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "lso-memo"
+kind = "official-report"
+publisher = "Wyoming Legislative Service Office, Budget and Fiscal Division, memorandum to the Joint Revenue Interim Committee: Property Tax, People’s Initiative, and Real Estate Transfer Tax Information (May 20, 2026), packet pages 1, 5 and 94 to 98"
+credit = "Wyoming Legislative Service Office"
+url = "https://wyoleg.gov/InterimCommittee/2026/03-202606082-01PropertyTaxPeoplesInitiativeandRealEstateTransferTaxInformation.pdf"
+file = "sources/lso-memo-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "process"
+kind = "public-record"
+publisher = "Wyoming Secretary of State’s Office, Election Division, Initiative Process Information (revised 07/2021), pages 1 to 2"
+credit = "Wyoming Secretary of State, Initiative Process Information"
+url = "https://sos.wyo.gov/Elections/Docs/IPInfo.pdf"
+file = "sources/initiative-process-info.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "certification"
+kind = "public-record"
+publisher = "Wyoming Secretary of State, Certification of the Property Tax Initiative"
+url = "https://sos.wyo.gov/Elections/Docs/Property_Tax_Initiative_Certificate.pdf"
+file = "sources/certification-of-initiative.pdf"
+retrieved = "2026-10-27"
