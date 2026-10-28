@@ -8,10 +8,14 @@
 # guide prints no fiscal statement (not a tax measure): the fiscal line
 # follows the no-cost-estimate wording. Two things stay out of the
 # neutral sections because a side argues them (STANDARD.md 6.3): the
-# City Council's 2024 approval of 8,174 units (the supporters', and the
-# initiative's own findings), and the analysis's warning that the
-# measure could constrain the city's compliance with state housing law
-# (the opponents'). The script names no one.
+# City Council's 2024 approval (the supporters', and the initiative's
+# own findings), and the analysis's warning that the measure could
+# constrain the city's compliance with state housing law (the
+# opponents'). The limit itself is not argued: the full text (Section
+# 3, Policy LU 4.4) strikes today's area limits, 2,577 + 1,107 + 2,439
+# + 521 + 1,530 = 8,174, and puts 929 + 406 + 870 + 174 + 521 = 2,900 in
+# their place, so the today and change lines give both. The script
+# names no one.
 
 contest = "ca-2026-11-03-newport-beach-measure-h"
 template = "measure"
@@ -65,19 +69,23 @@ id = "today"
 heading = "Today"
 
 [[section.line]]
-text = "Today, the housing policy in the General Plan names five areas for new homes."
+text = "Today, the housing policy in the General Plan allows up to 8,174 homes in five areas."
 sources = ["text"]
 
 [section.line.visual]
-kind = "illustration"
-name = "home-building"
+kind = "bars"
+title = "Most homes allowed in the five areas"
+source = "text"
+unit = ""
+labels = ["Today", "Under Measure H"]
+values = [8174, 2900]
 
 [[section]]
 id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "Measure H would allow up to 2,900 homes in those five areas: 2,160 for low incomes or below, and 740 for moderate incomes."
+text = "Measure H would lower that limit to 2,900 homes: 2,160 for low incomes or below, and 740 for moderate incomes."
 sources = ["guide-page"]
 
 [section.line.visual]
