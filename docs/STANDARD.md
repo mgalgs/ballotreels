@@ -278,8 +278,9 @@ the questions record in rule 10.1 becomes required from version 3.)
    records show happened to it: enacted, when, struck down, upheld,
    repealed, still in force. Every outcome the records show is stated as
    plainly as the enactment, so a repeal or a court ruling is never left
-   out. "Similar" is judged from the two texts (they do the same thing),
-   never from news coverage.
+   out. A ruling a higher court later reversed may be told as part of the
+   ruling that stands ("courts upheld it"). "Similar" is judged from the
+   two texts (they do the same thing), never from news coverage.
 4. **No effects.** Whether a law elsewhere worked, or what it caused,
    is argument, not precedent. It appears only where a side's official
    argument makes it, in that side's section (rule 6.3).
@@ -287,7 +288,9 @@ the questions record in rule 10.1 becomes required from version 3.)
    opening line, the vote lines or a side's section. Answers fit the
    video's usual length budget, except precedent: telling every similar
    law with its outcomes may lengthen the video, since leaving a place
-   out to save time would choose which outcomes a voter hears.
+   out to save time would choose which outcomes a voter hears. To keep
+   that short, precedent is told in two lines: where and when similar
+   laws passed, then what happened to them.
 
 ## Machine checks
 

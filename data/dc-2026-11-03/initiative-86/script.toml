@@ -7,10 +7,12 @@
 # Precedent (STANDARD.md section 10) is every enacted law in the archived
 # records (sources/precedent/README.md) that bans these sales: California's
 # (which also bans the force-feeding, as Initiative 86 does), then the city
-# sales bans of Chicago, New York City, Pittsburgh and Portland, Oregon,
-# each with its outcomes: Chicago's ban upheld then repealed; New York
-# City's upheld on appeal but kept unenforced by an injunction. Leaving a
-# place out would pick which outcomes a voter hears. Brookline's bylaw is
+# sales bans of Chicago, New York City, Pittsburgh and Portland, Oregon.
+# One page lists them, the next their outcomes: Chicago's ban upheld then
+# repealed; New York City's upheld on appeal but kept unenforced by an
+# injunction; California's 2015 ruling against its sales ban is folded
+# into the appeals that reversed it (rule 10.3). Leaving a place out would
+# pick which outcomes a voter hears. Brookline's bylaw is
 # not told: its records are not archived (README Part 4). Who it affects
 # comes only from the initiative's text and the Chief Financial Officer;
 # no official record says how many businesses sell these products, so the
@@ -65,44 +67,25 @@ id = "background"
 heading = "Similar laws elsewhere"
 
 [[section.line]]
-id = "california"
-text = "California banned the force-feeding and sales in 2004; a court struck the sales ban down, then an appeals court upheld it."
-sources = ["ca-law", "ca-court-2017", "ca-court-2022"]
+id = "passed"
+text = "Between 2004 and 2026, California, Chicago, New York City, Pittsburgh and Portland, Oregon, passed bans on these sales."
+sources = ["ca-law", "chicago-law", "nyc-law", "pittsburgh-law", "portland-law"]
 
 [section.line.visual]
-kind = "illustration"
-name = "law-book"
-stamp = "California"
+kind = "timeline"
+source = "ca-law"
+labels = ["2004", "2006", "2019", "2023", "2026"]
+items = ["California", "Chicago", "New York City", "Pittsburgh", "Portland, Oregon"]
 
 [[section.line]]
-id = "chicago"
-text = "Chicago banned restaurant sales in 2006; a court upheld the ban, then the city repealed it in 2008."
-sources = ["chicago-law", "chicago-court-2007", "chicago-repeal"]
+id = "outcomes"
+text = "Courts upheld the bans in California, Chicago and New York City; Chicago then repealed its ban, and a court order kept New York's from being enforced."
+sources = ["ca-court-2017", "ca-court-2022", "chicago-court-2007", "chicago-repeal", "nyc-court-2026", "pittsburgh-law", "portland-law"]
 
 [section.line.visual]
-kind = "illustration"
-name = "legislative-chamber"
-stamp = "Chicago"
-
-[[section.line]]
-id = "new-york-city"
-text = "New York City passed a sales ban in 2019; an appeals court upheld it in 2026, but a court order kept it from being enforced."
-sources = ["nyc-law", "nyc-court-2026"]
-
-[section.line.visual]
-kind = "illustration"
-name = "sealed-order"
-stamp = "New York City"
-
-[[section.line]]
-id = "pittsburgh-portland"
-text = "Pittsburgh passed a sales ban in 2023; Portland, Oregon, passed one that starts December 31."
-sources = ["pittsburgh-law", "portland-law"]
-
-[section.line.visual]
-kind = "illustration"
-name = "court-gavel"
-stamp = "Pittsburgh · Portland"
+kind = "list"
+source = "chicago-repeal"
+items = ["California: upheld in court", "Chicago: upheld, then repealed in 2008", "New York City: upheld, but not enforced", "Pittsburgh: took effect in 2023", "Portland, Oregon: takes effect December 31"]
 
 [[section]]
 id = "today"
@@ -218,7 +201,7 @@ highlight = ["No, to reject"]
 
 [[question]]
 ask = "Has anywhere else done this, and what happened?"
-lines = ["california", "chicago", "new-york-city", "pittsburgh-portland"]
+lines = ["passed", "outcomes"]
 
 [[question]]
 ask = "Who would this affect?"
