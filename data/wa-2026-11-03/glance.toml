@@ -1,0 +1,26 @@
+# "Ballot at a glance" figures for the 2026-11-03 Washington general
+# election (docs/SCRIPT-FORMAT.md, "glance.toml"), quoted from the
+# Office of Financial Management's fiscal impact statements.
+
+# No impact on the state; the local cost it names is "minor" and
+# "indeterminate", so the state's "no fiscal impact" is the status.
+[il26-001]
+source = "fiscal"
+status = "no-material-impact"
+quote = "The initiative would have no fiscal impact on the state. Local school districts may incur minor costs to update policies and procedures, but this fiscal impact is indeterminate."
+
+[il26-638]
+source = "fiscal"
+quote = "would incur a one-time cost of approximately $21,000 in SFY 2026 to update existing guidelines to align with the initiative’s requirements."
+amount = 21000
+period = "one-time"
+direction = "cost"
+
+# Fiscal years 2027 through 2031: the five fiscal years the statement
+# totals ("over five fiscal years").
+[ip26-645]
+source = "fiscal"
+quote = "If approved by voters, Initiative 645 will result in an estimated loss to state revenue of $11.4 billion over state fiscal years 2027-2031."
+amount = 11400000000
+period = "over 5 years"
+direction = "revenue-loss"
