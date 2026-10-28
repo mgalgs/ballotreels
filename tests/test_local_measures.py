@@ -225,20 +225,20 @@ class LocalAddressTest(LocalGeoTestCase):
 
 
 class CountyIndexTest(unittest.TestCase):
-    def test_county_level_after_the_state(self):
+    def test_most_local_level_first(self):
         index = load_index(ELECTION_DIR)
         self.assertEqual(level_of(SAN_DIEGO, STATE), "county")
         self.assertEqual(
             [e.id for e in ballot_order(index)],
-            ["ca-2026-11-03-prop-90", "ca-2026-11-03-prop-91",
+            ["ca-2026-11-03-sd-unified-measure-f",
+             "ca-2026-11-03-grossmont-measure-g",
+             "ca-2026-11-03-san-diego-city-measure-d",
+             "ca-2026-11-03-el-cajon-city-measure-e",
+             "ca-2026-11-03-helix-water-measure-h",
              "ca-2026-11-03-sd-county-measure-a",
              "ca-2026-11-03-sd-county-measure-b",
              "ca-2026-11-03-imperial-county-measure-c",
-             "ca-2026-11-03-helix-water-measure-h",
-             "ca-2026-11-03-san-diego-city-measure-d",
-             "ca-2026-11-03-el-cajon-city-measure-e",
-             "ca-2026-11-03-sd-unified-measure-f",
-             "ca-2026-11-03-grossmont-measure-g"])
+             "ca-2026-11-03-prop-90", "ca-2026-11-03-prop-91"])
         self.assertEqual(level_of(SD_CITY, STATE), "place")
         self.assertEqual(level_of(GROSSMONT, STATE), "school_district")
 
@@ -259,16 +259,16 @@ class CountyEndToEndTest(LocalServerTestCase):
 
     def test_ballot_has_its_county_measures_only(self):
         doc = self.ballot_for_zip("92101")
-        self.assertEqual(_ids(doc["levels"][1:2]),
-                         ["ca-2026-11-03-sd-county-measure-a",
-                          "ca-2026-11-03-sd-county-measure-b",
-                          "ca-2026-11-03-helix-water-measure-h"])
+        self.assertEqual(_ids(doc["levels"][2:3]),
+                         ["ca-2026-11-03-helix-water-measure-h",
+                          "ca-2026-11-03-sd-county-measure-a",
+                          "ca-2026-11-03-sd-county-measure-b"])
         doc = self.ballot_for_zip("92250")
-        self.assertEqual(_ids(doc["levels"][1:]),
+        self.assertEqual(_ids(doc["levels"][:-1]),
                          ["ca-2026-11-03-imperial-county-measure-c"])
 
     def test_contest_page(self):
-        summary = self.ballot_for_zip("92101")["levels"][1]["contests"][0]
+        summary = self.ballot_for_zip("92101")["levels"][2]["contests"][1]
         self.assertEqual(summary["path"], "/ca/2026/sd-county-measure-a")
         self.assertEqual(summary["status"], "none")
         doc = self.get_json("/api/contest/ca/2026/sd-county-measure-a")
@@ -301,7 +301,7 @@ class LocalBallotTest(LocalServerTestCase):
     def test_zip_wholly_in_a_city(self):
         doc = self.ballot_for_zip("92101")
         self.assertEqual([lvl["level"] for lvl in doc["levels"]],
-                         ["state", "county", "place", "school_district"])
+                         ["school_district", "place", "county", "state"])
         self.assertEqual(_maybe(doc["levels"]),
                          {"ca-2026-11-03-san-diego-city-measure-d": False,
                           "ca-2026-11-03-sd-unified-measure-f": False})

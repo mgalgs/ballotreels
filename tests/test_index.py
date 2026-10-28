@@ -59,10 +59,10 @@ class IndexTest(unittest.TestCase):
         index = load_index(FIXTURE)
         order = [e.id for e in ballot_order(index)]
         self.assertEqual(order, [
+            "ca-2026-11-03-assembly-17",
+            "ca-2026-11-03-prop-91",
             "ca-2026-11-03-prop-92",
             "ca-2026-11-03-prop-90",
-            "ca-2026-11-03-prop-91",
-            "ca-2026-11-03-assembly-17",
         ])
 
 

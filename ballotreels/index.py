@@ -26,10 +26,11 @@ KINDS = frozenset({"measure", "race"})
 # listed in contests.toml, under this id suffix (and slug).
 CRASH_COURSE = "crash-course"
 
-# Division substrings, in ballot order (docs/ARCHITECTURE.md divisions are
+# Division substrings, widest first (docs/ARCHITECTURE.md divisions are
 # OCD-IDs; "state" is matched by equality with the election's own state
 # division, the rest by substring): statewide, congressional, legislative,
-# then the local ones, county, city ("place") and school district.
+# then the local ones, county, city ("place") and school district. The
+# ballot lists them in reverse, most local first (ballot_order).
 LEVELS = ("state", "cd", "sldu", "sldl", "county", "place",
           "school_district")
 
@@ -337,17 +338,17 @@ def _number_key(number: str | None, position: int) -> tuple[int, Any]:
 
 
 def ballot_order(index: ContestIndex) -> tuple[IndexEntry, ...]:
-    """Every entry, grouped by level in LEVELS' order (statewide,
-    congressional, legislative, county, city, school district), races in
-    file order
-    then measures in natural number order within each level (any
-    unnumbered ones after, in file order)."""
-    level_rank = {level: i for i, level in enumerate(LEVELS)}
+    """Every entry, grouped by level, most local first: LEVELS reversed
+    (school district, city, county, legislative, congressional,
+    statewide), with a special district's measures (`voters`) ahead of
+    its county's own. Within a level, races in file order, then measures
+    in natural number order (any unnumbered ones after, in file order)."""
+    level_rank = {level: i for i, level in enumerate(reversed(LEVELS))}
     file_order = {entry.id: i for i, entry in enumerate(index.entries)}
 
     def key(entry: IndexEntry):
         level = level_of(entry.division, index.election.state)
-        lrank = level_rank.get(level, len(LEVELS))
+        lrank = (level_rank.get(level, len(LEVELS)), entry.voters is None)
         if entry.kind == "race":
             return (lrank, 0, file_order[entry.id])
         return (lrank, 1, _number_key(entry.number, file_order[entry.id]))

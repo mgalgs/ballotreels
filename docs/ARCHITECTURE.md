@@ -85,9 +85,11 @@ after it (its context), and any new take can fail the transcript check.
 
 ## Local contests
 
-A ballot's divisions run, in ballot order: the state, the congressional
-district, the state senate and house (or assembly) districts, then the
-local ones: the **county**, the **city** and the **school district**.
+A ballot's divisions run from widest to narrowest: the state, the
+congressional district, the state senate and house (or assembly)
+districts, then the local ones: the **county**, the **city** and the
+**school district**. The site lists them the other way round, most
+local first, with a special district's measures ahead of its county's.
 Their OCD-IDs are the state's followed by the level and the name, lower
 case, spaces as underscores, nothing but letters, digits and `. _ ~ -`:
 
