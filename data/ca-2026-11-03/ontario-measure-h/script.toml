@@ -1,0 +1,146 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; how it reached the ballot and what it needs to pass; what would
+# change (the rate, how long, where the money goes); the impartial
+# analysis's revenue estimate; one line per side; what a vote does.
+#
+# The card quotes the ballot question from the City Council's resolution
+# (the guide prints none), which has no yes/no lines; the vote lines
+# give the City Attorney's Impartial Analysis's meanings and both
+# highlight the phrase of the question they turn on. "City's" is heard
+# as "cities" (standard/speakability.txt), so the narration says neither.
+#
+# The analysis's $32.5 million a year has no scale: no archived source
+# states the city's general fund budget (STANDARD.md 6.5; left open). The
+# analysis's "would not be shared with the State, County" is the
+# supporters' point too ("cannot be taken by the state or county"), so it
+# stays out of the neutral sections (STANDARD.md 6.3). Sides come from
+# the argument in favor and the argument against, not the rebuttals.
+
+contest = "ca-2026-11-03-ontario-measure-h"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-label"
+number = "H"
+title = "SUPPLEMENTAL GENERAL TRANSACTIONS AND USE TAX (SALES TAX)"
+origin = "A RESOLUTION OF THE CITY COUNCIL OF THE CITY OF ONTARIO, CALIFORNIA, CALLING FOR THE PLACEMENT OF A GENERAL TAX MEASURE ON THE BALLOT"
+summary = "To maintain fire, paramedic, police, 911 response, anti-gang programs; respond to property crimes, thefts, burglaries; clean and maintain public areas; repair streets/potholes; address homelessness; increase access to affordable housing for seniors/families/individuals; retain/attract local businesses; for general City services; shall the measure establishing a half-cent sales tax providing approximately $32,500,000 annually until ended by voters; requiring audits, spending disclosure, funds locally controlled, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure H"
+
+[[section.line]]
+text = "City of Ontario Measure H asks Ontario voters whether to add a half-cent sales tax."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["half-cent sales tax"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The City Council placed Measure H on the ballot, and it needs a simple majority to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Shoppers in Ontario would pay an extra 50 cents for every $100 of purchases."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section.line]]
+text = "The tax would start in April 2027 and last until voters end it."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+text = "Measure H is a general tax: the money would go into the general fund, for any lawful city service."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+text = "The city attorney's impartial analysis estimates the tax would raise $32.5 million a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure H keeps fire, paramedic and emergency services going, and fixes the local streets and potholes."
+sources = ["arguments"]
+basis = ["Measure H helps maintain fire, paramedic, and 911 emergency services so first responders are there when we need them most.", "Repair streets and potholes, and reduce dangerous speeding"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Maintains fire, paramedic and 911 response", "Repairs streets and potholes"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure H brings Ontario the highest sales tax in San Bernardino County, and another blank check."
+sources = ["arguments"]
+basis = ["Measure H would raise Ontario's sales tax to 9.25%, giving Ontario the highest sales tax in San Bernardino County.", "Measure H gives the City Council another $32.5 million every year to spend however it wants."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Highest sales tax in the county", "Another blank check for the council"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the half-cent sales tax."
+sources = ["impartial-analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["half-cent sales tax"]
+
+[[section.line]]
+text = "A no vote does not authorize the half-cent sales tax."
+sources = ["impartial-analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["half-cent sales tax"]
