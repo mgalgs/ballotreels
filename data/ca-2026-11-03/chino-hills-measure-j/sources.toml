@@ -1,0 +1,64 @@
+# Archived sources for City of Chino Hills Measure J, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Bernardino County Registrar of Voters' comprehensive Voter Information
+# Guide (VIG.pdf, PDF pages 222-229); "page" is the guide's printed
+# footer number (SB COMPREHENSIVE-220 is PDF page 222).
+#
+# The guide prints no ballot question; the card quotes it from the City
+# Council's resolution placing the measure (Section 2). The same
+# resolution's recitals state the city's adopted 2026-27 General Fund
+# budget, the total that gives the revenue estimate its scale.
+
+[contest]
+id = "ca-2026-11-03-chino-hills-measure-j"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:chino_hills"
+kind = "measure"
+title = "City of Chino Hills Measure J: One-Cent General Sales Tax"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "City of Chino Hills, Resolution No. 2026R-041: the ballot question for Measure J"
+credit = "Ballot question, Resolution No. 2026R-041"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofChinoHills/RES_ChinoHills.pdf"
+file = "sources/RES_ChinoHills.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "budget"
+kind = "legislative-record"
+publisher = "City of Chino Hills, Resolution No. 2026R-041, recitals: the adopted Fiscal Year 2026-27 General Fund budget"
+credit = "Resolution No. 2026R-041"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofChinoHills/RES_ChinoHills.pdf"
+file = "sources/RES_ChinoHills.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney, Impartial Analysis of Measure J, San Bernardino County Voter Information Guide, page SB COMPREHENSIVE-220"
+credit = "Impartial Analysis, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp222-229.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments in favor of and against Measure J and rebuttals, San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-220 to 222"
+credit = "Arguments, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp222-229.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text for Measure J (ordinance adding Chapter 3.30 to the Chino Hills Municipal Code), San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-222 to 227"
+credit = "Full Text, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp222-229.pdf"
+retrieved = "2026-10-28"
