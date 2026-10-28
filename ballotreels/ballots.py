@@ -107,6 +107,19 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label="Fiscal Note",
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+    # New Mexico's Secretary of State prints each constitutional
+    # amendment's ballot title, purpose and the Legislative Council
+    # Service's arguments, and each general obligation bond question, in
+    # its "2026 General Election Voter Guide" (the year left out here, as
+    # Nevada's is). Each is headed "Constitutional Amendment 1" or "Bond
+    # Question 1" (badge BOND QUESTION, as printed, rather than the bare
+    # QUESTION), and the ballot prints the choices "For:" and "Against:".
+    # The guide prints no fiscal statement for any of them.
+    "nm": Ballot(guide="General Election Voter Guide",
+                 fiscal_label=None,
+                 choices=("For", "Against"),
+                 card_source_kind="official-title-summary",
+                 badges={"Question": "BOND QUESTION"}),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
