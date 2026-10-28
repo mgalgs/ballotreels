@@ -1,0 +1,151 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; what a millage rate is and how rates reset after each
+# reassessment; the use-it-or-lose-it rule today; what Amendment 2 would
+# change; what the Legislative Fiscal Office says; the two sides; what a
+# vote does.
+#
+# The card quotes the Secretary of State's "Statements of Proposed
+# Constitutional Amendments": the ballot question whole, the Abstract,
+# and the "Proposed Constitutional Amendment" paragraph. The sheet prints
+# no "a yes vote means" lines, so the card has none, and the vote lines
+# take their two meanings from the card's own words.
+#
+# Fiscal: the Legislative Fiscal Office's note says the amendment "may
+# result in foregone ad valorem tax revenues" and "the extent of any
+# decrease is indeterminable"; it gives no dollar figure, so none needs a
+# scale. Its paragraph on the Secretary of State's ballot costs is the
+# election's cost, not the amendment's.
+#
+# Louisiana publishes no official arguments for or against an
+# amendment, so both sides are filed = false and each says so once, in
+# the same number of words. No person is named.
+
+contest = "la-2026-11-03-amendment-2"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "statements"
+number = "2"
+title = "Do you support an amendment to allow a local taxing authority to continue to levy a lower millage rate without losing its ability to adjust to the maximum authorized millage rate from a prior year’s reassessment? (Effective January 1, 2027) (Amends Article VII, Section 23(C))"
+origin = "Authorizes a local taxing authority to levy a lower millage rate without losing its ability to adjust to the prior year’s maximum authorized millage rate"
+summary = "Proposed Constitutional Amendment allows a taxing authority to continue to levy a lower millage rate without subsequently losing its ability to adjust to the maximum authorized millage rate from a prior year’s reassessment."
+
+[[section]]
+id = "what"
+heading = "Amendment 2"
+
+[[section.line]]
+text = "Amendment 2 is about local property tax rates after a reassessment."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "page"
+source = "statements"
+highlight = ["levy a lower millage rate"]
+
+[[section]]
+id = "background"
+heading = "How rates reset"
+
+[[section.line]]
+text = "A millage rate is a local property tax rate."
+sources = ["statements", "fiscal-note"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section.line]]
+text = "After each reassessment, every four years, rates are adjusted so the tax collected stays the same."
+sources = ["statements", "digest"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, a taxing authority may vote to raise its rate back to the prior maximum, but only until the next reassessment."
+sources = ["statements", "digest", "fiscal-note"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would let a taxing authority keep a lower rate and still return to the maximum later."
+sources = ["statements", "fiscal-note"]
+
+[section.line.visual]
+kind = "page"
+source = "statements"
+highlight = ["without subsequently losing its ability to adjust to the maximum authorized millage rate"]
+
+[[section]]
+id = "fiscal"
+heading = "What the fiscal note says"
+
+[[section.line]]
+text = "The Legislative Fiscal Office says property tax revenue may go uncollected if rates stay lower for longer, by an amount it cannot determine."
+sources = ["fiscal-note"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Louisiana publishes no official argument for the amendment."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "list"
+source = "statements"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Louisiana publishes no official argument against the amendment."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "list"
+source = "statements"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote lets taxing authorities keep lower rates without losing the maximum."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "page"
+source = "statements"
+highlight = ["continue to levy a lower millage rate without losing its ability"]
+
+[[section.line]]
+text = "A no vote keeps today's rule, ending that ability at the next reassessment."
+sources = ["statements", "digest"]
+
+[section.line.visual]
+kind = "page"
+source = "statements"
+highlight = ["from a prior year’s reassessment"]
