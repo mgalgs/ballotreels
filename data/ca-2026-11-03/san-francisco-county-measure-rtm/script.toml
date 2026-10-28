@@ -1,0 +1,151 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks, and that five counties decide it together; the district the
+# Legislature created, whose voters petitioned for the tax; what the tax
+# would be; where San Francisco's share would go; the District's revenue
+# estimate; one line per side; what a vote does.
+#
+# This is San Francisco's copy: its pamphlet's 1 percent rate and the
+# arguments filed there. The impartial analysis is by the District's
+# legal counsel, and "Counsel" is heard as "Council"
+# (standard/speakability.txt), so the narration calls it the District's
+# impartial analysis. The $980 million a year is the District's tax
+# across five counties; no archived source states a District budget to
+# scale it against (STANDARD.md 6.5), so it stands alone. The oversight
+# committee and efficiency reviews are the supporters' point and the
+# opponents' "blank check" theirs, so neither is in a neutral section
+# (STANDARD.md 6.3).
+
+contest = "ca-2026-11-03-san-francisco-county-measure-rtm"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-page"
+number = "RTM"
+title = "Regional Transit Measure"
+origin = "This measure was placed on the ballot by voter initiative, signed by the requisite number of voters within the Public Transit Revenue Measure District (“District”)."
+summary = "shall the measure enacting a 0.5% (Alameda, Contra Costa, San Mateo, Santa Clara counties), and 1% (San Francisco) sales tax for 14 years generating approximately $980,000,000 annually, be adopted?"
+yes = "A “yes” vote is a vote to impose the tax described above for 14 years."
+no = "A “no” vote is a vote against imposing the tax."
+
+[[section]]
+id = "what"
+heading = "Measure RTM"
+
+[[section.line]]
+text = "Regional Measure RTM asks voters in San Francisco and four other Bay Area counties whether to add a sales tax for public transit."
+sources = ["ballot-page"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-page"
+highlight = ["sales tax for 14 years"]
+
+[[section.line]]
+text = "The measure needs a majority of the votes in all five counties combined."
+sources = ["ballot-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-line-map"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "In 2025, the Legislature created a five-county transit district, whose voters put this tax on the ballot by petition."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "commuter-train"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure RTM would add a 1 percent sales tax in San Francisco, and half a percent in the other counties, for 14 years."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section.line]]
+text = "Of the money raised in San Francisco, about 63 percent would go to Muni, and 29 percent to BART."
+sources = ["text"]
+
+[section.line.visual]
+kind = "share"
+title = "Where San Francisco's share would go"
+source = "text"
+unit = "%"
+labels = ["Muni", "BART", "Caltrain"]
+values = [62.87, 29.14, 3.97]
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+text = "The District's impartial analysis estimates the tax would raise about $980 million a year from all five counties."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say without Measure RTM, Muni could cut service by at least 30 percent, and BART could close 15 stations."
+sources = ["arguments"]
+basis = ["Without this measure, Muni could cut service by at least 30%, cancel at least 20 bus routes, end regular evening service, eliminate cable car service", "BART could close 15 stations, including Colma, San Bruno, and South San Francisco, and reduce service by 70%."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Prevents deep cuts to Muni, BART and Caltrain", "Does not tax rent, utilities or most groceries"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure RTM makes life in San Francisco less affordable, by raising its sales tax rate to 9.625 percent."
+sources = ["arguments"]
+basis = ["The new Regional Transit Measure (RTM) Tax makes life in San Francisco less affordable.", "RTM is a NEW TAX that would raise San Francisco’s Sales Tax rate to 9.625%."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Raises the sales tax rate to 9.625 percent", "Transit agencies should fix spending first"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is a vote to impose the tax for 14 years."
+sources = ["ballot-page"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-page"
+highlight = ["a vote to impose the tax"]
+
+[[section.line]]
+text = "A no vote is a vote against imposing the tax."
+sources = ["ballot-page"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-page"
+highlight = ["a vote against imposing the tax"]

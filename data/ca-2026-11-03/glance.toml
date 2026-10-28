@@ -238,3 +238,13 @@ source = "guide-page"
 quote = "Total estimated revenue derived from the special tax from the 53 developed and 3 undeveloped parcels currently in the Permanent Road Division for the first fiscal year is $54,125."
 amount = 54125
 period = "per-year"
+
+# Regional Measure RTM (San Francisco's copy): the pamphlet prints no
+# Controller's Statement; the one estimate is the District's impartial
+# analysis's yearly revenue across all five counties.
+[san-francisco-county-measure-rtm]
+source = "analysis"
+quote = "It is estimated that the tax would raise approximately $980 million per year."
+amount = 980000000
+period = "per-year"
+direction = "revenue-gain"

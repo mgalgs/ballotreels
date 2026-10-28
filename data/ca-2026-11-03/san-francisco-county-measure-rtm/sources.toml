@@ -1,0 +1,55 @@
+# Archived sources for Regional Measure RTM, 2026-11-03 general election
+# (sources/sources.md), as San Francisco's own Voter Information Pamphlet
+# & Sample Ballot prints it: San Francisco's rate (1 percent) and the
+# arguments filed in San Francisco. The other four counties of the Public
+# Transit Revenue Measure District print their own. "page" is the
+# pamphlet's printed page number (the PDF's page less 2).
+#
+# The measure covers all of San Francisco, so its division is the county
+# and it has no `voters`; it passes on the votes of all five counties
+# together. The pamphlet prints no Controller's Statement, digest or paid
+# arguments for it: the impartial analysis by the District's legal
+# counsel is its neutral explanation and the one revenue estimate.
+
+[contest]
+id = "ca-2026-11-03-san-francisco-county-measure-rtm"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:san_francisco"
+kind = "measure"
+title = "Regional Measure RTM: Regional Transit Measure"
+
+[[source]]
+id = "ballot-page"
+kind = "official-title-summary"
+publisher = "San Francisco Department of Elections, Voter Information Pamphlet & Sample Ballot, November 3, 2026, pages 52 to 53: ballot question, the District's impartial analysis, and how RTM got on the ballot"
+credit = "San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/ballot-question-and-impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "analysis"
+kind = "official-fiscal-analysis"
+publisher = "Public Transit Revenue Measure District's Legal Counsel, Impartial Analysis of Regional Transit Measure, San Francisco Voter Information Pamphlet & Sample Ballot, pages 52 to 53"
+credit = "Impartial Analysis, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/ballot-question-and-impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Proponent's and Opponent's Arguments on Regional Measure RTM and their rebuttals, San Francisco Voter Information Pamphlet & Sample Ballot, pages 54 to 55"
+credit = "Arguments, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/arguments-and-rebuttals.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Connect Bay Area Transit Initiative (legal text of Regional Measure RTM), San Francisco Voter Information Pamphlet & Sample Ballot, pages 56 to 60"
+credit = "Legal text of RTM, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/legal-text.pdf"
+retrieved = "2026-10-28"
