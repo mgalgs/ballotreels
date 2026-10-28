@@ -1,0 +1,64 @@
+# Archived sources for Jamul-Dulzura Union School District Measure H,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Diego County Registrar of Voters' Voter Information Guide (ballot type
+# 653, a Jamul precinct); "page" is the guide's printed footer number.
+
+[contest]
+id = "ca-2026-11-03-jamul-dulzura-measure-h"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:jamul-dulzura_union_elementary_school_district"
+kind = "measure"
+title = "Jamul-Dulzura Union School District Measure H: $18,000,000 in School Facilities Bonds"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Voter Information Guide (ballot type 653), page SD 653-079: ballot label and County Counsel Impartial Analysis"
+credit = "County Counsel Impartial Analysis, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-653.pdf"
+file = "sources/vig653-p81-ballot-label-impartial-analysis-tax-rate-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Tax Rate Statement Regarding Proposed Jamul-Dulzura Union School District General Obligation Bonds, San Diego County Voter Information Guide (ballot type 653), page SD 653-079"
+credit = "Tax Rate Statement, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-653.pdf"
+file = "sources/vig653-p81-ballot-label-impartial-analysis-tax-rate-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure H, as printed in the San Diego County Voter Information Guide (ballot type 653), page SD 653-080, with the notice that no argument against was filed"
+credit = "Argument in favor, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-653.pdf"
+file = "sources/vig653-p82-argument-in-favor-no-argument-against.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure H, San Diego County Voter Information Guide (ballot type 653), pages SD 653-080 to SD 653-082"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-653.pdf"
+file = "sources/vig653-p82-84-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Jamul-Dulzura Union School District, Board of Education Resolution No. 7092026.1, with cover letter, as filed with the San Diego County Registrar of Voters"
+url = "https://www.sdvote.com/content/dam/rov/en/election/nov-3-2026-gubernatorial-general-election/jamul-dulzura-union%20school-district.pdf"
+file = "sources/rov-board-resolution-7092026.1-and-cover-letter.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Composite Ballot, General 2026, page 22"
+url = "https://www.sdvote.com/content/dam/rov/en/election/facsimile-reference-ballot/english-reference-ballot.pdf"
+file = "sources/composite-ballot-p22.pdf"
+retrieved = "2026-10-28"

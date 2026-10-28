@@ -1,0 +1,157 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and whose measure it is; how the bonds are repaid and the vote they
+# need; what the money would pay for and who checks it; the tax rate
+# statement's estimates; one line per side; what a vote does.
+#
+# The tax rate and the bond total are given as the statement and the
+# ballot give them. The bonds are repaid from a tax on property in the
+# district, and no archived source states the district's budget, so the
+# total repaid has no scale (STANDARD.md 6.5; left open). The ballot
+# question's "With no projected increase in current tax rates" is the
+# supporters' point too ("without increasing existing tax rates"), so the
+# neutral lines leave it to the card and the yes side (STANDARD.md 6.3).
+# County Counsel's Impartial Analysis is cited as the guide page;
+# "Counsel" is heard as "Council" (standard/speakability.txt).
+#
+# No argument against was filed ("No Argument Against Measure H was filed
+# with the Office of the Registrar of Voters"): the no side says so,
+# filed = false (STANDARD.md 2.5).
+
+contest = "ca-2026-11-03-jamul-dulzura-measure-h"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "H"
+title = "JAMUL-DULZURA UNION SCHOOL DISTRICT"
+origin = "The Board of Education for the Jamul-Dulzura Union School District (“District”) placed this measure on the ballot."
+summary = "With no projected increase in current tax rates and to repair/ replace deteriorating roofs, plumbing, dry rot, termite damage, electrical; upgrade aging schools to meet current health/ safety standards; and upgrade classrooms to support student achievement in math, science, technology, reading, writing, shall Jamul-Dulzura Union School District’s measure be adopted authorizing $18,000,000 in bonds at legal rates, levying $30 per $100,000 assessed value (averaging $1,300,000 annually) while bonds are outstanding, with citizen oversight/ audits, all money locally controlled?"
+yes = "A “YES” vote is in favor of authorizing the District to issue and sell $18,000,000 in general obligation bonds."
+no = "A “NO” vote is against authorizing the District to issue and sell $18,000,000 in general obligation bonds."
+
+[[section]]
+id = "what"
+heading = "Measure H"
+
+[[section.line]]
+text = "Jamul-Dulzura Union School District Measure H asks the district's voters whether to approve $18 million in school bonds."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["$18,000,000 in bonds"]
+
+[[section]]
+id = "today"
+heading = "How school bonds work"
+
+[[section.line]]
+text = "The bonds would be repaid, with interest, by a yearly tax on the assessed value of property in the district."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure H needs 55 percent of the vote to pass."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The money would repair roofs, plumbing and electrical systems, and upgrade aging classrooms."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section.line]]
+text = "A citizens' oversight committee and yearly audits would check that the money goes only to the listed projects."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax rate statement says"
+
+[[section.line]]
+text = "The district's tax rate statement estimates $30 a year per $100,000 of assessed value, through fiscal year 2062-2063."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "bars"
+title = "Measure H, in millions of dollars"
+source = "tax-statement"
+unit = ""
+labels = ["Bonds", "Total repaid, with interest"]
+values = [18, 43.17]
+
+[[section.line]]
+text = "The statement puts the total repaid, with interest, at about $43.2 million."
+sources = ["tax-statement"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure H fixes leaking roofs, failing pipes and termite damage at district schools without increasing existing tax rates."
+sources = ["argument-for"]
+basis = ["Vote YES on Measure H to repair and upgrade classrooms and school", "facilities in the Jamul-Dulzura Union School District without increasing existing tax rates.", "Out of 61 roofs across our schools, 58 are leaking and need replacement", "underground pipes and infrastructure are failing", "Replace wood and support beams that have extensive termite damage and dry rot"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Fixes leaking roofs, failing pipes and dry rot", "Keeps existing tax rates, with independent audits"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure H was filed with the Registrar of Voters for the San Diego County Voter Information Guide."
+sources = ["argument-for"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is in favor of authorizing the district to issue and sell the $18 million in bonds."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["in favor of authorizing"]
+
+[[section.line]]
+text = "A no vote is against authorizing the district to issue and sell the bonds."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["against authorizing"]
