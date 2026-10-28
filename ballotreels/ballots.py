@@ -95,6 +95,8 @@ BALLOTS: dict[str, Ballot] = {
                          "San Bernardino County Voter Information Guide",
                      "ca-2026-11-03-sb-mountains-hospital-measure-q":
                          "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-rim-of-the-world-park-measure-r":
+                         "Board of Directors Resolution No. 07132026.3",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",

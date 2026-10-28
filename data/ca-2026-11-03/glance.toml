@@ -286,3 +286,12 @@ source = "tax-statement"
 quote = "The best estimate from official sources of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $106,182,725."
 amount = 106182725
 period = "unstated"
+
+# Rim of the World Recreation and Park District Measure R: a special
+# parcel tax; the guide prints no tax rate statement, and the one
+# estimate is the ballot question's first-year revenue.
+[rim-of-the-world-park-measure-r]
+source = "ballot-question"
+quote = "generating approximately $510,000 the first year"
+amount = 510000
+period = "per-year"
