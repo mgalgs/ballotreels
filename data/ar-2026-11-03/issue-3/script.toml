@@ -1,0 +1,152 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; what local governments may fund today; the programs and
+# districts the amendment would allow, and how district property would be
+# taxed; that no cost estimate exists; one line per side; what a vote
+# does.
+#
+# Arkansas publishes no official voter guide. The card quotes the
+# Secretary of State's Notice to the Public: the popular name as its
+# title, the ballot title as its summary; the notice prints no "a FOR
+# vote means" lines, so the card has none. The tax line states both
+# halves of the text's rule (exempt from other taxes, taxed by the
+# district), so neither the effect nor its cost is passed over (rule
+# 6.4).
+#
+# The sides come from the University of Arkansas Division of
+# Agriculture's guide, "What do supporters say?" and "What do opponents
+# say?" (STANDARD.md rule 1.2): unattributed examples of what each side
+# has made public, which the Division does not endorse. Each side's line
+# names the guide the same way. For: Arkansas is the only state in its
+# region without such districts, and they would help communities compete
+# without raising taxes. Against: district property comes off the tax
+# rolls and the cost shifts to everyone outside the district, and the
+# government picks which businesses benefit.
+
+contest = "ar-2026-11-03-issue-3"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "notice"
+number = "3"
+title = "A Constitutional Amendment Concerning Economic Development in the State of Arkansas; and Authorizing the General Assembly to Provide for the Creation of Economic Development Districts Within Cities, Counties, or Cooperative Areas to Promote Economic Development Within the Economic Development District."
+origin = "the 95th General Assembly refers the following constitutional amendment to a vote of the people on November 3, 2026"
+summary = "AN AMENDMENT TO THE ARKANSAS CONSTITUTION CONCERNING ECONOMIC DEVELOPMENT IN THE STATE OF ARKANSAS; AND AUTHORIZING THE GENERAL ASSEMBLY TO PROVIDE FOR THE CREATION OF ECONOMIC DEVELOPMENT DISTRICTS WITHIN CITIES, COUNTIES, OR COOPERATIVE AREAS TO PROMOTE ECONOMIC DEVELOPMENT WITHIN THE ECONOMIC DEVELOPMENT DISTRICT."
+
+[[section]]
+id = "what"
+heading = "Issue 3"
+
+[[section.line]]
+text = "Issue 3 is about economic development in Arkansas."
+sources = ["notice"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["Concerning Economic Development in the State of Arkansas"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, cities and counties may fund economic development projects."
+sources = ["text", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would let lawmakers create development programs, loans, and grants."
+sources = ["text", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-capitol"
+
+[[section.line]]
+text = "Lawmakers could allow economic development districts in cities, counties, or cooperative areas."
+sources = ["notice", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["CREATION OF ECONOMIC DEVELOPMENT DISTRICTS WITHIN CITIES, COUNTIES, OR COOPERATIVE AREAS"]
+
+[[section.line]]
+text = "District property would be exempt from other taxes, but taxed by the district."
+sources = ["text", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "district-map"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Arkansas does not publish a cost estimate for the amendment."
+sources = ["notice"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say, according to the University of Arkansas guide, Arkansas alone in its region lacks these districts, and they would help communities compete without raising taxes."
+sources = ["uaex-guide"]
+basis = ["Arkansas is the only state in our region that does not allow these types of Economic Development Districts.", "Issue 3 would give communities across Arkansas more flexibility to invest in infrastructure, support housing, and compete for economic development opportunities, all without raising taxes."]
+
+[section.line.visual]
+kind = "list"
+source = "uaex-guide"
+items = ["Arkansas alone in its region lacks these districts", "Helps communities compete without raising taxes"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say, according to the University of Arkansas guide, district property leaves the tax rolls, shifting costs to everyone else, and government picks which businesses benefit."
+sources = ["uaex-guide"]
+basis = ["When property goes into one of these districts it comes off the tax rolls for schools, the county and the city.", "Those services still have to be paid for, so the cost shifts to everyone outside the district.", "The government picks which businesses receive advantages, usually big, out-of-state corporations."]
+
+[section.line.visual]
+kind = "list"
+source = "uaex-guide"
+items = ["Shifts tax costs to everyone outside the district", "Government picks which businesses benefit"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for means lawmakers could create these programs and districts."
+sources = ["notice", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+
+[[section.line]]
+text = "A vote against means the current wording would stay."
+sources = ["notice", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
