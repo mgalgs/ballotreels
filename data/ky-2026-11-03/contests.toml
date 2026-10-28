@@ -1,0 +1,18 @@
+# Contest index for the 2026-11-03 Kentucky general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot: the one constitutional amendment the General Assembly proposed.
+# `number` is a measure's ballot designation (a string). The ballot
+# prints "CONSTITUTIONAL AMENDMENT 1" and no short title, so the title
+# pairs the designation with a short neutral subject.
+
+[election]
+id = "ky-2026-11-03"
+state = "ocd-division/country:us/state:ky"
+title = "Kentucky General Election, November 3, 2026"
+
+[[contest]]
+id = "ky-2026-11-03-amendment-1"
+kind = "measure"
+division = "ocd-division/country:us/state:ky"
+title = "Constitutional Amendment 1: Governor's Pardons Before an Election"
+number = "1"
