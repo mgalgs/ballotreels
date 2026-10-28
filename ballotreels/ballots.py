@@ -95,6 +95,18 @@ BALLOTS: dict[str, Ballot] = {
                          "San Diego County Voter Information Guide",
                      "ca-2026-11-03-coronado-measure-d":
                          "San Diego County Voter Information Guide",
+                     "ca-2026-11-03-perris-union-high-measure-aa":
+                         "Riverside County Voter Information Guide",
+                     "ca-2026-11-03-hemet-unified-measure-i":
+                         "Riverside County Voter Information Guide",
+                     "ca-2026-11-03-temecula-valley-unified-measure-s":
+                         "Riverside County Voter Information Guide",
+                     "ca-2026-11-03-murrieta-valley-unified-measure-m":
+                         "Riverside County Voter Information Guide",
+                     "ca-2026-11-03-desert-recreation-measure-p":
+                         "Riverside County Voter Information Guide",
+                     "ca-2026-11-03-san-bernardino-ccd-measure-y-riverside":
+                         "Riverside County Voter Information Guide",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",
