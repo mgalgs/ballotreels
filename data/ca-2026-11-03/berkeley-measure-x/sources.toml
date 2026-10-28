@@ -1,0 +1,49 @@
+# Archived sources for City of Berkeley Measure X, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the
+# Alameda County Registrar of Voters' Composite Voter Information Guide
+# (PDF pages 865 to 878); "page" is the guide's printed footer number.
+# The guide prints no fiscal analysis for Measure X (not a tax measure).
+#
+# vig-pp865-878.pdf is the cut as archived. Its Times New Roman fonts
+# are embedded as CID TrueType with no Unicode map, so pdftotext reads
+# most of the text as glyph numbers. vig-pp865-878-text-layer.pdf is the
+# same file with one change: a ToUnicode map added to those fonts, from
+# Times New Roman's own glyph order (glyph 3-97 is ASCII 32-126; the
+# ligatures, curly quotes, dashes and bullet by their glyph numbers),
+# checked against the printed pages. The sources below cite it, so the
+# checks can read the guide's words.
+
+[contest]
+id = "ca-2026-11-03-berkeley-measure-x"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:berkeley"
+kind = "measure"
+title = "City of Berkeley Measure X: Amending the Rent Stabilization and Eviction for Just Cause Ordinance"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "Alameda County Registrar of Voters, Composite Voter Information Guide, page BMX-1: ballot question and City Attorney's Impartial Analysis of Measure X"
+credit = "City Attorney's Impartial Analysis, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp865-878-text-layer.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments for and against Measure X and rebuttals, as printed in the Alameda County Composite Voter Information Guide, pages BMX-2 to BMX-4"
+credit = "Arguments, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp865-878-text-layer.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure X, amendments to the Rent Stabilization and Eviction for Just Cause Ordinance, Alameda County Composite Voter Information Guide, pages BMX-5 to BMX-14"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp865-878-text-layer.pdf"
+retrieved = "2026-10-28"
