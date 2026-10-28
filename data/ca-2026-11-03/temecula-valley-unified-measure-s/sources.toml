@@ -1,0 +1,74 @@
+# Archived sources for Temecula Valley Unified School District Measure S,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the
+# County of Riverside Registrar of Voters' County Voter Information Guide
+# (ballot type 122); "page" is the guide's printed footer number.
+#
+# The ballot question is printed only on the sample ballot, whose
+# columns of English and Spanish text pdftotext reads line by line across
+# each other. The card therefore quotes sources/guide-pages.txt: the
+# sample ballot page's text as poppler's `pdftotext -raw` extracts it
+# from sources/sample-ballot-page.pdf (in the PDF's own reading order),
+# followed by the measure pages' text as plain `pdftotext` extracts it
+# from sources/voter-guide-measure-pages.pdf. The other sources cite the
+# PDFs themselves.
+
+[contest]
+id = "ca-2026-11-03-temecula-valley-unified-measure-s"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:temecula_valley_unified_school_district"
+kind = "measure"
+title = "Temecula Valley Unified Measure S: School Repair and Upgrade Bonds"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "County of Riverside Registrar of Voters, County Voter Information Guide, pages RV 122-021 and RV 122-033: Measure S's ballot question on the sample ballot, and the Impartial Analysis's statement of what a vote does"
+credit = "Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000122.pdf"
+file = "sources/guide-pages.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "Riverside County Counsel, Impartial Analysis of Measure S, Riverside County Voter Information Guide, page RV 122-033"
+credit = "Impartial Analysis, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000122.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Temecula Valley Unified School District, Tax Rate Statement for Measure S, Riverside County Voter Information Guide, page RV 122-032"
+credit = "Tax Rate Statement, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000122.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments for and against Measure S, and the rebuttals, as printed in the Riverside County Voter Information Guide, pages RV 122-034 and RV 122-035"
+credit = "Arguments, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000122.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure S, Riverside County Voter Information Guide, pages RV 122-029 to RV 122-032"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000122.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "County of Riverside Registrar of Voters, Sample Ballot, County Voter Information Guide, page RV 122-021"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000122.pdf"
+file = "sources/sample-ballot-page.pdf"
+retrieved = "2026-10-28"

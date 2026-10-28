@@ -1,0 +1,152 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; how a school bond is repaid and what it needs to
+# pass; what the money would pay for; the district's tax statement; one
+# line per side; what a vote does.
+#
+# The ballot question has no title line, so the card quotes the question
+# (from the sample ballot, the one page that prints it) as its title, as
+# Santee School District's card does, and the Impartial Analysis's
+# statement of what the measure does as its summary, with its origin and
+# yes and no lines. "Counsel" is heard as "Council"
+# (standard/speakability.txt). The bond total and the debt service are
+# repaid from a tax on property in the district, and no archived source
+# states the district's budget, so they have no budget scale (STANDARD.md
+# 6.5; left open). The tax statement gives $20 as both its average and its
+# highest rate.
+#
+# The opponents argue the ballot hides the repayment cost of $383 million.
+# The fiscal section still gives the tax statement's total debt service,
+# as every bond script does (STANDARD.md 6.4: the fiscal statement's cost
+# is told), and the opponents' line keeps their claim, that the ballot
+# hides it, without repeating the figure. The district's $120 million
+# General Fund balance and $450 million budget are the opponents' figures,
+# not an official source's, so they appear only in the opponents' line.
+# Sides come from the argument in favor and the argument against, not the
+# rebuttals.
+
+contest = "ca-2026-11-03-temecula-valley-unified-measure-s"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-label"
+number = "S"
+title = "To provide safe, modern schools by repairing and upgrading aging classrooms, school facilities, science and career technology labs supporting college/career readiness in math, science, engineering, technology, arts, and skilled trades; repairing deteriorating roofs, plumbing, gas, and electrical systems; shall Temecula Valley Unified School District's measure be adopted authorizing $215,000,000 in bonds at legal interest rates, levying approximately $20 per $100,000 assessed value (averaging $13,000,000) annually, while bonds are outstanding, with citizen oversight, audits, and all money locally-controlled?"
+origin = "The Board of Education of the District, by adopting Resolution No. 2025-26/42 (“Resolution”), elected to call an election to place this Measure on the ballot."
+summary = "Measure S would enable the District to issue and sell bonds of up to a maximum amount of two-hundred and fifteen million dollars ($215,000,000), at interest rates not to exceed legal limits."
+yes = "A “YES” vote on Measure “S” is a vote to authorize the District to issue and sell bonds to provide financing of school facilities projects."
+no = "A “NO” vote on Measure “S” is a vote to reject the District from issuing and selling bonds to provide financing of school facilities projects."
+
+[[section]]
+id = "what"
+heading = "Measure S"
+
+[[section.line]]
+text = "Temecula Valley Unified School District Measure S asks the district's voters whether to approve $215 million in school bonds."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["$215,000,000 in bonds"]
+
+[[section]]
+id = "today"
+heading = "How a school bond works"
+
+[[section.line]]
+text = "The district would borrow the money and repay it with a tax on property, based on its assessed value."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure S needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The money would repair roofs, plumbing, gas and electrical systems, and upgrade aging classrooms, science labs and career technology labs."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+text = "The district's tax statement estimates a tax of $20 per $100,000 of assessed value, collected until 2055-2056."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section.line]]
+text = "The statement estimates the total to repay, with interest, at about $383 million."
+sources = ["tax-statement"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure S replaces aging portable classrooms with permanent ones and upgrades cooling for 100-degree summers."
+sources = ["arguments"]
+basis = ["many classrooms are now entering their fourth decade", "Measure S allows us to transition from temporary portable structures into", "With local summer temperatures often exceeding 100 degrees, upgrading"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Replaces old portables with permanent classrooms", "Upgrades cooling and shade for hot summers"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the ballot hides the true cost, and the district holds $120 million usable for repairs."
+sources = ["arguments"]
+basis = ["This measure uses deceptive ballot language", "to deliberately hide the true costs from voters", "approximately $120 million in General Fund balance (6/30/26) that", "state law allows for use on repairs and modernization"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Ballot language hides the true repayment cost", "District holds $120 million usable for repairs"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the district to issue and sell the bonds."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["a vote to authorize the District"]
+
+[[section.line]]
+text = "A no vote rejects the district issuing and selling the bonds."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["a vote to reject the District"]
