@@ -44,7 +44,9 @@ BALLOTS: dict[str, Ballot] = {
     # A county measure's card is a page of its county's publication, not
     # the state's guide: San Diego's Voter Information Guide prints each
     # measure's ballot label and impartial analysis; Los Angeles prints
-    # its ballot label only in the measure's proposed ordinance.
+    # its ballot label only in the measure's proposed ordinance; Orange
+    # County's Voter Information Guide prints each city measure's ballot
+    # question, impartial analysis and arguments in its own section.
     "ca": Ballot(guide="Official Voter Information Guide",
                  fiscal_label="Fiscal Impact:",
                  choices=("Yes", "No"),
@@ -83,6 +85,20 @@ BALLOTS: dict[str, Ballot] = {
                          "San Diego County Voter Information Guide",
                      "ca-2026-11-03-harris-annex-road-zone-measure-q":
                          "San Diego County Voter Information Guide",
+                     "ca-2026-11-03-santa-ana-measure-n":
+                         "Orange County Voter Information Guide",
+                     "ca-2026-11-03-irvine-measure-d":
+                         "Orange County Voter Information Guide",
+                     "ca-2026-11-03-orange-city-measure-i":
+                         "Orange County Voter Information Guide",
+                     "ca-2026-11-03-orange-city-measure-j":
+                         "Orange County Voter Information Guide",
+                     "ca-2026-11-03-orange-city-measure-k":
+                         "Orange County Voter Information Guide",
+                     "ca-2026-11-03-costa-mesa-measure-c":
+                         "Orange County Voter Information Guide",
+                     "ca-2026-11-03-westminster-measure-o":
+                         "Orange County Voter Information Guide",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",
