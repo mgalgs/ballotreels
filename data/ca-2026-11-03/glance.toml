@@ -162,3 +162,9 @@ source = "guide-page"
 quote = "providing $20,000,000 annually for general government use for 10 years"
 amount = 20000000
 period = "per-year"
+
+# City of Oceanside Measure R: the guide prints no fiscal analysis (not a
+# tax measure).
+[oceanside-measure-r]
+source = "guide-page"
+status = "none-printed"

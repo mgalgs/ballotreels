@@ -1,0 +1,43 @@
+# Archived sources for City of Oceanside Measure R, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Diego County Registrar of Voters' Voter Information Guide (ballot type
+# 160, an Oceanside precinct); "page" is the guide's printed footer
+# number.
+#
+# The City Clerk's site refused downloads (HTTP 403), so every source is
+# the guide's. It prints all four arguments and rebuttals.
+
+[contest]
+id = "ca-2026-11-03-oceanside-measure-r"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:oceanside"
+kind = "measure"
+title = "City of Oceanside Measure R: Charter Amendment on Prevailing Wage and Project Labor Agreements"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Voter Information Guide, page SD 160-074: ballot label and City Attorney Impartial Analysis"
+credit = "City Attorney Impartial Analysis, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-160.pdf"
+file = "sources/vig160-p76-ballot-label-impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments for and against Measure R and rebuttals, as printed in the San Diego County Voter Information Guide, pages SD 160-075 to SD 160-076"
+credit = "Arguments, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-160.pdf"
+file = "sources/vig160-p77-78-arguments-and-rebuttals.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure R, Exhibit A, San Diego County Voter Information Guide, page SD 160-077"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-160.pdf"
+file = "sources/vig160-p79-full-text.pdf"
+retrieved = "2026-10-28"
