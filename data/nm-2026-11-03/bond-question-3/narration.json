@@ -1,0 +1,243 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 69.05,
+  "phrases": [
+    {
+      "text": "Bond Question 3 is about borrowing for higher education.",
+      "start": 0.03,
+      "end": 3.95
+    },
+    {
+      "text": "A general obligation bond is money the state borrows and repays with interest, generally over up to eleven years.",
+      "start": 4.61,
+      "end": 12.37
+    },
+    {
+      "text": "Today, the bonds cannot be issued without voter approval.",
+      "start": 13.03,
+      "end": 16.82
+    },
+    {
+      "text": "Bond Question 3 would allow up to $352,225,379 for improvements and acquisitions in higher education, special schools and tribal schools.",
+      "start": 17.48,
+      "end": 32.23
+    },
+    {
+      "text": "The Legislative Finance Committee puts all three bond questions at about 0.136 percent of the net taxable value of property.",
+      "start": 32.89,
+      "end": 41.64
+    },
+    {
+      "text": "The State Board of Finance will set the tax rate and yearly cost to property owners after the election.",
+      "start": 42.3,
+      "end": 48.51
+    },
+    {
+      "text": "New Mexico's voter guide includes no official argument for the bond question.",
+      "start": 49.17,
+      "end": 53.96
+    },
+    {
+      "text": "New Mexico's voter guide includes no official argument against the bond question.",
+      "start": 54.62,
+      "end": 59.57
+    },
+    {
+      "text": "A vote for authorizes the bonds, and the property tax to repay them.",
+      "start": 60.23,
+      "end": 64.8
+    },
+    {
+      "text": "A vote against means the bonds would not be issued.",
+      "start": 65.46,
+      "end": 69.02
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Bond Question 3 is about borrowing for higher education.",
+      "A general obligation bond is money the state borrows and repays with interest, generally over up to eleven years.",
+      "Today, the bonds cannot be issued without voter approval.",
+      "Bond Question 3 would allow up to $352,225,379 for improvements and acquisitions in higher education, special schools and tribal schools.",
+      "The Legislative Finance Committee puts all three bond questions at about 0.136 percent of the net taxable value of property.",
+      "The State Board of Finance will set the tax rate and yearly cost to property owners after the election.",
+      "New Mexico's voter guide includes no official argument for the bond question.",
+      "New Mexico's voter guide includes no official argument against the bond question.",
+      "A vote for authorizes the bonds, and the property tax to repay them.",
+      "A vote against means the bonds would not be issued."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Bond Question 3 is about borrowing for higher education."
+      },
+      "bounds": [
+        0,
+        95520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Bond Question 3 is about borrowing for higher education.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A general obligation bond is money the state borrows and repays with interest, generally over up to eleven years."
+      },
+      "bounds": [
+        109920,
+        297600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A general obligation bond is money the state borrows and repays with interest, generally over up to eleven years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, the bonds cannot be issued without voter approval."
+      },
+      "bounds": [
+        312000,
+        404400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, the bonds cannot be issued without voter approval.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Bond Question 3 would allow up to $352,225,379 for improvements and acquisitions in higher education, special schools and tribal schools."
+      },
+      "bounds": [
+        418800,
+        774240
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Bond Question 3 would allow up to $352,225,379 for improvements and acquisitions in higher education, special schools and tribal schools.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The Legislative Finance Committee puts all three bond questions at about 0.136 percent of the net taxable value of property."
+      },
+      "bounds": [
+        788640,
+        1000080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Legislative Finance Committee puts all three bond questions at about 0.136 percent of the net taxable value of property.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The State Board of Finance will set the tax rate and yearly cost to property owners after the election."
+      },
+      "bounds": [
+        1014480,
+        1164960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The State Board of Finance will set the tax rate and yearly cost to property owners after the election.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "New Mexico's voter guide includes no official argument for the bond question."
+      },
+      "bounds": [
+        1179360,
+        1295760
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"New Mexico's voter guide includes no official argument for the bond question.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "New Mexico's voter guide includes no official argument against the bond question."
+      },
+      "bounds": [
+        1310160,
+        1430400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"New Mexico's voter guide includes no official argument against the bond question.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A vote for authorizes the bonds, and the property tax to repay them."
+      },
+      "bounds": [
+        1444800,
+        1555920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A vote for authorizes the bonds, and the property tax to repay them.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A vote against means the bonds would not be issued."
+      },
+      "bounds": [
+        1570320,
+        1657200
+      ]
+    }
+  ],
+  "sha256": "7ee224ce3fd5085dc7a12e580d51d3f99569be1449e8b034c538aa8a7b3f5993"
+}

@@ -1,0 +1,265 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 68.23,
+  "phrases": [
+    {
+      "text": "Question 3 would let Rhode Island borrow $100 million for economic development.",
+      "start": 0.03,
+      "end": 5.19
+    },
+    {
+      "text": "A bond is a loan, repaid with interest from the state's general revenues.",
+      "start": 5.85,
+      "end": 10.17
+    },
+    {
+      "text": "Each of five bond questions is decided separately, by majority vote.",
+      "start": 10.83,
+      "end": 15.44
+    },
+    {
+      "text": "$55 million would go to site development, such as buying, cleaning up and preparing land for industry.",
+      "start": 16.1,
+      "end": 23.48
+    },
+    {
+      "text": "$45 million would go to infrastructure for growth industries, such as ocean, defense and life sciences.",
+      "start": 24.14,
+      "end": 31.72
+    },
+    {
+      "text": "The handbook estimates $60,483,750 in interest, a total cost of $160,483,750.",
+      "start": 32.38,
+      "end": 45.74
+    },
+    {
+      "text": "Those are only estimates, based on 20-year loans at 5 percent interest.",
+      "start": 46.4,
+      "end": 51.45
+    },
+    {
+      "text": "The handbook includes no official argument for the question.",
+      "start": 52.11,
+      "end": 55.3
+    },
+    {
+      "text": "The handbook includes no official argument against the question.",
+      "start": 55.96,
+      "end": 59.44
+    },
+    {
+      "text": "Approve means you support the State issuing these bonds.",
+      "start": 60.1,
+      "end": 63.55
+    },
+    {
+      "text": "Reject means you are against the State issuing these bonds.",
+      "start": 64.21,
+      "end": 68.2
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Question 3 would let Rhode Island borrow $100 million for economic development.",
+      "A bond is a loan, repaid with interest from the state's general revenues.",
+      "Each of five bond questions is decided separately, by majority vote.",
+      "$55 million would go to site development, such as buying, cleaning up and preparing land for industry.",
+      "$45 million would go to infrastructure for growth industries, such as ocean, defense and life sciences.",
+      "The handbook estimates $60,483,750 in interest, a total cost of $160,483,750.",
+      "Those are only estimates, based on 20-year loans at 5 percent interest.",
+      "The handbook includes no official argument for the question.",
+      "The handbook includes no official argument against the question.",
+      "Approve means you support the State issuing these bonds.",
+      "Reject means you are against the State issuing these bonds."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Question 3 would let Rhode Island borrow $100 million for economic development."
+      },
+      "bounds": [
+        0,
+        125280
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Question 3 would let Rhode Island borrow $100 million for economic development.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A bond is a loan, repaid with interest from the state's general revenues."
+      },
+      "bounds": [
+        139680,
+        244800
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A bond is a loan, repaid with interest from the state's general revenues.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Each of five bond questions is decided separately, by majority vote."
+      },
+      "bounds": [
+        259200,
+        371280
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Each of five bond questions is decided separately, by majority vote.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "$55 million would go to site development, such as buying, cleaning up and preparing land for industry."
+      },
+      "bounds": [
+        385680,
+        564240
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"$55 million would go to site development, such as buying, cleaning up and preparing land for industry.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "$45 million would go to infrastructure for growth industries, such as ocean, defense and life sciences."
+      },
+      "bounds": [
+        578640,
+        762000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"$45 million would go to infrastructure for growth industries, such as ocean, defense and life sciences.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The handbook estimates $60,483,750 in interest, a total cost of $160,483,750."
+      },
+      "bounds": [
+        776400,
+        1098480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The handbook estimates $60,483,750 in interest, a total cost of $160,483,750.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Those are only estimates, based on 20-year loans at 5 percent interest."
+      },
+      "bounds": [
+        1112880,
+        1235520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Those are only estimates, based on 20-year loans at 5 percent interest.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The handbook includes no official argument for the question."
+      },
+      "bounds": [
+        1249920,
+        1327920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The handbook includes no official argument for the question.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The handbook includes no official argument against the question."
+      },
+      "bounds": [
+        1342320,
+        1427280
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The handbook includes no official argument against the question.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Approve means you support the State issuing these bonds."
+      },
+      "bounds": [
+        1441680,
+        1525920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Approve means you support the State issuing these bonds.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Reject means you are against the State issuing these bonds."
+      },
+      "bounds": [
+        1540320,
+        1637520
+      ]
+    }
+  ],
+  "sha256": "745dbc85a8a5f2bf33c3525579595c0788300391564489011586f03387257dc4"
+}

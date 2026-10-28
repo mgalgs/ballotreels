@@ -1,0 +1,243 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 59.94,
+  "phrases": [
+    {
+      "text": "Amendment 5 is about nonrecurring state money paid to state retirement systems.",
+      "start": 0.03,
+      "end": 4.99
+    },
+    {
+      "text": "At least 25 percent of nonrecurring money in the official state forecast must go to state retirement systems.",
+      "start": 5.65,
+      "end": 12.4
+    },
+    {
+      "text": "Today, each system must apply the money to its oldest unfunded accrued liability first.",
+      "start": 13.06,
+      "end": 18.98
+    },
+    {
+      "text": "The amendment would let a system apply the money to any of its unfunded liability instead.",
+      "start": 19.64,
+      "end": 25.06
+    },
+    {
+      "text": "The Legislative Auditor's actuarial note expects no measurable effect on retirement costs or revenues over five years.",
+      "start": 25.72,
+      "end": 33.35
+    },
+    {
+      "text": "Without instructions from the Legislature, the note says, each system would need its own policy for the money.",
+      "start": 34.01,
+      "end": 40.26
+    },
+    {
+      "text": "Louisiana publishes no official argument against the amendment.",
+      "start": 40.92,
+      "end": 45.29
+    },
+    {
+      "text": "Louisiana publishes no official argument for the amendment.",
+      "start": 45.95,
+      "end": 49.99
+    },
+    {
+      "text": "A yes vote lets a system apply this money to any of its unfunded liability.",
+      "start": 50.65,
+      "end": 55.29
+    },
+    {
+      "text": "A no vote keeps the money going to the oldest liability first.",
+      "start": 55.95,
+      "end": 59.91
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Amendment 5 is about nonrecurring state money paid to state retirement systems.",
+      "At least 25 percent of nonrecurring money in the official state forecast must go to state retirement systems.",
+      "Today, each system must apply the money to its oldest unfunded accrued liability first.",
+      "The amendment would let a system apply the money to any of its unfunded liability instead.",
+      "The Legislative Auditor's actuarial note expects no measurable effect on retirement costs or revenues over five years.",
+      "Without instructions from the Legislature, the note says, each system would need its own policy for the money.",
+      "Louisiana publishes no official argument against the amendment.",
+      "Louisiana publishes no official argument for the amendment.",
+      "A yes vote lets a system apply this money to any of its unfunded liability.",
+      "A no vote keeps the money going to the oldest liability first."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Amendment 5 is about nonrecurring state money paid to state retirement systems."
+      },
+      "bounds": [
+        0,
+        120480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Amendment 5 is about nonrecurring state money paid to state retirement systems.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "At least 25 percent of nonrecurring money in the official state forecast must go to state retirement systems."
+      },
+      "bounds": [
+        134880,
+        298320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"At least 25 percent of nonrecurring money in the official state forecast must go to state retirement systems.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, each system must apply the money to its oldest unfunded accrued liability first."
+      },
+      "bounds": [
+        312720,
+        456240
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, each system must apply the money to its oldest unfunded accrued liability first.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The amendment would let a system apply the money to any of its unfunded liability instead."
+      },
+      "bounds": [
+        470640,
+        602160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The amendment would let a system apply the money to any of its unfunded liability instead.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The Legislative Auditor's actuarial note expects no measurable effect on retirement costs or revenues over five years."
+      },
+      "bounds": [
+        616560,
+        801120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Legislative Auditor's actuarial note expects no measurable effect on retirement costs or revenues over five years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Without instructions from the Legislature, the note says, each system would need its own policy for the money."
+      },
+      "bounds": [
+        815520,
+        966960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Without instructions from the Legislature, the note says, each system would need its own policy for the money.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Louisiana publishes no official argument against the amendment."
+      },
+      "bounds": [
+        981360,
+        1087680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Louisiana publishes no official argument against the amendment.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Louisiana publishes no official argument for the amendment."
+      },
+      "bounds": [
+        1102080,
+        1200480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Louisiana publishes no official argument for the amendment.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote lets a system apply this money to any of its unfunded liability."
+      },
+      "bounds": [
+        1214880,
+        1327680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote lets a system apply this money to any of its unfunded liability.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote keeps the money going to the oldest liability first."
+      },
+      "bounds": [
+        1342080,
+        1438560
+      ]
+    }
+  ],
+  "sha256": "446d5da1f99b99d8e68c82baf5743445fa8874f2745a80d2e950f9cdba8465d4"
+}
