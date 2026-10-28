@@ -1,0 +1,72 @@
+# Archived sources for Colorado Amendment 87, 2026-11-03 general
+# election. Every id here may be cited by script.toml. `kind` must be one
+# the standard allows (docs/STANDARD.md, section 1).
+#
+# Colorado's Legislative Council Staff prints each measure's Quick Ballot
+# Reference Guide entry, its analysis (with the arguments for and
+# against, which Legislative Council Staff writes, and the fiscal
+# impact), and its ballot title and text in the 2026 Colorado State
+# Ballot Information Booklet, so several sources below share one
+# archived file: that measure's pages, cut from the full booklet. The
+# full fiscal impact statement the booklet condenses is archived beside
+# it, and the initiative's final text as filed with the Secretary of
+# State.
+
+[contest]
+id = "co-2026-11-03-amendment-87"
+election = "co-2026-11-03"
+division = "ocd-division/country:us/state:co"
+kind = "measure"
+title = "Amendment 87: Graduated Income Tax"
+
+[[source]]
+id = "blue-book"
+kind = "official-title-summary"
+publisher = "Colorado Legislative Council Staff, 2026 Colorado State Ballot Information Booklet, Amendment 87: Quick Ballot Reference Guide, analysis and ballot title, pages 10, 33 to 40 and 79 to 83"
+credit = "Colorado State Ballot Information Booklet, Amendment 87"
+url = "https://content.leg.colorado.gov/sites/default/files/2026-blue-book-en-accessible.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal-impact"
+kind = "official-fiscal-analysis"
+publisher = "Colorado Legislative Council Staff, Fiscal Impact of Amendment 87, in the 2026 Colorado State Ballot Information Booklet, pages 38 to 40"
+credit = "Legislative Council Staff, State Ballot Information Booklet"
+url = "https://content.leg.colorado.gov/sites/default/files/2026-blue-book-en-accessible.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal-statement"
+kind = "official-fiscal-analysis"
+publisher = "Colorado Legislative Council Staff, Fiscal Impact Statement, Amendment 87: Graduated Income Tax, September 10, 2026"
+credit = "Legislative Council Staff, Fiscal Impact Statement"
+url = "https://content.leg.colorado.gov/sites/default/files/2026-fiscal-impact-statements-english-accessible.pdf"
+file = "sources/fiscal-impact-statement.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments For and Against Amendment 87, written by Colorado Legislative Council Staff, as printed in the 2026 Colorado State Ballot Information Booklet, pages 36 to 37"
+url = "https://content.leg.colorado.gov/sites/default/files/2026-blue-book-en-accessible.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Colorado Secretary of State, Proposed Initiative 2025-2026 #195, final text"
+credit = "Colorado Secretary of State, initiative #195 text"
+url = "https://www.coloradosos.gov/pubs/elections/Initiatives/titleBoard/filings/2025-2026/195Final.pdf"
+file = "sources/text-final-initiative-195.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "title-board"
+kind = "public-record"
+publisher = "Colorado Secretary of State, Title Board results for Proposed Initiative #195"
+url = "https://www.coloradosos.gov/pubs/elections/Initiatives/titleBoard/results/2025-2026/195Results.html"
+file = "sources/title-board-results-195.html"
+retrieved = "2026-10-27"
