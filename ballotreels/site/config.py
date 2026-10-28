@@ -11,7 +11,6 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 DATA_ROOT = REPO_ROOT / "data"
 
-DEFAULT_GEOCODER_URL = "https://geocoding.geo.census.gov/geocoder"
 DEFAULT_SITE_URL = "https://ballotreels.org"
 
 
@@ -52,9 +51,7 @@ class Config:
     heartbeat_timeout: float
     eta_default_minutes: float
     max_upload_mb: int
-    geocoder_url: str
     generate_global_limit: int = 30
-    address_limit: int = 30
     require_approval: bool = True
     # The base of the absolute URLs in link-preview tags; never taken
     # from a request's Host header.
@@ -94,13 +91,9 @@ def load_config(args) -> Config:
                                      float),
         max_upload_mb=_resolve(args.max_upload_mb, "BALLOTREELS_MAX_UPLOAD_MB",
                                500, int),
-        geocoder_url=_resolve(args.geocoder_url, "BALLOTREELS_GEOCODER_URL",
-                              DEFAULT_GEOCODER_URL, str),
         generate_global_limit=_resolve(
             getattr(args, "generate_global_limit", None),
             "BALLOTREELS_GENERATE_GLOBAL_LIMIT", 30, int),
-        address_limit=_resolve(getattr(args, "address_limit", None),
-                               "BALLOTREELS_ADDRESS_LIMIT", 30, int),
         require_approval=_resolve(getattr(args, "require_approval", None),
                                   "BALLOTREELS_REQUIRE_APPROVAL", True,
                                   _bool),

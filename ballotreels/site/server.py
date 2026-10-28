@@ -18,14 +18,11 @@ import sys
 import threading
 import time
 import urllib.parse
-import urllib.request
 from dataclasses import dataclass, field
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any
 
-from ..geo.geocoder import (AddressNotCovered, AddressNotFound, GeocoderError,
-                            lookup_address)
 from ..geo.lookup import GeoData
 from ..geo.states import STATE_NAMES, chambers, state_for_zip
 from ..index import (ContestIndex, IndexEntry, ballot_order, key_for,
@@ -71,11 +68,7 @@ ROOT_FILES = {
 
 ADMIN_COOKIE = "ballotreels_admin"
 
-# Longest address /api/address passes on to the geocoder.
-MAX_ADDRESS_CHARS = 200
-# Geocoder calls in flight at once; past this the lookup answers 503.
-MAX_GEOCODER_CALLS = 4
-# The window of the global Generate cap and the per-IP address limit.
+# The window of the global Generate cap.
 HOUR = 3600
 # The most divisions one ballot request may name: a zip's statewide,
 # congressional, legislative and county ones, and every city and school
@@ -131,19 +124,13 @@ class Deps:
     rate_lock: threading.Lock = field(default_factory=threading.Lock)
     rate_hits: dict[str, list[float]] = field(default_factory=dict)
     global_hits: list[float] = field(default_factory=list)
-    address_hits: dict[str, list[float]] = field(default_factory=dict)
-    geocoder_slots: threading.BoundedSemaphore = field(
-        default_factory=lambda: threading.BoundedSemaphore(MAX_GEOCODER_CALLS))
     clock: Any = None
-    geocoder_fetch: Any = None
     # data/related.toml's groups of related measures, by group name.
     related: dict[str, tuple[str, ...]] = field(default_factory=dict)
 
     def __post_init__(self):
         if self.clock is None:
             self.clock = time.time
-        if self.geocoder_fetch is None:
-            self.geocoder_fetch = _fetch_geocoder
 
     def contest(self, contest_id: str
                 ) -> tuple[StateElection, IndexEntry] | None:
@@ -159,11 +146,6 @@ class Deps:
         """Every served state whose geo data has this zip."""
         return [s for s in self.states.values()
                 if s.geo is not None and zip_code in s.geo.zips]
-
-
-def _fetch_geocoder(url: str) -> str:
-    with urllib.request.urlopen(url, timeout=15) as resp:
-        return resp.read().decode("utf-8")
 
 
 def _incoming_dir(data_dir: Path, job_id: int, claim: str) -> Path:
@@ -314,8 +296,8 @@ class _DeadlineReader(io.RawIOBase):
 
 class _JsonHandler(BaseHTTPRequestHandler):
     # Largest JSON or form body read into memory. The public listener only
-    # takes a contest id or an address; the private one also takes a
-    # failed job's check output.
+    # takes a contest id; the private one also takes a failed job's
+    # check output.
     max_body_bytes = 16 * 1024
     # Seconds a read or write on the connection may block, so a client
     # that trickles its request cannot hold a handler thread forever.
@@ -726,18 +708,6 @@ def _check_rate_limit(deps: Deps, ip: str) -> tuple[bool, int, bool]:
         return True, 0, False
 
 
-def _check_address_limit(deps: Deps, ip: str) -> tuple[bool, int]:
-    """As _check_rate_limit, for address lookups (their own bucket)."""
-    now = deps.clock()
-    with deps.rate_lock:
-        hits = deps.address_hits.setdefault(ip, [])
-        wait = _over_limit(hits, deps.config.address_limit, HOUR, now)
-        if wait:
-            return False, wait
-        hits.append(now)
-        return True, 0
-
-
 def _too_many(handler: "_JsonHandler", status: int, retry_after: int,
               message: str, **extra: Any) -> None:
     body = json.dumps({"error": message, **extra}).encode("utf-8")
@@ -832,8 +802,6 @@ class PublicHandler(_JsonHandler):
                 return self._job_status(int(m.group(1)))
             if path == "/api/generate" and method == "POST":
                 return self._generate()
-            if path == "/api/address" and method == "POST":
-                return self._address()
             m = re.fullmatch(
                 r"/v/([0-9a-f]{16})/(\d+)/(video\.mp4|poster\.jpg)", path)
             if m and method in ("GET", "HEAD"):
@@ -976,8 +944,9 @@ class PublicHandler(_JsonHandler):
                 return self._json(200, _statewide_only(zip_code, state))
             return self._json(404, _uncovered_zip(zip_code, deps))
         if len(found) > 1:
-            # A zip across a state line: only an address can say which
-            # state's ballot it is (the geocoder names the state).
+            # A zip across a state line: the zip alone can't say which
+            # state's ballot it is (`needs_address` is the flag's old
+            # name, kept for the app).
             return self._json(200, {
                 "zip": zip_code, "needs_address": True,
                 "states": [{"state": s.abbr,
@@ -997,44 +966,10 @@ class PublicHandler(_JsonHandler):
         if not found:
             return self._json(404, _uncovered_zip(zip_code, deps))
         if len(found) > 1:
-            return self._json(409, {"error": "this zip spans states; "
-                                             "look up an address"})
+            return self._json(409, {"error": "this zip spans states"})
         kind = self._query().get("kind", [None])[0]
         kinds = [kind] if kind else None
         self._json(200, found[0].geo.zip_shapes(zip_code, kinds=kinds))
-
-    def _address(self) -> None:
-        deps = self.server.deps
-        body = self._read_json()
-        address = body.get("address")
-        if not address or not isinstance(address, str):
-            return self._json(400, {"error": "address is required"})
-        if len(address) > MAX_ADDRESS_CHARS:
-            return self._json(400, {"error": "address is too long"})
-        allowed, retry_after = _check_address_limit(
-            deps, _client_ip(self, deps))
-        if not allowed:
-            return _too_many(self, 429, retry_after,
-                             "too many address lookups; try again later")
-        if not deps.geocoder_slots.acquire(blocking=False):
-            return _too_many(self, 503, 5,
-                             "the address lookup is busy; try again")
-        try:
-            result = lookup_address(
-                address, deps.geocoder_fetch, deps.config.geocoder_url,
-                {abbr: s.geo for abbr, s in deps.states.items()})
-        except AddressNotCovered as e:
-            return self._json(404, _not_covered(e.state))
-        except AddressNotFound as e:
-            return self._json(404, {"error": str(e)})
-        except GeocoderError as e:
-            return self._json(502, {"error": str(e)})
-        finally:
-            deps.geocoder_slots.release()
-        state = deps.states[result["state"]]
-        result["election"] = state.index.election.id
-        result["chambers"] = chambers(state.abbr)
-        self._json(200, result)
 
     def _ballot(self) -> None:
         """The contests of the divisions `d`; those of the divisions also

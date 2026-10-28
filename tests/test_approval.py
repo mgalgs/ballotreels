@@ -141,7 +141,7 @@ class ApprovalConfigTest(unittest.TestCase):
             public_port=None, private_host=None, private_port=None,
             generate_limit=None, generate_window=None,
             trust_forwarded_for=None, heartbeat_timeout=None,
-            eta_default_minutes=None, max_upload_mb=None, geocoder_url=None,
+            eta_default_minutes=None, max_upload_mb=None,
             require_approval=flag)
 
     def test_on_by_default_flag_and_env_turn_it_off(self):

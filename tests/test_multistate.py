@@ -38,17 +38,6 @@ def _write_election(root: Path, election_id: str, state: str,
         "\n".join(lines), encoding="utf-8")
 
 
-def _geocoder_doc(state_fips: str, extra: dict | None = None) -> str:
-    geographies = {"States": [{"GEOID": state_fips}],
-                   "119th Congressional Districts": [
-                       {"GEOID": state_fips + "01"}]}
-    geographies.update(extra or {})
-    return json.dumps({"result": {"addressMatches": [{
-        "matchedAddress": "1 FAKE ST, EXAMPLE",
-        "coordinates": {"x": 1.2, "y": 1.2},
-        "geographies": geographies}]}})
-
-
 class MultiStateTestCase(PrivateApiMixin, unittest.TestCase):
     def setUp(self):
         tmp = Path(self.enterContext(tempfile.TemporaryDirectory()))
@@ -120,7 +109,7 @@ class LoadTest(MultiStateTestCase):
             public_host=None, public_port=None, private_host=None,
             private_port=None, generate_limit=None, generate_window=None,
             trust_forwarded_for=None, heartbeat_timeout=None,
-            eta_default_minutes=None, max_upload_mb=None, geocoder_url=None)
+            eta_default_minutes=None, max_upload_mb=None)
         self.assertEqual(load_config(ns).election,
                          "ny-2026-11-03,tx-2026-11-03")
 
@@ -150,7 +139,7 @@ class ZipRoutingTest(MultiStateTestCase):
         self.assertEqual(body["state"], "ca")
         self.assertEqual(body["election"], "ca-2026-11-03")
 
-    def test_straddling_zip_asks_for_address(self):
+    def test_straddling_zip_names_its_states(self):
         status, body = self.get("/api/zip/99902")
         self.assertEqual(status, 200)
         self.assertTrue(body["needs_address"])
@@ -174,8 +163,8 @@ class ZipRoutingTest(MultiStateTestCase):
 
     def test_served_state_zip_without_data(self):
         # A New York prefix the fake New York has no data for, and a
-        # Texas one (Texas is served, without geo data): the address
-        # lookup can still find these, so not "we don't cover".
+        # Texas one (Texas is served, without geo data): served states,
+        # so not "we don't cover".
         for zip_code in ("12345", "75201"):
             with self.subTest(zip_code):
                 status, body = self.get(f"/api/zip/{zip_code}")
@@ -225,40 +214,6 @@ class BallotRoutingTest(MultiStateTestCase):
         job = self.deps.queue.get_job(body["job"]["id"])
         self.assertEqual(job["election"], "tx-2026-11-03")
         self.assertEqual(job["division"], "ocd-division/country:us/state:tx")
-
-
-class AddressRoutingTest(MultiStateTestCase):
-    def _address(self, doc):
-        self.deps.geocoder_fetch = lambda url: doc
-        return self._public("POST", "/api/address", {"address": "1 Fake St"})
-
-    def test_address_routes_to_its_state(self):
-        status, body, _ = self._address(_geocoder_doc("36"))
-        self.assertEqual(status, 200)
-        self.assertEqual(body["state"], "ny")
-        self.assertEqual(body["election"], "ny-2026-11-03")
-        self.assertIn({"ocd_id": "ocd-division/country:us/state:ny",
-                       "name": "Statewide"}, body["kinds"]["state"])
-        self.assertEqual(body["kinds"]["cd"][0]["ocd_id"],
-                         "ocd-division/country:us/state:ny/cd:1")
-        # Missing legislative layers come from New York's own shapes.
-        self.assertEqual(body["kinds"]["sldl"][0]["name"],
-                         "State Assembly District 1")
-
-        # And the address's divisions give New York's ballot.
-        query = "&".join(f"d={e['ocd_id']}" for entries in
-                         body["kinds"].values() for e in entries)
-        status, ballot = self.get(f"/api/ballot?{query}")
-        self.assertEqual(ballot["election"], "ny-2026-11-03")
-
-        status, body, _ = self._address(_geocoder_doc("06"))
-        self.assertEqual(body["state"], "ca")
-
-    def test_address_in_uncovered_state(self):
-        status, body, _ = self._address(_geocoder_doc("12"))
-        self.assertEqual(status, 404)
-        self.assertEqual(body["error"], "We don't cover Florida yet")
-        self.assertFalse(body["covered"])
 
 
 class ChamberLabelTest(unittest.TestCase):
