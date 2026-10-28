@@ -1,0 +1,53 @@
+# Archived sources for City of Ontario Measure H, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Bernardino County Registrar of Voters' comprehensive Voter Information
+# Guide (VIG.pdf, PDF pages 206-209); "page" is the guide's printed
+# footer number (SB COMPREHENSIVE-204 is PDF page 206).
+#
+# The guide prints no ballot question; the card quotes it from the City
+# Council's resolution placing the measure (Section 3, and again in
+# Resolution No. 2026-137).
+
+[contest]
+id = "ca-2026-11-03-ontario-measure-h"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:ontario"
+kind = "measure"
+title = "City of Ontario Measure H: Half-Cent General Sales Tax"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "City of Ontario, Resolution No. 2026-136: the ballot question for Measure H"
+credit = "Ballot question, Resolution No. 2026-136"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofOntario/RES_Ontario.pdf"
+file = "sources/RES_Ontario.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney, Impartial Analysis of Measure H, San Bernardino County Voter Information Guide, page SB COMPREHENSIVE-204"
+credit = "Impartial Analysis, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp206-209.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments in favor of and against Measure H and rebuttals, San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-204 to 207"
+credit = "Arguments, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp206-209.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Ontario, Full Text of Measure H (ordinance adding Chapter 13 to Title 3 of the Ontario Municipal Code)"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofOntario/FT_Ontario.pdf"
+file = "sources/FT_Ontario.pdf"
+retrieved = "2026-10-28"

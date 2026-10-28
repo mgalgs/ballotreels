@@ -1,0 +1,52 @@
+# Archived sources for City of Chino Measure F, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Bernardino County Registrar of Voters' comprehensive Voter Information
+# Guide (VIG.pdf, PDF pages 197-198); "page" is the guide's printed
+# footer number (SB COMPREHENSIVE-195 is PDF page 197).
+#
+# The guide prints no ballot question; the card quotes it from the City
+# Council's resolution placing the measure (Section 4).
+
+[contest]
+id = "ca-2026-11-03-chino-measure-f"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:chino"
+kind = "measure"
+title = "City of Chino Measure F: Business License Tax Based on Gross Receipts"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "City of Chino, Resolution No. 2026-049: the ballot question for Measure F"
+credit = "Ballot question, Resolution No. 2026-049"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofChino/RES_CityofChino.pdf"
+file = "sources/RES_CityofChino.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney, Impartial Analysis of Measure F, San Bernardino County Voter Information Guide, page SB COMPREHENSIVE-195"
+credit = "Impartial Analysis, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp197-198.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure F (no argument against is printed), San Bernardino County Voter Information Guide, page SB COMPREHENSIVE-196"
+credit = "Argument in Favor, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp197-198.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Chino, Full Text of Measure F (business license tax ordinance)"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofChino/FT_CityofChino.pdf"
+file = "sources/FT_CityofChino.pdf"
+retrieved = "2026-10-28"

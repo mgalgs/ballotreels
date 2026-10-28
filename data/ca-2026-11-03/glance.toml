@@ -398,3 +398,59 @@ source = "guide-page"
 quote = "providing approximately $452,000 annually in new funds until ended by voters"
 amount = 452000
 period = "per-year"
+
+# San Bernardino County Measure I: the guide prints no fiscal statement;
+# the one estimate is in the ballot question. It continues an existing
+# tax, so no direction is given.
+[san-bernardino-county-measure-i]
+source = "ballot-label"
+quote = "providing approximately $250,000,000 annually until ended by voters"
+amount = 250000000
+period = "per-year"
+
+# City of Ontario Measure H: the guide prints no fiscal statement; the
+# one estimate is the City Attorney's Impartial Analysis's.
+[ontario-measure-h]
+source = "impartial-analysis"
+quote = "It is estimated that Measure \"H\" will provide an additional $32,500,000 in annual local funding"
+amount = 32500000
+period = "per-year"
+
+# City of Chino Measure F: the guide prints no fiscal statement; the one
+# estimate is in the ballot question.
+[chino-measure-f]
+source = "ballot-label"
+quote = "generating approximately $4,800,000 annually until ended by voters"
+amount = 4800000
+period = "per-year"
+
+# City of Chino Hills Measure J: the guide prints no fiscal statement;
+# the one estimate is the City Attorney's Impartial Analysis's.
+[chino-hills-measure-j]
+source = "impartial-analysis"
+quote = "It is estimated that Measure J will provide an additional $11,500,000.00 annually to the City's general fund"
+amount = 11500000
+period = "per-year"
+
+# City of Upland Measure M: the guide prints no fiscal statement; the
+# one estimate is the City Attorney's Impartial Analysis's.
+[upland-measure-m]
+source = "impartial-analysis"
+quote = "This tax is estimated to generate $3.3 million annually, $2.1 million more than the current business license tax structure."
+amount = 3300000
+period = "per-year"
+
+# City of Highland Measure E: the guide prints no fiscal statement; the
+# one estimate is city staff's, as the City Attorney's Impartial
+# Analysis gives it.
+[highland-measure-e]
+source = "impartial-analysis"
+quote = "City staff have estimated that the Sales Tax Ordinance will raise approximately $6.35 million annually in local revenue."
+amount = 6350000
+period = "per-year"
+
+# City of Colton Measure O: not a tax measure; the guide prints no
+# fiscal statement.
+[colton-measure-o]
+source = "impartial-analysis"
+status = "none-printed"

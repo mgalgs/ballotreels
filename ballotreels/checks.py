@@ -1198,11 +1198,17 @@ def _in_text(phrase: str, archived: str) -> bool:
     """Whether `phrase` occurs in an archived source's text, compared as
     the card is (verbatim, whitespace collapsed), except that a hyphen in
     the phrase may be missing from the text: pdftotext joins a word
-    hyphenated across a line break ("bolt-" / "action" -> "boltaction")."""
+    hyphenated across a line break ("bolt-" / "action" -> "boltaction"),
+    and drops a dash standing alone at a line's end with it ("$0.60 -" /
+    "$1.50" -> "$0.60 $1.50")."""
     want = _normalise(phrase)
     if want in archived:
         return True
-    return re.search(_hyphen_optional(want), archived) is not None
+    if re.search(_hyphen_optional(want), archived) is not None:
+        return True
+    unspaced = want.replace(" - ", " ")
+    return unspaced != want and \
+        re.search(_hyphen_optional(unspaced), archived) is not None
 
 
 def _hyphen_optional(phrase: str) -> str:

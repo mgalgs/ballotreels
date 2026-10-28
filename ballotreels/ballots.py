@@ -47,6 +47,10 @@ BALLOTS: dict[str, Ballot] = {
     # its ballot label only in the measure's proposed ordinance; Orange
     # County's Voter Information Guide prints each city measure's ballot
     # question, impartial analysis and arguments in its own section.
+    # its ballot label only in the measure's proposed ordinance. San
+    # Bernardino's guide prints no ballot question, which its cards quote
+    # from the resolution placing the measure; the guide is still the
+    # publication the measure's pages are in.
     "ca": Ballot(guide="Official Voter Information Guide",
                  fiscal_label="Fiscal Impact:",
                  choices=("Yes", "No"),
@@ -123,6 +127,20 @@ BALLOTS: dict[str, Ballot] = {
                          "Orange County Voter Information Guide",
                      "ca-2026-11-03-westminster-measure-o":
                          "Orange County Voter Information Guide",
+                     "ca-2026-11-03-san-bernardino-county-measure-i":
+                         "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-ontario-measure-h":
+                         "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-chino-measure-f":
+                         "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-chino-hills-measure-j":
+                         "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-upland-measure-m":
+                         "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-highland-measure-e":
+                         "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-colton-measure-o":
+                         "San Bernardino County Voter Information Guide",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",
