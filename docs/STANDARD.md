@@ -230,6 +230,10 @@ every video made before it still meets the standard.)
    "Most prominent" is fixed, not chosen: an elected official acting in
    office, highest office first; then the official proponent or
    sponsoring committee; then the first signer of the official argument.
+   Between officials of the same office, the one whose recorded role in
+   this measure is larger comes first: a sponsor, then a signer of the
+   official argument, then a recorded vote alone; a leadership post
+   outside this measure counts for nothing.
 4. **No one on the record, said plainly.** Where the record names no one
    on one side, the script may still name the other side's, and says
    that the record names no one on the other.
