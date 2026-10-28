@@ -6,6 +6,7 @@ import unittest
 
 from ballotreels import check_contest, load_contest
 from ballotreels.ballots import BALLOTS, badge, ballot_for, designation
+from ballotreels.checks import _card_quote_in
 
 from .helpers import ContestCopyTestCase
 from .test_card import CARD, VERSION
@@ -142,6 +143,47 @@ class BallotTest(unittest.TestCase):
                           None, ("Yes", "No"), "official-title-summary"))
         self.assertEqual(badge(la, "Amendment 1: X", "1"), "AMENDMENT")
         self.assertEqual(badge(la, "Amendment 10: X", "10"), "AMENDMENT")
+        self.assertTrue(la.card_column_breaks)
+        self.assertFalse(any(b.card_column_breaks
+                             for s, b in BALLOTS.items() if s != "la"))
+
+
+class CardColumnBreakTest(unittest.TestCase):
+    """A card quote from a source set in columns may lose a line-end
+    hyphen and run across one column break, only where the state's
+    entry says its source is set so."""
+
+    TEXT = ("Do you support an amendment to make a onetime transfer of "
+            "the exemption to a property owned by a person who is at "
+            "least sixty-five years of age Abstract: Something else "
+            "entirely here and who qualifies for the special assessment "
+            "level? (Adds Article VII)")
+
+    def test_verbatim_passes_either_way(self):
+        q = "Abstract: Something else entirely here"
+        self.assertTrue(_card_quote_in(q, self.TEXT, False))
+        self.assertTrue(_card_quote_in(q, self.TEXT, True))
+
+    def test_hyphen_missing_from_the_text(self):
+        q = "make a one-time transfer of the exemption"
+        self.assertFalse(_card_quote_in(q, self.TEXT, False))
+        self.assertTrue(_card_quote_in(q, self.TEXT, True))
+
+    def test_one_column_break(self):
+        q = ("a property owned by a person who is at least sixty-five "
+             "years of age and who qualifies for the special assessment "
+             "level? (Adds Article VII)")
+        self.assertFalse(_card_quote_in(q, self.TEXT, False))
+        self.assertTrue(_card_quote_in(q, self.TEXT, True))
+
+    def test_pieces_must_be_long_enough_and_verbatim(self):
+        # a five-word tail is too short to count as a piece
+        self.assertFalse(_card_quote_in(
+            "who is at least sixty-five years of age (Adds Article VII)",
+            self.TEXT, True))
+        self.assertFalse(_card_quote_in(
+            "who is at least sixty-five years of age and who does not "
+            "qualify for anything at all", self.TEXT, True))
 
 
 class SideHeadingTest(ContestCopyTestCase):

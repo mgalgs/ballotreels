@@ -536,10 +536,35 @@ def check_card(c: Contest) -> list[Failure]:
         return out
     for key, value in card.quoted():
         if isinstance(value, str) and value.strip() \
-                and _normalise(value) not in archived:
+                and not _card_quote_in(value, archived,
+                                       ballot.card_column_breaks):
             fail(f"{key!r} does not appear verbatim in source "
                  f"{card.source!r} ({src.file})")
     return out
+
+
+CARD_PIECE_MIN_WORDS = 6
+
+
+def _card_quote_in(value: str, archived: str, column_breaks: bool) -> bool:
+    """Whether a card quote occurs in its source's archived text: verbatim,
+    whitespace collapsed. Where the state's card source is set in columns
+    that pdftotext reads out of order (Ballot.card_column_breaks), a
+    hyphen may also be missing, as for a choice's label, and the quote may
+    run across one column break: two pieces, each of at least
+    CARD_PIECE_MIN_WORDS words and each verbatim in the text."""
+    want = _normalise(value)
+    if want in archived:
+        return True
+    if not column_breaks:
+        return False
+    if _in_text(want, archived):
+        return True
+    words = want.split(" ")
+    n = CARD_PIECE_MIN_WORDS
+    return any(_in_text(" ".join(words[:i]), archived)
+               and _in_text(" ".join(words[i:]), archived)
+               for i in range(n, len(words) - n + 1))
 
 
 def check_sources(c: Contest) -> list[Failure]:

@@ -29,6 +29,11 @@ class Ballot:
     card_source_kind: str    # the source kind a `[card]` quotes
     # designation words the guide abbreviates on its badge, as printed
     badges: dict[str, str] = field(default_factory=dict)
+    # True where the card's source is set in columns that pdftotext reads
+    # out of order (Louisiana's one-sheet statements), so a card quote may
+    # run across one column break and lose a hyphen at a line's end
+    # (checks._card_quote_in)
+    card_column_breaks: bool = False
 
 
 BALLOTS: dict[str, Ballot] = {
@@ -135,10 +140,14 @@ BALLOTS: dict[str, Ballot] = {
     # paragraphs, numbered 1 to 10 in ballot order, and no fiscal
     # statement; each Act submits its proposition for electors "to vote
     # YES or NO". The badge takes "Amendment" from the contest title.
+    # The sheet is one page of four columns: No. 6's ballot question runs
+    # from the foot of one column to the head of the next, and No. 1's
+    # breaks "one-time" at a line's end, which pdftotext joins.
     "la": Ballot(guide="Statements of Proposed Constitutional Amendments",
                  fiscal_label=None,
                  choices=("Yes", "No"),
-                 card_source_kind="official-title-summary"),
+                 card_source_kind="official-title-summary",
+                 card_column_breaks=True),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
