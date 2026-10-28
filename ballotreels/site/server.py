@@ -31,7 +31,9 @@ from ..geo.states import STATE_NAMES, chambers, state_for_zip
 from ..index import (ContestIndex, IndexEntry, ballot_order, key_for,
                      level_of, load_index)
 from ..queue import JobQueue
+from ..related import load_related, related_to
 from ..standard import Standard, load_standard
+from . import config as site_config
 from . import pages
 from .config import (Config, ElectionResolutionError, resolve_election_dirs,
                      state_abbr)
@@ -129,6 +131,8 @@ class Deps:
         default_factory=lambda: threading.BoundedSemaphore(MAX_GEOCODER_CALLS))
     clock: Any = None
     geocoder_fetch: Any = None
+    # data/related.toml's groups of related measures, by group name.
+    related: dict[str, tuple[str, ...]] = field(default_factory=dict)
 
     def __post_init__(self):
         if self.clock is None:
@@ -254,8 +258,11 @@ def build_deps(config: Config, clock=None, warn=None) -> Deps:
     queue.on_vacate = lambda job_id, claim: shutil.rmtree(
         _incoming_dir(config.data_dir, job_id, claim), ignore_errors=True)
     _sweep_orphaned_dirs(config.data_dir, queue)
+    # A live lookup of the data root, so tests can monkeypatch it. Ids of
+    # elections not served are left out of each page's list, not errors.
+    related = load_related(site_config.DATA_ROOT / "related.toml")
     return Deps(config=config, queue=queue, states=states, standard=standard,
-               clock=clock)
+               clock=clock, related=related)
 
 
 class BadRequest(Exception):
@@ -503,6 +510,30 @@ def _contest_summary(entry, state: StateElection,
     }
 
 
+def _related(entry, state: StateElection,
+             deps: Deps) -> list[dict[str, Any]]:
+    """The measures related to `entry` (data/related.toml) that are
+    served: its own state's first, in ballot order, then the other
+    states' by state name, each in ballot order."""
+    found = []
+    for contest_id in related_to(deps.related, entry.id):
+        hit = deps.contest(contest_id)
+        if hit is None:
+            continue
+        other_state, other = hit
+        position = ballot_order(other_state.index).index(other)
+        found.append((other_state.abbr != state.abbr,
+                      _sort_name(other_state.abbr), position,
+                      other_state, other))
+    found.sort(key=lambda f: f[:3])
+    return [{"id": other.id,
+             "state": other_state.abbr,
+             "state_name": pages.capitalize(_state_name(other_state.abbr)),
+             "title": other.title,
+             "path": other_state.contest_path(other)}
+            for *_, other_state, other in found]
+
+
 def _contest_detail(entry, state: StateElection,
                     deps: Deps) -> dict[str, Any]:
     key = key_for(state.index.election.id, entry, deps.standard)
@@ -534,6 +565,8 @@ def _contest_detail(entry, state: StateElection,
                         for c in entry.corrections],
         "report_url": REPORT_URL,
         "job": job,
+        # Measures on the same subject, each linking to its own page.
+        "related": _related(entry, state, deps),
         # only a choice question says so: a yes/no measure's detail is
         # as it always was
         **({"choice": True} if entry.choice else {}),

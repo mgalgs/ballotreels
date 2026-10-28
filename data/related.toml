@@ -1,0 +1,52 @@
+# Measures on the same subject, linked from each other's pages under
+# "Related measures" (ballotreels/related.py). Each key names a group
+# and lists its contest ids; every measure in a group links to every
+# other, in both directions. A measure may sit in several groups. The
+# group names are for whoever edits this file and are never shown to
+# readers. A group of one links nothing yet: it is here so that adding
+# a measure on the same subject is one line.
+
+voter-identification = [
+  "ca-2026-11-03-prop-39",
+  "oh-2026-11-03-issue-3",
+  "az-2026-11-03-prop-144",
+]
+
+school-athletics-eligibility = [
+  "az-2026-11-03-prop-318",
+  "wa-2026-11-03-il26-638",
+]
+
+vote-threshold-for-taxes = [
+  "ut-2026-11-03-amendment-b",
+  "ca-2026-11-03-prop-43",
+]
+
+budget-reserve-funds = [
+  "ca-2026-11-03-prop-2",
+  "fl-2026-11-03-amendment-1",
+]
+
+campaign-finance = [
+  "ca-2026-11-03-prop-4",
+]
+
+income-tax-on-high-incomes = [
+  "ca-2026-11-03-prop-3",
+  "wa-2026-11-03-ip26-645",
+]
+
+property-taxes = [
+  "fl-2026-11-03-amendment-2",
+  "fl-2026-11-03-amendment-3",
+  "ca-2026-11-03-prop-42",
+]
+
+housing-programs = [
+  "ca-2026-11-03-prop-1",
+  "ca-2026-11-03-prop-37",
+]
+
+initiative-process = [
+  "ut-2026-11-03-amendment-b",
+]
