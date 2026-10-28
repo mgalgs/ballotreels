@@ -310,6 +310,18 @@ BALLOTS: dict[str, Ballot] = {
                  badges={"Measure": "INITIATIVE MEASURE"},
                  guides={"ne-2026-11-03-amendment-1":
                          "Legislative Resolution 19CA"}),
+
+    # Vermont prints no voter guide and no explanation. Each town's
+    # ballot carries an "OFFICIAL STATE CONSTITUTIONAL AMENDMENT BALLOT"
+    # panel: "PROPOSAL 3" (badge PROPOSAL), "To see if the voters will
+    # amend the Vermont Constitution by adding Article 23 to read:", the
+    # article's text and the choices "YES" and "NO". The card quotes that
+    # panel. No fiscal statement exists for a proposal the General
+    # Assembly adopts.
+    "vt": Ballot(guide="Official State Constitutional Amendment Ballot",
+                 fiscal_label=None,
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
