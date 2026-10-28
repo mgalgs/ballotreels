@@ -426,9 +426,6 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
                        help="hold each video a visitor requests as pending "
                             "until the operator approves it (default: on; "
                             "--no-require-approval queues them directly)")
-    serve.add_argument("--address-limit", default=None, type=int,
-                       help="max address lookups per client IP per hour "
-                            "(default: 30)")
     serve.add_argument("--trust-forwarded-for", action="store_true",
                        default=None,
                        help="use the rightmost X-Forwarded-For entry as "
@@ -442,8 +439,6 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
     serve.add_argument("--max-upload-mb", default=None, type=int,
                        help="largest file a worker may upload (default: "
                             "500)")
-    serve.add_argument("--geocoder-url", default=None,
-                       help="base URL of the Census Geocoder")
     serve.add_argument("--site-url", default=None,
                        help="the site's public base URL, for the absolute "
                             "URLs in link previews (default: "

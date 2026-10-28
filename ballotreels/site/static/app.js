@@ -114,7 +114,6 @@ function notice(title, message, actions) {
 function homeActions() {
   return [
     linkButton("Try another zip", "/", "btn-primary"),
-    linkButton("Use my address", "/#/address", "btn-quiet"),
   ];
 }
 
@@ -410,9 +409,9 @@ function drawFallbackSvg(container, featureCollection, onSelect, letters) {
 
 // -- routes -----------------------------------------------------------
 
-// The page's route: a hash route (the zip and address flow, which are
-// personal and not shared, and every link from before the short paths)
-// wins over the path.
+// The page's route: a hash route (the zip flow, which is personal and
+// not shared, and every link from before the short paths) wins over
+// the path.
 function currentRoute() {
   const hash = location.hash.replace(/^#/, "");
   if (hash) {
@@ -449,7 +448,7 @@ const SERVER_PATHS = /^\/(?:api|static|v|admin)(?:\/|$)/;
 
 // Same-site links navigate in the app rather than reloading the page.
 // An old-style "#/..." href is taken from the site root, so it never
-// lands on top of a short path (/ut#/address).
+// lands on top of a short path (/ut#/zip/84101).
 document.addEventListener("click", (event) => {
   if (event.defaultPrevented || event.button !== 0 || event.metaKey ||
       event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -487,7 +486,9 @@ async function route() {
   window.scrollTo(0, 0);
   // Must match pages.HOME_TITLE, the title a fresh load of / shows.
   document.title = "ballotreels: your ballot, explained";
-  if (path === "/" || path === "") {
+  // The old #/address page is gone (zips are the only lookup): its
+  // links land on the zip entry.
+  if (path === "/" || path === "" || (hash && path === "/address")) {
     showPath("/");
     return renderHome();
   }
@@ -504,10 +505,8 @@ async function route() {
   if (m) return renderContest(`/api/contest/${m[1]}`);
   m = hash && path.match(/^\/zip\/([0-9]+)$/);
   if (m) return renderZip(m[1]);
-  if (hash && path === "/address") return renderAddress();
   if (hash && path === "/ballot") {
-    return renderBallot(params.getAll("d"), params.get("addr"),
-                        params.getAll("p"));
+    return renderBallot(params.getAll("d"), params.getAll("p"));
   }
   notFound();
 }
@@ -548,11 +547,6 @@ function renderHome() {
               text: "Short, even-handed videos on everything on your " +
                     "ballot, with every claim sourced." }),
     form,
-    el("div", { class: "or-rule", text: "or" }),
-    linkButton("Use my street address", "/#/address", "btn-quiet btn-block"),
-    el("p", { class: "field-note",
-              text: "Pins down your exact districts when a zip code " +
-                    "spans more than one." }),
   ]));
   const states = el("ul", { class: "state-list" });
   const browse = el("section", { class: "browse", hidden: "hidden" }, [
@@ -617,90 +611,6 @@ function noMeasuresNotice(body, actions) {
     `${electionDay(body.election)}.`, actions);
 }
 
-async function renderAddress() {
-  const input = el("input", {
-    type: "text", id: "address", autocomplete: "street-address",
-    placeholder: "123 Main St, San Jose, CA 95112",
-    enterkeyhint: "search", "aria-describedby": "address-note",
-  });
-  const result = el("div", { id: "address-note", "aria-live": "polite" });
-  const submit = el("button", { type: "submit",
-                                class: "btn btn-primary btn-block",
-                                text: "Find my ballot" });
-  const go = async () => {
-    if (!input.value.trim()) {
-      result.replaceChildren(el("p", { class: "inline-error",
-        text: "Type your street address, with the city and zip." }));
-      input.focus();
-      return;
-    }
-    submit.disabled = true;
-    submit.textContent = "Looking it up...";
-    result.replaceChildren();
-    const token = routeToken;
-    const { ok, status, body } = await postJson("/api/address",
-      { address: input.value });
-    if (isStale(token)) return;
-    if (!ok) {
-      submit.disabled = false;
-      submit.textContent = "Find my ballot";
-      let message;
-      if (status === 404 && body && body.covered === false) {
-        message = body.state_name ?
-          `We don't cover ${body.state_name} yet.` :
-          "We don't cover that address's state yet.";
-      } else if (status === 404) {
-        message = "We couldn't find that address. Check the spelling " +
-          "and include the city and zip.";
-      } else if (status === 0) {
-        message = "We couldn't reach ballotreels. Check your connection " +
-          "and try again.";
-      } else if (status === 502 || status === 503) {
-        message = "The address lookup isn't answering right now. Try " +
-          "again in a minute, or use your zip code.";
-      } else if (status === 429) {
-        message = "You've looked up several addresses in a short time. " +
-          "Try again later, or use your zip code.";
-      } else {
-        message = body && body.error ? body.error :
-          "We couldn't find that address.";
-      }
-      result.replaceChildren(el("p", { class: "inline-error", text: message }));
-      return;
-    }
-    const divisions = [];
-    for (const entries of Object.values(body.kinds)) {
-      for (const entry of entries) divisions.push(entry.ocd_id);
-    }
-    // The geocoder's matched address rides along in the hash so the
-    // ballot page can show it and the voter can check it.
-    const params = divisions.map((d) => `d=${encodeURIComponent(d)}`)
-      .concat([`addr=${encodeURIComponent(body.matched_address || "")}`])
-      .join("&");
-    go(`/#/ballot?${params}`);
-  };
-  app.appendChild(el("section", {}, [
-    backLink("Use a zip code instead", "/"),
-    heading("h1", "Your street address"),
-    el("p", { class: "lead",
-              text: "Your address pins down exactly which districts " +
-                    "you vote in." }),
-    el("form", {
-      class: "box", novalidate: "novalidate",
-      onsubmit: (event) => { event.preventDefault(); go(); },
-    }, [
-      el("label", { for: "address", text: "Street, city and zip" }),
-      input,
-      result,
-      el("div", { class: "btn-row" }, [submit]),
-    ]),
-    el("p", { class: "small muted",
-              text: "We look it up with the US Census Bureau's geocoder, " +
-                    "which finds the point on the map it falls on." }),
-  ]));
-  input.focus();
-}
-
 async function renderZip(zip) {
   const token = routeToken;
   app.appendChild(loading(`Looking up ${zip}...`));
@@ -718,8 +628,8 @@ async function renderZip(zip) {
         [linkButton("Try another zip code", "/", "btn-primary")]));
     } else if (status === 404) {
       app.appendChild(notice(`No district data for ${zip}`,
-        "We don't have this zip code's districts. Check the number, " +
-        "or look up your street address instead.", homeActions()));
+        "We don't have this zip code's districts. Check the number " +
+        "and try again.", homeActions()));
     } else {
       app.appendChild(notice("We couldn't look up that zip code",
         body && body.error ? `The lookup said: ${body.error}.` :
@@ -729,12 +639,15 @@ async function renderZip(zip) {
     return;
   }
   if (body.needs_address) {
-    // A zip across a state line: the street address says which state.
+    // A zip across a state line: the zip alone can't say which state's
+    // ballot is yours, so each state's measures are offered instead.
     app.appendChild(notice(`Zip code ${zip} crosses a state line`,
-      `It is partly in ${body.states.map((s) => s.name).join(" and ")}. ` +
-      "Your street address tells us which ballot is yours.",
-      [linkButton("Use my street address", "/#/address", "btn-primary"),
-       linkButton("Change zip code", "/", "btn-quiet")]));
+      `It is partly in ${body.states.map((s) => s.name).join(" and ")}, ` +
+      "so it can't tell us which ballot is yours. You can browse each " +
+      "state's measures.",
+      [...body.states.map((s) => linkButton(s.name.replace(/^the /, ""),
+                                            `/${s.state}`, "btn-quiet")),
+       linkButton("Change zip code", "/", "btn-primary")]));
     return;
   }
   if (body.ambiguous.length === 0) {
@@ -811,11 +724,6 @@ async function renderAmbiguousKind(zip, zipDoc, kind) {
               text: "The dotted line is your zip code. Each district " +
                     "carries its letter and its own shading." }),
     list,
-    el("p", { class: "muted" }, [
-      "Not sure which? ",
-      el("a", { href: "/#/address", text: "Look up your street address" }),
-      " and we'll work it out.",
-    ]),
   ]));
   const { body: shapes } = await getJson(
     `/api/zip/${zip}/shapes?kind=${encodeURIComponent(kind)}`);
@@ -932,7 +840,7 @@ function posterFor(videoUrl) {
   return videoUrl.replace(/video\.mp4$/, "poster.jpg");
 }
 
-async function renderBallot(divisions, matchedAddress, partial) {
+async function renderBallot(divisions, partial) {
   app.appendChild(loading("Getting your ballot..."));
   const token = routeToken;
   const query = divisions.map((d) => `d=${encodeURIComponent(d)}`)
@@ -961,12 +869,6 @@ async function renderBallot(divisions, matchedAddress, partial) {
     heading("h1", "Your ballot"),
     when ? el("p", { class: "muted", text: `Election day: ${when}` }) : null,
   ]);
-  if (matchedAddress) {
-    section.appendChild(el("p", { class: "box matched" }, [
-      el("span", { text: `Matched address: ${matchedAddress}. ` }),
-      el("a", { href: "/#/address", text: "Not your address? Try again" }),
-    ]));
-  }
   if (contests.length === 0 && body.empty_election) {
     section.appendChild(noMeasuresNotice(body, [
       linkButton("Try another zip", "/", "btn-primary")]));

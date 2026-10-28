@@ -323,7 +323,7 @@ class SiteUrlOptionTest(unittest.TestCase):
             "data_dir", "election", "public_host", "public_port",
             "private_host", "private_port", "generate_limit",
             "generate_window", "trust_forwarded_for", "heartbeat_timeout",
-            "eta_default_minutes", "max_upload_mb", "geocoder_url")}
+            "eta_default_minutes", "max_upload_mb")}
         fields.update(kw)
         return argparse.Namespace(**fields)
 
@@ -364,7 +364,6 @@ const renderHome = () => calls.push(["home"]);
 const renderState = (...a) => calls.push(["state", ...a]);
 const renderContest = (...a) => calls.push(["contest", ...a]);
 const renderZip = (...a) => calls.push(["zip", ...a]);
-const renderAddress = () => calls.push(["address"]);
 const renderBallot = (...a) => calls.push(["ballot", ...a]);
 eval(src.slice(start, end));
 const out = {};
@@ -392,10 +391,11 @@ ROUTES = {
     "/ut#/contest/ut-2026-11-03-amendment-a":
         ["contest", "/api/contest/ut-2026-11-03-amendment-a"],
     "/#/zip/84101": ["zip", "84101"],
-    "/#/address": ["address"],
-    "/#/ballot?d=a&d=b&addr=x": ["ballot", ["a", "b"], "x", []],
+    # the old street-address page: zips are the only lookup
+    "/#/address": ["home"],
+    "/#/ballot?d=a&d=b": ["ballot", ["a", "b"], []],
     # a zip's cities and school districts that cover only part of it
-    "/#/ballot?d=a&d=p1&p=p1": ["ballot", ["a", "p1"], None, ["p1"]],
+    "/#/ballot?d=a&d=p1&p=p1": ["ballot", ["a", "p1"], ["p1"]],
     "/zip/84101": ["notFound"],
     "/ut/2026/amendment-a/x": ["notFound"],
 }
@@ -413,6 +413,7 @@ class AppRouterTest(unittest.TestCase):
                 self.assertEqual(out[url]["call"], want)
         # The home page reached by an old "#/" shows as "/".
         self.assertEqual(out["/#/"]["replaced"], "/")
+        self.assertEqual(out["/#/address"]["replaced"], "/")
 
     def test_old_links_show_the_short_path(self):
         app_js = (STATIC_DIR / "app.js").read_text(encoding="utf-8")

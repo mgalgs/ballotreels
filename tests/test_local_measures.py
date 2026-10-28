@@ -1,6 +1,6 @@
 """Local measures (docs/ARCHITECTURE.md): county, city and school
 district contests on a zip's ballot, end to end through the geo build,
-the zip and address lookups, the ballot, the contest page and the
+the zip lookup, the ballot, the contest page and the
 sitemap, over the fake San Diego of tests/geo_fixtures.py and the
 fixture election in tests/fixtures/local/."""
 
@@ -11,7 +11,6 @@ import unittest
 from pathlib import Path
 
 import ballotreels.site.config as site_config
-from ballotreels.geo.geocoder import lookup_address
 from ballotreels.geo.lookup import GeoData, ocd_id, slug
 from ballotreels.index import ballot_order, level_of, load_index
 from ballotreels.site.server import build_deps, make_servers
@@ -137,7 +136,7 @@ class LocalGeoBuildTest(LocalGeoTestCase):
         self.assertNotIn("place", doc["kinds"])
         self.assertNotIn("school_district", doc["kinds"])
 
-    def test_shapes_for_the_address_fallback(self):
+    def test_district_shapes_and_names(self):
         self.assertIn(EL_CAJON, self.geo.district_shapes)
         self.assertNotIn(f"{STATE}/place:spring_valley",
                          self.geo.district_shapes)
@@ -170,58 +169,6 @@ class LocalGeoBuildTest(LocalGeoTestCase):
             self.assertEqual(
                 [e["ocd_id"] for e in doc["kinds"]["school_district"]],
                 [SD_UNIFIED])
-
-
-def _geocoder(geographies, x=12.0, y=5.0):
-    doc = {"result": {"addressMatches": [{
-        "matchedAddress": "1 MAIN ST, EL CAJON, CA, 92102",
-        "coordinates": {"x": x, "y": y},
-        "geographies": {
-            "States": [{"GEOID": "06"}],
-            "Counties": [{"GEOID": "06073", "NAME": "San Diego County",
-                          "BASENAME": "San Diego"}],
-            **geographies}}]}}
-    return lambda url: json.dumps(doc)
-
-
-class LocalAddressTest(LocalGeoTestCase):
-    def test_address_names_its_city_and_school_districts(self):
-        fetch = _geocoder({
-            "Incorporated Places": [{"GEOID": "0621712",
-                                     "NAME": "El Cajon city",
-                                     "BASENAME": "El Cajon"}],
-            "Census Designated Places": [],
-            "Unified School Districts": [],
-            "Elementary School Districts": [{
-                "GEOID": "0606540",
-                "NAME": "Cajon Valley Union School District"}],
-            "Secondary School Districts": [{
-                "GEOID": "0616050",
-                "NAME": "Grossmont Union High School District"}],
-        })
-        result = lookup_address("1 Main St", fetch, "https://x.test",
-                                {"ca": self.geo})
-        self.assertEqual(result["kinds"]["place"],
-                         [{"ocd_id": EL_CAJON, "name": "City of El Cajon"}])
-        self.assertEqual(
-            [e["ocd_id"] for e in result["kinds"]["school_district"]],
-            [CAJON_VALLEY, GROSSMONT])
-
-    def test_unincorporated_address_has_no_city(self):
-        fetch = _geocoder({"Incorporated Places": [],
-                           "Unified School Districts": []}, x=16.0)
-        result = lookup_address("1 Main St", fetch, "https://x.test",
-                                {"ca": self.geo})
-        self.assertNotIn("place", result["kinds"])
-
-    def test_missing_layers_fall_back_to_the_shapes(self):
-        result = lookup_address("1 Main St", _geocoder({}, x=5.0),
-                                "https://x.test", {"ca": self.geo})
-        self.assertEqual([e["ocd_id"] for e in result["kinds"]["place"]],
-                         [SD_CITY])
-        self.assertEqual(
-            [e["ocd_id"] for e in result["kinds"]["school_district"]],
-            [SD_UNIFIED])
 
 
 class CountyIndexTest(unittest.TestCase):

@@ -55,7 +55,7 @@ _PLACE_TYPES = {" city": "City of", " town": "Town of"}
 
 def place_name(name: str, display: str | None) -> str:
     """A city's display name: "City of San Diego" for TIGER's NAMELSAD
-    (or the geocoder's NAME) "San Diego city"; else that name as is."""
+    "San Diego city"; else that name as is."""
     for suffix, prefix in _PLACE_TYPES.items():
         if display and display == f"{name}{suffix}":
             return f"{prefix} {name}"

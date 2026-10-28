@@ -86,14 +86,6 @@ class OneMapColourTest(unittest.TestCase):
         r, g, b = (int(hex_digits[i:i + 2], 16) for i in (0, 2, 4))
         self.assertLessEqual(max(r, g, b) - min(r, g, b), 16)
 
-    def test_ballot_shows_matched_address(self):
-        # A12: the address flow shows the geocoder's matched address on
-        # the ballot it leads to, so the voter can check it.
-        app_js = (STATIC_DIR / "app.js").read_text(encoding="utf-8")
-        self.assertIn('params.get("addr")', app_js)
-        self.assertIn("addr=${encodeURIComponent(body.matched_address", app_js)
-        self.assertIn("Matched address: ${matchedAddress}", app_js)
-
 
 class ContestApiFieldsTest(ServerTestCase):
     def test_contest_api_fields(self):

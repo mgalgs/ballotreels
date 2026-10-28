@@ -417,20 +417,6 @@ input.zip-input::placeholder {
   margin-top: 0.4rem;
 }
 
-.or-rule {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 22px 0 14px;
-  color: var(--ink-soft);
-}
-
-.or-rule::before, .or-rule::after {
-  content: "";
-  flex: 1;
-  border-top: 1.5px dashed var(--ink-faint);
-}
-
 .promise {
   list-style: none;
   padding: 0;
@@ -716,16 +702,6 @@ input.zip-input::placeholder {
 }
 
 /* -- ballot --------------------------------------------------------- */
-
-.matched {
-  font-size: 1.05rem;
-}
-
-.matched strong {
-  font-weight: 400;
-  background: rgba(224, 123, 51, 0.16);
-  padding: 0 3px;
-}
 
 .level-heading {
   margin: 1.6rem 0 0.7rem;

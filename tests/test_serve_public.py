@@ -35,7 +35,6 @@ def _make_config(data_dir: Path, **overrides) -> Config:
         token="test-token", generate_limit=5, generate_window=3600,
         trust_forwarded_for=False, heartbeat_timeout=120.0,
         eta_default_minutes=10.0, max_upload_mb=500,
-        geocoder_url="https://example.test/geocoder",
         # The queue-flow tests start jobs directly; the approval queue
         # (on by default) has its own tests in test_approval.
         require_approval=False)
@@ -357,8 +356,7 @@ class ConfigDefaultsTest(unittest.TestCase):
             public_port=None, private_host=None, private_port=None,
             generate_limit=None, generate_window=None,
             trust_forwarded_for=None, heartbeat_timeout=None,
-            eta_default_minutes=None, max_upload_mb=None,
-            geocoder_url=None)
+            eta_default_minutes=None, max_upload_mb=None)
         config = load_config(ns)
         self.assertEqual(config.data_dir, REPO_ROOT / "var")
         self.assertEqual(config.public_port, 8080)

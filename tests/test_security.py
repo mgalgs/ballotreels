@@ -1,13 +1,9 @@
-import contextlib
 import http.client
-import io
 import json
 import socket
-import threading
 import time
 import unittest
 
-from ballotreels.geo.geocoder import GeocoderError, lookup_address
 from ballotreels.site import server as site_server
 
 from .test_serve_private import ServerTestCaseWithConfig
@@ -15,12 +11,6 @@ from .test_serve_private import ServerTestCaseWithConfig
 PROP_90 = "ca-2026-11-03-prop-90"
 PROP_91 = "ca-2026-11-03-prop-91"
 PROP_92 = "ca-2026-11-03-prop-92"
-
-GEOCODER_OK = json.dumps({"result": {"addressMatches": [{
-    "matchedAddress": "1 FAKE ST, EXAMPLE, CA, 99999",
-    "coordinates": {"x": 5.0, "y": 5.0},
-    "geographies": {"States": [{"GEOID": "06"}]}}]}})
-
 
 class FailedJobNotRetriggeredTest(ServerTestCaseWithConfig):
     def _job_for(self, contest):
@@ -76,81 +66,6 @@ class GlobalGenerateCapTest(ServerTestCaseWithConfig):
             headers={"X-Forwarded-For": "2001:db8::3"})
         self.assertEqual(status, 429)
         self.assertEqual(body["limit"], "global")
-
-
-class AddressLimitsTest(ServerTestCaseWithConfig):
-    config_overrides = {"address_limit": 2}
-
-    def setUp(self):
-        super().setUp()
-        self.deps.geocoder_fetch = lambda url: GEOCODER_OK
-
-    def test_address_too_long(self):
-        status, body, _ = self._public("POST", "/api/address",
-                                       {"address": "x" * 201})
-        self.assertEqual(status, 400)
-        status, _, _ = self._public("POST", "/api/address",
-                                    {"address": "x" * 200})
-        self.assertEqual(status, 200)
-
-    def test_address_per_ip_limit(self):
-        statuses = [self._public("POST", "/api/address",
-                                 {"address": "1 Fake St"})[0]
-                    for _ in range(3)]
-        self.assertEqual(statuses, [200, 200, 429])
-
-    def test_geocoder_concurrency(self):
-        release = threading.Event()
-        entered = threading.Semaphore(0)
-
-        def slow_fetch(url):
-            entered.release()
-            release.wait(5)
-            return GEOCODER_OK
-
-        self.deps.geocoder_fetch = slow_fetch
-        self.deps.address_hits.clear()
-        object.__setattr__(self.deps.config, "address_limit", 100)
-        results = []
-        threads = [threading.Thread(target=lambda: results.append(
-            self._public("POST", "/api/address", {"address": "1 Fake St"},
-                         headers={})[0]))
-            for _ in range(site_server.MAX_GEOCODER_CALLS)]
-        for t in threads:
-            t.start()
-        for _ in threads:
-            self.assertTrue(entered.acquire(timeout=5))
-        status, body, _ = self._public("POST", "/api/address",
-                                       {"address": "1 Fake St"})
-        self.assertEqual(status, 503)
-        self.assertIn("busy", body["error"])
-        release.set()
-        for t in threads:
-            t.join(5)
-        self.assertEqual(results, [200] * site_server.MAX_GEOCODER_CALLS)
-
-
-class GeocoderErrorTextTest(ServerTestCaseWithConfig):
-    def test_detail_logged_not_returned(self):
-        def failing(url):
-            raise OSError("secret-internal-detail")
-
-        self.deps.geocoder_fetch = failing
-        err = io.StringIO()
-        with contextlib.redirect_stderr(err):
-            status, body, _ = self._public("POST", "/api/address",
-                                           {"address": "1 Fake St"})
-        self.assertEqual(status, 502)
-        self.assertNotIn("secret-internal-detail", json.dumps(body))
-        self.assertIn("secret-internal-detail", err.getvalue())
-
-    def test_bad_response_fixed_message(self):
-        err = io.StringIO()
-        with contextlib.redirect_stderr(err):
-            with self.assertRaises(GeocoderError) as cm:
-                lookup_address("1 Fake St", lambda url: "<html>nope",
-                               "https://geocoder.example.test", {"ca": None})
-        self.assertNotIn("html", str(cm.exception))
 
 
 class RequestTimeoutTest(ServerTestCaseWithConfig):

@@ -2,7 +2,7 @@
 
 Even-handed explainer videos for everything on your ballot.
 
-Enter your address, see the districts you vote in, and get one short
+Enter your zip code, see the districts you vote in, and get one short
 video per race and measure on your ballot. Each video explains what the
 contest is and what each side or candidate says, with every claim
 sourced to an official or primary document, the same structure and
@@ -164,7 +164,7 @@ under `rel2020/cd-sld/`, but those URLs have not been checked against
 census.gov. If a default one fails to download (or is not a
 relationship file), the build still succeeds but prints a warning, and
 a zip lookup carries no district of that kind (the district shapes are
-still built, and the address lookup still resolves it exactly). Pass
+still built). Pass
 `--url sldu_rel.txt=...` / `--url sldl_rel.txt=...` to supply a file in
 the same pipe-delimited format (`GEOID_ZCTA5_20`, a `GEOID_*` district
 column, `AREALAND_PART`); a URL given that way must work.
@@ -196,7 +196,9 @@ is a startup error naming both. Each state's zips come from its own
 is a startup warning, and only its zip lookups are affected. A zip is
 looked up in every served state: found in one, it answers with that
 state and election; found in two (a zip across a state line), the page
-asks for a street address, and the geocoder's state picks the ballot.
+says the zip alone can't tell which ballot is yours and links to each
+state's measures. Zip codes are the only lookup; there is no address
+search.
 A zip in a state not served gets "We don't cover <state> yet", the
 state told by the zip's first three digits. The ballot API serves the
 state of the statewide division it is given, and the district labels
@@ -211,8 +213,9 @@ is the same page for that year's election, and a measure's page is
 the contest id without its election prefix, under the year of the
 election's date, so a later election can never reuse a link. The app
 keeps these paths in the address bar as it navigates, so any page can
-be copied and shared; the zip and street-address ballot pages stay on
-`/#/...` routes, since they are personal. Each of these pages is
+be copied and shared; the zip and ballot pages stay on `/#/...`
+routes, since they are personal (an old `#/address` link lands on the
+home page). Each of these pages is
 answered with its own `<title>`, description and link-preview tags
 (Open Graph and Twitter card), with absolute URLs under `--site-url`;
 a measure's preview image is its current video's poster, or else the
@@ -240,12 +243,10 @@ measures on that election day.
 | `--generate-window` | `BALLOTREELS_GENERATE_WINDOW` | `3600` (seconds) |
 | `--generate-global-limit` | `BALLOTREELS_GENERATE_GLOBAL_LIMIT` | `30` (new jobs per hour, every client together) |
 | `--require-approval` / `--no-require-approval` | `BALLOTREELS_REQUIRE_APPROVAL` | on |
-| `--address-limit` | `BALLOTREELS_ADDRESS_LIMIT` | `30` (address lookups per client IP per hour) |
 | `--trust-forwarded-for` | `BALLOTREELS_TRUST_FORWARDED_FOR` | off; set only behind a trusted reverse proxy |
 | `--heartbeat-timeout` | `BALLOTREELS_HEARTBEAT_TIMEOUT` | `120` (seconds) |
 | `--eta-default-minutes` | `BALLOTREELS_ETA_DEFAULT_MINUTES` | `10` |
 | `--max-upload-mb` | `BALLOTREELS_MAX_UPLOAD_MB` | `500` |
-| `--geocoder-url` | `BALLOTREELS_GEOCODER_URL` | the Census Geocoder |
 | `--site-url` | `BALLOTREELS_SITE_URL` | `https://ballotreels.org`; the base of the absolute URLs in link previews (never taken from the request's `Host`) |
 
 `--generate-limit` and `--generate-window` bound how many videos one
@@ -255,10 +256,7 @@ already-queued or already-cached contest is always free);
 since a per-IP limit alone is beaten by rotating IPv6 addresses. A
 contest whose latest job failed or was cancelled is not re-queued by a
 visitor (its page says the video isn't available, with no button): only
-the queue monitor's retry starts it again. The address
-lookup takes at most 200 characters, is limited per client IP by
-`--address-limit`, and makes at most 4 geocoder calls at once
-(answering 503, "busy", past that). The queue
+the queue monitor's retry starts it again. The queue
 monitor lives on the private listener at `/admin/`, signed in with the
 same token (as a cookie, via `/admin/login`, so a phone browser can use
 it too).
