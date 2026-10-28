@@ -288,3 +288,9 @@ source = "impartial-analysis"
 quote = "City staff have estimated that the Sales Tax Ordinance will raise approximately $6.35 million annually in local revenue."
 amount = 6350000
 period = "per-year"
+
+# City of Colton Measure O: not a tax measure; the guide prints no
+# fiscal statement.
+[colton-measure-o]
+source = "impartial-analysis"
+status = "none-printed"
