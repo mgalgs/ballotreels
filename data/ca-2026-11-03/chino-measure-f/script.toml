@@ -1,0 +1,165 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; the tax today; what would change (a tax on gross receipts, the
+# small-business flat rate, the top rates by kind of business, what the
+# council could and could not change, where the money goes); the ballot
+# question's revenue estimate; one line per side; what a vote does.
+#
+# The card quotes the ballot question from the City Council's resolution
+# (the guide prints none), which has no yes/no lines; the vote lines
+# give the City Attorney's Impartial Analysis's meanings and both
+# highlight the phrase of the question they turn on. "City's" and
+# "business's" are heard as plurals (standard/speakability.txt), so the
+# narration says neither.
+#
+# The ballot question's $4.8 million a year has no scale: no archived
+# source states the city's general fund budget (STANDARD.md 6.5; left
+# open). The supporters' figures on what the largest businesses pay are
+# their argument and stay in their section (STANDARD.md 6.3).
+#
+# No argument against is printed in the guide (the Registrar's measures
+# page: "No Argument Against was filed."): the no side is filed = false.
+
+contest = "ca-2026-11-03-chino-measure-f"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-label"
+number = "F"
+title = "MODERNIZING THE CITY’S BUSINESS LICENSE TAX"
+origin = "A RESOLUTION OF THE CITY COUNCIL OF THE CITY OF CHINO, CALIFORNIA, ORDERING THE SUBMISSION TO THE QUALIFIED ELECTORS OF THE CITY OF A GENERAL TAX MEASURE"
+summary = "Without taxing residents, and to support general city services such as 911/police response; protect local drinking water sources; retain/attract local businesses; shall the measure be adopted to reform City of Chino’s outdated business license ordinance with rates of $0.60 - $1.50 per $1,000 of gross receipts for larger businesses based on business category; and only $25 for smaller businesses (under $75,000), generating approximately $4,800,000 annually until ended by voters; with audits, spending disclosure, funds locally controlled?"
+
+[[section]]
+id = "what"
+heading = "Measure F"
+
+[[section.line]]
+text = "City of Chino Measure F asks Chino voters whether to change how the city taxes businesses."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["business license ordinance"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Chino already charges a business license tax to businesses operating in the city."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure F would replace parts of that tax with a tax on gross receipts."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+text = "Businesses with $75,000 or less in gross receipts would pay $25."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Top tax on each $1,000 of gross receipts above $75,000"
+source = "impartial-analysis"
+unit = ""
+labels = ["General and retail", "Contractors", "Services", "Professional", "Real property and rental"]
+values = [0.60, 1.00, 1.00, 1.50, 1.50]
+
+[[section.line]]
+text = "Above that, top rates would run from 60 cents to $1.50 per $1,000, by kind of business."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+text = "The council could lower the tax, but not raise it without another vote."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section.line]]
+text = "The money would go to the general fund, for any lawful city purpose."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+text = "The ballot question says the tax would raise about $4.8 million a year."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "illustration"
+name = "set-aside-funds"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure F has larger businesses contribute fairly, protects small businesses, and does not tax residents."
+sources = ["argument-for"]
+basis = ["require larger business operations to contribute fairly toward the services and infrastructure they use.", "Measure F protects small businesses. Approximately 56% of Chino businesses", "Measure F does not tax Chino residents."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Larger businesses contribute fairly", "Protects small businesses; no tax on residents"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure F was submitted, so the county voter guide prints only the supporters' argument."
+sources = ["argument-for"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves the business license tax ordinance."
+sources = ["impartial-analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["business license ordinance"]
+
+[[section.line]]
+text = "A no vote is against approving the business license tax ordinance."
+sources = ["impartial-analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["business license ordinance"]
