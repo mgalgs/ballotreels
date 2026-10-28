@@ -128,8 +128,6 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label="FISCAL IMPACT",
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
-}
-
     # Wyoming's Secretary of State prints the one proposition's ballot
     # language, its "Estimated Fiscal Impact:" and its full text in "2026
     # General Election Statewide Ballot Propositions", and the ballot's

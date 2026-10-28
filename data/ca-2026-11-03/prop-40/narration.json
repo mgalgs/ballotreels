@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 67.84,
+  "seconds": 71.15,
   "phrases": [
     {
       "text": "Proposition 40 is about a one-time tax on billionaires.",
@@ -39,24 +39,24 @@
       "end": 45.24
     },
     {
-      "text": "Opponents say Proposition 40 would drive wealthy residents away, costing the state billions.",
+      "text": "Opponents, including Rene Bravo, the first signer against, say the tax would drive the wealthy away, costing billions.",
       "start": 45.9,
-      "end": 52.4
+      "end": 54.04
     },
     {
-      "text": "Supporters say Proposition 40 would tax billionaires to replace federal health care cuts.",
-      "start": 53.06,
-      "end": 59.14
+      "text": "Supporters, including Suzanne Jimenez, the measure's proponent, say the tax would replace federal cuts to health care funding.",
+      "start": 54.7,
+      "end": 62.32
     },
     {
       "text": "A yes vote means the state would collect the one-time tax.",
-      "start": 59.8,
-      "end": 63.51
+      "start": 62.98,
+      "end": 66.82
     },
     {
       "text": "A no vote means the state would not collect the one-time tax.",
-      "start": 64.17,
-      "end": 67.81
+      "start": 67.48,
+      "end": 71.12
     }
   ],
   "inputs": {
@@ -68,8 +68,8 @@
       "Ninety percent of the money would go to health care.",
       "The Legislative Analyst's Office expects the tax to raise tens of billions of dollars over several years.",
       "It also sees a possible yearly drop in income taxes of under $1 billion, less than 1 percent of this year's General Fund spending.",
-      "Opponents say Proposition 40 would drive wealthy residents away, costing the state billions.",
-      "Supporters say Proposition 40 would tax billionaires to replace federal health care cuts.",
+      "Opponents, including Rene Bravo, the first signer against, say the tax would drive the wealthy away, costing billions.",
+      "Supporters, including Suzanne Jimenez, the measure's proponent, say the tax would replace federal cuts to health care funding.",
       "A yes vote means the state would collect the one-time tax.",
       "A no vote means the state would not collect the one-time tax."
     ],
@@ -205,11 +205,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Opponents say Proposition 40 would drive wealthy residents away, costing the state billions."
+        "text": "Opponents, including Rene Bravo, the first signer against, say the tax would drive the wealthy away, costing billions."
       },
       "bounds": [
         1100880,
-        1258320
+        1297680
       ]
     },
     {
@@ -217,15 +217,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say Proposition 40 would drive wealthy residents away, costing the state billions.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents, including Rene Bravo, the first signer against, say the tax would drive the wealthy away, costing billions.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Supporters say Proposition 40 would tax billionaires to replace federal health care cuts."
+        "text": "Supporters, including Suzanne Jimenez, the measure's proponent, say the tax would replace federal cuts to health care funding."
       },
       "bounds": [
-        1272720,
-        1420080
+        1312080,
+        1496400
       ]
     },
     {
@@ -233,15 +233,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Proposition 40 would tax billionaires to replace federal health care cuts.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters, including Suzanne Jimenez, the measure's proponent, say the tax would replace federal cuts to health care funding.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote means the state would collect the one-time tax."
       },
       "bounds": [
-        1434480,
-        1524960
+        1510800,
+        1604400
       ]
     },
     {
@@ -256,10 +256,10 @@
         "text": "A no vote means the state would not collect the one-time tax."
       },
       "bounds": [
-        1539360,
-        1628160
+        1618800,
+        1707600
       ]
     }
   ],
-  "sha256": "642f64eb5625f1ae4703267fd59b47f6c42556331f089ea32f558f89b9c0f181"
+  "sha256": "6c81210f0ea9b55cc0f69b6b3ee1ed16aa4c34f404660d9872376418e66b04f5"
 }
