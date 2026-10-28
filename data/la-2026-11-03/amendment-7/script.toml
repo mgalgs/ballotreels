@@ -1,0 +1,146 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; the ban on donating public funds today; what Amendment 7
+# would allow, and which lines; what the Legislative Fiscal Office says;
+# the two sides; what a vote does.
+#
+# The card quotes the Secretary of State's "Statements of Proposed
+# Constitutional Amendments": the ballot question whole, the Abstract,
+# and the "Proposed Constitutional Amendment" paragraph on the new
+# exception. The sheet prints no "a yes vote means" lines, so the card
+# has none, and the vote lines take their two meanings from the card's
+# own words.
+#
+# Fiscal: the Legislative Fiscal Office's note says the amendment "may
+# increase local fund expenditures for political subdivisions", to the
+# extent they use public funds on these lines; it gives no dollar
+# figure, so none needs a scale. Its paragraph on the Secretary of
+# State's ballot costs is the election's cost, not the amendment's.
+#
+# digest-sb228-reengrossed.pdf predates House amendments and is not
+# cited: the résumé digest describes the Act as enacted.
+#
+# Louisiana publishes no official arguments for or against an
+# amendment, so both sides are filed = false and each says so once, in
+# the same number of words. No person is named.
+
+contest = "la-2026-11-03-amendment-7"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "statements"
+number = "7"
+title = "Do you support an amendment to allow for the use of public funds by a political subdivision for the purpose of identifying, inventorying, removing or replacing drinking water utility service lines made of or affected by materials as specified or prescribed by the Lead and Copper Rule Improvements of the United States Environmental Protection Agency, promulgated October 30, 2024, or subsequent promulgation, on property owned by utility customers? (Amends Article VII, Section 14)"
+origin = "Authorizes the use of public funds to identify, inventory, remove, or replace certain water lines on property owned by utility customers"
+summary = "Proposed Constitutional Amendment provides an additional exception that authorizes the use of public funds by a political subdivision for the purpose of identifying, inventorying, removing or replacing drinking water utility service lines made of, or affected by, materials as specified or prescribed by the Lead and Copper Rule Improvements of the U.S. Environmental Protection Agency, promulgated October 30, 2024, or subsequent promulgation, on property owned by utility customers."
+
+[[section]]
+id = "what"
+heading = "Amendment 7"
+
+[[section.line]]
+text = "Amendment 7 is about public money for drinking water service lines on private property."
+sources = ["statements", "fiscal-note"]
+
+[section.line.visual]
+kind = "page"
+source = "statements"
+highlight = ["drinking water utility service lines"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the state constitution bars lending or donating public funds to any person or organization, with listed exceptions."
+sources = ["statements", "digest"]
+
+[section.line.visual]
+kind = "illustration"
+name = "public-funds-locked"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would let local governments use public funds to identify, remove or replace certain water lines on property owned by utility customers."
+sources = ["statements", "act"]
+
+[section.line.visual]
+kind = "page"
+source = "statements"
+highlight = ["identifying, inventorying, removing or replacing"]
+
+[[section.line]]
+text = "The lines covered are those made of or affected by materials named in a federal Environmental Protection Agency rule on lead and copper."
+sources = ["statements", "act"]
+
+[section.line.visual]
+kind = "illustration"
+name = "water-service-line"
+
+[[section]]
+id = "fiscal"
+heading = "What the fiscal note says"
+
+[[section.line]]
+text = "The Legislative Fiscal Office says local government spending may rise, to the extent local governments use public funds on these lines."
+sources = ["fiscal-note"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Louisiana publishes no official argument for the amendment."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "list"
+source = "statements"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Louisiana publishes no official argument against the amendment."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "list"
+source = "statements"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote allows public funds for these water lines on customer property."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "page"
+source = "statements"
+highlight = ["allow for the use of public funds by a political subdivision"]
+
+[[section.line]]
+text = "A no vote keeps the ban, with no exception for these lines."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "page"
+source = "statements"
+highlight = ["an additional exception"]
