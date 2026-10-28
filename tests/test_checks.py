@@ -7,7 +7,8 @@ from ballotreels import check_contest, load_contest, load_standard
 from ballotreels.standard import (REPO_ROOT, SOURCE_KINDS,
                                   judgment_word_pattern, read_judgment_words)
 
-from .helpers import PROP_2, ContestCopyTestCase, drop_background, write_narration
+from .helpers import (PROP_2, ContestCopyTestCase, drop_background,
+                      unlinted_standard, write_narration)
 
 
 class Prop2PassesTest(unittest.TestCase):
@@ -19,7 +20,7 @@ class Prop2PassesTest(unittest.TestCase):
 
 class BrokenCopyTest(ContestCopyTestCase):
     def failures(self):
-        return check_contest(load_contest(self.dir))
+        return check_contest(load_contest(self.dir), unlinted_standard())
 
     def assertOnly(self, check, section=None, line=None, count=1):
         """The copy fails exactly `count` times, all on `check` there."""

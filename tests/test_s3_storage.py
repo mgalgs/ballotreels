@@ -40,7 +40,7 @@ class S3WorkerTestCase(WorkerTestCase):
                      repo=self.fake_repo, runner=runner,
                      writer=HandWrittenScriptWriter(),
                      storage=storage or self.storage,
-                     standard=self.deps.standard,
+                     standard=self.standard,
                      work_dir=self.tmp / "work",
                      masters_dir=self.tmp / "masters",
                      poll_interval=0.05,

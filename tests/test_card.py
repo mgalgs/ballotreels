@@ -8,7 +8,7 @@ from pathlib import Path
 from ballotreels import check_contest, load_contest
 from ballotreels.checks import _archived_text, _in_raw_columns, plain_text
 
-from .helpers import ContestCopyTestCase
+from .helpers import ContestCopyTestCase, unlinted_standard
 
 TITLE = ("INCREASES STATE’S RAINY DAY FUND. LEGISLATIVE CONSTITUTIONAL "
          "AMENDMENT.")
@@ -34,7 +34,8 @@ class CardTest(ContestCopyTestCase):
         self.edit("script.toml", VERSION, VERSION + CARD)
 
     def failures(self):
-        return [str(f) for f in check_contest(load_contest(self.dir))]
+        return [str(f) for f in check_contest(load_contest(self.dir),
+                                              unlinted_standard())]
 
     def add_page(self, extra="", source="quick-reference"):
         """Give the vote section's first line a `page` visual."""

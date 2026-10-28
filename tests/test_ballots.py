@@ -11,7 +11,7 @@ from ballotreels.checks import _card_quote_in
 from ballotreels.ballots import (BALLOTS, badge, ballot_for, designation,
                                  guide_of)
 
-from .helpers import ContestCopyTestCase
+from .helpers import ContestCopyTestCase, unlinted_standard
 from .test_card import CARD, VERSION
 
 
@@ -404,7 +404,8 @@ class LouisianaStatementsStitchTest(unittest.TestCase):
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):
-        return [str(f) for f in check_contest(load_contest(self.dir))]
+        return [str(f) for f in check_contest(load_contest(self.dir),
+                                              unlinted_standard())]
 
     def set_headings(self, yes, no):
         self.edit("script.toml", 'heading = "Supporters say"',

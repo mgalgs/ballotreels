@@ -1,5 +1,6 @@
 """Shared test helpers: a frozen Prop 2 contest, and broken copies of it."""
 
+import functools
 import json
 import re
 import shutil
@@ -25,6 +26,18 @@ PROP_2 = REPO / "tests" / "fixtures" / "prop-2"
 NARRATION_RMS = 0.0658
 
 NARRATION_SIDECARS = ("narration.json", "narration.wav", "narration.vtt")
+
+
+@functools.cache
+def unlinted_standard():
+    """The standard with an empty speakability list. A copy of Prop 2
+    without its sidecars has no narration, so every line is fresh and
+    linted; a test of some other check's exact failures uses this so it
+    does not depend on what standard/speakability.txt lists."""
+    from dataclasses import replace
+
+    from ballotreels.standard import load_standard
+    return replace(load_standard(), speakability=())
 
 
 class ContestCopyTestCase(unittest.TestCase):

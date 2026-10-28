@@ -3,18 +3,21 @@ import shutil
 import subprocess
 import sys
 import unittest
+from unittest import mock
 
 from ballotreels.cli import main
 from ballotreels.contest import load_contest
 from ballotreels.narration import narration_text
 
-from .helpers import PROP_2, REPO, ContestCopyTestCase
+from .helpers import PROP_2, REPO, ContestCopyTestCase, unlinted_standard
 
 
 class CliTest(ContestCopyTestCase):
     def run_cli_cmd(self, command, *dirs):
         out = io.StringIO()
-        code = main([command, *map(str, dirs)], out=out)
+        # The copy has no narration, so every line would be linted.
+        with mock.patch("ballotreels.cli.load_standard", unlinted_standard):
+            code = main([command, *map(str, dirs)], out=out)
         return code, out.getvalue().splitlines()
 
     def run_cli(self, *dirs):
@@ -77,9 +80,11 @@ class CliTest(ContestCopyTestCase):
                                  f"FAIL {self.dir}: could not load"])
 
     def test_module_entry_point(self):
+        # Prop 2 itself, whose narration is current: the subprocess
+        # lints a copy without one against the real speakability list.
         r = subprocess.run(
             [sys.executable, "-m", "ballotreels", "check",
-             str(self.dir)],
+             str(PROP_2)],
             cwd=REPO, capture_output=True, text=True)
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
         self.assertTrue(r.stdout.startswith("PASS "))

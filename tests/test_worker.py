@@ -53,6 +53,9 @@ class WorkerTestCase(unittest.TestCase):
         self.config = _make_config(self.data_dir, election="ca-2026-11-03",
                                    **self.config_overrides)
         self.deps = build_deps(self.config)
+        # The fake repo's Prop 2 has no narration, so every line is fresh:
+        # the worker's checks here do not depend on speakability.txt.
+        self.standard = replace(self.deps.standard, speakability=())
         self.public, self.private = make_servers(self.deps)
         self.addCleanup(self.deps.queue.close)
         for srv in (self.public, self.private):
@@ -80,7 +83,7 @@ class WorkerTestCase(unittest.TestCase):
                      repo=self.fake_repo, runner=runner,
                      writer=HandWrittenScriptWriter(),
                      storage=LocalStorage(self.client),
-                     standard=standard or self.deps.standard,
+                     standard=standard or self.standard,
                      work_dir=self.tmp / "work",
                      masters_dir=self.tmp / "masters",
                      poll_interval=0.05,
@@ -218,7 +221,7 @@ class CheckRunsWithoutSidecarsTest(WorkerTestCase):
         worker = self.make_worker()
         contest_dir = worker._prepare_scratch(job, worker._job_work_dir(job["id"]))
         self.assertFalse((contest_dir / "narration.json").exists())
-        run_check(contest_dir, self.deps.standard)  # must not raise
+        run_check(contest_dir, self.standard)  # must not raise
 
 
 class NarrateRechecksAirtimeTest(WorkerTestCase):
@@ -759,7 +762,7 @@ class CheckJudgesFreshnessTest(WorkerTestCase):
             "A no vote means the current rules would not change.",
             "A no vote means the rules stay, unless a driver consents."),
             encoding="utf-8")
-        row, runner = self.run_job()
+        row, runner = self.run_job(self.deps.standard)
         self.assertEqual(row["state"], "failed")
         self.assertEqual(row["failed_stage"], "check")
         self.assertIn("[speakability] vote.line[1]: 'consents'", row["error"])
