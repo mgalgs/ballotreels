@@ -1,0 +1,65 @@
+# Archived sources for San Bernardino City Unified School District
+# Measure Z, 2026-11-03 general election (sources/sources.md). Every id
+# here may be cited by script.toml. `kind` must be one the standard
+# allows (docs/STANDARD.md, section 1). The guide's pages are cut from the
+# San Bernardino County Registrar of Voters' comprehensive Voter
+# Information Guide, PDF pages 264 to 271; "page" is the guide's printed
+# footer number (SB COMPREHENSIVE-262 to -269).
+#
+# The archived guide pages print no ballot question for Measure Z (its
+# Full Text opens with the bond authorization), so the card quotes the
+# question from the Board of Education's resolution, which directs the
+# Registrar to print it on the ballot. The Registrar's measures page links
+# Z's "Impartial" to the argument in favor by mistake; County Counsel's
+# Impartial Analysis is the one printed in the guide.
+
+[contest]
+id = "ca-2026-11-03-san-bernardino-city-unified-measure-z"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:san_bernardino_city_unified_school_district"
+kind = "measure"
+title = "San Bernardino City Unified School District Measure Z: School Repair and Construction Bonds"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Board of Education of the San Bernardino City Unified School District, Resolution No. 10.6, Section 3(b): the statement of the measure for the ballot, as posted by the Registrar of Voters"
+credit = "Ballot question, Board of Education Resolution No. 10.6"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/SBCityUSD/RES_SBCityUSD.pdf"
+file = "sources/RES_SBCityUSD.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "County Counsel Impartial Analysis of Bond Measure Z, San Bernardino County Voter Information Guide, page SB COMPREHENSIVE-262"
+credit = "Impartial Analysis, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp264-271.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "San Bernardino City Unified School District, Tax Rate Statement for Bond Measure Z, San Bernardino County Voter Information Guide, page SB COMPREHENSIVE-263"
+credit = "Tax Rate Statement, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp264-271.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Bond Measure Z, San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-262 to -263 (no argument against was filed)"
+credit = "Arguments, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp264-271.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text for Bond Measure Z, San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-264 to -269"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp264-271.pdf"
+retrieved = "2026-10-28"
