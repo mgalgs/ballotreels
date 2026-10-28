@@ -1,0 +1,109 @@
+# Contest index for the 2026-11-03 Colorado general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot, in the order of the State Ballot Information Booklet's
+# contents. `number` is a measure's ballot designation (a string).
+# Titles pair the designation with the measure's short title as printed
+# in the 2026 Colorado State Ballot Information Booklet.
+
+[election]
+id = "co-2026-11-03"
+state = "ocd-division/country:us/state:co"
+title = "Colorado General Election, November 3, 2026"
+
+[[contest]]
+id = "co-2026-11-03-amendment-81"
+kind = "measure"
+division = "ocd-division/country:us/state:co"
+title = "Amendment 81: Law Enforcement Communication with Federal Immigration Authorities"
+number = "81"
+
+[[contest]]
+id = "co-2026-11-03-amendment-82"
+kind = "measure"
+division = "ocd-division/country:us/state:co"
+title = "Amendment 82: Constitutional Right to Purchase and Sell Natural Gas"
+number = "82"
+
+[[contest]]
+id = "co-2026-11-03-amendment-83"
+kind = "measure"
+division = "ocd-division/country:us/state:co"
+title = "Amendment 83: Constitutional Right to Hunt and Fish"
+number = "83"
+
+[[contest]]
+id = "co-2026-11-03-amendment-84"
+kind = "measure"
+division = "ocd-division/country:us/state:co"
+title = "Amendment 84: Mail Ballot Voter Identification"
+number = "84"
+
+[[contest]]
+id = "co-2026-11-03-amendment-85"
+kind = "measure"
+division = "ocd-division/country:us/state:co"
+title = "Amendment 85: Plain Language Ballot Titles"
+number = "85"
+
+[[contest]]
+id = "co-2026-11-03-amendment-86"
+kind = "measure"
+division = "ocd-division/country:us/state:co"
+title = "Amendment 86: Requirements for Off-Cycle Congressional Redistricting"
+number = "86"
+
+[[contest]]
+id = "co-2026-11-03-amendment-87"
+kind = "measure"
+division = "ocd-division/country:us/state:co"
+title = "Amendment 87: Graduated Income Tax"
+number = "87"
+
+[[contest]]
+id = "co-2026-11-03-proposition-nn"
+kind = "measure"
+division = "ocd-division/country:us/state:co"
+title = "Proposition NN: Keep and Spend Money for Education and Other Purposes"
+number = "NN"
+
+[[contest]]
+id = "co-2026-11-03-proposition-132"
+kind = "measure"
+division = "ocd-division/country:us/state:co"
+title = "Proposition 132: Increase Penalties for Fentanyl Crimes"
+number = "132"
+
+[[contest]]
+id = "co-2026-11-03-proposition-133"
+kind = "measure"
+division = "ocd-division/country:us/state:co"
+title = "Proposition 133: Penalties for Human Trafficking of a Minor"
+number = "133"
+
+[[contest]]
+id = "co-2026-11-03-proposition-134"
+kind = "measure"
+division = "ocd-division/country:us/state:co"
+title = "Proposition 134: Male and Female Participation in School and Collegiate Sports"
+number = "134"
+
+[[contest]]
+id = "co-2026-11-03-proposition-135"
+kind = "measure"
+division = "ocd-division/country:us/state:co"
+title = "Proposition 135: Prohibit Surgery on Minors in Response to Perception of Sex or Gender"
+number = "135"
+
+[[contest]]
+id = "co-2026-11-03-proposition-136"
+kind = "measure"
+division = "ocd-division/country:us/state:co"
+title = "Proposition 136: Income Tax Rate Limit"
+number = "136"
+
+[[contest]]
+id = "co-2026-11-03-proposition-137"
+kind = "measure"
+division = "ocd-division/country:us/state:co"
+title = "Proposition 137: Direct Sporting Goods Sales Tax Revenue for Conservation"
+number = "137"
