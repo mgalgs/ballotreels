@@ -83,6 +83,22 @@ BALLOTS: dict[str, Ballot] = {
                          "San Diego County Voter Information Guide",
                      "ca-2026-11-03-harris-annex-road-zone-measure-q":
                          "San Diego County Voter Information Guide",
+                     # San Bernardino's guide prints no ballot question:
+                     # these cards quote it from the city's resolution
+                     "ca-2026-11-03-adelanto-measure-p":
+                         "City of Adelanto Resolution No. 26-37",
+                     "ca-2026-11-03-twentynine-palms-measure-g":
+                         "City of Twentynine Palms Resolution No. 26-22",
+                     "ca-2026-11-03-needles-measure-d":
+                         "City of Needles Resolution No. 2026-29",
+                     "ca-2026-11-03-needles-measure-k":
+                         "City of Needles Resolution No. 2026-27",
+                     # and these, whose question no archived text gives
+                     # whole, quote the guide's own impartial analysis
+                     "ca-2026-11-03-grand-terrace-measure-n":
+                         "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-needles-measure-l":
+                         "San Bernardino County Voter Information Guide",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",
