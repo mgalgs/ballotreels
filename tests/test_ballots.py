@@ -38,6 +38,13 @@ class BallotTest(unittest.TestCase):
         self.assertEqual(badge(BALLOTS["fl"], "Amendment 1: X", "1"),
                          "AMENDMENT")
 
+    def test_hawaii_badge_and_wording(self):
+        hi = BALLOTS["hi"]
+        self.assertEqual(badge(hi, "Question 1: X", "1"), "QUESTION")
+        self.assertEqual(hi.guide, "2026 Voter Guide")
+        self.assertIsNone(hi.fiscal_label)
+        self.assertEqual(hi.choices, ("Yes", "No"))
+
     def test_ballot_for_reads_the_divisions_state(self):
         self.assertIs(ballot_for("ocd-division/country:us/state:ut"),
                       BALLOTS["ut"])

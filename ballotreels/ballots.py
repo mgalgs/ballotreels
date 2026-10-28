@@ -107,6 +107,17 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label="Fiscal Note",
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+    # Hawaii's Office of Elections prints each proposed constitutional
+    # amendment in its "2026 Voter Guide" on one page of statements
+    # "PROVIDED BY THE STATE OF HAWAII, DEPARTMENT OF THE ATTORNEY
+    # GENERAL": its title ("QUESTION #1: ..."; the badge says QUESTION,
+    # from the contest title's "Question 1"), the ballot question, an
+    # explanation and the meaning of a "yes" and a "no" vote. No fiscal
+    # statement exists for an amendment the Legislature proposes.
+    "hi": Ballot(guide="2026 Voter Guide",
+                 fiscal_label=None,
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
