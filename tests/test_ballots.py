@@ -197,6 +197,15 @@ class BallotTest(unittest.TestCase):
         self.assertEqual(badge(nm, "Bond Question 1: X", "1"),
                          "BOND QUESTION")
 
+    def test_virginia_uses_its_explanations_words(self):
+        va = BALLOTS["va"]
+        self.assertEqual((va.guide, va.fiscal_label, va.choices,
+                          va.card_source_kind),
+                         ("Explanation for Voters",
+                          "State Fiscal Impact Statement", ("Yes", "No"),
+                          "official-title-summary"))
+        self.assertEqual(badge(va, "Question 1: X", "1"), "QUESTION")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):
