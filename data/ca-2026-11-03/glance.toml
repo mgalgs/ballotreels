@@ -97,3 +97,12 @@ amount = 100000000
 magnitude = 10000000
 period = "per-year"
 direction = "cost"
+
+# San Diego County Measure B: the guide prints no fiscal analysis; the
+# one estimate is in its ballot label (and County Counsel's Impartial
+# Analysis, whose sentence pdftotext interleaves with the next column).
+[sd-county-measure-b]
+source = "guide-page"
+quote = "a half-cent sales tax raising an estimated $400,000,000 to $450,000,000 annually"
+amount = 450000000
+period = "per-year"
