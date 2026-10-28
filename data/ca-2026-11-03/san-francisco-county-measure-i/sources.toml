@@ -1,0 +1,55 @@
+# Archived sources for San Francisco Proposition I, 2026-11-03
+# consolidated general election (sources/sources.md). Every id here may
+# be cited by script.toml. The pages are cut from the Department of
+# Elections' San Francisco Voter Information Pamphlet & Sample Ballot;
+# "pages" are the pamphlet's printed page numbers (its PDF pages less 2).
+#
+# San Francisco prints no county counsel analysis: the Ballot
+# Simplification Council's digest and the Controller's Statement are
+# each labelled "an impartial analysis of this measure". One file holds
+# the ballot question, digest and Controller's Statement, so it backs two
+# sources of different kinds. The Controller's Statement also gives the
+# total behind the script's scale (STANDARD.md 6.5): "the approximately
+# $7 billion General Fund sources".
+
+[contest]
+id = "ca-2026-11-03-san-francisco-county-measure-i"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:san_francisco"
+kind = "measure"
+title = "San Francisco Proposition I: Changes to Real Property Transfer Tax"
+
+[[source]]
+id = "digest"
+kind = "official-title-summary"
+publisher = "San Francisco Department of Elections, Voter Information Pamphlet & Sample Ballot, pages 132 to 133: ballot question and Digest by the Ballot Simplification Council"
+credit = "Digest, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/ballot-question-digest-controller-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "controller"
+kind = "official-fiscal-analysis"
+publisher = "Controller's Statement on Proposition I, San Francisco Voter Information Pamphlet & Sample Ballot, pages 132 to 133"
+credit = "Controller's Statement, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/ballot-question-digest-controller-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Proponent's and Opponent's Arguments and Rebuttals on Proposition I, San Francisco Voter Information Pamphlet & Sample Ballot, pages 134 to 135"
+credit = "Arguments, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/arguments-and-rebuttals.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Legal Text of Proposition I (initiative ordinance), San Francisco Voter Information Pamphlet & Sample Ballot, pages 233 to 239"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/legal-text.pdf"
+retrieved = "2026-10-28"

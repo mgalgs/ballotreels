@@ -257,3 +257,15 @@ quote = "it would generate approximately $177 million annually for Muni transit 
 amount = 177000000
 period = "per-year"
 direction = "revenue-gain"
+
+# San Francisco Proposition I: the Controller's Statement's opening
+# estimate of the change to the city's overall revenue (the ballot
+# question's figure). The $120 million it would move from the General
+# Fund to a housing fund is a shift between funds, not a change in total,
+# so it is not the sorted amount.
+[san-francisco-county-measure-i]
+source = "controller"
+quote = "it would represent a moderate annual decrease of approximately $1 million to the City's overall revenues starting in Fiscal Year (FY) 2027-28."
+amount = 1000000
+period = "per-year"
+direction = "revenue-loss"
