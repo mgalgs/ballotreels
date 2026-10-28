@@ -1,0 +1,58 @@
+# Archived sources for Louisiana Amendment 4, 2026-11-03 general
+# election. Every id here may be cited by script.toml. `kind` must be one
+# the standard allows (docs/STANDARD.md, section 1).
+#
+# Louisiana has no voter pamphlet. The Secretary of State's one-page
+# "Statements of Proposed Constitutional Amendments" (R.S. 18:431 and
+# 18:552) prints all ten amendments' ballot questions, Abstracts and
+# "Present Constitution / Proposed Constitutional Amendment" paragraphs;
+# the card quotes it. Louisiana publishes no official arguments for or
+# against an amendment, so there is no source of kind official-argument.
+#
+# No Legislative Fiscal Office note was issued on the enrolled bill, and
+# the Secretary of State prints no cost estimate.
+#
+# The earlier printed digest (digest-*.pdf) is not cited: the résumé
+# digest describes the Act as enacted.
+
+[contest]
+id = "la-2026-11-03-amendment-4"
+election = "la-2026-11-03"
+division = "ocd-division/country:us/state:la"
+kind = "measure"
+title = "Amendment 4: Places a lifetime term limit on a person who has served as governor for more than one and one-half terms"
+
+[[source]]
+id = "statements"
+kind = "official-title-summary"
+publisher = "Louisiana Secretary of State, Statements of Proposed Constitutional Amendments, November 3, 2026, No. 4, page 1"
+credit = "Louisiana Secretary of State, Statements of Proposed Constitutional Amendments"
+url = "https://www.sos.la.gov/media/j2fjvpye/proposed-constitutional-amendments-2026-nov-summaries.pdf"
+file = "sources/statements-of-proposed-amendments.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "ballot-language"
+kind = "official-title-summary"
+publisher = "Louisiana Secretary of State, 2026 Proposed Constitutional Amendments, November 3, 2026 Election, Proposed Amendment No. 4, page 1"
+credit = "Louisiana Secretary of State, 2026 Proposed Constitutional Amendments"
+url = "https://www.sos.la.gov/media/jo2die1s/proposed-constitutional-amendments-2026-nov.pdf"
+file = "sources/sos-ballot-language-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "act"
+kind = "official-text"
+publisher = "Louisiana Legislature, Act 414 (HB 225), 2026 Regular Session, enrolled"
+url = "https://legis.la.gov/legis/ViewDocument.aspx?d=1479667"
+file = "sources/act-414-hb225.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "digest"
+kind = "official-title-summary"
+publisher = "Louisiana Legislature, Résumé Digest of Act 414 (HB 225), 2026 Regular Session"
+credit = "Louisiana Legislature, Résumé Digest"
+url = "https://legis.la.gov/legis/ViewDocument.aspx?d=1485446"
+file = "sources/resume-digest-hb225.pdf"
+retrieved = "2026-10-27"

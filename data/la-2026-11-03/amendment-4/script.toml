@@ -1,0 +1,142 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; the governor's term limit today; what Amendment 4 would
+# change; that no cost estimate is printed; the two sides; what a vote
+# does.
+#
+# The card quotes the Secretary of State's "Statements of Proposed
+# Constitutional Amendments": the ballot question whole, the Abstract,
+# and the "Proposed Constitutional Amendment" paragraph. The sheet prints
+# no "a yes vote means" lines, so the card has none, and the vote lines
+# take their two meanings from the card's own words.
+#
+# Fiscal: no Legislative Fiscal Office note was issued on the enrolled
+# bill and the sheet prints no estimate, so the fiscal line is the
+# standard one for a statement with none (STANDARD rule 6.5; the round's
+# rule 5a).
+#
+# Louisiana publishes no official arguments for or against an
+# amendment, so both sides are filed = false and each says so once, in
+# the same number of words. No person is named.
+
+contest = "la-2026-11-03-amendment-4"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "statements"
+number = "4"
+title = "Do you support an amendment to prohibit a person who has served more than one and one-half terms as governor from being elected as governor for any future term? (Amends Article IV, Section 3(B))"
+origin = "Places a lifetime term limit on a person who has served as governor for more than one and one-half terms"
+summary = "Proposed Constitutional Amendment provides that no person who has served as governor for more than one and one-half terms shall be elected governor for any future term."
+
+[[section]]
+id = "what"
+heading = "Amendment 4"
+
+[[section.line]]
+text = "Amendment 4 is about how many terms a person may serve as governor."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "page"
+source = "statements"
+highlight = ["lifetime term limit"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, a governor who has served more than one and one-half terms in a row cannot be elected to the next term."
+sources = ["statements", "digest"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-capitol"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would bar anyone who has served more than one and one-half terms from being elected governor again, for any future term."
+sources = ["statements", "act"]
+
+[section.line.visual]
+kind = "page"
+source = "statements"
+highlight = ["shall be elected governor for any future term"]
+
+[[section.line]]
+text = "The limit would no longer depend on serving the terms in a row."
+sources = ["act", "digest"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Louisiana's official statement does not include a cost estimate for the amendment."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "No cost estimate"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Louisiana publishes no official argument for the amendment."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "list"
+source = "statements"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Louisiana publishes no official argument against the amendment."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "list"
+source = "statements"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote places a lifetime limit on anyone who has served more than one and one-half terms as governor."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "page"
+source = "statements"
+highlight = ["Places a lifetime term limit"]
+
+[[section.line]]
+text = "A no vote keeps today's limit, which bars only the next term."
+sources = ["statements", "digest"]
+
+[section.line.visual]
+kind = "page"
+source = "statements"
+highlight = ["for any future term"]
