@@ -225,6 +225,12 @@ class CommandTest(GlanceTestCase):
 
 
 class DataFileTest(unittest.TestCase):
+    def test_every_live_election_has_one(self):
+        for state in LIVE:
+            with self.subTest(state):
+                self.assertTrue(
+                    (DATA / f"{state}-2026-11-03" / "glance.toml").is_file())
+
     def test_every_file_passes(self):
         for path in sorted(DATA.glob("*/glance.toml")):
             with self.subTest(path.parent.name):
