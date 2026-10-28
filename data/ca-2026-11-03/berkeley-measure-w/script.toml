@@ -1,0 +1,154 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; who put it on the ballot and what it needs to pass;
+# what would change (the filing fee, candidate statements, the public
+# financing cap, the petition and vacancy rules); the guide's lack of a
+# cost estimate; one line per side; what a vote does.
+#
+# The guide prints no fiscal analysis (not a tax measure). The public
+# financing cap ($250,000 to $400,000 per four-year cycle) is money of
+# the city's Fair Elections Fund, and no archived source states the
+# fund's or the city's budget, so it has no scale (STANDARD.md 6.5; left
+# open). That the Council's vote was unanimous is the supporters'
+# argument, so the neutral line says only that the Council placed it.
+#
+# No argument against Measure W was submitted ("NO ARGUMENT AGAINST
+# MEASURE W WAS SUBMITTED"): the no side is filed = false, as for San
+# Diego Unified Measure M.
+#
+# The guide prints no yes/no lines for this measure, so, as for Utah, the
+# card has no YES/NO boxes, and the two vote lines highlight the one
+# phrase of the question they turn on.
+
+contest = "ca-2026-11-03-berkeley-measure-w"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "W"
+title = "CITY OF BERKELEY MEASURE W"
+origin = "This measure was placed on the ballot by the City Council of the City of Berkeley."
+summary = "Shall the measure amending the City Charter to reduce candidate filing fees; eliminate signatures in lieu of filing fee process; eliminate certain personal information from candidate statements; clarify and revise initiative, referendum and recall processes; amend election timelines for filling Mayor and Councilmember vacancies; increase the maximum amount from the public campaign financing fund for administration and enforcement from $250,000 to $400,000 per four-year election cycle; and make other changes be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure W"
+
+[[section.line]]
+text = "City of Berkeley Measure W asks voters in the city whether to change election rules in the City Charter."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["amending the City Charter"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The City Council placed Measure W on the ballot, and it needs a simple majority to pass."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The candidate filing fee would drop from $150 to the state amount, now $25."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "job-application"
+
+[[section.line]]
+text = "Candidate statements would no longer have to list a place of birth or residence."
+sources = ["guide-page"]
+
+[[section.line]]
+text = "Up to $400,000 of public financing money, instead of $250,000, could pay to run the program each four-year cycle."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "public-funds-locked"
+
+[[section.line]]
+text = "Recall, initiative and referendum rules, and the timelines for filling vacancies, would also change."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "amended-page"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Alameda County guide does not include a cost estimate for the measure."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure W corrects outdated deadlines and reduces barriers to running for office."
+sources = ["arguments"]
+basis = ["The primary changes are related to the City’s policies around funding the public financing program, clarifying recall petition processes, correcting outdated deadlines, reducing barriers to becoming a candidate for city office,"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Corrects outdated deadlines", "Fewer barriers to running for city office"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure W was submitted to appear in the Alameda County guide."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote amends the City Charter with these changes."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["amending the City Charter"]
+
+[[section.line]]
+text = "A no vote leaves the City Charter as it is."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["amending the City Charter"]
