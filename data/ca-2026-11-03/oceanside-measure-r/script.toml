@@ -1,8 +1,8 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
-# asks; the charter today and the state laws passed since; who put it on
-# the ballot and what it needs to pass; what would change (prevailing
-# wages written in, project labor agreements allowed, what such an
-# agreement is); no cost estimate; one line per side; what a vote does.
+# asks; the charter today; who put it on the ballot and what it needs to
+# pass; what would change (prevailing wages written in, project labor
+# agreements allowed, what such an agreement is); no cost estimate; one
+# line per side; what a vote does.
 #
 # The City Clerk's site refused downloads; the guide prints the ballot
 # label, the City Attorney's Impartial Analysis, all four arguments and
@@ -15,8 +15,11 @@
 # (STANDARD.md 6.3); the Impartial Analysis's own sentences on it (the
 # city has kept its qualified status; Measure R would ensure it) are left
 # out with them, so the background neither previews nor answers either
-# side. The guide prints no fiscal analysis (not a tax measure), so the
-# fiscal line says the guide does not include a cost estimate.
+# side. The analysis's account of the state laws passed since 2010 is
+# left out too: told alone, it sets up the supporters' premise without
+# the opponents' answer. The guide prints no fiscal analysis (not a tax
+# measure), so the fiscal line says the guide does not include a cost
+# estimate.
 #
 # Sides come from the argument in favor and the argument against, not
 # the rebuttals.
@@ -59,14 +62,6 @@ sources = ["guide-page"]
 [section.line.visual]
 kind = "illustration"
 name = "constitution-page"
-
-[[section.line]]
-text = "Since then, state laws have generally cut off state public works funding where local rules do not match state wage laws."
-sources = ["guide-page"]
-
-[section.line.visual]
-kind = "illustration"
-name = "state-capitol"
 
 [[section.line]]
 text = "The City Council placed Measure R on the ballot, and it needs a simple majority to pass."
