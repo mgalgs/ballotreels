@@ -1,0 +1,154 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; who must show photo ID under the constitution today; what
+# state law already asks of absentee voters; what the amendment would
+# change; who would still set the ID rules; that there is no cost
+# estimate; the two sides; what a vote does.
+#
+# The card quotes the Legislative Services Officer's summary explanation:
+# the ballot question as the title and the official summary sentence as
+# the summary. North Carolina numbers no amendment, so the card has no
+# number and the script names it by subject, never by a number. The
+# explanation prints no "a vote for means" lines and no fiscal
+# statement, so the card has neither, and the vote lines take their two
+# meanings from the ballot question.
+#
+# Today: the constitution asks photo ID of in-person voters, and state
+# law already asks absentee voters for a copy of photo ID or a signed
+# statement of an exception, both as the Legislative Analysis Division's
+# summary says it; the amendment puts the rule for all voters in the
+# constitution.
+#
+# No fiscal note exists, so the fiscal line is the no-estimate form.
+# North Carolina publishes no official arguments for or against an
+# amendment, so both sides are filed = false and each says so once, in
+# the same number of words.
+
+contest = "nc-2026-11-03-photo-id-for-voting"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "explanation"
+title = "Constitutional amendment to require all voters, not just those presenting to vote in person, to present photo identification before voting."
+origin = "Session Law 2024-58"
+summary = "This amendment to the North Carolina Constitution would require presentation of photographic identification for voters in all instances in North Carolina elections."
+
+[[section]]
+id = "what"
+heading = "The photo ID amendment"
+
+[[section.line]]
+text = "This amendment is about showing photo identification to vote in North Carolina."
+sources = ["explanation", "ballot"]
+
+[section.line.visual]
+kind = "page"
+source = "explanation"
+highlight = ["photo identification"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today the state constitution requires photo ID from voters who vote in person."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "id-card"
+
+[[section.line]]
+text = "State law also has absentee voters send a copy of their photo ID, or a signed statement of an exception."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "mail-ballot-envelope"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would put photo ID for all voters, however they vote, in the constitution."
+sources = ["summary", "text", "explanation"]
+
+[section.line.visual]
+kind = "page"
+source = "explanation"
+highlight = ["require all voters, not just those presenting to vote in person"]
+
+[[section.line]]
+text = "As today, the General Assembly would set the ID rules, which may include exceptions."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-capitol"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "North Carolina's official explanation does not include a cost estimate for the amendment."
+sources = ["explanation"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "North Carolina publishes no official argument for the amendment."
+sources = ["explanation"]
+
+[section.line.visual]
+kind = "list"
+source = "explanation"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "North Carolina publishes no official argument against the amendment."
+sources = ["explanation"]
+
+[section.line.visual]
+kind = "list"
+source = "explanation"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for puts photo ID for all voters in the constitution."
+sources = ["explanation"]
+
+[section.line.visual]
+kind = "page"
+source = "explanation"
+highlight = ["require all voters"]
+
+[[section.line]]
+text = "A vote against keeps the constitution's photo ID rule for in-person voters only."
+sources = ["explanation", "summary"]
+
+[section.line.visual]
+kind = "page"
+source = "explanation"
+highlight = ["presenting to vote in person"]

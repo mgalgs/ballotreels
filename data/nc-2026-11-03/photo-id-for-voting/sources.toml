@@ -1,0 +1,61 @@
+# Archived sources for North Carolina's photo ID amendment, 2026-11-03
+# general election. Every id here may be cited by script.toml. `kind`
+# must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# North Carolina prints no voter guide. The official explanation is the
+# Legislative Services Officer's summary explanation (G.S. 147-54.10),
+# two pages for all three amendments; this one is on page 1. No state
+# site posts it: lso-summary-explanations.pdf is Camden County's hosted
+# copy of the August 20, 2026 release (Forsyth County's copy has the
+# same text), not checked byte for byte against an original from the
+# Legislative Services Office. It prints the ballot question, so the
+# card quotes it.
+#
+# The Legislative Analysis Division's summary of the session law is the
+# General Assembly's nonpartisan staff's description of the amendment
+# and of current law, filed as an official-title-summary as North
+# Dakota's official analyses are. No fiscal note exists (the bill's
+# page lists none), and North Carolina has no official arguments for or
+# against an amendment, so there is no source of either kind.
+
+[contest]
+id = "nc-2026-11-03-photo-id-for-voting"
+election = "nc-2026-11-03"
+division = "ocd-division/country:us/state:nc"
+kind = "measure"
+title = "Constitutional Amendment - Require Photo ID for Voting"
+
+[[source]]
+id = "explanation"
+kind = "official-title-summary"
+publisher = "Legislative Services Officer, North Carolina General Assembly, Official Summary Explanation of 2026 Constitutional Amendments (August 20, 2026), page 1; Camden County's copy"
+credit = "North Carolina Legislative Services Officer, Official Summary Explanation"
+url = "https://www.camdencountync.gov/DocumentCenter/View/1277/Summary-Explanation-of-2026-Constitutional-Amendments"
+file = "sources/lso-summary-explanations.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "North Carolina State Board of Elections, Referendum Choices List Grouped by Referendum, November 3, 2026"
+credit = "North Carolina State Board of Elections"
+url = "https://s3.amazonaws.com/dl.ncsbe.gov/Elections/2026/Candidate%20Filing/statewide_referendums_20261103.pdf"
+file = "sources/statewide-referendums.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "General Assembly of North Carolina, Session Law 2024-58, Senate Bill 921 (2023 Session), as ratified"
+url = "https://www.ncleg.gov/Sessions/2023/Bills/Senate/PDF/S921v3.pdf"
+file = "sources/sl2024-58-s921.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "summary"
+kind = "official-title-summary"
+publisher = "North Carolina General Assembly, Legislative Analysis Division, Senate Bill 921: Analysis of S.L. 2024-58, December 20, 2024"
+credit = "North Carolina Legislative Analysis Division"
+url = "https://dashboard.ncleg.gov/api/Services/BillSummary/2023/S921-SMST-118(sl)-v-5"
+file = "sources/s921-bill-summary-sl.pdf"
+retrieved = "2026-10-27"

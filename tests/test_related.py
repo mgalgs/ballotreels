@@ -98,18 +98,31 @@ class RealDataApiTest(unittest.TestCase):
         self.assertEqual(self.related("ca-2026-11-03-prop-39"),
                          [("Arizona", "az-2026-11-03-prop-144"),
                           ("Nevada", "nv-2026-11-03-question-7"),
+                          ("North Carolina",
+                           "nc-2026-11-03-photo-id-for-voting"),
                           ("Ohio", "oh-2026-11-03-issue-3")])
         self.assertEqual(self.related("oh-2026-11-03-issue-3"),
                          [("Arizona", "az-2026-11-03-prop-144"),
                           ("California", "ca-2026-11-03-prop-39"),
-                          ("Nevada", "nv-2026-11-03-question-7")])
+                          ("Nevada", "nv-2026-11-03-question-7"),
+                          ("North Carolina",
+                           "nc-2026-11-03-photo-id-for-voting")])
         self.assertEqual(self.related("az-2026-11-03-prop-144"),
                          [("California", "ca-2026-11-03-prop-39"),
                           ("Nevada", "nv-2026-11-03-question-7"),
+                          ("North Carolina",
+                           "nc-2026-11-03-photo-id-for-voting"),
                           ("Ohio", "oh-2026-11-03-issue-3")])
         self.assertEqual(self.related("nv-2026-11-03-question-7"),
                          [("Arizona", "az-2026-11-03-prop-144"),
                           ("California", "ca-2026-11-03-prop-39"),
+                          ("North Carolina",
+                           "nc-2026-11-03-photo-id-for-voting"),
+                          ("Ohio", "oh-2026-11-03-issue-3")])
+        self.assertEqual(self.related("nc-2026-11-03-photo-id-for-voting"),
+                         [("Arizona", "az-2026-11-03-prop-144"),
+                          ("California", "ca-2026-11-03-prop-39"),
+                          ("Nevada", "nv-2026-11-03-question-7"),
                           ("Ohio", "oh-2026-11-03-issue-3")])
 
     def test_own_state_first(self):
