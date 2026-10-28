@@ -253,3 +253,12 @@ period = "per-year"
 [irvine-measure-d]
 source = "guide-page"
 status = "none-printed"
+
+# City of Orange Measure I: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is the City's, as the City Attorney's
+# Impartial Analysis reports it.
+[orange-city-measure-i]
+source = "impartial-analysis"
+quote = "The City estimates that the measure would generate approximately $37 million annually, although actual revenues will depend on taxable sales."
+amount = 37000000
+period = "per-year"
