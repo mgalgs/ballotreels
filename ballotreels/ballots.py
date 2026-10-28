@@ -310,6 +310,18 @@ BALLOTS: dict[str, Ballot] = {
                  badges={"Measure": "INITIATIVE MEASURE"},
                  guides={"ne-2026-11-03-amendment-1":
                          "Legislative Resolution 19CA"}),
+
+    # Kentucky prints no voter guide, explanation or fiscal statement.
+    # Under KRS 118.415 the General Assembly writes the ballot question
+    # itself, and SB 10 (Acts Chapter 12) has the whole question and the
+    # whole amended section printed on the ballot: the county sample
+    # ballot ("CONSTITUTIONAL AMENDMENT 1", badge AMENDMENT, from the
+    # title's designation) is the card's page. The ballot prints the
+    # choices "YES" and "NO".
+    "ky": Ballot(guide="Sample Ballot",
+                 fiscal_label=None,
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
