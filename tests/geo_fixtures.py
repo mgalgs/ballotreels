@@ -298,3 +298,76 @@ def build_simple_state_geo(data_dir: Path, state: str, zips: list[str],
             return (src_dir / name).read_bytes()
 
         return build(data_dir, state, fetch)
+
+
+# A fake San Diego, for the local-measure tests: two counties side by
+# side, San Diego (x 0-20) and Imperial (x 20-30), all of it in one
+# congressional and one legislative district of each chamber. Zips:
+# 92101 wholly in San Diego County; 92102 too; 92250 in Imperial.
+LOCAL_COUNTIES = {"06073": "San Diego", "06025": "Imperial"}
+LOCAL_ZIPS = {
+    "92101": [(1.0, 1.0), (4.0, 1.0), (4.0, 4.0), (1.0, 4.0), (1.0, 1.0)],
+    "92102": [(8.0, 1.0), (12.0, 1.0), (12.0, 4.0), (8.0, 4.0), (8.0, 1.0)],
+    "92103": [(13.0, 1.0), (17.0, 1.0), (17.0, 4.0), (13.0, 4.0),
+              (13.0, 1.0)],
+    "92250": [(22.0, 1.0), (25.0, 1.0), (25.0, 4.0), (22.0, 4.0),
+              (22.0, 1.0)],
+}
+_LOCAL_COUNTY_OF = {"92101": "06073", "92102": "06073", "92103": "06073",
+                    "92250": "06025"}
+
+
+def _box(x0: float, y0: float, x1: float, y1: float) -> Ring:
+    return [(x0, y0), (x1, y0), (x1, y1), (x0, y1), (x0, y0)]
+
+
+def write_local_source(src_dir: Path) -> None:
+    fields = [("GEOID", "C", 10), ("STATEFP", "C", 2), ("NAME", "C", 40)]
+    whole = _box(0.0, 0.0, 30.0, 10.0)
+    write_shapefile(src_dir / "cd", fields,
+                    [{"GEOID": "0651", "STATEFP": "06", "NAME": ""}],
+                    [[whole]])
+    for kind in ("sldu", "sldl"):
+        write_shapefile(src_dir / kind, fields,
+                        [{"GEOID": "06039", "STATEFP": "06", "NAME": ""}],
+                        [[whole]])
+    county_fields = fields + [("NAMELSAD", "C", 60)]
+    write_shapefile(
+        src_dir / "county", county_fields,
+        [{"GEOID": geoid, "STATEFP": "06", "NAME": name,
+          "NAMELSAD": f"{name} County"}
+         for geoid, name in LOCAL_COUNTIES.items()],
+        [[_box(0.0, 0.0, 20.0, 10.0)], [_box(20.0, 0.0, 30.0, 10.0)]])
+    write_shapefile(src_dir / "zcta", [("GEOID20", "C", 10)],
+                    [{"GEOID20": z} for z in LOCAL_ZIPS],
+                    [[ring] for ring in LOCAL_ZIPS.values()])
+    district = {"cd": "0651", "sldu": "06039", "sldl": "06039"}
+    for kind in ("cd", "sldu", "sldl", "county"):
+        column = f"GEOID_{kind.upper()}_20"
+        lines = [f"GEOID_ZCTA5_20|{column}|AREALAND_PART"]
+        lines += [f"{z}|{district.get(kind) or _LOCAL_COUNTY_OF[z]}|1000000"
+                  for z in LOCAL_ZIPS]
+        (src_dir / f"{kind}_rel.txt").write_text("\n".join(lines) + "\n",
+                                                 encoding="utf-8")
+
+
+def build_local_geo(data_dir: Path) -> list[str]:
+    """Builds `write_local_source`'s fake San Diego into
+    `<data_dir>/geo/ca/`."""
+    import tempfile
+
+    from ballotreels.geo.build import build, census_urls
+
+    with tempfile.TemporaryDirectory() as tmp:
+        src_dir = Path(tmp)
+        write_local_source(src_dir)
+        urls = {**census_urls(STATE), **SLD_REL_URLS}
+        url_to_name = {url: name for name, url in urls.items()}
+
+        def fetch(url: str) -> bytes:
+            name = url_to_name[url]
+            if name.endswith(".zip"):
+                return _zip_shapes(src_dir, name[:-len(".zip")])
+            return (src_dir / name).read_bytes()
+
+        return build(data_dir, STATE, fetch, urls=SLD_REL_URLS)
