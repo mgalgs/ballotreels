@@ -303,3 +303,13 @@ quote = "the overall cost to the City ranges from $2.0 million to $2.6 million f
 amount = 2600000
 period = "per-year"
 direction = "cost"
+
+# City of Oakland Measure FF: the City Auditor's Impartial Analysis is the
+# fiscal statement (the ballot question's own estimate is "$4-$13 million
+# annually").
+[oakland-measure-ff]
+source = "auditor"
+quote = "would generate between $10.4 and $13.8 million of revenue in the first year"
+amount = 13800000
+period = "per-year"
+direction = "revenue-gain"
