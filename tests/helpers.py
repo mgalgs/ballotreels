@@ -86,3 +86,18 @@ def write_narration(contest_dir, stretch=None):
     doc = {"phrases": phrases, "seconds": round(t, 2)}
     (Path(contest_dir) / "narration.json").write_text(
         json.dumps(doc, indent=2) + "\n", encoding="utf-8")
+
+
+def write_committed_narration(contest_dir):
+    """Stand in for a narration committed for `contest_dir`'s current
+    script: write_narration's narration.json, with a phrase_cache keyed as
+    `say` records one, beside an empty narration.wav. Editing a line
+    afterwards leaves only its phrases, and the phrase after them, to be
+    synthesised afresh (narration.unreused_phrases)."""
+    write_narration(contest_dir)
+    path = Path(contest_dir) / "narration.json"
+    doc = json.loads(path.read_text(encoding="utf-8"))
+    doc["phrase_cache"] = [{"key": {"text": p["text"]}}
+                           for p in doc["phrases"]]
+    path.write_text(json.dumps(doc, indent=2) + "\n", encoding="utf-8")
+    (Path(contest_dir) / "narration.wav").write_bytes(b"")
