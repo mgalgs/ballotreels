@@ -1,0 +1,155 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; why it is on the ballot; what the bonds would pay for; the
+# limits the ballot question and Act 578 set, and how the bonds are
+# repaid; one line per side; what a vote does.
+#
+# Arkansas publishes no official voter guide and no cost estimate. The
+# card quotes the Secretary of State's Notice to the Public: the ballot
+# title, the ballot question as its summary, and the ballot's two
+# choices, "FOR Issuance of ..." and "AGAINST Issuance of ...", as its
+# yes and no. Every number comes from the ballot question or Act 578,
+# never from the university guide. No interest or total-cost figure is
+# published, so none is given. The dollar figures have no scale: no
+# archived official source states the state's general revenue total
+# (STANDARD.md rule 6.5), so the scale is left open.
+#
+# The University of Arkansas Division of Agriculture's guide (STANDARD.md
+# rule 1.2) gives one line of explanation, that voters must approve most
+# general obligation bonds, and the sides, "What do supporters say?" and
+# "What do opponents say?": unattributed examples of what each side has
+# made public, which the Division does not endorse. Each line relying on
+# it names it. For: the future needs more money, and every county has
+# received at least one of these loans. Against: borrowing means paying
+# interest at higher rates, and the broad language leaves unclear who
+# could benefit.
+
+contest = "ar-2026-11-03-issue-4"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "notice"
+number = "4"
+title = "Arkansas Water, Waste Disposal, and Pollution Abatement Facilities Financing Act of 2025."
+origin = "The 95th General Assembly refers the following question to a vote of the people on November 3, 2026"
+summary = "Shall the Arkansas Natural Resources Commission be authorized to issue general obligation bonds under the authority of the Arkansas Water, Waste Disposal, and Pollution Abatement Facilities Financing Act of 2025, for the financing and refinancing of the development of water, waste disposal, water pollution control, abatement and prevention, drainage, irrigation, flood control, and wetlands and aquatic resources projects to serve the citizens of the State of Arkansas, in total principal amount not to exceed five hundred million dollars ($500,000,000), with no more than one hundred sixty-five million dollars ($165,000,000) in total principal amount of such bonds to be issued to finance and refinance the development of irrigation facilities, in series from time to time in principal amounts not to exceed, without prior approval of the General Assembly, sixty million dollars ($60,000,000) in any two-year period beginning on July 1 of each odd-numbered year, which bonds shall be secured by a pledge of the full faith and credit of the State of Arkansas?"
+yes = "FOR Issuance of State of Arkansas Water, Waste Disposal, and Pollution Abatement Facilities general obligation bonds."
+no = "AGAINST Issuance of State of Arkansas Water, Waste Disposal, and Pollution Abatement Facilities general obligation bonds."
+
+[[section]]
+id = "what"
+heading = "Issue 4"
+
+[[section.line]]
+text = "Issue 4 asks about bonds for water and waste projects."
+sources = ["notice"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["Arkansas Water, Waste Disposal, and Pollution Abatement Facilities Financing Act of 2025."]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "The University of Arkansas guide says voters must approve most general obligation bonds."
+sources = ["uaex-guide"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "A state commission could fund water, waste, drainage, irrigation, and flood control projects."
+sources = ["notice", "act"]
+
+[section.line.visual]
+kind = "illustration"
+name = "water-pipes"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Borrowing could total $500 million, at most $165 million for irrigation."
+sources = ["notice", "act"]
+
+[section.line.visual]
+kind = "bars"
+title = "Most the bonds could total, millions of dollars"
+source = "act"
+unit = ""
+labels = ["All projects", "Irrigation"]
+values = [500, 165]
+
+[[section.line]]
+text = "Lawmakers must approve issuing more than $60 million in two years."
+sources = ["notice", "act"]
+
+[[section.line]]
+text = "General revenue would repay each series within 35 years."
+sources = ["act"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say, according to the University of Arkansas guide, the future needs more money, and every county has received at least one of these loans."
+sources = ["uaex-guide"]
+basis = ["The last two bond issues have been a tremendous help but the future is going to need more money.", "Over the last four years, every single county has received at least one of these loans."]
+
+[section.line.visual]
+kind = "list"
+source = "uaex-guide"
+items = ["The future needs more money for these projects", "Every county has received at least one loan"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say, according to the University of Arkansas guide, borrowing means paying interest at higher rates, and broad wording leaves unclear who could benefit."
+sources = ["uaex-guide"]
+basis = ["but borrowing also means paying interest, particularly when today’s rates are considerably higher than they were several years ago.", "Issue 4’s broad language raises questions about who could benefit from taxpayer-backed bonds."]
+
+[section.line.visual]
+kind = "list"
+source = "uaex-guide"
+items = ["Borrowing means paying interest at higher rates", "Broad wording leaves unclear who could benefit"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for means the bonds could be issued."
+sources = ["notice"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["FOR Issuance"]
+
+[[section.line]]
+text = "A vote against means the bonds could not be issued."
+sources = ["notice"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["AGAINST Issuance"]
