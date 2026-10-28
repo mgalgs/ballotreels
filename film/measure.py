@@ -2969,8 +2969,11 @@ def draw_pencil(cv, n, P):
 PLANS = {fmt: build(fmt) for fmt in LAYOUTS}
 
 
-def draw(n, cv):
-    P = PLANS[cv.format.name]
+def draw(n, cv, P=None):
+    """Frame n. `P` is the plan to draw from: by default this format's own
+    (PLANS); the crash course (film/crash_course.py) passes a part of it."""
+    if P is None:
+        P = PLANS[cv.format.name]
     ctx = cv.ctx
     ctx.set_source_surface(sp.backdrop(cv.width, cv.height), 0, 0)
     ctx.paint()
