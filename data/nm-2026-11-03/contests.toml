@@ -1,0 +1,64 @@
+# Contest index for the 2026-11-03 New Mexico general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string), as the
+# Secretary of State's 2026 General Election Voter Guide prints it
+# ("Constitutional Amendment 1", "Bond Question 1"). The guide prints no
+# short title for an amendment, so an amendment's title pairs its
+# designation with its ballot title as printed (in capitals, as
+# California's are); a bond question's pairs it with the guide's own
+# heading for it (pages 35 and 36). The seven are all of the statewide
+# questions, in ballot order: all were referred by the Legislature.
+
+[election]
+id = "nm-2026-11-03"
+state = "ocd-division/country:us/state:nm"
+title = "New Mexico General Election, November 3, 2026"
+
+[[contest]]
+id = "nm-2026-11-03-constitutional-amendment-1"
+kind = "measure"
+division = "ocd-division/country:us/state:nm"
+title = "Constitutional Amendment 1: PROPOSING AN AMENDMENT TO ARTICLE 4, SECTION 22 OF THE CONSTITUTION OF NEW MEXICO TO REQUIRE THE GOVERNOR TO PROVIDE VETO MESSAGES ON ALL BILLS VETOED IN WHOLE OR IN PART AND TO PROVIDE THAT ALL BILLS PASSED BY THE LEGISLATURE AND NOT ACTED ON BY THE GOVERNOR WILL BECOME LAW."
+number = "1"
+
+[[contest]]
+id = "nm-2026-11-03-constitutional-amendment-2"
+kind = "measure"
+division = "ocd-division/country:us/state:nm"
+title = "Constitutional Amendment 2: PROPOSING TO AMEND ARTICLE 7, SECTION 1 OF THE CONSTITUTION OF NEW MEXICO TO REMOVE THE REQUIREMENT THAT SCHOOL ELECTIONS BE SEPARATE FROM PARTISAN ELECTIONS."
+number = "2"
+
+[[contest]]
+id = "nm-2026-11-03-constitutional-amendment-3"
+kind = "measure"
+division = "ocd-division/country:us/state:nm"
+title = "Constitutional Amendment 3: PROPOSING AN AMENDMENT TO ARTICLE 12, SECTION 13 OF THE CONSTITUTION OF NEW MEXICO TO ESTABLISH NOMINATING COMMITTEES TO PROVIDE LISTS OF NOMINEES TO THE GOVERNOR FOR APPOINTMENT OF NONSTUDENT MEMBERS TO THE BOARDS OF REGENTS OF STATE EDUCATIONAL INSTITUTIONS; PROVIDING THAT STUDENT MEMBERS OF BOARDS OF REGENTS SHALL BE APPOINTED FROM A LIST PROVIDED BY AN ELECTED STUDENT GOVERNING BODY OF THE INSTITUTION; PROVIDING THAT, EXCEPT FOR A STUDENT MEMBER, MEMBERS OF THE BOARDS OF REGENTS SHALL NOT HAVE CHANGED THEIR POLITICAL PARTY REGISTRATION IN THE TWELVE MONTHS PRECEDING APPOINTMENT."
+number = "3"
+
+[[contest]]
+id = "nm-2026-11-03-constitutional-amendment-4"
+kind = "measure"
+division = "ocd-division/country:us/state:nm"
+title = "Constitutional Amendment 4: PROPOSING TO AMEND ARTICLE 4, SECTION 10 OF THE CONSTITUTION OF NEW MEXICO TO ALLOW LEGISLATIVE COMPENSATION THAT IS LIMITED TO THE MEDIAN HOUSEHOLD INCOME FOR NEW MEXICO, TO REQUIRE LEGISLATIVE COMPENSATION TO BE REDUCED IF THE MEDIAN HOUSEHOLD INCOME FOR NEW MEXICO FALLS, TO ALLOW LEGISLATIVE COMPENSATION TO BE INCREASED ONLY IF THE MEDIAN HOUSEHOLD INCOME FOR NEW MEXICO RISES AND TO PROVIDE FOR DELAYED IMPLEMENTATION."
+number = "4"
+
+[[contest]]
+id = "nm-2026-11-03-bond-question-1"
+kind = "measure"
+division = "ocd-division/country:us/state:nm"
+title = "Bond Question 1: Senior Citizen Facility Improvement, Construction and Equipment"
+number = "1"
+
+[[contest]]
+id = "nm-2026-11-03-bond-question-2"
+kind = "measure"
+division = "ocd-division/country:us/state:nm"
+title = "Bond Question 2: Library Acquisitions"
+number = "2"
+
+[[contest]]
+id = "nm-2026-11-03-bond-question-3"
+kind = "measure"
+division = "ocd-division/country:us/state:nm"
+title = "Bond Question 3: Higher Education"
+number = "3"
