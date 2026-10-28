@@ -586,8 +586,8 @@ def _crash_course(state: StateElection, deps: Deps) -> dict[str, Any] | None:
 def _related(entry, state: StateElection,
              deps: Deps) -> list[dict[str, Any]]:
     """The measures related to `entry` (data/related.toml) that are
-    served: its own state's first, in ballot order, then the other
-    states' by state name, each in ballot order."""
+    served: its own state's first, in ballot order (most local first),
+    then the other states' by state name, each in ballot order."""
     found = []
     for contest_id in related_to(deps.related, entry.id):
         hit = deps.contest(contest_id)

@@ -197,12 +197,12 @@ class RelatedApiTest(ShortUrlTestCase):
     def test_order(self):
         doc = self.api("/api/contest/ca/2026/prop-9")
         self.assertEqual([r["path"] for r in doc["related"]],
-                         ["/ca/2026/prop-3", "/ca/2026/cd-1",
+                         ["/ca/2026/cd-1", "/ca/2026/prop-3",
                           "/ut/2026/amendment-a"])
         doc = self.api("/api/contest/ut-2026-11-03-amendment-a")
         self.assertEqual([r["path"] for r in doc["related"]],
-                         ["/ca/2026/prop-3", "/ca/2026/prop-9",
-                          "/ca/2026/cd-1"])
+                         ["/ca/2026/cd-1", "/ca/2026/prop-3",
+                          "/ca/2026/prop-9"])
 
     def test_empty(self):
         self.deps.related = {}
@@ -315,11 +315,11 @@ class RenderingsTest(RelatedApiTest):
         self.assertEqual(page.sections, 1)
         self.assertEqual(page.heading, "Related measures")
         self.assertEqual(page.links, [
+            ["/ca/2026/cd-1", "California",
+             "Fake California District Measure"],
             # The title as contests.toml has it, escaped and unescaped
             # again intact.
             ["/ca/2026/prop-9", "California", TRICKY + "."],
-            ["/ca/2026/cd-1", "California",
-             "Fake California District Measure"],
             ["/ut/2026/amendment-a", "Utah",
              "Constitutional Amendment A: Fake"]])
 

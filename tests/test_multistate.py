@@ -197,14 +197,14 @@ class BallotRoutingTest(MultiStateTestCase):
         body, ids = self._ballot_ids("ocd-division/country:us/state:ny",
                                      "ocd-division/country:us/state:ny/sldl:1")
         self.assertEqual(body["election"], "ny-2026-11-03")
-        self.assertEqual(ids, ["ny-2026-11-03-prop-1",
-                               "ny-2026-11-03-sldl-1"])
+        self.assertEqual(ids, ["ny-2026-11-03-sldl-1",
+                               "ny-2026-11-03-prop-1"])
         self.assertEqual(body["chambers"]["sldl"], "State Assembly")
 
         body, ids = self._ballot_ids("ocd-division/country:us/state:ca",
                                      "ocd-division/country:us/state:ca/cd:1")
         self.assertEqual(body["election"], "ca-2026-11-03")
-        self.assertEqual(ids, ["ca-2026-11-03-prop-1", "ca-2026-11-03-cd-1"])
+        self.assertEqual(ids, ["ca-2026-11-03-cd-1", "ca-2026-11-03-prop-1"])
 
         # Texas has no geo data but its ballot still serves.
         body, ids = self._ballot_ids("ocd-division/country:us/state:tx")
