@@ -151,3 +151,13 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all of the bonds are issued and sold is approximately $47,978,702."
 amount = 47978702
 period = "unstated"
+
+# Julian Union High School District Measure J: the total debt service
+# (the bonds are $9,000,000). pdftotext interleaves both of the page's
+# whole sentences with the next column, so the quote is the part of
+# County Counsel's Impartial Analysis's sentence that reads unbroken.
+[julian-high-measure-j]
+source = "guide-page"
+quote = "to be repaid if the bonds are issued and sold is approximately $18,215,253."
+amount = 18215253
+period = "unstated"
