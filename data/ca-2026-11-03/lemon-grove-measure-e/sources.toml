@@ -1,0 +1,51 @@
+# Archived sources for City of Lemon Grove Measure E, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Diego County Registrar of Voters' Voter Information Guide (ballot type
+# 581, a Lemon Grove precinct); "page" is the guide's printed footer
+# number.
+#
+# The guide prints an argument in favor and no argument against, and no
+# rebuttals.
+
+[contest]
+id = "ca-2026-11-03-lemon-grove-measure-e"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:lemon_grove"
+kind = "measure"
+title = "City of Lemon Grove Measure E: Restricting the Sale of Birds in Pet Stores"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Voter Information Guide, page SD 581-078: ballot label, Official Title and Ballot Summary, and City Attorney Impartial Analysis"
+credit = "City Attorney Impartial Analysis, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-581.pdf"
+file = "sources/vig581-p80-ballot-label-ballot-summary-impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in favor of Measure E, as printed in the San Diego County Voter Information Guide, page SD 581-079 (the guide prints no argument against)"
+credit = "Argument in favor, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-581.pdf"
+file = "sources/vig581-p81-argument-in-favor.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure E, San Diego County Voter Information Guide, pages SD 581-079 to SD 581-080"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-581.pdf"
+file = "sources/vig581-p81-82-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "election-filing"
+publisher = "City of Lemon Grove, Resolution No. 2026-4201, ordering the submission of a citizen initiated ordinance (the Bird Initiative) to the voters"
+url = "https://www.lemongrove.ca.gov/media/efgknmo2/resolution-no-2026-4201-submitting-the-bird-initiative-to-the-voters.pdf"
+file = "sources/lemon-grove-clerk-resolution-2026-4201-submitting-bird-initiative.pdf"
+retrieved = "2026-10-28"

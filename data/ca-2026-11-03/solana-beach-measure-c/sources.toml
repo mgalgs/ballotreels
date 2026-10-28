@@ -1,0 +1,43 @@
+# Archived sources for City of Solana Beach Measure C, 2026-11-03
+# general election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Diego County Registrar of Voters' Voter Information Guide (ballot type
+# 236, a Solana Beach precinct); "page" is the guide's printed footer
+# number.
+#
+# The guide prints an argument in favor and no argument against, and no
+# rebuttals.
+
+[contest]
+id = "ca-2026-11-03-solana-beach-measure-c"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:solana_beach"
+kind = "measure"
+title = "City of Solana Beach Measure C: Hotel Tax Update and 1% Rate Increase"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Voter Information Guide, page SD 236-075: ballot label and City Attorney's Impartial Analysis"
+credit = "City Attorney's Impartial Analysis, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-236.pdf"
+file = "sources/vig236-p77-ballot-label-impartial-analysis-argument-in-favor.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in favor of Measure C, as printed in the San Diego County Voter Information Guide, page SD 236-075 (the guide prints no argument against)"
+credit = "Argument in favor, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-236.pdf"
+file = "sources/vig236-p77-ballot-label-impartial-analysis-argument-in-favor.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure C, Proposed Ordinance 545, San Diego County Voter Information Guide, pages SD 236-076 to SD 236-077"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-236.pdf"
+file = "sources/vig236-p78-79-full-text-ordinance-545.pdf"
+retrieved = "2026-10-28"

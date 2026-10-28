@@ -1,0 +1,155 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; the state rule for dogs, cats and rabbits today; how it reached
+# the ballot; what would change (birds added, what is exempt, the
+# penalty); no cost estimate; one line per side; what a vote does.
+#
+# The guide prints no fiscal analysis (not a tax measure), so the fiscal
+# line says the guide does not include a cost estimate. "County's" is
+# heard as "counties" (standard/speakability.txt), so it names "the San
+# Diego County guide".
+#
+# The guide prints an argument in favor and no argument against: the no
+# side is filed = false, as for Proposition 37. The guide prints no "no
+# argument was submitted" notice, so the no line says only that none
+# appears in the guide.
+#
+# The penalty line follows the Ballot Summary and the full text (each
+# bird a separate infraction); the Impartial Analysis also mentions civil
+# penalties, which the full text does not name, so the line leaves them
+# out.
+
+contest = "ca-2026-11-03-lemon-grove-measure-e"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "E"
+title = "An Initiative Measure restricting the sale of birds in the City of Lemon Grove, requiring that birds be obtained exclusively from animal shelters, humane societies, or nonprofit rescue organizations and establishing related regulations."
+origin = "Measure E has been placed on the ballot because the City received a petition signed by the requisite number of voters seeking the adoption of rescue-only pet store standards for birds."
+summary = "Shall the Measure restricting the sale of birds in the City of Lemon Grove, requiring that birds be obtained exclusively from animal shelters, humane societies, or nonprofit rescue organizations and establishing related regulations be adopted"
+yes = "A “YES” vote is a vote to adopt the ordinance."
+no = "A “NO” vote is a vote against adopting the ordinance."
+
+[[section]]
+id = "what"
+heading = "Measure E"
+
+[[section.line]]
+text = "City of Lemon Grove Measure E asks voters in the city whether pet stores may offer only birds from shelters and rescue groups."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["restricting the sale of birds"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, state law bars pet stores from selling dogs, cats and rabbits unless they come from a shelter, humane society or rescue group."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "law-book"
+
+[[section.line]]
+text = "Measure E reached the ballot by a voter petition, and it needs a simple majority to pass."
+sources = ["guide-page", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure E would apply the same rule to birds in Lemon Grove pet stores."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "pet-store-birdcage"
+
+[[section.line]]
+text = "Poultry for farms and backyard flocks would not be covered."
+sources = ["guide-page"]
+
+[[section.line]]
+text = "Each bird sold in violation would be a separate infraction, enforceable six months after the measure is adopted."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "inspection-clipboard"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The San Diego County guide does not include a cost estimate for the measure."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure E ends commercial bird sales in pet stores and helps rescue birds find homes."
+sources = ["arguments"]
+basis = ["End the sale of commercially sourced birds in Lemon Grove pet", "Create more opportunities for shelter and rescue birds to find"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Ends pet store sales of commercially sourced birds", "More homes for shelter and rescue birds"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure E appears in the San Diego County Voter Information Guide for this election."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "list"
+source = "guide-page"
+items = ["No argument against was printed"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is a vote to adopt the ordinance."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["a vote to adopt"]
+
+[[section.line]]
+text = "A no vote is a vote against adopting the ordinance."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["a vote against adopting"]

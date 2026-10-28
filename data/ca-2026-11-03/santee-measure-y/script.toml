@@ -1,0 +1,146 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; who put it on the ballot and what it needs to pass; what would
+# change (when the tax runs, where the money goes, who reviews it); the
+# impartial analysis's revenue estimate; one line per side; what a vote
+# does.
+#
+# The guide prints no fiscal analysis or tax rate statement (not a
+# bond); the one revenue estimate is the City Attorney's, in the ballot
+# label and the Impartial Analysis. No archived source states the
+# city's general fund budget, so the $14 million has no scale
+# (STANDARD.md 6.5; left open). The card's yes/no lines are the
+# analysis's own.
+#
+# Sides come from the argument in favor and the argument against, not
+# the rebuttals.
+
+contest = "ca-2026-11-03-santee-measure-y"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "Y"
+title = "1% GENERAL TRANSACTIONS AND USE (SALES) TAX FOR TEN (10) YEARS"
+origin = "On June 24, 2026, the City Council voted to place Measure “Y” on the November 3, 2026 General Municipal Election ballot."
+summary = "To provide funding for City of Santee services and infrastructure, such as fixing streets and potholes; keeping streets, sidewalks, parks and public facilities safe, clean, and well-maintained; repairing / replacing aging infrastructure and stormdrains; local traffic management; fire protection, paramedic, crime prevention, and 911 emergency response, shall City of Santee’s measure establishing a one cent sales tax be adopted, providing approximately $14,000,000 annually for city services for 10 years, with independent audits, citizens’ committee oversight, and all funds locally controlled?"
+yes = "A “yes” vote on Measure “Y” will authorize the 1% transactions and use (sales) tax for 10 years."
+no = "A “no” vote on Measure “Y” will not authorize the 1% transactions and use (sales) tax for 10 years."
+
+[[section]]
+id = "what"
+heading = "Measure Y"
+
+[[section.line]]
+text = "City of Santee Measure Y asks voters in the city whether to add a one-cent sales tax for 10 years."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["one cent sales tax"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The City Council placed Measure Y on the ballot, and the guide says it needs a simple majority to pass."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The 1 percent tax would start in April 2027 and end in March 2037."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+text = "The money would go into the general fund of the city, for any lawful city program or service."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "A five-member citizens' committee appointed by the City Council would review the spending each year."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The City Attorney's impartial analysis estimates the tax would raise about $14 million a year."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Santee runs a lean budget, and Measure Y would repair what is failing now, before it becomes an emergency."
+sources = ["arguments"]
+basis = ["Some will say the City should live within its means. It does. Santee runs a", "lean, conservative budget, and the San Diego County Taxpayers", "Measure Y is how Santee gets ahead of this: repair what is failing now", "before it becomes a costly emergency."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Repairs streets, fire stations and storm drains", "Citizen oversight, and the tax ends in 10 years"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say families would pay more every time they shop or buy gas, and the money could be spent on anything."
+sources = ["arguments"]
+basis = ["A 1% sales tax increase would make Santee families pay more every time", "they shop, dine out, or buy gas...for the next 10 years.", "The money from this tax would enter the general fund and could be spent", "on anything including city raises, special projects, or continued efforts to"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Families pay more to shop, dine out or buy gas", "General fund money could be spent on anything"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote will authorize the 1 percent sales tax for 10 years."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["will authorize"]
+
+[[section.line]]
+text = "A no vote will not authorize the 1 percent sales tax."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["will not authorize"]

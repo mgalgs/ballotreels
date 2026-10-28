@@ -1,0 +1,44 @@
+# Archived sources for City of Santee Measure Y, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Diego County Registrar of Voters' Voter Information Guide (ballot type
+# 365, a Santee precinct); "page" is the guide's printed footer number.
+#
+# The guide does not print the measure's full text (Resolution
+# 071-2026, Section 7); it is the ordinance attached to the resolution
+# as Exhibit "A", archived from the City Clerk (a scan with no text
+# layer).
+
+[contest]
+id = "ca-2026-11-03-santee-measure-y"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:santee"
+kind = "measure"
+title = "City of Santee Measure Y: One Cent Sales Tax for City Services"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Voter Information Guide, page SD 365-077: ballot label and City Attorney Impartial Analysis"
+credit = "City Attorney Impartial Analysis, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-365.pdf"
+file = "sources/vig365-p79-ballot-label-impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments for and against Measure Y and rebuttals, as printed in the San Diego County Voter Information Guide, pages SD 365-078 to SD 365-079"
+credit = "Arguments, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-365.pdf"
+file = "sources/vig365-p80-81-arguments-and-rebuttals.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Santee, Resolution No. 071-2026 and its Exhibit A, the Transactions and Use Tax Ordinance"
+url = "https://www.cityofsanteeca.gov/documents/city-clerk/elections/2026%20Resolutions/reso-071-2026.pdf"
+file = "sources/santee-clerk-resolution-071-2026-calling-election-general-tax-measure.pdf"
+retrieved = "2026-10-28"
