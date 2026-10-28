@@ -98,6 +98,11 @@ magnitude = 10000000
 period = "per-year"
 direction = "cost"
 
+# San Diego County Measure A: the guide prints no fiscal statement.
+[sd-county-measure-a]
+source = "guide-page"
+status = "none-printed"
+
 # San Diego County Measure B: the guide prints no fiscal analysis; the
 # one estimate is in its ballot label (and County Counsel's Impartial
 # Analysis, whose sentence pdftotext interleaves with the next column).
