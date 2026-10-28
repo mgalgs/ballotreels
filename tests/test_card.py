@@ -6,7 +6,8 @@ import unittest
 from pathlib import Path
 
 from ballotreels import check_contest, load_contest
-from ballotreels.checks import _archived_text, _in_raw_columns, plain_text
+from ballotreels.checks import (_archived_text, _in_raw_columns, _unshifted,
+                                plain_text)
 
 from .helpers import ContestCopyTestCase, unlinted_standard
 
@@ -372,3 +373,35 @@ class ColumnTextTest(unittest.TestCase):
             "This proposal increases the maximum acreage to qualify for "
             "assessment and taxation as a bona fide conservation use "
             "property from 2,000 acres to 5,000 acres.", GA_BOOKLET))
+
+
+ALAMEDA_GUIDE = (Path(__file__).resolve().parent.parent / "data" /
+                 "ca-2026-11-03" / "alameda-county-measure-rtm" / "sources" /
+                 "vig-pp758-768.pdf")
+
+
+class ShiftedGlyphTest(unittest.TestCase):
+    """Alameda County's guide sets some lines in a font with no Unicode
+    map, which pdftotext prints as glyph indices, each character's code
+    less 29; those lines are read decoded."""
+
+    def test_a_shifted_line_is_decoded(self):
+        self.assertEqual(_unshifted("x\nWUD\u0d76F\x0f\x03DQG\x03\x14\x17\n"),
+                         "x\ntraffic, and 14\n")
+
+    def test_other_lines_and_texts_are_kept(self):
+        # a line with a lower-case letter is the font's own text
+        self.assertEqual(_unshifted("a \x03b\nDQG\x03"), "a \x03b\nand ")
+        # no sign of the font at all: nothing changes, upper case included
+        self.assertEqual(_unshifted("BART RTM\fRTM-2\n"), "BART RTM\fRTM-2\n")
+        # a Spanish "¿" in a line of ordinary text stays one
+        self.assertEqual(_unshifted("¿Qué?\nDQG\x03"), "¿Qué?\nand ")
+
+    @unittest.skipUnless(shutil.which("pdftotext"),
+                         "needs poppler's pdftotext")
+    def test_the_guide_reads_as_printed(self):
+        text = _archived_text(ALAMEDA_GUIDE)
+        self.assertIn("traffic, and reduce pollution by: Preserving BART, "
+                      "Caltrain, VTA", text)
+        self.assertIn("It is estimated that the tax would raise "
+                      "approximately $980 million per year.", text)
