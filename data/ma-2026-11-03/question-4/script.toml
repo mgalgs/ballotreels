@@ -1,0 +1,136 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; that voters cannot register at the polls today; what the
+# question would allow, and what a registrant would have to show and
+# sign; the fiscal statement; one point per side; what a vote does.
+#
+# The card quotes the Secretary of the Commonwealth's Information for
+# Voters: the question's short title, its origin, the first two
+# paragraphs of the Attorney General's summary (the rest, on documents,
+# provisional ballots and the start date, runs past the vote lines in
+# the booklet's text and does not fit the card), the statement of fiscal
+# consequences, and the booklet's "A YES VOTE" and "A NO VOTE" lines.
+# That other New England states allow it is the supporters' point and
+# stays in their section. No person the booklet names is named.
+
+contest = "ma-2026-11-03-question-4"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "booklet"
+number = "4"
+title = "Election Day Registration"
+origin = "Law Proposed by Initiative Petition"
+summary = "This proposed law would permit eligible individuals to register to vote or update their voter registration address on Election Day. An individual who is eligible to vote could register to vote on Election Day by going to the polling place in the precinct where they live during voting hours and presenting proof of residency and signing a written oath."
+fiscal = "The proposed law has no discernible material fiscal consequences for state and municipal government finances."
+yes = "A YES VOTE would permit eligible citizens to register to vote or to update their voter registration address at their polling place on Election Day."
+no = "A NO VOTE would make no change to the laws governing voter registration."
+
+[[section]]
+id = "what"
+heading = "Question 4"
+
+[[section.line]]
+text = "Question 4 is about registering to vote on Election Day."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["Election Day Registration"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, voters cannot register at their polling place on Election Day."
+sources = ["booklet", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The question would let eligible people register, or update their address, at the polls."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["presenting proof of residency and signing a written oath"]
+
+[[section.line]]
+text = "Registrants would show proof of residency, and sign an oath that false information is a felony."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "illustration"
+name = "id-card"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Executive Office of Administration and Finance says the law has no discernible material fiscal consequences."
+sources = ["fiscal"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the rest of New England already offers it, and proof of residence and a felony-backed oath keep it secure."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["The rest of New England already has it", "Proof of residence and an oath deter fraud"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say officials would lose the time to check registrants in advance, and errors might surface only after ballots are cast."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Ends the advance period for checking registrants", "Errors might surface only after ballots are cast"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote would permit eligible citizens to register at their polling place on Election Day."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["A YES VOTE would permit eligible citizens"]
+
+[[section.line]]
+text = "A no vote would make no change to the laws governing voter registration."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["A NO VOTE would make no change"]
