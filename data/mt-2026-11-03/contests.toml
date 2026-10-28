@@ -1,0 +1,35 @@
+# Contest index for the 2026-11-03 Montana general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string), as the
+# ballot prints it. Montana's Voter Information Pamphlet prints no short
+# title for a ballot issue, so titles pair the designation, as the
+# ballot's YES/NO lines word it ("YES on Constitutional Amendment
+# CI-132", "YES on Initiative I-194"), with the heading the measure's
+# complete text gives itself: its new section's name, or its short title.
+# The three are all of the statewide ballot issues, in ballot order.
+
+[election]
+id = "mt-2026-11-03"
+state = "ocd-division/country:us/state:mt"
+title = "Montana General Election, November 3, 2026"
+
+[[contest]]
+id = "mt-2026-11-03-ci-132"
+kind = "measure"
+division = "ocd-division/country:us/state:mt"
+title = "Constitutional Amendment CI-132: Nonpartisan Judicial Elections"
+number = "CI-132"
+
+[[contest]]
+id = "mt-2026-11-03-ci-133"
+kind = "measure"
+division = "ocd-division/country:us/state:mt"
+title = "Constitutional Amendment CI-133: Right to initiative and referendum"
+number = "CI-133"
+
+[[contest]]
+id = "mt-2026-11-03-i-194"
+kind = "measure"
+division = "ocd-division/country:us/state:mt"
+title = "Initiative I-194: The Montana Plan Act"
+number = "I-194"
