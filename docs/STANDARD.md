@@ -35,6 +35,9 @@ invalidates the cache for every video made under an older one.
      for the state's own words. It is never a source for the ballot
      title, the measure's text, or a cost; those still come only from
      the official documents above;
+   - for precedent only (section 10): **another government's official
+     records** of a similar law, namely its enacted text, its
+     legislative record, and a court's opinion on it;
    - for a candidate: the candidate's own ballot designation and
      statement as filed with the election official, the candidate's own
      website or published statements, and public records (FEC filings,
@@ -251,6 +254,39 @@ every video made before it still meets the standard.)
    a side's own section ("Supporters, including Governor X, say..."); never
    in the opening line or the vote lines.
 
+## 10. The questions a video raises
+
+A viewer who finishes a video should not be left asking a question that
+an official record answers. A narrow measure leaves the obvious ones
+open: who it would actually affect, and whether anywhere else has done
+this. These rules make answering them part of writing the script. (Added
+under version 2 without a new version: answering is permitted now, and
+the questions record in rule 10.1 becomes required from version 3.)
+
+1. **A reader's questions, recorded.** Before a script is final, a
+   reader who did not write it reads it as a first-time voter and lists
+   the questions it leaves open. The script records each question with
+   its answer: the lines that answer it, or that no official source
+   answers it. A question no official source answers is not answered by
+   the narrator's own knowledge.
+2. **Who it affects, from the record.** A measure's reach (who it
+   covers, how many, what kind of business or person) is stated only as
+   an official source states it: the measure's own text, the fiscal
+   analysis, or an agency's record. It is never estimated or inferred.
+3. **Precedent is legal history, every outcome.** A similar law
+   elsewhere is described only by what the other government's official
+   records show happened to it: enacted, when, struck down, upheld,
+   repealed, still in force. Every outcome the records show is stated as
+   plainly as the enactment, so a repeal or a court ruling is never left
+   out. "Similar" is judged from the two texts (they do the same thing),
+   never from news coverage.
+4. **No effects.** Whether a law elsewhere worked, or what it caused,
+   is argument, not precedent. It appears only where a side's official
+   argument makes it, in that side's section (rule 6.3).
+5. **Where it goes.** Precedent goes in the background, never in the
+   opening line, the vote lines or a side's section. Answers fit the
+   video's usual length budget; the video does not grow to hold them.
+
 ## Machine checks
 
 The pipeline rejects a script or render that fails any of these. They
@@ -272,6 +308,7 @@ human reading the video.
 | Every chart cites a source id that exists, of an allowed kind | 7.1 |
 | Every person or organisation a line names is declared on it with its role and a source the line cites, of a kind rule 9.1 allows (the official arguments, the election filing, the legislative record), whose text has the name verbatim (an undeclared name is found by a heuristic: a run of capitalised words outside the contest's official wording and `standard/proper-words.txt`); names only in background or a side's section, never in the opening line or the vote lines; as many names in each side's section as the other's, where both filed | 9.1, 9.3, 9.5 |
 | No chart in a side section unless both sides have one | 7.3 |
+| Another government's record is cited only by a background line; every recorded question names the lines that answer it, each of which exists, or is marked as answered by no official source | 1.2, 10.1, 10.5 |
 | A choice question's options: letters in ballot order, each letter and label verbatim in the cited source, each spoken name the label with or without its parenthesised parts, the narration naming each once, in ballot order, on its own grid page, and every option as often as every other; no sides, no yes/no lines on its card | 8.1-8.4 |
 
 Standard version: 2
