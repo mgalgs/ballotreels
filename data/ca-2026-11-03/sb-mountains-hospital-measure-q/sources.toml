@@ -1,0 +1,74 @@
+# Archived sources for San Bernardino Mountains Community Hospital
+# District Measure Q, 2026-11-03 general election (sources/sources.md).
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1). The guide's pages are cut
+# from the San Bernardino County Registrar of Voters' comprehensive Voter
+# Information Guide, PDF pages 250 to 253; "page" is the guide's printed
+# footer number (SB COMPREHENSIVE-248 to -251).
+#
+# The guide's Full Text prints the ballot question; with County Counsel's
+# Impartial Analysis, which states what a yes and a no vote do, it is the
+# card's source.
+#
+# A hospital district has no Census boundary, so the measure's division
+# is the county and `voters` names the district (docs/SCRIPT-FORMAT.md).
+
+[contest]
+id = "ca-2026-11-03-sb-mountains-hospital-measure-q"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:san_bernardino"
+kind = "measure"
+title = "San Bernardino Mountains Community Hospital District Measure Q: Hospital Facility Bonds"
+voters = "the San Bernardino Mountains Community Hospital District"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "San Bernardino County Registrar of Voters, Voter Information Guide, pages SB COMPREHENSIVE-248 to -251: Bond Measure Q's ballot question and Impartial Analysis"
+credit = "San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp250-253.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "County Counsel Impartial Analysis of Bond Measure Q, San Bernardino County Voter Information Guide, page SB COMPREHENSIVE-248"
+credit = "Impartial Analysis, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp250-253.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "San Bernardino Mountains Community Hospital District, Tax Rate Statement for Bond Measure Q, San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-249 to -250"
+credit = "Tax Rate Statement, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp250-253.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Bond Measure Q, San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-248 to -249 (no argument against was filed)"
+credit = "Arguments, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp250-253.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text for Bond Measure Q, San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-250 to -251"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp250-253.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "legislative-record"
+publisher = "Board of Directors of the San Bernardino Mountains Community Hospital District, Resolution No. 2027-02 ordering the bond election, as posted by the Registrar of Voters"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/SBMCHD/RES_SBMCHD.pdf"
+file = "sources/RES_SBMCHD.pdf"
+retrieved = "2026-10-28"
