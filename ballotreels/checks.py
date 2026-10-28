@@ -24,7 +24,8 @@ from .ballots import BALLOTS, Ballot, badge, ballot_for
 from .contest import CARD_KEYS, Card, Choice, Contest, Line, Section, Visual
 from .illustrations import load_library
 from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, CHOICE_TEMPLATES,
-                       CHOICES, FISCAL, SOURCE_KINDS, TEMPLATES, Risk,
+                       CHOICES, FISCAL, SOURCE_KINDS, TEMPLATES,
+                       UNIVERSITY_GUIDE, UNIVERSITY_GUIDE_SECTIONS, Risk,
                        Standard, Template, judgment_word_pattern,
                        load_standard)
 
@@ -124,6 +125,62 @@ def check_background_only(c: Contest) -> list[Failure]:
                         f"{verb} {sid!r}, of kind {src.kind!r}, which may be "
                         f"cited only in a {BACKGROUND!r} section",
                         label, i))
+    return out
+
+
+def check_university_guide(c: Contest) -> list[Failure]:
+    """STANDARD.md 1.2: a public university's ballot guide is a source only
+    where the state publishes no official voter guide (so the contest has
+    no `official-argument` source), only for explanation (a `background`,
+    `today` or `change` section) and the sides, never for the opening, a
+    cost or the vote lines; and every line relying on it names its
+    publisher, by the source's `short_name`, so a viewer never takes it
+    for the state's own words."""
+    guides = [s for s in c.sources if s.kind == UNIVERSITY_GUIDE]
+    if not guides:
+        return []
+    out = []
+    for s in guides:
+        if s.short_name is None or not s.short_name.strip():
+            out.append(Failure(
+                "university-guide",
+                f"source {s.id!r}, of kind {UNIVERSITY_GUIDE!r}, has no "
+                f"'short_name': the publisher's name as each line relying "
+                f"on it says it"))
+    official = [s.id for s in c.sources if s.kind == "official-argument"]
+    for label, sec in c.script.labelled():
+        allowed = sec.side is not None or sec.id in UNIVERSITY_GUIDE_SECTIONS
+        for i, line in enumerate(sec.lines):
+            cited = [s for sid in line.sources or ()
+                     if (s := c.source(sid)) is not None
+                     and s.kind == UNIVERSITY_GUIDE]
+            v = line.visual
+            shown = (c.source(v.source) if v is not None
+                     and isinstance(v.source, str) else None)
+            if shown is not None and shown.kind == UNIVERSITY_GUIDE \
+                    and shown not in cited:
+                cited.append(shown)  # _source_problems reports it uncited
+            for s in cited:
+                def fail(msg):
+                    out.append(Failure("university-guide", msg, label, i))
+
+                if official:
+                    fail(f"cites {s.id!r}, a university guide, but the "
+                         f"contest has an official voter guide's arguments "
+                         f"({', '.join(map(repr, official))}); the "
+                         f"official guide is the source")
+                if not allowed:
+                    fail(f"cites {s.id!r}, a university guide, in a "
+                         f"{sec.id!r} section: it may explain (in "
+                         f"{', '.join(sorted(UNIVERSITY_GUIDE_SECTIONS))}) "
+                         f"and give the sides, never the opening, a cost "
+                         f"or the vote")
+                name = s.short_name
+                if isinstance(name, str) and name.strip() \
+                        and name not in line.text:
+                    fail(f"cites {s.id!r}, a university guide, but does "
+                         f"not name its publisher: the line must say "
+                         f"{name!r}")
     return out
 
 
@@ -923,6 +980,10 @@ _QUOTES = str.maketrans({"‘": "'", "’": "'", "‚": "'", "‛": "'",
                          "“": '"', "”": '"', "„": '"', "‟": '"',
                          "\u00ad": None})
 BASIS_MIN_WORDS = 6
+# What a side's `basis` may quote: its official argument, or, where the
+# state publishes none, a university guide's account of what the side
+# says (STANDARD.md 1.2; check_university_guide keeps it to that).
+ARGUMENT_KINDS = frozenset({"official-argument", UNIVERSITY_GUIDE})
 
 
 def _loose(s: str) -> str:
@@ -944,7 +1005,8 @@ def _loose_archived(path: Path) -> str:
 def check_side_basis(c: Contest, required: bool) -> list[Failure]:
     """docs/SCRIPT-FORMAT.md's `basis`: each entry of a line's `basis` is
     a passage of at least BASIS_MIN_WORDS words that appears verbatim in
-    an `official-argument` source the line cites, so a reader can hold the
+    an `official-argument` source the line cites (or a `university-guide`,
+    where the state has no official arguments), so a reader can hold the
     line against the point it distils (SCRIPT-RECIPE.md, "Sides"). Only a
     side's lines may have one. With `required` (a script still to be
     narrated), every line of a side that filed an argument must have
@@ -975,10 +1037,11 @@ def check_side_basis(c: Contest, required: bool) -> list[Failure]:
                 continue
             args = [s for sid in line.sources or ()
                     if (s := c.source(sid)) is not None
-                    and s.kind == "official-argument"]
+                    and s.kind in ARGUMENT_KINDS]
             if not args:
                 fail("has a 'basis' but cites no 'official-argument' source "
-                     "to quote it from")
+                     "(or, where the state has none, 'university-guide' "
+                     "source) to quote it from")
                 continue
             texts = []
             for src in args:
@@ -1285,6 +1348,7 @@ def check_contest(c: Contest, standard: Standard | None = None
         *check_line_citations(c),
         *check_cited_sources_exist(c),
         *check_background_only(c),
+        *check_university_guide(c),
         *check_visuals(c),
         *check_ballot(c),
         *check_card(c),

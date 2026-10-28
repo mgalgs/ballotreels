@@ -29,7 +29,7 @@ retrieved = "2026-10-24"
 Allowed source kinds (STANDARD.md section 1): `official-title-summary`,
 `official-fiscal-analysis`, `official-argument`, `official-text`,
 `candidate-statement`, `candidate-website`, `public-record`,
-`official-report`, `official-data`.
+`official-report`, `official-data`, `university-guide`.
 
 `official-fiscal-analysis` is the state's official fiscal statement on
 the measure, whoever writes it: in California, the Legislative Analyst's
@@ -44,6 +44,30 @@ analysis, arguments and text in one pamphlet section).
 `background` section. The one other use is the budget total behind a
 scale (STANDARD.md rule 6.5): a line in the `fiscal` section may cite
 one beside the `official-fiscal-analysis` that states the figure.
+
+`university-guide` is a public university's nonpartisan ballot guide,
+allowed only where the state publishes no official voter guide
+(STANDARD.md rule 1.2: Arkansas's, from the University of Arkansas
+Division of Agriculture). It needs a `short_name`, the publisher as the
+narration says it:
+
+```toml
+[[source]]
+id = "uaex-guide"
+kind = "university-guide"
+publisher = "University of Arkansas System Division of Agriculture, ..."
+short_name = "University of Arkansas"
+```
+
+`check` fails a line or chart citing it when the contest also has an
+`official-argument` source (the state has an official guide); when it
+is in a `what`, `fiscal` or `vote` section (it may explain, in
+`background`, `today` and `change`, and give the sides, never the
+opening, a cost or the vote; the card is official-only by its kind);
+and when the line's text does not contain the `short_name` ("…, the
+University of Arkansas guide says"), so a viewer never takes it for the
+state's own words. A side's `basis` quotes it as it would an official
+argument: its "what supporters say" and "what opponents say".
 
 ## script.toml
 
@@ -78,7 +102,8 @@ basis = ["Montana grants them every power they have.", "And Montana has reserved
 
 - `basis` is a list of one or more strings, each a sentence or a
   fragment of at least 6 words, and each must appear in the archived
-  text of an `official-argument` source the line cites. It is compared
+  text of an `official-argument` source the line cites (or, where the
+  state has none, a `university-guide`, above). It is compared
   as the card is (above), and looser still, since arguments are often
   PDFs: ligatures ("ﬁ") unfolded, curly quotes and straight ones alike,
   and hyphens and dashes ignored with the spaces around them, so a word

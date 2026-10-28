@@ -27,7 +27,15 @@ SOURCE_KINDS = frozenset({
     "public-record",
     "official-report",
     "official-data",
+    "university-guide",
 })
+
+# A public university's nonpartisan ballot guide, allowed only where the
+# state publishes no official voter guide (STANDARD.md rule 1.2), and
+# only for explanation and the sides: never the opening, a cost or the
+# vote lines (checks.check_university_guide).
+UNIVERSITY_GUIDE = "university-guide"
+UNIVERSITY_GUIDE_SECTIONS = frozenset({"background", "today", "change"})
 
 # Kinds a line or chart may cite only in a `background` section
 # (STANDARD.md rule 6.1, docs/SCRIPT-FORMAT.md).
