@@ -1,0 +1,39 @@
+# Archived sources for Placentia Measure L, 2026-11-03 general election
+# (sources/sources.md). Every id here may be cited by script.toml. `kind`
+# must be one the standard allows (docs/STANDARD.md, section 1). All
+# three are the Measure L pages (Section 11, "Ballot Measures-L") of the
+# Orange County Registrar of Voters' Voter Information Guide; "page" is
+# the page of that section.
+
+[contest]
+id = "ca-2026-11-03-placentia-measure-l"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:placentia"
+kind = "measure"
+title = "Placentia Measure L: Raising the Hotel Tax to 14%"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "Orange County Registrar of Voters, Voter Information Guide, Section 11 (Ballot Measures-L), pages 1 and 3: ballot question and City Attorney Impartial Analysis"
+credit = "City Attorney Impartial Analysis, Orange County Voter Information Guide"
+url = "https://ocvote.gov/sites/default/files/2026-09/L-PLAC%20-%20LAYOUT%20(1).pdf"
+file = "sources/voter-guide-section.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in favor of Measure L, as printed in the Orange County Voter Information Guide, Section 11 (Ballot Measures-L), page 4, with the notice that no argument against was submitted"
+credit = "Argument in favor, Orange County Voter Information Guide"
+url = "https://ocvote.gov/sites/default/files/2026-09/L-PLAC%20-%20LAYOUT%20(1).pdf"
+file = "sources/voter-guide-section.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure L (an ordinance amending Placentia Municipal Code Section 5.08.500 and adding Section 3.20.100), Orange County Voter Information Guide, Section 11 (Ballot Measures-L), page 2"
+url = "https://ocvote.gov/sites/default/files/2026-09/L-PLAC%20-%20LAYOUT%20(1).pdf"
+file = "sources/voter-guide-section.pdf"
+retrieved = "2026-10-28"

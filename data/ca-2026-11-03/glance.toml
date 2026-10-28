@@ -260,3 +260,11 @@ quote = "The City estimates a new 1% sales tax would result in additional revenu
 amount = 15000000
 period = "per-year"
 direction = "revenue-gain"
+
+# Placentia Measure L: the guide prints no fiscal statement; the one
+# estimate is the ballot question's.
+[placentia-measure-l]
+source = "guide-page"
+quote = "generating about $715,000 annually"
+amount = 715000
+period = "per-year"
