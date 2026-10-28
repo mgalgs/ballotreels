@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 69.14,
+  "seconds": 90.79,
   "phrases": [
     {
       "text": "Initiative 86 is about force-feeding birds to enlarge their livers, and foods like foie gras.",
@@ -9,65 +9,83 @@
       "end": 6.73
     },
     {
-      "text": "The District's Office of Revenue Analysis knows of no bird farms in the District.",
+      "text": "California banned the force-feeding and sales in 2004; a court struck the sales ban down, then an appeals court upheld it.",
       "start": 7.39,
-      "end": 12.33
+      "end": 16.21
     },
     {
-      "text": "The District's environment department already inspects shops and restaurants under bans on foam containers and straws.",
-      "start": 12.99,
-      "end": 20.15
+      "text": "Chicago banned restaurant sales in 2006; a court upheld the ban, then the city repealed it in 2008.",
+      "start": 16.87,
+      "end": 25.3
     },
     {
-      "text": "Initiative 86 would ban force-feeding a bird to enlarge its liver, and selling the products, including foie gras.",
-      "start": 20.81,
-      "end": 28.84
+      "text": "New York City passed a sales ban in 2019; an appeals court upheld it in 2026, but a court order kept it from being enforced.",
+      "start": 25.96,
+      "end": 35.05
     },
     {
-      "text": "From July 2027, violations would bring fines of $1,000 to $5,000 a day.",
-      "start": 29.5,
-      "end": 36.41
+      "text": "Pittsburgh passed a sales ban in 2023; Portland, Oregon, passed one that starts December 31.",
+      "start": 35.71,
+      "end": 42.1
     },
     {
-      "text": "The Chief Financial Officer estimates that carrying out the ban would cost $314,000 over four years, less than 1 percent of any year's local spending.",
-      "start": 37.07,
-      "end": 48.02
+      "text": "The Chief Financial Officer knows of no bird farms in the District.",
+      "start": 42.76,
+      "end": 46.35
     },
     {
-      "text": "The Chief Financial Officer says the money is not yet budgeted, and carrying out the ban depends on it.",
-      "start": 48.68,
-      "end": 54.59
+      "text": "Initiative 86 would ban the force-feeding, and selling the products or bringing them in for business.",
+      "start": 47.01,
+      "end": 52.89
+    },
+    {
+      "text": "From July 2027, restaurants, stores and others breaking the ban could be fined $1,000 to $5,000 a day.",
+      "start": 53.55,
+      "end": 62.54
+    },
+    {
+      "text": "The Chief Financial Officer estimates a cost of $314,000 over four years, less than 1 percent of any year's local spending.",
+      "start": 63.2,
+      "end": 72.39
+    },
+    {
+      "text": "Carrying out the ban waits until its cost is budgeted.",
+      "start": 73.05,
+      "end": 76.37
     },
     {
       "text": "No official argument against Initiative 86 was published.",
-      "start": 55.25,
-      "end": 59.46
+      "start": 77.03,
+      "end": 81.11
     },
     {
       "text": "No official argument for Initiative 86 was published.",
-      "start": 60.12,
-      "end": 64.06
+      "start": 81.77,
+      "end": 85.71
     },
     {
       "text": "A yes vote approves the ban.",
-      "start": 64.72,
-      "end": 66.44
+      "start": 86.37,
+      "end": 88.09
     },
     {
       "text": "A no vote rejects the ban.",
-      "start": 67.1,
-      "end": 69.11
+      "start": 88.75,
+      "end": 90.76
     }
   ],
   "inputs": {
     "phrases": [
       "Initiative 86 is about force-feeding birds to enlarge their livers, and foods like foie gras.",
-      "The District's Office of Revenue Analysis knows of no bird farms in the District.",
-      "The District's environment department already inspects shops and restaurants under bans on foam containers and straws.",
-      "Initiative 86 would ban force-feeding a bird to enlarge its liver, and selling the products, including foie gras.",
-      "From July 2027, violations would bring fines of $1,000 to $5,000 a day.",
-      "The Chief Financial Officer estimates that carrying out the ban would cost $314,000 over four years, less than 1 percent of any year's local spending.",
-      "The Chief Financial Officer says the money is not yet budgeted, and carrying out the ban depends on it.",
+      "California banned the force-feeding and sales in 2004; a court struck the sales ban down, then an appeals court upheld it.",
+      "Chicago banned restaurant sales in 2006; a court upheld the ban, then the city repealed it in 2008.",
+      "New York City passed a sales ban in 2019; an appeals court upheld it in 2026, but a court order kept it from being enforced.",
+      "Pittsburgh passed a sales ban in 2023; Portland, Oregon, passed one that starts December 31.",
+      "The Chief Financial Officer knows of no bird farms in the District.",
+      "Initiative 86 would ban the force-feeding, and selling the products or bringing them in for business.",
+      "From July 2027, restaurants, stores and others breaking the ban could be fined $1,000 to $5,000 a day.",
+      "The Chief Financial Officer estimates a cost of $314,000 over four years, less than 1 percent of any year's local spending.",
+      "Carrying out the ban waits until its cost is budgeted.",
       "No official argument against Initiative 86 was published.",
       "No official argument for Initiative 86 was published.",
       "A yes vote approves the ban.",
@@ -109,11 +127,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The District's Office of Revenue Analysis knows of no bird farms in the District."
+        "text": "California banned the force-feeding and sales in 2004; a court struck the sales ban down, then an appeals court upheld it."
       },
       "bounds": [
         176640,
-        296640
+        389760
       ]
     },
     {
@@ -121,15 +139,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The District's Office of Revenue Analysis knows of no bird farms in the District.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"California banned the force-feeding and sales in 2004; a court struck the sales ban down, then an appeals court upheld it.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The District's environment department already inspects shops and restaurants under bans on foam containers and straws."
+        "text": "Chicago banned restaurant sales in 2006; a court upheld the ban, then the city repealed it in 2008."
       },
       "bounds": [
-        311040,
-        484320
+        404160,
+        607920
       ]
     },
     {
@@ -137,15 +155,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The District's environment department already inspects shops and restaurants under bans on foam containers and straws.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Chicago banned restaurant sales in 2006; a court upheld the ban, then the city repealed it in 2008.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Initiative 86 would ban force-feeding a bird to enlarge its liver, and selling the products, including foie gras."
+        "text": "New York City passed a sales ban in 2019; an appeals court upheld it in 2026, but a court order kept it from being enforced."
       },
       "bounds": [
-        498720,
-        692880
+        622320,
+        841920
       ]
     },
     {
@@ -153,15 +171,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Initiative 86 would ban force-feeding a bird to enlarge its liver, and selling the products, including foie gras.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"New York City passed a sales ban in 2019; an appeals court upheld it in 2026, but a court order kept it from being enforced.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "From July 2027, violations would bring fines of $1,000 to $5,000 a day."
+        "text": "Pittsburgh passed a sales ban in 2023; Portland, Oregon, passed one that starts December 31."
       },
       "bounds": [
-        707280,
-        874560
+        856320,
+        1011120
       ]
     },
     {
@@ -169,15 +187,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"From July 2027, violations would bring fines of $1,000 to $5,000 a day.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Pittsburgh passed a sales ban in 2023; Portland, Oregon, passed one that starts December 31.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The Chief Financial Officer estimates that carrying out the ban would cost $314,000 over four years, less than 1 percent of any year's local spending."
+        "text": "The Chief Financial Officer knows of no bird farms in the District."
       },
       "bounds": [
-        888960,
-        1153200
+        1025520,
+        1113120
       ]
     },
     {
@@ -185,15 +203,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Chief Financial Officer estimates that carrying out the ban would cost $314,000 over four years, less than 1 percent of any year's local spending.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Chief Financial Officer knows of no bird farms in the District.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The Chief Financial Officer says the money is not yet budgeted, and carrying out the ban depends on it."
+        "text": "Initiative 86 would ban the force-feeding, and selling the products or bringing them in for business."
       },
       "bounds": [
-        1167600,
-        1310880
+        1127520,
+        1270080
       ]
     },
     {
@@ -201,15 +219,63 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Chief Financial Officer says the money is not yet budgeted, and carrying out the ban depends on it.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Initiative 86 would ban the force-feeding, and selling the products or bringing them in for business.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "From July 2027, restaurants, stores and others breaking the ban could be fined $1,000 to $5,000 a day."
+      },
+      "bounds": [
+        1284480,
+        1501680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"From July 2027, restaurants, stores and others breaking the ban could be fined $1,000 to $5,000 a day.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The Chief Financial Officer estimates a cost of $314,000 over four years, less than 1 percent of any year's local spending."
+      },
+      "bounds": [
+        1516080,
+        1738080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Chief Financial Officer estimates a cost of $314,000 over four years, less than 1 percent of any year's local spending.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Carrying out the ban waits until its cost is budgeted."
+      },
+      "bounds": [
+        1752480,
+        1833600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Carrying out the ban waits until its cost is budgeted.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "No official argument against Initiative 86 was published."
       },
       "bounds": [
-        1325280,
-        1427760
+        1848000,
+        1947360
       ]
     },
     {
@@ -224,8 +290,8 @@
         "text": "No official argument for Initiative 86 was published."
       },
       "bounds": [
-        1442160,
-        1538160
+        1961760,
+        2057760
       ]
     },
     {
@@ -240,8 +306,8 @@
         "text": "A yes vote approves the ban."
       },
       "bounds": [
-        1552560,
-        1595280
+        2072160,
+        2114880
       ]
     },
     {
@@ -256,10 +322,10 @@
         "text": "A no vote rejects the ban."
       },
       "bounds": [
-        1609680,
-        1659360
+        2129280,
+        2178960
       ]
     }
   ],
-  "sha256": "375e59b20ee867facd15f54d8f2122d542be61e1b4e0d39adf49e176cb9893af"
+  "sha256": "697271464bda64bca3407ec4f5236dc65191a52f11ba7beea5c96d129976d476"
 }
