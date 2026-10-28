@@ -1,0 +1,26 @@
+# "Ballot at a glance" figures for the 2026-11-03 Florida general
+# election (docs/SCRIPT-FORMAT.md, "glance.toml"), quoted from each
+# joint resolution's legislative bill analysis and fiscal impact
+# statement; the amendment booklet prints no fiscal estimate.
+
+# A required yearly transfer into the state's reserve fund: neither a
+# cost nor a saving in the analysis's words, so no direction.
+[amendment-1]
+source = "analysis"
+quote = "Therefore, if revenue collections were to remain the same, the joint resolution would require the Legislature to transfer $750 million each fiscal year for at least the next 10 years unless certain conditions are met."
+amount = 750000000
+period = "per-year"
+
+# The Revenue Estimating Conference's finding: no impact, as the
+# amendment only authorizes the Legislature to act.
+[amendment-2]
+source = "analysis"
+status = "no-material-impact"
+quote = "The Revenue Estimating Conference has determined that the joint resolution will have no impact since the proposed amendment to the constitution requires voter approval and is not self-executing."
+
+[amendment-3]
+source = "analysis"
+quote = "The recurring impact in all years is estimated to be -$11.86 billion on local non-school property tax revenues"
+amount = 11860000000
+period = "per-year"
+direction = "revenue-loss"
