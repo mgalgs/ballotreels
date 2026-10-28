@@ -53,6 +53,9 @@ class IndexEntry:
     number: str | None = None
     office: str | None = None
     corrections: tuple[Correction, ...] = ()
+    # a choice question: its script has a [choices] table, so the page
+    # speaks of its choices, not of two sides (docs/SCRIPT-FORMAT.md)
+    choice: bool = False
 
 
 @dataclass(frozen=True)
@@ -136,6 +139,17 @@ def _check_sources_match(entry: IndexEntry, election: Election,
                 f"index {expect!r}")
 
 
+def _is_choice_question(contest_dir: Path) -> bool:
+    """Whether the script in `contest_dir` asks a choice question (has a
+    [choices] table). False when there is no script, or it does not parse:
+    ballotreels.contest reports that."""
+    try:
+        with (contest_dir / "script.toml").open("rb") as f:
+            return isinstance(tomllib.load(f).get("choices"), dict)
+    except (OSError, tomllib.TOMLDecodeError):
+        return False
+
+
 def _load_entry(raw: dict[str, Any], i: int, election: Election,
                 election_dir: Path) -> IndexEntry:
     where = f"contest[{i}]"
@@ -165,6 +179,7 @@ def _load_entry(raw: dict[str, Any], i: int, election: Election,
             raise ContestIndexError(f"{where}: race needs 'office'")
         if number is not None:
             raise ContestIndexError(f"{where}: race must not set 'number'")
+    dir_name = cid[len(prefix):]
     entry = IndexEntry(
         id=cid,
         kind=kind,
@@ -173,8 +188,8 @@ def _load_entry(raw: dict[str, Any], i: int, election: Election,
         number=number,
         office=office,
         corrections=_load_corrections(raw, where),
+        choice=_is_choice_question(election_dir / dir_name),
     )
-    dir_name = cid[len(prefix):]
     _check_sources_match(entry, election, election_dir / dir_name, where)
     return entry
 

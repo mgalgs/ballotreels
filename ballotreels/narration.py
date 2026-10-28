@@ -20,7 +20,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from .contest import Contest, Section
-from .standard import TEMPLATES, side_order
+from .standard import side_order, template_for
 
 
 class NarrationError(Exception):
@@ -49,7 +49,7 @@ def playback_sections(contest: Contest) -> tuple[tuple[str, Section], ...]:
     (so template 2's background sections play as written), with the two side
     sections reordered by `side_order`. Sections the template doesn't name
     are left out; check_template reports them."""
-    t = TEMPLATES[contest.script.template][contest.script.template_version]
+    t = template_for(contest.script)
     labelled = contest.script.labelled()
     side_to_id = {label: sid for sid, label in t.sides.items()}
     first, second = side_order(contest.id)

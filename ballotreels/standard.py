@@ -60,6 +60,32 @@ TEMPLATES: dict[str, dict[int, Template]] = {
 }
 
 
+CHOICES = "choices"
+
+# A choice question (a script with a [choices] table: voters pick one of
+# several options, not yes or no) under the same template and version as
+# the yes/no measure it stands beside, so the cache key and every yes/no
+# script are untouched: template -> version -> its sections. No sides:
+# one `choices` section lists every option in ballot order
+# (docs/SCRIPT-FORMAT.md, STANDARD.md section 8).
+CHOICE_TEMPLATES: dict[str, dict[int, Template]] = {
+    "measure": {
+        2: Template(("what", BACKGROUND, CHOICES, "fiscal", "vote"), {},
+                    frozenset({BACKGROUND})),
+    },
+}
+
+
+def template_for(script) -> Template:
+    """The Template `script` follows: its template and version's, or the
+    choice question's under them when the script has a [choices] table.
+    Raises KeyError for an unknown template or version."""
+    t = TEMPLATES[script.template][script.template_version]
+    if getattr(script, "choices", None) is None:
+        return t
+    return CHOICE_TEMPLATES[script.template][script.template_version]
+
+
 @dataclass(frozen=True)
 class Standard:
     version: int

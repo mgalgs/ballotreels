@@ -51,7 +51,10 @@ stale; they are regenerated on next request.
 6. **Render.** A fixed videobuilder film template per contest kind
    (measure, candidate race) reads the script, narrates it with
    videobuilder's speech module (one voice for all), and draws the cards
-   and the closing sources card. A soft drawing sound, cut from two short
+   and the closing sources card. A yes/no measure's two sides share one
+   slide; a choice question (STANDARD.md section 8) has no sides, and
+   draws every option, in ballot order, on one grid of equal cells (more
+   than six: several grid pages), with the options listed on its card. A soft drawing sound, cut from two short
    recordings of a pencil and a felt-tip marker (film/draw_sound.py,
    film/sounds/) rather than synthesized, follows the pencil or
    highlighter while it is actually drawing, levelled about 13.5 dB under

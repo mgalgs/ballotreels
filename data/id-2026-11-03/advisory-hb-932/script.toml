@@ -1,0 +1,149 @@
+# A choice question (docs/SCRIPT-FORMAT.md, STANDARD.md section 8), about
+# 45 seconds: what the question asks; that it is non-binding, and the
+# Legislature would have to act later to designate a state gun; the six
+# choices, in ballot order, on one grid; what the bill's fiscal note
+# says; how to vote. The designation is said once, in the opening line.
+#
+# No sides: an advisory question has no statements for or against. Every
+# choice is named once, as printed in the pamphlet but without the
+# calibre in parentheses (the drawn label keeps it), and nothing more:
+# the pamphlet's descriptions of the firearms differ in length and tone,
+# so the narration only says that it describes each one.
+#
+# The card quotes pages 14 and 15 of the Idaho Voter Pamphlet: the
+# question, its heading, the Brief Statement of Purpose and the choices.
+# The pamphlet prints no fiscal statement for the question, so the card
+# has none; the fiscal section cites the bill's fiscal note, by that
+# name, and says, as the note's own disclaimer does, that a proponent of
+# the bill prepared it.
+
+contest = "id-2026-11-03-advisory-hb-932"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "pamphlet"
+number = "932"
+title = "Which of the following guns should be designated as the state gun of Idaho? Please choose only one answer."
+origin = "Advisory Question - House Bill 932"
+summary = "This advisory question asks Idahoans to designate which gun they would like to have as the official Idaho State Gun. This is a non-binding measure, and the Legislature would have to take action during a future legislative session to officially designate a gun as the Idaho State Gun."
+
+[choices]
+source = "pamphlet"
+
+[[choices.choice]]
+letter = "(a)"
+label = "Winchester Model 1894 (.30-30)"
+spoken = "Winchester Model 1894"
+illustration = "winchester-model-1894"
+
+[[choices.choice]]
+letter = "(b)"
+label = "Winchester Model 1873 “Gun that Won the West” (.44-40)"
+spoken = "Winchester Model 1873 “Gun that Won the West”"
+illustration = "winchester-model-1873"
+
+[[choices.choice]]
+letter = "(c)"
+label = "1873 Colt Single Action Army Revolver “Peacemaker” (.45 Colt)"
+spoken = "1873 Colt Single Action Army Revolver “Peacemaker”"
+illustration = "colt-single-action-army"
+
+[[choices.choice]]
+letter = "(d)"
+label = "M1 Garand rifle (.30-06)"
+spoken = "M1 Garand rifle"
+illustration = "m1-garand"
+
+[[choices.choice]]
+letter = "(e)"
+label = "Colt M1911 .45 automatic Colt pistol (.45 ACP)"
+spoken = "Colt M1911 .45 automatic Colt pistol"
+illustration = "colt-m1911"
+
+[[choices.choice]]
+letter = "(f)"
+label = "Remington Model 700 bolt-action rifle (.30-06)"
+spoken = "Remington Model 700 bolt-action rifle"
+illustration = "remington-model-700"
+
+[[section]]
+id = "what"
+heading = "House Bill 932"
+
+[[section.line]]
+text = "House Bill 932, an advisory question, asks which of six guns should be designated the state gun of Idaho."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["Which of the following guns should be designated as the state gun of Idaho?"]
+
+[[section]]
+id = "background"
+heading = "An advisory question"
+
+[[section.line]]
+text = "The question is non-binding."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["non-binding measure"]
+
+[[section.line]]
+text = "To designate a state gun, the Legislature would have to act in a future session."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["the Legislature would have to take action during a future legislative session"]
+
+[[section]]
+id = "choices"
+heading = "The six choices"
+
+[[section.line]]
+text = "The ballot lists the Winchester Model 1894, the Winchester Model 1873 “Gun that Won the West”, and the 1873 Colt Single Action Army Revolver “Peacemaker”."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "choices"
+source = "pamphlet"
+
+[[section.line]]
+text = "Then the M1 Garand rifle, the Colt M1911 .45 automatic Colt pistol, and the Remington Model 700 bolt-action rifle."
+sources = ["pamphlet"]
+
+[[section.line]]
+text = "The Voter Pamphlet describes each one."
+sources = ["pamphlet"]
+
+[[section]]
+id = "fiscal"
+heading = "What the fiscal note says"
+
+[[section.line]]
+text = "The bill's fiscal note, prepared by a supporter of the bill, says the bill is expected to have no direct impact on the General Fund or local government revenues."
+sources = ["fiscal-note"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "vote"
+heading = "How to vote"
+
+[[section.line]]
+text = "Voters choose only one of the six."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["Please choose only one answer."]

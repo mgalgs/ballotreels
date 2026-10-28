@@ -78,14 +78,16 @@ def capitalize(text: str) -> str:
 
 
 def measure_meta(state_name: str, title: str, path: str,
-                 poster: str | None) -> PageMeta:
-    """A measure's page: its state and ballot title, read neutrally."""
+                 poster: str | None, choice: bool = False) -> PageMeta:
+    """A measure's page: its state and ballot title, read neutrally. A
+    choice question has no sides: its page says it lists the choices."""
     title = title.strip().rstrip(".").strip()
+    what = ("What it asks and the choices on the ballot" if choice else
+            "What it would do and what each side says")
     return PageMeta(
         title=f"{capitalize(state_name)} {title}, explained in 60 seconds",
         description=(f"A short, even-handed explainer of {state_name} "
-                     f"{title}. What it would do and what each side says, "
-                     f"every claim sourced."),
+                     f"{title}. {what}, every claim sourced."),
         path=path, image=poster or DEFAULT_IMAGE)
 
 

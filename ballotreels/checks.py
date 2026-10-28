@@ -18,17 +18,18 @@ from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
 
-from . import narration, storyboard
+from . import grid, narration, storyboard
 from .ballots import BALLOTS, Ballot, badge, ballot_for
-from .contest import CARD_KEYS, Card, Contest, Line, Section, Visual
+from .contest import CARD_KEYS, Card, Choice, Contest, Line, Section, Visual
 from .illustrations import load_library
-from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, FISCAL, SOURCE_KINDS,
-                       TEMPLATES, Standard, Template, judgment_word_pattern,
-                       load_standard)
+from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, CHOICE_TEMPLATES,
+                       CHOICES, FISCAL, SOURCE_KINDS, TEMPLATES, Standard,
+                       Template, judgment_word_pattern, load_standard)
 
 SIDE_TOLERANCE = 0.05
 CHART_KINDS = ("bars", "share", "series", "figure")
-VISUAL_KINDS = (*CHART_KINDS, "timeline", "list", "illustration", "page")
+VISUAL_KINDS = (*CHART_KINDS, "timeline", "list", "illustration", "page",
+                "choices")
 # Kinds that only put text on screen: the centre of the frame is for
 # pictures, so a script may no longer use them.
 REMOVED_KINDS = ("number", "words")
@@ -153,19 +154,24 @@ def _illustration_problems(v: Visual) -> list[str]:
     out = []
     _forbid(v, ("title", "source", "unit", "labels", "values", "figure",
                 "items", "focus", "highlight"), out)
-    if v.name is None:
-        out.append("has no 'name'")
-    elif not isinstance(v.name, str) or not v.name:
-        out.append("'name' must be a non-empty string")
-    else:
-        entry = load_library().get(v.name)
-        if entry is None:
-            out.append(f"names {v.name!r}, which is not in "
-                       f"film/illustrations/illustrations.toml")
-        elif not entry.path.is_file():
-            out.append(f"names {v.name!r}, whose file {entry.file!r} "
-                       f"does not exist")
+    out += _library_problems(v.name, "name")
     return out
+
+
+def _library_problems(name: object, key: str) -> list[str]:
+    """`name`, given as `key`: an entry in the illustration library whose
+    file exists."""
+    if name is None:
+        return [f"has no {key!r}"]
+    if not isinstance(name, str) or not name:
+        return [f"{key!r} must be a non-empty string"]
+    entry = load_library().get(name)
+    if entry is None:
+        return [f"names {name!r}, which is not in "
+                f"film/illustrations/illustrations.toml"]
+    if not entry.path.is_file():
+        return [f"names {name!r}, whose file {entry.file!r} does not exist"]
+    return []
 
 
 def _timeline_problems(v: Visual) -> list[str]:
@@ -253,6 +259,24 @@ def _page_problems(c: Contest, line: Line, v: Visual) -> list[str]:
     return out
 
 
+def _choices_visual_problems(c: Contest, line: Line, v: Visual) -> list[str]:
+    """A `choices` visual: one page of a choice question's grid, citing
+    the source its options are quoted from. Where it may appear, and how
+    many, is check_choices's."""
+    if c.script.choices is None:
+        return ["needs a [choices] table in script.toml"]
+    out = []
+    _forbid(v, ("title", "unit", "labels", "values", "figure", "items",
+                "name", "focus", "highlight"), out)
+    out += _source_problems(c, line, v)
+    want = c.script.choices.source
+    if isinstance(v.source, str) and isinstance(want, str) \
+            and v.source != want:
+        out.append(f"cites {v.source!r}, but the choices are quoted from "
+                   f"{want!r}")
+    return out
+
+
 def _visual_problems(c: Contest, line: Line, v: Visual) -> list[str]:
     """Everything wrong with visual `v` on `line`, per
     docs/SCRIPT-FORMAT.md."""
@@ -271,6 +295,8 @@ def _visual_problems(c: Contest, line: Line, v: Visual) -> list[str]:
         return _illustration_problems(v)
     if v.kind == "page":
         return _page_problems(c, line, v)
+    if v.kind == "choices":
+        return _choices_visual_problems(c, line, v)
     for key in ("focus", "highlight"):
         if getattr(v, key) is not None:
             return [f"a {v.kind!r} visual may not have {key!r}"]
@@ -538,6 +564,13 @@ def check_template(c: Contest) -> list[Failure]:
         return [Failure("template",
                         f"unknown version {sc.template_version} of template "
                         f"{sc.template!r}")]
+    if sc.choices is not None:
+        t = CHOICE_TEMPLATES.get(sc.template, {}).get(sc.template_version)
+        if t is None:
+            return [Failure("template",
+                            f"{sc.template} v{sc.template_version} has no "
+                            f"choice question: a [choices] table needs "
+                            f"{_choice_versions()}")]
     out = []
     got = tuple(s.id for s in sc.sections)
     if not _fits(got, t):
@@ -546,6 +579,7 @@ def check_template(c: Contest) -> list[Failure]:
         note = " (* zero or more)" if t.repeated else ""
         out.append(Failure("template",
                            f"sections are {', '.join(got) or '(none)'}; "
+                           f"{'a choice question under ' if sc.choices is not None else ''}"
                            f"{sc.template} v{sc.template_version} requires "
                            f"{want}{note}"))
     for label, sec in sc.labelled():
@@ -557,6 +591,11 @@ def check_template(c: Contest) -> list[Failure]:
                 msg = f"must have side = {want!r}, has {sec.side!r}"
             out.append(Failure("template", msg, label))
     return out
+
+
+def _choice_versions() -> str:
+    return " or ".join(f"{name} v{v}" for name, vs in CHOICE_TEMPLATES.items()
+                       for v in vs)
 
 
 def check_side_headings(c: Contest) -> list[Failure]:
@@ -743,6 +782,239 @@ def check_airtime(c: Contest) -> list[Failure]:
                     f"{label_b}={on_b:.2f}s")]
 
 
+_PAREN = re.compile(r"\s*\([^()]*\)")
+
+
+def spoken_forms(label: str) -> set[str]:
+    """The ways a narration may name an option printed as `label`: as
+    printed, or with any of its parenthesised parts left out (a calibre, a
+    code: words that read badly aloud), whitespace collapsed."""
+    groups = list(_PAREN.finditer(label))
+    out = set()
+    for mask in range(1 << len(groups)):
+        kept, pos = [], 0
+        for k, m in enumerate(groups):
+            kept.append(label[pos:m.start()])
+            if not mask >> k & 1:
+                kept.append(m.group(0))
+            pos = m.end()
+        kept.append(label[pos:])
+        out.add(_normalise("".join(kept)))
+    return out
+
+
+def _letter_series(letters: list[str]) -> bool:
+    """Whether `letters`, each stripped to its letters and digits ("(a)" ->
+    "a"), run on from the first of a series: a, b, c; A, B, C; or 1, 2, 3."""
+    cores = [re.sub(r"[^0-9A-Za-z]", "", x) for x in letters]
+    if not cores or cores[0] not in ("a", "A", "1"):
+        return False
+    for i, core in enumerate(cores):
+        if cores[0] == "1":
+            if core != str(i + 1):
+                return False
+        elif len(core) != 1 or ord(core) != ord(cores[0]) + i:
+            return False
+    return True
+
+
+def _in_text(phrase: str, archived: str) -> bool:
+    """Whether `phrase` occurs in an archived source's text, compared as
+    the card is (verbatim, whitespace collapsed), except that a hyphen in
+    the phrase may be missing from the text: pdftotext joins a word
+    hyphenated across a line break ("bolt-" / "action" -> "boltaction")."""
+    want = _normalise(phrase)
+    if want in archived:
+        return True
+    parts = [re.escape(p) for p in want.split("-")]
+    return re.search("-?".join(parts), archived) is not None
+
+
+def _occurrences(text: str, names: list[str]) -> list[tuple[int, int]]:
+    """(position, option index) of every occurrence of each option's name
+    in `text`, in text order; a name inside a longer option's name (say
+    "Colt" in "Colt pistol") is not counted for the shorter one."""
+    found = []
+    taken = [False] * len(text)
+    for i in sorted(range(len(names)), key=lambda i: -len(names[i])):
+        name = names[i]
+        if not name:
+            continue
+        k = text.find(name)
+        while k >= 0:
+            if not any(taken[k:k + len(name)]):
+                found.append((k, i))
+                for j in range(k, k + len(name)):
+                    taken[j] = True
+            k = text.find(name, k + 1)
+    return sorted(found)
+
+
+def check_choices(c: Contest) -> list[Failure]:
+    """A choice question's `[choices]` (docs/SCRIPT-FORMAT.md, STANDARD.md
+    section 8): at least two options, each printed and drawn alike, its
+    letter and label verbatim in the cited source, its letters in ballot
+    order; no yes/no lines on the card; and the narration naming every
+    option the same number of times, each once in the `choices` section,
+    in ballot order, on the grid page that shows it."""
+    ch = c.script.choices
+    if ch is None:
+        return []
+    out = []
+
+    def fail(msg, section=None, line=None):
+        out.append(Failure("choices", msg, section, line))
+
+    card = c.script.card
+    if card is not None and (card.yes is not None or card.no is not None):
+        fail("the card has 'yes'/'no' lines, but a choice question has no "
+             "yes or no: the card lists the choices instead")
+    opts = ch.choices
+    if len(opts) < 2:
+        fail(f"has {len(opts)} choice{'' if len(opts) == 1 else 's'}; a "
+             f"choice question needs at least 2")
+    ok_labels = True
+    for i, o in enumerate(opts):
+        what = f"choice[{i}]"
+        if not isinstance(o.label, str) or not o.label.strip():
+            fail(f"{what} has no 'label' (a non-empty string)")
+            ok_labels = False
+            continue
+        what = f"choice {o.label!r}"
+        if o.letter is not None and (not isinstance(o.letter, str)
+                                     or not o.letter.strip()):
+            fail(f"{what}: 'letter' must be a non-empty string")
+        if o.spoken is not None:
+            if not isinstance(o.spoken, str) or not o.spoken.strip():
+                fail(f"{what}: 'spoken' must be a non-empty string")
+                ok_labels = False
+            elif _normalise(o.spoken) not in spoken_forms(o.label):
+                fail(f"{what}: spoken {o.spoken!r} is not the label as "
+                     f"printed, with or without its parenthesised parts")
+                ok_labels = False
+        for msg in _library_problems(o.illustration, "illustration"):
+            fail(f"{what} {msg}")
+    lettered = [o.letter is not None for o in opts]
+    if any(lettered) and not all(lettered):
+        fail("some choices have a 'letter' and some do not: every choice "
+             "has one, or none does")
+    elif all(lettered) and opts and all(isinstance(o.letter, str)
+                                        for o in opts):
+        if not _letter_series([o.letter for o in opts]):
+            fail(f"letters {', '.join(o.letter for o in opts)} are not in "
+                 f"ballot order (a, b, c ...; A, B, C ...; or 1, 2, 3 ...)")
+    labels = [o.label for o in opts if isinstance(o.label, str)]
+    if len(set(labels)) != len(labels):
+        fail("two choices have the same label")
+
+    # the source, and each option verbatim in it
+    src = None
+    if not isinstance(ch.source, str) or not ch.source:
+        fail("[choices] has no 'source' (the source id its options are "
+             "quoted from)")
+    else:
+        src = c.source(ch.source)
+        if src is None:
+            fail(f"source {ch.source!r} is not in sources.toml")
+        elif card is not None and isinstance(card.source, str) \
+                and card.source != ch.source:
+            fail(f"source {ch.source!r} is not the card's {card.source!r}: "
+                 f"the card lists the choices, verbatim from its own source")
+    if src is not None:
+        path = (c.path / src.file).resolve()
+        if path.is_relative_to(c.path.resolve()) and path.is_file():
+            try:
+                archived = _archived_text(path)
+            except UnreadableSource as e:
+                fail(f"cannot read source {ch.source!r} ({src.file}) to "
+                     f"check the choices' labels: {e}")
+            else:
+                for o in opts:
+                    if isinstance(o.label, str) and o.label.strip() \
+                            and not _in_text(o.printed, archived):
+                        fail(f"choice {o.printed!r} does not appear verbatim "
+                             f"in source {ch.source!r} ({src.file})")
+
+    if ok_labels and len(opts) >= 2:
+        out += _choice_narration(c, opts)
+    return out
+
+
+def _choice_narration(c: Contest, opts: tuple[Choice, ...]) -> list[Failure]:
+    """The narration's side of check_choices: each option named once in
+    the `choices` section, in ballot order, while its grid page is up;
+    as often as every other over the whole script; and one `choices`
+    visual per grid page, the first on the section's first line, and no
+    other visual in the section or `choices` visual outside it."""
+    out = []
+
+    def fail(msg, section=None, line=None):
+        out.append(Failure("choices", msg, section, line))
+
+    names = [_normalise(o.said) for o in opts]
+    counts = Counter()
+    for label, sec in c.script.labelled():
+        for i, line in enumerate(sec.lines):
+            for _, k in _occurrences(_normalise(line.text), names):
+                counts[k] += 1
+            v = line.visual
+            if sec.id != CHOICES and v is not None and v.kind == "choices":
+                fail(f"a 'choices' visual belongs only in the {CHOICES!r} "
+                     f"section", label, i)
+    if len(set(counts[k] for k in range(len(opts)))) > 1:
+        said = ", ".join(f"{opts[k].said!r} {counts[k]}"
+                         for k in range(len(opts)))
+        fail(f"the narration names the choices unequally often ({said}); "
+             f"every choice is named as often as every other")
+
+    secs = [(label, sec) for label, sec in c.script.labelled()
+            if sec.id == CHOICES]
+    if len(secs) != 1:
+        return out  # check_template reports it
+    label, sec = secs[0]
+    want = grid.pages(len(opts))
+    at = []
+    for i, line in enumerate(sec.lines):
+        v = line.visual
+        if v is None:
+            continue
+        if v.kind != "choices":
+            fail(f"the {CHOICES!r} section shows only the choices' grid; "
+                 f"this line has a {v.kind!r} visual", label, i)
+        else:
+            at.append(i)
+    if len(at) != len(want):
+        fail(f"has {len(at)} 'choices' visual{'' if len(at) == 1 else 's'}; "
+             f"{len(opts)} choices take {len(want)} grid page"
+             f"{'' if len(want) == 1 else 's'} "
+             f"({' + '.join(str(len(p)) for p in want)}), one visual each",
+             label)
+        return out
+    if at[0] != 0:
+        fail("the first grid page must come with the section's first line",
+             label, at[0])
+    # each page's options, in ballot order, in the lines it is up for
+    order = []
+    for p, (a, page) in enumerate(zip(at, want)):
+        b = at[p + 1] if p + 1 < len(at) else len(sec.lines)
+        text = " ".join(_normalise(ln.text) for ln in sec.lines[a:b])
+        found = _occurrences(text, names)
+        for k in page:
+            n = sum(1 for _, j in found if j == k)
+            if n != 1:
+                fail(f"choice {opts[k].said!r} is named {n} times while its "
+                     f"grid page is up; name it exactly once", label, a)
+        order += [j for _, j in found if j in page]
+        stray = sorted({j for _, j in found if j not in page})
+        for j in stray:
+            fail(f"choice {opts[j].said!r} is named while grid page "
+                 f"{p + 1} is up, which does not show it", label, a)
+    if order != sorted(order) and len(set(order)) == len(order):
+        fail("the narration lists the choices out of ballot order: "
+             + ", ".join(repr(opts[k].said) for k in order), label)
+    return out
+
+
 def check_judgment_words(c: Contest, words: tuple[str, ...]) -> list[Failure]:
     """STANDARD.md 3.1: no judgment word in a heading, a line or anything
     a visual shows. The `[card]` is exempt: it quotes the official page
@@ -802,6 +1074,7 @@ def check_contest(c: Contest, standard: Standard | None = None
         *check_ballot(c),
         *check_card(c),
         *check_highlight_balance(c),
+        *check_choices(c),
         *check_sources(c),
         *check_template(c),
         *check_side_headings(c),

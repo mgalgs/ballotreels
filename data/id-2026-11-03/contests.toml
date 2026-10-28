@@ -3,10 +3,11 @@
 # ballot. `number` is a measure's ballot designation (a string). Titles
 # pair the designation with the measure's short title as the 2026 Idaho
 # Voter Pamphlet prints it: for a joint resolution, the subject it is
-# "relating to"; for the initiative, the name of the act.
-#
-# Advisory Question H.B. 932 is on the ballot too, but is not listed yet:
-# it asks voters to choose among options, and needs its own template.
+# "relating to"; for the initiative, the name of the act; for the
+# advisory question, the pamphlet's own heading, "Advisory Question -
+# House Bill 932", with the subject the bill is "relating to" (the state
+# gun). It asks voters to choose one of six options: a choice question
+# (docs/SCRIPT-FORMAT.md).
 
 [election]
 id = "id-2026-11-03"
@@ -33,3 +34,10 @@ kind = "measure"
 division = "ocd-division/country:us/state:id"
 title = "Proposition 1: Reproductive Freedom & Privacy Act"
 number = "1"
+
+[[contest]]
+id = "id-2026-11-03-advisory-hb-932"
+kind = "measure"
+division = "ocd-division/country:us/state:id"
+title = "Advisory Question – House Bill 932: State Gun"
+number = "932"

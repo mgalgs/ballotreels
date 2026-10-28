@@ -87,6 +87,40 @@ CARD_KEYS = tuple(Card.__dataclass_fields__)
 
 
 @dataclass(frozen=True)
+class Choice:
+    """One of a choice question's options, as the ballot prints it
+    (docs/SCRIPT-FORMAT.md). As with Visual, each field is None when its
+    key is absent, and the checks judge the values."""
+    letter: Any = None        # as printed, "(a)"; all choices or none
+    label: Any = None         # verbatim, drawn on the card and the grid
+    spoken: Any = None        # as narrated; None: the label
+    illustration: Any = None  # its drawing on the grid, from the library
+
+    @property
+    def said(self) -> Any:
+        """The name the narration says: `spoken`, or the label."""
+        return self.label if self.spoken is None else self.spoken
+
+    @property
+    def printed(self) -> str:
+        """The letter and label as the ballot prints them: "(a) ..."."""
+        parts = (self.letter, self.label)
+        return " ".join(p for p in parts if isinstance(p, str) and p)
+
+
+CHOICE_KEYS = tuple(Choice.__dataclass_fields__)
+
+
+@dataclass(frozen=True)
+class Choices:
+    """The script's `[choices]`: the options of a question that asks voters
+    to pick one of several, rather than yes or no, in ballot order. A
+    script with this table is a choice question."""
+    source: Any = None
+    choices: tuple[Choice, ...] = ()
+
+
+@dataclass(frozen=True)
 class Line:
     text: str
     sources: tuple[str, ...] | None  # None when the key is absent
@@ -111,6 +145,8 @@ class Script:
     standard_version: int
     sections: tuple[Section, ...]
     card: Card | None = None  # None when there is no [card] table
+    # None when there is no [choices] table: a yes/no question
+    choices: Choices | None = None
 
     def labels(self) -> tuple[str, ...]:
         """Each section's label, in file order: its id, or `id[k]` for the
@@ -245,6 +281,7 @@ def _load_script(path: Path) -> Script:
     card = (None if raw_card is None else
             Card(**{k: raw_card[k] for k in CARD_KEYS if k in raw_card}))
     return Script(
+        choices=_load_choices(data, name),
         contest=_get(data, "contest", str, name),
         template=_get(data, "template", str, name),
         template_version=_get(data, "template_version", int, name),
@@ -252,6 +289,19 @@ def _load_script(path: Path) -> Script:
         sections=tuple(sections),
         card=card,
     )
+
+
+def _load_choices(data: dict[str, Any], name: str) -> Choices | None:
+    raw = _get(data, "choices", dict, name, None)
+    if raw is None:
+        return None
+    where = f"{name}: [choices]"
+    out = []
+    for i, c in enumerate(_get(raw, "choice", list, where, [])):
+        if not isinstance(c, dict):
+            raise ContestError(f"{where} choice[{i}]: must be a table")
+        out.append(Choice(**{k: c[k] for k in CHOICE_KEYS if k in c}))
+    return Choices(source=raw.get("source"), choices=tuple(out))
 
 
 def load_contest(path: str | Path) -> Contest:
