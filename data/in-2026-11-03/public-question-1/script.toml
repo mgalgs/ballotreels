@@ -1,8 +1,8 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
 # is about; what the Constitution says about bail today; what the
-# amendment would add (two conditions under which other offenses are not
-# bailable); that no cost estimate is printed; the two sides; what a
-# vote does.
+# amendment would add (bail restricted for a substantial risk, and two
+# conditions under which other offenses are not bailable); that no cost
+# estimate is printed; the two sides; what a vote does.
 #
 # The card quotes the Indiana Election Division's "2026 Indiana Election
 # Legislation Summary": the ballot text as it prints it ("Public
@@ -13,10 +13,11 @@
 # two meanings from the ballot text on the card.
 #
 # What changes is read from the enrolled resolution, where bold marks the
-# added words. The script narrates the new final sentence (the two
-# conditions, as the ballot states them) and leaves out the added
-# "unless the accused poses a substantial risk" clause for length; the
-# card's summary states it.
+# added words. The amendment adds two things, and the script narrates
+# both: the "unless the accused poses a substantial risk" clause (in the
+# summary's words, "allow the court to restrict bail") and the new final
+# sentence (the two conditions, as the ballot states them). The vote
+# lines say "these limits" so a yes vote is not narrowed to either one.
 #
 # Fiscal: the summary prints no cost estimate, so the fiscal line is the
 # standard one for a guide with none (the round's rule 5a). Whether the
@@ -56,23 +57,28 @@ id = "today"
 heading = "Today"
 
 [[section.line]]
-text = "Today, Indiana's Constitution makes offenses other than murder or treason bailable."
-sources = ["text"]
+text = "Today, Indiana's Constitution makes all offenses bailable except murder or treason, when the proof is evident or the presumption strong."
+sources = ["summary", "text"]
 
 [section.line.visual]
 kind = "illustration"
 name = "constitution-page"
-
-[[section.line]]
-text = "Murder or treason is not bailable when the proof is evident or the presumption strong."
-sources = ["summary", "text"]
 
 [[section]]
 id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "The amendment would make other offenses not bailable when two things are true."
+text = "The amendment would let courts restrict bail when the accused poses a substantial risk to others or the community."
+sources = ["summary", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["allow the court to restrict bail to a person charged with a crime when the accused poses a substantial risk"]
+
+[[section.line]]
+text = "It would also deny bail when two things are true."
 sources = ["summary", "text"]
 
 [section.line.visual]
@@ -140,8 +146,8 @@ id = "vote"
 heading = "What your vote means"
 
 [[section.line]]
-text = "A yes vote means other offenses could also be denied bail under the two conditions."
-sources = ["summary", "ballot-act", "county-notice"]
+text = "A yes vote adds these limits on bail."
+sources = ["summary", "text", "ballot-act", "county-notice"]
 
 [section.line.visual]
 kind = "page"
@@ -149,7 +155,7 @@ source = "summary"
 highlight = ["a person charged with an offense other than murder or treason is not entitled to bail"]
 
 [[section.line]]
-text = "A no vote means other offenses stay bailable, as they are today."
+text = "A no vote keeps bail as it is today."
 sources = ["summary", "text", "county-notice"]
 
 [section.line.visual]
