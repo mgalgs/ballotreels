@@ -63,11 +63,13 @@ class LocalServerTestCase(ServerTestCase):
 
     def ballot_for_zip(self, zip_code):
         """The ballot the app asks for once a zip needs no question: every
-        division the zip answer lists."""
+        division the zip answer lists, and its partial ones again as `p`
+        (app.js's ballotParams)."""
         doc = self.get_json(f"/api/zip/{zip_code}")
         self.assertEqual(doc["ambiguous"], [])
-        query = "&".join(f"d={e['ocd_id']}" for entries in
-                         doc["kinds"].values() for e in entries)
+        query = "&".join([f"d={e['ocd_id']}" for entries in
+                          doc["kinds"].values() for e in entries] +
+                         [f"p={d}" for d in doc["partial"]])
         return self.get_json(f"/api/ballot?{query}")
 
 
@@ -231,7 +233,13 @@ class CountyIndexTest(unittest.TestCase):
             ["ca-2026-11-03-prop-90", "ca-2026-11-03-prop-91",
              "ca-2026-11-03-sd-county-measure-a",
              "ca-2026-11-03-sd-county-measure-b",
-             "ca-2026-11-03-imperial-county-measure-c"])
+             "ca-2026-11-03-imperial-county-measure-c",
+             "ca-2026-11-03-san-diego-city-measure-d",
+             "ca-2026-11-03-el-cajon-city-measure-e",
+             "ca-2026-11-03-sd-unified-measure-f",
+             "ca-2026-11-03-grossmont-measure-g"])
+        self.assertEqual(level_of(SD_CITY, STATE), "place")
+        self.assertEqual(level_of(GROSSMONT, STATE), "school_district")
 
     def test_crash_course_stays_statewide(self):
         index = load_index(ELECTION_DIR)
@@ -250,9 +258,7 @@ class CountyEndToEndTest(LocalServerTestCase):
 
     def test_ballot_has_its_county_measures_only(self):
         doc = self.ballot_for_zip("92101")
-        self.assertEqual([lvl["level"] for lvl in doc["levels"]],
-                         ["state", "county"])
-        self.assertEqual(_ids(doc["levels"][1:]),
+        self.assertEqual(_ids(doc["levels"][1:2]),
                          ["ca-2026-11-03-sd-county-measure-a",
                           "ca-2026-11-03-sd-county-measure-b"])
         doc = self.ballot_for_zip("92250")
@@ -281,3 +287,49 @@ class CountyEndToEndTest(LocalServerTestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def _maybe(levels):
+    return {c["id"]: c.get("maybe", False)
+            for lvl in levels for c in lvl["contests"]
+            if lvl["level"] in ("place", "school_district")}
+
+
+class LocalBallotTest(LocalServerTestCase):
+    def test_zip_wholly_in_a_city(self):
+        doc = self.ballot_for_zip("92101")
+        self.assertEqual([lvl["level"] for lvl in doc["levels"]],
+                         ["state", "county", "place", "school_district"])
+        self.assertEqual(_maybe(doc["levels"]),
+                         {"ca-2026-11-03-san-diego-city-measure-d": False,
+                          "ca-2026-11-03-sd-unified-measure-f": False})
+
+    def test_zip_across_cities_lists_every_one_as_maybe(self):
+        doc = self.ballot_for_zip("92102")
+        self.assertEqual(_maybe(doc["levels"]),
+                         {"ca-2026-11-03-san-diego-city-measure-d": True,
+                          "ca-2026-11-03-el-cajon-city-measure-e": True,
+                          "ca-2026-11-03-sd-unified-measure-f": True,
+                          "ca-2026-11-03-grossmont-measure-g": True})
+
+    def test_zip_partly_in_a_city(self):
+        doc = self.ballot_for_zip("92103")
+        self.assertEqual(_maybe(doc["levels"]),
+                         {"ca-2026-11-03-el-cajon-city-measure-e": True,
+                          "ca-2026-11-03-grossmont-measure-g": False})
+
+    def test_many_divisions(self):
+        # a zip's own and every city and school district it overlaps:
+        # more than the ten a ballot request once allowed
+        query = "&".join([f"d={STATE}/cd:{n}" for n in range(1, 12)] +
+                         [f"d={GROSSMONT}"])
+        doc = self.get_json(f"/api/ballot?{query}")
+        self.assertIn("ca-2026-11-03-grossmont-measure-g",
+                      _ids(doc["levels"]))
+
+    def test_app_reads_the_partial_divisions(self):
+        app = (REPO / "ballotreels" / "site" / "static" /
+               "app.js").read_text(encoding="utf-8")
+        self.assertIn('params.getAll("p")', app)
+        self.assertIn("ballotParams(body.kinds, body.partial)", app)
+        self.assertIn("depending on your address", app)

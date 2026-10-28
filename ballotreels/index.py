@@ -27,8 +27,10 @@ CRASH_COURSE = "crash-course"
 
 # Division substrings, in ballot order (docs/ARCHITECTURE.md divisions are
 # OCD-IDs; "state" is matched by equality with the election's own state
-# division, the rest by substring).
-LEVELS = ("state", "cd", "sldu", "sldl", "county")
+# division, the rest by substring): statewide, congressional, legislative,
+# then the local ones, county, city ("place") and school district.
+LEVELS = ("state", "cd", "sldu", "sldl", "county", "place",
+          "school_district")
 
 
 class ContestIndexError(Exception):
@@ -270,7 +272,7 @@ def level_of(division: str, state_division: str) -> str:
     "other" if it matches none of them."""
     if division == state_division:
         return "state"
-    for level in ("cd", "sldu", "sldl", "county"):
+    for level in LEVELS[1:]:
         if f"/{level}:" in division:
             return level
     return "other"
@@ -283,8 +285,9 @@ def _number_key(number: str | None, position: int) -> tuple[int, Any]:
 
 
 def ballot_order(index: ContestIndex) -> tuple[IndexEntry, ...]:
-    """Every entry, grouped by level in the fixed order the brief gives
-    (statewide, congressional, legislative, county), races in file order
+    """Every entry, grouped by level in LEVELS' order (statewide,
+    congressional, legislative, county, city, school district), races in
+    file order
     then measures in natural number order within each level (any
     unnumbered ones after, in file order)."""
     level_rank = {level: i for i, level in enumerate(LEVELS)}

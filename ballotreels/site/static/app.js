@@ -506,7 +506,8 @@ async function route() {
   if (m) return renderZip(m[1]);
   if (hash && path === "/address") return renderAddress();
   if (hash && path === "/ballot") {
-    return renderBallot(params.getAll("d"), params.get("addr"));
+    return renderBallot(params.getAll("d"), params.get("addr"),
+                        params.getAll("p"));
   }
   notFound();
 }
@@ -737,21 +738,26 @@ async function renderZip(zip) {
     return;
   }
   if (body.ambiguous.length === 0) {
-    const divisions = [];
-    for (const entries of Object.values(body.kinds)) {
-      for (const entry of entries) divisions.push(entry.ocd_id);
-    }
-    // The geocoder's matched address rides along in the hash so the
-    // ballot page can show it and the voter can check it.
-    const params = divisions.map((d) => `d=${encodeURIComponent(d)}`)
-      .concat([`addr=${encodeURIComponent(body.matched_address || "")}`])
-      .join("&");
     // Replace, so Back from the ballot returns home, not to a page
     // that would forward straight back here.
-    go(`/#/ballot?${params}`, true);
+    go(`/#/ballot?${ballotParams(body.kinds, body.partial)}`, true);
     return;
   }
   await renderAmbiguousKind(zip, body, body.ambiguous[0]);
+}
+
+// The ballot's query: every division (`d`), and those of a zip's cities
+// and school districts that cover only part of it (`p`), whose contests
+// the ballot marks as depending on the address. No question is asked
+// about those: a measure of each is shown, so none is missed.
+function ballotParams(kinds, partial) {
+  const divisions = [];
+  for (const entries of Object.values(kinds)) {
+    for (const entry of entries) divisions.push(entry.ocd_id);
+  }
+  return divisions.map((d) => `d=${encodeURIComponent(d)}`)
+    .concat((partial || []).map((d) => `p=${encodeURIComponent(d)}`))
+    .join("&");
 }
 
 const KIND_NAMES = {
@@ -832,18 +838,15 @@ function selectDistrict(zip, zipDoc, chosenKind, chosenOcdId) {
       remaining[0]);
     return;
   }
-  const divisions = [];
-  for (const entries of Object.values(kinds)) {
-    for (const entry of entries) divisions.push(entry.ocd_id);
-  }
-  const params = divisions.map((d) => `d=${encodeURIComponent(d)}`).join("&");
-  go(`/#/ballot?${params}`);
+  go(`/#/ballot?${ballotParams(kinds, zipDoc.partial)}`);
 }
 
 const LEVEL_NAMES = {
   state: "Statewide",
   cd: "Congressional",
   county: "County",
+  place: "City",
+  school_district: "School district",
 };
 
 function levelName(level, chambers) {
@@ -894,10 +897,18 @@ function contestHeading(contest) {
   const { eyebrow, title } = titleParts(contest);
   if (!eyebrow) {
     return [el("h3", { class: "contest-eyebrow contest-title-only",
-                       text: title })];
+                       text: title }), ...localNotes(contest)];
   }
   return [el("h3", { class: "contest-eyebrow", text: eyebrow }),
-          el("p", { class: "contest-title", text: title })];
+          el("p", { class: "contest-title", text: title }),
+          ...localNotes(contest)];
+}
+
+// A ballot's local contest that the zip alone can't place on it: one of
+// a city or school district covering only part of the zip.
+function localNotes(contest) {
+  return contest.maybe ? [el("p", { class: "local-note",
+    text: "May be on your ballot, depending on your address." })] : [];
 }
 
 // The ballot list does not carry poster URLs; a local video's poster
@@ -907,10 +918,12 @@ function posterFor(videoUrl) {
   return videoUrl.replace(/video\.mp4$/, "poster.jpg");
 }
 
-async function renderBallot(divisions, matchedAddress) {
+async function renderBallot(divisions, matchedAddress, partial) {
   app.appendChild(loading("Getting your ballot..."));
   const token = routeToken;
-  const query = divisions.map((d) => `d=${encodeURIComponent(d)}`).join("&");
+  const query = divisions.map((d) => `d=${encodeURIComponent(d)}`)
+    .concat((partial || []).map((d) => `p=${encodeURIComponent(d)}`))
+    .join("&");
   const { ok, status, body } = await getJson(`/api/ballot?${query}`);
   if (isStale(token)) return;
   app.innerHTML = "";

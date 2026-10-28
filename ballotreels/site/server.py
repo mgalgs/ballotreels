@@ -77,6 +77,11 @@ MAX_ADDRESS_CHARS = 200
 MAX_GEOCODER_CALLS = 4
 # The window of the global Generate cap and the per-IP address limit.
 HOUR = 3600
+# The most divisions one ballot request may name: a zip's statewide,
+# congressional, legislative and county ones, and every city and school
+# district it overlaps.
+MAX_BALLOT_DIVISIONS = 40
+
 # A rate-limit bucket that is not a client IP.
 GLOBAL_BUCKET = "*"
 
@@ -989,15 +994,20 @@ class PublicHandler(_JsonHandler):
         self._json(200, result)
 
     def _ballot(self) -> None:
+        """The contests of the divisions `d`; those of the divisions also
+        given as `p` (a zip's partial ones: ballotreels.geo.lookup) are
+        marked `maybe`, on the ballot or not depending on the address."""
         deps = self.server.deps
         divisions: list[str] = []
         seen = set()
-        for d in self._query().get("d", []):
+        query = self._query()
+        for d in query.get("d", []):
             if d not in seen:
                 seen.add(d)
                 divisions.append(d)
-            if len(divisions) >= 10:
+            if len(divisions) >= MAX_BALLOT_DIVISIONS:
                 break
+        partial = set(query.get("p", [])[:MAX_BALLOT_DIVISIONS])
         # The ballot is the state's whose division came with it (the
         # statewide one always does); with one state served, that one.
         state = next((deps.states[a] for a in map(state_abbr, divisions)
@@ -1021,8 +1031,10 @@ class PublicHandler(_JsonHandler):
                 bucket = {"level": lvl, "contests": []}
                 levels.append(bucket)
                 current = lvl
-            bucket["contests"].append(
-                _contest_summary(entry, state, deps))
+            summary = _contest_summary(entry, state, deps)
+            if entry.division in partial:
+                summary["maybe"] = True
+            bucket["contests"].append(summary)
         self._json(200, {"election": index.election.id,
                          "state": state.abbr,
                          "state_name": _state_name(state.abbr),
