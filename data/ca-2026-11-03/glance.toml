@@ -256,3 +256,12 @@ source = "ballot-question"
 quote = "providing approximately $2,000,000 in funds annually until ended by voters"
 amount = 2000000
 period = "per-year"
+
+# City of Grand Terrace Measure N: the guide prints no tax rate
+# statement; the one estimate is the City Attorney's Impartial Analysis's.
+[grand-terrace-measure-n]
+source = "guide-page"
+quote = "It is estimated that this tax will generate approximately $1,200,000 annually in revenue."
+amount = 1200000
+period = "per-year"
+direction = "revenue-gain"
