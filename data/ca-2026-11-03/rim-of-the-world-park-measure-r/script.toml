@@ -6,7 +6,9 @@
 # The archived guide pages print no ballot question for Measure R, so the
 # card quotes it from the Board of Directors' Resolution No. 07132026.3,
 # which recites it; the question has no title line, so the card's title
-# is its first clause and its summary the rest, verbatim. The resolution
+# is the whole question, its origin the board that adopted the
+# resolution, and its summary the resolution's sentence submitting the
+# measure to the voters, verbatim. The resolution
 # prints no yes or no lines, so the card has none; the vote lines take
 # their meanings from County Counsel's Impartial Analysis and highlight
 # the question's own figures. "Counsel" is heard as "Council"
@@ -31,9 +33,9 @@ standard_version = 2
 [card]
 source = "ballot-question"
 number = "R"
-title = "Shall Rim of the World Recreation & Park District adopt a resolution increasing its annual special parcel tax from $22 to $37/parcel/year, with an annual escalator of 1%, until ended by voters,"
-origin = "a General District Election is to be held in the Rim of the World Recreation and Park District, California on November 3, 2026, at which there will be submitted to the voters the following measure:"
-summary = "generating approximately $510,000 the first year, to sustain essential recreation services; improve and maintain parks, recreational facilities, and community amenities; address rising costs, emergency repair and disaster recovery; all funds remain local used only for these purposes with annual audit/ reporting?"
+title = "Shall Rim of the World Recreation & Park District adopt a resolution increasing its annual special parcel tax from $22 to $37/parcel/year, with an annual escalator of 1%, until ended by voters, generating approximately $510,000 the first year, to sustain essential recreation services; improve and maintain parks, recreational facilities, and community amenities; address rising costs, emergency repair and disaster recovery; all funds remain local used only for these purposes with annual audit/ reporting?"
+origin = "Board of Directors of the Rim of the World Recreation and Park District"
+summary = "a General District Election is to be held in the Rim of the World Recreation and Park District, California on November 3, 2026, at which there will be submitted to the voters the following measure:"
 
 [[section]]
 id = "what"
