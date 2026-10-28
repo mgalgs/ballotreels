@@ -1,0 +1,151 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; who appoints regents today; what Amendment 3 would change:
+# the committees, the governor's choice limited to their nominees, and
+# the party-registration rule; that the guide includes no cost estimate;
+# one point per side; what a vote does.
+#
+# The card quotes the Secretary of State's 2026 General Election Voter
+# Guide: the ballot title, and the amendment's "Purpose", whose opening
+# words are the origin line and whose last four sentences, from student
+# regents today to the change, are the summary (the sentences before
+# them run across a page break, so the card cannot quote them whole).
+# The guide prints no "a vote for means" lines, so the vote lines take
+# their two meanings from one phrase of the summary, the same for each,
+# so the two stay parallel.
+#
+# The guide's reprint of the full text predates the resolution's
+# amendment ("SIX months"); every full-text claim is cited from the
+# Legislative Council Service's booklet and the resolution as passed
+# ("twelve months"). The student-regent change is on the card and
+# left out of the narration for length. The arguments are the
+# Legislative Council Service's, two a side, each side's two as its
+# list. The Legislative Finance Committee's report finds only election
+# costs, so the fiscal line says the guide includes no cost estimate. No
+# person is named.
+
+contest = "nm-2026-11-03-constitutional-amendment-3"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide"
+number = "3"
+title = "PROPOSING AN AMENDMENT TO ARTICLE 12, SECTION 13 OF THE CONSTITUTION OF NEW MEXICO TO ESTABLISH NOMINATING COMMITTEES TO PROVIDE LISTS OF NOMINEES TO THE GOVERNOR FOR APPOINTMENT OF NONSTUDENT MEMBERS TO THE BOARDS OF REGENTS OF STATE EDUCATIONAL INSTITUTIONS; PROVIDING THAT STUDENT MEMBERS OF BOARDS OF REGENTS SHALL BE APPOINTED FROM A LIST PROVIDED BY AN ELECTED STUDENT GOVERNING BODY OF THE INSTITUTION; PROVIDING THAT, EXCEPT FOR A STUDENT MEMBER, MEMBERS OF THE BOARDS OF REGENTS SHALL NOT HAVE CHANGED THEIR POLITICAL PARTY REGISTRATION IN THE TWELVE MONTHS PRECEDING APPOINTMENT."
+origin = "Constitutional Amendment 3 proposes to amend Article 12, Section 13 of the Constitution of New Mexico"
+summary = "Student regents must be students of their respective institutions and are appointed from a list provided by the president of their respective institutions. The proposed amendment would require the legislature to establish a bipartisan or nonpartisan regent nominating committee for each of the 10 state educational institutions and would limit the governor's prospective appointments to the nominees selected by the regent nominating committees. Additionally, the proposed amendment would require the governor to appoint student regents from lists provided by the elected student governing bodies of their respective institutions instead of by the institutions' presidents. Finally, excepting the student regents, the proposed amendment would disqualify a person from being appointed to a board of regents if the person changed political party registration in the 12 months preceding the person's appointment."
+
+[[section]]
+id = "what"
+heading = "Amendment 3"
+
+[[section.line]]
+text = "Constitutional Amendment 3 is about how regents are chosen."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["BOARDS OF REGENTS OF STATE EDUCATIONAL INSTITUTIONS"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the governor appoints the regents who run state colleges, universities and specialized schools; the Senate approves them."
+sources = ["guide", "lcs-summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "university-hall"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Amendment 3 would have the Legislature create a bipartisan or nonpartisan nominating committee for each institution."
+sources = ["guide", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["bipartisan or nonpartisan regent nominating committee"]
+
+[[section.line]]
+text = "The governor could appoint only the nominees a committee selects."
+sources = ["guide", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "nominee-list"
+
+[[section.line]]
+text = "Regents, except students, could not have changed parties in the prior 12 months."
+sources = ["guide", "text"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The 2026 General Election Voter Guide does not include a cost estimate for the amendment."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say committees would offer nominees who best serve each institution, and could limit politics in appointments."
+sources = ["arguments"]
+basis = ["the legislature will ensure that a nominating committee provides to the governor a list of nominees who would best serve the interests of the institution as a regent.", "Regent nominating committees may limit or remove the influence of politics from the appointment process."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Nominees who would best serve each institution", "Could limit politics in appointments"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the amendment would alter checks and balances, and nominating committees are not accountable to voters."
+sources = ["arguments"]
+basis = ["The amendment would alter the checks and balances between the legislature and the executive regarding the appointment of state officers.", "A nominating committee, on the other hand, is not accountable to the voters."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Alters the checks and balances on appointments", "Committees are not accountable to voters"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for means the governor's appointments would be limited to committee nominees."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["limit the governor's prospective appointments to the nominees selected by the regent nominating committees"]
+
+[[section.line]]
+text = "A vote against means the governor's appointments would not be limited to committee nominees."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["limit the governor's prospective appointments to the nominees selected by the regent nominating committees"]
