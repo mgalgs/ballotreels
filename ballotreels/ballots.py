@@ -99,6 +99,8 @@ BALLOTS: dict[str, Ballot] = {
                          "Riverside County Voter Information Guide",
                      "ca-2026-11-03-canyon-lake-measure-e":
                          "Riverside County Voter Information Guide",
+                     "ca-2026-11-03-indian-wells-measure-h":
+                         "Riverside County Voter Information Guide",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",
