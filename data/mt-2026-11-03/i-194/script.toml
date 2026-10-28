@@ -1,0 +1,168 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about, and what the ballot statement counts as an artificial
+# person; the legal privileges Montana law gives them today; what the
+# initiative would exclude from their powers, the penalty, and what it
+# exempts; that the pamphlet prints no cost estimate; one point per side;
+# what a vote does.
+#
+# The card quotes the Voter Information Pamphlet's ballot language: its
+# heading, its origin line, the ballot statement (verbatim, with the
+# pamphlet's own "fi" ligatures, as pdftotext extracts them) and the
+# ballot's YES/NO lines. No fiscal statement exists, so the card has no
+# fiscal quote and the fiscal section says only that the pamphlet prints
+# no cost estimate, as Arizona's and Ohio's measures do.
+#
+# "Today" says only what the complete text states the state confers on
+# an artificial person (limited liability among its charter
+# privileges). It does not say what Montana's campaign laws allow these
+# groups today: no archived official source states it, and the text's
+# findings on it are the initiative's own. No dollar figure is used:
+# the supporters' state budget comparison and campaign spending figures
+# stay out, as do the court cases the opponents cite. Each side gets its
+# two most concrete points, in its own words, with equal words.
+# No person the arguments name is named.
+
+contest = "mt-2026-11-03-i-194"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "pamphlet"
+number = "I-194"
+title = "INITIATIVE NO. 194"
+origin = "A LAW PROPOSED BY INITIATIVE PETITION"
+summary = "I-194, if passed, limits the powers of artiﬁcial persons to those powers necessary or convenient as provided by law. These powers must exclude contributing anything of value to candidate elections, supporting or opposing political parties, or supporting or opposing state or local ballot issues. Artiﬁcial persons include non-proﬁts, trusts, partnerships, corporations, trade associations, or unincorporated associations and includes all such entities doing business in Montana. Any violation of I-194 is punished by forfeiting all privileges to do business in Montana. Those privileges may be, but are not automatically, restored upon disgorgement and certiﬁcation of compliance with I-194. I-194 does not apply to the distribution of news, commentary, or editorial content. I-194 also does not apply to the state of Montana, political subdivisions, individuals, political committees, or public corporations."
+yes = "YES on Initiative I-194"
+no = "NO on Initiative I-194"
+
+[[section]]
+id = "what"
+heading = "I-194"
+
+[[section.line]]
+text = "I-194 is about political spending by artificial persons."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["limits the powers of artiﬁcial persons"]
+
+[[section]]
+id = "background"
+heading = "Artificial persons"
+
+[[section.line]]
+text = "Artificial persons include nonprofits, trusts, partnerships, corporations, trade associations and unincorporated associations."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["non-proﬁts, trusts, partnerships, corporations, trade associations, or unincorporated associations"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, Montana law gives artificial persons privileges such as limited liability."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Artificial persons could not contribute to candidate elections, or support or oppose parties or ballot issues."
+sources = ["pamphlet", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["contributing anything of value to candidate elections"]
+
+[[section.line]]
+text = "Violators would forfeit all Montana business privileges, restored only after disgorgement and certified compliance."
+sources = ["pamphlet", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["forfeiting all privileges to do business in Montana"]
+
+[[section.line]]
+text = "News and commentary, the state, political subdivisions, individuals, political committees and public corporations would be exempt."
+sources = ["pamphlet", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["news, commentary, or editorial content", "political subdivisions, individuals, political committees, or public corporations"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Montana's Voter Information Pamphlet prints no cost estimate for the initiative."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Montana grants artificial persons every power, and can end anonymous dark money in elections."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Montana grants artificial persons every power", "Ends anonymous dark money in Montana elections"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the initiative restricts free speech of businesses, churches and community groups, sparing out-of-state PACs."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Restricts free speech of local businesses and churches", "Leaves out-of-state PACs and dark money untouched"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote would approve adding language to Montana law."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["YES on Initiative I-194"]
+
+[[section.line]]
+text = "A no vote would make no change to Montana law."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["NO on Initiative I-194"]

@@ -84,6 +84,17 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label=None,
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+    # Montana's Secretary of State prints each ballot issue's ballot
+    # language, complete text and arguments in its Voter Information
+    # Pamphlet. The ballot prints the choices "YES on Constitutional
+    # Amendment CI-132" and "YES on Initiative I-194" (the badge takes
+    # the designation word from them: AMENDMENT CI-132, INITIATIVE
+    # I-194). No fiscal statement is printed: Montana prints one only
+    # where the fiscal note finds an impact.
+    "mt": Ballot(guide="Voter Information Pamphlet",
+                 fiscal_label=None,
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")

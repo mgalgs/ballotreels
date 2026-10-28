@@ -93,6 +93,18 @@ class BallotTest(unittest.TestCase):
                           ("Yes", "No"), "official-title-summary"))
         self.assertEqual(badge(oh, "State Issue 3: X", "3"), "ISSUE")
 
+    def test_montana_uses_its_pamphlets_words(self):
+        mt = BALLOTS["mt"]
+        self.assertEqual((mt.guide, mt.fiscal_label, mt.choices,
+                          mt.card_source_kind),
+                         ("Voter Information Pamphlet", None,
+                          ("Yes", "No"), "official-title-summary"))
+        # "YES on Constitutional Amendment CI-132", "YES on Initiative I-194"
+        self.assertEqual(badge(mt, "Constitutional Amendment CI-132: X",
+                               "CI-132"), "AMENDMENT")
+        self.assertEqual(badge(mt, "Initiative I-194: X", "I-194"),
+                         "INITIATIVE")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):
