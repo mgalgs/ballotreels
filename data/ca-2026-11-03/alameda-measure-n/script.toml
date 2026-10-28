@@ -1,0 +1,165 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; how the Council approves a property deal today (an ordinance,
+# four votes) and how the measure reached the ballot; what would change
+# (a resolution, three votes for shorter leases) and what would not
+# (sales and longer leases, park sales); that the guide gives no cost;
+# one line per side; what a vote does.
+#
+# That sales still need four votes is in the full text's Section 3-10(C);
+# that park sales still need voter approval is the impartial analysis's.
+# The guide prints no fiscal analysis, so the fiscal line says it
+# includes no cost estimate. The analysis's "No" statement runs across a
+# page break, so the card has no yes/no lines and the vote lines take
+# their meanings from the ballot question, as Utah's do. Sides come
+# from the argument in favor and the argument against, not the
+# rebuttals.
+
+contest = "ca-2026-11-03-alameda-measure-n"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "N"
+title = "Proposed City Charter Amendment Ballot Measure"
+origin = "This Measure was placed on the ballot by the City Council of the City of Alameda acting upon the recommendations of an ad-hoc Charter Review Subcommittee."
+summary = "Shall the measure amending Section 3-10 of the City Charter to change sales or leases of City real property exceeding one year to be approved by resolution rather than by ordinance and to reduce the City Council approval threshold from supermajority (four affirmative votes) to simple majority (three affirmative votes) for leases of City real property not exceeding ten years be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure N"
+
+[[section.line]]
+text = "City of Alameda Measure N asks voters in the city whether to change how the City Council approves sales and leases of city property."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["Section 3-10 of the City Charter"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, a city property deal longer than one year needs an ordinance, adopted at two meetings, with a 30-day wait before it takes effect."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+text = "It also needs at least four of the five Council votes."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "legislative-chamber"
+
+[[section.line]]
+text = "The City Council placed Measure N on the ballot, and it needs a simple majority to pass."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The Council could approve these deals by resolution at one meeting, taking effect right away, about 45 days sooner."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hourglass-plans"
+
+[[section.line]]
+text = "Leases of 10 years or less would need three Council votes instead of four."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "bars"
+title = "Council votes needed for a lease of 10 years or less"
+source = "guide-page"
+unit = ""
+labels = ["Today", "Measure N"]
+values = [4, 3]
+
+[[section.line]]
+text = "Sales and longer leases would still need four votes, and selling a city park would still need voter approval."
+sources = ["guide-page", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "project-site"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Alameda County Composite Voter Information Guide does not include a cost estimate for the measure."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say today's extra steps can delay negotiations and discourage tenants, and that a more efficient process would help fill vacant city properties."
+sources = ["arguments"]
+basis = ["These requirements can delay negotiations, discourage prospective tenants, and make Alameda less competitive with other communities.", "A more efficient process will help Alameda fill vacant properties"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Fewer delays for deals and tenants", "Helps fill vacant city properties"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the four-vote rule keeps the Council from moving so fast it serves only developers or commercial tenants, and has not slowed progress."
+sources = ["arguments"]
+basis = ["the current 4-vote requirement as is helps ensure that City Council doesn't proceed so fast as to only accommodate developers or commercial tenants", "the current 4-vote requirement as is does not hold up progress."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Four votes keep deals from moving too fast", "The rule has not held up progress"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means approval by resolution, and a simple majority of three votes for leases of up to 10 years."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["simple majority (three affirmative votes)"]
+
+[[section.line]]
+text = "A no vote means approval stays by ordinance, with a supermajority of four votes for these leases."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["supermajority (four affirmative votes)"]
