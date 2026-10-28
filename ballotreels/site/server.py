@@ -400,6 +400,54 @@ class _JsonHandler(BaseHTTPRequestHandler):
             self.wfile.write(data)
         return True
 
+    def _generate(self, rate_limited: bool) -> None:
+        """Creates (or joins, or reports the cached video for) the job
+        for the posted contest. The operator's path passes
+        rate_limited=False: it neither checks nor records the limits."""
+        deps = self.server.deps
+        body = self._read_json()
+        contest_id = body.get("contest")
+        found = (deps.contest(contest_id)
+                 if isinstance(contest_id, str) else None)
+        if found is None:
+            return self._json(404, {"error": "no such contest"})
+        state, entry = found
+        key = key_for(state.index.election.id, entry, deps.standard)
+        if key is None:
+            return self._json(400, {"error": "not available yet"})
+        video = deps.queue.video_for(key)
+        if video is not None:
+            return self._json(200, {"job": None, "status": "cached",
+                                   "video_url": video.urls.get("video")})
+        existing = deps.queue.find_live_job(key)
+        if existing is not None:
+            return self._json(200, {"job": _job_view(existing, deps)})
+        # A job that failed or was cancelled stays that way until the
+        # operator retries it from the queue monitor: each new attempt
+        # spends paid narration.
+        latest = deps.queue.latest_job(key)
+        if latest is not None and latest["state"] in ("failed", "cancelled"):
+            return self._json(409, {"job": None, "status": latest["state"],
+                                    "error": "not available yet"})
+        if rate_limited:
+            ip = _client_ip(self, deps)
+            allowed, retry_after, everyone = _check_rate_limit(deps, ip)
+            if everyone:
+                # Named, so the page does not blame this visitor for it.
+                return _too_many(self, 429, retry_after,
+                                 "too many videos requested this hour",
+                                 limit="global")
+            if not allowed:
+                self.send_response(429)
+                self.send_header("Retry-After", str(retry_after))
+                self.send_header("Content-Length", "0")
+                self.end_headers()
+                return
+        # With approval on, a visitor's request waits for the operator.
+        job, created = deps.queue.create_job(
+            key, state="pending" if deps.config.require_approval else "queued")
+        self._json(201 if created else 200, {"job": _job_view(job, deps)})
+
 
 class _DepsServer(ThreadingHTTPServer):
     daemon_threads = True
@@ -802,7 +850,7 @@ class PublicHandler(_JsonHandler):
             if m and method == "GET":
                 return self._job_status(int(m.group(1)))
             if path == "/api/generate" and method == "POST":
-                return self._generate()
+                return self._generate(rate_limited=True)
             m = re.fullmatch(
                 r"/v/([0-9a-f]{16})/(\d+)/(video\.mp4|poster\.jpg)", path)
             if m and method in ("GET", "HEAD"):
@@ -1082,50 +1130,6 @@ class PublicHandler(_JsonHandler):
         content_type = "video/mp4" if name == "video.mp4" else "image/jpeg"
         _serve_file_range(self, path, content_type, method)
 
-    def _generate(self) -> None:
-        deps = self.server.deps
-        body = self._read_json()
-        contest_id = body.get("contest")
-        found = (deps.contest(contest_id)
-                 if isinstance(contest_id, str) else None)
-        if found is None:
-            return self._json(404, {"error": "no such contest"})
-        state, entry = found
-        key = key_for(state.index.election.id, entry, deps.standard)
-        if key is None:
-            return self._json(400, {"error": "not available yet"})
-        video = deps.queue.video_for(key)
-        if video is not None:
-            return self._json(200, {"job": None, "status": "cached",
-                                   "video_url": video.urls.get("video")})
-        existing = deps.queue.find_live_job(key)
-        if existing is not None:
-            return self._json(200, {"job": _job_view(existing, deps)})
-        # A job that failed or was cancelled stays that way until the
-        # operator retries it from the queue monitor: each new attempt
-        # spends paid narration.
-        latest = deps.queue.latest_job(key)
-        if latest is not None and latest["state"] in ("failed", "cancelled"):
-            return self._json(409, {"job": None, "status": latest["state"],
-                                    "error": "not available yet"})
-        ip = _client_ip(self, deps)
-        allowed, retry_after, everyone = _check_rate_limit(deps, ip)
-        if everyone:
-            # Named, so the page does not blame this visitor for it.
-            return _too_many(self, 429, retry_after,
-                             "too many videos requested this hour",
-                             limit="global")
-        if not allowed:
-            self.send_response(429)
-            self.send_header("Retry-After", str(retry_after))
-            self.send_header("Content-Length", "0")
-            self.end_headers()
-            return
-        # With approval on, a visitor's request waits for the operator.
-        job, created = deps.queue.create_job(
-            key, state="pending" if deps.config.require_approval else "queued")
-        self._json(201 if created else 200, {"job": _job_view(job, deps)})
-
     def _job_status(self, job_id: int) -> None:
         deps = self.server.deps
         job = deps.queue.get_job(job_id)
@@ -1189,6 +1193,10 @@ class PrivateHandler(_JsonHandler):
                 return self._admin_action(int(m.group(1)), m.group(2))
             if path == "/admin/api/jobs" and method == "GET":
                 return self._admin_jobs()
+            # The operator queueing many contests at once: same job as
+            # /api/generate, outside the public limits.
+            if path == "/admin/api/generate" and method == "POST":
+                return self._generate(rate_limited=False)
             if path == "/worker/claim" and method == "POST":
                 return self._claim()
             m = re.fullmatch(r"/worker/jobs/(\d+)/heartbeat", path)
