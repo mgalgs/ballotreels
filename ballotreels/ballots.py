@@ -35,6 +35,10 @@ class Ballot:
     # (checks._card_quote_in)
     card_column_breaks: bool = False
 
+    # the publication a measure's card is a page of where it is not the
+    # guide (a measure the guide does not cover), by contest id
+    guides: dict[str, str] = field(default_factory=dict)
+
 
 BALLOTS: dict[str, Ballot] = {
     "ca": Ballot(guide="Official Voter Information Guide",
@@ -285,6 +289,27 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label=None,
                  choices=("For", "Against"),
                  card_source_kind="official-title-summary"),
+
+    # Nebraska's Secretary of State prints each initiative's ballot
+    # language (its explanatory statements, "A vote “FOR” will ..." and
+    # "A vote “AGAINST” means ...", and its question), full text and
+    # arguments in the "Informational Pamphlet on Initiative Measures
+    # Appearing on the 2026 General Election Ballot", which heads each
+    # "INITIATIVE MEASURE 440" (the title's designation is "Measure",
+    # so the badge reads as printed) and prints the choices "For" and
+    # "Against". Nebraska prints no fiscal statement for a measure. The
+    # pamphlet covers only the initiatives: Proposed Amendment No. 1,
+    # the Legislature's, has its card drawn from the legislative
+    # resolution that placed it on the ballot (LR19CA, whose Sec. 2
+    # prints its ballot language), named as such.
+    "ne": Ballot(guide="Informational Pamphlet on Initiative Measures "
+                       "Appearing on the 2026 General Election Ballot",
+                 fiscal_label=None,
+                 choices=("For", "Against"),
+                 card_source_kind="official-title-summary",
+                 badges={"Measure": "INITIATIVE MEASURE"},
+                 guides={"ne-2026-11-03-amendment-1":
+                         "Legislative Resolution 19CA"}),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
@@ -299,6 +324,12 @@ def state_of(division: str) -> str | None:
 def ballot_for(division: str) -> Ballot | None:
     """The wording for the state `division` is in, or None if it has none."""
     return BALLOTS.get(state_of(division) or "")
+
+
+def guide_of(ballot: Ballot, contest_id: str) -> str:
+    """The publication the card of contest `contest_id` is a page of: the
+    state's guide, unless the entry names another for that contest."""
+    return ballot.guides.get(contest_id, ballot.guide)
 
 
 def designation(title: str, number: str) -> str | None:

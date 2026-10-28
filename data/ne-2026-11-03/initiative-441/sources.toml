@@ -1,0 +1,48 @@
+# Archived sources for Nebraska Initiative Measure 441 (Online Sports
+# Wagering Regulation), 2026-11-03 general election. Every id here may
+# be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Secretary of State prints each initiative's ballot language, full
+# text and arguments in its "Informational Pamphlet on Initiative
+# Measures Appearing on the 2026 General Election Ballot". The archived
+# guide-section.pdf is the pamphlet's introduction (PDF page 2) and this
+# measure's pages (PDF pages 9 to 18, printed pages 6 to 15), cut from the
+# full pamphlet, so the first three sources share one file. Page
+# numbers below are the pamphlet's printed ones. Nebraska prints no
+# fiscal statement for an initiative. The petition as filed, the Spanish
+# pamphlet and the county sample ballots are archived and cited nowhere.
+
+[contest]
+id = "ne-2026-11-03-initiative-441"
+election = "ne-2026-11-03"
+division = "ocd-division/country:us/state:ne"
+kind = "measure"
+title = "Initiative Measure 441: Online Sports Wagering Regulation"
+
+[[source]]
+id = "pamphlet"
+kind = "official-title-summary"
+publisher = "Nebraska Secretary of State, Informational Pamphlet on Initiative Measures Appearing on the 2026 General Election Ballot, Initiative Measure 441: ballot title and text, page 6"
+credit = "Nebraska Informational Pamphlet, Initiative Measure 441"
+url = "https://sos.nebraska.gov/sites/default/files/doc/elections/2026/2026%20Ballot%20Measures%20Pamphlet.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Proposed Initiative Measure 441, Nebraska Secretary of State, Informational Pamphlet on Initiative Measures Appearing on the 2026 General Election Ballot, pages 7 to 14"
+url = "https://sos.nebraska.gov/sites/default/files/doc/elections/2026/2026%20Ballot%20Measures%20Pamphlet.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments For and Against Initiative Measure 441, derived from information provided to the Secretary of State by supporters and opponents, Nebraska Secretary of State, Informational Pamphlet on Initiative Measures Appearing on the 2026 General Election Ballot, page 15"
+credit = "Arguments For and Against, Nebraska Informational Pamphlet, Initiative Measure 441"
+url = "https://sos.nebraska.gov/sites/default/files/doc/elections/2026/2026%20Ballot%20Measures%20Pamphlet.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+

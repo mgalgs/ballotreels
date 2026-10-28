@@ -20,7 +20,7 @@ from functools import lru_cache
 from pathlib import Path
 
 from . import grid, narration, spoken, storyboard
-from .ballots import BALLOTS, Ballot, badge, ballot_for
+from .ballots import BALLOTS, Ballot, badge, ballot_for, guide_of
 from .contest import CARD_KEYS, Card, Choice, Contest, Line, Section, Visual
 from .illustrations import load_library
 from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, CHOICE_TEMPLATES,
@@ -640,7 +640,8 @@ def check_card(c: Contest) -> list[Failure]:
         return out
     if src.kind != ballot.card_source_kind:
         fail(f"source {card.source!r} is of kind {src.kind!r}; a card "
-             f"quotes the measure's page in the {ballot.guide}, a source "
+             f"quotes the measure's page in the "
+             f"{guide_of(ballot, c.id)}, a source "
              f"of kind {ballot.card_source_kind!r}")
         return out
     path = (c.path / src.file).resolve()

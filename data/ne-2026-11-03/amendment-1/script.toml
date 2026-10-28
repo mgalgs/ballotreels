@@ -1,0 +1,157 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; who put it on the ballot; the limit today, and how a term is
+# counted; what Amendment 1 would change; that no cost estimate exists;
+# the two sides; what a vote does.
+#
+# The card quotes Legislative Resolution 19CA as passed (the slip law):
+# its ballot question (Sec. 2), its "Passed by the Legislature" line and
+# its Sec. 1. The Secretary of State's informational pamphlet covers only
+# the initiatives, so the card is drawn as the resolution's page
+# (ballotreels.ballots names it for this contest). The Executive Board's
+# FOR/AGAINST statement is printed with a text layer only on the county
+# sample ballots, where pdftotext breaks the AGAINST statement across
+# the next column, so the card has no `yes`/`no`; the vote lines state
+# the two meanings as the Hall County sample ballot does, highlighting
+# the question's "two" and "three" consecutive terms.
+#
+# Article III, section 12 as amended is read from the PDF: "three" is
+# underscored and "two" struck (pdftotext gives "three two").
+#
+# Nebraska publishes no official arguments for or against the amendment,
+# so both sides are filed = false and each says so once, in the same
+# number of words. No person is named.
+
+contest = "ne-2026-11-03-amendment-1"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "resolution"
+number = "1"
+title = "A constitutional amendment to change the limit on legislative terms from two consecutive terms to three consecutive terms."
+origin = "Passed by the Legislature May 28, 2025"
+summary = "At the general election in November 2026, the following proposed amendment to the Constitution of Nebraska shall be submitted to the electors of the State of Nebraska for approval or rejection"
+
+[[section]]
+id = "what"
+heading = "Amendment 1"
+
+[[section.line]]
+text = "Amendment 1 is about how many terms in a row a state legislator may serve."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "resolution"
+highlight = ["change the limit on legislative terms"]
+
+[[section.line]]
+text = "The Legislature placed the amendment on the ballot in 2025."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-capitol"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, a legislator who serves two four-year terms in a row cannot serve again for four years."
+sources = ["sample-ballot", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "legislative-chamber"
+
+[[section.line]]
+text = "Serving more than half of a term counts as serving a full term."
+sources = ["text"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would raise the limit to three consecutive four-year terms, or 12 years."
+sources = ["sample-ballot", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "resolution"
+highlight = ["to three consecutive terms"]
+
+[[section.line]]
+text = "After three terms in a row, a legislator could not serve again for four years."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Legislature's resolution does not include a cost estimate for the amendment."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "No cost estimate"
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Nebraska publishes no official argument for the amendment."
+sources = ["sample-ballot"]
+
+[section.line.visual]
+kind = "list"
+source = "sample-ballot"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Nebraska publishes no official argument against the amendment."
+sources = ["sample-ballot"]
+
+[section.line.visual]
+kind = "list"
+source = "sample-ballot"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for raises the limit to three consecutive four-year terms."
+sources = ["sample-ballot", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "resolution"
+highlight = ["three consecutive terms"]
+
+[[section.line]]
+text = "A vote against keeps the limit at two consecutive four-year terms."
+sources = ["sample-ballot", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "resolution"
+highlight = ["two consecutive terms"]

@@ -1,0 +1,51 @@
+# Archived sources for Nebraska Proposed Amendment No. 1 (LR19CA),
+# 2026-11-03 general election. Every id here may be cited by script.toml.
+# `kind` must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# The Secretary of State's informational pamphlet covers only the
+# initiatives, so this amendment's card quotes the Legislature's
+# resolution as passed (the slip law), whose Sec. 2 prints the ballot
+# question. The Executive Board's ballot statement ("A vote FOR will
+# ..." / "A vote AGAINST will ...") is quoted from no file: the approved
+# statement is an image scan with no text layer
+# (sources/lr19ca-approved-ballot-statement.pdf), and on both county
+# sample ballots pdftotext interleaves the AGAINST statement with the
+# next column. The script states its meanings, citing the Hall County
+# sample ballot (page 4), which prints it. The committee statement and
+# the introducer's statement of intent are archived and cited nowhere:
+# the first's explanation of amendments describes a version later
+# reversed, and the second is the sponsor's own account.
+
+[contest]
+id = "ne-2026-11-03-amendment-1"
+election = "ne-2026-11-03"
+division = "ocd-division/country:us/state:ne"
+kind = "measure"
+title = "Proposed Amendment No. 1: Limit on Legislative Terms"
+
+[[source]]
+id = "resolution"
+kind = "official-title-summary"
+publisher = "Nebraska Legislature, Legislative Resolution 19CA, Proposed Constitutional Amendment, passed May 28, 2025 (slip law), page 1: ballot language (Sec. 2)"
+credit = "Nebraska Legislature, LR19CA"
+url = "https://nebraskalegislature.gov/FloorDocs/109/PDF/Slip/LR19CA.pdf"
+file = "sources/lr19ca-slip-law.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Nebraska Legislature, Legislative Resolution 19CA, Proposed Constitutional Amendment, passed May 28, 2025 (slip law), page 1: amendment to Article III, section 12"
+credit = "Nebraska Legislature, LR19CA"
+url = "https://nebraskalegislature.gov/FloorDocs/109/PDF/Slip/LR19CA.pdf"
+file = "sources/lr19ca-slip-law.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "sample-ballot"
+kind = "official-title-summary"
+publisher = "Hall County, Nebraska, Sample Ballot, General Election, November 3, 2026, page 4: Proposed Amendment No. 1"
+credit = "Hall County Sample Ballot"
+url = "http://files.hallcountyne.gov/Documents/Departments/Election%20Commission/Sample%20Ballots/26GNEHALL_7_PUB.pdf"
+file = "sources/hall-county-sample-ballot.pdf"
+retrieved = "2026-10-27"

@@ -1,0 +1,141 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; that the section is new; what schools would have to do, and
+# which teams it would cover; that no cost estimate exists; two points
+# per side; what a vote does.
+#
+# The card quotes the Secretary of State's informational pamphlet. Its
+# ballot question is split where the pamphlet prints it: the question,
+# ending at its question mark, is the title, and the sentence after it
+# ("The amendment would apply to ...") the summary. The object statement
+# in the full text is not quoted: its wording ("constitutional
+# protections", "equal access") is the supporters' framing, which their
+# argument repeats. The FOR/AGAINST statements are the vote boxes.
+#
+# Every neutral line keeps to the ballot's and the text's own terms
+# ("biological sex", "students of the male sex", "coed or mixed").
+# Each side gets two points from its argument, in its own words and
+# terms. No person is named, and nothing outside the archived sources is
+# mentioned.
+
+contest = "ne-2026-11-03-initiative-442"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "pamphlet"
+number = "442"
+title = "Shall the Nebraska Constitution be amended to provide: (1) Schools must expressly designate each athletic team or sport as one of the following based on biological sex: (a) Males, men, or boys; (b) females, women, or girls; or (c) coed or mixed; and (2) Athletic teams or sports designated for females, women, or girls shall not be open to students of the male sex?"
+origin = "Proposed by Initiative Petition"
+summary = "The amendment would apply to all athletic teams or sports sponsored by public schools or postsecondary educational institutions, and private schools or educational institutions whose athletic teams or sports compete against public schools or institutions."
+yes = "A vote “FOR” will amend the Nebraska Constitution to provide: (1) Schools must expressly designate each athletic team or sport as one of the following based on biological sex: (a) Males, men, or boys; (b) females, women, or girls; or (c) coed or mixed; and (2) Athletic teams or sports designated for females, women, or girls shall not be open to students of the male sex. The amendment would apply to all athletic teams or sports sponsored by public schools or postsecondary educational institutions, and private schools or educational institutions whose athletic teams or sports compete against public schools or institutions."
+no = "A vote “AGAINST” means the Nebraska Constitution will not be amended in this manner."
+
+[[section]]
+id = "what"
+heading = "Initiative Measure 442"
+
+[[section.line]]
+text = "Initiative Measure 442 is about school sports and biological sex."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the constitution lacks the section this initiative would add."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Schools would designate each team as male, female, or coed or mixed, based on biological sex."
+sources = ["pamphlet", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-gym"
+
+[[section.line]]
+text = "Teams for females would not be open to students of the male sex."
+sources = ["pamphlet", "text"]
+
+[[section.line]]
+text = "The rule would cover public schools and colleges, and private schools that compete against them."
+sources = ["pamphlet", "text"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Secretary of State's informational pamphlet does not include a cost estimate for the initiative."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "No cost estimate"
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Initiative 442 ensures female athletes are not forced to compete against biological males, which poses safety risks."
+sources = ["arguments"]
+basis = ["Fairness for Girls ensures female athletes are not forced to compete against biological males.", "Allowing biological males to compete against girls poses safety risks because of physical differences in strength, bone density, and size, increasing the likelihood of injury."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Girls not forced to compete against males", "Physical differences pose safety risks"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Initiative 442 requires gender verification for girls but not boys, and subjects all girls to greater barriers."
+sources = ["arguments"]
+basis = ["by making gender verification constitutionally required for girls and young women who want to play sports at their public school, college or university, but would not place a similar requirement on boys and young men.", "it would actually subject all girls to greater barriers and risk of harm"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Gender verification for girls but not boys", "Greater barriers and risk for all girls"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for adds these rules to the constitution."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["expressly designate each athletic team or sport"]
+
+[[section.line]]
+text = "A vote against means the constitution will not be amended in this manner."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["will not be amended in this manner"]

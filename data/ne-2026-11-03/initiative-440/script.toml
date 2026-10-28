@@ -1,0 +1,139 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; what the Constitution allows
+# today; what Initiative 440 would allow; that no cost estimate exists;
+# two points per side; what a vote does.
+#
+# The card quotes the Secretary of State's informational pamphlet: the
+# ballot question, its "Proposed by Initiative Petition" line, the full
+# text's object statement and the explanatory statements for a vote
+# "FOR" and "AGAINST". Nebraska prints no fiscal statement.
+#
+# The amendment authorizes laws; it does not itself set rules for
+# wagering, and the script says so in the ballot's words. Initiative
+# Measure 441, on the same ballot, is not mentioned: neither the
+# pamphlet nor 440's text states how the two relate.
+#
+# Each side gets two points from its argument, in its own words. The
+# "$166 million" is the supporters' projection, said as theirs; no
+# official source states a ten-year total to scale it against
+# (STANDARD.md rule 6.5), so it has none. No person is named.
+
+contest = "ne-2026-11-03-initiative-440"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "pamphlet"
+number = "440"
+title = "Shall the Nebraska Constitution be amended to authorize the enactment of laws allowing persons located within Nebraska to place sports wagers through an Internet-based platform when offered by an authorized gaming operator conducting games of chance within a licensed racetrack enclosure in Nebraska?"
+origin = "Proposed by Initiative Petition"
+summary = "The object of this petition is to amend the Nebraska Constitution to state that laws may be enacted allowing sports wagers to be placed within the State of Nebraska through an Internet-based platform offered by an authorized gaming operator."
+yes = "A vote “FOR” will amend the Nebraska Constitution to authorize the enactment of laws to allow persons located within Nebraska to place sports wagers through an Internet-based platform when offered by an authorized gaming operator conducting games of chance within a licensed racetrack enclosure in Nebraska."
+no = "A vote “AGAINST” means the Nebraska Constitution will not be amended in this manner."
+
+[[section]]
+id = "what"
+heading = "Initiative Measure 440"
+
+[[section.line]]
+text = "Initiative Measure 440 is a proposed constitutional amendment about placing sports wagers online."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["allowing persons located within Nebraska to place sports wagers"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the constitution allows laws for games of chance at licensed racetracks."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "racetrack"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would allow laws letting people in Nebraska place sports wagers through the Internet."
+sources = ["pamphlet", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "phone-sports-wager"
+
+[[section.line]]
+text = "The online wagers would be offered by the gaming operators at licensed racetracks."
+sources = ["pamphlet"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Secretary of State's informational pamphlet does not include a cost estimate for the initiative."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "No cost estimate"
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Initiative 440 keeps the money in Nebraska, and directs more than $166 million to property tax relief over ten years."
+sources = ["arguments"]
+basis = ["Initiative 440 keeps the money in Nebraska through a legal, regulated and secure marketplace", "Vote FOR Initiative 440 to legalize online sports wagering and direct more than $166 million to property tax relief.", "projected to deliver more than $166 million in direct property tax relief to Nebraska homeowners, farmers, ranchers and small businesses over the next ten years."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Keeps the money in Nebraska", "More than $166 million over ten years for property tax relief"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Initiative 440 sends hundreds of millions of dollars out of Nebraska to gambling conglomerates, and online betting fuels corruption in sports."
+sources = ["arguments"]
+basis = ["sending hundreds of millions of dollars out of Nebraska to out-of-state gambling conglomerates", "Online sports betting fuels corruption in sports"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Sends hundreds of millions out of Nebraska", "Online betting fuels corruption in sports"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for amends the constitution to allow laws for online sports wagers."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["place sports wagers through an Internet-based platform"]
+
+[[section.line]]
+text = "A vote against means the constitution will not be amended in this manner."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["will not be amended in this manner"]

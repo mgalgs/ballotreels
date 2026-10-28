@@ -1,0 +1,137 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; how sports wagers are placed today; what Initiative 441 would
+# add, and how many platforms each operator could use; that no cost
+# estimate exists; two points per side; what a vote does.
+#
+# The card quotes the Secretary of State's informational pamphlet: the
+# ballot question, its "Proposed by Initiative Petition" line, the full
+# text's object statement and the explanatory statements for a vote
+# "FOR" and "AGAINST". Nebraska prints no fiscal statement. What is new
+# in the law is read from the PDF's underscoring (online wagers, the
+# two-platform cap), not from the text extract.
+#
+# Initiative Measure 440, on the same ballot, is not mentioned: neither
+# the pamphlet nor 441's text states how the two relate. The 70 percent
+# share of wagering tax revenue is the supporters' claim (they say it
+# comes from existing gaming law, not this text), said as theirs. No
+# person is named.
+
+contest = "ne-2026-11-03-initiative-441"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "pamphlet"
+number = "441"
+title = "Shall statutes be enacted that: (1) Allow persons located within Nebraska to place sports wagers through an Internet-based platform when offered by an authorized gaming operator conducting games of chance within a licensed racetrack enclosure in Nebraska or the operator’s platform provider; and (2) Regulate such sports wagers?"
+origin = "Proposed by Initiative Petition"
+summary = "The object of this petition is to enact a statute allowing sports wagers to be placed within the State of Nebraska through Internet-based platforms offered by an authorized gaming operator, or its contracted platform provider, and regulate such sports wagers."
+yes = "A vote “FOR” will enact statutes allowing persons located within Nebraska to place sports wagers through an Internet-based platform when offered by an authorized gaming operator conducting games of chance within a licensed racetrack enclosure in Nebraska or the operator’s platform provider, and regulating such sports wagers."
+no = "A vote “AGAINST” means no such statutes will be enacted."
+
+[[section]]
+id = "what"
+heading = "Initiative Measure 441"
+
+[[section.line]]
+text = "Initiative Measure 441 is a proposed law about placing sports wagers online."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["Allow persons located within Nebraska to place sports wagers"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, sports wagers must be placed in person or at a kiosk at a licensed racetrack."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "racetrack"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The initiative would add wagers through an online platform, by anyone located in Nebraska."
+sources = ["pamphlet", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "phone-sports-wager"
+
+[[section.line]]
+text = "Each racetrack gaming operator could use up to two online platforms run by contracted providers."
+sources = ["text"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Secretary of State's informational pamphlet does not include a cost estimate for the initiative."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "No cost estimate"
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Initiative 441 creates real consumer protections, and directs 70 percent of wagering tax revenue to a property tax credit fund."
+sources = ["arguments"]
+basis = ["Initiative 441 creates the legal and regulatory framework for online sports wagering, with real consumer protections and oversight by the Nebraska Racing and Gaming Commission.", "this initiative requires that 70 percent of all wagering tax revenue goes directly to Nebraska's Property Tax Credit Cash Fund."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Creates real consumer protections", "70 percent of wagering tax to property tax credits"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Initiative 441 puts out-of-state gambling interests ahead of Nebraska taxpayers, and every teenager with a phone will face aggressive advertising."
+sources = ["arguments"]
+basis = ["Initiative Measure 441 puts out-of-state gambling interests ahead of Nebraska taxpayers and student-athletes.", "Every teenager with a phone will face aggressive advertising"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Puts out-of-state gambling interests first", "Aggressive advertising to every teenager"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for enacts statutes allowing and regulating online sports wagers."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["regulating such sports wagers"]
+
+[[section.line]]
+text = "A vote against means no such statutes will be enacted."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["no such statutes will be enacted"]
