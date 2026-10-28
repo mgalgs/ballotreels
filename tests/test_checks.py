@@ -329,6 +329,34 @@ class BrokenCopyTest(ContestCopyTestCase):
         self.assertVisual("today", 1, "may not have 'title'",
                           "may not have 'source'")
 
+    def test_illustration_stamp(self):
+        self.add_visual(self.ILLUSTRATION + 'stamp = "None reported"\n')
+        self.assertEqual(self.failures(), [])
+
+    def test_stamp_must_be_short_words_on_one_line(self):
+        for stamp, want in (('""', "'stamp' must be a non-empty string"),
+                            ('"  "', "'stamp' must be a non-empty string"),
+                            ("3", "'stamp' must be a non-empty string"),
+                            ('"None\\nreported"', "'stamp' must be one line"),
+                            ('"' + "x" * 25 + '"',
+                             "'stamp' is 25 characters, more than 24")):
+            with self.subTest(stamp=stamp):
+                self.setUp()
+                self.add_visual(self.ILLUSTRATION + f"stamp = {stamp}\n")
+                self.assertVisual("today", 1, want)
+
+    def test_only_an_illustration_has_a_stamp(self):
+        self.add_visual(self.TIMELINE + 'stamp = "None reported"\n')
+        self.assertVisual("today", 1, "may not have 'stamp'")
+
+    def test_judgment_word_in_a_stamp(self):
+        self.add_visual(self.ILLUSTRATION + 'stamp = "Sweeping"\n')
+        got = self.failures()
+        self.assertEqual([(f.check, f.section, f.line, f.message)
+                          for f in got],
+                         [("judgment-word", "today", 1,
+                           "judgment word 'Sweeping' in visual stamp")])
+
     def test_words_and_number_are_gone(self):
         self.add_visual('kind = "words"\ntext = "deposits stop"\n')
         self.add_visual('kind = "number"\ntext = "10%"\nlabel = "target"\n'

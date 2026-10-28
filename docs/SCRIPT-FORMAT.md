@@ -261,7 +261,12 @@ name = "save-more"       # no source: the line cites
   manifest's one style, approved by a person and checked in; the
   library grows as new topics need pictures. No `title` and no
   `source`: an illustration carries no facts, and the line's own
-  sources cover what is said.
+  sources cover what is said. An optional `stamp`, a few words on one
+  line (at most 24 characters), is written in pencil across the top of
+  the stage once the drawing is down, so a muted viewer reads the slide
+  at a glance: `stamp = "None reported"` where the guide gives no cost
+  estimate. It is on-screen text, so the judgment-word list applies to
+  it; no other kind of visual may have one.
 
 ```toml
 [section.line.visual]

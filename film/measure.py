@@ -697,10 +697,20 @@ def illustration_visual(chart, lines, L, f0, f1):
     u = L['u']
     surf, _ = illustration_ink(chart.visual.name)
     iw, ih = surf.get_width(), surf.get_height()
-    room_w, room_h = stage.w * 0.96, stage.h - 40 * u
+    stamp = chart.visual.stamp
+    top = stage.y
+    if stamp:
+        # the stamp's band across the stage's top, as large as the heading
+        # (smaller only if the words would not fit on one line); the
+        # drawing fits in the room under it
+        fnt = L['heading_font']
+        while text.measure(stamp, fnt) > stage.w * 0.92 and fnt.size > 30:
+            fnt = font(fnt.size * 0.94, 700)
+        top = stage.y + 10 * u + text.line_height(fnt) + 20 * u
+    room_w, room_h = stage.w * 0.96, stage.bottom - top - 20 * u
     k = min(room_w / iw, room_h / ih)
     w, h = iw * k, ih * k
-    x, y = stage.cx - w / 2, stage.cy - h / 2
+    x, y = stage.cx - w / 2, (top + stage.bottom) / 2 - h / 2
     feather = 0.12 * ih  # the wipe's soft edge, in the image's pixels
 
     def draw(cv, p):
@@ -728,7 +738,16 @@ def illustration_visual(chart, lines, L, f0, f1):
 
     d = min(WIPE, max(8, (f1 - f0) * 0.8))
     items = [Item(f0, f0 + d, draw, head, ease=DRAW)]
-    return items, [Mark('chart', Box(x, y, w, h))]
+    if not stamp:
+        return items, [Mark('chart', Box(x, y, w, h))]
+    # written on in the film's pencil once the drawing is down, in its
+    # graphite: words of fact, never the accent colour (rules 4.1, 7.4)
+    written, _, sbox = write_lines(f0 + d, [stamp], fnt, stage.x, stage.y + 10 * u,
+                                   align='center', width=stage.w)
+    items += scaled(written, f0 + d, max(4, (f1 - f0) * 0.8 - d))
+    sw = text.measure(stamp, fnt)
+    sbox = Box(stage.cx - sw / 2, sbox.y, sw, sbox.h)
+    return items, [Mark('chart', Box(min(x, sbox.x), sbox.y, max(w, sbox.w), y + h - sbox.y))]
 
 
 def timeline_reveals(n, lines, f0):
