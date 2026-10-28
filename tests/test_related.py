@@ -97,12 +97,19 @@ class RealDataApiTest(unittest.TestCase):
     def test_voter_identification_links_both_ways(self):
         self.assertEqual(self.related("ca-2026-11-03-prop-39"),
                          [("Arizona", "az-2026-11-03-prop-144"),
+                          ("Nevada", "nv-2026-11-03-question-7"),
                           ("Ohio", "oh-2026-11-03-issue-3")])
         self.assertEqual(self.related("oh-2026-11-03-issue-3"),
                          [("Arizona", "az-2026-11-03-prop-144"),
-                          ("California", "ca-2026-11-03-prop-39")])
+                          ("California", "ca-2026-11-03-prop-39"),
+                          ("Nevada", "nv-2026-11-03-question-7")])
         self.assertEqual(self.related("az-2026-11-03-prop-144"),
                          [("California", "ca-2026-11-03-prop-39"),
+                          ("Nevada", "nv-2026-11-03-question-7"),
+                          ("Ohio", "oh-2026-11-03-issue-3")])
+        self.assertEqual(self.related("nv-2026-11-03-question-7"),
+                         [("Arizona", "az-2026-11-03-prop-144"),
+                          ("California", "ca-2026-11-03-prop-39"),
                           ("Ohio", "oh-2026-11-03-issue-3")])
 
     def test_own_state_first(self):
@@ -121,7 +128,7 @@ class RealDataApiTest(unittest.TestCase):
 
     def test_fields(self):
         state, entry = self.deps.contest("ca-2026-11-03-prop-39")
-        [az, _] = _contest_detail(entry, state, self.deps)["related"]
+        [az, *_] = _contest_detail(entry, state, self.deps)["related"]
         other_state, other = self.deps.contest("az-2026-11-03-prop-144")
         self.assertEqual(az, {
             "id": "az-2026-11-03-prop-144", "state": "az",
