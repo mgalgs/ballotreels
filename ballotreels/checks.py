@@ -726,19 +726,31 @@ def check_side_list_items(c: Contest) -> list[Failure]:
 # it, and spoken.seconds's estimate of the difference is off by 0.55 s
 # RMS, so the margin is 0.9 s. It flags Montana CI-132's first draft
 # (1.31 s estimated, 2.1 s when narrated), and 3 of the 31 committed pairs
-# with both sides filed, if they were narrated again: I-194 (1.14 s
+# with both sides filed, if their sides were narrated again (an edit
+# elsewhere re-speaks no side, so is not estimated): I-194 (1.14 s
 # narrated), Arizona 142 (1.15 s) and CI-132 as committed (1.74 s, the
 # nearest of all to the cap).
 SPOKEN_PARITY_LIMIT = 1.1
 
 
-def check_spoken_parity(c: Contest) -> list[Failure]:
+def check_spoken_parity(c: Contest,
+                        pieces: tuple[narration.NarrationLine, ...] | None = None
+                        ) -> list[Failure]:
     """STANDARD.md 2.2, before narration: the two sides' estimated spoken
     durations (spoken.seconds: numbers, money and symbols said in full)
     differ by at most SPOKEN_PARITY_LIMIT, so the narration will pass
     check_airtime. Equal word counts are not enough: "nearly $90,000" is
     two words, said as five. A side that filed no argument is exempt, as
-    from check_airtime."""
+    from check_airtime.
+
+    `pieces` is what `say` would synthesise afresh (default: everything);
+    check_contest passes narration.unreused_phrases. When none of it is in
+    a side section, both sides are said exactly as they were when they
+    passed check_airtime, so there is nothing to estimate. Otherwise both
+    sides are estimated whole, recorded phrases too: the estimate's error
+    is mostly the take's pace, which cancels only between two estimates,
+    so a recorded side against an estimated one would miss CI-132's
+    draft."""
     by_side: dict[str, list[tuple[str, Section]]] = {}
     for label, sec in c.script.labelled():
         if sec.side is not None:
@@ -747,6 +759,9 @@ def check_spoken_parity(c: Contest) -> list[Failure]:
     if len(yes) != 1 or len(no) != 1:
         return []  # a template failure; nothing to compare
     if not (yes[0][1].filed and no[0][1].filed):
+        return []
+    if pieces is not None and not any(p.section in (yes[0][0], no[0][0])
+                                      for p in pieces):
         return []
     est = {label: spoken.seconds("\n".join(ln.text for ln in sec.lines))
            for label, sec in (yes[0], no[0])}
@@ -759,9 +774,9 @@ def check_spoken_parity(c: Contest) -> list[Failure]:
             if spoken.spoken_text(ln.text) != " ".join(ln.text.split())]
     return [Failure(
         "spoken-parity",
-        f"the sides' estimated spoken durations differ by {abs(a - b):.1f}s "
-        f"({la}={a:.1f}s, {lb}={b:.1f}s), more than the "
-        f"{SPOKEN_PARITY_LIMIT:.1f}s allowed before narration (the airtime "
+        f"the sides' estimated spoken durations differ by {abs(a - b):.2f}s "
+        f"({la}={a:.2f}s, {lb}={b:.2f}s), more than the "
+        f"{SPOKEN_PARITY_LIMIT:.2f}s allowed before narration (the airtime "
         f"check pads at most {narration.SIDE_PAD_CAP:.0f}s, and this "
         f"estimate can be off by half a second); shorten {longer} or "
         f"lengthen the other, counting numbers as said"
@@ -1243,6 +1258,7 @@ def check_contest(c: Contest, standard: Standard | None = None
     if standard is None:
         standard = load_standard()
     fresh = needs_narration(c)
+    unreused = narration.unreused_phrases(c) if fresh else None
     return [
         *check_contest_id(c),
         *check_line_citations(c),
@@ -1260,11 +1276,10 @@ def check_contest(c: Contest, standard: Standard | None = None
         *check_side_visuals(c),
         *check_side_list_items(c),
         *check_airtime(c),
-        *(check_spoken_parity(c) if fresh else ()),
+        *(check_spoken_parity(c, unreused) if fresh else ()),
         *check_side_basis(c, required=fresh),
         *check_judgment_words(c, standard.judgment_words),
-        *(check_speakability(c, standard.speakability,
-                              narration.unreused_phrases(c))
+        *(check_speakability(c, standard.speakability, unreused)
           if fresh else ()),
         *check_standard_version(c, standard.version),
     ]

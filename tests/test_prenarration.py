@@ -207,11 +207,11 @@ class SpokenTextTest(unittest.TestCase):
     def test_numbers_said_in_full(self):
         from ballotreels.spoken import spoken_text
         for written, said in [
-                ("nearly $90,000.", "nearly ninety thousand dollars ."),
+                ("nearly $90,000.", "nearly ninety thousand dollars."),
                 ("over $2 million on", "over two million dollars on"),
                 ("$1.4 billion", "one point four billion dollars"),
                 ("20%", "twenty percent"), ("10 percent", "ten percent"),
-                ("in 1978,", "in nineteen seventy-eight ,"),
+                ("in 1978,", "in nineteen seventy-eight,"),
                 ("by 2026", "by twenty twenty-six"),
                 ("in 2005", "in two thousand five"),
                 ("about 1,500 clinics", "about one thousand five hundred "
@@ -295,6 +295,32 @@ class SpokenParityTest(unittest.TestCase):
             'side = "no"\n', 'side = "no"\nfiled = false\n'),
             encoding="utf-8")
         self.assertEqual(self.parity(), [])
+
+    def test_edit_outside_the_sides_is_not_estimated(self):
+        # Re-narrating after a background edit re-speaks that line and the
+        # one after it, not a side: the sides keep the takes that passed
+        # the real airtime check (1.7 s apart, where the estimate says
+        # 1.1 s), so they are not estimated again.
+        shutil.rmtree(self.dir)
+        shutil.copytree(CI_132, self.dir)
+        path = self.dir / "script.toml"
+        old = path.read_text(encoding="utf-8")
+        self.assertIn("proposed by initiative petition", old)
+        path.write_text(old.replace("proposed by initiative petition",
+                                    "proposed by an initiative petition"),
+                        encoding="utf-8")
+        self.assertTrue(needs_narration(load_contest(self.dir)))
+        self.assertEqual(self.parity(), [])
+
+    def test_edit_to_a_side_is_estimated(self):
+        # With CI-132's narration committed, writing the opponents' draft
+        # back in re-speaks that side, so both are estimated, and fail.
+        shutil.rmtree(self.dir)
+        shutil.copytree(CI_132, self.dir)
+        self.set_no(CI_132_NO_DRAFT)
+        [f] = self.parity()
+        self.assertIn("shorten yes", f.message)
+        self.assertIn("nearly ninety thousand dollars.'", f.message)
 
     def test_committed_narration_is_not_estimated(self):
         # Narrated and committed, CI-132 passed the real airtime check

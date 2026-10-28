@@ -105,7 +105,7 @@ def spoken_text(text: str) -> str:
     text = _ACRONYM.sub(lambda m: " ".join(m.group(1)) + m.group(2), text)
     for sym, words in _SYMBOLS.items():
         text = text.replace(sym, words)
-    return " ".join(text.split())
+    return re.sub(r" (?=[.,;:!?])", "", " ".join(text.split()))
 
 
 _VOWELS = re.compile(r"[aeiouy]+")
