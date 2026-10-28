@@ -19,3 +19,12 @@
 (?i)\b\w*[b-df-hj-np-tv-z]y['’]s\b | a possessive of a word ending in a consonant and "y" sounds just like its plural ("property's" is heard as "properties") | rephrase with "of" ("the value of the property")
 [À-ÖØ-öø-ÿ] | the transcript check hears an accented letter without its accent ("René" as "Rene") | write the name without the accent ("Rene"); the name check folds accents when it matches the source
 \bLuz\b | the name "Luz" is heard as "Luce" or "Lou's" | use the title and surname ("Senator Escamilla")
+(?i)\bK through 12\b | the transcript writes "K-12", and "through" is a word the script has but the transcript lacks | write "K-12"
+(?i)\b(?:first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|eleventh|twelfth|\d+(?:st|nd|rd|th))-grade\b | the transcript writes a grade either as a word or as a numeral ("eighth" or "8th"), at random, and the check folds neither | write the grade as a plain number, which the check folds ("a grade 8 reading level")
+(?i)\b(?:one|two|three|four|five|six|seven|eight|nine|ten) and a half\b | the transcript writes a decimal ("3.5") and the check does not fold "and a half" | write the decimal ("3.5 percent")
+\b(?:19|20)\d\d to (?:19|20)\d\d\b | the transcript writes a span of years with a hyphen ("2027-2028") and drops the "to" | write the hyphen ("the 2027-2028 budget year")
+(?i)\bGeorgia['’]s\b | "Georgia's" is heard as "George's" | name it another way ("the state's", "of Georgia")
+\bRhody\b | "Rhody" is heard as "Roadie" | describe the fund instead of naming it
+(?i)\bA vote for\b(?! the\b) | after "vote", "for" is transcribed as the digit "4" | say "A vote for the amendment" or "Voting for it"
+\$\d[\d.,]* (?:million|billion) to \$\d[\d.,]* (?:million|billion) | a range of dollar amounts is transcribed in words ("one million to seven million dollars") | drop the figures ("get smaller amounts") or give the total; "up to $7 million" was transcribed "up to seven million dollars" too
+(?i)\b\w+s['’]s\b | a possessive written "s's" is transcribed "s'" ("Kansas's" as "Kansas'") | rephrase ("the state's", "of Kansas")
