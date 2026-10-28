@@ -85,6 +85,14 @@ class BallotTest(unittest.TestCase):
         self.assertEqual(badge(az, "Proposition 317: X", "317"),
                          "PROPOSITION")
 
+    def test_ohio_uses_its_reports_words(self):
+        oh = BALLOTS["oh"]
+        self.assertEqual((oh.guide, oh.fiscal_label, oh.choices,
+                          oh.card_source_kind),
+                         ("Proposed Amendment to the Ohio Constitution", None,
+                          ("Yes", "No"), "official-title-summary"))
+        self.assertEqual(badge(oh, "State Issue 3: X", "3"), "ISSUE")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):

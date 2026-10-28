@@ -74,6 +74,16 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label=None,
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+    # Ohio's Secretary of State prints each statewide issue's ballot
+    # language, explanation, arguments and text in one report, headed on
+    # every page "Proposed Amendment to the Ohio Constitution"; its
+    # ballot language heads the issue "ISSUE 3" and prints the choices
+    # "YES" and "NO". No fiscal statement exists: Ohio requires none for
+    # an amendment the General Assembly proposes.
+    "oh": Ballot(guide="Proposed Amendment to the Ohio Constitution",
+                 fiscal_label=None,
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
