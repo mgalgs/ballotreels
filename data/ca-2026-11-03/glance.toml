@@ -248,3 +248,11 @@ quote = "It is estimated that the tax would raise approximately $980 million per
 amount = 980000000
 period = "per-year"
 direction = "revenue-gain"
+
+# San Francisco Proposition A: the Controller's Statement's estimate.
+[san-francisco-county-measure-a]
+source = "controller"
+quote = "Should the proposed Charter amendment be approved by the voters, in my opinion, it would have a moderate impact on the cost of government, saving $365,000 to $450,000 annually."
+amount = 450000
+period = "per-year"
+direction = "savings"

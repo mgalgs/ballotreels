@@ -1,0 +1,65 @@
+# Archived sources for San Francisco Proposition A, 2026-11-03 general
+# election (sources/sources.md). San Francisco is a consolidated city and
+# county, so its propositions are countywide: the division is the
+# county. "page" is the Voter Information Pamphlet & Sample Ballot's
+# printed page number (the PDF's page less 2).
+#
+# The pamphlet's impartial materials are the Ballot Simplification
+# Council's digest and the Controller's Statement, on one cut of pages.
+# The Controller's Statement on A gives no General Fund total; the
+# Controller's Statement on Proposition C, on the pamphlet's page 77,
+# does ("approximately $7 billion General Fund sources"), and is archived
+# here as sources/prop-c-controller-statement.pdf (a copy of C's own
+# cut) for the scale of A's savings (STANDARD.md 6.5). The paid arguments
+# (page 68) are not cited.
+
+[contest]
+id = "ca-2026-11-03-san-francisco-county-measure-a"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:san_francisco"
+kind = "measure"
+title = "San Francisco Proposition A: Charter Changes Affecting Various City Departments and Commissions"
+
+[[source]]
+id = "digest"
+kind = "official-title-summary"
+publisher = "San Francisco Department of Elections, Voter Information Pamphlet & Sample Ballot, November 3, 2026, pages 64 to 65: ballot question, Digest by the Ballot Simplification Council, and how A got on the ballot"
+credit = "Ballot Simplification Council digest, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/ballot-question-digest-controller-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "controller"
+kind = "official-fiscal-analysis"
+publisher = "City Controller, Controller's Statement on “A”, San Francisco Voter Information Pamphlet & Sample Ballot, pages 64 to 65"
+credit = "Controller's Statement, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/ballot-question-digest-controller-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "general-fund"
+kind = "official-report"
+publisher = "City Controller, Controller's Statement on “C”, San Francisco Voter Information Pamphlet & Sample Ballot, page 77: the General Fund total"
+credit = "Controller's Statement on C, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/prop-c-controller-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Proponent's and Opponent's Arguments on Proposition A and their rebuttals, San Francisco Voter Information Pamphlet & Sample Ballot, pages 66 to 67"
+credit = "Arguments, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/arguments-and-rebuttals.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Legal Text of Proposition A (proposed Charter amendment), San Francisco Voter Information Pamphlet & Sample Ballot, pages 148 to 181"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/legal-text.pdf"
+retrieved = "2026-10-28"
