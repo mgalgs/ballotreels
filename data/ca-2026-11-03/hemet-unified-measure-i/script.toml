@@ -1,0 +1,150 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; how a school bond is repaid and what it needs to
+# pass; what the money would pay for; the district's tax statement; one
+# line per side; what a vote does.
+#
+# The card quotes the ballot question's title line as its title and the
+# question as its summary (from the sample ballot, the one page that
+# prints it); the origin and the yes and no lines are the Impartial
+# Analysis's. The title keeps "Hemet Unified": the City of Hemet has a
+# Measure Q on this ballot. "Counsel" is heard as "Council"
+# (standard/speakability.txt). The bond total and the debt service are
+# repaid from a tax on property in the district, and no archived source
+# states the district's budget, so they have no budget scale (STANDARD.md
+# 6.5; left open). The fiscal line gives the tax statement's highest rate
+# beside its average, as it prints both.
+#
+# Whether Measure I raises taxes is what the two sides dispute
+# (supporters: it extends a 2018 bond and "WON'T increase tax rates";
+# opponents: about $50 per $100,000 is a burden low-income households
+# cannot carry), so the neutral sections give only the tax statement's
+# rates and years and leave the "rate-extension" words on the card
+# (STANDARD.md 6.3). Sides come from the argument in favor and the
+# argument against, not the rebuttals.
+
+contest = "ca-2026-11-03-hemet-unified-measure-i"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-label"
+number = "I"
+title = "Hemet Unified School District Rate-Extension School Repair, Improvement, Health and Safety Measure."
+origin = "The Governing Board of the District, by adopting Resolution No. 4183 (“Resolution”), elected to call an election to place this Measure on the ballot."
+summary = "To repair and upgrade aging classrooms, science labs, career technology and school facilities to support college/career readiness in math, science, technology, arts, engineering, skilled trades; fix deteriorating roofs, plumbing, electrical systems; and improve school safety, security, air conditioning systems; shall Hemet Unified School District's rate-extension measure be adopted authorizing $225,000,000 in bonds at legal rates, levying approximately $50 per $100,000 assessed value ($16,000,000 annually) while bonds are outstanding, with citizen oversight and independent audits?"
+yes = "A “YES” vote on Measure “I” is a vote to authorize the District to issue and sell bonds to provide financing of school facilities projects."
+no = "A “NO” vote on Measure “I” is a vote to reject the District from issuing and selling bonds to provide financing of school facilities projects."
+
+[[section]]
+id = "what"
+heading = "Measure I"
+
+[[section.line]]
+text = "Hemet Unified School District Measure I asks the district's voters whether to approve $225 million in school bonds."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["$225,000,000 in bonds"]
+
+[[section]]
+id = "today"
+heading = "How a school bond works"
+
+[[section.line]]
+text = "The district would borrow the money and repay it from a tax on property in the district."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure I needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The money would fix roofs, plumbing and electrical systems, upgrade aging classrooms and labs, and improve school safety and air conditioning."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+text = "The district's tax statement estimates an average tax of $49 per $100,000 of assessed value, and at most $60, through 2051-2052."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section.line]]
+text = "The statement estimates the total to repay, with interest, at about $382 million."
+sources = ["tax-statement"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure I fixes leaky roofs and adds air conditioning and shade, without raising tax rates."
+sources = ["arguments"]
+basis = ["Last year, 108 HUSD classrooms had leaky roofs.", "Install AC units and shade structures, protecting students from", "Measure I WON’T increase tax rates."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Fixes leaky roofs, adds cooling and shade", "Extends a 2018 bond without raising tax rates"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure I taxes struggling families for 25 years without first exhausting grants or other funding."
+sources = ["arguments"]
+basis = ["Placing a 25-year tax burden on residents without demonstrating genuine effort", "The District asks homeowners to shoulder this massive debt without ﬁrst exhausting state grants", "Families are already struggling with inﬂation and rising costs."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Grants and other funding not exhausted first", "Low-income households pay the same rate"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the district to issue and sell the bonds."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["a vote to authorize the District"]
+
+[[section.line]]
+text = "A no vote rejects the district issuing and selling the bonds."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["a vote to reject the District"]
