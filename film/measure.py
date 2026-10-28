@@ -698,19 +698,20 @@ def illustration_visual(chart, lines, L, f0, f1):
     surf, _ = illustration_ink(chart.visual.name)
     iw, ih = surf.get_width(), surf.get_height()
     stamp = chart.visual.stamp
-    top = stage.y
+    band = 0
     if stamp:
-        # the stamp's band across the stage's top, as large as the heading
-        # (smaller only if the words would not fit on one line); the
-        # drawing fits in the room under it
+        # the stamp's band across the drawing's top, as large as the
+        # heading (smaller only if the words would not fit on one line);
+        # the drawing fits in the room under it, and the two are centred
+        # on the stage together
         fnt = L['heading_font']
         while text.measure(stamp, fnt) > stage.w * 0.92 and fnt.size > 30:
             fnt = font(fnt.size * 0.94, 700)
-        top = stage.y + 10 * u + text.line_height(fnt) + 20 * u
-    room_w, room_h = stage.w * 0.96, stage.bottom - top - 20 * u
+        band = text.line_height(fnt) + 20 * u
+    room_w, room_h = stage.w * 0.96, stage.h - 40 * u - band
     k = min(room_w / iw, room_h / ih)
     w, h = iw * k, ih * k
-    x, y = stage.cx - w / 2, (top + stage.bottom) / 2 - h / 2
+    x, y = stage.cx - w / 2, stage.cy - (h - band) / 2
     feather = 0.12 * ih  # the wipe's soft edge, in the image's pixels
 
     def draw(cv, p):
@@ -742,7 +743,7 @@ def illustration_visual(chart, lines, L, f0, f1):
         return items, [Mark('chart', Box(x, y, w, h))]
     # written on in the film's pencil once the drawing is down, in its
     # graphite: words of fact, never the accent colour (rules 4.1, 7.4)
-    written, _, sbox = write_lines(f0 + d, [stamp], fnt, stage.x, stage.y + 10 * u,
+    written, _, sbox = write_lines(f0 + d, [stamp], fnt, stage.x, y - band,
                                    align='center', width=stage.w)
     items += scaled(written, f0 + d, max(4, (f1 - f0) * 0.8 - d))
     sw = text.measure(stamp, fnt)
