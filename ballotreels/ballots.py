@@ -95,6 +95,20 @@ BALLOTS: dict[str, Ballot] = {
                          "San Diego County Voter Information Guide",
                      "ca-2026-11-03-coronado-measure-d":
                          "San Diego County Voter Information Guide",
+                     "ca-2026-11-03-berkeley-measure-u":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-berkeley-measure-v":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-berkeley-measure-w":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-berkeley-measure-x":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-berkeley-measure-y":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-berkeley-measure-z":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-berkeley-measure-aa":
+                         "Alameda County Composite Voter Information Guide",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",
