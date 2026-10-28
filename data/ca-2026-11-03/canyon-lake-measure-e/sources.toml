@@ -1,0 +1,46 @@
+# Archived sources for City of Canyon Lake Measure E, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The pages are cut from the County of
+# Riverside Registrar of Voters' County Voter Information Guide (ballot
+# type 106, a Canyon Lake precinct); "page" is the guide's page.
+#
+# The guide prints the ballot question, the City Attorney's Impartial
+# Analysis and an argument in favor; it prints "NO ARGUMENT FILED AGAINST
+# MEASURE “E”", no rebuttals, no fiscal analysis and not the
+# initiative's full text (the City of Canyon Lake's clerk has it; not
+# archived).
+
+[contest]
+id = "ca-2026-11-03-canyon-lake-measure-e"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:canyon_lake"
+kind = "measure"
+title = "City of Canyon Lake Measure E: One Cent Sales Tax for Police, Fire and Paramedic Services"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "County of Riverside Registrar of Voters, County Voter Information Guide, page 22: sample ballot, Measure E ballot question"
+credit = "Sample ballot, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000106.pdf"
+file = "sources/sample-ballot-page.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "analysis"
+kind = "official-title-summary"
+publisher = "County of Riverside Registrar of Voters, County Voter Information Guide, page 44: City Attorney Impartial Analysis of Measure E"
+credit = "City Attorney Impartial Analysis, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000106.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in favor of Measure E, as printed in the County of Riverside Registrar of Voters' County Voter Information Guide, page 44 (no argument against was filed)"
+credit = "Argument in favor, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000106.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
