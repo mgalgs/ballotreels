@@ -13,5 +13,7 @@
 \b[A-Z]{3,}s\b | an acronym written as a plural is heard as a word ("PACs" as "packs" or "pacts"; two-letter ones like "IDs" are spelled out and pass) | write out what it stands for ("political committees")
 \bPACs?\b | "PAC" is said as a word and heard as "pack" | write out what it stands for ("political committee")
 (?<!\w)(?:[A-Za-z]\.){2,} | an abbreviation with internal periods splits the phrase or is read letter by letter ("U.S.", "e.g.") | write the words ("United States", "for example")
+\bCounsel\b | "Counsel" is heard as "Council" | name the body another way ("the Legislature's fiscal note")
+(?i)\bmail voters?\b | "mail voters" is heard as "male voters" | say "voters who vote by mail"
 (?i)\bconsents?\b | "consents" was heard as "can sense" | say "agrees" or "permission"
 (?i)\b\w*[b-df-hj-np-tv-z]y['’]s\b | a possessive of a word ending in a consonant and "y" sounds just like its plural ("property's" is heard as "properties") | rephrase with "of" ("the value of the property")
