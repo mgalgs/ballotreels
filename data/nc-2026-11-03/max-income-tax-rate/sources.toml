@@ -1,0 +1,72 @@
+# Archived sources for North Carolina's income tax rate amendment,
+# 2026-11-03 general election. Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# North Carolina prints no voter guide. The official explanation is the
+# Legislative Services Officer's summary explanation (G.S. 147-54.10),
+# two pages for all three amendments; this one is on page 2. No state
+# site posts it: lso-summary-explanations.pdf is Camden County's hosted
+# copy of the August 20, 2026 release (Forsyth County's copy has the
+# same text), not checked byte for byte against an original from the
+# Legislative Services Office. It prints the ballot question, so the
+# card quotes it. Its heading repeats the bill's short title, which no
+# line or card field quotes.
+#
+# The fiscal statement is the Fiscal Research Division's Legislative
+# Fiscal Note on the bill's first edition; the amendment's text is
+# unchanged in the session law. The Legislative Analysis Division's
+# summary of the session law is filed as an official-title-summary, as
+# North Dakota's official analyses are. North Carolina has no official
+# arguments for or against an amendment.
+
+[contest]
+id = "nc-2026-11-03-max-income-tax-rate"
+election = "nc-2026-11-03"
+division = "ocd-division/country:us/state:nc"
+kind = "measure"
+title = "Constitutional Amendment - Maximum Income Tax Rate of 3.5%"
+
+[[source]]
+id = "explanation"
+kind = "official-title-summary"
+publisher = "Legislative Services Officer, North Carolina General Assembly, Official Summary Explanation of 2026 Constitutional Amendments (August 20, 2026), page 2; Camden County's copy"
+credit = "North Carolina Legislative Services Officer, Official Summary Explanation"
+url = "https://www.camdencountync.gov/DocumentCenter/View/1277/Summary-Explanation-of-2026-Constitutional-Amendments"
+file = "sources/lso-summary-explanations.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "North Carolina State Board of Elections, Referendum Choices List Grouped by Referendum, November 3, 2026"
+credit = "North Carolina State Board of Elections"
+url = "https://s3.amazonaws.com/dl.ncsbe.gov/Elections/2026/Candidate%20Filing/statewide_referendums_20261103.pdf"
+file = "sources/statewide-referendums.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "General Assembly of North Carolina, Session Law 2026-4, Senate Bill 1080 (2025 Session), as ratified"
+url = "https://www.ncleg.gov/Sessions/2025/Bills/Senate/PDF/S1080v3.pdf"
+file = "sources/sl2026-4-s1080.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "summary"
+kind = "official-title-summary"
+publisher = "North Carolina General Assembly, Legislative Analysis Division, Senate Bill 1080: Analysis of S.L. 2026-4, August 19, 2026"
+credit = "North Carolina Legislative Analysis Division"
+url = "https://dashboard.ncleg.gov/api/Services/BillSummary/2025/S1080-SMBA-128(sl)-v-10"
+file = "sources/s1080-bill-summary-sl.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal-note"
+kind = "official-fiscal-analysis"
+publisher = "North Carolina General Assembly, Fiscal Research Division, Legislative Fiscal Note, Senate Bill 1080 (First Edition), May 19, 2026"
+credit = "North Carolina Fiscal Research Division, Fiscal Note"
+url = "https://www.ncleg.gov/Sessions/2025/FiscalNotes/Senate/PDF/SFN1080v1.pdf"
+file = "sources/s1080-fiscal-note.pdf"
+retrieved = "2026-10-27"

@@ -1,0 +1,154 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; the cap today; how state law already lowers the personal
+# rate; what the amendment would change; what the Fiscal Research
+# Division's fiscal note says, with its caveat; the two sides; what a
+# vote does.
+#
+# The card quotes the Legislative Services Officer's summary explanation:
+# the ballot question as the title and the official summary sentence as
+# the summary. North Carolina numbers no amendment, so the card has no
+# number and the script names it by subject. The explanation's heading
+# repeats the bill's short title; neither the card nor any line uses it.
+# The explanation prints no "a vote for means" lines and no fiscal
+# statement, so the card has neither, and the vote lines take their two
+# meanings from the summary's "a maximum of 7%" and "a maximum of 3.5%".
+#
+# Fiscal: the note's bottom line is "No Fiscal Impact", because the
+# rates "are anticipated to be under the 3.5% cap in 2027 and after"
+# (the personal rate forecast at 3.49% in 2027 and 2.99% from 2028, as
+# its Table 1 shows; corporate rates are lower still). Its Technical
+# Considerations add that if revenue missed the FY 2025-26 trigger, the
+# 3.99% rate would stay and the cap "would become binding and require a
+# reduction to the personal income tax rate"; the script
+# gives that caveat beside the no-impact line. No dollar figure is
+# narrated, so rule 6.5 does not apply. The "CONFIDENTIAL" memo is not
+# a source.
+#
+# North Carolina publishes no official arguments for or against an
+# amendment, so both sides are filed = false and each says so once, in
+# the same number of words.
+
+contest = "nc-2026-11-03-max-income-tax-rate"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "explanation"
+title = "Constitutional amendment to keep the State income tax rate from being raised higher than three and one-half percent (3.5%)."
+origin = "Session Law 2026-4"
+summary = "This amendment to the North Carolina Constitution would lower the State income tax rate from a maximum of 7% to a maximum of 3.5% beginning January 1, 2027."
+
+[[section]]
+id = "what"
+heading = "The income tax amendment"
+
+[[section.line]]
+text = "This amendment is about the cap on North Carolina's income tax rate."
+sources = ["explanation", "ballot"]
+
+[section.line.visual]
+kind = "page"
+source = "explanation"
+highlight = ["State income tax rate"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "The constitution now caps the income tax rate at 7 percent."
+sources = ["explanation", "summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "income-taxes"
+
+[[section.line]]
+text = "State law lowers the personal rate by half a point when revenue passes set targets."
+sources = ["fiscal-note"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would lower the cap to three and a half percent, for personal and corporate income, from 2027."
+sources = ["explanation", "summary"]
+
+[section.line.visual]
+kind = "page"
+source = "explanation"
+highlight = ["a maximum of 3.5%"]
+
+[[section]]
+id = "fiscal"
+heading = "What the fiscal note says"
+
+[[section.line]]
+text = "The Fiscal Research Division found no fiscal impact, because rates are expected to stay under the new cap."
+sources = ["fiscal-note"]
+
+[section.line.visual]
+kind = "bars"
+title = "Personal income tax rate"
+source = "fiscal-note"
+unit = "%"
+labels = ["2026", "2027 forecast", "2028 forecast"]
+values = [3.99, 3.49, 2.99]
+
+[[section.line]]
+text = "If revenue missed its 2025 to 2026 target, the Division adds, the 3.99 percent rate would stay, and the cap would then require a lower rate."
+sources = ["fiscal-note"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "North Carolina publishes no official argument for the amendment."
+sources = ["explanation"]
+
+[section.line.visual]
+kind = "list"
+source = "explanation"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "North Carolina publishes no official argument against the amendment."
+sources = ["explanation"]
+
+[section.line.visual]
+kind = "list"
+source = "explanation"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for sets the cap at three and a half percent."
+sources = ["explanation"]
+
+[section.line.visual]
+kind = "page"
+source = "explanation"
+highlight = ["a maximum of 3.5%"]
+
+[[section.line]]
+text = "A vote against keeps the cap at 7 percent."
+sources = ["explanation"]
+
+[section.line.visual]
+kind = "page"
+source = "explanation"
+highlight = ["a maximum of 7%"]
