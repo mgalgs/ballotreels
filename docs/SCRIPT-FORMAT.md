@@ -469,13 +469,16 @@ quote = "Unknown net fiscal effect."
   billion" is `2700000000`. Only a figure printed with a dollar sign
   counts; "tens of millions of dollars" is not one. The check fails an
   amount that is not the quote's largest figure.
-- `period` (with `amount` only) is the figure's period as the quote
-  states it: `per-year`, `one-time`, `over N years`, `every N years`
+- `period` (with `amount`, or status `in-words`) is the figure's period
+  as the quote states it: `per-year`, `one-time`, `over N years`, `every N years`
   (one recurring figure per N years, as Utah's "every two years"), or
   `unstated`.
 - `status`, instead of `amount`, when the statement prints no dollar
-  figure: `none-printed` (no figure, including no statement at all, when
-  `quote` is left out), `not-determined` (the statement says the effect
+  figure: `none-printed` (no size at all, including no statement at all,
+  when `quote` is left out), `in-words` (the statement sizes the effect
+  only in words, as "tens of millions of dollars each year"; it needs
+  its `period`, and sorts apart from the dollar figures, never as a
+  guessed amount), `not-determined` (the statement says the effect
   cannot be determined or is unknown) or `no-material-impact` (it says
   there is no fiscal effect, or none of note). Any status but
   `none-printed` needs its `quote`.

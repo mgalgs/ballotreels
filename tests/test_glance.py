@@ -121,7 +121,9 @@ class LoaderTest(GlanceTestCase):
             "'status' must": '[prop-2]\nsource = "note"\nstatus = "tbd"\n',
             "needs the 'quote' that says so":
                 '[prop-2]\nsource = "note"\nstatus = "not-determined"\n',
-            "with an 'amount' only":
+            "'in-words' needs its 'period'": '[prop-2]\nsource = "note"\n'
+                'status = "in-words"\nquote = "x"\n',
+            "with an 'amount'":
                 '[prop-2]\nsource = "note"\nstatus = "none-printed"\n'
                 'period = "per-year"\n',
             "needs the 'quote' that states it":
@@ -195,6 +197,19 @@ class CheckTest(GlanceTestCase):
             self.failures(GOOD.replace("2700000000", "1500000")),
             ["[glance] prop-2: amount 1500000 is not the quote's largest "
              "dollar figure (2700000000)"])
+
+    def test_in_words(self):
+        self.write('[prop-2]\nsource = "note"\nstatus = "in-words"\n'
+                   'quote = "admin-istration"\nperiod = "per-year"\n')
+        self.assertEqual(load_glance(self.election)["prop-2"].period,
+                         "per-year")
+        self.assertEqual(check_glance(self.election), [])
+        failures = self.failures(
+            '[prop-2]\nsource = "note"\nstatus = "in-words"\n'
+            'quote = "$314,000 a year"\nperiod = "per-year"\n')
+        self.assertEqual(len(failures), 1)
+        self.assertIn("status is 'in-words', but the quote prints",
+                      failures[0])
 
     def test_none_printed_with_a_figure_fails(self):
         failures = self.failures(

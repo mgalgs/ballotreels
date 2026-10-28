@@ -29,9 +29,10 @@ GLANCE_KINDS = frozenset({"official-fiscal-analysis",
                           "official-title-summary"})
 DIRECTIONS = frozenset({"cost", "revenue-loss", "revenue-gain", "savings",
                         "mixed"})
-# Why an entry has no amount: the statement prints no dollar figure, says
-# the effect cannot be determined, or says there is no material effect.
-STATUSES = frozenset({"none-printed", "not-determined",
+# Why an entry has no amount: the statement prints no dollar figure, sizes
+# the effect only in words ("tens of millions of dollars"), says the
+# effect cannot be determined, or says there is no material effect.
+STATUSES = frozenset({"none-printed", "in-words", "not-determined",
                       "no-material-impact"})
 PERIODS = frozenset({"per-year", "one-time", "unstated"})
 _PERIOD_SPAN = re.compile(r"^(over|every) ([2-9]|[1-9]\d+) years$")
@@ -56,7 +57,7 @@ class GlanceEntry:
     source: str
     quote: str | None = None
     amount: int | None = None     # dollars; None when `status` is set
-    period: str | None = None     # with `amount` only
+    period: str | None = None     # with `amount`, or status "in-words"
     direction: str | None = None  # only as the quote states it
     status: str | None = None     # None when `amount` is set
 
@@ -117,9 +118,17 @@ def _entry(slug: str, raw: object, where: str) -> GlanceEntry:
         if status not in STATUSES:
             raise GlanceError(f"{where}: 'status' must be one of "
                               f"{sorted(STATUSES)}, got {status!r}")
-        if period is not None:
+        if status == "in-words":
+            if period is None:
+                raise GlanceError(f"{where}: status 'in-words' needs its "
+                                  f"'period'")
+            if not valid_period(period):
+                raise GlanceError(
+                    f"{where}: 'period' must be one of {sorted(PERIODS)}, "
+                    f"'over N years' or 'every N years', got {period!r}")
+        elif period is not None:
             raise GlanceError(f"{where}: 'period' goes with an 'amount' "
-                              f"only")
+                              f"or status 'in-words' only")
         if quote is None and status != "none-printed":
             raise GlanceError(f"{where}: status {status!r} needs the "
                               f"'quote' that says so")
@@ -216,8 +225,8 @@ def check_glance(election_dir: str | Path) -> list[Failure] | None:
             elif entry.amount != max(figures):
                 fail(f"amount {entry.amount} is not the quote's largest "
                      f"dollar figure ({max(figures)})")
-        elif entry.status == "none-printed" \
+        elif entry.status in ("none-printed", "in-words") \
                 and (figures := dollar_figures(entry.quote)):
-            fail(f"status is 'none-printed', but the quote prints "
+            fail(f"status is {entry.status!r}, but the quote prints "
                  f"{figures}: give the largest as 'amount'")
     return out
