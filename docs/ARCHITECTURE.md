@@ -28,9 +28,10 @@ stale; they are regenerated on next request.
 
     location ─▶ divisions ─▶ contests ─▶ sources ─▶ script ─▶ checks ─▶ render ─▶ encode ─▶ cache
 
-1. **Location to divisions.** An address resolves to an exact set of
-   divisions. A zip code may span several, so the UI shows a map of the
-   candidate districts and asks the user to pick, or to enter an address.
+1. **Location to divisions.** A zip code resolves to a set of
+   divisions. It may span several districts of a kind, so the UI shows a
+   map of the candidate districts and asks the user to pick. Zip codes
+   are the only lookup.
    A zip's cities and school districts are never asked about: the ballot
    lists every one overlapping it, marking those that cover only part
    of it (see "Local contests" below).
@@ -101,7 +102,7 @@ A city is a TIGER/Line incorporated place (a census-designated place
 has no government, and so no measures); its name is TIGER's (`San
 Diego`, shown as "City of San Diego"). A school district is a unified,
 elementary or secondary one, named as TIGER names it ("San Diego
-Unified School District"); an address in both an elementary and a
+Unified School District"); a home in both an elementary and a
 secondary district is in both.
 
 Local contests live in the state's election directory beside the
@@ -122,9 +123,7 @@ listed in the zip's `partial`. A zip split between counties asks which,
 as for any district; a zip's cities and school districts are not asked
 about. The ballot lists the contests of every one overlapping the zip,
 and those of a `partial` one say "May be on your ballot, depending on
-your address." An address resolves them exactly (the Census Geocoder's
-incorporated places and school district layers), so its ballot marks
-none.
+your address."
 
 **Special districts.** A water, fire, health care, community services
 or community college district has no free statewide boundary layer.
@@ -235,7 +234,6 @@ county.
 | Need | Source |
 |---|---|
 | District shapes for the map | Census TIGER/Line: congressional districts, state legislative districts (upper and lower), counties, incorporated places, unified, elementary and secondary school districts |
-| Address to districts | Census Geocoder (free, no key; returns the districts above for an address). Google Civic Information divisions endpoint as a cross-check and for OCD-IDs |
 | Zip to candidate districts | Census ZCTA relationship files, intersected with the TIGER shapes; for cities and school districts, which have none, the ZCTA shapes measured against theirs |
 | Statewide measures: title, summary, text, fiscal analysis, arguments | California Secretary of State official voter information guide (the analysis there is the Legislative Analyst's Office's) |
 | Certified candidate list, ballot designations | California Secretary of State certified list of candidates |
@@ -268,7 +266,7 @@ cache, plus the operator's queue monitor:
 - **The serve tier** (`python -m ballotreels serve`) is meant to run on
   a small public host (a DigitalOcean droplet in the operator's plan).
   It has two listeners:
-  - the **public** listener: the site, the district/zip/address lookup,
+  - the **public** listener: the site, the zip lookup,
     the ballot and contest APIs, Generate, and the cached videos
     (served with HTTP Range support, since Safari and iOS require it).
   - the **private** listener: the worker API and the queue monitor,
@@ -307,9 +305,9 @@ cache, plus the operator's queue monitor:
   one in browsers and the CDN never hides the fix. A retried upload of
   the same job still overwrites its own objects. Superseded objects in
   the bucket are not deleted.
-- No accounts: the public site asks for nothing but a zip code or an
-  address, and the operator's queue monitor is the only gated page,
-  signed in with the one shared token.
+- No accounts: the public site asks for nothing but a zip code, and
+  the operator's queue monitor is the only gated page, signed in with
+  the one shared token.
 
 ## Scope of this round
 
