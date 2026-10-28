@@ -1,0 +1,63 @@
+# Archived sources for Riverside County Measure A, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the
+# Riverside County Registrar of Voters' County Voter Information Guide
+# (ballot type 415; the Measure A pages are the same in every ballot
+# type's guide); "page" is the guide's printed footer number.
+#
+# The guide prints the Expenditure Plan, not the ordinance; the
+# ordinance is archived from the Riverside County Transportation
+# Commission. The guide prints no fiscal analysis or tax rate statement
+# (a sales tax, not a bond).
+
+[contest]
+id = "ca-2026-11-03-riverside-county-measure-a"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:riverside"
+kind = "measure"
+title = "Riverside County Measure A: Continuing the Half-Cent Transportation Sales Tax"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "Riverside County Registrar of Voters, County Voter Information Guide, page RV 415-020: sample ballot, Measure A"
+credit = "Sample ballot, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000415.pdf"
+file = "sources/sample-ballot-page.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Riverside County Counsel, Impartial Analysis of Measure A, Riverside County Voter Information Guide, page RV 415-038"
+credit = "Impartial Analysis, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000415.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "expenditure-plan"
+kind = "official-text"
+publisher = "Riverside County Transportation Commission, Riverside County Transportation Improvement Plan (Expenditure Plan) for Measure A, Riverside County Voter Information Guide, pages RV 415-027 to RV 415-037"
+credit = "Expenditure Plan, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000415.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments for and against Measure A and rebuttals, as printed in the Riverside County Voter Information Guide, pages RV 415-039 to RV 415-040"
+credit = "Arguments, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000415.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ordinance"
+kind = "official-text"
+publisher = "Riverside County Transportation Commission, Ordinance No. 26-001, renewing the existing transportation measure"
+url = "https://www.rctc.org/wp-content/uploads/2026/06/RCTIP_Ordinance.pdf"
+file = "sources/rctc-ordinance.pdf"
+retrieved = "2026-10-28"

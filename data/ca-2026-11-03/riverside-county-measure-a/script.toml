@@ -1,0 +1,168 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; how the tax began and when it ends today; who put it on the
+# ballot and what it needs to pass; what would change (no end date, how
+# the money is split, who reviews it); the ballot's revenue estimate;
+# one line per side; what a vote does.
+#
+# The guide prints no fiscal analysis or tax rate statement (a sales
+# tax, not a bond); the one yearly estimate is in the ballot question.
+# No archived source states the Transportation Commission's budget or
+# the county's general fund, so the $280 million has no scale
+# (STANDARD.md 6.5; left open). The card is the sample ballot's question,
+# which prints no yes/no lines; the vote lines take their meaning from
+# County Counsel's Impartial Analysis, as Los Angeles County Measure A's
+# do.
+#
+# Sides come from the argument in favor and the argument against, not
+# the rebuttals.
+
+contest = "ca-2026-11-03-riverside-county-measure-a"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot"
+number = "A"
+title = "Riverside County Traffic Relief, Pothole/Road Repair Investment Renewal"
+origin = "COUNTY OF RIVERSIDE"
+summary = "Without raising tax rates, shall the measure to reduce congestion; repair potholes; complete freeway projects; keep roads in good condition; help improve safety; support local jobs; reinforce aging bridges, highways/roads from flooding/earthquakes; keep senior/student/disabled/veteran bus fares low be adopted, continuing the existing ½¢ voter-approved transportation sales tax providing approximately $280,000,000 annually until ended by voters, requiring audits, spending disclosure, local control?"
+
+[[section]]
+id = "what"
+heading = "Measure A"
+
+[[section.line]]
+text = "Riverside County Measure A asks voters across the county whether to continue the existing half-cent sales tax for transportation."
+sources = ["ballot", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["continuing the existing ½¢ voter-approved transportation sales tax"]
+
+[[section]]
+id = "background"
+heading = "How the tax began"
+
+[[section.line]]
+text = "Voters first approved the tax in 1988, to pay for highways, local roads and public transit."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "timeline"
+source = "impartial-analysis"
+labels = ["1988", "2002", "2039"]
+items = ["Voters approve the tax", "Voters extend it 30 years", "The tax is set to expire"]
+
+[[section.line]]
+text = "In 2002, voters extended it for 30 more years, so it is now set to expire in 2039."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The Riverside County Transportation Commission placed Measure A on the ballot, and it needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The tax would continue at the same rate after 2039, until voters end it."
+sources = ["impartial-analysis", "ordinance"]
+
+[section.line.visual]
+kind = "illustration"
+name = "extend-deadline"
+
+[[section.line]]
+text = "A spending plan splits the money among highways, local roads and public transit."
+sources = ["impartial-analysis", "expenditure-plan"]
+
+[section.line.visual]
+kind = "share"
+title = "Western Riverside County's split"
+source = "expenditure-plan"
+unit = "%"
+labels = ["Highways and regional corridors", "Local streets and roads", "Public transportation"]
+values = [59, 29, 12]
+
+[[section.line]]
+text = "An independent taxpayers oversight committee would review a yearly audit."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "fiscal"
+heading = "What the ballot estimates"
+
+[[section.line]]
+text = "The ballot question estimates the tax would provide about $280 million a year."
+sources = ["ballot"]
+
+[section.line.visual]
+kind = "illustration"
+name = "open-road"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure A would fix potholes, repair aging bridges and speed up traffic, all without raising taxes."
+sources = ["arguments"]
+basis = ["Fix thousands of potholes and bad roads throughout Riverside", "Upgrade and repair almost 500 aging, deteriorating bridges", "Vote Yes on A to fix roads and cut down traffic jams now - without raising taxes!"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Fixes potholes and aging bridges", "Cuts traffic without raising taxes"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say drivers still face gridlock after decades of this tax, and voters should not make it open-ended."
+sources = ["arguments"]
+basis = ["For nearly four decades, Riverside County taxpayers have paid the Measure A half-cent sales tax for transportation.", "Yet today, motorists still face some of Southern California’s worst congestion", "VOTERS SHOULD NOT GIVE GOVERNMENT AN OPEN-ENDED TAX COMMITMENT WITHOUT DEMANDING BETTER RESULTS."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Gridlock remains after decades of the tax", "Voters should not make the tax open-ended"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote extends the half-cent tax at the same rate until voters end it."
+sources = ["impartial-analysis", "ballot"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["until ended by voters"]
+
+[[section.line]]
+text = "A no vote rejects the extension, and the tax stays set to expire in 2039."
+sources = ["impartial-analysis", "ballot"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["continuing the existing ½¢ voter-approved transportation sales tax"]

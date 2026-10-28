@@ -283,3 +283,12 @@ status = "none-printed"
 [coronado-measure-d]
 source = "guide-page"
 status = "none-printed"
+
+# Riverside County Measure A: the guide prints no fiscal analysis or tax
+# rate statement; the one yearly estimate is in its ballot question
+# (the line pdftotext keeps whole; the sample ballot is set in columns).
+[riverside-county-measure-a]
+source = "ballot"
+quote = "sales tax providing approximately $280,000,000 annually"
+amount = 280000000
+period = "per-year"
