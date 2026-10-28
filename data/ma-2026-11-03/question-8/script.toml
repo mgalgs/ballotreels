@@ -1,0 +1,146 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; the laws that allow and tax retail sales today; what the
+# question would repeal, and when; what possession and medical use it
+# would keep; the revenue the fiscal statement says the taxes raised;
+# one point per side; what a vote does.
+#
+# The card quotes the Secretary of the Commonwealth's Information for
+# Voters: the question's short title, its origin, the first paragraph of
+# the Attorney General's summary (the rest, on penalties under 21,
+# licensed businesses and the start date, runs past the vote lines in
+# the booklet's text and does not fit the card), the statement of fiscal
+# consequences, and the booklet's "A YES VOTE" and "A NO VOTE" lines.
+#
+# The fiscal statement's about $280 million in state revenue and $50
+# million in local revenue in fiscal year 2025 are government money and
+# take a scale (the state's and local budgets for that year), but no
+# archived source states those totals, so the figures are stated
+# without a scale (left open for the host to add one). For the same
+# reason neither side's money figure ("$4.50" for every "$1", "billions
+# of dollars") is narrated. No person the booklet names is named.
+
+contest = "ma-2026-11-03-question-8"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "booklet"
+number = "8"
+title = "Prohibit Retail Sale of Adult Recreational Use Marijuana"
+origin = "Law Proposed by Initiative Petition"
+summary = "The proposed law would change the type and amount of marijuana that may legally be possessed in Massachusetts by repealing the laws that legalize, regulate, and tax the retail sale of adult recreational use marijuana in Massachusetts. The proposed law would also permit persons 21 years of age and older to possess 1 ounce or less of marijuana including no more than 5 grams in the form of concentrate, and to gift or transfer to another person 21 years of age and older 1 ounce or less of marijuana including no more than 5 grams in the form of concentrate. The proposed law would also impose a civil penalty of $100 and forfeiture of the marijuana for the possession of marijuana between the weight of 1 and 2 ounces."
+fiscal = "By repealing the laws that legalize and tax the retail sale of adult recreational use marijuana, the proposed law would reduce the amount that state and municipal governments receive from the taxation of those sales. In fiscal year 2025, taxation of the retail sale of adult recreational use marijuana raised approximately $280 million in state revenue and $50 million in local revenue. The state budget, which is supported by tax revenue, funds local aid for schools and municipal budgets."
+yes = "A YES VOTE would prohibit the legalization, regulation, and taxation of the retail sale of adult recreational use marijuana, and change the penalties for possession of marijuana."
+no = "A NO VOTE would make no change to the law relative to marijuana."
+
+[[section]]
+id = "what"
+heading = "Question 8"
+
+[[section.line]]
+text = "Question 8 is about recreational marijuana stores."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["Prohibit Retail Sale of Adult Recreational Use Marijuana"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, state laws legalize, regulate and tax those stores."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The question would repeal those laws, starting January 1, 2028."
+sources = ["booklet", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["repealing the laws that legalize, regulate, and tax the retail sale"]
+
+[[section.line]]
+text = "Adults 21 and older could still have up to one ounce, and medical sales would continue."
+sources = ["booklet", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["permit persons 21 years of age and older to possess 1 ounce or less"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Executive Office of Administration and Finance says repeal would reduce revenue from taxes that raised about $280 million for the state and $50 million locally in fiscal 2025."
+sources = ["fiscal"]
+
+[section.line.visual]
+kind = "illustration"
+name = "revenue-drop"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say marijuana is now the most common drug in fatal car accidents here, and modern concentrates and edibles are linked to psychosis."
+sources = ["arguments"]
+basis = ["Since commercial legalization, marijuana is now the most common drug found in fatal car accidents in Massachusetts", "Modern concentrates and edibles have been linked to mental health conditions like psychosis"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Most common drug found in fatal car accidents", "Concentrates and edibles linked to psychosis"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the question would return marijuana to an illicit market with no safety testing, and shut down hundreds of small businesses."
+sources = ["arguments"]
+basis = ["returning marijuana to the illicit market where there are no safeguards in place", "ensuring that products are tested for safety", "Question 8 would shut down hundreds of small businesses"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Returns marijuana to an illicit market without safeguards", "Shuts down hundreds of small businesses"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote would prohibit retail sales of recreational marijuana."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["A YES VOTE would prohibit"]
+
+[[section.line]]
+text = "A no vote would make no change to the law on marijuana."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["A NO VOTE would make no change"]

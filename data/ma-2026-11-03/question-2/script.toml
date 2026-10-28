@@ -1,0 +1,144 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; that the state's public employee labor law does not name
+# CPCS as an employer today; what the question would change, and the
+# funding request it would require; the fiscal statement; one point per
+# side; what a vote does.
+#
+# The card quotes the Secretary of the Commonwealth's Information for
+# Voters: the question's short title, its origin, the Attorney General's
+# summary, the statement of fiscal consequences, and the booklet's "A
+# YES VOTE" and "A NO VOTE" lines ("Committee for Public Counsel
+# Service employees" as printed). CPCS is spelled out on first use, as
+# the summary does.
+#
+# No organized group filed an argument against: the booklet prints one
+# the Secretary compiled, in part from the Legislature's majority
+# report. It is the booklet's official argument against, so the no side
+# is a filed argument, attributed as the booklet heads it ("the argument
+# against"), not to any group. No person the booklet names is named.
+
+contest = "ma-2026-11-03-question-2"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "booklet"
+number = "2"
+title = "Collective Bargaining for CPCS Employees"
+origin = "Law Proposed by Initiative Petition"
+summary = "This proposed law would specify that employees of the Committee for Public Counsel Services (“CPCS”) are permitted to engage in collective bargaining with their employer. It would also require CPCS, after executing a collective bargaining agreement, to request the appropriation necessary to fund such agreement from the Governor."
+fiscal = "The proposed law may have an impact on state finances. CPCS receives its funding, in part, from state government appropriations. The fiscal impact of the proposed law is difficult to project due to the uncertainty regarding the outcomes of any such collective bargaining by CPCS employees."
+yes = "A YES VOTE would specify that Committee for Public Counsel Services employees may form a union to collectively bargain with their employer."
+no = "A NO VOTE would make no change to the law governing labor relations for Committee for Public Counsel Service employees."
+
+[[section]]
+id = "what"
+heading = "Question 2"
+
+[[section.line]]
+text = "Question 2 is about union rights for employees of the Committee for Public Counsel Services, or CPCS."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["Collective Bargaining for CPCS Employees"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the public employee labor law does not name CPCS as an employer."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The question would let CPCS employees form a union and bargain with their employer."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["permitted to engage in collective bargaining with their employer"]
+
+[[section.line]]
+text = "CPCS would then have to ask the Governor to fund any contract."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["to request the appropriation necessary to fund such agreement from the Governor"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Executive Office of Administration and Finance says the fiscal impact is difficult to project."
+sources = ["fiscal"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say CPCS employees, unlike other state employees, cannot choose whether to unionize, and the question gives them that choice."
+sources = ["arguments"]
+basis = ["unlike other state employees, CPCS employees do not currently have the right to choose whether to organize and collectively bargain", "It simply gives CPCS employees the right to make that choice for themselves."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Unlike other state workers, CPCS staff cannot choose a union", "Gives CPCS employees the right to choose"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "The argument against says bargaining could disrupt how the agency is run, and limit its flexibility with caseloads and courts."
+sources = ["arguments"]
+basis = ["Introducing collective bargaining into this framework could disrupt existing management and supervisory frameworks", "particularly if they limit the agency’s ability to respond flexibly to fluctuating caseloads, staffing needs, and court demands."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Could disrupt management and blur lines of authority", "Could limit flexibility with fluctuating caseloads, staffing and courts"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote would specify that CPCS employees may form a union."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["A YES VOTE would specify"]
+
+[[section.line]]
+text = "A no vote would make no change to the labor law for CPCS employees."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["A NO VOTE would make no change"]

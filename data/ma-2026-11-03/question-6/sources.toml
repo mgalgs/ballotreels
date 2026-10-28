@@ -1,0 +1,71 @@
+# Archived sources for Massachusetts Question 6, 2026-11-03 state
+# election. Every id here may be cited by script.toml. `kind` must be one
+# the standard allows (docs/STANDARD.md, section 1).
+#
+# The Secretary of the Commonwealth prints a question's wording, the
+# Attorney General's summary, "What your vote will do", the Executive
+# Office of Administration and Finance's statement of fiscal
+# consequences, the 150-word arguments, the Legislature's committee reports and the
+# full text in its Information for Voters, so several sources below
+# share one archived file: those pages, cut from the full booklet. The
+# booklet is cited by the Secretary's own URL; sec.state.ma.us blocks
+# scripted fetches, so the archived copy came from an Internet Archive
+# capture of that PDF.
+
+[contest]
+id = "ma-2026-11-03-question-6"
+election = "ma-2026-11-03"
+division = "ocd-division/country:us/state:ma"
+kind = "measure"
+title = "Question 6: Natural Resource Conservation Fund"
+
+[[source]]
+id = "booklet"
+kind = "official-title-summary"
+publisher = "Secretary of the Commonwealth of Massachusetts, Information for Voters, 2026 Ballot Questions, Question 6: ballot question, summary and What Your Vote Will Do, pages 16 to 17"
+credit = "Massachusetts Information for Voters, Question 6"
+url = "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal"
+kind = "official-fiscal-analysis"
+publisher = "Executive Office of Administration and Finance, Statement of Fiscal Consequences of Question 6, in the Secretary of the Commonwealth's Information for Voters, page 17"
+credit = "Statement of Fiscal Consequences, Information for Voters"
+url = "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments in favor of and against Question 6, as printed in the Secretary of the Commonwealth's Information for Voters, page 17"
+credit = "Arguments, Information for Voters"
+url = "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Proposed Law, Question 6, in the Secretary of the Commonwealth's Information for Voters, pages 40 to 41"
+url = "https://www.sec.state.ma.us/divisions/elections/download/information-for-voters/archive/IFV_2026%20English.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "petition"
+kind = "official-text"
+publisher = "Massachusetts Attorney General's Office, text of the initiative petition as filed"
+url = "https://www.mass.gov/doc/25-15-initiative-petition-for-a-law-to-protect-water-nature-version-a/download"
+file = "sources/text-proposed-law-as-filed.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "ag-summary"
+kind = "official-title-summary"
+publisher = "Massachusetts Attorney General's Office, summary of the initiative petition as certified"
+url = "https://www.mass.gov/doc/final-summary-for-25-15-initiative-petition-for-a-law-to-protect-water-nature-version-a/download"
+file = "sources/ag-summary-certified.pdf"
+retrieved = "2026-10-27"

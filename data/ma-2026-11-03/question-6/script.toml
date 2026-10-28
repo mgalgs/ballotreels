@@ -1,0 +1,147 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; where the sales taxes on sporting goods go today; how much
+# of them the new fund would get, and when; what the fiscal statement
+# says it would divert and cost; one point per side; what a vote does.
+#
+# The card quotes the Secretary of the Commonwealth's Information for
+# Voters: the question's short title, its origin, the first paragraph of
+# the Attorney General's summary (the rest, on the board, its rules and
+# reports, runs past the vote lines in the booklet's text and does not
+# fit the card), the statement of fiscal consequences, and the booklet's
+# "A YES VOTE" and "A NO VOTE" lines.
+#
+# The fiscal statement's "tens of millions of dollars" a year is
+# government money, compared with the state operating budget it names,
+# but no archived source states that budget's total, so the figure is
+# stated without a scale (left open for the host to add one). That the
+# money is subject to appropriation is in the summary, so the change
+# line states it in the summary's words; the argument against's point
+# that the Legislature may not fund it stays in that section.
+# The supporters' "$100 million/year" is left off for the same want of a
+# scale.
+#
+# No organized group filed an argument against: the booklet prints one
+# the Secretary compiled, in part from the Legislature's majority
+# report. It is the booklet's official argument against, so the no side
+# is a filed argument, attributed as the booklet heads it ("the argument
+# against"), not to any group. No person the booklet names is named.
+
+contest = "ma-2026-11-03-question-6"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "booklet"
+number = "6"
+title = "Natural Resource Conservation Fund"
+origin = "Law Proposed by Initiative Petition"
+summary = "This proposed law would establish a Nature for All Fund that, subject to appropriation by the Legislature, would receive 50% of state taxes collected from the sale and use of sporting goods, recreational vehicles, and golf courses for the first year of its operation. After July 1, 2028, the Nature for All Fund would begin receiving, subject to appropriation by the Legislature, 100% of state taxes collected on the sale and use of sporting goods, recreational vehicles, and golf courses."
+fiscal = "The proposed law would have a significant impact on state and local budgets. While a full fiscal analysis is not feasible, it is estimated that, on an annual basis, the proposed law would automatically divert tens of millions of dollars of tax receipts that are currently supporting the state operating budget to the new fund. This proposed law would also have substantial implementation costs."
+yes = "A YES VOTE would create a fund that could be utilized for natural resource conservation that would receive some state taxes collected on the sale and use of sporting goods and recreational vehicles, and the use of golf courses."
+no = "A NO VOTE would not create this natural resource conservation fund or change how sales and use taxes are spent."
+
+[[section]]
+id = "what"
+heading = "Question 6"
+
+[[section.line]]
+text = "Question 6 is about a new natural resource conservation fund."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["Natural Resource Conservation Fund"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, sales taxes on sporting goods, recreational vehicles and golf courses support the state operating budget."
+sources = ["booklet", "fiscal"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "A new Nature for All Fund would get half of those taxes, then all after July 2028, subject to appropriation by the Legislature."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "bars"
+title = "Share of the sporting goods taxes for the fund, subject to appropriation"
+source = "booklet"
+unit = "%"
+labels = ["First year", "After July 1, 2028"]
+values = [50, 100]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Executive Office of Administration and Finance says it would divert tens of millions of dollars a year from the budget, with substantial implementation costs."
+sources = ["fiscal"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the question protects water, land and wildlife without raising taxes, using the sales tax already being paid."
+sources = ["arguments"]
+basis = ["Voting YES on 6 protects water, land, and wildlife in Massachusetts — without raising taxes.", "It dedicates the sales tax we already pay on sporting goods to protecting water and nature"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Protects clean water, land and wildlife", "No new tax: uses sales tax already paid"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "The argument against says the earmark would take money from other state programs, and the Legislature may not fund it."
+sources = ["arguments"]
+basis = ["Implementation of the measure would require the reallocation or reduction of funds presently directed toward other state initiatives", "Even if approved by the voters, the funds may not be allocated to the “Nature for All Fund,” as the Legislature retains exclusive authority over appropriations decisions."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Takes money from other state programs", "Even if approved, funds may not reach the fund"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote would create the fund, paid from some state sales taxes."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["A YES VOTE would create a fund"]
+
+[[section.line]]
+text = "A no vote would not create the fund or change how sales taxes are spent."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["A NO VOTE would not create this natural resource conservation fund"]

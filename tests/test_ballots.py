@@ -113,6 +113,15 @@ class BallotTest(unittest.TestCase):
                           ("Yes", "No"), "official-title-summary"))
         self.assertEqual(badge(nv, "Question 6: X", "6"), "QUESTION")
 
+    def test_massachusetts_uses_its_booklets_words(self):
+        ma = BALLOTS["ma"]
+        self.assertEqual((ma.guide, ma.fiscal_label, ma.choices,
+                          ma.card_source_kind),
+                         ("Information for Voters",
+                          "STATEMENT OF FISCAL CONSEQUENCES",
+                          ("Yes", "No"), "official-title-summary"))
+        self.assertEqual(badge(ma, "Question 1: X", "1"), "QUESTION")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):

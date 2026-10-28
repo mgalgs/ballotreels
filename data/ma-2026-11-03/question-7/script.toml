@@ -1,0 +1,137 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; that local zoning decides today; the lots the question would
+# open to single-family homes, and what towns could still regulate; the
+# fiscal statement; one point per side; what a vote does.
+#
+# The card quotes the Secretary of the Commonwealth's Information for
+# Voters: the question's short title, its origin, the first paragraph of
+# the Attorney General's summary (the second, on local regulation, runs
+# past the vote lines in the booklet's text; the narration states it),
+# the statement of fiscal consequences, and the booklet's "A YES VOTE"
+# and "A NO VOTE" lines. No figure here is government money. No person
+# the booklet names is named.
+
+contest = "ma-2026-11-03-question-7"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "booklet"
+number = "7"
+title = "Single Family Homes"
+origin = "Law Proposed by Initiative Petition"
+summary = "This proposed law would allow single-family homes to be built in a residentially zoned area as long as the land on which it is to be constructed is at least 5,000 square feet, has at least 50 feet of land bordering the street, road, or public way that it faces, and has access to public sewer and water services."
+fiscal = "If the proposed law enables the growth of housing in communities, it could provide positive new growth revenues to municipalities. However, it is difficult to project the potential scale of new growth tied to the proposed law. The proposed law thus has no discernible material fiscal consequences for state and municipal government finances."
+yes = "A YES VOTE would allow single-family homes to be built on lots of 5,000 square feet or more in residential areas, subject to reasonable local regulation of certain aspects of those homes."
+no = "A NO VOTE would make no change to the law relative to building single-family homes."
+
+[[section]]
+id = "what"
+heading = "Question 7"
+
+[[section.line]]
+text = "Question 7 is about where single-family homes may be built."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["Single Family Homes"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, local zoning rules decide where single-family homes may go."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "homestead"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The question would allow single-family homes on residential lots of at least 5,000 square feet, with public water and sewer."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["at least 5,000 square feet"]
+
+[[section.line]]
+text = "Towns could still reasonably regulate height, spacing, parking and short-term rentals."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "illustration"
+name = "home-building"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Executive Office of Administration and Finance finds no discernible material fiscal consequences."
+sources = ["fiscal"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say requiring huge lot sizes makes houses expensive, and smaller lots mean more affordable homes for young families and seniors."
+sources = ["arguments"]
+basis = ["Requiring huge lot sizes to build a single-family home makes houses expensive", "so we can have more affordable homes for young families and seniors."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Requiring huge lots makes houses expensive", "More affordable homes for young families and seniors"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say a statewide mandate would override the local planning by officials who answer to taxpayers and know their communities best."
+sources = ["arguments"]
+basis = ["through a statewide mandate that removes local decision-making.", "It would override local planning by requiring every city and town to allow single-family homes", "Local officials are directly responsible to taxpayers", "They understand their communities best, and work with residents to plan for housing"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["A statewide mandate overriding local planning", "Officials answer to taxpayers and know their communities"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote would allow single-family homes on lots of 5,000 square feet or more."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["A YES VOTE would allow single-family homes"]
+
+[[section.line]]
+text = "A no vote would make no change to the law on building single-family homes."
+sources = ["booklet"]
+
+[section.line.visual]
+kind = "page"
+source = "booklet"
+highlight = ["A NO VOTE would make no change"]
