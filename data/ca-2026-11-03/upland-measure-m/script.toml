@@ -77,15 +77,12 @@ sources = ["impartial-analysis"]
 
 [[section.line]]
 text = "Above that, the rate would depend on the kind of business, with a cap of $28,000 a year."
-sources = ["impartial-analysis"]
+sources = ["impartial-analysis", "ballot-label"]
 
 [section.line.visual]
-kind = "bars"
-title = "Tax rate on gross receipts over $100,000"
-source = "impartial-analysis"
-unit = "%"
-labels = ["Retail and commercial", "Contractors", "Rental", "General service", "Professional service"]
-values = [0.065, 0.15, 0.2, 0.125, 0.125]
+kind = "page"
+source = "ballot-label"
+highlight = ["rates between 0.065% and 0.2% of gross receipts"]
 
 [[section.line]]
 text = "The new rates would start in 2028 and last until voters end them."
