@@ -1,0 +1,39 @@
+# Contest index for the 2026-11-03 Arkansas general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). Arkansas
+# publishes no official voter guide; titles pair the designation with
+# the measure's short title as the Secretary of State's Notice to the
+# Public prints it (its popular name, or a bond act's ballot title).
+
+[election]
+id = "ar-2026-11-03"
+state = "ocd-division/country:us/state:ar"
+title = "Arkansas General Election, November 3, 2026"
+
+[[contest]]
+id = "ar-2026-11-03-issue-1"
+kind = "measure"
+division = "ocd-division/country:us/state:ar"
+title = "Issue 1: The Citizens Only Voting Amendment"
+number = "1"
+
+[[contest]]
+id = "ar-2026-11-03-issue-2"
+kind = "measure"
+division = "ocd-division/country:us/state:ar"
+title = "Issue 2: Right to Keep and Bear Arms"
+number = "2"
+
+[[contest]]
+id = "ar-2026-11-03-issue-3"
+kind = "measure"
+division = "ocd-division/country:us/state:ar"
+title = "Issue 3: Economic Development in the State of Arkansas"
+number = "3"
+
+[[contest]]
+id = "ar-2026-11-03-issue-4"
+kind = "measure"
+division = "ocd-division/country:us/state:ar"
+title = "Issue 4: Arkansas Water, Waste Disposal, and Pollution Abatement Facilities Financing Act of 2025"
+number = "4"
