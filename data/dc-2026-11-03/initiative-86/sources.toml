@@ -54,13 +54,10 @@ retrieved = "2026-10-27"
 # Precedent (STANDARD.md section 10, rule 1.2): other governments' official
 # records of a similar law, of kind precedent-record, citable only in a
 # background section. sources/precedent/README.md quotes the passage behind
-# each fact and lists what no official record confirmed. The script
-# describes California's law, the one archived law that, like Initiative
-# 86, bans the force-feeding itself as well as sales (none bans importing,
-# as Initiative 86 does); the city sales bans do not fit the length budget
-# beside it (script.toml's header). The other archived records (New York City,
-# Chicago, Pittsburgh, Portland, Oregon; the Supreme Court dockets) are not
-# listed, since the video's page lists every source here as one it used.
+# each fact and lists what no official record confirmed. Only the records
+# a line cites are listed (not the Supreme Court dockets or the other
+# archived copies), since the video's page lists every source here as
+# one it used.
 
 [[source]]
 id = "ca-law"
@@ -87,4 +84,67 @@ publisher = "United States Court of Appeals for the Ninth Circuit, Association d
 credit = "Ninth Circuit, Nos. 20-55882, 20-55944 (2022)"
 url = "https://cdn.ca9.uscourts.gov/datastore/opinions/2022/05/06/20-55882.pdf"
 file = "sources/precedent/ca9-2022-05-06-20-55882-assn-des-eleveurs-v-bonta.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "chicago-law"
+kind = "precedent-record"
+publisher = "City of Chicago, City Council, Journal of the Proceedings, Regular Meeting of April 26, 2006 (excerpt: ordinance prohibiting sale of foie gras by food establishments)"
+credit = "Chicago City Council Journal, April 26, 2006"
+url = "https://chicityclerk.s3.us-west-2.amazonaws.com/s3fs-public-1/reports/2006_04_26_VI_VII.pdf"
+file = "sources/precedent/chicago-journal-2006-04-26-foie-gras-ordinance-excerpt.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "chicago-court-2007"
+kind = "precedent-record"
+publisher = "United States District Court for the Northern District of Illinois, Illinois Restaurant Association v. City of Chicago, No. 06 C 7014, Memorandum and Order filed June 12, 2007"
+credit = "N.D. Ill., No. 06 C 7014 (2007)"
+url = "https://www.govinfo.gov/content/pkg/USCOURTS-ilnd-1_06-cv-07014/pdf/USCOURTS-ilnd-1_06-cv-07014-1.pdf"
+file = "sources/precedent/ndil-2007-06-12-06-cv-7014-ill-rest-assn-v-chicago.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "chicago-repeal"
+kind = "precedent-record"
+publisher = "City of Chicago, City Council, Journal of the Proceedings, Regular Meeting of May 14, 2008 (excerpt: repeal of the foie gras sales prohibition)"
+credit = "Chicago City Council Journal, May 14, 2008"
+url = "https://chicityclerk.s3.us-west-2.amazonaws.com/s3fs-public-1/reports/2008_05_14_VI_VII.pdf"
+file = "sources/precedent/chicago-journal-2008-05-14-foie-gras-repeal-excerpt.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "nyc-law"
+kind = "precedent-record"
+publisher = "The City of New York, Local Laws of the City of New York for the Year 2019, No. 202, banning the sale or provision of certain force-fed poultry products"
+credit = "New York City Local Law 202 of 2019"
+url = "https://legistar.council.nyc.gov/View.ashx?M=F&ID=7989450&GUID=6E44EC7D-0844-4D6A-93A5-CE9DD58D1BA7"
+file = "sources/precedent/nyc-local-law-202-of-2019.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "nyc-court-2026"
+kind = "precedent-record"
+publisher = "State of New York, Supreme Court, Appellate Division, Third Judicial Department, Matter of City of New York v Ball, CV-24-1310, decided March 12, 2026"
+credit = "N.Y. App. Div., 3d Dept., CV-24-1310 (2026)"
+url = "https://decisions.courts.state.ny.us/ad3/Decisions/2026/CV-24-1310.pdf"
+file = "sources/precedent/nyad3-2026-03-12-cv-24-1310-city-of-new-york-v-ball.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "pittsburgh-law"
+kind = "precedent-record"
+publisher = "City of Pittsburgh, City Council, File 2023-2291, Ordinance adopting Chapter 641, Force-Fed Products Prohibited (enacted December 29, 2023)"
+credit = "Pittsburgh City Council, File 2023-2291"
+url = "https://pittsburgh.legistar.com/LegislationDetail.aspx?ID=6442147&GUID=6C629C26-4B7C-4359-8E2A-72A0CD5E1A6D&Options=ID|Text|&FullText=1"
+file = "sources/precedent/pittsburgh-council-file-2023-2291.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "portland-law"
+kind = "precedent-record"
+publisher = "City of Portland, Oregon, City Council, Ordinance 192190, prohibiting the sale or provision of certain force-fed poultry products (passed June 4, 2026)"
+credit = "Portland, Oregon, Ordinance 192190"
+url = "https://www.portland.gov/council/documents/ordinance/passed/192190"
+file = "sources/precedent/portland-or-ordinance-192190.html"
 retrieved = "2026-10-28"

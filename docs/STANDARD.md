@@ -285,7 +285,9 @@ the questions record in rule 10.1 becomes required from version 3.)
    argument makes it, in that side's section (rule 6.3).
 5. **Where it goes.** Precedent goes in the background, never in the
    opening line, the vote lines or a side's section. Answers fit the
-   video's usual length budget; the video does not grow to hold them.
+   video's usual length budget, except precedent: telling every similar
+   law with its outcomes may lengthen the video, since leaving a place
+   out to save time would choose which outcomes a voter hears.
 
 ## Machine checks
 
