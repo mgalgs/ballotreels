@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 60.57,
+  "seconds": 60.7,
   "phrases": [
     {
       "text": "Proposition 141 is about taxes or fees based on how many miles people drive.",
@@ -19,39 +19,39 @@
       "end": 18.6
     },
     {
-      "text": "Governments also could not monitor or limit miles driven, unless a driver consents.",
+      "text": "Governments also could not monitor or limit miles driven, unless a driver agrees.",
       "start": 19.26,
-      "end": 24.95
+      "end": 25.03
     },
     {
       "text": "Government vehicles, and in certain cases interstate commercial vehicles, would be exempt.",
-      "start": 25.61,
-      "end": 30.82
+      "start": 25.69,
+      "end": 30.95
     },
     {
       "text": "Arizona's guide prints no cost estimate for the measure.",
-      "start": 31.48,
-      "end": 34.78
+      "start": 31.61,
+      "end": 34.91
     },
     {
       "text": "Supporters say mileage tracking is government surveillance, and the measure bans it permanently in the constitution.",
-      "start": 35.44,
-      "end": 42.44
+      "start": 35.57,
+      "end": 42.57
     },
     {
       "text": "Opponents say fuel tax revenue is eroding, and the measure bans a road funding option prematurely.",
-      "start": 43.1,
-      "end": 49.22
+      "start": 43.23,
+      "end": 49.35
     },
     {
       "text": "A yes vote means banning mileage taxes, and mileage tracking without consent.",
-      "start": 49.88,
-      "end": 55.22
+      "start": 50.01,
+      "end": 55.35
     },
     {
       "text": "A no vote means the constitution's current taxation language stays the same.",
-      "start": 55.88,
-      "end": 60.54
+      "start": 56.01,
+      "end": 60.67
     }
   ],
   "inputs": {
@@ -59,7 +59,7 @@
       "Proposition 141 is about taxes or fees based on how many miles people drive.",
       "Today, Arizona's Constitution has no section on taxing or tracking miles driven.",
       "The measure would bar the state and local governments from taxing people by the miles they drive.",
-      "Governments also could not monitor or limit miles driven, unless a driver consents.",
+      "Governments also could not monitor or limit miles driven, unless a driver agrees.",
       "Government vehicles, and in certain cases interstate commercial vehicles, would be exempt.",
       "Arizona's guide prints no cost estimate for the measure.",
       "Supporters say mileage tracking is government surveillance, and the measure bans it permanently in the constitution.",
@@ -135,11 +135,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Governments also could not monitor or limit miles driven, unless a driver consents."
+        "text": "Governments also could not monitor or limit miles driven, unless a driver agrees."
       },
       "bounds": [
         461520,
-        599520
+        601440
       ]
     },
     {
@@ -147,15 +147,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Governments also could not monitor or limit miles driven, unless a driver consents.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Governments also could not monitor or limit miles driven, unless a driver agrees.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "Government vehicles, and in certain cases interstate commercial vehicles, would be exempt."
       },
       "bounds": [
-        613920,
-        740400
+        615840,
+        743520
       ]
     },
     {
@@ -170,8 +170,8 @@
         "text": "Arizona's guide prints no cost estimate for the measure."
       },
       "bounds": [
-        754800,
-        835440
+        757920,
+        838560
       ]
     },
     {
@@ -186,8 +186,8 @@
         "text": "Supporters say mileage tracking is government surveillance, and the measure bans it permanently in the constitution."
       },
       "bounds": [
-        849840,
-        1019280
+        852960,
+        1022400
       ]
     },
     {
@@ -202,8 +202,8 @@
         "text": "Opponents say fuel tax revenue is eroding, and the measure bans a road funding option prematurely."
       },
       "bounds": [
-        1033680,
-        1182000
+        1036800,
+        1185120
       ]
     },
     {
@@ -218,8 +218,8 @@
         "text": "A yes vote means banning mileage taxes, and mileage tracking without consent."
       },
       "bounds": [
-        1196400,
-        1326000
+        1199520,
+        1329120
       ]
     },
     {
@@ -234,10 +234,10 @@
         "text": "A no vote means the constitution's current taxation language stays the same."
       },
       "bounds": [
-        1340400,
-        1453680
+        1343520,
+        1456800
       ]
     }
   ],
-  "sha256": "5cb7e9cac98becbc14f5f548277c8165f5a3564e313571c35b02d97000e9811b"
+  "sha256": "21850fa4d2e4d93bffef92a8b92cc9a58fad37cbc08dc66a58d17a49d1dbc35d"
 }
