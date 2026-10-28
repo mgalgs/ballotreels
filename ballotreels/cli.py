@@ -21,6 +21,7 @@ from pathlib import Path
 from .adapters.ca_sos import append_entries, build_contest_entries, fetch_measures
 from .checks import check_contest, word_count
 from .contest import ContestError, load_contest
+from .glance import check_glance
 from .index import ContestIndexError, load_index
 from .narration import narration_text
 from .standard import load_standard, side_order
@@ -59,6 +60,21 @@ def _check_one(path: str, standard, out) -> bool:
     if contest.script.template == "measure" and contest.script.choices is None:
         summary += f"; {side_order(contest.id)[0]} plays first"
     print(summary, file=out)
+    return not failures
+
+
+def _check_glance(election_dir: Path, out) -> bool:
+    """Check an election's glance.toml (docs/SCRIPT-FORMAT.md); true when
+    it passes or the election has none yet."""
+    failures = check_glance(election_dir)
+    if failures is None:
+        return True
+    for f in failures:
+        print(f"{election_dir}: {f}", file=out)
+    name = election_dir.name
+    print(f"FAIL glance {name}: {len(failures)} failure"
+          f"{'' if len(failures) == 1 else 's'}" if failures
+          else f"PASS glance {name}", file=out)
     return not failures
 
 
@@ -435,6 +451,11 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
         ok = True
         for path in args.contests:
             ok = _check_one(path, standard, out) and ok
+        # Each election a checked contest belongs to: its glance.toml, once.
+        for election_dir in dict.fromkeys(
+                Path(p).resolve().parent for p in args.contests):
+            if (election_dir / "contests.toml").is_file():
+                ok = _check_glance(election_dir, out) and ok
         return 0 if ok else 1
 
     if args.command == "measures":
