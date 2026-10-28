@@ -7,11 +7,12 @@ README = (REPO / "README.md").read_text(encoding="utf-8")
 ARCHITECTURE = (REPO / "docs" / "ARCHITECTURE.md").read_text(encoding="utf-8")
 
 # Files whose flags and env vars README.md must document. BALLOTREELS_CONTEST
-# (set by cli.py, read by film/measure.py) is deliberately excluded: it is an
-# internal signal to the render template, not a user-facing option.
+# and BALLOTREELS_CRASH_COURSE (set by cli.py, read by film/measure.py and
+# film/crash_course.py) are deliberately excluded: they are internal signals
+# to the render templates, not user-facing options.
 SCANNED_FILES = ("ballotreels/cli.py", "ballotreels/site/config.py",
                  "ballotreels/worker.py", "ballotreels/storage.py")
-EXCLUDED_ENV_VARS = {"BALLOTREELS_CONTEST"}
+EXCLUDED_ENV_VARS = {"BALLOTREELS_CONTEST", "BALLOTREELS_CRASH_COURSE"}
 
 FLAG_RE = re.compile(r'"(--[a-z][a-z0-9-]*)"')
 ENV_RE = re.compile(r"BALLOTREELS_[A-Z0-9_]+")

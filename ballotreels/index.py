@@ -10,7 +10,7 @@ later concern (ballotreels.contest).
 from __future__ import annotations
 
 import tomllib
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -19,6 +19,11 @@ from .standard import TEMPLATES
 _MISSING = object()
 
 KINDS = frozenset({"measure", "race"})
+
+# A state's crash course (ballotreels.crash_course): an election-level
+# contest of its own kind, derived from the statewide measures rather than
+# listed in contests.toml, under this id suffix (and slug).
+CRASH_COURSE = "crash-course"
 
 # Division substrings, in ballot order (docs/ARCHITECTURE.md divisions are
 # OCD-IDs; "state" is matched by equality with the election's own state
@@ -56,17 +61,29 @@ class IndexEntry:
     # a choice question: its script has a [choices] table, so the page
     # speaks of its choices, not of two sides (docs/SCRIPT-FORMAT.md)
     choice: bool = False
+    # a crash course: its members' contest ids, in ballot order, and the
+    # election directory they are read from (its cache key hashes them)
+    members: tuple[str, ...] = ()
+    election_dir: str | None = field(default=None, compare=False,
+                                     repr=False)
 
 
 @dataclass(frozen=True)
 class ContestIndex:
     election: Election
     entries: tuple[IndexEntry, ...]
+    # the state's crash course, when it has statewide measures enough for
+    # one (ballotreels.crash_course); never one of `entries`, so the
+    # ballot, the state page's list and the sitemap are as they were
+    crash_course: IndexEntry | None = None
 
     def get(self, contest_id: str) -> IndexEntry | None:
         for e in self.entries:
             if e.id == contest_id:
                 return e
+        if self.crash_course is not None and \
+                self.crash_course.id == contest_id:
+            return self.crash_course
         return None
 
 
@@ -180,6 +197,10 @@ def _load_entry(raw: dict[str, Any], i: int, election: Election,
         if number is not None:
             raise ContestIndexError(f"{where}: race must not set 'number'")
     dir_name = cid[len(prefix):]
+    if dir_name == CRASH_COURSE:
+        raise ContestIndexError(
+            f"{where}: {CRASH_COURSE!r} is the crash course's id, derived "
+            f"from the statewide measures; it is not listed here")
     entry = IndexEntry(
         id=cid,
         kind=kind,
@@ -210,13 +231,24 @@ def load_index(election_dir: str | Path) -> ContestIndex:
             raise ContestIndexError(f"contest {entry.id!r}: duplicate id")
         seen.add(entry.id)
         entries.append(entry)
-    return ContestIndex(election=election, entries=tuple(entries))
+    from .crash_course import crash_course_entry
+    return ContestIndex(
+        election=election, entries=tuple(entries),
+        crash_course=crash_course_entry(election, tuple(entries),
+                                        election_dir))
 
 
 def key_for(election_id: str, entry: IndexEntry,
            standard) -> tuple[str, str, str, int, int] | None:
     """The cache key (docs/ARCHITECTURE.md) for `entry`, or None if its
-    kind has no template yet (so it cannot be generated)."""
+    kind has no template yet (so it cannot be generated). A crash course's
+    contest id carries a digest of its members' scripts and narration
+    (ballotreels.crash_course.key_contest), so a change to any of them is
+    a new key, never the old video."""
+    if entry.kind == CRASH_COURSE:
+        from . import crash_course
+        return (election_id, entry.division, crash_course.key_contest(entry),
+                standard.version, crash_course.TEMPLATE_VERSION)
     templates = TEMPLATES.get(entry.kind)
     if not templates:
         return None

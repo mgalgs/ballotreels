@@ -78,6 +78,61 @@ it to be re-narrated on the host: the worker never re-makes a committed
 narration, since `say` re-speaks an edited line and the unchanged line
 after it (its context), and any new take can fail the transcript check.
 
+## The crash course
+
+A state's **crash course** is one video through every statewide measure
+on its ballot, so a voter can watch one thing; it sits at the top of the
+state's page (`/<st>/<year>` and `/<st>`) once it has been made, with a
+chapter chip per measure, and the page is otherwise unchanged.
+
+It says nothing new. Its members are the election's statewide measures
+(kind `measure`, division the state's) in `contests.toml`'s order, the
+ballot's, and each gets one slot that replays two sections of its own
+measure film, picture and committed narration together: its opening
+section (`what`, what the measure is) and its `vote` section (what a yes
+and a no vote would do), or, for a choice question (STANDARD.md section
+8), its `choices` section, which names the options. The audio is cut
+from the member's committed `narration.wav` by its `narration.json`
+phrase timings, a tenth of a second either side of the reused words;
+the TTS is never asked for anything. A replayed section is drawn as its
+own film draws it, but with nothing left over from the sections it
+skips (no page fading out, no other section's caption, pencil or
+countdown ring).
+
+Every slot is the same length: the longest member's two sections plus
+half a second; a shorter one holds its last frame, silent and without a
+caption, for the rest. Before the first slot, an opening card, on screen
+only, gives the state's name, "N statewide measures" and the election's
+date; after the last, a sources card lists what the reused lines cite,
+grouped under each measure's title, over as many pages as it takes. The
+link under the caption on every frame is the state's page,
+`ballotreels.org/<st>/<year>`. Its chapters are one per measure, titled
+as `contests.toml` titles it.
+
+It is an election-level contest of its own kind (`crash-course`): id
+`<election>-crash-course`, division the state, derived by the index
+loader (`ContestIndex.crash_course`) for any election with at least two
+statewide measures, never listed in `contests.toml`. Its template
+(`film/crash_course.py`) has its own version. Its cache key's contest
+part is `<election>-crash-course@<digest>`, the digest hashing every
+member's `script.toml`, `sources.toml`, `narration.json` and
+`narration.wav`, so a change to any member is a new key, and an older
+crash course is never shown beside measure videos it disagrees with.
+
+The operator queues it like any contest: `POST /api/generate` with its
+id, approved in the queue monitor, under the same per-IP and global
+limits. The worker copies the election's `contests.toml` and every
+member's directory into its scratch directory and runs the usual stages
+over them: each member's sources and checks; the job's digest checked
+against the worker's own copy (a worker whose checkout differs from the
+serve tier's fails rather than render other words); and in place of
+narrating, each member's committed narration must be current for its
+script. A missing or stale one fails the job with a message naming the
+measure, the same rule as for a single measure, except that a missing
+narration is not made here either. The published `script.toml` is a
+derived record of the reused lines, and the published sources name the
+measure each is cited for.
+
 ## Data sources (pilot: California, free sources only)
 
 The pilot covers federal, state-legislative and statewide contests.

@@ -3,6 +3,7 @@
     python -m ballotreels check <contest-dir>...
     python -m ballotreels narration <contest-dir>...
     python -m ballotreels render <contest-dir> [--format 9x16|16x9|all]
+    python -m ballotreels render <election-dir>   (its crash course, 9x16)
     python -m ballotreels measures ca-sos <election-dir> [--base-url URL]
     python -m ballotreels geo build [--state ca] [--data-dir DIR]
     python -m ballotreels geo zip <zip> [--state ca] [--data-dir DIR]
@@ -28,6 +29,7 @@ from .standard import load_standard, side_order
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 FILM_TEMPLATE = REPO_ROOT / "film" / "measure.py"
+CRASH_COURSE_FILM = REPO_ROOT / "film" / "crash_course.py"
 CA_SOS_BASE_URL = "https://voterguide.sos.ca.gov"
 
 
@@ -92,8 +94,43 @@ def _narration_one(path: str, out) -> bool:
     return True
 
 
+def _render_crash_course(path: str, fmt_arg: str, out_dir: Path, out,
+                         site_url: str | None = None) -> bool:
+    """Render the crash course of the election in `path` (9x16 only)."""
+    from .crash_course import CrashCourseError, plan
+    try:
+        course = plan(path)
+    except (CrashCourseError, ContestIndexError) as e:
+        print(f"{path}: {e}", file=out)
+        print(f"FAIL {path}: could not lay out its crash course", file=out)
+        return False
+    if fmt_arg not in ("9x16", "all"):
+        print(f"{path}: a crash course is 9x16 only", file=out)
+        return False
+    try:
+        import videobuilder as vb
+        from videobuilder.render import render
+    except ImportError as e:
+        print(f"{path}: videobuilder is required to render ({e})", file=out)
+        return False
+    os.environ["BALLOTREELS_CRASH_COURSE"] = str(Path(path).resolve())
+    if site_url:
+        os.environ["BALLOTREELS_SITE_URL"] = site_url
+    from .pipeline import write_chapters
+    module = vb.load_module(str(CRASH_COURSE_FILM))
+    out_dir.mkdir(parents=True, exist_ok=True)
+    dest = out_dir / f"{course.entry.id}-9x16.mp4"
+    render(module.FILM, str(dest), format="9x16", log=out)
+    print(f"wrote {dest}", file=out)
+    print(f"wrote {write_chapters(dest, module.CHAPTERS)}", file=out)
+    return True
+
+
 def _render_one(path: str, fmt_arg: str, out_dir: Path, out,
                 site_url: str | None = None) -> bool:
+    from .crash_course import is_election_dir
+    if is_election_dir(path):
+        return _render_crash_course(path, fmt_arg, out_dir, out, site_url)
     try:
         contest = load_contest(path)
     except ContestError as e:
@@ -303,7 +340,8 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
              "in playback order, for `videobuilder say`")
     narration.add_argument("contests", nargs="+", metavar="contest-dir")
     render = sub.add_parser(
-        "render", help="render the contest's video with videobuilder")
+        "render", help="render the contest's video with videobuilder; "
+                       "given an election's directory, its crash course")
     render.add_argument("contest", metavar="contest-dir")
     render.add_argument("--format", choices=["9x16", "16x9", "all"],
                         default="all")
