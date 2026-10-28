@@ -44,7 +44,10 @@ BALLOTS: dict[str, Ballot] = {
     # A county measure's card is a page of its county's publication, not
     # the state's guide: San Diego's Voter Information Guide prints each
     # measure's ballot label and impartial analysis; Los Angeles prints
-    # its ballot label only in the measure's proposed ordinance.
+    # its ballot label only in the measure's proposed ordinance. San
+    # Bernardino's guide prints no ballot question, which its cards quote
+    # from the resolution placing the measure; the guide is still the
+    # publication the measure's pages are in.
     "ca": Ballot(guide="Official Voter Information Guide",
                  fiscal_label="Fiscal Impact:",
                  choices=("Yes", "No"),
@@ -83,6 +86,20 @@ BALLOTS: dict[str, Ballot] = {
                          "San Diego County Voter Information Guide",
                      "ca-2026-11-03-harris-annex-road-zone-measure-q":
                          "San Diego County Voter Information Guide",
+                     "ca-2026-11-03-san-bernardino-county-measure-i":
+                         "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-ontario-measure-h":
+                         "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-chino-measure-f":
+                         "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-chino-hills-measure-j":
+                         "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-upland-measure-m":
+                         "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-highland-measure-e":
+                         "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-colton-measure-o":
+                         "San Bernardino County Voter Information Guide",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",
