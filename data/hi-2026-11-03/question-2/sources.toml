@@ -1,0 +1,78 @@
+# Archived sources for Hawaii Question 2, 2026-11-03 general election.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+#
+# The Office of Elections' 2026 Voter Guide prints each proposed
+# amendment on one page of statements provided by the Department of the
+# Attorney General: the title, the ballot question, an explanation, the
+# meaning of a "yes", a "no" and a blank vote, and the ratification rule.
+# guide-section.pdf is Question 2's page (page 74) cut from the full
+# guide. Hawaii publishes no official arguments for or against a
+# proposed amendment, and no fiscal statement on one, so there is no
+# source of kind official-argument or official-fiscal-analysis.
+#
+# The amendment is S.B. No. 3219, H.D. 3, C.D. 1 (2026).
+# legislature-notice-section.pdf is its full text as adopted, pages 3 to
+# 8 of the Legislature's Notice of Proposed Constitutional Amendments.
+# The Legislature's files were fetched from the same paths on
+# data.capitol.hawaii.gov, because www.capitol.hawaii.gov blocked
+# scripted fetches; the urls are the canonical ones.
+
+[contest]
+id = "hi-2026-11-03-question-2"
+election = "hi-2026-11-03"
+division = "ocd-division/country:us/state:hi"
+kind = "measure"
+title = "Question 2: Directing the Hawaii State Legislature to Establish Procedures for Counties to Issue RISE Bonds, Exempt from County Debt Limits"
+
+[[source]]
+id = "guide"
+kind = "official-title-summary"
+publisher = "State of Hawaii Office of Elections, 2026 Voter Guide, General Election, Proposed Amendments to the Hawaii State Constitution, Question #2, page 74 (statements provided by the Department of the Attorney General)"
+credit = "Hawaii Office of Elections, 2026 Voter Guide"
+url = "https://elections.hawaii.gov/wp-content/uploads/VoterGuide_2026_General_English.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "elections-page"
+kind = "official-title-summary"
+publisher = "State of Hawaii Office of Elections, 2026 Proposed Amendments to the Hawaii State Constitution"
+credit = "Hawaii Office of Elections"
+url = "https://elections.hawaii.gov/voting/2026-proposed-amendments-to-the-hawaii-state-constitution/"
+file = "sources/oe-proposed-amendments-page.html"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Hawaii State Legislature, Notice of Proposed Constitutional Amendments to the Constitution of the State of Hawaii, S.B. No. 3219, H.D. 3, C.D. 1 (2026), pages 3 to 8"
+credit = "Hawaii State Legislature, Notice of Proposed Constitutional Amendments"
+url = "https://www.capitol.hawaii.gov/docs/conam/2026%20Constitutional%20Amendment%20Web_ENG.pdf"
+file = "sources/legislature-notice-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "bill"
+kind = "official-text"
+publisher = "The Senate, Thirty-Third Legislature, 2026, State of Hawaii, S.B. No. 3219, H.D. 3, C.D. 1"
+credit = "Hawaii State Legislature, S.B. No. 3219, H.D. 3, C.D. 1"
+url = "https://www.capitol.hawaii.gov/sessions/session2026/bills/SB3219_CD1_.pdf"
+file = "sources/sb3219-hd3-cd1-2026.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "status"
+kind = "public-record"
+publisher = "Hawaii State Legislature, measure status, S.B. No. 3219 (2026)"
+url = "https://www.capitol.hawaii.gov/session/measure_indiv.aspx?billtype=SB&billnumber=3219&year=2026"
+file = "sources/sb3219-status-2026.html"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "committee-report"
+kind = "public-record"
+publisher = "Hawaii State Legislature, Conference Committee Report No. 220-26, on S.B. No. 3219, H.D. 3, C.D. 1 (2026)"
+url = "https://www.capitol.hawaii.gov/sessions/session2026/CommReports/SB3219_CD1_CCR220-26_.pdf"
+file = "sources/sb3219-ccr220-conference-report.pdf"
+retrieved = "2026-10-27"
