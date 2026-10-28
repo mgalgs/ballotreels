@@ -158,6 +158,26 @@ def _illustration_problems(v: Visual) -> list[str]:
     return out
 
 
+STAMP_MAX = 24  # characters: a stamp is a few words, read at a glance
+
+
+def _stamp_problems(v: Visual) -> list[str]:
+    """An illustration's optional `stamp`: short words on one line,
+    written across its top. No other visual has one."""
+    if v.stamp is None or v.kind not in VISUAL_KINDS:
+        return []
+    if v.kind != "illustration":
+        return [f"a {v.kind!r} visual may not have 'stamp'"]
+    if not isinstance(v.stamp, str) or not v.stamp.strip():
+        return ["'stamp' must be a non-empty string"]
+    if "\n" in v.stamp:
+        return ["'stamp' must be one line"]
+    if len(v.stamp) > STAMP_MAX:
+        return [f"'stamp' is {len(v.stamp)} characters, more than "
+                f"{STAMP_MAX}"]
+    return []
+
+
 def _library_problems(name: object, key: str) -> list[str]:
     """`name`, given as `key`: an entry in the illustration library whose
     file exists."""
@@ -369,7 +389,8 @@ def check_visuals(c: Contest) -> list[Failure]:
             what = ("chart" if kind in CHART_KINDS
                     or kind not in (*VISUAL_KINDS, *REMOVED_KINDS)
                     else f"{kind!r} visual")
-            for msg in _visual_problems(c, line, line.visual):
+            for msg in (_visual_problems(c, line, line.visual)
+                        + _stamp_problems(line.visual)):
                 out.append(Failure("visual", f"{what} {msg}", label, i))
     return out
 
@@ -1043,7 +1064,7 @@ def check_judgment_words(c: Contest, words: tuple[str, ...]) -> list[Failure]:
 def _shown_text(v: Visual) -> list[tuple[str, str]]:
     """The words a visual puts on screen, as (key, text) pairs."""
     out = []
-    for key in ("title", "labels", "items"):
+    for key in ("title", "labels", "items", "stamp"):
         value = getattr(v, key)
         for x in value if isinstance(value, list) else [value]:
             if isinstance(x, str):

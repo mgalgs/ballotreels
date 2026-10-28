@@ -54,6 +54,7 @@ class Visual:
     name: Any = None   # illustration: an entry in the illustration library
     focus: Any = None  # page: the phrase on the card to circle
     highlight: Any = None  # page: phrases on the card to highlight
+    stamp: Any = None  # illustration: short words written across its top
 
 
 VISUAL_KEYS = tuple(Visual.__dataclass_fields__)
