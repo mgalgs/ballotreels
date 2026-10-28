@@ -16,9 +16,19 @@ const STANDARD_URL =
 const MAP_COLOR = "#666666";
 
 // Districts are told apart by a letter pinned on the map (and on their
-// card in the list) and by their line's dash, never by colour.
+// card in the list), by their line's dash and by their fill's pattern,
+// never by colour: each pattern is drawn in MAP_COLOR, light enough
+// that the streets underneath still read.
 const DISTRICT_DASHES = [null, "12 7", "18 5 3 5", "3 6"];
 const ZIP_DASH = "4 4";
+// Hatching at an angle (degrees), dots, or a cross-hatch, in an order
+// that puts the most unlike patterns on neighbouring letters.
+const DISTRICT_PATTERNS = [
+  { lines: [45] }, { dots: true }, { lines: [-45] }, { lines: [45, -45] },
+  { lines: [0] }, { lines: [90] },
+];
+const PATTERN_ID = "district-pattern-";
+const SVG_NS = "http://www.w3.org/2000/svg";
 
 const app = document.getElementById("app");
 
@@ -194,6 +204,65 @@ function labelPoint(districtRings, zipRings) {
   return [(own.minX + own.maxX) / 2, (own.minY + own.maxY) / 2];
 }
 
+function svgNode(tag, attrs) {
+  const node = document.createElementNS(SVG_NS, tag);
+  for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);
+  return node;
+}
+
+// The district fills, as an SVG <defs> for the map's own <svg>: the
+// n-th district is filled with `url(#district-pattern-<n>)`.
+function patternDefs() {
+  const defs = svgNode("defs", {});
+  const size = 10;
+  DISTRICT_PATTERNS.forEach((pattern, i) => {
+    const node = svgNode("pattern", {
+      id: PATTERN_ID + i, patternUnits: "userSpaceOnUse",
+      width: size, height: size,
+    });
+    // A faint wash under the marks, so the district reads as one area.
+    node.appendChild(svgNode("rect", {
+      width: size, height: size, fill: MAP_COLOR, "fill-opacity": "0.08",
+    }));
+    if (pattern.dots) {
+      for (const [x, y] of [[2.5, 2.5], [7.5, 7.5]]) {
+        node.appendChild(svgNode("circle", {
+          cx: x, cy: y, r: "1.7", fill: MAP_COLOR, "fill-opacity": "0.7",
+        }));
+      }
+    } else {
+      node.setAttribute("patternTransform", `rotate(${pattern.lines[0]})`);
+      for (const angle of pattern.lines) {
+        // Each further angle is drawn relative to the first.
+        node.appendChild(svgNode("line", {
+          x1: 0, y1: size / 2, x2: size, y2: size / 2,
+          stroke: MAP_COLOR, "stroke-width": "1.6", "stroke-opacity": "0.6",
+          transform: `rotate(${angle - pattern.lines[0]} ${size / 2} ` +
+                     `${size / 2})`,
+        }));
+      }
+    }
+    defs.appendChild(node);
+  });
+  return defs;
+}
+
+function districtFill(n) {
+  return `url(#${PATTERN_ID}${n % DISTRICT_PATTERNS.length})`;
+}
+
+// A short note on the map itself that it moves and zooms, since the
+// buttons alone go unnoticed.
+function mapHint() {
+  const Hint = L.Control.extend({
+    onAdd() {
+      return el("div", { class: "map-hint", "aria-hidden": "true",
+                         text: "Drag to move · + − to zoom" });
+    },
+  });
+  return new Hint({ position: "topright" });
+}
+
 // `onSelect(ocdId)` is called when a district is tapped; the zip outline
 // is drawn on top and takes no taps. `letters` maps an ocd id to the
 // letter its card in the list shows.
@@ -205,10 +274,14 @@ function drawMap(container, featureCollection, onSelect, letters) {
   }
   const map = L.map(container, { attributionControl: true,
                                  scrollWheelZoom: false });
+  // The tiles are muted in style.css, so their own lines and labels
+  // never compete with the district lines.
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 18,
     attribution: "&copy; OpenStreetMap contributors",
+    className: "base-tiles",
   }).addTo(map);
+  mapHint().addTo(map);
   const zip = featureCollection.features.find(
     (f) => f.properties.role === "zip");
   const zipRings = zip ? zip.geometry.coordinates : null;
@@ -222,9 +295,9 @@ function drawMap(container, featureCollection, onSelect, letters) {
     const dash = isZip ? ZIP_DASH : DISTRICT_DASHES[n % DISTRICT_DASHES.length];
     const layer = L.polygon(rings, {
       color: MAP_COLOR,
-      weight: isZip ? 3 : 2.5,
-      fillColor: MAP_COLOR,
-      fillOpacity: isZip ? 0 : 0.12,
+      weight: isZip ? 3.5 : 3,
+      fillColor: isZip ? MAP_COLOR : districtFill(n),
+      fillOpacity: isZip ? 0 : 1,
       dashArray: dash,
       interactive: !isZip,
     }).addTo(map);
@@ -241,18 +314,25 @@ function drawMap(container, featureCollection, onSelect, letters) {
       }
       if (onSelect) {
         layer.on("click", () => onSelect(feature.properties.ocd_id));
+        // A firmer outline while pointed at or pressed.
+        layer.on("mouseover", () => layer.setStyle({ weight: 5 }));
+        layer.on("mouseout", () => layer.setStyle({ weight: 3 }));
       }
     }
     layer.getBounds().getSouthWest() && bounds.push(layer.getBounds());
   }
   // Frame the zip, where the districts split; fall back to everything.
   if (zipBounds) {
-    map.fitBounds(zipBounds.pad(0.3));
+    map.fitBounds(zipBounds.pad(0.1));
   } else if (bounds.length) {
     let combined = bounds[0];
     for (const b of bounds.slice(1)) combined = combined.extend(b);
     map.fitBounds(combined, { padding: [10, 10] });
   }
+  // The patterns go in the overlay's own <svg>, which Leaflet makes once
+  // the map has a view (just above).
+  const overlay = map.getPanes().overlayPane.querySelector("svg");
+  if (overlay) overlay.insertBefore(patternDefs(), overlay.firstChild);
   // The zip outline on top, so it is never hidden under a district.
   map.eachLayer((layer) => {
     if (layer.options && layer.options.dashArray === ZIP_DASH &&
@@ -261,30 +341,27 @@ function drawMap(container, featureCollection, onSelect, letters) {
 }
 
 function drawFallbackSvg(container, featureCollection, onSelect, letters) {
-  const xs = [];
-  const ys = [];
-  for (const feature of featureCollection.features) {
-    for (const ring of feature.geometry.coordinates) {
-      for (const [x, y] of ring) {
-        xs.push(x);
-        ys.push(y);
-      }
-    }
-  }
-  const minX = Math.min(...xs), maxX = Math.max(...xs);
-  const minY = Math.min(...ys), maxY = Math.max(...ys);
-  const w = 300, h = 220, pad = 10;
-  const sx = (x) => pad + ((x - minX) / (maxX - minX || 1)) * (w - 2 * pad);
-  const sy = (y) => h - pad - ((y - minY) / (maxY - minY || 1)) * (h - 2 * pad);
-  const ns = "http://www.w3.org/2000/svg";
-
   const zip = featureCollection.features.find(
     (f) => f.properties.role === "zip");
   const zipRings = zip ? zip.geometry.coordinates : null;
-  const svg = document.createElementNS(ns, "svg");
-  svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
-  svg.setAttribute("width", "100%");
-  svg.setAttribute("height", "100%");
+  // Frame the zip, where the districts split, as the Leaflet map does;
+  // what lies outside it is clipped. Without a zip, frame everything.
+  const box = ringsBox(zipRings || featureCollection.features.flatMap(
+    (f) => f.geometry.coordinates));
+  const w = 300, h = 220, pad = 22;
+  // One scale for both axes, a degree of longitude shrunk by the
+  // latitude, so shapes keep their proportions.
+  const kx = Math.cos(((box.minY + box.maxY) / 2) * Math.PI / 180);
+  const scale = Math.min(
+    (w - 2 * pad) / ((box.maxX - box.minX) * kx || 1),
+    (h - 2 * pad) / ((box.maxY - box.minY) || 1));
+  const cx = (box.minX + box.maxX) / 2, cy = (box.minY + box.maxY) / 2;
+  const sx = (x) => w / 2 + (x - cx) * kx * scale;
+  const sy = (y) => h / 2 - (y - cy) * scale;
+
+  const svg = svgNode("svg", { viewBox: `0 0 ${w} ${h}`, width: "100%",
+                               height: "100%", overflow: "hidden" });
+  svg.appendChild(patternDefs());
   const labels = [];
   let n = 0;
   // Districts first, the zip outline last so it sits on top.
@@ -293,15 +370,14 @@ function drawFallbackSvg(container, featureCollection, onSelect, letters) {
   for (const feature of ordered) {
     const isZip = feature.properties.role === "zip";
     const dash = isZip ? ZIP_DASH : DISTRICT_DASHES[n % DISTRICT_DASHES.length];
+    const fill = isZip ? "none" : districtFill(n);
     if (!isZip) n++;
     for (const ring of feature.geometry.coordinates) {
       const points = ring.map(([x, y]) => `${sx(x)},${sy(y)}`).join(" ");
-      const poly = document.createElementNS(ns, "polygon");
-      poly.setAttribute("points", points);
-      poly.setAttribute("stroke", MAP_COLOR);
-      poly.setAttribute("fill", MAP_COLOR);
-      poly.setAttribute("fill-opacity", isZip ? "0" : "0.12");
-      poly.setAttribute("stroke-width", isZip ? "2.5" : "2");
+      const poly = svgNode("polygon", {
+        points, stroke: MAP_COLOR, fill,
+        "stroke-width": isZip ? "3" : "2.5",
+      });
       if (dash) poly.setAttribute("stroke-dasharray", dash);
       if (isZip) {
         poly.setAttribute("pointer-events", "none");
@@ -315,16 +391,17 @@ function drawFallbackSvg(container, featureCollection, onSelect, letters) {
     const letter = !isZip && letters && letters[feature.properties.ocd_id];
     if (letter) {
       const [x, y] = labelPoint(feature.geometry.coordinates, zipRings);
-      const text = document.createElementNS(ns, "text");
-      text.setAttribute("x", sx(x));
-      text.setAttribute("y", sy(y));
-      text.setAttribute("text-anchor", "middle");
-      text.setAttribute("dominant-baseline", "central");
-      text.setAttribute("class", "svg-label");
-      text.setAttribute("fill", "currentColor");
-      text.setAttribute("pointer-events", "none");
+      // The letter in a paper disc, as on its card in the list.
+      const label = svgNode("g", { class: "svg-label",
+                                   "pointer-events": "none" });
+      label.appendChild(svgNode("circle", { cx: sx(x), cy: sy(y), r: "15" }));
+      const text = svgNode("text", {
+        x: sx(x), y: sy(y), "text-anchor": "middle",
+        "dominant-baseline": "central",
+      });
       text.textContent = letter;
-      labels.push(text);
+      label.appendChild(text);
+      labels.push(label);
     }
   }
   for (const text of labels) svg.appendChild(text);
@@ -726,7 +803,7 @@ async function renderAmbiguousKind(zip, zipDoc, kind) {
     mapDiv,
     el("p", { class: "map-note",
               text: "The dotted line is your zip code. Each district " +
-                    "carries its letter." }),
+                    "carries its letter and its own shading." }),
     list,
     el("p", { class: "muted" }, [
       "Not sure which? ",
