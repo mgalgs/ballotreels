@@ -301,3 +301,9 @@ source = "analysis"
 quote = "It is estimated that Measure “E” will provide an additional $1,140,000 in annual local funding."
 amount = 1140000
 period = "per-year"
+
+# City of Indian Wells Measure H: the Riverside County guide prints no
+# fiscal analysis (not a new tax).
+[indian-wells-measure-h]
+source = "analysis"
+status = "none-printed"
