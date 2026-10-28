@@ -117,8 +117,10 @@ def row_intervals(rings, step: float) -> dict[int, list[tuple[float, float]]]:
     out = {}
     for k, xs in crossings.items():
         xs.sort()
-        out[k] = [(xs[i], xs[i + 1]) for i in range(0, len(xs) - 1, 2)
-                  if xs[i + 1] > xs[i]]
+        ivs = [(xs[i], xs[i + 1]) for i in range(0, len(xs) - 1, 2)
+               if xs[i + 1] > xs[i]]
+        if ivs:
+            out[k] = ivs
     return out
 
 

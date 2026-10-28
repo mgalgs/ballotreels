@@ -9,7 +9,8 @@ from ballotreels.geo.build import (BuildError, census_urls,
                                    parse_relationship, build)
 from ballotreels.geo.lookup import GeoData, ocd_id
 from ballotreels.geo.shapefile import read_shapefile
-from ballotreels.geo.shapes import douglas_peucker, point_in_polygon, simplify_ring
+from ballotreels.geo.shapes import (douglas_peucker, point_in_polygon,
+                                    row_intervals, simplify_ring)
 
 from . import geo_fixtures
 
@@ -218,6 +219,12 @@ class PointInPolygonTest(unittest.TestCase):
         self.assertTrue(point_in_polygon((25.0, 5.0), rings))
         self.assertTrue(point_in_polygon((5.0, 5.0), rings))
         self.assertFalse(point_in_polygon((15.0, 5.0), rings))
+
+
+class RowIntervalsTest(unittest.TestCase):
+    def test_zero_width_shape_has_no_rows(self):
+        # a line crosses this collapsed ring, but only at one x
+        self.assertEqual(row_intervals([((0.0, 0.0), (0.0, 1.0))], 1.0), {})
 
 
 class OcdIdTest(unittest.TestCase):
