@@ -95,6 +95,18 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label=None,
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+    # Nevada's Secretary of State prints each statewide question's
+    # ballot question, explanation and digest, arguments, Legislative
+    # Counsel Bureau fiscal note and full text in its booklet "2026
+    # Statewide Ballot Questions" (the year left out here, as Utah's
+    # "2026 Utah Voter Information Pamphlet" leaves it). Each question
+    # is headed "QUESTION 6" (badge QUESTION, from the title's
+    # designation), its fiscal statement "Fiscal Note", and the ballot
+    # prints the choices "Yes" and "No".
+    "nv": Ballot(guide="Statewide Ballot Questions",
+                 fiscal_label="Fiscal Note",
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
