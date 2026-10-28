@@ -1,0 +1,40 @@
+# Archived sources for Georgia Amendment 2, 2026-11-03 general election.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+#
+# Georgia has no official argument process: the Secretary of State's
+# booklet prints each amendment's full text and a neutral summary, and
+# no arguments for or against, so there is no source of kind
+# official-argument. Both side sections say so, citing the booklet.
+#
+# guide-section.pdf is pages 1-2, 4 and 7 of the booklet. sos.ga.gov
+# refuses scripted fetches (HTTP 403), so the archived copy is the
+# Internet Archive's unmodified capture of the official URL, 2026-10-19:
+# https://web.archive.org/web/20261019232431id_/https://sos.ga.gov/sites/default/files/2026-09/2026%20Constitutional%20Summaries%20booklet%20FINAL.pdf
+# (SHA-256 of the whole booklet
+# 30ea8d29d64f646aaf9dde202c62ce0a5c5474567aab27a5b4970a841df0af6b).
+
+[contest]
+id = "ga-2026-11-03-amendment-2"
+election = "ga-2026-11-03"
+division = "ocd-division/country:us/state:ga"
+kind = "measure"
+title = "Amendment 2: Provides for the nonpartisan election of all probate court judges"
+
+[[source]]
+id = "booklet"
+kind = "official-title-summary"
+publisher = "Georgia Secretary of State, Proposed Constitutional Amendments, General Election, November 3, 2026, pages 1-2, 4 and 7"
+credit = "Georgia Secretary of State, Proposed Constitutional Amendments"
+url = "https://sos.ga.gov/sites/default/files/2026-09/2026%20Constitutional%20Summaries%20booklet%20FINAL.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Georgia General Assembly, House Resolution 251 (As Passed House and Senate)"
+credit = "Georgia General Assembly, House Resolution 251"
+url = "https://www.legis.ga.gov/api/legislation/document/20252026/248549"
+file = "sources/hr251-as-passed.pdf"
+retrieved = "2026-10-27"
