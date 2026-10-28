@@ -17,6 +17,13 @@
 # tax is hard to undo; against, that voters should have the same simple
 # majority as lawmakers and that the change makes initiatives harder and
 # sets a precedent. Same words per line, same words per list item.
+#
+# Each side names one person, in its own line, in the same form of words
+# as each other and as Prop 40's (STANDARD.md section 9): for, S.J.R. 2's
+# chief sponsor, from the enrolled resolution; against, the first signer
+# of the argument against, as the pamphlet prints it. Both are senators,
+# so both carry the one title. Senator Escamilla also voted no on the
+# Senate's final vote, but rule 9.3 ranks a signer above a vote alone.
 
 contest = "ut-2026-11-03-amendment-b"
 template = "measure"
@@ -120,8 +127,10 @@ heading = "Why some vote for"
 side = "yes"
 
 [[section.line]]
-text = "Supporters say tax increases should need broad agreement from the voters who will pay them."
-sources = ["arguments"]
+text = "Supporters, including Senator Lincoln Fillmore, the resolution's chief sponsor, say tax increases should need broad agreement from the voters who will pay them."
+sources = ["arguments", "resolution"]
+basis = ["they should be adopted only if there is substantial support from the voters who ultimately pay them", "should have widespread agreement from the people who will pay for it"]
+names = [{ name = "Lincoln Fillmore", role = "the resolution's chief sponsor", source = "resolution" }]
 
 [section.line.visual]
 kind = "list"
@@ -134,8 +143,10 @@ heading = "Why some vote against"
 side = "no"
 
 [[section.line]]
-text = "Opponents say Utah voters should get the same simple majority lawmakers use to raise taxes."
+text = "Opponents, including Senator Luz Escamilla, the first signer of the argument against, say voters deserve the same simple majority lawmakers use to raise taxes."
 sources = ["arguments"]
+basis = ["Utahns deserve the same rules that apply to their elected officials.", "Lawmakers can raise taxes with a simple majority. The people should have that same power."]
+names = [{ name = "Luz Escamilla", role = "the first signer of the argument against", source = "arguments" }]
 
 [section.line.visual]
 kind = "list"
