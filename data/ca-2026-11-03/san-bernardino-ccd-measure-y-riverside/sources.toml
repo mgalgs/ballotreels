@@ -1,0 +1,73 @@
+# Archived sources for San Bernardino Community College District Measure
+# Y, as it appears in Riverside County, 2026-11-03 general election
+# (sources/sources.md). Every id here may be cited by script.toml. `kind`
+# must be one the standard allows (docs/STANDARD.md, section 1). The
+# guide's pages are cut from the County of Riverside Registrar of Voters'
+# County Voter Information Guide (ballot type 374); "page" is the guide's
+# printed footer number.
+#
+# A community college district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md). The district lies mostly in San Bernardino
+# County; this contest is its part in Riverside County (6 of the county's
+# ballot types), hence the "-riverside" id. A San Bernardino County
+# contest for the same measure needs its own id.
+#
+# The card quotes sources/guide-pages.txt, the guide pages' text as
+# poppler's pdftotext extracts it from sources/voter-guide-measure-pages.pdf
+# (pages 1 to 4 whole; page 5, where the Impartial Analysis and the
+# argument in favor share the page in two columns, one column at a time,
+# with -x/-y/-W/-H), because pdftotext reads that page's two columns
+# line by line across each other. The other sources cite the PDF itself.
+
+[contest]
+id = "ca-2026-11-03-san-bernardino-ccd-measure-y-riverside"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:riverside"
+kind = "measure"
+title = "San Bernardino Community College District Measure Y: College Repair and Job Training Bonds"
+voters = "the San Bernardino Community College District"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "County of Riverside Registrar of Voters, County Voter Information Guide, pages RV 374-045 and RV 374-049: Measure Y's ballot question, as its full text prints it, and the Impartial Analysis's statement of what a vote does"
+credit = "Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000374.pdf"
+file = "sources/guide-pages.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "County Counsel, Impartial Analysis of Bond Measure Y, Riverside County Voter Information Guide, page RV 374-049"
+credit = "Impartial Analysis, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000374.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "San Bernardino Community College District, Tax Rate Statement for Measure Y, Riverside County Voter Information Guide, page RV 374-048"
+credit = "Tax Rate Statement, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000374.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in favor of Measure Y, and the notice that no argument against was filed, as printed in the Riverside County Voter Information Guide, page RV 374-049"
+credit = "Arguments, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000374.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure Y, Riverside County Voter Information Guide, pages RV 374-045 to RV 374-048"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000374.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"

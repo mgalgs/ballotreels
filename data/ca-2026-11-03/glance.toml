@@ -291,3 +291,12 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $356,671,141."
 amount = 356671141
 period = "unstated"
+
+# San Bernardino Community College District Measure Y (its Riverside
+# County contest): the district's Tax Rate Statement, its total debt
+# service (the bonds are $898,000,000).
+[san-bernardino-ccd-measure-y-riverside]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $1.9 billion."
+amount = 1900000000
+period = "unstated"
