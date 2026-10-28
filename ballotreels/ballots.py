@@ -95,6 +95,16 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label=None,
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+    # Massachusetts's Secretary of the Commonwealth prints each ballot
+    # question's wording, the Attorney General's summary, "WHAT YOUR VOTE
+    # WILL DO" (its "A YES VOTE" and "A NO VOTE" lines), the Executive
+    # Office of Administration and Finance's "STATEMENT OF FISCAL
+    # CONSEQUENCES" and the arguments in its Information for Voters. The
+    # booklet heads each "QUESTION 1" (the badge: QUESTION 1).
+    "ma": Ballot(guide="Information for Voters",
+                 fiscal_label="STATEMENT OF FISCAL CONSEQUENCES",
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
