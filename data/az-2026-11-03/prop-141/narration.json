@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 60.7,
+  "seconds": 60.77,
   "phrases": [
     {
       "text": "Proposition 141 is about taxes or fees based on how many miles people drive.",
@@ -29,29 +29,29 @@
       "end": 30.95
     },
     {
-      "text": "Arizona's guide prints no cost estimate for the measure.",
+      "text": "Arizona's guide does not include a cost estimate for the measure.",
       "start": 31.61,
-      "end": 34.91
+      "end": 35.22
     },
     {
       "text": "Supporters say mileage tracking is government surveillance, and the measure bans it permanently in the constitution.",
-      "start": 35.57,
-      "end": 42.57
+      "start": 35.88,
+      "end": 42.64
     },
     {
       "text": "Opponents say fuel tax revenue is eroding, and the measure bans a road funding option prematurely.",
-      "start": 43.23,
-      "end": 49.35
+      "start": 43.3,
+      "end": 49.42
     },
     {
       "text": "A yes vote means banning mileage taxes, and mileage tracking without consent.",
-      "start": 50.01,
-      "end": 55.35
+      "start": 50.08,
+      "end": 55.42
     },
     {
       "text": "A no vote means the constitution's current taxation language stays the same.",
-      "start": 56.01,
-      "end": 60.67
+      "start": 56.08,
+      "end": 60.74
     }
   ],
   "inputs": {
@@ -61,7 +61,7 @@
       "The measure would bar the state and local governments from taxing people by the miles they drive.",
       "Governments also could not monitor or limit miles driven, unless a driver agrees.",
       "Government vehicles, and in certain cases interstate commercial vehicles, would be exempt.",
-      "Arizona's guide prints no cost estimate for the measure.",
+      "Arizona's guide does not include a cost estimate for the measure.",
       "Supporters say mileage tracking is government surveillance, and the measure bans it permanently in the constitution.",
       "Opponents say fuel tax revenue is eroding, and the measure bans a road funding option prematurely.",
       "A yes vote means banning mileage taxes, and mileage tracking without consent.",
@@ -167,11 +167,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Arizona's guide prints no cost estimate for the measure."
+        "text": "Arizona's guide does not include a cost estimate for the measure."
       },
       "bounds": [
         757920,
-        838560
+        846000
       ]
     },
     {
@@ -179,15 +179,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Arizona's guide prints no cost estimate for the measure.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Arizona's guide does not include a cost estimate for the measure.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "Supporters say mileage tracking is government surveillance, and the measure bans it permanently in the constitution."
       },
       "bounds": [
-        852960,
-        1022400
+        860400,
+        1024080
       ]
     },
     {
@@ -202,8 +202,8 @@
         "text": "Opponents say fuel tax revenue is eroding, and the measure bans a road funding option prematurely."
       },
       "bounds": [
-        1036800,
-        1185120
+        1038480,
+        1186800
       ]
     },
     {
@@ -218,8 +218,8 @@
         "text": "A yes vote means banning mileage taxes, and mileage tracking without consent."
       },
       "bounds": [
-        1199520,
-        1329120
+        1201200,
+        1330800
       ]
     },
     {
@@ -234,10 +234,10 @@
         "text": "A no vote means the constitution's current taxation language stays the same."
       },
       "bounds": [
-        1343520,
-        1456800
+        1345200,
+        1458480
       ]
     }
   ],
-  "sha256": "21850fa4d2e4d93bffef92a8b92cc9a58fad37cbc08dc66a58d17a49d1dbc35d"
+  "sha256": "61b87a126426e468ddab196e61255c61ab9ee70b729feda2c2e23ddb25aa5251"
 }

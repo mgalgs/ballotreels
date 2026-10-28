@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 59.81,
+  "seconds": 60.88,
   "phrases": [
     {
       "text": "Proposition 318 is about dividing school sports teams and locker rooms by sex.",
@@ -29,29 +29,29 @@
       "end": 33.32
     },
     {
-      "text": "Arizona's guide prints no cost estimate for the measure.",
+      "text": "Arizona's guide does not include a cost estimate for the measure.",
       "start": 33.98,
-      "end": 37.12
+      "end": 37.69
     },
     {
       "text": "Supporters say the measure protects girls' fairness, safety and privacy in sports and locker rooms.",
-      "start": 37.78,
-      "end": 44.35
+      "start": 38.35,
+      "end": 45.42
     },
     {
       "text": "Opponents say the measure discriminates against vulnerable kids and invites gender checks on any girl.",
-      "start": 45.01,
-      "end": 51.18
+      "start": 46.08,
+      "end": 52.25
     },
     {
       "text": "A yes vote means all school teams are designated by sex.",
-      "start": 51.84,
-      "end": 55.61
+      "start": 52.91,
+      "end": 56.68
     },
     {
       "text": "A no vote means current student athletics laws stay the same.",
-      "start": 56.27,
-      "end": 59.78
+      "start": 57.34,
+      "end": 60.85
     }
   ],
   "inputs": {
@@ -61,7 +61,7 @@
       "The measure would extend that rule to private schools and athletic associations.",
       "Teams would be male, female or coed by sex at birth, and males could not join female teams.",
       "Schools could not let anyone use athletic restrooms, locker rooms or showers not designated for their sex.",
-      "Arizona's guide prints no cost estimate for the measure.",
+      "Arizona's guide does not include a cost estimate for the measure.",
       "Supporters say the measure protects girls' fairness, safety and privacy in sports and locker rooms.",
       "Opponents say the measure discriminates against vulnerable kids and invites gender checks on any girl.",
       "A yes vote means all school teams are designated by sex.",
@@ -167,11 +167,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Arizona's guide prints no cost estimate for the measure."
+        "text": "Arizona's guide does not include a cost estimate for the measure."
       },
       "bounds": [
         814800,
-        891600
+        905280
       ]
     },
     {
@@ -179,15 +179,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Arizona's guide prints no cost estimate for the measure.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Arizona's guide does not include a cost estimate for the measure.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "Supporters say the measure protects girls' fairness, safety and privacy in sports and locker rooms."
       },
       "bounds": [
-        906000,
-        1065120
+        919680,
+        1090800
       ]
     },
     {
@@ -202,8 +202,8 @@
         "text": "Opponents say the measure discriminates against vulnerable kids and invites gender checks on any girl."
       },
       "bounds": [
-        1079520,
-        1229040
+        1105200,
+        1254720
       ]
     },
     {
@@ -218,8 +218,8 @@
         "text": "A yes vote means all school teams are designated by sex."
       },
       "bounds": [
-        1243440,
-        1335360
+        1269120,
+        1361040
       ]
     },
     {
@@ -234,10 +234,10 @@
         "text": "A no vote means current student athletics laws stay the same."
       },
       "bounds": [
-        1349760,
-        1435440
+        1375440,
+        1461120
       ]
     }
   ],
-  "sha256": "a91f8b6f50de14e1bf8f44f8760ac22d1361452b69b9eea60411290b0c2c6228"
+  "sha256": "c89ac5c51603eca12141c971d0ffe4e8da2c2f1cc83b30bfd0558dbc724e088d"
 }

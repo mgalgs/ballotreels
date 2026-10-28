@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 66.04,
+  "seconds": 66.46,
   "phrases": [
     {
       "text": "State Issue 3 is about photo ID to vote in Ohio.",
@@ -29,29 +29,29 @@
       "end": 37.55
     },
     {
-      "text": "Ohio's issue report prints no cost estimate for the amendment.",
+      "text": "Ohio's issue report does not include a cost estimate for the amendment.",
       "start": 38.21,
-      "end": 42.39
+      "end": 42.3
     },
     {
       "text": "Opponents say the amendment leaves absentee voting unprotected, and blocks county veterans and digital military IDs.",
-      "start": 43.05,
-      "end": 50.29
+      "start": 42.96,
+      "end": 50.71
     },
     {
       "text": "Supporters say photo ID helps verify voters' identity, and a constitutional rule keeps election laws stable.",
-      "start": 50.95,
-      "end": 59.16
+      "start": 51.37,
+      "end": 59.58
     },
     {
       "text": "A yes vote means approval of the amendment.",
-      "start": 59.82,
-      "end": 62.43
+      "start": 60.24,
+      "end": 62.85
     },
     {
       "text": "A no vote means disapproval of the amendment.",
-      "start": 63.09,
-      "end": 66.01
+      "start": 63.51,
+      "end": 66.43
     }
   ],
   "inputs": {
@@ -61,7 +61,7 @@
       "The amendment would require an Ohio driver license or state ID, a United States passport, or a military, National Guard or Veterans Affairs ID.",
       "State law could allow another check for voters with a religious objection to being photographed.",
       "Voters who vote another way, such as by mail, would need photo ID, unless state law accepts a signature and another identifier.",
-      "Ohio's issue report prints no cost estimate for the amendment.",
+      "Ohio's issue report does not include a cost estimate for the amendment.",
       "Opponents say the amendment leaves absentee voting unprotected, and blocks county veterans and digital military IDs.",
       "Supporters say photo ID helps verify voters' identity, and a constitutional rule keeps election laws stable.",
       "A yes vote means approval of the amendment.",
@@ -167,11 +167,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Ohio's issue report prints no cost estimate for the amendment."
+        "text": "Ohio's issue report does not include a cost estimate for the amendment."
       },
       "bounds": [
         916320,
-        1018080
+        1015920
       ]
     },
     {
@@ -179,15 +179,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Ohio's issue report prints no cost estimate for the amendment.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Ohio's issue report does not include a cost estimate for the amendment.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "Opponents say the amendment leaves absentee voting unprotected, and blocks county veterans and digital military IDs."
       },
       "bounds": [
-        1032480,
-        1207680
+        1030320,
+        1217760
       ]
     },
     {
@@ -202,8 +202,8 @@
         "text": "Supporters say photo ID helps verify voters' identity, and a constitutional rule keeps election laws stable."
       },
       "bounds": [
-        1222080,
-        1420560
+        1232160,
+        1430640
       ]
     },
     {
@@ -218,8 +218,8 @@
         "text": "A yes vote means approval of the amendment."
       },
       "bounds": [
-        1434960,
-        1499040
+        1445040,
+        1509120
       ]
     },
     {
@@ -234,10 +234,10 @@
         "text": "A no vote means disapproval of the amendment."
       },
       "bounds": [
-        1513440,
-        1584960
+        1523520,
+        1595040
       ]
     }
   ],
-  "sha256": "ee0ac3ab552a28ff965505f01419a151ee87537bc279cd1b0816fbb462508507"
+  "sha256": "3fb420bb0c86c9daa90bd17bbfb6798bcc151434b401009522e98ee0fe7d9033"
 }

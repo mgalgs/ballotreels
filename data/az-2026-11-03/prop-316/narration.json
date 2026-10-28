@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 61.13,
+  "seconds": 61.57,
   "phrases": [
     {
       "text": "Proposition 316 is about local taxes on groceries.",
@@ -29,29 +29,29 @@
       "end": 33.38
     },
     {
-      "text": "Arizona's guide prints no cost estimate for the measure.",
+      "text": "Arizona's guide does not include a cost estimate for the measure.",
       "start": 34.04,
-      "end": 37.23
+      "end": 37.52
     },
     {
       "text": "Supporters say the measure lets cities keep their revenue, while local voters decide any increase.",
-      "start": 37.89,
-      "end": 43.52
+      "start": 38.18,
+      "end": 43.96
     },
     {
       "text": "Opponents say the measure strips cities' local control, risking service cuts and higher property taxes.",
-      "start": 44.18,
-      "end": 51.17
+      "start": 44.62,
+      "end": 51.61
     },
     {
       "text": "A yes vote means no new or higher grocery tax without voter approval.",
-      "start": 51.83,
-      "end": 56.66
+      "start": 52.27,
+      "end": 57.1
     },
     {
       "text": "A no vote means current local tax laws stay the same.",
-      "start": 57.32,
-      "end": 61.1
+      "start": 57.76,
+      "end": 61.54
     }
   ],
   "inputs": {
@@ -61,7 +61,7 @@
       "Under the measure, a new or higher grocery tax would need local voters' approval.",
       "The rate could not exceed 2 percent, and places at 2 percent or more could not raise it.",
       "The measure is retroactive: no grocery tax could be adopted or raised from mid-2025 to mid-2027.",
-      "Arizona's guide prints no cost estimate for the measure.",
+      "Arizona's guide does not include a cost estimate for the measure.",
       "Supporters say the measure lets cities keep their revenue, while local voters decide any increase.",
       "Opponents say the measure strips cities' local control, risking service cuts and higher property taxes.",
       "A yes vote means no new or higher grocery tax without voter approval.",
@@ -167,11 +167,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Arizona's guide prints no cost estimate for the measure."
+        "text": "Arizona's guide does not include a cost estimate for the measure."
       },
       "bounds": [
         816240,
-        894240
+        901200
       ]
     },
     {
@@ -179,15 +179,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Arizona's guide prints no cost estimate for the measure.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Arizona's guide does not include a cost estimate for the measure.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "Supporters say the measure lets cities keep their revenue, while local voters decide any increase."
       },
       "bounds": [
-        908640,
-        1045200
+        915600,
+        1055760
       ]
     },
     {
@@ -202,8 +202,8 @@
         "text": "Opponents say the measure strips cities' local control, risking service cuts and higher property taxes."
       },
       "bounds": [
-        1059600,
-        1228800
+        1070160,
+        1239360
       ]
     },
     {
@@ -218,8 +218,8 @@
         "text": "A yes vote means no new or higher grocery tax without voter approval."
       },
       "bounds": [
-        1243200,
-        1360560
+        1253760,
+        1371120
       ]
     },
     {
@@ -234,10 +234,10 @@
         "text": "A no vote means current local tax laws stay the same."
       },
       "bounds": [
-        1374960,
-        1467120
+        1385520,
+        1477680
       ]
     }
   ],
-  "sha256": "5bc730f1d15bd62bc3801b5372feea6898bec63cb5edf585357e7284bfb58635"
+  "sha256": "666eb0df1e8d307406cfe1c54508c573e134aa6168836b2f3c3fcf1c42a28a72"
 }

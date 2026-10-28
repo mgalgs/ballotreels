@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 61.59,
+  "seconds": 62.36,
   "phrases": [
     {
       "text": "Proposition 317 is about drug cartels.",
@@ -34,29 +34,29 @@
       "end": 34.67
     },
     {
-      "text": "Arizona's guide prints no cost estimate for the measure.",
+      "text": "Arizona's guide does not include a cost estimate for the measure.",
       "start": 35.33,
-      "end": 38.51
+      "end": 38.82
     },
     {
       "text": "Supporters say cartels act as terrorists, and the measure requires Arizona to fight back.",
-      "start": 39.17,
-      "end": 45.14
+      "start": 39.48,
+      "end": 45.91
     },
     {
       "text": "Opponents say the measure is symbolic, does nothing, and wastes voters' and lawmakers' time.",
-      "start": 45.8,
-      "end": 51.64
+      "start": 46.57,
+      "end": 52.41
     },
     {
       "text": "A yes vote means declaring drug cartels terrorist organizations.",
-      "start": 52.3,
-      "end": 56.77
+      "start": 53.07,
+      "end": 57.54
     },
     {
       "text": "A no vote means keeping the current laws on terrorism and the department.",
-      "start": 57.43,
-      "end": 61.56
+      "start": 58.2,
+      "end": 62.33
     }
   ],
   "inputs": {
@@ -67,7 +67,7 @@
       "The measure would declare drug cartels to be terrorist organizations.",
       "Cartels would be defined as groups engaged in human smuggling, drug trafficking for profit, or terrorism.",
       "The department would have to use all lawful means within its authority against cartels.",
-      "Arizona's guide prints no cost estimate for the measure.",
+      "Arizona's guide does not include a cost estimate for the measure.",
       "Supporters say cartels act as terrorists, and the measure requires Arizona to fight back.",
       "Opponents say the measure is symbolic, does nothing, and wastes voters' and lawmakers' time.",
       "A yes vote means declaring drug cartels terrorist organizations.",
@@ -189,11 +189,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Arizona's guide prints no cost estimate for the measure."
+        "text": "Arizona's guide does not include a cost estimate for the measure."
       },
       "bounds": [
         847200,
-        924960
+        932400
       ]
     },
     {
@@ -201,15 +201,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Arizona's guide prints no cost estimate for the measure.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Arizona's guide does not include a cost estimate for the measure.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "Supporters say cartels act as terrorists, and the measure requires Arizona to fight back."
       },
       "bounds": [
-        939360,
-        1084080
+        946800,
+        1102560
       ]
     },
     {
@@ -224,8 +224,8 @@
         "text": "Opponents say the measure is symbolic, does nothing, and wastes voters' and lawmakers' time."
       },
       "bounds": [
-        1098480,
-        1240080
+        1116960,
+        1258560
       ]
     },
     {
@@ -240,8 +240,8 @@
         "text": "A yes vote means declaring drug cartels terrorist organizations."
       },
       "bounds": [
-        1254480,
-        1363200
+        1272960,
+        1381680
       ]
     },
     {
@@ -256,10 +256,10 @@
         "text": "A no vote means keeping the current laws on terrorism and the department."
       },
       "bounds": [
-        1377600,
-        1478160
+        1396080,
+        1496640
       ]
     }
   ],
-  "sha256": "a1a505923b5ee7c9877251f94a1e8a0c01e77ca0b06274c40537e13a28cdd43f"
+  "sha256": "09f354c599260ceab7f43e479ec3283dbda550823640ee55a48143f48b876e1a"
 }

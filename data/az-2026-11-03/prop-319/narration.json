@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 61.66,
+  "seconds": 62.7,
   "phrases": [
     {
       "text": "Proposition 319 is about cameras that catch drivers speeding or ignoring traffic signals and signs.",
@@ -29,29 +29,29 @@
       "end": 32.45
     },
     {
-      "text": "Arizona's guide prints no cost estimate for the measure.",
+      "text": "Arizona's guide does not include a cost estimate for the measure.",
       "start": 33.11,
-      "end": 36.43
+      "end": 36.93
     },
     {
       "text": "Supporters say the measure stops for-profit cameras that invade privacy, and gives voters control.",
-      "start": 37.09,
-      "end": 43.36
+      "start": 37.59,
+      "end": 44.4
     },
     {
       "text": "Opponents say cameras save lives, and the measure takes that tool from local communities.",
-      "start": 44.02,
-      "end": 49.41
+      "start": 45.06,
+      "end": 50.45
     },
     {
       "text": "A yes vote means no new camera contracts after 2026, and local votes on existing cameras.",
-      "start": 50.07,
-      "end": 57.08
+      "start": 51.11,
+      "end": 58.12
     },
     {
       "text": "A no vote means current photo enforcement laws stay the same.",
-      "start": 57.74,
-      "end": 61.63
+      "start": 58.78,
+      "end": 62.67
     }
   ],
   "inputs": {
@@ -61,7 +61,7 @@
       "Under the measure, cameras would be allowed only under a contract in place by December 31, 2026.",
       "Cities and towns with cameras would need local voters' approval at the next general election to keep them.",
       "Voters would decide again every 10 years.",
-      "Arizona's guide prints no cost estimate for the measure.",
+      "Arizona's guide does not include a cost estimate for the measure.",
       "Supporters say the measure stops for-profit cameras that invade privacy, and gives voters control.",
       "Opponents say cameras save lives, and the measure takes that tool from local communities.",
       "A yes vote means no new camera contracts after 2026, and local votes on existing cameras.",
@@ -167,11 +167,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Arizona's guide prints no cost estimate for the measure."
+        "text": "Arizona's guide does not include a cost estimate for the measure."
       },
       "bounds": [
         793920,
-        875040
+        887040
       ]
     },
     {
@@ -179,15 +179,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Arizona's guide prints no cost estimate for the measure.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Arizona's guide does not include a cost estimate for the measure.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "Supporters say the measure stops for-profit cameras that invade privacy, and gives voters control."
       },
       "bounds": [
-        889440,
-        1041360
+        901440,
+        1066320
       ]
     },
     {
@@ -202,8 +202,8 @@
         "text": "Opponents say cameras save lives, and the measure takes that tool from local communities."
       },
       "bounds": [
-        1055760,
-        1186560
+        1080720,
+        1211520
       ]
     },
     {
@@ -218,8 +218,8 @@
         "text": "A yes vote means no new camera contracts after 2026, and local votes on existing cameras."
       },
       "bounds": [
-        1200960,
-        1370640
+        1225920,
+        1395600
       ]
     },
     {
@@ -234,10 +234,10 @@
         "text": "A no vote means current photo enforcement laws stay the same."
       },
       "bounds": [
-        1385040,
-        1479840
+        1410000,
+        1504800
       ]
     }
   ],
-  "sha256": "61ed06d267b715fdd5b6bd7070838d3aeb5028d972eab1189889aa81d5bc518a"
+  "sha256": "3b6e17bcba67e82e0fdaca428837f83ffb21f1f3f6df8ae9c7cd4acc2acc9729"
 }

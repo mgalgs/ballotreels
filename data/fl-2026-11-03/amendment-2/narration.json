@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 59.72,
+  "seconds": 60.26,
   "phrases": [
     {
       "text": "Amendment 2 is about property taxes on equipment and other movable property kept on Florida farmland.",
@@ -29,29 +29,29 @@
       "end": 36.29
     },
     {
-      "text": "Florida's amendment booklet prints no estimate of how Amendment 2 would change local tax revenue.",
+      "text": "Florida's amendment booklet does not include an estimate of how Amendment 2 would change local tax revenue.",
       "start": 36.95,
-      "end": 42.66
+      "end": 43.2
     },
     {
       "text": "No official argument for Amendment 2 was published.",
-      "start": 43.32,
-      "end": 46.82
+      "start": 43.86,
+      "end": 47.36
     },
     {
       "text": "No official argument against Amendment 2 was published.",
-      "start": 47.48,
-      "end": 50.87
+      "start": 48.02,
+      "end": 51.41
     },
     {
       "text": "A yes vote exempts this farm property from property tax.",
-      "start": 51.53,
-      "end": 55.22
+      "start": 52.07,
+      "end": 55.76
     },
     {
       "text": "A no vote keeps this farm property subject to property tax.",
-      "start": 55.88,
-      "end": 59.69
+      "start": 56.42,
+      "end": 60.23
     }
   ],
   "inputs": {
@@ -61,7 +61,7 @@
       "Today, the first $25,000 of this property's assessed value is exempt.",
       "Amendment 2 would exempt this property entirely if it is usually kept on farmland, used for farming or agritourism, and owned by the landowner or leaseholder.",
       "The exemption would first apply to taxes for 2027.",
-      "Florida's amendment booklet prints no estimate of how Amendment 2 would change local tax revenue.",
+      "Florida's amendment booklet does not include an estimate of how Amendment 2 would change local tax revenue.",
       "No official argument for Amendment 2 was published.",
       "No official argument against Amendment 2 was published.",
       "A yes vote exempts this farm property from property tax.",
@@ -167,11 +167,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Florida's amendment booklet prints no estimate of how Amendment 2 would change local tax revenue."
+        "text": "Florida's amendment booklet does not include an estimate of how Amendment 2 would change local tax revenue."
       },
       "bounds": [
         886080,
-        1024560
+        1037520
       ]
     },
     {
@@ -179,15 +179,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Florida's amendment booklet prints no estimate of how Amendment 2 would change local tax revenue.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Florida's amendment booklet does not include an estimate of how Amendment 2 would change local tax revenue.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "No official argument for Amendment 2 was published."
       },
       "bounds": [
-        1038960,
-        1124400
+        1051920,
+        1137360
       ]
     },
     {
@@ -202,8 +202,8 @@
         "text": "No official argument against Amendment 2 was published."
       },
       "bounds": [
-        1138800,
-        1221600
+        1151760,
+        1234560
       ]
     },
     {
@@ -218,8 +218,8 @@
         "text": "A yes vote exempts this farm property from property tax."
       },
       "bounds": [
-        1236000,
-        1326000
+        1248960,
+        1338960
       ]
     },
     {
@@ -234,10 +234,10 @@
         "text": "A no vote keeps this farm property subject to property tax."
       },
       "bounds": [
-        1340400,
-        1433280
+        1353360,
+        1446240
       ]
     }
   ],
-  "sha256": "dcae6e21acc25bfdf7a0851cbe3fd360a8dae17e3b519dbb195c12692c6a29ba"
+  "sha256": "b388c8253d8ab95563521d5e53e7e9768b4dcb7f3e42934ec033ac82aab94738"
 }
