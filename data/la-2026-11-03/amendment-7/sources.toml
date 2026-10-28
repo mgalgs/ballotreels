@@ -1,0 +1,68 @@
+# Archived sources for Louisiana Amendment 7, 2026-11-03 general
+# election. Every id here may be cited by script.toml. `kind` must be one
+# the standard allows (docs/STANDARD.md, section 1).
+#
+# Louisiana has no voter pamphlet. The Secretary of State's one-page
+# "Statements of Proposed Constitutional Amendments" (R.S. 18:431 and
+# 18:552) prints all ten amendments' ballot questions, Abstracts and
+# "Present Constitution / Proposed Constitutional Amendment" paragraphs;
+# the card quotes it. Louisiana publishes no official arguments for or
+# against an amendment, so there is no source of kind official-argument.
+#
+# The Legislative Fiscal Office's note on the enrolled bill was written
+# for legislators and is not printed by the Secretary of State; the
+# script names the office when it cites it.
+#
+# digest-sb228-reengrossed.pdf predates House amendments and is not cited:
+# the résumé digest describes the Act as enacted.
+
+[contest]
+id = "la-2026-11-03-amendment-7"
+election = "la-2026-11-03"
+division = "ocd-division/country:us/state:la"
+kind = "measure"
+title = "Amendment 7: Authorizes the use of public funds to identify, inventory, remove, or replace certain water lines on property owned by utility customers"
+
+[[source]]
+id = "statements"
+kind = "official-title-summary"
+publisher = "Louisiana Secretary of State, Statements of Proposed Constitutional Amendments, November 3, 2026, No. 7, page 1"
+credit = "Louisiana Secretary of State, Statements of Proposed Constitutional Amendments"
+url = "https://www.sos.la.gov/media/j2fjvpye/proposed-constitutional-amendments-2026-nov-summaries.pdf"
+file = "sources/statements-of-proposed-amendments.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "ballot-language"
+kind = "official-title-summary"
+publisher = "Louisiana Secretary of State, 2026 Proposed Constitutional Amendments, November 3, 2026 Election, Proposed Amendment No. 7, page 2"
+credit = "Louisiana Secretary of State, 2026 Proposed Constitutional Amendments"
+url = "https://www.sos.la.gov/media/jo2die1s/proposed-constitutional-amendments-2026-nov.pdf"
+file = "sources/sos-ballot-language-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "act"
+kind = "official-text"
+publisher = "Louisiana Legislature, Act 607 (SB 228), 2026 Regular Session, enrolled"
+url = "https://legis.la.gov/legis/ViewDocument.aspx?d=1480189"
+file = "sources/act-607-sb228.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "digest"
+kind = "official-title-summary"
+publisher = "Louisiana Legislature, Résumé Digest of Act 607 (SB 228), 2026 Regular Session"
+credit = "Louisiana Legislature, Résumé Digest"
+url = "https://legis.la.gov/legis/ViewDocument.aspx?d=1483270"
+file = "sources/resume-digest-sb228.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal-note"
+kind = "official-fiscal-analysis"
+publisher = "Louisiana Legislative Fiscal Office, Fiscal Note on SB 228 (Enrolled), 2026 Regular Session, June 1, 2026"
+credit = "Louisiana Legislative Fiscal Office"
+url = "https://legis.la.gov/legis/ViewDocument.aspx?d=1479498"
+file = "sources/fiscal-note-sb228-enrolled.pdf"
+retrieved = "2026-10-27"

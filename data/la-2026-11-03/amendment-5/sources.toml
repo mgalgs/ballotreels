@@ -1,0 +1,69 @@
+# Archived sources for Louisiana Amendment 5, 2026-11-03 general
+# election. Every id here may be cited by script.toml. `kind` must be one
+# the standard allows (docs/STANDARD.md, section 1).
+#
+# Louisiana has no voter pamphlet. The Secretary of State's one-page
+# "Statements of Proposed Constitutional Amendments" (R.S. 18:431 and
+# 18:552) prints all ten amendments' ballot questions, Abstracts and
+# "Present Constitution / Proposed Constitutional Amendment" paragraphs;
+# the card quotes it. Louisiana publishes no official arguments for or
+# against an amendment, so there is no source of kind official-argument.
+#
+# The bill's fiscal statement is the Legislative Auditor's actuarial note
+# on the enrolled bill (its state-government part prepared by the
+# Legislative Fiscal Office), written for legislators and not printed by
+# the Secretary of State; the script names it when it cites it.
+#
+# The earlier printed digest (digest-*.pdf) is not cited: the résumé
+# digest describes the Act as enacted.
+
+[contest]
+id = "la-2026-11-03-amendment-5"
+election = "la-2026-11-03"
+division = "ocd-division/country:us/state:la"
+kind = "measure"
+title = "Amendment 5: Authorizes a state retirement system receiving nonrecurring state monies to apply those monies to any of its outstanding unfunded accrued liability (UAL) rather than its oldest UAL first"
+
+[[source]]
+id = "statements"
+kind = "official-title-summary"
+publisher = "Louisiana Secretary of State, Statements of Proposed Constitutional Amendments, November 3, 2026, No. 5, page 1"
+credit = "Louisiana Secretary of State, Statements of Proposed Constitutional Amendments"
+url = "https://www.sos.la.gov/media/j2fjvpye/proposed-constitutional-amendments-2026-nov-summaries.pdf"
+file = "sources/statements-of-proposed-amendments.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "ballot-language"
+kind = "official-title-summary"
+publisher = "Louisiana Secretary of State, 2026 Proposed Constitutional Amendments, November 3, 2026 Election, Proposed Amendment No. 5, page 1"
+credit = "Louisiana Secretary of State, 2026 Proposed Constitutional Amendments"
+url = "https://www.sos.la.gov/media/jo2die1s/proposed-constitutional-amendments-2026-nov.pdf"
+file = "sources/sos-ballot-language-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "act"
+kind = "official-text"
+publisher = "Louisiana Legislature, Act 606 (HB 27), 2026 Regular Session, enrolled"
+url = "https://legis.la.gov/legis/ViewDocument.aspx?d=1480365"
+file = "sources/act-606-hb27.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "digest"
+kind = "official-title-summary"
+publisher = "Louisiana Legislature, Résumé Digest of Act 606 (HB 27), 2026 Regular Session"
+credit = "Louisiana Legislature, Résumé Digest"
+url = "https://legis.la.gov/legis/ViewDocument.aspx?d=1485020"
+file = "sources/resume-digest-hb27.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "actuarial-note"
+kind = "official-fiscal-analysis"
+publisher = "Louisiana Legislative Auditor, Actuarial Note on HB 27 (Enrolled), 2026 Regular Session, May 29, 2026"
+credit = "Louisiana Legislative Auditor, Actuarial Note"
+url = "https://legis.la.gov/legis/ViewDocument.aspx?d=1478551"
+file = "sources/actuarial-note-hb27-enrolled.pdf"
+retrieved = "2026-10-27"

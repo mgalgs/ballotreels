@@ -484,6 +484,22 @@ def _archived_text(path: Path) -> str:
     whitespace collapsed alike."""
     if path.suffix.lower() != ".pdf":
         return plain_text(path.read_text(encoding="utf-8", errors="replace"))
+    return _normalise(_pdftotext(path))
+
+
+@lru_cache(maxsize=8)
+def _archived_blocks(path: Path) -> tuple[str, ...]:
+    """An archived source's text as the blocks pdftotext separates with a
+    blank line (a column's run of lines, a paragraph), each whitespace
+    collapsed; a page's plain_text is one block."""
+    if path.suffix.lower() != ".pdf":
+        return (_archived_text(path),)
+    blocks = (_normalise(b) for b in re.split(r"\n\s*\n", _pdftotext(path)))
+    return tuple(b for b in blocks if b)
+
+
+@lru_cache(maxsize=8)
+def _pdftotext(path: Path) -> str:
     if shutil.which("pdftotext") is None:
         raise UnreadableSource("pdftotext (poppler) is not installed")
     try:
@@ -492,7 +508,7 @@ def _archived_text(path: Path) -> str:
     except (subprocess.CalledProcessError,
             subprocess.TimeoutExpired) as e:
         raise UnreadableSource(f"pdftotext failed: {e}") from None
-    return _normalise(out.stdout.decode("utf-8", errors="replace"))
+    return out.stdout.decode("utf-8", errors="replace")
 
 
 _WHITESPACE = re.compile(r"\s+")
@@ -621,6 +637,8 @@ def check_card(c: Contest) -> list[Failure]:
         return out  # check_sources reports it
     try:
         archived = _archived_text(path)
+        blocks = _archived_blocks(path) if ballot.card_column_breaks \
+            else None
     except UnreadableSource as e:
         fail(f"cannot read source {card.source!r} ({src.file}) to check "
              f"the card's quotes: {e}")
@@ -630,10 +648,43 @@ def check_card(c: Contest) -> list[Failure]:
         # across a line break ("eighty-" / "two" -> "eightytwo")
         if isinstance(value, str) and value.strip() \
                 and not _in_text(value, archived) \
-                and not _in_raw_columns(value, path):
+                and not _in_raw_columns(value, path) \
+                and not _card_quote_in(value, archived, blocks):
             fail(f"{key!r} does not appear verbatim in source "
                  f"{card.source!r} ({src.file})")
     return out
+
+
+CARD_PIECE_MIN_WORDS = 6
+
+
+def _card_quote_in(value: str, archived: str,
+                   blocks: tuple[str, ...] | None) -> bool:
+    """Whether a card quote occurs in its source's archived text: verbatim,
+    whitespace collapsed. Where the state's card source is set in columns
+    that pdftotext reads out of order (Ballot.card_column_breaks), `blocks`
+    is that text in pdftotext's blank-line-separated blocks; a hyphen may
+    then be missing, as for a choice's label, and the quote may run across
+    one column break: two pieces, each of at least CARD_PIECE_MIN_WORDS
+    words, the first ending one block and the second starting another. A
+    piece found only mid-block is no column break, so a quote stitched
+    from two places on the sheet still fails."""
+    want = _normalise(value)
+    if want in archived:
+        return True
+    if blocks is None:
+        return False
+    if _in_text(want, archived):
+        return True
+    words = want.split(" ")
+    n = CARD_PIECE_MIN_WORDS
+    for i in range(n, len(words) - n + 1):
+        head = re.compile(_hyphen_optional(" ".join(words[:i])) + r"\Z")
+        tail = re.compile(_hyphen_optional(" ".join(words[i:])))
+        if any(head.search(b) for b in blocks) \
+                and any(tail.match(b) for b in blocks):
+            return True
+    return False
 
 
 def check_sources(c: Contest) -> list[Failure]:
@@ -1009,8 +1060,12 @@ def _in_text(phrase: str, archived: str) -> bool:
     want = _normalise(phrase)
     if want in archived:
         return True
-    parts = [re.escape(p) for p in want.split("-")]
-    return re.search("-?".join(parts), archived) is not None
+    return re.search(_hyphen_optional(want), archived) is not None
+
+
+def _hyphen_optional(phrase: str) -> str:
+    """A regex for `phrase` with each of its hyphens optional."""
+    return "-?".join(re.escape(p) for p in phrase.split("-"))
 
 
 # A basis is compared looser than a card quote: a side's argument is

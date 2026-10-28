@@ -1,0 +1,146 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; how expropriation by a private entity works today; what
+# Amendment 8 would bar; that no cost estimate is printed; the two
+# sides; what a vote does.
+#
+# The card quotes the Secretary of State's "Statements of Proposed
+# Constitutional Amendments": the ballot question whole, the Abstract,
+# and the "Proposed Constitutional Amendment" paragraph. The sheet prints
+# no "a yes vote means" lines, so the card has none, and the vote lines
+# take their two meanings from the card's own words.
+#
+# Fiscal: no Legislative Fiscal Office note was issued on the enrolled
+# bill and the sheet prints no estimate, so the fiscal line is the
+# standard one for a statement with none (STANDARD rule 6.5; the round's
+# rule 5a).
+#
+# Louisiana publishes no official arguments for or against an
+# amendment, so both sides are filed = false and each says so once, in
+# the same number of words. No person is named.
+
+contest = "la-2026-11-03-amendment-8"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "statements"
+number = "8"
+title = "Do you support an amendment to prohibit expropriation of property by a foreign adversary or an agent of a foreign adversary? (Amends Article I, Section 4(B)(4))"
+origin = "Prohibits expropriation of property by a foreign adversary or an agent of a foreign adversary"
+summary = "Proposed Constitutional Amendment retains the present constitution and adds a prohibition that no private entity that is a foreign adversary or an agent of a foreign adversary, as defined by law, shall take or damage property."
+
+[[section]]
+id = "what"
+heading = "Amendment 8"
+
+[[section.line]]
+text = "Amendment 8 is about expropriation, the taking of property, by a foreign adversary."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "page"
+source = "statements"
+highlight = ["expropriation of property by a foreign adversary"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, a private entity that the law allows to expropriate may take property only for a public and necessary purpose, with just compensation to the owner."
+sources = ["statements", "act"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section.line]]
+text = "A court decides whether the purpose is public and necessary."
+sources = ["statements", "digest"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would bar any private entity that is a foreign adversary, or an agent of one, from taking or damaging property."
+sources = ["statements", "act"]
+
+[section.line.visual]
+kind = "page"
+source = "statements"
+highlight = ["no private entity that is a foreign adversary or an agent of a foreign adversary"]
+
+[[section.line]]
+text = "Who counts as a foreign adversary is defined by law."
+sources = ["statements", "act"]
+
+[section.line.visual]
+kind = "illustration"
+name = "law-book"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Louisiana's official statement does not include a cost estimate for the amendment."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "No cost estimate"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Louisiana publishes no official argument for the amendment."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "list"
+source = "statements"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Louisiana publishes no official argument against the amendment."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "list"
+source = "statements"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote bars expropriation by a foreign adversary or its agent."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "page"
+source = "statements"
+highlight = ["prohibit expropriation of property by a foreign adversary"]
+
+[[section.line]]
+text = "A no vote keeps today's expropriation rules, with no such ban."
+sources = ["statements"]
+
+[section.line.visual]
+kind = "page"
+source = "statements"
+highlight = ["adds a prohibition"]
