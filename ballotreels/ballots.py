@@ -89,6 +89,8 @@ BALLOTS: dict[str, Ballot] = {
                          "Board of Education Resolution No. 10.6",
                      "ca-2026-11-03-upland-unified-measure-a":
                          "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-barstow-ccd-measure-c":
+                         "Board of Trustees Resolution, Appendix B",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",

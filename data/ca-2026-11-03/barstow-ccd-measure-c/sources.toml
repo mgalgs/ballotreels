@@ -1,0 +1,69 @@
+# Archived sources for Barstow Community College District Measure C,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Bernardino County Registrar of Voters' comprehensive Voter Information
+# Guide, PDF pages 183 to 188; "page" is the guide's printed footer
+# number (SB COMPREHENSIVE-181 to -186).
+#
+# The archived guide pages print no ballot question for Measure C, so the
+# card quotes it from Appendix B ("Abbreviated Form of Bond Measure") of
+# the Board of Trustees' resolution, as the Registrar posts it (its
+# number is left blank on that copy).
+#
+# A community college district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md). The resolution places the district "in San
+# Bernardino County", so it has one contest.
+
+[contest]
+id = "ca-2026-11-03-barstow-ccd-measure-c"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:san_bernardino"
+kind = "measure"
+title = "Barstow Community College District Measure C: College Facility Bonds"
+voters = "the Barstow Community College District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Board of Trustees of the Barstow Community College District, resolution ordering the bond election, Appendix B: Abbreviated Form of Bond Measure, as posted by the Registrar of Voters"
+credit = "Ballot question, Board of Trustees resolution"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/BarstowCCD/RES_BarstowCCD.pdf"
+file = "sources/RES_BarstowCCD.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "County Counsel Impartial Analysis of Bond Measure C, San Bernardino County Voter Information Guide, page SB COMPREHENSIVE-181"
+credit = "Impartial Analysis, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp183-188.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Barstow Community College District, Tax Rate Statement for Bond Measure C, San Bernardino County Voter Information Guide, page SB COMPREHENSIVE-182"
+credit = "Tax Rate Statement, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp183-188.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Bond Measure C, San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-181 to -182 (no argument against was filed)"
+credit = "Arguments, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp183-188.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text for Bond Measure C, San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-182 to -186"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp183-188.pdf"
+retrieved = "2026-10-28"
