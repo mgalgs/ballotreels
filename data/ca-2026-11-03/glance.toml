@@ -289,3 +289,12 @@ status = "none-printed"
 [albany-measure-o]
 source = "guide-page"
 status = "none-printed"
+
+# City of Albany Measure P: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is in its ballot question (and the
+# City Attorney's Impartial Analysis).
+[albany-measure-p]
+source = "guide-page"
+quote = "providing an estimated $1,400,000 annually until ended by voters"
+amount = 1400000
+period = "per-year"
