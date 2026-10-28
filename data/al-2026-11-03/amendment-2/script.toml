@@ -1,0 +1,172 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; how county school boards stand today; what the amendment
+# would allow (a merger), what must come first (a study), and how voters
+# could stop one (a protest and a vote); what the two official cost
+# statements say; the two sides; what a vote does.
+#
+# The card quotes the Fair Ballot Commission's ballot statement: the
+# ballot text as title, the Act it was proposed by as origin, the
+# plain-language summary's "If approved" paragraph and the two that
+# follow it as summary, and its yes and no sentences. The statement's
+# cost sentence sits under no heading, so the card has no fiscal quote
+# (ballots.py). The title quotes "potential", which the statement
+# misprints "potentia1" (sources.toml).
+#
+# The two official cost statements differ, and both are given,
+# attributed: the Commission says no costs or taxes; the Legislative
+# Services Agency's fiscal notes say a merger could raise or lower the
+# obligations of the county boards involved, add work for the State
+# Board, and estimate $100,000 of proclamation expenses from the State
+# General Fund. No archived source states the State General Fund total
+# for fiscal year 2027, so the figure is stated without its scale (left
+# open). The notes describe earlier versions, and the script says so.
+#
+# Alabama publishes no official arguments for or against an amendment:
+# both sides are filed = false and each says so once, in the same number
+# of words. No person is named.
+
+contest = "al-2026-11-03-amendment-2"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "fbc"
+number = "2"
+title = "Proposing an amendment to the Constitution of Alabama of 2022, to provide a process for the creation of a consolidated county school system by merging two or more contiguous county boards of education; to require the State Board of Education to conduct an impact study on the potential effects of the consolidation; to require publication of the impact study; to provide a procedure for protesting a proposed consolidation of two or more county school systems; and to require the State Board of Education to adopt rules."
+origin = "Proposed by Act No. 2026-378 (House Bill 380, 2026 Regular Legislative Session)"
+summary = "If approved, this amendment would allow two or more neighboring county boards of education to agree to merge their county school systems into one multi-county school system by formal resolution of the affected county school boards. Before a merger could occur, the State Board of Education would be required to conduct a study of the proposed merger, including its potential effects on students, families, educational programs, transportation, finances, taxes, and school operations. The study must be published before the merger could be finalized. If at least 25 percent of the qualified voters in any of the affected county school systems submits a written protest, the proposed merger could not take effect unless it is approved by a majority of the voters in each of the affected counties at the next general election. In addition to a majority of voters in each county, the amendment also requires that the merger be approved by an overall majority of the votes cast in all the affected counties."
+yes = "If the majority of voters vote “yes” on Amendment 2, the Alabama Constitution will be changed."
+no = "If the majority of voters vote “no” on Amendment 2, the Alabama Constitution will not be changed."
+
+[[section]]
+id = "what"
+heading = "Amendment 2"
+
+[[section.line]]
+text = "Amendment 2 is about merging county school systems."
+sources = ["fbc"]
+
+[section.line.visual]
+kind = "page"
+source = "fbc"
+highlight = ["consolidated county school system"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, each county board of education operates independently, with no process for merging."
+sources = ["fbc"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would let neighboring county boards agree to merge into one multi-county school system."
+sources = ["fbc", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "fbc"
+highlight = ["one multi-county school system"]
+
+[[section.line]]
+text = "The State Board of Education would first study and publish the effects on students, finances, taxes and more."
+sources = ["fbc", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "notice-website"
+
+[[section.line]]
+text = "A written protest by 25 percent of voters in any system would require a majority vote in each county, and overall."
+sources = ["fbc", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "fbc"
+highlight = ["written protest", "overall majority"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Alabama's ballot statement says the amendment has no costs or taxes."
+sources = ["fbc-cost"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "No costs or taxes"
+
+[[section.line]]
+text = "Legislative Services Agency fiscal notes on earlier versions say county board costs could rise or fall, and State Board work would grow."
+sources = ["fiscal-note-1", "fiscal-note-2"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "The notes also estimate $100,000 in proclamation expenses from the State General Fund in 2027."
+sources = ["fiscal-note-1", "fiscal-note-2"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Alabama publishes no official argument for the amendment."
+sources = ["fbc"]
+
+[section.line.visual]
+kind = "list"
+source = "fbc"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Alabama publishes no official argument against the amendment."
+sources = ["fbc"]
+
+[section.line.visual]
+kind = "list"
+source = "fbc"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means the Alabama Constitution will be changed."
+sources = ["fbc"]
+
+[section.line.visual]
+kind = "page"
+source = "fbc"
+highlight = ["the Alabama Constitution will be changed"]
+
+[[section.line]]
+text = "A no vote means the Alabama Constitution will not be changed."
+sources = ["fbc"]
+
+[section.line.visual]
+kind = "page"
+source = "fbc"
+highlight = ["the Alabama Constitution will not be changed"]
