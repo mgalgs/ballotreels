@@ -611,8 +611,45 @@ def _pdftotext(path: Path) -> str:
 _WHITESPACE = re.compile(r"\s+")
 
 
+# Glyphs a shifted font (below) prints for ligatures and punctuation.
+_SHIFTED_GLYPHS = {"¿": "fi", "À": "fl", "൵": "ff", "൶": "ffi", "¶": "’",
+                   "³": "“", "´": "”", "±": "–", "²": "—"}
+
+
+def _unshift_line(line: str) -> str:
+    """One line of pdftotext's output with a shifted font decoded.
+
+    Alameda County's guide sets some lines in a font whose text layer is
+    each character's code less 29: "&LW\\" for "City", control characters
+    for its spaces, digits and commas. Such a line has no lower-case
+    letter, so a line without one is decoded whole; a line with one is
+    left as it is. A heading set in capitals decodes to nonsense, which is
+    harmless: this reading is only ever a second chance for a quote."""
+    if re.search(r"[a-z]", line):
+        return line
+    return "".join(_SHIFTED_GLYPHS.get(ch)
+                   or (chr(ord(ch) + 29) if 0x03 <= ord(ch) <= 0x5D
+                       and ch != " " else ch)
+                   for ch in line)
+
+
+def _unshifted(text: str) -> str:
+    """pdftotext's output with each shifted-font line decoded
+    (_unshift_line)."""
+    return "\n".join(_unshift_line(line) for line in text.split("\n"))
+
+
 @lru_cache(maxsize=8)
-def _unspaced_raw_text(path: Path) -> str | None:
+def _loose_unshifted(path: Path) -> str | None:
+    """A PDF's text, its shifted-font lines decoded, for a basis
+    comparison; None for a page."""
+    if path.suffix.lower() != ".pdf":
+        return None
+    return _loose(_unshifted(_pdftotext(path)))
+
+
+@lru_cache(maxsize=16)
+def _unspaced_raw_text(path: Path, unshift: bool = False) -> str | None:
     """A PDF's text in the order it is printed (pdftotext -raw), every
     space removed; None for a page, or where the PDF cannot be read.
 
@@ -631,14 +668,20 @@ def _unspaced_raw_text(path: Path) -> str | None:
                              capture_output=True, check=True, timeout=60)
     except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
         return None
-    return _WHITESPACE.sub("", out.stdout.decode("utf-8", errors="replace"))
+    text = out.stdout.decode("utf-8", errors="replace")
+    return _WHITESPACE.sub("", _unshifted(text) if unshift else text)
 
 
 def _in_raw_columns(value: str, path: Path) -> bool:
     """Whether `value` is in the PDF at `path` read column by column, as
-    _unspaced_raw_text compares it."""
-    raw = _unspaced_raw_text(path)
-    return raw is not None and _WHITESPACE.sub("", value) in raw
+    _unspaced_raw_text compares it, as printed or with its shifted-font
+    lines decoded (_unshift_line)."""
+    want = _WHITESPACE.sub("", value)
+    for unshift in (False, True):
+        raw = _unspaced_raw_text(path, unshift)
+        if raw is not None and want in raw:
+            return True
+    return False
 
 
 def highlight_counts(c: Contest) -> tuple[int, int]:
@@ -1246,6 +1289,9 @@ def check_side_basis(c: Contest, required: bool) -> list[Failure]:
                     continue  # check_sources reports it
                 try:
                     texts.append(_loose_archived(path))
+                    # a PDF's shifted-font lines decoded (_unshift_line)
+                    if (unshifted := _loose_unshifted(path)) is not None:
+                        texts.append(unshifted)
                 except UnreadableSource as e:
                     fail(f"cannot read source {src.id!r} ({src.file}) to "
                          f"check the basis: {e}")

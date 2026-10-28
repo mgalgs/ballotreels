@@ -6,7 +6,7 @@ import unittest
 
 from ballotreels import check_contest, load_contest
 from ballotreels.ballots import BALLOTS, badge, ballot_for, designation
-from ballotreels.checks import _card_quote_in
+from ballotreels.checks import _card_quote_in, _unshifted
 
 from ballotreels.ballots import (BALLOTS, badge, ballot_for, designation,
                                  guide_of)
@@ -285,6 +285,29 @@ class CardColumnBreakTest(unittest.TestCase):
             "to a property owned by a person who is at least sixty-five "
             "years of age special assessment level? (Effective January 1, "
             "2028)", self.TEXT, self.BLOCKS))
+
+
+class ShiftedFontTest(unittest.TestCase):
+    """Alameda County's guide sets some lines in a font whose text layer
+    is each character's code less 29; a quote may be found in that text
+    with each such line decoded, and only such lines."""
+
+    def test_decodes_a_line_with_no_lower_case(self):
+        # "such as police, fire, and emergency medical", Piedmont GG
+        line = ("VXFK DV SROLFH\x0f \u00bfUH\x0f DQG HPHUJHQF\\ "
+                "PHGLFDO")
+        self.assertEqual(_unshifted(line),
+                         "such as police, fire, and emergency medical")
+
+    def test_control_characters_are_spaces_and_digits(self):
+        # "On June 1, 2026, the City", Albany O
+        line = ("2Q\x03-XQH\x03\x14\x0f\x03\x15\x13\x15\x19\x0f\x03"
+                "WKH\x03&LW\\")
+        self.assertEqual(_unshifted(line), "On June 1, 2026, the City")
+
+    def test_a_line_with_lower_case_is_left_alone(self):
+        text = "Shall the measure authorizing\nVXFK DV"
+        self.assertEqual(_unshifted(text), "Shall the measure authorizing\nsuch as")
 
 
 @unittest.skipIf(shutil.which("pdftotext") is None, "needs pdftotext")
