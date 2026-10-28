@@ -143,18 +143,33 @@ class LayoutTest(unittest.TestCase):
         self.assertEqual(len(self.ut.members), 2)
         self.assertEqual(len(self.ca.members), 14)
 
-    def test_every_slot_is_as_long_as_the_longest_plus_the_gap(self):
+    def test_each_slot_is_its_own_content_plus_the_gap(self):
+        gap = round(cc.SLOT_GAP_SECONDS * self.ut.fps)
         for course in (self.ut, self.ca):
-            longest = max(m.frames for m in course.members)
-            self.assertEqual(course.slot, longest + round(
-                cc.SLOT_GAP_SECONDS * course.fps))
             starts = [course.slot_start(i)
                       for i in range(len(course.members) + 1)]
             self.assertEqual(starts[0], course.opening)
-            self.assertEqual({b - a for a, b in zip(starts, starts[1:])},
-                             {course.slot})
-            for m in course.members:
-                self.assertLessEqual(m.frames, course.slot)
+            self.assertEqual([b - a for a, b in zip(starts, starts[1:])],
+                             [m.frames + gap for m in course.members])
+            self.assertEqual(course.slots_end, course.opening + sum(
+                m.frames + gap for m in course.members))
+
+    def test_no_slot_is_padded_to_the_longest(self):
+        # Idaho's members differ by many seconds (HB 932's choices
+        # section is the longest): a shorter one ends when it does
+        course = cc.plan(ID)
+        gap = round(cc.SLOT_GAP_SECONDS * course.fps)
+        lengths = [m.frames for m in course.members]
+        self.assertGreater(max(lengths) - min(lengths), 10 * course.fps)
+        for i, m in enumerate(course.members):
+            self.assertEqual(course.slot_start(i + 1) - course.slot_start(i),
+                             m.frames + gap)
+        self.assertLess(course.slots_end - course.opening,
+                        len(lengths) * (max(lengths) + gap))
+        # and its chapters start where its unequal slots do
+        for i, ch in enumerate(cc.chapters(course)):
+            self.assertAlmostEqual(ch["start"], course.slot_start(i)
+                                   / course.fps, delta=0.001)
 
     def test_each_slot_is_the_opening_and_the_vote_section(self):
         for m in self.ca.members:

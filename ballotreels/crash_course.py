@@ -8,9 +8,10 @@ and its vote section (what a yes and a no vote would do), or, for a
 choice question (STANDARD.md section 8), its `choices` section, which
 names the options. The audio is cut from the measure's committed
 narration.wav by its narration.json phrase timings; the TTS is never
-asked for anything. Every slot is as long as the longest member's two
-sections plus SLOT_GAP_SECONDS (STANDARD.md rule 2.2's equal time, between
-measures); a shorter one holds its last frame, in silence, for the rest.
+asked for anything. Each slot is as long as its own member's two
+sections plus SLOT_GAP_SECONDS, for which it holds its last frame in
+silence; a slot is never padded out to match a longer one, so the
+course is the sum of its slots.
 
 The film around the slots says nothing either: a short opening card
 with the state's name, how many statewide measures it has and the
@@ -41,14 +42,14 @@ from .storyboard import FPS, Storyboard, frame, layout
 
 # The crash course's own template version, in its cache key: bump it when
 # its film changes what it draws (docs/ARCHITECTURE.md).
-TEMPLATE_VERSION = 1
+TEMPLATE_VERSION = 2
 
 # Fewer statewide measures than this, and a state has no crash course:
 # one measure's own video already is one.
 MIN_MEMBERS = 2
 
 OPENING_SECONDS = 2.0   # the opening card, on screen only
-SLOT_GAP_SECONDS = 0.5  # added to the longest member's two sections
+SLOT_GAP_SECONDS = 0.5  # added to each member's own two sections
 AUDIO_MARGIN = 0.1      # s of the narration kept either side of a part's words
 AUDIO_FADE = 3          # frames each cut of the narration fades over
 
@@ -212,10 +213,10 @@ class CrashCourse:
     members: tuple[Member, ...]
     fps: int
     opening: int  # the opening card's frames
-    slot: int     # every slot's frames
+    slots: tuple[int, ...]  # each member's slot's frames, in ballot order
 
     def slot_start(self, i: int) -> int:
-        return self.opening + i * self.slot
+        return self.opening + sum(self.slots[:i])
 
     @property
     def slots_end(self) -> int:
@@ -346,13 +347,14 @@ def plan(election_dir: str | Path, fps: int = FPS,
         m = index.get(cid)
         contest = load_member(m, election_dir, index.election.id)
         members.append(member_layout(m, contest, fps))
-    slot = max(m.frames for m in members) + frame(SLOT_GAP_SECONDS, fps)
+    gap = frame(SLOT_GAP_SECONDS, fps)
     return CrashCourse(
         entry=entry, election=index.election,
         state_name=_state_name(index.election.state),
         date=election_date(index.election.id),
         members=tuple(members), fps=fps,
-        opening=frame(OPENING_SECONDS, fps), slot=slot)
+        opening=frame(OPENING_SECONDS, fps),
+        slots=tuple(m.frames + gap for m in members))
 
 
 def chapters(course: CrashCourse) -> list[dict[str, object]]:

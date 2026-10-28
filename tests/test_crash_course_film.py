@@ -107,9 +107,10 @@ class CrashCourseFilmTest(unittest.TestCase):
             (a.said_from + a.said_to) / 2 * self.course.fps) - a.start
         self.assertIn("caption", self.marks(said))
         self.assertIn("link", self.marks(said))
-        if m.frames < self.course.slot:
-            held = self.course.slot_start(1) - 1
-            self.assertNotIn("caption", self.marks(held))
+        # the gap at the slot's end holds its last frame, uncaptioned
+        held = self.course.slot_start(1) - 1
+        self.assertGreater(held, self.course.slot_start(0) + m.frames - 1)
+        self.assertNotIn("caption", self.marks(held))
         # the opening card and the sources card: link and footer, no caption
         for n in (self.course.opening - 1, self.m.FILM.frames - 1):
             got = self.marks(n)

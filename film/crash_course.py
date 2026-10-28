@@ -1,4 +1,4 @@
-"""The state crash course film, template version 1 (ballotreels.crash_course).
+"""The state crash course film, template version 2 (ballotreels.crash_course).
 
     python -m ballotreels render data/ut-2026-11-03 --format 9x16
     BALLOTREELS_CRASH_COURSE=data/ut-2026-11-03 python film/crash_course.py sheet
@@ -10,12 +10,14 @@ out with ballotreels.crash_course.plan:
 
 - an opening card, on screen only, with no narration: the state's name,
   how many statewide measures it has, and the election's date;
-- one slot per measure, every one the same length: the measure's own
+- one slot per measure, as long as that measure's own sections: its own
   film (film/measure.py, loaded once per member, unchanged) replayed for
   its opening section and its vote section (a choice question's
   `choices` section), each with the stretch of the measure's committed
-  narration under it, cut by its phrase timings; the slot holds the vote
-  section's last frame, silent and with no caption, until it ends;
+  narration under it, cut by its phrase timings; the slot then holds the
+  vote section's last frame, silent and with no caption, for
+  ballotreels.crash_course.SLOT_GAP_SECONDS, and is never padded out to
+  match a longer one;
 - a closing sources card, in the measure film's style: what the reused
   lines cite, grouped under each measure's title, over as many pages as
   it takes.
@@ -301,7 +303,10 @@ def at(n):
     film's own cards."""
     if n < COURSE.opening or n >= COURSE.slots_end:
         return None
-    i, k = divmod(n - COURSE.opening, COURSE.slot)
+    i = 0
+    while n >= COURSE.slot_start(i + 1):
+        i += 1
+    k = n - COURSE.slot_start(i)
     mod, parts, hold = SLOTS[i]
     for view, p in zip(parts, COURSE.members[i].parts):
         if k < p.frames:
