@@ -1,0 +1,53 @@
+# Archived sources for City of Highland Measure E, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Bernardino County Registrar of Voters' comprehensive Voter Information
+# Guide (VIG.pdf, PDF pages 191-196); "page" is the guide's printed
+# footer number (SB COMPREHENSIVE-189 is PDF page 191).
+#
+# The guide prints no ballot question; the card quotes it from the City
+# Council's resolution placing the measure.
+
+[contest]
+id = "ca-2026-11-03-highland-measure-e"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:highland"
+kind = "measure"
+title = "City of Highland Measure E: One-Cent General Sales Tax"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "City of Highland, Resolution No. 2026-040: Measure E as it shall appear on the ballot"
+credit = "Ballot question, Resolution No. 2026-040"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofHighland/RES_CityofHighland.pdf"
+file = "sources/RES_CityofHighland.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney, Impartial Analysis of Measure E, San Bernardino County Voter Information Guide, page SB COMPREHENSIVE-189"
+credit = "Impartial Analysis, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp191-196.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure E (no argument against is printed), San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-189 to 190"
+credit = "Argument in Favor, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp191-196.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text for Measure E (ordinance adding Chapter 3.40 to the Highland Municipal Code), San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-190 to 194"
+credit = "Full Text, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp191-196.pdf"
+retrieved = "2026-10-28"

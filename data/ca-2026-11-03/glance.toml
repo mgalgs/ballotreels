@@ -279,3 +279,12 @@ source = "impartial-analysis"
 quote = "This tax is estimated to generate $3.3 million annually, $2.1 million more than the current business license tax structure."
 amount = 3300000
 period = "per-year"
+
+# City of Highland Measure E: the guide prints no fiscal statement; the
+# one estimate is city staff's, as the City Attorney's Impartial
+# Analysis gives it.
+[highland-measure-e]
+source = "impartial-analysis"
+quote = "City staff have estimated that the Sales Tax Ordinance will raise approximately $6.35 million annually in local revenue."
+amount = 6350000
+period = "per-year"
