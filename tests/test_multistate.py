@@ -2,7 +2,6 @@
 this is real data)."""
 
 import io
-import json
 import tempfile
 import threading
 import unittest
@@ -318,27 +317,6 @@ class DcGeoBuildTest(unittest.TestCase):
                          "Orleans Parish")
         self.assertEqual(result["kinds"]["county"][0]["ocd_id"],
                          "ocd-division/country:us/state:la/county:orleans")
-
-    def test_dc_address_has_no_legislative_districts(self):
-        from ballotreels.geo.geocoder import lookup_address
-        from ballotreels.geo.lookup import GeoData
-        doc = json.dumps({"result": {"addressMatches": [{
-            "matchedAddress": "1 FAKE ST NW, WASHINGTON, DC",
-            "coordinates": {"x": 1.2, "y": 1.2},
-            "geographies": {
-                "States": [{"GEOID": "11"}],
-                "119th Congressional Districts": [{"GEOID": "1198"}],
-                "Counties": [{"GEOID": "11001",
-                              "NAME": "District of Columbia",
-                              "BASENAME": "District of Columbia"}]}}]}})
-        result = lookup_address("1 Fake St NW", lambda url: doc,
-                                "https://geocoder.example.test",
-                                {"dc": GeoData.load(self.geo_dir)})
-        self.assertEqual(sorted(result["kinds"]), ["cd", "county", "state"])
-        self.assertEqual(result["kinds"]["county"][0]["name"],
-                         "District of Columbia")
-        self.assertEqual(result["kinds"]["cd"][0]["name"],
-                         "Delegate District (at large)")
 
 
 class SiteLabelsTest(unittest.TestCase):

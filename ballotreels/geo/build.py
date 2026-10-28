@@ -69,8 +69,7 @@ SHAPE_ARCHIVES = ("cd", "sldu", "sldl", "county", "zcta", "place", "unsd",
 # districts, 2020 ZCTAs, from the 2020 CD/SLD record layout) could not be
 # checked from where this was written, so they are optional: if the
 # default URL fails, the build warns and goes on, and zips carry no
-# district of that kind (the address lookup still resolves it). A URL
-# given with --url must work.
+# district of that kind. A URL given with --url must work.
 OPTIONAL_DOWNLOADS = ("sldu_rel.txt", "sldl_rel.txt")
 
 # A state whose every school district is unified (Hawaii's one, Nevada's
@@ -287,9 +286,7 @@ def build(data_dir: str | Path, state_abbr: str,
             if name not in OPTIONAL_DOWNLOADS or name in (urls or {}):
                 raise
             kind = name[:-len("_rel.txt")]
-            warnings.append(
-                f"{e}; zips will carry no {kind} district (the address "
-                f"lookup still resolves it)")
+            warnings.append(f"{e}; zips will carry no {kind} district")
 
     state_dir = data_dir / "geo" / state_abbr
     tmp_dir = data_dir / "geo" / f"{state_abbr}.tmp"

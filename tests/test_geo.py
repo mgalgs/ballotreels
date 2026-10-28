@@ -131,7 +131,7 @@ class BuildCensusShapesTest(GeoBuildTestCase):
         self.assertNotIn("sldu", r["kinds"])
         self.assertNotIn("sldl", r["kinds"])
         self.assertEqual(r["ambiguous"], ["cd"])
-        # The shapes are still built, for the address fallback.
+        # The shapes are still built.
         self.assertIn("ocd-division/country:us/state:ca/sldu:1",
                       geo.district_shapes)
 
