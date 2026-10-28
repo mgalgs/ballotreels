@@ -1,0 +1,90 @@
+# "Ballot at a glance" figures for the 2026-11-03 California general
+# election (docs/SCRIPT-FORMAT.md, "glance.toml"). Each quote is the
+# Legislative Analyst's own summary of the measure's fiscal impact, as
+# printed under the Official Title and Summary.
+
+[prop-1]
+source = "title-summary"
+quote = "Increased state cost of $500 million to $600 million annually for about 25 years to repay the housing bond."
+amount = 600000000
+period = "per-year"
+direction = "cost"
+
+[prop-2]
+source = "title-summary"
+status = "none-printed"
+quote = "State budget reserves would be higher."
+
+[prop-3]
+source = "title-summary"
+quote = "Maintains $5 billion to $15 billion of annual state income tax revenue by making a temporary tax increase on high-income earners permanent instead of letting it expire in 2031."
+amount = 15000000000
+period = "per-year"
+
+[prop-4]
+source = "title-summary"
+status = "none-printed"
+quote = "Ongoing costs to the state of a few hundred thousand dollars each year for the Fair Political Practices Commission to answer questions from state and local governments about public campaign finance programs."
+direction = "cost"
+
+[prop-5]
+source = "title-summary"
+status = "not-determined"
+quote = "Net fiscal effect unknown. Possible state and local government savings or costs of millions of dollars to administer recall elections."
+direction = "mixed"
+
+[prop-37]
+source = "title-summary"
+status = "no-material-impact"
+quote = "No direct state or local costs."
+
+[prop-38]
+source = "title-summary"
+quote = "Increased state cost of $500 million to $600 million annually for about 20 years to repay the medical research bond."
+amount = 600000000
+period = "per-year"
+direction = "cost"
+
+[prop-39]
+source = "title-summary"
+status = "none-printed"
+quote = "State and local government costs of between tens of millions of dollars and low hundreds of millions of dollars each year to implement new voting requirements."
+direction = "cost"
+
+# The summary sizes the wealth tax itself only in words ("tens of
+# billions of dollars"); its one dollar figure is the possible yearly
+# income tax loss, so that is the sort value.
+[prop-40]
+source = "title-summary"
+quote = "Temporary state revenue increase from a new wealth tax on billionaires. These wealth tax revenues probably would add up to tens of billions of dollars spread over several years. Possible ongoing decrease of less than $1 billion per year in state income tax revenue collected from billionaires."
+amount = 1000000000
+period = "per-year"
+direction = "mixed"
+
+[prop-41]
+source = "title-summary"
+status = "not-determined"
+quote = "Unknown net fiscal effect."
+
+[prop-42]
+source = "title-summary"
+status = "none-printed"
+quote = "Possibility that tax revenues will not go up as much in the future."
+
+[prop-43]
+source = "title-summary"
+status = "none-printed"
+quote = "Possibility that local government tax revenues will not go up as much in the future due to a higher vote threshold for certain taxes."
+
+[prop-44]
+source = "title-summary"
+status = "none-printed"
+quote = "Increased state costs in the low tens of millions of dollars per year to enforce the new requirements on certain private nonprofit health care clinics, covered by fees charged to the affected clinics."
+direction = "cost"
+
+[prop-45]
+source = "title-summary"
+quote = "Initial costs for state and local governments, likely in the high tens of millions of dollars annually—potentially exceeding $100 million annually—to implement new project review and court challenge procedures for eligible projects."
+amount = 100000000
+period = "per-year"
+direction = "cost"
