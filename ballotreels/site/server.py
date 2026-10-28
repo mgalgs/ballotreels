@@ -802,7 +802,21 @@ class PublicHandler(_JsonHandler):
         meta = self._page_meta(path)
         if meta is None:
             return self._html(404, pages.not_found_meta(path))
-        self._html(200, meta)
+        # A measure's page carries its related measures in the HTML too.
+        measure = self._measure_at(path)
+        main = (pages.related_html(_related(measure[1], measure[0], deps))
+                if measure else "")
+        self._html(200, meta, main)
+
+    def _measure_at(self, path: str
+                    ) -> tuple[StateElection, IndexEntry] | None:
+        """The contest whose short path is `path`, or None."""
+        m = re.fullmatch(r"/([a-z]{2})/(\d{4})/([^/]+)", path)
+        if not m:
+            return None
+        state = self.server.deps.states.get(m.group(1))
+        entry = state.contest_at(m.group(2), m.group(3)) if state else None
+        return (state, entry) if entry is not None else None
 
     def _page_meta(self, path: str) -> pages.PageMeta | None:
         """The tags of the page at `path`, or None if there is none."""
@@ -816,12 +830,9 @@ class PublicHandler(_JsonHandler):
                 return None
             return pages.state_meta(_state_name(state.abbr), path,
                                     len(_statewide_measures(state)))
-        m = re.fullmatch(r"/([a-z]{2})/(\d{4})/([^/]+)", path)
-        if m:
-            state = deps.states.get(m.group(1))
-            entry = state.contest_at(m.group(2), m.group(3)) if state else None
-            if entry is None:
-                return None
+        measure = self._measure_at(path)
+        if measure:
+            state, entry = measure
             key = key_for(state.index.election.id, entry, deps.standard)
             video = deps.queue.video_for(key) if key is not None else None
             poster = video.urls.get("poster") if video else None
@@ -832,10 +843,11 @@ class PublicHandler(_JsonHandler):
                 video_made=video.created_at if video else None)
         return None
 
-    def _html(self, status: int, meta: pages.PageMeta) -> None:
+    def _html(self, status: int, meta: pages.PageMeta,
+              main: str = "") -> None:
         template = (STATIC_DIR / "index.html").read_text(encoding="utf-8")
         body = pages.render_page(template, meta,
-                                 self.server.deps.config.site_url
+                                 self.server.deps.config.site_url, main
                                  ).encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", CONTENT_TYPE_BY_EXT[".html"])

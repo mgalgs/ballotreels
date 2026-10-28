@@ -1166,9 +1166,33 @@ a.contest:hover {
   }
 }
 
-.contest-page .section-title {
+.contest-page .section-title,
+.related-measures .section-title {
   font-size: 1.7rem;
   margin: 1.4rem 0 0.7rem;
+}
+
+/* Related measures: each its state's name over its title, the whole a
+   link. */
+.related {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+.related li {
+  margin: 0 0 12px;
+}
+
+.related a {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.related-state {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
 }
 
 /* -- wide screens --------------------------------------------------- */

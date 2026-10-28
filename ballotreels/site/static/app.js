@@ -1410,6 +1410,23 @@ function chapterNodes(chapters, video) {
 }
 
 // `apiPath`: the contest's API URL, by short path or (an old link) by id.
+// Measures on the same subject (data/related.toml), each its state's
+// name and its title, linking to its page; the server puts the same
+// list in the page it sends (pages.related_html). No section without
+// any.
+function relatedSection(related) {
+  if (!related || !related.length) return null;
+  return el("section", { class: "related-measures" }, [
+    heading("h2", "Related measures", { class: "section-title" }),
+    el("ul", { class: "related" }, related.map((r) => el("li", {}, [
+      el("a", { href: r.path }, [
+        el("span", { class: "related-state", text: r.state_name }), " ",
+        el("span", { class: "related-title", text: r.title }),
+      ]),
+    ]))),
+  ]);
+}
+
 async function renderContest(apiPath) {
   const token = routeToken;
   app.appendChild(loading("Loading..."));
@@ -1528,6 +1545,9 @@ async function renderContest(apiPath) {
               text: "Report an error with this video" }),
   ]));
   rest.appendChild(corrections);
+
+  const related = relatedSection(body.related);
+  if (related) rest.appendChild(related);
 
   rest.appendChild(el("p", { class: "fine-print" }, [
     "Made under the ",
