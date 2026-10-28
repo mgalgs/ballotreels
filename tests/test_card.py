@@ -151,6 +151,19 @@ class CardTest(ContestCopyTestCase):
             "[card] 'no' does not appear verbatim in source "
             "'quick-reference' (sources/quick-reference.html)"])
 
+    def test_a_one_misprinted_for_an_l_may_be_corrected(self):
+        # "potentia1" in Alabama's ballot statement for Amendment 2
+        self.edit("sources/quick-reference.html", "essential services",
+                  "essentia1 services")
+        self.assertEqual(self.failures(), [])
+        self.edit("script.toml", "essential services", "essentia1 services")
+        self.assertEqual(self.failures(), [])
+        self.edit("script.toml", "approved by voters in 2014",
+                  "approved by voters in 20l4")
+        self.assertEqual(self.failures(), [
+            "[card] 'summary' does not appear verbatim in source "
+            "'quick-reference' (sources/quick-reference.html)"])
+
     def test_plain_text(self):
         self.assertEqual(
             plain_text('<head><style>p { x }</style><script>var a = "<b>";'

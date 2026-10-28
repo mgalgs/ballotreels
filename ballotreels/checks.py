@@ -415,6 +415,17 @@ def _normalise(s: str) -> str:
     return _SPACE_BEFORE_PUNCT.sub("", s)
 
 
+# A digit "1" printed for a letter "l" at the end of a word, as Alabama's
+# Fair Ballot Commission statement for Amendment 2 prints "potentia1"
+# (the ballot itself prints "potential"). A card may quote the word as
+# the ballot spells it; everything else stays verbatim.
+_ONE_FOR_L = re.compile(r"(?<=[a-z])1(?![0-9A-Za-z])")
+
+
+def _digit_one_read_as_l(archived: str) -> str:
+    return _ONE_FOR_L.sub("l", archived)
+
+
 class UnreadableSource(Exception):
     """An archived source whose text cannot be extracted here."""
 
@@ -536,7 +547,8 @@ def check_card(c: Contest) -> list[Failure]:
         return out
     for key, value in card.quoted():
         if isinstance(value, str) and value.strip() \
-                and _normalise(value) not in archived:
+                and _normalise(value) not in archived \
+                and _normalise(value) not in _digit_one_read_as_l(archived):
             fail(f"{key!r} does not appear verbatim in source "
                  f"{card.source!r} ({src.file})")
     return out
