@@ -1,6 +1,6 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
-# is about; who sets the policy today; how teams would be designated and
-# who would play on them, and what the booklet says is unclear; what
+# is about; who sets the policy today; who would play on which teams
+# (the vote line gives the designations), and what the booklet says is unclear; what
 # Legislative Council Staff says it costs; one point per side; what a
 # vote does.
 #
@@ -62,15 +62,6 @@ id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "Every school team would be designated for biological males, biological females, or as coeducational."
-sources = ["blue-book", "text"]
-
-[section.line.visual]
-kind = "page"
-source = "blue-book"
-highlight = ["designate each school or intramural athletic team or sport as male, female, or coeducational"]
-
-[[section.line]]
 text = "Students would play on teams matching their biological sex, or on coeducational teams."
 sources = ["blue-book"]
 
@@ -92,7 +83,7 @@ id = "fiscal"
 heading = "What it would cost"
 
 [[section.line]]
-text = "Legislative Council Staff expects minimal school costs, and state legal costs it cannot determine."
+text = "Legislative Council Staff expects minimal costs for schools, and state enforcement costs if a district intentionally does not comply."
 sources = ["fiscal-impact", "fiscal-statement"]
 
 [section.line.visual]

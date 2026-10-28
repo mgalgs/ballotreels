@@ -11,8 +11,9 @@
 # The narration says "trading anything of value for" where the booklet
 # says "to buy or sell" (a listener hears "buy" as "by"). That judges
 # could no longer weigh the facts of a case is the opponents' point and
-# stays in their section. The costs begin in budget year 2041-42, about
-# 14 years out, as the fiscal statement says; no official total exists
+# stays in their section. The costs begin in budget year 2041-42, which
+# the booklet ("about 14 years") and the fiscal statement ("about 15
+# years") both print, so the line names the year; no official total exists
 # for that year to scale them by. The booklet prints one argument for
 # and one against; each side's list takes two points from its one
 # argument.
@@ -78,7 +79,7 @@ id = "fiscal"
 heading = "What it would cost"
 
 [[section.line]]
-text = "Legislative Council Staff says state prison costs would begin in about 14 years."
+text = "Legislative Council Staff says state prison costs would begin in budget year 2041-42."
 sources = ["fiscal-impact", "fiscal-statement"]
 
 [section.line.visual]

@@ -3,7 +3,7 @@
 # graduated rates and where the added money would go; what happens if
 # Proposition 136 also passes; what Legislative Council Staff estimates
 # it raises, and what the ballot title's figure is; one point per side;
-# what a vote does. It runs longer than most (about 160 words): the
+# what a vote does. It runs longer than most (about 170 words): the
 # conflict with Proposition 136 and both revenue figures each need a
 # line.
 #
@@ -19,7 +19,9 @@
 # about $2 billion in the first full year. The narration gives both, each
 # as the booklet explains it, and never one as the other. The $2 billion
 # takes the booklet's own comparison (income tax revenue of $15 billion
-# under current law in 2028, $17 billion under the measure); the $2.7 billion is set against the
+# under current law in 2028, $17 billion under the measure), from its
+# analysis ("Does Amendment 87 impact TABOR refunds?", page 35), not its
+# Fiscal Impact section, so it cites the booklet; the $2.7 billion is set against the
 # booklet's own Table 5, fiscal year spending without the increase of
 # $24.62 billion for 2027-28: 2.7 / 24.62 = 11 percent.
 #
@@ -93,7 +95,7 @@ kind = "illustration"
 name = "set-aside-funds"
 
 [[section.line]]
-text = "If Proposition 136 also passes, the exact outcome is unclear; the legislature or a court would need to resolve it."
+text = "If Proposition 136 also passes, the exact outcome is unclear, for the legislature or a court to determine."
 sources = ["blue-book"]
 
 [section.line.visual]
@@ -106,18 +108,18 @@ heading = "What it would raise"
 
 [[section.line]]
 text = "Legislative Council Staff estimates income tax revenue of $17 billion in 2028, up $2 billion from current law."
-sources = ["fiscal-impact"]
+sources = ["blue-book"]
 
 [section.line.visual]
 kind = "bars"
 title = "State income tax revenue in 2028, billions of dollars"
-source = "fiscal-impact"
+source = "blue-book"
 unit = ""
 labels = ["Current law", "Amendment 87"]
 values = [15, 17]
 
 [[section.line]]
-text = "The $2.7 billion in the ballot title is a required maximum estimate, about 11 percent of expected state spending without the increase."
+text = "The ballot title's $2.7 billion is a required maximum estimate, about 11 percent of expected state spending without the increase."
 sources = ["fiscal-impact", "fiscal-statement"]
 
 [section.line.visual]

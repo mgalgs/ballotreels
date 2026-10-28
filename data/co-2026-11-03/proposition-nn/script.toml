@@ -1,8 +1,8 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
 # is about; the revenue limit and its refunds today; what the
 # proposition would let the state keep, and where the money would go;
-# what Legislative Council Staff estimates it keeps, and what that does
-# to refunds; one point per side; what a vote does.
+# how much Legislative Council Staff expects it to reduce refunds, and
+# that this eliminates them; one point per side; what a vote does.
 #
 # The card quotes the State Ballot Information Booklet: the ballot title
 # as printed in its Text & Titles section, its origin and vote-needed
@@ -10,6 +10,12 @@
 # of its "What does Proposition NN do?" as the summary and its YES/NO
 # lines. Senate Bill 26-135, the bill that referred it, is cited as the
 # text but named nowhere on screen or in the narration.
+#
+# The fiscal line uses the booklet's own framing, "reduce the amount
+# refunded to taxpayers by $329.9 million ... $521.0 million": these are
+# not what the state keeps (the booklet puts that at about $500 million
+# in the first year), since $153.1 million already goes unrefunded under
+# current law.
 #
 # Scale: the fiscal impact statement (page 6) sets the refunds the
 # measure removes beside the revenue subject to the limit the state
@@ -84,12 +90,12 @@ id = "fiscal"
 heading = "What it would cost"
 
 [[section.line]]
-text = "Legislative Council Staff estimates the state would keep $329.9 million this budget year and $521.0 million the next, each about 2 percent of revenue subject to the limit."
+text = "Legislative Council Staff expects refunds to fall by $329.9 million this budget year and $521.0 million the next, each about 2 percent of revenue subject to the limit."
 sources = ["fiscal-impact", "fiscal-statement"]
 
 [section.line.visual]
 kind = "bars"
-title = "Refunds the state would keep instead, millions of dollars"
+title = "Reduction in refunds to taxpayers, millions of dollars"
 source = "fiscal-impact"
 unit = ""
 labels = ["2026-27", "2027-28"]
