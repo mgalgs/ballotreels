@@ -128,6 +128,18 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label="FISCAL IMPACT",
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+    # Virginia's Department of Elections publishes, for each proposed
+    # constitutional amendment, a special explanation (Code § 30-19.9)
+    # headed "EXPLANATION FOR VOTERS" over its "QUESTION 1" (the badge:
+    # QUESTION), with the ballot question and full text; its brochure
+    # carries the same wording. The card quotes the explanation. The
+    # fiscal statement is the Department of Planning and Budget's,
+    # headed "State Fiscal Impact Statement"; no card quotes it. The
+    # ballot's choices are "Yes" and "No".
+    "va": Ballot(guide="Explanation for Voters",
+                 fiscal_label="State Fiscal Impact Statement",
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
