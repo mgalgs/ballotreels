@@ -1,8 +1,8 @@
-"""The crash course film (film/crash_course.py), built for Utah: every
-sound it plays is a cut of a member's committed narration (or the soft
-drawing sound), made without the TTS; each slot replays its member's own
-film; the slot's held end says nothing and shows no caption; and every
-frame leads to the state's page."""
+"""The crash course film (film/crash_course.py), built for California: a
+contact sheet of one-liners. Every sound it plays is a cut of a member's
+committed narration (or the soft drawing sound), made without the TTS;
+each tile is drawn on in its own slot, the same size as every other;
+and every frame leads to the state's page."""
 
 import os
 import unittest
@@ -11,7 +11,7 @@ from unittest import mock
 
 from ballotreels import crash_course as cc
 
-from .test_crash_course import UT
+from .test_crash_course import CA
 
 
 def refuse_tts(*a, **kw):
@@ -24,13 +24,13 @@ class CrashCourseFilmTest(unittest.TestCase):
         import videobuilder as vb
         from videobuilder import speech
         old = os.environ.get("BALLOTREELS_CRASH_COURSE")
-        os.environ["BALLOTREELS_CRASH_COURSE"] = str(UT)
+        os.environ["BALLOTREELS_CRASH_COURSE"] = str(CA)
         try:
             with mock.patch.object(speech, "say", refuse_tts), \
                     mock.patch.object(speech, "Gemini", refuse_tts), \
                     mock.patch.object(speech, "Kokoro", refuse_tts), \
                     mock.patch.object(speech, "Chatterbox", refuse_tts):
-                cls.m = vb.load_module(str(UT.parent.parent / "film" /
+                cls.m = vb.load_module(str(CA.parent.parent / "film" /
                                            "crash_course.py"))
         finally:
             if old is None:
@@ -43,6 +43,9 @@ class CrashCourseFilmTest(unittest.TestCase):
         return [s for s in self.m.FILM.sounds
                 if Path(s.path).name == "narration.wav"]
 
+    def marks(self, n, fmt="9x16"):
+        return [name for name, _ in self.m.FILM.frame(n, fmt).marks]
+
     def test_every_sound_is_a_member_narration_cut_or_the_drawing(self):
         wavs = {str(Path(m.contest.path, "narration.wav").resolve())
                 for m in self.course.members}
@@ -54,121 +57,112 @@ class CrashCourseFilmTest(unittest.TestCase):
                                  "ballotreels-draw-sound", s)
                 self.assertFalse(s.ducks)
 
-    def test_the_cuts_are_the_plan_s_inside_their_slots(self):
+    def test_each_cut_is_the_plan_s_at_its_slot(self):
         voices = self.voices()
-        self.assertEqual(len(voices), 2 * len(self.course.members))
-        k = 0
-        for i, m in enumerate(self.course.members):
-            pos = self.course.slot_start(i)
-            for p in m.parts:
-                s = voices[k]
-                k += 1
-                self.assertEqual(s.at, pos + p.audio_at)
-                self.assertAlmostEqual(s.start, p.audio_from, places=6)
-                self.assertEqual(s.frames, p.audio_frames)
-                self.assertGreaterEqual(s.at, self.course.slot_start(i))
-                self.assertLessEqual(s.at + s.frames,
-                                     self.course.slot_start(i + 1))
-                pos += p.frames
+        self.assertEqual(len(voices), len(self.course.members))
+        for i, (m, s) in enumerate(zip(self.course.members, voices)):
+            self.assertEqual(Path(s.path).parent.resolve(),
+                             Path(m.contest.path).resolve())
+            self.assertEqual(s.at, self.course.slot_start(i))
+            self.assertAlmostEqual(s.start, m.audio_from, places=6)
+            self.assertEqual(s.frames, m.audio_frames)
+            self.assertLessEqual(s.at + s.frames,
+                                 s.at + self.course.slots[i])
+        # nothing is said over the opening card, a page's heading or the
+        # closing page
+        for s in voices:
+            self.assertGreaterEqual(s.at, self.course.opening)
+            self.assertLessEqual(s.at + s.frames, self.course.slots_end)
 
     def test_its_length_and_chapters(self):
-        self.assertEqual(self.m.FILM.frames, self.course.slots_end +
+        self.assertEqual(self.m.FILM.frames, self.course.sources_start +
                          self.m.SOURCES_PAGE * len(self.m.PAGES))
+        self.assertEqual(self.course.closing, 3 * self.course.fps)
         self.assertEqual(self.m.CHAPTERS, cc.chapters(self.course))
         self.assertEqual([f.name for f in self.m.FILM.formats],
                          ["9x16", "16x9"])
 
-    def test_each_slot_replays_its_member_s_own_film(self):
-        for i, m in enumerate(self.course.members):
-            a, b = m.parts
-            start = self.course.slot_start(i)
-            view, n = self.m.at(start)
-            self.assertIs(view.mod, self.m.FILMS[i])
-            self.assertEqual(n, a.start)
-            self.assertEqual(self.m.at(start + a.frames)[1], b.start)
-            self.assertEqual(self.m.at(start + m.frames - 1)[1], b.end - 1)
-            # held, to the slot's end
-            self.assertEqual(self.m.at(self.course.slot_start(i + 1) - 1)[1],
-                             b.end - 1)
-        self.assertIsNone(self.m.at(0))
-        self.assertIsNone(self.m.at(self.course.slots_end))
-
     def test_the_link_on_every_frame_is_the_state_page(self):
-        self.assertEqual(self.m.LINK, "ballotreels.org/ut/2026")
-        for mod in self.m.FILMS:
-            self.assertEqual(mod.LINK, self.m.LINK)
+        self.assertEqual(self.m.LINK, "ballotreels.org/ca/2026")
+        self.assertEqual(self.m.T.LINK, self.m.LINK)
+        for n in (0, self.course.slot_start(3), self.m.FILM.frames - 1):
+            self.assertIn("link", self.marks(n))
 
-    def marks(self, n, fmt="9x16"):
-        return {name for name, _ in self.m.FILM.frame(n, fmt).marks}
+    def test_each_tile_shows_its_measure_s_own_video(self):
+        m = self.course.members[2]
+        self.assertEqual(self.m.tile_url(m), "ballotreels.org/ca/2026/prop-3")
+        self.assertEqual(self.m.tile_badge(m), ("PROP", "3"))
+        self.assertTrue(self.m.short_title(m).startswith("PROVIDES "))
 
-    def test_a_caption_while_it_speaks_and_none_in_the_hold(self):
-        m = self.course.members[0]
-        a = m.parts[0]
-        said = self.course.slot_start(0) + round(
-            (a.said_from + a.said_to) / 2 * self.course.fps) - a.start
-        self.assertIn("caption", self.marks(said))
-        self.assertIn("link", self.marks(said))
-        # the gap at the slot's end holds its last frame, uncaptioned
-        held = self.course.slot_start(1) - 1
-        self.assertGreater(held, self.course.slot_start(0) + m.frames - 1)
-        self.assertNotIn("caption", self.marks(held))
-        # the opening card and the sources card: link and footer, no caption
-        for n in (self.course.opening - 1, self.m.FILM.frames - 1):
-            got = self.marks(n)
-            self.assertIn("link", got)
-            self.assertIn("footer", got)
-            self.assertNotIn("caption", got)
-        self.assertIn("sources", self.marks(self.m.FILM.frames - 1))
-
-
-    # ---- 16x9: rendered from the command line, for YouTube ----
-
-    def test_16x9_is_the_same_length_with_the_same_chapters_and_sound(self):
-        # one film, so one frame count, one chapter list and one sound
-        # track for both formats: the 16x9 course's pages are the 9x16
-        # course's, so neither is padded or cut to match the other
-        film = self.m.FILM
-        self.assertEqual(film.format("16x9").width, 1920)
-        self.assertEqual(film.format("16x9").height, 1080)
-        self.assertEqual(film.frames, self.course.slots_end +
-                         self.m.SOURCES_PAGE * len(self.m.PAGES))
-        self.assertEqual(self.m.CHAPTERS, cc.chapters(self.course))
+    def test_tiles_come_on_one_at_a_time_and_stay_on_their_page(self):
         for fmt in self.m.FORMATS:
-            own = self.m.VIEWS[fmt]["own"]
-            pages = [g for g in own["groups"]
-                     if g.f0 >= self.course.slots_end]
-            self.assertEqual(len(pages), len(self.m.PAGES), fmt)
+            for k, page in enumerate(self.course.pages):
+                for j, i in enumerate(page):
+                    # the slot's last frame: this tile and every one
+                    # before it on the page, and no later one
+                    n = self.course.slot_start(i) + self.course.slots[i] - 1
+                    got = self.marks(n, fmt)
+                    self.assertEqual(got.count("tile"), j + 1, (fmt, k, i))
+                    self.assertEqual(got.count("tile url"), j + 1)
+                    self.assertIn("heading", got)
+                    self.assertNotIn("caption", got)
+                # the next page comes on clean
+                after = self.course.page_start(k + 1) + self.m.T.FADE
+                self.assertNotIn("tile", self.marks(after, fmt))
 
-    def test_each_16x9_slot_replays_its_member_s_16x9_film(self):
-        for i, m in enumerate(self.course.members):
-            mod = self.m.FILMS[i]
-            start = self.course.slot_start(i)
-            for fmt in self.m.FORMATS:
-                frames = [start, start + m.parts[0].frames,
-                          self.course.slot_start(i + 1) - 1]
-                want = [m.parts[0].start, m.parts[1].start,
-                        m.parts[1].end - 1]
-                for n, k in zip(frames, want):
-                    view, got = self.m.at(n, fmt)
-                    self.assertIs(view.mod, mod)
-                    self.assertEqual(got, k)
-                    self.assertIs(view.plan["L"], mod.LAYOUTS[fmt])
-                    plan = {id(g) for g in mod.PLANS[fmt]["groups"]}
-                    self.assertTrue(
-                        all(id(g) in plan for g in view.plan["groups"]),
-                        (fmt, n))
+    def test_every_tile_is_the_same_size_in_the_same_type(self):
+        for fmt in self.m.FORMATS:
+            L = self.m.T.LAYOUTS[fmt]
+            sizes = set()
+            for k in range(len(self.course.pages)):
+                n = self.course.page_start(k + 1) - 1
+                cv = self.m.FILM.frame(n, fmt)
+                for name, box in cv.marks:
+                    if name == "tile":
+                        sizes.add((round(box.w, 3), round(box.h, 3)))
+                        self.assertGreaterEqual(box.x, 0)
+                        self.assertLessEqual(box.x + box.w, L["W"])
+                        self.assertLessEqual(box.y + box.h,
+                                             dict(cv.marks)["link"].y)
+            self.assertEqual(len(sizes), 1, fmt)
+        self.assertEqual(self.m.GRIDS, {"9x16": (2, 3), "16x9": (3, 2)})
+
+    def test_each_one_liner_fits_its_tile_verbatim(self):
+        from videobuilder import text
+        for fmt in self.m.FORMATS:
+            L = self.m.T.LAYOUTS[fmt]
+            fnt = self.m.VIEWS[fmt]["line_font"]
+            box = self.m.cells(L, fmt, self.m.page_head(L, 1, 3, 0)[2])[0]
+            for m in self.course.members:
+                p = self.m.tile_parts(m, box, L)
+                lines = text.wrap(m.line.text, fnt, p["inner"])
+                self.assertEqual(" ".join(lines).replace("- ", "-"),
+                                 m.line.text.replace("- ", "-"))
+                self.assertLessEqual(p["line_top"] + len(lines)
+                                     * text.line_height(fnt), p["url_y"])
+
+    def test_the_closing_page_is_still_and_silent(self):
+        a, b = self.course.slots_end, self.course.sources_start
+        got = self.marks(b - self.m.T.FADE - 1)
+        self.assertIn("closing", got)
+        self.assertIn("closing link", got)
+        self.assertNotIn("tile", got)
+        for s in self.voices():
+            self.assertFalse(s.at < b and s.at + s.frames > a)
 
     def test_16x9_cards_fit_the_landscape_frame(self):
         film = self.m.FILM
         W, H = 1920, 1080
-        last = [self.course.slots_end + (k + 1) * self.m.SOURCES_PAGE
+        last = [self.course.sources_start + (k + 1) * self.m.SOURCES_PAGE
                 - self.m.T.FADE - 1 for k in range(len(self.m.PAGES))]
-        for n in (self.course.opening - self.m.T.FADE - 1, *last):
+        pages = [self.course.page_start(k + 1) - 1
+                 for k in range(len(self.course.pages))]
+        for n in (self.course.opening - self.m.T.FADE - 1, *pages,
+                  self.course.sources_start - self.m.T.FADE - 1, *last):
             cv = film.frame(n, "16x9")
             self.assertEqual((cv.width, cv.height), (W, H))
             marks = dict(cv.marks)
             self.assertIn("link", marks)
-            self.assertNotIn("caption", marks)
             for name, box in cv.marks:
                 self.assertGreaterEqual(box.x, 0, (n, name))
                 self.assertGreaterEqual(box.y, 0, (n, name))
@@ -178,15 +172,6 @@ class CrashCourseFilmTest(unittest.TestCase):
                 # the list ends above the link under it
                 self.assertLessEqual(marks["sources"].bottom,
                                      marks["link"].y, n)
-
-    def test_16x9_a_caption_while_it_speaks_and_none_in_the_hold(self):
-        m = self.course.members[0]
-        a = m.parts[0]
-        said = self.course.slot_start(0) + round(
-            (a.said_from + a.said_to) / 2 * self.course.fps) - a.start
-        self.assertIn("caption", self.marks(said, "16x9"))
-        self.assertNotIn("caption",
-                         self.marks(self.course.slot_start(1) - 1, "16x9"))
 
 
 if __name__ == "__main__":

@@ -89,37 +89,52 @@ chapter chip per measure, and the page is otherwise unchanged.
 
 It says nothing new. Its members are the election's statewide measures
 (kind `measure`, division the state's) in `contests.toml`'s order, the
-ballot's, and each gets one slot that replays two sections of its own
-measure film, picture and committed narration together: its opening
-section (`what`, what the measure is) and its `vote` section (what a yes
-and a no vote would do), or, for a choice question (STANDARD.md section
-8), its `choices` section, which names the options. The audio is cut
-from the member's committed `narration.wav` by its `narration.json`
-phrase timings, a tenth of a second either side of the reused words;
-the TTS is never asked for anything. A replayed section is drawn as its
-own film draws it, but with nothing left over from the sections it
-skips (no page fading out, no other section's caption, pencil or
-countdown ring).
+ballot's, set out as a contact sheet: pages of up to six tiles (two
+columns by three rows in 9:16), split as evenly as they go over the
+fewest pages (fourteen measures make pages of 5, 5 and 4, not 6, 6 and
+2). Each page is headed with the state's name and "statewide measures",
+with "1 of 3" when there are several. A tile shows the measure's badge
+and number as its card draws them ("PROP 3"), its short title (its
+`contests.toml` title less the designation the badge shows, cut at two
+lines with an ellipsis), its one-liner, and, small, the measure's own
+page (`ballotreels.org/<st>/<year>/<measure>`), where its full video is.
 
-Each slot lasts as long as its own member's two sections plus half a
-second, for which it holds its last frame, silent and without a
-caption. No slot is padded out to match a longer one, so the course is
-as long as its slots together. Before the first slot, an opening card,
-on screen only, gives the state's name, "N statewide measures" and the
-election's date; after the last, a sources card lists what the reused lines cite,
-grouped under each measure's title, over as many pages as it takes. The
-link under the caption on every frame is the state's page,
-`ballotreels.org/<st>/<year>`. Its chapters are one per measure, each
-starting where its slot does, titled as `contests.toml` titles it.
+The one-liner is a line of the measure's own script, verbatim: the
+first line of its `change` section, what the measure would do, or, in a
+script with no `change` section, the first line of its opening section
+(`what`). It is never a side's argument. Its sound is that line's cut
+of the member's committed `narration.wav`, by its `narration.json`
+phrase timings, a tenth of a second either side of the words (never
+past halfway to the phrase before or after); the TTS is never asked for
+anything. Tiles are drawn on one at a time, in the coloured-pencil
+style, while their one-liner is said; earlier tiles on the page stay,
+and the next page comes on clean. Every tile is the same size, drawn
+the same way, with its one-liner in the same type: the largest at which
+every member's fits. There is no caption: the tile writes out the words
+it says.
+
+Each tile's slot lasts as long as its one-liner's cut plus half a
+second. No slot is padded out to match a longer one, so a page is as
+long as a second's lead for its heading and its slots together. Before
+the first page, an opening card, on screen only, gives the state's
+name, "N statewide measures" and the election's date; after the last,
+a closing page, still and silent for three seconds, says that every
+measure has its own one-minute video, over the state's page; then a
+sources card lists what the one-liners cite, grouped under each
+measure's title, over as many pages as it takes. The link under the
+stage on every frame is the state's page, `ballotreels.org/<st>/<year>`.
+Its chapters are one per measure, each starting where its slot does,
+titled as `contests.toml` titles it.
 
 The film also has a 16:9 layout, for a YouTube copy rendered from the
 command line only (`render <election-dir> --format 16x9`); the pipeline
 renders and serves 9:16 alone, so the 16:9 copy is in no cache key. It
-has the same frames, audio and chapters: each slot replays its member's
-16:9 film, the opening card is laid out for landscape, and the sources
-card has 9:16's pages, a page's groups set in two columns when it has
-more than one. The drawing sounds follow the 9:16 strokes, as the measure
-film's do; the 16:9 strokes land within a few frames of them.
+has the same frames, audio and chapters: its pages of tiles are three
+columns by two rows, the opening card and closing page are laid out for
+landscape, and the sources card has 9:16's pages, a page's groups set
+in two columns when it has more than one. The drawing sounds follow the
+9:16 strokes, as the measure film's do; the 16:9 strokes land within a
+few frames of them.
 
 It is an election-level contest of its own kind (`crash-course`): id
 `<election>-crash-course`, division the state, derived by the index

@@ -146,82 +146,80 @@ class LayoutTest(unittest.TestCase):
     def test_each_slot_is_its_own_content_plus_the_gap(self):
         gap = round(cc.SLOT_GAP_SECONDS * self.ut.fps)
         for course in (self.ut, self.ca):
-            starts = [course.slot_start(i)
-                      for i in range(len(course.members) + 1)]
-            self.assertEqual(starts[0], course.opening)
-            self.assertEqual([b - a for a, b in zip(starts, starts[1:])],
+            self.assertEqual(list(course.slots),
                              [m.frames + gap for m in course.members])
+            self.assertEqual(course.page_start(0), course.opening)
+            for k, page in enumerate(course.pages):
+                start = course.page_start(k) + course.lead
+                for i in page:
+                    self.assertEqual(course.slot_start(i), start)
+                    start += course.slots[i]
+                self.assertEqual(course.page_start(k + 1), start)
             self.assertEqual(course.slots_end, course.opening + sum(
-                m.frames + gap for m in course.members))
+                course.lead + sum(course.slots[i] for i in p)
+                for p in course.pages))
+            self.assertEqual(course.sources_start,
+                             course.slots_end + course.closing)
 
     def test_no_slot_is_padded_to_the_longest(self):
-        # Idaho's members differ by many seconds (HB 932's choices
-        # section is the longest): a shorter one ends when it does
-        course = cc.plan(ID)
+        course = self.ca
         gap = round(cc.SLOT_GAP_SECONDS * course.fps)
         lengths = [m.frames for m in course.members]
-        self.assertGreater(max(lengths) - min(lengths), 10 * course.fps)
+        self.assertGreater(max(lengths) - min(lengths), 3 * course.fps)
         for i, m in enumerate(course.members):
-            self.assertEqual(course.slot_start(i + 1) - course.slot_start(i),
-                             m.frames + gap)
-        self.assertLess(course.slots_end - course.opening,
-                        len(lengths) * (max(lengths) + gap))
+            self.assertEqual(course.slots[i], m.frames + gap)
         # and its chapters start where its unequal slots do
         for i, ch in enumerate(cc.chapters(course)):
             self.assertAlmostEqual(ch["start"], course.slot_start(i)
                                    / course.fps, delta=0.001)
 
-    def test_each_slot_is_the_opening_and_the_vote_section(self):
-        for m in self.ca.members:
-            self.assertEqual([p.label for p in m.parts], ["what", "vote"])
-            self.assertEqual(m.parts[0].start, 0)
-            vote = next(s for s in m.board.sections if s.label == "vote")
-            self.assertEqual((m.parts[1].start, m.parts[1].end),
-                             (vote.start, vote.end))
+    def test_pages_split_evenly_over_the_fewest(self):
+        self.assertEqual(cc.page_sizes(14), (5, 5, 4))
+        self.assertEqual(cc.page_sizes(6), (6,))
+        self.assertEqual(cc.page_sizes(7), (4, 3))
+        self.assertEqual(cc.page_sizes(2), (2,))
+        self.assertEqual(cc.page_sizes(13), (5, 4, 4))
+        # in ballot order, every member once
+        self.assertEqual([len(p) for p in self.ca.pages], [5, 5, 4])
+        self.assertEqual([i for p in self.ca.pages for i in p],
+                         list(range(14)))
+        self.assertEqual(self.ut.pages, ((0, 1),))
 
-    def test_a_choice_question_closes_on_the_section_naming_its_options(self):
+    def test_each_one_liner_is_its_change_section_s_first_line(self):
+        for course in (self.ut, self.ca):
+            for m in course.members:
+                change = next(s for s in m.contest.script.sections
+                              if s.id == "change")
+                self.assertIs(m.line, change.lines[0])
+                self.assertFalse(m.fallback)
+
+    def test_a_script_with_no_change_section_says_its_opening_line(self):
         course = cc.plan(ID)
-        choice = [m for m in course.members
-                  if m.contest.script.choices is not None]
-        self.assertTrue(choice)
-        for m in choice:
-            self.assertEqual([p.label for p in m.parts],
-                             ["what", "choices"])
+        fell = [m for m in course.members if m.fallback]
+        self.assertEqual([m.entry.id for m in fell],
+                         ["id-2026-11-03-advisory-hb-932"])
+        for m in fell:
+            self.assertEqual(m.section, "what")
+            self.assertIs(m.line, m.contest.script.sections[0].lines[0])
 
-    def test_the_audio_is_cut_around_the_reused_phrases_only(self):
-        # Every phrase of the committed narration either lies inside a
-        # part's cut (a reused line's) or wholly outside every cut: nothing
-        # else is said, not even a word of the next section.
-        for course in (self.ut, self.ca):
+    def test_the_audio_is_cut_around_the_one_liner_only(self):
+        # Every phrase of the committed narration either lies inside the
+        # tile's cut (its one-liner's) or wholly outside it: nothing else
+        # is said, not even a word of the next line.
+        for course in (self.ut, self.ca, cc.plan(ID)):
             for m in course.members:
-                fps = course.fps
-                reused = {p.label for p in m.parts}
-                cuts = [(p.audio_from, p.audio_from + p.audio_frames / fps)
-                        for p in m.parts]
+                a = m.audio_from
+                b = a + m.audio_frames / course.fps
+                said = False
                 for span in match_phrases(m.contest):
-                    inside = [a - 1e-6 <= span.start and span.end <= b + 1e-6
-                              for a, b in cuts]
-                    overlaps = [span.start < b and span.end > a
-                                for a, b in cuts]
-                    if span.section in reused:
-                        self.assertTrue(any(inside), (m.entry.id, span))
+                    if (span.section, span.index) == (m.section, 0):
+                        self.assertLessEqual(a - 1e-6, span.start)
+                        self.assertLessEqual(span.end, b + 1e-6)
+                        said = True
                     else:
-                        self.assertFalse(any(overlaps), (m.entry.id, span))
-
-    def test_the_cut_plays_under_its_own_picture(self):
-        for course in (self.ut, self.ca):
-            for m in course.members:
-                for p in m.parts:
-                    self.assertGreaterEqual(p.audio_at, 0)
-                    self.assertLessEqual(p.audio_at + p.audio_frames,
-                                         p.frames)
-                    # the words start where the member's own film says them
-                    t = (p.start + p.audio_at) / course.fps
-                    self.assertAlmostEqual(
-                        p.said_from - t,
-                        min(s.start for s in match_phrases(m.contest)
-                            if s.section == p.label) - p.audio_from,
-                        delta=1.5 / course.fps)
+                        self.assertFalse(span.start < b and span.end > a,
+                                         (m.entry.id, span))
+                self.assertTrue(said, m.entry.id)
 
     def test_chapters_one_per_measure_in_ballot_order(self):
         index = load_index(CA)
@@ -263,7 +261,8 @@ class LayoutTest(unittest.TestCase):
         for rec, m in zip(doc["member"], self.ut.members):
             self.assertEqual(rec["contest"], m.entry.id)
             self.assertEqual([ln for s in rec["section"] for ln in s["lines"]],
-                             [ln.text for ln in m.lines])
+                             [m.line.text])
+            self.assertEqual(rec["section"][0]["id"], "change")
 
 
 class StaleMemberTest(ElectionCopyTestCase):
