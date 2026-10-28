@@ -118,7 +118,8 @@ class RealDataApiTest(unittest.TestCase):
                           ("California", "ca-2026-11-03-prop-42"),
                           ("Louisiana", "la-2026-11-03-amendment-1"),
                           ("Louisiana", "la-2026-11-03-amendment-2"),
-                          ("Louisiana", "la-2026-11-03-amendment-6")])
+                          ("Louisiana", "la-2026-11-03-amendment-6"),
+                          ("Louisiana", "la-2026-11-03-amendment-9")])
 
     def test_two_groups(self):
         # Utah's Amendment B is in two groups, one link from each.
