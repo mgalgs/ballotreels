@@ -123,9 +123,19 @@ class RequeueTest(AdminTestCase):
             claimed["id"], claimed["claim"], "render"))
 
 
+PROP_90 = "ca-2026-11-03-prop-90"
+CRASH_COURSE = "ca-2026-11-03-crash-course"
+
+
 class RegenerateTest(AdminTestCase):
-    def _done_job(self, contest):
-        key = _key_for(contest)
+    def _current_key(self, contest):
+        """The key a fresh post of this served contest gets now."""
+        from ballotreels.index import key_for
+        state, entry = self.deps.contest(contest)
+        return key_for(state.index.election.id, entry, self.deps.standard)
+
+    def _done_job(self, contest=None, key=None):
+        key = key if key is not None else self._current_key(contest)
         job, _ = self.deps.queue.create_job(key)
         claimed = self.deps.queue.claim("w1")
         self.assertTrue(self.deps.queue.complete(
@@ -136,7 +146,7 @@ class RegenerateTest(AdminTestCase):
     def test_regenerate_done(self):
         # STANDARD.md rule 5.2: a correction is fixed by regenerating; the
         # old video keeps serving until the new job replaces it.
-        key, job = self._done_job("regen-done")
+        key, job = self._done_job(PROP_90)
         resp, doc = self._admin_json(
             "POST", f"/admin/api/jobs/{job['id']}/regenerate")
         self.assertEqual(resp.status, 200, doc)
@@ -153,6 +163,57 @@ class RegenerateTest(AdminTestCase):
         self.assertEqual(resp.status, 409)
         self.assertEqual(doc["error"],
                          f"job #{live['id']} for this key is already queued")
+
+    def test_regenerate_current_crash_course(self):
+        key, job = self._done_job(CRASH_COURSE)
+        resp, doc = self._admin_json(
+            "POST", f"/admin/api/jobs/{job['id']}/regenerate")
+        self.assertEqual(resp.status, 200, doc)
+        live = self.deps.queue.find_live_job(key)
+        self.assertEqual(live["state"], "queued")
+        self.assertNotEqual(live["id"], job["id"])
+
+    def _assert_stale_refused(self, current, stale):
+        _, job = self._done_job(key=stale)
+        before = len(self.deps.queue.list_jobs())
+        resp, doc = self._admin_json(
+            "POST", f"/admin/api/jobs/{job['id']}/regenerate")
+        self.assertEqual(resp.status, 409)
+        self.assertEqual(doc["error"], (
+            f"job #{job['id']} was made for standard {stale[3]} / "
+            f"template {stale[4]}, but this server now makes standard "
+            f"{current[3]} / template {current[4]}; post the contest "
+            f"again to get a fresh job"))
+        self.assertEqual(len(self.deps.queue.list_jobs()), before)
+        self.assertIsNone(self.deps.queue.find_live_job(stale))
+
+    def test_regenerate_refuses_older_template_crash_course(self):
+        # 19 crash courses regenerated after the template went 2 -> 3 all
+        # still said template 2, and every worker failed them.
+        current = self._current_key(CRASH_COURSE)
+        stale = current[:4] + (current[4] - 1,)
+        self._assert_stale_refused(current, stale)
+
+    def test_regenerate_refuses_older_template_measure(self):
+        current = self._current_key(PROP_90)
+        stale = current[:4] + (current[4] - 1,)
+        self._assert_stale_refused(current, stale)
+
+    def test_regenerate_refuses_older_standard(self):
+        current = self._current_key(PROP_90)
+        stale = current[:3] + (current[3] - 1, current[4])
+        self._assert_stale_refused(current, stale)
+
+    def test_regenerate_refuses_contest_no_longer_served(self):
+        _, job = self._done_job(key=_key_for("ca-2026-11-03-prop-999"))
+        before = len(self.deps.queue.list_jobs())
+        resp, doc = self._admin_json(
+            "POST", f"/admin/api/jobs/{job['id']}/regenerate")
+        self.assertEqual(resp.status, 409)
+        self.assertEqual(doc["error"], (
+            f"job #{job['id']}'s contest ca-2026-11-03-prop-999 is no "
+            f"longer served, so it cannot be regenerated"))
+        self.assertEqual(len(self.deps.queue.list_jobs()), before)
 
     def test_regenerate_only_from_done(self):
         job, _ = self.deps.queue.create_job(_key_for("regen-queued"))

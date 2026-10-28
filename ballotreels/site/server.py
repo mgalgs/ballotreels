@@ -27,7 +27,8 @@ from ..geo.lookup import GeoData
 from ..geo.states import STATE_NAMES, chambers, state_for_zip
 from ..index import (ContestIndex, IndexEntry, ballot_order, key_for,
                      level_of, load_index, voters_line)
-from ..queue import JobQueue
+from ..crash_course import split_key_contest
+from ..queue import TRANSITIONS, JobQueue
 from ..related import load_related, related_to
 from ..standard import Standard, load_standard
 from . import config as site_config
@@ -1266,10 +1267,40 @@ class PrivateHandler(_JsonHandler):
                          "workers": deps.queue.workers()})
 
     def _admin_action(self, job_id: int, action: str) -> None:
+        if action == "regenerate":
+            stale = self._stale_regenerate(job_id)
+            if stale is not None:
+                return self._json(409, {"error": stale})
         ok, message = self.server.deps.queue.transition(job_id, action)
         if not ok:
             return self._json(409, {"error": message})
         self._json(200, {"ok": True})
+
+    def _stale_regenerate(self, job_id: int) -> str | None:
+        """Why a regenerate of this job can only fail, or None if it can
+        go ahead: a copy of a job made for other versions than this server
+        makes its contest for now would be refused by every worker, and a
+        contest no longer served has no current versions at all. Jobs the
+        queue would refuse anyway are left to its own message."""
+        deps = self.server.deps
+        job = deps.queue.get_job(job_id)
+        if job is None or job["state"] not in TRANSITIONS["regenerate"]:
+            return None
+        contest_id = split_key_contest(job["contest"])[0]
+        found = deps.contest(contest_id)
+        key = (key_for(found[0].index.election.id, found[1], deps.standard)
+               if found is not None else None)
+        if key is None:
+            return (f"job #{job_id}'s contest {contest_id} is no longer "
+                    f"served, so it cannot be regenerated")
+        has = (job["standard_version"], job["template_version"])
+        now = (key[3], key[4])
+        if has != now:
+            return (f"job #{job_id} was made for standard {has[0]} / "
+                    f"template {has[1]}, but this server now makes "
+                    f"standard {now[0]} / template {now[1]}; post the "
+                    f"contest again to get a fresh job")
+        return None
 
     def _state_conflict(self, job_id: int) -> None:
         job = self.server.deps.queue.get_job(job_id)
