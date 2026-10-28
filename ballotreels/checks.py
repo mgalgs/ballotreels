@@ -8,6 +8,7 @@ skip that part rather than report the same defect twice.
 
 from __future__ import annotations
 
+import difflib
 import html
 import math
 import re
@@ -22,6 +23,7 @@ from pathlib import Path
 from . import grid, narration, spoken, storyboard
 from .ballots import BALLOTS, Ballot, badge, ballot_for, guide_of
 from .contest import CARD_KEYS, Card, Choice, Contest, Line, Section, Visual
+from .geo import divisions
 from .illustrations import load_library
 from .index import voters_problem
 from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, CHOICE_TEMPLATES,
@@ -84,6 +86,47 @@ def check_voters(c: Contest) -> list[Failure]:
                         "has 'voters' but no [card]: the card is where the "
                         "film says who votes on it")]
     return []
+
+
+def check_division(c: Contest) -> list[Failure]:
+    """A county, city or school district contest's division is one the
+    geo build has a shape for, as listed in its election's divisions.tsv
+    (ballotreels.geo.divisions): the zip lookup shows a contest only for
+    a division it has a shape of, so one typed from the ballot ("San
+    Diego Unified") rather than TIGER's name ("San Diego City Unified")
+    would be shown to no voter. Other levels (the state, its legislative
+    districts) are not listed and not checked.
+
+    Not part of check_contest: the film worker runs that on a scratch
+    copy of the contest dir with no election around it, and a division
+    matters to the zip lookup, not the film. `python -m ballotreels
+    check` runs it beside check_contest."""
+    level, _, name = c.division.rsplit("/", 1)[-1].partition(":")
+    if level not in divisions.LEVELS:
+        return []
+    election_dir = Path(c.path).resolve().parent
+    path = election_dir / divisions.FILENAME
+    if not path.is_file():
+        return [Failure(
+            "division",
+            f"{c.id}: its election has no {divisions.FILENAME} to check "
+            f"its {level} division {c.division!r} against; write it from "
+            f"the geo build with `python -m ballotreels geo divisions "
+            f"{election_dir.name}` (README)")]
+    listed = divisions.read_divisions(path)
+    if c.division in listed:
+        return []
+    prefix = c.division[:-len(name)]
+    same_level = {d[len(prefix):]: d for d in listed if d.startswith(prefix)}
+    close = [f"{same_level[n]!r} ({listed[same_level[n]]})"
+             for n in difflib.get_close_matches(name, same_level, n=3)]
+    hint = (f"closest listed: {', '.join(close)}" if close else
+            f"no listed {level} is close")
+    return [Failure(
+        "division",
+        f"{c.id}: division {c.division!r} is not in {path.name}, so the "
+        f"zip lookup would show it to no voter (usually the ballot's "
+        f"name for it, not TIGER's); {hint}")]
 
 
 def check_line_citations(c: Contest) -> list[Failure]:
