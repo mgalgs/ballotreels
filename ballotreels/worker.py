@@ -17,9 +17,11 @@ from pathlib import Path
 from typing import Any
 
 from .contest import load_contest
+from . import crash_course
 from .pipeline import (PipelineError, Runner, ScriptWriter, read_chapters,
-                       run_check, run_encode, run_narrate, run_render,
-                       run_script, run_sources)
+                       run_check, run_crash_check, run_crash_narrate,
+                       run_crash_script, run_crash_sources, run_encode,
+                       run_narrate, run_render, run_script, run_sources)
 from .queue import hash_for_key
 from .standard import Standard
 
@@ -256,6 +258,25 @@ class Worker:
             dest.mkdir(parents=True, exist_ok=True)
         return dest
 
+    def _prepare_election_scratch(self, job: dict[str, Any],
+                                  wd: Path) -> Path:
+        """A crash course's scratch copy: the election's contests.toml and
+        each member's directory, committed narration and all."""
+        from .index import load_index
+        election = job["election"]
+        src = crash_course.election_dir_for(self.repo, election)
+        dest = wd / election
+        dest.mkdir(parents=True, exist_ok=True)
+        if not (src / "contests.toml").is_file():
+            return dest  # the script stage reports it
+        shutil.copy2(src / "contests.toml", dest / "contests.toml")
+        entry = load_index(src).crash_course
+        for cid in (entry.members if entry is not None else ()):
+            member = crash_course.member_dir(src, election, cid)
+            if member.is_dir():
+                shutil.copytree(member, dest / member.name)
+        return dest
+
     def _heartbeat_loop(self, job_id: int, claim: str) -> None:
         while not self._hb_stop.is_set():
             if self._hb_stop.wait(self.heartbeat_interval):
@@ -294,12 +315,19 @@ class Worker:
                              web: Path, poster: Path,
                              chapters: list[dict[str, Any]] | None = None
                              ) -> None:
-        contest = load_contest(contest_dir)
-        sources = _source_dicts(contest)
+        if crash_course.is_crash_course(job["contest"]):
+            # what the reused lines cite, and a record of what it says
+            course = crash_course.plan(contest_dir)
+            sources = crash_course.sources(course)
+            script = crash_course.script_toml(course).encode("utf-8")
+        else:
+            contest = load_contest(contest_dir)
+            sources = _source_dicts(contest)
+            script = (Path(contest_dir) / "script.toml").read_bytes()
         files = {
             "video.mp4": Path(web).read_bytes(),
             "poster.jpg": Path(poster).read_bytes(),
-            "script.toml": (Path(contest_dir) / "script.toml").read_bytes(),
+            "script.toml": script,
             "sources.json": json.dumps(sources).encode("utf-8"),
         }
         published = self.storage.put_all(job, files)
@@ -320,18 +348,31 @@ class Worker:
         master_path = None
         try:
             self._heartbeat_start(job_id, claim)
-            contest_dir = self._prepare_scratch(job, wd)
-            self._run_stage(job_id, claim, "sources",
-                           lambda: run_sources(contest_dir))
-            self._run_stage(
-                job_id, claim, "script",
-                lambda: run_script(contest_dir, self.writer, job,
-                                   self.standard))
-            self._run_stage(job_id, claim, "check",
-                           lambda: run_check(contest_dir, self.standard))
-            self._run_stage(
-                job_id, claim, "narrate",
-                lambda: run_narrate(contest_dir, self.runner, self.standard))
+            if crash_course.is_crash_course(job["contest"]):
+                # The same stages over an election's statewide measures:
+                # nothing to write, and nothing ever narrated.
+                contest_dir = self._prepare_election_scratch(job, wd)
+                stages = (
+                    ("sources", lambda: run_crash_sources(contest_dir)),
+                    ("script", lambda: run_crash_script(
+                        contest_dir, job, self.standard)),
+                    ("check", lambda: run_crash_check(
+                        contest_dir, self.standard)),
+                    ("narrate", lambda: run_crash_narrate(
+                        contest_dir, self.standard)),
+                )
+            else:
+                contest_dir = self._prepare_scratch(job, wd)
+                stages = (
+                    ("sources", lambda: run_sources(contest_dir)),
+                    ("script", lambda: run_script(
+                        contest_dir, self.writer, job, self.standard)),
+                    ("check", lambda: run_check(contest_dir, self.standard)),
+                    ("narrate", lambda: run_narrate(
+                        contest_dir, self.runner, self.standard)),
+                )
+            for stage, func in stages:
+                self._run_stage(job_id, claim, stage, func)
             out_dir = wd / "out"
             rendered = self._run_stage(
                 job_id, claim, "render",

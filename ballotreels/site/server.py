@@ -510,6 +510,30 @@ def _contest_summary(entry, state: StateElection,
     }
 
 
+def _crash_course(state: StateElection, deps: Deps) -> dict[str, Any] | None:
+    """The state's crash course, for the top of its page: None when it has
+    none (too few statewide measures). Its key hashes its members' scripts
+    and narration, so a video made before any of them changed is never
+    shown as this one."""
+    entry = state.index.crash_course
+    if entry is None:
+        return None
+    key = key_for(state.index.election.id, entry, deps.standard)
+    status, video, job = _contest_status(key, deps)
+    return {
+        "id": entry.id,
+        "kind": entry.kind,
+        "title": entry.title,
+        "measures": len(entry.members),
+        "status": status,
+        "video_url": (video.urls.get("video") if video else None),
+        "poster_url": (video.urls.get("poster") if video else None),
+        "chapters": ((video.chapters or []) if video else []),
+        "sources": (video.sources if video else []),
+        "job": job,
+    }
+
+
 def _related(entry, state: StateElection,
              deps: Deps) -> list[dict[str, Any]]:
     """The measures related to `entry` (data/related.toml) that are
@@ -1029,7 +1053,9 @@ class PublicHandler(_JsonHandler):
                          "empty_election": not index.entries,
                          "chambers": chambers(abbr),
                          "levels": ([{"level": "state", "contests": contests}]
-                                    if contests else [])})
+                                    if contests else []),
+                         # one video through every statewide measure
+                         "crash_course": _crash_course(state, deps)})
 
     def _contest(self, contest_id: str) -> None:
         deps = self.server.deps

@@ -143,12 +143,119 @@ def run_narrate(contest_dir: Path, runner: Runner, standard: Standard) -> None:
     _check_or_raise(contest_dir, standard)
 
 
+# ---- a crash course (ballotreels.crash_course): an election directory,
+# its statewide measures' own directories in it, and nothing to narrate ----
+
+def _crash_index(election_dir: Path):
+    from .index import ContestIndexError, load_index
+    try:
+        index = load_index(election_dir)
+    except ContestIndexError as e:
+        raise PipelineError(str(e)) from None
+    if index.crash_course is None:
+        raise PipelineError(f"{index.election.id}: too few statewide "
+                            f"measures for a crash course")
+    return index
+
+
+def _crash_members(election_dir: Path):
+    """(entry, member directory) for each member, in ballot order."""
+    from .crash_course import member_dir
+    index = _crash_index(election_dir)
+    return [(index.get(cid), member_dir(election_dir, index.election.id, cid))
+            for cid in index.crash_course.members]
+
+
+def _who(entry) -> str:
+    return f"{entry.title} ({entry.id})"
+
+
+def run_crash_sources(election_dir: Path) -> None:
+    for entry, d in _crash_members(Path(election_dir)):
+        try:
+            run_sources(d)
+        except PipelineError as e:
+            raise PipelineError(f"{_who(entry)}: {e}") from None
+
+
+def run_crash_script(election_dir: Path, job: dict[str, Any],
+                     standard: Standard) -> None:
+    """Nothing is written for a crash course; this checks the job is for
+    the crash course this worker's copy of the measures makes: the same
+    versions, and the same members' scripts and narration (its key's
+    digest), so it never publishes one that disagrees with them."""
+    from .crash_course import TEMPLATE_VERSION, digest, split_key_contest
+    from .contest import ContestError, load_contest
+    entry = _crash_index(Path(election_dir)).crash_course
+    if (standard.version != job["standard_version"] or
+            TEMPLATE_VERSION != job["template_version"]):
+        raise PipelineError(
+            f"worker has standard {standard.version} / template "
+            f"{TEMPLATE_VERSION}, job wants standard "
+            f"{job['standard_version']} / template {job['template_version']}")
+    cid, want = split_key_contest(job["contest"])
+    got = digest(entry)
+    if cid != entry.id or want != got:
+        raise PipelineError(
+            f"this worker's copy of the statewide measures (digest {got}) "
+            f"is not the one the job was queued for ({want}); a member's "
+            f"script or narration differs, so bring the worker's checkout "
+            f"to the serve tier's")
+    for member, d in _crash_members(Path(election_dir)):
+        try:
+            load_contest(d)
+        except ContestError as e:
+            raise PipelineError(f"{_who(member)}: {e}") from None
+
+
+def run_crash_check(election_dir: Path, standard: Standard) -> None:
+    """Every member has a committed narration of exactly its script (or
+    the job fails naming it, as below), and passes the standard's checks,
+    as its own video must."""
+    from .crash_course import CrashCourseError, load_member
+    election_dir = Path(election_dir)
+    election_id = _crash_index(election_dir).election.id
+    for entry, d in _crash_members(election_dir):
+        try:
+            load_member(entry, election_dir, election_id)
+        except CrashCourseError as e:
+            raise PipelineError(str(e)) from None
+        try:
+            _check_or_raise(d, standard)
+        except PipelineError as e:
+            raise PipelineError(f"{_who(entry)}:\n{e}") from None
+
+
+def run_crash_narrate(election_dir: Path, standard: Standard) -> None:
+    """A crash course is never narrated: each member's committed narration
+    must already be current for its script, or the job fails naming the
+    measure (crash_course.load_member), the same rule as for a single
+    measure, except that a missing one is not made here either. This lays
+    the slots out from those narrations, so a member that can't be cut
+    fails here, before the render."""
+    from .crash_course import CrashCourseError, plan
+    try:
+        plan(election_dir)
+    except CrashCourseError as e:
+        raise PipelineError(str(e)) from None
+
+
 def run_render(contest_dir: Path, runner: Runner, out_dir: Path) -> Path:
     return runner.render(contest_dir, out_dir)
 
 
 def run_encode(master: Path, web: Path, poster: Path, runner: Runner) -> None:
     runner.encode(master, web, poster)
+
+
+def _video_id(contest_dir: Path) -> str:
+    """The id a render of `contest_dir` names its video by: the contest's,
+    or, for an election's directory, its crash course's."""
+    from .crash_course import crash_course_id, is_election_dir
+    if is_election_dir(contest_dir):
+        return crash_course_id(_crash_index(Path(contest_dir)).election.id)
+    from .contest import load_contest
+    return load_contest(contest_dir).id
 
 
 class SubprocessRunner:
@@ -178,14 +285,12 @@ class SubprocessRunner:
                    str(contest_dir)])
 
     def render(self, contest_dir: Path, out_dir: Path) -> Path:
-        from .contest import load_contest
-        contest = load_contest(contest_dir)
         argv = [sys.executable, "-m", "ballotreels", "render",
                 str(contest_dir), "--format", "9x16", "--out", str(out_dir)]
         if self.site_url:
             argv += ["--site-url", self.site_url]
         self._run(argv)
-        return out_dir / f"{contest.id}-9x16.mp4"
+        return out_dir / f"{_video_id(contest_dir)}-9x16.mp4"
 
     def encode(self, master: Path, web: Path, poster: Path) -> None:
         self._run([
@@ -293,16 +398,22 @@ class FakeRunner:
 
     def render(self, contest_dir: Path, out_dir: Path) -> Path:
         self._maybe_block("render")
-        from .contest import load_contest
-        contest = load_contest(contest_dir)
         out_dir = Path(out_dir)
         out_dir.mkdir(parents=True, exist_ok=True)
-        dest = out_dir / f"{contest.id}-9x16.mp4"
+        dest = out_dir / f"{_video_id(contest_dir)}-9x16.mp4"
         # A placeholder, not a real MP4 (A17): starts with an ftyp box so
         # it is at least recognizable, 64 KiB of deterministic bytes.
         body = (b"\x00\x00\x00\x18ftypisom" +
                bytes((i % 256 for i in range(64 * 1024 - 16))))
         dest.write_bytes(body)
+        from .crash_course import chapters as course_chapters
+        from .crash_course import is_election_dir, plan
+        if is_election_dir(contest_dir):
+            # its chapters, as the real render writes them
+            write_chapters(dest, course_chapters(plan(contest_dir)))
+            return dest
+        from .contest import load_contest
+        contest = load_contest(contest_dir)
         # Chapters as the real render writes them, on the fake narration's
         # clock (none without one, as from a render that predates them).
         from .narration import NarrationError
