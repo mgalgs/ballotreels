@@ -16,7 +16,8 @@
 #
 # The guide prints no tax rate statement for a parcel tax; the one
 # revenue estimate is the ballot question's "approximately $510,000 the
-# first year". No official archived source states the district's budget
+# first year", which its grammar ties to the increase, not the whole $37
+# tax (the argument in favor agrees: "additional first-year revenue"). No official archived source states the district's budget
 # (the $1.1 million in the argument in favor is that side's figure), so
 # the estimate has no budget scale (STANDARD.md 6.5; left open). The
 # per-parcel amounts are what one property owner pays, not the district's
@@ -91,7 +92,7 @@ id = "fiscal"
 heading = "What it would raise"
 
 [[section.line]]
-text = "The ballot question estimates the tax would generate about $510,000 in its first year."
+text = "The ballot question estimates the increase would bring in about $510,000 in its first year."
 sources = ["ballot-question"]
 
 [section.line.visual]
