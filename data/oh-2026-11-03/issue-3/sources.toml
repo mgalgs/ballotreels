@@ -1,0 +1,76 @@
+# Archived sources for Ohio State Issue 3, 2026-11-03 general election.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+#
+# The Ohio Ballot Board certifies an issue's ballot language and
+# explanation, and the Secretary of State prints them with the arguments
+# for and against and the full text in one report on the issue; each is
+# also archived as filed. No fiscal statement exists: Ohio requires none
+# for an amendment the General Assembly proposes by joint resolution.
+
+[contest]
+id = "oh-2026-11-03-issue-3"
+election = "oh-2026-11-03"
+division = "ocd-division/country:us/state:oh"
+kind = "measure"
+title = "State Issue 3: To Require Voters to Present Photo Identification in Order to Vote"
+
+[[source]]
+id = "ballot-language"
+kind = "official-title-summary"
+publisher = "Ohio Ballot Board, certified ballot language for Issue 3, August 3, 2026"
+credit = "Ohio Ballot Board, ballot language"
+url = "https://www.ohiosos.gov/assets/certified-ballot-language-08-03-2026.pdf"
+file = "sources/ballot-language.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "explanation"
+kind = "official-title-summary"
+publisher = "Ohio Ballot Board, certified explanation of Issue 3, August 3, 2026"
+credit = "Ohio Ballot Board, explanation"
+url = "https://www.ohiosos.gov/assets/certified-explanation-08-03-2026.pdf"
+file = "sources/explanation.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "report"
+kind = "official-title-summary"
+publisher = "Ohio Secretary of State, Proposed Amendment to the Ohio Constitution: Issue 3, November 3, 2026"
+credit = "Ohio Secretary of State, Issue 3 report"
+url = "https://www.ohiosos.gov/assets/2026-11-statewide-issue-3-report.pdf"
+file = "sources/report.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments in support of and against Issue 3, as printed in the Ohio Secretary of State's report on Issue 3, page 3"
+url = "https://www.ohiosos.gov/assets/2026-11-statewide-issue-3-report.pdf"
+file = "sources/report.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Support of Issue 3, as filed with the Ohio Secretary of State"
+url = "https://www.ohiosos.gov/assets/issue-3-argument-in-for.pdf"
+file = "sources/argument-for.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Issue 3, as filed with the Ohio Secretary of State"
+url = "https://www.ohiosos.gov/assets/issue-3-argument-against.pdf"
+file = "sources/argument-against.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Ohio General Assembly, Substitute Senate Joint Resolution 10, 136th General Assembly, as enrolled"
+credit = "Ohio General Assembly, Sub. S.J.R. 10"
+url = "https://search-prod.lis.state.oh.us/api/v2/general_assembly_136/legislation/sjr10/05_EN/pdf/"
+file = "sources/text-proposed-law.pdf"
+retrieved = "2026-10-27"

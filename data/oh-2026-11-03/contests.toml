@@ -1,0 +1,18 @@
+# Contest index for the 2026-11-03 Ohio general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). Titles
+# pair the designation with the ballot language's title, as printed in
+# the Secretary of State's report on the issue. Issue 3 is the only
+# statewide issue on the ballot.
+
+[election]
+id = "oh-2026-11-03"
+state = "ocd-division/country:us/state:oh"
+title = "Ohio General Election, November 3, 2026"
+
+[[contest]]
+id = "oh-2026-11-03-issue-3"
+kind = "measure"
+division = "ocd-division/country:us/state:oh"
+title = "State Issue 3: To Require Voters to Present Photo Identification in Order to Vote"
+number = "3"

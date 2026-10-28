@@ -1,0 +1,151 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; where voter ID sits in Ohio's law today; what the amendment
+# would require in person, which IDs count, the religious-objection
+# alternative and voting by mail; that the report prints no cost
+# estimate; one point per side; what a vote does.
+#
+# The card quotes the Ohio Ballot Board's certified ballot language: its
+# title, the "This proposed amendment would" bullets as the summary, and
+# its "YES"/"NO" lines. No fiscal statement exists for an amendment the
+# General Assembly proposes, so the card has no fiscal quote and the
+# fiscal section says only that the report prints no cost estimate, as
+# Arizona's referrals do.
+#
+# Neutral lines keep to the ballot language's and explanation's terms;
+# neither side's framing ("voter fraud", "voter suppression") is used
+# outside its own section. That photo ID is already in state law is
+# argued by both sides (supporters: no new burden; opponents: unneeded),
+# so "today" says only that the constitution has no such section and
+# that the explanation leaves the details to Ohio law. Each side gets
+# its two most concrete points, in its own words, with equal words.
+
+contest = "oh-2026-11-03-issue-3"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-language"
+number = "3"
+title = "TO REQUIRE VOTERS TO PRESENT PHOTO IDENTIFICATION IN ORDER TO VOTE"
+origin = "Proposed by Joint Resolution of the General Assembly"
+summary = "This proposed amendment would: • Require voters to present an approved form of government-issued photo identification in order to vote. • Allow state law to provide for an alternative method of verifying a voter’s identity for a voter who has a sincere religious objection to being photographed and, therefore, does not possess an approved form of government-issued photo identification. • Require that voters who do not vote in person provide an approved form of government-issued photo identification, unless the law authorizes those persons to vote by providing a signature and at least one other specified unique identifier. • Define approved forms of government-issued photo identification as an unexpired Ohio driver license or state identification card; a United States passport or passport card; or a United States military identification card, Ohio National Guard identification card, or United States Department of Veterans Affairs identification card."
+yes = "A \"YES\" vote means approval of the amendment."
+no = "A \"NO\" vote means disapproval of the amendment."
+
+[[section]]
+id = "what"
+heading = "State Issue 3"
+
+[[section.line]]
+text = "State Issue 3 is about photo ID to vote in Ohio."
+sources = ["ballot-language"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-language"
+highlight = ["TO REQUIRE VOTERS TO PRESENT PHOTO IDENTIFICATION"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, Ohio's Constitution has no voter ID section; state law sets voting rules."
+sources = ["text", "explanation"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-capitol"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would require an Ohio driver license or state ID, a U.S. passport, or a military, National Guard or Veterans Affairs ID."
+sources = ["ballot-language", "explanation"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-language"
+highlight = ["Require voters to present an approved form of government-issued photo identification"]
+
+[[section.line]]
+text = "State law could allow another check for voters with a religious objection to being photographed."
+sources = ["ballot-language", "explanation"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-language"
+highlight = ["sincere religious objection to being photographed"]
+
+[[section.line]]
+text = "Mail voters would need photo ID, unless state law accepts a signature and ID number."
+sources = ["ballot-language", "explanation"]
+
+[section.line.visual]
+kind = "illustration"
+name = "id-number-envelope"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Ohio's issue report prints no cost estimate for the amendment."
+sources = ["report"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say photo ID helps verify voters' identity, and a constitutional rule keeps election laws stable."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Helps verify a voter's identity", "Keeps election laws stable in the constitution"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the amendment leaves absentee voting unprotected, and blocks county veterans and digital military IDs."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Leaves absentee voting unprotected", "Blocks county veterans IDs and digital military IDs"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means approval of the amendment."
+sources = ["ballot-language"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-language"
+highlight = ["means approval"]
+
+[[section.line]]
+text = "A no vote means disapproval of the amendment."
+sources = ["ballot-language"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-language"
+highlight = ["means disapproval"]
