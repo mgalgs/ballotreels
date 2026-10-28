@@ -165,7 +165,7 @@ def narration_state(contest: Contest) -> str:
     return CURRENT
 
 
-def unreused_phrases(contest: Contest) -> tuple[NarrationLine, ...]:
+def unreused_phrases(contest: Contest) -> tuple[NarrationLine, ...] | None:
     """The phrases `say` would synthesise afresh when re-narrating the
     current script, each as a NarrationLine whose `text` is the phrase
     (not the whole line): every phrase when there is no narration.wav or
@@ -176,8 +176,12 @@ def unreused_phrases(contest: Contest) -> tuple[NarrationLine, ...]:
     after them are synthesised again, and nothing else is. Assumes the
     narrating host's TTS settings are the ones the sidecar recorded.
     Without videobuilder to split lines the way `say` does, every line is
-    returned whole."""
-    lines = narration_lines(contest)
+    returned whole; None, meaning every line, for a script whose template
+    is unknown (check_template reports it)."""
+    try:
+        lines = narration_lines(contest)
+    except KeyError:
+        return None
     path = contest.path
     cache = []
     if (path / "narration.wav").is_file() and (path / "narration.json").is_file():

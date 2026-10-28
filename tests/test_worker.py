@@ -10,7 +10,9 @@ from pathlib import Path
 
 import ballotreels.site.config as site_config
 from ballotreels.cli import main
+from ballotreels.contest import load_contest
 from ballotreels.index import key_for
+from ballotreels.narration import CURRENT, narration_state
 from ballotreels.pipeline import (STAGES, FakeRunner, HandWrittenScriptWriter,
                                   PipelineError, SubprocessRunner, run_check)
 from ballotreels.queue import hash_for_key
@@ -678,6 +680,25 @@ class CommittedNarrationReusedTest(WorkerTestCase):
                              (self.dest / name).read_bytes(), name)
 
     def test_current_narration_never_calls_tts(self):
+        job, _ = self.deps.queue.create_job(self.prop2_key())
+        runner = NoTTSRunner()
+        self.make_worker(runner=runner).run_once()
+        row = self.deps.queue.get_job(job["id"])
+        self.assertEqual(row["state"], "done", row["error"])
+        self.assertEqual(runner.narrated, [])
+
+    def test_visual_only_edit_never_calls_tts(self):
+        # Montana CI-132's render re-synthesised its yes side after an edit
+        # to an illustration only: what is on screen is not spoken, so the
+        # committed narration stays current and is reused as it is.
+        script = self.dest / "script.toml"
+        script.write_text(script.read_text(encoding="utf-8").replace(
+            'title = "Where General Fund money goes (approximate)"',
+            'title = "Where the General Fund goes (approximate)"'),
+            encoding="utf-8")
+        self.assertIn("Where the General Fund goes",
+                      script.read_text(encoding="utf-8"))
+        self.assertEqual(narration_state(load_contest(self.dest)), CURRENT)
         job, _ = self.deps.queue.create_job(self.prop2_key())
         runner = NoTTSRunner()
         self.make_worker(runner=runner).run_once()
