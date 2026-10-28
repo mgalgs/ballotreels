@@ -1,0 +1,49 @@
+# Contest index for the 2026-11-03 Rhode Island general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). The
+# five are the general obligation bond questions the General Assembly
+# referred in Article 5 of the FY 2027 budget act (Public Laws 2026,
+# chapter 84), in ballot order. Titles pair the designation with the
+# question's short title as the Secretary of State's Voter Information
+# Handbook prints it ("1. Higher Education Facilities" in its table of
+# the bond questions, page 8).
+
+[election]
+id = "ri-2026-11-03"
+state = "ocd-division/country:us/state:ri"
+title = "Rhode Island General Election, November 3, 2026"
+
+[[contest]]
+id = "ri-2026-11-03-question-1"
+kind = "measure"
+division = "ocd-division/country:us/state:ri"
+title = "Question 1: Higher Education Facilities"
+number = "1"
+
+[[contest]]
+id = "ri-2026-11-03-question-2"
+kind = "measure"
+division = "ocd-division/country:us/state:ri"
+title = "Question 2: Housing and Homeownership"
+number = "2"
+
+[[contest]]
+id = "ri-2026-11-03-question-3"
+kind = "measure"
+division = "ocd-division/country:us/state:ri"
+title = "Question 3: Economic Development"
+number = "3"
+
+[[contest]]
+id = "ri-2026-11-03-question-4"
+kind = "measure"
+division = "ocd-division/country:us/state:ri"
+title = "Question 4: Cultural Economy"
+number = "4"
+
+[[contest]]
+id = "ri-2026-11-03-question-5"
+kind = "measure"
+division = "ocd-division/country:us/state:ri"
+title = "Question 5: Green Economy Bonds"
+number = "5"

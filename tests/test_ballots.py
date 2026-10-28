@@ -170,6 +170,14 @@ class BallotTest(unittest.TestCase):
         self.assertEqual(badge(co, "Amendment 81: X", "81"), "AMENDMENT")
         self.assertEqual(badge(co, "Proposition NN: X", "NN"), "PROPOSITION")
 
+    def test_rhode_island_uses_its_handbooks_words(self):
+        ri = BALLOTS["ri"]
+        self.assertEqual((ri.guide, ri.fiscal_label, ri.choices,
+                          ri.card_source_kind),
+                         ("Voter Information Handbook", "Total cost:",
+                          ("Approve", "Reject"), "official-title-summary"))
+        self.assertEqual(badge(ri, "Question 1: X", "1"), "QUESTION")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):

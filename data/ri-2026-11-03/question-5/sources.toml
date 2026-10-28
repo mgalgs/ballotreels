@@ -1,0 +1,74 @@
+# Archived sources for Rhode Island Question 5, 2026-11-03 general election.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+#
+# guide-section.pdf is cut from the Secretary of State's Voter
+# Information Handbook: page 8 (the cost table for all five bond
+# questions and the shared ballot proposition) and pages 14 and 15, Question
+# 5's own (its ballot label, what a vote to approve or reject means,
+# its explanation and purpose, its timetable, useful life and "Total
+# cost:" table). One file backs two sources: the ballot label and its
+# explanation (official-title-summary), and the handbook's cost
+# estimate (official-fiscal-analysis), the only fiscal statement the
+# handbook prints.
+#
+# Rhode Island publishes no official arguments for or against its bond
+# questions, so there is no source of kind official-argument: both side
+# sections say so, citing the handbook, which prints none.
+#
+# The Senate Fiscal Office's article summaries of the FY 2027 budget are
+# deliberately not archived or cited: their Article 5 text was carried
+# over from the Governor's proposal and does not match the act as
+# passed.
+
+[contest]
+id = "ri-2026-11-03-question-5"
+election = "ri-2026-11-03"
+division = "ocd-division/country:us/state:ri"
+kind = "measure"
+title = "Question 5: Green Economy Bonds"
+
+[[source]]
+id = "handbook"
+kind = "official-title-summary"
+publisher = "Rhode Island Secretary of State, Voter Information Handbook: A Guide to State Referenda and Voting Procedures in Rhode Island, General Election November 3, 2026, pages 8, 14 and 15"
+credit = "Rhode Island Voter Information Handbook 2026"
+url = "https://vote.sos.ri.gov/Forms/Elections/Guides/VoterRef26.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "handbook-cost"
+kind = "official-fiscal-analysis"
+publisher = "Rhode Island Secretary of State, Voter Information Handbook 2026, cost of the bond questions and Question 5's \"Total cost:\", pages 8, 14 and 15"
+credit = "Rhode Island Voter Information Handbook 2026"
+url = "https://vote.sos.ri.gov/Forms/Elections/Guides/VoterRef26.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Rhode Island General Assembly, Public Laws 2026, Chapter 084 (H 7127 Substitute A as amended), Article 5, Relating to Capital Development Program"
+credit = "Public Laws 2026, chapter 84, Article 5"
+url = "https://webserver.rilegislature.gov/PublicLaws/law26/law26084-05.htm"
+file = "sources/public-law-2026-ch084-article-05.htm"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "act"
+kind = "official-text"
+publisher = "Rhode Island General Assembly, Public Laws 2026, Chapter 084 (H 7127 Substitute A as amended), enacted June 12, 2026, contents"
+credit = "Public Laws 2026, chapter 84"
+url = "https://webserver.rilegislature.gov/PublicLaws/law26/law26084.htm"
+file = "sources/public-law-2026-ch084-index.htm"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "hfas-capital"
+kind = "official-report"
+publisher = "Rhode Island House Fiscal Advisory Staff, FY 2027 Budget as Enacted, Capital Overview, pages 5 to 8"
+credit = "House Fiscal Advisory Staff, FY 2027 Budget as Enacted"
+url = "https://www.rilegislature.gov/housefiscalreport/2020/FY%202027%20Budget%20as%20Enacted%20-%20Capital%20Overview.pdf"
+file = "sources/hfas-fy2027-capital-overview.pdf"
+retrieved = "2026-10-27"

@@ -1,0 +1,169 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what
+# the question would borrow, and for what; what a bond is and who repays
+# it; how the five bond questions are decided; the two parts of the bond and what each would pay for; the
+# handbook's cost estimate, with its caveat; the sides; what a vote does.
+#
+# The card quotes the Secretary of State's Voter Information Handbook:
+# the ballot label's title, the ballot label's description, its clause before "to be allocated as follows:", since the two projects that follow are printed beside the vote boxes, not run on from it; the act it was passed in
+# (page 8's "Chapter 084 Public Laws 2026"), the total under the
+# question's "Total cost:" table, and the handbook's own "Your vote to
+# “Approve” means" and "Your vote to “Reject” means" lines.
+#
+# Rhode Island publishes no official arguments for or against its bond
+# questions, so both sides are filed = false and each says so once, in
+# the same number of words. The handbook's "Explanation and purpose" is
+# the state's description of the projects, not an argument for them; the
+# change section uses only its amounts and what each would pay for.
+#
+# Scale (STANDARD.md rule 6.5): the handbook compares the borrowing
+# with no budget, so the scale would be the state's general revenue
+# budget for FY 2027. No archived source states that total, so the
+# $50 million and its cost are stated without a scale until one is
+# archived. The House Fiscal Advisory Staff's debt ratios are a
+# different comparison and are not used. Annual debt service is left
+# out: the handbook gives none, nor is a timetable or useful life said.
+# No person the handbook names is named.
+
+contest = "ri-2026-11-03-question-4"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "handbook"
+number = "4"
+title = "4. CULTURAL ECONOMY - $50,000,000"
+origin = "Chapter 084 Public Laws 2026"
+summary = "To provide funding for cultural economy efforts"
+fiscal = "$80,242,500"
+yes = "Your vote to “Approve” means that you support the State issuing $50,000,000 in general obligation bonds for cultural economy efforts."
+no = "Your vote to “Reject” means that you are against the State issuing $50,000,000 in general obligation bonds for cultural economy efforts."
+
+[[section]]
+id = "what"
+heading = "Question 4"
+
+[[section.line]]
+text = "Question 4 would let Rhode Island borrow $50 million for cultural economy efforts."
+sources = ["handbook", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "handbook"
+highlight = ["cultural economy efforts"]
+
+[[section]]
+id = "background"
+heading = "What a bond is"
+
+[[section.line]]
+text = "A bond is a loan, repaid with interest from the state's general revenues."
+sources = ["handbook", "hfas-capital"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section]]
+id = "today"
+heading = "Five questions"
+
+[[section.line]]
+text = "Each of five bond questions is decided separately, by majority vote."
+sources = ["handbook", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What the bond would pay for"
+
+[[section.line]]
+text = "$45 million would build a State History Center in Providence, to display and store State Archives documents."
+sources = ["handbook", "text"]
+
+[section.line.visual]
+kind = "bars"
+title = "Question 4 borrowing, by project"
+source = "handbook"
+unit = "million"
+labels = ["State History Center", "State Preservation Grants"]
+values = [45, 5]
+
+[[section.line]]
+text = "$5 million would fund State Preservation Grants to cities, towns and nonprofits, to preserve museums and heritage sites."
+sources = ["handbook", "text"]
+
+[[section]]
+id = "fiscal"
+heading = "What the handbook says it costs"
+
+[[section.line]]
+text = "The handbook estimates $30,242,500 in interest, a total cost of $80,242,500."
+sources = ["handbook-cost"]
+
+[section.line.visual]
+kind = "bars"
+title = "Estimated cost of Question 4, in dollars"
+source = "handbook-cost"
+unit = ""
+labels = ["Principal", "Interest", "Total cost"]
+values = [50000000, 30242500, 80242500]
+
+[[section.line]]
+text = "Those are only estimates, based on 20-year loans at 5 percent interest."
+sources = ["handbook-cost"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote to approve"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "The handbook includes no official argument for the question."
+sources = ["handbook"]
+
+[section.line.visual]
+kind = "list"
+source = "handbook"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote to reject"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The handbook includes no official argument against the question."
+sources = ["handbook"]
+
+[section.line.visual]
+kind = "list"
+source = "handbook"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "Approve means you support the State issuing these bonds."
+sources = ["handbook"]
+
+[section.line.visual]
+kind = "page"
+source = "handbook"
+highlight = ["you support the State issuing"]
+
+[[section.line]]
+text = "Reject means you are against the State issuing these bonds."
+sources = ["handbook"]
+
+[section.line.visual]
+kind = "page"
+source = "handbook"
+highlight = ["you are against the State issuing"]
