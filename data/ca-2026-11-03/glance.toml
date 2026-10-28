@@ -148,3 +148,12 @@ source = "tax-statement"
 quote = "the bonds are issued and sold is $1,154,254,750."
 amount = 1154254750
 period = "unstated"
+
+# La Mesa-Spring Valley School District Measure AA: the total debt
+# service, as County Counsel's Impartial Analysis gives it (pdftotext
+# interleaves the Tax Rate Statement's sentence with the next column).
+[la-mesa-spring-valley-measure-aa]
+source = "impartial-analysis"
+quote = "The estimated total debt service, including principal and interest, required to be repaid if the bonds are issued and sold is approximately $257,998,000."
+amount = 257998000
+period = "unstated"

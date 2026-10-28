@@ -1,0 +1,76 @@
+# Archived sources for La Mesa-Spring Valley School District Measure AA,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Diego County Registrar of Voters' Voter Information Guide (ballot type
+# 575); "page" is the guide's printed footer number.
+#
+# One guide page prints the ballot label, County Counsel's Impartial
+# Analysis and the Tax Rate Statement; each is its own source.
+
+[contest]
+id = "ca-2026-11-03-la-mesa-spring-valley-measure-aa"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:la_mesa-spring_valley_school_district"
+kind = "measure"
+title = "La Mesa-Spring Valley School District Measure AA: Classroom Repair and Upgrade Bonds"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Voter Information Guide, page SD 575-081: ballot label of Measure AA"
+credit = "Ballot label, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-575.pdf"
+file = "sources/vig575-p83-ballot-label-impartial-analysis-tax-rate-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "County Counsel Impartial Analysis of Measure AA, San Diego County Voter Information Guide, page SD 575-081"
+credit = "Impartial Analysis, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-575.pdf"
+file = "sources/vig575-p83-ballot-label-impartial-analysis-tax-rate-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "La Mesa-Spring Valley School District, Tax Rate Statement for Measure AA, San Diego County Voter Information Guide, page SD 575-081"
+credit = "Tax Rate Statement, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-575.pdf"
+file = "sources/vig575-p83-ballot-label-impartial-analysis-tax-rate-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in favor of Measure AA, and the notice that no argument against was filed, as printed in the San Diego County Voter Information Guide, page SD 575-082"
+credit = "Arguments, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-575.pdf"
+file = "sources/vig575-p84-argument-in-favor-no-argument-against.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure AA, San Diego County Voter Information Guide, pages SD 575-082 to SD 575-084"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-575.pdf"
+file = "sources/vig575-p84-86-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Composite Ballot, General 2026"
+url = "https://www.sdvote.com/content/dam/rov/en/election/facsimile-reference-ballot/english-reference-ballot.pdf"
+file = "sources/composite-ballot-p22.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "legislative-record"
+publisher = "Board of Education of the La Mesa-Spring Valley School District, Resolution No. 25-26-31 (June 16, 2026) and the District cover letter, as posted by the Registrar of Voters"
+url = "https://www.sdvote.com/content/dam/rov/en/election/nov-3-2026-gubernatorial-general-election/la-mesa-spring-valley-school-district.pdf"
+file = "sources/rov-board-resolution-25-26-31-and-cover-letter.pdf"
+retrieved = "2026-10-28"
