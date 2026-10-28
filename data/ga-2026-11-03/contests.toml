@@ -1,0 +1,33 @@
+# Contest index for the 2026-11-03 Georgia general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). Titles
+# pair the designation with the short caption adopted by the
+# Constitutional Amendments Publication Board, as printed in the
+# Secretary of State's booklet of Proposed Constitutional Amendments
+# (its final period dropped).
+
+[election]
+id = "ga-2026-11-03"
+state = "ocd-division/country:us/state:ga"
+title = "Georgia General Election, November 3, 2026"
+
+[[contest]]
+id = "ga-2026-11-03-amendment-1"
+kind = "measure"
+division = "ocd-division/country:us/state:ga"
+title = "Amendment 1: Increases the maximum qualifying acreage for assessment and taxation as bona fide conservation use property"
+number = "1"
+
+[[contest]]
+id = "ga-2026-11-03-amendment-2"
+kind = "measure"
+division = "ocd-division/country:us/state:ga"
+title = "Amendment 2: Provides for the nonpartisan election of all probate court judges"
+number = "2"
+
+[[contest]]
+id = "ga-2026-11-03-amendment-3"
+kind = "measure"
+division = "ocd-division/country:us/state:ga"
+title = "Amendment 3: Authorizes creation of Georgia Next Generation 9-1-1 Fund for 9-1-1 systems expansion, maintenance, and operation"
+number = "3"
