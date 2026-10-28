@@ -1,0 +1,160 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; the height limit today; why it is on the ballot (the state
+# housing department's position and the city's housing plan) and what it
+# needs to pass; what would change; no cost estimate; one line per side;
+# what a vote does.
+#
+# The City's site refused downloads; the guide prints the ballot label,
+# the City Attorney's Impartial Analysis, the argument against and the
+# full text, which cover what the standard needs. The guide prints no
+# fiscal analysis (not a tax measure), so the fiscal line says the guide
+# does not include a cost estimate. The zone is "one residential zone"
+# in the narration: its code ("R-4") reads badly aloud.
+#
+# The guide prints an argument against and no argument in favor: the yes
+# side is filed = false. The guide prints no "no argument was submitted"
+# notice, so the yes line says only that none appears in the guide. The
+# argument against's history (a three-story cap since 1972, the 2023
+# settlement) is its own and unconfirmed by any official record
+# archived, so it is told only as the argument's claim, in its section
+# (STANDARD.md 6.3).
+
+contest = "ca-2026-11-03-coronado-measure-d"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "D"
+title = "CITY OF CORONADO"
+origin = "The City Council of the City of Coronado placed Measure D on the ballot for voter consideration at the November 3, 2026, election."
+summary = "Shall the measure, increasing the permissible height of “multiple-family developments” in the City of Coronado’s R-4 Multiple Family Residential Zone from the existing maximum of 3 stories (with a maximum height of no more than 35 feet) to a maximum of 4 stories (with a maximum height of no more than 42 feet), be adopted?"
+yes = "A “Yes” vote is a vote in favor of Measure D, which is a vote in favor of revising the height limits as stated above."
+no = "“No” vote is a vote against Measure D, which is a vote against revising the height limits as stated above."
+
+[[section]]
+id = "what"
+heading = "Measure D"
+
+[[section.line]]
+text = "City of Coronado Measure D asks voters in the city whether to let multifamily buildings in one residential zone rise to four stories."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["to a maximum of 4 stories"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, multifamily buildings in that zone may be at most three stories and 35 feet tall."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "bars"
+title = "Height limit, in feet"
+source = "guide-page"
+unit = " ft"
+labels = ["Today", "Measure D"]
+values = [35, 42]
+
+[[section.line]]
+text = "The state housing department says that limit holds back the 40 homes per acre the zone allows."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "home-building"
+
+[[section.line]]
+text = "Coronado's housing plan requires the city to put Measure D before voters, and it needs a simple majority to pass."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure D would raise the limit to four stories, and no more than 42 feet."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "amended-page"
+
+[[section.line]]
+text = "The City Attorney says the new limit would meet the state housing department's requirements."
+sources = ["guide-page"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The San Diego County guide does not include a cost estimate for the measure."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument in favor of Measure D appears in the San Diego County Voter Information Guide for this election."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "list"
+source = "guide-page"
+items = ["No argument for was printed"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure D gives away a three-story limit that has protected the village character of Coronado since 1972."
+sources = ["arguments"]
+basis = ["For over fifty-four years, Coronado voters sought to protect the village", "Measure D asks residents to give that protection away.", "Avenue between Second and Eighth Streets. Since 1972, Proposition R has", "capped affected building heights in that zone at three stories."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Gives away a three-story limit set in 1972", "The housing mandate behind it rests on rigged math"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is a vote in favor of revising the height limits."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["in favor of revising"]
+
+[[section.line]]
+text = "A no vote is a vote against revising the height limits."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["against revising"]

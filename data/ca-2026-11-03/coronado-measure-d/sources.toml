@@ -1,0 +1,42 @@
+# Archived sources for City of Coronado Measure D, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Diego County Registrar of Voters' Voter Information Guide (ballot type
+# 318, a Coronado precinct); "page" is the guide's printed footer number.
+#
+# The City's site refused downloads, so every source is the guide's. It
+# prints an argument against and no argument in favor, and no rebuttals.
+
+[contest]
+id = "ca-2026-11-03-coronado-measure-d"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:coronado"
+kind = "measure"
+title = "City of Coronado Measure D: Four-Story Height Limit for Multiple-Family Developments in the R-4 Zone"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Voter Information Guide, page SD 318-074: ballot label and City Attorney Impartial Analysis"
+credit = "City Attorney Impartial Analysis, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-318.pdf"
+file = "sources/vig318-p76-ballot-label-impartial-analysis-argument-against.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument against Measure D, as printed in the San Diego County Voter Information Guide, page SD 318-074 (the guide prints no argument in favor)"
+credit = "Argument against, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-318.pdf"
+file = "sources/vig318-p76-ballot-label-impartial-analysis-argument-against.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure D, San Diego County Voter Information Guide, page SD 318-075"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-318.pdf"
+file = "sources/vig318-p77-full-text.pdf"
+retrieved = "2026-10-28"
