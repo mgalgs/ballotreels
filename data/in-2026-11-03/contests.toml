@@ -1,0 +1,28 @@
+# Contest index for the 2026-11-03 Indiana general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot: the two constitutional amendments, each agreed to by two
+# separately elected General Assemblies. `number` is a measure's ballot
+# designation (a string). The ballot prints "PUBLIC QUESTION 1" and the
+# Indiana Election Division's "2026 Indiana Election Legislation
+# Summary" prints "Public Question #1"; the titles drop the "#" so the
+# designation word stands just before the number (ballots.py), and pair
+# it with the summary's section heading for the amendment.
+
+[election]
+id = "in-2026-11-03"
+state = "ocd-division/country:us/state:in"
+title = "Indiana General Election, November 3, 2026"
+
+[[contest]]
+id = "in-2026-11-03-public-question-1"
+kind = "measure"
+division = "ocd-division/country:us/state:in"
+title = "Public Question 1: Limitations on the Right to Bail"
+number = "1"
+
+[[contest]]
+id = "in-2026-11-03-public-question-2"
+kind = "measure"
+division = "ocd-division/country:us/state:in"
+title = "Public Question 2: Residence for Town and City Court Judges"
+number = "2"
