@@ -256,3 +256,13 @@ quote = "Should the proposed Charter amendment be approved by the voters, in my 
 amount = 450000
 period = "per-year"
 direction = "savings"
+
+# San Francisco Proposition B: the Controller finds no direct cost (B
+# does not require the city to create either body); this is the cost if
+# the city does, over eight years.
+[san-francisco-county-measure-b]
+source = "controller"
+quote = "However, if the City moves forward with establishing a MFC and subsequently a Public Bank, as authorized by the proposed Charter amendment, the costs would be significant, ranging from approximately $310 million to $460 million over an eight-year period"
+amount = 460000000
+period = "over 8 years"
+direction = "cost"
