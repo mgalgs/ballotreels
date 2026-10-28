@@ -107,6 +107,17 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label="Fiscal Note",
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+    # North Dakota's Secretary of State mails every voter "North Dakota
+    # Statewide Ballot Measure Information" (NDCC 16.1-01-18): each
+    # measure's explanation, its YES and NO meanings, a box headed
+    # "FISCAL IMPACT" and the ballot as it will appear, with the choices
+    # "YES" and "NO". Its measures are "Constitutional Measure No. 1" and
+    # "Initiated Constitutional Measure No. 2"; designation() skips the
+    # "No.", so the badge reads MEASURE.
+    "nd": Ballot(guide="North Dakota Statewide Ballot Measure Information",
+                 fiscal_label="FISCAL IMPACT",
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
