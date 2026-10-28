@@ -19,11 +19,17 @@ from .states import legislative_kinds
 
 # Layer names are matched by substring, not equality, since the exact
 # name (e.g. "119th Congressional Districts") changes with the vintage.
+# A school district may be in any of three layers ("Unified School
+# Districts", "Elementary School Districts", "Secondary School
+# Districts"), and an address in both an elementary and a secondary one
+# is in both.
 LAYER_SUBSTRINGS = {
     "cd": "Congressional Districts",
     "sldu": "Legislative Districts - Upper",
     "sldl": "Legislative Districts - Lower",
     "county": "Counties",
+    "place": "Incorporated Places",
+    "school_district": "School Districts",
 }
 
 
@@ -55,10 +61,13 @@ _ABBR_BY_FIPS = {fips: abbr for abbr, fips in STATE_FIPS.items()}
 
 
 def _find_layer(geographies: dict[str, Any], substring: str) -> list | None:
+    """The features of every layer whose name has `substring`, or None
+    if no layer's does."""
+    found = None
     for name, features in geographies.items():
         if substring in name:
-            return features
-    return None
+            found = (found or []) + list(features)
+    return found
 
 
 def _address_state_fips(geographies: dict[str, Any]) -> str | None:
@@ -164,13 +173,16 @@ def lookup_address(address: str, fetch: Callable[[str], str], base_url: str,
         if features is not None:
             entries = []
             for feat in features:
-                # Counties: NAME is "Sacramento County", BASENAME is
-                # "Sacramento", which is what the TIGER shapefile's NAME
-                # (and so the zip path's OCD-ID) uses. NAME is the display
-                # name ("District of Columbia" has no "County").
+                # Counties and places: NAME is "Sacramento County" or
+                # "San Diego city", BASENAME is "Sacramento" or "San
+                # Diego", which is what the TIGER shapefile's NAME (and so
+                # the zip path's OCD-ID) uses; NAME is the shapefile's
+                # NAMELSAD, the display name ("District of Columbia" has
+                # no "County").
+                based = kind in ("county", "place")
                 name = (feat.get("BASENAME") or feat.get("NAME")
-                        if kind == "county" else feat.get("NAME"))
-                display = feat.get("NAME") if kind == "county" else None
+                        if based else feat.get("NAME"))
+                display = feat.get("NAME") if based else None
                 result = ocd_id(kind, feat.get("GEOID", ""), state_abbr, name,
                                 display)
                 if result:

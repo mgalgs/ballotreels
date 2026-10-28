@@ -54,7 +54,7 @@ def iter_dbf(path: Path) -> Iterator[dict[str, Any] | None]:
             o = 1
             for name, ftype, length in fields:
                 raw = rec[o:o + length].decode(
-                    "ascii", errors="replace").strip()
+                    "utf-8", errors="replace").strip()
                 o += length
                 row[name] = int(raw) if ftype == "N" and raw else raw
             yield row

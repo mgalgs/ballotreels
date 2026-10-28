@@ -129,11 +129,16 @@ git-ignored data directory:
     python -m ballotreels geo build --state ca
 
 This downloads Census TIGER/Line shapefiles (congressional, state
-senate, state assembly and county boundaries, plus ZCTA zip-code
+senate, state assembly and county boundaries, incorporated places,
+unified, elementary and secondary school districts, plus ZCTA zip-code
 shapes; each a `.zip` archive, whose `.shp` and `.dbf` it extracts)
 and the ZCTA-to-congressional-district and ZCTA-to-county relationship
 files, then writes `<data-dir>/geo/<state>/`: one simplified GeoJSON file per
-district kind, one per zip outline, and a `zips.json` lookup table. It
+district kind, one per zip outline, and a `zips.json` lookup table.
+Cities and school districts have no relationship file, so their zips
+are measured from the shapes themselves: one covering under 1% of a
+zip is left off it (a boundary sliver), one covering under 99% of it
+is marked `partial`, and `--min-overlap` raises the first bound. It
 is safe and idempotent to re-run: a file already downloaded is not
 re-fetched, and the build only replaces the previous output once it has
 fully succeeded.
@@ -146,7 +151,11 @@ of the zip's land area; default `0`, keep every sliver), `--tolerance`
 and `--url NAME=URL` (repeatable, overrides one download by name, e.g.
 `--url cd.zip=https://...`, for when a Census URL has moved). The names
 are `cd.zip`, `sldu.zip`, `sldl.zip`, `county.zip`, `zcta.zip`,
-`cd_rel.txt`, `county_rel.txt`, `sldu_rel.txt` and `sldl_rel.txt`.
+`place.zip`, `unsd.zip`, `elsd.zip`, `scsd.zip`, `cd_rel.txt`,
+`county_rel.txt`, `sldu_rel.txt` and `sldl_rel.txt`. A state with no
+elementary or secondary school districts has no `elsd.zip` or
+`scsd.zip`: if either fails to download, the build warns and goes on
+without it.
 
 The ZCTA-to-state-legislative-district relationship files
 (`sldu_rel.txt`, `sldl_rel.txt`) default to the 2024-district files

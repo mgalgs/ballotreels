@@ -79,11 +79,11 @@ def write_dbf(path: Path, fields: list[tuple[str, str, int]],
     for rec in records:
         out += b" "
         for name, ftype, length in fields:
-            value = str(rec.get(name, ""))
+            value = str(rec.get(name, "")).encode("utf-8")[:length]
             if ftype == "N":
-                out += value[:length].rjust(length).encode("ascii")
+                out += value.rjust(length)
             else:
-                out += value[:length].ljust(length).encode("ascii")
+                out += value.ljust(length)
     path.write_bytes(bytes(out))
 
 
@@ -93,6 +93,18 @@ def write_shapefile(base_path: Path, fields: list[tuple[str, str, int]],
     base_path.parent.mkdir(parents=True, exist_ok=True)
     write_shp(base_path.with_suffix(".shp"), rings)
     write_dbf(base_path.with_suffix(".dbf"), fields, records)
+
+
+LOCAL_LAYERS = ("place", "unsd", "elsd", "scsd")
+LOCAL_FIELDS = [("GEOID", "C", 10), ("STATEFP", "C", 2), ("NAME", "C", 60),
+                ("NAMELSAD", "C", 80), ("CLASSFP", "C", 2)]
+
+
+def write_no_local(src_dir: Path) -> None:
+    """Empty city and school-district layers, for a fake with no local
+    districts."""
+    for layer in LOCAL_LAYERS:
+        write_shapefile(src_dir / layer, LOCAL_FIELDS, [], [])
 
 
 # A small fake California, shared by every test that needs built geo
@@ -135,6 +147,8 @@ def write_fixture_source(src_dir: Path) -> None:
         [[county]])
 
     # The real ZCTA shapefile names its zip field GEOID20.
+    write_no_local(src_dir)
+
     zip_fields = [("GEOID20", "C", 10)]
     zips = {
         "99901": [(1.0, 1.0), (4.0, 1.0), (4.0, 4.0), (1.0, 4.0), (1.0, 1.0)],
@@ -263,6 +277,7 @@ def write_simple_state_source(src_dir: Path, state: str, zips: list[str],
                     [{"GEOID": fips + "999", "STATEFP": fips,
                       "NAME": county_name,
                       "NAMELSAD": county_namelsad or ""}], [[square]])
+    write_no_local(src_dir)
     rings = [[(1.0 + i, 1.0), (1.5 + i, 1.0), (1.5 + i, 1.5), (1.0 + i, 1.5),
               (1.0 + i, 1.0)] for i in range(len(zips))]
     write_shapefile(src_dir / "zcta", [("GEOID20", "C", 10)],
@@ -302,8 +317,18 @@ def build_simple_state_geo(data_dir: Path, state: str, zips: list[str],
 
 # A fake San Diego, for the local-measure tests: two counties side by
 # side, San Diego (x 0-20) and Imperial (x 20-30), all of it in one
-# congressional and one legislative district of each chamber. Zips:
-# 92101 wholly in San Diego County; 92102 too; 92250 in Imperial.
+# congressional and one legislative district of each chamber.
+#
+# Cities: San Diego (x 0-10), El Cajon (x 10-15); Spring Valley (x
+# 15-17) is a census-designated place, not a city. School districts: San
+# Diego Unified (x 0-10); east of it, Cajon Valley Union (elementary) and
+# Grossmont Union High (secondary) over the same ground (x 10-20).
+#
+# Zips: 92101 wholly in San Diego city and Unified; 92102 half San
+# Diego, half El Cajon, and so in both cities' and all three school
+# districts' (each partly); 92103 half El Cajon, half unincorporated
+# (El Cajon partly), wholly in Cajon Valley and Grossmont; 92250 in
+# Imperial County, in no city or district.
 LOCAL_COUNTIES = {"06073": "San Diego", "06025": "Imperial"}
 LOCAL_ZIPS = {
     "92101": [(1.0, 1.0), (4.0, 1.0), (4.0, 4.0), (1.0, 4.0), (1.0, 1.0)],
@@ -319,6 +344,33 @@ _LOCAL_COUNTY_OF = {"92101": "06073", "92102": "06073", "92103": "06073",
 
 def _box(x0: float, y0: float, x1: float, y1: float) -> Ring:
     return [(x0, y0), (x1, y0), (x1, y1), (x0, y1), (x0, y0)]
+
+
+# layer -> (GEOID, NAME, NAMELSAD, CLASSFP, (x0, y0, x1, y1))
+LOCAL_DISTRICTS = {
+    "place": [
+        ("0666000", "San Diego", "San Diego city", "C1",
+         (0.0, 0.0, 10.0, 10.0)),
+        ("0621712", "El Cajon", "El Cajon city", "C1",
+         (10.0, 0.0, 15.0, 10.0)),
+        ("0673696", "Spring Valley", "Spring Valley CDP", "U1",
+         (15.0, 0.0, 17.0, 10.0)),
+    ],
+    "unsd": [
+        ("0634320", "San Diego Unified School District", "", "",
+         (0.0, 0.0, 10.0, 10.0)),
+        ("0699999", "School District Not Defined", "", "",
+         (20.0, 0.0, 30.0, 10.0)),
+    ],
+    "elsd": [
+        ("0606540", "Cajon Valley Union School District", "", "",
+         (10.0, 0.0, 20.0, 10.0)),
+    ],
+    "scsd": [
+        ("0616050", "Grossmont Union High School District", "", "",
+         (10.0, 0.0, 20.0, 10.0)),
+    ],
+}
 
 
 def write_local_source(src_dir: Path) -> None:
@@ -338,6 +390,13 @@ def write_local_source(src_dir: Path) -> None:
           "NAMELSAD": f"{name} County"}
          for geoid, name in LOCAL_COUNTIES.items()],
         [[_box(0.0, 0.0, 20.0, 10.0)], [_box(20.0, 0.0, 30.0, 10.0)]])
+    for layer, rows in LOCAL_DISTRICTS.items():
+        write_shapefile(
+            src_dir / layer, LOCAL_FIELDS,
+            [{"GEOID": geoid, "STATEFP": "06", "NAME": name,
+              "NAMELSAD": namelsad, "CLASSFP": classfp}
+             for geoid, name, namelsad, classfp, _ in rows],
+            [[_box(*box)] for *_, box in rows])
     write_shapefile(src_dir / "zcta", [("GEOID20", "C", 10)],
                     [{"GEOID20": z} for z in LOCAL_ZIPS],
                     [[ring] for ring in LOCAL_ZIPS.values()])

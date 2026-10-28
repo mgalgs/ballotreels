@@ -16,12 +16,32 @@ import zipfile
 from pathlib import Path
 from typing import Callable
 
-from .lookup import ocd_id
+from .lookup import LOCAL_KINDS, PARTIAL, ocd_id
 from .shapefile import iter_shapefile
-from .shapes import simplify_ring
+from .shapes import (overlap_length, point_in_polygon, row_intervals,
+                     simplify_ring)
 from .states import legislative_kinds
 
+# The district kinds whose zips come from a Census relationship file.
 KINDS = ("cd", "sldu", "sldl", "county")
+
+# The local kinds (ballotreels.geo.lookup.LOCAL_KINDS) have no ZCTA
+# relationship file, so their zips are found from the shapes themselves:
+# each is the union of these TIGER layers. A place is an incorporated
+# city or town (a census-designated place has no government, and so no
+# measures); a school district is unified, elementary or secondary.
+LOCAL_LAYERS = {"place": ("place",),
+                "school_district": ("unsd", "elsd", "scsd")}
+
+# The spacing, in degrees of latitude, of the lines a zip's overlap with
+# a local district is measured along (about 220 m).
+SCAN_STEP = 0.002
+# A local district covering less than this share of a zip is left off
+# it: the zip and district outlines are drawn from different years'
+# boundaries, so where they mean the same line they can differ by a
+# sliver. One covering more than 1 - SLIVER of it covers all of it; any
+# other is `partial`.
+SLIVER = 0.01
 
 # U.S. state and D.C. FIPS codes, abbreviation -> 2-digit code.
 STATE_FIPS = {
@@ -42,7 +62,8 @@ STATE_FIPS = {
 TIGER_BASE = "https://www2.census.gov/geo/tiger/TIGER2024"
 REL_BASE = "https://www2.census.gov/geo/docs/maps-data/data/rel2020"
 
-SHAPE_ARCHIVES = ("cd", "sldu", "sldl", "county", "zcta")
+SHAPE_ARCHIVES = ("cd", "sldu", "sldl", "county", "zcta", "place", "unsd",
+                  "elsd", "scsd")
 
 # The ZCTA-to-state-legislative-district relationship files (2024
 # districts, 2020 ZCTAs, from the 2020 CD/SLD record layout) could not be
@@ -51,6 +72,11 @@ SHAPE_ARCHIVES = ("cd", "sldu", "sldl", "county", "zcta")
 # district of that kind (the address lookup still resolves it). A URL
 # given with --url must work.
 OPTIONAL_DOWNLOADS = ("sldu_rel.txt", "sldl_rel.txt")
+
+# A state whose every school district is unified (Hawaii's one, Nevada's
+# counties) has no elementary or secondary layer to download: without
+# one, the build warns and goes on.
+OPTIONAL_SHAPES = ("elsd.zip", "scsd.zip")
 
 
 def kinds_for(state_abbr: str) -> tuple[str, ...]:
@@ -71,6 +97,10 @@ def census_urls(state_abbr: str) -> dict[str, str]:
         "sldl.zip": f"{TIGER_BASE}/SLDL/tl_2024_{fips}_sldl.zip",
         "county.zip": f"{TIGER_BASE}/COUNTY/tl_2024_us_county.zip",
         "zcta.zip": f"{TIGER_BASE}/ZCTA520/tl_2024_us_zcta520.zip",
+        "place.zip": f"{TIGER_BASE}/PLACE/tl_2024_{fips}_place.zip",
+        "unsd.zip": f"{TIGER_BASE}/UNSD/tl_2024_{fips}_unsd.zip",
+        "elsd.zip": f"{TIGER_BASE}/ELSD/tl_2024_{fips}_elsd.zip",
+        "scsd.zip": f"{TIGER_BASE}/SCSD/tl_2024_{fips}_scsd.zip",
         "cd_rel.txt": f"{REL_BASE}/cd-sld/tab20_cd11820_zcta520_st{fips}.txt",
         "county_rel.txt":
             f"{REL_BASE}/zcta520/tab20_zcta520_county20_natl.txt",
@@ -80,8 +110,9 @@ def census_urls(state_abbr: str) -> dict[str, str]:
             f"{REL_BASE}/cd-sld/tab20_sldl202420_zcta520_st{fips}.txt",
     }
     # "sldu.zip" and "sldu_rel.txt" both belong to kind "sldu".
+    layers = ("zcta",) + tuple(l for ls in LOCAL_LAYERS.values() for l in ls)
     return {name: url for name, url in urls.items()
-            if name.split(".")[0].removesuffix("_rel") in kinds + ("zcta",)}
+            if name.split(".")[0].removesuffix("_rel") in kinds + layers}
 
 
 class BuildError(Exception):
@@ -241,7 +272,13 @@ def build(data_dir: str | Path, state_abbr: str,
     for name, url in resolved_urls.items():
         kind = name[:-len(".zip")] if name.endswith(".zip") else None
         if kind in SHAPE_ARCHIVES:
-            _fetch_shapes(kind, url, raw_dir, fetch)
+            try:
+                _fetch_shapes(kind, url, raw_dir, fetch)
+            except BuildError as e:
+                if name not in OPTIONAL_SHAPES or name in (urls or {}):
+                    raise
+                warnings.append(f"{e}; the state has no {kind} school "
+                                f"districts in this build")
             continue
         try:
             _download(name, url, raw_dir / name, fetch)
@@ -288,6 +325,71 @@ def _zcta_of(attrs: dict) -> str:
 
 def _shp_base(raw_dir: Path, name: str) -> Path:
     return raw_dir / name
+
+
+def _incorporated(attrs: dict) -> bool:
+    """A TIGER place that is an incorporated city or town (class code
+    C*), not a census-designated place (U*)."""
+    return str(attrs.get("CLASSFP", "")).startswith("C")
+
+
+class _ZipScan:
+    """The zips' outlines as row intervals (ballotreels.geo.shapes.
+    row_intervals), so a local district's share of each zip can be
+    measured without keeping every zip's full outline in memory."""
+
+    def __init__(self, step: float = SCAN_STEP):
+        self.step = step
+        # row -> [(x0, x1, zip)], sorted once all zips are in
+        self.rows: dict[int, list[tuple[float, float, str]]] = {}
+        self.area: dict[str, float] = {}
+        # zips too small for any line to cross: a point inside each
+        self.points: dict[str, tuple[float, float]] = {}
+        self._sorted = False
+
+    def add(self, zip_code: str, rings, simplified) -> None:
+        rows = row_intervals(rings, self.step)
+        area = sum(b - a for ivs in rows.values() for a, b in ivs)
+        if area > 0:
+            self.area[zip_code] = area
+            for k, ivs in rows.items():
+                self.rows.setdefault(k, []).extend(
+                    (a, b, zip_code) for a, b in ivs)
+        elif simplified or rings:
+            ring = (simplified or rings)[0]
+            xs = [p[0] for p in ring]
+            ys = [p[1] for p in ring]
+            self.points[zip_code] = ((min(xs) + max(xs)) / 2,
+                                     (min(ys) + max(ys)) / 2)
+        self._sorted = False
+
+    def overlaps(self, rings, simplified) -> dict[str, float]:
+        """zip -> the share of its area inside the shape `rings`
+        (`simplified`: the same shape, for the zips too small to
+        measure, which count as wholly in it when their point is)."""
+        if not self._sorted:
+            for ivs in self.rows.values():
+                ivs.sort()
+            self._sorted = True
+        shared: dict[str, float] = {}
+        for k, mine in row_intervals(rings, self.step).items():
+            theirs = self.rows.get(k)
+            if not theirs:
+                continue
+            by_zip: dict[str, list[tuple[float, float]]] = {}
+            lo, hi = mine[0][0], mine[-1][1]
+            for a, b, z in theirs:
+                if b > lo and a < hi:
+                    by_zip.setdefault(z, []).append((a, b))
+            for z, ivs in by_zip.items():
+                length = overlap_length(mine, ivs)
+                if length > 0:
+                    shared[z] = shared.get(z, 0.0) + length
+        out = {z: length / self.area[z] for z, length in shared.items()}
+        for z, point in self.points.items():
+            if point_in_polygon(point, simplified or rings):
+                out[z] = 1.0
+        return out
 
 
 def _build_into(tmp_dir: Path, raw_dir: Path, fips: str, state_abbr: str,
@@ -345,11 +447,13 @@ def _build_into(tmp_dir: Path, raw_dir: Path, fips: str, state_abbr: str,
             if division not in bucket:
                 bucket.append(division)
 
+    zip_scan = _ZipScan()
     zcta_records = iter_shapefile(_shp_base(raw_dir, "zcta"),
                                   keep=lambda a: _zcta_of(a) in relevant_zips)
     for rec in zcta_records:
         z = _zcta_of(rec.attrs)
         rings = _simplify_rings(rec.rings, tolerance)
+        zip_scan.add(z, rec.rings, rings)
         if not rings:
             continue
         feature = {
@@ -360,6 +464,46 @@ def _build_into(tmp_dir: Path, raw_dir: Path, fips: str, state_abbr: str,
         }
         (zcta_dir / f"{z}.geojson").write_text(
             json.dumps(feature), encoding="utf-8")
+
+    for kind in LOCAL_KINDS:
+        features = []
+        for layer in LOCAL_LAYERS[kind]:
+            if not (raw_dir / f"{layer}.shp").exists():
+                continue  # an optional one (OPTIONAL_SHAPES) not supplied
+            records = iter_shapefile(
+                _shp_base(raw_dir, layer),
+                keep=lambda a: a.get("STATEFP") == fips and (
+                    kind != "place" or _incorporated(a)))
+            for rec in records:
+                result = ocd_id(kind, rec.attrs.get("GEOID", ""), state_abbr,
+                                rec.attrs.get("NAME"),
+                                rec.attrs.get("NAMELSAD") or None)
+                if result is None:
+                    continue
+                division, display = result
+                rings = _simplify_rings(rec.rings, tolerance)
+                for z, share in zip_scan.overlaps(rec.rings, rings).items():
+                    if share < max(min_overlap, SLIVER):
+                        continue
+                    entry = zip_kinds.setdefault(z, {})
+                    bucket = entry.setdefault(kind, [])
+                    if division not in bucket:
+                        bucket.append(division)
+                    if share <= 1 - SLIVER:
+                        entry.setdefault(PARTIAL, []).append(division)
+                if not rings:
+                    continue
+                features.append({
+                    "type": "Feature",
+                    "properties": {"ocd_id": division, "name": display,
+                                   "kind": kind},
+                    "geometry": {"type": "Polygon",
+                                 "coordinates": [[list(p) for p in r]
+                                                 for r in rings]},
+                })
+        (tmp_dir / f"{kind}.geojson").write_text(
+            json.dumps({"type": "FeatureCollection", "features": features}),
+            encoding="utf-8")
 
     state_division = f"ocd-division/country:us/state:{state_abbr}"
     zips_doc = {}
