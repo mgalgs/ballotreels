@@ -248,3 +248,12 @@ quote = "it would significantly increase the cost of government by approximately
 amount = 9800000
 period = "one-time"
 direction = "cost"
+
+# San Francisco Proposition H: the Controller's Statement's yearly
+# revenue estimate.
+[san-francisco-county-measure-h]
+source = "controller"
+quote = "it would generate approximately $177 million annually for Muni transit service starting in Fiscal Year (FY) 2027-2028"
+amount = 177000000
+period = "per-year"
+direction = "revenue-gain"
