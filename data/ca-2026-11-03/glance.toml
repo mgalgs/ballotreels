@@ -186,3 +186,55 @@ source = "impartial-analysis"
 quote = "The estimated total debt service, including principal and interest, required to be repaid if the bonds are issued and sold is approximately $1,246,250,216."
 amount = 1246250216
 period = "unstated"
+
+# Ramona Municipal Water District Measure P: not a tax measure; the
+# guide prints no fiscal statement.
+[ramona-water-measure-p]
+source = "guide-page"
+status = "none-printed"
+
+# Jamul-Dulzura Union School District Measure H: the Tax Rate
+# Statement's total debt service (the bonds are $18,000,000).
+[jamul-dulzura-measure-h]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $43,170,000."
+amount = 43170000
+period = "unstated"
+
+# Mountain Empire Unified School District Measure L: the Tax Information
+# Statement's total debt service (the bonds are $23,000,000).
+[mountain-empire-measure-l]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all of the bonds are issued and sold is approximately $47,978,702."
+amount = 47978702
+period = "unstated"
+
+# Julian Union High School District Measure J: the total debt service
+# (the bonds are $9,000,000). pdftotext interleaves both of the page's
+# whole sentences with the next column, so the quote is the part of
+# County Counsel's Impartial Analysis's sentence that reads unbroken.
+[julian-high-measure-j]
+source = "guide-page"
+quote = "to be repaid if the bonds are issued and sold is approximately $18,215,253."
+amount = 18215253
+period = "unstated"
+
+# Pala Mesa Road Zone Measure T: the guide prints no tax rate statement;
+# the one estimate is County Counsel's Impartial Analysis's first-year
+# revenue. It replaces an assessment the guide does not size, so no
+# direction is given.
+[pala-mesa-road-zone-measure-t]
+source = "guide-page"
+quote = "Total estimated revenue derived from the special tax from the 305 developed and 40 undeveloped parcels currently in the Permanent Road Division for the first fiscal year is $580,450."
+amount = 580450
+period = "per-year"
+
+# Harris Annex Road Zone Measure Q: the guide prints no tax rate
+# statement; the one estimate is County Counsel's Impartial Analysis's
+# first-year revenue. It replaces an assessment the guide does not size,
+# so no direction is given.
+[harris-annex-road-zone-measure-q]
+source = "guide-page"
+quote = "Total estimated revenue derived from the special tax from the 53 developed and 3 undeveloped parcels currently in the Permanent Road Division for the first fiscal year is $54,125."
+amount = 54125
+period = "per-year"

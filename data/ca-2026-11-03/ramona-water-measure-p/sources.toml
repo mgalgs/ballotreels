@@ -1,0 +1,51 @@
+# Archived sources for Ramona Municipal Water District Measure P,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's page is cut from the San
+# Diego County Registrar of Voters' Voter Information Guide (ballot type
+# 389, a Ramona precinct); "page" is the guide's printed footer number.
+#
+# A special district: the division is the county, and `voters` names who
+# votes on it (docs/SCRIPT-FORMAT.md).
+
+[contest]
+id = "ca-2026-11-03-ramona-water-measure-p"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:san_diego"
+kind = "measure"
+title = "Ramona Municipal Water District Measure P: Amending Proposition NN's Project Spending and Debt Limits"
+voters = "the Ramona Municipal Water District"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Voter Information Guide (ballot type 389), page SD 389-073: ballot label and District Counsel Impartial Analysis"
+credit = "District Counsel Impartial Analysis, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-389.pdf"
+file = "sources/vig389-p75-ballot-label-impartial-analysis-argument-in-favor.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure P, as printed in the San Diego County Voter Information Guide (ballot type 389), page SD 389-073, with the notice that no argument against was filed"
+credit = "Argument in favor, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-389.pdf"
+file = "sources/vig389-p75-ballot-label-impartial-analysis-argument-in-favor.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Ramona Municipal Water District, Board of Directors Resolution No. 26-1634, with Exhibit A, Full Text of Ballot Measure (amended Ordinance No. 108), as filed with the San Diego County Registrar of Voters"
+url = "https://www.sdvote.com/content/dam/rov/en/election/nov-3-2026-gubernatorial-general-election/ramona-municipal-water-district.pdf"
+file = "sources/rov-board-resolution-26-1634-with-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Composite Ballot, General 2026, page 23"
+url = "https://www.sdvote.com/content/dam/rov/en/election/facsimile-reference-ballot/english-reference-ballot.pdf"
+file = "sources/composite-ballot-p23.pdf"
+retrieved = "2026-10-28"

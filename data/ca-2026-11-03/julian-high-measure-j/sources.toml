@@ -1,0 +1,64 @@
+# Archived sources for Julian Union High School District Measure J,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Diego County Registrar of Voters' Voter Information Guide (ballot type
+# 480, a Julian precinct); "page" is the guide's printed footer number.
+
+[contest]
+id = "ca-2026-11-03-julian-high-measure-j"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:julian_union_high_school_district"
+kind = "measure"
+title = "Julian Union High School District Measure J: $9,000,000 in School Facilities Bonds"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Voter Information Guide (ballot type 480), page SD 480-072: ballot label and County Counsel Impartial Analysis"
+credit = "County Counsel Impartial Analysis, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-480.pdf"
+file = "sources/vig480-p74-ballot-label-impartial-analysis-tax-rate-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Tax Rate Statement, Julian Union High School District, San Diego County Voter Information Guide (ballot type 480), page SD 480-072"
+credit = "Tax Rate Statement, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-480.pdf"
+file = "sources/vig480-p74-ballot-label-impartial-analysis-tax-rate-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure J, as printed in the San Diego County Voter Information Guide (ballot type 480), page SD 480-073, with the notice that no argument against was filed"
+credit = "Argument in favor, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-480.pdf"
+file = "sources/vig480-p75-argument-in-favor-no-argument-against.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure J, San Diego County Voter Information Guide (ballot type 480), pages SD 480-073 to SD 480-075"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-480.pdf"
+file = "sources/vig480-p75-77-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Julian Union High School District, Board of Education Resolution No. 25-26-11, with cover letter and appendices, as filed with the San Diego County Registrar of Voters"
+url = "https://www.sdvote.com/content/dam/rov/en/election/nov-3-2026-gubernatorial-general-election/julian-union-high-school-district.pdf"
+file = "sources/rov-board-resolution-25-26-11-and-cover-letter.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Composite Ballot, General 2026, page 22"
+url = "https://www.sdvote.com/content/dam/rov/en/election/facsimile-reference-ballot/english-reference-ballot.pdf"
+file = "sources/composite-ballot-p22.pdf"
+retrieved = "2026-10-28"

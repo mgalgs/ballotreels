@@ -1,0 +1,64 @@
+# Archived sources for Mountain Empire Unified School District Measure L,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Diego County Registrar of Voters' Voter Information Guide (ballot type
+# 001); "page" is the guide's printed footer number.
+
+[contest]
+id = "ca-2026-11-03-mountain-empire-measure-l"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:mountain_empire_unified_school_district"
+kind = "measure"
+title = "Mountain Empire Unified School District Measure L: $23,000,000 in Bonds for Mountain Empire High School"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Voter Information Guide (ballot type 001), page SD 001-077: ballot label and County Counsel Impartial Analysis"
+credit = "County Counsel Impartial Analysis, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-001.pdf"
+file = "sources/vig001-p79-ballot-label-impartial-analysis-tax-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Tax Information Statement, Mountain Empire Unified School District, San Diego County Voter Information Guide (ballot type 001), page SD 001-077"
+credit = "Tax Information Statement, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-001.pdf"
+file = "sources/vig001-p79-ballot-label-impartial-analysis-tax-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure L, as printed in the San Diego County Voter Information Guide (ballot type 001), page SD 001-078, with the notice that no argument against was filed"
+credit = "Argument in favor, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-001.pdf"
+file = "sources/vig001-p80-argument-in-favor-no-argument-against.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure L, Mountain Empire Unified School District School Safety, Renovation and Construction Measure, San Diego County Voter Information Guide (ballot type 001), pages SD 001-078 to SD 001-081"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-001.pdf"
+file = "sources/vig001-p80-83-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Mountain Empire Unified School District, Board of Education Resolution No. 25/26-041, with cover letter and exhibits, as filed with the San Diego County Registrar of Voters"
+url = "https://www.sdvote.com/content/dam/rov/en/election/nov-3-2026-gubernatorial-general-election/mountain-empire-unified-school-district.pdf"
+file = "sources/rov-board-resolution-25-26-041-and-cover-letter.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Composite Ballot, General 2026, page 22"
+url = "https://www.sdvote.com/content/dam/rov/en/election/facsimile-reference-ballot/english-reference-ballot.pdf"
+file = "sources/composite-ballot-p22.pdf"
+retrieved = "2026-10-28"

@@ -71,6 +71,18 @@ BALLOTS: dict[str, Ballot] = {
                          "San Diego County Voter Information Guide",
                      "ca-2026-11-03-grossmont-cuyamaca-measure-g":
                          "San Diego County Voter Information Guide",
+                     "ca-2026-11-03-ramona-water-measure-p":
+                         "San Diego County Voter Information Guide",
+                     "ca-2026-11-03-jamul-dulzura-measure-h":
+                         "San Diego County Voter Information Guide",
+                     "ca-2026-11-03-mountain-empire-measure-l":
+                         "San Diego County Voter Information Guide",
+                     "ca-2026-11-03-julian-high-measure-j":
+                         "San Diego County Voter Information Guide",
+                     "ca-2026-11-03-pala-mesa-road-zone-measure-t":
+                         "San Diego County Voter Information Guide",
+                     "ca-2026-11-03-harris-annex-road-zone-measure-q":
+                         "San Diego County Voter Information Guide",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",

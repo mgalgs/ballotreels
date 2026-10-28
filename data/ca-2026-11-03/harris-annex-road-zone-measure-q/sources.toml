@@ -1,0 +1,47 @@
+# Archived sources for Measure Q of Permanent Road Division No. 1000,
+# Zone No. 9B – Harris Annex, 2026-11-03 general election
+# (sources/sources.md). Every id here may be cited by script.toml. `kind`
+# must be one the standard allows (docs/STANDARD.md, section 1). The
+# guide's page is cut from the San Diego County Registrar of Voters' Voter
+# Information Guide (ballot type 185); "page" is the guide's printed
+# footer number.
+#
+# A county road zone is a special district: the division is the county,
+# and `voters` names the zone as the Board of Supervisors' resolution and
+# the ballot do (docs/SCRIPT-FORMAT.md). The ordinance (the resolution's
+# Exhibit A) and the special tax report were not archived; the ballot
+# question, County Counsel's Impartial Analysis and the notice that no
+# arguments were filed cover what the script needs.
+
+[contest]
+id = "ca-2026-11-03-harris-annex-road-zone-measure-q"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:san_diego"
+kind = "measure"
+title = "Harris Annex Road Zone Measure Q: Special Tax for Road Maintenance, Replacing the Existing Assessment"
+voters = "Permanent Road Division No. 1000, Zone No. 9B – Harris Annex"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Voter Information Guide (ballot type 185), page SD 185-073: ballot label, County Counsel Impartial Analysis and notice that no arguments were filed"
+credit = "County Counsel Impartial Analysis, San Diego County Voter Information Guide"
+url = "https://www.sdvote.com/content/dam/rov/en/sb/SB-ENG-185.pdf"
+file = "sources/vig185-p75-ballot-label-impartial-analysis-no-arguments.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "County of San Diego, Board of Supervisors Resolution No. 26-071, Calling for a Special Election within Permanent Road Division No. 1000, Zone No. 9B – Harris Annex, June 24, 2026, as filed with the San Diego County Registrar of Voters (without its Exhibit A)"
+url = "https://www.sdvote.com/content/dam/rov/en/election/nov-3-2026-gubernatorial-general-election/harris-annex.pdf"
+file = "sources/rov-board-of-supervisors-resolution-26-071.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "San Diego County Registrar of Voters, Composite Ballot, General 2026, page 23"
+url = "https://www.sdvote.com/content/dam/rov/en/election/facsimile-reference-ballot/english-reference-ballot.pdf"
+file = "sources/composite-ballot-p23.pdf"
+retrieved = "2026-10-28"
