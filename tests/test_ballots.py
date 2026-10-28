@@ -122,6 +122,18 @@ class BallotTest(unittest.TestCase):
                           ("Yes", "No"), "official-title-summary"))
         self.assertEqual(badge(ma, "Question 1: X", "1"), "QUESTION")
 
+    def test_north_dakota_uses_its_guides_words(self):
+        nd = BALLOTS["nd"]
+        self.assertEqual((nd.guide, nd.fiscal_label, nd.choices,
+                          nd.card_source_kind),
+                         ("North Dakota Statewide Ballot Measure Information",
+                          "FISCAL IMPACT", ("Yes", "No"),
+                          "official-title-summary"))
+        self.assertEqual(badge(nd, "Constitutional Measure No. 1: X", "1"),
+                         "MEASURE")
+        self.assertEqual(badge(nd, "Initiated Constitutional Measure No. 2: X",
+                               "2"), "MEASURE")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):

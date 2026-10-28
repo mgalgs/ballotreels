@@ -1,0 +1,26 @@
+# Contest index for the 2026-11-03 North Dakota general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). Titles
+# pair the designation as the ballot prints it with the measure's
+# heading in the Secretary of State's "North Dakota Statewide Ballot
+# Measure Information", set in title case (the guide prints it in
+# capitals).
+
+[election]
+id = "nd-2026-11-03"
+state = "ocd-division/country:us/state:nd"
+title = "North Dakota General Election, November 3, 2026"
+
+[[contest]]
+id = "nd-2026-11-03-measure-1"
+kind = "measure"
+division = "ocd-division/country:us/state:nd"
+title = "Constitutional Measure No. 1: Seeks to Increase the Percentage of Yes Votes Needed to Change the Constitution"
+number = "1"
+
+[[contest]]
+id = "nd-2026-11-03-measure-2"
+kind = "measure"
+division = "ocd-division/country:us/state:nd"
+title = "Initiated Constitutional Measure No. 2: Seeks to Provide Meals to Students Through a State Funded Source"
+number = "2"

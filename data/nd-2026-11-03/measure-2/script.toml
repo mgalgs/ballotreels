@@ -1,0 +1,164 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; how free meals work today; which schools would serve meals
+# at no cost, and who would pay; what the ballot language says it costs;
+# the two sides; what a vote does.
+#
+# The card quotes the Secretary of State's "North Dakota Statewide
+# Ballot Measure Information": the measure's heading, its "Placed on the
+# ballot by" bullet, the ballot's explanation as the guide prints it
+# (the guide's own explanation runs in two columns that pdftotext
+# interleaves, so it cannot be quoted verbatim), and the short YES and
+# NO lines beside the ballot. Its fiscal quote is the ballot's fiscal
+# sentence as the guide prints it: the guide's "FISCAL IMPACT" box
+# states the same estimate in another form ($124 million to $134 million
+# for meals plus $300,000 a biennium for administration, its "2027-2029"
+# split across a line that pdftotext joins), and the script uses only
+# the ballot's form, never the two together.
+#
+# Scale (rule 6.5): no archived source states North Dakota's general fund
+# appropriations for the 2027-29 biennium, so the estimate is stated
+# without a share; the total is left open for the host to archive.
+#
+# North Dakota publishes no official arguments for or against a measure;
+# the guide's "What your vote means" is the Secretary of State's neutral
+# description, not an argument. Both sides are filed = false and each
+# says so once, in the same number of words. No person is named.
+
+contest = "nd-2026-11-03-measure-2"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide"
+number = "2"
+title = "SEEKS TO PROVIDE MEALS TO STUDENTS THROUGH A STATE FUNDED SOURCE"
+origin = "Placed on the ballot by petition circulated by a sponsoring committee"
+summary = "This initiated measure amendment would amend and add a new section to article VIII of the North Dakota Constitution. It would mandate all public school districts, public schools, and public charter schools to provide one breakfast and one lunch each school day to enrolled students at no cost to the student, parent, or guardians. It would allow nonpublic schools, Bureau of Indian Education schools, and other tribal schools the option to provide the same. It would require the State of North Dakota to reimburse school districts and schools at one hundred percent of the current rates used by the state for free meals and the rate shall be adjusted annually for inflation. It would require the legislative assembly to identify a source of funds for reimbursement and if a source of funds is unable to be identified, reimbursement funds would be appropriated from the legacy earnings fund. This amendment would supersede any other part of the constitution that conflicts with it."
+fiscal = "The estimated fiscal impact of this measure is a $124.3 million to $134.3 million increase in ongoing biennial expenditures for the 2027-2029 biennium and will be adjusted for inflation every year after that."
+yes = "Means you support dedicating state funding to provide one breakfast and one lunch each school day to students in participating schools."
+no = "Means you do not support the state funding for student meals beyond the current free and reduced meal program."
+
+[[section]]
+id = "what"
+heading = "Measure 2"
+
+[[section.line]]
+text = "Measure 2 is about free school meals."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["PROVIDE MEALS TO STUDENTS"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, students apply for federal free and reduced meals and must meet income requirements."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-meal-tray"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Public schools would have to serve every student breakfast and lunch at no cost."
+sources = ["guide", "ballot-language", "analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["one breakfast and one lunch each school day to enrolled students at no cost"]
+
+[[section.line]]
+text = "Private and tribal schools could choose to take part."
+sources = ["guide", "ballot-language"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["the option to provide the same"]
+
+[[section.line]]
+text = "The state would pay what federal funding does not, from a source the Legislature names or else Legacy Fund earnings."
+sources = ["guide", "fiscal-report"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["appropriated from the legacy earnings fund"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The ballot language estimates $124.3 million to $134.3 million for the 2027 to 2029 two-year budget, adjusted yearly for inflation after that."
+sources = ["ballot-language", "analysis", "guide"]
+
+[section.line.visual]
+kind = "bars"
+title = "Estimated cost of Measure 2, 2027 to 2029, dollars"
+source = "ballot-language"
+unit = "million"
+labels = ["Low end", "High end"]
+values = [124.3, 134.3]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "North Dakota's guide includes no official argument for the measure."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "list"
+source = "guide"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "North Dakota's guide includes no official argument against the measure."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "list"
+source = "guide"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means you support state funding for school breakfast and lunch."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["dedicating state funding"]
+
+[[section.line]]
+text = "A no vote means you do not support state meal funding beyond the current free and reduced meal program."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "page"
+source = "guide"
+highlight = ["beyond the current free and reduced meal program"]
