@@ -5,6 +5,14 @@
 # point per side; what a vote does. The school-funding and spending-limit
 # exemptions and the retirement-account rules are left to the sides:
 # opponents argue from them (rule 6.3); the card shows the exemptions.
+#
+# Each side names one person, in its own line, in the same form of words
+# (STANDARD.md section 9): for, the measure's official proponent, as the
+# Secretary of State's qualification notice and the amended filing name
+# her (rule 9.3 ranks a proponent above an argument's signers); against,
+# the first signer of the argument against, as the guide prints it, with
+# no title or employer. The elected officials the arguments quote or list
+# have no record of their own position on this measure, so none is named.
 
 contest = "ca-2026-11-03-prop-40"
 template = "measure"
@@ -111,8 +119,10 @@ heading = "Why some vote yes"
 side = "yes"
 
 [[section.line]]
-text = "Supporters say Proposition 40 would tax billionaires to replace federal health care cuts."
-sources = ["arguments"]
+text = "Supporters, including Suzanne Jimenez, the measure's official proponent, say Proposition 40 would tax billionaires to replace federal health care cuts."
+sources = ["arguments", "qualification-notice", "initiative-filing"]
+basis = ["slashed funding for healthcare in California to pay for more billionaire tax breaks", "It will raise about $100 billion to replace the funding"]
+names = [{ name = "Suzanne Jimenez", role = "the measure's official proponent", source = "qualification-notice" }]
 
 [section.line.visual]
 kind = "list"
@@ -125,8 +135,10 @@ heading = "Why some vote no"
 side = "no"
 
 [[section.line]]
-text = "Opponents say Proposition 40 would drive wealthy residents away, costing the state billions."
+text = "Opponents, including René Bravo, the first signer of the argument against, say Proposition 40 would drive wealthy residents away, costing billions."
 sources = ["arguments"]
+basis = ["the tax will cost California $25 billion as the tax drives companies and wealthy residents out-of-state"]
+names = [{ name = "René Bravo", role = "the first signer of the argument against", source = "arguments" }]
 
 [section.line.visual]
 kind = "list"
