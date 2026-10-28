@@ -1,0 +1,142 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; the tax today and how its money may be spent; what would change
+# (the tax split in two at the same total rate, half for housing only);
+# the Controller's Statement's two effects, the money moved out of the
+# General Fund and the small overall loss from a new exemption, each with
+# its scale; one line per side; what a vote does.
+#
+# The ballot and pamphlet call it "Proposition I", so the narration does.
+# The Controller's Statement gives the total itself ("the approximately
+# $7 billion General Fund sources"): $120 million is about 2 percent (1.7,
+# rounded), $1 million less than 1 percent.
+#
+# How the housing money must be split (60, 25 and 10 percent) is argued by
+# the opponents' rebuttal ("at least 70% of the money does not have to
+# build housing"), and the 2020 measure behind the tax by the proponents,
+# so neither is set up in a neutral section (STANDARD.md 6.3). That the
+# total rate stays the same is the digest's own statement of what the
+# measure does, so the change section says it, without the proponents'
+# "no new taxes".
+
+contest = "ca-2026-11-03-san-francisco-county-measure-i"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "digest"
+number = "I"
+title = "Changes to Real Property Transfer Tax"
+origin = "On July 23, 2026, the Department of Elections certified that the initiative petition calling for Proposition I to be placed on the ballot had a sufficient number of valid signatures to qualify the measure for the ballot."
+summary = "Shall the City permanently dedicate half of the transfer tax revenues collected when certain real estate with a value or sales price of more than $10,000,000 changes hands, which will continue to be taxed at rates of 5.5% to 6%, to be spent only on affordable housing, including social housing developments and housing assistance, and exempt certain sales from the dedicated portion of the tax, for an estimated annual revenue decrease of approximately $1 million?"
+yes = "If you vote “yes,” you want to dedicate half of the transfer tax revenues when certain real estate with a value or sales price of more than $10,000,000 changes hands, to be spent only on affordable housing, including social housing developments and housing assistance."
+no = "If you vote “no,” you do not want to make these changes."
+
+[[section]]
+id = "what"
+heading = "Proposition I"
+
+[[section.line]]
+text = "Proposition I asks San Francisco voters whether to reserve half of the transfer tax on property sales over $10 million for affordable housing."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "page"
+source = "digest"
+highlight = ["Changes to Real Property Transfer Tax"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today the city taxes those sales at 5.5 or 6 percent, and the money can be spent on any public purpose."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "illustration"
+name = "office-tower"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Proposition I would split that tax into two equal halves, so the total rate stays the same."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "illustration"
+name = "set-aside-funds"
+
+[[section.line]]
+text = "Money from the new tax could be spent only on affordable housing, including social housing and help for tenants."
+sources = ["digest"]
+
+[[section]]
+id = "fiscal"
+heading = "What the Controller says"
+
+[[section.line]]
+text = "The Controller's Statement says about $120 million a year would move out of the General Fund, about 2 percent of its roughly $7 billion."
+sources = ["controller"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "A new exemption for some recently built apartment buildings would lower total revenue by about $1 million a year, less than 1 percent."
+sources = ["controller"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say voters passed this tax in 2020 for affordable housing, yet none has reached housing in two years."
+sources = ["arguments"]
+basis = ["In 2020, voters approved a tax on the sale of properties worth more than $10 million, specifically so that money could fund affordable housing and rent relief.", "In the past two years, none of this revenue has gone to affordable housing."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Keeps the housing promise voters made in 2020", "Uses only a tax voters already approved"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Proposition I starves the General Fund of transfer tax money, forcing city service cuts in lean years."
+sources = ["arguments"]
+basis = ["Carving out transfer tax revenues into a restricted fund starves the General Fund of essential dollars, forcing severe service cuts across the city during lean budget years.", "Real estate transfer taxes are notoriously unpredictable."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Starves the General Fund, forcing service cuts", "Ties housing to volatile real estate sales"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "If you vote yes, you want to dedicate half of this transfer tax to affordable housing."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "page"
+source = "digest"
+highlight = ["you want to dedicate half of the transfer tax revenues"]
+
+[[section.line]]
+text = "If you vote no, you do not want to make these changes."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "page"
+source = "digest"
+highlight = ["you do not want to make these changes"]

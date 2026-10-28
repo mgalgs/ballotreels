@@ -1,0 +1,138 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; what the park replaced; the rule today; what would change, and
+# the permits it needs; the Controller's Statement's costs, each with its
+# scale, and the saving it also names (STANDARD.md 6.4); one line per
+# side; what a vote does.
+#
+# The ballot and pamphlet call it "Proposition G", so the narration does;
+# the directory keeps the project's measure name. The Controller's
+# Statement on G names no budget total: the scale divides its figures by
+# the "approximately $7 billion General Fund sources" the Controller's
+# Statement on Proposition I gives (general-fund), each under 1 percent.
+# The statement is headed "Controller's Statement" and signed by the
+# Deputy City Controller; the narration names the statement, not the
+# signer. "a.m." and "p.m." are read letter by letter
+# (standard/speakability.txt), so the hours are said in words.
+
+contest = "ca-2026-11-03-san-francisco-county-measure-g"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "digest"
+number = "G"
+title = "Allowing Private Vehicles on the Upper Great Highway in Sunset Dunes Park"
+origin = "On July 23, 2026, the Department of Elections certified that the initiative petition calling for Proposition G to be placed on the ballot had a sufficient number of valid signatures to qualify the measure for the ballot."
+summary = "Shall the City close Sunset Dunes Park from Monday at 4:00 a.m. through Friday at 6:00 p.m., unless a holiday falls on a weekday, in order to reopen the roadway known as the Upper Great Highway to private vehicles during that time?"
+yes = "If you vote “yes,” you want to close Sunset Dunes Park from Monday at 4:00 a.m. through Friday at 6:00 p.m., unless a holiday falls on a weekday, in order to reopen the roadway known as the Upper Great Highway to private vehicles during that time."
+no = "If you vote “no,” you do not want the City to make these changes."
+
+[[section]]
+id = "what"
+heading = "Proposition G"
+
+[[section.line]]
+text = "Proposition G asks San Francisco voters whether to reopen the Upper Great Highway to private vehicles on weekdays."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "page"
+source = "digest"
+highlight = ["Allowing Private Vehicles on the Upper Great Highway"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today that stretch of road is Sunset Dunes Park, closed to private vehicles at all times."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "illustration"
+name = "coastal-park-promenade"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Proposition G would open the road to private vehicles from Monday morning until Friday evening."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "illustration"
+name = "coastal-highway"
+
+[[section.line]]
+text = "Weekends and holidays would stay closed to private vehicles, and coastal permits would be needed first."
+sources = ["digest", "controller"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Controller's Statement estimates one-time costs of about $9.8 million, less than 1 percent of the roughly $7 billion General Fund."
+sources = ["controller", "general-fund"]
+
+[section.line.visual]
+kind = "illustration"
+name = "traffic-signals"
+
+[[section.line]]
+text = "Yearly costs would rise between $500,000 and $1.9 million, also less than 1 percent, while park staffing costs would fall."
+sources = ["controller", "general-fund"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Proposition G restores a weekday road and a weekend park, because traffic injuries in the Sunset have risen."
+sources = ["arguments"]
+basis = ["Since the Great Highway closed, traffic injuries in Sunset neighborhoods have risen sharply", "it keeps the Great Highway closed on weekends, allowing access to it as a park, but opens it to vehicle travel Monday through Friday."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Restores weekday driving and a weekend park", "Answers rising traffic injuries in the Sunset"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Proposition G spends nearly $10 million to remove a coastal park whose visits are mostly on weekdays."
+sources = ["arguments"]
+basis = ["Proposition G asks you to spend nearly $10 million to demolish a coastal park", "Nearly 60% of visits to Sunset Dunes are on weekdays."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Spends nearly $10 million removing a park", "Ends the nearly 60 percent of weekday visits"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "If you vote yes, you want to close the park on weekdays to reopen the highway to private vehicles."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "page"
+source = "digest"
+highlight = ["you want to close Sunset Dunes Park"]
+
+[[section.line]]
+text = "If you vote no, you do not want the city to make these changes."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "page"
+source = "digest"
+highlight = ["you do not want the City to make these changes"]

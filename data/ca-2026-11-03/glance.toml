@@ -299,3 +299,43 @@ source = "tax-statement"
 quote = "The best estimate from official sources of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $157,260,047."
 amount = 157260047
 period = "unstated"
+
+# San Francisco Proposition G: the Controller's Statement's opening
+# estimate, a one-time capital cost (the largest figure) and a yearly
+# cost range.
+[san-francisco-county-measure-g]
+source = "controller"
+quote = "it would significantly increase the cost of government by approximately $9.8 million in one-time capital costs and by approximately $500,000 to $1.9 million annually."
+amount = 9800000
+period = "one-time"
+direction = "cost"
+
+# San Francisco Proposition H: the Controller's Statement's yearly
+# revenue estimate.
+[san-francisco-county-measure-h]
+source = "controller"
+quote = "it would generate approximately $177 million annually for Muni transit service starting in Fiscal Year (FY) 2027-2028"
+amount = 177000000
+period = "per-year"
+direction = "revenue-gain"
+
+# San Francisco Proposition I: the Controller's Statement's opening
+# estimate of the change to the city's overall revenue (the ballot
+# question's figure). The $120 million it would move from the General
+# Fund to a housing fund is a shift between funds, not a change in total,
+# so it is not the sorted amount.
+[san-francisco-county-measure-i]
+source = "controller"
+quote = "it would represent a moderate annual decrease of approximately $1 million to the City's overall revenues starting in Fiscal Year (FY) 2027-28."
+amount = 1000000
+period = "per-year"
+direction = "revenue-loss"
+
+# San Francisco Proposition J: the Controller's Statement's average
+# yearly revenue over the first five years.
+[san-francisco-county-measure-j]
+source = "controller"
+quote = "The measure could bring an average of $100 million to $150 million annually over the first five years."
+amount = 150000000
+period = "per-year"
+direction = "revenue-gain"
