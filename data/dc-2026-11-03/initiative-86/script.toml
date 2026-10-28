@@ -5,15 +5,19 @@
 # the two sides; what a vote does.
 #
 # Precedent (STANDARD.md section 10) is California's law, the one law in
-# the archived records (sources/precedent/README.md) that, like Initiative
-# 86, bans the force-feeding itself as well as sales, told with each court
-# outcome the records show. The city laws there (New York City, Chicago,
-# Pittsburgh, Portland, Oregon) ban sales only, and telling each with all
-# its outcomes does not fit the length budget (rule 10.5). Who it affects
+# the archived records (sources/precedent/README.md) whose text, like
+# Initiative 86's, bans the force-feeding itself as well as sales. It is
+# told with each outcome the records show: passed in 2004, in force from
+# 2012, struck down in 2015, upheld on appeal (2017, 2022) except for sales
+# completed outside California. The city sales bans there (New York City,
+# Chicago, Pittsburgh, Portland, Oregon) are not told: their outcomes
+# (Chicago's repeal, the New York City injunction) do not fit the length
+# budget (rule 10.5) beside California's, so the precedent question below
+# is answered for California only. Who it affects
 # comes only from the initiative's text and the Chief Financial Officer;
 # no official record says how many businesses sell these products, so the
 # questions record says so and the script does not.
-#
+
 # The card quotes the Voter Guide's page: the short title, the summary
 # statement, and the ballot's two choices, "Yes, to approve" and "No, to
 # reject", which the card draws in its YES and NO boxes.
@@ -64,7 +68,7 @@ heading = "A similar law elsewhere"
 
 [[section.line]]
 id = "california-law"
-text = "California passed a law in 2004 banning the force-feeding, and selling the products."
+text = "California banned the force-feeding and sales in 2004, starting in 2012."
 sources = ["ca-law"]
 
 [section.line.visual]
@@ -73,7 +77,7 @@ name = "law-book"
 
 [[section.line]]
 id = "california-courts"
-text = "A court struck down the California sales ban in 2015, then an appeals court upheld it."
+text = "A court struck down California's sales ban in 2015; appeals courts upheld it, except sales completed elsewhere."
 sources = ["ca-court-2017", "ca-court-2022"]
 
 [section.line.visual]
@@ -86,7 +90,7 @@ heading = "Today"
 
 [[section.line]]
 id = "no-bird-farms"
-text = "The District's Office of Revenue Analysis knows of no bird farms in the District."
+text = "The Chief Financial Officer knows of no bird farms in the District."
 sources = ["fiscal"]
 
 [section.line.visual]
@@ -109,7 +113,7 @@ highlight = ["Ban the sale or distribution"]
 
 [[section.line]]
 id = "fines"
-text = "From July 2027, restaurants, stores or anyone else breaking the ban could be fined $1,000 to $5,000 a day."
+text = "From July 2027, restaurants, stores and others breaking the ban could be fined $1,000 to $5,000 a day."
 sources = ["fiscal", "formulation"]
 
 [section.line.visual]
@@ -121,7 +125,7 @@ id = "fiscal"
 heading = "What the official estimate says"
 
 [[section.line]]
-text = "The Chief Financial Officer estimates the ban would cost $314,000 over four years, less than 1 percent of any year's local spending."
+text = "The Chief Financial Officer estimates a cost of $314,000 over four years, less than 1 percent of any year's local spending."
 sources = ["fiscal", "budget"]
 
 [section.line.visual]
@@ -192,6 +196,8 @@ highlight = ["No, to reject"]
 # 10.1), each with the lines that answer it or marked as answered by no
 # official source.
 
+# Answered for California only; the city sales bans are not told (see
+# the header).
 [[question]]
 ask = "Has anywhere else done this, and what happened?"
 lines = ["california-law", "california-courts"]
