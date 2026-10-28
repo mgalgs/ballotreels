@@ -99,15 +99,16 @@ own film draws it, but with nothing left over from the sections it
 skips (no page fading out, no other section's caption, pencil or
 countdown ring).
 
-Every slot is the same length: the longest member's two sections plus
-half a second; a shorter one holds its last frame, silent and without a
-caption, for the rest. Before the first slot, an opening card, on screen
-only, gives the state's name, "N statewide measures" and the election's
-date; after the last, a sources card lists what the reused lines cite,
+Each slot lasts as long as its own member's two sections plus half a
+second, for which it holds its last frame, silent and without a
+caption. No slot is padded out to match a longer one, so the course is
+as long as its slots together. Before the first slot, an opening card,
+on screen only, gives the state's name, "N statewide measures" and the
+election's date; after the last, a sources card lists what the reused lines cite,
 grouped under each measure's title, over as many pages as it takes. The
 link under the caption on every frame is the state's page,
-`ballotreels.org/<st>/<year>`. Its chapters are one per measure, titled
-as `contests.toml` titles it.
+`ballotreels.org/<st>/<year>`. Its chapters are one per measure, each
+starting where its slot does, titled as `contests.toml` titles it.
 
 It is an election-level contest of its own kind (`crash-course`): id
 `<election>-crash-course`, division the state, derived by the index
