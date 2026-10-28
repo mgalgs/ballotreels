@@ -1,0 +1,53 @@
+# Archived sources for Nevada Question 6 (Initiative Petition C-05-2023),
+# 2026-11-03 general election. Every id here may be cited by script.toml.
+# `kind` must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# Nevada's Secretary of State prints a question's ballot question,
+# explanation and digest, arguments for and against with their
+# rebuttals, the Legislative Counsel Bureau's fiscal note and the full
+# text in one section of its booklet "2026 Statewide Ballot Questions",
+# so every source below shares one archived file: that section's pages
+# (6 to 17), cut from the full booklet. Clark County's reprint of the
+# same pages (sources/clark-county-ballot-questions-reprint.pdf) is
+# archived as a second copy and cited nowhere: the booklet has all of it.
+
+[contest]
+id = "nv-2026-11-03-question-6"
+election = "nv-2026-11-03"
+division = "ocd-division/country:us/state:nv"
+kind = "measure"
+title = "Question 6: Fundamental Right to Abortion"
+
+[[source]]
+id = "booklet"
+kind = "official-title-summary"
+publisher = "Nevada Secretary of State, 2026 Statewide Ballot Questions, Question 6: ballot question and explanation and digest, pages 6 to 8"
+credit = "Nevada 2026 Statewide Ballot Questions, Question 6"
+url = "https://www.nvsos.gov/home/showpublisheddocument/20519/639233354596030000"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal-note"
+kind = "official-fiscal-analysis"
+publisher = "Fiscal Note on Question 6, prepared by the Fiscal Analysis Division of the Legislative Counsel Bureau, August 1, 2024, as printed in the Nevada Secretary of State's 2026 Statewide Ballot Questions, pages 15 to 16"
+credit = "Fiscal Note, Legislative Counsel Bureau"
+url = "https://www.nvsos.gov/home/showpublisheddocument/20519/639233354596030000"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments for and against Question 6 and rebuttals, as printed in the Nevada Secretary of State's 2026 Statewide Ballot Questions, pages 9 to 14"
+url = "https://www.nvsos.gov/home/showpublisheddocument/20519/639233354596030000"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of the Measure, Question 6, Nevada Secretary of State, 2026 Statewide Ballot Questions, page 17"
+url = "https://www.nvsos.gov/home/showpublisheddocument/20519/639233354596030000"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"

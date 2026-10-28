@@ -1,0 +1,30 @@
+# Contest index for the 2026-11-03 Nevada general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string), as the
+# Secretary of State's booklet "2026 Statewide Ballot Questions" prints
+# it ("QUESTION 6"); Nevada has no Questions 1 to 5 this year. The
+# booklet prints no short title, so titles pair the designation with the
+# name the measure's own text gives what it adds: Question 6's
+# "fundamental right to abortion" (its Section 1, which the digest
+# quotes), Question 7's two new sections, "Photo Identification" and
+# "Voter Verification". The two are all of the statewide questions, in
+# ballot order.
+
+[election]
+id = "nv-2026-11-03"
+state = "ocd-division/country:us/state:nv"
+title = "Nevada General Election, November 3, 2026"
+
+[[contest]]
+id = "nv-2026-11-03-question-6"
+kind = "measure"
+division = "ocd-division/country:us/state:nv"
+title = "Question 6: Fundamental Right to Abortion"
+number = "6"
+
+[[contest]]
+id = "nv-2026-11-03-question-7"
+kind = "measure"
+division = "ocd-division/country:us/state:nv"
+title = "Question 7: Photo Identification and Voter Verification"
+number = "7"
