@@ -1,0 +1,151 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; where the Constitution says local officers live today; what
+# the amendment would allow city and town court judges; how the closest
+# county is found; that no cost estimate is printed; the two sides; what
+# a vote does.
+#
+# The card quotes the Indiana Election Division's "2026 Indiana Election
+# Legislation Summary": the ballot text as it prints it ("Public
+# Question #2 ...") as title, the act that prescribed that ballot text
+# as origin (as page 1 lists it; Public Question 1's card names its
+# own), and the explanatory paragraph as summary. The summary prints no
+# "a yes vote means" lines, so the card has none, and the vote lines take
+# their two meanings from the ballot text on the card.
+#
+# The ballot abbreviates the rule ("the bordering county closest to the
+# city or town"); the script states it as the enrolled resolution does,
+# measured by "the shortest distance from the city or town limits to the
+# county line". Today's rule is the resolution's unchanged text
+# (subsection (a)); the script says what it requires and does not say
+# how it applies to a city court judge, which no source states.
+#
+# Fiscal: the summary prints no cost estimate, so the fiscal line is the
+# standard one for a guide with none (the round's rule 5a). Whether the
+# Legislative Services Agency wrote a fiscal note is not known.
+#
+# Indiana publishes no official arguments for or against an amendment,
+# so both sides are filed = false and each says so once, in the same
+# number of words. No person is named.
+
+contest = "in-2026-11-03-public-question-2"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "summary"
+number = "2"
+title = "Public Question #2 Shall the Constitution of the State of Indiana be amended to permit the judge of a city or town court to reside in: (1) the county in which the court is located; or (2) the bordering county closest to the city or town in which the court is located? (This question concerns Article 6, Section 6 of the Constitution of the State of Indiana.)"
+origin = "Public Law 18-2026 (House Enrolled Act 1019): Constitutional Amendment Ballot Question"
+summary = "In 2023 and 2025 the General Assembly adopted a joint resolution proposing to amend Article 6, Section 6 of the Constitution of the State of Indiana to allow a judge of a city or town court to live in the county where the court is located or the bordering Indiana county that is the closest Indiana county to the city or town in which the court is located, calculated by measuring the shortest distance from the city or town limits to the county line."
+
+[[section]]
+id = "what"
+heading = "Public Question 2"
+
+[[section.line]]
+text = "Public Question 2 is about where city and town court judges may live."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["to allow a judge of a city or town court to live"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, Indiana's Constitution requires county, township and town officers to live within their county, township or town."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would let a city or town court judge live in the court's county, or the closest bordering Indiana county."
+sources = ["summary", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["the bordering Indiana county that is the closest Indiana county"]
+
+[[section.line]]
+text = "The closest county is found by the shortest distance from the city or town limits to the county line."
+sources = ["summary", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-line-map"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Indiana's election summary does not include a cost estimate for the amendment."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "No cost estimate"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Indiana publishes no official argument for the amendment."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "list"
+source = "summary"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Indiana publishes no official argument against the amendment."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "list"
+source = "summary"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means city and town court judges could live in either of those two counties."
+sources = ["summary", "county-notice"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["be amended to permit the judge of a city or town court to reside in"]
+
+[[section.line]]
+text = "A no vote keeps today's residence rule in the Constitution unchanged."
+sources = ["summary", "text", "county-notice"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["Article 6, Section 6 of the Constitution of the State of Indiana"]
