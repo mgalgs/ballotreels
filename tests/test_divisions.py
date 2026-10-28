@@ -5,11 +5,15 @@ import io
 import json
 import tempfile
 import unittest
+from dataclasses import replace
 from pathlib import Path
 
+from ballotreels import check_contest, load_contest
+from ballotreels.checks import check_division
 from ballotreels.cli import main
 
 from . import geo_fixtures
+from .helpers import PROP_2, unlinted_standard
 
 CA = "ocd-division/country:us/state:ca"
 
@@ -88,6 +92,89 @@ class WriteDivisionsTest(unittest.TestCase):
         self.assertIn("county.geojson", out)
         self.assertIn("geo build", out)
         self.assertFalse((self.election / "divisions.tsv").exists())
+
+
+SAN_DIEGO_UNIFIED = f"{CA}/school_district:san_diego_city_unified_school_district"
+
+
+class CheckDivisionTest(unittest.TestCase):
+    """check_division reads only a contest's id, division and directory,
+    so these are Prop 2 moved into a scratch election and given another
+    division."""
+
+    def setUp(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        self.election = Path(tmp.name) / "ca-2026-11-03"
+        self.election.mkdir()
+        (self.election / "divisions.tsv").write_text(
+            f"{CA}/county:san_diego\tSan Diego County\n"
+            f"{CA}/place:san_diego\tCity of San Diego\n"
+            f"{CA}/school_district:san_diego_city_unified_school_district\t"
+            f"San Diego City Unified School District\n"
+            f"{CA}/school_district:san_dieguito_union_high_school_district\t"
+            f"San Dieguito Union High School District\n"
+            f"{CA}/school_district:santee_school_district\t"
+            f"Santee School District\n", encoding="utf-8")
+        self.prop_2 = load_contest(PROP_2)
+
+    def contest(self, division, election=None):
+        return replace(self.prop_2, id="ca-2026-11-03-measure-m",
+                       division=division,
+                       path=(election or self.election) / "measure-m")
+
+    def test_listed_school_district_passes(self):
+        self.assertEqual(check_division(self.contest(SAN_DIEGO_UNIFIED)), [])
+
+    def test_ballot_name_fails_with_the_tiger_name(self):
+        wrong = f"{CA}/school_district:san_diego_unified_school_district"
+        failures = check_division(self.contest(wrong))
+        self.assertEqual(len(failures), 1)
+        message = str(failures[0])
+        self.assertTrue(message.startswith("[division] "), message)
+        self.assertIn("ca-2026-11-03-measure-m", message)
+        self.assertIn(repr(wrong), message)
+        # the closest of the same level first; never the county or city
+        self.assertIn(f"closest listed: {SAN_DIEGO_UNIFIED!r} "
+                      f"(San Diego City Unified School District)", message)
+        self.assertNotIn("county:", message)
+        self.assertNotIn("place:", message)
+
+    def test_unlisted_place_and_county_fail(self):
+        for division in (f"{CA}/place:san_deigo", f"{CA}/county:sandiego"):
+            failures = check_division(self.contest(division))
+            self.assertEqual(len(failures), 1, division)
+            self.assertIn("closest listed", failures[0].message)
+
+    def test_nothing_close(self):
+        failures = check_division(self.contest(f"{CA}/place:zzyzx"))
+        self.assertIn("no listed place is close", failures[0].message)
+
+    def test_missing_file_fails(self):
+        (self.election / "divisions.tsv").unlink()
+        failures = check_division(self.contest(SAN_DIEGO_UNIFIED))
+        self.assertEqual(len(failures), 1)
+        self.assertIn("no divisions.tsv", failures[0].message)
+        self.assertIn("python -m ballotreels geo divisions ca-2026-11-03",
+                      failures[0].message)
+
+    def test_other_levels_need_no_file(self):
+        (self.election / "divisions.tsv").unlink()
+        for division in (CA, f"{CA}/cd:51", f"{CA}/sldu:39"):
+            self.assertEqual(check_division(self.contest(division)), [],
+                             division)
+
+    def test_statewide_contest_passes_every_check_without_the_file(self):
+        # Prop 2's own election (tests/fixtures) has no divisions.tsv.
+        self.assertFalse((PROP_2.parent / "divisions.tsv").exists())
+        self.assertEqual(
+            check_contest(self.prop_2, unlinted_standard()), [])
+
+    def test_check_contest_runs_it(self):
+        wrong = f"{CA}/school_district:san_diego_unified_school_district"
+        failures = check_contest(self.contest(wrong), unlinted_standard())
+        self.assertEqual([f.check for f in failures
+                          if f.check == "division"], ["division"])
 
 
 if __name__ == "__main__":
