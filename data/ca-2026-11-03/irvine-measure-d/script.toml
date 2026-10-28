@@ -1,0 +1,160 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and whose measure it is; how city elections are won today; how
+# ranked choice voting counts ballots, and when and on what conditions
+# Measure D would switch to it; that the guide prints no cost estimate,
+# and the cost cap the impartial analysis states; one line per side; what
+# a vote does.
+#
+# The cost cap is the analysis's own comparison ("0.23% of the City’s
+# fiscal year 2026-2027 general fund budget of approximately $312.1
+# million is approximately $717,790"), so its scale is quoted (STANDARD.md
+# 6.5). The guide prints no estimate of the cost itself: the fiscal line
+# says so in the no-cost-estimate wording.
+#
+# The opponents' $47 million deficit is a projection for 2030 with no
+# matching budget total in the archive, so the no side says its "serious
+# budget crisis" instead of the figure. Sides come from each argument,
+# not the rebuttals; pdftotext interleaves page 7's argument against with
+# its rebuttal, so each basis is a run the extraction keeps whole.
+
+contest = "ca-2026-11-03-irvine-measure-d"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "D"
+title = "City of Irvine, Measure Directing the Use of Ranked Choice Voting for City Council Member and Mayoral Elections After January 1, 2028"
+origin = "The City Council of the City of Irvine has placed a measure before the voters"
+summary = "Shall a measure that directs, to the extent technically and financially feasible, the use of ranked choice voting for City Council Member and Mayoral Elections occurring after January 1, 2028, be adopted?"
+yes = "A “Yes” vote is in favor of adopting the measure and transitioning to RCV elections after January 1, 2028, if the specified technical and financial conditions are met."
+no = "A “No” vote is against adopting the measure."
+
+[[section]]
+id = "what"
+heading = "Measure D"
+
+[[section.line]]
+text = "Irvine Measure D asks city voters whether to use ranked choice voting to elect the mayor and City Council."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["ranked choice voting"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, Irvine voters pick one candidate, and whoever gets the most votes wins, even without a majority."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-one-question"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "With ranked choice, voters rank the candidates in order of preference."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ranked-ballot"
+
+[[section.line]]
+text = "If no one has a majority, the last-place candidate is dropped and those ballots go to their next choice."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+id = "conditions"
+text = "The switch would come after January 1, 2028, if voting equipment can handle it and the added cost stays under a cap."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "spending-limit"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The Orange County Voter Information Guide does not include a cost estimate for the measure."
+sources = ["guide-page", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section.line]]
+id = "cap"
+text = "The city attorney's impartial analysis says the cap is 0.23 percent of the general fund: about $717,790 of a $312.1 million budget in 2026-2027."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say ranked choice guarantees that winners have majority support, and a strict cost limit protects taxpayers."
+sources = ["argument-for"]
+basis = ["Ranked Choice Voting (RCV) guarantees that Irvine residents elect officeholders who win majority support.", "This measure ensures fiscal accountability with a strict safeguard: RCV will only be implemented if the cost is below 0.23% of the city’s budget."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Winners need majority support", "Used only if it costs under 0.23% of budget"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say no one knows what ranked choice will cost, while Irvine faces a serious budget crisis."
+sources = ["argument-against"]
+basis = ["NO ONE KNOWS WHAT THIS WILL COST.", "Irvine is facing a serious budget crisis."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["No one knows what it will cost", "Not needed: Irvine holds no runoff elections"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is in favor of moving to ranked choice after January 1, 2028, if the conditions are met."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["in favor of adopting the measure"]
+
+[[section.line]]
+text = "A no vote is against adopting the measure."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["against adopting the measure"]
+
+[[question]]
+ask = "When would ranked choice voting start, and could it be put off?"
+lines = ["conditions"]
+
+[[question]]
+ask = "How much would ranked choice voting cost?"
+lines = ["cap"]

@@ -339,3 +339,62 @@ quote = "The measure could bring an average of $100 million to $150 million annu
 amount = 150000000
 period = "per-year"
 direction = "revenue-gain"
+
+# Santa Ana Measure N: the guide prints no fiscal analysis or tax rate
+# statement; the one estimate is the City Attorney's Impartial Analysis's.
+[santa-ana-measure-n]
+source = "impartial-analysis"
+quote = "Measure N will continue the local transactions and use tax at a rate of 1.5 cents generating approximately $84,000,000 every year for general city services."
+amount = 84000000
+period = "per-year"
+
+# Irvine Measure D: not a tax measure; the guide prints no fiscal
+# statement or cost estimate (the impartial analysis states a cost cap,
+# not an estimate).
+[irvine-measure-d]
+source = "guide-page"
+status = "none-printed"
+
+# City of Orange Measure I: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is the City's, as the City Attorney's
+# Impartial Analysis reports it.
+[orange-city-measure-i]
+source = "impartial-analysis"
+quote = "The City estimates that the measure would generate approximately $37 million annually, although actual revenues will depend on taxable sales."
+amount = 37000000
+period = "per-year"
+
+# City of Orange Measure J: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is the City's, as the City Attorney's
+# Impartial Analysis reports it.
+[orange-city-measure-j]
+source = "impartial-analysis"
+quote = "The City estimates that the measure would generate approximately $3 million annually, although actual revenues will depend on hotel occupancy, room rates, and related taxable charges."
+amount = 3000000
+period = "per-year"
+
+# City of Orange Measure K: not a tax measure; the guide prints no fiscal
+# statement.
+[orange-city-measure-k]
+source = "guide-page"
+status = "none-printed"
+
+# Costa Mesa Measure C: the guide prints no fiscal analysis or tax rate
+# statement. Its ballot question gives the larger of the guide's two
+# revenue figures (the City Attorney's Impartial Analysis gives "an
+# additional $4.6 million dollars annually" beside current receipts of
+# about $1 million).
+[costa-mesa-measure-c]
+source = "guide-page"
+quote = "generating approximately $5,600,000 annually until ended by voters"
+amount = 5600000
+period = "per-year"
+
+# Westminster Measure O: the guide prints no fiscal analysis or tax rate
+# statement, and the impartial analysis no estimate; the one estimate is
+# the ballot question's.
+[westminster-measure-o]
+source = "guide-page"
+quote = "providing approximately $452,000 annually in new funds until ended by voters"
+amount = 452000
+period = "per-year"

@@ -1,0 +1,45 @@
+# Archived sources for City of Westminster Measure O, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1). Every source is a page of the Measure O section ("Ballot
+# Measures-O", Section 11) of the Orange County Registrar of Voters'
+# Voter Information Guide, one archived PDF; "page" is the section's own.
+#
+# The City Attorney's Impartial Analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is. Neither an argument in favor nor one against was
+# submitted (page 1 prints the notices), and no tax rate statement or
+# fiscal analysis is printed.
+
+[contest]
+id = "ca-2026-11-03-westminster-measure-o"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:westminster"
+kind = "measure"
+title = "Westminster Measure O: Raising the Hotel Guest Tax From 8% to 12%"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "Orange County Registrar of Voters, Voter Information Guide, Ballot Measures-O, page 1: ballot question, what your vote means and the notices that no arguments were submitted"
+credit = "Ballot question, Orange County Voter Information Guide"
+url = "https://ocvote.gov/sites/default/files/2026-09/O-WEST%20-%20LAYOUT%20(1).pdf"
+file = "sources/voter-guide-section.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Scott E. Porter, City Attorney, Impartial Analysis of Measure O, Orange County Voter Information Guide, Ballot Measures-O, page 3"
+credit = "City Attorney's Impartial Analysis, Orange County Voter Information Guide"
+url = "https://ocvote.gov/sites/default/files/2026-09/O-WEST%20-%20LAYOUT%20(1).pdf"
+file = "sources/voter-guide-section.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure O, City of Westminster Ordinance No. 2639, Orange County Voter Information Guide, Ballot Measures-O, page 2"
+url = "https://ocvote.gov/sites/default/files/2026-09/O-WEST%20-%20LAYOUT%20(1).pdf"
+file = "sources/voter-guide-section.pdf"
+retrieved = "2026-10-28"
