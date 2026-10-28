@@ -262,3 +262,12 @@ source = "impartial-analysis"
 quote = "The City estimates that the measure would generate approximately $37 million annually, although actual revenues will depend on taxable sales."
 amount = 37000000
 period = "per-year"
+
+# City of Orange Measure J: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is the City's, as the City Attorney's
+# Impartial Analysis reports it.
+[orange-city-measure-j]
+source = "impartial-analysis"
+quote = "The City estimates that the measure would generate approximately $3 million annually, although actual revenues will depend on hotel occupancy, room rates, and related taxable charges."
+amount = 3000000
+period = "per-year"
