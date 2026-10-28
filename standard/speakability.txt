@@ -35,3 +35,4 @@
 (?i)\bend it\b | "end it" runs together and is heard as "ended" | say "repeal it"
 (?i)\bfavors\b | the transcript may spell it the British way ("favours") | say "supports"
 (?<!from )\b\d[\d.]* to \d[\d.]* percent\b | a range of percents is transcribed with a hyphen and a sign ("1-2%") | say "between 1 and 2 percent" ("from 10 to 14 percent", a change, is fine)
+\b\d[\d.]* cents? (?:sales )?tax\b | a sales tax in cents is transcribed in dollars ("1 cent" as "$0.01") | give the rate as a percent ("a 1 percent sales tax"; a 1-cent sales tax is 1 percent)
