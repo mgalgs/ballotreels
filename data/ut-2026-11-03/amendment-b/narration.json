@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 63.69,
+  "seconds": 70.52,
   "phrases": [
     {
       "text": "Amendment B is about passing citizen initiatives that raise taxes.",
@@ -39,24 +39,24 @@
       "end": 40.17
     },
     {
-      "text": "Supporters say tax increases should need broad agreement from the voters who will pay them.",
+      "text": "Supporters, including Senator Fillmore, the measure's chief sponsor, say tax increases need broad agreement from those who pay them.",
       "start": 40.83,
-      "end": 45.97
+      "end": 49.59
     },
     {
-      "text": "Opponents say Utah voters should get the same simple majority lawmakers use to raise taxes.",
-      "start": 46.63,
-      "end": 52.44
+      "text": "Opponents, including Senator Escamilla, the first signer against, say voters should get the same simple majority that lawmakers use.",
+      "start": 50.25,
+      "end": 59.33
     },
     {
       "text": "A vote for means tax-raising initiatives would need at least 60 percent.",
-      "start": 53.1,
-      "end": 58.02
+      "start": 59.99,
+      "end": 64.85
     },
     {
       "text": "A vote against means tax-raising initiatives would still need a simple majority.",
-      "start": 58.68,
-      "end": 63.66
+      "start": 65.51,
+      "end": 70.49
     }
   ],
   "inputs": {
@@ -68,8 +68,8 @@
       "The rule covers new taxes, expanded taxes, higher rates and some property tax changes.",
       "It would not change the vote needed for any other initiative.",
       "The Voter Information Pamphlet says Amendment B likely would not materially affect state revenues or spending.",
-      "Supporters say tax increases should need broad agreement from the voters who will pay them.",
-      "Opponents say Utah voters should get the same simple majority lawmakers use to raise taxes.",
+      "Supporters, including Senator Fillmore, the measure's chief sponsor, say tax increases need broad agreement from those who pay them.",
+      "Opponents, including Senator Escamilla, the first signer against, say voters should get the same simple majority that lawmakers use.",
       "A vote for means tax-raising initiatives would need at least 60 percent.",
       "A vote against means tax-raising initiatives would still need a simple majority."
     ],
@@ -205,11 +205,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Supporters say tax increases should need broad agreement from the voters who will pay them."
+        "text": "Supporters, including Senator Fillmore, the measure's chief sponsor, say tax increases need broad agreement from those who pay them."
       },
       "bounds": [
         979200,
-        1104000
+        1190880
       ]
     },
     {
@@ -217,15 +217,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say tax increases should need broad agreement from the voters who will pay them.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters, including Senator Fillmore, the measure's chief sponsor, say tax increases need broad agreement from those who pay them.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Opponents say Utah voters should get the same simple majority lawmakers use to raise taxes."
+        "text": "Opponents, including Senator Escamilla, the first signer against, say voters should get the same simple majority that lawmakers use."
       },
       "bounds": [
-        1118400,
-        1259280
+        1205280,
+        1424640
       ]
     },
     {
@@ -233,15 +233,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say Utah voters should get the same simple majority lawmakers use to raise taxes.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents, including Senator Escamilla, the first signer against, say voters should get the same simple majority that lawmakers use.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A vote for means tax-raising initiatives would need at least 60 percent."
       },
       "bounds": [
-        1273680,
-        1393200
+        1439040,
+        1557120
       ]
     },
     {
@@ -256,10 +256,10 @@
         "text": "A vote against means tax-raising initiatives would still need a simple majority."
       },
       "bounds": [
-        1407600,
-        1528560
+        1571520,
+        1692480
       ]
     }
   ],
-  "sha256": "8420287314942e847c7746ec8f1636f01393bc09d47d2bfa184f4ca0b71cae7b"
+  "sha256": "7dcce7aa7458fd1a3b382bc1bdcce340e46bc064c56975c183c523a3c096005b"
 }
