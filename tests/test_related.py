@@ -121,7 +121,8 @@ class RealDataApiTest(unittest.TestCase):
         # Utah's Amendment B is in two groups, one link from each.
         self.assertEqual(self.related("ut-2026-11-03-amendment-b"),
                          [("California", "ca-2026-11-03-prop-43"),
-                          ("Montana", "mt-2026-11-03-ci-133")])
+                          ("Montana", "mt-2026-11-03-ci-133"),
+                          ("North Dakota", "nd-2026-11-03-measure-1")])
 
     def test_unrelated_measure(self):
         self.assertEqual(self.related("ca-2026-11-03-prop-5"), [])

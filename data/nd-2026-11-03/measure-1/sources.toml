@@ -1,0 +1,80 @@
+# Archived sources for North Dakota Constitutional Measure No. 1,
+# 2026-11-03 general election. Every id here may be cited by script.toml.
+# `kind` must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# guide-section.pdf is pages 1 and 2 of the Secretary of State's "North
+# Dakota Statewide Ballot Measure Information" (the voter-education
+# mailer of NDCC 16.1-01-18), whose full URL is given; page 1 also
+# carries the guide's introduction. Its "FISCAL IMPACT" box backs the
+# guide-fiscal source. North Dakota requires a Legislative Council
+# fiscal report only for initiated measures (NDCC 16.1-01-17), so none
+# exists for this one. North Dakota publishes no official arguments for
+# or against a measure, so there is no source of kind official-argument:
+# both side sections say so, citing the guide, which prints none.
+#
+# hcr-3003-enrolled.pdf marks new text by underline and deleted text by
+# strikethrough, which its extracted text loses ("heretoto"); the script
+# quotes the guide and the analysis instead. hcr-3003-filed.pdf is an
+# image scan of the filed resolution, archived for the record and cited
+# by no line.
+
+[contest]
+id = "nd-2026-11-03-measure-1"
+election = "nd-2026-11-03"
+division = "ocd-division/country:us/state:nd"
+kind = "measure"
+title = "Constitutional Measure No. 1: Seeks to Increase the Percentage of Yes Votes Needed to Change the Constitution"
+
+[[source]]
+id = "guide"
+kind = "official-title-summary"
+publisher = "North Dakota Secretary of State, North Dakota Statewide Ballot Measure Information, 2026 General Election, Constitutional Measure No. 1, pages 1 and 2"
+credit = "North Dakota Statewide Ballot Measure Information"
+url = "https://www.sos.nd.gov/sites/default/files/documents/elections/2026-general-measure-guide.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "guide-fiscal"
+kind = "official-fiscal-analysis"
+publisher = "North Dakota Secretary of State, North Dakota Statewide Ballot Measure Information, 2026 General Election, Constitutional Measure No. 1: Fiscal Impact, page 2"
+credit = "North Dakota Statewide Ballot Measure Information, Fiscal Impact"
+url = "https://www.sos.nd.gov/sites/default/files/documents/elections/2026-general-measure-guide.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "ballot-language"
+kind = "official-title-summary"
+publisher = "North Dakota Secretary of State, Official Ballot Language for Measures Appearing on the Ballot, November 3, 2026: Constitutional Measure No. 1"
+credit = "North Dakota Secretary of State, Official Ballot Language"
+url = "https://www.sos.nd.gov/sites/default/files/documents/elections/measures/ballot-language-2026-general-measure1.pdf"
+file = "sources/ballot-language-measure-1.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "analysis"
+kind = "official-title-summary"
+publisher = "North Dakota Secretary of State, Analyses of the Statewide Measures Appearing on the Election Ballot, November 3, 2026: Analysis of Constitutional Measure No. 1"
+credit = "North Dakota Secretary of State, Analysis of Constitutional Measure No. 1"
+url = "https://www.sos.nd.gov/sites/default/files/documents/elections/measures/analysis-2026-general-measure1.pdf"
+file = "sources/analysis-measure-1.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Sixty-ninth Legislative Assembly of North Dakota, House Concurrent Resolution No. 3003, enrolled (2025 Session Laws, Ch. 614)"
+credit = "House Concurrent Resolution No. 3003, enrolled"
+url = "https://ndlegis.gov/assembly/69-2025/regular/documents/25-3037-03000.pdf"
+file = "sources/hcr-3003-enrolled.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "filed"
+kind = "official-text"
+publisher = "North Dakota Secretary of State, House Concurrent Resolution No. 3003 as filed (image scan)"
+credit = "House Concurrent Resolution No. 3003, as filed"
+url = "https://www.sos.nd.gov/sites/www/files/documents/services/leg-bills/2025-69/house-res/3003.pdf"
+file = "sources/hcr-3003-filed.pdf"
+retrieved = "2026-10-27"
