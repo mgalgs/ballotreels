@@ -1,0 +1,172 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and whose measure it is; what a general law city is, what changes
+# for a charter city, who placed Measure K on the ballot and the vote it
+# needs; what the charter would do (term limits, the Open Space Reserve,
+# its other subjects); that the guide prints no cost estimate; one line
+# per side; what a vote does.
+#
+# The term-limits line says, as the impartial analysis does, that the
+# limits would not count terms served before the charter: leaving that
+# out would state the limits more strongly than the analysis does, and
+# stating it is what the measure does, not a side's argument. The guide
+# prints no fiscal statement: the fiscal line follows the no-cost-estimate
+# wording. Sides come from each argument, not the rebuttals; pdftotext
+# interleaves page 9's argument against with its rebuttal, so each basis
+# is a run the extraction keeps whole.
+
+contest = "ca-2026-11-03-orange-city-measure-k"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "K"
+title = "City of Orange, Proposed Charter for the City of Orange"
+origin = "The City Council of the City of Orange is submitting Measure K to the voters"
+summary = "Shall the proposed Charter for the City of Orange, establishing the City as a charter city under the California Constitution and providing the City’s governing document for municipal affairs, be adopted?"
+yes = "A “Yes” vote on Measure K approves the proposed Charter and authorizes the City of Orange to become a charter city."
+no = "A “No” vote on Measure K rejects the proposed Charter, and the City of Orange would remain a general law city governed by existing state law."
+
+[[section]]
+id = "what"
+heading = "Measure K"
+
+[[section.line]]
+text = "City of Orange Measure K asks city voters whether to adopt a city charter, making Orange a charter city."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["establishing the City as a charter city"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, Orange is a general law city, governed mainly by state law."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "law-book"
+
+[[section.line]]
+text = "A charter city still follows state law on statewide matters, but has authority over its own municipal affairs."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section.line]]
+text = "The City Council placed Measure K on the ballot, and it needs a majority to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "term-limits"
+text = "The charter would set lifetime limits of two four-year terms for mayor and three for council members, not counting earlier terms."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-board-room"
+
+[[section.line]]
+text = "The charter would create an open space reserve of city land, and taking land out of it would need voter approval."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "open-space-hills"
+
+[[section.line]]
+text = "The charter also covers city contracting, the taking of private property, balanced budgets and yearly independent audits."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "balanced-budget"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Orange County Voter Information Guide does not include a cost estimate for the measure."
+sources = ["guide-page", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure K gives voters the final say on open space and sets lifetime limits for mayor and council."
+sources = ["argument-for"]
+basis = ["Measure K ensures that Orange voters have the final say on important matters in our city through a charter", "no property can ever be removed from the Open Space Reserve without a vote of the people", "Measure K also imposes lifetime term limits on Orange Mayors and Councilmembers."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Voters get the final say on open space", "Lifetime term limits for mayor and council"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure K lets the current council reset and extend its terms, and charter cities face higher legal costs."
+sources = ["argument-against"]
+basis = ["It is a power grab that allows the current City Council to reset and extend their terms in office", "Becoming a charter city historically increases city legal costs, which could result in higher taxes and reduced public services."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Lets the current council reset its terms", "Charter cities have higher legal costs"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves the charter and makes Orange a charter city."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["approves the proposed Charter"]
+
+[[section.line]]
+text = "A no vote rejects the charter, and Orange stays a general law city governed by state law."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["rejects the proposed Charter"]
+
+[[question]]
+ask = "Would terms already served count toward the new limits?"
+lines = ["term-limits"]
+
+[[question]]
+ask = "What would becoming a charter city cost the city?"
+unanswered = true

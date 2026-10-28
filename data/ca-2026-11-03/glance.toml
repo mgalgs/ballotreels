@@ -271,3 +271,9 @@ source = "impartial-analysis"
 quote = "The City estimates that the measure would generate approximately $3 million annually, although actual revenues will depend on hotel occupancy, room rates, and related taxable charges."
 amount = 3000000
 period = "per-year"
+
+# City of Orange Measure K: not a tax measure; the guide prints no fiscal
+# statement.
+[orange-city-measure-k]
+source = "guide-page"
+status = "none-printed"
