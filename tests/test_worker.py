@@ -685,24 +685,20 @@ class CommittedNarrationReusedTest(WorkerTestCase):
         self.assertEqual(row["state"], "done", row["error"])
         self.assertEqual(runner.narrated, [])
 
-    def test_stale_narration_is_narrated_beside_its_sidecars(self):
-        # An edited script is narrated again, but with the old sidecars in
-        # place, so `say` keeps every phrase whose key did not change.
+    def test_stale_narration_fails_fast(self):
+        # An edited script's committed narration is not re-made on the
+        # worker: `say` would re-speak the edited line and the unchanged
+        # line after it, and either new take can fail its transcript check.
         script = self.dest / "script.toml"
         script.write_text(script.read_text(encoding="utf-8").replace(
             "A no vote means the current rules would not change.",
             "A no vote means the current rules would stay the same."),
             encoding="utf-8")
-        seen = {}
-
-        class Recording(FakeRunner):
-            def narrate(self, contest_dir):
-                seen["json"] = (Path(contest_dir) / "narration.json").read_bytes()
-                seen["wav"] = (Path(contest_dir) / "narration.wav").is_file()
-                super().narrate(contest_dir)
-
         job, _ = self.deps.queue.create_job(self.prop2_key())
-        self.make_worker(runner=Recording()).run_once()
-        self.assertEqual(seen.get("json"),
-                         (self.dest / "narration.json").read_bytes())
-        self.assertTrue(seen.get("wav"))
+        runner = NoTTSRunner()
+        self.make_worker(runner=runner).run_once()
+        row = self.deps.queue.get_job(job["id"])
+        self.assertEqual(row["state"], "failed")
+        self.assertEqual(row["failed_stage"], "narrate")
+        self.assertIn("scripts/narrate.sh", row["error"])
+        self.assertEqual(runner.narrated, [])
