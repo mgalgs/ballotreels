@@ -87,6 +87,16 @@ template, `film/measure.py`, which reads the contest directory and its
 committed narration — nothing about one contest is in the template
 itself.
 
+Given an election's directory instead, `render` makes that state's
+crash course: one 9:16 video through every statewide measure, built
+from the measures' committed scripts and narration alone, with no new
+narration (docs/ARCHITECTURE.md, "The crash course"):
+
+    python -m ballotreels render data/ut-2026-11-03
+
+This writes `out/<election>-crash-course-9x16.mp4` and its chapters,
+one per measure, using `film/crash_course.py`.
+
 ## Extending the contest index
 
 Each election's ballot is listed in `data/<election>/contests.toml`
