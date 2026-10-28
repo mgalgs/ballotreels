@@ -1,0 +1,46 @@
+# Archived sources for City of Perris Measure C, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the
+# Riverside County Registrar of Voters' County Voter Information Guide
+# (ballot type 49, a Perris precinct); "page" is the guide's printed
+# footer number.
+#
+# The guide does not print the measure's full text (the ordinance adding
+# Chapter 3.42 to the Perris Municipal Code); the City's copy was not
+# retrieved, so no official-text source is listed. The guide prints no
+# fiscal analysis or tax rate statement.
+
+[contest]
+id = "ca-2026-11-03-perris-measure-c"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:perris"
+kind = "measure"
+title = "City of Perris Measure C: Business License Tax on Warehouses, Industrial Businesses and Truck Yards"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "Riverside County Registrar of Voters, County Voter Information Guide, page RV 049-020: sample ballot, Measure C"
+credit = "Sample ballot, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000049.pdf"
+file = "sources/sample-ballot-page.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney, City of Perris, Impartial Analysis of Measure C, Riverside County Voter Information Guide, page RV 049-045"
+credit = "City Attorney Impartial Analysis, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000049.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments for and against Measure C and rebuttals, as printed in the Riverside County Voter Information Guide, pages RV 049-046 to RV 049-047"
+credit = "Arguments, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000049.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"

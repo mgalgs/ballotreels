@@ -301,3 +301,13 @@ source = "impartial-analysis"
 quote = "It is estimated that Measure “Q” will provide an additional $16,000,000 in annual local funding"
 amount = 16000000
 period = "per-year"
+
+# City of Perris Measure C: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is the City's, as the City Attorney's
+# Impartial Analysis gives it (the ballot question rounds it to
+# $2,500,000).
+[perris-measure-c]
+source = "impartial-analysis"
+quote = "The City estimates $2,523,877 in annual revenue."
+amount = 2523877
+period = "per-year"
