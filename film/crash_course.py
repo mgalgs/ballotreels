@@ -163,8 +163,9 @@ def opening_card():
     y += lh_mid + gap * 0.5
     more, f, _ = T.write_lines(f + 2, [COURSE.date], small, st.x, y, align='center', width=st.w)
     items += more
-    # all of it on within the card's first second and a bit
-    return T.scaled(items, 4, max(8, COURSE.opening - 20))
+    # all of it on, and the pencil gone, before the card's first second
+    # is up: the web copy's poster is that frame (pipeline.encode)
+    return T.scaled(items, 4, max(8, COURSE.opening // 2 - 10))
 
 
 # ---- the closing sources card: grouped by measure, over pages ----

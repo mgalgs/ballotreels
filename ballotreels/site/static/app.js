@@ -1350,7 +1350,7 @@ function crashCourseNodes(course) {
   const chips = chapterNodes(course.chapters,
                              nodes[0].querySelector("video"));
   return [el("div", { class: "crash-course" }, [
-    el("h2", { text: `All ${course.measures} measures in one video` }),
+    el("h2", { text: "Every measure in one video" }),
     ...nodes, ...chips])];
 }
 

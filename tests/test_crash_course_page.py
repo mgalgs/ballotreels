@@ -79,7 +79,7 @@ class CrashCourseNodesTest(unittest.TestCase):
 
     def test_the_video_with_a_chip_per_measure(self):
         self.assertEqual(self.out["count"], 1)
-        self.assertEqual(self.out["heading"], ["All 2 measures in one video"])
+        self.assertEqual(self.out["heading"], ["Every measure in one video"])
         self.assertEqual(self.out["videos"], [COURSE["video_url"]])
         self.assertEqual(self.out["chips"],
                          [c["title"] for c in COURSE["chapters"]])
