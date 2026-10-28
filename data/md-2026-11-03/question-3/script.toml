@@ -1,0 +1,163 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; the standards the State Constitution sets for legislative
+# districts, and the 2022 ruling that applied them to congressional
+# districts; the amendment's three changes; what the Department of
+# Legislative Services says it costs; the two sides; what a vote does.
+#
+# The card quotes the State Board of Elections' "Ballot Questions for the
+# November 3, 2026 Election": the question's title, its chapter as the
+# Board prints it, and the ballot text the Supreme Court of Maryland's
+# order of September 3, 2026 set (Chapter 881's purpose paragraph, with
+# the "(Amending Article III ...)" line under it). The act's own ballot
+# wording is not on the ballot and is not quoted. The Board prints no
+# "A vote FOR / AGAINST" lines for Question 3, so the card has none, and
+# the two vote lines take one parallel meaning each from the card's
+# "Amending Article III of the Maryland Constitution", highlighting the
+# same phrase for both.
+#
+# The 2022 ruling is stated in the Department's summary's words; no
+# case, party or judge is named.
+# Maryland publishes no official arguments for or against an amendment;
+# both sides are filed = false and each says so once, in the same number
+# of words. The Department finds no material fiscal effect, so no dollar
+# figure needs a scale. No person is named.
+
+contest = "md-2026-11-03-question-3"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-questions"
+number = "3"
+title = "Electoral Districts – General Assembly and Congressional Representatives"
+origin = "Ch. 881 of the 2026 Legislative Session"
+summary = "FOR the purpose of clarifying that certain requirements apply only to districts for the election of members of the Senate of Maryland and the House of Delegates; authorizing the General Assembly to grant original jurisdiction to the Supreme Court of Maryland to review the congressional districting plan of the State; and providing that nothing in the Maryland Constitution provides applicable criteria for the boundaries of a congressional districting plan. (Amending Article III of the Maryland Constitution)"
+
+[[section]]
+id = "what"
+heading = "Question 3"
+
+[[section.line]]
+text = "Question 3 is about rules for congressional districts in Maryland."
+sources = ["ballot-questions"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-questions"
+highlight = ["congressional districting plan"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the State Constitution requires each legislative district to be compact, with adjoining territory and substantially equal population."
+sources = ["dls-summary", "amendment-text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "district-map"
+
+[[section.line]]
+text = "A 2022 circuit court ruling held that those standards also apply to congressional districts."
+sources = ["dls-summary", "fiscal-note"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would say those standards apply only to State Senate and House of Delegates districts."
+sources = ["ballot-questions", "dls-summary", "amendment-text"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-questions"
+highlight = ["apply only to districts for the election of members of the Senate of Maryland and the House of Delegates"]
+
+[[section.line]]
+text = "The amendment would also say the State Constitution sets no criteria for congressional boundaries."
+sources = ["ballot-questions", "dls-summary", "amendment-text"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-questions"
+highlight = ["nothing in the Maryland Constitution provides applicable criteria for the boundaries of a congressional districting plan"]
+
+[[section.line]]
+text = "The General Assembly could also have congressional map challenges start in the Supreme Court of Maryland."
+sources = ["ballot-questions", "dls-summary"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-questions"
+highlight = ["grant original jurisdiction to the Supreme Court of Maryland"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Department of Legislative Services expects no material effect on State operations or finances."
+sources = ["fiscal-note"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Maryland publishes no official argument for the amendment."
+sources = ["ballot-questions"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-questions"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Maryland publishes no official argument against the amendment."
+sources = ["ballot-questions"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-questions"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for means the State Constitution would change as described."
+sources = ["ballot-questions"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-questions"
+highlight = ["Amending Article III of the Maryland Constitution"]
+
+[[section.line]]
+text = "A vote against means the State Constitution stays as it is."
+sources = ["ballot-questions"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-questions"
+highlight = ["Amending Article III of the Maryland Constitution"]

@@ -1,0 +1,84 @@
+# Archived sources for Maryland Question 3, 2026-11-03 general election.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+#
+# Maryland mails no voter pamphlet. The State Board of Elections' page
+# "Ballot Questions for the November 3, 2026 Election" (Election Law
+# 7-103(e)) prints each question's title and ballot text; for Question 3
+# it prints the text the Supreme Court of Maryland's per curiam order of
+# September 3, 2026 directed it to use (the purpose paragraph of Chapter
+# 881), and no "A vote FOR / AGAINST" lines. The act's own ballot wording
+# is not on the ballot. The same page lists county charter and bond
+# questions, whose lines are not Question 3's. dls-summary-section.pdf is
+# page 1 (the covering letter) and page 6 (Question 3's summary, a
+# scanned image with no text layer) of the Department of Legislative
+# Services' summaries (Election Law 7-105(b)); amendment-text-section.pdf
+# is Question 3's page of the Board's "Text of Proposed Constitutional
+# Amendment". Chapter 881 is an act of the August 2026 special session,
+# though the General Assembly's site files it under the 2026 regular
+# session. There is no ballot fiscal statement: the Department's Fiscal
+# and Policy Note on the bill is the official one. Maryland publishes no
+# official arguments for or against an amendment, so there is no source
+# of kind official-argument: both side sections say so, citing the
+# Board's page, which prints none.
+
+[contest]
+id = "md-2026-11-03-question-3"
+election = "md-2026-11-03"
+division = "ocd-division/country:us/state:md"
+kind = "measure"
+title = "Question 3: Electoral Districts – General Assembly and Congressional Representatives"
+
+[[source]]
+id = "ballot-questions"
+kind = "official-title-summary"
+publisher = "Maryland State Board of Elections, Ballot Questions for the November 3, 2026 Election: Question 3"
+credit = "Maryland State Board of Elections"
+url = "https://elections.maryland.gov/elections/2026/ballot_questions.html"
+file = "sources/sbe-ballot-questions.html"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "dls-summary"
+kind = "official-title-summary"
+publisher = "Maryland Department of Legislative Services, ballot question summaries, letter to the State Administrator of Elections, August 11, 2026, pages 1 and 6"
+credit = "Department of Legislative Services, ballot question summary"
+url = "https://elections.maryland.gov/elections/2026/2026_Ballot_Question_SBE_Letter.pdf"
+file = "sources/dls-summary-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal-note"
+kind = "official-fiscal-analysis"
+publisher = "Maryland Department of Legislative Services, Fiscal and Policy Note, House Bill 2100 (2026 Special Session), Third Reader - Revised"
+credit = "Department of Legislative Services, Fiscal and Policy Note"
+url = "https://mgaleg.maryland.gov/2026RS/fnotes/bil_0000/hb2100.pdf"
+file = "sources/hb2100-fiscal-and-policy-note.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "amendment-text"
+kind = "official-text"
+publisher = "Maryland State Board of Elections, Text of Proposed Constitutional Amendment: Question 3"
+credit = "Maryland State Board of Elections, amendment text"
+url = "https://elections.maryland.gov/elections/2026/SBE_Proposed_Constitutional_Amendment_Text.pdf"
+file = "sources/amendment-text-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "chapter"
+kind = "official-text"
+publisher = "Laws of Maryland, Special Session of 2026, Chapter 881 (House Bill 2100)"
+credit = "Chapter 881 of the Special Session of 2026"
+url = "https://mgaleg.maryland.gov/2026RS/Chapters_noln/CH_881_hb2100t.pdf"
+file = "sources/ch881-hb2100.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "court-order"
+kind = "public-record"
+publisher = "Supreme Court of Maryland, per curiam order, Nos. 21 and 22, September Term 2026, filed September 3, 2026"
+credit = "Supreme Court of Maryland, order of September 3, 2026"
+url = "https://www.mdcourts.gov/data/opinions/coa/2026/21a26pc.pdf"
+file = "sources/supreme-court-order-21a26.pdf"
+retrieved = "2026-10-27"

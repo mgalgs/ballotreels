@@ -1,0 +1,32 @@
+# Contest index for the 2026-11-03 Maryland general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). Titles
+# pair the designation as the State Board of Elections heads each
+# question ("Question 1") with the question's title as the Board's
+# "Ballot Questions for the November 3, 2026 Election" prints it.
+
+[election]
+id = "md-2026-11-03"
+state = "ocd-division/country:us/state:md"
+title = "Maryland General Election, November 3, 2026"
+
+[[contest]]
+id = "md-2026-11-03-question-1"
+kind = "measure"
+division = "ocd-division/country:us/state:md"
+title = "Question 1: Arbitration Reform for State Employees Act of 2026"
+number = "1"
+
+[[contest]]
+id = "md-2026-11-03-question-2"
+kind = "measure"
+division = "ocd-division/country:us/state:md"
+title = "Question 2: Temporary Appointments on the Commission on Judicial Disabilities"
+number = "2"
+
+[[contest]]
+id = "md-2026-11-03-question-3"
+kind = "measure"
+division = "ocd-division/country:us/state:md"
+title = "Question 3: Electoral Districts – General Assembly and Congressional Representatives"
+number = "3"

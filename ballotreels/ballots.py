@@ -226,6 +226,19 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label="State Fiscal Impact Statement",
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+
+    # Maryland mails no voter pamphlet. The State Board of Elections posts
+    # "Ballot Questions for the November 3, 2026 Election" (Election Law
+    # 7-103(e)): each question headed "Question 1", its title, ballot
+    # text and "A vote FOR / AGAINST" lines, and the choices "For the
+    # Constitutional Amendment" and "Against the Constitutional
+    # Amendment". It prints no fiscal statement; the Department of
+    # Legislative Services' Fiscal and Policy Note heads its own "Fiscal
+    # Summary". No card quotes it, so the heading is never drawn.
+    "md": Ballot(guide="Ballot Questions for the November 3, 2026 Election",
+                 fiscal_label="Fiscal Summary",
+                 choices=("For", "Against"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")

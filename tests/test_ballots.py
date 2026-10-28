@@ -206,6 +206,15 @@ class BallotTest(unittest.TestCase):
                           "official-title-summary"))
         self.assertEqual(badge(va, "Question 1: X", "1"), "QUESTION")
 
+    def test_maryland_uses_its_boards_words(self):
+        md = BALLOTS["md"]
+        self.assertEqual((md.guide, md.fiscal_label, md.choices,
+                          md.card_source_kind),
+                         ("Ballot Questions for the November 3, 2026 Election",
+                          "Fiscal Summary", ("For", "Against"),
+                          "official-title-summary"))
+        self.assertEqual(badge(md, "Question 1: X", "1"), "QUESTION")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):

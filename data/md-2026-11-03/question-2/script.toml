@@ -1,0 +1,147 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; what the Commission does; the gap in today's rules; what the
+# amendment would allow, and who may fill a seat; what the Department of
+# Legislative Services says it costs; the two sides; what a vote does.
+#
+# The card quotes the State Board of Elections' "Ballot Questions for the
+# November 3, 2026 Election": the question's title, its chapter, the
+# ballot text, and the "A vote FOR" and "A vote AGAINST" lines (the FOR
+# and AGAINST labels are the boxes' own, from ballots.py).
+#
+# Maryland publishes no official arguments for or against an amendment;
+# the Board's vote lines are neutral descriptions, not arguments. Both
+# sides are filed = false and each says so once, in the same number of
+# words. The Department finds no material fiscal effect, so no dollar
+# figure needs a scale. No person is named.
+
+contest = "md-2026-11-03-question-2"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-questions"
+number = "2"
+title = "Temporary Appointments on the Commission on Judicial Disabilities"
+origin = "Ch. 878 of the 2026 Legislative Session"
+summary = "Authorizing temporary substitute appointments to the Commission on Judicial Disabilities when a member is recused or disqualified, or when a member's term expires. In these situations, the Commission Chair may recall a former member of the Commission, or the Governor, at the request of the Commission Chair, may appoint a temporary substitute member or extend the term of a current member until a permanent replacement is appointed. Only individuals who meet the constitutional eligibility requirements may be recalled or appointed to the Commission."
+yes = "A vote FOR this amendment means that temporary appointments to the Commission are allowed if a member is recused, disqualified, or if a member's term ends without a replacement. The Commission Chair can temporarily fill an opening on the Commission with a former member. The Governor can, at the request of the Commission Chair pick a temporary substitute to fill an opening on the Commission or extend the term of a current member until a replacement is appointed. Only individuals who meet the constitutional eligibility requirements may be recalled or appointed to the Commission."
+no = "A vote AGAINST the amendment means that current membership rules for the Commission stay the same. Temporary appointments are not allowed if a member is recused, disqualified, or if a member's term ends."
+
+[[section]]
+id = "what"
+heading = "Question 2"
+
+[[section.line]]
+text = "Question 2 is about filling seats on the Commission on Judicial Disabilities."
+sources = ["ballot-questions"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-questions"
+highlight = ["Temporary Appointments on the Commission on Judicial Disabilities"]
+
+[[section]]
+id = "background"
+heading = "What the Commission does"
+
+[[section.line]]
+text = "The Commission investigates complaints against judges and recommends discipline."
+sources = ["dls-summary", "fiscal-note"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the law has no provisions on membership after a recusal, a disqualification, or an expired term."
+sources = ["dls-summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "empty-commission-seat"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would let the chair recall a former member, or ask the Governor to appoint a temporary substitute or extend a current term."
+sources = ["ballot-questions", "dls-summary", "amendment-text"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-questions"
+highlight = ["the Commission Chair may recall a former member of the Commission"]
+
+[[section.line]]
+text = "Substitutes must meet the same qualifications, and cannot be someone the Senate rejected for the Commission."
+sources = ["dls-summary", "amendment-text"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Department of Legislative Services says the Commission would gain efficiencies, with no other material effect on State finances."
+sources = ["fiscal-note"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Maryland publishes no official argument for the amendment."
+sources = ["ballot-questions"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-questions"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Maryland publishes no official argument against the amendment."
+sources = ["ballot-questions"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-questions"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for means temporary appointments to the Commission are allowed."
+sources = ["ballot-questions"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-questions"
+highlight = ["temporary appointments to the Commission are allowed"]
+
+[[section.line]]
+text = "A vote against means current membership rules stay the same."
+sources = ["ballot-questions"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-questions"
+highlight = ["current membership rules for the Commission stay the same"]

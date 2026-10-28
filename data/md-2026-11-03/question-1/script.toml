@@ -1,0 +1,145 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; what happens today when bargaining stalls; what the amendment
+# would require of the budget, and what its companion law would add, with
+# the General Assembly's say over spending; what the Department of
+# Legislative Services says it costs; the two sides; what a vote does.
+#
+# The card quotes the State Board of Elections' "Ballot Questions for the
+# November 3, 2026 Election": the question's title, its chapter, the
+# ballot text, and the "A vote FOR" and "A vote AGAINST" lines (the FOR
+# and AGAINST labels are the boxes' own, from ballots.py).
+#
+# Maryland publishes no official arguments for or against an amendment;
+# the Board's vote lines are neutral descriptions, not arguments. Both
+# sides are filed = false and each says so once, in the same number of
+# words. The Department's figure, at least $150,000 a year, is stated
+# without a scale: no archived source gives the State budget total it
+# would be compared against. No person is named.
+
+contest = "md-2026-11-03-question-1"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-questions"
+number = "1"
+title = "Arbitration Reform for State Employees Act of 2026"
+origin = "Ch. 155 of the 2026 Legislative Session"
+summary = "Providing that each budget submitted by the Governor shall include proposed expenditures necessary to implement wages, hours, fringe benefits, health benefits, and other terms and conditions of employment in each collective bargaining memorandum of understanding with State employees, whether the State and State employees reached those terms and conditions by mutual agreement or through a neutral decider's order."
+yes = "A vote FOR this amendment means that the Governor has to include money in the proposed State budget to pay for agreements between the State and its employees. Agreements might include changes to wages, hours, fringe benefits, health benefits, and other terms and conditions of employment. The Governor must put enough money in the State budget to cover the agreed upon pay and benefits for employees, whether those terms were negotiated or decided by a neutral decision-maker."
+no = "A vote AGAINST the amendment means that the law about funding agreements between the State and State employees stays the same."
+
+[[section]]
+id = "what"
+heading = "Question 1"
+
+[[section.line]]
+text = "Question 1 is about funding State employee agreements, each a memorandum of understanding."
+sources = ["ballot-questions", "dls-summary"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-questions"
+highlight = ["collective bargaining memorandum of understanding with State employees"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, if bargaining stalls, a fact finder recommends terms, which are not binding."
+sources = ["fiscal-note"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bargaining-table"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would require the Governor to budget for every agreement, whether bargained or set by a neutral decision-maker."
+sources = ["ballot-questions", "dls-summary", "amendment-text"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-questions"
+highlight = ["by mutual agreement or through a neutral decider's order"]
+
+[[section.line]]
+text = "A related law would add binding arbitration, except in higher education, but new spending would still need legislative approval."
+sources = ["dls-summary", "chapter"]
+
+[section.line.visual]
+kind = "illustration"
+name = "law-book"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Department of Legislative Services says State spending would likely rise at least $150,000 a year, if not significantly more."
+sources = ["fiscal-note"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "Personnel costs would also be affected, potentially significantly, the Department says."
+sources = ["fiscal-note"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Maryland publishes no official argument for the amendment."
+sources = ["ballot-questions"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-questions"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Maryland publishes no official argument against the amendment."
+sources = ["ballot-questions"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-questions"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for means the Governor must budget money to pay for these agreements."
+sources = ["ballot-questions"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-questions"
+highlight = ["include money in the proposed State budget to pay for agreements"]
+
+[[section.line]]
+text = "A vote against means the law about funding these agreements stays the same."
+sources = ["ballot-questions"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-questions"
+highlight = ["stays the same"]

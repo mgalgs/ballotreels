@@ -1,0 +1,70 @@
+# Archived sources for Maryland Question 2, 2026-11-03 general election.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+#
+# Maryland mails no voter pamphlet. The State Board of Elections' page
+# "Ballot Questions for the November 3, 2026 Election" (Election Law
+# 7-103(e)) prints each question's title, ballot text and "A vote FOR /
+# AGAINST" lines; the same page lists county charter and bond questions,
+# whose lines are not Question 2's. dls-summary-section.pdf is page 1 (the
+# covering letter) and page 5 (Question 2's summary, a scanned image with
+# no text layer) of the Department of Legislative Services' summaries
+# (Election Law 7-105(b)); amendment-text-section.pdf is Question 2's
+# page of the Board's "Text of Proposed Constitutional Amendment". There
+# is no ballot fiscal statement: the Department's Fiscal and Policy Note
+# on the bill is the official one. Maryland publishes no official
+# arguments for or against an amendment, so there is no source of kind
+# official-argument: both side sections say so, citing the Board's page,
+# which prints none.
+
+[contest]
+id = "md-2026-11-03-question-2"
+election = "md-2026-11-03"
+division = "ocd-division/country:us/state:md"
+kind = "measure"
+title = "Question 2: Temporary Appointments on the Commission on Judicial Disabilities"
+
+[[source]]
+id = "ballot-questions"
+kind = "official-title-summary"
+publisher = "Maryland State Board of Elections, Ballot Questions for the November 3, 2026 Election: Question 2"
+credit = "Maryland State Board of Elections"
+url = "https://elections.maryland.gov/elections/2026/ballot_questions.html"
+file = "sources/sbe-ballot-questions.html"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "dls-summary"
+kind = "official-title-summary"
+publisher = "Maryland Department of Legislative Services, ballot question summaries, letter to the State Administrator of Elections, August 11, 2026, pages 1 and 5"
+credit = "Department of Legislative Services, ballot question summary"
+url = "https://elections.maryland.gov/elections/2026/2026_Ballot_Question_SBE_Letter.pdf"
+file = "sources/dls-summary-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal-note"
+kind = "official-fiscal-analysis"
+publisher = "Maryland Department of Legislative Services, Fiscal and Policy Note, Senate Bill 933 (2026 Session), Third Reader"
+credit = "Department of Legislative Services, Fiscal and Policy Note"
+url = "https://mgaleg.maryland.gov/2026RS/fnotes/bil_0003/sb0933.pdf"
+file = "sources/sb933-fiscal-and-policy-note.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "amendment-text"
+kind = "official-text"
+publisher = "Maryland State Board of Elections, Text of Proposed Constitutional Amendment: Question 2"
+credit = "Maryland State Board of Elections, amendment text"
+url = "https://elections.maryland.gov/elections/2026/SBE_Proposed_Constitutional_Amendment_Text.pdf"
+file = "sources/amendment-text-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "chapter"
+kind = "official-text"
+publisher = "Laws of Maryland 2026, Chapter 878 (Senate Bill 933)"
+credit = "Chapter 878 of 2026"
+url = "https://mgaleg.maryland.gov/2026RS/Chapters_noln/CH_878_sb0933t.pdf"
+file = "sources/ch878-sb933.pdf"
+retrieved = "2026-10-27"
