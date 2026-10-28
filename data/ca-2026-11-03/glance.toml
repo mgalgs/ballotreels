@@ -334,3 +334,13 @@ source = "guide-page"
 quote = "providing an estimated $775,000 annually until ended by voters"
 amount = 775000
 period = "per-year"
+
+# City of Piedmont Measure GG: the guide prints no fiscal analysis or tax
+# rate statement; the estimate is the Acting City Attorney's Impartial
+# Analysis's (its ballot question rounds it to $1,500,000).
+[piedmont-measure-gg]
+source = "guide-page"
+quote = "It is estimated that this tax will generate approximately $1,521,000 of additional revenue annually."
+amount = 1521000
+period = "per-year"
+direction = "revenue-gain"

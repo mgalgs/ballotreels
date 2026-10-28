@@ -1,0 +1,156 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; the transfer tax today and what it pays for; what would change
+# (the rate, the narrowed exemption) and what it needs to pass; the
+# impartial analysis's revenue estimate; one line per side; what a vote
+# does.
+#
+# The guide prints no fiscal analysis or tax rate statement. The ballot
+# question says "approximately $1,500,000 annually"; the fiscal line
+# gives the Impartial Analysis's own, finer estimate, attributed to it.
+# No archived source states Piedmont's budget, so the figure has no scale
+# (STANDARD.md 6.5; left open). The page prints no subject heading over
+# the ballot question, so the card's title is the page's own head, the
+# city's name. The analysis is signed by the Acting City Attorney, so
+# the fiscal line names it as the impartial analysis.
+#
+# The guide prints an argument in favor and the notice "NO ARGUMENT
+# AGAINST MEASURE GG WAS SUBMITTED": the no side is filed = false.
+
+contest = "ca-2026-11-03-piedmont-measure-gg"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "GG"
+title = "CITY OF PIEDMONT"
+origin = "The City Council voted to place Measure GG on the November 3, 2026, ballot."
+summary = "Shall the measure, providing funding for City of Piedmont’s essential city services, such as police, fire, and emergency medical response; and maintenance of aging City buildings, parks, stormwater drains, roads and sidewalks, by increasing the real estate transfer tax from 1.3% to 1.75% to be more in line with neighboring cities and to generate approximately $1,500,000 annually in general tax revenue until ended by voters, be adopted?"
+yes = "A “YES” vote would be in favor of Measure GG."
+no = "A “NO” vote would be against Measure GG."
+
+[[section]]
+id = "what"
+heading = "Measure GG"
+
+[[section.line]]
+text = "City of Piedmont Measure GG asks Piedmont voters whether to raise the tax paid when property is sold, from 1.3 percent to 1.75 percent."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["increasing the real estate transfer tax from 1.3% to 1.75%"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, when property is sold or transferred, Piedmont charges a tax of $13 for each $1,000 of the price."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "down-payment"
+
+[[section.line]]
+text = "The money pays for the usual and current expenses of the city."
+sources = ["guide-page"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure GG would raise the tax to $17.50 for each $1,000, and rename it the real estate transfer tax."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "bars"
+title = "Tax for each $1,000 of the price"
+source = "guide-page"
+unit = ""
+labels = ["Today", "Measure GG"]
+values = [13.00, 17.50]
+
+[[section.line]]
+text = "Transfers from a public agency to a nonprofit using certain tax-exempt bonds would no longer be exempt."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure GG needs a majority of the votes cast to pass."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The impartial analysis estimates the increase would raise about $1,521,000 a year, which may be used for any general city purpose."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the tax, last updated over 30 years ago, funds city services and would be closer to neighboring cities."
+sources = ["arguments"]
+basis = ["For almost 60 years Piedmont has depended on its transfer tax to fund critical services for Piedmont residents.", "The last time Piedmont’s measure was updated was over 30 years ago.", "Approval of this measure will put Piedmont’s transfer tax more in line with neighboring cities that have updated their measures over the years."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Funds police, fire and repairs", "In line with neighboring cities"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The Alameda County Composite Voter Information Guide says that no argument against Measure GG was submitted for this election."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is in favor of Measure GG and its 1.75 percent transfer tax."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["in favor of Measure GG"]
+
+[[section.line]]
+text = "A no vote is against Measure GG and its 1.75 percent transfer tax."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["against Measure GG"]
