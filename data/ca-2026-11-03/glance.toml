@@ -129,3 +129,10 @@ source = "fiscal-statement"
 quote = "This measure requires the County Board of Supervisors (Board) to appropriate a minimum of $14.3 million for the Ethics Commission's and Office of Ethics Compliance's annual operating budget, beginning in Fiscal Year 2027-28."
 amount = 14300000
 period = "per-year"
+
+# San Diego Unified Measure M: the district's Tax Information Statement.
+[san-diego-unified-measure-m]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest that would be required to be repaid if all of the bonds are issued and sold is approximately $8,100,000,000."
+amount = 8100000000
+period = "unstated"
