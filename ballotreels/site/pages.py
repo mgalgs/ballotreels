@@ -202,8 +202,35 @@ def sitemap_xml(site_url: str, paths: list[str]) -> str:
             f"{urls}</urlset>\n")
 
 
-def render_page(template: str, meta: PageMeta, site_url: str) -> str:
+RELATED_HEADING = "Related measures"
+
+
+def related_html(related: list[dict]) -> str:
+    """A measure page's related measures (the contest API's "related"),
+    as the app draws them: each its state's name and its title, linking
+    to its page. Nothing when there are none."""
+    if not related:
+        return ""
+    esc = lambda text: html.escape(text, quote=True)
+    items = "".join(
+        f'<li><a href="{esc(r["path"])}">'
+        f'<span class="related-state">{esc(r["state_name"])}</span> '
+        f'<span class="related-title">{esc(r["title"])}</span></a></li>'
+        for r in related)
+    return ('<section class="related-measures">'
+            f'<h2 class="section-title"><span class="scribble">'
+            f'{RELATED_HEADING}</span></h2>'
+            f'<ul class="related">{items}</ul></section>')
+
+
+_MAIN = '<main id="app"></main>'
+
+
+def render_page(template: str, meta: PageMeta, site_url: str,
+                main: str = "") -> str:
     """index.html with its default title and description replaced by
-    `meta`'s tags."""
+    `meta`'s tags, and `main` (HTML) in its otherwise empty <main>, there
+    before the app's script runs and draws the page over it."""
     tags = meta_tags(meta, site_url)
-    return _META_BLOCK.sub(lambda _m: tags, template, count=1)
+    page = _META_BLOCK.sub(lambda _m: tags, template, count=1)
+    return page.replace(_MAIN, f'<main id="app">{main}</main>', 1)

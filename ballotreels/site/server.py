@@ -31,7 +31,9 @@ from ..geo.states import STATE_NAMES, chambers, state_for_zip
 from ..index import (ContestIndex, IndexEntry, ballot_order, key_for,
                      level_of, load_index)
 from ..queue import JobQueue
+from ..related import load_related, related_to
 from ..standard import Standard, load_standard
+from . import config as site_config
 from . import pages
 from .config import (Config, ElectionResolutionError, resolve_election_dirs,
                      state_abbr)
@@ -129,6 +131,8 @@ class Deps:
         default_factory=lambda: threading.BoundedSemaphore(MAX_GEOCODER_CALLS))
     clock: Any = None
     geocoder_fetch: Any = None
+    # data/related.toml's groups of related measures, by group name.
+    related: dict[str, tuple[str, ...]] = field(default_factory=dict)
 
     def __post_init__(self):
         if self.clock is None:
@@ -254,8 +258,11 @@ def build_deps(config: Config, clock=None, warn=None) -> Deps:
     queue.on_vacate = lambda job_id, claim: shutil.rmtree(
         _incoming_dir(config.data_dir, job_id, claim), ignore_errors=True)
     _sweep_orphaned_dirs(config.data_dir, queue)
+    # A live lookup of the data root, so tests can monkeypatch it. Ids of
+    # elections not served are left out of each page's list, not errors.
+    related = load_related(site_config.DATA_ROOT / "related.toml")
     return Deps(config=config, queue=queue, states=states, standard=standard,
-               clock=clock)
+               clock=clock, related=related)
 
 
 class BadRequest(Exception):
@@ -503,6 +510,30 @@ def _contest_summary(entry, state: StateElection,
     }
 
 
+def _related(entry, state: StateElection,
+             deps: Deps) -> list[dict[str, Any]]:
+    """The measures related to `entry` (data/related.toml) that are
+    served: its own state's first, in ballot order, then the other
+    states' by state name, each in ballot order."""
+    found = []
+    for contest_id in related_to(deps.related, entry.id):
+        hit = deps.contest(contest_id)
+        if hit is None:
+            continue
+        other_state, other = hit
+        position = ballot_order(other_state.index).index(other)
+        found.append((other_state.abbr != state.abbr,
+                      _sort_name(other_state.abbr), position,
+                      other_state, other))
+    found.sort(key=lambda f: f[:3])
+    return [{"id": other.id,
+             "state": other_state.abbr,
+             "state_name": pages.capitalize(_state_name(other_state.abbr)),
+             "title": other.title,
+             "path": other_state.contest_path(other)}
+            for *_, other_state, other in found]
+
+
 def _contest_detail(entry, state: StateElection,
                     deps: Deps) -> dict[str, Any]:
     key = key_for(state.index.election.id, entry, deps.standard)
@@ -534,6 +565,8 @@ def _contest_detail(entry, state: StateElection,
                         for c in entry.corrections],
         "report_url": REPORT_URL,
         "job": job,
+        # Measures on the same subject, each linking to its own page.
+        "related": _related(entry, state, deps),
         # only a choice question says so: a yes/no measure's detail is
         # as it always was
         **({"choice": True} if entry.choice else {}),
@@ -769,7 +802,21 @@ class PublicHandler(_JsonHandler):
         meta = self._page_meta(path)
         if meta is None:
             return self._html(404, pages.not_found_meta(path))
-        self._html(200, meta)
+        # A measure's page carries its related measures in the HTML too.
+        measure = self._measure_at(path)
+        main = (pages.related_html(_related(measure[1], measure[0], deps))
+                if measure else "")
+        self._html(200, meta, main)
+
+    def _measure_at(self, path: str
+                    ) -> tuple[StateElection, IndexEntry] | None:
+        """The contest whose short path is `path`, or None."""
+        m = re.fullmatch(r"/([a-z]{2})/(\d{4})/([^/]+)", path)
+        if not m:
+            return None
+        state = self.server.deps.states.get(m.group(1))
+        entry = state.contest_at(m.group(2), m.group(3)) if state else None
+        return (state, entry) if entry is not None else None
 
     def _page_meta(self, path: str) -> pages.PageMeta | None:
         """The tags of the page at `path`, or None if there is none."""
@@ -783,12 +830,9 @@ class PublicHandler(_JsonHandler):
                 return None
             return pages.state_meta(_state_name(state.abbr), path,
                                     len(_statewide_measures(state)))
-        m = re.fullmatch(r"/([a-z]{2})/(\d{4})/([^/]+)", path)
-        if m:
-            state = deps.states.get(m.group(1))
-            entry = state.contest_at(m.group(2), m.group(3)) if state else None
-            if entry is None:
-                return None
+        measure = self._measure_at(path)
+        if measure:
+            state, entry = measure
             key = key_for(state.index.election.id, entry, deps.standard)
             video = deps.queue.video_for(key) if key is not None else None
             poster = video.urls.get("poster") if video else None
@@ -799,10 +843,11 @@ class PublicHandler(_JsonHandler):
                 video_made=video.created_at if video else None)
         return None
 
-    def _html(self, status: int, meta: pages.PageMeta) -> None:
+    def _html(self, status: int, meta: pages.PageMeta,
+              main: str = "") -> None:
         template = (STATIC_DIR / "index.html").read_text(encoding="utf-8")
         body = pages.render_page(template, meta,
-                                 self.server.deps.config.site_url
+                                 self.server.deps.config.site_url, main
                                  ).encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", CONTENT_TYPE_BY_EXT[".html"])
