@@ -95,6 +95,33 @@ for").
   following the manifest's rules (objects and places, no people, no text),
   then generated with the manifest's style and approved by a person.
 
+## Choice questions
+
+A question that asks voters to pick one of several options (format:
+SCRIPT-FORMAT.md's `[choices]`; rules: STANDARD.md section 8) has no
+sides and no arguments. Its story is shorter: what it asks; any
+background its official sources state (whether it is binding, what
+would have to happen next); the choices; what the fiscal statement
+says; how to vote. A shorter film is fine; padding is not.
+
+- **The choices section** names every choice once, in ballot order, and
+  nothing about any one of them: no description, no history, no
+  nickname beyond what the ballot prints. Short connecting words
+  ("Then …") are shared by all. If the guide describes each option,
+  one line may say so.
+- Name each choice as printed, leaving out a parenthesised calibre or
+  code that reads badly aloud (`spoken`); the drawn label keeps it.
+- Split the names across the section's lines so each is short to hear;
+  with more than six choices, the lines of each grid page name only that
+  page's choices.
+- **Drawings**: one per choice, all with the same kind of subject (the
+  option alone, plain, no people and no text). Ask for new ones in the
+  contest's `illustrations-wanted.txt` (`name|subject`, one a line).
+- **Vote line**: quote the ballot's own instruction ("Please choose only
+  one answer"), highlighted on the card.
+- Read it as someone who favours each choice in turn. If any would
+  call a line unfair to theirs, rewrite it.
+
 ## Before it is done
 
 - `python -m ballotreels check <contest-dir>` passes.

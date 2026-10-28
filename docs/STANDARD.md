@@ -172,6 +172,35 @@ The rules below keep that story neutral.
    add a projection, or annotate a value with a judgment ("only",
    "record", "dangerously low").
 
+## 8. Choice questions
+
+Some questions ask voters to pick one of several options rather than
+answer yes or no (Idaho's advisory question on a state gun). Such a
+question has no for and against: its options take the place of the two
+sides, and the rules of section 2 for sides become these. (This section
+was added under version 2 without a new version: it governs only choice
+questions, and no video of one was made before it.)
+
+1. **Ballot order.** The options are listed, drawn and narrated in the
+   order the ballot prints them, and in no other order.
+2. **Verbatim labels.** Each option's letter and label are quoted
+   exactly as the cited official source prints them, on the card and
+   on the grid. The narration names each option as printed, and may
+   leave out a part in parentheses (a calibre, a code) that reads badly
+   aloud; the drawn label keeps it.
+3. **Every option, equally.** The narration names every option, the
+   same number of times, with the same treatment: no option gets a
+   description, a reason, or more words than another. If the official
+   guide describes each option, the script may say so, and describes
+   none.
+4. **Equal treatment on screen.** Every option is drawn on one sheet, a
+   grid of equal cells: the same cell size, the same drawing size and
+   treatment, the same label face and size, and the same drawing-on
+   time for each. No option is highlighted, enlarged, coloured
+   differently, ranked or set apart, on the grid or on the card.
+5. **No ranking.** Nothing says or implies that one option is more
+   popular, more fitting, more historic or more likely than another.
+
 ## Machine checks
 
 The pipeline rejects a script or render that fails any of these. They
@@ -188,5 +217,6 @@ human reading the video.
 | Each measure side's on-screen time exactly equal, the shorter one padded with trailing silence (padding over 2s fails instead, as too big to be TTS noise) | 2.2, 4.1 |
 | Every chart cites a source id that exists, of an allowed kind | 7.1 |
 | No chart in a side section unless both sides have one | 7.3 |
+| A choice question's options: letters in ballot order, each letter and label verbatim in the cited source, each spoken name the label with or without its parenthesised parts, the narration naming each once, in ballot order, on its own grid page, and every option as often as every other; no sides, no yes/no lines on its card | 8.1-8.4 |
 
 Standard version: 2

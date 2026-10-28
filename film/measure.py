@@ -61,7 +61,12 @@ same code for both, built from line positions, never from the side —
 rules 2.2, 4.1, 7.4). The two sides also get exactly the same time on
 screen: narration.side_pad adds silence to the shorter side's spoken
 audio (both in the layout and in the audio actually played, below), so
-neither section is shorter on the page than the other. The film closes
+neither section is shorter on the page than the other. A choice
+question (a script with [choices], STANDARD.md section 8) has no sides:
+its card lists the choices where a yes/no card has its YES and NO boxes,
+and its `choices` section draws every option, in ballot order, on one
+grid of equal cells (choices_plan; more than six take several pages),
+each drawing and label drawn on alike as the narrator names it. The film closes
 on a card listing every cited source (rule 1.5).
 Under the caption, on every frame from the first to the last, a quiet
 line gives the measure's own page on the site (LINK: the site's address

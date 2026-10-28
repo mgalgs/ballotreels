@@ -139,8 +139,55 @@ fiscal = "Enactment of Constitutional Amendment B likely would not ..."   # opti
   and the page's "Opponents: None submitted" sits beside a filed
   argument against.
 
+### A choice question: `[choices]`
+
+Most measures ask yes or no. A question that asks voters to pick one of
+several options (Idaho's advisory question on a state gun: "Please
+choose only one answer") opts in with a top-level `[choices]` table,
+listing the options in ballot order (STANDARD.md section 8):
+
+```toml
+[choices]
+source = "pamphlet"          # where the options are quoted from: the card's source
+
+[[choices.choice]]
+letter = "(a)"               # as printed; every choice has one, or none does
+label = "Winchester Model 1894 (.30-30)"   # verbatim, drawn on the card and the grid
+spoken = "Winchester Model 1894"           # optional: as narrated; defaults to the label
+illustration = "winchester-model-1894"     # its drawing on the grid, from the library
+```
+
+- At least 2 choices. `source` must be in `sources.toml` and, with a
+  card, be the card's own source.
+- **Verbatim**: each choice's letter and label, joined by a space ("(a)
+  Winchester Model 1894 (.30-30)"), must appear in the source's text,
+  compared as the card is, except that a hyphen in the label may be
+  missing from a PDF's text (pdftotext joins a word hyphenated across a
+  line break: "bolt-" and "action" come out "boltaction"). Leave out the
+  ballot's list punctuation (a trailing ";" or "or").
+- **Letters** run on from the first of a series once stripped to their
+  letters and digits: a, b, c ...; A, B, C ...; or 1, 2, 3 ...
+- `spoken` is the label, or the label with any of its parenthesised
+  parts left out (a calibre or a code that reads badly aloud).
+- `illustration` is an entry in the illustration library whose file
+  exists, as for an `illustration` visual. Give every choice the same
+  kind of subject (a plain drawing of the option alone), so none is
+  drawn differently (rule 8.4).
+- **The card** has no `yes` or `no`: it lists the choices, letter and
+  label, one a row in one face, under THE CHOICES, where a yes/no card
+  has its boxes. A `focus` or `highlight` never marks a choice on it.
+  Everything else on the card works as for any measure.
+- **The narration** names each choice by its `spoken` name (or label):
+  exactly once in the `choices` section, in ballot order, while the grid
+  page that shows it is up; and, over the whole script, every choice as
+  often as every other (in practice, once each). A choice's label is a
+  verbatim quote, exempt from the judgment-word check like the card; the
+  narration is not.
+- The checks fail a script with `[choices]` and sides, or with the yes/no
+  sections; see "the choice question" below for its sections.
+
 A line may carry one visual: a chart, a timeline, a list, an
-illustration or the page card. The centre of the frame shows only
+illustration, the page card, or a choice question's grid. The centre of the frame shows only
 pictures: text that belongs to a picture (a chart's title, its labels,
 its source line) is fine, but no visual is only text. There are two
 exceptions: the page card, which is a picture of the official ballot
@@ -223,6 +270,31 @@ source = "quick-reference"   # must equal card.source, and be among the line's s
 focus = "Rainy Day Fund"     # optional: the term to click
 ```
 
+```toml
+[section.line.visual]
+kind = "choices"         # one page of a choice question's grid
+source = "pamphlet"      # the [choices] table's source
+```
+
+- `choices`: a page of the grid of the `[choices]`, allowed only in the
+  `choices` section and only with a `[choices]` table; nothing but
+  `kind` and `source`. Each option is a cell: its drawing over its letter
+  and label. The grid is the smallest of 1x2, 1x3, 2x2 and 2x3 (columns x
+  rows on the 9:16 frame: "1x2" is one column of two stacked cells; the
+  16:9 frame turns it on its side) that holds the page's options: 2 take
+  1x2, 3 take 1x3, 4 take 2x2, 5 or 6 take 2x3. More than 6 take
+  ceil(n / 6) pages, split as evenly as possible in ballot order, the
+  earlier pages taking any extra one (7 = 4 + 3, 8 = 4 + 4, 13 = 5 + 4 +
+  4), each page on the smallest grid for its own count
+  (`ballotreels.grid`). The k-th `choices` visual shows page k, so the
+  `choices` section has exactly one per page, the first on its first
+  line, and no other visual. Cells fill in reading order, left to right
+  then top to bottom; a partly filled grid leaves its last cell empty.
+  Every cell is the same size on every page, its drawing the same size,
+  its label in the same face and size at the same place, and each draws
+  on in the same time, as the narrator names it (its name's estimated
+  spoken position in the page's lines, as a highlight's is timed). The
+  source is named under the grid.
 - `page`: the `[card]`, drawn as the official page. Allowed only when
   the script has a card; no `title`. `focus`, if given, is a phrase
   that must occur in the card's text (its title, origin, summary, yes
@@ -289,6 +361,17 @@ and only when both sides have one with the same number of items in all:
 both sides share one slide, whose two blocks hold each side's checklist
 and nothing else, so a chart, timeline, page or illustration in a side
 fails the check rather than going undrawn.
+
+### The choice question, under the measure template, version 2
+
+A script with a `[choices]` table keeps `template = "measure"` and
+`template_version = 2` (so the cache key, and every yes/no script, are
+unchanged) and follows these sections, in this order: `what`, any number
+of `background` sections, `choices`, `fiscal`, `vote`. There are no
+sides: no section has a `side`, and the choices take the sides' place
+(STANDARD.md section 8). Visuals may appear in any section but
+`choices`, which shows only the grid (above). The film draws the
+`choices` section as any section: its heading, then the grid's pages.
 
 ### The measure template, version 1
 
