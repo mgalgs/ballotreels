@@ -1,0 +1,57 @@
+# Archived sources for Vermont Proposal 4, 2026-11-03 general election.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+#
+# Vermont prints no voter guide, no explanation and no arguments for or
+# against a proposal of amendment, so there is no source of kind
+# official-argument; both side sections say so, citing the ballot. The
+# card quotes the ballot's "OFFICIAL STATE CONSTITUTIONAL AMENDMENT
+# BALLOT" panel, as printed on the City of Burlington's sample ballot for
+# Chittenden-17 (page 1, left column).
+#
+# The adopted text is quoted from the ballot and the Senate Journal of
+# March 11, 2026. The journal also prints the proposal's Sec. 1, PURPOSE,
+# which is not on the ballot; the script does not use it.
+
+[contest]
+id = "vt-2026-11-03-proposal-4"
+election = "vt-2026-11-03"
+division = "ocd-division/country:us/state:vt"
+kind = "measure"
+title = "Proposal 4: Equality of Rights"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "City of Burlington, Official Vermont General Election Ballot, November 3, 2026, Burlington, Chittenden-17 (sample ballot), page 1"
+credit = "Official Vermont General Election Ballot"
+url = "https://burlingtonvt.gov/DocumentCenter/View/12827/Chi-17-Sample?bidId="
+file = "sources/burlington-sample-ballot-chittenden-17.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "journal"
+kind = "official-text"
+publisher = "Vermont General Assembly, Journal of the Senate, Wednesday, March 11, 2026, pages 236-238"
+credit = "Journal of the Senate, March 11, 2026"
+url = "https://legislature.vermont.gov/Documents/2026/Docs/JOURNAL/sj260311.pdf#page=1"
+file = "sources/senate-journal-2026-03-11-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "status-2026"
+kind = "legislative-record"
+publisher = "Vermont General Assembly, PR.4, 2025-2026 session, detailed status"
+credit = "Vermont General Assembly, PR.4 status"
+url = "https://legislature.vermont.gov/bill/loadBillDetailedStatus/2026/2225"
+file = "sources/pr4-detailed-status.json"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "status-2024"
+kind = "legislative-record"
+publisher = "Vermont General Assembly, PR.4, 2023-2024 session, detailed status"
+credit = "Vermont General Assembly, PR.4 status, 2023-2024"
+url = "https://legislature.vermont.gov/bill/loadBillDetailedStatus/2024/1100"
+file = "sources/pr4-2024-detailed-status.json"
+retrieved = "2026-10-27"
