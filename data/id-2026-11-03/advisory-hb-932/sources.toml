@@ -1,0 +1,44 @@
+# Archived sources for Idaho's Advisory Question - House Bill 932,
+# 2026-11-03 general election. Every id here may be cited by script.toml.
+# `kind` must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# An advisory question, not an amendment or an initiative: it asks voters
+# to choose one of six guns (a choice question, docs/SCRIPT-FORMAT.md),
+# and has no statements for or against. The Voter Pamphlet prints the
+# question, its six choices, the Legislative Council's brief statement of
+# purpose and a brief description of each firearm on pages 14 and 15; the
+# fiscal note is the one filed with the bill in the Legislature, under
+# its statement of purpose.
+
+[contest]
+id = "id-2026-11-03-advisory-hb-932"
+election = "id-2026-11-03"
+division = "ocd-division/country:us/state:id"
+kind = "measure"
+title = "Advisory Question – House Bill 932: State Gun"
+
+[[source]]
+id = "pamphlet"
+kind = "official-title-summary"
+publisher = "Idaho Secretary of State, 2026 Idaho Voter Pamphlet, pages 14–15: Advisory Question - House Bill 932, its choices, Brief Statement of Purpose, and Brief Description of Each Firearm"
+credit = "Idaho Voter Pamphlet, Advisory Question - House Bill 932"
+url = "https://archive.voteidaho.gov/download/2026_Voter_Pamphlet.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal-note"
+kind = "official-fiscal-analysis"
+publisher = "Idaho Legislature, Statement of Purpose and Fiscal Note, RS33738 / H0932, introduced March 18, 2026"
+credit = "Fiscal note, House Bill 932, Idaho Legislature"
+url = "https://legislature.idaho.gov/wp-content/uploads/sessioninfo/2026/legislation/H0932SOP.pdf"
+file = "sources/statement-of-purpose.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Idaho Legislature, House Bill No. 932, Sixty-eighth Legislature, Second Regular Session, 2026"
+url = "https://legislature.idaho.gov/wp-content/uploads/sessioninfo/2026/legislation/H0932.pdf"
+file = "sources/text-proposed-law.pdf"
+retrieved = "2026-10-27"
