@@ -1,0 +1,149 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; who levies property taxes today; what the amendment would
+# require; that it sets no limit itself; what the Fiscal Research
+# Division's fiscal note says; the two sides; what a vote does.
+#
+# The card quotes the Legislative Services Officer's summary explanation:
+# the ballot question as the title and the official summary sentence as
+# the summary. North Carolina numbers no amendment, so the card has no
+# number and the script names it by subject. The explanation prints no
+# "a vote for means" lines and no fiscal statement, so the card has
+# neither, and the vote lines take their two meanings from the card's
+# "require the General Assembly to set limits" and "requiring limits".
+#
+# The amendment directs the General Assembly to "enact general laws
+# limiting the amount by which the levy of taxes on property may
+# increase, which may include exceptions"; it sets no limit, percentage
+# or cap itself, and no line says it does.
+#
+# Fiscal: the note finds "No Fiscal Impact", State and local, because
+# "the specifics of any limits on levies would be specified in
+# subsequent legislation following the referendum passing". Its table
+# of past county and municipal property tax revenue is background the
+# note gives "while there is no fiscal impact", not an effect, so it is
+# left out, and no dollar figure is narrated.
+#
+# North Carolina publishes no official arguments for or against an
+# amendment, so both sides are filed = false and each says so once, in
+# the same number of words.
+
+contest = "nc-2026-11-03-property-tax-levy-limit"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "explanation"
+title = "Constitutional amendment requiring limits on property tax increases by local governments."
+origin = "Session Law 2026-5"
+summary = "This amendment to the North Carolina Constitution would require the General Assembly to set limits on property tax increases by local governments."
+
+[[section]]
+id = "what"
+heading = "The property tax amendment"
+
+[[section.line]]
+text = "This amendment is about how much local property taxes may go up in North Carolina."
+sources = ["explanation", "ballot"]
+
+[section.line.visual]
+kind = "page"
+source = "explanation"
+highlight = ["property tax increases by local governments"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Counties, cities and towns collect property taxes for purposes state law allows, or that their own voters approve."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would require the General Assembly to pass laws limiting how much local property tax collections may increase."
+sources = ["text", "summary", "explanation", "fiscal-note"]
+
+[section.line.visual]
+kind = "page"
+source = "explanation"
+highlight = ["require the General Assembly to set limits"]
+
+[[section.line]]
+text = "The amendment sets no limit itself; those later laws would, and they may include exceptions."
+sources = ["text", "summary", "fiscal-note"]
+
+[section.line.visual]
+kind = "illustration"
+name = "law-book"
+
+[[section]]
+id = "fiscal"
+heading = "What the fiscal note says"
+
+[[section.line]]
+text = "The Fiscal Research Division found no fiscal impact for the state or local governments, because the specifics would come in later laws."
+sources = ["fiscal-note"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "North Carolina publishes no official argument for the amendment."
+sources = ["explanation"]
+
+[section.line.visual]
+kind = "list"
+source = "explanation"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "North Carolina publishes no official argument against the amendment."
+sources = ["explanation"]
+
+[section.line.visual]
+kind = "list"
+source = "explanation"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for requires the General Assembly to set limits on local property tax increases."
+sources = ["explanation"]
+
+[section.line.visual]
+kind = "page"
+source = "explanation"
+highlight = ["require the General Assembly to set limits"]
+
+[[section.line]]
+text = "A vote against leaves the constitution without a requirement for such limits."
+sources = ["explanation"]
+
+[section.line.visual]
+kind = "page"
+source = "explanation"
+highlight = ["requiring limits"]

@@ -69,7 +69,7 @@ class Card:
     quoted verbatim (docs/SCRIPT-FORMAT.md). As with Visual, each field is
     None when its key is absent, and the checks judge the values."""
     source: Any = None
-    number: Any = None
+    number: Any = None  # optional: absent where the ballot numbers no measure
     title: Any = None
     origin: Any = None
     summary: Any = None
@@ -80,7 +80,7 @@ class Card:
     # The fields quoted from the source, in the order the page shows them.
     QUOTED = ("title", "origin", "summary", "fiscal", "yes", "no")
     # The fields a card may leave out.
-    OPTIONAL = ("fiscal", "yes", "no")
+    OPTIONAL = ("number", "fiscal", "yes", "no")
 
     def quoted(self) -> tuple[tuple[str, Any], ...]:
         """(key, value) for each quoted field, in page order."""

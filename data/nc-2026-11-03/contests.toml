@@ -1,0 +1,30 @@
+# Contest index for the 2026-11-03 North Carolina general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. North Carolina's ballot heads each amendment only
+# "Constitutional Amendment", with no number, so no entry has a
+# `number` and the measures keep this file's order, the ballot's. Titles
+# are the State Board of Elections' contest names, as its Referendum
+# Choices List prints them (there in capitals).
+
+[election]
+id = "nc-2026-11-03"
+state = "ocd-division/country:us/state:nc"
+title = "North Carolina General Election, November 3, 2026"
+
+[[contest]]
+id = "nc-2026-11-03-photo-id-for-voting"
+kind = "measure"
+division = "ocd-division/country:us/state:nc"
+title = "Constitutional Amendment - Require Photo ID for Voting"
+
+[[contest]]
+id = "nc-2026-11-03-max-income-tax-rate"
+kind = "measure"
+division = "ocd-division/country:us/state:nc"
+title = "Constitutional Amendment - Maximum Income Tax Rate of 3.5%"
+
+[[contest]]
+id = "nc-2026-11-03-property-tax-levy-limit"
+kind = "measure"
+division = "ocd-division/country:us/state:nc"
+title = "Constitutional Amendment - Property Tax Levy Limit"

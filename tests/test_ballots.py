@@ -333,6 +333,13 @@ class LouisianaStatementsStitchTest(unittest.TestCase):
         self.assertEqual(badge(al, "Statewide Amendment 1: X", "1"),
                          "AMENDMENT")
 
+    def test_north_carolina_uses_its_explanations_words(self):
+        nc = BALLOTS["nc"]
+        self.assertEqual((nc.guide, nc.fiscal_label, nc.choices,
+                          nc.card_source_kind),
+                         ("Official Summary Explanation", None,
+                          ("For", "Against"), "official-title-summary"))
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):

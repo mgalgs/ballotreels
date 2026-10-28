@@ -272,6 +272,19 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label=None,
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+
+    # North Carolina prints no voter guide. Its one official explanation
+    # is the Legislative Services Officer's "Official Summary
+    # Explanation of 2026 Constitutional Amendments" (G.S. 147-54.10):
+    # each amendment's ballot question, its choices "FOR" and "AGAINST"
+    # (the State Board of Elections' list prints "For" and "Against"),
+    # and an official summary, with no fiscal statement. The ballot heads
+    # each only "Constitutional Amendment", with no number, so its cards
+    # have no number and draw no badge.
+    "nc": Ballot(guide="Official Summary Explanation",
+                 fiscal_label=None,
+                 choices=("For", "Against"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")

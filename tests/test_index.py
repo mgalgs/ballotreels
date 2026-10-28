@@ -101,16 +101,33 @@ number = "90"
         self.assertIn("kind", str(cm.exception))
 
     def test_measure_without_number(self):
+        """A ballot that numbers no measure leaves `number` out."""
         self.write(BASE + """
 [[contest]]
 id = "ca-2026-11-03-prop-90"
 kind = "measure"
 division = "ocd-division/country:us/state:ca"
+title = "B"
+
+[[contest]]
+id = "ca-2026-11-03-prop-91"
+kind = "measure"
+division = "ocd-division/country:us/state:ca"
 title = "A"
+
+[[contest]]
+id = "ca-2026-11-03-prop-1"
+kind = "measure"
+division = "ocd-division/country:us/state:ca"
+title = "C"
+number = "1"
 """)
-        with self.assertRaises(ContestIndexError) as cm:
-            load_index(self.dir)
-        self.assertIn("needs 'number'", str(cm.exception))
+        index = load_index(self.dir)
+        self.assertIsNone(index.entries[0].number)
+        # unnumbered measures follow the numbered ones, in file order
+        self.assertEqual([e.id for e in ballot_order(index)],
+                         ["ca-2026-11-03-prop-1", "ca-2026-11-03-prop-90",
+                          "ca-2026-11-03-prop-91"])
 
     def test_race_without_office(self):
         self.write(BASE + """

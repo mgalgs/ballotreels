@@ -99,25 +99,41 @@ class RealDataApiTest(unittest.TestCase):
                          [("Arizona", "az-2026-11-03-prop-144"),
                           ("Colorado", "co-2026-11-03-amendment-84"),
                           ("Nevada", "nv-2026-11-03-question-7"),
+                          ("North Carolina",
+                           "nc-2026-11-03-photo-id-for-voting"),
                           ("Ohio", "oh-2026-11-03-issue-3")])
         self.assertEqual(self.related("oh-2026-11-03-issue-3"),
                          [("Arizona", "az-2026-11-03-prop-144"),
                           ("California", "ca-2026-11-03-prop-39"),
                           ("Colorado", "co-2026-11-03-amendment-84"),
-                          ("Nevada", "nv-2026-11-03-question-7")])
+                          ("Nevada", "nv-2026-11-03-question-7"),
+                          ("North Carolina",
+                           "nc-2026-11-03-photo-id-for-voting")])
         self.assertEqual(self.related("az-2026-11-03-prop-144"),
                          [("California", "ca-2026-11-03-prop-39"),
                           ("Colorado", "co-2026-11-03-amendment-84"),
                           ("Nevada", "nv-2026-11-03-question-7"),
+                          ("North Carolina",
+                           "nc-2026-11-03-photo-id-for-voting"),
                           ("Ohio", "oh-2026-11-03-issue-3")])
         self.assertEqual(self.related("nv-2026-11-03-question-7"),
                          [("Arizona", "az-2026-11-03-prop-144"),
                           ("California", "ca-2026-11-03-prop-39"),
                           ("Colorado", "co-2026-11-03-amendment-84"),
+                          ("North Carolina",
+                           "nc-2026-11-03-photo-id-for-voting"),
                           ("Ohio", "oh-2026-11-03-issue-3")])
         self.assertEqual(self.related("co-2026-11-03-amendment-84"),
                          [("Arizona", "az-2026-11-03-prop-144"),
                           ("California", "ca-2026-11-03-prop-39"),
+                          ("Nevada", "nv-2026-11-03-question-7"),
+                          ("North Carolina",
+                           "nc-2026-11-03-photo-id-for-voting"),
+                          ("Ohio", "oh-2026-11-03-issue-3")])
+        self.assertEqual(self.related("nc-2026-11-03-photo-id-for-voting"),
+                         [("Arizona", "az-2026-11-03-prop-144"),
+                          ("California", "ca-2026-11-03-prop-39"),
+                          ("Colorado", "co-2026-11-03-amendment-84"),
                           ("Nevada", "nv-2026-11-03-question-7"),
                           ("Ohio", "oh-2026-11-03-issue-3")])
 
@@ -131,7 +147,10 @@ class RealDataApiTest(unittest.TestCase):
                           ("Louisiana", "la-2026-11-03-amendment-6"),
                           ("Louisiana", "la-2026-11-03-amendment-9"),
                           ("Louisiana", "la-2026-11-03-amendment-10"),
-                          ("Wyoming", "wy-2026-11-03-initiative-proposition-1")])
+                          ("North Carolina",
+                           "nc-2026-11-03-property-tax-levy-limit"),
+                          ("Wyoming",
+                           "wy-2026-11-03-initiative-proposition-1")])
 
     def test_two_groups(self):
         # Utah's Amendment B is in two groups: a link from one, two from the
