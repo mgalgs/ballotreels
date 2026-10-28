@@ -275,3 +275,11 @@ quote = "If approved, the City has determined Measure D would result in an addit
 amount = 20916
 period = "per-year"
 direction = "cost"
+
+# City of Needles Measure K: the guide prints no fiscal statement; the
+# one estimate is the City's, in the City Attorney's Impartial Analysis.
+[needles-measure-k]
+source = "impartial-analysis"
+quote = "the City has determined that Measure K would generate approximately $200,000 annually beginning in 2027, $300,000 annually beginning in 2029, and approximately $400,000 annually upon full implementation beginning in 2030."
+amount = 400000
+period = "per-year"
