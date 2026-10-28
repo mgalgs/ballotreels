@@ -604,9 +604,18 @@ def bars_chart(chart, L, f0, f1):
         if max(text.measure(ln, lf) for ls in lab_lines for ln in ls) <= slot - 16 * u or lf.size < 22:
             break
         lf = font(lf.size * 0.94, 600)
+    # the values too, so neighbours never run into each other: wrapped
+    # (number over unit) before the one font shrinks to fit the slot
+    vals = [with_unit(val, v.unit) for val in v.values]
+    val_lines = [[s] for s in vals]
+    if max(text.measure(s, vf) for s in vals) > slot - 16 * u:
+        val_lines = [s.split(' ', 1) for s in vals]
+    while max(text.measure(ln, vf) for ls in val_lines for ln in ls) > slot - 16 * u and vf.size >= 22:
+        vf = font(vf.size * 0.94, 700)
+    val_h = max(len(ls) for ls in val_lines) * text.line_height(vf)
     lab_h = max(len(ls) for ls in lab_lines) * text.line_height(lf)
     base = plot.bottom - lab_h - 14 * u
-    top = plot.y + text.line_height(vf) + 8 * u
+    top = plot.y + val_h + 8 * u
     scale = (base - top) / vmax
     x0 = plot.x + axis_w
     axis = Stroke([(x0 - 30 * u, base), (plot.right, base)], seed_of('axis'), passes=3, width=4.2 * u)
@@ -623,8 +632,9 @@ def bars_chart(chart, L, f0, f1):
         bar = GrowBar(cx - bw / 2, base, bw, val * scale, seed_of('bar', i), u, colour=BARS_COLOUR)
         items.append(Item(f + 2, f + 2 + grow, bar.draw, bar.head, ink=BARS_COLOUR))
         f += 2 + grow
-        vi, f, _ = write_lines(f + 2, [with_unit(val, v.unit)], vf, cx - slot / 2,
-                               base - val * scale - text.line_height(vf) - 4 * u, align='center', width=slot)
+        vh = len(val_lines[i]) * text.line_height(vf)
+        vi, f, _ = write_lines(f + 2, val_lines[i], vf, cx - slot / 2,
+                               base - val * scale - vh - 4 * u, align='center', width=slot)
         items += vi
         f += 6
     items = scaled(items, f0, draw_budget(f0, f1))
