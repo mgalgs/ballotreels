@@ -1,8 +1,8 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
 # is about; how it reached the ballot (adopted in 2024, and again in
-# 2025); that the constitution has no such article today; what the
-# new article says, in its own terms; that the ballot gives no cost
-# estimate; that neither side has an official argument; what a vote does.
+# 2025); that it adds a new article; what the new article says, in its
+# own terms; that the ballot gives no cost estimate; that neither side
+# has an official argument; what a vote does.
 #
 # The card quotes the ballot's panel: the article's heading as printed,
 # "Article 23. [Right to collectively bargain]", as its title; the ballot
@@ -65,8 +65,8 @@ id = "today"
 heading = "Today"
 
 [[section.line]]
-text = "Today, Vermont's Constitution has no article on collective bargaining."
-sources = ["journal"]
+text = "The amendment adds a new article to the Constitution."
+sources = ["ballot", "journal"]
 
 [section.line.visual]
 kind = "illustration"
@@ -94,7 +94,7 @@ kind = "illustration"
 name = "bargaining-table"
 
 [[section.line]]
-text = "No law could interfere with, negate, or diminish the right to bargain collectively."
+text = "No law could interfere with, negate, or diminish the right to bargain."
 sources = ["ballot", "journal"]
 
 [section.line.visual]
@@ -159,7 +159,7 @@ id = "vote"
 heading = "What your vote means"
 
 [[section.line]]
-text = "A yes vote adds the right to collectively bargain to Vermont's Constitution."
+text = "A yes vote adds the right to collectively bargain to the Constitution."
 sources = ["ballot"]
 
 [section.line.visual]
@@ -168,7 +168,7 @@ source = "ballot"
 highlight = ["[Right to collectively bargain]"]
 
 [[section.line]]
-text = "A no vote does not add the right to collectively bargain to Vermont's Constitution."
+text = "A no vote does not add the right to collectively bargain to the Constitution."
 sources = ["ballot"]
 
 [section.line.visual]
