@@ -1,0 +1,59 @@
+# Archived sources for North Dakota Initiated Constitutional Measure
+# No. 2, 2026-11-03 general election. Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# guide-section.pdf is pages 3 and 4 of the Secretary of State's "North
+# Dakota Statewide Ballot Measure Information" (the voter-education
+# mailer of NDCC 16.1-01-18), whose full URL is given; page 4 also
+# carries a sidebar on how the constitution can be changed. The
+# Legislative Council's fiscal impact report is the statement NDCC
+# 16.1-01-17 requires for an initiated measure. North Dakota publishes no
+# official arguments for or against a measure, so there is no source of
+# kind official-argument: both side sections say so, citing the guide,
+# which prints none. The petition is not archived: it prints the
+# sponsoring committee's home addresses, and the guide and the ballot
+# language carry its text.
+
+[contest]
+id = "nd-2026-11-03-measure-2"
+election = "nd-2026-11-03"
+division = "ocd-division/country:us/state:nd"
+kind = "measure"
+title = "Initiated Constitutional Measure No. 2: Seeks to Provide Meals to Students Through a State Funded Source"
+
+[[source]]
+id = "guide"
+kind = "official-title-summary"
+publisher = "North Dakota Secretary of State, North Dakota Statewide Ballot Measure Information, 2026 General Election, Constitutional Measure No. 2, pages 3 and 4"
+credit = "North Dakota Statewide Ballot Measure Information"
+url = "https://www.sos.nd.gov/sites/default/files/documents/elections/2026-general-measure-guide.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "ballot-language"
+kind = "official-title-summary"
+publisher = "North Dakota Secretary of State, Official Ballot Language for Measures Appearing on the Ballot, November 3, 2026: Initiated Constitutional Measure No. 2"
+credit = "North Dakota Secretary of State, Official Ballot Language"
+url = "https://www.sos.nd.gov/sites/default/files/documents/elections/measures/ballot-language-2026-general-measure2.pdf"
+file = "sources/ballot-language-measure-2.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "analysis"
+kind = "official-title-summary"
+publisher = "North Dakota Secretary of State, Analyses of the Statewide Measures Appearing on the Election Ballot, November 3, 2026: Analysis of Initiated Constitutional Measure No. 2"
+credit = "North Dakota Secretary of State, Analysis of Measure No. 2"
+url = "https://www.sos.nd.gov/sites/default/files/documents/elections/measures/analysis-2026-general-measure2.pdf"
+file = "sources/analysis-measure-2.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal-report"
+kind = "official-fiscal-analysis"
+publisher = "North Dakota Legislative Council, Report Submitted to the North Dakota Secretary of State Under North Dakota Century Code Section 16.1-01-17: Initiated Constitutional Measure Relating to School Meals, July 2026"
+credit = "North Dakota Legislative Council, fiscal impact report"
+url = "https://www.sos.nd.gov/sites/default/files/documents/elections/measures/schoollunches-fiscal-impact.pdf"
+file = "sources/fiscal-impact-measure-2.pdf"
+retrieved = "2026-10-27"
