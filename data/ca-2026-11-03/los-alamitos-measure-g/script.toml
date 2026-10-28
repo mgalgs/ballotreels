@@ -1,6 +1,6 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
-# asks and who placed it; the hotel tax today and what it raises; what
-# would change (the rate; a general tax for any city service); the
+# asks; the hotel tax today and what it raises; what
+# would change (the rate); the
 # ballot question's revenue estimate; one line per side; what a vote
 # does.
 #
@@ -45,14 +45,6 @@ kind = "page"
 source = "guide-page"
 highlight = ["increasing the City of Los Alamitos’ transient occupancy tax"]
 
-[[section.line]]
-text = "The Los Alamitos City Council placed Measure G on the ballot."
-sources = ["guide-page"]
-
-[section.line.visual]
-kind = "illustration"
-name = "school-board-room"
-
 [[section]]
 id = "today"
 heading = "Today"
@@ -88,14 +80,6 @@ sources = ["guide-page"]
 [section.line.visual]
 kind = "illustration"
 name = "hotel-front-desk"
-
-[[section.line]]
-text = "The money would go into the general fund, for any general city service, such as public safety or parks."
-sources = ["guide-page"]
-
-[section.line.visual]
-kind = "illustration"
-name = "state-budget"
 
 [[section]]
 id = "fiscal"

@@ -1,6 +1,6 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
-# asks and who placed it; the hotel tax today, whom it covers and where
-# its money goes; what would change (the rate, when, the yearly review);
+# asks; the hotel tax today and where its money goes; what would
+# change (the rate, and when);
 # the ballot question's revenue estimate; one line per side; what a vote
 # does.
 #
@@ -42,14 +42,6 @@ kind = "page"
 source = "guide-page"
 highlight = ["existing transient occupancy tax (hotel tax)"]
 
-[[section.line]]
-text = "The Placentia City Council placed Measure L on the ballot."
-sources = ["guide-page"]
-
-[section.line.visual]
-kind = "illustration"
-name = "school-board-room"
-
 [[section]]
 id = "today"
 heading = "Today"
@@ -65,14 +57,6 @@ source = "guide-page"
 unit = "%"
 labels = ["Today", "With Measure L"]
 values = [10, 14]
-
-[[section.line]]
-text = "Short-term rentals of homes, or of rooms in homes, pay the tax too."
-sources = ["guide-page"]
-
-[section.line.visual]
-kind = "illustration"
-name = "hotel-front-desk"
 
 [[section.line]]
 text = "The money goes into the general fund, which pays for services such as police patrols and road repairs."
@@ -93,14 +77,6 @@ sources = ["guide-page", "text"]
 [section.line.visual]
 kind = "illustration"
 name = "end-date"
-
-[[section.line]]
-text = "The existing citizens' oversight committee would also report each year on how the hotel tax money is spent."
-sources = ["guide-page"]
-
-[section.line.visual]
-kind = "illustration"
-name = "recurring-review"
 
 [[section]]
 id = "fiscal"

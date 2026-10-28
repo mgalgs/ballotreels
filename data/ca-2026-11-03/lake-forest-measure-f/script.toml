@@ -1,5 +1,5 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
-# asks and who placed it; the limit today; what
+# asks; the limit today; what
 # would change, and how it applies to members serving now; that the guide
 # gives no cost estimate; one line per side; what a vote does.
 #
@@ -43,14 +43,6 @@ sources = ["guide-page"]
 kind = "page"
 source = "guide-page"
 highlight = ["limiting city council members to two consecutive terms"]
-
-[[section.line]]
-text = "The Lake Forest City Council placed Measure F on the ballot."
-sources = ["guide-page"]
-
-[section.line.visual]
-kind = "illustration"
-name = "school-board-room"
 
 [[section]]
 id = "today"
