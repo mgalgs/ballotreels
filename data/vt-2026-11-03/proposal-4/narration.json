@@ -1,0 +1,265 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 66.03,
+  "phrases": [
+    {
+      "text": "Proposal 4 is about equality of rights in Vermont's Constitution.",
+      "start": 0.03,
+      "end": 4.33
+    },
+    {
+      "text": "The Legislature adopted the amendment in 2024, and again in 2026.",
+      "start": 4.99,
+      "end": 10.56
+    },
+    {
+      "text": "The proposal adds a new article, changing no existing one.",
+      "start": 11.22,
+      "end": 15.31
+    },
+    {
+      "text": "The article would guarantee equal protection under the law.",
+      "start": 15.97,
+      "end": 19.27
+    },
+    {
+      "text": "The State could not deny equal treatment on account of race, ethnicity, sex, religion, disability, sexual orientation, gender identity, gender expression, or national origin.",
+      "start": 19.93,
+      "end": 33.25
+    },
+    {
+      "text": "The article would not prevent measures intended to provide equality of treatment and opportunity for groups historically subject to discrimination.",
+      "start": 33.91,
+      "end": 42.51
+    },
+    {
+      "text": "Vermont's ballot does not include a cost estimate for the amendment.",
+      "start": 43.17,
+      "end": 47.09
+    },
+    {
+      "text": "Vermont publishes no official argument for the amendment.",
+      "start": 47.75,
+      "end": 51.2
+    },
+    {
+      "text": "Vermont publishes no official argument against the amendment.",
+      "start": 51.86,
+      "end": 55.22
+    },
+    {
+      "text": "A yes vote adds the equality of rights article to Vermont's Constitution.",
+      "start": 55.88,
+      "end": 60.54
+    },
+    {
+      "text": "A no vote does not add the equality of rights article to Vermont's Constitution.",
+      "start": 61.2,
+      "end": 66.0
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Proposal 4 is about equality of rights in Vermont's Constitution.",
+      "The Legislature adopted the amendment in 2024, and again in 2026.",
+      "The proposal adds a new article, changing no existing one.",
+      "The article would guarantee equal protection under the law.",
+      "The State could not deny equal treatment on account of race, ethnicity, sex, religion, disability, sexual orientation, gender identity, gender expression, or national origin.",
+      "The article would not prevent measures intended to provide equality of treatment and opportunity for groups historically subject to discrimination.",
+      "Vermont's ballot does not include a cost estimate for the amendment.",
+      "Vermont publishes no official argument for the amendment.",
+      "Vermont publishes no official argument against the amendment.",
+      "A yes vote adds the equality of rights article to Vermont's Constitution.",
+      "A no vote does not add the equality of rights article to Vermont's Constitution."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Proposal 4 is about equality of rights in Vermont's Constitution."
+      },
+      "bounds": [
+        0,
+        104640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Proposal 4 is about equality of rights in Vermont's Constitution.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The Legislature adopted the amendment in 2024, and again in 2026."
+      },
+      "bounds": [
+        119040,
+        254160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Legislature adopted the amendment in 2024, and again in 2026.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The proposal adds a new article, changing no existing one."
+      },
+      "bounds": [
+        268560,
+        368160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The proposal adds a new article, changing no existing one.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The article would guarantee equal protection under the law."
+      },
+      "bounds": [
+        382560,
+        463200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The article would guarantee equal protection under the law.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The State could not deny equal treatment on account of race, ethnicity, sex, religion, disability, sexual orientation, gender identity, gender expression, or national origin."
+      },
+      "bounds": [
+        477600,
+        798720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The State could not deny equal treatment on account of race, ethnicity, sex, religion, disability, sexual orientation, gender identity, gender expression, or national origin.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The article would not prevent measures intended to provide equality of treatment and opportunity for groups historically subject to discrimination."
+      },
+      "bounds": [
+        813120,
+        1020960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The article would not prevent measures intended to provide equality of treatment and opportunity for groups historically subject to discrimination.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Vermont's ballot does not include a cost estimate for the amendment."
+      },
+      "bounds": [
+        1035360,
+        1130880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Vermont's ballot does not include a cost estimate for the amendment.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Vermont publishes no official argument for the amendment."
+      },
+      "bounds": [
+        1145280,
+        1229520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Vermont publishes no official argument for the amendment.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Vermont publishes no official argument against the amendment."
+      },
+      "bounds": [
+        1243920,
+        1326000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Vermont publishes no official argument against the amendment.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote adds the equality of rights article to Vermont's Constitution."
+      },
+      "bounds": [
+        1340400,
+        1453680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote adds the equality of rights article to Vermont's Constitution.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote does not add the equality of rights article to Vermont's Constitution."
+      },
+      "bounds": [
+        1468080,
+        1584720
+      ]
+    }
+  ],
+  "sha256": "f0a53634fec568c3dd200eb7e7019dd9f481783a626766a844ca86cb0ff353d4"
+}
