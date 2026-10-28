@@ -165,3 +165,14 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $49,700,000."
 amount = 49700000
 period = "unstated"
+
+# Fallbrook Union Elementary School District Measure K: the total debt
+# service, as County Counsel's Impartial Analysis gives it ("The
+# estimated total debt service, including principal and interest,
+# required to be repaid ..."). pdftotext interleaves the page's two
+# columns, so the quote is the run it keeps whole.
+[fallbrook-elementary-measure-k]
+source = "impartial-analysis"
+quote = "to be repaid if the bonds are issued and sold is approximately $167,000,000."
+amount = 167000000
+period = "unstated"
