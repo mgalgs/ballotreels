@@ -1,0 +1,73 @@
+# Archived sources for Desert Recreation District Measure P, 2026-11-03
+# general election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1). The guide's pages are cut from the County of Riverside
+# Registrar of Voters' County Voter Information Guide (ballot type 261;
+# the same pages are in ballot type 270); "page" is the guide's printed
+# footer number. The guide prints no tax rate statement or fiscal
+# analysis for this parcel tax: the one revenue estimate is the ballot
+# question's.
+#
+# A recreation and park district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md).
+#
+# The ballot question is printed only on the sample ballot, whose
+# columns of English and Spanish text pdftotext reads line by line across
+# each other. The card therefore quotes sources/guide-pages.txt: the
+# sample ballot pages' text as poppler's `pdftotext -raw` extracts it
+# from sources/sample-ballot-page.pdf (in the PDF's own reading order),
+# followed by the measure pages' text as plain `pdftotext` extracts it
+# from sources/voter-guide-measure-pages.pdf. The other sources cite the
+# PDFs themselves.
+
+[contest]
+id = "ca-2026-11-03-desert-recreation-measure-p"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:riverside"
+kind = "measure"
+title = "Desert Recreation District Measure P: Parcel Tax for Parks, Recreation and Senior and Youth Services"
+voters = "the Desert Recreation District"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "County of Riverside Registrar of Voters, County Voter Information Guide, pages RV 261-020 and RV 261-045: Measure P's ballot question on the sample ballot, and the Impartial Analysis's statement of what a vote does"
+credit = "Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000261.pdf"
+file = "sources/guide-pages.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "Riverside County Counsel, Impartial Analysis of Measure P, Riverside County Voter Information Guide, page RV 261-045"
+credit = "Impartial Analysis, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000261.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in favor of Measure P, and the notice that no argument against was filed, as printed in the Riverside County Voter Information Guide, page RV 261-045"
+credit = "Arguments, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000261.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure P, an ordinance of the people of Desert Recreation District, Riverside County Voter Information Guide, pages RV 261-043 and RV 261-044"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000261.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "County of Riverside Registrar of Voters, Sample Ballot, County Voter Information Guide, pages RV 261-020 and RV 261-021"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000261.pdf"
+file = "sources/sample-ballot-page.pdf"
+retrieved = "2026-10-28"
