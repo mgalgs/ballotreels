@@ -10,7 +10,7 @@
 # One entry per line: a Python regular expression (case-sensitive; start
 # it with (?i) for any case), " | ", why it is misheard, " | ", what to
 # write instead. A pattern may use "|" for alternation, but not " | ".
-\b[A-Z]{2,}s\b | an acronym written as a plural is heard as a word ("PACs" as "packs" or "pacts") | write out what it stands for ("political committees")
+\b[A-Z]{3,}s\b | an acronym written as a plural is heard as a word ("PACs" as "packs" or "pacts"; two-letter ones like "IDs" are spelled out and pass) | write out what it stands for ("political committees")
 \bPACs?\b | "PAC" is said as a word and heard as "pack" | write out what it stands for ("political committee")
 (?<!\w)(?:[A-Za-z]\.){2,} | an abbreviation with internal periods splits the phrase or is read letter by letter ("U.S.", "e.g.") | write the words ("United States", "for example")
 (?i)\bconsents?\b | "consents" was heard as "can sense" | say "agrees" or "permission"

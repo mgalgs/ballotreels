@@ -85,6 +85,10 @@ class SpeakabilityTest(ContestCopyTestCase):
         self.assertFlags("Committees called SuperPACs and LLCs spend.",
                          "LLCs")
 
+    def test_two_letter_acronym_plural_passes(self):
+        # "IDs" is spelled out letter by letter and narrated fine.
+        self.assertEqual(self.speak("Voters may show photo IDs."), [])
+
     def test_eg(self):
         self.assertFlags("Some funds, e.g. reserves, are kept.", "e.g.")
 
