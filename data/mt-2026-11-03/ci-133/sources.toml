@@ -1,0 +1,44 @@
+# Archived sources for Montana Constitutional Initiative No. 133 (CI-133),
+# 2026-11-03 general election. Every id here may be cited by script.toml.
+# `kind` must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# Montana's Secretary of State prints a ballot issue's ballot language,
+# complete text, arguments for and against and both rebuttals in one
+# section of the Voter Information Pamphlet, so several sources below
+# share one archived file: that section's pages, cut from the full
+# pamphlet. The ballot language and complete text are also archived as
+# the Secretary of State publishes them. No fiscal statement exists: the
+# pamphlet prints none and the ballot language carries none.
+
+[contest]
+id = "mt-2026-11-03-ci-133"
+election = "mt-2026-11-03"
+division = "ocd-division/country:us/state:mt"
+kind = "measure"
+title = "Constitutional Amendment CI-133: Right to initiative and referendum"
+
+[[source]]
+id = "pamphlet"
+kind = "official-title-summary"
+publisher = "Montana Secretary of State, 2026 Voter Information Pamphlet, Constitutional Initiative No. 133 (CI-133): ballot language and What Your Vote Will Do, pages 11 to 17"
+credit = "Montana Voter Information Pamphlet, CI-133"
+url = "https://sosmt.gov/elections/vip/"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments for and against CI-133 and rebuttals, as printed in the Montana Secretary of State's 2026 Voter Information Pamphlet, pages 11 to 17"
+url = "https://sosmt.gov/elections/vip/"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Montana Secretary of State, ballot language and complete text of Constitutional Initiative No. 133 (CI-133)"
+credit = "Montana Secretary of State, CI-133 text"
+url = "https://sosmt.gov/wp-content/uploads/wpfd/preview_files/CI-133(ba9d97da675a9f26f24b5f9e333b35b7).pdf"
+file = "sources/text-proposed-law.pdf"
+retrieved = "2026-10-27"
