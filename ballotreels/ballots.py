@@ -128,6 +128,17 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label="FISCAL IMPACT",
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+    # Louisiana has no voter pamphlet. Its Secretary of State's
+    # "Statements of Proposed Constitutional Amendments" (R.S. 18:431 and
+    # 18:552) prints each amendment's ballot question, Act, "Abstract"
+    # and "Present Constitution / Proposed Constitutional Amendment"
+    # paragraphs, numbered 1 to 10 in ballot order, and no fiscal
+    # statement; each Act submits its proposition for electors "to vote
+    # YES or NO". The badge takes "Amendment" from the contest title.
+    "la": Ballot(guide="Statements of Proposed Constitutional Amendments",
+                 fiscal_label=None,
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")

@@ -134,6 +134,15 @@ class BallotTest(unittest.TestCase):
         self.assertEqual(badge(nd, "Initiated Constitutional Measure No. 2: X",
                                "2"), "MEASURE")
 
+    def test_louisiana_uses_its_statements_words(self):
+        la = BALLOTS["la"]
+        self.assertEqual((la.guide, la.fiscal_label, la.choices,
+                          la.card_source_kind),
+                         ("Statements of Proposed Constitutional Amendments",
+                          None, ("Yes", "No"), "official-title-summary"))
+        self.assertEqual(badge(la, "Amendment 1: X", "1"), "AMENDMENT")
+        self.assertEqual(badge(la, "Amendment 10: X", "10"), "AMENDMENT")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):
