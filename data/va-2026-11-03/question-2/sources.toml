@@ -1,0 +1,75 @@
+# Archived sources for Virginia Question 2, 2026-11-03 general election.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+#
+# Virginia publishes, for each proposed amendment, a neutral special
+# explanation (Code § 30-19.9): the "EXPLANATION FOR VOTERS", the ballot
+# question and the full text. The card quotes it. The Department of
+# Elections' brochure prints the same wording; its text layer prints
+# each word several times, so nothing is quoted from it. Virginia
+# publishes no official arguments for or against an amendment, so there
+# is no source of kind official-argument.
+#
+# The General Assembly passed two identical referendum acts, Chapter 1
+# (HB 612) and Chapter 819 (SB 311); the script cites the House's.
+
+[contest]
+id = "va-2026-11-03-question-2"
+election = "va-2026-11-03"
+division = "ocd-division/country:us/state:va"
+kind = "measure"
+title = "Question 2: Marriage"
+
+[[source]]
+id = "explanation"
+kind = "official-title-summary"
+publisher = "Virginia Department of Elections, Explanation for Proposed Constitutional Amendment to Be Voted On at the November 3, 2026, Election, Question 2 (approved by the Joint Privileges and Elections Committee, June 22, 2026)"
+credit = "Virginia Department of Elections, Explanation for Voters"
+url = "https://www.elections.virginia.gov/media/electionadministration/electionlaw/11-3-26-Special-Explanation-for-Q2-Marriage.pdf"
+file = "sources/special-explanation.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "brochure"
+kind = "official-title-summary"
+publisher = "Virginia Department of Elections, Proposed Constitutional Amendments To be voted on at the November 3, 2026 Election, Question 2, page 2"
+credit = "Virginia Department of Elections, Proposed Constitutional Amendments"
+url = "https://www.elections.virginia.gov/media/formswarehouse/print-ready-materials-artwork/november-2026-proposed-constitutional-amendments/2026-Nov-Proposed-Constitution-Amendments-Brochure---EN.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "act"
+kind = "official-text"
+publisher = "Virginia Acts of Assembly, 2026 Session, Chapter 1 (HB 612)"
+credit = "Virginia Acts of Assembly, 2026, Chapter 1"
+url = "https://lis.blob.core.windows.net/files/1169217.PDF"
+file = "sources/chapter-1-hb612-referendum-act.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "senate-act"
+kind = "official-text"
+publisher = "Virginia Acts of Assembly, 2026 Session, Chapter 819 (SB 311)"
+credit = "Virginia Acts of Assembly, 2026, Chapter 819"
+url = "https://lis.blob.core.windows.net/files/1222726.PDF"
+file = "sources/chapter-819-sb311-referendum-act.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Virginia Acts of Assembly, 2026 Session, Chapter 975, House Joint Resolution No. 3"
+credit = "Virginia Acts of Assembly, 2026, Chapter 975"
+url = "https://lis.blob.core.windows.net/files/1224862.PDF"
+file = "sources/chapter-975-hj3-resolution.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal"
+kind = "official-fiscal-analysis"
+publisher = "Virginia Department of Planning and Budget, 2026 General Assembly Session, State Fiscal Impact Statement, HB612ER"
+credit = "Virginia Department of Planning and Budget"
+url = "https://lis.blob.core.windows.net/files/1141202.PDF"
+file = "sources/hb612er-fiscal-impact-statement.pdf"
+retrieved = "2026-10-27"
