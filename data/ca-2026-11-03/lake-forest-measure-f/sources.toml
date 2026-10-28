@@ -1,0 +1,39 @@
+# Archived sources for Lake Forest Measure F, 2026-11-03 general election
+# (sources/sources.md). Every id here may be cited by script.toml. `kind`
+# must be one the standard allows (docs/STANDARD.md, section 1). All three
+# are the Measure F pages (Section 11, "Ballot Measures-F") of the Orange
+# County Registrar of Voters' Voter Information Guide; "page" is the page
+# of that section.
+
+[contest]
+id = "ca-2026-11-03-lake-forest-measure-f"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:lake_forest"
+kind = "measure"
+title = "Lake Forest Measure F: City Council Term Limits with a Four-Year Break"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "Orange County Registrar of Voters, Voter Information Guide, Section 11 (Ballot Measures-F), pages 1 to 2: ballot question and City Attorney Impartial Analysis"
+credit = "City Attorney Impartial Analysis, Orange County Voter Information Guide"
+url = "https://ocvote.gov/sites/default/files/2026-09/F-LFOR%20-%20LAYOUT%20(1).pdf"
+file = "sources/voter-guide-section.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument against Measure F, as printed in the Orange County Voter Information Guide, Section 11 (Ballot Measures-F), page 3, with the notice that no argument in favor was submitted"
+credit = "Argument against, Orange County Voter Information Guide"
+url = "https://ocvote.gov/sites/default/files/2026-09/F-LFOR%20-%20LAYOUT%20(1).pdf"
+file = "sources/voter-guide-section.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure F (an ordinance amending Lake Forest Municipal Code Section 2.04.080), Orange County Voter Information Guide, Section 11 (Ballot Measures-F), page 2"
+url = "https://ocvote.gov/sites/default/files/2026-09/F-LFOR%20-%20LAYOUT%20(1).pdf"
+file = "sources/voter-guide-section.pdf"
+retrieved = "2026-10-28"
