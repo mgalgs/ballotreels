@@ -283,3 +283,13 @@ status = "none-printed"
 [coronado-measure-d]
 source = "guide-page"
 status = "none-printed"
+
+# Alameda County Regional Transit Measure RTM: the guide prints no fiscal
+# analysis or tax rate statement; the one estimate is in its ballot
+# question (and the Legal Counsel's Impartial Analysis), for the whole
+# five-county district.
+[alameda-county-measure-rtm]
+source = "guide-page"
+quote = "generating approximately $980,000,000 annually"
+amount = 980000000
+period = "per-year"
