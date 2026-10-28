@@ -95,7 +95,15 @@ narration (docs/ARCHITECTURE.md, "The crash course"):
     python -m ballotreels render data/ut-2026-11-03
 
 This writes `out/<election>-crash-course-9x16.mp4` and its chapters,
-one per measure, using `film/crash_course.py`.
+one per measure, using `film/crash_course.py`. For YouTube, the same
+course laid out in 16:9 (the same frames, audio and chapters, each slot
+replaying its measure's 16:9 film) is made only here:
+
+    python -m ballotreels render data/ut-2026-11-03 --format 16x9
+
+which writes `out/<election>-crash-course-16x9.mp4` beside it;
+`--format all` writes both. The site and the worker only ever make the
+9:16 one.
 
 ## Extending the contest index
 

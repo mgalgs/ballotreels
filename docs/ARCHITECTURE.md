@@ -110,6 +110,15 @@ link under the caption on every frame is the state's page,
 `ballotreels.org/<st>/<year>`. Its chapters are one per measure, each
 starting where its slot does, titled as `contests.toml` titles it.
 
+The film also has a 16:9 layout, for a YouTube copy rendered from the
+command line only (`render <election-dir> --format 16x9`); the pipeline
+renders and serves 9:16 alone, so the 16:9 copy is in no cache key. It
+has the same frames, audio and chapters: each slot replays its member's
+16:9 film, the opening card is laid out for landscape, and the sources
+card has 9:16's pages, a page's groups set in two columns when it has
+more than one. The drawing sounds follow the 9:16 strokes, as the measure
+film's do; the 16:9 strokes land within a few frames of them.
+
 It is an election-level contest of its own kind (`crash-course`): id
 `<election>-crash-course`, division the state, derived by the index
 loader (`ContestIndex.crash_course`) for any election with at least two
