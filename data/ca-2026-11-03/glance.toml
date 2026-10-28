@@ -283,3 +283,12 @@ status = "none-printed"
 [coronado-measure-d]
 source = "guide-page"
 status = "none-printed"
+
+# City of Pleasanton Measure HH: the guide prints no fiscal analysis or
+# tax rate statement; the one estimate is in its ballot question (and
+# the City Attorney's Impartial Analysis).
+[pleasanton-measure-hh]
+source = "guide-page"
+quote = "generating an estimated $1.4 to $2.8 million per year in additional revenue"
+amount = 2800000
+period = "per-year"

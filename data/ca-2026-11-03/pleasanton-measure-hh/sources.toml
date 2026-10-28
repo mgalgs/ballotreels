@@ -1,0 +1,47 @@
+# Archived sources for City of Pleasanton Measure HH, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. The guide's pages are cut from the Alameda County
+# Registrar of Voters' Composite Voter Information Guide (965 pages);
+# "pages" are the PDF's page numbers, with the printed footer (PMHH-1 to
+# PMHH-3) beside them.
+#
+# The guide prints the ballot question, the City Attorney's Impartial
+# Analysis, an argument in favor and an argument against, and a rebuttal
+# to each. It prints no tax rate statement and no full text: the
+# analysis says the City Clerk mails the ordinance on request, and the
+# City's own copy sits behind a Laserfiche viewer that returned empty
+# files (sources.md), so no official-text source is archived.
+
+[contest]
+id = "ca-2026-11-03-pleasanton-measure-hh"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:pleasanton"
+kind = "measure"
+title = "City of Pleasanton Measure HH: Hotel Tax Increase"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "Alameda County Registrar of Voters, Composite Voter Information Guide, November 3, 2026, page 956 (PMHH-1): ballot question of Measure HH"
+credit = "Ballot question, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp956-958.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "City Attorney's Impartial Analysis of Measure HH, Alameda County Composite Voter Information Guide, page 956 (PMHH-1)"
+credit = "City Attorney's Impartial Analysis, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp956-958.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments in favor of and against Measure HH, and the rebuttals to each, as printed in the Alameda County Composite Voter Information Guide, pages 957 to 958 (PMHH-2 to PMHH-3)"
+credit = "Arguments, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp956-958.pdf"
+retrieved = "2026-10-28"
