@@ -1,0 +1,51 @@
+# Archived sources for San Francisco Proposition D, 2026-11-03 general
+# election (sources/sources.md). San Francisco is a consolidated city and
+# county, so its propositions are countywide: the division is the
+# county. "page" is the Voter Information Pamphlet & Sample Ballot's
+# printed page number (the PDF's page less 2).
+#
+# The pamphlet's impartial materials are the Ballot Simplification
+# Council's digest and the Controller's Statement, on one cut of pages.
+# The paid arguments (pages 88 to 93) are not cited.
+
+[contest]
+id = "ca-2026-11-03-san-francisco-county-measure-d"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:san_francisco"
+kind = "measure"
+title = "San Francisco Proposition D: Changes to Ballot Measure Process"
+
+[[source]]
+id = "digest"
+kind = "official-title-summary"
+publisher = "San Francisco Department of Elections, Voter Information Pamphlet & Sample Ballot, November 3, 2026, pages 84 to 85: ballot question, Digest by the Ballot Simplification Council, and how D got on the ballot"
+credit = "Ballot Simplification Council digest, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/ballot-question-digest-controller-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "controller"
+kind = "official-fiscal-analysis"
+publisher = "City Controller, Controller's Statement on “D”, San Francisco Voter Information Pamphlet & Sample Ballot, page 85"
+credit = "Controller's Statement, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/ballot-question-digest-controller-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Proponent's and Opponent's Arguments on Proposition D and their rebuttals, San Francisco Voter Information Pamphlet & Sample Ballot, pages 86 to 87"
+credit = "Arguments, San Francisco Voter Information Pamphlet"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/arguments-and-rebuttals.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Legal Text of Proposition D (initiative Charter amendment), San Francisco Voter Information Pamphlet & Sample Ballot, pages 190 to 193"
+url = "https://media.api.sf.gov/documents/N26_EN_VIP.pdf"
+file = "sources/legal-text.pdf"
+retrieved = "2026-10-28"

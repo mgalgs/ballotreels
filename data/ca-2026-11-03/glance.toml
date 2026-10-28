@@ -274,3 +274,10 @@ quote = "Should the proposed Charter amendment be approved by the voters, in my 
 amount = 60000000
 period = "per-year"
 direction = "cost"
+
+# San Francisco Proposition D: the Controller's finding, which sizes no
+# cost (its dollar figures are examples of savings it cannot determine).
+[san-francisco-county-measure-d]
+source = "controller"
+status = "no-material-impact"
+quote = "Should the proposed Charter amendment be approved by the voters, in my opinion, it would have a minimal impact on the cost of government."
