@@ -113,6 +113,14 @@ class BallotTest(unittest.TestCase):
                           ("Yes", "No"), "official-title-summary"))
         self.assertEqual(badge(nv, "Question 6: X", "6"), "QUESTION")
 
+    def test_arkansas_uses_its_notices_words(self):
+        ar = BALLOTS["ar"]
+        self.assertEqual((ar.guide, ar.fiscal_label, ar.choices,
+                          ar.card_source_kind),
+                         ("Notice to the Public", None,
+                          ("For", "Against"), "official-title-summary"))
+        self.assertEqual(badge(ar, "Issue 1: X", "1"), "ISSUE")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):
