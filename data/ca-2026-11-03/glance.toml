@@ -247,3 +247,12 @@ source = "ballot-question"
 quote = "providing approximately $3,000,000 annually until ended by voters"
 amount = 3000000
 period = "per-year"
+
+# City of Twentynine Palms Measure G: the guide prints no tax rate
+# statement; the one estimate is in the ballot question (and the City
+# Attorney's Impartial Analysis).
+[twentynine-palms-measure-g]
+source = "ballot-question"
+quote = "providing approximately $2,000,000 in funds annually until ended by voters"
+amount = 2000000
+period = "per-year"

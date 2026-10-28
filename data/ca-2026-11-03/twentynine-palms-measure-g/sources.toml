@@ -1,0 +1,53 @@
+# Archived sources for City of Twentynine Palms Measure G, 2026-11-03
+# general election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Bernardino County Registrar of Voters' Voter Information Guide; "page"
+# is the guide's printed footer number (its PDF pages are two higher).
+#
+# The guide does not print the ballot question; it is printed only in the
+# City Council's resolution (its Section 1, "the following question"),
+# which the card quotes.
+
+[contest]
+id = "ca-2026-11-03-twentynine-palms-measure-g"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:twentynine_palms"
+kind = "measure"
+title = "City of Twentynine Palms Measure G: 1% Transactions (Sales) and Use Tax for City Services"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Twentynine Palms, City Council Resolution No. 26-22, Section 1: the question submitted to the voters, as posted by the San Bernardino County Registrar of Voters"
+credit = "Ballot question, City of Twentynine Palms Resolution No. 26-22"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofTwentyninePalms/RES_TP.pdf"
+file = "sources/RES_TP.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "San Bernardino County Registrar of Voters, Voter Information Guide, page SB COMPREHENSIVE-197: City Attorney's Impartial Analysis of Measure G"
+credit = "City Attorney's Impartial Analysis, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp199-205.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure G, as printed in the San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-197 to 198"
+credit = "Argument in favor, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp199-205.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "full-text"
+kind = "official-text"
+publisher = "Full Text for Measure G, San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-198 to 203"
+credit = "Full text of Measure G, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp199-205.pdf"
+retrieved = "2026-10-28"
