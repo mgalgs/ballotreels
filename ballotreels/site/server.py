@@ -519,6 +519,9 @@ def _contest_detail(entry, state: StateElection,
                         for c in entry.corrections],
         "report_url": REPORT_URL,
         "job": job,
+        # only a choice question says so: a yes/no measure's detail is
+        # as it always was
+        **({"choice": True} if entry.choice else {}),
     }
 
 
@@ -766,7 +769,7 @@ class PublicHandler(_JsonHandler):
             video = deps.queue.video_for(key) if key is not None else None
             poster = video.urls.get("poster") if video else None
             return pages.measure_meta(_state_name(state.abbr), entry.title,
-                                      path, poster)
+                                      path, poster, choice=entry.choice)
         return None
 
     def _html(self, status: int, meta: pages.PageMeta) -> None:

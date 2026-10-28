@@ -1437,8 +1437,11 @@ async function renderContest(apiPath) {
     }
     corrections.appendChild(list);
   } else {
+    // a choice question has no sides: its options are treated alike
+    const fair = body.choice ? "the choices aren't treated alike"
+                             : "the sides don't get equal time";
     corrections.appendChild(el("p", { text: "None so far. If a fact is " +
-      "wrong or the sides don't get equal time, report it: corrections " +
+      `wrong or ${fair}, report it: corrections ` +
       "are dated and listed here." }));
   }
   corrections.appendChild(el("p", { class: "report" }, [

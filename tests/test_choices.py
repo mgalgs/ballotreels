@@ -219,5 +219,46 @@ class PagedChoiceTest(ChoiceTestCase):
                          f"is up, which does not show it")
 
 
+class SiteTest(unittest.TestCase):
+    """The site says a choice question lists choices, not two sides."""
+
+    def test_index_marks_a_choice_question(self):
+        from ballotreels.index import load_index
+        with tempfile.TemporaryDirectory() as tmp:
+            election = Path(tmp) / "id-2026-11-03"
+            write_choice_contest(election / "advisory-test", 3)
+            (election / "contests.toml").write_text('''[election]
+id = "id-2026-11-03"
+state = "ocd-division/country:us/state:id"
+title = "Test"
+
+[[contest]]
+id = "id-2026-11-03-advisory-test"
+kind = "measure"
+division = "ocd-division/country:us/state:id"
+title = "Advisory Question Test 7: State Tree"
+number = "7"
+
+[[contest]]
+id = "id-2026-11-03-hjr-9"
+kind = "measure"
+division = "ocd-division/country:us/state:id"
+title = "House Joint Resolution 9: Test"
+number = "9"
+''', encoding="utf-8")
+            index = load_index(election)
+            self.assertTrue(index.get("id-2026-11-03-advisory-test").choice)
+            self.assertFalse(index.get("id-2026-11-03-hjr-9").choice)
+
+    def test_page_description(self):
+        from ballotreels.site.pages import measure_meta
+        yes_no = measure_meta("Idaho", "House Joint Resolution 4: X", "/id/2026/hjr-4", None)
+        self.assertIn("what each side says", yes_no.description)
+        choice = measure_meta("Idaho", "Advisory Question - House Bill 932: State Gun",
+                              "/id/2026/advisory-hb-932", None, choice=True)
+        self.assertIn("What it asks and the choices on the ballot", choice.description)
+        self.assertNotIn("side", choice.description)
+
+
 if __name__ == "__main__":
     unittest.main()
