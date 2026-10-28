@@ -165,6 +165,41 @@ def narration_state(contest: Contest) -> str:
     return CURRENT
 
 
+def unreused_phrases(contest: Contest) -> tuple[NarrationLine, ...]:
+    """The phrases `say` would synthesise afresh when re-narrating the
+    current script, each as a NarrationLine whose `text` is the phrase
+    (not the whole line): every phrase when there is no narration.wav or
+    no narration.json `phrase_cache` to reuse from, otherwise each phrase
+    whose cache key no committed phrase has. A Gemini phrase's key is its
+    own text plus the previous phrase's as context (videobuilder.speech
+    `_gemini_style`), so an edited line's phrases and the phrase right
+    after them are synthesised again, and nothing else is. Assumes the
+    narrating host's TTS settings are the ones the sidecar recorded.
+    Without videobuilder to split lines the way `say` does, every line is
+    returned whole."""
+    lines = narration_lines(contest)
+    path = contest.path
+    cache = []
+    if (path / "narration.wav").is_file() and (path / "narration.json").is_file():
+        try:
+            doc = json.loads((path / "narration.json").read_text(encoding="utf-8"))
+            cache = [e["key"]["text"] for e in doc.get("phrase_cache") or ()]
+        except (ValueError, KeyError, TypeError):
+            cache = []
+    try:
+        from videobuilder import speech
+    except ImportError:
+        return lines
+    committed = set(zip([None, *cache], cache))
+    out, previous = [], None
+    for line in lines:
+        for text in speech.phrases(line.text):
+            if (previous, text) not in committed:
+                out.append(NarrationLine(line.section, line.index, text))
+            previous = text
+    return tuple(out)
+
+
 def side_durations(contest: Contest
                    ) -> tuple[tuple[str, float], tuple[str, float]] | None:
     """Each side section's spoken duration in seconds (the span from its

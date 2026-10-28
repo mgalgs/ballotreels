@@ -151,6 +151,46 @@ class GateTest(unittest.TestCase):
                                  "speakability"))
 
 
+PROP_141 = REPO_ROOT / "data" / "az-2026-11-03" / "prop-141"
+
+
+class ReusedPhraseTest(unittest.TestCase):
+    """A stale narration is re-narrated phrase by phrase: `say` reuses every
+    phrase whose text and preceding phrase are unchanged, so only the
+    phrases it would synthesise afresh are linted. Prop 141's vote line
+    says "without consent" and passed the real transcript check."""
+
+    def setUp(self):
+        import tempfile
+        from pathlib import Path
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        self.dir = Path(tmp.name) / "prop-141"
+        shutil.copytree(PROP_141, self.dir)
+
+    def failures(self, old, new):
+        script = self.dir / "script.toml"
+        text = script.read_text(encoding="utf-8")
+        self.assertEqual(text.count(old), 1)
+        script.write_text(text.replace(old, new), encoding="utf-8")
+        c = load_contest(self.dir)
+        self.assertTrue(needs_narration(c))
+        return only(check_contest(c, STANDARD), "speakability")
+
+    def test_edit_elsewhere_does_not_lint_reused_line(self):
+        self.assertEqual(self.failures(
+            "how many miles people drive.",
+            "how many miles people drive each year."), [])
+
+    def test_edit_before_relints_the_next_phrase(self):
+        # The vote line's first phrase quotes the edited line as context,
+        # so `say` speaks it again: it is linted.
+        got = self.failures("road funding option prematurely.",
+                            "road funding option too soon.")
+        self.assertEqual([(f.section, f.line) for f in got], [("vote", 0)])
+        self.assertIn("'consent'", got[0].message)
+
+
 CI_132 = REPO_ROOT / "data" / "mt-2026-11-03" / "ci-132"
 CI_132_YES = ("Supporters say judges should be elected on their record and "
               "qualifications, not politics, and a recent law lets political "

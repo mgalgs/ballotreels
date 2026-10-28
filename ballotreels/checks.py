@@ -1188,23 +1188,32 @@ def needs_narration(c: Contest) -> bool:
     return narration.narration_state(c) != narration.CURRENT
 
 
-def check_speakability(c: Contest, risks: tuple[Risk, ...]) -> list[Failure]:
+def check_speakability(c: Contest, risks: tuple[Risk, ...],
+                       pieces: tuple[narration.NarrationLine, ...] | None = None
+                       ) -> list[Failure]:
     """No narrated line uses a spelling the narration's transcript check
     mishears (standard/speakability.txt). Only the narration: the card and
-    on-screen items are not spoken."""
+    on-screen items are not spoken. `pieces` is the text to lint, each
+    piece tagged with its line (default: every line); check_contest passes
+    only the phrases `say` would synthesise afresh
+    (narration.unreused_phrases), since a reused phrase already passed the
+    real transcript check."""
+    if pieces is None:
+        pieces = tuple(narration.NarrationLine(label, i, line.text)
+                       for label, sec in c.script.labelled()
+                       for i, line in enumerate(sec.lines))
     out = []
-    for label, sec in c.script.labelled():
-        for i, line in enumerate(sec.lines):
-            taken: list[tuple[int, int]] = []  # one report per token
-            for risk in risks:
-                for m in risk.pattern.finditer(line.text):
-                    if any(m.start() < e and s < m.end() for s, e in taken):
-                        continue
-                    taken.append(m.span())
-                    out.append(Failure(
-                        "speakability",
-                        f"{m.group(0)!r} in {line.text!r}: {risk.reason}; "
-                        f"instead, {risk.suggestion}", label, i))
+    for piece in pieces:
+        taken: list[tuple[int, int]] = []  # one report per token
+        for risk in risks:
+            for m in risk.pattern.finditer(piece.text):
+                if any(m.start() < e and s < m.end() for s, e in taken):
+                    continue
+                taken.append(m.span())
+                out.append(Failure(
+                    "speakability",
+                    f"{m.group(0)!r} in {piece.text!r}: {risk.reason}; "
+                    f"instead, {risk.suggestion}", piece.section, piece.index))
     return out
 
 
@@ -1254,6 +1263,8 @@ def check_contest(c: Contest, standard: Standard | None = None
         *(check_spoken_parity(c) if fresh else ()),
         *check_side_basis(c, required=fresh),
         *check_judgment_words(c, standard.judgment_words),
-        *(check_speakability(c, standard.speakability) if fresh else ()),
+        *(check_speakability(c, standard.speakability,
+                              narration.unreused_phrases(c))
+          if fresh else ()),
         *check_standard_version(c, standard.version),
     ]
