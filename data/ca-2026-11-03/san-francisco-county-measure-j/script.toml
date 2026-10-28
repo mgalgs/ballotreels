@@ -1,0 +1,144 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; the tax break today; what would change and which properties keep
+# the break; the Controller's Statement's revenue, with its scale, and its
+# warning that the yearly amount is unpredictable; one line per side;
+# what a vote does.
+#
+# The ballot and pamphlet call it "Proposition J", so the narration does.
+# The Controller's Statement on J names no budget total: the scale
+# divides its range by the "approximately $7 billion General Fund
+# sources" the Controller's Statement on Proposition I gives
+# (general-fund): $100 million to $150 million is about 1 to 2 percent
+# (1.4 and 2.1, rounded). Dollar ranges are said "between ... and ..."
+# (standard/speakability.txt).
+#
+# The pamphlet is inconsistent on how J reached the ballot (sources.toml):
+# the card quotes "How J Got on the Ballot", and the narration says
+# neither.
+
+contest = "ca-2026-11-03-san-francisco-county-measure-j"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "digest"
+number = "J"
+title = "Removal of Foreclosure Exemption for Real Property Transfer Tax"
+origin = "On July 28, 2026, the Board of Supervisors voted 10 to 0, with one Supervisor excused, to place Proposition J on the ballot."
+summary = "Shall the City permanently apply a transfer tax of between 0.5% and 6% of a property’s fair market value, on the transfer of properties such as commercial, industrial, and large residential properties, that are transferred to a lender because of foreclosure or to avoid foreclosure, for estimated annual revenue of $100 million to $150 million?"
+yes = "If you vote “yes,” you want to apply a transfer tax for properties such as commercial, industrial, and large residential properties, that are transferred to a lender because of foreclosure."
+no = "If you vote “no,” you do not want to make these changes."
+
+[[section]]
+id = "what"
+heading = "Proposition J"
+
+[[section.line]]
+text = "Proposition J asks San Francisco voters whether to fully tax commercial, industrial and large residential properties that lenders take through foreclosure."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "page"
+source = "digest"
+highlight = ["Removal of Foreclosure Exemption for Real Property Transfer Tax"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, a lender that takes over a property through foreclosure pays transfer tax only on the price above the debt still owed."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sealed-order"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "From March 2027, Proposition J would tax those properties on their full market value."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "illustration"
+name = "office-tower"
+
+[[section.line]]
+text = "Single-family homes and buildings with fewer than five units would keep the tax break."
+sources = ["digest"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+text = "The Controller's Statement estimates between $100 million and $150 million a year over the first five years, about 1 to 2 percent of the roughly $7 billion General Fund."
+sources = ["controller", "general-fund"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "The statement says the yearly amount would be unpredictable, likely highest at first and then falling."
+sources = ["controller"]
+
+[section.line.visual]
+kind = "illustration"
+name = "market-swings"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say a tax break made for struggling homeowners now goes to corporate lenders foreclosing on office towers."
+sources = ["arguments"]
+basis = ["In 1984, to protect San Francisco families who were financially struggling, the city created a tax break for homeowners", "But the same tax break is also being given to financial institutions and corporate lenders when they acquire office towers, mega apartment complexes, and industrial buildings through foreclosure."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Ends a homeowner tax break used by lenders", "Raises money for city services"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Proposition J makes lending here riskier and costlier than anywhere else in California, raising interest rates."
+sources = ["arguments"]
+basis = ["this measure makes lending in San Francisco significantly riskier and more expensive than anywhere else in the state.", "Lenders will respond by raising interest rates, demanding higher down payments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Makes lending riskier and more expensive", "Raises interest rates and down payments"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "If you vote yes, you want to apply a transfer tax to these properties when lenders take them through foreclosure."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "page"
+source = "digest"
+highlight = ["you want to apply a transfer tax"]
+
+[[section.line]]
+text = "If you vote no, you do not want to make these changes."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "page"
+source = "digest"
+highlight = ["you do not want to make these changes"]

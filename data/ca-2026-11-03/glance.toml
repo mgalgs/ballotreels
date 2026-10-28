@@ -269,3 +269,12 @@ quote = "it would represent a moderate annual decrease of approximately $1 milli
 amount = 1000000
 period = "per-year"
 direction = "revenue-loss"
+
+# San Francisco Proposition J: the Controller's Statement's average
+# yearly revenue over the first five years.
+[san-francisco-county-measure-j]
+source = "controller"
+quote = "The measure could bring an average of $100 million to $150 million annually over the first five years."
+amount = 150000000
+period = "per-year"
+direction = "revenue-gain"
