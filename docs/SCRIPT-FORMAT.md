@@ -29,7 +29,16 @@ retrieved = "2026-10-24"
 Allowed source kinds (STANDARD.md section 1): `official-title-summary`,
 `official-fiscal-analysis`, `official-argument`, `official-text`,
 `candidate-statement`, `candidate-website`, `public-record`,
-`official-report`, `official-data`.
+`official-report`, `official-data`, `election-filing`,
+`legislative-record`.
+
+`election-filing` is a measure's filing with the election official or
+that official's notice of it (an initiative's filing naming its
+proponent, the notice that it qualified); `legislative-record` is the
+legislature's record of it (the enrolled bill or resolution and its
+sponsors, its bill-status data, a roll-call vote). With
+`official-argument` (whose signers the guide prints), they are the kinds
+a line's `names` may come from (STANDARD.md rule 9.1).
 
 `official-fiscal-analysis` is the state's official fiscal statement on
 the measure, whoever writes it: in California, the Legislative Analyst's
@@ -92,6 +101,46 @@ basis = ["Montana grants them every power they have.", "And Montana has reserved
 - What it is for: SCRIPT-RECIPE.md, "Sides". The check makes the line
   traceable; whether the line says what its basis says is for the
   writer and the reviewer.
+
+A line that says the name of a person or organisation declares it, with
+its role in the record and the source that names it (STANDARD.md
+section 9):
+
+```toml
+[[section.line]]
+text = "Supporters, including Senator Lincoln Fillmore, the measure's chief sponsor, say ..."
+sources = ["arguments", "resolution"]
+names = [{ name = "Lincoln Fillmore", role = "the measure's chief sponsor", source = "resolution" }]
+```
+
+- Each entry has a non-empty `name`, `role` and `source`. The line's
+  text says the `name` (as a whole word or words) and the `role`, each
+  as written; an office the role sits in ("Senator") may stand before
+  the name.
+- `source` is one of the line's own `sources`, of kind
+  `official-argument`, `election-filing` or `legislative-record`, and
+  the `name` appears in its archived text verbatim, compared as a
+  `basis` is (above). The check finds the name anywhere in that text;
+  that an argument names the person as a signer, not only inside its
+  own words (where rule 9.1 does not allow it), is for the reviewer.
+- **Where**: only in a `background` section or a side's own, never in
+  the opening line (the first line of `what`) or a `vote` line, where
+  a name declared anywhere in the script fails too.
+- **Equal per side**: the yes side's lines declare as many names as the
+  no side's, unless a side filed no argument (rule 9.4). A background
+  name counts for neither side.
+- **Undeclared names**: a line that says a run of two or more capitalised
+  words, one of them neither in the contest's official wording (its
+  title, card, sources' publishers and credits, headings and choices)
+  nor in `standard/proper-words.txt` (offices, bodies, months, states),
+  fails as a possible name it does not declare; a sentence's capitalised
+  opening word ("In", "The") does not count. It is a heuristic: it misses
+  a lone surname, and a run that names no one is fixed by adding its
+  words (an office, a body or a place, never a person) to the list.
+- That the role is the one the record gives, and that the most prominent
+  on each side is named in the same form of words, is for the writer and
+  the reviewer.
+
 A line that states a computed share of a budget (STANDARD.md rule 6.5)
 lists the source of the figure and the source of the total; when one
 source states both, that one id is enough.

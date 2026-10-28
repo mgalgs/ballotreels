@@ -3,7 +3,9 @@
 docs/STANDARD.md is the one home for the standard's version number and
 standard/judgment-words.txt for the judgment-word list, and
 standard/speakability.txt for the spellings the narration's transcript
-check mishears; this module reads them rather than repeating them.
+check mishears, and standard/proper-words.txt for the capitalised words
+a narrated line may say that name no one; this module reads them rather
+than repeating them.
 """
 
 from __future__ import annotations
@@ -27,7 +29,15 @@ SOURCE_KINDS = frozenset({
     "public-record",
     "official-report",
     "official-data",
+    "election-filing",
+    "legislative-record",
 })
+
+# Kinds a declared name may come from (STANDARD.md rule 9.1): the official
+# voter guide's arguments (their signers), the filing with the election
+# official, and the legislative record.
+NAMING_KINDS = frozenset({"official-argument", "election-filing",
+                          "legislative-record"})
 
 # Kinds a line or chart may cite only in a `background` section
 # (STANDARD.md rule 6.1, docs/SCRIPT-FORMAT.md).
@@ -101,6 +111,7 @@ class Standard:
     version: int
     judgment_words: tuple[str, ...]
     speakability: tuple[Risk, ...] = ()
+    proper_words: frozenset[str] = frozenset()
 
 
 def read_version(path: Path) -> int:
@@ -152,6 +163,8 @@ def load_standard(root: str | Path = REPO_ROOT) -> Standard:
         judgment_words=read_judgment_words(
             root / "standard" / "judgment-words.txt"),
         speakability=read_speakability(root / "standard" / "speakability.txt"),
+        proper_words=frozenset(read_judgment_words(
+            root / "standard" / "proper-words.txt")),
     )
 
 

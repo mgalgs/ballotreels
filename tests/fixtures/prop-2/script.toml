@@ -192,6 +192,11 @@ basis = ["The theoretical \"rebate\" opponents refer to relies on a 50-year-old 
 text = "Their argument is signed by leaders of the California Professional Firefighters, the Assembly Budget Committee, and the Los Angeles Area Chamber of Commerce."
 sources = ["arguments"]
 basis = ["Darrell Roberts, President California Professional Firefighters Jesse Gabriel, Chair California State Assembly Budget Committee Maria S. Salinas, CEO Los Angeles Area Chamber of Commerce"]
+names = [
+  { name = "California Professional Firefighters", role = "signed by leaders of", source = "arguments" },
+  { name = "Assembly Budget Committee", role = "signed by leaders of", source = "arguments" },
+  { name = "Los Angeles Area Chamber of Commerce", role = "signed by leaders of", source = "arguments" },
+]
 
 [[section]]
 id = "no"
@@ -217,6 +222,11 @@ basis = ["also supported legislation to suspend more than $5 billion in required
 text = "Their argument is signed by leaders of the Assembly Budget Committee, the Senate Elections and Constitutional Amendments Committee, and Reform California."
 sources = ["arguments"]
 basis = ["David Tangipa, Vice Chair Assembly Budget Committee Carl DeMaio, Chairman Reform California Steven Choi, Vice Chair Senate Elections and Constitutional Amendment"]
+names = [
+  { name = "Assembly Budget Committee", role = "signed by leaders of", source = "arguments" },
+  { name = "Senate Elections and Constitutional Amendments Committee", role = "signed by leaders of", source = "arguments" },
+  { name = "Reform California", role = "signed by leaders of", source = "arguments" },
+]
 
 [[section]]
 id = "vote"

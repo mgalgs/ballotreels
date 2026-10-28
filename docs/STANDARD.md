@@ -269,6 +269,7 @@ human reading the video.
 | Each measure side's on-screen time exactly equal, the shorter one padded with trailing silence (padding over 2s fails instead, as too big to be TTS noise) | 2.2, 4.1 |
 | Each measure side's line quotes, as its `basis`, the passages of its cited official argument it distils, each verbatim in that source; required before narration (a script whose narration is missing or stale) | 3.3 |
 | Every chart cites a source id that exists, of an allowed kind | 7.1 |
+| Every person or organisation a line names is declared on it with its role and a source the line cites, of a kind rule 9.1 allows (the official arguments, the election filing, the legislative record), whose text has the name verbatim (an undeclared name is found by a heuristic: a run of capitalised words outside the contest's official wording and `standard/proper-words.txt`); names only in background or a side's section, never in the opening line or the vote lines; as many names in each side's section as the other's, where both filed | 9.1, 9.3, 9.5 |
 | No chart in a side section unless both sides have one | 7.3 |
 | A choice question's options: letters in ballot order, each letter and label verbatim in the cited source, each spoken name the label with or without its parenthesised parts, the narration naming each once, in ballot order, on its own grid page, and every option as often as every other; no sides, no yes/no lines on its card | 8.1-8.4 |
 

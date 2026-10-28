@@ -24,9 +24,9 @@ from .ballots import BALLOTS, Ballot, badge, ballot_for
 from .contest import CARD_KEYS, Card, Choice, Contest, Line, Section, Visual
 from .illustrations import load_library
 from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, CHOICE_TEMPLATES,
-                       CHOICES, FISCAL, SOURCE_KINDS, TEMPLATES, Risk,
-                       Standard, Template, judgment_word_pattern,
-                       load_standard)
+                       CHOICES, FISCAL, NAMING_KINDS, SOURCE_KINDS,
+                       TEMPLATES, Risk, Standard, Template,
+                       judgment_word_pattern, load_standard, template_for)
 
 SIDE_TOLERANCE = 0.05
 CHART_KINDS = ("bars", "share", "series", "figure")
@@ -1004,6 +1004,189 @@ def check_side_basis(c: Contest, required: bool) -> list[Failure]:
     return out
 
 
+# STANDARD.md section 9: a script names a person or organisation only as
+# a line's declared `names`, each from a record of an allowed kind.
+NAMING = "naming"
+# A word, with any possessive or hyphenated part: "Utah's", "René", "CI-132".
+_WORD = re.compile(r"[^\W\d_][\w'’-]*")
+_POSSESSIVE = re.compile(r"['’]s?$")
+_SENTENCE_BREAK = re.compile(r"[.!?:;]")
+# Words a sentence may open with, capitalised only for that.
+_OPENERS = frozenset("""a an the in on at for from to under after before if
+but and so then today each most only other those they it this that these
+what when why how""".split())
+
+
+def _bare(word: str) -> str:
+    """`word` without a possessive ending: "Utah's" -> "Utah"."""
+    return _POSSESSIVE.sub("", word)
+
+
+def _official_words(c: Contest) -> set[str]:
+    """The capitalised words of the contest's own official wording: its
+    title, its card, its sources' publishers and credits, its headings and
+    its choices' labels. A run of these names the measure or its sources,
+    not a person."""
+    texts = [c.title, *(s.publisher for s in c.sources),
+             *(s.credit or "" for s in c.sources),
+             *(sec.heading for sec in c.script.sections)]
+    if c.script.card is not None:
+        texts.append(card_text(c.script.card))
+    if c.script.choices is not None:
+        texts += [x for ch in c.script.choices.choices
+                  for x in (ch.label, ch.spoken) if isinstance(x, str)]
+    return {_bare(m.group(0)) for t in texts for m in _WORD.finditer(t)
+            if m.group(0)[0].isupper()}
+
+
+def proper_runs(text: str) -> list[tuple[int, list[tuple[str, bool]]]]:
+    """Each run of two or more capitalised words in `text`, separated only
+    by spaces, as (offset, [(word without possessive, opens a sentence)])."""
+    runs: list[tuple[int, list[tuple[str, bool]]]] = []
+    run: list[tuple[str, bool]] = []
+    start = prev_end = 0
+    for m in _WORD.finditer(text):
+        gap = text[prev_end:m.start()]
+        opens = prev_end == 0 or _SENTENCE_BREAK.search(gap) is not None
+        if run and (gap.strip() or not m.group(0)[0].isupper()):
+            if len(run) > 1:
+                runs.append((start, run))
+            run = []
+        if m.group(0)[0].isupper():
+            if not run:
+                start = m.start()
+            run.append((_bare(m.group(0)), opens))
+        prev_end = m.end()
+    if len(run) > 1:
+        runs.append((start, run))
+    return runs
+
+
+def _undeclared(c: Contest, line: Line, known: set[str],
+                lowered: set[str]) -> list[str]:
+    """The runs of capitalised words in `line` that may be a name it does
+    not declare: a run with a word that is neither a known word (the
+    contest's official words, standard/proper-words.txt) nor a sentence's
+    ordinary opening word."""
+    text = line.text
+    for n in line.names:
+        if isinstance(n.name, str) and n.name:
+            text = text.replace(n.name, "|")
+    out = []
+    for start, run in proper_runs(text):
+        def ok(word, opens):
+            return word in known or (opens and (word.lower() in _OPENERS
+                                                or word.lower() in lowered))
+        if not all(ok(w, o) for w, o in run):
+            out.append(" ".join(w for w, _ in run))
+    return out
+
+
+def _name_problems(c: Contest, line: Line, n) -> list[str]:
+    """What is wrong with one declared name: its fields, its place in the
+    line's text, and its source."""
+    bad = [k for k in ("name", "role", "source")
+           if not isinstance(getattr(n, k), str) or not getattr(n, k).strip()]
+    if bad:
+        return [f"a declared name needs a non-empty {', '.join(bad)}"]
+    out = []
+    if re.search(rf"(?<!\w){re.escape(n.name)}(?!\w)", line.text) is None:
+        out.append(f"declares {n.name!r}, which the line does not say")
+    if n.role not in line.text:
+        out.append(f"declares {n.name!r} as {n.role!r}, but the line does "
+                   f"not say that role")
+    if n.source not in (line.sources or ()):
+        out.append(f"{n.name!r} comes from {n.source!r}, which the line "
+                   f"does not cite")
+        return out
+    src = c.source(n.source)
+    if src is None:
+        return out  # check_cited_sources_exist reports it
+    if src.kind not in NAMING_KINDS:
+        kinds = ", ".join(sorted(NAMING_KINDS))
+        out.append(f"{n.name!r} comes from {src.id!r}, of kind {src.kind!r}; "
+                   f"a name comes only from a record of kind {kinds} "
+                   f"(STANDARD.md rule 9.1)")
+        return out
+    path = (c.path / src.file).resolve()
+    if not path.is_relative_to(c.path.resolve()) or not path.is_file():
+        return out  # check_sources reports it
+    try:
+        archived = _loose_archived(path)
+    except UnreadableSource as e:
+        return [*out, f"cannot read source {src.id!r} ({src.file}) to check "
+                      f"{n.name!r}: {e}"]
+    if _loose(n.name) not in archived:
+        out.append(f"{n.name!r} does not appear verbatim in {src.id!r} "
+                   f"({src.file})")
+    return out
+
+
+def check_naming(c: Contest, proper_words: frozenset[str] = frozenset()
+                 ) -> list[Failure]:
+    """STANDARD.md section 9, as docs/SCRIPT-FORMAT.md's `names`: every
+    person or organisation a line says is declared on that line, with its
+    role, from a source the line cites, of a kind the record allows, in
+    which the name appears verbatim; names go only in a background or a
+    side section, never in the opening line or the vote lines; and the two
+    sides name as many as each other, where both filed. A name is found by
+    a heuristic (_undeclared): a run of capitalised words not all known."""
+    sc = c.script
+    known = _official_words(c) | set(proper_words)
+    lowered = {m.group(0) for sec in sc.sections for line in sec.lines
+               for m in _WORD.finditer(line.text) if m.group(0).islower()}
+    declared = {n.name for sec in sc.sections for line in sec.lines
+                for n in line.names if isinstance(n.name, str) and n.name}
+    try:  # a side section missing its `side` is check_template's
+        side_ids = tuple(template_for(sc).sides)
+    except KeyError:
+        side_ids = ()
+    out = []
+    per_side: dict[str, list[tuple[str, Section]]] = {}
+    for label, sec in sc.labelled():
+        if sec.side is not None:
+            per_side.setdefault(sec.side, []).append((label, sec))
+        for i, line in enumerate(sec.lines):
+            def fail(msg):
+                out.append(Failure(NAMING, msg, label, i))
+
+            for run in _undeclared(c, line, known, lowered):
+                fail(f"says {run!r}, which may be a person's or an "
+                     f"organisation's name: declare it in the line's "
+                     f"'names' (STANDARD.md section 9), or, if it names no "
+                     f"one, add its words to standard/proper-words.txt")
+            for n in line.names:
+                for msg in _name_problems(c, line, n):
+                    fail(msg)
+            opening = sec is sc.sections[0] and i == 0
+            if opening or sec.id == "vote":
+                where = "the opening line" if opening else "a vote line"
+                said = sorted(d for d in declared
+                              if re.search(rf"(?<!\w){re.escape(d)}(?!\w)",
+                                           line.text))
+                for d in said:
+                    fail(f"names {d!r} in {where}; a name never goes there "
+                         f"(STANDARD.md rule 9.5)")
+            elif line.names and sec.side is None \
+                    and sec.id not in (BACKGROUND, *side_ids):
+                fail(f"names {', '.join(repr(n.name) for n in line.names)} "
+                     f"in the {sec.id!r} section; a name goes only in a "
+                     f"background section or a side's own (STANDARD.md "
+                     f"rule 9.5)")
+    yes, no = per_side.get("yes", []), per_side.get("no", [])
+    if len(yes) == 1 and len(no) == 1 and yes[0][1].filed and no[0][1].filed:
+        counts = {label: sum(len(line.names) for line in sec.lines)
+                  for label, sec in (yes[0], no[0])}
+        (la, a), (lb, b) = counts.items()
+        if a != b:
+            out.append(Failure(
+                NAMING, f"the sides name different numbers of people or "
+                        f"organisations ({la}={a}, {lb}={b}); each side's "
+                        f"most prominent is named the same way, as many "
+                        f"times (STANDARD.md rule 9.3)"))
+    return out
+
+
 def _occurrences(text: str, names: list[str]) -> list[tuple[int, int]]:
     """(position, option index) of every occurrence of each option's name
     in `text`, in text order; a name inside a longer option's name (say
@@ -1300,6 +1483,7 @@ def check_contest(c: Contest, standard: Standard | None = None
         *(check_spoken_parity(c, unreused) if fresh else ()),
         *check_side_basis(c, required=fresh),
         *check_judgment_words(c, standard.judgment_words),
+        *check_naming(c, standard.proper_words),
         *(check_speakability(c, standard.speakability, unreused)
           if fresh else ()),
         *check_standard_version(c, standard.version),
