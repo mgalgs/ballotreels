@@ -24,8 +24,8 @@ from .ballots import BALLOTS, Ballot, badge, ballot_for, guide_of
 from .contest import CARD_KEYS, Card, Choice, Contest, Line, Section, Visual
 from .illustrations import load_library
 from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, CHOICE_TEMPLATES,
-                       CHOICES, FISCAL, NAMING_KINDS, SOURCE_KINDS,
-                       TEMPLATES, UNIVERSITY_GUIDE,
+                       CHOICES, FISCAL, NAMING_KINDS, PRECEDENT_RECORD,
+                       SOURCE_KINDS, TEMPLATES, UNIVERSITY_GUIDE,
                        UNIVERSITY_GUIDE_SECTIONS, Risk, Standard,
                        Template, judgment_word_pattern, load_standard,
                        template_for)
@@ -182,6 +182,75 @@ def check_university_guide(c: Contest) -> list[Failure]:
                     fail(f"cites {s.id!r}, a university guide, but does "
                          f"not name its publisher: the line must say "
                          f"{name!r}")
+    return out
+
+
+def check_questions(c: Contest) -> list[Failure]:
+    """STANDARD.md section 10: another government's record of a similar
+    law (a `precedent-record` source) is cited, by a line or its chart,
+    only in a background section (rules 1.2, 10.5); and each question in
+    the script's `[[question]]` record (rule 10.1) is asked in words and
+    either names the ids of the lines that answer it, every one of them a
+    line's `id`, or is marked `unanswered = true`, never both and never
+    neither. Line ids are unique, so a question's answer is one line."""
+    sc = c.script
+    out = []
+    for label, sec in sc.labelled():
+        if sec.id == BACKGROUND:
+            continue
+        for i, line in enumerate(sec.lines):
+            cited = [("cites", sid) for sid in line.sources or ()]
+            if line.visual is not None and isinstance(line.visual.source, str):
+                cited.append(("has a chart citing", line.visual.source))
+            for verb, sid in cited:
+                src = c.source(sid)
+                if src is not None and src.kind == PRECEDENT_RECORD:
+                    out.append(Failure(
+                        "precedent",
+                        f"{verb} {sid!r}, another government's record "
+                        f"({PRECEDENT_RECORD!r}), which may be cited only "
+                        f"as precedent, in a {BACKGROUND!r} section",
+                        label, i))
+    ids: Counter[str] = Counter()
+    for label, sec in sc.labelled():
+        for i, line in enumerate(sec.lines):
+            if line.id is None:
+                continue
+            if not line.id.strip():
+                out.append(Failure("questions", "has an empty 'id'", label, i))
+            ids[line.id] += 1
+    for lid, n in ids.items():
+        if n > 1 and lid.strip():
+            out.append(Failure("questions",
+                               f"line id {lid!r} is used by {n} lines; "
+                               f"each line's id is its own"))
+    for k, q in enumerate(sc.questions):
+        def fail(msg):
+            out.append(Failure("questions", f"question[{k}] {msg}"))
+
+        if not isinstance(q.ask, str) or not q.ask.strip():
+            fail("needs 'ask', the question in plain words")
+        if q.unanswered not in (None, True):
+            fail("'unanswered' may only be true; leave it out for a "
+                 "question the script answers")
+        refs = q.lines
+        if refs is not None and (
+                not isinstance(refs, list)
+                or not all(isinstance(r, str) and r for r in refs)):
+            fail("'lines' must be a list of line ids")
+            refs = []
+        if refs and q.unanswered is True:
+            fail("names the lines that answer it and is marked unanswered; "
+                 "it is one or the other")
+        elif not refs and q.unanswered is not True:
+            fail("is neither answered nor marked unanswered: give 'lines', "
+                 "the ids of the lines that answer it, or "
+                 "'unanswered = true' where no official source does "
+                 "(STANDARD.md rule 10.1)")
+        for r in refs or ():
+            if r not in ids:
+                fail(f"names line {r!r}, which no line in the script has "
+                     f"as its 'id'")
     return out
 
 
@@ -1648,6 +1717,7 @@ def check_contest(c: Contest, standard: Standard | None = None
         *check_cited_sources_exist(c),
         *check_background_only(c),
         *check_university_guide(c),
+        *check_questions(c),
         *check_visuals(c),
         *check_ballot(c),
         *check_card(c),

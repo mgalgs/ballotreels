@@ -50,3 +50,41 @@ credit = "Office of the Chief Financial Officer, FY 2026 Approved Budget"
 url = "https://app.box.com/shared/static/3fwa2n22w8vz006vgsclkpjszxuw07l6.pdf"
 file = "sources/budget-plan.pdf"
 retrieved = "2026-10-27"
+
+# Precedent (STANDARD.md section 10, rule 1.2): other governments' official
+# records of a similar law, of kind precedent-record, citable only in a
+# background section. sources/precedent/README.md quotes the passage behind
+# each fact and lists what no official record confirmed. The script
+# describes California's law, the one archived law that, like Initiative
+# 86, bans the force-feeding itself as well as sales (none bans importing,
+# as Initiative 86 does); the city sales bans do not fit the length budget
+# beside it (script.toml's header). The other archived records (New York City,
+# Chicago, Pittsburgh, Portland, Oregon; the Supreme Court dockets) are not
+# listed, since the video's page lists every source here as one it used.
+
+[[source]]
+id = "ca-law"
+kind = "precedent-record"
+publisher = "California State Legislature, Senate Bill 1520 (2004), Force fed birds, chaptered text, Statutes of 2004, Chapter 904"
+credit = "California Statutes of 2004, Chapter 904"
+url = "https://www.leginfo.ca.gov/pub/03-04/bill/sen/sb_1501-1550/sb_1520_bill_20040929_chaptered.html"
+file = "sources/precedent/ca-sb1520-2004-chaptered.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ca-court-2017"
+kind = "precedent-record"
+publisher = "United States Court of Appeals for the Ninth Circuit, Association des Eleveurs de Canards et d'Oies du Quebec v. Becerra, No. 15-55192, opinion filed September 15, 2017"
+credit = "Ninth Circuit, No. 15-55192 (2017)"
+url = "https://cdn.ca9.uscourts.gov/datastore/opinions/2017/09/15/15-55192.pdf"
+file = "sources/precedent/ca9-2017-09-15-15-55192-assn-des-eleveurs-v-becerra.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ca-court-2022"
+kind = "precedent-record"
+publisher = "United States Court of Appeals for the Ninth Circuit, Association des Eleveurs de Canards et d'Oies du Quebec v. Bonta, Nos. 20-55882 and 20-55944, opinion filed May 6, 2022"
+credit = "Ninth Circuit, Nos. 20-55882, 20-55944 (2022)"
+url = "https://cdn.ca9.uscourts.gov/datastore/opinions/2022/05/06/20-55882.pdf"
+file = "sources/precedent/ca9-2022-05-06-20-55882-assn-des-eleveurs-v-bonta.pdf"
+retrieved = "2026-10-28"
