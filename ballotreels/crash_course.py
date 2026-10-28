@@ -1,22 +1,22 @@
 """A state's crash course: one video through every statewide measure on
 its ballot (docs/ARCHITECTURE.md, "The crash course").
 
-Nothing in it is written for it. Each measure gets one slot, and the
-slot replays two sections of that measure's own film, picture and
-committed narration alike: its opening section (what the measure is)
-and its vote section (what a yes and a no vote would do), or, for a
-choice question (STANDARD.md section 8), its `choices` section, which
-names the options. The audio is cut from the measure's committed
-narration.wav by its narration.json phrase timings; the TTS is never
-asked for anything. Each slot is as long as its own member's two
-sections plus SLOT_GAP_SECONDS, for which it holds its last frame in
-silence; a slot is never padded out to match a longer one, so the
-course is the sum of its slots.
+Nothing in it is written for it. The measures are tiles on pages, a
+contact sheet of up to PAGE_TILES a page, split as evenly as they go
+over the fewest pages (page_sizes), in ballot order. Each tile says one
+line of its measure's own script, verbatim: the first line of its
+`change` section (what the measure would do), or, in a script with
+none, of its opening section. The audio is that line's cut of the
+measure's committed narration.wav, by its narration.json phrase
+timings; the TTS is never asked for anything. Each tile's slot is as
+long as its line plus SLOT_GAP_SECONDS, and a slot is never padded out
+to match a longer one, so a page is its heading's lead plus its slots.
 
-The film around the slots says nothing either: a short opening card
+The film around the pages says nothing either: a short opening card
 with the state's name, how many statewide measures it has and the
-election's date, and a closing sources card listing what the reused
-lines cite, grouped by measure.
+election's date; a still closing page pointing to each measure's own
+video; and a sources card listing what the reused lines cite, grouped
+by measure.
 
 This module lays all of that out as frames and seconds, with no drawing
 (film/crash_course.py draws it), the same way ballotreels.storyboard does
@@ -36,25 +36,27 @@ from .contest import Contest, ContestError, Line, Source, load_contest
 from .index import (CRASH_COURSE, ContestIndex, Election, IndexEntry,
                     load_index)
 from .narration import (CURRENT, MISSING, NarrationError, match_phrases,
-                        narration_state, padded_spans, playback_sections)
-from .standard import CHOICES
-from .storyboard import FPS, Storyboard, frame, layout
+                        narration_state, playback_sections)
+from .storyboard import FPS, frame
 
 # The crash course's own template version, in its cache key: bump it when
 # its film changes what it draws (docs/ARCHITECTURE.md).
-TEMPLATE_VERSION = 2
+TEMPLATE_VERSION = 3
 
 # Fewer statewide measures than this, and a state has no crash course:
 # one measure's own video already is one.
 MIN_MEMBERS = 2
 
-OPENING_SECONDS = 2.0   # the opening card, on screen only
-SLOT_GAP_SECONDS = 0.5  # added to each member's own two sections
-AUDIO_MARGIN = 0.1      # s of the narration kept either side of a part's words
-AUDIO_FADE = 3          # frames each cut of the narration fades over
+OPENING_SECONDS = 2.0    # the opening card, on screen only
+PAGE_LEAD_SECONDS = 1.0  # a page's heading, before its first tile
+SLOT_GAP_SECONDS = 0.5   # added to each tile's own one-liner
+CLOSING_SECONDS = 3.0    # the closing page, still and silent
+AUDIO_MARGIN = 0.1       # s of the narration kept either side of a line's words
+AUDIO_FADE = 3           # frames each cut of the narration fades over
+PAGE_TILES = 6           # tiles on a page, at most
 
 OPENING = "what"
-VOTE = "vote"
+CHANGE = "change"
 
 MONTHS = ("January", "February", "March", "April", "May", "June", "July",
           "August", "September", "October", "November", "December")
@@ -163,45 +165,32 @@ def is_crash_course(contest: str) -> bool:
 # ---- the layout ----
 
 @dataclass(frozen=True)
-class Part:
-    """One of the two sections a slot replays: frames [start, end) of the
-    member's own film, and the narration under it."""
-    label: str  # the section's label (Script.labels)
-    heading: str
-    lines: tuple[Line, ...]
-    start: int  # frames, on the member film's clock
-    end: int
-    # the narration cut for it: seconds into narration.wav, and frames
-    # into this part (from `start`) where it starts playing, for how long
-    audio_from: float
-    audio_at: int
-    audio_frames: int
-    # the reused words' span, seconds on the member film's (padded) clock,
-    # for the captions
-    said_from: float
-    said_to: float
-
-    @property
-    def frames(self) -> int:
-        return self.end - self.start
-
-
-@dataclass(frozen=True)
 class Member:
+    """One measure's tile: the line it says (its one-liner, verbatim) and
+    the cut of its committed narration that says it."""
     entry: IndexEntry
     contest: Contest
-    board: Storyboard
-    parts: tuple[Part, Part]
-    cited: tuple[Source, ...]  # what the reused lines cite, sources.toml order
+    section: str  # the label (Script.labels) of the section the line opens
+    line: Line
+    # the narration cut for it: seconds into narration.wav, for how long
+    audio_from: float
+    audio_frames: int
+    cited: tuple[Source, ...]  # what the line cites, sources.toml order
 
     @property
     def frames(self) -> int:
-        """The member's two sections, back to back, in frames."""
-        return sum(p.frames for p in self.parts)
+        """The tile's own content: its one-liner, said."""
+        return self.audio_frames
 
     @property
     def lines(self) -> tuple[Line, ...]:
-        return tuple(ln for p in self.parts for ln in p.lines)
+        return (self.line,)
+
+    @property
+    def fallback(self) -> bool:
+        """Whether the script has no CHANGE section, so the tile says its
+        opening line instead."""
+        return all(sec.id != CHANGE for sec in self.contest.script.sections)
 
 
 @dataclass(frozen=True)
@@ -213,20 +202,47 @@ class CrashCourse:
     members: tuple[Member, ...]
     fps: int
     opening: int  # the opening card's frames
+    lead: int     # each page's frames before its first tile, for its heading
+    pages: tuple[tuple[int, ...], ...]  # each page's members, by index
     slots: tuple[int, ...]  # each member's slot's frames, in ballot order
+    closing: int  # the closing page's frames, before the sources pages
+
+    def page_start(self, k: int) -> int:
+        """The frame page k comes on; for k past the last page, the frame
+        the closing page does."""
+        return (self.opening + self.lead * k
+                + sum(self.slots[i] for p in self.pages[:k] for i in p))
+
+    def page_of(self, i: int) -> int:
+        return next(k for k, p in enumerate(self.pages) if i in p)
 
     def slot_start(self, i: int) -> int:
-        return self.opening + sum(self.slots[:i])
+        k = self.page_of(i)
+        return (self.page_start(k) + self.lead
+                + sum(self.slots[j] for j in self.pages[k] if j < i))
 
     @property
     def slots_end(self) -> int:
-        """The frame the sources card starts."""
-        return self.slot_start(len(self.members))
+        """The frame the closing page starts."""
+        return self.page_start(len(self.pages))
+
+    @property
+    def sources_start(self) -> int:
+        """The frame the sources pages start."""
+        return self.slots_end + self.closing
 
     @property
     def headline(self) -> str:
         n = len(self.members)
         return f"{n} statewide measure{'' if n == 1 else 's'}"
+
+
+def page_sizes(n: int, most: int = PAGE_TILES) -> tuple[int, ...]:
+    """How many tiles each page has: n split as evenly as it goes over the
+    fewest pages of at most `most`, the larger pages first (14: 5, 5, 4)."""
+    k = -(-n // most)
+    base, extra = divmod(n, k)
+    return (base + 1,) * extra + (base,) * (k - extra)
 
 
 def election_date(election_id: str) -> str:
@@ -245,13 +261,6 @@ def _state_name(division: str) -> str:
 
 def _who(entry: IndexEntry) -> str:
     return f"{entry.title} ({entry.id})"
-
-
-def vote_section(contest: Contest) -> str:
-    """The id of the section a slot closes on: `vote`, what a yes and a no
-    vote would do; or, for a choice question, `choices`, which names the
-    options."""
-    return CHOICES if contest.script.choices is not None else VOTE
 
 
 def load_member(entry: IndexEntry, election_dir: str | Path,
@@ -279,25 +288,6 @@ def load_member(entry: IndexEntry, election_dir: str | Path,
     return contest
 
 
-def _part(contest: Contest, board: Storyboard, label: str, fps: int) -> Part:
-    beat = next(s for s in board.sections if s.label == label)
-    said = [s for s in match_phrases(contest) if s.section == label]
-    padded = [s for s in padded_spans(contest, fps) if s.section == label]
-    u0 = min(s.start for s in said)
-    p0, p1 = (min(s.start for s in padded), max(s.end for s in padded))
-    # The side pad falls inside a side section, never inside the opening
-    # or the vote section, so the whole part sits one shift from the audio
-    # file's own clock.
-    shift = p0 - u0
-    a = max(beat.start, frame(p0 - AUDIO_MARGIN, fps))
-    b = min(beat.end, frame(p1 + AUDIO_MARGIN, fps))
-    return Part(label=label, heading=beat.section.heading,
-                lines=beat.section.lines, start=beat.start, end=beat.end,
-                audio_from=max(0.0, a / fps - shift),
-                audio_at=a - beat.start, audio_frames=b - a,
-                said_from=p0, said_to=p1)
-
-
 def _cited(contest: Contest, lines: tuple[Line, ...]) -> tuple[Source, ...]:
     ids = set()
     for line in lines:
@@ -309,25 +299,38 @@ def _cited(contest: Contest, lines: tuple[Line, ...]) -> tuple[Source, ...]:
 
 def member_layout(entry: IndexEntry, contest: Contest,
                   fps: int = FPS) -> Member:
-    """The member's two parts, on its own film's clock."""
+    """The member's one-liner and its cut of the narration: the first line
+    of its CHANGE section (what the measure would do), or, in a script
+    with none, of its OPENING section."""
     doc = json.loads((contest.path / "narration.json").read_text(
         encoding="utf-8"))
-    try:
-        board = layout(contest, doc["seconds"], fps)
-    except (NarrationError, KeyError) as e:
-        raise CrashCourseError(f"{_who(entry)}: {e}") from None
-    labels = [label for label, _ in playback_sections(contest)]
-    want = vote_section(contest)
-    votes = [label for label, sec in playback_sections(contest)
-             if sec.id == want]
-    if not labels or labels[0] != OPENING or len(votes) != 1:
+    sections = playback_sections(contest)
+    label = next((lb for lb, sec in sections if sec.id == CHANGE), None)
+    if label is None and sections and sections[0][1].id == OPENING:
+        label = sections[0][0]
+    sec = dict(sections).get(label)
+    if sec is None or not sec.lines:
         raise CrashCourseError(
-            f"{_who(entry)}: needs one {OPENING!r} section first and one "
-            f"{want!r} section to make its slot from")
-    parts = (_part(contest, board, labels[0], fps),
-             _part(contest, board, votes[0], fps))
-    lines = parts[0].lines + parts[1].lines
-    return Member(entry, contest, board, parts, _cited(contest, lines))
+            f"{_who(entry)}: needs a {CHANGE!r} or an {OPENING!r} section "
+            f"with a line to make its tile from")
+    try:
+        spans = list(match_phrases(contest))
+    except NarrationError as e:
+        raise CrashCourseError(f"{_who(entry)}: {e}") from None
+    k = next(j for j, s in enumerate(spans)
+             if s.section == label and s.index == 0)
+    said = spans[k]
+    # AUDIO_MARGIN either side of the words, but never past halfway to
+    # the phrase before or after, so not a breath of another line plays
+    lo = (spans[k - 1].end + said.start) / 2 if k else 0.0
+    hi = ((said.end + spans[k + 1].start) / 2 if k + 1 < len(spans)
+          else doc.get("seconds", said.end + AUDIO_MARGIN))
+    a = max(lo, said.start - AUDIO_MARGIN)
+    b = min(hi, said.end + AUDIO_MARGIN)
+    line = sec.lines[0]
+    return Member(entry, contest, label, line, audio_from=a,
+                  audio_frames=max(1, frame(b - a, fps)),
+                  cited=_cited(contest, (line,)))
 
 
 def plan(election_dir: str | Path, fps: int = FPS,
@@ -348,20 +351,28 @@ def plan(election_dir: str | Path, fps: int = FPS,
         contest = load_member(m, election_dir, index.election.id)
         members.append(member_layout(m, contest, fps))
     gap = frame(SLOT_GAP_SECONDS, fps)
+    pages, i = [], 0
+    for n in page_sizes(len(members)):
+        pages.append(tuple(range(i, i + n)))
+        i += n
     return CrashCourse(
         entry=entry, election=index.election,
         state_name=_state_name(index.election.state),
         date=election_date(index.election.id),
         members=tuple(members), fps=fps,
         opening=frame(OPENING_SECONDS, fps),
-        slots=tuple(m.frames + gap for m in members))
+        lead=frame(PAGE_LEAD_SECONDS, fps),
+        pages=tuple(pages),
+        slots=tuple(m.frames + gap for m in members),
+        closing=frame(CLOSING_SECONDS, fps))
 
 
 def chapters(course: CrashCourse) -> list[dict[str, object]]:
     """One chapter per measure, in ballot order: where its slot starts, in
     seconds (rounded up to the millisecond, as storyboard.chapters does),
     and its title as contests.toml gives it (its designation and short
-    title). Neither the opening card nor the sources card is one."""
+    title). Neither the opening card, a page's heading, the closing page
+    nor the sources card is one."""
     return [{"start": math.ceil(course.slot_start(i) * 1000 / course.fps
                                 - 1e-6) / 1000,
              "title": m.entry.title}
@@ -380,8 +391,8 @@ def sources(course: CrashCourse) -> list[dict[str, object]]:
 
 def script_toml(course: CrashCourse) -> str:
     """A record of what the crash course says, in TOML, published where a
-    measure's video publishes its script.toml: each member's reused
-    sections and their lines, verbatim. Derived, never edited."""
+    measure's video publishes its script.toml: each member's one-liner,
+    verbatim, under the section it opens. Derived, never edited."""
     def q(s: str) -> str:
         return json.dumps(s, ensure_ascii=False)
 
@@ -395,11 +406,11 @@ def script_toml(course: CrashCourse) -> str:
     for m in course.members:
         out += ["[[member]]", f"contest = {q(m.entry.id)}",
                 f"title = {q(m.entry.title)}", ""]
-        for p in m.parts:
-            out += ["[[member.section]]", f"id = {q(p.label)}",
-                    f"heading = {q(p.heading)}",
-                    "lines = [" + ", ".join(q(ln.text) for ln in p.lines)
-                    + "]", ""]
+        sec = dict(playback_sections(m.contest))[m.section]
+        out += ["[[member.section]]", f"id = {q(m.section)}",
+                f"heading = {q(sec.heading)}",
+                "lines = [" + ", ".join(q(ln.text) for ln in m.lines)
+                + "]", ""]
     return "\n".join(out)
 
 
