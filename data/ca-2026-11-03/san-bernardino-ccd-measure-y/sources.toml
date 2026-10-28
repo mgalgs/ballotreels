@@ -1,0 +1,76 @@
+# Archived sources for San Bernardino Community College District Measure Y,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Bernardino County Registrar of Voters' comprehensive Voter Information
+# Guide, PDF pages 258 to 263; "page" is the guide's printed footer
+# number (SB COMPREHENSIVE-256 to -261).
+#
+# The guide's Full Text prints the ballot question; with County Counsel's
+# Impartial Analysis, which states what a yes and a no vote do, it is the
+# card's source. The Tax Rate Statement is its own source.
+#
+# A community college district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md). Whether the district reaches into Riverside
+# County is not confirmed by any archived record, so it has one contest.
+
+[contest]
+id = "ca-2026-11-03-san-bernardino-ccd-measure-y"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:san_bernardino"
+kind = "measure"
+title = "San Bernardino Community College District Measure Y: College Facility Bonds"
+voters = "the San Bernardino Community College District"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "San Bernardino County Registrar of Voters, Voter Information Guide, pages SB COMPREHENSIVE-256 to -261: Bond Measure Y's ballot question and Impartial Analysis"
+credit = "San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp258-263.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "County Counsel Impartial Analysis of Bond Measure Y, San Bernardino County Voter Information Guide, page SB COMPREHENSIVE-256"
+credit = "Impartial Analysis, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp258-263.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "San Bernardino Community College District, Tax Rate Statement for Bond Measure Y, San Bernardino County Voter Information Guide, page SB COMPREHENSIVE-257"
+credit = "Tax Rate Statement, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp258-263.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Bond Measure Y, San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-256 to -257 (no argument against was filed)"
+credit = "Arguments, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp258-263.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text for Bond Measure Y, San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-258 to -261"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp258-263.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "legislative-record"
+publisher = "Board of Trustees of the San Bernardino Community College District, resolution ordering the bond election, with Exhibit A, as posted by the Registrar of Voters"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/SBCCD/RES_SBCCD.pdf"
+file = "sources/RES_SBCCD.pdf"
+retrieved = "2026-10-28"
