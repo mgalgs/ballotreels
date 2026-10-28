@@ -99,6 +99,7 @@ from sketch import (BROWN, DRAW, GRAPHITE, HONEY, OCHRE, ORANGE, RESTING_ANGLE, 
                     SAGE, TEAL, Hatch, Item, Stroke, fade_item, hatch_item,
                     stroke_item, text_item)
 
+from ballotreels import grid  # noqa: E402
 from ballotreels.ballots import badge, ballot_for  # noqa: E402
 from ballotreels.contest import load_contest  # noqa: E402
 from ballotreels.illustrations import load_library  # noqa: E402
@@ -400,6 +401,8 @@ def heading_text_items(words, L, f0):
 def ballot_run(lines, L, first_f):
     """The measure's ballot entry, drawn during the run's first line: its
     title, and its two options drawn alike, neither marked."""
+    if CHOICES is not None:
+        return choice_ballot_run(lines, L, first_f)
     stage = L['stage']
     u = L['u']
     tf = L['ballot_title_font']
@@ -451,6 +454,56 @@ def ballot_run(lines, L, first_f):
     items = scaled(items + opt_items, first_f, budget0)
     bb = _rot_bbox(cx, cy, w, h, angle)
     return items, [Mark('ballot', bb)]
+
+
+def choice_ballot_run(lines, L, first_f):
+    """ballot_run for a choice question: the title, then every option, in
+    ballot order, its letter and label as printed beside an empty oval, all
+    alike and none marked."""
+    stage = L['stage']
+    u = L['u']
+    tf = L['ballot_title_font']
+    w = min(stage.w * 0.92, 900 * u)
+    pad = 46 * u
+    oval_w = 70 * u
+    while True:
+        tl = text.wrap(CONTEST.title, tf, w - 2 * pad, balance=True)
+        rows = [text.wrap(c.printed, tf, w - 2 * pad - oval_w, balance=True) for c in CHOICES]
+        lh = text.line_height(tf)
+        h = pad + lh * len(tl) + 40 * u + sum(len(r) * lh + 14 * u for r in rows) + pad * 0.6
+        if h <= stage.h or tf.size < 20:
+            break
+        tf = font(tf.size * 0.92, family=PRINT)
+    h = min(stage.h, h)
+    cx, cy = stage.cx, stage.cy
+    angle = -0.012
+    at = (cx, cy, angle)
+    pts, draw_paper = paper(cx, cy, w, h, angle)
+    f = first_f
+    budget0 = draw_budget(first_f, lines[-1].end)
+    items = [fade_item(f, f + 6, draw_paper)]
+    outline = Stroke(pts, seed_of('ballot'), passes=2, width=3.2 * u, closed=True, overshoot=0, alpha=0.75)
+    items.append(stroke_item(f + 3, f + 14, outline, at=at))
+    f += 14
+    ti, f, _ = write_lines(f, tl, tf, -w / 2 + pad, -h / 2 + pad * 0.8)
+    items += ti
+    ry = -h / 2 + pad * 0.8 + lh * len(tl) + 22 * u
+    rule = Stroke([(-w / 2 + pad, ry), (w / 2 - pad, ry)], seed_of('ballot rule'), passes=2, width=2.6 * u)
+    items.append(stroke_item(f, f + 6, rule))
+    f += 6
+    y = ry + 18 * u
+    for rl in rows:
+        ox = -w / 2 + pad + 24 * u
+        oval = Stroke(sp.ellipse(ox, y + lh * 0.5, 22 * u, 14 * u, n=40), seed_of('oval'), passes=2,
+                      width=3 * u, closed=True, overshoot=0)
+        items.append(stroke_item(f, f + 8, oval))
+        li, f, _ = write_lines(f + 8, rl, tf, -w / 2 + pad + oval_w, y)
+        items += li
+        y += len(rl) * lh + 14 * u
+    for it in items[1:]:
+        it.at = at
+    items = scaled(items, first_f, budget0)
+    return items, [Mark('ballot', _rot_bbox(cx, cy, w, h, angle))]
 
 
 def _rot_bbox(cx, cy, w, h, a):
@@ -1084,6 +1137,198 @@ def sides_group(side_a, side_b, L, fmt, h_f0):
     return items, marks
 
 
+# ---- the stage: a choice question's grid (STANDARD.md section 8) ----
+# Every option on one labelled sheet, in ballot order, read left to right
+# and top to bottom: a drawing from the library over its letter and label
+# as the ballot prints them. The grid is the smallest of 1x2, 1x3, 2x2 and
+# 2x3 (columns x rows on the 9:16 frame; turned on its side, rows x
+# columns, in 16:9) that holds a page's options (ballotreels.grid); more
+# than six take several pages, one `choices` visual each. Every cell is
+# the same size on every page, its drawing the same size, its label in the
+# same face and size and at the same place, and each draws on in the same
+# time, as the narrator names it; a partly filled grid leaves its last
+# cell empty rather than stretching an option.
+CELL_GAP = 28    # px between two cells
+CELL_PAD = 18    # px inside a cell, around its drawing and its label
+CELL_LABEL_GAP = 12  # px between a cell's drawing and its label
+CELL_LABEL_LINES = 3  # no label may take more lines than this
+CELL_DRAW = 30   # frames a cell's drawing and label take, at most (1 s)
+
+
+def grid_shape(count, fmt):
+    """(columns, rows) of the page holding `count` options in `fmt`."""
+    cols, rows = grid.grid_for(count)
+    return (cols, rows) if fmt == '9x16' else (rows, cols)
+
+
+@functools.lru_cache(maxsize=4)
+def choices_plan(fmt):
+    """Every grid page laid out together for `fmt`, so that every cell
+    comes out alike: a dict of the cell size, the label font and height,
+    the drawing's box inside a cell, and each page's cell boxes, in ballot
+    order. The cells fill the stage above the source line."""
+    L = LAYOUTS[fmt]
+    u = L['u']
+    st = L['stage']
+    src = CONTEST.source(CONTEST.script.choices.source)
+    nf = L['note_font']
+    sh = text.line_height(nf) * len(text.wrap(f'Source: {src.short_credit}', nf, st.w, balance=True))
+    room = Box(st.x, st.y, st.w, st.h - sh - 22 * u)
+    gap = CELL_GAP * u
+    pages = grid.pages(len(CHOICES))
+    slots = []
+    for page in pages:
+        cols, rows = grid_shape(len(page), fmt)
+        slots.append((cols, rows, (room.w - gap * (cols - 1)) / cols, (room.h - gap * (rows - 1)) / rows))
+    # one cell size for every page: the smallest slot's
+    cw = min(sw for _, _, sw, _ in slots)
+    ch = min(sh_ for _, _, _, sh_ in slots)
+    pad = CELL_PAD * u
+    inner = cw - 2 * pad
+    fnt = L['timeline_font']
+    while True:
+        n = max(len(text.wrap(c.printed, fnt, inner, balance=True)) for c in CHOICES)
+        label_h = n * text.line_height(fnt)
+        if (n <= CELL_LABEL_LINES and label_h <= ch * 0.4) or fnt.size < 20:
+            break
+        fnt = font(fnt.size * 0.94, family=PRINT)
+    art = (pad, pad, inner, ch - 2 * pad - label_h - CELL_LABEL_GAP * u)
+    cells = []
+    for page, (cols, rows, sw, sh_) in zip(pages, slots):
+        boxes = []
+        for i in range(len(page)):
+            c, r = i % cols, i // cols
+            x = room.x + c * (sw + gap) + (sw - cw) / 2
+            y = room.y + r * (sh_ + gap) + (sh_ - ch) / 2
+            boxes.append(Box(x, y, cw, ch))
+        cells.append(boxes)
+    return dict(cell=(cw, ch), font=fnt, label_h=label_h, art=art, cells=cells, pages=pages)
+
+
+def choice_page(chart):
+    """Which grid page (0-based) the `choices` visual `chart` shows: the
+    script's k-th `choices` visual shows page k."""
+    shown = [c for c in BOARD.charts if c.visual.kind == 'choices']
+    return next(k for k, c in enumerate(shown) if (c.section, c.index) == (chart.section, chart.index))
+
+
+def choice_starts(names, lines, f0):
+    """The frame each of a page's options is named at: its name's
+    estimated spoken position in the first of the page's `lines` that
+    says it (as highlight_starts estimates a phrase's), or, said in none,
+    spread evenly over the page's lines; never before `f0`."""
+    out = []
+    for k, name in enumerate(names):
+        at = None
+        for beat in lines:
+            said, _ = _norm(beat.line.text)
+            i = said.find(_norm(name)[0])
+            if i >= 0:
+                a, b = SPOKEN.get((beat.section, beat.index), (beat.start, beat.end))
+                at = a + (b - a) * i / max(1, len(said))
+                break
+        if at is None:
+            a, b = lines[0].start, lines[-1].end
+            at = a + (b - a) * k / len(names)
+        out.append(max(f0, at))
+    return out
+
+
+def choice_art(name):
+    """Option drawing `name` as illustration_ink makes it, or None when the
+    library has no such file yet (a placeholder is drawn instead; the
+    checks fail such a script, so only a still shows one)."""
+    entry = load_library().get(name) if isinstance(name, str) else None
+    if entry is None or not entry.path.is_file():
+        return None
+    return illustration_ink(name)[0]
+
+
+def choice_cell(choice, box, plan, L, f0, d):
+    """One option's cell at `box`: its drawing wiped on, then its letter and
+    label written under it, both within `d` frames from `f0`, the same for
+    every option."""
+    u = L['u']
+    ax, ay, aw, ah = plan['art']
+    ax, ay = box.x + ax, box.y + ay
+    surf = choice_art(choice.illustration)
+    items = []
+    wipe = d * 0.6
+    if surf is None:
+        cross = Stroke(box_pts(ax + aw * 0.1, ay + ah * 0.1, aw * 0.8, ah * 0.8), seed_of('choice placeholder'),
+                       passes=1, width=2 * u, closed=True, overshoot=0, alpha=0.35)
+        items.append(stroke_item(f0, f0 + wipe, cross))
+    else:
+        iw, ih = surf.get_width(), surf.get_height()
+        k = min(aw / iw, ah / ih)
+        w, h = iw * k, ih * k
+        x, y = ax + (aw - w) / 2, ay + (ah - h) / 2
+        feather = 0.12 * ih
+
+        def draw(cv, p, surf=surf, x=x, y=y, k=k, ih=ih, feather=feather):
+            ctx = cv.ctx
+            ctx.save()
+            ctx.translate(x, y)
+            ctx.scale(k, k)
+            ctx.set_operator(cairo.OPERATOR_MULTIPLY)
+            ctx.set_source_surface(surf, 0, 0)
+            ctx.get_source().set_filter(cairo.FILTER_GOOD)
+            if p >= 1:
+                ctx.paint()
+            else:
+                edge = p * (ih + feather)
+                g = cairo.LinearGradient(0, edge - feather, 0, edge)
+                g.add_color_stop_rgba(0, 0, 0, 0, 1)
+                g.add_color_stop_rgba(1, 0, 0, 0, 0)
+                ctx.mask(g)
+            ctx.restore()
+
+        def head(p, x=x, y=y, w=w, k=k, ih=ih, feather=feather):
+            sweep = 0.5 - 0.42 * math.cos(p * math.pi * 5)
+            return (x + w * (0.06 + 0.88 * sweep), y + (p * (ih + feather) - feather * 0.5) * k)
+
+        items.append(Item(f0, f0 + wipe, draw, head, ease=DRAW))
+    fnt = plan['font']
+    lines = text.wrap(choice.printed, fnt, aw, balance=True)
+    ly = ay + ah + CELL_LABEL_GAP * u
+    label, _, _ = write_lines(f0 + wipe, lines, fnt, ax, ly, align='center', width=aw)
+    # every label takes the same time, whatever its length
+    a, b = label[0].f0, max(it.f1 for it in label)
+    for it in label:
+        it.f0 = f0 + wipe + (it.f0 - a) * (d - wipe) / (b - a)
+        it.f1 = f0 + wipe + (it.f1 - a) * (d - wipe) / (b - a)
+    return items + label
+
+
+def choices_visual(chart, lines, L, f0, f1):
+    """One grid page (choices_plan): the cells' outlines all drawn on
+    together, then each option's drawing and label as the narrator names
+    it, each in the same time, and the source along the bottom."""
+    fmt = '9x16' if L is LAYOUTS['9x16'] else '16x9'
+    plan = choices_plan(fmt)
+    p = choice_page(chart)
+    page = plan['pages'][p]
+    boxes = plan['cells'][p]
+    u = L['u']
+    src, sbox = source_note(chart, L, f0)
+    items = [src]
+    for box in boxes:
+        outline = Stroke(box_pts(*box), seed_of('choice cell'), passes=2, width=3 * u, closed=True,
+                         overshoot=0, alpha=0.5)
+        items.append(stroke_item(f0, f0 + 12, outline))
+    opts = [CHOICES[k] for k in page]
+    starts = choice_starts([o.said for o in opts], lines, f0 + 14)
+    # one drawing time for every cell: what the closest two names leave
+    gaps = [b - a for a, b in zip(starts, starts[1:])] + [max(12, (f1 - starts[-1]) * 0.8)]
+    d = max(12, min(CELL_DRAW, *gaps))
+    for i in range(1, len(starts)):
+        starts[i] = max(starts[i], starts[i - 1] + d)
+    for o, box, s0 in zip(opts, boxes, starts):
+        items += choice_cell(o, box, plan, L, s0, d)
+    union = _union(boxes)
+    return items, [Mark('chart', union), Mark('chart source', sbox)]
+
+
 SHARE_HATCH = [dict(angle=45, spacing=11, cross=False, alpha=0.5),
                dict(angle=-35, spacing=8, cross=True, alpha=0.36),
                dict(angle=0, spacing=13, cross=False, alpha=0.5),
@@ -1437,7 +1682,8 @@ FIGURES = {
     'steady-spending-volatile-revenue': figure_steady_spending_volatile_revenue,
 }
 CHARTS = {'bars': bars_chart, 'share': share_chart, 'series': series_chart}
-SHOWN = {'illustration': illustration_visual, 'timeline': timeline_visual, 'list': list_visual}
+SHOWN = {'illustration': illustration_visual, 'timeline': timeline_visual, 'list': list_visual,
+         'choices': choices_visual}
 
 
 def chart_run(chart, lines, L, first_f):
@@ -1518,6 +1764,11 @@ def runs_of(sec):
 # readable whole). A later `page` line
 # brings the page back at full view, every term clicked so far ticked off.
 CARD = CONTEST.script.card
+# a choice question's options (STANDARD.md section 8), in ballot order, or
+# None for a yes/no measure: the card lists them where a yes/no card has
+# its YES and NO boxes, and the `choices` section draws them on the grid
+CHOICES = CONTEST.script.choices.choices if CONTEST.script.choices is not None else None
+CHOICES_HEADING = 'THE CHOICES'
 PAGE_DRAW = 30     # frames the page takes to draw on, the first time (1 s)
 CLICK = 18         # frames the highlighter takes to sweep a term, every occurrence (0.6 s)
 ZOOM = 24          # frames the camera takes to ease in on it (0.8 s)
@@ -1642,6 +1893,10 @@ def page_spreads(card):
     title, before the fiscal statement and the vote boxes, between those
     two, and, with the boxes, under their heading and between them."""
     fiscal, votes = card.fiscal is not None, card.yes is not None
+    if CHOICES is not None:
+        # the choices' list, in the boxes' place: under its heading and
+        # between its rows (one spread shared out between them)
+        return 1 + 1 + fiscal + 2
     return 1 + (fiscal or votes) + (fiscal and votes) + 2 * votes
 
 
@@ -1686,6 +1941,8 @@ def _layout_page(card, box, s, arrangement, spread=0):
     y += summary.height
     left_bottom = y
     votes = card.yes is not None
+    if CHOICES is not None:
+        return _layout_choices(card, box, s, two, colw, x, y, gap, spread, F, parts, left_bottom)
     if card.fiscal is None and not votes:
         return y - box.y, parts
     if two:
@@ -1725,6 +1982,34 @@ def _layout_page(card, box, s, arrangement, spread=0):
     return max(y, left_bottom) - box.y, parts
 
 
+def _layout_choices(card, box, s, two, colw, x, y, gap, spread, F, parts, left_bottom):
+    """The rest of a choice question's card, from _layout_page: the fiscal
+    statement, if any, then THE CHOICES and every choice on a row of its
+    own, letter and label as the ballot prints them, all in one face and
+    size (rule 7.4, STANDARD.md section 8): the list in the YES/NO boxes'
+    place."""
+    if two:
+        x, y = box.x + colw + gap * 1.5, box.y
+    else:
+        y += gap + spread
+    if card.fiscal is not None:
+        parts['labels'].append((FISCAL_LABEL, F['bold'], x, y))
+        y += text.line_height(F['bold'])
+        fiscal = Flow('fiscal', card.fiscal, F['body'], x=x, y=y, width=colw)
+        parts['flows'].append(fiscal)
+        y += fiscal.height + gap + spread
+    parts['labels'].append((CHOICES_HEADING, F['head'], x, y))
+    y += text.line_height(F['head']) + gap * 0.05
+    parts['shapes'].append(('rule', (x, y, colw)))
+    y += gap * 0.5 + spread
+    row_gap = gap * 0.3 + spread / max(1, len(CHOICES) - 1)
+    for i, choice in enumerate(CHOICES):
+        row = Flow(f'choice {i}', choice.printed, F['body'], x=x, y=y, width=colw)
+        parts['flows'].append(row)
+        y += row.height + (row_gap if i + 1 < len(CHOICES) else 0)
+    return max(y, left_bottom) - box.y, parts
+
+
 @functools.lru_cache(maxsize=4)
 def page_plan(fmt):
     """The card laid out for format `fmt` over the full-page view's whole
@@ -1741,7 +2026,7 @@ def page_plan(fmt):
     # can frame the pair.
     best = None
     # (A card with only a summary has nothing to set beside it.)
-    beside = CARD.fiscal is not None or CARD.yes is not None
+    beside = CARD.fiscal is not None or CARD.yes is not None or CHOICES is not None
     for arrangement in (('columns', 'stacked') if L['H'] <= L['W'] and beside else ('stacked',)):
         s = 90 * u
         while s > 12:
@@ -1769,6 +2054,8 @@ def focus_boxes(parts, focus):
     one entry per occurrence, of its boxes (one per line it spans)."""
     out = []
     for fl in parts['flows']:
+        if fl.field.startswith('choice '):
+            continue  # no choice is highlighted over another (STANDARD.md section 8)
         words = getattr(CARD, fl.field)
         k = words.find(focus)
         while k >= 0:
@@ -1832,6 +2119,15 @@ def page_static(paper_box, parts, L):
         write(*next(labels))  # the fiscal statement's heading
         for run in flows['fiscal'].runs:
             write(*run)
+    if CHOICES is not None:
+        write(*next(labels), alpha=0.8)  # THE CHOICES
+        kind, (x, y, w) = next(shapes)
+        marks.append(('stroke', Stroke([(x, y), (x + w, y)], seed_of('page rule', 1), passes=2, width=2 * u,
+                                       overshoot=2, alpha=0.6)))
+        for i in range(len(CHOICES)):
+            for run in flows[f'choice {i}'].runs:
+                write(*run)
+        return paper_draw, marks
     if 'yes' not in flows:
         return paper_draw, marks
     write(*next(labels), alpha=0.8)  # WHAT YOUR VOTE MEANS

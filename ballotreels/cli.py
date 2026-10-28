@@ -56,7 +56,7 @@ def _check_one(path: str, standard, out) -> bool:
               f"{'' if len(failures) == 1 else 's'}"
               if failures else f"PASS {contest.id}")
     summary = f"{status}; words {words}"
-    if contest.script.template == "measure":
+    if contest.script.template == "measure" and contest.script.choices is None:
         summary += f"; {side_order(contest.id)[0]} plays first"
     print(summary, file=out)
     return not failures

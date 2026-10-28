@@ -133,3 +133,54 @@ source = "ballot"
 highlight = ["Please choose only one answer."]
 ''', encoding="utf-8")
     return path
+
+
+def write_stand_in_sidecars(path):
+    """Stand-in narration sidecars for the script in `path`, as
+    tests.helpers.write_narration lays them out (0.4 s a word), with the
+    captions file and a silent WAV the film template reads beside them.
+    Never for a real contest's committed directory: its sidecars come
+    from the TTS model on the host."""
+    import json
+    import wave
+
+    from .helpers import write_narration
+
+    path = Path(path)
+    write_narration(path)
+    doc = json.loads((path / "narration.json").read_text(encoding="utf-8"))
+
+    def ts(t):
+        return f"{int(t // 3600):02d}:{int(t % 3600 // 60):02d}:{t % 60:06.3f}"
+    cues = "".join(f"{ts(p['start'])} --> {ts(p['end'])}\n{p['text']}\n\n"
+                   for p in doc["phrases"])
+    (path / "narration.vtt").write_text("WEBVTT\n\n" + cues, encoding="utf-8")
+    rate = 8000
+    with wave.open(str(path / "narration.wav"), "wb") as w:
+        w.setnchannels(1)
+        w.setsampwidth(2)
+        w.setframerate(rate)
+        w.writeframes(b"\0\0" * int(rate * doc["seconds"] + rate))
+
+
+def load_film(contest_dir):
+    """film/measure.py loaded afresh for the contest in `contest_dir` (it
+    reads BALLOTREELS_CONTEST once, at import), as its own module."""
+    import importlib.util
+    import os
+
+    repo = Path(__file__).resolve().parent.parent
+    old = os.environ.get("BALLOTREELS_CONTEST")
+    os.environ["BALLOTREELS_CONTEST"] = str(contest_dir)
+    try:
+        spec = importlib.util.spec_from_file_location(
+            f"film_measure_{abs(hash(str(contest_dir)))}",
+            repo / "film" / "measure.py")
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+    finally:
+        if old is None:
+            del os.environ["BALLOTREELS_CONTEST"]
+        else:
+            os.environ["BALLOTREELS_CONTEST"] = old
+    return mod
