@@ -151,6 +151,19 @@ class CardTest(ContestCopyTestCase):
             "[card] 'no' does not appear verbatim in source "
             "'quick-reference' (sources/quick-reference.html)"])
 
+    def test_verbatim_allows_a_hyphen_joined_at_a_line_break(self):
+        # pdftotext joins "eighty-" / "two" into "eightytwo"; the card
+        # keeps the hyphen as printed. Nothing else is loosened.
+        self.edit("sources/quick-reference.html", "economic downturns",
+                  "economicdownturns", count=2)
+        self.edit("script.toml", "during economic downturns. Fiscal",
+                  "during economic-downturns. Fiscal")
+        self.assertEqual(self.failures(), [])
+        self.edit("script.toml", "economic-downturns", "economic-Downturns")
+        self.assertEqual(self.failures(), [
+            "[card] 'summary' does not appear verbatim in source "
+            "'quick-reference' (sources/quick-reference.html)"])
+
     def test_plain_text(self):
         self.assertEqual(
             plain_text('<head><style>p { x }</style><script>var a = "<b>";'
