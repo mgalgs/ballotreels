@@ -1,0 +1,17 @@
+# Contest index for the 2026-11-03 Wyoming general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). Titles
+# pair the designation with the name the Secretary of State's 2026
+# General Election Statewide Ballot Propositions gives the initiative.
+
+[election]
+id = "wy-2026-11-03"
+state = "ocd-division/country:us/state:wy"
+title = "Wyoming General Election, November 3, 2026"
+
+[[contest]]
+id = "wy-2026-11-03-initiative-proposition-1"
+kind = "measure"
+division = "ocd-division/country:us/state:wy"
+title = "Proposed Initiative Proposition Number One: People’s Initiative to Limit Property Tax in Wyoming through a Homeowner’s Property Exemption"
+number = "One"

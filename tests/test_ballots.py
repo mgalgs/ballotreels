@@ -134,6 +134,17 @@ class BallotTest(unittest.TestCase):
         self.assertEqual(badge(nd, "Initiated Constitutional Measure No. 2: X",
                                "2"), "MEASURE")
 
+    def test_wyoming_uses_its_propositions_words(self):
+        wy = BALLOTS["wy"]
+        self.assertEqual((wy.guide, wy.fiscal_label, wy.choices,
+                          wy.card_source_kind),
+                         ("2026 General Election Statewide Ballot Propositions",
+                          "Estimated Fiscal Impact:", ("For", "Against"),
+                          "official-title-summary"))
+        # "PROPOSED INITIATIVE PROPOSITION NUMBER ONE"
+        self.assertEqual(badge(wy, "Proposed Initiative Proposition Number "
+                                   "One: X", "One"), "PROPOSITION")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):

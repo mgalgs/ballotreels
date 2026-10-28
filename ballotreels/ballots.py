@@ -130,6 +130,19 @@ BALLOTS: dict[str, Ballot] = {
                  card_source_kind="official-title-summary"),
 }
 
+    # Wyoming's Secretary of State prints the one proposition's ballot
+    # language, its "Estimated Fiscal Impact:" and its full text in "2026
+    # General Election Statewide Ballot Propositions", and the ballot's
+    # choices "FOR" and "AGAINST". The proposition is headed "PROPOSED
+    # INITIATIVE PROPOSITION NUMBER ONE": its number is the word "One",
+    # so the word before it is "Number", and the badge says PROPOSITION.
+    "wy": Ballot(guide="2026 General Election Statewide Ballot Propositions",
+                 fiscal_label="Estimated Fiscal Impact:",
+                 choices=("For", "Against"),
+                 card_source_kind="official-title-summary",
+                 badges={"Number": "PROPOSITION"}),
+}
+
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
 
 

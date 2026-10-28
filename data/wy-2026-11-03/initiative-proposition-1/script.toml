@@ -1,0 +1,182 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; how the exemption list works today; what the proposition would
+# add and who would qualify; what the ballot's Estimated Fiscal Impact says
+# it would do to state revenue, and what that estimate leaves out; the two
+# sides; what a vote does, and the pass rule. The designation is said
+# once, in the opening line; after that, "the proposition" and "the law".
+#
+# The card quotes page 1 of the Secretary of State's 2026 General Election
+# Statewide Ballot Propositions: the heading (origin), the ballot language
+# whole (title), and the Estimated Fiscal Impact block (fiscal). Wyoming
+# prints no explanation or digest, so the summary is the page's own line
+# naming the initiative, the least redundant passage beside the ballot
+# language. There are no "a vote FOR means" lines, so the card has no
+# yes/no, and the vote lines take their two meanings from the ballot's
+# question, "Shall a law be enacted".
+#
+# The proposition is a statute (it creates W.S. 39-11-105(a)(xliii)), not
+# a constitutional amendment: the ballot asks "Shall a law be enacted".
+#
+# Fiscal: the narration keeps to the ballot's own state-only estimate and
+# says once, in its words, that it leaves out local governments. The
+# Legislative Service Office's wider estimate, including local levies,
+# measures something else and is not used. Scale (rule 6.5): the
+# statement names no budget, and no archived source states the state's
+# General Fund (or School Foundation Program) total for fiscal year 2028,
+# so the figure is stated without a scale; left open. The text's "tax
+# year 2025" against the statement's "earliest applicable tax year would
+# be 2027" is not resolved: the narration gives the statement's 2027,
+# attributed to the estimate, and the card carries both.
+#
+# Wyoming publishes no official arguments for or against an initiative,
+# so both sides are filed = false and each says so once, in the same
+# number of words. The pass rule is said once, in the Voter's Guide's
+# words ("approved by a majority of those voting in the General
+# Election").
+#
+# Left out for time: the one-exemption-per-owner rule, the sworn claim
+# with the county assessor and the yearly confirmation, the penalty for
+# false claims (all on the card).
+
+contest = "wy-2026-11-03-initiative-proposition-1"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "propositions"
+number = "One"
+title = "Shall a law be enacted: Establishing a property tax exemption for qualified homeowners’ primary residence in the amount of fifty percent (50%) of the assessed value of the dwelling; AND Defining “homeowner” and “primary residence”; providing that no more than one exemption shall apply to a single property or be claimed by a single owner per year; requiring a homeowner to be a resident of Wyoming for at least one year and to have occupied the primary residence for at least six months of the previous tax year to qualify; requiring an initial sworn claim to be filed with the county assessor by the fourth Monday in May; providing for continuing the exemption in subsequent years through annually confirming eligibility; providing a penalty for false claims; clarifying that the exemption applies to the residential structure; and specifying applicability?"
+origin = "PROPOSED INITIATIVE PROPOSITION NUMBER ONE"
+summary = "People’s Initiative to Limit Property Tax in Wyoming through a Homeowner’s Property Exemption"
+fiscal = "Anticipated Revenue / (decrease) Fiscal Year 2028 ($92,614,266) Fiscal Year 2029 ($95,855,766) The above estimate is based on residential property assessed value and property tax data from the Computer Assisted Mass Appraisal (CAMA) system provided by the Department of Revenue in 2023. The future fiscal impact estimates are derived by using the January 2023 Consensus Revenue Estimating Group (CREG) report, estimating annual growth of 3.5% for properties in the future years. This is an estimate of fiscal impact to the State of Wyoming only and does not include an estimate of any impact upon political subdivisions. The proposition references a beginning in 2025, but if passed in 2026 the earliest applicable tax year would be 2027, with impact to the state beginning in 2028. Fiscal impact will apply to each year so long as the exemption is in place. Future impacts depend on unpredictable economic conditions."
+
+[[section]]
+id = "what"
+heading = "Proposition One"
+
+[[section.line]]
+text = "Proposition One is a proposed law about property taxes on Wyoming homes."
+sources = ["propositions"]
+
+[section.line.visual]
+kind = "page"
+source = "propositions"
+highlight = ["Establishing a property tax exemption"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Wyoming law today lists property exempt from tax."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The proposition would exempt fifty percent of the assessed value of a qualifying primary residence from property tax."
+sources = ["propositions", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "propositions"
+highlight = ["fifty percent (50%) of the assessed value of the dwelling"]
+
+[[section.line]]
+text = "Owners would need a year living in Wyoming, and six months in the home."
+sources = ["propositions"]
+
+[section.line.visual]
+kind = "page"
+source = "propositions"
+highlight = ["a resident of Wyoming for at least one year", "at least six months of the previous tax year"]
+
+[[section]]
+id = "fiscal"
+heading = "What the official estimate says"
+
+[[section.line]]
+text = "The ballot's estimate says state revenue would fall about $92.6 million in fiscal year 2028, and $95.9 million in 2029."
+sources = ["fiscal"]
+
+[section.line.visual]
+kind = "bars"
+title = "Drop in state revenue, dollars"
+source = "fiscal"
+unit = "million"
+labels = ["Fiscal year 2028", "Fiscal year 2029"]
+values = [92.6, 95.9]
+
+[[section.line]]
+text = "That estimate covers the state only, not local governments."
+sources = ["fiscal"]
+
+[[section.line]]
+text = "It says the earliest tax year would be 2027."
+sources = ["fiscal"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote for"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Wyoming publishes no official argument for the proposition."
+sources = ["propositions"]
+
+[section.line.visual]
+kind = "list"
+source = "propositions"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote against"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Wyoming publishes no official argument against the proposition."
+sources = ["propositions"]
+
+[section.line.visual]
+kind = "list"
+source = "propositions"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A vote for means the law would be enacted."
+sources = ["propositions"]
+
+[section.line.visual]
+kind = "page"
+source = "propositions"
+highlight = ["Shall a law be enacted"]
+
+[[section.line]]
+text = "A vote against means the law would not be enacted."
+sources = ["propositions"]
+
+[section.line.visual]
+kind = "page"
+source = "propositions"
+
+[[section.line]]
+text = "It passes if approved by a majority of those voting in the General Election."
+sources = ["guide"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
