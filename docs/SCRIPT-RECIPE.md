@@ -67,6 +67,14 @@ before writing another.
 - One line per side, attributed ("Supporters say…", "Opponents say…"),
   each the side's strongest point as the side itself states it in the
   official arguments.
+- **Say what the side said.** Give each side's line a `basis`
+  (SCRIPT-FORMAT.md): the sentences of its argument the line distils,
+  copied verbatim. The line must say what its basis says, as that side's
+  claim, in its own sense: a reader of the basis would recognise the
+  line as their point. It may compress, but never invert or weaken a
+  claim, or turn it into a complaint. "Montana grants them every power
+  they have" (so the state may limit them) is not "Montana grants
+  artificial persons every power", which sounds like an objection.
 - **Equal word counts** (the check allows 5%; aim for exact), and
   **equal spoken length**: a number is said in full ("nearly $90,000" is
   two words, said as five), so balance what is heard. Until the script

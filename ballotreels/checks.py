@@ -13,6 +13,7 @@ import math
 import re
 import shutil
 import subprocess
+import unicodedata
 from collections import Counter
 from dataclasses import dataclass
 from functools import lru_cache
@@ -878,6 +879,95 @@ def _in_text(phrase: str, archived: str) -> bool:
     return re.search("-?".join(parts), archived) is not None
 
 
+# A basis is compared looser than a card quote: a side's argument is
+# often a PDF, whose text breaks words across lines ("con- sents",
+# "social- media" -> "socialmedia"), prints ligatures ("ﬁ") and curly
+# quotes, where the script types straight ones.
+_QUOTES = str.maketrans({"‘": "'", "’": "'", "‚": "'", "‛": "'",
+                         "“": '"', "”": '"', "„": '"', "‟": '"',
+                         "\u00ad": None})
+BASIS_MIN_WORDS = 6
+
+
+def _loose(s: str) -> str:
+    """`s` for a basis comparison: ligatures and other compatibility
+    characters unfolded (NFKC), quotes straightened, soft hyphens dropped,
+    whitespace collapsed, and every hyphen or dash, with the spaces
+    around it, removed, so a word hyphenated across a line matches it
+    whole and a compound split at a hyphen matches it joined."""
+    s = unicodedata.normalize("NFKC", s).translate(_QUOTES)
+    s = re.sub(r"\s*[-‐‑–—]\s*", "", _normalise(s))
+    return s
+
+
+@lru_cache(maxsize=8)
+def _loose_archived(path: Path) -> str:
+    return _loose(_archived_text(path))
+
+
+def check_side_basis(c: Contest, required: bool) -> list[Failure]:
+    """docs/SCRIPT-FORMAT.md's `basis`: each entry of a line's `basis` is
+    a passage of at least BASIS_MIN_WORDS words that appears verbatim in
+    an `official-argument` source the line cites, so a reader can hold the
+    line against the point it distils (SCRIPT-RECIPE.md, "Sides"). Only a
+    side's lines may have one. With `required` (a script still to be
+    narrated), every line of a side that filed an argument must have
+    one."""
+    sides = Counter(sec.side for sec in c.script.sections
+                    if sec.side is not None)
+    if sides != Counter({"yes": 1, "no": 1}):
+        return []  # a template failure; which lines are a side's is unclear
+    out = []
+    for label, sec in c.script.labelled():
+        for i, line in enumerate(sec.lines):
+            def fail(msg):
+                out.append(Failure("side-basis", msg, label, i))
+
+            if sec.side is None:
+                if line.basis is not None:
+                    fail("has a 'basis', but only a side's lines distil "
+                         "an argument")
+                continue
+            if line.basis is None:
+                if required and sec.filed and not line.connective:
+                    fail("has no 'basis': quote the passage of the side's "
+                         "official argument this line distils (needed "
+                         "until the script is narrated)")
+                continue
+            if not line.basis:
+                fail("'basis' is empty: quote at least one passage")
+                continue
+            args = [s for sid in line.sources or ()
+                    if (s := c.source(sid)) is not None
+                    and s.kind == "official-argument"]
+            if not args:
+                fail("has a 'basis' but cites no 'official-argument' source "
+                     "to quote it from")
+                continue
+            texts = []
+            for src in args:
+                path = (c.path / src.file).resolve()
+                if not path.is_relative_to(c.path.resolve()) \
+                        or not path.is_file():
+                    continue  # check_sources reports it
+                try:
+                    texts.append(_loose_archived(path))
+                except UnreadableSource as e:
+                    fail(f"cannot read source {src.id!r} ({src.file}) to "
+                         f"check the basis: {e}")
+            if not texts:
+                continue
+            for passage in line.basis:
+                if len(passage.split()) < BASIS_MIN_WORDS:
+                    fail(f"basis {passage!r} is under {BASIS_MIN_WORDS} "
+                         f"words: quote enough to show the point")
+                elif not any(_loose(passage) in t for t in texts):
+                    ids = ", ".join(repr(s.id) for s in args)
+                    fail(f"basis {passage!r} does not appear verbatim in "
+                         f"the argument it cites ({ids})")
+    return out
+
+
 def _occurrences(text: str, names: list[str]) -> list[tuple[int, int]]:
     """(position, option index) of every occurrence of each option's name
     in `text`, in text order; a name inside a longer option's name (say
@@ -1162,6 +1252,7 @@ def check_contest(c: Contest, standard: Standard | None = None
         *check_side_list_items(c),
         *check_airtime(c),
         *(check_spoken_parity(c) if fresh else ()),
+        *check_side_basis(c, required=fresh),
         *check_judgment_words(c, standard.judgment_words),
         *(check_speakability(c, standard.speakability) if fresh else ()),
         *check_standard_version(c, standard.version),

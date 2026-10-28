@@ -242,8 +242,19 @@ class BrokenCopyTest(ContestCopyTestCase):
         self.assertTrue(got[1].message.startswith("has a chart citing"))
 
     # 4d. charts in side sections (rule 7.3)
-    SIDE_LINE = {"yes": 'next downturn."\nsources = ["arguments"]',
-                 "no": 'less likely."\nsources = ["arguments"]'}
+    # Each side's first line, through its basis: a visual added after it
+    # must come after every key of the line.
+    SIDE_LINE = {"yes": 'next downturn."\nsources = ["arguments"]\n'
+                        'basis = ["Proposition 2 strengthens that fund, so '
+                        'schools, healthcare, and public safety don\'t pay '
+                        'the price for Sacramento\'s boom-and-bust '
+                        'budgeting."]',
+                 "no": 'less likely."\nsources = ["arguments"]\n'
+                       'basis = ["In 1978 California voters overwhelmingly '
+                       'voted to amend the state constitution to impose a '
+                       'spending limit on state politicians", "while making '
+                       'it less likely that taxpayers will receive the '
+                       'rebates they are constitutionally owed"]'}
 
     def add_side_chart(self, side, kind):
         chart = (f'\n\n[section.line.visual]\nkind = "{kind}"\n'

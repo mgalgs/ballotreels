@@ -4,6 +4,7 @@ spoken lengths differ too much, and side lines with no verbatim basis in
 their argument. They apply only to a script whose narration is missing or
 stale."""
 
+import re
 import shutil
 import unittest
 from dataclasses import replace
@@ -13,8 +14,6 @@ from ballotreels.checks import check_speakability, needs_narration
 from ballotreels.standard import REPO_ROOT, Risk, read_speakability
 
 from .helpers import PROP_2, ContestCopyTestCase
-
-import re
 
 NO_LINE = ('text = "A no vote means the current rules would not change."')
 STANDARD = load_standard()
@@ -264,3 +263,150 @@ class SpokenParityTest(unittest.TestCase):
         self.assertFalse(needs_narration(c))
         self.assertEqual(only(check_contest(c, STANDARD), "spoken-parity"),
                          [])
+
+
+I_194 = REPO_ROOT / "data" / "mt-2026-11-03" / "i-194"
+# The supporters' line as first written: it reads as a complaint, where
+# the argument's point is that Montana may therefore limit them.
+I_194_YES_DRAFT = ("Supporters say Montana grants artificial persons every "
+                   "power, and can end anonymous dark money in elections.")
+
+
+class SideBasisTest(ContestCopyTestCase):
+    """Prop 2's copy has no narration, so its side lines need a basis."""
+
+    def basis(self):
+        return only(check_contest(load_contest(self.dir), STANDARD),
+                    "side-basis")
+
+    def test_fixture_bases_pass(self):
+        # Including ones typed with straight quotes where the guide prints
+        # curly ones ("rebate", doesn't, state's).
+        self.assertEqual(self.basis(), [])
+
+    def test_missing_basis_fails_before_narration(self):
+        self.edit("script.toml", 'basis = ["Currently, it doesn\'t dedicate '
+                  'any new dollars to any of those priorities.", "It needs '
+                  'the discipline to follow the rules already in place"]\n',
+                  "")
+        [f] = self.basis()
+        self.assertEqual((f.section, f.line), ("no", 1))
+        self.assertIn("has no 'basis'", f.message)
+
+    def test_basis_not_in_the_argument(self):
+        self.edit("script.toml", "the rules already in place",
+                  "the rules already on the books")
+        [f] = self.basis()
+        self.assertEqual((f.section, f.line), ("no", 1))
+        self.assertIn("does not appear verbatim", f.message)
+        self.assertIn("'arguments'", f.message)
+
+    def test_basis_too_short(self):
+        self.edit("script.toml", '"It needs the discipline to follow the '
+                  'rules already in place"', '"follow the rules"')
+        [f] = self.basis()
+        self.assertIn("under 6 words", f.message)
+
+    def test_basis_must_cite_an_argument(self):
+        self.edit("script.toml", 'sources = ["arguments"]\nbasis = ["David',
+                  'sources = ["lao-analysis"]\nbasis = ["David')
+        got = self.basis()
+        self.assertTrue(any("cites no 'official-argument'" in f.message
+                            for f in got), [str(f) for f in got])
+
+    def test_only_side_lines_have_a_basis(self):
+        self.edit("script.toml",
+                  'text = "A no vote means the current rules would not '
+                  'change."\n',
+                  'text = "A no vote means the current rules would not '
+                  'change."\nbasis = ["It needs the discipline to follow '
+                  'the rules already in place"]\n')
+        [f] = self.basis()
+        self.assertEqual(f.section, "vote")
+        self.assertIn("only a side's lines", f.message)
+
+    def test_unfiled_side_needs_none(self):
+        self.edit("script.toml", 'side = "no"\n', 'side = "no"\nfiled = false\n')
+        path = self.dir / "script.toml"
+        text = path.read_text(encoding="utf-8")
+        no = text.index('side = "no"')
+        end = text.index('id = "vote"')
+        path.write_text(text[:no] + re.sub(r"basis = \[.*\]\n", "",
+                                            text[no:end]) + text[end:],
+                        encoding="utf-8")
+        self.assertEqual(self.basis(), [])
+
+
+class SideBasisGateTest(unittest.TestCase):
+    def test_narrated_scripts_need_no_basis(self):
+        # Every committed contest is narrated; none has a basis yet, and
+        # none fails for it.
+        import glob
+        for path in sorted(glob.glob(str(REPO_ROOT / "data" / "*" / "*" /
+                                          "script.toml"))):
+            c = load_contest(path.rsplit("/", 1)[0])
+            if needs_narration(c):
+                continue
+            from ballotreels.checks import check_side_basis
+            self.assertEqual(check_side_basis(c, required=False), [], c.id)
+
+
+@unittest.skipIf(shutil.which("pdftotext") is None, "needs pdftotext")
+class I194BasisTest(unittest.TestCase):
+    """Montana I-194, whose argument is a PDF (ligatures, words joined or
+    split across lines), copied without its narration."""
+
+    def setUp(self):
+        import tempfile
+        from pathlib import Path
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        self.dir = Path(tmp.name) / "i-194"
+        shutil.copytree(I_194, self.dir,
+                        ignore=shutil.ignore_patterns("narration.*"))
+
+    def set_yes(self, text, basis=None):
+        path = self.dir / "script.toml"
+        old = path.read_text(encoding="utf-8")
+        start = old.index('text = "Supporters say')
+        end = old.index("\n", old.index("sources =", start))
+        import json
+        new = f'text = "{text}"\nsources = ["arguments"]'
+        if basis is not None:
+            new += "\nbasis = [" + ", ".join(json.dumps(b) for b in basis) + "]"
+        path.write_text(old[:start] + new + old[end:], encoding="utf-8")
+
+    def basis(self):
+        return [f for f in only(check_contest(load_contest(self.dir),
+                                              STANDARD), "side-basis")
+                if f.section == "yes"]
+
+    def test_draft_without_basis_is_caught(self):
+        self.set_yes(I_194_YES_DRAFT)
+        [f] = self.basis()
+        self.assertIn("has no 'basis'", f.message)
+
+    def test_draft_with_its_basis_passes_the_machine_check(self):
+        # The check makes the line traceable; whether the line says what
+        # its basis says is the reviewer's (SCRIPT-RECIPE.md, "Sides").
+        self.set_yes("Supporters say Montana grants artificial persons all "
+                     "the powers they have, so it can end dark money in "
+                     "elections.",
+                     ["Montana grants them every power they have.",
+                      "And Montana has reserved the authority to modify "
+                      "those"])
+        self.assertEqual(self.basis(), [])
+
+    def test_pdf_ligatures_and_line_breaks(self):
+        self.set_yes(I_194_YES_DRAFT,
+                     ["artificial persons are creations of statute that "
+                      "exist only by virtue of powers affirmatively",
+                      "TV ads, and digital and social-media advertising"])
+        self.assertEqual(self.basis(), [])
+
+    def test_paraphrase_is_not_a_basis(self):
+        self.set_yes(I_194_YES_DRAFT,
+                     ["Montana grants artificial persons every power they "
+                      "have."])
+        [f] = self.basis()
+        self.assertIn("does not appear verbatim", f.message)

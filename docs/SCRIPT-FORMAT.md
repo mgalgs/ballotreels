@@ -65,6 +65,33 @@ connective = true                    # a line that makes no claim
 ```
 
 A line has `sources` (non-empty) or `connective = true`, never both.
+
+A line in a side section may also have a `basis`: the passages of the
+side's official argument that the line distils, each quoted verbatim.
+
+```toml
+[[section.line]]
+text = "Supporters say Montana grants artificial persons all the powers they have, so it can limit them."
+sources = ["arguments"]
+basis = ["Montana grants them every power they have.", "And Montana has reserved the authority to modify those"]
+```
+
+- `basis` is a list of one or more strings, each a sentence or a
+  fragment of at least 6 words, and each must appear in the archived
+  text of an `official-argument` source the line cites. It is compared
+  as the card is (above), and looser still, since arguments are often
+  PDFs: ligatures ("ﬁ") unfolded, curly quotes and straight ones alike,
+  and hyphens and dashes ignored with the spaces around them, so a word
+  hyphenated across a line break ("con- sents", "socialmedia") matches.
+- Only a side's lines may have one.
+- **Required until the script is narrated**: when the contest's narration
+  is missing or stale (`narration.json` no longer matches the script),
+  every non-connective line of a side that filed an argument must have a
+  `basis`. A script narrated without one keeps passing; editing it makes
+  its narration stale, and the edited script needs one.
+- What it is for: SCRIPT-RECIPE.md, "Sides". The check makes the line
+  traceable; whether the line says what its basis says is for the
+  writer and the reviewer.
 A line that states a computed share of a budget (STANDARD.md rule 6.5)
 lists the source of the figure and the source of the total; when one
 source states both, that one id is enough.
