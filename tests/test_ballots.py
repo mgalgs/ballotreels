@@ -105,6 +105,16 @@ class BallotTest(unittest.TestCase):
         self.assertEqual(badge(mt, "Initiative I-194: X", "I-194"),
                          "INITIATIVE")
 
+    def test_colorado_uses_its_booklets_words(self):
+        co = BALLOTS["co"]
+        self.assertEqual((co.guide, co.fiscal_label, co.choices,
+                          co.card_source_kind),
+                         ("State Ballot Information Booklet",
+                          "Fiscal Impact Statement",
+                          ("Yes/For", "No/Against"), "official-title-summary"))
+        self.assertEqual(badge(co, "Amendment 81: X", "81"), "AMENDMENT")
+        self.assertEqual(badge(co, "Proposition NN: X", "NN"), "PROPOSITION")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):
@@ -140,6 +150,18 @@ class SideHeadingTest(ContestCopyTestCase):
         self.assertEqual(self.failures(), [
             "[side-heading] yes: heading 'Why some vote yes' says 'yes'; the "
             "ballot's word for this side is 'For'"])
+
+    def test_colorado_uses_yes_for_and_no_against(self):
+        self.edit("sources.toml", "state:ca", "state:co")
+        self.set_headings("Why some vote yes/for", "Why some vote no/against")
+        self.assertEqual(self.failures(), [])
+
+    def test_colorado_fails_a_word_of_another_states(self):
+        self.edit("sources.toml", "state:ca", "state:co")
+        self.set_headings("Why some vote yes", "Why some vote no/against")
+        self.assertEqual(self.failures(), [
+            "[side-heading] yes: heading 'Why some vote yes' says 'yes'; the "
+            "ballot's word for this side is 'Yes/For'"])
 
 
 @unittest.skipIf(shutil.which("pdftotext") is None, "needs pdftotext")
