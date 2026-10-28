@@ -1,0 +1,144 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; how a city bond is repaid and what it needs to pass;
+# what the money would pay for; the city's tax rate statement; one line
+# per side; what a vote does.
+#
+# The bonds and their debt service are repaid from a tax on property in
+# the city, and no archived source states the city's budget, so the
+# $300 million and the $610 million have no budget scale (STANDARD.md
+# 6.5; left open). The fiscal line gives the statement's average and
+# highest rates, as it prints both; its final year is said in full
+# ("2066-2067"), as speakability.txt asks.
+#
+# The audits, oversight and project list are the supporters' argument
+# (and on the card's question), so the neutral sections leave them out
+# (STANDARD.md 6.3).
+#
+# The guide prints no yes/no lines for this measure, so, as for Utah, the
+# card has no YES/NO boxes, and the two vote lines highlight the one
+# phrase of the question they turn on.
+
+contest = "ca-2026-11-03-berkeley-measure-u"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "U"
+title = "CITY OF BERKELEY BOND MEASURE U"
+origin = "This measure was placed on the ballot by the City Council of the City of Berkeley."
+summary = "Shall the measure authorizing issuance of $300,000,000 in general obligation bonds to fund acquisition and improvement of fire stations, emergency response facilities, parks and recreation facilities, and other public infrastructure and facilities, and increase climate resiliency, subject to independent oversight and audits, be adopted? Financial Implications: Average annual taxpayer costs over projected 40 years bonds are outstanding are approximately $22.14 per $100,000 assessed property value; generating approximately $15,200,000/year."
+
+[[section]]
+id = "what"
+heading = "Measure U"
+
+[[section.line]]
+text = "City of Berkeley Measure U asks voters in the city whether to approve $300 million in bonds."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["$300,000,000 in general obligation bonds"]
+
+[[section]]
+id = "today"
+heading = "How a city bond works"
+
+[[section.line]]
+text = "The city would borrow the money and repay it from a tax on property in Berkeley."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure U needs two-thirds of the vote to pass."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The money would pay for fire stations, emergency response facilities, parks, earthquake upgrades and other city facilities."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "fire-station"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax rate statement says"
+
+[[section.line]]
+text = "The tax rate statement estimates an average tax of $22 a year per $100,000 of assessed value, through 2066-2067."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section.line]]
+text = "The statement estimates the total to repay, with interest, at $610 million."
+sources = ["tax-statement"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure U keeps Berkeley safe, replacing unsafe fire stations and building seawalls for sea-level rise."
+sources = ["arguments"]
+basis = ["Measure U keeps Berkeley safe. The impacts of climate change, including intense wildfires,", "by renovating our 911 dispatch center, replacing unsafe fire stations, installing green infrastructure, and constructing seawalls to prepare for sea-level rise."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Replaces unsafe fire stations, upgrades the 911 center", "Audits, oversight and a public project list"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure U is a $300 million blank check, with no binding commitment to specific projects."
+sources = ["arguments"]
+basis = ["Measure U borrows $300 million with no comprehensive capital plan, no binding commitment to specific projects, and no budget for maintaining new facilities.", "it’s a $300 million blank check."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No binding commitment to specific projects", "Costs $550 million to $600 million with interest"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means the city could issue the $300 million in bonds."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["authorizing issuance of $300,000,000 in general obligation bonds"]
+
+[[section.line]]
+text = "A no vote means the city could not issue these bonds."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["authorizing issuance of $300,000,000 in general obligation bonds"]
