@@ -1,0 +1,96 @@
+# Archived sources for Kentucky Constitutional Amendment 1, 2026-11-03
+# general election. Every id here may be cited by script.toml. `kind`
+# must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# Kentucky publishes no voter pamphlet, no explanation and no Attorney
+# General summary. Under KRS 118.415 the General Assembly writes the
+# ballot question itself, and SB 10 has the whole question and the whole
+# amended Section 77 printed on the ballot. The card quotes Franklin
+# County's official sample ballot; the amendment's text is cited from
+# Acts Chapter 12, the official enacted copy (bracketed words are
+# deletions). sb10-final-bill.pdf, the enrolled bill, is marked
+# "unofficial copy" and backs no line.
+#
+# Kentucky publishes no official arguments for or against an amendment,
+# so there is no source of kind official-argument: both side sections
+# say so, citing the ballot, which prints none.
+#
+# No state fiscal note exists. The Legislative Research Commission's
+# Local Government Mandate Statement (2/2/26) is the one fiscal
+# statement; it was written for SB 10 GA, whose title still amends
+# Sections 77 and 240. House Floor Amendment 1 deleted the Section 240
+# change, and the House passed the bill "w/ HFA 1" (vote history), so the
+# script says the statement was written for an earlier version.
+#
+# The Secretary of State's "2026 Constitutional Amendments" page was read
+# but not archived, and is not cited.
+
+[contest]
+id = "ky-2026-11-03-amendment-1"
+election = "ky-2026-11-03"
+division = "ocd-division/country:us/state:ky"
+kind = "measure"
+title = "Constitutional Amendment 1: Governor's Pardons Before an Election"
+
+[[source]]
+id = "sample-ballot"
+kind = "official-title-summary"
+publisher = "Kentucky Secretary of State, Franklin County Sample Ballot, General Election, November 3, 2026"
+credit = "Franklin County Sample Ballot"
+url = "https://web.sos.ky.gov/ballots/Franklin%202026G.pdf"
+file = "sources/sample-ballot-franklin-county.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "act"
+kind = "official-text"
+publisher = "Kentucky General Assembly, 2026 Regular Session, Acts Chapter 12 (SB 10)"
+credit = "Acts Chapter 12 (SB 10)"
+url = "https://apps.legislature.ky.gov/law/acts/26RS/documents/0012.pdf"
+file = "sources/sb10-acts-ch-12.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "mandate-statement"
+kind = "official-fiscal-analysis"
+publisher = "Kentucky Legislative Research Commission, Local Government Mandate Statement, SB 10 GA, 2026 Regular Session"
+credit = "Legislative Research Commission"
+url = "https://apps.legislature.ky.gov/recorddocuments/note/26RS/sb10/LM.pdf"
+file = "sources/sb10-local-mandate-statement.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "floor-amendment"
+kind = "legislative-record"
+publisher = "Kentucky General Assembly, House Floor Amendment 1 to SB 10, 2026 Regular Session"
+credit = "House Floor Amendment 1 to SB 10"
+url = "https://apps.legislature.ky.gov/recorddocuments/bill/26RS/SB10/HFA1.pdf"
+file = "sources/sb10-house-floor-amendment-1.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "vote-history"
+kind = "legislative-record"
+publisher = "Kentucky General Assembly, SB 10 Vote History, 2026 Regular Session"
+credit = "SB 10 Vote History"
+url = "https://apps.legislature.ky.gov/record/26rs/sb10/vote_history.pdf"
+file = "sources/sb10-vote-history.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "final-bill"
+kind = "legislative-record"
+publisher = "Kentucky General Assembly, SB 10 as enrolled, 2026 Regular Session (unofficial copy)"
+credit = "SB 10, enrolled (unofficial copy)"
+url = "https://apps.legislature.ky.gov/recorddocuments/bill/26RS/sb10/bill.pdf"
+file = "sources/sb10-final-bill.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "krs-118-415"
+kind = "public-record"
+publisher = "Kentucky Revised Statutes, KRS 118.415, Constitutional amendments"
+credit = "KRS 118.415"
+url = "https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=54651"
+file = "sources/krs-118-415.pdf"
+retrieved = "2026-10-27"

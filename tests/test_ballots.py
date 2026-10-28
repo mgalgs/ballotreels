@@ -374,6 +374,15 @@ class LouisianaStatementsStitchTest(unittest.TestCase):
                          ("Official General Election Ballot", None,
                           ("Yes", "No"), "official-title-summary"))
 
+    def test_kentucky_uses_its_ballots_words(self):
+        ky = BALLOTS["ky"]
+        self.assertEqual((ky.guide, ky.fiscal_label, ky.choices,
+                          ky.card_source_kind),
+                         ("Sample Ballot", None, ("Yes", "No"),
+                          "official-title-summary"))
+        self.assertEqual(badge(ky, "Constitutional Amendment 1: X", "1"),
+                         "AMENDMENT")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):
