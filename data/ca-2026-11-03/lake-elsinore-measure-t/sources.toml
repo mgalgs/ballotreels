@@ -1,0 +1,55 @@
+# Archived sources for City of Lake Elsinore Measure T, 2026-11-03
+# general election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the
+# Riverside County Registrar of Voters' County Voter Information Guide
+# (ballot type 98, a Lake Elsinore precinct); "page" is the guide's
+# printed footer number.
+#
+# The guide prints the measure's full text (the ordinance), the City
+# Attorney's Impartial Analysis and the argument in favor; it prints "NO
+# ARGUMENT FILED AGAINST MEASURE “T”", no rebuttals, and no fiscal
+# analysis.
+
+[contest]
+id = "ca-2026-11-03-lake-elsinore-measure-t"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:lake_elsinore"
+kind = "measure"
+title = "City of Lake Elsinore Measure T: Appointed City Treasurer"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "Riverside County Registrar of Voters, County Voter Information Guide, page RV 098-020: sample ballot, Measure T"
+credit = "Sample ballot, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000098.pdf"
+file = "sources/sample-ballot-page.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney, Impartial Analysis of Measure T, Riverside County Voter Information Guide, page RV 098-043"
+credit = "City Attorney Impartial Analysis, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000098.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Lake Elsinore, Measure T ordinance amending Municipal Code Chapter 2.42 (City Treasurer), Riverside County Voter Information Guide, pages RV 098-041 to RV 098-042"
+credit = "Full text, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000098.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument"
+kind = "official-argument"
+publisher = "Argument in favor of Measure T (no argument against was filed), as printed in the Riverside County Voter Information Guide, page RV 098-043"
+credit = "Argument in favor, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000098.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"

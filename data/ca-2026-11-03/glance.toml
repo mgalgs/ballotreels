@@ -311,3 +311,9 @@ source = "impartial-analysis"
 quote = "The City estimates $2,523,877 in annual revenue."
 amount = 2523877
 period = "per-year"
+
+# City of Lake Elsinore Measure T: the guide prints no fiscal analysis
+# (not a tax measure).
+[lake-elsinore-measure-t]
+source = "impartial-analysis"
+status = "none-printed"
