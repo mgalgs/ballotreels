@@ -35,8 +35,13 @@ SOURCES_CARD_SECONDS = 5.0  # the sources stay listed on the video's page
 
 
 def frame(seconds: float, fps: int = FPS) -> int:
-    """Seconds to the nearest frame, halves rounding up (never banker's)."""
-    return int(seconds * fps + 0.5)
+    """Seconds to the nearest frame, halves rounding up (never banker's).
+    The product is first rounded to a millionth of a frame, so float noise
+    can't tip an exact half either way: 63.15 s is 1894.5 frames, but
+    63.15 + 1.0 multiplies out to 1924.4999..., and a time shifted by a
+    whole-frame pad (narration.side_pad) must still land exactly that many
+    frames later."""
+    return int(round(seconds * fps, 6) + 0.5)
 
 
 @dataclass(frozen=True)

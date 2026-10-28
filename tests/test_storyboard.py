@@ -124,6 +124,24 @@ class CitedSourcesTest(unittest.TestCase):
         self.assertEqual(SOURCES_CARD_SECONDS, 5.0)
 
 
+class FrameTest(unittest.TestCase):
+    def test_halves_round_up(self):
+        self.assertEqual(frame(63.15), 1895)  # 1894.5 frames
+        self.assertEqual(frame(0.05), 2)
+
+    def test_a_whole_frame_shift_moves_the_frame_by_exactly_that(self):
+        # narration.side_pad pads in whole frames, k / fps seconds, added
+        # to centisecond phrase times; each padded boundary has to land
+        # exactly k frames later, or a boundary sitting on a half frame
+        # (Prop 45's 63.15 s) rounds the other way once padded and hands a
+        # frame from one side to the other
+        for cs in range(0, 12000, 5):
+            t = cs / 100
+            for k in range(0, 61):
+                with self.subTest(t=t, k=k):
+                    self.assertEqual(frame(t + k / 30), frame(t) + k)
+
+
 class Prop2LayoutTest(unittest.TestCase):
     def test_real_narration(self):
         board = layout(load_contest(PROP_2), narration_seconds(PROP_2))
