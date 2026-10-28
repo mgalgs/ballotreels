@@ -122,6 +122,20 @@ class Choices:
 
 
 @dataclass(frozen=True)
+class Name:
+    """A person or organisation a line names, declared with its role in the
+    record and the source that names it (docs/SCRIPT-FORMAT.md, STANDARD.md
+    section 9). As with Visual, each field is None when its key is absent,
+    and the checks judge the values."""
+    name: Any = None    # as said, and verbatim in the source
+    role: Any = None    # its role in the record, as said
+    source: Any = None  # a source id the line cites, that names it
+
+
+NAME_KEYS = tuple(Name.__dataclass_fields__)
+
+
+@dataclass(frozen=True)
 class Line:
     text: str
     sources: tuple[str, ...] | None  # None when the key is absent
@@ -130,6 +144,8 @@ class Line:
     # A side's line: the passages of its cited argument it distils, each
     # verbatim (docs/SCRIPT-FORMAT.md). None when the key is absent.
     basis: tuple[str, ...] | None = None
+    # Every person or organisation the line names (STANDARD.md section 9).
+    names: tuple[Name, ...] = ()
 
 
 @dataclass(frozen=True)
@@ -251,12 +267,18 @@ def _load_line(raw: Any, where: str) -> Line:
         if not all(isinstance(b, str) for b in basis):
             raise ContestError(f"{where}: 'basis' must be a list of strings")
         basis = tuple(basis)
+    names = []
+    for k, n in enumerate(_get(raw, "names", list, where, [])):
+        if not isinstance(n, dict):
+            raise ContestError(f"{where}: names[{k}] must be a table")
+        names.append(Name(**{key: n[key] for key in NAME_KEYS if key in n}))
     return Line(
         text=_get(raw, "text", str, where),
         sources=sources,
         connective=_get(raw, "connective", bool, where, False),
         visual=_load_visual(raw, where),
         basis=basis,
+        names=tuple(names),
     )
 
 
