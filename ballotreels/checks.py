@@ -1082,6 +1082,11 @@ def _undeclared(c: Contest, line: Line, known: set[str],
     return out
 
 
+def _unaccent(s: str) -> str:
+    return "".join(ch for ch in unicodedata.normalize("NFKD", s)
+                   if not unicodedata.combining(ch))
+
+
 def _name_problems(c: Contest, line: Line, n) -> list[str]:
     """What is wrong with one declared name: its fields, its place in the
     line's text, and its source."""
@@ -1116,7 +1121,9 @@ def _name_problems(c: Contest, line: Line, n) -> list[str]:
     except UnreadableSource as e:
         return [*out, f"cannot read source {src.id!r} ({src.file}) to check "
                       f"{n.name!r}: {e}"]
-    if _loose(n.name) not in archived:
+    # accents folded: the narration writes "Rene" for a source's "René",
+    # because the transcript check hears no accents (speakability.txt)
+    if _unaccent(_loose(n.name)) not in _unaccent(archived):
         out.append(f"{n.name!r} does not appear verbatim in {src.id!r} "
                    f"({src.file})")
     return out
