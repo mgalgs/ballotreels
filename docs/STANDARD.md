@@ -26,6 +26,15 @@ invalidates the cache for every video made under an older one.
      published data from the state's nonpartisan fiscal offices (in
      California, the Legislative Analyst's Office and the Department of
      Finance);
+   - where a state publishes no official voter guide at all: a
+     **public university's nonpartisan ballot guide**, and only for what
+     no official document states (plain-language explanation, and what
+     supporters and opponents say). The video names the guide's
+     publisher every time it relies on it ("the University of Arkansas
+     Division of Agriculture's guide says…"), so a viewer never takes it
+     for the state's own words. It is never a source for the ballot
+     title, the measure's text, or a cost; those still come only from
+     the official documents above;
    - for a candidate: the candidate's own ballot designation and
      statement as filed with the election official, the candidate's own
      website or published statements, and public records (FEC filings,
