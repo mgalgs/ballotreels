@@ -36,8 +36,9 @@ _LOWER_CHAMBER = {
     "wv": "House of Delegates",
 }
 
-# Nebraska's one chamber is TIGER's SLDU.
+# Nebraska's one chamber is TIGER's SLDU; it has no SLDL at all.
 _UPPER_CHAMBER = {"ne": "Legislative"}
+UNICAMERAL = frozenset({"ne"})
 
 
 def chambers(state: str) -> dict[str, str]:
@@ -45,12 +46,16 @@ def chambers(state: str) -> dict[str, str]:
     (as in "<name> District 4"); empty for a state with no legislature."""
     if state in NO_LEGISLATURE:
         return {}
+    if state in UNICAMERAL:
+        return {"sldu": _UPPER_CHAMBER[state]}
     return {"sldu": _UPPER_CHAMBER.get(state, "State Senate"),
             "sldl": _LOWER_CHAMBER.get(state, "State House")}
 
 
 def legislative_kinds(state: str) -> tuple[str, ...]:
-    return () if state in NO_LEGISLATURE else ("sldu", "sldl")
+    if state in NO_LEGISLATURE:
+        return ()
+    return ("sldu",) if state in UNICAMERAL else ("sldu", "sldl")
 
 
 # USPS 3-digit zip prefixes, as (first, last, state); a prefix in no
