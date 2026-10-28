@@ -134,6 +134,14 @@ class BallotTest(unittest.TestCase):
         self.assertEqual(badge(nd, "Initiated Constitutional Measure No. 2: X",
                                "2"), "MEASURE")
 
+    def test_georgia_uses_its_booklets_words(self):
+        ga = BALLOTS["ga"]
+        self.assertEqual((ga.guide, ga.fiscal_label, ga.choices,
+                          ga.card_source_kind),
+                         ("Proposed Constitutional Amendments", None,
+                          ("Yes", "No"), "official-title-summary"))
+        self.assertEqual(badge(ga, "Amendment 1: X", "1"), "AMENDMENT")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):

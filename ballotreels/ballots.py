@@ -128,6 +128,16 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label="FISCAL IMPACT",
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+    # Georgia's Secretary of State prints the full text of each
+    # amendment the General Assembly proposes, its ballot question and a
+    # summary in its booklet "Proposed Constitutional Amendments"; the
+    # ballot prints the choices "( ) YES" and "( ) NO". The booklet
+    # prints no fiscal statement. Its amendments are numbered "1" to
+    # "3" (the badge: AMENDMENT, from the title's designation).
+    "ga": Ballot(guide="Proposed Constitutional Amendments",
+                 fiscal_label=None,
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
