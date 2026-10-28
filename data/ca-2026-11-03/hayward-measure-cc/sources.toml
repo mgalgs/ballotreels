@@ -12,7 +12,7 @@
 # so on page HMCC-2. The Registrar's scanned filing packet
 # (sources/rov-measure-packet.pdf) has no text layer and is not cited.
 # Some lines of the guide are set in a font with no Unicode map;
-# checks._unshifted reads them.
+# the checks do not yet read them (a decoder from another round will).
 
 [contest]
 id = "ca-2026-11-03-hayward-measure-cc"

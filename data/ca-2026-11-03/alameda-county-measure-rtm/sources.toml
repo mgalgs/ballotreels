@@ -14,7 +14,8 @@
 # The guide prints no tax rate statement or fiscal analysis; the revenue
 # estimate is in the ballot question and the Legal Counsel's Impartial
 # Analysis. Some lines of the guide are set in a font with no Unicode
-# map; checks._unshifted reads them.
+# map; the checks do not yet read them (a decoder from another round
+# will).
 
 [contest]
 id = "ca-2026-11-03-alameda-county-measure-rtm"

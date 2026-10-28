@@ -6,8 +6,8 @@
 # (PDF pages 795 to 798, printed AMN-1 to AMN-4).
 #
 # The guide prints no fiscal analysis (not a tax measure). Some lines of
-# the guide are set in a font with no Unicode map; checks._unshifted
-# reads them.
+# the guide are set in a font with no Unicode map; the checks
+# do not yet read them (a decoder from another round will).
 
 [contest]
 id = "ca-2026-11-03-alameda-measure-n"

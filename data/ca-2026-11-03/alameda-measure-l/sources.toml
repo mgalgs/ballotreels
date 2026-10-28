@@ -8,7 +8,8 @@
 # One guide page prints the ballot question and the City Attorney's
 # Impartial Analysis; the Tax Rate Statement, the measure's fiscal
 # statement, follows it. Some lines of the guide are set in a font with
-# no Unicode map; checks._unshifted reads them.
+# no Unicode map; the checks do not yet read them (a decoder from
+# another round will).
 
 [contest]
 id = "ca-2026-11-03-alameda-measure-l"

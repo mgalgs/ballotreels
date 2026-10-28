@@ -8,7 +8,8 @@
 # The guide prints two impartial analyses: the City Attorney's (what the
 # measure does) and the City Auditor's (its financial impact), the
 # measure's fiscal statement. Some lines of the guide are set in a font
-# with no Unicode map; checks._unshifted reads them.
+# with no Unicode map; the checks do not yet read them (a decoder
+# from another round will).
 
 [contest]
 id = "ca-2026-11-03-oakland-measure-ee"
