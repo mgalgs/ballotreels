@@ -108,9 +108,9 @@ section 9):
 
 ```toml
 [[section.line]]
-text = "Supporters, including Senator Lincoln Fillmore, the resolution's chief sponsor, say ..."
+text = "Supporters, including Senator Lincoln Fillmore, the measure's chief sponsor, say ..."
 sources = ["arguments", "resolution"]
-names = [{ name = "Lincoln Fillmore", role = "the resolution's chief sponsor", source = "resolution" }]
+names = [{ name = "Lincoln Fillmore", role = "the measure's chief sponsor", source = "resolution" }]
 ```
 
 - Each entry has a non-empty `name`, `role` and `source`. The line's
