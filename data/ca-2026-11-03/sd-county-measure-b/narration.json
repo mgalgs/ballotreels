@@ -1,0 +1,243 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 70.3,
+  "phrases": [
+    {
+      "text": "San Diego County Measure B asks county voters about a half-cent sales tax for health and safety services.",
+      "start": 0.03,
+      "end": 7.55
+    },
+    {
+      "text": "Measure B is a citizen initiative, and the guide says it needs a simple majority to pass.",
+      "start": 8.21,
+      "end": 14.49
+    },
+    {
+      "text": "The tax would apply countywide and would last until voters end it.",
+      "start": 15.15,
+      "end": 19.66
+    },
+    {
+      "text": "The money would go to Tijuana River sewage cleanup, to public safety and wildfire prevention, and to health care, child care and nutrition.",
+      "start": 20.32,
+      "end": 29.61
+    },
+    {
+      "text": "An oversight committee would audit the spending, and all spending would be made public.",
+      "start": 30.27,
+      "end": 34.94
+    },
+    {
+      "text": "The county attorney's impartial analysis estimates the tax would raise between $400 million and $450 million a year.",
+      "start": 35.6,
+      "end": 43.89
+    },
+    {
+      "text": "Opponents say Measure B raises average household taxes by hundreds of dollars yearly, without a sunset clause.",
+      "start": 44.55,
+      "end": 51.84
+    },
+    {
+      "text": "Supporters say Measure B prevents cuts: slower emergency response, fewer hospital staff, and families without health care.",
+      "start": 52.5,
+      "end": 61.02
+    },
+    {
+      "text": "A yes vote would impose the half-cent sales tax for these services.",
+      "start": 61.68,
+      "end": 65.45
+    },
+    {
+      "text": "A no vote would reject the half-cent sales tax for these services.",
+      "start": 66.11,
+      "end": 70.27
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "San Diego County Measure B asks county voters about a half-cent sales tax for health and safety services.",
+      "Measure B is a citizen initiative, and the guide says it needs a simple majority to pass.",
+      "The tax would apply countywide and would last until voters end it.",
+      "The money would go to Tijuana River sewage cleanup, to public safety and wildfire prevention, and to health care, child care and nutrition.",
+      "An oversight committee would audit the spending, and all spending would be made public.",
+      "The county attorney's impartial analysis estimates the tax would raise between $400 million and $450 million a year.",
+      "Opponents say Measure B raises average household taxes by hundreds of dollars yearly, without a sunset clause.",
+      "Supporters say Measure B prevents cuts: slower emergency response, fewer hospital staff, and families without health care.",
+      "A yes vote would impose the half-cent sales tax for these services.",
+      "A no vote would reject the half-cent sales tax for these services."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "San Diego County Measure B asks county voters about a half-cent sales tax for health and safety services."
+      },
+      "bounds": [
+        0,
+        181920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"San Diego County Measure B asks county voters about a half-cent sales tax for health and safety services.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure B is a citizen initiative, and the guide says it needs a simple majority to pass."
+      },
+      "bounds": [
+        196320,
+        348480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure B is a citizen initiative, and the guide says it needs a simple majority to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The tax would apply countywide and would last until voters end it."
+      },
+      "bounds": [
+        362880,
+        472560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The tax would apply countywide and would last until voters end it.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money would go to Tijuana River sewage cleanup, to public safety and wildfire prevention, and to health care, child care and nutrition."
+      },
+      "bounds": [
+        486960,
+        711360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money would go to Tijuana River sewage cleanup, to public safety and wildfire prevention, and to health care, child care and nutrition.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "An oversight committee would audit the spending, and all spending would be made public."
+      },
+      "bounds": [
+        725760,
+        839280
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"An oversight committee would audit the spending, and all spending would be made public.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The county attorney's impartial analysis estimates the tax would raise between $400 million and $450 million a year."
+      },
+      "bounds": [
+        853680,
+        1054080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The county attorney's impartial analysis estimates the tax would raise between $400 million and $450 million a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say Measure B raises average household taxes by hundreds of dollars yearly, without a sunset clause."
+      },
+      "bounds": [
+        1068480,
+        1244880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say Measure B raises average household taxes by hundreds of dollars yearly, without a sunset clause.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say Measure B prevents cuts: slower emergency response, fewer hospital staff, and families without health care."
+      },
+      "bounds": [
+        1259280,
+        1465200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure B prevents cuts: slower emergency response, fewer hospital staff, and families without health care.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote would impose the half-cent sales tax for these services."
+      },
+      "bounds": [
+        1479600,
+        1571520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote would impose the half-cent sales tax for these services.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote would reject the half-cent sales tax for these services."
+      },
+      "bounds": [
+        1585920,
+        1687200
+      ]
+    }
+  ],
+  "sha256": "f494fc7fc28288efc04ece4aa14249722a13fa8b915efbf88a46a5c3e3c9d921"
+}
