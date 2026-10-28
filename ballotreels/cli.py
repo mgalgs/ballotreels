@@ -22,7 +22,7 @@ import urllib.request
 from pathlib import Path
 
 from .adapters.ca_sos import append_entries, build_contest_entries, fetch_measures
-from .checks import check_contest, word_count
+from .checks import check_contest, check_division, word_count
 from .contest import ContestError, load_contest
 from .glance import check_glance
 from .index import ContestIndexError, load_index
@@ -52,7 +52,7 @@ def _check_one(path: str, standard, out) -> bool:
         print(f"{path}: {e}", file=out)
         print(f"FAIL {path}: could not load", file=out)
         return False
-    failures = check_contest(contest, standard)
+    failures = [*check_contest(contest, standard), *check_division(contest)]
     for f in failures:
         print(f"{path}: {f}", file=out)
     words = " ".join(f"{label}={word_count(s)}"

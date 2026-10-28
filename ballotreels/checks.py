@@ -95,7 +95,12 @@ def check_division(c: Contest) -> list[Failure]:
     a division it has a shape of, so one typed from the ballot ("San
     Diego Unified") rather than TIGER's name ("San Diego City Unified")
     would be shown to no voter. Other levels (the state, its legislative
-    districts) are not listed and not checked."""
+    districts) are not listed and not checked.
+
+    Not part of check_contest: the film worker runs that on a scratch
+    copy of the contest dir with no election around it, and a division
+    matters to the zip lookup, not the film. `python -m ballotreels
+    check` runs it beside check_contest."""
     level, _, name = c.division.rsplit("/", 1)[-1].partition(":")
     if level not in divisions.LEVELS:
         return []
@@ -1769,7 +1774,6 @@ def check_contest(c: Contest, standard: Standard | None = None
     return [
         *check_contest_id(c),
         *check_voters(c),
-        *check_division(c),
         *check_line_citations(c),
         *check_cited_sources_exist(c),
         *check_background_only(c),

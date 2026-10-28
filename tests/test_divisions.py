@@ -3,6 +3,7 @@ that refuses a local contest whose division is not in it."""
 
 import io
 import json
+import shutil
 import tempfile
 import unittest
 from dataclasses import replace
@@ -11,6 +12,7 @@ from pathlib import Path
 from ballotreels import check_contest, load_contest
 from ballotreels.checks import check_division
 from ballotreels.cli import main
+from ballotreels.pipeline import run_check
 
 from . import geo_fixtures
 from .helpers import PROP_2, unlinted_standard
@@ -170,12 +172,34 @@ class CheckDivisionTest(unittest.TestCase):
         self.assertEqual(
             check_contest(self.prop_2, unlinted_standard()), [])
 
-    def test_check_contest_runs_it(self):
-        wrong = f"{CA}/school_district:san_diego_unified_school_district"
-        failures = check_contest(self.contest(wrong), unlinted_standard())
-        self.assertEqual([f.check for f in failures
-                          if f.check == "division"], ["division"])
+    def local_prop_2(self, parent, division=SAN_DIEGO_UNIFIED):
+        """Prop 2's files under `parent`, with a local division."""
+        dest = parent / "prop-2"
+        shutil.copytree(PROP_2, dest)
+        sources = dest / "sources.toml"
+        sources.write_text(sources.read_text(encoding="utf-8").replace(
+            f'division = "{CA}"\n', f'division = "{division}"\n', 1),
+            encoding="utf-8")
+        return dest
 
+    def test_cli_check_runs_it(self):
+        wrong = f"{CA}/school_district:san_diego_unified_school_district"
+        out = io.StringIO()
+        code = main(["check", str(self.local_prop_2(self.election, wrong))],
+                    out=out)
+        self.assertNotEqual(code, 0)
+        self.assertIn(f"[division] ca-2026-11-03-prop-2: division "
+                      f"{wrong!r}", out.getvalue())
+
+    def test_film_check_of_a_scratch_copy_passes(self):
+        # The worker checks a copy at <work_dir>/<job_id>/<dir>, with no
+        # election (and so no divisions.tsv) around it.
+        scratch = self.election.parent / "42"
+        scratch.mkdir()
+        run_check(self.local_prop_2(scratch), unlinted_standard())
+        self.assertEqual([f for f in check_contest(
+            self.contest(SAN_DIEGO_UNIFIED, election=scratch),
+            unlinted_standard()) if f.check == "division"], [])
 
 if __name__ == "__main__":
     unittest.main()
