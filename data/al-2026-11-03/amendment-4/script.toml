@@ -1,0 +1,167 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; what the Constitution requires today; what local boards would
+# have to adopt (a weekly broadcast of the first stanza) and the one
+# alternative (a school-approved performance); what the two official
+# cost statements say; the two sides; what a vote does.
+#
+# The card quotes the Fair Ballot Commission's ballot statement: the
+# ballot text as title, the Act it was proposed by as origin, the
+# plain-language summary's "If approved" paragraph as summary, and its
+# yes and no sentences. The statement's cost sentence sits under no
+# heading, so the card has no fiscal quote (ballots.py). The ballot text
+# ends with a stray closing quote mark in the statement ("hours.”");
+# the title stops before it.
+#
+# The subject is contested, so the script keeps to the statement's own
+# terms. The act's legislative findings (Section 1, on the anthem's
+# history) are the authors' reasons and are left out.
+#
+# The two official cost statements differ, and both are given,
+# attributed: the Commission says no costs or taxes; the Legislative
+# Services Agency's fiscal note on the bill as enacted says local boards'
+# administrative costs could rise by an undetermined amount, and
+# estimates $100,000 of proclamation expenses from the State General
+# Fund. No archived source states the State General Fund total for
+# fiscal year 2027, so the figure is stated without its scale (left
+# open).
+#
+# Alabama publishes no official arguments for or against an amendment:
+# both sides are filed = false and each says so once, in the same number
+# of words. No person is named.
+
+contest = "al-2026-11-03-amendment-4"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "fbc"
+number = "4"
+title = "Proposing an amendment to the Constitution of Alabama of 2022, to require local boards of education to adopt policies requiring each public K-12 school to broadcast or sanction the performance of the first stanza of The Star-Spangled Banner at least once per week during school hours."
+origin = "Proposed by Act No. 2026-424 (Senate Bill 5, 2026 Regular Legislative Session)"
+summary = "If approved, this amendment would require each local board of education to adopt a policy requiring each public K-12 school to broadcast the first stanza of The Star-Spangled Banner at least once each week during school hours. A local board of education could instead allow the first stanza of The Star-Spangled Banner to be performed during school hours by a school-approved band, choir, vocal group, or vocalist using the version archived by the Library of Congress."
+yes = "If the majority of voters vote “yes” on Amendment 4, the Alabama Constitution will be changed."
+no = "If the majority of voters vote “no” on Amendment 4, the Alabama Constitution will not be changed."
+
+[[section]]
+id = "what"
+heading = "Amendment 4"
+
+[[section.line]]
+text = "Amendment 4 is about The Star-Spangled Banner in public schools."
+sources = ["fbc"]
+
+[section.line.visual]
+kind = "page"
+source = "fbc"
+highlight = ["the first stanza of The Star-Spangled Banner at least once per week"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the Alabama Constitution requires no school board policy on The Star-Spangled Banner."
+sources = ["fbc"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Local boards would have to require each public school, kindergarten through twelfth grade, to broadcast the first stanza of The Star-Spangled Banner at least once a week during school hours."
+sources = ["fbc", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-loudspeaker"
+
+[[section.line]]
+text = "A board could instead allow a school-approved band, choir, vocal group or vocalist to perform the first stanza, using the version archived by the Library of Congress."
+sources = ["fbc", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "fbc"
+highlight = ["school-approved band, choir, vocal group, or vocalist"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Alabama's ballot statement says the amendment has no costs or taxes."
+sources = ["fbc-cost"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "No costs or taxes"
+
+[[section.line]]
+text = "A Legislative Services Agency fiscal note on the enacted bill says administrative costs for local boards could rise, by an undetermined amount."
+sources = ["fiscal-note"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "The note also estimates $100,000 in proclamation expenses from the State General Fund in 2027."
+sources = ["fiscal-note"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Alabama publishes no official argument for the amendment."
+sources = ["fbc"]
+
+[section.line.visual]
+kind = "list"
+source = "fbc"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Alabama publishes no official argument against the amendment."
+sources = ["fbc"]
+
+[section.line.visual]
+kind = "list"
+source = "fbc"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means the Alabama Constitution will be changed."
+sources = ["fbc"]
+
+[section.line.visual]
+kind = "page"
+source = "fbc"
+highlight = ["the Alabama Constitution will be changed"]
+
+[[section.line]]
+text = "A no vote means the Alabama Constitution will not be changed."
+sources = ["fbc"]
+
+[section.line.visual]
+kind = "page"
+source = "fbc"
+highlight = ["the Alabama Constitution will not be changed"]
