@@ -250,3 +250,13 @@ status = "none-printed"
 [newport-beach-measure-h]
 source = "guide-page"
 status = "none-printed"
+
+# San Clemente Measure M: the guide prints no fiscal statement; the one
+# estimate is the city's, as the City Attorney's Impartial Analysis
+# reports it.
+[san-clemente-measure-m]
+source = "guide-page"
+quote = "The City estimates a new 1% sales tax would result in additional revenue of approximately $15 million annually to the City of San Clemente for 10 years"
+amount = 15000000
+period = "per-year"
+direction = "revenue-gain"
