@@ -437,6 +437,39 @@ def _archived_text(path: Path) -> str:
     return _normalise(out.stdout.decode("utf-8", errors="replace"))
 
 
+_WHITESPACE = re.compile(r"\s+")
+
+
+@lru_cache(maxsize=8)
+def _unspaced_raw_text(path: Path) -> str | None:
+    """A PDF's text in the order it is printed (pdftotext -raw), every
+    space removed; None for a page, or where the PDF cannot be read.
+
+    A newspaper-style PDF set in narrow columns (Georgia's amendment
+    booklet) defeats pdftotext's default reading order, which interleaves
+    lines of neighbouring columns; -raw keeps each column whole but runs
+    words together ("ShalltheConstitution"). A card quote that is not in
+    the default text may instead be in this one, compared with all
+    whitespace removed from both: the words and their order still match
+    exactly."""
+    if path.suffix.lower() != ".pdf" or shutil.which("pdftotext") is None:
+        return None
+    try:
+        out = subprocess.run(["pdftotext", "-raw", "-enc", "UTF-8",
+                              str(path), "-"],
+                             capture_output=True, check=True, timeout=60)
+    except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
+        return None
+    return _WHITESPACE.sub("", out.stdout.decode("utf-8", errors="replace"))
+
+
+def _in_raw_columns(value: str, path: Path) -> bool:
+    """Whether `value` is in the PDF at `path` read column by column, as
+    _unspaced_raw_text compares it."""
+    raw = _unspaced_raw_text(path)
+    return raw is not None and _WHITESPACE.sub("", value) in raw
+
+
 def highlight_counts(c: Contest) -> tuple[int, int]:
     """How many highlighted occurrences, over the whole script, fall in the
     card's YES box and in its NO box: each well-formed `highlight` phrase
@@ -536,7 +569,8 @@ def check_card(c: Contest) -> list[Failure]:
         return out
     for key, value in card.quoted():
         if isinstance(value, str) and value.strip() \
-                and _normalise(value) not in archived:
+                and _normalise(value) not in archived \
+                and not _in_raw_columns(value, path):
             fail(f"{key!r} does not appear verbatim in source "
                  f"{card.source!r} ({src.file})")
     return out

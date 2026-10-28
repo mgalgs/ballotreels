@@ -1,10 +1,12 @@
 """The `[card]` table and the `page` visual (docs/SCRIPT-FORMAT.md), on a
 copy of Prop 2 given a card quoting its Quick Reference page."""
 
+import shutil
 import unittest
+from pathlib import Path
 
 from ballotreels import check_contest, load_contest
-from ballotreels.checks import plain_text
+from ballotreels.checks import _archived_text, _in_raw_columns, plain_text
 
 from .helpers import ContestCopyTestCase
 
@@ -302,3 +304,37 @@ class CardTest(ContestCopyTestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+GA_BOOKLET = (Path(__file__).resolve().parent.parent / "data" /
+              "ga-2026-11-03" / "amendment-1" / "sources" /
+              "guide-section.pdf")
+
+
+@unittest.skipUnless(shutil.which("pdftotext"), "needs poppler's pdftotext")
+class ColumnTextTest(unittest.TestCase):
+    """Georgia's booklet is set in narrow newspaper columns, which
+    pdftotext's default reading order interleaves; a card quote is also
+    found in the columns read whole, with whitespace ignored."""
+
+    CAPTION = ("Increases the maximum qualifying acreage for assessment "
+               "and taxation as bona fide conservation use property.")
+
+    def test_interleaved_columns_defeat_the_default_text(self):
+        self.assertNotIn(self.CAPTION, _archived_text(GA_BOOKLET))
+
+    def test_a_quote_is_found_in_the_columns(self):
+        self.assertTrue(_in_raw_columns(self.CAPTION, GA_BOOKLET))
+        # "ShalltheConstitution" and "acresto4,000acres" in the -raw text
+        self.assertTrue(_in_raw_columns(
+            "Shall the Constitution of Georgia, for the purpose of "
+            "protecting family farmland", GA_BOOKLET))
+
+    def test_the_words_must_still_match(self):
+        self.assertFalse(_in_raw_columns(
+            "Increases the maximum qualifying acreage for taxation",
+            GA_BOOKLET))
+        self.assertFalse(_in_raw_columns(
+            "This proposal increases the maximum acreage to qualify for "
+            "assessment and taxation as a bona fide conservation use "
+            "property from 2,000 acres to 5,000 acres.", GA_BOOKLET))
