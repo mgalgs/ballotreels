@@ -8,8 +8,9 @@ import unittest
 from pathlib import Path
 
 from ballotreels.cli import main
-from ballotreels.glance import (GlanceError, check_glance, dollar_figures,
-                                load_glance)
+from ballotreels.glance import (MAGNITUDES, GlanceEntry, GlanceError,
+                                check_glance, dollar_figures, load_glance,
+                                word_magnitudes)
 from ballotreels.index import load_index
 
 from .helpers import PROP_2, REPO
@@ -35,7 +36,19 @@ number = "2"
 
 NOTE = ("<html><body><p>FISCAL NOTE The measure’s cost would be "
         "$1.5 million to $2.7 billion over ten years, or “about” "
-        "$314,000 a year in admin­istration.</p></body></html>")
+        "$314,000 a year in admin­istration. Savings of tens of millions "
+        "of dollars each year, and a few hundred thousand dollars once."
+        "</p></body></html>")
+
+WORDS = """\
+[prop-2]
+source = "note"
+status = "words"
+magnitude = 10000000
+quote = "Savings of tens of millions of dollars each year"
+period = "per-year"
+direction = "savings"
+"""
 
 GOOD = """\
 [prop-2]
@@ -92,6 +105,50 @@ class DollarFiguresTest(unittest.TestCase):
             "tens of millions of dollars, under 1 billion"), [])
 
 
+class WordMagnitudesTest(unittest.TestCase):
+    def test_table(self):
+        for phrase, value in MAGNITUDES.items():
+            with self.subTest(phrase):
+                self.assertEqual(max(word_magnitudes(
+                    f"costs of {phrase.upper()} of dollars")), value)
+        self.assertEqual(sorted(MAGNITUDES.values()),
+                         [10**n for n in range(3, 11)])
+
+    def test_a_few(self):
+        for phrase, value in {"a few thousand": 10**3,
+                              "a few hundred thousand": 10**5,
+                              "a few million": 10**6,
+                              "a few tens of millions": 10**7,
+                              "a few hundred million": 10**8,
+                              "a few\nbillion": 10**9}.items():
+            with self.subTest(phrase):
+                self.assertEqual(max(word_magnitudes(
+                    f"{phrase} dollars")), value)
+
+    def test_nothing_else(self):
+        for quote in ("$1 billion", "a few hundred dollars",
+                      "several million dollars", "a hundred thousand",
+                      "low hundreds of dollars", "trillions"):
+            with self.subTest(quote):
+                self.assertEqual(word_magnitudes(quote), [])
+
+    def test_every_phrase_named(self):
+        self.assertEqual(word_magnitudes(
+            "between tens of millions of dollars and low hundreds of "
+            "millions of dollars"), [10**6, 10**7, 10**8])
+
+
+class SortValueTest(unittest.TestCase):
+    def test_sort_value(self):
+        def entry(**kw):
+            return GlanceEntry(slug="p", source="s", **kw).sort_value
+        self.assertEqual(entry(amount=10**9, magnitude=10**10), 10**10)
+        self.assertEqual(entry(amount=10**8, magnitude=10**7), 10**8)
+        self.assertEqual(entry(amount=5), 5)
+        self.assertEqual(entry(status="words", magnitude=10**5), 10**5)
+        self.assertIsNone(entry(status="not-determined"))
+
+
 class LoaderTest(GlanceTestCase):
     def test_no_file(self):
         self.assertIsNone(load_glance(self.election))
@@ -121,8 +178,15 @@ class LoaderTest(GlanceTestCase):
             "'status' must": '[prop-2]\nsource = "note"\nstatus = "tbd"\n',
             "needs the 'quote' that says so":
                 '[prop-2]\nsource = "note"\nstatus = "not-determined"\n',
-            "'in-words' needs its 'period'": '[prop-2]\nsource = "note"\n'
-                'status = "in-words"\nquote = "x"\n',
+            "'words' needs its 'period'":
+                WORDS.replace('period = "per-year"\n', ""),
+            "'words' needs its 'magnitude'":
+                WORDS.replace("magnitude = 10000000\n", ""),
+            "'magnitude' must be": WORDS.replace("10000000", "20000000"),
+            "'magnitude' must be ": WORDS.replace("10000000", "true"),
+            "'magnitude' goes with":
+                '[prop-2]\nsource = "note"\nstatus = "not-determined"\n'
+                'quote = "x"\nmagnitude = 1000\n',
             "with an 'amount'":
                 '[prop-2]\nsource = "note"\nstatus = "none-printed"\n'
                 'period = "per-year"\n',
@@ -198,18 +262,50 @@ class CheckTest(GlanceTestCase):
             ["[glance] prop-2: amount 1500000 is not the quote's largest "
              "dollar figure (2700000000)"])
 
-    def test_in_words(self):
-        self.write('[prop-2]\nsource = "note"\nstatus = "in-words"\n'
-                   'quote = "admin-istration"\nperiod = "per-year"\n')
-        self.assertEqual(load_glance(self.election)["prop-2"].period,
-                         "per-year")
+    def test_words(self):
+        self.write(WORDS)
+        entry = load_glance(self.election)["prop-2"]
+        self.assertEqual((entry.status, entry.magnitude, entry.period,
+                          entry.sort_value),
+                         ("words", 10**7, "per-year", 10**7))
         self.assertEqual(check_glance(self.election), [])
-        failures = self.failures(
-            '[prop-2]\nsource = "note"\nstatus = "in-words"\n'
-            'quote = "$314,000 a year"\nperiod = "per-year"\n')
-        self.assertEqual(len(failures), 1)
-        self.assertIn("status is 'in-words', but the quote prints",
+        self.assertEqual(self.failures(WORDS.replace(
+            "Savings of tens of millions of dollars each year",
+            "a few hundred thousand dollars once").replace(
+            "10000000", "100000")), [])
+        failures = self.failures(WORDS.replace(
+            "Savings of tens of millions of dollars each year",
+            "$314,000 a year"))
+        self.assertEqual(len(failures), 2)
+        self.assertIn("status is 'words', but the quote prints",
                       failures[0])
+
+    def test_magnitude_must_be_the_largest_phrase(self):
+        self.assertEqual(
+            self.failures(WORDS.replace("10000000", "100000")),
+            ["[glance] prop-2: magnitude 100000 is not a size the quote "
+             "names in words ([1000000, 10000000])"])
+        self.assertEqual(
+            self.failures(WORDS.replace("10000000", "1000000")),
+            ["[glance] prop-2: magnitude 1000000 is not the largest size "
+             "the quote names in words (10000000)"])
+
+    def test_amount_and_magnitude(self):
+        both = ('[prop-2]\nsource = "note"\n'
+                'quote = "$314,000 a year in admin-istration. Savings of '
+                'tens of millions of dollars each year"\n'
+                'amount = 314000\nperiod = "per-year"\n')
+        self.assertEqual(
+            self.failures(both),
+            ["[glance] prop-2: the quote names a size in words "
+             "(10000000): give it as 'magnitude'"])
+        self.assertEqual(self.failures(both + "magnitude = 10000000\n"), [])
+        self.assertEqual(load_glance(self.election)["prop-2"].sort_value,
+                         10**7)
+        # a magnitude the quote does not name fails beside an amount too
+        failures = self.failures(GOOD + "magnitude = 1000000\n")
+        self.assertEqual(len(failures), 1)
+        self.assertIn("names in words (none)", failures[0])
 
     def test_none_printed_with_a_figure_fails(self):
         failures = self.failures(

@@ -469,16 +469,25 @@ quote = "Unknown net fiscal effect."
   billion" is `2700000000`. Only a figure printed with a dollar sign
   counts; "tens of millions of dollars" is not one. The check fails an
   amount that is not the quote's largest figure.
-- `period` (with `amount`, or status `in-words`) is the figure's period
+- `magnitude` (with `amount`, or status `words`) is the largest size the
+  quote names in words, as the lower bound it names, in dollars:
+  thousands `1000`, tens of thousands `10000`, hundreds of thousands
+  `100000`, millions `1000000`, tens of millions `10000000`, hundreds of
+  millions `100000000`, billions `1000000000`, tens of billions
+  `10000000000`; "a few" of a unit is that unit's bound ("a few hundred
+  thousand dollars" is `100000`). Nothing else counts. The check fails a
+  magnitude whose phrase the quote does not print or that is not its
+  largest, and an `amount` or `words` entry whose quote names one but
+  gives none.
+- `period` (with `amount`, or status `words`) is the figure's period
   as the quote states it: `per-year`, `one-time`, `over N years`, `every N years`
   (one recurring figure per N years, as Utah's "every two years"), or
   `unstated`.
 - `status`, instead of `amount`, when the statement prints no dollar
   figure: `none-printed` (no size at all, including no statement at all,
-  when `quote` is left out), `in-words` (the statement sizes the effect
+  when `quote` is left out), `words` (the statement sizes the effect
   only in words, as "tens of millions of dollars each year"; it needs
-  its `period`, and sorts apart from the dollar figures, never as a
-  guessed amount), `not-determined` (the statement says the effect
+  its `magnitude` and `period`), `not-determined` (the statement says the effect
   cannot be determined or is unknown) or `no-material-impact` (it says
   there is no fiscal effect, or none of note). Any status but
   `none-printed` needs its `quote`.
@@ -486,7 +495,9 @@ quote = "Unknown net fiscal effect."
   `revenue-loss`, `revenue-gain`, `savings` or `mixed`. It is never
   inferred, and is left out where the quote does not say.
 
-Revenue and cost are both size: the list sorts by `amount` alone. Once
+Revenue and cost are both size: the list sorts by the larger of
+`amount` and `magnitude`, so "tens of billions of dollars" beside "less
+than $1 billion" sorts as `10000000000`. Once
 an election has a `glance.toml`, `python -m ballotreels check` on any of
 its contests also checks the file: every measure in `contests.toml` has
 an entry, and every entry meets the rules above.
