@@ -1,64 +1,64 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 62.65,
+  "seconds": 61.2,
   "phrases": [
     {
       "text": "Proposition 37 is about loans for middle-income buyers of new homes.",
       "start": 0.03,
-      "end": 5.42
+      "end": 5.97
     },
     {
       "text": "Today, a state agency lends some buyers part of the down payment they pay up front.",
-      "start": 6.08,
-      "end": 10.99
+      "start": 6.63,
+      "end": 11.33
     },
     {
-      "text": "Proposition 37 would let that agency sell up to $25 billion in bonds.",
-      "start": 11.65,
-      "end": 18.08
+      "text": "Proposition 37 would let that agency sell bonds worth up to twenty-five billion dollars.",
+      "start": 11.99,
+      "end": 17.81
     },
     {
       "text": "Each loan could cover up to 17 percent of a new home's price.",
-      "start": 18.74,
-      "end": 23.29
+      "start": 18.47,
+      "end": 22.95
     },
     {
       "text": "The Legislative Analyst's Office says buyers' payments would repay the bonds, with no direct state or local costs.",
-      "start": 23.95,
-      "end": 31.86
+      "start": 23.61,
+      "end": 30.82
     },
     {
       "text": "The office says the program's scope depends on unknowns, such as investor demand for the bonds.",
-      "start": 32.52,
-      "end": 39.32
+      "start": 31.48,
+      "end": 37.84
     },
     {
       "text": "Supporters say Proposition 37 makes buying homes more affordable, at zero cost to taxpayers.",
-      "start": 39.98,
-      "end": 46.37
+      "start": 38.5,
+      "end": 44.9
     },
     {
       "text": "No argument against Proposition 37 was submitted to appear in the official voter guide.",
-      "start": 47.03,
-      "end": 52.55
+      "start": 45.56,
+      "end": 51.07
     },
     {
       "text": "A yes vote means the state would create a new homebuying assistance program.",
-      "start": 53.21,
-      "end": 57.74
+      "start": 51.73,
+      "end": 56.33
     },
     {
       "text": "A no vote means the state would not be required to create that program.",
-      "start": 58.4,
-      "end": 62.62
+      "start": 56.99,
+      "end": 61.17
     }
   ],
   "inputs": {
     "phrases": [
       "Proposition 37 is about loans for middle-income buyers of new homes.",
       "Today, a state agency lends some buyers part of the down payment they pay up front.",
-      "Proposition 37 would let that agency sell up to $25 billion in bonds.",
+      "Proposition 37 would let that agency sell bonds worth up to twenty-five billion dollars.",
       "Each loan could cover up to 17 percent of a new home's price.",
       "The Legislative Analyst's Office says buyers' payments would repay the bonds, with no direct state or local costs.",
       "The office says the program's scope depends on unknowns, such as investor demand for the bonds.",
@@ -91,7 +91,7 @@
       },
       "bounds": [
         0,
-        130800
+        144000
       ]
     },
     {
@@ -106,8 +106,8 @@
         "text": "Today, a state agency lends some buyers part of the down payment they pay up front."
       },
       "bounds": [
-        145200,
-        264480
+        158400,
+        272640
       ]
     },
     {
@@ -119,11 +119,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Proposition 37 would let that agency sell up to $25 billion in bonds."
+        "text": "Proposition 37 would let that agency sell bonds worth up to twenty-five billion dollars."
       },
       "bounds": [
-        278880,
-        434640
+        287040,
+        428160
       ]
     },
     {
@@ -131,15 +131,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Proposition 37 would let that agency sell up to $25 billion in bonds.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Proposition 37 would let that agency sell bonds worth up to twenty-five billion dollars.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "Each loan could cover up to 17 percent of a new home's price."
       },
       "bounds": [
-        449040,
-        559680
+        442560,
+        551520
       ]
     },
     {
@@ -154,8 +154,8 @@
         "text": "The Legislative Analyst's Office says buyers' payments would repay the bonds, with no direct state or local costs."
       },
       "bounds": [
-        574080,
-        765360
+        565920,
+        740400
       ]
     },
     {
@@ -170,8 +170,8 @@
         "text": "The office says the program's scope depends on unknowns, such as investor demand for the bonds."
       },
       "bounds": [
-        779760,
-        944400
+        754800,
+        908880
       ]
     },
     {
@@ -186,8 +186,8 @@
         "text": "Supporters say Proposition 37 makes buying homes more affordable, at zero cost to taxpayers."
       },
       "bounds": [
-        958800,
-        1113600
+        923280,
+        1078320
       ]
     },
     {
@@ -202,8 +202,8 @@
         "text": "No argument against Proposition 37 was submitted to appear in the official voter guide."
       },
       "bounds": [
-        1128000,
-        1261920
+        1092720,
+        1226400
       ]
     },
     {
@@ -218,8 +218,8 @@
         "text": "A yes vote means the state would create a new homebuying assistance program."
       },
       "bounds": [
-        1276320,
-        1386480
+        1240800,
+        1352640
       ]
     },
     {
@@ -234,10 +234,10 @@
         "text": "A no vote means the state would not be required to create that program."
       },
       "bounds": [
-        1400880,
-        1503600
+        1367040,
+        1468800
       ]
     }
   ],
-  "sha256": "11a360c8e171ed0c865c331d91f70dd93de81add61a1138a5778ef5109e39f75"
+  "sha256": "aca488ff689584ee304b18fe4feef2eeedec2fb8eecaefb64fce8b881b199982"
 }
