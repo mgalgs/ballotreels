@@ -434,3 +434,59 @@ the side has a `list`, ticks that list in on its own lines, in the same
 type, row heights and spacing in both boxes; a side with none shows just
 its label. When both lists cite the same source, one source line sits
 under both boxes; otherwise each box carries its own.
+
+## glance.toml
+
+`data/<election>/glance.toml` holds the figures behind a state page's
+"ballot at a glance" list, which the viewer can sort by the size of each
+measure's official fiscal estimate. It is one file per election, beside
+`contests.toml`, with one table per measure, keyed by the measure's
+directory name:
+
+```toml
+[prop-1]
+source = "title-summary"   # an id in that measure's sources.toml
+quote = "Increased state cost of $500 million to $600 million annually for about 25 years to repay the housing bond."
+amount = 600000000         # dollars: the largest dollar figure the quote prints
+period = "per-year"
+direction = "cost"
+
+[prop-41]
+source = "title-summary"
+status = "not-determined"
+quote = "Unknown net fiscal effect."
+```
+
+- `source` (required) is the official fiscal statement, or the official
+  guide's fiscal section, the figure is quoted from: a source of kind
+  `official-fiscal-analysis` or `official-title-summary`. Where none is
+  printed, it is the guide that prints none.
+- `quote` is verbatim from that source's archived text, compared as a
+  side's `basis` is (above): whitespace, quotes, ligatures and
+  hyphenation do not matter.
+- `amount` is the largest absolute dollar figure the quote prints (a
+  range sorts by its high end), as a whole number of dollars: "$2.7
+  billion" is `2700000000`. Only a figure printed with a dollar sign
+  counts; "tens of millions of dollars" is not one. The check fails an
+  amount that is not the quote's largest figure.
+- `period` (with `amount`, or status `in-words`) is the figure's period
+  as the quote states it: `per-year`, `one-time`, `over N years`, `every N years`
+  (one recurring figure per N years, as Utah's "every two years"), or
+  `unstated`.
+- `status`, instead of `amount`, when the statement prints no dollar
+  figure: `none-printed` (no size at all, including no statement at all,
+  when `quote` is left out), `in-words` (the statement sizes the effect
+  only in words, as "tens of millions of dollars each year"; it needs
+  its `period`, and sorts apart from the dollar figures, never as a
+  guessed amount), `not-determined` (the statement says the effect
+  cannot be determined or is unknown) or `no-material-impact` (it says
+  there is no fiscal effect, or none of note). Any status but
+  `none-printed` needs its `quote`.
+- `direction` (optional) is only as the quote states it: `cost`,
+  `revenue-loss`, `revenue-gain`, `savings` or `mixed`. It is never
+  inferred, and is left out where the quote does not say.
+
+Revenue and cost are both size: the list sorts by `amount` alone. Once
+an election has a `glance.toml`, `python -m ballotreels check` on any of
+its contests also checks the file: every measure in `contests.toml` has
+an entry, and every entry meets the rules above.
