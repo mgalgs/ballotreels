@@ -1,0 +1,68 @@
+# Archived sources for Louisiana Amendment 6, 2026-11-03 general
+# election. Every id here may be cited by script.toml. `kind` must be one
+# the standard allows (docs/STANDARD.md, section 1).
+#
+# Louisiana has no voter pamphlet. The Secretary of State's one-page
+# "Statements of Proposed Constitutional Amendments" (R.S. 18:431 and
+# 18:552) prints all ten amendments' ballot questions, Abstracts and
+# "Present Constitution / Proposed Constitutional Amendment" paragraphs;
+# the card quotes it. Louisiana publishes no official arguments for or
+# against an amendment, so there is no source of kind official-argument.
+#
+# The Legislative Fiscal Office's note on the enrolled bill was written
+# for legislators and is not printed by the Secretary of State; the
+# script names the office when it cites it.
+#
+# The earlier printed digest (digest-*.pdf) is not cited: the résumé
+# digest describes the Act as enacted.
+
+[contest]
+id = "la-2026-11-03-amendment-6"
+election = "la-2026-11-03"
+division = "ocd-division/country:us/state:la"
+kind = "measure"
+title = "Amendment 6: Authorizes extension of an additional property tax exemption for owners who are 65 or older"
+
+[[source]]
+id = "statements"
+kind = "official-title-summary"
+publisher = "Louisiana Secretary of State, Statements of Proposed Constitutional Amendments, November 3, 2026, No. 6, page 1"
+credit = "Louisiana Secretary of State, Statements of Proposed Constitutional Amendments"
+url = "https://www.sos.la.gov/media/j2fjvpye/proposed-constitutional-amendments-2026-nov-summaries.pdf"
+file = "sources/statements-of-proposed-amendments.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "ballot-language"
+kind = "official-title-summary"
+publisher = "Louisiana Secretary of State, 2026 Proposed Constitutional Amendments, November 3, 2026 Election, Proposed Amendment No. 6, page 2"
+credit = "Louisiana Secretary of State, 2026 Proposed Constitutional Amendments"
+url = "https://www.sos.la.gov/media/jo2die1s/proposed-constitutional-amendments-2026-nov.pdf"
+file = "sources/sos-ballot-language-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "act"
+kind = "official-text"
+publisher = "Louisiana Legislature, Act 274 (HB 514), 2026 Regular Session, enrolled"
+url = "https://legis.la.gov/legis/ViewDocument.aspx?d=1476071"
+file = "sources/act-274-hb514.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "digest"
+kind = "official-title-summary"
+publisher = "Louisiana Legislature, Résumé Digest of Act 274 (HB 514), 2026 Regular Session"
+credit = "Louisiana Legislature, Résumé Digest"
+url = "https://legis.la.gov/legis/ViewDocument.aspx?d=1485493"
+file = "sources/resume-digest-hb514.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal-note"
+kind = "official-fiscal-analysis"
+publisher = "Louisiana Legislative Fiscal Office, Fiscal Note on HB 514 (Enrolled), 2026 Regular Session, May 21, 2026"
+credit = "Louisiana Legislative Fiscal Office"
+url = "https://legis.la.gov/legis/ViewDocument.aspx?d=1475571"
+file = "sources/fiscal-note-hb514-enrolled.pdf"
+retrieved = "2026-10-27"
