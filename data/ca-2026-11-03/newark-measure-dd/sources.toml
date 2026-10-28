@@ -1,0 +1,53 @@
+# Archived sources for City of Newark Measure DD, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. The guide's pages are cut from the Alameda County
+# Registrar of Voters' Composite Voter Information Guide (965 pages);
+# "pages" are the PDF's page numbers, with the printed footer (NMDD-1 on)
+# beside them.
+#
+# The guide prints the ballot question, the City Attorney's Impartial
+# Analysis, an argument in favor and an argument against, a rebuttal to
+# each, and the full text of the ordinance. It prints no tax rate
+# statement.
+
+[contest]
+id = "ca-2026-11-03-newark-measure-dd"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:newark"
+kind = "measure"
+title = "City of Newark Measure DD: Business License Tax Update"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "Alameda County Registrar of Voters, Composite Voter Information Guide, November 3, 2026, page 921 (NMDD-1): ballot question of Measure DD"
+credit = "Ballot question, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp921-932.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "City Attorney's Impartial Analysis of Measure DD, Alameda County Composite Voter Information Guide, page 921 (NMDD-1)"
+credit = "City Attorney's Impartial Analysis, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp921-932.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments in favor of and against Measure DD, and the rebuttals to each, as printed in the Alameda County Composite Voter Information Guide, pages 922 to 923 (NMDD-2 to NMDD-3)"
+credit = "Arguments, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp921-932.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure DD, an ordinance repealing and replacing Chapter 5.04 of the Newark Municipal Code, Alameda County Composite Voter Information Guide, pages 924 to 932"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp921-932.pdf"
+retrieved = "2026-10-28"
