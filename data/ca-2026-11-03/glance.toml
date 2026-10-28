@@ -274,3 +274,12 @@ period = "per-year"
 [laguna-beach-measure-e]
 source = "guide-page"
 status = "none-printed"
+
+# Los Alamitos Measure G: the guide prints no fiscal statement; the one
+# estimate with a period is the ballot question's (the City Attorney's
+# Impartial Analysis gives the same $300,000 without one).
+[los-alamitos-measure-g]
+source = "guide-page"
+quote = "providing approximately $300,000 annually"
+amount = 300000
+period = "per-year"
