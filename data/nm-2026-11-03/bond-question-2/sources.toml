@@ -1,0 +1,65 @@
+# Archived sources for New Mexico Bond Question 2 (the 2026 Capital
+# Projects General Obligation Bond Act, House Bill 248, Laws 2026,
+# chapter 65), 2026-11-03 general election. Every id here may be cited
+# by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Secretary of State's 2026 General Election Voter Guide prints the
+# bond question and its "Explanation of General Obligation Bonds and
+# Taxes"; sources/guide-section.pdf is pages 36 to 39 of it. The
+# guide prints no fiscal statement and no arguments for or against. The
+# Legislative Finance Committee's fiscal impact report on the act, the
+# Legislature's own analysis of it, is named as such where cited. Its
+# per-question amounts leave out the cost of issuing the bonds and are
+# not used in place of the ballot's.
+
+[contest]
+id = "nm-2026-11-03-bond-question-2"
+election = "nm-2026-11-03"
+division = "ocd-division/country:us/state:nm"
+kind = "measure"
+title = "Bond Question 2: Library Acquisitions"
+
+[[source]]
+id = "guide"
+kind = "official-title-summary"
+publisher = "New Mexico Secretary of State, 2026 General Election Voter Guide, Bond Question 2 and Explanation of General Obligation Bonds and Taxes, pages 36 to 39"
+credit = "New Mexico 2026 General Election Voter Guide"
+url = "https://www.sos.nm.gov/wp-content/uploads/2026/09/2026-Voter-Guide-English.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "act"
+kind = "official-text"
+publisher = "New Mexico Legislature, House Bill 248 (2026 Capital Projects General Obligation Bond Act), House Taxation and Revenue Committee substitute, as passed, Sections 10 and 11"
+credit = "House Bill 248, as passed"
+url = "https://www.nmlegis.gov/Sessions/26%20Regular/final/HB0248.pdf"
+file = "sources/hb0248-2026-final.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fir"
+kind = "official-fiscal-analysis"
+publisher = "New Mexico Legislative Finance Committee, Fiscal Impact Report on House Bill 248 (2026), House Taxation and Revenue Committee substitute, February 14, 2026"
+credit = "Legislative Finance Committee, Fiscal Impact Report"
+url = "https://www.nmlegis.gov/Sessions/26%20Regular/firs/HB0248.PDF"
+file = "sources/hb0248-2026-lfc-fir.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "projects"
+kind = "official-data"
+publisher = "New Mexico Legislative Council Service, General Obligation Bond Projects, Chart by Agency, House Taxation and Revenue Committee substitute for House Bill 248, 2026"
+credit = "Legislative Council Service, General Obligation Bond Projects"
+url = "https://www.nmlegis.gov/Publications/Capital_Outlay/HB248%20Chart%20Funded%20Projects%20by%20Agency%203A%20GOB.pdf"
+file = "sources/hb248-gob-projects-chart.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "status"
+kind = "public-record"
+publisher = "New Mexico Legislature, House Bill 248 (2026) legislation status page"
+url = "https://www.nmlegis.gov/Legislation/Legislation?chamber=H&legType=B&legNo=248&year=26"
+file = "sources/hb0248-2026-status.html"
+retrieved = "2026-10-27"
