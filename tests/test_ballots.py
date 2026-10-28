@@ -5,7 +5,8 @@ import shutil
 import unittest
 
 from ballotreels import check_contest, load_contest
-from ballotreels.ballots import BALLOTS, badge, ballot_for, designation
+from ballotreels.ballots import (BALLOTS, badge, ballot_for, designation,
+                                 guide_of)
 
 from .helpers import ContestCopyTestCase
 from .test_card import CARD, VERSION
@@ -112,6 +113,21 @@ class BallotTest(unittest.TestCase):
                          ("Statewide Ballot Questions", "Fiscal Note",
                           ("Yes", "No"), "official-title-summary"))
         self.assertEqual(badge(nv, "Question 6: X", "6"), "QUESTION")
+
+    def test_nebraska_uses_its_pamphlets_words(self):
+        ne = BALLOTS["ne"]
+        self.assertEqual((ne.fiscal_label, ne.choices, ne.card_source_kind),
+                         (None, ("For", "Against"), "official-title-summary"))
+        # "INITIATIVE MEASURE 440", as the pamphlet prints it
+        self.assertEqual(badge(ne, "Initiative Measure 440: X", "440"),
+                         "INITIATIVE MEASURE")
+        self.assertEqual(badge(ne, "Proposed Amendment No. 1: X", "1"),
+                         "AMENDMENT")
+        # the pamphlet covers only the initiatives
+        self.assertTrue(guide_of(ne, "ne-2026-11-03-initiative-440")
+                        .startswith("Informational Pamphlet"))
+        self.assertEqual(guide_of(ne, "ne-2026-11-03-amendment-1"),
+                         "Legislative Resolution 19CA")
 
 
 class SideHeadingTest(ContestCopyTestCase):
