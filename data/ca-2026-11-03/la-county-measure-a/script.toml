@@ -1,4 +1,4 @@
-# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain: what it
 # asks; the rules today (no strikes, good-faith bargaining); what would
 # change (more workers barred from striking, a panel picks between final
 # offers, its decision binding); the Auditor-Controller's fiscal
@@ -37,7 +37,7 @@ id = "what"
 heading = "Measure A"
 
 [[section.line]]
-text = "Los Angeles County Measure A asks county voters whether to amend the County Charter to add binding arbitration for public safety labor disputes."
+text = "Los Angeles County Measure A asks county voters whether to set up binding arbitration for public safety labor disputes."
 sources = ["ballot-label"]
 
 [section.line.visual]
@@ -50,7 +50,7 @@ id = "today"
 heading = "Today"
 
 [[section.line]]
-text = "Today, firefighters and deputy sheriffs may not strike, and the county and their unions must negotiate pay in good faith."
+text = "Today, firefighters and deputy sheriffs may not strike, and the county must negotiate with their unions in good faith."
 sources = ["impartial-analysis"]
 
 [section.line.visual]
@@ -78,7 +78,7 @@ kind = "illustration"
 name = "court-gavel"
 
 [[section.line]]
-text = "The panel's decision would be binding, with no approval needed from the Board of Supervisors or voters."
+text = "The panel's decision would be binding, without approval from the Board of Supervisors or voters."
 sources = ["impartial-analysis"]
 
 [[section]]
@@ -86,16 +86,12 @@ id = "fiscal"
 heading = "What the Auditor-Controller says"
 
 [[section.line]]
-text = "The Auditor-Controller says an arbitration could cost tens of thousands to millions of dollars, depending on how complex it is."
+text = "The Auditor-Controller says each arbitration could cost tens of thousands to millions of dollars, and has no basis to predict the effect on labor costs."
 sources = ["fiscal-statement"]
 
 [section.line.visual]
 kind = "illustration"
 name = "analyst-review"
-
-[[section.line]]
-text = "The office says it has no basis to predict whether labor costs would be higher or lower."
-sources = ["fiscal-statement"]
 
 [[section]]
 id = "yes"
@@ -141,7 +137,7 @@ source = "ballot-label"
 highlight = ["impartial binding arbitration process"]
 
 [[section.line]]
-text = "A no vote means no binding arbitration, and the labor negotiation process would remain unchanged."
+text = "A no vote means no binding arbitration, and the negotiation process stays as it is."
 sources = ["impartial-analysis", "ballot-label"]
 
 [section.line.visual]
