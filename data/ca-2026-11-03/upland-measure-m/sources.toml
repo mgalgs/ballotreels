@@ -1,0 +1,53 @@
+# Archived sources for City of Upland Measure M, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Bernardino County Registrar of Voters' comprehensive Voter Information
+# Guide (VIG.pdf, PDF pages 236-239); "page" is the guide's printed
+# footer number (SB COMPREHENSIVE-234 is PDF page 236).
+#
+# The guide prints no ballot question; the card quotes it from the City
+# Council's Resolution No. 6898, Section 3 (the archived file bundles
+# Resolutions Nos. 6898, 6899 and 6900).
+
+[contest]
+id = "ca-2026-11-03-upland-measure-m"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:upland"
+kind = "measure"
+title = "City of Upland Measure M: Business License Tax Based on Gross Receipts"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "City of Upland, Resolution No. 6898, Section 3: the ballot question for Measure M"
+credit = "Ballot question, Resolution No. 6898"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofUpland/RES_Upland.pdf"
+file = "sources/RES_Upland.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney, Impartial Analysis of Measure M, San Bernardino County Voter Information Guide, page SB COMPREHENSIVE-234"
+credit = "Impartial Analysis, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp236-239.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments in favor of and against Measure M and rebuttals, San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-234 to 237"
+credit = "Arguments, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp236-239.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Upland, Full Text of Measure M (business license tax ordinance)"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofUpland/FT_Upland.pdf"
+file = "sources/FT_Upland.pdf"
+retrieved = "2026-10-28"
