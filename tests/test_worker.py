@@ -638,3 +638,71 @@ class UnreachableServerTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class NoTTSRunner(FakeRunner):
+    """A FakeRunner whose narrate must not be called: standing in for the
+    real TTS, which a committed, current narration never needs."""
+
+    def __init__(self):
+        super().__init__()
+        self.narrated = []
+
+    def narrate(self, contest_dir):
+        self.narrated.append(Path(contest_dir))
+        raise AssertionError("TTS called for a contest whose committed "
+                             "narration matches its script")
+
+
+class CommittedNarrationReusedTest(WorkerTestCase):
+    """Arizona Proposition 141's render re-synthesised a narration already
+    narrated, transcript-checked and committed on the host, and the new take
+    failed the transcript check: the scratch copy dropped the sidecars, so
+    `say` had no phrase_cache to reuse. A committed narration that matches
+    the script is reused byte for byte, with no TTS call."""
+
+    def setUp(self):
+        super().setUp()
+        dest = self.fake_repo / "data" / "ca-2026-11-03" / "prop-2"
+        for name in NARRATION_SIDECARS + ("narration.txt",):
+            shutil.copy2(PROP_2 / name, dest / name)
+        self.dest = dest
+
+    def test_scratch_copy_keeps_the_sidecars(self):
+        job, _ = self.deps.queue.create_job(self.prop2_key())
+        worker = self.make_worker()
+        contest_dir = worker._prepare_scratch(
+            job, worker._job_work_dir(job["id"]))
+        for name in NARRATION_SIDECARS:
+            self.assertEqual((contest_dir / name).read_bytes(),
+                             (self.dest / name).read_bytes(), name)
+
+    def test_current_narration_never_calls_tts(self):
+        job, _ = self.deps.queue.create_job(self.prop2_key())
+        runner = NoTTSRunner()
+        self.make_worker(runner=runner).run_once()
+        row = self.deps.queue.get_job(job["id"])
+        self.assertEqual(row["state"], "done", row["error"])
+        self.assertEqual(runner.narrated, [])
+
+    def test_stale_narration_is_narrated_beside_its_sidecars(self):
+        # An edited script is narrated again, but with the old sidecars in
+        # place, so `say` keeps every phrase whose key did not change.
+        script = self.dest / "script.toml"
+        script.write_text(script.read_text(encoding="utf-8").replace(
+            "A no vote means the current rules would not change.",
+            "A no vote means the current rules would stay the same."),
+            encoding="utf-8")
+        seen = {}
+
+        class Recording(FakeRunner):
+            def narrate(self, contest_dir):
+                seen["json"] = (Path(contest_dir) / "narration.json").read_bytes()
+                seen["wav"] = (Path(contest_dir) / "narration.wav").is_file()
+                super().narrate(contest_dir)
+
+        job, _ = self.deps.queue.create_job(self.prop2_key())
+        self.make_worker(runner=Recording()).run_once()
+        self.assertEqual(seen.get("json"),
+                         (self.dest / "narration.json").read_bytes())
+        self.assertTrue(seen.get("wav"))

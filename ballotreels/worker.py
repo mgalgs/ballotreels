@@ -23,9 +23,6 @@ from .pipeline import (PipelineError, Runner, ScriptWriter, read_chapters,
 from .queue import hash_for_key
 from .standard import Standard
 
-NARRATION_SIDECARS = ("narration.json", "narration.wav", "narration.vtt",
-                      "narration.txt")
-
 MAX_FAIL_OUTPUT = 256 * 1024
 
 # Longest pause between claim attempts while the serve tier is unreachable.
@@ -251,8 +248,10 @@ class Worker:
         dest = wd / dir_name
         wd.mkdir(parents=True, exist_ok=True)
         if src.is_dir():
-            shutil.copytree(src, dest,
-                           ignore=shutil.ignore_patterns(*NARRATION_SIDECARS))
+            # With its committed narration sidecars: the narrate stage
+            # reuses them (run_narrate), and `say` needs narration.json's
+            # phrase_cache beside narration.wav to keep unchanged phrases.
+            shutil.copytree(src, dest)
         else:
             dest.mkdir(parents=True, exist_ok=True)
         return dest

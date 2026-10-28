@@ -134,6 +134,37 @@ def match_phrases(contest: Contest) -> tuple[NarrationSpan, ...] | None:
     return tuple(spans)
 
 
+MISSING, STALE, CURRENT = "missing", "stale", "current"
+
+
+def narration_state(contest: Contest) -> str:
+    """Whether the contest's committed narration is MISSING (no
+    narration.json or narration.wav), STALE (its phrases no longer match
+    the script's lines) or CURRENT (narrated from exactly this script's
+    text). A current narration has passed `say`'s transcript check, so it
+    is reused as it is; the pre-narration checks (speakability, spoken
+    length, side basis) apply only to a script that is not."""
+    path = contest.path
+    if not ((path / "narration.json").is_file()
+            and (path / "narration.wav").is_file()):
+        return MISSING
+    try:
+        match_phrases(contest)
+    except NarrationError:
+        return STALE
+    except (KeyError, ValueError, TypeError):
+        return STALE  # an unreadable sidecar, or a template check_template reports
+    except ImportError:
+        # No videobuilder to split lines the way `say` does: compare the
+        # whole text instead, which `say`'s splitting never changes.
+        doc = json.loads((path / "narration.json").read_text(encoding="utf-8"))
+        said = " ".join(p["text"] for p in doc.get("phrases", ()))
+        script = " ".join(" ".join(ln.text.split())
+                          for ln in narration_lines(contest))
+        return CURRENT if said == script else STALE
+    return CURRENT
+
+
 def side_durations(contest: Contest
                    ) -> tuple[tuple[str, float], tuple[str, float]] | None:
     """Each side section's spoken duration in seconds (the span from its

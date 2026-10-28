@@ -114,7 +114,19 @@ def run_check(contest_dir: Path, standard: Standard) -> None:
 
 
 def run_narrate(contest_dir: Path, runner: Runner, standard: Standard) -> None:
-    runner.narrate(contest_dir)
+    from .contest import ContestError, load_contest
+    from .narration import CURRENT, narration_state
+    try:
+        state = narration_state(load_contest(contest_dir))
+    except ContestError as e:
+        raise PipelineError(str(e)) from None
+    # A narration committed for exactly this script was made and
+    # transcript-checked on the host: use it as it is. Asking the TTS
+    # again would only risk a new take failing the transcript check. A
+    # stale one is still in the scratch copy, so `say` reuses every
+    # phrase that did not change (videobuilder's phrase_cache).
+    if state != CURRENT:
+        runner.narrate(contest_dir)
     # STANDARD.md rule 7 ("A video that fails any rule is not published"):
     # re-check now that the sidecars exist, since airtime can only be
     # measured once they do.

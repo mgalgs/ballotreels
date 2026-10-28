@@ -70,7 +70,11 @@ stale; they are regenerated on next request.
 
 Steps 1-2 and 8 run on the serve tier; steps 3-7 run on a worker, in a
 scratch copy of the contest (never the worker's own committed copy),
-against the serve tier's job queue.
+against the serve tier's job queue. The copy keeps the contest's
+committed narration: one narrated from exactly the current script was
+made and transcript-checked on the host, so the worker uses it as it
+is and never asks the TTS again; a stale one stays beside the script,
+so re-narrating keeps every phrase that did not change.
 
 ## Data sources (pilot: California, free sources only)
 
