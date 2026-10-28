@@ -322,3 +322,11 @@ source = "guide-page"
 quote = "generating an additional $12 million annually until repealed"
 amount = 12000000
 period = "per-year"
+
+# City of Alameda Measure L: the city's Tax Rate Statement, its total debt
+# service.
+[alameda-measure-l]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $662,197,756."
+amount = 662197756
+period = "unstated"
