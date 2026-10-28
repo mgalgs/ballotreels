@@ -1,0 +1,148 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; who regulates hunting and fishing today; the right and the
+# policy the amendment would add, and the regulation it keeps; what
+# Legislative Council Staff says it changes and costs; one point per
+# side; what a vote does.
+#
+# The card quotes the State Ballot Information Booklet: the ballot title
+# as printed in its Text & Titles section, its origin and vote-needed
+# line, its answer to "What does Amendment 83 do?" as the summary and its
+# YES/NO lines.
+#
+# The booklet prints one argument for and one against; each side's list
+# takes two points from its one argument. The supporters' $115 million
+# of license revenue stays out: their line keeps their point without it.
+
+contest = "co-2026-11-03-amendment-83"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "blue-book"
+number = "83"
+title = "Shall there be an amendment to the Colorado Constitution creating a constitutional right to hunt, fish, and harvest fish and wildlife by traditional methods, including all species of fish and wildlife managed by the state except non-game species, endangered species, or any species that is illegal to hunt under federal law, and, in connection therewith, establishing hunting and fishing as the preferred means of managing fish and wildlife populations; and preserving the right of the state to regulate hunting, fishing, and wildlife management if necessary for sound scientific wildlife conservation and management, public safety, or to preserve the future of hunting and fishing opportunities for all species?"
+origin = "Placed on the ballot by citizen initiative • Passes with 55 percent of the vote"
+summary = "Amendment 83 establishes a right in the Colorado Constitution to fish and hunt certain wildlife, and establishes hunting and fishing as the preferred means of managing fish and wildlife populations."
+yes = "A “yes” vote on Amendment 83 establishes a state constitutional right to hunt and fish."
+no = "A “no” vote on Amendment 83 means that hunting and fishing will continue as allowed under existing state and federal law."
+
+[[section]]
+id = "what"
+heading = "Amendment 83"
+
+[[section.line]]
+text = "Amendment 83 is about hunting and fishing in Colorado."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["constitutional right to hunt, fish, and harvest fish and wildlife"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, Colorado Parks and Wildlife regulates hunting and fishing."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "fishing-gear"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would create a constitutional right to hunt and fish by traditional methods."
+sources = ["blue-book", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section.line]]
+text = "Hunting and fishing would become the preferred means of managing wildlife."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["preferred means of managing fish and wildlife populations"]
+
+[[section.line]]
+text = "The state could still regulate for science, public safety, or future hunting and fishing."
+sources = ["blue-book"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Legislative Council Staff says existing law would not change at first, though court rulings could lead to changes."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section.line]]
+text = "Near-term state spending is not expected to change significantly, though legal costs could rise."
+sources = ["fiscal-impact", "fiscal-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes/for"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the amendment protects hunting and fishing from future restrictions, and license revenue aids wildlife statewide."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Lasting protection against future restrictions", "License revenue benefits wildlife management statewide"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no/against"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the constitution should protect fundamental rights, not recreation, and vague language could prompt costly lawsuits."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Protect fundamental rights, not recreational activities", "Vague language could prompt costly legal challenges"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote creates a state constitutional right to hunt and fish."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["establishes a state constitutional right to hunt and fish"]
+
+[[section.line]]
+text = "A no vote means hunting and fishing continue under existing law."
+sources = ["blue-book"]
+
+[section.line.visual]
+kind = "page"
+source = "blue-book"
+highlight = ["will continue as allowed under existing state and federal law"]
