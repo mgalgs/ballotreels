@@ -1,0 +1,39 @@
+# Archived sources for Newport Beach Measure H, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1). All three are the Measure H pages (Section 11, "Ballot
+# Measures-H") of the Orange County Registrar of Voters' Voter
+# Information Guide; "page" is the page of that section.
+
+[contest]
+id = "ca-2026-11-03-newport-beach-measure-h"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:newport_beach"
+kind = "measure"
+title = "Newport Beach Measure H: General Plan Amendment for 2,900 Affordable Housing Units"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "Orange County Registrar of Voters, Voter Information Guide, Section 11 (Ballot Measures-H), pages 1 and 5: ballot question and City Attorney Impartial Analysis"
+credit = "City Attorney Impartial Analysis, Orange County Voter Information Guide"
+url = "https://ocvote.gov/sites/default/files/2026-09/H-NBEA%20-%20LAYOUT%20(1).pdf"
+file = "sources/voter-guide-section.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments for and against Measure H and rebuttals, as printed in the Orange County Voter Information Guide, Section 11 (Ballot Measures-H), pages 6 to 7"
+credit = "Arguments, Orange County Voter Information Guide"
+url = "https://ocvote.gov/sites/default/files/2026-09/H-NBEA%20-%20LAYOUT%20(1).pdf"
+file = "sources/voter-guide-section.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure H (the Responsible Housing Initiative), Orange County Voter Information Guide, Section 11 (Ballot Measures-H), pages 2 to 5"
+url = "https://ocvote.gov/sites/default/files/2026-09/H-NBEA%20-%20LAYOUT%20(1).pdf"
+file = "sources/voter-guide-section.pdf"
+retrieved = "2026-10-28"
