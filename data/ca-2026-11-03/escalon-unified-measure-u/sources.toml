@@ -1,0 +1,68 @@
+# Archived sources for Escalon Unified School District Measure U,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The San Joaquin County Registrar of Voters prints Measure U's ballot
+# question, full text, the district's tax rate statement, County
+# Counsel's impartial analysis and the argument in favor on printed
+# pages 581-585 of its composite County of San Joaquin Voter Information
+# Guide & Sample Ballot; sources/vig-measure-u-pp581-585.pdf is those
+# pages cut from it, and every source cites the full guide's URL with
+# the pages. County Counsel's impartial analysis is the measure's
+# neutral explanation, the kind a state's attorney general's
+# explanatory statement is; the district's tax rate statement is its
+# fiscal statement. The guide prints no argument against and no
+# rebuttals.
+
+[contest]
+id = "ca-2026-11-03-escalon-unified-measure-u"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:escalon_unified_school_district"
+kind = "measure"
+title = "Escalon Unified School District Measure U: School Repair and Modernization Bonds"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "San Joaquin County Registrar of Voters, County of San Joaquin Voter Information Guide & Sample Ballot, November 3, 2026: Measure U's ballot question, page 581"
+credit = "Ballot question, San Joaquin County Voter Information Guide"
+url = "https://www.sjgov.org/docs/default-source/registrar-of-voters-documents/elections/gubernatorial-general-election-2026/current-election/sj-composite-eng-(1).pdf?sfvrsn=98168b81_1"
+file = "sources/vig-measure-u-pp581-585.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "San Joaquin County Counsel, Impartial Analysis of Measure U, County of San Joaquin Voter Information Guide & Sample Ballot, November 3, 2026, page 584"
+credit = "Impartial Analysis, San Joaquin County Voter Information Guide"
+url = "https://www.sjgov.org/docs/default-source/registrar-of-voters-documents/elections/gubernatorial-general-election-2026/current-election/sj-composite-eng-(1).pdf?sfvrsn=98168b81_1"
+file = "sources/vig-measure-u-pp581-585.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Escalon Unified School District, Tax Rate Statement for Measure U, County of San Joaquin Voter Information Guide & Sample Ballot, November 3, 2026, page 584"
+credit = "Tax Rate Statement, San Joaquin County Voter Information Guide"
+url = "https://www.sjgov.org/docs/default-source/registrar-of-voters-documents/elections/gubernatorial-general-election-2026/current-election/sj-composite-eng-(1).pdf?sfvrsn=98168b81_1"
+file = "sources/vig-measure-u-pp581-585.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure U, County of San Joaquin Voter Information Guide & Sample Ballot, November 3, 2026, page 585 (the guide prints no argument against)"
+credit = "Arguments, San Joaquin County Voter Information Guide"
+url = "https://www.sjgov.org/docs/default-source/registrar-of-voters-documents/elections/gubernatorial-general-election-2026/current-election/sj-composite-eng-(1).pdf?sfvrsn=98168b81_1"
+file = "sources/vig-measure-u-pp581-585.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure U, Escalon Unified School District Repair, Safety, Modern Education Measure, County of San Joaquin Voter Information Guide & Sample Ballot, November 3, 2026, pages 581-583"
+credit = "Full Text of Measure U, San Joaquin County Voter Information Guide"
+url = "https://www.sjgov.org/docs/default-source/registrar-of-voters-documents/elections/gubernatorial-general-election-2026/current-election/sj-composite-eng-(1).pdf?sfvrsn=98168b81_1"
+file = "sources/vig-measure-u-pp581-585.pdf"
+retrieved = "2026-10-28"
