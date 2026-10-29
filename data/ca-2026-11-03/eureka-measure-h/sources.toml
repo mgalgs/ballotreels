@@ -1,0 +1,50 @@
+# Archived sources for City of Eureka Measure H, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Humboldt County Office of Elections prints Measure H's impartial
+# analysis on page 21 of its Full Voter Information Guide, and nothing
+# else for the measure: no ballot question (its sample ballot pages are
+# placeholders), no argument for or against, no rebuttals and no fiscal
+# statement. The ballot question is the City Council's, from Resolution
+# No. 2026-32, Section 1, in the county's packet for the measure; those
+# pages are a scan with no text layer, so the passages cited were typed
+# from the page images into sources/resolution-2026-32-transcription.txt,
+# whose url is the scan's (as Fowler Measure T's are). The text of the
+# charter amendment (the resolution's Exhibit A) is not in the packet
+# and was not obtained, so no source here is of kind official-text.
+
+[contest]
+id = "ca-2026-11-03-eureka-measure-h"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:eureka"
+kind = "measure"
+title = "City of Eureka Measure H: Mayor and Councilmember Pay"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Eureka, City Council Resolution No. 2026-32, calling a general municipal election for a proposed charter amendment, adopted June 16, 2026: the ballot question, Section 1, and the vote needed, Section 3, page 1 (transcribed from the scan), as posted by the Humboldt County Office of Elections, Measure H - City of Eureka Charter Amendment"
+credit = "Resolution No. 2026-32, City of Eureka"
+url = "https://humboldtgov.org/DocumentCenter/View/156834/Measure-H---City-of-Eureka-Charter-Amendment"
+file = "sources/resolution-2026-32-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure H, prepared by the Eureka City Attorney, Humboldt County Office of Elections, Full Voter Information Guide – November 3, 2026 Statewide General Election, page 21"
+credit = "City Attorney’s Impartial Analysis, Humboldt County Voter Information Guide"
+url = "https://humboldtgov.org/DocumentCenter/View/158656/Full-Voter-Information-Guide---November-3-2026-Statewide-General-Election"
+file = "sources/vig-p21-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "Humboldt County Office of Elections, Full Voter Information Guide – November 3, 2026 Statewide General Election, page 21: Measure H, City of Eureka, Charter Amendment (the guide prints the impartial analysis and no argument for or against)"
+credit = "Humboldt County Voter Information Guide, page 21"
+url = "https://humboldtgov.org/DocumentCenter/View/158656/Full-Voter-Information-Guide---November-3-2026-Statewide-General-Election"
+file = "sources/vig-p21-analysis.pdf"
+retrieved = "2026-10-28"
