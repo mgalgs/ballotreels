@@ -51,6 +51,9 @@ BALLOTS: dict[str, Ballot] = {
     # Bernardino's guide prints no ballot question, which its cards quote
     # from the resolution placing the measure; the guide is still the
     # publication the measure's pages are in.
+    # its ballot label only in the measure's proposed ordinance.
+    # Riverside's guide is titled "County Voter Information Guide" on its
+    # pages, with no county name, so its cards use that name as printed.
     "ca": Ballot(guide="Official Voter Information Guide",
                  fiscal_label="Fiscal Impact:",
                  choices=("Yes", "No"),
@@ -201,6 +204,18 @@ BALLOTS: dict[str, Ballot] = {
                          "Riverside County Voter Information Guide",
                      "ca-2026-11-03-indian-wells-measure-h":
                          "Riverside County Voter Information Guide",
+                     "ca-2026-11-03-perris-union-high-measure-aa":
+                         "County Voter Information Guide",
+                     "ca-2026-11-03-hemet-unified-measure-i":
+                         "County Voter Information Guide",
+                     "ca-2026-11-03-temecula-valley-unified-measure-s":
+                         "County Voter Information Guide",
+                     "ca-2026-11-03-murrieta-valley-unified-measure-m":
+                         "County Voter Information Guide",
+                     "ca-2026-11-03-desert-recreation-measure-p":
+                         "County Voter Information Guide",
+                     "ca-2026-11-03-san-bernardino-ccd-measure-y-riverside":
+                         "County Voter Information Guide",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",
