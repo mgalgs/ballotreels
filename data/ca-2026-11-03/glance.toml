@@ -1538,3 +1538,12 @@ source = "impartial-analysis"
 quote = "Measure M would impose a special tax of $75 per year per parcel, raising approximately $177,600 annually to fund educational programs."
 amount = 177600
 period = "per-year"
+
+# Coast Life Support District Measure D (Sonoma's copy): the pages print
+# no tax rate statement for the parcel tax; the one estimate is the
+# measure question's.
+[coast-life-support-measure-d-sonoma]
+source = "measure-question"
+quote = "providing an estimated $1,972,934 annually, until the tax is amended or repealed"
+amount = 1972934
+period = "per-year"
