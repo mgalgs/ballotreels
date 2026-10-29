@@ -2050,3 +2050,11 @@ source = "ballot-question"
 quote = "which is anticipated to raise up to $20,000 annually, and more, if additional lodging facilities open in the City"
 amount = 20000
 period = "per-year"
+
+# Santa Ynez Valley Union High School District Measure D: the district's
+# Tax Rate Statement, its total debt service (the bonds are $80 million).
+[santa-ynez-valley-measure-d]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $142.1 million."
+amount = 142100000
+period = "unstated"

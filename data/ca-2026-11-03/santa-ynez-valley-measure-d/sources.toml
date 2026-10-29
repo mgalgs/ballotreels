@@ -1,0 +1,66 @@
+# Archived sources for Santa Ynez Valley Union High School District
+# Measure D, 2026-11-03 general election (sources/sources.md). Every id
+# here may be cited by script.toml. `kind` must be one the standard
+# allows (docs/STANDARD.md, section 1).
+#
+# Santa Barbara County Elections prints each ballot type's County Voter
+# Information Guide as one PDF; pages 26 to 31 (impartial analysis, tax
+# rate statement, argument in favor, full text) and 36 to 37 (sample
+# ballot) of Ballot Type 40 were cut into one excerpt, which backs every
+# source here. The ballot labels the measure "Measure D2026"; the project
+# names it by its bare letter. County Counsel's impartial analysis is the
+# measure's neutral explanation; the district's Tax Rate Statement is its
+# fiscal statement. No argument against was filed, and no rebuttals are
+# printed.
+
+[contest]
+id = "ca-2026-11-03-santa-ynez-valley-measure-d"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:santa_ynez_valley_union_high_school_district"
+kind = "measure"
+title = "Santa Ynez Valley Union High School District Measure D: School Facility Bonds"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 40, page 37: Sample Ballot, Santa Ynez Valley Union High School District Measure D2026"
+credit = "Sample Ballot, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000040.pdf"
+file = "sources/VIG-bt040_pp26-31_36-37.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure D2026, Santa Ynez Valley Union High School District, Rachel Van Mullem, County Counsel, County of Santa Barbara, Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 40, page 26"
+credit = "County Counsel’s Impartial Analysis, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000040.pdf"
+file = "sources/VIG-bt040_pp26-31_36-37.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Santa Ynez Valley Union High School District, Tax Rate Statement for Measure D2026, Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 40, page 27"
+credit = "Tax Rate Statement, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000040.pdf"
+file = "sources/VIG-bt040_pp26-31_36-37.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure D2026, Santa Ynez Valley Union High School District, Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 40, page 28 (no argument against was filed)"
+credit = "Arguments, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000040.pdf"
+file = "sources/VIG-bt040_pp26-31_36-37.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure D2026, Santa Ynez Valley Union High School District, with its Project List, Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 40, pages 28 to 31"
+credit = "Measure D2026 full text, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000040.pdf"
+file = "sources/VIG-bt040_pp26-31_36-37.pdf"
+retrieved = "2026-10-28"
