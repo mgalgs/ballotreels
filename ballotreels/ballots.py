@@ -291,6 +291,20 @@ BALLOTS: dict[str, Ballot] = {
                          "RESOLUTION NO. 2026-28",
                      "ca-2026-11-03-portola-valley-measure-n":
                          "RESOLUTION NO. 3010-2026",
+                     # Sonoma County's Registrar of Voters publishes each
+                     # measure's guide pages as one PDF headed "Local
+                     # Ballot Measure: H"; no page naming the guide was
+                     # archived, so the card names the pages as headed.
+                     "ca-2026-11-03-sonoma-county-measure-h":
+                         "Local Ballot Measure: H",
+                     "ca-2026-11-03-santa-rosa-junior-college-measure-ab":
+                         "Local Ballot Measure: AB",
+                     "ca-2026-11-03-santa-rosa-measure-l":
+                         "Local Ballot Measure: L",
+                     "ca-2026-11-03-rohnert-park-measure-k":
+                         "Local Ballot Measure: K",
+                     "ca-2026-11-03-windsor-measure-i":
+                         "Local Ballot Measure: I",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
