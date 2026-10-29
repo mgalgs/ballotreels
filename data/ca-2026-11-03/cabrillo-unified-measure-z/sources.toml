@@ -1,0 +1,63 @@
+# Archived sources for Cabrillo Unified School District Measure Z,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# San Mateo County publishes each measure's documents separately, not as
+# one pamphlet: the Board of Trustees' resolution (whose Exhibit A is the
+# ballot label and Exhibit B the full ballot text), the impartial
+# analysis, and the argument in favor, as its own PDF on the
+# Assessor-County Clerk-Recorder & Elections page. No argument against
+# and no rebuttal is among the posted documents. The impartial analysis
+# prints no author, and the posted file ends after its "yes" sentence.
+# A parcel tax has no tax rate statement; the revenue estimate is the
+# impartial analysis's (and the ballot label's).
+#
+# Every PDF here is a scan, with no text layer or a rough OCR one. Each
+# source's `file` is therefore a transcription of the pages the script
+# quotes, made by reading the page images, beside the PDF it transcribes
+# (sources/<name>.txt for sources/<name>.pdf); `url` is the PDF's. The
+# check reads a non-PDF file as plain text.
+
+[contest]
+id = "ca-2026-11-03-cabrillo-unified-measure-z"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:cabrillo_unified_school_district"
+kind = "measure"
+title = "Cabrillo Unified School District Measure Z: Replacement Education Parcel Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Board of Trustees of the Cabrillo Unified School District, Resolution No. 09-2026, Exhibit A: Summary of Measure (ballot label), as posted by San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Resolution No. 09-2026"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M109-Contest%20Code-Reso-Cabrillo%20USD%20Parcel%20Tax.pdf"
+file = "sources/resolution-full-text.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "Impartial Analysis of Measure Z (no author printed), as posted by San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Impartial Analysis"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MZ-ImpartialAnalysis-Cabrillo-USD-Parcel-Tax.pdf"
+file = "sources/impartial-analysis.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Board of Trustees of the Cabrillo Unified School District, Resolution No. 09-2026, with Exhibit B: Full Ballot Text"
+credit = "Resolution No. 09-2026"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M109-Contest%20Code-Reso-Cabrillo%20USD%20Parcel%20Tax.pdf"
+file = "sources/resolution-full-text.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure Z, as filed with the San Mateo County Chief Elections Officer (no argument against appears in the published measure documents)"
+credit = "Argument in Favor"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M109-Contest%20Code-5ArgInFavor-Cabrillo%20USD%20Parcel%20Tax_Redacted.pdf"
+file = "sources/argument-for.txt"
+retrieved = "2026-10-28"

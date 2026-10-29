@@ -994,3 +994,12 @@ source = "impartial-analysis"
 quote = "is estimated to raise approximately $3,400,000 annually."
 amount = 3400000
 period = "per-year"
+
+# Cabrillo Unified School District Measure Z: a parcel tax, so no tax
+# rate statement; the estimate is the Impartial Analysis's (the ballot
+# label gives it as $2,600,000).
+[cabrillo-unified-measure-z]
+source = "impartial-analysis"
+quote = "which tax is estimated to raise approximately $2.6 million annually."
+amount = 2600000
+period = "per-year"
