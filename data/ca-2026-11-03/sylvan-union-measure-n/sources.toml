@@ -1,0 +1,73 @@
+# Archived sources for Sylvan Union School District Measure N,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Stanislaus County Registrar of Voters prints Measure N's full
+# text, County Counsel's impartial analysis, the district's tax rate
+# statement and the argument in favor on PDF pages 65-76 of its
+# bilingual Voter Information Guide; sources/vig-measure-n-pdfpp65-76.pdf
+# is those pages cut from it, and every source from it cites the full
+# guide's URL with the pages. The guide does not print the ballot
+# question: it is quoted from the Registrar's Notice of Election for
+# Measure N. County Counsel's impartial analysis is the measure's
+# neutral explanation, the kind a state's attorney general's
+# explanatory statement is; the district's tax rate statement is its
+# fiscal statement. The guide prints "None filed" under the argument
+# against, and no rebuttals.
+#
+# The ballot and these documents call the district "Sylvan Union School
+# District"; its Census boundary is named "Sylvan Union Elementary
+# School District" (divisions.tsv), the same district.
+
+[contest]
+id = "ca-2026-11-03-sylvan-union-measure-n"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:sylvan_union_elementary_school_district"
+kind = "measure"
+title = "Sylvan Union School District Measure N: Student Safety and Classroom Modernization Bonds"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Stanislaus County Registrar of Voters, Notice of Election / Notice of Argument Filing Deadlines, Sylvan Union School District - Measure N, dated July 12, 2026: the ballot question"
+credit = "Notice of Election, Stanislaus County Registrar of Voters"
+url = "https://www.stanvote.gov/pdf/public_notices/20261103_notice_of_election_publication-measure-n-sylvan.pdf"
+file = "sources/notice-measure-n-sylvan.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Stanislaus County Counsel, Impartial Analysis by County Counsel, Sylvan Union School District – Measure N, Stanislaus County Voter Information Guide, General Election, November 3, 2026, PDF page 73"
+credit = "Impartial Analysis, Stanislaus County Voter Information Guide"
+url = "https://www.stanvote.gov/pdf/voter-guides/20261103.pdf"
+file = "sources/vig-measure-n-pdfpp65-76.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Sylvan Union School District, Tax Rate Statement, Measure N, Stanislaus County Voter Information Guide, General Election, November 3, 2026, PDF page 75"
+credit = "Tax Rate Statement, Stanislaus County Voter Information Guide"
+url = "https://www.stanvote.gov/pdf/voter-guides/20261103.pdf"
+file = "sources/vig-measure-n-pdfpp65-76.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor, Sylvan Union School District – Measure N, Stanislaus County Voter Information Guide, General Election, November 3, 2026, PDF page 76 (argument against: \"None filed\")"
+credit = "Arguments, Stanislaus County Voter Information Guide"
+url = "https://www.stanvote.gov/pdf/voter-guides/20261103.pdf"
+file = "sources/vig-measure-n-pdfpp65-76.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text, Sylvan Union School District – Measure N, Stanislaus County Voter Information Guide, General Election, November 3, 2026, PDF pages 65-72"
+credit = "Full Text of Measure N, Stanislaus County Voter Information Guide"
+url = "https://www.stanvote.gov/pdf/voter-guides/20261103.pdf"
+file = "sources/vig-measure-n-pdfpp65-76.pdf"
+retrieved = "2026-10-28"
