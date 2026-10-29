@@ -440,6 +440,20 @@ BALLOTS: dict[str, Ballot] = {
                      "ca-2026-11-03-south-placer-fire-measure-b":
                          "Measure B — South Placer Fire Protection District, "
                          "Fire and Emergency Medical Response Measure",
+                     # Solano County's printed guide was not archived; the
+                     # Registrar posts each measure's filed documents, and
+                     # each card quotes its ballot question from the
+                     # resolution placing the measure, named as headed
+                     "ca-2026-11-03-solano-county-measure-e":
+                         "Resolution No. 2026-164",
+                     "ca-2026-11-03-solano-county-measure-h":
+                         "Resolution No. 2026-150",
+                     "ca-2026-11-03-fairfield-measure-p":
+                         "Resolution No. 2026-159",
+                     "ca-2026-11-03-fairfield-measure-q":
+                         "Resolution No. 2026-158",
+                     "ca-2026-11-03-vacaville-measure-v":
+                         "Resolution No. 2026-106",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
