@@ -1410,3 +1410,12 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $657,200,000."
 amount = 657200000
 period = "unstated"
+
+# Tahoe Truckee Unified School District Measure P: a parcel tax, so no
+# tax rate statement; County Counsel's Impartial Analysis gives the
+# measure's revenue estimate.
+[tahoe-truckee-unified-measure-p]
+source = "impartial-analysis"
+quote = "The measure estimates that the tax would generate approximately $7 million annually"
+amount = 7000000
+period = "per-year"

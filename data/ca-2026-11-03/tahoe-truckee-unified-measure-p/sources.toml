@@ -1,0 +1,58 @@
+# Archived sources for Tahoe Truckee Unified School District Measure P,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Placer County Elections publishes no combined guide document; it posts
+# each measure's guide pages as one PDF, headed "MEASURE P" and
+# "EDUCATION PARCEL TAX MEASURE – TAHOE TRUCKEE UNIFIED SCHOOL DISTRICT",
+# paged MP1 to MP6. One PDF backs every source here. A parcel tax has no
+# tax rate statement: County Counsel's Impartial Analysis is the measure's
+# neutral explanation and states its revenue estimate.
+#
+# The district reaches Placer, Nevada and El Dorado counties. Its
+# boundary is a Census school district, so this one contest, on the
+# whole district's division, reaches voters in all three; Placer County
+# Counsel wrote the impartial analysis, so Placer's pages are cited.
+
+[contest]
+id = "ca-2026-11-03-tahoe-truckee-unified-measure-p"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:tahoe-truckee_unified_school_district"
+kind = "measure"
+title = "Tahoe-Truckee Unified Measure P: Education Parcel Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Placer County Elections, Measure P: Education Parcel Tax Measure – Tahoe Truckee Unified School District, page MP1: the ballot question"
+credit = "Measure P, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure_P.pdf"
+file = "sources/11032026_Measure_P.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "Placer County Counsel, County Counsel’s Impartial Analysis of Measure P, Placer County Elections, Measure P, page MP1"
+credit = "Impartial Analysis, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure_P.pdf"
+file = "sources/11032026_Measure_P.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure P, the notice that no rebuttal to it was submitted, and the Argument Against Measure P and its rebuttal, Placer County Elections, Measure P, pages MP2 to MP3"
+credit = "Arguments, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure_P.pdf"
+file = "sources/11032026_Measure_P.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure P Submitted by Tahoe Truckee Unified School District, Placer County Elections, Measure P, pages MP4 to MP6"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure_P.pdf"
+file = "sources/11032026_Measure_P.pdf"
+retrieved = "2026-10-28"
