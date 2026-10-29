@@ -1821,3 +1821,9 @@ source = "impartial-analysis"
 quote = "First-year revenue under this structure is estimated to be approximately $1,612,000."
 amount = 1612000
 period = "per-year"
+
+# City of Benicia Measure Y: a charter; no fiscal statement applies, and
+# the City Attorney's impartial analysis gives no estimate.
+[benicia-measure-y]
+source = "impartial-analysis"
+status = "none-printed"
