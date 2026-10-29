@@ -1,0 +1,66 @@
+# Archived sources for Shasta-Tehama-Trinity Joint Community College
+# District Measure C, 2026-11-03 general election, as Modoc County's
+# voters see it (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Modoc County posts no voter guide for this election, only each
+# measure's documents. For Measure C that is the district's packet, one
+# PDF with a text layer: the board's resolution, the full text of the
+# measure (Appendix A), the ballot question (Appendix B, page 13) and
+# the tax rate statement (Appendix C, pages 14 and 15), the measure's
+# fiscal statement; and the argument in favor. Modoc posts no impartial
+# analysis (the Trinity and Lassen guides print it) and no argument
+# against, and with no guide of its own it is not known from Modoc's
+# documents whether one was filed.
+#
+# A community college district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md). The district reaches into six counties (the
+# tax rate statement names them); Shasta, its home county, keeps the
+# plain shasta-tehama-trinity-jccd-measure-c, and Tehama, Trinity, Lassen,
+# Modoc and Humboldt each stage the same measure under a suffixed id.
+
+[contest]
+id = "ca-2026-11-03-shasta-tehama-trinity-jccd-measure-c-modoc"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:modoc"
+kind = "measure"
+title = "Shasta-Tehama-Trinity Joint Community College District Measure C: College Facility Bonds"
+voters = "the Shasta-Tehama-Trinity Joint Community College District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Shasta-Tehama-Trinity Joint Community College District, Resolution No. 2025-26-18, Appendix B: Abbreviated Form of Bond Measure, packet page 13, as posted by Modoc County Elections, Measure C - Shasta-Tehama-Trinity Joint Community College District"
+credit = "Resolution No. 2025-26-18, Shasta-Tehama-Trinity Joint Community College District"
+url = "https://www.countyofmodoc.gov/DocumentCenter/View/1641/Measure-C---Shasta-Tehama-Trinity-Joint-Community-College-District-PDF"
+file = "sources/measure-c-county-packet.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Shasta-Tehama-Trinity Joint Community College District, Appendix C: Tax Rate Statement, signed by Dr. Frank Nigro, Superintendent/President, packet pages 14 and 15, as posted by Modoc County Elections, Measure C - Shasta-Tehama-Trinity Joint Community College District"
+credit = "Tax Rate Statement, Shasta-Tehama-Trinity Joint Community College District"
+url = "https://www.countyofmodoc.gov/DocumentCenter/View/1641/Measure-C---Shasta-Tehama-Trinity-Joint-Community-College-District-PDF"
+file = "sources/measure-c-county-packet.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure C, Shasta-Tehama-Trinity Joint Community College District, as posted by Modoc County Elections, Measure C - Argument in Favor (no argument against is posted)"
+credit = "Argument in Favor, Modoc County Elections"
+url = "https://www.countyofmodoc.gov/DocumentCenter/View/1640/Measure-C---Argument-in-Favor-PDF"
+file = "sources/argument-in-favor.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Shasta-Tehama-Trinity Joint Community College District, Resolution No. 2025-26-18 ordering the bond election, with Appendix A, the full text of the bond measure and its project list, packet pages 1 to 12, as posted by Modoc County Elections, Measure C - Shasta-Tehama-Trinity Joint Community College District"
+credit = "Resolution No. 2025-26-18, Shasta-Tehama-Trinity Joint Community College District"
+url = "https://www.countyofmodoc.gov/DocumentCenter/View/1641/Measure-C---Shasta-Tehama-Trinity-Joint-Community-College-District-PDF"
+file = "sources/measure-c-county-packet.pdf"
+retrieved = "2026-10-28"

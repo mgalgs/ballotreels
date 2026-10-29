@@ -1,0 +1,201 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the tax voters approved in 1987
+# and the vote Measure I needs; what would change (the new amounts and
+# when, what the money is for, how long it lasts); the ballot question's
+# revenue estimate; one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this fire protection district". The card
+# and title carry the name.
+#
+# The district reaches into Siskiyou and Modoc counties; this is its
+# Modoc contest, a copy of the Siskiyou one (tulelake-fpd-measure-i),
+# which was scripted from these same Modoc County documents: only the
+# contest and division differ. Neither county posts an impartial
+# analysis, so the neutral lines rest on the District's own Resolution No. 2026-4 (the
+# ballot question, the card's source) and Ordinance No. 26-01 (the full
+# text): the 1987 amounts and the new ones, the start year, the
+# two-thirds vote, the special fund and its uses, and that the tax lasts
+# until voters repeal it. The ordinance's word for what is replaced is an
+# "increase to the existing special parcel tax", so the change line says
+# the amounts would rise. The resolution prints no yes/no lines, so the
+# card has no YES/NO boxes and both vote lines highlight the question's
+# own "be adopted?", as Livingston T's do.
+#
+# That the tax has stayed the same while living costs rose is the
+# argument in favor's point; the neutral "today" line gives only the
+# ordinance's 1987 amounts, with no word on whether or why they changed
+# (STANDARD.md 6.3). The ballot question's $106,250 a year has no scale:
+# no archived official source states the district's budget (STANDARD.md
+# 6.5; left open). The tax amounts are per parcel (exempt).
+#
+# No argument against Measure I is posted by either county, and it is
+# not known whether one was filed (sources/sources.md), so the no side
+# says none is among the documents either county posted (filed = false, STANDARD.md
+# 2.5), as Livingston T's sides do. The argument in favor names its
+# signers; with no one on the record for the other side, the script
+# names no one. The argument's scanned text layer is doubled, so its
+# basis matches the PDF's printed-order text (checks._loose_archived).
+
+contest = "ca-2026-11-03-tulelake-fpd-measure-i-modoc"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "I"
+title = "RESOLUTION NO. 2026-4"
+origin = "PASSED AND ADOPTED by the Tulelake Multi-County Fire Protection District"
+summary = "Shall an ordinance of the Tulelake Multi-County Fire Protection District imposing an annual special parcel tax to maintain and improve fire protection and prevention services in the amount of $50 per parcel for unimproved parcels, $100 per parcel for improved parcels, and $150 for commercial parcels for each business occupancy, estimated to raise approximately $106,250 annually, which shall continue until repealed by the voters, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure I"
+
+[[section.line]]
+text = "Measure I asks the voters of this fire protection district whether to raise the district's yearly parcel tax for fire protection."
+sources = ["ballot-question", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["an annual special parcel tax to maintain and improve fire protection and prevention services"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-tax"
+text = "In 1987, the district's voters approved a yearly tax of $16 for each vacant parcel, $25 for each improved parcel and $50 for each business."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "farmland-town-edge"
+
+[[section.line]]
+id = "threshold"
+text = "Measure I needs two-thirds of the vote to pass."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "amounts"
+text = "Measure I would raise those amounts to $50, $100 and $150, starting in the 2027-2028 fiscal year."
+sources = ["ballot-question", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["$50 per parcel for unimproved parcels, $100 per parcel for improved parcels, and $150 for commercial parcels for each business occupancy"]
+
+[[section.line]]
+id = "uses"
+text = "The money would go to a special fund for fire, rescue, emergency medical and ambulance services."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "fire-station-engine"
+
+[[section.line]]
+id = "duration"
+text = "The tax would continue until the district's voters repeal it."
+sources = ["ballot-question", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section]]
+id = "fiscal"
+heading = "What the measure says"
+
+[[section.line]]
+text = "The ballot question estimates the tax would raise about $106,250 a year."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "set-aside-funds"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say living costs rose over 177 percent while the tax stayed the same, putting services and fire insurance at risk."
+sources = ["argument-for"]
+basis = ["The Cost of Living Index has risen by 177.35% since then but the District's parcel tax has remained the same.", "Without increased funding the result could be a reduction in fire and medical services and a possible loss of fire insurance on property within the District."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Tax unchanged as living costs rose 177%", "Without it, services and insurance at risk"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure I appears among the official documents that either county has posted online for this ballot measure."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the ordinance raising the parcel tax to the new amounts."
+sources = ["ballot-question", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["be adopted?"]
+
+[[section.line]]
+text = "A no vote means the ordinance raising the parcel tax does not take effect."
+sources = ["ballot-question", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["be adopted?"]
+
+[[question]]
+ask = "How much would my parcel pay?"
+lines = ["today-tax", "amounts"]
+
+[[question]]
+ask = "What would the money pay for?"
+lines = ["uses"]
+
+[[question]]
+ask = "How long would the tax last?"
+lines = ["duration"]
+
+[[question]]
+ask = "What vote does the measure need to pass?"
+lines = ["threshold"]
+
+[[question]]
+ask = "How large is $106,250 next to the district's budget?"
+unanswered = true

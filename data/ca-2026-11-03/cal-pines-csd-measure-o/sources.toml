@@ -1,0 +1,56 @@
+# Archived sources for California Pines Community Services District
+# Measure O, 2026-11-03 general election (sources/sources.md). Every id
+# here may be cited by script.toml. `kind` must be one the standard
+# allows (docs/STANDARD.md, section 1).
+#
+# Modoc County posts no voter guide for this election, only each
+# measure's documents. For Measure O that is the District's packet, its
+# Resolution No. 2026-F (pages 1 to 3; the ballot question is on page 2)
+# with Exhibit A, the ordinance that is the measure's full text (pages 5
+# to 7), and County Counsel's impartial analysis, the measure's neutral
+# explanation. No argument for or against is posted, and with no guide
+# to check it is not known whether one was filed. A flat parcel tax has
+# no tax rate statement.
+#
+# A community services district has no Census boundary, so the
+# measure's division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md). The tax is levied only on parcels in Lake
+# Units 1B, 3 and 4 and the Mobile Home Park (the "CSD Area"), but the
+# resolution says who votes: "All persons qualified and registered to
+# vote in the District as of the date of such election shall be
+# entitled to vote" (Section 7), so `voters` names the whole District.
+
+[contest]
+id = "ca-2026-11-03-cal-pines-csd-measure-o"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:modoc"
+kind = "measure"
+title = "California Pines Community Services District Measure O: District Services Parcel Tax Increase"
+voters = "the California Pines Community Services District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "California Pines Community Services District, Board of Directors Resolution No. 2026-F, approving the Services Special Parcel Tax Measure and ordering its submittal to the voters, adopted June 24, 2026: the ballot question, page 2, as posted by Modoc County Elections, Measure O - Cal Pines CSD"
+credit = "Resolution No. 2026-F, California Pines Community Services District"
+url = "https://www.countyofmodoc.gov/DocumentCenter/View/1644/Measure-O---Cal-Pines-CSD-PDF"
+file = "sources/measure-o-county-packet.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis by County Counsel, California Pines Community Services District, Measure O, Margaret Long, Modoc County Counsel, as posted by Modoc County Elections"
+credit = "Impartial Analysis, Modoc County Counsel"
+url = "https://www.countyofmodoc.gov/DocumentCenter/View/1661/Measure-O---Impartial-Analysis-"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "California Pines Community Services District, Exhibit A to Resolution No. 2026-F: the ordinance increasing the District's special parcel tax for community services district services from $66 to $116 per year, pages 5 to 7, as posted by Modoc County Elections, Measure O - Cal Pines CSD"
+credit = "Ordinance, Exhibit A to Resolution No. 2026-F, California Pines Community Services District"
+url = "https://www.countyofmodoc.gov/DocumentCenter/View/1644/Measure-O---Cal-Pines-CSD-PDF"
+file = "sources/measure-o-county-packet.pdf"
+retrieved = "2026-10-28"

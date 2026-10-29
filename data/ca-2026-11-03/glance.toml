@@ -2505,3 +2505,42 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $264,800,000."
 amount = 264800000
 period = "unstated"
+
+# California Pines Community Services District Measure P (Modoc): a
+# parcel tax has no tax rate statement; the one estimate is County
+# Counsel's Impartial Analysis's, the added revenue a year.
+[cal-pines-csd-measure-p]
+source = "impartial-analysis"
+quote = "The increased tax is expected to generate approximately Seven Hundred Fifty-Five Thousand dollars ($755,000.00) in additional annual revenue"
+amount = 755000
+period = "per-year"
+
+# California Pines Community Services District Measure O (Modoc): a
+# parcel tax has no tax rate statement; the one estimate is County
+# Counsel's Impartial Analysis's, what the increased tax would raise a
+# year.
+[cal-pines-csd-measure-o]
+source = "impartial-analysis"
+quote = "generate approximately Ninety-Eight Thousand dollars ($98,000.00) per year"
+amount = 98000
+period = "per-year"
+
+# Tulelake Multi-County Fire Protection District Measure I (Modoc
+# County's contest): no impartial analysis or tax rate statement is
+# posted; the one estimate is the ballot question's, as Siskiyou's
+# contest gives it.
+[tulelake-fpd-measure-i-modoc]
+source = "ballot-question"
+quote = "estimated to raise approximately $106,250 annually"
+amount = 106250
+period = "per-year"
+
+# Shasta-Tehama-Trinity Joint Community College District Measure C,
+# Modoc County's contest: the district's Tax Rate Statement, its total
+# debt service, as Humboldt's contest gives it (the bonds are
+# $129,630,000).
+[shasta-tehama-trinity-jccd-measure-c-modoc]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $264,800,000."
+amount = 264800000
+period = "unstated"
