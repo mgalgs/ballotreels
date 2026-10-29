@@ -1,0 +1,331 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 84.59,
+  "phrases": [
+    {
+      "text": "Measure K asks the voters of this road zone whether to replace its $260 yearly road assessment with a $520 tax per parcel.",
+      "start": 0.03,
+      "end": 10.37
+    },
+    {
+      "text": "The county formed the zone in 1985 to pay for road improvements and maintenance.",
+      "start": 11.03,
+      "end": 16.38
+    },
+    {
+      "text": "The county counts 62 registered voters living in the zone.",
+      "start": 17.04,
+      "end": 20.76
+    },
+    {
+      "text": "The Board of Supervisors placed Measure K on the ballot at the request of the zone's advisory committee.",
+      "start": 21.42,
+      "end": 26.25
+    },
+    {
+      "text": "Measure K needs two-thirds of the vote to pass.",
+      "start": 26.91,
+      "end": 30.05
+    },
+    {
+      "text": "The new tax would apply to every parcel, built on or not, starting in the 2027-2028 fiscal year.",
+      "start": 30.71,
+      "end": 38.61
+    },
+    {
+      "text": "The tax could rise each year with a construction cost index, by no more than 3 percent a year.",
+      "start": 39.27,
+      "end": 45.44
+    },
+    {
+      "text": "The money could pay only for the roads in the zone, and the tax would last until voters change or repeal it.",
+      "start": 46.1,
+      "end": 53.02
+    },
+    {
+      "text": "If Measure K fails, the $260 assessment stays.",
+      "start": 53.68,
+      "end": 58.17
+    },
+    {
+      "text": "The county attorney's impartial analysis expects the tax to raise about $11,960 a year.",
+      "start": 58.83,
+      "end": 65.95
+    },
+    {
+      "text": "No argument for Measure K was submitted.",
+      "start": 66.61,
+      "end": 69.28
+    },
+    {
+      "text": "No argument against Measure K was submitted.",
+      "start": 69.94,
+      "end": 73.15
+    },
+    {
+      "text": "A yes vote authorizes the tax of $520 per parcel a year.",
+      "start": 73.81,
+      "end": 78.93
+    },
+    {
+      "text": "A no vote is against the tax, and the $260 assessment stays.",
+      "start": 79.59,
+      "end": 84.56
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure K asks the voters of this road zone whether to replace its $260 yearly road assessment with a $520 tax per parcel.",
+      "The county formed the zone in 1985 to pay for road improvements and maintenance.",
+      "The county counts 62 registered voters living in the zone.",
+      "The Board of Supervisors placed Measure K on the ballot at the request of the zone's advisory committee.",
+      "Measure K needs two-thirds of the vote to pass.",
+      "The new tax would apply to every parcel, built on or not, starting in the 2027-2028 fiscal year.",
+      "The tax could rise each year with a construction cost index, by no more than 3 percent a year.",
+      "The money could pay only for the roads in the zone, and the tax would last until voters change or repeal it.",
+      "If Measure K fails, the $260 assessment stays.",
+      "The county attorney's impartial analysis expects the tax to raise about $11,960 a year.",
+      "No argument for Measure K was submitted.",
+      "No argument against Measure K was submitted.",
+      "A yes vote authorizes the tax of $520 per parcel a year.",
+      "A no vote is against the tax, and the $260 assessment stays."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure K asks the voters of this road zone whether to replace its $260 yearly road assessment with a $520 tax per parcel."
+      },
+      "bounds": [
+        0,
+        249600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure K asks the voters of this road zone whether to replace its $260 yearly road assessment with a $520 tax per parcel.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The county formed the zone in 1985 to pay for road improvements and maintenance."
+      },
+      "bounds": [
+        264000,
+        393840
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The county formed the zone in 1985 to pay for road improvements and maintenance.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The county counts 62 registered voters living in the zone."
+      },
+      "bounds": [
+        408240,
+        498960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The county counts 62 registered voters living in the zone.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The Board of Supervisors placed Measure K on the ballot at the request of the zone's advisory committee."
+      },
+      "bounds": [
+        513360,
+        630720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Board of Supervisors placed Measure K on the ballot at the request of the zone's advisory committee.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure K needs two-thirds of the vote to pass."
+      },
+      "bounds": [
+        645120,
+        721920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure K needs two-thirds of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The new tax would apply to every parcel, built on or not, starting in the 2027-2028 fiscal year."
+      },
+      "bounds": [
+        736320,
+        927360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The new tax would apply to every parcel, built on or not, starting in the 2027-2028 fiscal year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The tax could rise each year with a construction cost index, by no more than 3 percent a year."
+      },
+      "bounds": [
+        941760,
+        1091280
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The tax could rise each year with a construction cost index, by no more than 3 percent a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money could pay only for the roads in the zone, and the tax would last until voters change or repeal it."
+      },
+      "bounds": [
+        1105680,
+        1273200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money could pay only for the roads in the zone, and the tax would last until voters change or repeal it.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "If Measure K fails, the $260 assessment stays."
+      },
+      "bounds": [
+        1287600,
+        1396800
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"If Measure K fails, the $260 assessment stays.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The county attorney's impartial analysis expects the tax to raise about $11,960 a year."
+      },
+      "bounds": [
+        1411200,
+        1583520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The county attorney's impartial analysis expects the tax to raise about $11,960 a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument for Measure K was submitted."
+      },
+      "bounds": [
+        1597920,
+        1663440
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure K was submitted.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument against Measure K was submitted."
+      },
+      "bounds": [
+        1677840,
+        1756320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure K was submitted.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote authorizes the tax of $520 per parcel a year."
+      },
+      "bounds": [
+        1770720,
+        1895040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote authorizes the tax of $520 per parcel a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote is against the tax, and the $260 assessment stays."
+      },
+      "bounds": [
+        1909440,
+        2030160
+      ]
+    }
+  ],
+  "sha256": "e4a1154aba4bdaf64e6bc8c2749481ebede1881b24a8bdad8a4a54b56b5f4edf"
+}
