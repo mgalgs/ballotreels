@@ -2204,3 +2204,9 @@ source = "impartial-analysis"
 quote = "City staff has estimated that Measure “C-26” could provide an additional $500,000 in annual local funding if the tax were levied at a 6% rate."
 amount = 500000
 period = "per-year"
+
+# Arroyo Grande Measure D: not a tax; the guide prints no fiscal
+# statement for it.
+[arroyo-grande-measure-d]
+source = "impartial-analysis"
+status = "none-printed"
