@@ -114,11 +114,11 @@ sources = ["tax-statement"]
 
 [section.line.visual]
 kind = "bars"
-title = "Bonds and total to repay, millions of dollars"
+title = "Bonds and estimated total to repay, millions of dollars"
 source = "tax-statement"
 unit = ""
 labels = ["Bonds", "Total to repay"]
-values = [16, 33.635]
+values = [16, 33.6]
 
 [[section.line]]
 id = "total"
