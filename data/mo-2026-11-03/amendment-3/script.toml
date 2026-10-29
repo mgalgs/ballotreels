@@ -1,0 +1,170 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about (both subjects, equally); what the Constitution provides
+# today; what the amendment would change, for abortion and for gender
+# transition procedures for minors; what the State Auditor's fiscal note
+# summary says; the two sides; what a vote does.
+#
+# The card quotes the Secretary of State's "2026 Ballot Measures" page:
+# the Official Ballot Title's question as title (its five lines run
+# together as printed; the card sets one paragraph), the resolution it
+# was proposed by as origin, the Fair Ballot Language's tax sentence as
+# summary, the fiscal note summary paragraph printed under the title as
+# fiscal (headed "Fiscal Note Summary", as the State Auditor's fiscal
+# note heads it), and the Fair Ballot Language's "yes" and "no" vote
+# sentences.
+#
+# Wording: every description of the change is the Fair Ballot Language's
+# own ("repeal", "allow restriction of abortions to cases of medical
+# emergency, rape and incest under twelve weeks gestation, and fetal
+# anomalies", "prohibit gender transition procedures for minors ...
+# with exceptions for specific medical conditions"), and Section 36 is
+# described only as the page does ("approved by the voters in 2024",
+# "reproductive healthcare rights, including abortion through fetal
+# viability"). The narration says "Section 36", not "Article I, Section
+# 36", so the transcript check does not meet a Roman numeral; the card
+# keeps the full name. The resolution's own summary statement (its
+# Section B) is not the certified ballot title and is not used.
+#
+# Missouri publishes no official arguments for or against a measure:
+# both sides are filed = false and each says so once, in the same number
+# of words. No person is named.
+#
+# Highlights in the YES and NO boxes balance at three each: "rape and
+# incest under twelve weeks gestation", which both boxes print (one
+# each), then two per vote line.
+
+contest = "mo-2026-11-03-amendment-3"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "sos-page"
+number = "3"
+title = "Shall the Missouri Constitution be amended to: Repeal the 2024 voter-approved Amendment providing reproductive healthcare rights, including abortion through fetal viability; Allow abortions for rape and incest (under twelve-weeks' gestation), emergencies, and fetal anomalies; Allow legislation regulating abortion; Ensure parental consent for minors' abortions; Prohibit gender transition procedures for minors?"
+origin = "Proposed by 103rd General Assembly (First Regular Session) HCS HJR 73"
+summary = "If passed, this measure will not increase or decrease taxes."
+fiscal = "State governmental entities estimate no costs or savings. Greene County estimates it may experience an unknown increase in tax revenue. Other local governmental entities estimate no costs or savings."
+yes = "A \"yes\" vote will repeal Article I, Section 36, of the Missouri Constitution approved by the voters in 2024 which provided reproductive healthcare rights, including abortion through fetal viability; continue to ensure women's ability to access medical care for medical emergencies, ectopic pregnancies, and miscarriages; allow legislation to regulate abortion providers and facilities to ensure health and safety; require informed and voluntary consent for an abortion, including parental or judicial consent for minors; allow restriction of abortions to cases of medical emergency, rape and incest under twelve weeks gestation, and fetal anomalies; prohibit public funding of abortions except in limited circumstances; and prohibit gender transition procedures for minors including gender transition surgeries, cross-sex hormones or puberty-blocking drugs, with exceptions for specific medical conditions."
+no = "A \"no\" vote will leave Article I, Section 36, of the Missouri Constitution approved by voters in 2024 in place; will not limit abortion to cases of medical emergency, rape and incest under twelve weeks gestation, and fetal anomalies, but leave access to abortion available through fetal viability; will not prohibit gender transition procedures for minors."
+
+[[section]]
+id = "what"
+heading = "Amendment 3"
+
+[[section.line]]
+text = "Amendment 3 is about abortion, and about gender transition procedures for minors."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["Allow legislation regulating abortion", "Prohibit gender transition procedures for minors"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, Section 36 of the Constitution, approved by voters in 2024, provides reproductive healthcare rights, including abortion through fetal viability."
+sources = ["sos-page", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would repeal that section, and allow legislation to regulate abortion providers and facilities."
+sources = ["sos-page", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["Repeal the 2024 voter-approved Amendment", "Allow legislation regulating abortion"]
+
+[[section.line]]
+text = "The amendment would allow restriction of abortion to cases of medical emergency, rape and incest under twelve weeks gestation, and fetal anomalies."
+sources = ["sos-page", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["rape and incest under twelve weeks gestation"]
+
+[[section.line]]
+text = "The amendment would prohibit gender transition procedures for minors, with exceptions for specific medical conditions."
+sources = ["sos-page", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["Prohibit gender transition procedures for minors"]
+
+[[section]]
+id = "fiscal"
+heading = "What the State Auditor says"
+
+[[section.line]]
+text = "The State Auditor's fiscal note summary says state and other local governmental entities estimate no costs or savings; Greene County estimates it may experience an unknown increase in tax revenue."
+sources = ["fiscal-note", "sos-page"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["estimate no costs or savings", "Greene County estimates it may experience an unknown increase in tax revenue"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Missouri publishes no official argument for the amendment."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "list"
+source = "sos-page"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Missouri publishes no official argument against the amendment."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "list"
+source = "sos-page"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote will repeal Section 36, and prohibit gender transition procedures for minors."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["repeal Article I, Section 36", "and prohibit gender transition procedures for minors including"]
+
+[[section.line]]
+text = "A no vote will leave Section 36 in place, and not prohibit gender transition procedures for minors."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["leave Article I, Section 36", "will not prohibit gender transition procedures for minors"]

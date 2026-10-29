@@ -465,6 +465,15 @@ class LouisianaStatementsStitchTest(unittest.TestCase):
                          ("Constitutional amendments", None,
                           ("Yes", "No"), "official-title-summary"))
 
+    def test_missouri_uses_its_ballot_measures_pages_words(self):
+        mo = BALLOTS["mo"]
+        self.assertEqual((mo.guide, mo.fiscal_label, mo.choices,
+                          mo.card_source_kind),
+                         ("2026 Ballot Measures", "Fiscal Note Summary",
+                          ("Yes", "No"), "official-title-summary"))
+        self.assertEqual(badge(mo, "Amendment 3: X", "3"), "AMENDMENT")
+        self.assertEqual(badge(mo, "Proposition A: X", "A"), "PROPOSITION")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):

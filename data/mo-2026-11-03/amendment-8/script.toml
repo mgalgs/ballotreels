@@ -1,0 +1,159 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; what state law provides today; what the amendment would
+# change (the election and duties of sheriffs in the Constitution, and
+# removal only by the Attorney General's court action) and where it
+# would not apply; what the State Auditor's fiscal note summary says;
+# the two sides; what a vote does.
+#
+# The card quotes the Secretary of State's "2026 Ballot Measures" page:
+# the Official Ballot Title's question as title, the resolution it was
+# proposed by as origin, the Fair Ballot Language's tax sentence as
+# summary, the fiscal note summary paragraph printed under the title as
+# fiscal (headed "Fiscal Note Summary", as the State Auditor's fiscal
+# note heads it), and the Fair Ballot Language's "yes" and "no" vote
+# sentences.
+#
+# "A writ of quo warranto initiated by the Attorney General" is said as
+# "a court action brought by the Attorney General"; the card keeps the
+# legal term. The places the new section leaves out are said as the
+# resolution's subsection 2 describes them, naming none.
+#
+# Missouri publishes no official arguments for or against a measure:
+# both sides are filed = false and each says so once, in the same number
+# of words. No person is named.
+#
+# Highlights in the YES and NO boxes balance at one each, one phrase per
+# vote line.
+
+contest = "mo-2026-11-03-amendment-8"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "sos-page"
+number = "8"
+title = "Shall the Missouri Constitution be amended to support law enforcement by preserving the right of citizens to elect a county sheriff, prohibiting the removal of a county sheriff except by a writ of quo warranto, and recognizing the office of sheriff as part of the administration of justice?"
+origin = "Proposed by 103rd General Assembly (Second Regular Session) CCS HCS SS SJR 87"
+summary = "If passed, this measure will not increase or decrease taxes."
+fiscal = "State and local governmental entities estimate no costs or savings."
+yes = "A \"yes\" vote will amend the Missouri Constitution to require counties to: elect a sheriff every four years, which is currently required by statute; place in the Constitution provisions regarding sheriffs' duties that are currently provided by statute; and provide that an elected sheriff may be removed from office only through a writ of quo warranto initiated by the Attorney General."
+no = "A \"no\" vote will not amend the Missouri Constitution. Current Missouri statutes providing for the election of county sheriffs to four-year terms and governing their duties and removal will remain in effect unless changed by law."
+
+[[section]]
+id = "what"
+heading = "Amendment 8"
+
+[[section.line]]
+text = "Amendment 8 is about county sheriffs."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["preserving the right of citizens to elect a county sheriff"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, state law requires counties to elect a sheriff every four years, and governs the duties and removal of sheriffs."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would put the election and duties of sheriffs into the Missouri Constitution."
+sources = ["sos-page", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section.line]]
+text = "An elected sheriff could be removed only through a court action brought by the Attorney General."
+sources = ["sos-page", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section.line]]
+text = "The new section would not apply to a city not within a county, or to certain charter counties."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-line-map"
+
+[[section]]
+id = "fiscal"
+heading = "What the State Auditor says"
+
+[[section.line]]
+text = "The State Auditor's fiscal note summary says state and local governmental entities estimate no costs or savings."
+sources = ["fiscal-note", "sos-page"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["State and local governmental entities estimate no costs or savings."]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Missouri publishes no official argument for the amendment."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "list"
+source = "sos-page"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Missouri publishes no official argument against the amendment."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "list"
+source = "sos-page"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote will place these provisions on sheriffs, including their removal, in the Missouri Constitution."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["only through a writ of quo warranto initiated by the Attorney General"]
+
+[[section.line]]
+text = "A no vote will leave the current statutes on sheriffs in effect, unless changed by law."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["will remain in effect unless changed by law"]

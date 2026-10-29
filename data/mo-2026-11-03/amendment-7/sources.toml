@@ -1,0 +1,56 @@
+# Archived sources for Missouri Amendment 7, 2026-11-03 general election.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+#
+# Missouri has no voter pamphlet. The official statewide summary is the
+# Secretary of State's "2026 Ballot Measures" page: each measure's
+# Official Ballot Title (the question, then the State Auditor's fiscal
+# note summary) and its Fair Ballot Language (what a "yes" and a "no"
+# vote will do, and a sentence on taxes). The host returns 403 to
+# scripted fetches, so the archived copy is a verbatim snapshot of the
+# page as rendered in Chrome. It backs the card (sos-page). The State
+# Auditor's fiscal note prints the same summary paragraph under the
+# heading "Fiscal Note Summary".
+#
+# Missouri publishes no official arguments for or against a measure, so
+# there is no source of kind official-argument: both side sections say
+# so, citing the page, which prints none.
+#
+# The signed resolution (ssscssjr95-signedcopy.pdf) and the certificate
+# of the official ballot title (ssscssjr95webcert.pdf) are also archived,
+# but are image scans with no text layer; nothing in the script rests on
+# them, so they are not listed here.
+
+[contest]
+id = "mo-2026-11-03-amendment-7"
+election = "mo-2026-11-03"
+division = "ocd-division/country:us/state:mo"
+kind = "measure"
+title = "Amendment 7: Show-Me Prosperity Fund"
+
+[[source]]
+id = "sos-page"
+kind = "official-title-summary"
+publisher = "Missouri Secretary of State, 2026 Ballot Measures: Amendment 7, Official Ballot Title and Fair Ballot Language"
+credit = "Missouri Secretary of State, 2026 Ballot Measures"
+url = "https://www.sos.mo.gov/petitions/2026BallotMeasures"
+file = "sources/sos-2026-ballot-measures-page.txt"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal-note"
+kind = "official-fiscal-analysis"
+publisher = "Missouri State Auditor's Office, Fiscal Note (26-SS SCS SJR 95), June 18, 2026"
+credit = "Missouri State Auditor, Fiscal Note"
+url = "https://auditor.mo.gov/FiscalNote/ViewFiscalNoteFile/1709"
+file = "sources/amendment-7-auditor-fiscal-note.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Missouri General Assembly, Senate Substitute for Senate Committee Substitute for Senate Joint Resolution No. 95, Truly Agreed To and Finally Passed (103rd General Assembly, Second Regular Session)"
+credit = "SS SCS SJR 95, Truly Agreed To and Finally Passed"
+url = "https://www.senate.mo.gov/26info/pdf-bill/tat/SJR95.pdf"
+file = "sources/amendment-7-full-text-sjr95.pdf"
+retrieved = "2026-10-27"

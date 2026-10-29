@@ -1,0 +1,48 @@
+# Archived sources for Missouri Amendment 6, 2026-11-03 general election.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+#
+# Missouri has no voter pamphlet. The official statewide summary is the
+# Secretary of State's "2026 Ballot Measures" page: each measure's
+# Official Ballot Title (the question, then the State Auditor's fiscal
+# note summary) and its Fair Ballot Language (what a "yes" and a "no"
+# vote will do, and a sentence on taxes). The host returns 403 to
+# scripted fetches, so the archived copy is a verbatim snapshot of the
+# page as rendered in Chrome. It backs the card (sos-page). The State
+# Auditor's fiscal note prints the same summary paragraph under the
+# heading "Fiscal Note Summary".
+#
+# Missouri publishes no official arguments for or against a measure, so
+# there is no source of kind official-argument: both side sections say
+# so, citing the page, which prints none.
+#
+# The initiative petition (2026-106.pdf, the amendment's full text) and
+# the certificate of sufficiency (2026-106webcert.pdf) are also archived,
+# but are image scans with no text layer; nothing in the script rests on
+# them, so they are not listed here. Every claim comes from the page and
+# the fiscal note.
+
+[contest]
+id = "mo-2026-11-03-amendment-6"
+election = "mo-2026-11-03"
+division = "ocd-division/country:us/state:mo"
+kind = "measure"
+title = "Amendment 6: Initiative and Referendum Petitions"
+
+[[source]]
+id = "sos-page"
+kind = "official-title-summary"
+publisher = "Missouri Secretary of State, 2026 Ballot Measures: Amendment 6, Official Ballot Title and Fair Ballot Language"
+credit = "Missouri Secretary of State, 2026 Ballot Measures"
+url = "https://www.sos.mo.gov/petitions/2026BallotMeasures"
+file = "sources/sos-2026-ballot-measures-page.txt"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal-note"
+kind = "official-fiscal-analysis"
+publisher = "Missouri State Auditor's Office, Fiscal Note (26-106), August 8, 2025"
+credit = "Missouri State Auditor, Fiscal Note"
+url = "https://auditor.mo.gov/FiscalNote/ViewFiscalNoteFile/1658"
+file = "sources/amendment-6-auditor-fiscal-note.pdf"
+retrieved = "2026-10-27"
