@@ -13,8 +13,8 @@
 # Attorney's Impartial Analysis is the measure's neutral explanation.
 #
 # Some lines of these pages are set in a font whose text layer is
-# shifted (checks._unshift_line); quotes from them are checked against
-# that text decoded.
+# glyph ids shifted 29 places; quotes from them match only once the
+# alameda-4 round's decoder in ballotreels/checks.py is merged.
 
 [contest]
 id = "ca-2026-11-03-albany-measure-t"
