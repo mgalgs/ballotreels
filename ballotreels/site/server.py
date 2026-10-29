@@ -719,6 +719,20 @@ def _hero(state: StateElection, county: str | None = None) -> str | None:
     return pages.hero_svg(_hero_in_list_order(state, hero), county, flag_url)
 
 
+def _mini(state: StateElection) -> dict[str, Any]:
+    """The home page's icon for a state's button: `{"mini": {"width",
+    "height", "path"}, "flag": its 160 px flag's URL or None}`, the
+    state's coarse outline from counties.json; nothing from a build
+    before it."""
+    mini = state.geo.mini if state.geo else None
+    if not mini or not mini.get("path"):
+        return {}
+    flag = pages.mini_flag_path(state.abbr)
+    return {"mini": {k: mini[k] for k in ("width", "height", "path")},
+            "flag": f"/static/{flag}" if (STATIC_DIR / flag).is_file()
+            else None}
+
+
 def _hero_in_list_order(state: StateElection, hero: dict) -> dict:
     """`hero` with its outlines in the order of the state API's
     `counties` list, so the state page's county picker (app.js) pairs
@@ -1198,7 +1212,8 @@ class PublicHandler(_JsonHandler):
         deps = self.server.deps
         self._json(200, {"states": [
             {"state": abbr, "name": _state_name(abbr),
-             "election": deps.states[abbr].index.election.id}
+             "election": deps.states[abbr].index.election.id,
+             **_mini(deps.states[abbr])}
             for abbr in sorted(deps.states, key=_sort_name)]})
 
     def _state(self, abbr: str) -> None:

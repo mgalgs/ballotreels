@@ -125,9 +125,12 @@ class GeoData:
     zcta_dir: Path
     # counties.json (ballotreels.geo.counties), None for a build from
     # before it: each county's cities and school districts, and the
-    # counties' outlines for the pages' map.
+    # counties' outlines for the pages' map, and the state's coarse
+    # outer outline for the home page's icon (None from a build before
+    # it).
     counties: dict[str, dict[str, Any]] | None = None
     hero: dict[str, Any] | None = None
+    mini: dict[str, Any] | None = None
 
     @classmethod
     def load(cls, geo_dir: str | Path) -> "GeoData":
@@ -144,14 +147,16 @@ class GeoData:
                 oid = feat["properties"]["ocd_id"]
                 names[oid] = feat["properties"]["name"]
                 district_shapes[oid] = feat["geometry"]
-        counties = hero = None
+        counties = hero = mini = None
         counties_path = geo_dir / "counties.json"
         if counties_path.is_file():
             doc = json.loads(counties_path.read_text(encoding="utf-8"))
             counties, hero = doc["counties"], doc.get("hero")
+            mini = doc.get("mini")
         return cls(state=geo_dir.name, zips=zips, names=names,
                    district_shapes=district_shapes,
-                   zcta_dir=geo_dir / "zcta", counties=counties, hero=hero)
+                   zcta_dir=geo_dir / "zcta", counties=counties, hero=hero,
+                   mini=mini)
 
     def division_counties(self, division: str) -> list[str]:
         """The counties a city or school district lies in (a county is

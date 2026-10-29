@@ -2,14 +2,21 @@
 (ballotreels.geo.outline, written into counties.json's `mini`), over
 hand-made county shapes (nothing here is real geography)."""
 
+import json
 import math
 import re
+import tempfile
 import unittest
+from pathlib import Path
+from unittest import mock
 
-from ballotreels.geo.counties import county_doc
+from ballotreels.geo.counties import FILENAME, county_doc
+from ballotreels.geo.lookup import GeoData
 from ballotreels.geo.outline import MINI_BUDGET, MINI_SIZE, mini_outline
+from ballotreels.site import server
 
 from .helpers import REPO
+from .test_county_pages import CountyServerTestCase
 
 FIXTURE_GEO = REPO / "tests" / "fixtures" / "counties" / "geo" / "ca"
 
@@ -118,3 +125,66 @@ class MiniOutlineTest(unittest.TestCase):
         # the outer edge only: smaller than any one county's hero path
         self.assertLess(len(mini["path"]),
                         min(map(len, doc["hero"]["paths"].values())) * 2)
+
+
+class StatesApiTest(CountyServerTestCase):
+    def states(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            static = Path(tmp)
+            if self.flag:
+                (static / "flags").mkdir()
+                (static / "flags" / "ca-mini.jpg").write_bytes(b"\xff\xd8")
+            with mock.patch.object(server, "STATIC_DIR", static):
+                return self.get_json("/api/states")["states"]
+
+    flag = True
+
+    def test_each_state_carries_its_outline_and_mini_flag(self):
+        [ca] = self.states()
+        self.assertEqual(ca["mini"], county_doc(self.data_dir / "geo" /
+                                                "ca")["mini"])
+        self.assertEqual(ca["flag"], "/static/flags/ca-mini.jpg")
+
+    def test_no_county_paths_reach_the_home_page(self):
+        resp, body = self.get(self.public_port, "/api/states")
+        self.assertNotIn(b"county:", body)
+        self.assertNotIn(b"hero", body)
+        self.assertLess(len(body), 600)
+
+
+class StatesApiWithoutAFlagTest(StatesApiTest):
+    flag = False
+
+    def test_each_state_carries_its_outline_and_mini_flag(self):
+        [ca] = self.states()
+        self.assertIn("path", ca["mini"])
+        self.assertIsNone(ca["flag"])
+
+
+class StatesApiBeforeTheOutlineTest(CountyServerTestCase):
+    """A counties.json from before the outline: the state is listed as
+    it always was, with no icon."""
+
+    def setUp(self):
+        super().setUp()
+        path = self.data_dir / "geo" / "ca" / FILENAME
+        doc = json.loads(path.read_text(encoding="utf-8"))
+        del doc["mini"]
+        path.write_text(json.dumps(doc), encoding="utf-8")
+        # the served geo, as read from that file
+        self.deps.states["ca"].geo = GeoData.load(path.parent)
+        self.assertIsNone(self.deps.states["ca"].geo.mini)
+
+    def test_listed_as_before(self):
+        self.assertEqual(self.get_json("/api/states")["states"],
+                         [{"state": "ca", "name": "California",
+                           "election": "ca-2026-11-03"}])
+
+
+class StatesApiWithoutCountiesTest(CountyServerTestCase):
+    with_counties = False
+
+    def test_listed_as_before(self):
+        self.assertEqual(self.get_json("/api/states")["states"],
+                         [{"state": "ca", "name": "California",
+                           "election": "ca-2026-11-03"}])
