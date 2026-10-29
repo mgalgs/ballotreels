@@ -1,0 +1,189 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the elected treasurer today and
+# the appointed director of finance beside it; who placed it on the
+# ballot and how its question describes the post; what would change and
+# who would do the work; the vote it needs; the City's savings estimate
+# as the impartial analysis gives it; both sides, neither of which filed
+# an argument; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city", and the card and title carry
+# the name.
+#
+# The card quotes the guide's page: its heading over the question, the
+# question, the analysis's first sentence as the origin, and the
+# analysis's yes and no sentences as the boxes. "Vacant and no longer
+# needed" is the City Council's wording in its question, so the
+# narration gives it as the question's, never as the narrator's.
+#
+# The charter amendment's own text (Resolution No. 9465's Exhibit A) was
+# not posted, and the guide prints only how to ask the City Clerk for
+# it; the guide's question and the City Attorney's analysis cover what
+# the standard needs (the question, a neutral explanation, the sides).
+#
+# The $65,000 a year is the City's estimate as the analysis gives it; no
+# archived source states the City's general fund budget to give it a
+# scale (STANDARD.md 6.5; left open, under [[question]]).
+#
+# The guide prints "No argument in favor was filed." and "No argument
+# against was filed.": both sides say so plainly, each marked
+# filed = false (STANDARD.md 2.5).
+
+contest = "ca-2026-11-03-oroville-measure-r"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "R"
+title = "City of Oroville – Resolution 9465 – Charter Amendment: Removing City Treasurer Position"
+origin = "The Oroville City Council placed Measure R on the ballot."
+summary = "Shall the City of Oroville Charter be amended to delete the vacant and no longer needed City Treasurer position, saving the City approximately $65,000 annually?"
+yes = "A “yes” vote is a vote to eliminate the City Treasurer position as described above."
+no = "A “no” vote is a vote to retain the existing Charter provisions."
+
+[[section]]
+id = "what"
+heading = "Measure R"
+
+[[section.line]]
+text = "Measure R asks the voters of this city whether to remove the elected City Treasurer from the city charter."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["Charter be amended to delete"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today voters elect a City Treasurer to a four-year term, to collect city taxes and safeguard city money."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bank-vault"
+
+[[section.line]]
+text = "A director of finance, appointed by the City Council, already has largely the same duties."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section.line]]
+text = "The City Council placed Measure R on the ballot, and its question calls the position vacant and no longer needed."
+sources = ["guide-page", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["vacant and no longer needed"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "removed"
+text = "Measure R would delete the treasurer from the charter, and create no appointed treasurer instead."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "amended-page"
+
+[[section.line]]
+id = "duties"
+text = "The director of finance and other staff would mainly do the financial work of the city."
+sources = ["guide-page"]
+
+[[section.line]]
+text = "Measure R needs a simple majority to pass."
+sources = ["guide-page", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "savings"
+text = "The city attorney's impartial analysis says the city estimates savings of about $65,000 a year, depending on what the position would have cost."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "The county voter guide says that no argument for Measure R was filed."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "list"
+source = "guide-page"
+items = ["No argument for was filed"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The county voter guide says that no argument against Measure R was filed."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "list"
+source = "guide-page"
+items = ["No argument against was filed"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is a vote to eliminate the City Treasurer position."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["eliminate the City Treasurer position"]
+
+[[section.line]]
+text = "A no vote is a vote to retain the existing charter provisions."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["retain the existing Charter provisions"]
+
+[[question]]
+ask = "Who would handle the money if the treasurer is gone?"
+lines = ["removed", "duties"]
+
+[[question]]
+ask = "How much would the city save?"
+lines = ["savings"]
+
+[[question]]
+ask = "How big is $65,000 a year next to the city budget?"
+unanswered = true

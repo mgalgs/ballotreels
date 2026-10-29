@@ -2437,3 +2437,13 @@ source = "ballot-question"
 quote = "estimated to raise approximately $106,250 annually"
 amount = 106250
 period = "per-year"
+
+# City of Oroville Measure R (Butte): no tax rate statement or fiscal
+# analysis applies (not a tax); the one estimate is the City's, as the
+# City Attorney's Impartial Analysis gives it.
+[oroville-measure-r]
+source = "guide-page"
+quote = "The City’s estimate is that eliminating the position would save approximately $65,000 annually."
+amount = 65000
+period = "per-year"
+direction = "savings"
