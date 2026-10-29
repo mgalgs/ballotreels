@@ -1,0 +1,72 @@
+# Archived sources for Sonoma County Junior College District Measure AB,
+# 2026-11-03 general election, as it appears in Mendocino County
+# (sources/sources.md). Every id here may be cited by script.toml.
+# `kind` must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# Mendocino County Elections posts each measure's Voter Information
+# Guide pages as one PDF, linked from its "Measures on the Ballot" page;
+# Measure AB's are guide pages 23AB1 to 23AB6: the full text, which
+# opens with the ballot question; the District's Tax Rate Statement; the
+# County Counsels' Impartial Analysis (Sonoma, Mendocino and Marin); and
+# the argument in favor, the argument against and a rebuttal to each.
+# One PDF backs every source here.
+#
+# A community college district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md). The district reaches Sonoma, Marin and
+# Mendocino counties: this contest is Mendocino's, hence the
+# "-mendocino" id; santa-rosa-junior-college-measure-ab is Sonoma's, the
+# lead county, and santa-rosa-junior-college-measure-ab-marin Marin's.
+
+[contest]
+id = "ca-2026-11-03-santa-rosa-jc-measure-ab-mendocino"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:mendocino"
+kind = "measure"
+title = "Sonoma County Junior College District Measure AB: College Facility Bonds"
+voters = "the Sonoma County Junior College District (Santa Rosa Junior College)"
+
+[[source]]
+id = "measure-question"
+kind = "official-title-summary"
+publisher = "Full Text of Measure AB, Sonoma County Junior College District, the ballot question, Mendocino County Elections, Voter Information Guide pages for Measure AB, page 23AB1"
+credit = "Measure AB, Mendocino County Elections"
+url = "https://www.mendocinocounty.gov/files/assets/public/v/1/acre/elections/measure-ab-srjc-bond-measure.pdf"
+file = "sources/measure-ab-srjc-bond-measure.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "County Counsel’s Impartial Analysis, Measure AB (County Counsels of Sonoma, Mendocino and Marin Counties), Mendocino County Elections, Voter Information Guide pages for Measure AB, page 23AB4"
+credit = "Impartial Analysis, Mendocino County Elections"
+url = "https://www.mendocinocounty.gov/files/assets/public/v/1/acre/elections/measure-ab-srjc-bond-measure.pdf"
+file = "sources/measure-ab-srjc-bond-measure.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Sonoma County Junior College District, Tax Rate Statement Concerning Measure AB, Mendocino County Elections, Voter Information Guide pages for Measure AB, page 23AB3"
+credit = "Tax Rate Statement, Sonoma County Junior College District"
+url = "https://www.mendocinocounty.gov/files/assets/public/v/1/acre/elections/measure-ab-srjc-bond-measure.pdf"
+file = "sources/measure-ab-srjc-bond-measure.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments in Favor of and Against Measure AB, and the rebuttals, Mendocino County Elections, Voter Information Guide pages for Measure AB, pages 23AB5 to 23AB6"
+credit = "Arguments, Mendocino County Elections"
+url = "https://www.mendocinocounty.gov/files/assets/public/v/1/acre/elections/measure-ab-srjc-bond-measure.pdf"
+file = "sources/measure-ab-srjc-bond-measure.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure AB, Sonoma County Junior College District, Mendocino County Elections, Voter Information Guide pages for Measure AB, pages 23AB1 to 23AB3"
+credit = "Full Text of Measure AB, Mendocino County Elections"
+url = "https://www.mendocinocounty.gov/files/assets/public/v/1/acre/elections/measure-ab-srjc-bond-measure.pdf"
+file = "sources/measure-ab-srjc-bond-measure.pdf"
+retrieved = "2026-10-28"
