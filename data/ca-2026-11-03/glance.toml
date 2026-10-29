@@ -1070,3 +1070,12 @@ source = "impartial-analysis"
 quote = "Measure L is estimated to produce $46 million annually, including approximately $23 million in additional annual revenue compared to the existing one-half cent tax."
 amount = 46000000
 period = "per-year"
+
+# City of Rohnert Park Measure K: the guide prints no fiscal analysis or
+# tax rate statement; the one estimate is the City's, as the City
+# Attorney's Impartial Analysis gives it.
+[rohnert-park-measure-k]
+source = "impartial-analysis"
+quote = "The City estimates that Measure K, if approved, would generate approximately $5,500,000 in annual tax revenue"
+amount = 5500000
+period = "per-year"
