@@ -1529,3 +1529,12 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all of the bonds are issued and sold is approximately $32,000,000."
 amount = 32000000
 period = "unstated"
+
+# Harmony Union School District Measure M: the pages print no tax rate
+# statement for the parcel tax; the one estimate is County Counsel's
+# Impartial Analysis's.
+[harmony-union-measure-m]
+source = "impartial-analysis"
+quote = "Measure M would impose a special tax of $75 per year per parcel, raising approximately $177,600 annually to fund educational programs."
+amount = 177600
+period = "per-year"
