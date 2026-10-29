@@ -291,6 +291,20 @@ BALLOTS: dict[str, Ballot] = {
                          "RESOLUTION NO. 2026-28",
                      "ca-2026-11-03-portola-valley-measure-n":
                          "RESOLUTION NO. 3010-2026",
+                     "ca-2026-11-03-san-mateo-measure-h":
+                         "City of San Mateo Resolution No. 84 (2026)",
+                     "ca-2026-11-03-san-mateo-measure-f":
+                         "City of San Mateo Resolution No. 85 (2026)",
+                     "ca-2026-11-03-redwood-city-measure-e":
+                         "Resolution No. 16425",
+                     "ca-2026-11-03-san-bruno-measure-s":
+                         "Resolution No. 2026-075",
+                     "ca-2026-11-03-san-bruno-measure-dd":
+                         "Resolution No. 2026-077",
+                     "ca-2026-11-03-san-bruno-measure-ee":
+                         "Resolution No. 2026-079",
+                     "ca-2026-11-03-pacifica-measure-bb":
+                         "Resolution No. 61-2026",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

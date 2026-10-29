@@ -1,0 +1,165 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; the rent caps today and how the measure reached the ballot; what
+# would change (the new cap, who gets just-cause protection); the ballot question's cost estimate and who pays it; one
+# line per side; what a vote does.
+#
+# Measure E is a citizen initiative. The impartial analysis says it "was
+# placed on the ballot by an initiative petition", so the script says it
+# reached the ballot by a voter petition. The Council only submitted it
+# (Resolution No. 16425); the card's origin is that resolution's
+# adoption line.
+#
+# ACRE posts no fiscal analysis (not a tax measure). The one cost
+# estimate is the ballot question's, the City Council's own wording,
+# "estimated to cost $5 million to $11 million annually, funded by
+# annual rental property owner fees", so the fiscal line attributes it
+# to the ballot question and says who pays, as the question does. The
+# range is said "between 5 and 11 million dollars", since a written
+# dollar range is misheard (standard/speakability.txt). No archived
+# source states the city's general fund budget, so the figure has no
+# scale (STANDARD.md 6.5; left open). The arguments' "$11 million per
+# year", "18 new full-time employees" and the claim that the math "does
+# not work" are the opponents' own (from a report not on file), and the
+# "not paid for by homeowners, renters, nor the city's general fund" is
+# the supporters', so each stays in its side (rule 6.3).
+#
+# The resolution prints the ballot question with YES and NO boxes and no
+# yes/no statements, and the impartial analysis prints none either, so
+# the card has none and the vote lines take "approves" and "rejects",
+# each highlighting the same phrase of the ballot question.
+#
+# The ballot question's fourth point, larger relocation payments for
+# no-fault evictions, is left out for length: the rent cap and the reach
+# of just-cause protection are the measure's core. "ADUs" is said as
+# "accessory dwelling units" (an acronym plural is misheard). The today
+# line says "certain older units" for the analysis's "specified rental
+# units 15 years old or older".
+
+contest = "ca-2026-11-03-redwood-city-measure-e"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-label"
+number = "E"
+title = "SUBMITTING TO THE VOTERS AT THAT ELECTION AN INITIATIVE MEASURE TO AMEND THE REDWOOD CITY CODE TO IMPOSE ADDITIONAL RENT CONTROL AND JUST CAUSE EVICTION LIMITS"
+origin = "Passed and adopted by the Council of the City of Redwood City at a Joint City Council/Successor Agency Board/Public Financing Authority Meeting thereof held on the 7th day of July 2026"
+summary = "Shall the measure repealing Redwood City Municipal Code Chapter 42 and replacing it with a new Chapter 42 that (1) limits rent increases on multifamily housing built before February 1, 1995; (2) expands just-cause eviction protections to most rental housing, including single-family homes, ADUs, and affordable housing; (3) requires new City administration estimated to cost $5 million to $11 million annually, funded by annual rental property owner fees; and (4) increases relocation assistance for no-fault evictions, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure E"
+
+[[section.line]]
+text = "City of Redwood City Measure E asks voters in the city whether to adopt new limits on rents and evictions."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["limits rent increases on multifamily housing built before February 1, 1995"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, rent increases on certain older units are capped at 5 to 10 percent a year, depending on inflation."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "older-apartments"
+
+[[section.line]]
+text = "Measure E reached the ballot by voter petition and needs a simple majority to pass."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "For certain units built before 1995, the cap would be 60 percent of inflation, and no more than 5 percent."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "older-apartments"
+
+[[section.line]]
+text = "Just-cause eviction rules would cover single-family homes, accessory dwelling units and affordable housing."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "homestead"
+
+[[section]]
+id = "fiscal"
+heading = "What the ballot question says"
+
+[[section.line]]
+text = "The ballot question puts the yearly cost of new city administration at between 5 and 11 million dollars, paid by fees on rental property owners."
+sources = ["ballot-label", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure E keeps Redwood City affordable and stable, and a small landlord fee will pay for it."
+sources = ["argument-for"]
+basis = ["Rent control will keep Redwood City affordable and create stability for our community.", "will be funded by a small fee on landlords—not paid for by homeowners, renters, nor the city's general fund."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Keeps Redwood City affordable and stable", "Paid for by a small fee on landlords"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure E is costly to run, forcing service cuts or new taxes, and burdens nonprofit housing providers."
+sources = ["argument-against"]
+basis = ["this measure would cost Redwood City up to $11 million per year and require up to 18 new full-time employees to administer.", "Cuts to critical neighborhood services or new taxes will be needed to fund ongoing implementation.", "Nonprofit housing providers would face new fees, unsustainable rent restrictions, and tightening operating budgets."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Costly to run: service cuts or new taxes", "Burdens nonprofit housing providers"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves Measure E and its new rent rules."
+sources = ["impartial-analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["Shall the measure repealing Redwood City Municipal Code Chapter 42 and replacing it with a new Chapter 42"]
+
+[[section.line]]
+text = "A no vote rejects Measure E and its new rent rules."
+sources = ["impartial-analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["Shall the measure repealing Redwood City Municipal Code Chapter 42 and replacing it with a new Chapter 42"]

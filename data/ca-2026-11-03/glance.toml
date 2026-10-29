@@ -1044,3 +1044,63 @@ source = "ballot-question"
 quote = "providing approximately $2,000,000 in locally controlled funding annually"
 amount = 2000000
 period = "per-year"
+
+# City of San Mateo Measure H: ACRE posts no tax rate statement or fiscal
+# analysis; the one estimate is the City Attorney's Impartial Analysis
+# (and the ballot question's).
+[san-mateo-measure-h]
+source = "impartial-analysis"
+quote = "the proposed tax is estimated to generate approximately $7 million a year in locally controlled funding."
+amount = 7000000
+period = "per-year"
+direction = "revenue-gain"
+
+# City of San Mateo Measure F: a Charter amendment, not a tax; neither
+# the resolution nor the City Attorney's Impartial Analysis gives a cost
+# estimate.
+[san-mateo-measure-f]
+source = "ballot-label"
+status = "none-printed"
+
+# City of Redwood City Measure E: no tax rate statement or fiscal
+# analysis (not a tax); the one estimate is the ballot question's cost of
+# new city administration, funded by fees on rental property owners.
+[redwood-city-measure-e]
+source = "ballot-label"
+quote = "requires new City administration estimated to cost $5 million to $11 million annually, funded by annual rental property owner fees"
+amount = 11000000
+period = "per-year"
+direction = "cost"
+
+# City of San Bruno Measure S: not a tax; neither the resolution nor the
+# City Attorney's Impartial Analysis gives a cost or revenue estimate
+# (the argument in favor's $4 million is its own).
+[san-bruno-measure-s]
+source = "ballot-label"
+status = "none-printed"
+
+# City of San Bruno Measure DD: not a tax; neither the resolution nor the
+# City Attorney's Impartial Analysis gives a cost or revenue estimate.
+[san-bruno-measure-dd]
+source = "ballot-label"
+status = "none-printed"
+
+# City of San Bruno Measure EE: no tax rate statement or fiscal analysis
+# (a business license tax); the one estimate is the city's, as the City
+# Attorney's Impartial Analysis reports it (and the ballot question).
+[san-bruno-measure-ee]
+source = "impartial-analysis"
+quote = "The City estimated that Measure EE would raise approximately $4,000,000 per year for use in the City."
+amount = 4000000
+period = "per-year"
+direction = "revenue-gain"
+
+# City of Pacifica Measure BB: no tax rate statement or fiscal analysis (a
+# sales tax); the one estimate is the city's, as the City Attorney's
+# Impartial Analysis reports it (and the ballot question).
+[pacifica-measure-bb]
+source = "impartial-analysis"
+quote = "The City estimates that Measure BB, if approved, would generate approximately $5,000,000 in annual tax revenue until ended by voters."
+amount = 5000000
+period = "per-year"
+direction = "revenue-gain"

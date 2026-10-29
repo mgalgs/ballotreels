@@ -1,0 +1,170 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; how the tax works today and who put the measure on the ballot;
+# what would change (the flat $75 tier for all but the two excepted classes, the rates per $1,000 above it,
+# that some pay less and some more, a general tax with no end date); the
+# city's revenue estimate as the impartial analysis reports it; one line
+# per side; what a vote does.
+#
+# ACRE posts no tax rate statement or fiscal analysis; the one revenue
+# estimate is the city's (resolution recital and ballot question), which
+# the City Attorney's impartial analysis reports as "The City estimated",
+# so the fiscal line says so. No archived source states the city's
+# general fund budget, so the $4 million has no scale (STANDARD.md 6.5;
+# left open). The argument in favor's "more than $20 million" in revenue
+# threatened by state actions is the supporters' own claim and is left
+# out (rule 6.3). The two classes the measure leaves unchanged (cardrooms
+# and airport parking) are left out for length.
+#
+# The card quotes the Council's resolution, where the ballot question is
+# printed; its title is the resolution's heading, cut after the measure's
+# subject, and its origin is the City Clerk's adoption certificate. The
+# resolution's ballot box prints only "Yes" and "No", so the card has no
+# yes/no statements; the vote lines take the impartial analysis's own
+# meanings ("a vote to amend ... to revise the business license tax
+# rates and structure"; "a vote to not amend ... and maintain the
+# current business license tax rates and structure") and both highlight
+# the same phrase of the ballot question. That residents are not taxed,
+# the $75 base rate as protection for small businesses, and the services
+# named are left to the supporters; higher prices and relocation to the
+# opponents (rule 6.3).
+
+contest = "ca-2026-11-03-san-bruno-measure-ee"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-label"
+number = "EE"
+title = "A MEASURE TO MODERNIZE AND SIMPLIFY THE BUSINESS LICENSE TAX"
+origin = "I hereby certify that foregoing Resolution No. 2026 – 079 was introduced and adopted by the San Bruno City Council at a regular meeting on July 28, 2026"
+summary = "San Bruno Essential Services Protection Measure. To protect essential services such as: fixing potholes/city streets; providing rapid response to 9-1-1 emergency calls; maintaining library programs for children, teens, adults/seniors; maintaining parks/open space; and general city services, shall the measure be adopted simplifying/modernizing San Bruno's business license ordinance, making rates more equitable/equal, updating the tax rate schedule as described in the ordinance, until ended by voters, raising $4,000,000 annually, with annual independent audits?"
+
+[[section]]
+id = "what"
+heading = "Measure EE"
+
+[[section.line]]
+text = "City of San Bruno Measure EE asks voters in the city whether to revise the business license tax."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["simplifying/modernizing San Bruno's business license ordinance"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the tax depends on things like office space, employees or vehicles."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section.line]]
+text = "The City Council placed Measure EE on the ballot, and it needs a simple majority."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Most businesses would pay $75 on their first $75,000 in receipts, then $1 to $2 per $1,000 more, by type."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Dollars per $1,000 of receipts above $75,000"
+source = "impartial-analysis"
+unit = ""
+labels = ["General/Retail", "Professional", "Rental", "Services", "Contractors"]
+values = [1.0, 2.0, 1.5, 1.5, 2.0]
+
+[[section.line]]
+text = "Taxes would go down for some businesses and up for others."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "trade-off"
+
+[[section.line]]
+text = "Measure EE would be a general tax, lasting until voters repeal it."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The City Attorney's impartial analysis reports a city estimate of about $4 million a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure EE updates an outdated tax so big businesses pay fairly and city services stay funded."
+sources = ["argument-for"]
+basis = ["This outdated, regressive structure leaves San Bruno far behind neighboring cities and unable to sustainably fund basic services.", "ensuring that large enterprises contribute appropriately while protecting small businesses", "It is a modernization and simplification of our Business License Tax so it is fair, equitable, and aligned with real-world business activity.", "Vote YES to protect essential services and keep San Bruno strong."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Updates an outdated 1999 tax", "Large businesses pay fairly"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say businesses would pass the tax on in higher prices and lower wages, and some may relocate."
+sources = ["argument-against"]
+basis = ["Taxes are just another cost of doing business, which owners must pass along, to stay in business.", "Customers, through higher prices; • Employees, through lower wages/salaries; or", "San Bruno business owners who fall behind because skyrocketing taxation pushes customers away, may hatch plans to relocate to cities that appreciate them more."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Costs passed on in higher prices", "Some owners may relocate"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote revises the business license tax rates and structure."
+sources = ["impartial-analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["shall the measure be adopted simplifying/modernizing San Bruno's business license ordinance"]
+
+[[section.line]]
+text = "A no vote keeps the current business license tax rates and structure."
+sources = ["impartial-analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["shall the measure be adopted simplifying/modernizing San Bruno's business license ordinance"]
