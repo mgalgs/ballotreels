@@ -34,18 +34,18 @@
       "end": 48.53
     },
     {
-      "text": "Opponents say Measure E is costly to run, forcing service cuts or new taxes, and burdens nonprofit housing providers.",
+      "text": "Opponents say Measure E is costly to run, forcing service cuts or new taxes, and burdens nonprofit housing groups.",
       "start": 49.19,
-      "end": 58.37
+      "end": 57.97
     },
     {
-      "text": "Supporters say Measure E keeps Redwood City affordable and stable, and a small landlord fee will pay for it.",
-      "start": 59.03,
-      "end": 66.18
+      "text": "Supporters say rent control keeps the city affordable and stable, funded by a small fee on landlords, not by renters.",
+      "start": 58.63,
+      "end": 66.29
     },
     {
       "text": "A yes vote approves Measure E and its new rent rules.",
-      "start": 66.84,
+      "start": 66.95,
       "end": 70.5
     },
     {
@@ -62,8 +62,8 @@
       "For certain units built before 1995, the cap would be 60 percent of inflation, and no more than 5 percent.",
       "Just-cause eviction rules would cover single-family homes, accessory dwelling units and affordable housing.",
       "The ballot question puts the yearly cost of new city administration at between $5 million and $11 million, paid by fees on rental property owners.",
-      "Opponents say Measure E is costly to run, forcing service cuts or new taxes, and burdens nonprofit housing providers.",
-      "Supporters say Measure E keeps Redwood City affordable and stable, and a small landlord fee will pay for it.",
+      "Opponents say Measure E is costly to run, forcing service cuts or new taxes, and burdens nonprofit housing groups.",
+      "Supporters say rent control keeps the city affordable and stable, funded by a small fee on landlords, not by renters.",
       "A yes vote approves Measure E and its new rent rules.",
       "A no vote rejects Measure E and its new rent rules."
     ],
@@ -183,11 +183,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Opponents say Measure E is costly to run, forcing service cuts or new taxes, and burdens nonprofit housing providers."
+        "text": "Opponents say Measure E is costly to run, forcing service cuts or new taxes, and burdens nonprofit housing groups."
       },
       "bounds": [
         1179840,
-        1401600
+        1392000
       ]
     },
     {
@@ -195,15 +195,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say Measure E is costly to run, forcing service cuts or new taxes, and burdens nonprofit housing providers.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say Measure E is costly to run, forcing service cuts or new taxes, and burdens nonprofit housing groups.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Supporters say Measure E keeps Redwood City affordable and stable, and a small landlord fee will pay for it."
+        "text": "Supporters say rent control keeps the city affordable and stable, funded by a small fee on landlords, not by renters."
       },
       "bounds": [
-        1416000,
-        1589040
+        1406400,
+        1591680
       ]
     },
     {
@@ -211,14 +211,14 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure E keeps Redwood City affordable and stable, and a small landlord fee will pay for it.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say rent control keeps the city affordable and stable, funded by a small fee on landlords, not by renters.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote approves Measure E and its new rent rules."
       },
       "bounds": [
-        1603440,
+        1606080,
         1692720
       ]
     },
@@ -239,5 +239,5 @@
       ]
     }
   ],
-  "sha256": "dd79f3389a0dabfa6561ff13eac18f0dddfb72edd9d955be96ca9c4f842806e5"
+  "sha256": "a07e901ba36389c6fd5913d0186ae8cd4d3c4b0399a03593c4683bbcba03240a"
 }
