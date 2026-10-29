@@ -1,0 +1,217 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what
+# the question asks, and that each town's ballot fills in its own names;
+# how it got on the ballot, when it returns and the vote it needs; what a
+# School Administrative Unit's central office is; the two limits, what
+# they leave out, and the override; that no cost estimate exists; the two
+# sides; what a vote does.
+#
+# New Hampshire has no voter guide. The card quotes the Secretary of
+# State's "Questions on the General Election Ballot 2026": the heading the
+# sheet prints over the question as its title, the sheet's own heading
+# ("2026 General Election") as its origin, under the badge QUESTION 2, and
+# the question, in its quotation marks and with its bracketed blanks, as
+# its summary, exactly as printed; the narration says each town's ballot
+# fills in its own names. pdftotext joins the sheet's "three-" and
+# "fifths" across a line break; the card keeps the hyphen (ballots.py).
+# The sheet prints no short title, so contests.toml pairs "Question 2"
+# with HB 1300's own term ("school district local tax cap"). It prints no
+# "a yes vote means" lines, so the card has none, and the vote lines take
+# their meanings from the question's words.
+#
+# The explanation is the question's own words and HB 1300 as chaptered.
+# "These caps ... do not affect classroom instruction, school-based
+# services, or other municipal expenditures" is the question's wording,
+# quoted and attributed to it, not a claim the narrator makes. "SAU" is
+# said as "School Administrative Unit" for the transcript check. The
+# House Election Law committee's majority and minority reports are
+# committee reports, not voter arguments, and are not cited.
+#
+# Fiscal: no fiscal note exists for the question and the sheet prints no
+# cost. The 6 percent central office cap is a limit, not a cost, and no
+# dollar figure appears, so none needs a scale.
+#
+# New Hampshire publishes no official arguments for or against a ballot
+# question, so both sides are filed = false and each says so once, in the
+# same number of words.
+
+contest = "nh-2026-11-03-question-2"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "questions"
+number = "2"
+title = "Statutory Question required by HB 1300, Chapter 324, 2026"
+origin = "2026 General Election"
+summary = "“Shall the [name of municipality] limit property tax growth for [name(s) of school district(s)] under RSA 32:5-i? If adopted for a two-year period: (1) the local property tax levy may not grow beyond the prior year’s amount, adjusted for inflation and new construction; (2) SAU central office spending may not exceed 6 percent of total school district appropriations; and (3) bonded capital costs are excluded from both limits. These caps apply only to administrative operations of the SAU central office and do not affect classroom instruction, school-based services, or other municipal expenditures. These limits may be overridden as provided in RSA 32:5-i. Adoption requires a three-fifths (3/5) majority vote.”"
+
+[[section]]
+id = "what"
+heading = "Question 2"
+
+[[section.line]]
+text = "Question 2 asks whether to limit school property tax growth for two years."
+sources = ["questions", "hb-1300"]
+
+[section.line.visual]
+kind = "page"
+source = "questions"
+highlight = ["limit property tax growth"]
+
+[[section.line]]
+id = "names"
+text = "The ballot in each town fills in its own names in the brackets."
+sources = ["questions", "hb-1300"]
+
+[section.line.visual]
+kind = "page"
+source = "questions"
+highlight = ["[name of municipality]", "[name(s) of school district(s)]"]
+
+[[section]]
+id = "background"
+heading = "How it got on the ballot"
+
+[[section.line]]
+id = "law"
+text = "A 2026 state law, House Bill 1300, puts the question on ballots this year and in 2028."
+sources = ["hb-1300"]
+
+[section.line.visual]
+kind = "illustration"
+name = "legislative-chamber"
+
+[[section.line]]
+id = "three-fifths"
+text = "The question needs a three-fifths majority to pass."
+sources = ["questions", "hb-1300"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "A school administrative unit runs the central office for its school districts."
+sources = ["hb-1300"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-board-room"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The school property tax levy could grow only with inflation and new construction."
+sources = ["questions", "hb-1300"]
+
+[section.line.visual]
+kind = "page"
+source = "questions"
+highlight = ["adjusted for inflation and new construction"]
+
+[[section.line]]
+text = "Central office spending could not exceed 6 percent of school district appropriations."
+sources = ["questions", "hb-1300"]
+
+[section.line.visual]
+kind = "page"
+source = "questions"
+highlight = ["6 percent of total school district appropriations"]
+
+[[section.line]]
+text = "The question says the caps do not affect classroom instruction, school-based services, or other municipal expenditures."
+sources = ["questions"]
+
+[section.line.visual]
+kind = "page"
+source = "questions"
+highlight = ["do not affect classroom instruction, school-based services, or other municipal expenditures"]
+
+[[section.line]]
+id = "bonds"
+text = "Bond payments for buildings are left out of both limits."
+sources = ["questions", "hb-1300"]
+
+[section.line.visual]
+kind = "page"
+source = "questions"
+highlight = ["bonded capital costs are excluded from both limits"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "New Hampshire's Questions on the General Election Ballot 2026 does not include a cost estimate for the question."
+sources = ["questions"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "New Hampshire publishes no official argument for the question."
+sources = ["questions"]
+
+[section.line.visual]
+kind = "list"
+source = "questions"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "New Hampshire publishes no official argument against the question."
+sources = ["questions"]
+
+[section.line.visual]
+kind = "list"
+source = "questions"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is for both limits."
+sources = ["questions", "hb-1300"]
+
+[section.line.visual]
+kind = "page"
+source = "questions"
+highlight = ["If adopted for a two-year period"]
+
+[[section.line]]
+text = "A no vote is against them."
+sources = ["questions", "hb-1300"]
+
+[section.line.visual]
+kind = "page"
+source = "questions"
+
+[[question]]
+ask = "Why does the question on my ballot name my town?"
+lines = ["names"]
+
+[[question]]
+ask = "How many votes does the question need to pass?"
+lines = ["three-fifths"]
+
+[[question]]
+ask = "Will the question come back?"
+lines = ["law"]
