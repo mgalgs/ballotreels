@@ -1,0 +1,146 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; how a school bond is repaid and what it needs to
+# pass; what the money would pay for; the district's tax statement; one
+# line per side; what a vote does.
+#
+# The bond total and the debt service are repaid from a tax on property
+# in the district, and no archived source states the district's budget,
+# so they have no budget scale (STANDARD.md 6.5; left open), as for
+# Santee School District Measure BB. The fiscal line gives the tax
+# statement's highest rate beside its average, as it prints both, and
+# says its fiscal years in full ("2058-59" printed). The supporters' "low
+# tax rates" and the 2022 measure are their argument, so they stay out
+# of the neutral sections (STANDARD.md 6.3). "Counsel" is heard as
+# "Council" (standard/speakability.txt).
+#
+# The impartial analysis prints no yes and no sentences, so the card has
+# no boxes; the vote lines take their meanings from the ballot question,
+# one phrase each, as Utah's do. No argument against Measure K was
+# submitted: the no side says so plainly and is marked filed = false.
+# The card's title is the guide page's own head. Much of the page's text
+# layer is in glyph ids (checks._unshifted_text reads it back).
+
+contest = "ca-2026-11-03-sunol-glen-unified-measure-k"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "K"
+title = "SUNOL GLEN UNIFIED SCHOOL DISTRICT BOND MEASURE K"
+origin = "This Measure is placed on the ballot by the governing board of the District."
+summary = "To improve the quality of local education; complete the Main Building retrofit and renovation; replace deteriorating plumbing, electrical, sewer, heating and ventilation systems; and modernize and upgrade old classrooms and restrooms; shall Sunol Glen Unified School District’s measure be adopted authorizing $6,100,000 of bonds at legal rates, generating on average $431,700 annually while bonds are outstanding at approximate rates of $35 per $100,000 assessed value, with audits, citizens’ oversight, no money for salaries and funds staying local?"
+
+[[section]]
+id = "what"
+heading = "Measure K"
+
+[[section.line]]
+text = "Sunol Glen Unified School District Measure K asks the district's voters whether to approve $6.1 million in school bonds."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["complete the Main Building retrofit and renovation"]
+
+[[section]]
+id = "today"
+heading = "How a school bond works"
+
+[[section.line]]
+text = "The district would borrow the money and repay it, with interest, from a tax on property in the district."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure K needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The money would finish the Main Building retrofit, replace plumbing, electrical, sewer and heating systems, and upgrade classrooms and restrooms."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+text = "The district's tax statement estimates an average tax of $33.54 per $100,000 of assessed value, and at most $35, through 2058-2059."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section.line]]
+text = "The statement estimates the total to repay, with interest, at about $13.8 million."
+sources = ["tax-statement"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure K finishes the Main Building retrofit and modernizes classrooms at low tax rates."
+sources = ["arguments"]
+basis = ["Finish Main Building retrofit: Requires final phases of structural and infrastructure repairs", "Aging classrooms: Modernize and renovate our learning environments", "Tax rates are estimated to remain amongst the lowest compared to area school districts."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Finishes the Main Building retrofit", "Modernizes classrooms at low tax rates"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure K was submitted for this election's Alameda County Composite Voter Information Guide."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes $6.1 million in bonds, and a tax of about $35 per $100,000 to repay them."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["authorizing $6,100,000 of bonds at legal rates"]
+
+[[section.line]]
+text = "A no vote authorizes neither the bonds nor the tax of about $35 per $100,000 to repay them."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["at approximate rates of $35 per $100,000 assessed value"]

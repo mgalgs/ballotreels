@@ -499,3 +499,65 @@ source = "guide-page"
 quote = "providing approximately $300,000 annually"
 amount = 300000
 period = "per-year"
+
+# City of Pleasanton Measure HH: the guide prints no fiscal analysis or
+# tax rate statement; the one estimate is in its ballot question (and
+# the City Attorney's Impartial Analysis).
+[pleasanton-measure-hh]
+source = "guide-page"
+quote = "generating an estimated $1.4 to $2.8 million per year in additional revenue"
+amount = 2800000
+period = "per-year"
+
+# City of Union City Measure II: the guide prints no fiscal analysis or
+# tax rate statement; the one estimate is in its ballot question (and
+# the City Attorney's Impartial Analysis).
+[union-city-measure-ii]
+source = "guide-page"
+quote = "providing $7,000,000 annually"
+amount = 7000000
+period = "per-year"
+
+# City of Newark Measure DD: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is in its ballot question (and the
+# City Attorney's Impartial Analysis).
+[newark-measure-dd]
+source = "guide-page"
+quote = "raising $6,600,000 annually until ended by voters"
+amount = 6600000
+period = "per-year"
+
+# City of Emeryville Measure BB: the guide prints no fiscal analysis or
+# tax rate statement, and the City Attorney's Impartial Analysis gives
+# no estimate; the one figure is in its ballot question.
+[emeryville-measure-bb]
+source = "guide-page"
+quote = "providing $12,400,000 annually"
+amount = 12400000
+period = "per-year"
+
+# Dublin Unified School District Measure I: a parcel tax, so no tax rate
+# statement; the one estimate is in its ballot question (and County
+# Counsel's Impartial Analysis).
+[dublin-unified-measure-i]
+source = "guide-page"
+quote = "providing approximately $2,900,000 annually for nine years"
+amount = 2900000
+period = "per-year"
+
+# San Lorenzo Unified School District Measure J: a parcel tax, so no tax
+# rate statement; the one estimate is in its ballot question (and County
+# Counsel's Impartial Analysis).
+[san-lorenzo-unified-measure-j]
+source = "guide-page"
+quote = "providing approximately $1.8 million annually"
+amount = 1800000
+period = "per-year"
+
+# Sunol Glen Unified School District Measure K: the district's Tax Rate
+# Statement, its total debt service.
+[sunol-glen-unified-measure-k]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $13,815,000."
+amount = 13815000
+period = "unstated"

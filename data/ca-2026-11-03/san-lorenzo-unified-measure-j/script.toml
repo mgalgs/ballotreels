@@ -1,0 +1,152 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; the parcel tax today; what it needs to pass; what
+# would change (the same rate for 12 more years, what the money may pay
+# for, who is exempt); the district's revenue estimate, as the impartial
+# analysis gives it; one line per side; what a vote does.
+#
+# A parcel tax, not a bond: the guide prints no tax rate statement. The
+# revenue estimate is the district's, in the ballot question and County
+# Counsel's Impartial Analysis. No archived source states the district's
+# budget, so the $1.8 million has no scale (STANDARD.md 6.5; left open);
+# the $99 is an amount per parcel (exempt). The supporters' "layoff of 20
+# teachers" is their argument, so it stays out of the neutral sections
+# (STANDARD.md 6.3). The analysis gives no date the current tax ends, so
+# the script gives none. "Counsel" is heard as "Council"
+# (standard/speakability.txt), so the narration says "the impartial
+# analysis".
+#
+# The impartial analysis prints no yes and no sentences, so the card has
+# no boxes; the vote lines take their meanings from the ballot question,
+# one phrase each, as Utah's do. No argument against Measure J was
+# submitted: the no side says so plainly and is marked filed = false.
+# The card's title is the guide page's own head. Much of the page's text
+# layer is in glyph ids (checks._unshifted_text reads it back).
+
+contest = "ca-2026-11-03-san-lorenzo-unified-measure-j"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "J"
+title = "SAN LORENZO UNIFIED SCHOOL DISTRICT MEASURE J"
+origin = "This Measure is placed on the ballot by the governing board of the District."
+summary = "To renew expiring local school funding without increasing current tax rates; support academic excellence and programs in reading, writing, math, arts, science and technology; attract and retain highly qualified teachers and staff; and continue stable, local funding the State cannot take away; shall San Lorenzo Unified School District’s measure be adopted, renewing its expiring $99 parcel tax for 12 years, providing approximately $1.8 million annually, with senior exemptions, citizen oversight, and no funds for district administrators?"
+
+[[section]]
+id = "what"
+heading = "Measure J"
+
+[[section.line]]
+text = "San Lorenzo Unified School District Measure J asks the district's voters whether to renew its $99 parcel tax for 12 years."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["renewing its expiring $99 parcel tax for 12 years"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the district levies a tax of $99 per parcel, which expires unless voters renew it."
+sources = ["guide-page", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section.line]]
+text = "Measure J needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "From July 1, 2027, the tax would stay at $99 per parcel a year for 12 more years."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+text = "The money could go only to the school purposes the measure lists."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+text = "Owners 65 or older, and some people receiving disability benefits, could apply to be exempt."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The impartial analysis says the district estimates the tax would provide about $1.8 million a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure J renews existing funding without raising tax rates, preventing cuts and teacher layoffs."
+sources = ["arguments"]
+basis = ["It simply renews existing local funding at the current rate, continuing what voters have already approved.", "Measure J will prevent cuts and protect the academic programs that our students need to succeed.", "forcing the layoff of 20 teachers, high staff turnover, and academic program reductions."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Renews funding at the current rate", "Prevents cuts and teacher layoffs"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure J was submitted for this election's Alameda County Composite Voter Information Guide."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote renews the expiring school funding at the current rate for 12 years."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["To renew expiring local school funding"]
+
+[[section.line]]
+text = "A no vote lets the expiring $99 parcel tax end."
+sources = ["guide-page", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["its expiring $99 parcel tax"]

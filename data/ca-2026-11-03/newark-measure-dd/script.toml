@@ -1,0 +1,143 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; how the business license tax works today; what would
+# change (seven categories taxed on gross receipts, the lower minimum,
+# the start date, a general tax, the vote needed); the revenue estimate,
+# as the impartial analysis gives it; one line per side; what a vote
+# does.
+#
+# The guide prints no tax rate statement or fiscal analysis (not a
+# bond); the revenue estimate is in the ballot question and the City
+# Attorney's Impartial Analysis. No archived source states the city's
+# General Fund budget, so the $6.6 million has no scale (STANDARD.md
+# 6.5; left open). The $39 and $25 minimums are amounts per business
+# (exempt). The opponents' "$5.5 million 465% tax increase" and the
+# supporters' "68% of Newark businesses" are their arguments, so they
+# stay out of the neutral sections (STANDARD.md 6.3). The argument
+# against is signed by a council member; the script names no one on
+# either side.
+#
+# The card's title is the guide page's own head. Much of the page's text
+# layer is in glyph ids (checks._unshifted_text reads it back).
+
+contest = "ca-2026-11-03-newark-measure-dd"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "DD"
+title = "CITY OF NEWARK MEASURE DD"
+origin = "The City Council of the City of Newark is submitting to the voters"
+summary = "“Newark Essential Services Protection Measure. To protect city services such as repairing potholes/streets; keeping neighborhoods safe/clean, and maintaining 9-1-1 emergency response/fire protection/neighborhood police patrols/parks/recreation programs, shall the measure be adopted updating Newark’s 56-year-old business license ordinance, lowering many small businesses' taxes, with rates up to 0.3% of gross receipts (as described in the ordinance), raising $6,600,000 annually until ended by voters, with spending disclosure/independent audits?”"
+yes = "A “Yes” vote is a vote to approve adopting an ordinance that would repeal and replace the existing business license tax."
+no = "A “No” vote is a vote against adopting the ordinance."
+
+[[section]]
+id = "what"
+heading = "Measure DD"
+
+[[section.line]]
+text = "City of Newark Measure DD asks voters in the city whether to replace the business license tax with a new one."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["updating Newark’s 56-year-old business license ordinance"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, Newark sorts businesses into many categories, taxed by a flat amount, by employees, by vehicles, by payroll or by gross receipts."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure DD would put businesses in seven categories, each taxed at a share of its gross receipts, up to 0.3 percent."
+sources = ["impartial-analysis", "guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "The minimum tax would drop from $39 to $25 on the first $100,000 of receipts, a cut for some businesses."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+text = "As a general tax with no end date, its money could go to any legitimate city purpose, and it needs a simple majority to pass."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The City Attorney's impartial analysis says Measure DD would generate about $6.6 million a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure DD lowers taxes for most small businesses, which now pay higher rates than large ones, and spares residents."
+sources = ["arguments"]
+basis = ["Measure DD lowers taxes for most small businesses", "many small businesses pay a higher percentage of their revenue than much larger businesses.", "does not increase taxes on local residents who do not own a business in Newark."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Lower taxes for most small businesses", "No tax increase on residents"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the tax increase would burden struggling local businesses and raise prices, with no guarantee of the promised services."
+sources = ["arguments"]
+basis = ["It would place an additional financial burden on local businesses at a time when many are already struggling", "businesses may be forced to raise prices to offset the increased tax burden.", "this measure is a general tax and does not guarantee that the funds will be spent on the purposes described in the ballot measure."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Burdens struggling local businesses", "No guarantee for the promised services"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves the ordinance replacing the business license tax."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["a vote to approve adopting an ordinance"]
+
+[[section.line]]
+text = "A no vote is against adopting the ordinance."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["a vote against adopting the ordinance"]

@@ -684,6 +684,107 @@ def _in_raw_columns(value: str, path: Path) -> bool:
     return raw is not None and _WHITESPACE.sub("", value) in raw
 
 
+# Alameda County's Composite Voter Information Guide sets much of its
+# text in a font with no Unicode map, which pdftotext reads as glyph ids:
+# each character 29 below the one printed ("PHDVXUH" for "measure", a
+# control character \x03 for a space), a few ligatures and quotes as
+# stray symbols, and parentheses not at all. These are the stray symbols.
+_SHIFTED_SYMBOLS = {"³": "“", "´": "”", "¶": "’", "¿": "fi", "À": "fl",
+                    "൵": "ff", "൶": "ffi"}
+_SHIFTED_CONTROL = re.compile(r"[\x01-\x08\x0e-\x1f]")
+
+
+def _unshift_line(line: str, beside: bool) -> str:
+    """One line of pdftotext's text with its glyph-id words read back as
+    printed. A word is shifted where it holds a control character or a
+    stray symbol, or sits between two shifted spaces, or (with `beside`)
+    beside one: "DQ" is "an" there, but a printed "II" may sit there too,
+    so the text is read both ways. In a word that also has a lower-case letter (a printed word
+    with shifted punctuation glued on), or a character no shifted word
+    holds ("BONDS" would read back as "_lkap"), only the control
+    characters and symbols are read back; printed punctuation ending a
+    word stays as it is."""
+    parts = re.split(r"(\x03| )", line)
+
+    def beside_shifted_space(i: int, step: int) -> bool:
+        j = i + step
+        while 0 <= j < len(parts) and parts[j] in ("", " "):
+            j += step
+        return 0 <= j < len(parts) and parts[j] == "\x03"
+
+    out = []
+    for i, tok in enumerate(parts):
+        if tok == "\x03":
+            out.append(" ")
+            continue
+        shifted = tok not in ("", " ") and (
+            _SHIFTED_CONTROL.search(tok) is not None
+            or any(ch in _SHIFTED_SYMBOLS for ch in tok)
+            or (beside_shifted_space(i, -1) and beside_shifted_space(i, 1))
+            or (beside and (beside_shifted_space(i, -1)
+                            or beside_shifted_space(i, 1))))
+        if not shifted:
+            out.append(tok)
+            continue
+        whole = re.search(r"[a-z]", tok) is None \
+            and not re.search(r"[A-C\x5e-\x7f]", tok)
+        ending = len(tok) - len(tok.rstrip(".,;:!?"))
+        for k, ch in enumerate(tok):
+            o = ord(ch)
+            if ch in _SHIFTED_SYMBOLS:
+                out.append(_SHIFTED_SYMBOLS[ch])
+            elif _SHIFTED_CONTROL.match(ch) or (
+                    whole and 0x21 <= o <= 0x5f and k < len(tok) - ending):
+                out.append(chr(o + 29))
+            else:
+                out.append(ch)
+    return "".join(out)
+
+
+@lru_cache(maxsize=8)
+def _unshifted_text(path: Path) -> str | None:
+    """A PDF's text with its glyph-id lines read back as printed, both ways
+    _unshift_line reads them, one after the other, each whitespace
+    collapsed and parentheses dropped (the font prints them with no text);
+    None for a page, or a PDF with no such lines."""
+    if path.suffix.lower() != ".pdf":
+        return None
+    try:
+        text = _pdftotext(path)
+    except UnreadableSource:
+        return None
+    if _SHIFTED_CONTROL.search(text) is None:
+        return None
+    reads = ("\n".join(_unshift_line(l, beside)
+                       if _SHIFTED_CONTROL.search(l) else l
+                       for l in text.split("\n"))
+             for beside in (True, False))
+    return "\n\n".join(_normalise(re.sub(r"[()]", " ", r)) for r in reads)
+
+
+# the ballot's vote boxes beside the question, which pdftotext reads into
+# its lines
+_BOX_LABELS = re.compile(r" (?:BONDS|YES|NO)(?= )")
+
+
+def _unshifted_form(s: str) -> str:
+    """`s` as _in_unshifted compares it: parentheses and the vote boxes'
+    labels dropped, every hyphen, with the spaces around it, removed
+    (pdftotext drops a printed hyphen at a line's end), and the space
+    after a slash ending a line ("paramedics/ fire")."""
+    s = _normalise(re.sub(r"[()]", " ", s))
+    s = _BOX_LABELS.sub("", f" {s} ").strip()
+    return re.sub(r"\s*-\s*", "", re.sub(r"/ ", "/", s))
+
+
+def _in_unshifted(value: str, path: Path) -> bool:
+    """Whether a card quote is in the PDF at `path` read back as
+    _unshifted_text reads it, both compared as _unshifted_form gives
+    them."""
+    text = _unshifted_text(path)
+    return text is not None and _unshifted_form(value) in _unshifted_form(text)
+
+
 def highlight_counts(c: Contest) -> tuple[int, int]:
     """How many highlighted occurrences, over the whole script, fall in the
     card's YES box and in its NO box: each well-formed `highlight` phrase
@@ -790,6 +891,7 @@ def check_card(c: Contest) -> list[Failure]:
         if isinstance(value, str) and value.strip() \
                 and not _in_text(value, archived) \
                 and not _in_raw_columns(value, path) \
+                and not _in_unshifted(value, path) \
                 and not _card_quote_in(value, archived, blocks) \
                 and _normalise(value) not in _digit_one_read_as_l(archived):
             fail(f"{key!r} does not appear verbatim in source "
@@ -1243,7 +1345,9 @@ def _loose(s: str) -> str:
 
 @lru_cache(maxsize=8)
 def _loose_archived(path: Path) -> str:
-    return _loose(_archived_text(path))
+    text = _loose(_archived_text(path))
+    unshifted = _unshifted_text(path)
+    return text if unshifted is None else f"{text} {_loose(unshifted)}"
 
 
 def check_side_basis(c: Contest, required: bool) -> list[Failure]:

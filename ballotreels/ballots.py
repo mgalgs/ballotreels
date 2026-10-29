@@ -153,6 +153,20 @@ BALLOTS: dict[str, Ballot] = {
                          "Orange County Voter Information Guide",
                      "ca-2026-11-03-los-alamitos-measure-g":
                          "Orange County Voter Information Guide",
+                     "ca-2026-11-03-pleasanton-measure-hh":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-union-city-measure-ii":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-newark-measure-dd":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-emeryville-measure-bb":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-dublin-unified-measure-i":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-san-lorenzo-unified-measure-j":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-sunol-glen-unified-measure-k":
+                         "Alameda County Composite Voter Information Guide",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",

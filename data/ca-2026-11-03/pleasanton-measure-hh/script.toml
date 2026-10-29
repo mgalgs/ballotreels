@@ -1,0 +1,150 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; the hotel tax today and who pays it; who put it on
+# the ballot and what it needs to pass; what would change (the two steps,
+# no end date, a general tax); the city's revenue estimate, as the
+# impartial analysis gives it; one line per side; what a vote does.
+#
+# The guide prints no tax rate statement or fiscal analysis (not a
+# bond); the revenue estimate is the city's, in the ballot question and
+# the City Attorney's Impartial Analysis. No archived source states the
+# city's General Fund budget, so the $1.4 million and $2.8 million have
+# no scale (STANDARD.md 6.5; left open). The guide prints no full text
+# (sources.toml).
+#
+# The card's title is the guide page's own head. Much of the page's text
+# layer is in glyph ids (checks._unshifted_text reads it back); the
+# ballot question and the yes and no sentences are quoted from the page
+# as printed. The supporters' deficit forecast and the opponents' "50%
+# rate hike" are their arguments, so they stay out of the neutral
+# sections (STANDARD.md 6.3).
+
+contest = "ca-2026-11-03-pleasanton-measure-hh"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "HH"
+title = "CITY OF PLEASANTON MEASURE HH"
+origin = "Measure HH was placed on the ballot by the Pleasanton City Council"
+summary = "Shall a measure be adopted to increase the City’s Uniform Transient Occupancy Tax paid by hotel guests from 8% to 10% on July 1, 2027, and to 12% on July 1, 2028, generating an estimated $1.4 to $2.8 million per year in additional revenue, that can be used to maintain city services, such as: police and fire protection; park and street maintenance; recreation programs; and other general government uses, until ended by voters?"
+yes = "A “yes” vote on Measure HH favors enacting the proposed ordinance that would increase the City’s TOT rate to 10% on July 1, 2027, and to 12% on July 1, 2028."
+no = "A “no” vote on Measure HH opposes the proposed ordinance and would maintain the City’s TOT rate at the existing 8%."
+
+[[section]]
+id = "what"
+heading = "Measure HH"
+
+[[section.line]]
+text = "City of Pleasanton Measure HH asks voters in the city whether to raise the hotel tax from 8 percent to 12 percent."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["Transient Occupancy Tax paid by hotel guests"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, guests staying 30 days or less at Pleasanton hotels, motels and other lodging pay an 8 percent tax."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-hotel"
+
+[[section.line]]
+text = "The City Council placed Measure HH on the ballot, and it needs a majority to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The rate would rise to 10 percent in July 2027, and to 12 percent in July 2028."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+text = "As a general tax with no end date, its money could pay for general city services until voters end it."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The City Attorney's impartial analysis gives the city estimate: about $1.4 million in new revenue the first year, then $2.8 million a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say visitors, not residents, mainly pay the tax, which protects city services as the city faces deficits."
+sources = ["arguments"]
+basis = ["is paid primarily by visitors staying in hotels and short-term lodging, rather than by Pleasanton residents or property owners.", "Based on the City of Pleasanton’s 10-year financial forecast, annual General Fund operating deficits will", "Vote YES to protect the high-quality city services that make Pleasanton a great place to live, work, and visit."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Paid mainly by visitors, not residents", "Protects city services amid deficits"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the tax harms hotel businesses, has no end date, and guarantees no money for public safety."
+sources = ["arguments"]
+basis = ["Imposing a steep new tax on visitors threatens that economic advantage and harms local hospitality businesses.", "Crucially, the measure contains no expiration date", "with no legal guarantee that a single dollar goes toward public safety"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Harms local hotel businesses", "No end date and no guaranteed use"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote favors raising the hotel tax to 10 percent, then to 12 percent."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["favors enacting the proposed ordinance"]
+
+[[section.line]]
+text = "A no vote opposes the increase and keeps the hotel tax at 8 percent."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["opposes the proposed ordinance"]
