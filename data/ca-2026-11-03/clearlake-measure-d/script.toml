@@ -1,0 +1,188 @@
+# Recipe E, about 60 seconds, distilled: one claim per line, in the shape
+# of Red Bluff Measure D's. The chain: what it asks and whose measure it
+# is; the office and how it is filled today; what would change (who
+# appoints, residence and qualifications, the city manager, the
+# treasurer race on this same ballot) and the vote it needs; the
+# pamphlet's lack of a cost estimate; one line per side; what a vote
+# does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry it.
+# "Appointive" is heard as "appointed" (standard/speakability.txt), so
+# the narration says "appointed"; the card quotes the question as
+# printed.
+#
+# The card quotes the ballot question from the Voter's Pamphlet page
+# that prints it beside the impartial analysis (017M521), under the
+# section's running head. The pamphlet prints only "Yes" and "No" blanks
+# with it, no yes/no statements, so the card has no YES/NO boxes and the
+# vote lines give the impartial analysis's own meanings, both
+# highlighting the same phrase of the question.
+#
+# The full text (Ordinance No. 287-2026) was not retrieved; every
+# neutral line comes from the City Attorney's impartial analysis, which
+# states each change it would make, including the transition rule for
+# the treasurer's race on this same ballot, which a voter needs to know.
+# That the duties would not change and that the appointee would serve at
+# the council's pleasure are left to the analysis, for length.
+# The three requirements state law sets for the elected office, that
+# the city may require no training, that no elected treasurer has served
+# in nearly two decades and that staff do the work are the argument in
+# favor's points, so the neutral lines leave them out and say only what
+# would change (STANDARD.md 6.3).
+#
+# The measure levies no tax and the pamphlet prints no fiscal statement
+# for it, so the fiscal line says the pamphlet includes no cost
+# estimate. No dollar figure is stated, so rule 6.5 has nothing to
+# scale.
+#
+# No argument against Measure D was submitted. The no side says so
+# plainly; its section is marked filed = false. The argument in favor
+# is signed by the mayor; with no one on the record for the other side,
+# the script names no one.
+
+contest = "ca-2026-11-03-clearlake-measure-d"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "D"
+title = "CITY OF CLEARLAKE MEASURE “D”"
+origin = "MEASURES, ANALYSES AND ARGUMENTS"
+summary = "SHALL THE OFFICE OF CITY TREASURER BE APPOINTIVE?"
+
+[[section]]
+id = "what"
+heading = "Measure D"
+
+[[section.line]]
+text = "Measure D asks the voters of this city whether the city treasurer should be appointed instead of elected."
+sources = ["ballot-question", "ballot-question-alone", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["SHALL THE OFFICE OF CITY TREASURER BE APPOINTIVE?"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "duties"
+text = "Today, voters elect the treasurer, who receives, safeguards and pays out the public money of the city."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bank-vault"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "appoint"
+text = "If Measure D passes, the City Council would appoint the treasurer, who would no longer have to live in the city."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section.line]]
+id = "manager"
+text = "The council could require professional qualifications, or let the city manager make the appointment."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+id = "race"
+text = "No treasurer elected on this same ballot would take office."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+text = "Measure D needs a majority vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The county voter guide does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the city cannot require training or financial experience of an elected treasurer, and city staff already do the work."
+sources = ["arguments"]
+basis = ["The City is prohibited from requiring any education, training, or financial experience of candidates for this elected office.", "The Treasurer’s duties are already carried out by professional City staff."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No training can be required now", "City staff already do the work"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure D was submitted, so the county voter guide prints only the argument in favor of it."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote makes the city treasurer an appointed position."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["BE APPOINTIVE?"]
+
+[[section.line]]
+text = "A no vote means the city treasurer would remain an elected office."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["BE APPOINTIVE?"]
+
+[[question]]
+ask = "Who would choose the treasurer, and what about the treasurer race on this ballot?"
+lines = ["appoint", "manager", "race"]
+
+[[question]]
+ask = "What does the treasurer do?"
+lines = ["duties"]
+
+[[question]]
+ask = "Would the change cost the city anything?"
+unanswered = true
