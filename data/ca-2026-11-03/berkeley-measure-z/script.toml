@@ -10,10 +10,10 @@
 # the city's general fund budget, so the estimate has no scale
 # (STANDARD.md 6.5; left open).
 #
-# The yearly inflation increase is the opponents' argument ("automatic
-# annual tax increases"), and the loans the fund could make if no bank
-# is authorized by 2033 the supporters' rebuttal, so the neutral
-# sections leave both out (STANDARD.md 6.3).
+# The impartial analysis states the yearly inflation increase, the state
+# approval a public bank needs, and the loans the fund could make if no
+# bank is authorized by June 30, 2033, so the neutral lines say "fund"
+# a public bank rather than "start" one, and give the inflation increase.
 #
 # The guide prints no yes/no lines for this measure, so, as for Utah, the
 # card has no YES/NO boxes, and the two vote lines highlight the one
@@ -36,7 +36,7 @@ id = "what"
 heading = "Measure Z"
 
 [[section.line]]
-text = "City of Berkeley Measure Z asks voters in the city whether to add a parcel tax to start a public bank."
+text = "City of Berkeley Measure Z asks voters in the city whether to add a parcel tax to fund a public bank."
 sources = ["guide-page"]
 
 [section.line.visual]
@@ -49,7 +49,7 @@ id = "background"
 heading = "What a public bank is"
 
 [[section.line]]
-text = "A public bank is a nonprofit bank owned by one or more local governments."
+text = "A public bank is a nonprofit bank owned by local governments, and needs state approval to open."
 sources = ["guide-page"]
 
 [section.line.visual]
@@ -73,7 +73,7 @@ id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "Homes would pay 6 cents and other property 9 cents a year per square foot of buildings, from 2027, for six years."
+text = "Homes would pay 6 cents and other property 9 cents a year per square foot of buildings, from 2027, for six years, rising each year with inflation."
 sources = ["guide-page"]
 
 [section.line.visual]
@@ -81,7 +81,7 @@ kind = "illustration"
 name = "special-tax"
 
 [[section.line]]
-text = "The money would start and support a public bank investing in affordable housing, green energy and small businesses."
+text = "The money would go to a fund to support a public bank investing in affordable housing, green energy and small businesses."
 sources = ["guide-page"]
 
 [[section]]
