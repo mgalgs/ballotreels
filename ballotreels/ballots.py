@@ -708,6 +708,20 @@ BALLOTS: dict[str, Ballot] = {
                      # named as headed
                      "ca-2026-11-03-tulelake-fpd-measure-i":
                          "Resolution No. 2026-4",
+                     # Tehama County posts no voter guide, only each
+                     # measure's filed documents: each card quotes the
+                     # ballot question from the ordinance or resolution
+                     # that prints it, named as headed
+                     "ca-2026-11-03-tehama-county-measure-e":
+                         "Ordinance No. 2158",
+                     "ca-2026-11-03-red-bluff-measure-d":
+                         "Resolution No. 21-2026",
+                     "ca-2026-11-03-red-bluff-juhsd-measure-h":
+                         "Resolution No. 2026.27-1",
+                     "ca-2026-11-03-los-molinos-unified-measure-g":
+                         "Resolution No. 6-18-26B",
+                     "ca-2026-11-03-shasta-tehama-trinity-jccd-measure-c-tehama":
+                         "Resolution No. 2025-26-18",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
