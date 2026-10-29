@@ -1,0 +1,287 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 80.4,
+  "phrases": [
+    {
+      "text": "Measure N asks the voters of this fire protection district whether to keep its higher spending limit for four more years.",
+      "start": 0.03,
+      "end": 7.37
+    },
+    {
+      "text": "The state constitution sets a yearly limit on a government's spending of tax money, which voters may raise for up to four years at a time.",
+      "start": 8.03,
+      "end": 16.72
+    },
+    {
+      "text": "In 2018, district voters approved a special tax for fire and ambulance services, and raised the limit so the district could spend it.",
+      "start": 17.38,
+      "end": 26.63
+    },
+    {
+      "text": "Voters continued the higher limit in 2022.",
+      "start": 27.29,
+      "end": 30.37
+    },
+    {
+      "text": "Measure N needs a simple majority to pass.",
+      "start": 31.03,
+      "end": 33.99
+    },
+    {
+      "text": "Measure N would let the district keep spending all of the special tax through the 2029-2030 fiscal year.",
+      "start": 34.65,
+      "end": 41.9
+    },
+    {
+      "text": "The impartial analysis says that if Measure N fails, the limit would be reduced, reducing the funds for the district's current level of service.",
+      "start": 42.56,
+      "end": 51.8
+    },
+    {
+      "text": "The county voter guide does not include a cost estimate for the measure.",
+      "start": 52.46,
+      "end": 56.43
+    },
+    {
+      "text": "Supporters say Measure N is not a new tax, and simply lets the fire department keep using voter-approved funding.",
+      "start": 57.09,
+      "end": 64.15
+    },
+    {
+      "text": "No argument against Measure N was submitted for the county Registrar of Voters' printed voter guide pages on this measure.",
+      "start": 64.81,
+      "end": 71.91
+    },
+    {
+      "text": "A yes vote continues the higher spending limit for four more years.",
+      "start": 72.57,
+      "end": 76.4
+    },
+    {
+      "text": "A no vote is a vote against continuing the higher limit.",
+      "start": 77.06,
+      "end": 80.37
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure N asks the voters of this fire protection district whether to keep its higher spending limit for four more years.",
+      "The state constitution sets a yearly limit on a government's spending of tax money, which voters may raise for up to four years at a time.",
+      "In 2018, district voters approved a special tax for fire and ambulance services, and raised the limit so the district could spend it.",
+      "Voters continued the higher limit in 2022.",
+      "Measure N needs a simple majority to pass.",
+      "Measure N would let the district keep spending all of the special tax through the 2029-2030 fiscal year.",
+      "The impartial analysis says that if Measure N fails, the limit would be reduced, reducing the funds for the district's current level of service.",
+      "The county voter guide does not include a cost estimate for the measure.",
+      "Supporters say Measure N is not a new tax, and simply lets the fire department keep using voter-approved funding.",
+      "No argument against Measure N was submitted for the county Registrar of Voters' printed voter guide pages on this measure.",
+      "A yes vote continues the higher spending limit for four more years.",
+      "A no vote is a vote against continuing the higher limit."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure N asks the voters of this fire protection district whether to keep its higher spending limit for four more years."
+      },
+      "bounds": [
+        0,
+        177600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure N asks the voters of this fire protection district whether to keep its higher spending limit for four more years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The state constitution sets a yearly limit on a government's spending of tax money, which voters may raise for up to four years at a time."
+      },
+      "bounds": [
+        192000,
+        402000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The state constitution sets a yearly limit on a government's spending of tax money, which voters may raise for up to four years at a time.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "In 2018, district voters approved a special tax for fire and ambulance services, and raised the limit so the district could spend it."
+      },
+      "bounds": [
+        416400,
+        639840
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"In 2018, district voters approved a special tax for fire and ambulance services, and raised the limit so the district could spend it.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Voters continued the higher limit in 2022."
+      },
+      "bounds": [
+        654240,
+        729600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Voters continued the higher limit in 2022.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure N needs a simple majority to pass."
+      },
+      "bounds": [
+        744000,
+        816480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure N needs a simple majority to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure N would let the district keep spending all of the special tax through the 2029-2030 fiscal year."
+      },
+      "bounds": [
+        830880,
+        1006320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure N would let the district keep spending all of the special tax through the 2029-2030 fiscal year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The impartial analysis says that if Measure N fails, the limit would be reduced, reducing the funds for the district's current level of service."
+      },
+      "bounds": [
+        1020720,
+        1243920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The impartial analysis says that if Measure N fails, the limit would be reduced, reducing the funds for the district's current level of service.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The county voter guide does not include a cost estimate for the measure."
+      },
+      "bounds": [
+        1258320,
+        1355040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The county voter guide does not include a cost estimate for the measure.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say Measure N is not a new tax, and simply lets the fire department keep using voter-approved funding."
+      },
+      "bounds": [
+        1369440,
+        1540320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure N is not a new tax, and simply lets the fire department keep using voter-approved funding.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument against Measure N was submitted for the county Registrar of Voters' printed voter guide pages on this measure."
+      },
+      "bounds": [
+        1554720,
+        1726560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure N was submitted for the county Registrar of Voters' printed voter guide pages on this measure.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote continues the higher spending limit for four more years."
+      },
+      "bounds": [
+        1740960,
+        1834320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote continues the higher spending limit for four more years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote is a vote against continuing the higher limit."
+      },
+      "bounds": [
+        1848720,
+        1929600
+      ]
+    }
+  ],
+  "sha256": "81745b9a0266f9b95db9a279f68fd3fe2b977203a0292f28bc330c177eae71c0"
+}
