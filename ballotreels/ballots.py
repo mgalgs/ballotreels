@@ -299,6 +299,8 @@ BALLOTS: dict[str, Ballot] = {
                      # and Clayton's cards quote the City Clerk's notice
                      "ca-2026-11-03-clayton-measure-m":
                          "Notice of Special Measure Election for the City of Clayton",
+                     "ca-2026-11-03-clayton-measure-n":
+                         "Notice of Special Measure Election for the City of Clayton",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

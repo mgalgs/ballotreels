@@ -1064,3 +1064,11 @@ source = "impartial-analysis"
 quote = "It is estimated that Measure M will provide an additional $1,000,000 in annual local funding"
 amount = 1000000
 period = "per-year"
+
+# City of Clayton Measure N: a special parcel tax; no tax rate statement
+# or fiscal analysis applies, and neither the ballot question nor the
+# City Attorney's impartial analysis prints a revenue estimate (the
+# county's guide could not be fetched).
+[clayton-measure-n]
+source = "ballot-question"
+status = "none-printed"
