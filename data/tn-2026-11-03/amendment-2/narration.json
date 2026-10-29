@@ -1,0 +1,269 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 63.49,
+  "phrases": [
+    {
+      "text": "Amendment 2 is about a state tax on property.",
+      "start": 0.03,
+      "end": 3.55
+    },
+    {
+      "text": "Today, the Constitution allows property to be taxed by the state, counties and cities.",
+      "start": 4.21,
+      "end": 10.36
+    },
+    {
+      "text": "The resolution says the Legislature repealed the state property tax in 1949, and property tax is now imposed at county and city rates.",
+      "start": 11.02,
+      "end": 20.78
+    },
+    {
+      "text": "The amendment would bar the Legislature from imposing a state property tax on any kind of property.",
+      "start": 21.44,
+      "end": 27.95
+    },
+    {
+      "text": "All property would still be subject to taxation, but not to a state tax.",
+      "start": 28.61,
+      "end": 33.66
+    },
+    {
+      "text": "The Fiscal Review Committee estimates a one-time local cost of $9,400 to print a longer sample ballot.",
+      "start": 34.32,
+      "end": 42.27
+    },
+    {
+      "text": "Tennessee publishes no official argument for the amendment.",
+      "start": 42.93,
+      "end": 46.13
+    },
+    {
+      "text": "Tennessee publishes no official argument against the amendment.",
+      "start": 46.79,
+      "end": 50.57
+    },
+    {
+      "text": "Yes adopts the proposed language.",
+      "start": 51.23,
+      "end": 53.64
+    },
+    {
+      "text": "No keeps the current language.",
+      "start": 54.3,
+      "end": 56.18
+    },
+    {
+      "text": "To pass, yes must outnumber no and exceed half of all votes cast for governor.",
+      "start": 56.84,
+      "end": 63.46
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Amendment 2 is about a state tax on property.",
+      "Today, the Constitution allows property to be taxed by the state, counties and cities.",
+      "The resolution says the Legislature repealed the state property tax in 1949, and property tax is now imposed at county and city rates.",
+      "The amendment would bar the Legislature from imposing a state property tax on any kind of property.",
+      "All property would still be subject to taxation, but not to a state tax.",
+      "The Fiscal Review Committee estimates a one-time local cost of $9,400 to print a longer sample ballot.",
+      "Tennessee publishes no official argument for the amendment.",
+      "Tennessee publishes no official argument against the amendment.",
+      "Yes adopts the proposed language.",
+      "No keeps the current language.",
+      "To pass, yes must outnumber no and exceed half of all votes cast for governor."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Amendment 2 is about a state tax on property."
+      },
+      "bounds": [
+        0,
+        85920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Amendment 2 is about a state tax on property.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, the Constitution allows property to be taxed by the state, counties and cities."
+      },
+      "bounds": [
+        100320,
+        249360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, the Constitution allows property to be taxed by the state, counties and cities.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The resolution says the Legislature repealed the state property tax in 1949, and property tax is now imposed at county and city rates."
+      },
+      "bounds": [
+        263760,
+        499440
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The resolution says the Legislature repealed the state property tax in 1949, and property tax is now imposed at county and city rates.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The amendment would bar the Legislature from imposing a state property tax on any kind of property."
+      },
+      "bounds": [
+        513840,
+        671520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The amendment would bar the Legislature from imposing a state property tax on any kind of property.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "All property would still be subject to taxation, but not to a state tax."
+      },
+      "bounds": [
+        685920,
+        808560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"All property would still be subject to taxation, but not to a state tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The Fiscal Review Committee estimates a one-time local cost of $9,400 to print a longer sample ballot."
+      },
+      "bounds": [
+        822960,
+        1015200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Fiscal Review Committee estimates a one-time local cost of $9,400 to print a longer sample ballot.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Tennessee publishes no official argument for the amendment."
+      },
+      "bounds": [
+        1029600,
+        1107840
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Tennessee publishes no official argument for the amendment.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Tennessee publishes no official argument against the amendment."
+      },
+      "bounds": [
+        1122240,
+        1214400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Tennessee publishes no official argument against the amendment.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Yes adopts the proposed language."
+      },
+      "bounds": [
+        1228800,
+        1288080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Yes adopts the proposed language.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No keeps the current language."
+      },
+      "bounds": [
+        1302480,
+        1349040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No keeps the current language.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "To pass, yes must outnumber no and exceed half of all votes cast for governor."
+      },
+      "bounds": [
+        1363440,
+        1523760
+      ]
+    }
+  ],
+  "sha256": "9b7a00eb90fe64b8b8c8bf113be7616c938b1b943e5e22daf1e0283f66ad5861",
+  "take": {
+    "sha256": "b44402a55e8cedad889dd1e08c76c6eb047a8bc2a46818d7344340fbfe26b5db",
+    "bytes": 3047564
+  }
+}
