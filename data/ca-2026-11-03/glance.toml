@@ -2219,3 +2219,12 @@ quote = "will generate approximately $8,400,000 annually in additional revenue u
 amount = 8400000
 period = "per-year"
 direction = "revenue-gain"
+
+# Calexico Measure O: no fiscal analysis or tax rate statement applies
+# (a sales tax); the estimates are the City's, as the impartial analysis
+# gives them, the larger at the 1 percent rate from October 2030.
+[calexico-measure-o]
+source = "impartial-analysis"
+quote = "It is estimated that Measure O will provide an additional $4,000,000 in annual local funding when collected at a ½% rate, increasing to $8,000,000 when collected at a 1% rate."
+amount = 8000000
+period = "per-year"

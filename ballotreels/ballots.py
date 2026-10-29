@@ -630,6 +630,9 @@ BALLOTS: dict[str, Ballot] = {
                      "ca-2026-11-03-el-centro-measure-t":
                          "Measure T — El Centro Public Safety/City "
                          "Services Measure",
+                     "ca-2026-11-03-calexico-measure-o":
+                         "Measure O — City of Calexico Public Safety "
+                         "Sales Tax",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
