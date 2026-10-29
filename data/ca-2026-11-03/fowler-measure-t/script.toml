@@ -1,0 +1,204 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; why the council placed it (the
+# county's Measure C transportation tax is set to expire); the city's
+# own rate today; what would change (the new rate and when it starts,
+# what is exempt, how long it lasts and when it would end sooner, the
+# vote it needs); the revenue estimate as the
+# impartial analysis gives it; one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city", and the county transportation
+# tax is "Measure C", never its full name. The card and title carry it.
+#
+# No printed guide was found, so the card quotes the ballot question
+# from Resolution No. 2854, Section 4, as typed from the scan. It prints
+# no yes/no lines, so the card has no YES/NO boxes; the vote lines both
+# highlight the same phrase of the question.
+#
+# How long it lasts: the ballot question says "until ended by voters";
+# the ordinance (Section 3-11.16(a)) says thirty years unless voters
+# extend it, and (c) ends it sooner once county voters approve a tax to
+# succeed or replace Measure C, the State sets its start, and the
+# council confirms by resolution that it is that successor. The
+# narration gives both official wordings, side by side, and the early
+# end, in one line. That the money goes to the general fund is left
+# out for length; the opening's "for general city services" carries it. The opponents' "would never end" is theirs; their line distils
+# the two points the rest of their argument makes (the burden, and
+# voluntary giving first), so it does not set their words against the
+# ordinance's.
+#
+# The council's reason (the resolution's synopsis: "to help offset the
+# loss of Measure C funding") is the authors' purpose (STANDARD.md 6.2);
+# no argument in favor was filed, so no side owns it. No archived
+# source states the city's general fund budget, so the $300,000 a year
+# has no scale (STANDARD.md 6.5; left open, under [[question]]).
+
+contest = "ca-2026-11-03-fowler-measure-t"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "T"
+title = "RESOLUTION NO. 2854"
+origin = "A RESOLUTION OF THE CITY COUNCIL OF THE CITY OF FOWLER"
+summary = "To fund general City services, such as local police, fire protection, emergency response, repair streets and roads, improve aging infrastructure, maintain parks and public facilities, and other general City services, shall the measure, establishing a one-half cent (½¢) transactions and use tax providing approximately $300,000.00 annually until ended by voters and public reporting consistent with State law as required, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure T"
+
+[[section.line]]
+text = "Measure T asks the voters of this city whether to add a half-cent sales tax for general city services."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establishing a one-half cent (½¢) transactions and use tax"]
+
+[[section]]
+id = "background"
+heading = "Measure C"
+
+[[section.line]]
+id = "measure-c"
+text = "The city council placed it on the ballot to help make up for the loss of Measure C, a county transportation sales tax set to expire in June 2027."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "open-road"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the city charges its own 1 percent sales tax."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "The city's own sales tax rate"
+source = "impartial-analysis"
+unit = "%"
+labels = ["Today", "With Measure T"]
+values = [1, 1.5]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rate"
+text = "Measure T would raise it to 1.5 percent, starting on July 1, 2027."
+sources = ["impartial-analysis", "text"]
+
+[[section.line]]
+id = "exempt"
+text = "Groceries and prescription medicine would be exempt."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section.line]]
+id = "term"
+text = "The ballot question says the tax runs until voters stop it; the measure's text sets 30 years, or less if a county tax replaces Measure C."
+sources = ["ballot-question", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+text = "Measure T needs a simple majority to pass."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The city attorney's impartial analysis says the tax would raise about $300,000 a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure T was filed with the county registrar of voters, so the published measure documents include only the opponents' argument."
+sources = ["argument-against"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["No argument for was submitted"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say even a half-percent sales tax is a heavy burden for struggling neighbors, and those raising money should try voluntary giving first."
+sources = ["argument-against"]
+basis = ["many are struggling, and even a half-percent sales tax can be a heavy burden that adds up.", "We simply ask that they try voluntary giving first"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["A heavy burden that adds up", "Try voluntary giving first"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the half-cent sales tax."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establishing a one-half cent (½¢) transactions and use tax"]
+
+[[section.line]]
+text = "A no vote does not adopt the half-cent sales tax."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establishing a one-half cent (½¢) transactions and use tax"]
+
+[[question]]
+ask = "How long would the tax last?"
+lines = ["term"]
+
+[[question]]
+ask = "What happens if a county tax to replace Measure C passes?"
+lines = ["term"]
+
+[[question]]
+ask = "Which purchases would be taxed, and who pays?"
+lines = ["exempt"]
+
+[[question]]
+ask = "How big is $300,000 a year next to the city budget?"
+unanswered = true

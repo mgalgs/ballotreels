@@ -531,6 +531,10 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 2026-179",
                      "ca-2026-11-03-fresno-county-measure-s":
                          "Resolution No. 26-294",
+                     "ca-2026-11-03-fowler-measure-t":
+                         "Resolution No. 2854",
+                     "ca-2026-11-03-sierra-kings-measure-h":
+                         "Resolution No. 328",
                      # Nevada County Elections prints each local
                      # measure's ballot question, what your vote means,
                      # impartial analysis, arguments and full text in its

@@ -2013,3 +2013,20 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $105,000,000."
 amount = 105000000
 period = "unstated"
+
+# City of Fowler Measure T: a sales tax, so no tax rate statement or
+# fiscal analysis applies. The quote is the ballot question's, from
+# Resolution No. 2854; the City Attorney's impartial analysis gives the
+# same $300,000 a year.
+[fowler-measure-t]
+source = "ballot-question"
+quote = "providing approximately $300,000.00 annually until ended by voters"
+amount = 300000
+period = "per-year"
+
+# Sierra Kings Health Care District Measure H: a hospital lease, not a
+# tax or bond; no fiscal statement was filed, and the ballot question
+# (Resolution No. 328) prints no dollar figure.
+[sierra-kings-measure-h]
+source = "ballot-question"
+status = "none-printed"
