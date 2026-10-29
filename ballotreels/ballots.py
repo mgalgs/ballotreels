@@ -52,20 +52,14 @@ BALLOTS: dict[str, Ballot] = {
     # measure's ballot label and impartial analysis; Los Angeles prints
     # its ballot label only in the measure's proposed ordinance; Orange
     # County's Voter Information Guide prints each city measure's ballot
-    # question, impartial analysis and arguments in its own section.
-    # its ballot label only in the measure's proposed ordinance. San
+    # question, impartial analysis and arguments in its own section. San
     # Bernardino's guide prints no ballot question, which its cards quote
     # from the resolution placing the measure; the guide is still the
-    # publication the measure's pages are in.
-    # its ballot label only in the measure's proposed ordinance.
-    # Riverside's guide is titled "County Voter Information Guide" on its
-    # pages, with no county name, so its cards use that name as printed.
-    # its ballot label only in the measure's proposed ordinance. Alameda
-    # County's Registrar calls its guide the Composite Voter Information
-    # Guide.
-    # its ballot label only in the measure's proposed ordinance; Alameda's
-    # Composite Voter Information Guide prints each measure's ballot
-    # question and impartial analysis.
+    # publication the measure's pages are in. Riverside's guide is titled
+    # "County Voter Information Guide" on its pages, with no county name,
+    # so its cards use that name as printed. Alameda's Composite Voter
+    # Information Guide prints each measure's ballot question and
+    # impartial analysis.
     "ca": Ballot(guide="Official Voter Information Guide",
                  fiscal_label="Fiscal Impact:",
                  choices=("Yes", "No"),
