@@ -1,0 +1,64 @@
+# Archived sources for City of Sanger Measure B, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Fresno County Registrar of Voters posts each measure's filed
+# documents on its election page; no printed Voter Information Guide
+# was found online. The ballot question is quoted from City Council
+# Resolution No. 2026-72, Section 4. The City Attorney's impartial
+# analysis is the measure's neutral explanation, the kind a state's
+# attorney general's explanatory statement is. No tax rate statement or
+# fiscal analysis applies (a hotel tax); the one revenue figure is the
+# ballot question's.
+#
+# The registrar posts an argument against and no argument in favor and
+# no rebuttals (sources/sources.md); the yes side is filed = false.
+#
+# Every PDF is a scan with no text layer. The passages cited were typed
+# from the page images into sources/*-transcription.txt, each naming the
+# PDF and URL it copies; those sources point at the transcription, and
+# their url at the scan (as Clayton Measure M's do).
+
+[contest]
+id = "ca-2026-11-03-sanger-measure-b"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:sanger"
+kind = "measure"
+title = "City of Sanger Measure B: Raising the Hotel Tax to 12%"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Sanger, City Council Resolution No. 2026-72, calling a general municipal election on a proposed ordinance increasing the transient occupancy tax from four percent to twelve percent, adopted August 6, 2026: the ballot question, Section 4, page 3, and Sections 5-6 (transcribed from the scan)"
+credit = "Resolution No. 2026-72, City of Sanger"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/sanger-transient-tax/resolution_redacted.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Shannon Chaffin, Aleshire & Wynder, LLP, City Attorney, City Attorney's Impartial Analysis of Measure B, filed with the Fresno County Clerk August 24, 2026 (transcribed from the scan)"
+credit = "Impartial Analysis, City Attorney of Sanger"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/sanger-transient-tax/impartial-analysis_redacted.pdf"
+file = "sources/impartial-analysis-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Sanger, Exhibit A to Resolution No. 2026-72: the ordinance amending and restating the transient occupancy tax, Article V of Chapter 66 of the Sanger Municipal Code (transcribed in part from the scan)"
+credit = "Exhibit A, City of Sanger"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/sanger-transient-tax/exhibit-a-ordinance_redacted.pdf"
+file = "sources/ordinance-full-text-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against City of Sanger Transient Occupancy Tax Measure, as filed with the Fresno County Clerk August 19, 2026 (transcribed from the scan); no argument in favor was posted"
+credit = "Argument against, Measure B"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/sanger-transient-tax/argument-against_redacted.pdf"
+file = "sources/argument-against-transcription.txt"
+retrieved = "2026-10-28"

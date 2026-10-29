@@ -1680,3 +1680,12 @@ source = "ballot-question"
 quote = "To generate approximately $460,907 annually"
 amount = 460907
 period = "per-year"
+
+# City of Sanger Measure B: no tax rate statement or fiscal analysis
+# applies (a hotel tax). The quote is the ballot question's, from
+# Resolution No. 2026-72; the impartial analysis gives no figure.
+[sanger-measure-b]
+source = "ballot-question"
+quote = "providing approximately $55,037 annually for general City services"
+amount = 55037
+period = "per-year"
