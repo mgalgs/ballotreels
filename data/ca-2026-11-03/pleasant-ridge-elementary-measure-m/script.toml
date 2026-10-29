@@ -1,0 +1,164 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; how a school bond is repaid and what it
+# needs to pass; what the money may pay for; the district's tax rate
+# statement; one line per side; what a vote does.
+#
+# The bond total and the debt service are repaid from a tax on property
+# in the district, and no archived source states the district's budget,
+# so they have no budget scale (STANDARD.md 6.5; left open). The tax
+# rate statement prints the same $22.50 as its average and its highest
+# rate; the chart shows both, as printed. The supporters cite the state
+# matching funds, the oversight committee, the audits and the bar on
+# administrator salaries, so the neutral sections leave them out
+# (STANDARD.md 6.3); the card quotes the question's words on them as
+# printed. The project line gives the full text's Bond Project List,
+# which the supporters' roofs and heating and cooling overlap, as the
+# other school bond scripts give their project lists.
+#
+# No argument against Measure M was submitted. The no side says so
+# plainly; its section is marked filed = false.
+
+contest = "ca-2026-11-03-pleasant-ridge-elementary-measure-m"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "M"
+title = "Pleasant Ridge Union Elementary School District"
+origin = "Measure M was placed on the ballot by the Board of Trustees of the Pleasant Ridge Union Elementary School District"
+summary = "To update local elementary and middle schools, replace leaky roofs and failing heating/ cooling systems, improve student and school safety, weatherproof schools to avoid mold and dry rot, and qualify for matching funds from the State, shall Pleasant Ridge Union Elementary School District’s measure authorizing $19,800,000 in bonds, levying approximately $22.50 per $100,000 assessed value, generating on average $1,400,000, annually, while bonds are outstanding, with citizen oversight and audits, all funds staying local and none for administrator salaries, be adopted?"
+yes = "A ‘yes’ vote is a vote in favor of authorizing the Pleasant Ridge Union Elementary School District to issue and sell up to $19,800,000 in general obligation bonds."
+no = "A ‘no’ vote is a vote against authorizing the Pleasant Ridge Union Elementary School District to issue and sell up to $19,800,000 in general obligation bonds."
+
+[[section]]
+id = "what"
+heading = "Measure M"
+
+[[section.line]]
+text = "Measure M asks the voters of this school district whether to approve $19.8 million in school bonds."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $19,800,000 in bonds"]
+
+[[section]]
+id = "today"
+heading = "How a school bond works"
+
+[[section.line]]
+text = "The district would sell the bonds and repay them, with interest, from a tax on property in the district."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure M needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "projects"
+text = "The money could repair roofs, heating and cooling, plumbing and water systems, and modernize classrooms, restrooms and playgrounds."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-roof-repair"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+id = "tax-rate"
+text = "The district's tax rate statement estimates a tax of $22.50 per $100,000 of assessed value each year, until 2052-2053."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "bars"
+title = "Estimated tax per $100,000 of assessed value"
+source = "tax-statement"
+unit = ""
+labels = ["Average", "Highest"]
+values = [22.5, 22.5]
+
+[[section.line]]
+text = "The statement estimates the total to repay, with interest, at about $37 million."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say schools over 50 years old need basic repairs, and Measure M qualifies the district for state matching funds."
+sources = ["arguments"]
+basis = ["Our schools are over 50 years old and need basic repairs and modernization to meet safety and academic standards.", "Voting Yes on M will give the Pleasant Ridge School District access to State matching funds that we would otherwise not qualify for"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Schools over 50 need basic repairs", "Qualifies for state matching funds"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure M was submitted for the voter guide that the county election office printed on this measure."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is in favor of letting the district issue and sell up to $19.8 million in bonds."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["a vote in favor of authorizing"]
+
+[[section.line]]
+text = "A no vote is against letting the district issue those bonds."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["a vote against authorizing"]
+
+[[question]]
+ask = "What would the bond money pay for?"
+lines = ["projects"]
+
+[[question]]
+ask = "How much would property owners pay?"
+lines = ["tax-rate"]
