@@ -2444,3 +2444,14 @@ period = "per-year"
 [tehama-county-measure-e]
 source = "impartial-analysis"
 status = "none-printed"
+
+# City of Red Bluff Measure D: no fiscal statement was filed with the
+# measure; the one estimate is the City Council staff report's cost of
+# putting it on this ballot. It prints the range as "$5,000-8,000", with
+# one dollar sign, so the check reads $5,000 as its one dollar figure.
+[red-bluff-measure-d]
+source = "staff-report"
+quote = "The Tehama County Clerk's Office estimates that the cost of adding this ballot measure to the November 3, 2026, election would be $5,000-8,000."
+amount = 5000
+period = "one-time"
+direction = "cost"
