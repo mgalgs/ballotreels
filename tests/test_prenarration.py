@@ -203,6 +203,9 @@ class GateTest(unittest.TestCase):
 
 
 PROP_141 = REPO_ROOT / "data" / "az-2026-11-03" / "prop-141"
+# a copy's narration is its recorded take, whether or not a checkout has
+# the take's audio (narration_store)
+WITHOUT_AUDIO = shutil.ignore_patterns("narration.wav")
 
 
 class ReusedPhraseTest(unittest.TestCase):
@@ -217,7 +220,7 @@ class ReusedPhraseTest(unittest.TestCase):
         tmp = tempfile.TemporaryDirectory()
         self.addCleanup(tmp.cleanup)
         self.dir = Path(tmp.name) / "prop-141"
-        shutil.copytree(PROP_141, self.dir)
+        shutil.copytree(PROP_141, self.dir, ignore=WITHOUT_AUDIO)
 
     def failures(self, old, new):
         script = self.dir / "script.toml"
@@ -353,7 +356,7 @@ class SpokenParityTest(unittest.TestCase):
         # the real airtime check (1.7 s apart, where the estimate says
         # 1.1 s), so they are not estimated again.
         shutil.rmtree(self.dir)
-        shutil.copytree(CI_132, self.dir)
+        shutil.copytree(CI_132, self.dir, ignore=WITHOUT_AUDIO)
         path = self.dir / "script.toml"
         old = path.read_text(encoding="utf-8")
         self.assertIn("proposed by initiative petition", old)
@@ -367,7 +370,7 @@ class SpokenParityTest(unittest.TestCase):
         # With CI-132's narration committed, writing the opponents' draft
         # back in re-speaks that side, so both are estimated, and fail.
         shutil.rmtree(self.dir)
-        shutil.copytree(CI_132, self.dir)
+        shutil.copytree(CI_132, self.dir, ignore=WITHOUT_AUDIO)
         self.set_no(CI_132_NO_DRAFT)
         [f] = self.parity()
         self.assertIn("shorten yes", f.message)
