@@ -716,7 +716,21 @@ def _hero(state: StateElection, county: str | None = None) -> str | None:
         return None
     flag = pages.flag_path(state.abbr)
     flag_url = f"/static/{flag}" if (STATIC_DIR / flag).is_file() else None
-    return pages.hero_svg(hero, county, flag_url)
+    return pages.hero_svg(_hero_in_list_order(state, hero), county, flag_url)
+
+
+def _hero_in_list_order(state: StateElection, hero: dict) -> dict:
+    """`hero` with its outlines in the order of the state API's
+    `counties` list, so the state page's county picker (app.js) pairs
+    the n-th path of the hero's #hero-counties with the n-th county,
+    without the outlines being sent twice or keyed: a county with no
+    outline gets an empty one, and any outline of no listed county
+    comes after them all."""
+    paths = hero["paths"]
+    listed = state.counties()
+    ordered = {c: paths.get(c, "") for c in listed}
+    ordered.update((c, d) for c, d in paths.items() if c not in listed)
+    return {**hero, "paths": ordered}
 
 
 def _contest_detail(entry, state: StateElection,

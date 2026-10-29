@@ -372,6 +372,39 @@ class HeroTest(CountyServerTestCase):
         # every county drawn, for the state's outline
         self.assertEqual(hero.count("<path "), 5)
 
+    def test_state_hero_outlines_follow_the_county_list(self):
+        # The county picker (app.js) pairs the n-th outline in the
+        # hero's #hero-counties with the n-th of `counties`.
+        doc = self.get_json("/api/state/ca")
+        group = re.search(r'<g id="hero-counties">(.*?)</g>', doc["hero"])
+        outlines = re.findall(r'<path d="([^"]*)"/>', group.group(1))
+        paths = county_doc(FIXTURE_GEO)["hero"]["paths"]
+        self.assertEqual(outlines, [paths[c] for c in
+                                    (ALPHA, BETA, DELTA, GAMMA)])
+        self.assertEqual([c["name"] for c in doc["counties"]],
+                         ["Alpha County", "Beta County", "Delta County",
+                          "Gamma County"])
+
+    def test_state_hero_sends_each_outline_once(self):
+        doc = self.get_json("/api/state/ca")
+        for d in county_doc(FIXTURE_GEO)["hero"]["paths"].values():
+            self.assertEqual(json.dumps(doc).count(d), 1, d)
+
+    def test_a_county_without_an_outline_keeps_its_place(self):
+        state = self.deps.states["ca"]
+        hero = {**state.geo.hero, "paths": {
+            k: v for k, v in state.geo.hero["paths"].items() if k != BETA}}
+        ordered = server._hero_in_list_order(state, hero)
+        self.assertEqual(list(ordered["paths"]), [ALPHA, BETA, DELTA, GAMMA])
+        self.assertEqual(ordered["paths"][BETA], "")
+
+    def test_ordering_the_outlines_adds_no_bytes(self):
+        state = self.deps.states["ca"]
+        with tempfile.TemporaryDirectory() as tmp, \
+                mock.patch.object(server, "STATIC_DIR", Path(tmp)):
+            self.assertEqual(len(server._hero(state)),
+                             len(pages.hero_svg(state.geo.hero)))
+
     def test_hero_is_small(self):
         self.assertLess(len(self.county("beta")["hero"]), 4000)
 
@@ -382,6 +415,68 @@ class HeroTest(CountyServerTestCase):
         self.assertNotIn("<script>", hero)
 
 
+def _app():
+    return (REPO / "ballotreels" / "site" / "static" /
+            "app.js").read_text(encoding="utf-8")
+
+
+class CountyPickerTest(CountyServerTestCase):
+    """The state page's county picker (app.js's offerCountyPicker and
+    openCountyPicker), over what the state API sends it."""
+
+    def test_offered_only_with_a_hero_and_counties(self):
+        state = _app()[_app().index("async function renderState"):]
+        hook = re.search(r"if \((.*)\) \{\s*offerCountyPicker\(hero, "
+                         r"body\.counties\);", state)
+        self.assertIsNotNone(hook)
+        self.assertEqual(hook.group(1),
+                         "hero && body.counties && body.counties.length")
+        doc = self.get_json("/api/state/ca")
+        self.assertTrue(doc["hero"])
+        self.assertEqual(len(doc["counties"]), 4)
+
+    def test_a_county_page_has_no_picker(self):
+        county = _app()[_app().index("async function renderCounty"):]
+        county = county[:county.index("\n}\n")]
+        self.assertNotIn("offerCountyPicker", county)
+
+    def test_each_county_gets_its_outline_name_and_path(self):
+        # What offerCountyPicker pairs up: the n-th outline of the
+        # hero's #hero-counties and the n-th county.
+        doc = self.get_json("/api/state/ca")
+        group = re.search(r'<g id="hero-counties">(.*?)</g>', doc["hero"])
+        outlines = re.findall(r'<path d="([^"]*)"/>', group.group(1))
+        paths = county_doc(FIXTURE_GEO)["hero"]["paths"]
+        self.assertEqual(
+            [(c["name"], c["path"], d)
+             for c, d in zip(doc["counties"], outlines)],
+            [(f"{n} County", f"/ca/2026/county/{n.lower()}",
+              paths[f"{STATE}/county:{n.lower()}"])
+             for n in ("Alpha", "Beta", "Delta", "Gamma")])
+        self.assertIn('#hero-counties > path', _app())
+
+    def test_the_picker_is_a_labelled_modal_dialog(self):
+        picker = _app()[_app().index("function openCountyPicker"):]
+        for text in ('role: "dialog"', '"aria-modal": "true"',
+                     '"aria-labelledby": "picker-title"',
+                     'text: "Select your county"',
+                     '"aria-label": shape.name',
+                     "See ${link.county.name}'s measures",
+                     '(prefers-reduced-motion: reduce)',
+                     'event.key === "Escape"', 'page.inert = true',
+                     'hero.focus('):
+            self.assertIn(text, picker)
+        self.assertNotIn("pushState", picker)
+
+    def test_the_note_says_click_or_tap(self):
+        app = _app()
+        self.assertIn('clickOrTap(" to select your county")', app)
+        css = (REPO / "ballotreels" / "site" / "static" /
+               "style.css").read_text(encoding="utf-8")
+        coarse = css[css.index("@media (pointer: coarse)"):]
+        self.assertLess(coarse.index(".on-fine"), coarse.index("}\n\n"))
+
+
 class WithoutCountiesFileTest(CountyServerTestCase):
     with_counties = False
 
@@ -390,6 +485,7 @@ class WithoutCountiesFileTest(CountyServerTestCase):
                             for w in self.warnings), self.warnings)
         self.page("/ca/2026/county/alpha", status=404)
         doc = self.get_json("/api/state/ca")
+        # so no county picker: renderState offers it only with both
         self.assertEqual(doc["counties"], [])
         self.assertIsNone(doc["hero"])
         resp, body = self.get(self.public_port, "/sitemap.xml")
