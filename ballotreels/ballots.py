@@ -575,6 +575,20 @@ BALLOTS: dict[str, Ballot] = {
                                      "winters-unified-measure-b")},
                      "ca-2026-11-03-los-rios-ccd-measure-h-yolo":
                          "Current Measure Information",
+                     # Madera County posts each measure's filed documents
+                     # and no printed guide was found online: the county
+                     # measure's card quotes the ballot question from the
+                     # registrar's legal notice, named as the registrar
+                     # titles it; each school bond's quotes the abbreviated
+                     # form from the board's resolution, named as headed.
+                     "ca-2026-11-03-madera-county-measure-u":
+                         "Notice of Date Fixed for Submitting Arguments",
+                     "ca-2026-11-03-yosemite-unified-measure-y":
+                         "Resolution No. 2025/2026-20",
+                     "ca-2026-11-03-alview-dairyland-measure-v":
+                         "Resolution No. 26-27-02",
+                     "ca-2026-11-03-yosemite-unified-sfid-1-measure-w":
+                         "Resolution No. 2025/2026-19",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

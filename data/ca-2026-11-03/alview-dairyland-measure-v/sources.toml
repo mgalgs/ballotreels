@@ -1,0 +1,72 @@
+# Archived sources for Alview-Dairyland Union School District Measure V,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Madera County Clerk-Recorder & Registrar of Voters posts each
+# measure's filed documents on its election page; the printed County
+# Voter Information Guide was not found online. The ballot question is
+# quoted from Appendix B, the "Abbreviated Form of Bond Measure", of the
+# Board of Trustees' Resolution No. 26-27-02, as Yosemite Unified
+# Measure Y's is from its board's resolution. County Counsel's impartial
+# analysis is the measure's neutral explanation, the kind a state's
+# attorney general's explanatory statement is; the district's tax rate
+# statement (the resolution's Appendix C) is its fiscal statement.
+#
+# Every PDF but the legal notice is a scan with no text layer. The
+# passages cited were typed from the page images into
+# sources/*-transcription.txt, each naming the PDF and URL it copies;
+# those sources point at the transcription, and their url at the scan.
+# The registrar posts no argument against and no rebuttals.
+
+[contest]
+id = "ca-2026-11-03-alview-dairyland-measure-v"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:alview-dairyland_union_elementary_school_district"
+kind = "measure"
+title = "Alview-Dairyland Union School District Measure V: $7.3 Million School Facilities Bond"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Alview-Dairyland Union School District, Board of Trustees Resolution No. 26-27-02, adopted July 14, 2026: Appendix B, Abbreviated Form of Bond Measure, PDF page 12 (transcribed from the scan)"
+credit = "Resolution No. 26-27-02, Alview-Dairyland Union School District"
+url = "https://votemadera.com/wp-content/uploads/2026/08/Alview-Dairyland-Resolution-No.-26-27-02.WithAttachments_Redacted.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Madera County Counsel, Impartial Analysis of Measure \"V\", Alview-Dairyland Union School District Bond Measure (transcribed from the scan)"
+credit = "Impartial Analysis, Madera County Counsel"
+url = "https://votemadera.com/wp-content/uploads/2026/08/Filed-Copy-Impartial-Analysis-Measure-V-Alview.Dairyland_Redacted.pdf"
+file = "sources/impartial-analysis-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Alview-Dairyland Union School District, Tax Rate Statement, Appendix C to Resolution No. 26-27-02, PDF page 13 (transcribed from the scan)"
+credit = "Tax Rate Statement, Alview-Dairyland Union School District"
+url = "https://votemadera.com/wp-content/uploads/2026/08/Alview-Dairyland-Resolution-No.-26-27-02.WithAttachments_Redacted.pdf"
+file = "sources/tax-rate-statement-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Alview-Dairyland Union School District, Resolution No. 26-27-02: Appendix A, Full Text of Bond Measure, PDF pages 7-11"
+credit = "Full Text of Bond Measure, Alview-Dairyland Union School District"
+url = "https://votemadera.com/wp-content/uploads/2026/08/Alview-Dairyland-Resolution-No.-26-27-02.WithAttachments_Redacted.pdf"
+file = "sources/full-text_resolution-appendix-a-p7-11.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure \"V\", as filed with the Madera County Clerk July 2026 (transcribed from the scan; the registrar posts no argument against)"
+credit = "Argument in favor, Measure V"
+url = "https://votemadera.com/wp-content/uploads/2026/08/Alview-Dairyland-Union-School-District-Measure-V-Argument-in-Favor.pdf"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"

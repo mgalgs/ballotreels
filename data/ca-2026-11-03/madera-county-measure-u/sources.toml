@@ -1,0 +1,79 @@
+# Archived sources for Madera County Measure U, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Madera County Clerk-Recorder & Registrar of Voters posts each
+# measure's filed documents on its election page; the printed County
+# Voter Information Guide was not found online. The ballot question is
+# quoted from the registrar's own legal notice, "Notice of Date Fixed for
+# Submitting Arguments", which has a text layer. County Counsel's
+# impartial analysis is the measure's neutral explanation, the kind a
+# state's attorney general's explanatory statement is; the
+# Auditor-Controller's fiscal impact statement is its fiscal statement.
+#
+# Who votes: the tax applies only in the unincorporated areas (the
+# impartial analysis), but the notice is given "to the qualified
+# electors of Madera County", and the ordinance takes effect once "the
+# voters of the County of Madera have approved the measure". So the
+# division is the county, with no `voters` line, as Fresno County
+# Measure A's is.
+#
+# The impartial analysis, fiscal impact statement and argument in favor
+# are scans with no text layer. The passages cited were typed from the
+# page images into sources/*-transcription.txt, each naming the PDF and
+# URL it copies; those sources point at the transcription, and their
+# url at the scan (as Fresno County Measure A's do). The registrar
+# posts no argument against and no rebuttals.
+
+[contest]
+id = "ca-2026-11-03-madera-county-measure-u"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:madera"
+kind = "measure"
+title = "Madera County Measure U: Transient Occupancy Tax Increase"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Madera County Clerk-Recorder & Registrar of Voters, Notice of Date Fixed for Submitting Arguments on the Madera County Transient Occupancy Tax Measure, dated July 24, 2026: the ballot question, page 1"
+credit = "Legal notice, Madera County Registrar of Voters"
+url = "https://votemadera.com/wp-content/uploads/2026/07/Legal-Notice-Madera-County-Transient-Occupancy-Tax-November-3-2026-Consolidated-General-Election.pdf"
+file = "sources/legal-notice-arguments.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Madera County Counsel, Impartial Analysis by County Counsel of Measure U to Increase Madera County's Transient Occupancy Tax Rate from 9% to 11%, filed with the Madera County Clerk July 15, 2026 (transcribed from the scan)"
+credit = "Impartial Analysis, Madera County Counsel"
+url = "https://votemadera.com/wp-content/uploads/2026/08/County-TOT-Measure-U.Impartial-Analysis.Filed__Redacted.pdf"
+file = "sources/impartial-analysis-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "fiscal-impact"
+kind = "official-fiscal-analysis"
+publisher = "County of Madera, Auditor-Controller, County Auditor-Controller's Fiscal Impact Statement, Ordinance Proposing to Amend Madera County Municipal Code to Increase the Transient Occupancy Tax Rate from Nine Percent (9%) to Eleven Percent (11%), filed with the Madera County Clerk July 31, 2026 (transcribed from the scan)"
+credit = "Fiscal Impact Statement, County of Madera"
+url = "https://votemadera.com/wp-content/uploads/2026/08/County-TOT-Measure-U-Fiscal-Impact-Statement.pdf"
+file = "sources/fiscal-impact-statement-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "County of Madera, proposed Ordinance of the Board of Supervisors Amending Section 3.20.030 of the Madera County Code Pertaining to the Increase of the Transient Occupancy Tax Rate, pages 1-2"
+credit = "Proposed ordinance, County of Madera"
+url = "https://votemadera.com/wp-content/uploads/2026/06/County-TOT-Proposed-Ordinance001.pdf"
+file = "sources/ordinance-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure U, as filed with the Madera County Clerk July 24, 2026 (transcribed from the scan; the registrar posts no argument against)"
+credit = "Argument in favor, Measure U"
+url = "https://votemadera.com/wp-content/uploads/2026/08/County-TOT-Measure-U-Argument-in-Favor-1.pdf"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"

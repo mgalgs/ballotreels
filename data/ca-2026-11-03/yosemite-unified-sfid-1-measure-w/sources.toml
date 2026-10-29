@@ -1,0 +1,95 @@
+# Archived sources for Yosemite Unified School District Measure W, the
+# School Facilities Improvement District No. 1 bond, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Who votes: the registrar's notice is given "to the qualified electors
+# of the School Facilities Improvement District No. 1 of the Yosemite
+# Unified School District (the "SFID") of Madera County", and the bonds
+# are repaid from taxes on property within the SFID (the impartial
+# analysis). The SFID has no boundary layer of its own, so the division
+# is the county with a `voters` line, as a special district's is.
+#
+# The Madera County Clerk-Recorder & Registrar of Voters posts each
+# measure's filed documents on its election page; the printed County
+# Voter Information Guide was not found online. The ballot question is
+# quoted from Exhibit B, the "Abbreviated Form", of the Board of
+# Trustees' Resolution No. 2025/2026-19, as Measure Y's is from its
+# resolution. County Counsel's impartial analysis is the measure's
+# neutral explanation, the kind a state's attorney general's
+# explanatory statement is; the district's tax rate statement is its
+# fiscal statement.
+#
+# Tax rate statement: the registrar posted the $18 million statement in
+# the Measure Y filing (its PDF pages 19-20) and the Measure Y statement
+# in this one; the right one was cut into
+# sources/tax-rate-statement_from-Y-filing-p19-20.pdf (sources.md).
+#
+# Every PDF but the legal notice is a scan with no text layer. The
+# passages cited were typed from the page images into
+# sources/*-transcription.txt, each naming the PDF and URL it copies;
+# those sources point at the transcription, and their url at the scan.
+# The registrar posts no argument against and no rebuttals.
+
+[contest]
+id = "ca-2026-11-03-yosemite-unified-sfid-1-measure-w"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:madera"
+kind = "measure"
+title = "Yosemite Unified School District Measure W: School Facilities Improvement District No. 1 Bond"
+voters = "the Yosemite Unified School District's School Facilities Improvement District No. 1"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Yosemite Unified School District, Board of Trustees Resolution No. 2025/2026-19, School Facilities Improvement District No. 1, adopted June 18, 2026: Exhibit B, Bond Measure (Abbreviated Form), PDF page 16 (transcribed from the scan)"
+credit = "Resolution No. 2025/2026-19, Yosemite Unified School District"
+url = "https://votemadera.com/wp-content/uploads/2026/08/Filed-copy-Resol-No-2025.2026-19-SFID-No-1_Redacted.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "notice"
+kind = "election-filing"
+publisher = "Madera County Clerk-Recorder & Registrar of Voters, Notice of Date Fixed for Submitting Arguments on the Yosemite Unified School District Bond Measure for School Facilities Improvement District No. 1, dated July 24, 2026, page 1"
+credit = "Legal notice, Madera County Registrar of Voters"
+url = "https://votemadera.com/wp-content/uploads/2026/07/Legal-Notice-Yosemite-Unified-School-District-School-Facilities-Improvement-District-November-3-2026-Consolidated-General-Ele.pdf"
+file = "sources/legal-notice-arguments.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Madera County Counsel, Impartial Analysis of Measure \"W\", Yosemite Unified School District Bond Measure for School Facilities Improvement District No. 1 (transcribed from the scan)"
+credit = "Impartial Analysis, Madera County Counsel"
+url = "https://votemadera.com/wp-content/uploads/2026/08/Filed-Copy-Impartial-Analysis-Measure-W-YUSD-SFID-No-1_Redacted.pdf"
+file = "sources/impartial-analysis-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Yosemite Unified School District, Tax Rate Statement Regarding Proposed $18 Million School Facilities Improvement District No. 1 of the Yosemite Unified School District General Obligation Bonds, as posted in the Measure Y filing, PDF pages 19-20 (transcribed from the scan)"
+credit = "Tax Rate Statement, Yosemite Unified School District"
+url = "https://votemadera.com/wp-content/uploads/2026/08/Filed-Copy-Resol-No-2025.2026-20-YUSD-Bond_Redacted.pdf"
+file = "sources/tax-rate-statement-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Yosemite Unified School District, Resolution No. 2025/2026-19: Exhibit A, Full Text of Bond Measure, School Facilities Improvement District No. 1, PDF pages 10-15"
+credit = "Full Text of Bond Measure, Yosemite Unified School District"
+url = "https://votemadera.com/wp-content/uploads/2026/08/Filed-copy-Resol-No-2025.2026-19-SFID-No-1_Redacted.pdf"
+file = "sources/full-text_exhibit-a-p10-15.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure W, as filed with the Madera County Clerk July 2026 (transcribed from the scan; the registrar posts no argument against)"
+credit = "Argument in favor, Measure W"
+url = "https://votemadera.com/wp-content/uploads/2026/08/Yosemite-Unified-School-District-SFID-No.-1-Measure-W-Argument-in-Favor.pdf"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"
