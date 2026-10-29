@@ -426,3 +426,12 @@ source = "ballot-question"
 quote = "providing $6,000,000 annually for general government use for 14 years"
 amount = 6000000
 period = "per-year"
+
+# City of East Palo Alto Measure O: the total debt service, the City's
+# estimate as the City Attorney's Impartial Analysis gives it (the tax
+# rate statement is not among the measure's published documents).
+[east-palo-alto-measure-o]
+source = "impartial-analysis"
+quote = "the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $268,205,658."
+amount = 268205658
+period = "unstated"

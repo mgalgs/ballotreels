@@ -1,0 +1,188 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and whose measure it is; what a bond is and who repays it, who
+# placed Measure O on the ballot and the two-thirds vote it needs; what
+# the money would build, and how it is kept apart; the City's estimates of
+# the tax rate and the total repaid, as the impartial analysis gives them;
+# one line per side; what a vote does.
+#
+# The card quotes the ballot question from Resolution No. 57-2026, which
+# prints no yes/no lines (the City Attorney's analysis has them, in
+# another document), so, as for Los Angeles County Measure A, the card has
+# no YES/NO boxes, the vote lines give the analysis's meanings, and both
+# highlight the one phrase of the question they turn on.
+#
+# Scale (STANDARD.md 6.5): the bonds are repaid from a tax on property in
+# the city (the impartial analysis: "payable from ad valorem taxes levied
+# on taxable property in the City"), money property owners pay, not the
+# general fund, so the $125 million and the $268 million are exempt, as a
+# school bond's are; the tax rate is per $100,000 of assessed value. No
+# tax rate statement is among the archived files; the figures are the
+# City's estimates as the impartial analysis reports them.
+#
+# The argument in favor was filed as "Measure __" (once "X"), the argument
+# against as "Measure __"; the script says Measure O.
+
+contest = "ca-2026-11-03-east-palo-alto-measure-o"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "O"
+title = "East Palo Alto Community/Water/Public Safety Infrastructure Measure"
+origin = "A RESOLUTION OF THE CITY COUNCIL OF THE CITY OF EAST PALO ALTO"
+summary = "Shall the measure constructing a Library, Emergency Command Center, civic center, youth sports park; replacing deteriorating water pipes to provide safe/ clean drinking water; repairing storm drains to prevent flooding; addressing earthquake safety, by authorizing East Palo Alto to issue $125,000,000 in general obligation bonds, with annual levies averaging $105.26 per $100,000 of assessed value (raising approximately $8,940,000 annually) while bonds are outstanding, with independent audits/ public disclosure, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure O"
+
+[[section.line]]
+text = "East Palo Alto Measure O asks city voters whether to borrow $125 million through bonds for a library, civic center, water pipes and storm drains."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["$125,000,000 in general obligation bonds"]
+
+[[section]]
+id = "today"
+heading = "How it works"
+
+[[section.line]]
+id = "who-repays"
+text = "Bonds are borrowed money, repaid with interest from a tax on property in the city."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "The City Council placed Measure O on the ballot, and it needs a two-thirds vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "projects"
+text = "The bonds would buy land for a civic center: a police building, and a building for a library and city hall."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section.line]]
+text = "They would also pay for water tanks and pipes, storm drains, and land for a park with a track and field."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "water-pipes"
+
+[[section.line]]
+text = "The money would be kept in a separate fund, with a yearly independent audit."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "set-aside-funds"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "tax-rate"
+text = "The city estimates the tax would average $105.26 per $100,000 of assessed value a year, through 2057-2058."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "homestead"
+
+[[section.line]]
+id = "total"
+text = "The city estimates repaying all the bonds would take about $268 million, principal and interest."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Measure O bonds, dollars"
+source = "impartial-analysis"
+unit = "million"
+labels = ["Borrowed", "Repaid with interest"]
+values = [125, 268.2]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure O upgrades deteriorating water pipes, and builds a modern library with safe places for kids after school."
+sources = ["argument-for"]
+basis = ["Yes on “__” upgrades deteriorating pipes that distribute our drinking water and installs drinking water storage tanks large enough to support future City growth.", "Yes on “__” provides a modern library with up-to-date technology, hands on learning spaces, and dedicated areas for children and teens so they have somewhere safe to go after school and in the summer."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Upgrades deteriorating water pipes", "A modern library, safe for kids"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the bonds could cost twice as much or more with interest, and safety repairs should come from today's budget."
+sources = ["argument-against"]
+basis = ["$125,000,000 could cost us $250,000,000 or more (depending on the interests’ rates).", "Paying for essential safety repairs now, by using dollars already in the budget"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Could cost twice as much with interest", "Pay for repairs from the budget"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the city to issue up to $125 million in bonds for these projects."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["$125,000,000 in general obligation bonds"]
+
+[[section.line]]
+text = "A no vote means the city would not be authorized to issue the bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["$125,000,000 in general obligation bonds"]
+
+[[question]]
+ask = "Who pays the bonds back?"
+lines = ["who-repays", "tax-rate"]
+
+[[question]]
+ask = "What exactly would the money build?"
+lines = ["projects"]
+
+[[question]]
+ask = "What would the bonds cost in all?"
+lines = ["total"]
