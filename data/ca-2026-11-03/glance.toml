@@ -435,3 +435,10 @@ source = "impartial-analysis"
 quote = "the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $268,205,658."
 amount = 268205658
 period = "unstated"
+
+# City of East Palo Alto Measure CC: not a tax measure; no fiscal
+# analysis is among the measure's published documents, and the ballot
+# question prints no figure.
+[east-palo-alto-measure-cc]
+source = "ballot-question"
+status = "none-printed"

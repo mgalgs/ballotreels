@@ -1,0 +1,73 @@
+# Archived sources for City of East Palo Alto Measure CC, 2026-11-03
+# general election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1). San Mateo County's Assessor-County Clerk-Recorder &
+# Elections (ACRE) posts each document of the measure separately, as the
+# City of East Palo Alto filed it; no printed voter guide was archived.
+#
+# Measure CC is an ordinance amending the Municipal Code, not a charter
+# amendment, though ACRE's link title for the resolution calls it a
+# "Charter Amendment Measure": the resolution, the ordinance and the
+# impartial analysis all say it amends the Municipal Code.
+#
+# The City Attorney's Impartial Analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is. Not a tax measure; no fiscal analysis is among ACRE's
+# files.
+#
+# The resolution's text layer misreads its ballot question, and the
+# arguments have none. Each source that `check` reads verbatim (the
+# card's ballot question, each side's basis) is a transcription of its
+# page, read from the page image, in a .txt beside the PDF; the url is
+# the PDF's. No rebuttal to the argument against is among ACRE's files.
+
+[contest]
+id = "ca-2026-11-03-east-palo-alto-measure-cc"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:east_palo_alto"
+kind = "measure"
+title = "City of East Palo Alto Measure CC: Term Limits for City Council Members"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of East Palo Alto, Resolution No. 30-2026, Section 2: the ballot question (page 2), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Ballot question, Resolution No. 30-2026"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M207-Contest%20-Code-Reso-EPA%20Term%20Limits_Redacted.pdf"
+file = "sources/resolution-full-text.p1-2.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney's Impartial Analysis of Measure CC, City of East Palo Alto, filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "City Attorney's Impartial Analysis"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MCC-ImpartialAnalysis-EPA-Term-Limits_Redacted.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of East Palo Alto, Resolution No. 30-2026 and Exhibit A, the ordinance adding Article IV to Chapter 2.08 of the Municipal Code (pages 1 to 5), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M207-Contest%20-Code-Reso-EPA%20Term%20Limits_Redacted.pdf"
+file = "sources/resolution-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure CC (page 3), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Argument in favor, filed with San Mateo County"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M207-Contest%20-Code-5ArgInFavor-EPA%20Term%20Limits_Redacted.pdf"
+file = "sources/argument-for.p3.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure CC (page 3), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Argument against, filed with San Mateo County"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M207-Contest%20-Code-7ArgAgainst-EPA%20Term%20Limits_Redacted.pdf"
+file = "sources/argument-against.p3.txt"
+retrieved = "2026-10-28"
