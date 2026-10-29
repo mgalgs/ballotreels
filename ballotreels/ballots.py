@@ -386,6 +386,13 @@ BALLOTS: dict[str, Ballot] = {
                                      "natomas-unified-measure-d",
                                      "center-joint-unified-measure-e",
                                      "galt-joint-union-high-measure-g")},
+                     # San Joaquin County prints each measure's ballot
+                     # question, impartial analysis, tax rate statement
+                     # and arguments in its composite guide.
+                     **{f"ca-2026-11-03-{slug}":
+                        "County of San Joaquin Voter Information Guide & "
+                        "Sample Ballot"
+                        for slug in ("lodi-unified-measure-t",)},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
