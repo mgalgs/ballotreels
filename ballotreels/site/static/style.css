@@ -1325,3 +1325,308 @@ a.contest:hover {
 .county-links {
   margin-top: 18px;
 }
+
+/* -- a state page's county picker ----------------------------------- */
+
+/* Shown beside the state, or for the other kind of pointer. */
+.on-coarse {
+  display: none;
+}
+
+@media (pointer: coarse) {
+  .on-fine {
+    display: none;
+  }
+
+  .on-coarse {
+    display: inline;
+  }
+}
+
+/* The hero as the way in to the county pages: the state, and a
+   handwritten note beside it with an arrow at it. */
+.hero-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hero-picker:focus {
+  outline: none;
+}
+
+.hero-picker .hero-map {
+  flex: 0 1 auto;
+  min-width: 0;
+  width: auto;
+  max-width: 70%;
+  height: min(30vh, 300px);
+  max-height: none;
+  margin: 0;
+}
+
+@media (min-width: 720px) {
+  .hero-picker .hero-map {
+    height: 340px;
+  }
+}
+
+.hero-note {
+  flex: 0 1 10.5rem;
+  align-self: flex-start;
+  margin: 6% 0 0;
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.05;
+  color: var(--ink);
+  transform: rotate(-4deg);
+}
+
+@media (min-width: 720px) {
+  .hero-note {
+    font-size: 1.7rem;
+  }
+}
+
+.hero-note-text {
+  display: block;
+}
+
+.hero-note-arrow {
+  display: block;
+  width: 58px;
+  height: 47px;
+  margin: 4px 0 0 -10px;
+  color: var(--accent);
+}
+
+@media (hover: hover) {
+  .hero-picker:hover .hero-note-text {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+  }
+}
+
+.picker-open,
+.picker-open body {
+  overflow: hidden;
+}
+
+/* The picker itself: the whole screen, paper, the state filling it
+   within margins between a heading and the bar at the bottom. */
+.county-picker {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 8px;
+  padding: max(10px, env(safe-area-inset-top)) 14px
+           max(12px, env(safe-area-inset-bottom));
+}
+
+.picker-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-position: -1px -1px;
+}
+
+.picker-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  max-width: 1100px;
+  justify-self: center;
+}
+
+.picker-title {
+  margin: 0;
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: 1.9rem;
+  line-height: 1.1;
+}
+
+.picker-close {
+  flex: 0 0 auto;
+}
+
+.picker-stage {
+  position: relative;
+  min-height: 0;
+}
+
+.picker-map {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transform-origin: 0 0;
+}
+
+.picker-edge use {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 12;
+  stroke-linejoin: round;
+}
+
+.picker-edge .picker-edge-soft {
+  stroke-opacity: 0.35;
+  stroke-width: 8;
+}
+
+/* The state as one shape: every county, a little fattened, so the
+   hairline gaps between neighbours never show the edge underneath. */
+.picker-mask {
+  fill: #fff;
+  stroke: #fff;
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.picker-paper {
+  fill: var(--scrap);
+}
+
+.picker-edge,
+.picker-paper,
+.picker-flag,
+.picker-pick {
+  pointer-events: none;
+}
+
+/* The county page's orange hatch (pages.hero_svg's hero-hatch). */
+.hatch-wash {
+  fill: var(--accent);
+  fill-opacity: 0.18;
+}
+
+.hatch-line {
+  stroke: var(--accent);
+  stroke-opacity: 0.85;
+  stroke-width: 2.6;
+}
+
+.picker-county {
+  cursor: pointer;
+}
+
+.picker-county path {
+  fill: transparent;
+  stroke: var(--ink);
+  stroke-opacity: 0.45;
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+}
+
+.picker-county:focus {
+  outline: none;
+}
+
+.picker-county.is-picked path,
+.picker-county.is-hovered path {
+  fill: url(#picker-hatch);
+}
+
+.picker-county:focus-visible path {
+  stroke: var(--ink);
+  stroke-opacity: 1;
+  stroke-width: 3.5;
+}
+
+/* The selected county's line, over its neighbours'. */
+.picker-pick {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 4;
+  stroke-linejoin: round;
+}
+
+/* A hovered county's name, above the pointer. */
+.picker-tip {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  padding: 1px 9px;
+  font-size: 1.05rem;
+  white-space: nowrap;
+  color: var(--ink);
+  background: var(--scrap);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--box-radius);
+  box-shadow: 1px 2px 0 var(--ink);
+  pointer-events: none;
+  transform: translate(-50%, calc(-100% - 14px));
+  visibility: hidden;
+}
+
+.picker-tip.is-shown {
+  visibility: visible;
+}
+
+/* The bar at the bottom: a hint, then the selected county and the
+   way to its page. */
+.picker-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 16px;
+  width: 100%;
+  max-width: 640px;
+  /* Room for a selected county's name and button from the start, so
+     the map does not move when one is selected. */
+  min-height: 72px;
+  justify-self: center;
+  padding: 8px 14px;
+  background: var(--scrap);
+  border: 2px solid var(--ink);
+  border-radius: var(--box-radius);
+  box-shadow: 2px 3px 0 var(--ink);
+}
+
+@media (max-width: 559px) {
+  .picker-bar {
+    min-height: 108px;
+  }
+}
+
+.picker-bar p {
+  margin: 0;
+}
+
+.picker-hint {
+  color: var(--ink-soft);
+}
+
+.picker-chosen {
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.picker-go {
+  text-align: center;
+}
+
+.picker-bar [hidden] {
+  display: none;
+}

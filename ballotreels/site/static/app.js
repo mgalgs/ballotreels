@@ -478,10 +478,16 @@ function notFound() {
     [linkButton("Find your ballot", "/", "btn-primary")]));
 }
 
+// The state page's county picker open now (openCountyPicker), if any.
+// route() dismisses it, so Back, or a county's link, never leaves it
+// over the next page.
+let countyPicker = null;
+
 async function route() {
   routeToken += 1;
   routedHref = location.href;
   const { path, params, hash } = currentRoute();
+  if (countyPicker) countyPicker.dismiss();
   app.innerHTML = "";
   window.scrollTo(0, 0);
   // Must match pages.HOME_TITLE, the title a fresh load of / shows.
@@ -698,6 +704,7 @@ function kindLabel(kind, chambers) {
 }
 
 async function renderAmbiguousKind(zip, zipDoc, kind) {
+  if (countyPicker) countyPicker.dismiss();
   app.innerHTML = "";
   window.scrollTo(0, 0);
   const kindName = kindLabel(kind, zipDoc.chambers);
@@ -942,9 +949,13 @@ async function renderState(abbr, year, old) {
   const contests = body.levels.flatMap((level) => level.contests);
   const ready = contests.filter((c) => c.status === "cached").length;
   const when = electionDate(body.election);
+  const hero = heroArt(body.hero);
+  if (hero && body.counties && body.counties.length) {
+    offerCountyPicker(hero, body.counties);
+  }
   const section = el("section", {}, [
     backLink("Find your ballot", "/"),
-    heroArt(body.hero),
+    hero,
     heading("h1", `${name} statewide measures`),
     when ? el("p", { class: "muted", text: `Election day: ${when}` }) : null,
   ]);
@@ -978,6 +989,302 @@ function heroArt(svg) {
   const node = el("div", { class: "hero-art", "aria-hidden": "true" });
   node.innerHTML = svg;
   return node;
+}
+
+// -- the state page's county picker ----------------------------------
+
+// The note's arrow, drawn by hand down and to the left, at the state.
+const NOTE_ARROW = '<svg class="hero-note-arrow" viewBox="0 0 64 52" ' +
+  'aria-hidden="true"><path d="M58 5 C 50 7, 40 12, 31 20 C 23 27, 16 36, ' +
+  '9 45" fill="none" stroke="currentColor" stroke-width="2.6" ' +
+  'stroke-linecap="round"/><path d="M7.5 31 C 8 36, 8.5 41, 9 45.5 C 14 ' +
+  '44, 18.5 43.5, 23 43.8" fill="none" stroke="currentColor" ' +
+  'stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+// "Click" on a mouse or trackpad, "Tap" on a touch screen: both are in
+// the page and the stylesheet shows one, by (pointer: coarse).
+function clickOrTap(rest) {
+  return [el("span", { class: "on-fine", text: "Click" }),
+          el("span", { class: "on-coarse", text: "Tap" }), rest];
+}
+
+// A state page's hero becomes the way in to its counties' pages: a
+// handwritten note beside the state, and the state and the note open
+// the picker. The hero's #hero-counties holds one outline per county,
+// in the order of the state API's `counties` (server._hero_in_list_order).
+// The hero stays hidden from screen readers and out of the tab order:
+// the county list further down is the way in without a pointer.
+function offerCountyPicker(hero, counties) {
+  const outlines = hero.querySelectorAll("#hero-counties > path");
+  const shapes = counties.map((c, i) => ({
+    name: c.name, path: c.path,
+    d: outlines[i] ? outlines[i].getAttribute("d") : "",
+  })).filter((c) => c.d);
+  if (!shapes.length) return;
+  hero.classList.add("hero-picker");
+  // Where focus comes back to when the picker closes.
+  hero.tabIndex = -1;
+  const note = el("p", { class: "hero-note" }, [
+    el("span", { class: "hero-note-text" },
+       clickOrTap(" to select your county")),
+  ]);
+  note.insertAdjacentHTML("beforeend", NOTE_ARROW);
+  hero.appendChild(note);
+  hero.addEventListener("click", (event) => {
+    if (event.target.closest(".hero-map, .hero-note")) {
+      openCountyPicker(hero, shapes);
+    }
+  });
+}
+
+// Where an <svg> draws its viewBox (`vb`, [x, y, w, h]) on screen: the
+// top-left corner of the box and the scale, for preserveAspectRatio's
+// default (centred, the whole box shown).
+function drawnBox(svg, vb) {
+  const r = svg.getBoundingClientRect();
+  const k = Math.min(r.width / vb[2], r.height / vb[3]);
+  return { x: r.left + (r.width - vb[2] * k) / 2,
+           y: r.top + (r.height - vb[3] * k) / 2, k };
+}
+
+// The full-screen picker: the state grows from the hero to fill the
+// screen, its flag fades to plain paper and the county lines draw in.
+// A tap or click selects a county (hatched, and named in the bar at the
+// bottom with a link to its page); a second one on it goes there. A
+// mis-tap on a small county so costs nothing. Close, Escape or a click
+// off the state shrink it back. No history entry: Back leaves the page.
+function openCountyPicker(hero, shapes) {
+  if (countyPicker) return;
+  const heroMap = hero.querySelector(".hero-map");
+  const vb = heroMap.getAttribute("viewBox").split(/\s+/).map(Number);
+  const pad = -vb[0];
+  const flagUrl = heroMap.querySelector(".hero-flag")?.getAttribute("href");
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const page = document.querySelector(".page");
+
+  // The map: the state as in the hero (heavy edge, paper land, the
+  // flag), with a link per county over it, in name order.
+  const map = svgNode("svg", { class: "picker-map", viewBox: vb.join(" "),
+                               focusable: "false" });
+  const land = `x="0" y="0" width="${vb[2] - 2 * pad}" ` +
+    `height="${vb[3] - 2 * pad}" mask="url(#picker-land)"`;
+  map.innerHTML =
+    '<defs><filter id="picker-pencil" x="-5%" y="-5%" width="110%" ' +
+    'height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.012" ' +
+    'numOctaves="1" seed="7" result="grain"/><feDisplacementMap ' +
+    'in="SourceGraphic" in2="grain" scale="4" xChannelSelector="R" ' +
+    'yChannelSelector="G"/></filter>' +
+    '<pattern id="picker-hatch" patternUnits="userSpaceOnUse" width="9" ' +
+    'height="9" patternTransform="rotate(-40)"><rect class="hatch-wash" ' +
+    'width="9" height="9"/><line class="hatch-line" x1="0" y1="4.5" ' +
+    'x2="9" y2="4.5"/></pattern><g id="picker-shapes"></g>' +
+    `<mask id="picker-land" maskUnits="userSpaceOnUse" x="${vb[0]}" ` +
+    `y="${vb[1]}" width="${vb[2]}" height="${vb[3]}"><use ` +
+    'class="picker-mask" href="#picker-shapes"/></mask></defs>' +
+    '<g class="picker-edge"><use href="#picker-shapes" ' +
+    'filter="url(#picker-pencil)"/><use class="picker-edge-soft" ' +
+    'href="#picker-shapes" transform="translate(2 -1.5)"/></g>' +
+    `<rect class="picker-paper" ${land}/>` +
+    (flagUrl ? `<image class="picker-flag" preserveAspectRatio="xMidYMid ` +
+               `slice" ${land}/>` : "") +
+    '<g class="picker-counties"></g>' +
+    '<path class="picker-pick" filter="url(#picker-pencil)"/>';
+  const flag = map.querySelector(".picker-flag");
+  if (flag) flag.setAttribute("href", flagUrl);
+  const group = map.querySelector("#picker-shapes");
+  const links = map.querySelector(".picker-counties");
+  for (const shape of shapes) {
+    group.appendChild(svgNode("path", { d: shape.d }));
+    const link = svgNode("a", { class: "picker-county", href: shape.path,
+                                "aria-label": shape.name });
+    link.appendChild(svgNode("path", { d: shape.d, pathLength: "1" }));
+    link.county = shape;
+    links.appendChild(link);
+  }
+  const pickMark = map.querySelector(".picker-pick");
+
+  const close = button("Close", { class: "btn btn-quiet picker-close" });
+  close.prepend(el("span", { "aria-hidden": "true", text: "✕ " }));
+  const tip = el("div", { class: "picker-tip", "aria-hidden": "true" });
+  const chosen = el("p", { class: "picker-chosen", hidden: "" });
+  const goLink = linkButton("", "#", "btn-primary picker-go");
+  goLink.hidden = true;
+  const hint = el("p", { class: "picker-hint" },
+                  clickOrTap(" your county on the map"));
+  const bar = el("div", { class: "picker-bar", "aria-live": "polite" },
+                 [hint, chosen, goLink]);
+  const stage = el("div", { class: "picker-stage" }, [map]);
+  const backdrop = el("div", { class: "picker-backdrop" });
+  const chrome = [
+    el("div", { class: "picker-head" }, [
+      el("h2", { id: "picker-title", class: "picker-title",
+                 text: "Select your county" }),
+      close]),
+    bar];
+  const root = el("div", { class: "county-picker", role: "dialog",
+                           "aria-modal": "true",
+                           "aria-labelledby": "picker-title" },
+                  [backdrop, chrome[0], stage, bar, tip]);
+
+  let picked = null;
+  function pick(link) {
+    if (picked) picked.classList.remove("is-picked");
+    picked = link;
+    link.classList.add("is-picked");
+    pickMark.setAttribute("d", link.county.d);
+    hint.hidden = true;
+    chosen.hidden = false;
+    chosen.textContent = link.county.name;
+    goLink.hidden = false;
+    goLink.href = link.county.path;
+    goLink.textContent = `See ${link.county.name}'s measures`;
+  }
+
+  map.addEventListener("click", (event) => {
+    const link = event.target.closest(".picker-county");
+    if (!link) {
+      // Off the state, on the screen around it.
+      if (event.target === map) shut();
+      return;
+    }
+    if (event.metaKey || event.ctrlKey || event.shiftKey) return;
+    // The second tap on a county, or Enter on it, follows its link
+    // (the page's own link handling); the first only selects it.
+    if (link === picked || event.detail === 0) return dismiss();
+    event.preventDefault();
+    pick(link);
+  });
+  goLink.addEventListener("click", () => dismiss());
+  // Moving through the counties by keyboard selects each in turn, so
+  // the bar names it. (On the dialog, not the SVG: Chrome makes an SVG
+  // element with a focus listener a tab stop of its own.)
+  root.addEventListener("focusin", (event) => {
+    const link = event.target.closest(".picker-county");
+    if (link && link.matches(":focus-visible")) pick(link);
+  });
+  // A mouse's hover shades the county and names it beside the pointer
+  // (a touch has no hover: its tap selects).
+  let hovered = null;
+  function hover(link) {
+    if (hovered) hovered.classList.remove("is-hovered");
+    hovered = link;
+    if (link) link.classList.add("is-hovered");
+    tip.classList.toggle("is-shown", !!link);
+  }
+  links.addEventListener("pointermove", (event) => {
+    const link = event.target.closest(".picker-county");
+    if (!link || event.pointerType !== "mouse") return hover(null);
+    tip.textContent = link.county.name;
+    tip.style.left = `${event.clientX}px`;
+    tip.style.top = `${event.clientY}px`;
+    hover(link);
+  });
+  links.addEventListener("pointerleave", () => hover(null));
+  close.addEventListener("click", () => shut());
+  backdrop.addEventListener("click", () => shut());
+  function onKey(event) {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      shut();
+    } else if (event.key === "Tab") {
+      // Focus stays in the picker: past its last stop, round to its first.
+      const stops = [...root.querySelectorAll("button, a[href]:not([hidden])")];
+      const at = stops.indexOf(document.activeElement);
+      const to = event.shiftKey ? (at <= 0 ? stops.length - 1 : null) :
+        (at === stops.length - 1 || at < 0 ? 0 : null);
+      if (to != null) {
+        event.preventDefault();
+        stops[to].focus();
+      }
+    }
+  }
+  document.addEventListener("keydown", onKey);
+
+  document.documentElement.classList.add("picker-open");
+  if (page) page.inert = true;
+  document.body.appendChild(root);
+  close.focus({ preventScroll: true });
+
+  // The grow: the map laid out full screen, then moved and scaled back
+  // onto the hero's state and played forward from there.
+  let running = [];
+  function flip(reverse) {
+    const from = drawnBox(heroMap, vb);
+    const to = drawnBox(map, vb);
+    const box = map.getBoundingClientRect();
+    const s = from.k / to.k;
+    const tx = from.x - box.left - s * (to.x - box.left);
+    const ty = from.y - box.top - s * (to.y - box.top);
+    const small = { transform: `translate(${tx}px, ${ty}px) scale(${s})` };
+    const full = { transform: "none" };
+    const timing = { duration: 480, easing: "cubic-bezier(.3, .7, .25, 1)",
+                     fill: "both" };
+    const faded = [{ opacity: 0 }, { opacity: 1 }];
+    if (reverse) {
+      return [
+        map.animate([full, small], { ...timing, delay: 140 }),
+        backdrop.animate([...faded].reverse(),
+                         { duration: 420, delay: 160, fill: "both" }),
+        ...chrome.map((c) => c.animate([...faded].reverse(),
+                                       { duration: 160, fill: "both" })),
+        links.animate([...faded].reverse(), { duration: 160, fill: "both" }),
+        pickMark.animate([...faded].reverse(),
+                         { duration: 160, fill: "both" }),
+        ...(flag ? [flag.animate(faded, { duration: 200, fill: "both" })] : []),
+      ];
+    }
+    return [
+      map.animate([small, full], timing),
+      backdrop.animate(faded, { duration: 360, fill: "both" }),
+      ...chrome.map((c) => c.animate(faded,
+                                     { duration: 240, delay: 320,
+                                       fill: "backwards" })),
+      ...(flag ? [flag.animate([...faded].reverse(),
+                               { duration: 380, delay: 300,
+                                 fill: "both" })] : []),
+      ...[...links.children].map((link) => link.firstChild.animate(
+        [{ strokeDasharray: "1 1", strokeDashoffset: 1 },
+         { strokeDasharray: "1 1", strokeDashoffset: 0 }],
+        { duration: 700, delay: 380, easing: "ease-out",
+          fill: "backwards" })),
+    ];
+  }
+  if (flag) flag.style.opacity = 0;
+  heroMap.style.visibility = "hidden";
+  if (!still) running = flip(false);
+
+  // Takes the picker down at once: for a county's link, or a new page.
+  function dismiss() {
+    if (countyPicker !== picker) return;
+    countyPicker = null;
+    running.forEach((a) => a.cancel());
+    document.removeEventListener("keydown", onKey);
+    root.remove();
+    heroMap.style.visibility = "";
+    document.documentElement.classList.remove("picker-open");
+    if (page) page.inert = false;
+  }
+
+  // Closes it, shrinking the state back into the hero, and gives focus
+  // back to the hero.
+  let shutting = false;
+  async function shut() {
+    if (shutting) return;
+    shutting = true;
+    hover(null);
+    root.inert = true;
+    if (!still) {
+      running.forEach((a) => a.cancel());
+      running = flip(true);
+      await Promise.all(running.map((a) => a.finished)).catch(() => {});
+    }
+    if (countyPicker !== picker) return;
+    dismiss();
+    hero.focus({ preventScroll: true });
+  }
+
+  const picker = { dismiss };
+  countyPicker = picker;
 }
 
 // A state page's list of its counties' pages.
