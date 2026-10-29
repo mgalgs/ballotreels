@@ -1,0 +1,58 @@
+# Archived sources for Oroville City Elementary School District Measure
+# Q, 2026-11-03 general election (sources/sources.md). Every id here may
+# be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Butte County Clerk-Recorder/Elections' Local Voter Information
+# Guide prints Measure Q on PDF pages 58 to 70 (printed footers
+# 04-110326-56 to -68): the ballot question and County Counsel's
+# Impartial Analysis (58 to 59), an argument in favor (59 to 60), "No
+# argument against was filed." (61), the full text with its project list
+# (61 to 68) and the District's Tax Information Statement (68 to 70). No
+# rebuttals are printed. The County also posts the District's signed
+# resolution and tax rate statement, and County Counsel's signed
+# analysis, as separate files (archived beside the guide pages; the
+# script cites the guide).
+
+[contest]
+id = "ca-2026-11-03-oroville-city-elementary-measure-q"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:oroville_city_elementary_school_district"
+kind = "measure"
+title = "Oroville City Elementary School District Measure Q: School Repair and Improvement Bonds"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "Butte County Clerk-Recorder/Elections, Local Voter Information Guide, Statewide General Election – November 3, 2026, PDF pages 58 and 59: ballot question and County Counsel's Impartial Analysis of Measure Q"
+credit = "County Counsel's Impartial Analysis, Butte County Local Voter Information Guide"
+url = "https://buttevotes.ca.gov/DocumentCenter/View/4193/Butte_VIG_Final_8-18-2026"
+file = "sources/vig-pp58-70-label-analysis-arguments-fulltext-taxstatement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure Q, as printed in the Butte County Local Voter Information Guide, PDF pages 59 and 60 (the guide prints that no argument against was filed, page 61)"
+credit = "Argument in favor, Butte County Local Voter Information Guide"
+url = "https://buttevotes.ca.gov/DocumentCenter/View/4193/Butte_VIG_Final_8-18-2026"
+file = "sources/vig-pp58-70-label-analysis-arguments-fulltext-taxstatement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure Q, with its Bond Project List, Butte County Local Voter Information Guide, PDF pages 61 to 68"
+credit = "Full text of Measure Q, Butte County Local Voter Information Guide"
+url = "https://buttevotes.ca.gov/DocumentCenter/View/4193/Butte_VIG_Final_8-18-2026"
+file = "sources/vig-pp58-70-label-analysis-arguments-fulltext-taxstatement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Tax Information Statement Measure Q, signed by the Superintendent, Oroville City Elementary School District, Butte County Local Voter Information Guide, PDF pages 68 to 70"
+credit = "Tax Information Statement, Oroville City Elementary School District"
+url = "https://buttevotes.ca.gov/DocumentCenter/View/4193/Butte_VIG_Final_8-18-2026"
+file = "sources/vig-pp58-70-label-analysis-arguments-fulltext-taxstatement.pdf"
+retrieved = "2026-10-28"

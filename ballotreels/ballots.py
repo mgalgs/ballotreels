@@ -745,6 +745,15 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 2026-4",
                      "ca-2026-11-03-shasta-tehama-trinity-jccd-measure-c-modoc":
                          "Abbreviated Form of Bond Measure",
+                     # Butte County Clerk-Recorder/Elections prints each
+                     # local measure's ballot question, impartial analysis
+                     # and arguments in its guide, titled "Local Voter
+                     # Information Guide" with no county name
+                     **{f"ca-2026-11-03-{slug}":
+                        "Local Voter Information Guide"
+                        for slug in ("oroville-measure-r",
+                                     "oroville-measure-s",
+                                     "oroville-city-elementary-measure-q")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
