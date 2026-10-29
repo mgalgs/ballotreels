@@ -1910,3 +1910,11 @@ period = "per-year"
 [davis-measure-w]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Woodland Measure Y: a sales tax, so no tax rate statement; the
+# City Attorney's Impartial Analysis gives the revenue estimate.
+[woodland-measure-y]
+source = "impartial-analysis"
+quote = "It is estimated that Measure “Y” will provide an additional $16,000,000 in annual local funding that could be used to maintain and improve City services."
+amount = 16000000
+period = "per-year"
