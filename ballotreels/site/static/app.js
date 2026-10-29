@@ -514,9 +514,13 @@ async function route() {
 function renderHome() {
   const input = el("input", {
     type: "text", id: "zip", class: "zip-input", inputmode: "numeric",
-    pattern: "[0-9]*", autocomplete: "postal-code", maxlength: "5",
+    pattern: "[0-9]*", maxlength: "5",
     placeholder: "5 digits", autofocus: "autofocus",
     "aria-describedby": "zip-note",
+    // "postal-code" makes password managers offer an identity fill on
+    // every visit; the ignore attributes keep their inline menus off.
+    autocomplete: "off", "data-bwignore": "true", "data-1p-ignore": "true",
+    "data-lpignore": "true",
   });
   const note = el("p", { id: "zip-note", class: "field-note",
                          "aria-live": "polite" });
