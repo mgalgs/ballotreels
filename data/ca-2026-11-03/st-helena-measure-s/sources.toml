@@ -1,0 +1,52 @@
+# Archived sources for City of St. Helena Measure S, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Napa County's Voter Information Guide could not be fetched
+# (napacounty.gov answers plain requests with a 403), so these are the
+# City of St. Helena's own Measure S pages. The ballot question is
+# quoted from the City's "Measure S - Ballot Question" page. The City
+# Attorney's impartial analysis is the measure's neutral explanation,
+# the kind a state's attorney general's explanatory statement is. No tax
+# rate statement or fiscal analysis applies (a sales tax); the one
+# revenue estimate is the analysis's. The City's resolution placing the
+# measure (sources/resolution-2026-070.pdf) is a scan with no text
+# layer and is not cited.
+#
+# The City posts no argument for or against Measure S; whether any was
+# filed is not confirmed against the printed county guide.
+
+[contest]
+id = "ca-2026-11-03-st-helena-measure-s"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:st._helena"
+kind = "measure"
+title = "City of St. Helena Measure S: A Half-Cent Sales Tax Until Ended by Voters"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of St. Helena, Measure S - Ballot Question"
+credit = "Measure S - Ballot Question, City of St. Helena"
+url = "https://cityofsthelena.gov/985/Measure-S---Ballot-Question"
+file = "sources/ballot-question.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City of St. Helena, City Attorney’s Impartial Analysis of Measure S, 1/2% Transactions and Use (Sales) Tax"
+credit = "City Attorney’s Impartial Analysis of Measure S"
+url = "https://cityofsthelena.gov/998/Measure-S---Impartial-Analysis"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of St. Helena, Measure S - Full Text (Chapter 3.26, Supplemental General Transactions and Use Tax)"
+credit = "Measure S - Full Text, City of St. Helena"
+url = "https://cityofsthelena.gov/986/Measure-S---Full-Text"
+file = "sources/full-text.html"
+retrieved = "2026-10-28"

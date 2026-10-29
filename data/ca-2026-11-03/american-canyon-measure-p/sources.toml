@@ -1,0 +1,65 @@
+# Archived sources for City of American Canyon Measure P, 2026-11-03
+# general election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Napa County's Voter Information Guide could not be fetched
+# (napacounty.gov answers plain requests with a 403), so these are the
+# City Clerk's copies from the City of American Canyon's Ballot Measures
+# page. The ballot question is quoted from Resolution No. 2026-57, which
+# orders it to "appear on the ballot". The resolution is a scan with no
+# text layer: its ballot question and adoption vote were typed from the
+# page images into sources/resolution-2026-57-transcription.txt, which
+# names the PDF and URL it copies; that source points at the
+# transcription, and its url at the scan. The City Attorney's impartial
+# analysis is the measure's neutral explanation, the kind a state's
+# attorney general's explanatory statement is. No tax rate statement or
+# fiscal analysis applies (a sales tax); the one revenue estimate is the
+# City's, as the analysis gives it.
+#
+# The City's page lists headings for an argument against and both
+# rebuttals with no document under them; whether any was filed is not
+# confirmed against the printed county guide.
+
+[contest]
+id = "ca-2026-11-03-american-canyon-measure-p"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:american_canyon"
+kind = "measure"
+title = "City of American Canyon Measure P: A 1% Sales Tax Until Ended by Voters"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of American Canyon, Resolution No. 2026-57, submitting a proposed transactions and use tax to the City’s voters, adopted June 16, 2026: the ballot question, page 1, and the vote, page 3 (transcribed from the scan)"
+credit = "Resolution No. 2026-57, City of American Canyon"
+url = "https://portal.laserfiche.com/Portal/ElectronicFile.aspx?docid=459185&repo=r-f53bdda4"
+file = "sources/resolution-2026-57-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City of American Canyon, City Attorney’s Impartial Analysis of Measure P, August 4, 2026"
+credit = "City Attorney’s Impartial Analysis of Measure P"
+url = "https://portal.laserfiche.com/Portal/ElectronicFile.aspx?docid=459186&repo=r-f53bdda4"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of American Canyon, the proposed ordinance adding Chapter 3.22, Transactions and Use Tax, to the American Canyon Municipal Code (full text)"
+credit = "Measure P ordinance, City of American Canyon"
+url = "https://portal.laserfiche.com/Portal/ElectronicFile.aspx?docid=459189&repo=r-f53bdda4"
+file = "sources/ordinance-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument In Favor Of Measure P, as posted by the City of American Canyon"
+credit = "Argument in favor, City of American Canyon"
+url = "https://portal.laserfiche.com/Portal/ElectronicFile.aspx?docid=464597&repo=r-f53bdda4"
+file = "sources/argument-in-favor.pdf"
+retrieved = "2026-10-28"

@@ -1496,3 +1496,29 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $61,000,000."
 amount = 61000000
 period = "unstated"
+
+# City of American Canyon Measure P: no tax rate statement or fiscal
+# analysis applies (a sales tax); the one estimate is the City's, as
+# the City Attorney's impartial analysis gives it.
+[american-canyon-measure-p]
+source = "impartial-analysis"
+quote = "The City estimates that Measure P will generate approximately $3.7 million in new local revenue per year."
+amount = 3700000
+period = "per-year"
+
+# City of St. Helena Measure S: no tax rate statement or fiscal analysis
+# applies (a sales tax); the one estimate is the City Attorney's
+# impartial analysis's.
+[st-helena-measure-s]
+source = "impartial-analysis"
+quote = "It is estimated that Measure S will provide an additional $2,000,000 in annual local funding"
+amount = 2000000
+period = "per-year"
+
+# Town of Yountville Measure Y: an increase in the Town's appropriations
+# limit, not a tax; no fiscal statement or revenue estimate was
+# published (the county's guide could not be fetched), and the
+# impartial analysis prints no cost.
+[yountville-measure-y]
+source = "impartial-analysis"
+status = "none-printed"

@@ -418,6 +418,15 @@ BALLOTS: dict[str, Ballot] = {
                         for slug in ("lodi-unified-measure-t",
                                      "lincoln-unified-measure-v",
                                      "escalon-unified-measure-u")},
+                     # Napa County's guide could not be fetched: each Napa
+                     # city's card quotes its ballot question from the
+                     # city's own document, named as headed
+                     "ca-2026-11-03-american-canyon-measure-p":
+                         "Resolution No. 2026-57",
+                     "ca-2026-11-03-st-helena-measure-s":
+                         "Measure S - Ballot Question",
+                     "ca-2026-11-03-yountville-measure-y":
+                         "Yountville Town Council Staff Report",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
