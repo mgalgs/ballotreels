@@ -1,0 +1,221 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 63.92,
+  "phrases": [
+    {
+      "text": "City of Berkeley Measure V asks voters in the city whether to add a 0.5 percent sales tax.",
+      "start": 0.03,
+      "end": 6.8
+    },
+    {
+      "text": "The City Council placed Measure V on the ballot, and it needs a simple majority to pass.",
+      "start": 7.46,
+      "end": 13.1
+    },
+    {
+      "text": "The total sales tax rate in Berkeley would rise to 10.75 percent, from April 2027 until voters repeal it.",
+      "start": 13.76,
+      "end": 22.61
+    },
+    {
+      "text": "The money would go into the general fund, and could be spent on any city purpose.",
+      "start": 23.27,
+      "end": 28.39
+    },
+    {
+      "text": "The City Attorney's impartial analysis says the city estimates the tax will raise between $9 million and $10 million a year.",
+      "start": 29.05,
+      "end": 37.14
+    },
+    {
+      "text": "Opponents say the permanent sales tax is regressive, and would fall hardest on students, low-income households, seniors and working families.",
+      "start": 37.8,
+      "end": 47.36
+    },
+    {
+      "text": "Supporters say Measure V would prevent forced cuts to fire and police, prevent a fire station closure, and maintain emergency response.",
+      "start": 48.02,
+      "end": 57.6
+    },
+    {
+      "text": "A yes vote is a vote in favor of the tax.",
+      "start": 58.26,
+      "end": 60.94
+    },
+    {
+      "text": "A no vote is a vote against the tax.",
+      "start": 61.6,
+      "end": 63.89
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "City of Berkeley Measure V asks voters in the city whether to add a 0.5 percent sales tax.",
+      "The City Council placed Measure V on the ballot, and it needs a simple majority to pass.",
+      "The total sales tax rate in Berkeley would rise to 10.75 percent, from April 2027 until voters repeal it.",
+      "The money would go into the general fund, and could be spent on any city purpose.",
+      "The City Attorney's impartial analysis says the city estimates the tax will raise between $9 million and $10 million a year.",
+      "Opponents say the permanent sales tax is regressive, and would fall hardest on students, low-income households, seniors and working families.",
+      "Supporters say Measure V would prevent forced cuts to fire and police, prevent a fire station closure, and maintain emergency response.",
+      "A yes vote is a vote in favor of the tax.",
+      "A no vote is a vote against the tax."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "City of Berkeley Measure V asks voters in the city whether to add a 0.5 percent sales tax."
+      },
+      "bounds": [
+        0,
+        163920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"City of Berkeley Measure V asks voters in the city whether to add a 0.5 percent sales tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The City Council placed Measure V on the ballot, and it needs a simple majority to pass."
+      },
+      "bounds": [
+        178320,
+        315120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Council placed Measure V on the ballot, and it needs a simple majority to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The total sales tax rate in Berkeley would rise to 10.75 percent, from April 2027 until voters repeal it."
+      },
+      "bounds": [
+        329520,
+        543360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The total sales tax rate in Berkeley would rise to 10.75 percent, from April 2027 until voters repeal it.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money would go into the general fund, and could be spent on any city purpose."
+      },
+      "bounds": [
+        557760,
+        682080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money would go into the general fund, and could be spent on any city purpose.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The City Attorney's impartial analysis says the city estimates the tax will raise between $9 million and $10 million a year."
+      },
+      "bounds": [
+        696480,
+        892080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Attorney's impartial analysis says the city estimates the tax will raise between $9 million and $10 million a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say the permanent sales tax is regressive, and would fall hardest on students, low-income households, seniors and working families."
+      },
+      "bounds": [
+        906480,
+        1137360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say the permanent sales tax is regressive, and would fall hardest on students, low-income households, seniors and working families.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say Measure V would prevent forced cuts to fire and police, prevent a fire station closure, and maintain emergency response."
+      },
+      "bounds": [
+        1151760,
+        1383120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure V would prevent forced cuts to fire and police, prevent a fire station closure, and maintain emergency response.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote is a vote in favor of the tax."
+      },
+      "bounds": [
+        1397520,
+        1463280
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote is a vote in favor of the tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote is a vote against the tax."
+      },
+      "bounds": [
+        1477680,
+        1534080
+      ]
+    }
+  ],
+  "sha256": "3963a46e2fbf61902bb13039bd076ed69d17dcc780477e93dd42759695673d74"
+}
