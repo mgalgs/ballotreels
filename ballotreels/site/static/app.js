@@ -946,11 +946,6 @@ async function renderState(abbr, year, old) {
     app.appendChild(section);
     return;
   }
-  const course = crashCourseNodes(body.crash_course);
-  if (course.length) {
-    section.append(...course);
-    requestAnimationFrame(fitVideo);
-  }
   section.appendChild(el("p", {
     text: `${contests.length} ${contests.length === 1 ? "measure" : "measures"}` +
       ` · ${ready} ${ready === 1 ? "video" : "videos"} ready to watch`,
@@ -1275,6 +1270,8 @@ function speedLabel(speed) {
 // The state's crash course, at the top of its page: one video through
 // every statewide measure, with a chip per measure to jump to it.
 // Nothing until one has been made: the page is then as it always was.
+// Not rendered at present: crash courses are withheld from the site
+// until their scripts are reworked.
 function crashCourseNodes(course) {
   if (!course || !course.video_url) return [];
   const nodes = videoNodes(course);
