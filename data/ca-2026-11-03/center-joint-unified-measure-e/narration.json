@@ -1,0 +1,243 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 76.89,
+  "phrases": [
+    {
+      "text": "Center Joint Unified School District Measure E asks the district's voters whether to approve $197 million in school bonds.",
+      "start": 0.03,
+      "end": 8.9
+    },
+    {
+      "text": "The district would borrow the money and repay it from a tax on property in the district.",
+      "start": 9.56,
+      "end": 14.74
+    },
+    {
+      "text": "Measure E needs 55 percent of the vote to pass.",
+      "start": 15.4,
+      "end": 18.82
+    },
+    {
+      "text": "The money would replace leaky roofs, decaying pipes and failing heating and cooling systems, update science and job training classrooms, and make room for growing enrollment.",
+      "start": 19.48,
+      "end": 30.5
+    },
+    {
+      "text": "The district's tax statement estimates an average tax of $54.94 per $100,000 of assessed value, and at most $60, through 2068-2069.",
+      "start": 31.16,
+      "end": 44.67
+    },
+    {
+      "text": "The statement estimates the total to repay, with interest, at about $517 million.",
+      "start": 45.33,
+      "end": 52.04
+    },
+    {
+      "text": "No argument against Measure E was filed with Sacramento County Voter Registration and Elections.",
+      "start": 52.7,
+      "end": 58.67
+    },
+    {
+      "text": "Supporters say Measure E repairs aging schools and improves safety, without increasing tax rates.",
+      "start": 59.33,
+      "end": 66.08
+    },
+    {
+      "text": "A yes vote allows the district to issue up to $197 million in bonds.",
+      "start": 66.74,
+      "end": 72.55
+    },
+    {
+      "text": "A no vote does not allow the district to issue the proposed bonds.",
+      "start": 73.21,
+      "end": 76.86
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Center Joint Unified School District Measure E asks the district's voters whether to approve $197 million in school bonds.",
+      "The district would borrow the money and repay it from a tax on property in the district.",
+      "Measure E needs 55 percent of the vote to pass.",
+      "The money would replace leaky roofs, decaying pipes and failing heating and cooling systems, update science and job training classrooms, and make room for growing enrollment.",
+      "The district's tax statement estimates an average tax of $54.94 per $100,000 of assessed value, and at most $60, through 2068-2069.",
+      "The statement estimates the total to repay, with interest, at about $517 million.",
+      "No argument against Measure E was filed with Sacramento County Voter Registration and Elections.",
+      "Supporters say Measure E repairs aging schools and improves safety, without increasing tax rates.",
+      "A yes vote allows the district to issue up to $197 million in bonds.",
+      "A no vote does not allow the district to issue the proposed bonds."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Center Joint Unified School District Measure E asks the district's voters whether to approve $197 million in school bonds."
+      },
+      "bounds": [
+        0,
+        214320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Center Joint Unified School District Measure E asks the district's voters whether to approve $197 million in school bonds.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The district would borrow the money and repay it from a tax on property in the district."
+      },
+      "bounds": [
+        228720,
+        354480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district would borrow the money and repay it from a tax on property in the district.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure E needs 55 percent of the vote to pass."
+      },
+      "bounds": [
+        368880,
+        452400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure E needs 55 percent of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money would replace leaky roofs, decaying pipes and failing heating and cooling systems, update science and job training classrooms, and make room for growing enrollment."
+      },
+      "bounds": [
+        466800,
+        732720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money would replace leaky roofs, decaying pipes and failing heating and cooling systems, update science and job training classrooms, and make room for growing enrollment.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The district's tax statement estimates an average tax of $54.94 per $100,000 of assessed value, and at most $60, through 2068-2069."
+      },
+      "bounds": [
+        747120,
+        1072800
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district's tax statement estimates an average tax of $54.94 per $100,000 of assessed value, and at most $60, through 2068-2069.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The statement estimates the total to repay, with interest, at about $517 million."
+      },
+      "bounds": [
+        1087200,
+        1249680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The statement estimates the total to repay, with interest, at about $517 million.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument against Measure E was filed with Sacramento County Voter Registration and Elections."
+      },
+      "bounds": [
+        1264080,
+        1408800
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure E was filed with Sacramento County Voter Registration and Elections.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say Measure E repairs aging schools and improves safety, without increasing tax rates."
+      },
+      "bounds": [
+        1423200,
+        1586640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure E repairs aging schools and improves safety, without increasing tax rates.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote allows the district to issue up to $197 million in bonds."
+      },
+      "bounds": [
+        1601040,
+        1741920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote allows the district to issue up to $197 million in bonds.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote does not allow the district to issue the proposed bonds."
+      },
+      "bounds": [
+        1756320,
+        1845360
+      ]
+    }
+  ],
+  "sha256": "38e7908f2e6278689c995cb55de848984d9151443a4679bca0594b6446990d17"
+}
