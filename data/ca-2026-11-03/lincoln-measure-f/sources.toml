@@ -1,0 +1,55 @@
+# Archived sources for City of Lincoln Measure F, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Placer County Elections publishes no combined guide document; it posts
+# each measure's guide pages as one PDF, headed "MEASURE F" and "LINCOLN
+# PUBLIC SAFETY/TAXPAYER PROTECTION MEASURE", paged MF1 to MF7. One PDF
+# backs every source here. The City Attorney's Impartial Analysis is the
+# measure's neutral explanation, of the kind the other Placer County
+# measures give it, and gives the one revenue estimate; a sales tax has
+# no tax rate statement. No argument against was submitted. The
+# ordinance is printed as "ORDINANCE XXXXB", its number not yet given.
+
+[contest]
+id = "ca-2026-11-03-lincoln-measure-f"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:lincoln"
+kind = "measure"
+title = "Lincoln Measure F: One-Cent Sales Tax for Public Safety and City Services"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Placer County Elections, Measure F: Lincoln Public Safety/Taxpayer Protection Measure, page MF1: the ballot question"
+credit = "Measure F, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-F.pdf"
+file = "sources/11032026_Measure-F.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Lincoln Interim City Attorney, City Attorney’s Impartial Analysis of Measure F, Placer County Elections, Measure F, page MF1"
+credit = "Impartial Analysis, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-F.pdf"
+file = "sources/11032026_Measure-F.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure F, and the notice that no argument against was submitted, Placer County Elections, Measure F, page MF2"
+credit = "Arguments, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-F.pdf"
+file = "sources/11032026_Measure-F.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure F Submitted by the City of Lincoln, the proposed ordinance adding Chapter 3.40, Placer County Elections, Measure F, pages MF3 to MF7"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-F.pdf"
+file = "sources/11032026_Measure-F.pdf"
+retrieved = "2026-10-28"

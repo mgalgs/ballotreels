@@ -1,0 +1,173 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; how it reached the ballot and what it needs;
+# what would change (a general tax, what it could pay for, when it starts
+# and how long it lasts); the impartial analysis's revenue estimate; one
+# line per side; what a vote does.
+#
+# The card's title is the PDF's own head; its origin and yes and no lines
+# are the City Attorney's Impartial Analysis. No city name is narrated
+# ("this city"): "Rocklin" is heard as "Rockland"
+# (standard/speakability.txt). The rate is said as the question says it,
+# "a half-cent sales tax"; the analysis's "50¢ per $100" is left to the
+# card, since an amount under a dollar is transcribed either way.
+#
+# The pages print no fiscal statement or tax rate statement; the one
+# estimate is the analysis's, "$8,000,000 in annual local funding" (and
+# the question's "approximately $8 million annually"). No archived source
+# states the city's general fund total, so it has no scale (STANDARD.md
+# 6.5; left open). The analysis's note that the money stays in the city
+# and is not shared with the state is a point the argument in favor
+# makes ("the State cannot take funding away"), so it stays out of the
+# neutral sections (STANDARD.md 6.3).
+#
+# The pages print an argument in favor and "NO ARGUMENT AGAINST MEASURE
+# C WAS SUBMITTED": the no side is filed = false and says so.
+
+contest = "ca-2026-11-03-rocklin-measure-c"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "C"
+title = "1/2% TRANSACTIONS AND USE (SALES) TAX"
+origin = "On June 9, 2026, the City Council voted unanimously to place Measure “C” on the November 3, 2026 General Municipal Election ballot."
+summary = "To maintain Rocklin’s public safety, financial stability and core public services, including: rapid 911 emergency/ medical response; police/ fire protection; keeping public areas and parks healthy/ safe/ clean; preserving open space; preventing wildfires; shall the City of Rocklin’s measure establishing a half-cent sales tax, providing approximately $8 million annually for general revenue purposes, until ended by voters, keeping all funds local, with annual audits/ public spending disclosure, be adopted?"
+yes = "A “yes” vote on Measure “C” will authorize the 1/2% transactions and use (sales) tax."
+no = "A “no” vote on Measure “C” will not authorize the 1/2% transactions and use (sales) tax."
+
+[[section]]
+id = "what"
+heading = "Measure C"
+
+[[section.line]]
+text = "Measure C asks the voters of this city whether to add a half-cent sales tax for general city services."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establishing a half-cent sales tax"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The City Council voted unanimously to place Measure C on the ballot, and it needs a majority to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The tax would be added to today's sales taxes, and collected the same way."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section.line]]
+id = "general-tax"
+text = "Measure C would be a general tax: the money would go into the city general fund, for any lawful city service."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+id = "uses"
+text = "The impartial analysis says the money could keep up services such as 911 response, police and fire, parks, open space and wildfire prevention."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "fire-station-engine"
+
+[[section.line]]
+text = "The tax would start on April 1, 2027, and last until voters repeal it."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The impartial analysis estimates the tax would raise about $8 million a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say forecasts show the city falling short of funds for its services, and visitors would share the cost."
+sources = ["arguments"]
+basis = ["long-term financial forecasts show the City will not have necessary funds to maintain the quality of life we all enjoy.", "Visitors to Rocklin will pay their fair share, so residents won’t shoulder the entire cost."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Forecasts show funds falling short", "Visitors share the cost"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure C was submitted, and the Measure C voter guide pages include no argument against the measure."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the half-cent sales tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["will authorize the 1/2%"]
+
+[[section.line]]
+text = "A no vote does not authorize the half-cent sales tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["will not authorize the 1/2%"]
+
+[[question]]
+ask = "What would the money pay for?"
+lines = ["general-tax", "uses"]
+
+[[question]]
+ask = "How big is the city's budget, compared with the tax?"
+unanswered = true

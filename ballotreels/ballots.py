@@ -527,6 +527,22 @@ BALLOTS: dict[str, Ballot] = {
                         "Nevada County Voter Information Guide"
                         for slug in ("nevada-city-measure-q",
                                      "pleasant-ridge-elementary-measure-m")},
+                     # More Placer County measures, each named by its own
+                     # PDF's head, as Rocklin Unified's Measure D is.
+                     "ca-2026-11-03-placer-county-measure-g":
+                         "Measure G — Proposal to Amend Placer County "
+                         "Charter Section 206",
+                     "ca-2026-11-03-placer-county-measure-h":
+                         "Measure H — Proposal to Amend Placer County "
+                         "Charter Section 502",
+                     "ca-2026-11-03-roseville-measure-a":
+                         "Measure A — Council Compensation Adjustment and "
+                         "Inflation Limitation Measure",
+                     "ca-2026-11-03-rocklin-measure-c":
+                         "Measure C — 1/2% Transactions and Use (Sales) Tax",
+                     "ca-2026-11-03-lincoln-measure-f":
+                         "Measure F — Lincoln Public Safety/Taxpayer "
+                         "Protection Measure",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

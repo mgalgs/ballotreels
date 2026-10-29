@@ -1,0 +1,176 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; who the County Executive Officer is and how
+# the officer is removed today; how it reached the ballot and what it
+# needs; what would change and what would not; no cost estimate; both
+# sides, which filed nothing; what a vote does.
+#
+# The card's title is the PDF's own head; its origin and yes and no lines
+# are County Counsel's Impartial Analysis (the origin stops before the
+# ordinance's number). "Counsel" is heard as "Council", and "county's"
+# as "counties" (standard/speakability.txt), and no county name is
+# narrated, so the narration says "the impartial analysis", "of the
+# county" and "the Measure H voter guide pages". Not a tax measure: the
+# pages print no fiscal statement, so the fiscal line says they include
+# no cost estimate.
+#
+# The ballot question gives the measure a purpose ("providing greater
+# flexibility in negotiating employment terms for recruitment and
+# retention, while preserving Board of Supervisors' oversight"). With no
+# argument on either side to answer it, the narration leaves that
+# purpose to the card, which quotes it, and says only what the
+# impartial analysis says the measure does.
+#
+# The pages print "NO ARGUMENT IN FAVOR OF MEASURE H WAS SUBMITTED" and
+# "NO ARGUMENT AGAINST MEASURE H WAS SUBMITTED": both sides say so,
+# filed = false (STANDARD.md 2.5), citing those pages.
+
+contest = "ca-2026-11-03-placer-county-measure-h"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "H"
+title = "PROPOSAL TO AMEND PLACER COUNTY CHARTER SECTION 502"
+origin = "This measure was placed on the ballot by the Board of Supervisors of the County of Placer"
+summary = "Shall the measure amending Article V, Section 502(a) of the Placer County Charter to allow alternative procedures for the removal of the County Executive Officer if specified in an employment agreement, providing greater flexibility in negotiating employment terms for recruitment and retention, while preserving Board of Supervisors’ oversight, be adopted?"
+yes = "A “YES” vote on Measure H is a vote to amend the Placer County Charter to allow an employment contract between the Board of Supervisors and the County Executive Officer to establish provisions governing removal of the County Executive Officer."
+no = "A “NO” vote on Measure H is a vote to leave the current Charter language unchanged, under which the County Executive Officer may be removed by an affirmative vote of three members of the Board of Supervisors, and the Charter would not authorize an employment contract to provide otherwise."
+
+[[section]]
+id = "what"
+heading = "Measure H"
+
+[[section.line]]
+text = "Measure H asks the voters of this county whether an employment contract may set how the County Executive Officer can be removed."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["the removal of the County Executive Officer"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "The County Executive Officer is the chief administrator of the county, appointed by the Board of Supervisors."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section.line]]
+id = "today-removal"
+text = "Today, the officer serves at the board's pleasure, and can be removed by a vote of three supervisors."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "empty-commission-seat"
+
+[[section.line]]
+text = "The Board of Supervisors placed Measure H on the ballot, and it needs a majority to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "change-contract"
+text = "Measure H would keep the three-vote rule, unless the officer's employment contract with the board says otherwise."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bargaining-table"
+
+[[section.line]]
+id = "change-none-set"
+text = "Measure H sets no specific alternative, and does not require the board to sign such a contract."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+text = "The board would still appoint the officer and review the officer's work."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Measure H voter guide pages do not include a cost estimate for the measure."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure H was submitted."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument for was submitted"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure H was submitted."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote lets an employment contract set the terms for removing the County Executive Officer."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["is a vote to amend the Placer County Charter"]
+
+[[section.line]]
+text = "A no vote keeps removal by a vote of three supervisors, with no contract able to change it."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["is a vote to leave the current Charter language unchanged"]
+
+[[question]]
+ask = "How can the officer be removed today?"
+lines = ["today-removal"]
+
+[[question]]
+ask = "What other removal terms would a contract set?"
+lines = ["change-none-set"]

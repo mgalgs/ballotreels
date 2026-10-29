@@ -1,0 +1,54 @@
+# Archived sources for City of Rocklin Measure C, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Placer County Elections publishes no combined guide document; it posts
+# each measure's guide pages as one PDF, headed "MEASURE C" and "1/2%
+# TRANSACTIONS AND USE (SALES) TAX", paged MC1 to MC6. One PDF backs
+# every source here. The City Attorney's Impartial Analysis is the
+# measure's neutral explanation, of the kind the other Placer County
+# measures give it, and gives the one revenue estimate; a sales tax has
+# no tax rate statement. No argument against was submitted.
+
+[contest]
+id = "ca-2026-11-03-rocklin-measure-c"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:rocklin"
+kind = "measure"
+title = "Rocklin Measure C: Half-Cent Sales Tax for General City Services"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Placer County Elections, Measure C: 1/2% Transactions and Use (Sales) Tax, page MC1: the ballot question"
+credit = "Measure C, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-C.pdf"
+file = "sources/11032026_Measure-C.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Rocklin City Attorney, City Attorney’s Impartial Analysis of Measure C, Placer County Elections, Measure C, page MC1"
+credit = "Impartial Analysis, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-C.pdf"
+file = "sources/11032026_Measure-C.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure C, and the notice that no argument against was submitted, Placer County Elections, Measure C, page MC2"
+credit = "Arguments, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-C.pdf"
+file = "sources/11032026_Measure-C.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure C Submitted by the City of Rocklin, Ordinance No. 1208, Placer County Elections, Measure C, pages MC3 to MC6"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-C.pdf"
+file = "sources/11032026_Measure-C.pdf"
+retrieved = "2026-10-28"

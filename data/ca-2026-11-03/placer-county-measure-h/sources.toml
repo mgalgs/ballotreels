@@ -1,0 +1,45 @@
+# Archived sources for Placer County Measure H, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Placer County Elections publishes no combined guide document; it posts
+# each measure's guide pages as one PDF, headed "MEASURE H" and
+# "PROPOSAL TO AMEND PLACER COUNTY CHARTER SECTION 502", paged MH1 to
+# MH2. One PDF backs every source here. County Counsel's Impartial
+# Analysis is the measure's neutral explanation, of the kind the other
+# Placer County measures give it. Not a tax measure: the pages print no
+# fiscal statement, and no argument for or against was submitted.
+
+[contest]
+id = "ca-2026-11-03-placer-county-measure-h"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:placer"
+kind = "measure"
+title = "Placer County Measure H: Removal of the County Executive Officer"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Placer County Elections, Measure H: Proposal to Amend Placer County Charter Section 502, pages MH1 to MH2: the ballot question, and the notices that no argument in favor or against was submitted"
+credit = "Measure H, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-H.pdf"
+file = "sources/11032026_Measure-H.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Placer County Counsel, County Counsel’s Impartial Analysis of Measure H, Placer County Elections, Measure H, page MH1"
+credit = "Impartial Analysis, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-H.pdf"
+file = "sources/11032026_Measure-H.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Proposed Charter Text Revision, Article V, Section 502(a), Placer County Elections, Measure H, page MH2"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-H.pdf"
+file = "sources/11032026_Measure-H.pdf"
+retrieved = "2026-10-28"

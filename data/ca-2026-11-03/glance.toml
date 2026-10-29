@@ -1937,3 +1937,37 @@ source = "guide-page"
 quote = "The special parcel tax authorized by this Measure is expected to generate revenue of approximately $135,300 per year."
 amount = 135300
 period = "per-year"
+
+# Placer County Measure G: a charter amendment, not a tax; the measure's
+# pages print no fiscal statement.
+[placer-county-measure-g]
+source = "ballot-question"
+status = "none-printed"
+
+# Placer County Measure H: a charter amendment, not a tax; the measure's
+# pages print no fiscal statement.
+[placer-county-measure-h]
+source = "ballot-question"
+status = "none-printed"
+
+# City of Roseville Measure A: a charter amendment, not a tax; the
+# measure's pages print no fiscal statement.
+[roseville-measure-a]
+source = "ballot-question"
+status = "none-printed"
+
+# City of Rocklin Measure C: a sales tax, so no tax rate statement; the
+# City Attorney's Impartial Analysis gives the revenue estimate.
+[rocklin-measure-c]
+source = "impartial-analysis"
+quote = "It is estimated that Measure “C” will provide an additional $8,000,000 in annual local funding"
+amount = 8000000
+period = "per-year"
+
+# City of Lincoln Measure F: a sales tax, so no tax rate statement; the
+# City Attorney's Impartial Analysis gives the revenue estimate.
+[lincoln-measure-f]
+source = "impartial-analysis"
+quote = "It is estimated that the proposed sales tax will provide an additional Six Million Dollars ($6,000,000) in annual local funding."
+amount = 6000000
+period = "per-year"
