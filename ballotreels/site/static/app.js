@@ -498,6 +498,9 @@ async function route() {
   if (m) return renderState(m[1], null, true);
   m = !hash && path.match(/^\/([a-z]{2})(?:\/(\d{4}))?$/);
   if (m) return renderState(m[1], m[2] || null, false);
+  // A county's page: /ca/2026/county/humboldt.
+  m = !hash && path.match(/^\/([a-z]{2})\/(\d{4})\/county\/([^/]+)$/);
+  if (m) return renderCounty(`/api/county/${m[1]}/${m[2]}/${m[3]}`);
   // A measure's page: /ut/2026/amendment-a, and the old #/contest/<id>.
   m = !hash && path.match(/^\/([a-z]{2})\/(\d{4})\/([^/]+)$/);
   if (m) return renderContest(`/api/contest/${m[1]}/${m[2]}/${m[3]}`);
@@ -955,6 +958,89 @@ async function renderState(abbr, year, old) {
   section.appendChild(el("p", { class: "muted small" }, [
     "Your own ballot may also have district and county measures. ",
     el("a", { href: "/", text: "Find it by zip code" }),
+    ".",
+  ]));
+  const counties = countyList(body.counties);
+  if (counties) section.appendChild(counties);
+  app.appendChild(section);
+}
+
+// A state page's list of its counties' pages.
+function countyList(counties) {
+  if (!counties || !counties.length) return null;
+  return el("section", { class: "browse county-browse" }, [
+    heading("h2", "Local measures by county", { class: "section-title" }),
+    el("ul", { class: "state-list county-list" }, counties.map((c) =>
+      el("li", {}, [el("a", { class: "btn btn-quiet state-link",
+                              href: c.path,
+                              text: c.name.replace(/ County$/, "") })]))),
+  ]);
+}
+
+// A county page's groups (server.COUNTY_LEVELS).
+const COUNTY_LEVEL_NAMES = {
+  county: "County",
+  place: "Cities",
+  school_district: "Schools",
+  special: "Special districts",
+};
+
+async function renderCounty(apiPath) {
+  app.appendChild(loading("Getting the measures..."));
+  const token = routeToken;
+  const { ok, status, body } = await getJson(apiPath);
+  if (isStale(token)) return;
+  app.innerHTML = "";
+  if (!ok) {
+    if (status === 0) app.appendChild(offlineNotice());
+    else if (status === 404) notFound();
+    else {
+      app.appendChild(notice("We couldn't load these measures",
+        "Something went wrong on our side. Try again in a moment.",
+        [button("Try again", { class: "btn btn-primary", onclick: route }),
+         linkButton("Start over", "/", "btn-quiet")]));
+    }
+    return;
+  }
+  showPath(body.path);
+  const stateName = body.state_name.replace(/^the /, "");
+  document.title = body.page_title || `${body.heading} · ballotreels`;
+  rememberBack(location.pathname, body.county_name);
+  const contests = body.levels.flatMap((level) => level.contests);
+  const ready = contests.filter((c) => c.status === "cached").length;
+  const section = el("section", {}, [
+    backLink(`${stateName} measures`, body.state_path),
+    heading("h1", body.heading),
+  ]);
+  if (contests.length === 0) {
+    section.appendChild(notice(body.none_text,
+      `${stateName}'s statewide measures are on every ballot in the county.`,
+      [linkButton(`${stateName} measures`, body.state_path, "btn-primary"),
+       linkButton("Find your ballot", "/", "btn-quiet")]));
+    app.appendChild(section);
+    return;
+  }
+  section.appendChild(el("p", { class: "lead" }, [
+    `Every local measure on the ballot anywhere in ${body.county_name}: ` +
+    "the county's own, and its cities', school districts' and special " +
+    "districts'. A city's or district's measure is on the ballot only " +
+    "for the voters who live in it.",
+  ]));
+  section.appendChild(el("p", {
+    text: `${contests.length} ${contests.length === 1 ? "measure" : "measures"}` +
+      ` · ${ready} ${ready === 1 ? "video" : "videos"} ready to watch`,
+  }));
+  for (const level of body.levels) {
+    section.appendChild(el("h2", { class: "level-heading",
+      text: COUNTY_LEVEL_NAMES[level.level] || levelName(level.level) }));
+    section.appendChild(el("div", { class: "card-grid" },
+                           level.contests.map(renderContestCard)));
+  }
+  section.appendChild(el("p", { class: "muted small" }, [
+    "Statewide measures are on the ",
+    el("a", { href: body.state_path, text: `${stateName} page` }),
+    ". To see just your own ballot, ",
+    el("a", { href: "/", text: "find it by zip code" }),
     ".",
   ]));
   app.appendChild(section);
@@ -1532,6 +1618,16 @@ async function renderContest(apiPath) {
 
   const related = relatedSection(body.related);
   if (related) rest.appendChild(related);
+  if (body.counties && body.counties.length) {
+    rest.appendChild(el("p", { class: "muted small county-links" }, [
+      "More local measures in ",
+      ...body.counties.flatMap((c, i) => [
+        i ? (i === body.counties.length - 1 ? " and " : ", ") : "",
+        el("a", { href: c.path, text: c.name }),
+      ]),
+      ".",
+    ]));
+  }
 
   rest.appendChild(el("p", { class: "fine-print" }, [
     "Made under the ",

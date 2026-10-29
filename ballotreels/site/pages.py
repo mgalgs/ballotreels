@@ -119,6 +119,47 @@ def state_meta(state_name: str, path: str, measures: int) -> PageMeta:
         path=path)
 
 
+def election_date(election_id: str) -> str | None:
+    """"ca-2026-11-03" -> "November 3, 2026"; None for an id without a
+    date."""
+    m = re.search(r"-(\d{4})-(\d{2})-(\d{2})$", election_id)
+    if not m:
+        return None
+    day = datetime.date(int(m.group(1)), int(m.group(2)), int(m.group(3)))
+    return f"{day:%B} {day.day}, {day.year}"
+
+
+def county_heading(county_name: str, election_id: str) -> str:
+    """A county page's heading: "Humboldt County ballot measures,
+    November 3, 2026"."""
+    when = election_date(election_id)
+    return f"{county_name} ballot measures" + (f", {when}" if when else "")
+
+
+def no_county_measures(county_name: str) -> str:
+    """What a county page says when the election has no local measure
+    voted on anywhere in the county."""
+    return f"No local measures are on the ballot in {county_name}."
+
+
+def county_meta(county_name: str, state_name: str, election_id: str,
+                path: str, measures: int) -> PageMeta:
+    """A county's page: every local measure voted on anywhere in it."""
+    where = f"{county_name}, {state_name.removeprefix('the ')}"
+    if not measures:
+        description = (f"{no_county_measures(county_name)} ballotreels "
+                       f"makes short, even-handed explainers of ballot "
+                       f"measures, every claim sourced.")
+    else:
+        what = "measure" if measures == 1 else f"{measures} measures"
+        description = (f"Short, even-handed explainers of the local "
+                       f"{what} on the ballot in {where}: county, city, "
+                       f"school and special district, every claim "
+                       f"sourced.")
+    return PageMeta(title=county_heading(county_name, election_id),
+                    description=description, path=path)
+
+
 def home_meta() -> PageMeta:
     return PageMeta(title=HOME_TITLE, description=HOME_DESCRIPTION, path="/")
 

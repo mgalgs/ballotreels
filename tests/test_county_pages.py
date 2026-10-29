@@ -7,14 +7,21 @@ import io
 import json
 import shutil
 import tempfile
+import threading
 import unittest
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
+import ballotreels.site.config as site_config
 from ballotreels.cli import main as cli_main
 from ballotreels.geo.counties import FILENAME, county_doc, write_counties
+from ballotreels.index import ballot_order, load_index
+from ballotreels.site import pages
+from ballotreels.site.server import build_deps, make_servers
 
 from . import geo_fixtures
 from .helpers import REPO
+from .test_serve_public import ServerTestCase, _make_config
 
 FIXTURE = REPO / "tests" / "fixtures" / "counties"
 FIXTURE_GEO = FIXTURE / "geo" / "ca"
@@ -120,6 +127,191 @@ class CountiesFileTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             shutil.copytree(FIXTURE_GEO, tmp, dirs_exist_ok=True)
             self.assertEqual(write_counties(tmp), Path(tmp) / FILENAME)
+
+
+def _ids(doc):
+    return {lvl["level"]: [c["id"].removeprefix("ca-2026-11-03-")
+                           for c in lvl["contests"]]
+            for lvl in doc["levels"]}
+
+
+class CountyServerTestCase(ServerTestCase):
+    """The public listener over tests/fixtures/counties/: its election,
+    and its shapes with counties.json written from them (unless
+    `with_counties` is False: a build from before the step)."""
+
+    with_counties = True
+
+    def setUp(self):
+        self._old_data_root = site_config.DATA_ROOT
+        site_config.DATA_ROOT = FIXTURE
+        self.addCleanup(self._restore_data_root)
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        self.data_dir = Path(tmp.name) / "var"
+        geo = self.data_dir / "geo" / "ca"
+        shutil.copytree(FIXTURE_GEO, geo)
+        if self.with_counties:
+            write_counties(geo)
+        self.warnings = []
+        self.config = _make_config(self.data_dir)
+        self.deps = build_deps(self.config, warn=self.warnings.append)
+        self.public, self.private = make_servers(self.deps)
+        self.addCleanup(self.deps.queue.close)
+        for srv in (self.public, self.private):
+            threading.Thread(target=srv.serve_forever, daemon=True).start()
+        self.addCleanup(self._shutdown)
+
+    def get_json(self, path, status=200):
+        resp, body = self.get(self.public_port, path)
+        self.assertEqual(resp.status, status, body)
+        return json.loads(body)
+
+    def county(self, slug):
+        return self.get_json(f"/api/county/ca/2026/{slug}")
+
+    def page(self, path, status=200):
+        resp, body = self.get(self.public_port, path)
+        self.assertEqual(resp.status, status, body)
+        return body.decode("utf-8")
+
+
+class CountyPageTest(CountyServerTestCase):
+    def test_a_countywide_measure_is_on_its_county_only(self):
+        self.assertEqual(_ids(self.county("alpha"))["county"],
+                         ["alpha-county-measure-a"])
+        for slug in ("beta", "gamma", "delta"):
+            with self.subTest(slug):
+                ids = [i for ids in _ids(self.county(slug)).values()
+                       for i in ids]
+                self.assertNotIn("alpha-county-measure-a", ids)
+
+    def test_measures_by_level(self):
+        self.assertEqual(_ids(self.county("alpha")), {
+            "county": ["alpha-county-measure-a"],
+            "place": ["alphaville-measure-c", "northedge-measure-n"],
+            "school_district": ["twin-valley-measure-t"]})
+        self.assertEqual(_ids(self.county("beta")), {
+            "county": ["beta-county-measure-b"],
+            "place": ["edgetown-measure-e", "sliverton-measure-s"],
+            "school_district": ["twin-valley-measure-t"],
+            "special": ["beta-fire-measure-f"]})
+        self.assertEqual([lvl["level"] for lvl in self.county("beta")
+                          ["levels"]],
+                         ["county", "place", "school_district", "special"])
+
+    def test_a_district_touching_the_county_line_is_not_listed(self):
+        # Edgetown's edge is Gamma's line; Sliverton crosses it by a
+        # sliver.
+        self.assertEqual(_ids(self.county("gamma")),
+                         {"school_district": ["gamma-elementary-measure-g"]})
+
+    def test_statewide_measures_are_not_listed(self):
+        doc = self.county("alpha")
+        ids = [i for ids in _ids(doc).values() for i in ids]
+        self.assertNotIn("prop-1", ids)
+        self.assertEqual(doc["state_path"], "/ca")
+
+    def test_each_measure_links_to_its_page(self):
+        contest = self.county("alpha")["levels"][0]["contests"][0]
+        self.assertEqual(contest["path"], "/ca/2026/alpha-county-measure-a")
+        self.assertEqual(contest["title"],
+                         "Measure A: Fake Alpha County Sales Tax")
+        self.page(contest["path"])
+
+    def test_heading_and_head_tags(self):
+        doc = self.county("alpha")
+        self.assertEqual(doc["heading"],
+                         "Alpha County ballot measures, November 3, 2026")
+        self.assertEqual(doc["page_title"], doc["heading"])
+        html = self.page("/ca/2026/county/alpha")
+        self.assertIn("<title>Alpha County ballot measures, November 3, "
+                      "2026</title>", html)
+        self.assertIn('<link rel="canonical" href="https://ballotreels.org'
+                      '/ca/2026/county/alpha">', html)
+        self.assertIn("4 measures on the ballot in Alpha County, "
+                      "California", html)
+
+    def test_a_county_with_no_measures_says_so(self):
+        doc = self.county("delta")
+        self.assertEqual(doc["levels"], [])
+        self.assertEqual(doc["none_text"],
+                         "No local measures are on the ballot in Delta "
+                         "County.")
+        html = self.page("/ca/2026/county/delta")
+        self.assertIn('content="No local measures are on the ballot in '
+                      'Delta County.', html)
+
+    def test_unknown_county_or_year_is_not_found(self):
+        for path in ("/ca/2026/county/nowhere", "/ca/2024/county/alpha",
+                     "/ut/2026/county/alpha", "/ca/2026/county",
+                     "/ca/2026/county/alpha/more"):
+            with self.subTest(path):
+                self.page(path, status=404)
+        self.get_json("/api/county/ca/2026/nowhere", status=404)
+        self.get_json("/api/county/ca/2024/alpha", status=404)
+
+    def test_typed_path_is_redirected(self):
+        resp, _ = self.get(self.public_port, "/CA/2026/County/Alpha/")
+        self.assertEqual(resp.status, 301)
+        self.assertEqual(resp.getheader("Location"),
+                         "/ca/2026/county/alpha")
+
+    def test_state_page_lists_the_counties(self):
+        doc = self.get_json("/api/state/ca")
+        self.assertEqual(doc["counties"], [
+            {"name": f"{n} County", "path": f"/ca/2026/county/{n.lower()}"}
+            for n in ("Alpha", "Beta", "Delta", "Gamma")])
+        # the statewide measures as before
+        self.assertEqual([c["id"] for lvl in doc["levels"]
+                          for c in lvl["contests"]], ["ca-2026-11-03-prop-1"])
+
+    def test_measure_page_links_its_counties(self):
+        def counties(slug):
+            return self.get_json(f"/api/contest/ca/2026/{slug}")["counties"]
+        self.assertEqual(counties("twin-valley-measure-t"), [
+            {"name": "Alpha County", "path": "/ca/2026/county/alpha"},
+            {"name": "Beta County", "path": "/ca/2026/county/beta"}])
+        self.assertEqual(counties("beta-fire-measure-f"),
+                         [{"name": "Beta County",
+                           "path": "/ca/2026/county/beta"}])
+        self.assertEqual(counties("prop-1"), [])
+
+    def test_sitemap(self):
+        resp, body = self.get(self.public_port, "/sitemap.xml")
+        ns = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
+        base = "https://ballotreels.org"
+        locs = [e.text.removeprefix(base)
+                for e in ET.fromstring(body).iter(f"{ns}loc")]
+        county_pages = [l for l in locs if "/county/" in l]
+        self.assertEqual(county_pages, [f"/ca/2026/county/{n}" for n in
+                                        ("alpha", "beta", "delta", "gamma")])
+        # everything else as it was: home, the state, its measures
+        index = load_index(FIXTURE / "ca-2026-11-03")
+        self.assertEqual(
+            [l for l in locs if "/county/" not in l],
+            ["/", "/ca"] + [pages.contest_path("ca", "ca-2026-11-03", e.id)
+                            for e in ballot_order(index)])
+        for path in county_pages:
+            self.page(path)
+
+    def test_app_routes_county_pages(self):
+        app = (REPO / "ballotreels" / "site" / "static" /
+               "app.js").read_text(encoding="utf-8")
+        self.assertIn("renderCounty(`/api/county/", app)
+
+
+class WithoutCountiesFileTest(CountyServerTestCase):
+    with_counties = False
+
+    def test_no_county_pages_and_a_warning(self):
+        self.assertTrue(any("geo counties --state ca" in w
+                            for w in self.warnings), self.warnings)
+        self.page("/ca/2026/county/alpha", status=404)
+        doc = self.get_json("/api/state/ca")
+        self.assertEqual(doc["counties"], [])
+        resp, body = self.get(self.public_port, "/sitemap.xml")
+        self.assertNotIn(b"/county/", body)
 
 
 if __name__ == "__main__":
