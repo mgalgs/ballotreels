@@ -916,3 +916,64 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $25.16 million."
 amount = 25160000
 period = "unstated"
+
+# City of Albany Measure O: the guide prints no fiscal analysis (not a
+# tax measure).
+[albany-measure-o]
+source = "guide-page"
+status = "none-printed"
+
+# City of Albany Measure P: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is in its ballot question (and the
+# City Attorney's Impartial Analysis).
+[albany-measure-p]
+source = "guide-page"
+quote = "providing an estimated $1,400,000 annually until ended by voters"
+amount = 1400000
+period = "per-year"
+
+# City of Albany Measure Q: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is in its ballot question (and the
+# City Attorney's Impartial Analysis).
+[albany-measure-q]
+source = "guide-page"
+quote = "providing an estimated $2,500,000 annually until ended by voters"
+amount = 2500000
+period = "per-year"
+
+# City of Albany Measure R: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is in its ballot question (and the
+# City Attorney's Impartial Analysis).
+[albany-measure-r]
+source = "guide-page"
+quote = "providing an estimated additional $600,000 annually, until ended by voters"
+amount = 600000
+period = "per-year"
+
+# City of Albany Measure S: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is in its ballot question (and the
+# City Attorney's Impartial Analysis).
+[albany-measure-s]
+source = "guide-page"
+quote = "$1,000,000 annually, until ended by voters, with all funds"
+amount = 1000000
+period = "per-year"
+
+# City of Albany Measure T: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is in its ballot question (and the
+# City Attorney's Impartial Analysis).
+[albany-measure-t]
+source = "guide-page"
+quote = "providing an estimated $775,000 annually until ended by voters"
+amount = 775000
+period = "per-year"
+
+# City of Piedmont Measure GG: the guide prints no fiscal analysis or tax
+# rate statement; the estimate is the Acting City Attorney's Impartial
+# Analysis's (its ballot question rounds it to $1,500,000).
+[piedmont-measure-gg]
+source = "guide-page"
+quote = "It is estimated that this tax will generate approximately $1,521,000 of additional revenue annually."
+amount = 1521000
+period = "per-year"
+direction = "revenue-gain"
