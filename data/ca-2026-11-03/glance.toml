@@ -339,3 +339,14 @@ quote = "The measure could bring an average of $100 million to $150 million annu
 amount = 150000000
 period = "per-year"
 direction = "revenue-gain"
+
+# San Mateo County Measure RTM: no fiscal or tax rate statement was
+# published; the one estimate is the ballot question's (the impartial
+# analysis gives the same, "approximately $980 million per year"), for
+# the whole five-county district.
+[san-mateo-county-measure-rtm]
+source = "ballot-question"
+quote = "generating approximately $980,000,000 annually"
+amount = 980000000
+period = "per-year"
+direction = "revenue-gain"

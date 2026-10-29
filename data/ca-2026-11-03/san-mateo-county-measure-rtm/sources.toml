@@ -1,0 +1,68 @@
+# Archived sources for San Mateo County Measure RTM, the Regional
+# Transit Measure, 2026-11-03 consolidated general election
+# (sources/sources.md). Every id here may be cited by script.toml. Each
+# is a document San Mateo County's Assessor-County Clerk-Recorder &
+# Elections (ACRE) posts on its election page; the county publishes no
+# single pamphlet file, so each source names its own document.
+#
+# Most of these PDFs are scans. The arguments have no text layer, and the
+# resolution's OCR layer misreads the ballot question's punctuation. The
+# passages the verbatim checks need (the card's ballot question and each
+# side's basis) were typed from the page images into
+# sources/*-transcription.txt, each naming the PDF and URL it copies;
+# those sources point at the transcription, and their url at the scan.
+#
+# The measure is the Public Transit Revenue Measure District's, voted on
+# in five counties under one text and one vote total (its resolution);
+# this is the San Mateo County contest.
+
+[contest]
+id = "ca-2026-11-03-san-mateo-county-measure-rtm"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:san_mateo"
+kind = "measure"
+title = "San Mateo County Measure RTM: Regional Transit Measure, a Sales Tax for Public Transit"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Public Transit Revenue Measure District Resolution No. 2, PDF pages 2, 7 and 8: its designation and the ballot question, as filed with San Mateo County Assessor-County Clerk-Recorder & Elections (transcribed from the scan)"
+credit = "Public Transit Revenue Measure District Resolution No. 2"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M206-Contest%20Code-Reso-Public%20Transit%20District%20Sales%20Tax_Redacted.pdf"
+file = "sources/resolution-ballot-question-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Public Transit Revenue Measure District’s Legal Counsel Impartial Analysis of Regional Transit Measure, San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Impartial Analysis of Regional Transit Measure"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M206-ImpartialAnalysis-Public-Transit-District-Sales-Tax.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Public Transit Revenue Measure District Resolution No. 2, with the full text of the Connect Bay Area Transit Initiative (Exhibit B), San Mateo County Assessor-County Clerk-Recorder & Elections"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M206-Contest%20Code-Reso-Public%20Transit%20District%20Sales%20Tax_Redacted.pdf"
+file = "sources/resolution-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of the Regional Transit Measure, San Mateo County Assessor-County Clerk-Recorder & Elections (page 7, transcribed from the scan)"
+credit = "Argument in favor, San Mateo County Elections"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M206-Contest%20Code-4ArginFavor-Public%20Transit%20District%20Sales%20Tax_Redacted_0.pdf"
+file = "sources/argument-for-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Regional Transit Measure, San Mateo County Assessor-County Clerk-Recorder & Elections (page 7, transcribed from the scan)"
+credit = "Argument against, San Mateo County Elections"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M206-Contest%20Code-46ArgAgainst-Public%20Transit%20District%20Sales%20Tax_Redacted.pdf"
+file = "sources/argument-against-transcription.txt"
+retrieved = "2026-10-28"
