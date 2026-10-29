@@ -1,0 +1,39 @@
+# Archived sources for Rancho Ponderosa Estates Road Zone of Benefit Measure L,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The pages are cut from the El Dorado
+# County Elections Department's Voter Information Pamphlet (PDF pages
+# 73 to 75, printed pages 17 to 19); "pages" below are the printed numbers.
+#
+# A zone of benefit of County Service Area 9 is a special district: the
+# division is the county, and `voters` names the zone as the impartial
+# analysis does (docs/SCRIPT-FORMAT.md). The pamphlet prints the
+# Board of Supervisors' resolution with the ballot question, the notice
+# that no arguments were submitted, and County Counsel's impartial
+# analysis; no tax rate statement applies (a special parcel tax).
+
+[contest]
+id = "ca-2026-11-03-rancho-ponderosa-estates-road-zone-measure-l"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:el_dorado"
+kind = "measure"
+title = "Rancho Ponderosa Estates Road Zone of Benefit Measure L: A $500 Road Tax per Parcel, Replacing the $225 Assessment"
+voters = "the Rancho Ponderosa Estates Road Zone of Benefit #98154 of County Service Area 9"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "El Dorado County Elections Department, El Dorado County Voter Information Pamphlet, Statewide General Election, November 3, 2026, pages 18 and 19: ballot question, notice that no arguments were submitted, and County Counsel’s Impartial Analysis of Measure L"
+credit = "Impartial Analysis of Measure L, El Dorado County Voter Information Pamphlet"
+url = "https://www.eldoradocounty.ca.gov/files/assets/county/v/2/documents/government/elections/20261103/complete-booklet.pdf"
+file = "sources/vip-pp73-75-measure-l.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Full Text of Measure L: El Dorado County Board of Supervisors Resolution No. 100-2026, El Dorado County Voter Information Pamphlet, pages 17 and 18"
+credit = "Full Text of Measure L, El Dorado County Voter Information Pamphlet"
+url = "https://www.eldoradocounty.ca.gov/files/assets/county/v/2/documents/government/elections/20261103/complete-booklet.pdf"
+file = "sources/vip-pp73-75-measure-l.pdf"
+retrieved = "2026-10-28"
