@@ -194,8 +194,8 @@ def hero_svg(hero: dict, county: str | None = None,
         '<defs>'
         '<filter id="hero-pencil" x="-5%" y="-5%" width="110%" '
         'height="110%"><feTurbulence type="fractalNoise" '
-        'baseFrequency="0.035" numOctaves="2" seed="7" result="grain"/>'
-        '<feDisplacementMap in="SourceGraphic" in2="grain" scale="6" '
+        'baseFrequency="0.012" numOctaves="1" seed="7" result="grain"/>'
+        '<feDisplacementMap in="SourceGraphic" in2="grain" scale="4" '
         'xChannelSelector="R" yChannelSelector="G"/></filter>'
         '<pattern id="hero-tone" patternUnits="userSpaceOnUse" width="12" '
         'height="12" patternTransform="rotate(-35)">'
@@ -216,11 +216,15 @@ def hero_svg(hero: dict, county: str | None = None,
         '<use href="#hero-counties" fill="#fff" stroke="#fff" '
         'stroke-width="3" stroke-linejoin="round"/></mask>'
         '</defs>')
-    # Every county stroked heavily, then the land drawn over it: only
-    # the outer half of the state's own edge is left showing.
+    # Every county stroked heavily, with a lighter second pass a hair
+    # off it (as the site's pencil boxes), then the land drawn over
+    # them: only the outer half of the state's own edge is left showing.
     edge = (f'<use href="#hero-counties" class="hero-edge" fill="none" '
             f'stroke="{_INK}" stroke-width="9" stroke-linejoin="round" '
-            f'filter="url(#hero-pencil)"/>')
+            f'filter="url(#hero-pencil)"/>'
+            f'<use href="#hero-counties" fill="none" stroke="{_INK}" '
+            'stroke-opacity="0.35" stroke-width="6" stroke-linejoin="round" '
+            'transform="translate(3 -2)"/>')
     if county is None:
         if flag_url:
             body = (f'<rect class="hero-tone" fill="url(#hero-tone)" {land}/>'
