@@ -27,7 +27,7 @@ from pathlib import Path
 from typing import Any
 
 from .lookup import ballot_division
-from .outline import mini_outline
+from .outline import drawn, mini_outline
 from .shapes import point_in_polygon, row_intervals, simplify_ring
 
 FILENAME = "counties.json"
@@ -185,7 +185,12 @@ def district_counties(district: _Shape,
 def _hero(counties: list[dict]) -> dict[str, Any]:
     """Every county's outline as an SVG path in one shared box,
     longitude scaled by the cosine of the state's middle latitude (so
-    the shape is not stretched), north up."""
+    the shape is not stretched), north up. Far, tiny outliers are left
+    out of the drawing and its box (ballotreels.geo.outline.drawn), so
+    a county with nothing else has no path."""
+    counties = [dict(c, rings=rings) for c, rings
+                in zip(counties, drawn([c["rings"] for c in counties]))
+                if rings]
     boxes = [_bbox(c["rings"]) for c in counties]
     x0 = min(b[0] for b in boxes)
     y0 = min(b[1] for b in boxes)
