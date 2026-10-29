@@ -26,4 +26,7 @@ for dir in "$@"; do
     "$python" -m videobuilder say "$dir/narration.txt" \
         --engine gemini --voice Rasalgethi --style "$style" --gap 0.6 \
         --out "$dir/narration.wav"
+    # The airtime and transcript checks need the new take, so a narration
+    # is not done until it passes here.
+    "$python" -m ballotreels check "$dir"
 done
