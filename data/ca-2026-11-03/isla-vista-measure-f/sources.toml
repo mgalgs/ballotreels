@@ -1,0 +1,57 @@
+# Archived sources for Isla Vista Community Services District Measure F
+# (printed on the ballot as "Measure F2026"), 2026-11-03 general election
+# (sources/sources.md). Every id here may be cited by script.toml. `kind`
+# must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# All three are pages of one file: the Santa Barbara County Voter
+# Information Guide and Sample Ballot for Ballot Type 31, pages 25 to 27
+# (impartial analysis, notice that no argument in favor or against was
+# filed, full text) and 32 to 33 (sample ballot, with the ballot question
+# on page 33). County Counsel's impartial analysis is the measure's
+# neutral explanation, the kind a state's analyst's or attorney
+# general's explanation is. The guide prints no fiscal statement for
+# the measure, and no argument on either side.
+
+[contest]
+id = "ca-2026-11-03-isla-vista-measure-f"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:santa_barbara"
+kind = "measure"
+title = "Isla Vista Community Services District Measure F: A $3.5 Million Yearly Appropriations Limit"
+voters = "the Isla Vista Community Services District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Santa Barbara County Elections, Santa Barbara County Voter Information Guide and Sample Ballot, November 3, 2026, General Election, Ballot Type 31, page 33: sample ballot, Measure F2026"
+credit = "Sample ballot, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000031.pdf"
+file = "sources/VIG-bt031_pp25-27_32-33.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Santa Barbara County Voter Information Guide and Sample Ballot, Ballot Type 31, page 25: Impartial Analysis of Measure F2026, Isla Vista Community Services District, County Counsel, County of Santa Barbara, August 7, 2026"
+credit = "Impartial Analysis of Measure F2026, County Counsel"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000031.pdf"
+file = "sources/VIG-bt031_pp25-27_32-33.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "no-arguments"
+kind = "official-title-summary"
+publisher = "Santa Barbara County Voter Information Guide and Sample Ballot, Ballot Type 31, page 26: “No Argument in Favor of Measure F2026 Was Filed” and “No Argument Against Measure F2026 Was Filed”"
+credit = "Santa Barbara County Voter Information Guide, page 26"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000031.pdf"
+file = "sources/VIG-bt031_pp25-27_32-33.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "full-text"
+kind = "official-text"
+publisher = "Santa Barbara County Voter Information Guide and Sample Ballot, Ballot Type 31, page 27: Full Text of Measure F2026, Isla Vista Community Services District"
+credit = "Full Text of Measure F2026"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000031.pdf"
+file = "sources/VIG-bt031_pp25-27_32-33.pdf"
+retrieved = "2026-10-28"

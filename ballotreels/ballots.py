@@ -595,6 +595,14 @@ BALLOTS: dict[str, Ballot] = {
                      **{f"ca-2026-11-03-{slug}": "Measures to be Voted On"
                         for slug in ("livingston-measure-t",
                                      "livingston-measure-u")},
+                     # Santa Barbara County Elections prints each local
+                     # measure's impartial analysis, arguments, full text
+                     # and (on its sample ballot pages) ballot question in
+                     # its Voter Information Guide and Sample Ballot.
+                     **{f"ca-2026-11-03-{slug}":
+                        "Santa Barbara County Voter Information Guide"
+                        for slug in ("isla-vista-measure-e",
+                                     "isla-vista-measure-f")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

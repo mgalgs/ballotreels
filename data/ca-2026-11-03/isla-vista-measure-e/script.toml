@@ -1,0 +1,183 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the district's existing utility
+# tax; the vote it needs; what would change (the new rates, what the
+# money may fund, how long it lasts); the revenue the ballot question
+# estimates; one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this community services district", and
+# the card and title carry the name. "Counsel" is heard as "Council"
+# (standard/speakability.txt), so the analysis is the county attorney's.
+#
+# The ballot and the analysis say "methane"; the measure's text defines
+# methane as "natural or manufactured gas used for light, heat, or
+# power", so the narration says "gas", citing the text.
+#
+# The card quotes the ballot question from the sample ballot (page 33),
+# which prints only YES and NO boxes, no yes and no sentences, so the
+# card has no boxes and the vote lines take their meaning from the
+# question itself, both highlighting the same phrase. The card's origin
+# is the impartial analysis's sentence on who placed the measure, in the
+# same file. The ballot prints
+# the letter "E2026"; the card's number is the bare letter, as the title.
+#
+# The guide prints no tax rate statement or fiscal statement. The one
+# revenue estimate, about $1.2 million a year, is the ballot question's
+# (the full text gives the same), attributed to it. It is government revenue,
+# but no archived source states the district's budget to give it a
+# scale (STANDARD.md 6.5; left open, under [[question]]). The district's
+# companion Measure F, an appropriations limit, is not mentioned in the
+# neutral sections: supporters cite "a strict annual limit" as their
+# point (STANDARD.md 6.3).
+#
+# The guide prints "No Argument Against Measure E2026 Was Filed": the no
+# side says so plainly, filed = false (STANDARD.md 2.5).
+
+contest = "ca-2026-11-03-isla-vista-measure-e"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "E"
+title = "Increased Isla Vista Municipal Infrastructure and Services."
+origin = "This Measure was placed on the ballot by the Board of Directors of the Isla Vista Community Services District"
+summary = "To fund local improvements to housing services; community based public safety; transportation, parking, and public transit; clean and safe public spaces, including lighting and sidewalks; and community facilities and events, shall voters authorize a Utility Users' Tax of 7% on methane and 6% on trash, sewage, water, and electric, authorizing establishment of exemptions, generating approximately $1,200,000 additional annually, until repealed by voters?"
+
+[[section]]
+id = "what"
+heading = "Measure E"
+
+[[section.line]]
+text = "Measure E asks the voters of this community services district whether to add a tax on gas, water, electric, sewer and trash bills."
+sources = ["ballot-question", "impartial-analysis", "full-text"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["shall voters authorize a Utility Users' Tax"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "existing"
+text = "Voters approved the district's current 8 percent utility users' tax in 2018."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "utility-bills"
+
+[[section.line]]
+text = "Measure E needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rates"
+text = "Measure E would add 7 percent on gas, and 6 percent on water, electric, sewer and trash, on top of the current tax."
+sources = ["impartial-analysis", "full-text"]
+
+[section.line.visual]
+kind = "bars"
+title = "Utility users' tax rates, in percent"
+source = "impartial-analysis"
+unit = "%"
+labels = ["Current tax (2018)", "New tax on methane", "New tax on water, electricity, sewer, garbage"]
+values = [8, 7, 6]
+
+[[section.line]]
+id = "uses"
+text = "The money could fund housing services, public safety, transit, public spaces, and community events, until voters repeal the tax."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "street-trees-lights"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+id = "revenue"
+text = "The ballot question estimates the tax would raise about $1.2 million a year."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure E funds buses, street repairs, public safety and cleanup, all controlled locally."
+sources = ["argument-for"]
+basis = ["Expand bus and shuttle service so students and workers can get around easily.", "Repave streets, sidewalks, and bike lanes so everyone can get around safely.", "Focus our public safety resources on what matters most: preventing sexual assault and violent crime.", "Clean up trash on our streets, beaches, and public spaces.", "Every dollar is controlled here, spending is capped by a strict annual limit, and the funds stay local"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Buses, street repairs, safety, cleanup", "All controlled locally"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The official voter guide for this election says no argument against Measure E was filed."
+sources = ["argument-for"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the new tax."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["shall voters authorize a Utility Users' Tax"]
+
+[[section.line]]
+text = "A no vote rejects the new tax, and the current tax stays."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["shall voters authorize a Utility Users' Tax"]
+
+[[question]]
+ask = "Does this replace the tax the district already has?"
+lines = ["existing", "rates"]
+
+[[question]]
+ask = "What could the money pay for, and for how long?"
+lines = ["uses"]
+
+[[question]]
+ask = "How big is $1.2 million a year next to what the district spends now?"
+unanswered = true

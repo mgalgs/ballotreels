@@ -2124,3 +2124,19 @@ status = "none-printed"
 [livingston-measure-u]
 source = "notice"
 status = "none-printed"
+
+# Isla Vista Community Services District Measure E: the guide prints no
+# tax rate statement; the one estimate is the ballot question's (the
+# measure's full text gives the same).
+[isla-vista-measure-e]
+source = "ballot-question"
+quote = "generating approximately $1,200,000 additional annually"
+amount = 1200000
+period = "per-year"
+direction = "revenue-gain"
+
+# Isla Vista Community Services District Measure F: an appropriations
+# limit; the guide prints no fiscal statement for it.
+[isla-vista-measure-f]
+source = "impartial-analysis"
+status = "none-printed"
