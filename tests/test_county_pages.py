@@ -372,6 +372,32 @@ class HeroTest(CountyServerTestCase):
         # every county drawn, for the state's outline
         self.assertEqual(hero.count("<path "), 5)
 
+    def test_state_hero_outlines_follow_the_county_list(self):
+        # The county picker (app.js) pairs the n-th outline in the
+        # hero's #hero-counties with the n-th of `counties`.
+        doc = self.get_json("/api/state/ca")
+        group = re.search(r'<g id="hero-counties">(.*?)</g>', doc["hero"])
+        outlines = re.findall(r'<path d="([^"]*)"/>', group.group(1))
+        paths = county_doc(FIXTURE_GEO)["hero"]["paths"]
+        self.assertEqual(outlines, [paths[c] for c in
+                                    (ALPHA, BETA, DELTA, GAMMA)])
+        self.assertEqual([c["name"] for c in doc["counties"]],
+                         ["Alpha County", "Beta County", "Delta County",
+                          "Gamma County"])
+
+    def test_state_hero_sends_each_outline_once(self):
+        doc = self.get_json("/api/state/ca")
+        for d in county_doc(FIXTURE_GEO)["hero"]["paths"].values():
+            self.assertEqual(json.dumps(doc).count(d), 1, d)
+
+    def test_a_county_without_an_outline_keeps_its_place(self):
+        state = self.deps.states["ca"]
+        hero = {**state.geo.hero, "paths": {
+            k: v for k, v in state.geo.hero["paths"].items() if k != BETA}}
+        ordered = server._hero_in_list_order(state, hero)
+        self.assertEqual(list(ordered["paths"]), [ALPHA, BETA, DELTA, GAMMA])
+        self.assertEqual(ordered["paths"][BETA], "")
+
     def test_hero_is_small(self):
         self.assertLess(len(self.county("beta")["hero"]), 4000)
 
