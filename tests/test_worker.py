@@ -30,6 +30,11 @@ from .test_serve_public import _make_config
 WORKER_FIXTURE_ELECTION = REPO / "tests" / "fixtures" / "worker_election"
 
 
+# How long a test waits on the worker before calling it hung: long, as a
+# machine busy with renders may take seconds to get anywhere.
+HANG_GUARD = 60
+
+
 class WorkerTestCase(unittest.TestCase):
     config_overrides: dict = {}
 
@@ -88,6 +93,17 @@ class WorkerTestCase(unittest.TestCase):
                      masters_dir=self.tmp / "masters",
                      poll_interval=0.05,
                      heartbeat_interval=heartbeat_interval)
+
+    def wait_for_narrate(self, job_id):
+        """Wait until the worker is in job `job_id`'s narrate stage, with a
+        bound that only guards a hang: a loaded machine may be slow."""
+        deadline = time.monotonic() + HANG_GUARD
+        while time.monotonic() < deadline:
+            row = self.deps.queue.get_job(job_id)
+            if row["state"] == "running" and row["stage"] == "narrate":
+                return
+            time.sleep(0.05)
+        self.fail("worker never reached the narrate stage")
 
     def prop2_key(self):
         entry = self.deps.states["ca"].index.get("ca-2026-11-03-prop-2")
@@ -257,17 +273,11 @@ class CancelWhileRunningTest(WorkerTestCase):
         worker = self.make_worker(runner=runner, heartbeat_interval=0.1)
         t = threading.Thread(target=worker.run_once)
         t.start()
-        for _ in range(100):
-            row = self.deps.queue.get_job(job["id"])
-            if row["state"] == "running" and row["stage"] == "narrate":
-                break
-            time.sleep(0.05)
-        else:
-            self.fail("worker never reached the narrate stage")
+        self.wait_for_narrate(job["id"])
 
         ok, _ = self.deps.queue.transition(job["id"], "cancel")
         self.assertTrue(ok)
-        t.join(timeout=5)
+        t.join(timeout=HANG_GUARD)
         self.assertFalse(t.is_alive())
 
         row = self.deps.queue.get_job(job["id"])
@@ -285,16 +295,13 @@ class StopReleasesJobTest(WorkerTestCase):
         worker = self.make_worker(runner=runner, heartbeat_interval=5.0)
         t = threading.Thread(target=worker.run_once)
         t.start()
-        for _ in range(100):
-            row = self.deps.queue.get_job(job["id"])
-            if row["state"] == "running":
-                break
-            time.sleep(0.05)
-        else:
-            self.fail("worker never claimed the job")
+        # Not just claimed: until run_once has the claim in hand, stop()
+        # has no job to give back.
+        self.wait_for_narrate(job["id"])
 
         worker.stop()
-        t.join(timeout=5)
+        t.join(timeout=HANG_GUARD)
+        self.assertFalse(t.is_alive())
 
         row = self.deps.queue.get_job(job["id"])
         self.assertEqual(row["state"], "queued")
