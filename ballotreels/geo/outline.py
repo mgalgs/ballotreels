@@ -43,16 +43,43 @@ OUTLIER_SHARE = 0.15
 OUTLIER_GAP = 0.15
 
 
-def drawn(counties: list[list[list[tuple[float, float]]]]
+def drawn(counties: list[list[list[tuple[float, float]]]],
+          frame: list[list[list[tuple[float, float]]]] | None = None
           ) -> list[list[list[tuple[float, float]]]]:
     """Each county's rings (lon, lat) less the far, tiny outliers, in
     the same order (a county may be left with none); `counties` itself
-    if nothing is left out. The rings are taken farthest first (their
+    if nothing is left out.
+
+    With `frame` (other outlines of the same counties: TIGER's, for
+    ones clipped to the shoreline), the outliers are those of `frame`,
+    and a ring of `counties` is left out if its box is clear of the box
+    of `frame`'s rings kept. The rule is tuned to TIGER's outlines; on
+    shoreline ones Hawaii's Kauai, its water gone, would count as one.
+
+    The rings are taken farthest first (their
     box's centre from the state's area-weighted centre) and the longest
     run of them dropped that holds under OUTLIER_SHARE of the area, each
     of it outside the box of the rings kept by more than OUTLIER_GAP of
     that box's longer side. Areas and distances are measured with
     longitude scaled by the cosine of the middle latitude."""
+    if frame is not None and frame is not counties:
+        kept = drawn(frame)
+        if kept is frame:
+            return counties
+        pts = [p for rings in kept for ring in rings for p in ring]
+        if not pts:
+            return counties
+        x0, x1 = min(x for x, _ in pts), max(x for x, _ in pts)
+        y0, y1 = min(y for _, y in pts), max(y for _, y in pts)
+
+        def clear(ring) -> bool:
+            return (min(x for x, _ in ring) > x1 or
+                    max(x for x, _ in ring) < x0 or
+                    min(y for _, y in ring) > y1 or
+                    max(y for _, y in ring) < y0)
+
+        return [[ring for ring in county if ring and not clear(ring)]
+                for county in counties]
     pts = [p for rings in counties for ring in rings for p in ring]
     if not pts:
         return counties
@@ -255,14 +282,15 @@ def _path(parts, tolerance: float) -> str:
     return "".join(out).replace(" -", "-")
 
 
-def mini_outline(counties: list[list[list[tuple[float, float]]]]
+def mini_outline(counties: list[list[list[tuple[float, float]]]],
+                 frame: list[list[list[tuple[float, float]]]] | None = None
                  ) -> dict | None:
     """The state's outer outline from its counties' rings (lon, lat):
     `{"width", "height", "path"}`, the path one SVG subpath per piece of
     land kept, in a box whose longer side is MINI_SIZE, at most
-    MINI_BUDGET bytes, far tiny outliers left out (`drawn`). None if
-    nothing is left."""
-    counties = [rings for rings in drawn(counties) if rings]
+    MINI_BUDGET bytes, far tiny outliers left out (`drawn`, of
+    `frame` if given). None if nothing is left."""
+    counties = [rings for rings in drawn(counties, frame) if rings]
     if not counties:
         return None
     projected, w, h = _project(counties)

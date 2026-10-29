@@ -16,7 +16,7 @@ import zipfile
 from pathlib import Path
 from typing import Callable
 
-from .counties import write_counties
+from .counties import SHORELINE, write_counties
 from .lookup import LOCAL_KINDS, PARTIAL, ocd_id
 from .shapefile import iter_shapefile
 from .shapes import (overlap_length, point_in_polygon, row_intervals,
@@ -64,9 +64,16 @@ STATE_FIPS = {
 # with `--url <name>=<url>`.
 TIGER_BASE = "https://www2.census.gov/geo/tiger/TIGER2024"
 REL_BASE = "https://www2.census.gov/geo/docs/maps-data/data/rel2020"
+GENZ_BASE = "https://www2.census.gov/geo/tiger/GENZ2024/shp"
 
-SHAPE_ARCHIVES = ("cd", "sldu", "sldl", "county", "zcta", "place", "unsd",
-                  "elsd", "scsd")
+# The Census cartographic boundary counties (download and shapes file
+# SHORELINE, ballotreels.geo.counties): the same counties as TIGER's,
+# clipped to the shoreline (TIGER's run out into the Great Lakes and the
+# sea). Only the drawn outlines use them; every lookup keeps TIGER's
+# county.geojson.
+
+SHAPE_ARCHIVES = ("cd", "sldu", "sldl", "county", SHORELINE, "zcta", "place",
+                  "unsd", "elsd", "scsd")
 
 # The ZCTA-to-state-legislative-district relationship files (2024
 # districts, 2020 ZCTAs, from the 2020 CD/SLD record layout) could not be
@@ -98,6 +105,7 @@ def census_urls(state_abbr: str) -> dict[str, str]:
         "sldu.zip": f"{TIGER_BASE}/SLDU/tl_2024_{fips}_sldu.zip",
         "sldl.zip": f"{TIGER_BASE}/SLDL/tl_2024_{fips}_sldl.zip",
         "county.zip": f"{TIGER_BASE}/COUNTY/tl_2024_us_county.zip",
+        f"{SHORELINE}.zip": f"{GENZ_BASE}/cb_2024_us_county_500k.zip",
         "zcta.zip": f"{TIGER_BASE}/ZCTA520/tl_2024_us_zcta520.zip",
         "place.zip": f"{TIGER_BASE}/PLACE/tl_2024_{fips}_place.zip",
         "unsd.zip": f"{TIGER_BASE}/UNSD/tl_2024_{fips}_unsd.zip",
@@ -112,7 +120,8 @@ def census_urls(state_abbr: str) -> dict[str, str]:
             f"{REL_BASE}/cd-sld/tab20_sldl202420_zcta520_st{fips}.txt",
     }
     # "sldu.zip" and "sldu_rel.txt" both belong to kind "sldu".
-    layers = ("zcta",) + tuple(l for ls in LOCAL_LAYERS.values() for l in ls)
+    layers = (("zcta", SHORELINE)
+              + tuple(l for ls in LOCAL_LAYERS.values() for l in ls))
     return {name: url for name, url in urls.items()
             if name.split(".")[0].removesuffix("_rel") in kinds + layers}
 
@@ -410,6 +419,30 @@ class _ZipScan:
         return out
 
 
+def _write_shoreline(tmp_dir: Path, raw_dir: Path, fips: str,
+                     counties: dict[str, dict], tolerance: float) -> None:
+    """Writes `<SHORELINE>.geojson`: the state's counties of the
+    cartographic boundary file, each with its TIGER county's properties
+    (joined on GEOID; one TIGER lacks is left out)."""
+    features = []
+    for rec in iter_shapefile(_shp_base(raw_dir, SHORELINE),
+                              keep=lambda a: a.get("STATEFP") == fips):
+        properties = counties.get(rec.attrs.get("GEOID", ""))
+        rings = _simplify_rings(rec.rings, tolerance)
+        if properties is None or not rings:
+            continue
+        features.append({
+            "type": "Feature",
+            "properties": properties,
+            "geometry": {"type": "Polygon",
+                         "coordinates": [[list(p) for p in r]
+                                         for r in rings]},
+        })
+    (tmp_dir / f"{SHORELINE}.geojson").write_text(
+        json.dumps({"type": "FeatureCollection", "features": features}),
+        encoding="utf-8")
+
+
 def _build_into(tmp_dir: Path, raw_dir: Path, fips: str, state_abbr: str,
                 min_overlap: float, tolerance: float) -> None:
     tmp_dir.mkdir(parents=True)
@@ -418,6 +451,8 @@ def _build_into(tmp_dir: Path, raw_dir: Path, fips: str, state_abbr: str,
 
     zip_kinds: dict[str, dict[str, list[str]]] = {}
     relevant_zips: set[str] = set()
+    # county GEOID -> its feature's properties, for the shoreline file
+    counties: dict[str, dict] = {}
 
     for kind in kinds_for(state_abbr):
         records = iter_shapefile(_shp_base(raw_dir, kind),
@@ -433,13 +468,15 @@ def _build_into(tmp_dir: Path, raw_dir: Path, fips: str, state_abbr: str,
                 continue
             division, display = result
             geoid_to_ocd[geoid] = division
+            properties = {"ocd_id": division, "name": display, "kind": kind}
+            if kind == "county":
+                counties[geoid] = properties
             rings = _simplify_rings(rec.rings, tolerance)
             if not rings:
                 continue
             features.append({
                 "type": "Feature",
-                "properties": {"ocd_id": division, "name": display,
-                              "kind": kind},
+                "properties": properties,
                 "geometry": {"type": "Polygon",
                             "coordinates": [[list(p) for p in r]
                                              for r in rings]},
@@ -466,6 +503,8 @@ def _build_into(tmp_dir: Path, raw_dir: Path, fips: str, state_abbr: str,
                                           min_overlap).items():
             relevant_zips.add(z)
             zip_kinds.setdefault(z, {})[kind] = divisions
+
+    _write_shoreline(tmp_dir, raw_dir, fips, counties, tolerance)
 
     zip_scan = _ZipScan()
     zcta_records = iter_shapefile(_shp_base(raw_dir, "zcta"),

@@ -207,10 +207,16 @@ SLD_REL_URLS = {
 def _zip_shapes(src_dir: Path, kind: str) -> bytes:
     """`<kind>.shp` and `.dbf` packed the way the Census ships them: a zip
     archive whose members are named after the TIGER file."""
+    from ballotreels.geo.counties import SHORELINE
+
+    # A fake with no shoreline counties of its own ships TIGER's again.
+    source = kind
+    if kind == SHORELINE and not (src_dir / f"{kind}.shp").exists():
+        source = "county"
     buf = io.BytesIO()
     with zipfile.ZipFile(buf, "w") as zf:
         for ext in (".shp", ".dbf"):
-            zf.write(src_dir / f"{kind}{ext}", f"tl_2024_fake_{kind}{ext}")
+            zf.write(src_dir / f"{source}{ext}", f"tl_2024_fake_{kind}{ext}")
     return buf.getvalue()
 
 
@@ -380,7 +386,13 @@ LOCAL_DISTRICTS = {
 }
 
 
-def write_local_source(src_dir: Path) -> None:
+# The shoreline counties `write_local_source(shoreline=True)` ships: San
+# Diego less a coast (x 0-2), under a name the build does not use;
+# Imperial absent; and a county of another state.
+SHORELINE_SAN_DIEGO = (2.0, 0.0, 20.0, 10.0)
+
+
+def write_local_source(src_dir: Path, shoreline: bool = False) -> None:
     fields = [("GEOID", "C", 10), ("STATEFP", "C", 2), ("NAME", "C", 40)]
     whole = _box(0.0, 0.0, 30.0, 10.0)
     write_shapefile(src_dir / "cd", fields,
@@ -397,6 +409,14 @@ def write_local_source(src_dir: Path) -> None:
           "NAMELSAD": f"{name} County"}
          for geoid, name in LOCAL_COUNTIES.items()],
         [[_box(0.0, 0.0, 20.0, 10.0)], [_box(20.0, 0.0, 30.0, 10.0)]])
+    if shoreline:
+        write_shapefile(
+            src_dir / "county_cb", county_fields,
+            [{"GEOID": "06073", "STATEFP": "06", "NAME": "Shore Diego",
+              "NAMELSAD": "Shore Diego County"},
+             {"GEOID": "32003", "STATEFP": "32", "NAME": "Clark",
+              "NAMELSAD": "Clark County"}],
+            [[_box(*SHORELINE_SAN_DIEGO)], [_box(20.0, 0.0, 30.0, 10.0)]])
     for layer, rows in LOCAL_DISTRICTS.items():
         write_shapefile(
             src_dir / layer, LOCAL_FIELDS,
@@ -417,7 +437,7 @@ def write_local_source(src_dir: Path) -> None:
                                                  encoding="utf-8")
 
 
-def build_local_geo(data_dir: Path) -> list[str]:
+def build_local_geo(data_dir: Path, **source_kwargs) -> list[str]:
     """Builds `write_local_source`'s fake San Diego into
     `<data_dir>/geo/ca/`."""
     import tempfile
@@ -426,7 +446,7 @@ def build_local_geo(data_dir: Path) -> list[str]:
 
     with tempfile.TemporaryDirectory() as tmp:
         src_dir = Path(tmp)
-        write_local_source(src_dir)
+        write_local_source(src_dir, **source_kwargs)
         urls = {**census_urls(STATE), **SLD_REL_URLS}
         url_to_name = {url: name for name, url in urls.items()}
 

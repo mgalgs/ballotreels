@@ -203,8 +203,8 @@ of the zip's land area; the bound is never below 1%), `--tolerance`
 (Douglas-Peucker simplification tolerance in degrees; default `0.001`),
 and `--url NAME=URL` (repeatable, overrides one download by name, e.g.
 `--url cd.zip=https://...`, for when a Census URL has moved). The names
-are `cd.zip`, `sldu.zip`, `sldl.zip`, `county.zip`, `zcta.zip`,
-`place.zip`, `unsd.zip`, `elsd.zip`, `scsd.zip`, `cd_rel.txt`,
+are `cd.zip`, `sldu.zip`, `sldl.zip`, `county.zip`, `county_cb.zip`,
+`zcta.zip`, `place.zip`, `unsd.zip`, `elsd.zip`, `scsd.zip`, `cd_rel.txt`,
 `county_rel.txt`, `sldu_rel.txt` and `sldl_rel.txt`. A state with no
 elementary or secondary school districts has no `elsd.zip` or
 `scsd.zip`: if either fails to download, the build warns and goes on
@@ -246,7 +246,12 @@ Both drawings frame the state's main body: the pieces of land farthest
 from the state's centre, if together they hold under 15% of its area
 and each is far outside the rest (by more than 15% of its box's longer
 side), such as Hawaii's Northwestern Hawaiian Islands, are left out of
-them (never out of the zip lookup or the county list).
+them (never out of the zip lookup or the county list). Both are drawn
+from `county_cb.geojson`, the Census cartographic boundary counties
+(`county_cb.zip`), clipped to the shoreline, where TIGER's run out into
+the Great Lakes and the sea (which far pieces are left out is still
+judged on TIGER's, so Hawaii keeps Kauai); a build from before it draws
+TIGER's `county.geojson`, which everything else always uses.
 A district is in a county only where the two share ground more than
 about 300 m across both ways, so a district whose edge merely is (or,
 from shape mismatch, slightly crosses) a county line is not listed

@@ -5,6 +5,13 @@ place.geojson, school_district.geojson), so it needs no download. `geo
 build` writes it last; `geo counties` writes it again from a build
 already on disk.
 
+The hero and the home page's mini outline are drawn from the counties
+clipped to the shoreline (county_cb.geojson, SHORELINE) where the build has them, else from TIGER's county.geojson,
+whose counties run out into the Great Lakes and the sea; which county a
+district is in always comes from county.geojson, and so do which far,
+tiny outliers both drawings leave out (ballotreels.geo.outline.drawn's
+`frame`).
+
 A district is in a county where the two share ground, not merely a
 border: the shapes are simplified independently (build.py's
 `tolerance`), so where a district's edge is the county line the two
@@ -31,6 +38,10 @@ from .outline import drawn, mini_outline
 from .shapes import point_in_polygon, row_intervals, simplify_ring
 
 FILENAME = "counties.json"
+
+# The counties clipped to the shoreline: `geo build`'s download and
+# shapes file of them (<SHORELINE>.zip, <SHORELINE>.geojson).
+SHORELINE = "county_cb"
 
 # The local kinds placed in counties, each with its shapes file.
 LOCAL_KINDS = ("place", "school_district")
@@ -182,14 +193,17 @@ def district_counties(district: _Shape,
             if point_in_polygon(middle, county.rings)][:1]
 
 
-def _hero(counties: list[dict]) -> dict[str, Any]:
+def _hero(counties: list[dict],
+          frame: list[dict] | None = None) -> dict[str, Any]:
     """Every county's outline as an SVG path in one shared box,
     longitude scaled by the cosine of the state's middle latitude (so
     the shape is not stretched), north up. Far, tiny outliers are left
-    out of the drawing and its box (ballotreels.geo.outline.drawn), so
-    a county with nothing else has no path."""
-    counties = [dict(c, rings=rings) for c, rings
-                in zip(counties, drawn([c["rings"] for c in counties]))
+    out of the drawing and its box (ballotreels.geo.outline.drawn, those
+    of `frame`'s outlines if given), so a county with nothing else has no
+    path."""
+    kept = drawn([c["rings"] for c in counties],
+                 frame and [c["rings"] for c in frame])
+    counties = [dict(c, rings=rings) for c, rings in zip(counties, kept)
                 if rings]
     boxes = [_bbox(c["rings"]) for c in counties]
     x0 = min(b[0] for b in boxes)
@@ -232,6 +246,9 @@ def county_doc(geo_dir: str | Path) -> dict[str, Any]:
     (ballotreels.geo.lookup.ballot_division)."""
     geo_dir = Path(geo_dir)
     counties = _features(geo_dir, "county", required=True)
+    shoreline = _features(geo_dir, SHORELINE, required=False)
+    frame = counties if shoreline else None
+    outlines = shoreline or counties
     shapes = {c["ocd_id"]: _Shape(c["rings"]) for c in counties}
     members: dict[str, set[str]] = {c["ocd_id"]: set() for c in counties}
     for kind in LOCAL_KINDS:
@@ -244,8 +261,9 @@ def county_doc(geo_dir: str | Path) -> dict[str, Any]:
         "counties": {c["ocd_id"]: {"name": c["name"],
                                    "divisions": sorted(members[c["ocd_id"]])}
                      for c in sorted(counties, key=lambda c: c["name"])},
-        "hero": _hero(counties) if counties else None,
-        "mini": mini_outline([c["rings"] for c in counties]),
+        "hero": _hero(outlines, frame) if outlines else None,
+        "mini": mini_outline([c["rings"] for c in outlines],
+                             frame and [c["rings"] for c in frame]),
     }
 
 
