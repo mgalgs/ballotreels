@@ -16,8 +16,8 @@
 #
 # Nothing official in hand states the map's partisan effect, so the
 # script states none, and names no district's member or party. The
-# ballot title's "keep more counties intact" is said once, attributed to
-# the ballot title.
+# ballot title's "keep more counties intact" is the yes side's claim
+# about the map, so only the card shows it; the narration does not.
 #
 # Missouri publishes no official arguments for or against a measure:
 # both sides are filed = false and each says so once, in the same number
@@ -77,15 +77,6 @@ sources = ["sos-page", "text"]
 [section.line.visual]
 kind = "illustration"
 name = "legislative-chamber"
-
-[[section.line]]
-text = "The ballot title says the new boundaries keep more counties intact."
-sources = ["sos-page"]
-
-[section.line.visual]
-kind = "page"
-source = "sos-page"
-highlight = ["keep more counties intact"]
 
 [[section.line]]
 text = "Missouri would still have eight districts."
