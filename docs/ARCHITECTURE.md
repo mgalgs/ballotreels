@@ -150,7 +150,12 @@ counties onto a grid, closing the hairline gaps between neighbours
 (their outlines are simplified independently), filling holes and
 tracing the edge of each piece of land left
 (`ballotreels/geo/outline.py`); a piece too small to see at icon size
-is dropped and the path kept to at most 800 bytes. The serve tier only
+is dropped and the path kept to at most 800 bytes. Both the hero and
+the coarse outline leave out far, tiny outliers (`outline.drawn`: a
+ring among the last 0.5% of the state's area, smallest first, and
+outside the box of the rest by more than 15% of its longer side, such
+as Hawaii's Northwestern Hawaiian Islands), from the drawing and its
+box only, so they frame the same main body. The serve tier only
 reads it: `/api/states`, which the home page already fetches to list
 the states, carries each state's coarse outline and its 160 px flag
 (`static/flags/<st>-mini.jpg`), never the county outlines.

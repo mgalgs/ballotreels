@@ -193,6 +193,11 @@ counties each city and school district lies in, for the county pages
 (`/ca/2026/county/humboldt`), each county's outline for their map, and
 the state's own outer outline, coarse (a few hundred bytes of path,
 islands too small to see dropped), for its button on the home page.
+Both drawings frame the state's main body: a piece of land among the
+smallest 0.5% of the state's area and far outside the rest (by more
+than 15% of its box's longer side), such as Hawaii's Northwestern
+Hawaiian Islands, is left out of them (never out of the zip lookup or
+the county list).
 A district is in a county only where the two share ground more than
 about 300 m across both ways, so a district whose edge merely is (or,
 from shape mismatch, slightly crosses) a county line is not listed
