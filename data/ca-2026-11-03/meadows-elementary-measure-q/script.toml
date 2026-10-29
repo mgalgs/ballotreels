@@ -1,0 +1,185 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; how a school bond is repaid and what it
+# needs to pass; what the money would pay for and what it may not; the
+# district's tax rate statement; both sides, neither of which has an
+# archived argument; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this school district". The card and title
+# carry the names. "Counsel" is heard as "Council"
+# (standard/speakability.txt), so the narration does not say it, and the
+# statement's "2050-51" is written in full.
+#
+# The card quotes the ballot question as the Registrar's Measure Q PDF
+# prints it, with blank Yes and No lines and no yes/no sentences. So the
+# card has no boxes, its origin is the impartial analysis's sentence
+# placing the measure, the vote lines give the analysis's meanings, and
+# both highlight the same phrase of the question.
+#
+# The bond amount differs between the documents: the ballot question
+# says "$2,260,400 of bonds", the tax rate statement and the impartial
+# analysis "up to $2,260,000". The narration's "about $2.26 million" is
+# the ballot question's figure, rounded, and true of both (the PDF's
+# heading rounds it further, to "$2.2M"); the card shows $2,260,400 as
+# printed.
+#
+# The bond total and the debt service are repaid from a tax on property
+# in the district, not from the district's budget, and no archived
+# source states that budget, so they have no budget scale (STANDARD.md
+# 6.5; left open), as Alview-Dairyland Measure V's do. The statement's
+# average and highest rates are the same, $25, and it says so.
+#
+# The same district has Measure P, a second bond, on the same ballot.
+# None of Measure Q's documents mentions it, so the script says nothing
+# of it (left open, under [[question]]).
+#
+# No argument for or against Measure Q was archived: the Registrar's
+# Measure Q PDF prints none, and with no full guide posted it is not
+# known whether any was filed. So each side says none is printed in the
+# posted pages (filed = false, STANDARD.md 2.5).
+
+contest = "ca-2026-11-03-meadows-elementary-measure-q"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "Q"
+title = "Meadows Union Elementary School District $2.2M Bond Measure"
+origin = "This measure was placed on the ballot by the governing board of Meadows Union Elementary School District"
+summary = "To construct a gymnasium and improve field lighting of athletic facilities; upgrade/repair parking lots; upgrade facilities for energy efficiencies; shall the Meadows Union Elementary School District’s measure be adopted to issue $2,260,400 of bonds at legal rates, levy approximately $25/$100,000 of assessed value, generating approximately $164,694 annually while bonds are outstanding, with annual audits and public disclosure of all spending, independent citizens’ oversight, NO money for salaries, all money staying local?"
+
+[[section]]
+id = "what"
+heading = "Measure Q"
+
+[[section.line]]
+text = "Measure Q asks the voters of this school district whether to approve about $2.26 million in school bonds."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to issue $2,260,400 of bonds"]
+
+[[section]]
+id = "today"
+heading = "How a school bond works"
+
+[[section.line]]
+id = "repaid"
+text = "The district would sell the bonds and repay them from a tax on property in the district."
+sources = ["tax-statement", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure Q needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "projects"
+text = "The money would build a gymnasium, improve field lighting, add energy upgrades such as solar panels, and repair parking lots."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-gym"
+
+[[section.line]]
+id = "limits"
+text = "Bond money could not pay salaries, and a citizens' oversight committee and yearly audits would check the spending."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+id = "rate"
+text = "The district's tax statement estimates $25 per $100,000 of assessed value each year, through 2050-2051."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section.line]]
+id = "total"
+text = "The statement estimates the total to repay, with interest, at about $3.95 million."
+sources = ["tax-statement"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure Q is printed in its posted pages."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument for was printed"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure Q is printed in its posted pages."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was printed"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the district to issue the bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to issue $2,260,400 of bonds"]
+
+[[section.line]]
+text = "A no vote does not authorize the district to issue the bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to issue $2,260,400 of bonds"]
+
+[[question]]
+ask = "Who pays for the bonds, and for how long?"
+lines = ["repaid", "rate"]
+
+[[question]]
+ask = "What would the money pay for?"
+lines = ["projects", "limits"]
+
+[[question]]
+ask = "How does Measure Q relate to Measure P, the district's other bond on this ballot?"
+unanswered = true

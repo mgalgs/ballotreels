@@ -1,0 +1,60 @@
+# Archived sources for Imperial County Measure S, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Imperial County Registrar of Voters posts each measure's pages as
+# one PDF (the ballot question, full text, argument and impartial
+# analysis); no countywide Voter Information Guide is posted online. The
+# packet's own text layer joins "locally-controlled" across a line break,
+# so the card quotes a transcription of its page 1 question and page 13
+# opening sentence (sources/ballot-question-transcription.txt, naming the
+# PDF and URL it copies). County Counsel's impartial analysis is the
+# measure's neutral explanation, the kind a state's attorney general's
+# explanatory statement is. No fiscal analysis or tax rate statement
+# applies (a sales tax); the one revenue estimate is the ballot
+# question's. The packet prints an argument in favor and no argument
+# against or rebuttal.
+
+[contest]
+id = "ca-2026-11-03-imperial-county-measure-s"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:imperial"
+kind = "measure"
+title = "Imperial County Measure S: Public Safety Sales Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Imperial County Registrar of Voters, Measure S, Imperial County Public Safety Sales and Use Tax Initiative: ballot question, page 1, and impartial analysis, page 13 (transcribed from the PDF)"
+credit = "Measure S, Imperial County Registrar of Voters"
+url = "https://elections.imperialcounty.org/wp-content/uploads/2026/08/MeasureS_PublicSafety-1.pdf"
+file = "sources/ballot-question-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Imperial County Counsel, County Counsel’s Impartial Analysis of Imperial County Public Safety Sales and Use Tax Initiative, Imperial County Registrar of Voters, Measure S, pages 13 to 14"
+credit = "County Counsel’s Impartial Analysis, Imperial County Registrar of Voters"
+url = "https://elections.imperialcounty.org/wp-content/uploads/2026/08/MeasureS_PublicSafety-1.pdf"
+file = "sources/impartial-analysis-pp13-14.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Ballot Measure S, the Imperial County Public Safety Ordinance, with its Ballot Title Summary, Imperial County Registrar of Voters, Measure S, pages 1 to 12"
+credit = "Full text of Measure S, Imperial County Registrar of Voters"
+url = "https://elections.imperialcounty.org/wp-content/uploads/2026/08/MeasureS_PublicSafety-1.pdf"
+file = "sources/measure-packet.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure S, Imperial County Registrar of Voters, Measure S, pages 12 to 13 (no argument against is printed)"
+credit = "Argument in favor, Imperial County Registrar of Voters"
+url = "https://elections.imperialcounty.org/wp-content/uploads/2026/08/MeasureS_PublicSafety-1.pdf"
+file = "sources/argument-in-favor-pp12-13.pdf"
+retrieved = "2026-10-28"

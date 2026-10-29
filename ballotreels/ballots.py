@@ -616,6 +616,32 @@ BALLOTS: dict[str, Ballot] = {
                                      "guadalupe-measure-j",
                                      "santa-ynez-valley-measure-d",
                                      "allan-hancock-measure-h")},
+                     # The Imperial County Registrar of Voters posts each
+                     # measure's ballot question, full text, impartial
+                     # analysis and any argument as one PDF; no
+                     # countywide guide is posted, so each card names
+                     # its measure's PDF as headed, as Placer's do.
+                     "ca-2026-11-03-imperial-county-measure-s":
+                         "Measure S — Imperial County Public Safety Sales "
+                         "and Use Tax Initiative",
+                     "ca-2026-11-03-imperial-valley-healthcare-measure-n":
+                         "Measure N — Maintaining Local Hospitals and "
+                         "Emergency Healthcare Services",
+                     "ca-2026-11-03-el-centro-measure-t":
+                         "Measure T — El Centro Public Safety/City "
+                         "Services Measure",
+                     "ca-2026-11-03-calexico-measure-o":
+                         "Measure O — City of Calexico Public Safety "
+                         "Sales Tax",
+                     "ca-2026-11-03-meadows-elementary-measure-p":
+                         "Measure P — Meadows Union Elementary School "
+                         "District $1.8M Bond Measure",
+                     "ca-2026-11-03-meadows-elementary-measure-q":
+                         "Measure Q — Meadows Union Elementary School "
+                         "District $2.2M Bond Measure",
+                     "ca-2026-11-03-westmorland-elementary-measure-r":
+                         "Measure R — Westmorland Union Elementary School "
+                         "District Bond Measure",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

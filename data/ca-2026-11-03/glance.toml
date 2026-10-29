@@ -2194,3 +2194,63 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $618,176,000."
 amount = 618176000
 period = "unstated"
+
+# Imperial County Measure S: no fiscal analysis or tax rate statement
+# applies (a sales tax); the one estimate is the ballot question's.
+[imperial-county-measure-s]
+source = "ballot-question"
+quote = "generating approximately $20,000,000 annually"
+amount = 20000000
+period = "per-year"
+
+# Imperial Valley Healthcare District Measure N: no tax rate statement
+# applies (a parcel tax); the ballot question prints the rate per
+# parcel, and the one revenue estimate is the full text's.
+[imperial-valley-healthcare-measure-n]
+source = "ballot-question"
+status = "none-printed"
+
+# El Centro Measure T: no fiscal analysis or tax rate statement applies
+# (a sales tax); the one estimate is the City's, as the impartial
+# analysis gives it.
+[el-centro-measure-t]
+source = "impartial-analysis"
+quote = "will generate approximately $8,400,000 annually in additional revenue until ended by voters"
+amount = 8400000
+period = "per-year"
+direction = "revenue-gain"
+
+# Calexico Measure O: no fiscal analysis or tax rate statement applies
+# (a sales tax); the estimates are the City's, as the impartial analysis
+# gives them, the larger at the 1 percent rate from October 2030.
+[calexico-measure-o]
+source = "impartial-analysis"
+quote = "It is estimated that Measure O will provide an additional $4,000,000 in annual local funding when collected at a ½% rate, increasing to $8,000,000 when collected at a 1% rate."
+amount = 8000000
+period = "per-year"
+
+# Meadows Union Elementary School District Measure P: the district's Tax
+# Rate Statement, its total debt service (the bonds are $1,808,320 in the
+# ballot question, up to $1,810,000 in the statement).
+[meadows-elementary-measure-p]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $3,162,130."
+amount = 3162130
+period = "unstated"
+
+# Meadows Union Elementary School District Measure Q: the district's Tax
+# Rate Statement, its total debt service (the bonds are $2,260,400 in the
+# ballot question, up to $2,260,000 in the statement).
+[meadows-elementary-measure-q]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $3,952,662."
+amount = 3952662
+period = "unstated"
+
+# Westmorland Union Elementary School District Measure R: the district's
+# Tax Rate Statement, its total debt service (the bonds are $2.8 million).
+[westmorland-elementary-measure-r]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $6,345,171."
+amount = 6345171
+period = "unstated"

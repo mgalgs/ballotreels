@@ -1,0 +1,61 @@
+# Archived sources for Westmorland Union Elementary School District
+# Measure R, 2026-11-03 general election (sources/sources.md). Every id
+# here may be cited by script.toml. `kind` must be one the standard
+# allows (docs/STANDARD.md, section 1).
+#
+# The Imperial County Registrar of Voters posts each measure's pages as
+# one PDF (the ballot question, full text and project list, the
+# District's tax rate statement and County Counsel's impartial
+# analysis); no countywide Voter Information Guide is posted online.
+# County Counsel's impartial analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is; the District's tax rate statement is its fiscal
+# statement. The Registrar's Measure R PDF prints no argument for or
+# against and no rebuttal; with no full guide posted, it is not known
+# whether any was filed.
+#
+# The tax rate statement gives "$24.86 per $100,000"; the ballot
+# question and the impartial analysis round it to $25.
+
+[contest]
+id = "ca-2026-11-03-westmorland-elementary-measure-r"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:westmorland_union_elementary_school_district"
+kind = "measure"
+title = "Westmorland Union Elementary School District Measure R: $2.8 Million School Facilities Bond"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Imperial County Registrar of Voters, Measure R, Westmorland Union Elementary School District Bond Measure: ballot question, page 1, and impartial analysis, page 5"
+credit = "Measure R, Imperial County Registrar of Voters"
+url = "https://elections.imperialcounty.org/wp-content/uploads/2026/08/MeasureR_WestmorlandUSD.pdf"
+file = "sources/measure-packet.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Imperial County Counsel, County Counsel’s Impartial Analysis of Bond Measure R, Imperial County Registrar of Voters, Measure R, pages 5 to 6"
+credit = "County Counsel’s Impartial Analysis, Imperial County Registrar of Voters"
+url = "https://elections.imperialcounty.org/wp-content/uploads/2026/08/MeasureR_WestmorlandUSD.pdf"
+file = "sources/tax-rate-statement-and-impartial-analysis-pp3-6.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Westmorland Union Elementary School District, Tax Rate Statement, Rauna Fox, Superintendent, Imperial County Registrar of Voters, Measure R, pages 3 to 4"
+credit = "Tax Rate Statement, Westmorland Union Elementary School District"
+url = "https://elections.imperialcounty.org/wp-content/uploads/2026/08/MeasureR_WestmorlandUSD.pdf"
+file = "sources/tax-rate-statement-and-impartial-analysis-pp3-6.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Ballot Measure R, with its Project List, Westmorland Union Elementary School District, Imperial County Registrar of Voters, Measure R, pages 1 to 3"
+credit = "Full text of Measure R, Imperial County Registrar of Voters"
+url = "https://elections.imperialcounty.org/wp-content/uploads/2026/08/MeasureR_WestmorlandUSD.pdf"
+file = "sources/measure-packet.pdf"
+retrieved = "2026-10-28"
