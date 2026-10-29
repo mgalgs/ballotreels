@@ -1,0 +1,175 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the council meeting rule, the
+# referendum threshold and the police and fire commissions' power over
+# their investigators today; what would change; the City Administrative
+# Officer's statement; one line per side; what a vote does.
+#
+# The card quotes the pamphlet: the title and ballot question from the
+# measure's own page (printed page 45), and the yes and no meanings from
+# its Ballot Summary (printed page 6). The heading above them, "CITY OF
+# LOS ANGELES CHARTER AMENDMENT EE", stands in for an origin: the
+# pamphlet does not say who placed the measure on the ballot.
+#
+# The Financial Impact Statement gives no dollar figure, so nothing needs
+# a scale (STANDARD.md 6.5); its line gives both the possible saving and
+# the undetermined cost (6.4). The supporters' "outlier among major
+# American cities" and the opponents' "corruption scandals" and San
+# Fernando Valley meetings are each side's own (6.3) and stay out of the
+# neutral sections. The rebuttal to the argument against is not cited.
+
+contest = "ca-2026-11-03-los-angeles-measure-ee"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "summary"
+number = "EE"
+title = "CITY ETHICS, ELECTIONS, AND GOVERNANCE."
+origin = "CITY OF LOS ANGELES CHARTER AMENDMENT EE"
+summary = "Shall the City Charter be amended to: increase the authority of the Police Department Inspector General and Fire Department Independent Assessor; prohibit Ethics Commissioners from running for certain elected offices for five years; increase penalties for campaign finance violations; require City Council to meet at least weekly rather than the currently required three days per week; increase referendum petition signature requirements; and make other changes regarding ethics, elections and governance?"
+yes = "A YES VOTE MEANS: You want the Charter to be amended to make the changes described above regarding ethics, elections, and governance."
+no = "A NO VOTE MEANS: You do not want the Charter to be amended to make the changes described above regarding ethics, elections, and governance."
+
+[[section]]
+id = "what"
+heading = "Measure EE"
+
+[[section.line]]
+text = "City of Los Angeles Measure EE asks voters in the city whether to change charter rules on ethics, elections, and how often the City Council meets."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["Shall the City Charter be amended"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the charter requires the City Council to meet at least three days a week."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "legislative-chamber"
+
+[[section.line]]
+text = "The police and fire commissions can direct their own investigators not to start or continue an investigation or audit."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "case-file-phone"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "meetings"
+text = "Measure EE would require the council to meet at least weekly, and end the power of the commissions to stop those investigations."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "recurring-review"
+
+[[section.line]]
+text = "Ethics commissioners could not run for city or school board office for five years after leaving."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "nominee-list"
+
+[[section.line]]
+text = "The top campaign finance penalty would rise to $15,000, or three times the amount involved if that is more."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section.line]]
+text = "A referendum petition would need signatures equal to 15 percent of the votes in the last election for mayor, up from 10 percent."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "neighborhood-petition"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+id = "cost"
+text = "The City Administrative Officer says fewer meetings may save on translation and captioning, while more oversight staff may bring costs that cannot be determined."
+sources = ["financial-impact"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure EE strengthens independent oversight of police and fire, and frees council members to work in their districts."
+sources = ["arguments"]
+basis = ["providing stronger independent oversight of two of the City’s most critical public safety departments.", "limits the time Councilmembers have to work in their districts, meet directly with constituents"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Stronger police and fire oversight", "More time to work in districts"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure EE mainly cuts the public meetings where residents can watch, give comment, and hold elected officials accountable."
+sources = ["arguments"]
+basis = ["Its primary effect is to reduce the number of public meetings where residents can watch proceedings, provide public comment, and hold elected officials accountable.", "Fewer public meetings mean fewer opportunities for public scrutiny"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Fewer public council meetings", "Less public scrutiny"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means you want the charter amended to make these changes."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["You want the Charter to be amended"]
+
+[[section.line]]
+text = "A no vote means you do not want the charter amended."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["You do not want the Charter to be amended"]
+
+[[question]]
+ask = "How often would the City Council meet?"
+lines = ["meetings"]
+
+[[question]]
+ask = "Would it cost or save money?"
+lines = ["cost"]

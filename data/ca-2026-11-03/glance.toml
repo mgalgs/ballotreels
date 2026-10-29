@@ -1073,3 +1073,12 @@ quote = "The annual administrative costs for commission staffing and resources a
 amount = 1100000
 period = "per-year"
 direction = "savings"
+
+# City of Los Angeles Measure EE: the City Administrative Officer gives
+# no dollar figure; fewer council meetings "may result in General Fund
+# cost savings", and the oversight changes bring costs that cannot be
+# determined.
+[los-angeles-measure-ee]
+source = "financial-impact"
+status = "not-determined"
+quote = "The changes to the Fire and Police commissions may require hiring new investigators, retaining external auditors, or expanding investigative staff depending on case volume resulting in costs that cannot be determined at this time."
