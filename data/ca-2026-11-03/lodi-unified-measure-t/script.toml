@@ -1,0 +1,156 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; the tax for the district's earlier bonds today; what
+# it needs to pass; what the money would pay for; the district's tax
+# statement (how the bonds would be timed, the rates, the total); one
+# line per side; what a vote does.
+#
+# The card's title is the guide page's own head; its origin is the tax
+# rate statement's first sentence, the guide's one statement of who
+# holds the election (the impartial analysis prints no origin and no
+# yes and no sentences, so the card has no boxes, and the vote lines
+# take their meaning from the ballot question, as Dublin I's do).
+# "Counsel" is heard as "Council" (standard/speakability.txt), so the
+# narration does not say it. The bond total and the debt service are
+# repaid from a tax on property in the district, and no archived source
+# states the district's budget, so they have no budget scale
+# (STANDARD.md 6.5; left open).
+#
+# That the tax rate is not projected to rise is the tax statement's own
+# statement of how the bonds would be sold, so the fiscal section gives
+# it, attributed, beside the rate for the 2002 and 2016 bonds today
+# (from the measure's full text), which a voter needs to weigh it. The
+# supporters' line therefore takes their other points (funds stay
+# local; repairs cost less now), so nothing they argue repeats in a
+# neutral section (STANDARD.md 6.3).
+#
+# No argument against Measure T was printed. The no side says so
+# plainly; its section is marked filed = false.
+
+contest = "ca-2026-11-03-lodi-unified-measure-t"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-label"
+number = "T"
+title = "LODI UNIFIED SCHOOL DISTRICT"
+origin = "An election will be held within the boundaries of Lodi Unified School District (“District”) on November 3, 2026 to authorize the sale of up to $195 million in bonds to finance facilities as described in the measure."
+summary = "With no estimated increase in current tax rates, shall Lodi Unified School District’s measure to repair leaky roofs, plumbing, deteriorating electrical, gas lines, heating, and air conditioning; improve school security; and upgrade career training and college preparation classrooms be adopted, authorizing $195 million of bonds with legal rates, average annual levies below $22 per $100,000 of assessed valuation ($11.4 million annually) while outstanding, annual audits, independent citizen oversight, full disclosure of all spending, and all funds locally controlled?"
+
+[[section]]
+id = "what"
+heading = "Measure T"
+
+[[section.line]]
+text = "Lodi Unified School District Measure T asks the district's voters whether to approve $195 million in school bonds."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["authorizing $195 million of bonds"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Voters approved school bonds for the district in 2002 and 2016, taxed at $54.50 per $100,000 of assessed value in the 2025-2026 fiscal year."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure T needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The money would repair roofs, plumbing, electrical and gas lines, and heating and cooling, improve security, and upgrade career training classrooms."
+sources = ["ballot-label", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-roof-repair"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+text = "The district's tax statement says the bonds would be sold so the property tax rate is not projected to rise above today's."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section.line]]
+text = "The statement estimates an average tax of $21.13 per $100,000 of assessed value, and at most $30.87, through 2060-2061."
+sources = ["tax-statement"]
+
+[[section.line]]
+text = "The statement estimates the total to repay, with interest, at about $388 million."
+sources = ["tax-statement"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say every dollar stays with local schools, and repairing them now costs far less than waiting."
+sources = ["arguments"]
+basis = ["Every dollar is legally required to be spent on projects for our local schools.", "Making repairs now costs far less than waiting."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Every dollar stays with local schools", "Repairs now cost less than waiting"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure T was printed in the San Joaquin County voter guide for this election."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the district to issue up to $195 million in bonds."
+sources = ["ballot-label", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["authorizing $195 million of bonds"]
+
+[[section.line]]
+text = "A no vote does not authorize the district to issue the bonds."
+sources = ["ballot-label", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["be adopted"]

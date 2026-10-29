@@ -1,0 +1,150 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; how a school bond is repaid and what it needs to
+# pass; what the money would pay for and what it may not; the
+# district's tax statement; the two sides; what a vote does.
+#
+# The card's title is the guide page's own head; its origin is the tax
+# rate statement's first sentence, the guide's one statement of who
+# holds the election (the impartial analysis prints no origin and no
+# yes and no sentences, so the card has no boxes, and the vote lines
+# take their meaning from the ballot question, as Dublin I's do).
+# "Counsel" is heard as "Council" (standard/speakability.txt), so the
+# narration does not say it. The bond total and the debt service are
+# repaid from a tax on property in the district, and no archived source
+# states the district's budget, so they have no budget scale
+# (STANDARD.md 6.5; left open). The fiscal line gives the tax
+# statement's highest rate beside its average, as it prints both, with
+# the last year in full.
+#
+# The guide prints no argument for or against Measure V. Both sides say
+# so plainly, citing the guide's pages, and both are marked
+# filed = false.
+
+contest = "ca-2026-11-03-lincoln-unified-measure-v"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-label"
+number = "V"
+title = "LINCOLN UNIFIED SCHOOL DISTRICT"
+origin = "An election will be held in the Lincoln Unified School District (the “District”) on November 3, 2026, to authorize the sale of up to $79,000,000 in general obligation bonds."
+summary = "Lincoln Unified School District Facilities and Safety Measure. To improve the quality of education; make safety/security improvements; provide classrooms and labs for job training and career readiness; replace roofs and HVAC systems; restrooms and facilities improvements; shall Lincoln Unified School District’s measure authorizing $79,000,000 of bonds be adopted at legal rates, estimated levies averaging $39.07 per $100,000 assessed value ($4,471,000 annually) while bonds are outstanding, with citizens’ oversight, audits, no money for salaries and funding only for LUSD schools?"
+
+[[section]]
+id = "what"
+heading = "Measure V"
+
+[[section.line]]
+text = "Lincoln Unified School District Measure V asks the district's voters whether to approve $79 million in school bonds."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["authorizing $79,000,000 of bonds"]
+
+[[section]]
+id = "today"
+heading = "How a school bond works"
+
+[[section.line]]
+text = "The district would borrow the money and repay it from a tax on property in the district."
+sources = ["tax-statement", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure V needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The money would pay for safety and security improvements, classrooms and labs for job training, and new roofs and heating and cooling systems."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-roof-repair"
+
+[[section.line]]
+text = "The money could not pay teacher or administrator salaries, and a citizens' oversight committee and yearly audits would check the spending."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+text = "The district's tax statement estimates an average tax of $39.07 per $100,000 of assessed value, and at most $39.50, through 2061-2062."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section.line]]
+text = "The statement estimates the total to repay, with interest, at about $156.5 million."
+sources = ["tax-statement"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure V was printed in the San Joaquin County voter guide for this election."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-label"
+items = ["No argument for was printed"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure V was printed in the San Joaquin County voter guide for this election."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-label"
+items = ["No argument against was printed"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the district to issue up to $79 million in bonds."
+sources = ["ballot-label", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["authorizing $79,000,000 of bonds"]
+
+[[section.line]]
+text = "A no vote does not authorize the district to issue the bonds."
+sources = ["ballot-label", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["be adopted"]

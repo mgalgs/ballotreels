@@ -409,6 +409,15 @@ BALLOTS: dict[str, Ballot] = {
                          "Local Ballot Measure: AB",
                      "ca-2026-11-03-sausalito-measure-x":
                          "Measure X (2026)",
+                     # San Joaquin County prints each measure's ballot
+                     # question, impartial analysis, tax rate statement
+                     # and arguments in its composite guide.
+                     **{f"ca-2026-11-03-{slug}":
+                        "County of San Joaquin Voter Information Guide & "
+                        "Sample Ballot"
+                        for slug in ("lodi-unified-measure-t",
+                                     "lincoln-unified-measure-v",
+                                     "escalon-unified-measure-u")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

@@ -1,0 +1,68 @@
+# Archived sources for Lodi Unified School District Measure T,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The San Joaquin County Registrar of Voters prints Measure T's ballot
+# question, full text, the district's tax rate statement, County
+# Counsel's impartial analysis and the argument in favor on printed
+# pages 576-580 of its composite County of San Joaquin Voter Information
+# Guide & Sample Ballot; sources/vig-measure-t-pp576-580.pdf is those
+# pages cut from it, and every source cites the full guide's URL with
+# the pages. County Counsel's impartial analysis is the measure's
+# neutral explanation, the kind a state's attorney general's
+# explanatory statement is; the district's tax rate statement is its
+# fiscal statement. The guide prints no argument against and no
+# rebuttals.
+
+[contest]
+id = "ca-2026-11-03-lodi-unified-measure-t"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:lodi_unified_school_district"
+kind = "measure"
+title = "Lodi Unified School District Measure T: School Repair and Safety Bonds"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "San Joaquin County Registrar of Voters, County of San Joaquin Voter Information Guide & Sample Ballot, November 3, 2026: Measure T's ballot question, page 576"
+credit = "Ballot question, San Joaquin County Voter Information Guide"
+url = "https://www.sjgov.org/docs/default-source/registrar-of-voters-documents/elections/gubernatorial-general-election-2026/current-election/sj-composite-eng-(1).pdf?sfvrsn=98168b81_1"
+file = "sources/vig-measure-t-pp576-580.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "San Joaquin County Counsel, Impartial Analysis of Measure T, County of San Joaquin Voter Information Guide & Sample Ballot, November 3, 2026, page 580"
+credit = "Impartial Analysis, San Joaquin County Voter Information Guide"
+url = "https://www.sjgov.org/docs/default-source/registrar-of-voters-documents/elections/gubernatorial-general-election-2026/current-election/sj-composite-eng-(1).pdf?sfvrsn=98168b81_1"
+file = "sources/vig-measure-t-pp576-580.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Lodi Unified School District, Tax Rate Statement for Measure T, County of San Joaquin Voter Information Guide & Sample Ballot, November 3, 2026, page 579"
+credit = "Tax Rate Statement, San Joaquin County Voter Information Guide"
+url = "https://www.sjgov.org/docs/default-source/registrar-of-voters-documents/elections/gubernatorial-general-election-2026/current-election/sj-composite-eng-(1).pdf?sfvrsn=98168b81_1"
+file = "sources/vig-measure-t-pp576-580.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure T, County of San Joaquin Voter Information Guide & Sample Ballot, November 3, 2026, page 580 (the guide prints no argument against)"
+credit = "Arguments, San Joaquin County Voter Information Guide"
+url = "https://www.sjgov.org/docs/default-source/registrar-of-voters-documents/elections/gubernatorial-general-election-2026/current-election/sj-composite-eng-(1).pdf?sfvrsn=98168b81_1"
+file = "sources/vig-measure-t-pp576-580.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure T, Lodi Unified School District School Improvement Bond of 2026, County of San Joaquin Voter Information Guide & Sample Ballot, November 3, 2026, pages 576-579"
+credit = "Full Text of Measure T, San Joaquin County Voter Information Guide"
+url = "https://www.sjgov.org/docs/default-source/registrar-of-voters-documents/elections/gubernatorial-general-election-2026/current-election/sj-composite-eng-(1).pdf?sfvrsn=98168b81_1"
+file = "sources/vig-measure-t-pp576-580.pdf"
+retrieved = "2026-10-28"
