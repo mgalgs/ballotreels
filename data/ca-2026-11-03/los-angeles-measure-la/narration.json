@@ -1,0 +1,287 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 92.68,
+  "phrases": [
+    {
+      "text": "City of Los Angeles Measure LA asks voters in the city whether to change the charter rules on the budget, infrastructure, public works and city contracts.",
+      "start": 0.03,
+      "end": 11.09
+    },
+    {
+      "text": "The City Charter sets the rules for how the city manages its budget, contracts, property and Department of Public Works.",
+      "start": 11.75,
+      "end": 19.59
+    },
+    {
+      "text": "Today, the city budgets one year at a time, and needs no capital plan for infrastructure.",
+      "start": 20.25,
+      "end": 26.38
+    },
+    {
+      "text": "A full-time Board of Public Works oversees the department, and the charter bars the city from mortgaging property or running commercial businesses.",
+      "start": 27.04,
+      "end": 36.31
+    },
+    {
+      "text": "Measure LA would require two-year budgets and a capital plan for roads, parks, bridges and buildings.",
+      "start": 36.97,
+      "end": 44.03
+    },
+    {
+      "text": "The Director of Public Works would gain powers, and the City Council could change or eliminate the board.",
+      "start": 44.69,
+      "end": 50.85
+    },
+    {
+      "text": "The city could also mortgage property, run commercial businesses, and change some contracting rules.",
+      "start": 51.51,
+      "end": 57.82
+    },
+    {
+      "text": "The City Administrative Officer estimates one-time General Fund costs between $4 million and $6 million, and says other effects cannot be quantified yet.",
+      "start": 58.48,
+      "end": 68.43
+    },
+    {
+      "text": "Opponents say letting the council eliminate the board removes independent review of contracts and weakens public accountability.",
+      "start": 69.09,
+      "end": 76.11
+    },
+    {
+      "text": "Supporters say long-term planning and two-year budgets let the city fix infrastructure before problems become more expensive.",
+      "start": 76.77,
+      "end": 84.5
+    },
+    {
+      "text": "A yes vote means you want the charter amended to make these changes.",
+      "start": 85.16,
+      "end": 88.87
+    },
+    {
+      "text": "A no vote means you do not want the charter amended.",
+      "start": 89.53,
+      "end": 92.65
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "City of Los Angeles Measure LA asks voters in the city whether to change the charter rules on the budget, infrastructure, public works and city contracts.",
+      "The City Charter sets the rules for how the city manages its budget, contracts, property and Department of Public Works.",
+      "Today, the city budgets one year at a time, and needs no capital plan for infrastructure.",
+      "A full-time Board of Public Works oversees the department, and the charter bars the city from mortgaging property or running commercial businesses.",
+      "Measure LA would require two-year budgets and a capital plan for roads, parks, bridges and buildings.",
+      "The Director of Public Works would gain powers, and the City Council could change or eliminate the board.",
+      "The city could also mortgage property, run commercial businesses, and change some contracting rules.",
+      "The City Administrative Officer estimates one-time General Fund costs between $4 million and $6 million, and says other effects cannot be quantified yet.",
+      "Opponents say letting the council eliminate the board removes independent review of contracts and weakens public accountability.",
+      "Supporters say long-term planning and two-year budgets let the city fix infrastructure before problems become more expensive.",
+      "A yes vote means you want the charter amended to make these changes.",
+      "A no vote means you do not want the charter amended."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "City of Los Angeles Measure LA asks voters in the city whether to change the charter rules on the budget, infrastructure, public works and city contracts."
+      },
+      "bounds": [
+        0,
+        266880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"City of Los Angeles Measure LA asks voters in the city whether to change the charter rules on the budget, infrastructure, public works and city contracts.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The City Charter sets the rules for how the city manages its budget, contracts, property and Department of Public Works."
+      },
+      "bounds": [
+        281280,
+        470880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Charter sets the rules for how the city manages its budget, contracts, property and Department of Public Works.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, the city budgets one year at a time, and needs no capital plan for infrastructure."
+      },
+      "bounds": [
+        485280,
+        633840
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, the city budgets one year at a time, and needs no capital plan for infrastructure.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A full-time Board of Public Works oversees the department, and the charter bars the city from mortgaging property or running commercial businesses."
+      },
+      "bounds": [
+        648240,
+        872160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A full-time Board of Public Works oversees the department, and the charter bars the city from mortgaging property or running commercial businesses.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure LA would require two-year budgets and a capital plan for roads, parks, bridges and buildings."
+      },
+      "bounds": [
+        886560,
+        1057440
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure LA would require two-year budgets and a capital plan for roads, parks, bridges and buildings.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The Director of Public Works would gain powers, and the City Council could change or eliminate the board."
+      },
+      "bounds": [
+        1071840,
+        1221120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Director of Public Works would gain powers, and the City Council could change or eliminate the board.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The city could also mortgage property, run commercial businesses, and change some contracting rules."
+      },
+      "bounds": [
+        1235520,
+        1388400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The city could also mortgage property, run commercial businesses, and change some contracting rules.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The City Administrative Officer estimates one-time General Fund costs between $4 million and $6 million, and says other effects cannot be quantified yet."
+      },
+      "bounds": [
+        1402800,
+        1643040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Administrative Officer estimates one-time General Fund costs between $4 million and $6 million, and says other effects cannot be quantified yet.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say letting the council eliminate the board removes independent review of contracts and weakens public accountability."
+      },
+      "bounds": [
+        1657440,
+        1827360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say letting the council eliminate the board removes independent review of contracts and weakens public accountability.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say long-term planning and two-year budgets let the city fix infrastructure before problems become more expensive."
+      },
+      "bounds": [
+        1841760,
+        2028720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say long-term planning and two-year budgets let the city fix infrastructure before problems become more expensive.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote means you want the charter amended to make these changes."
+      },
+      "bounds": [
+        2043120,
+        2133600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote means you want the charter amended to make these changes.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote means you do not want the charter amended."
+      },
+      "bounds": [
+        2148000,
+        2224320
+      ]
+    }
+  ],
+  "sha256": "4fb28d9dc4ff28b930b4fa6e5141dfdba4ec3ab6621a2604a5b150e7f8961342"
+}
