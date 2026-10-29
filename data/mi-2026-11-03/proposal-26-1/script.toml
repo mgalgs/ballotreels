@@ -1,6 +1,6 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
 # asks; why it is on the ballot; what a convention could do; what a yes
-# would set in motion; what the Senate Fiscal Agency estimates it would
+# would set in motion; what the two fiscal agencies estimate it would
 # cost; the two sides; what a vote does.
 #
 # The card quotes the Bureau of Elections' ballot wording: the heading
@@ -14,19 +14,21 @@
 # agency's summary of others' arguments, not an argument either side
 # filed; nothing in the script cites it.
 #
-# Cost: the Senate Fiscal Agency gives three estimates of the convention
-# itself (about $10.2 million in total from the 1961 convention's costs
-# inflated; $0.85 million, $1.8 million and $3.9 million a month from
-# that same estimate, the redistricting commission and the Oklahoma
-# Legislature) and about $20.3 million for each election not held on a
-# regular date. The script does not repeat the agency's expectation that
-# elections fall on regular dates: the House Fiscal Agency expects the
-# opposite for the delegate election, so stating one agency's guess
-# alone would tilt the line. The
-# monthly figure is said "$850,000" because "$0.85" is not speakable
-# (standard/speakability.txt). Scale (rule 6.5): no archived source
-# states Michigan's general fund for 2026-27, so the figures are said
-# without one; that total is still to be archived.
+# Cost: the two nonpartisan fiscal agencies disagree, so the script
+# gives each one's total, one line each, both called estimates. The
+# Senate Fiscal Agency: about $10.2 million for the convention itself,
+# from the 1961 convention's costs inflated (page 4). The House Fiscal
+# Agency: about $78.3 million in all (page 2), of which about $56.0
+# million is two elections (page 4): the delegate primary and general in
+# 2027, which it expects off the regular dates; it assumes the
+# ratification vote falls on one. The SFA's monthly figures and its
+# $20.3 million per election, which it expects to fall on regular
+# dates, are left out: with both totals said they are detail, and the
+# HFA expects the opposite. The chart shows both totals, each labelled
+# by its agency; a chart names one source, so it is the House line's,
+# and that line cites the SFA too for the other bar. Scale (rule 6.5):
+# no archived source states Michigan's general fund for 2026-27, so the
+# figures are said without one; that total is still to be archived.
 
 contest = "mi-2026-11-03-proposal-26-1"
 template = "measure"
@@ -112,8 +114,8 @@ id = "fiscal"
 heading = "What the official analysis says"
 
 [[section.line]]
-id = "cost-total"
-text = "The Senate Fiscal Agency estimates about $10.2 million, from the 1961 convention's costs."
+id = "cost-sfa"
+text = "The Senate Fiscal Agency estimates about $10.2 million for the convention, based on the 1961 convention's costs."
 sources = ["sfa"]
 
 [section.line.visual]
@@ -121,26 +123,17 @@ kind = "illustration"
 name = "analyst-review"
 
 [[section.line]]
-id = "cost-monthly"
-text = "Estimates run between $850,000 and $3.9 million a month."
-sources = ["sfa"]
+id = "cost-hfa"
+text = "The House Fiscal Agency estimates about $78.3 million in all, including about $56 million for two elections of delegates."
+sources = ["hfa", "sfa"]
 
 [section.line.visual]
 kind = "bars"
-title = "Estimated cost per month of a convention"
-source = "sfa"
+title = "Estimated cost, by agency"
+source = "hfa"
 unit = " million"
-labels = ["1961 convention", "Redistricting commission", "Oklahoma Legislature"]
-values = [0.85, 1.8, 3.9]
-
-[[section.line]]
-id = "cost-elections"
-text = "Elections off regular dates would add about $20.3 million each."
-sources = ["sfa"]
-
-[section.line.visual]
-kind = "illustration"
-name = "ballot-box"
+labels = ["Senate Fiscal Agency", "House Fiscal Agency"]
+values = [10.2, 78.3]
 
 [[section]]
 id = "yes"
@@ -204,4 +197,4 @@ lines = ["scope", "voters-decide"]
 
 [[question]]
 ask = "How much would it cost?"
-lines = ["cost-total", "cost-monthly", "cost-elections"]
+lines = ["cost-sfa", "cost-hfa"]
