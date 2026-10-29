@@ -805,6 +805,13 @@ def _in_raw_columns(value: str, path: Path) -> bool:
 _SHIFTED_SYMBOLS = {"³": "“", "´": "”", "¶": "’", "¿": "fi", "À": "fl",
                     "൵": "ff", "൶": "ffi"}
 _SHIFTED_CONTROL = re.compile(r"[\x01-\x08\x0e-\x1f]")
+# The font's apostrophe comes back as a printed space: "&LW\\ V" for
+# "City’s". Read as one where a shifted word runs on into a contraction's
+# ending (s, t, d, m, ll, re, ve) and a shifted space or the line's end;
+# a drop capital's space ("T he") is left as it is.
+_SHIFTED_APOSTROPHE = re.compile(
+    r"(?<![^\x03])([\x21-\x5f]+) ((?:V|W|G|P|OO|UH|YH)[\x01-\x1f]*)"
+    r"(?=\x03|$)")
 
 
 def _unshift_line(line: str, beside: bool) -> str:
@@ -816,7 +823,9 @@ def _unshift_line(line: str, beside: bool) -> str:
     with shifted punctuation glued on), or a character no shifted word
     holds ("BONDS" would read back as "_lkap"), only the control
     characters and symbols are read back; printed punctuation ending a
-    word stays as it is."""
+    word stays as it is, but a shifted X (";") ends a run of shifted
+    capitals ("IX"), and a word all punctuation (",;") is all shifted."""
+    line = _SHIFTED_APOSTROPHE.sub("\\1’\\2", line)
     parts = re.split(r"(\x03| )", line)
 
     def beside_shifted_space(i: int, step: int) -> bool:
@@ -842,6 +851,13 @@ def _unshift_line(line: str, beside: bool) -> str:
         whole = re.search(r"[a-z]", tok) is None \
             and not re.search(r"[A-C\x5e-\x7f]", tok)
         ending = len(tok) - len(tok.rstrip(".,;:!?"))
+        if ending == len(tok):
+            ending = 0  # "," is a shifted I, ",;" IX
+        # printed punctuation never follows a shifted capital (A-Z are
+        # \x24-\x3d), so a ";" after one is an X: "IX", "TAX"
+        while ending and tok[-ending] == ";" and \
+                0x24 <= ord(tok[-ending - 1]) <= 0x3d:
+            ending -= 1
         for k, ch in enumerate(tok):
             o = ord(ch)
             if ch in _SHIFTED_SYMBOLS:

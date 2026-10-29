@@ -31,6 +31,43 @@ class UnshiftTest(unittest.TestCase):
     def test_printed_punctuation_ending_a_word_stays(self):
         self.assertEqual(_unshift_line("UHVLGHQWV.\x03", True), "residents. ")
 
+    def test_capital_x(self):
+        # X (0x58) comes back as ";", which also ends a printed clause
+        self.assertEqual(_unshift_line("$UWLFOH\x03,;\x03RI\x03", True),
+                         "Article IX of ")
+        self.assertEqual(_unshift_line("\x03;\x03WD[\x03", True),
+                         " X tax ")
+        self.assertEqual(_unshift_line("\x037$;\x03", False), " TAX ")
+        self.assertEqual(_unshift_line("\x03;,,,\x03", False), " XIII ")
+        # a printed semicolon after a shifted word stays one
+        self.assertEqual(_unshift_line("VHUYLFHV;\x03", True), "services; ")
+
+    def test_a_word_all_punctuation_is_shifted(self):
+        self.assertEqual(_unshift_line("\x030HDVXUH\x03,,\x03", False),
+                         " Measure II ")
+
+    def test_apostrophe(self):
+        # the font's apostrophe comes back as a printed space
+        self.assertEqual(_unshift_line("WKH\x03&LW\\ V\x03&KDUWHU", True),
+                         "the City’s Charter")
+        self.assertEqual(_unshift_line("\x03&LW\\ V\x03", False),
+                         " City’s ")
+        self.assertEqual(_unshift_line("\x03GRQ W\x03", False), " don’t ")
+        self.assertEqual(_unshift_line("\x030D\\RU V\x11\x03", False),
+                         " Mayor’s. ")
+        # a drop capital's space is not one
+        self.assertEqual(_unshift_line("\x037 KH\x03", True), " T he ")
+
+    def test_quotes_with_x_and_apostrophe_found(self):
+        self.assertTrue(_in_unshifted(
+            "the provisions of Article IX of this Charter", OAKLAND_EE))
+        self.assertFalse(_in_unshifted(
+            "the provisions of Article XI of this Charter", OAKLAND_EE))
+        self.assertTrue(_in_unshifted("following the Mayor's election",
+                                      OAKLAND_EE))
+        self.assertTrue(_in_unshifted("following the Mayor’s election",
+                                      OAKLAND_EE))
+
     def test_ballot_question_found(self):
         question = ("Shall a measure be adopted to increase the City’s "
                     "Uniform Transient Occupancy Tax paid by hotel guests "
