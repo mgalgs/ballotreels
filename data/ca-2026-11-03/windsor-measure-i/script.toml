@@ -1,0 +1,147 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the sales tax today and the
+# town's share of it; what would change (the rate, the town's share,
+# how long, a general tax needing a simple majority); the revenue
+# estimate as the impartial analysis gives it; one line per side; what a
+# vote does.
+#
+# The guide prints no fiscal analysis or tax rate statement; the one
+# estimate is the one the Town Attorney's Impartial Analysis gives, from
+# the Council's resolution and the town staff's report. No archived
+# source states the town's general fund budget, so the $5.7 million has
+# no scale (STANDARD.md 6.5; left open). The analysis's sentence that
+# Windsor is the one city or town in the county without a local sales
+# tax is also the supporters' point ("the only city in Sonoma County
+# without its own dedicated local sales tax"), so it stays out of the
+# neutral sections (STANDARD.md 6.3), as do the oversight commission and
+# audits, which the argument in favor cites.
+#
+# Sides come from the argument in favor and the argument against, not
+# the rebuttals.
+
+contest = "ca-2026-11-03-windsor-measure-i"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "measure-question"
+number = "I"
+title = "Town of Windsor"
+origin = "The Town Council of the Town of Windsor has placed Measure I on the November 3, 2026, ballot"
+summary = "To provide funding for the Town of Windsor to maintain essential local services, such as repairing potholes and maintaining streets; neighborhood police patrols / emergency response / traffic enforcement; preserving parks / community events; disaster preparedness and fire prevention — removing brush / flammable fuels, and for general government use; shall the measure establishing a 1% sales tax, providing approximately $5,700,000 annually until ended by voters, requiring independent audits, citizen oversight, and all funds remaining in Windsor under local control, be adopted?"
+yes = "A “Yes” vote is a vote to approve a one percent (1%) sales tax in Windsor."
+no = "A “No” vote is a vote against the tax."
+
+[[section]]
+id = "what"
+heading = "Measure I"
+
+[[section.line]]
+text = "Town of Windsor Measure I asks voters in Windsor whether to add a 1 percent sales tax."
+sources = ["measure-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-question"
+highlight = ["establishing a 1% sales tax"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "The sales tax in Windsor is 9.25 percent today, and the town receives 1 percent of it."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "share"
+title = "Sales tax in Windsor today"
+source = "impartial-analysis"
+unit = "%"
+labels = ["To the town", "State, county and agencies"]
+values = [1, 8.25]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure I would raise the total to 10.25 percent, and the town's share to 2 percent, until voters repeal it."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section.line]]
+text = "As a general tax, the town could use the money for any government purpose, and it needs a simple majority to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The Town Attorney's impartial analysis says the tax would provide about $5.7 million a year for the general fund of the town."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say rising costs strain town services and deep cuts are coming without Measure I, and its money stays in Windsor."
+sources = ["arguments"]
+basis = ["While costs to provide essential services have increased, local funding has not, placing a significant strain on public safety, road repair, emergency preparedness, wildfire prevention, and more. Without a local funding solution, deep cuts are coming.", "Measure I provides dedicated local funding that will stay here in Windsor"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Prevents deep cuts to services", "Money stays in Windsor"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Windsor has a spending problem, not a revenue problem, and sales taxes hit working families and seniors hardest."
+sources = ["arguments"]
+basis = ["The Town of Windsor has a spending problem, not a revenue problem.", "Working families and low-income seniors are hit hardest by sales taxes"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["A spending problem, not revenue", "Hits families and seniors hardest"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is a vote to approve a 1 percent sales tax in Windsor."
+sources = ["measure-question"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-question"
+highlight = ["a vote to approve a one percent (1%) sales tax in Windsor"]
+
+[[section.line]]
+text = "A no vote is a vote against the tax."
+sources = ["measure-question"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-question"
+highlight = ["a vote against the tax"]

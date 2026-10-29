@@ -1079,3 +1079,13 @@ source = "impartial-analysis"
 quote = "The City estimates that Measure K, if approved, would generate approximately $5,500,000 in annual tax revenue"
 amount = 5500000
 period = "per-year"
+
+# Town of Windsor Measure I: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is the Town Attorney's Impartial
+# Analysis's, from the Council's resolution and the town staff's report
+# (the ballot question gives the same $5,700,000).
+[windsor-measure-i]
+source = "impartial-analysis"
+quote = "the tax would provide approximately $5.7 million annually for the Town’s general fund"
+amount = 5700000
+period = "per-year"
