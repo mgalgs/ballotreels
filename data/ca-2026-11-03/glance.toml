@@ -1167,3 +1167,12 @@ period = "per-year"
 source = "fiscal-statement"
 status = "no-material-impact"
 quote = "The measure is not expected to have a significant fiscal impact on the County of Santa Cruz."
+
+# County of Santa Cruz Measure E: the Auditor-Controller's fiscal impact
+# statement's yearly estimate.
+[santa-cruz-county-measure-e]
+source = "fiscal-statement"
+quote = "The proposed one-half percent increase in the local sales tax rate would annually generate approximately $27 million in additional revenue for the County General Fund."
+amount = 27000000
+period = "per-year"
+direction = "revenue-gain"

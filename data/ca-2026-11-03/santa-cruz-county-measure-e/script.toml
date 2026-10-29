@@ -1,0 +1,174 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; why the Board placed it, as County Counsel's
+# impartial analysis states it (STANDARD.md 6.2); the rates today; what
+# would change, and for how long; the Auditor-Controller's revenue
+# estimate with its scale; one line per side; what a vote does.
+#
+# "Counsel" is heard as "Council" and "county's" as "counties"
+# (standard/speakability.txt), so the narration says neither.
+#
+# Scale (STANDARD.md 6.5): about $27 million a year against the $844
+# million General Fund of the county's Fiscal Year 2026-27 budget, as the
+# ordinance's recitals state it: 27 / 844 = 3 percent. The Auditor-
+# Controller compares the figure with no budget; the $6,750,000 for the
+# partial first year is left out.
+#
+# Facts the sides cite stay in their sections (STANDARD.md 6.3): the
+# exemptions for groceries and prescriptions and the 50 cents on a $100
+# purchase (the supporters' rebuttal); that the money may be spent
+# without restriction (the opponents'). The fiscal line says only, as the
+# Auditor-Controller does, that the money goes into the general fund.
+#
+# The card quotes the ballot question from the Board's resolution, which
+# prints no yes and no statements, so the vote lines take their meanings
+# from County Counsel's impartial analysis and highlight the one phrase of
+# the question both votes turn on, as Utah's do.
+
+contest = "ca-2026-11-03-santa-cruz-county-measure-e"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "E"
+title = "TEMPORARY EMERGENCY MEDICAL, HEALTHCARE, FOOD, HOUSING, AND ESSENTIAL SERVICES PROTECTION MEASURE."
+origin = "RESOLUTION CALLING FOR AN ELECTION FOR THE PURPOSE OF SUBMITTING TO THE QUALIFIED ELECTORS OF THE COUNTY OF SANTA CRUZ A COUNTYWIDE MEASURE TO RAISE THE RETAIL TRANSACTIONS AND USE TAX (SALES TAX) BY ONE-HALF CENT"
+summary = "To keep local hospitals/emergency rooms open, protect ambulance response, sustain access to urgent healthcare, including reproductive and mental health care, support local food/housing assistance and other essential services, and partially restore critical lost federal funding, shall the County of Santa Cruz be authorized to collect a supplemental half-cent (0.5%) general sales tax for 5 years, providing $27,000,000 annually in locally controlled funds?"
+
+[[section]]
+id = "what"
+heading = "Measure E"
+
+[[section.line]]
+text = "County of Santa Cruz Measure E asks county voters whether to add a half-cent sales tax for five years."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["supplemental half-cent (0.5%) general sales tax for 5 years"]
+
+[[section]]
+id = "background"
+heading = "Why it is on the ballot"
+
+[[section.line]]
+id = "why"
+text = "The board of supervisors placed Measure E on the ballot, declaring the county in fiscal distress from cuts in federal and state funding."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "rates-today"
+text = "Today, the sales tax is 9.5 percent outside the cities, and up to 9.75 percent within them."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rates-change"
+text = "Measure E would raise each rate by half a percent, from April 2027 through April 2032."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Sales tax outside the cities"
+source = "impartial-analysis"
+unit = "%"
+labels = ["Today", "With Measure E"]
+values = [9.5, 10]
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+id = "revenue"
+text = "The county auditor-controller estimates Measure E would add about $27 million a year to the general fund, about 3 percent of its $844 million this year."
+sources = ["fiscal-statement", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure E keeps hospitals and emergency rooms open, and partly replaces federal funding the county has lost."
+sources = ["argument-for"]
+basis = ["Keep local hospitals and emergency rooms open and protect 9-1-1 ambulance response;", "helping partially replace more than $200 million in annual federal and related state funding losses affecting local healthcare and safety-net programs."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Keeps hospitals and emergency rooms open", "Partly replaces lost federal funding"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure E is a regressive tax that hits low-income workers, and the county could spend it on anything."
+sources = ["argument-against"]
+basis = ["Regressive sales taxes are the most punitive type of tax, impacting low-income workers,", "will spend it without any restriction on purpose."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Hits low-income workers and families hardest", "No limit on how the money is spent"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves a half-cent sales tax increase for five years."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["supplemental half-cent (0.5%) general sales tax for 5 years"]
+
+[[section.line]]
+text = "A no vote keeps the sales tax rate as it is now."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["supplemental half-cent (0.5%) general sales tax for 5 years"]
+
+[[question]]
+ask = "Why is this on the ballot now?"
+lines = ["why"]
+
+[[question]]
+ask = "What would the sales tax be where I live?"
+lines = ["rates-today", "rates-change"]
+
+[[question]]
+ask = "How much money would it raise, and how big is that next to the county budget?"
+lines = ["revenue"]
+
+[[question]]
+ask = "What would the money be spent on?"
+lines = ["revenue"]
