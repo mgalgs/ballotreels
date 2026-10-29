@@ -357,6 +357,16 @@ BALLOTS: dict[str, Ballot] = {
                          "Local Ballot Measure: K",
                      "ca-2026-11-03-windsor-measure-i":
                          "Local Ballot Measure: I",
+                     # Contra Costa County's guide could not be fetched:
+                     # Measure RTM's card quotes Alameda County's copy of
+                     # the District's ballot question and analysis
+                     "ca-2026-11-03-contra-costa-county-measure-rtm":
+                         "Alameda County Composite Voter Information Guide",
+                     # and Clayton's cards quote the City Clerk's notice
+                     "ca-2026-11-03-clayton-measure-m":
+                         "Notice of Special Measure Election for the City of Clayton",
+                     "ca-2026-11-03-clayton-measure-n":
+                         "Notice of Special Measure Election for the City of Clayton",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

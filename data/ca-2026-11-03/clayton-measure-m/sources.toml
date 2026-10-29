@@ -1,0 +1,70 @@
+# Archived sources for City of Clayton Measure M, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Contra Costa County's Voter Information Guide could not be fetched
+# (contracostavote.gov answered a bot challenge), so these are the
+# City Clerk's filed copies from the City of Clayton's Measure M page.
+# The ballot question is quoted from the Clerk's Notice of Special
+# Measure Election, which prints it as it is "to be displayed on each
+# individual ballot". The City Attorney's impartial analysis is the
+# measure's neutral explanation, the kind a state's attorney general's
+# explanatory statement is. No tax rate statement or fiscal analysis
+# applies (a sales tax); the one revenue estimate is the analysis's.
+#
+# The arguments are scans with no text layer. Their words were typed
+# from the page images into sources/*-transcription.txt, each naming
+# the PDF and URL it copies; those sources point at the transcription,
+# and their url at the scan.
+
+[contest]
+id = "ca-2026-11-03-clayton-measure-m"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:clayton"
+kind = "measure"
+title = "City of Clayton Measure M: A 1% Sales Tax Until Ended by Voters"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Clayton, City Clerk, Notice of Special Measure Election for the City of Clayton (Measures to Be Voted On), posted August 15, 2026: the ballot question, page 1"
+credit = "Notice of Special Measure Election, City of Clayton"
+url = "https://www.claytonca.gov/DocumentCenter/View/834"
+file = "sources/notice-of-measures.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City of Clayton, City Attorney’s Impartial Analysis of Measure M"
+credit = "City Attorney’s Impartial Analysis of Measure M"
+url = "https://www.claytonca.gov/DocumentCenter/View/841"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Clayton, Resolution No. 21-2026, placing the measure on the ballot, with the proposed ordinance (Exhibit A)"
+url = "https://www.claytonca.gov/DocumentCenter/View/836"
+file = "sources/resolution-21-2026.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor Measure M, as filed with the City Clerk of the City of Clayton (transcribed from the scan)"
+credit = "Argument in favor, City of Clayton"
+url = "https://www.claytonca.gov/DocumentCenter/View/839"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure M, as filed with the City Clerk of the City of Clayton (transcribed from the scan)"
+credit = "Argument against, City of Clayton"
+url = "https://www.claytonca.gov/DocumentCenter/View/845"
+file = "sources/argument-against-transcription.txt"
+retrieved = "2026-10-28"

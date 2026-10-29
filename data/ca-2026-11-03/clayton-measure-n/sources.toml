@@ -1,0 +1,72 @@
+# Archived sources for City of Clayton Measure N, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Contra Costa County's Voter Information Guide could not be fetched
+# (contracostavote.gov answered a bot challenge), so these are the
+# City Clerk's filed copies from the City of Clayton's Measure N page.
+# The ballot question is quoted from the Clerk's Notice of Special
+# Measure Election, which prints it as Resolution No. 33-2026 amended
+# it. The City Attorney's impartial analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is; it is served as a Word 97 file, cited but never quoted
+# by a verbatim check. No tax rate statement or fiscal analysis applies
+# (a special tax, not a bond), and the analysis gives no revenue
+# estimate.
+#
+# The arguments are scans with no text layer. Their words were typed
+# from the page images into sources/*-transcription.txt, each naming
+# the PDF and URL it copies; those sources point at the transcription,
+# and their url at the scan.
+
+[contest]
+id = "ca-2026-11-03-clayton-measure-n"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:clayton"
+kind = "measure"
+title = "City of Clayton Measure N: Extending and Raising the Citywide Landscape Maintenance Special Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Clayton, City Clerk, Notice of Special Measure Election for the City of Clayton (Measures to Be Voted On), posted August 15, 2026: the ballot question, page 1"
+credit = "Notice of Special Measure Election, City of Clayton"
+url = "https://www.claytonca.gov/DocumentCenter/View/838"
+file = "sources/notice-of-measures.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City of Clayton, City Attorney’s Impartial Analysis of Measure N"
+credit = "City Attorney’s Impartial Analysis of Measure N"
+url = "https://www.claytonca.gov/DocumentCenter/View/844"
+file = "sources/impartial-analysis.doc"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Clayton, Resolution No. 29-2026, extending the term for ten years and altering the rate and method of apportionment of the special tax of Community Facilities District No. 2007-1 (Citywide Landscape Maintenance)"
+url = "https://www.claytonca.gov/DocumentCenter/View/837"
+file = "sources/resolution-29-2026.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure N, as filed with the City Clerk of the City of Clayton (transcribed from the scan)"
+credit = "Argument in favor, City of Clayton"
+url = "https://www.claytonca.gov/DocumentCenter/View/842"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure N, as filed with the City Clerk of the City of Clayton (transcribed from the scan)"
+credit = "Argument against, City of Clayton"
+url = "https://www.claytonca.gov/DocumentCenter/View/843"
+file = "sources/argument-against-transcription.txt"
+retrieved = "2026-10-28"
