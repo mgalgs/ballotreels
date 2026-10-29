@@ -385,7 +385,11 @@ BALLOTS: dict[str, Ballot] = {
                                      "sacramento-city-unified-measure-m",
                                      "natomas-unified-measure-d",
                                      "center-joint-unified-measure-e",
-                                     "galt-joint-union-high-measure-g")},
+                                     "galt-joint-union-high-measure-g",
+                                     "folsom-measure-i",
+                                     "folsom-measure-j",
+                                     "folsom-measure-k",
+                                     "galt-measure-l")},
                      # San Mateo city measures: the card is a page of the
                      # city's resolution that prints the ballot question,
                      # named as its first page titles it
