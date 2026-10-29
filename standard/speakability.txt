@@ -39,3 +39,5 @@
 (?<![\d.$])\d+ cents\b | an amount in cents is often transcribed in dollars ("5 cents" as "$0.05", "30 cents" as "$0.30") | write it in dollars ("$0.05 per square foot")
 \bPerris\b | the city name "Perris" is heard as "Paris" | name it another way ("this city", "this high school district"); the card and title show its name
 \bMurrieta\b | the name "Murrieta" is heard as "Marietta" | name it another way ("this school district"); the card and title show its name
+(?i)\bhalve[sd]?\b | "halve" is heard as "have" | say "cut in half"
+(?i)\b\d[\d.]* (?:thousand|million|billion) dollars\b | an amount in words ("2.6 million dollars") is transcribed with a sign ("$2.6 million") | write the sign ("$2.6 million"), and give both ends of a range in full ("between $2 million and $2.6 million")
