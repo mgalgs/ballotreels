@@ -1,0 +1,243 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 66.92,
+  "phrases": [
+    {
+      "text": "City of Hemet Measure Q asks voters in the city whether to add a one-cent sales tax.",
+      "start": 0.03,
+      "end": 6.1
+    },
+    {
+      "text": "The City Council placed Measure Q on the ballot, and it needs a simple majority to pass.",
+      "start": 6.76,
+      "end": 12.27
+    },
+    {
+      "text": "The 1 percent tax would add one cent for each dollar spent on taxable goods, until voters repeal it.",
+      "start": 12.93,
+      "end": 20.25
+    },
+    {
+      "text": "The money would go into the general fund of the city, for any lawful city program or service.",
+      "start": 20.91,
+      "end": 26.74
+    },
+    {
+      "text": "The sales tax the city already collects under an earlier measure would stay in effect.",
+      "start": 27.4,
+      "end": 32.71
+    },
+    {
+      "text": "The City Attorney's impartial analysis estimates the tax would provide $16 million a year.",
+      "start": 33.37,
+      "end": 39.86
+    },
+    {
+      "text": "Opponents say Hemet has a spending problem, not a revenue problem, and its sales tax would top every city in six counties.",
+      "start": 40.52,
+      "end": 48.51
+    },
+    {
+      "text": "Supporters say Measure Q keeps police and firefighters available, and the city has no more room to cut without hurting public safety.",
+      "start": 49.17,
+      "end": 57.86
+    },
+    {
+      "text": "A yes vote will authorize the 1 percent sales tax.",
+      "start": 58.52,
+      "end": 62.21
+    },
+    {
+      "text": "A no vote will not authorize the 1 percent sales tax.",
+      "start": 62.87,
+      "end": 66.89
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "City of Hemet Measure Q asks voters in the city whether to add a one-cent sales tax.",
+      "The City Council placed Measure Q on the ballot, and it needs a simple majority to pass.",
+      "The 1 percent tax would add one cent for each dollar spent on taxable goods, until voters repeal it.",
+      "The money would go into the general fund of the city, for any lawful city program or service.",
+      "The sales tax the city already collects under an earlier measure would stay in effect.",
+      "The City Attorney's impartial analysis estimates the tax would provide $16 million a year.",
+      "Opponents say Hemet has a spending problem, not a revenue problem, and its sales tax would top every city in six counties.",
+      "Supporters say Measure Q keeps police and firefighters available, and the city has no more room to cut without hurting public safety.",
+      "A yes vote will authorize the 1 percent sales tax.",
+      "A no vote will not authorize the 1 percent sales tax."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "City of Hemet Measure Q asks voters in the city whether to add a one-cent sales tax."
+      },
+      "bounds": [
+        0,
+        147120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"City of Hemet Measure Q asks voters in the city whether to add a one-cent sales tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The City Council placed Measure Q on the ballot, and it needs a simple majority to pass."
+      },
+      "bounds": [
+        161520,
+        295200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Council placed Measure Q on the ballot, and it needs a simple majority to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The 1 percent tax would add one cent for each dollar spent on taxable goods, until voters repeal it."
+      },
+      "bounds": [
+        309600,
+        486720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The 1 percent tax would add one cent for each dollar spent on taxable goods, until voters repeal it.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money would go into the general fund of the city, for any lawful city program or service."
+      },
+      "bounds": [
+        501120,
+        642480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money would go into the general fund of the city, for any lawful city program or service.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The sales tax the city already collects under an earlier measure would stay in effect."
+      },
+      "bounds": [
+        656880,
+        785760
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The sales tax the city already collects under an earlier measure would stay in effect.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The City Attorney's impartial analysis estimates the tax would provide $16 million a year."
+      },
+      "bounds": [
+        800160,
+        957360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Attorney's impartial analysis estimates the tax would provide $16 million a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say Hemet has a spending problem, not a revenue problem, and its sales tax would top every city in six counties."
+      },
+      "bounds": [
+        971760,
+        1164960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say Hemet has a spending problem, not a revenue problem, and its sales tax would top every city in six counties.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say Measure Q keeps police and firefighters available, and the city has no more room to cut without hurting public safety."
+      },
+      "bounds": [
+        1179360,
+        1389360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure Q keeps police and firefighters available, and the city has no more room to cut without hurting public safety.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote will authorize the 1 percent sales tax."
+      },
+      "bounds": [
+        1403760,
+        1493760
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote will authorize the 1 percent sales tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote will not authorize the 1 percent sales tax."
+      },
+      "bounds": [
+        1508160,
+        1606080
+      ]
+    }
+  ],
+  "sha256": "1f12a3b86ee294a9f17e643e83d8c2119af40fdc7312393a6bc5c163e603b35a"
+}

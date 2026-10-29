@@ -1,0 +1,265 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 90.66,
+  "phrases": [
+    {
+      "text": "City of Alameda Measure L asks voters in the city whether to issue $300 million in bonds for flood, earthquake and street projects.",
+      "start": 0.03,
+      "end": 10.19
+    },
+    {
+      "text": "The City Council placed Measure L on the ballot, and it needs a yes vote from two-thirds of voters to pass.",
+      "start": 10.85,
+      "end": 17.62
+    },
+    {
+      "text": "The money could pay for sea walls and levees, storm drains and pumps, and other flood projects.",
+      "start": 18.28,
+      "end": 24.62
+    },
+    {
+      "text": "It could also pay for earthquake retrofits of fire stations, a new fire station, and street paving and pothole repair.",
+      "start": 25.28,
+      "end": 32.65
+    },
+    {
+      "text": "Property owners in the city would repay the bonds through a tax based on assessed value.",
+      "start": 33.31,
+      "end": 38.22
+    },
+    {
+      "text": "The tax rate statement estimates an average tax of $47.97 per $100,000 of assessed value, and at most $49.49, through 2061.",
+      "start": 38.88,
+      "end": 52.72
+    },
+    {
+      "text": "The statement estimates the total to repay, with interest, at about $662.2 million.",
+      "start": 53.38,
+      "end": 60.7
+    },
+    {
+      "text": "Supporters say the island is on the front lines of sea-level rise, and fire stations and storm sewers do not meet earthquake standards.",
+      "start": 61.36,
+      "end": 69.9
+    },
+    {
+      "text": "Opponents say the Council should name specific projects, where they are and what each costs, instead of sending voters broad funding categories.",
+      "start": 70.56,
+      "end": 79.61
+    },
+    {
+      "text": "A yes vote allows the city to issue $300 million in general obligation bonds for these projects.",
+      "start": 80.27,
+      "end": 86.87
+    },
+    {
+      "text": "A no vote does not allow the bonds in any amount.",
+      "start": 87.53,
+      "end": 90.63
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "City of Alameda Measure L asks voters in the city whether to issue $300 million in bonds for flood, earthquake and street projects.",
+      "The City Council placed Measure L on the ballot, and it needs a yes vote from two-thirds of voters to pass.",
+      "The money could pay for sea walls and levees, storm drains and pumps, and other flood projects.",
+      "It could also pay for earthquake retrofits of fire stations, a new fire station, and street paving and pothole repair.",
+      "Property owners in the city would repay the bonds through a tax based on assessed value.",
+      "The tax rate statement estimates an average tax of $47.97 per $100,000 of assessed value, and at most $49.49, through 2061.",
+      "The statement estimates the total to repay, with interest, at about $662.2 million.",
+      "Supporters say the island is on the front lines of sea-level rise, and fire stations and storm sewers do not meet earthquake standards.",
+      "Opponents say the Council should name specific projects, where they are and what each costs, instead of sending voters broad funding categories.",
+      "A yes vote allows the city to issue $300 million in general obligation bonds for these projects.",
+      "A no vote does not allow the bonds in any amount."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "City of Alameda Measure L asks voters in the city whether to issue $300 million in bonds for flood, earthquake and street projects."
+      },
+      "bounds": [
+        0,
+        245280
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"City of Alameda Measure L asks voters in the city whether to issue $300 million in bonds for flood, earthquake and street projects.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The City Council placed Measure L on the ballot, and it needs a yes vote from two-thirds of voters to pass."
+      },
+      "bounds": [
+        259680,
+        423600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Council placed Measure L on the ballot, and it needs a yes vote from two-thirds of voters to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money could pay for sea walls and levees, storm drains and pumps, and other flood projects."
+      },
+      "bounds": [
+        438000,
+        591600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money could pay for sea walls and levees, storm drains and pumps, and other flood projects.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "It could also pay for earthquake retrofits of fire stations, a new fire station, and street paving and pothole repair."
+      },
+      "bounds": [
+        606000,
+        784320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"It could also pay for earthquake retrofits of fire stations, a new fire station, and street paving and pothole repair.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Property owners in the city would repay the bonds through a tax based on assessed value."
+      },
+      "bounds": [
+        798720,
+        918000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Property owners in the city would repay the bonds through a tax based on assessed value.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The tax rate statement estimates an average tax of $47.97 per $100,000 of assessed value, and at most $49.49, through 2061."
+      },
+      "bounds": [
+        932400,
+        1266000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The tax rate statement estimates an average tax of $47.97 per $100,000 of assessed value, and at most $49.49, through 2061.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The statement estimates the total to repay, with interest, at about $662.2 million."
+      },
+      "bounds": [
+        1280400,
+        1457520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The statement estimates the total to repay, with interest, at about $662.2 million.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say the island is on the front lines of sea-level rise, and fire stations and storm sewers do not meet earthquake standards."
+      },
+      "bounds": [
+        1471920,
+        1678320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the island is on the front lines of sea-level rise, and fire stations and storm sewers do not meet earthquake standards.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say the Council should name specific projects, where they are and what each costs, instead of sending voters broad funding categories."
+      },
+      "bounds": [
+        1692720,
+        1911360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say the Council should name specific projects, where they are and what each costs, instead of sending voters broad funding categories.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote allows the city to issue $300 million in general obligation bonds for these projects."
+      },
+      "bounds": [
+        1925760,
+        2085600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote allows the city to issue $300 million in general obligation bonds for these projects.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote does not allow the bonds in any amount."
+      },
+      "bounds": [
+        2100000,
+        2175840
+      ]
+    }
+  ],
+  "sha256": "619f7233bbc5acd6b5916e29b9fd82974d06966202fc1c6adb88587787554fd0"
+}
