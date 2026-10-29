@@ -1,0 +1,55 @@
+# Archived sources for Post Mountain Public Utility District Measure D,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Trinity County Elections prints the whole measure in its Consolidated
+# County Voter Information Guide, cut here to pages 18 to 21 of the PDF
+# (printed pages 17 to 20): the ballot question, with its yes and no
+# meanings and "For None submitted." / "Against None submitted." (18),
+# the impartial analysis (19) and the full text of the district's
+# Ordinance No. 2026-01 (20 and 21). The impartial analysis is the
+# measure's neutral explanation and gives the district's revenue
+# estimate; a flat parcel tax has no tax rate statement, and none is
+# printed. No arguments or rebuttals were submitted. The district's
+# Resolution No. 2026-02, posted by the county as a scan, is archived
+# beside it and not cited.
+#
+# A public utility district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md).
+
+[contest]
+id = "ca-2026-11-03-post-mountain-pud-measure-d"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:trinity"
+kind = "measure"
+title = "Post Mountain Public Utility District Measure D: $100 Yearly Special Tax per Parcel for Road Maintenance"
+voters = "the Post Mountain Public Utility District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Local Ballot Measure D, Ballot Question, with the list For and Against (\"None submitted.\"), Trinity County Elections, Consolidated Trinity County Voter Information Guide, November 3, 2026 General Election, page 18 of the PDF (printed page 17)"
+credit = "Consolidated Trinity County Voter Information Guide"
+url = "https://www.trinitycounty.org/DocumentCenter/View/4334/November-3-2026-Consolidated-County-Voter-Information-Guide-PDF?bidId="
+file = "sources/vig-pp18-21-label-analysis-fulltext.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure D, Trinity County Elections, Consolidated Trinity County Voter Information Guide, November 3, 2026 General Election, page 19 of the PDF (printed page 18)"
+credit = "Impartial Analysis, Consolidated Trinity County Voter Information Guide"
+url = "https://www.trinitycounty.org/DocumentCenter/View/4334/November-3-2026-Consolidated-County-Voter-Information-Guide-PDF?bidId="
+file = "sources/vig-pp18-21-label-analysis-fulltext.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Local Ballot Measure D: Ordinance No. 2026-01, Ordinance of the Board of Directors of the Post Mountain Public Utility District Authorizing the Levy of a Special Tax to Fund Road Maintenance, Trinity County Elections, Consolidated Trinity County Voter Information Guide, November 3, 2026 General Election, pages 20 and 21 of the PDF (printed pages 19 and 20)"
+credit = "Full Text of Measure D, Consolidated Trinity County Voter Information Guide"
+url = "https://www.trinitycounty.org/DocumentCenter/View/4334/November-3-2026-Consolidated-County-Voter-Information-Guide-PDF?bidId="
+file = "sources/vig-pp18-21-label-analysis-fulltext.pdf"
+retrieved = "2026-10-28"
