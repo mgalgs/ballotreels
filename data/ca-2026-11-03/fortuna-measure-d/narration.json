@@ -1,0 +1,265 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 78.63,
+  "phrases": [
+    {
+      "text": "Measure D asks the voters of this city whether to add a second 0.75 percent local sales tax.",
+      "start": 0.03,
+      "end": 6.98
+    },
+    {
+      "text": "Today, the city already has a 0.75 percent sales tax, set to end on March 31, 2033.",
+      "start": 7.64,
+      "end": 15.56
+    },
+    {
+      "text": "Measure D would add another 0.75 percent from April 1, 2027, for a combined city rate of 1.5 percent until the first tax ends.",
+      "start": 16.22,
+      "end": 26.98
+    },
+    {
+      "text": "The added tax would continue after 2033, unless repealed by voters, or reduced or repealed by the council as the law allows.",
+      "start": 27.62,
+      "end": 37.64
+    },
+    {
+      "text": "As a general tax, the money may be used for any legitimate city purpose.",
+      "start": 38.3,
+      "end": 43.03
+    },
+    {
+      "text": "Measure D needs a majority of the vote to pass.",
+      "start": 43.69,
+      "end": 46.71
+    },
+    {
+      "text": "The city attorney's impartial analysis estimates that Measure D would bring in about $1.8 million a year.",
+      "start": 47.37,
+      "end": 55.16
+    },
+    {
+      "text": "The county voter guide prints only the argument in favor of Measure D, and none against it.",
+      "start": 55.82,
+      "end": 61.63
+    },
+    {
+      "text": "Supporters say the tax gives stable local funding for city services, and the state cannot take it.",
+      "start": 62.29,
+      "end": 68.87
+    },
+    {
+      "text": "A yes vote approves the added 0.75 percent sales tax.",
+      "start": 69.53,
+      "end": 73.31
+    },
+    {
+      "text": "A no vote is a vote against the added 0.75 percent sales tax.",
+      "start": 73.97,
+      "end": 78.6
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure D asks the voters of this city whether to add a second 0.75 percent local sales tax.",
+      "Today, the city already has a 0.75 percent sales tax, set to end on March 31, 2033.",
+      "Measure D would add another 0.75 percent from April 1, 2027, for a combined city rate of 1.5 percent until the first tax ends.",
+      "The added tax would continue after 2033, unless repealed by voters, or reduced or repealed by the council as the law allows.",
+      "As a general tax, the money may be used for any legitimate city purpose.",
+      "Measure D needs a majority of the vote to pass.",
+      "The city attorney's impartial analysis estimates that Measure D would bring in about $1.8 million a year.",
+      "The county voter guide prints only the argument in favor of Measure D, and none against it.",
+      "Supporters say the tax gives stable local funding for city services, and the state cannot take it.",
+      "A yes vote approves the added 0.75 percent sales tax.",
+      "A no vote is a vote against the added 0.75 percent sales tax."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure D asks the voters of this city whether to add a second 0.75 percent local sales tax."
+      },
+      "bounds": [
+        0,
+        168240
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure D asks the voters of this city whether to add a second 0.75 percent local sales tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, the city already has a 0.75 percent sales tax, set to end on March 31, 2033."
+      },
+      "bounds": [
+        182640,
+        374160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, the city already has a 0.75 percent sales tax, set to end on March 31, 2033.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure D would add another 0.75 percent from April 1, 2027, for a combined city rate of 1.5 percent until the first tax ends."
+      },
+      "bounds": [
+        388560,
+        647760
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure D would add another 0.75 percent from April 1, 2027, for a combined city rate of 1.5 percent until the first tax ends.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The added tax would continue after 2033, unless repealed by voters, or reduced or repealed by the council as the law allows."
+      },
+      "bounds": [
+        662160,
+        904080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The added tax would continue after 2033, unless repealed by voters, or reduced or repealed by the council as the law allows.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "As a general tax, the money may be used for any legitimate city purpose."
+      },
+      "bounds": [
+        918480,
+        1033440
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"As a general tax, the money may be used for any legitimate city purpose.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure D needs a majority of the vote to pass."
+      },
+      "bounds": [
+        1047840,
+        1121760
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure D needs a majority of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The city attorney's impartial analysis estimates that Measure D would bring in about $1.8 million a year."
+      },
+      "bounds": [
+        1136160,
+        1324560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The city attorney's impartial analysis estimates that Measure D would bring in about $1.8 million a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The county voter guide prints only the argument in favor of Measure D, and none against it."
+      },
+      "bounds": [
+        1338960,
+        1479840
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The county voter guide prints only the argument in favor of Measure D, and none against it.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say the tax gives stable local funding for city services, and the state cannot take it."
+      },
+      "bounds": [
+        1494240,
+        1653600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the tax gives stable local funding for city services, and the state cannot take it.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote approves the added 0.75 percent sales tax."
+      },
+      "bounds": [
+        1668000,
+        1760160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote approves the added 0.75 percent sales tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote is a vote against the added 0.75 percent sales tax."
+      },
+      "bounds": [
+        1774560,
+        1887120
+      ]
+    }
+  ],
+  "sha256": "9cb1acaeb7eae6e01f394977b4a2fd3a9b277444c9758ae97e07a2204c16d0a3"
+}
