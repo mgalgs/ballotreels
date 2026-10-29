@@ -616,6 +616,21 @@ BALLOTS: dict[str, Ballot] = {
                                      "guadalupe-measure-j",
                                      "santa-ynez-valley-measure-d",
                                      "allan-hancock-measure-h")},
+                     # The San Luis Obispo County Clerk-Recorder prints
+                     # each local measure's impartial analysis and
+                     # arguments in its Voter Information Guide, one PDF
+                     # per ballot type; where the guide does not print
+                     # the ballot question, the card quotes it from the
+                     # resolution or the city's notice page.
+                     **{f"ca-2026-11-03-{slug}":
+                        "San Luis Obispo County Voter Information Guide"
+                        for slug in ("arroyo-grande-measure-c",
+                                     "arroyo-grande-measure-d",
+                                     "grover-beach-measure-f",
+                                     "grover-beach-measure-a",
+                                     "pismo-beach-measure-e",
+                                     "paso-robles-unified-measure-g",
+                                     "allan-hancock-measure-h-san-luis-obispo")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
