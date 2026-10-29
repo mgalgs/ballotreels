@@ -2013,3 +2013,12 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $105,000,000."
 amount = 105000000
 period = "unstated"
+
+# Santa Maria Measure C: no tax rate statement or fiscal analysis applies
+# (a sales tax); the one estimate is the City's, as the City Attorney's
+# impartial analysis gives it.
+[santa-maria-measure-c]
+source = "impartial-analysis"
+quote = "It is estimated that Measure C2026 will provide an additional $13 million in annual local funding"
+amount = 13000000
+period = "per-year"

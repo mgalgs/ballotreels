@@ -1,0 +1,172 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the city's sales tax today; what
+# would change (the added rate, how long it lasts, where the money goes,
+# the vote it needs); the City's revenue estimate as the impartial
+# analysis gives it; one line per side; what a vote does.
+#
+# The card quotes the ballot label from the guide's sample ballot, which
+# prints the measure as "MEASURE C2026" under "CITY OF SANTA MARIA" with
+# plain YES and NO boxes and no yes/no lines. So the card has no YES/NO
+# boxes, its origin is the impartial analysis's own first words, the vote
+# lines give the analysis's meanings, and both highlight the same phrase
+# of the label. The narration gives the rate as a percent ("0.5
+# percent", as the ordinance sets it), since a sales tax said in cents
+# is transcribed in dollars (standard/speakability.txt).
+#
+# The services the label and the analysis list (parks, the aquatic
+# center, the library, youth programs, streets) are the supporters'
+# points too, as are the audits, so the neutral sections say only that
+# a general tax may pay for any general city purpose, and leave the list
+# to the card and the yes side (STANDARD.md 6.3). No tax rate statement
+# or fiscal analysis applies; the revenue is the City's estimate as the
+# impartial analysis gives it, and no archived source states the City's
+# general fund budget to give it a scale (STANDARD.md 6.5; left open,
+# under [[question]]).
+#
+# No argument against Measure C was filed. The no side says so plainly;
+# its section is marked filed = false.
+
+contest = "ca-2026-11-03-santa-maria-measure-c"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "C"
+title = "CITY OF SANTA MARIA GENERAL SERVICES."
+origin = "The Santa Maria City Council has placed Measure C2026 on the ballot"
+summary = "Maintain and enhance community services including parks and recreation, the aquatic center, library, youth programs, and roads and streets, to improve quality of life; shall the measure be approved adopting an ordinance implementing Measure C2026 at the one-half cent rate until ended by voters, providing $13,000,000 annually that cannot be taken by Sacramento, requiring oversight, independent audits, with all funds used locally."
+
+[[section]]
+id = "what"
+heading = "Measure C"
+
+[[section.line]]
+text = "Measure C asks the voters of this city whether to add a 0.5 percent local sales tax."
+sources = ["ballot-question", "impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["at the one-half cent rate"]
+
+[[section]]
+id = "today"
+heading = "The sales tax today"
+
+[[section.line]]
+id = "today-tax"
+text = "Today, the city already collects a 1 percent local sales tax under an earlier measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "added"
+text = "Measure C would add half a percent more, collected the same way, until voters repeal it."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+id = "general"
+text = "As a general tax, the money would go to the city general fund, for general government purposes."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "Measure C needs a simple majority to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The city attorney's impartial analysis estimates that Measure C would bring in an added $13 million a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure C keeps youth out of gangs, and keeps parks and the aquatic center open year-round."
+sources = ["arguments"]
+basis = ["Yes on Measure C will give our youth opportunities to succeed, keep them out of gangs, and promote safe communities.", "Yes on Measure C will keep City recreational facilities open year-round, including our parks and aquatic center."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Opportunities for youth, away from gangs", "Parks and aquatic center open year-round"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure C was filed, so the county voter guide prints only the one in favor."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves the half-percent local sales tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["at the one-half cent rate"]
+
+[[section.line]]
+text = "A no vote is a vote against the half-percent local sales tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["at the one-half cent rate"]
+
+[[question]]
+ask = "How long would the tax last?"
+lines = ["added"]
+
+[[question]]
+ask = "What can the money be spent on?"
+lines = ["general"]
+
+[[question]]
+ask = "How big is $13 million a year next to the city budget?"
+unanswered = true

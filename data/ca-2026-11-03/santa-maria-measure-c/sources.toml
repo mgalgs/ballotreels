@@ -1,0 +1,59 @@
+# Archived sources for Santa Maria Measure C, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Santa Barbara County Elections prints each ballot type's County Voter
+# Information Guide as one PDF; pages 26 to 31 (impartial analysis,
+# argument in favor, full text) and 36 to 37 (sample ballot) of Ballot
+# Type 73 were cut into one excerpt, which backs every source here. The
+# ballot labels the measure "Measure C2026"; the project names it by its
+# bare letter. The City Attorney's impartial analysis is the measure's
+# neutral explanation and gives the one revenue estimate; no tax rate
+# statement or fiscal analysis applies to a sales tax. No argument
+# against was filed, and no rebuttals are printed. The City Council's
+# resolution placing the measure was not obtained (the City's site
+# refused the download); the guide prints the ordinance in full.
+
+[contest]
+id = "ca-2026-11-03-santa-maria-measure-c"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:santa_maria"
+kind = "measure"
+title = "Santa Maria Measure C: Half-Cent Sales Tax for City Services"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 73, page 37: Sample Ballot, City of Santa Maria Measure C2026"
+credit = "Sample Ballot, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000073.pdf"
+file = "sources/VIG-bt073_pp26-31_36-37.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure C2026, City of Santa Maria, Thomas T. Watson, City Attorney, Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 73, page 26"
+credit = "City Attorney’s Impartial Analysis, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000073.pdf"
+file = "sources/VIG-bt073_pp26-31_36-37.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure C2026, City of Santa Maria, Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 73, page 27 (no argument against was filed)"
+credit = "Arguments, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000073.pdf"
+file = "sources/VIG-bt073_pp26-31_36-37.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure C2026, City of Santa Maria: an ordinance adding Chapter 3-8B, City Services Transactions and Use Tax, to the Santa Maria Municipal Code, Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 73, pages 27 to 31"
+credit = "Measure C2026 ordinance, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000073.pdf"
+file = "sources/VIG-bt073_pp26-31_36-37.pdf"
+retrieved = "2026-10-28"
