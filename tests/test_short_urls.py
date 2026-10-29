@@ -378,6 +378,7 @@ const renderState = (...a) => calls.push(["state", ...a]);
 const renderContest = (...a) => calls.push(["contest", ...a]);
 const renderZip = (...a) => calls.push(["zip", ...a]);
 const renderBallot = (...a) => calls.push(["ballot", ...a]);
+const renderZipBallot = (...a) => calls.push(["zipBallot", ...a]);
 eval(src.slice(start, end));
 const out = {};
 for (const url of JSON.parse(process.argv[2])) {
@@ -409,6 +410,10 @@ ROUTES = {
     "/#/ballot?d=a&d=b": ["ballot", ["a", "b"], []],
     # a zip's cities and school districts that cover only part of it
     "/#/ballot?d=a&d=p1&p=p1": ["ballot", ["a", "p1"], ["p1"]],
+    # a zip's ballot by the voter's picks, and one the zip settles alone
+    "/#/ballot/92071?cd=51&sldl=78":
+        ["zipBallot", "92071", {"cd": "51", "sldl": "78"}],
+    "/#/ballot/92064": ["zipBallot", "92064", {}],
     "/zip/84101": ["notFound"],
     "/ut/2026/amendment-a/x": ["notFound"],
 }

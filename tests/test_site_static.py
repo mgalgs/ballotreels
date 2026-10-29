@@ -1,7 +1,6 @@
 import json
 import shutil
 import subprocess
-import urllib.parse
 import re
 import unittest
 
@@ -139,28 +138,30 @@ if __name__ == "__main__":
 
 
 # Runs app.js's selectDistrict under node with stubbed routing, for a zip
-# ambiguous on two kinds: the first choice must reach the ballot, and so
-# must the zip's partial cities and school districts.
+# ambiguous on two kinds: both choices must reach the ballot's short
+# link, by each kind's short id.
 SELECT_DISTRICT_HARNESS = r"""
 const src = require("fs").readFileSync(process.argv[1], "utf8");
 const fn = src.match(/function selectDistrict[\s\S]*?\n}\n/)[0] +
-  src.match(/function ballotParams[\s\S]*?\n}\n/)[0];
-const location = { hash: "" };
-const go = (href) => { location.hash = href.replace(/^\//, ""); };
+  src.match(/function ballotHref[\s\S]*?\n}\n/)[0] +
+  src.match(/function shortId[\s\S]*?\n}\n/)[0];
+let href = null;
+const go = (h) => { href = h; };
 let next = null;
 const renderAmbiguousKind = (zip, doc, kind) => { next = [doc, kind]; };
 eval(fn);
 const doc = {
   kinds: { state: [{ ocd_id: "S" }],
-           cd: [{ ocd_id: "cd:1" }, { ocd_id: "cd:2" }],
-           sldl: [{ ocd_id: "sldl:1" }, { ocd_id: "sldl:2" }],
+           cd: [{ ocd_id: "x/cd:1" }, { ocd_id: "x/cd:2" }],
+           sldl: [{ ocd_id: "x/sldl:1" }, { ocd_id: "x/sldl:2" }],
            place: [{ ocd_id: "place:a" }, { ocd_id: "place:b" }] },
   ambiguous: ["cd", "sldl"],
   partial: ["place:a", "place:b"],
 };
-selectDistrict("99903", doc, "cd", "cd:1");
-selectDistrict("99903", next[0], next[1], "sldl:2");
-console.log(JSON.stringify({ kind: next[1], hash: location.hash }));
+selectDistrict("99903", doc, "cd", "x/cd:1");
+const between = href;
+selectDistrict("99903", next[0], next[1], "x/sldl:2");
+console.log(JSON.stringify({ kind: next[1], between, href }));
 """
 
 
@@ -173,10 +174,87 @@ class SelectDistrictTest(unittest.TestCase):
             check=True, capture_output=True, text=True).stdout
         result = json.loads(out)
         self.assertEqual(result["kind"], "sldl")
-        params = urllib.parse.parse_qs(result["hash"].split("?", 1)[1])
-        self.assertEqual(sorted(params["d"]),
-                         ["S", "cd:1", "place:a", "place:b", "sldl:2"])
-        self.assertEqual(sorted(params["p"]), ["place:a", "place:b"])
+        # The first choice asks the next question; it doesn't navigate.
+        self.assertIsNone(result["between"])
+        self.assertEqual(result["href"], "/#/ballot/99903?cd=1&sldl=2")
+
+
+# Runs app.js's renderZipBallot under node with the zip lookup stubbed,
+# printing where each short ballot link goes: the ballot (with the
+# divisions and partial ones the old long link would carry) or the
+# zip's picker.
+ZIP_BALLOT_HARNESS = r"""
+const src = require("fs").readFileSync(process.argv[1], "utf8");
+const fn = src.match(/async function renderZipBallot[\s\S]*?\n}\n/)[0] +
+  src.match(/function shortId[\s\S]*?\n}\n/)[0];
+const ZIPS = {
+  "99903": { kinds: { state: [{ ocd_id: "S" }],
+                      cd: [{ ocd_id: "x/cd:1" }, { ocd_id: "x/cd:2" }],
+                      sldl: [{ ocd_id: "x/sldl:1" }, { ocd_id: "x/sldl:2" }],
+                      place: [{ ocd_id: "x/place:a" }] },
+             ambiguous: ["cd", "sldl"], partial: ["x/place:a"] },
+  "99904": { kinds: { state: [{ ocd_id: "S" }], cd: [{ ocd_id: "x/cd:3" }] },
+             ambiguous: [], partial: [] },
+  "99905": { needs_address: true },
+};
+const routeToken = 0;
+const isStale = () => false;
+const app = { appendChild() {}, innerHTML: "" };
+const loading = () => ({});
+const offlineNotice = () => ({});
+const getJson = async (path) => {
+  const body = ZIPS[path.split("/").pop()];
+  return body ? { ok: true, status: 200, body } :
+    { ok: false, status: 404, body: {} };
+};
+let result;
+const go = (href, replace) => { result = ["go", href, !!replace]; };
+const renderBallot = async (d, p) => { result = ["ballot", d, p]; };
+eval(fn);
+(async () => {
+  const out = {};
+  for (const [zip, picks] of JSON.parse(process.argv[2])) {
+    result = null;
+    await renderZipBallot(zip, picks);
+    out[`${zip} ${JSON.stringify(picks)}`] = result;
+  }
+  console.log(JSON.stringify(out));
+})();
+"""
+
+ZIP_BALLOTS = [
+    (("99903", {"cd": "1", "sldl": "2"}),
+     ["ballot", ["S", "x/cd:1", "x/sldl:2", "x/place:a"], ["x/place:a"]]),
+    # picks for kinds the zip settles alone are ignored
+    (("99904", {}), ["ballot", ["S", "x/cd:3"], []]),
+    (("99904", {"cd": "9"}), ["ballot", ["S", "x/cd:3"], []]),
+    # a pick missing, or naming no division of its kind there
+    (("99903", {"cd": "1"}), ["go", "/#/zip/99903", True]),
+    (("99903", {"cd": "1", "sldl": "7"}), ["go", "/#/zip/99903", True]),
+    (("99903", {"cd": "x/cd:1", "sldl": "2"}),
+     ["go", "/#/zip/99903", True]),
+    # a zip the lookup refuses or can't place: its page says why
+    (("99905", {}), ["go", "/#/zip/99905", True]),
+    (("99906", {}), ["go", "/#/zip/99906", True]),
+]
+
+
+@unittest.skipUnless(shutil.which("node"), "node is not on PATH")
+class ZipBallotTest(unittest.TestCase):
+    def test_short_ballot_links(self):
+        out = json.loads(subprocess.run(
+            ["node", "-e", ZIP_BALLOT_HARNESS, str(STATIC_DIR / "app.js"),
+             json.dumps([args for args, _ in ZIP_BALLOTS])],
+            check=True, capture_output=True, text=True).stdout)
+        for (zip_code, picks), want in ZIP_BALLOTS:
+            key = f"{zip_code} {json.dumps(picks, separators=(',', ':'))}"
+            with self.subTest(key):
+                self.assertEqual(out[key], want)
+
+    def test_navigation_only_makes_short_links(self):
+        app_js = (STATIC_DIR / "app.js").read_text(encoding="utf-8")
+        self.assertNotIn("`/#/ballot?", app_js)
+        self.assertIn("go(ballotHref(zip, {}), true);", app_js)
 
 
 # Runs app.js's titleParts under node over every designation style the

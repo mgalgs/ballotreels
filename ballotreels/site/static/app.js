@@ -555,6 +555,10 @@ async function route() {
   if (m) return renderContest(`/api/contest/${m[1]}`);
   m = hash && path.match(/^\/zip\/([0-9]+)$/);
   if (m) return renderZip(m[1]);
+  // A zip's ballot: /#/ballot/92071?cd=51&sldl=78, a pick per kind the
+  // zip is split on; and the old /#/ballot?d=...&p=..., by division.
+  m = hash && path.match(/^\/ballot\/([0-9]+)$/);
+  if (m) return renderZipBallot(m[1], Object.fromEntries(params));
   if (hash && path === "/ballot") {
     return renderBallot(params.getAll("d"), params.getAll("p"));
   }
@@ -777,24 +781,59 @@ async function renderZip(zip) {
   if (body.ambiguous.length === 0) {
     // Replace, so Back from the ballot returns home, not to a page
     // that would forward straight back here.
-    go(`/#/ballot?${ballotParams(body.kinds, body.partial)}`, true);
+    go(ballotHref(zip, {}), true);
     return;
   }
   await renderAmbiguousKind(zip, body, body.ambiguous[0]);
 }
 
-// The ballot's query: every division (`d`), and those of a zip's cities
-// and school districts that cover only part of it (`p`), whose contests
-// the ballot marks as depending on the address. No question is asked
-// about those: a measure of each is shown, so none is missed.
-function ballotParams(kinds, partial) {
-  const divisions = [];
-  for (const entries of Object.values(kinds)) {
-    for (const entry of entries) divisions.push(entry.ocd_id);
+// A zip's ballot, by the voter's picks ({ cd: "51", sldl: "78" }): the
+// short id of the division picked for each kind the zip is split on.
+function ballotHref(zip, picks) {
+  const query = Object.entries(picks)
+    .map(([kind, id]) => `${kind}=${encodeURIComponent(id)}`).join("&");
+  return `/#/ballot/${zip}${query ? `?${query}` : ""}`;
+}
+
+// A division's short id: its OCD-ID's last segment (".../cd:51" -> "51").
+function shortId(ocdId) {
+  return ocdId.slice(ocdId.lastIndexOf(":") + 1);
+}
+
+// The ballot for a zip and the voter's picks: every division the zip
+// alone settles, and the one picked for each kind it is split on. A
+// pick missing, or naming no division of its kind there, sends the
+// voter to the zip's picker; so does a zip lookup the server refused,
+// whose page says why. The zip's cities and school districts that cover only
+// part of it go as partial: the ballot marks their contests as
+// depending on the address, rather than asking about them.
+async function renderZipBallot(zip, picks) {
+  app.appendChild(loading("Getting your ballot..."));
+  const token = routeToken;
+  const { ok, status, body } = await getJson(`/api/zip/${zip}`);
+  if (isStale(token)) return;
+  if (status === 0) {
+    // Offline: kept on this link, so "Try again" retries the ballot.
+    app.innerHTML = "";
+    app.appendChild(offlineNotice());
+    return;
   }
-  return divisions.map((d) => `d=${encodeURIComponent(d)}`)
-    .concat((partial || []).map((d) => `p=${encodeURIComponent(d)}`))
-    .join("&");
+  if (!ok || body.needs_address) {
+    go(`/#/zip/${zip}`, true);
+    return;
+  }
+  const kinds = { ...body.kinds };
+  for (const kind of body.ambiguous) {
+    const entry = kinds[kind].find((e) => shortId(e.ocd_id) === picks[kind]);
+    if (!entry) {
+      go(`/#/zip/${zip}`, true);
+      return;
+    }
+    kinds[kind] = [entry];
+  }
+  const divisions = Object.values(kinds).flat().map((e) => e.ocd_id);
+  app.innerHTML = "";
+  await renderBallot(divisions, body.partial || []);
 }
 
 const KIND_NAMES = {
@@ -864,14 +903,15 @@ function selectDistrict(zip, zipDoc, chosenKind, chosenOcdId) {
   // Narrow the chosen kind to the one district picked, so that a later
   // step (the next ambiguous kind) carries this choice forward.
   const kinds = { ...zipDoc.kinds, [chosenKind]: [{ ocd_id: chosenOcdId }] };
+  const picks = { ...zipDoc.picks, [chosenKind]: shortId(chosenOcdId) };
   const remaining = zipDoc.ambiguous.filter((k) => k !== chosenKind);
   if (remaining.length > 0) {
     // Ask about the next ambiguous kind before going to the ballot.
-    renderAmbiguousKind(zip, { ...zipDoc, kinds, ambiguous: remaining },
-      remaining[0]);
+    renderAmbiguousKind(zip,
+      { ...zipDoc, kinds, picks, ambiguous: remaining }, remaining[0]);
     return;
   }
-  go(`/#/ballot?${ballotParams(kinds, zipDoc.partial)}`);
+  go(ballotHref(zip, picks));
 }
 
 const LEVEL_NAMES = {
