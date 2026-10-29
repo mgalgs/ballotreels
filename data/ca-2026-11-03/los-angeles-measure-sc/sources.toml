@@ -1,0 +1,60 @@
+# Archived sources for City of Los Angeles Charter Amendment SC (scripted
+# as Measure SC, the site's convention), 2026-11-03 general election
+# (sources/sources.md). All four come from one cut of the City Clerk's
+# Voter Information Pamphlet, edition 201: the PDF's pages 11 and 73 to
+# 89, the pamphlet's printed pages 9 (Ballot Summary) and 71 to 87.
+#
+# The Chief Legislative Analyst's Impartial Summary is the measure's
+# neutral explanation, and the City Administrative Officer's Financial
+# Impact Statement its fiscal analysis. No argument against was submitted
+# (printed page 73), and no rebuttals.
+#
+# Who votes is not confirmed. SC is a City Charter amendment, so the
+# division is the city's; but only edition 201 of the pamphlet ("City/
+# LAUSD ballot measures") prints it, and edition 101 (the city's measures
+# only) leaves it out, which suggests that only city voters who live in
+# the Los Angeles Unified School District vote on it. No archived record
+# states that, so there is no `voters`, and the script says nothing
+# either way (see script.toml).
+
+[contest]
+id = "ca-2026-11-03-los-angeles-measure-sc"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:los_angeles"
+kind = "measure"
+title = "City of Los Angeles Measure SC: Campaign Finance Rules for Los Angeles Unified School District Board of Education Elections"
+
+[[source]]
+id = "summary"
+kind = "official-title-summary"
+publisher = "Office of the City Clerk, City of Los Angeles Voter Information Pamphlet, November 3, 2026, pages 9 and 71: Ballot Summary, ballot question, and Impartial Summary by the Chief Legislative Analyst"
+credit = "Impartial Summary, City of Los Angeles Voter Information Pamphlet"
+url = "https://cityclerk.lacity.org/election/ENG201_NOV-2026_Voter_Info_Pamphlet.pdf"
+file = "sources/vip201-sc.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "financial-impact"
+kind = "official-fiscal-analysis"
+publisher = "City Administrative Officer, Financial Impact Statement, City of Los Angeles Voter Information Pamphlet, November 3, 2026, page 72"
+credit = "Financial Impact Statement, City of Los Angeles Voter Information Pamphlet"
+url = "https://cityclerk.lacity.org/election/ENG201_NOV-2026_Voter_Info_Pamphlet.pdf"
+file = "sources/vip201-sc.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Charter Amendment SC, City of Los Angeles Voter Information Pamphlet, November 3, 2026, page 73"
+credit = "Argument in Favor, City of Los Angeles Voter Information Pamphlet"
+url = "https://cityclerk.lacity.org/election/ENG201_NOV-2026_Voter_Info_Pamphlet.pdf"
+file = "sources/vip201-sc.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Charter Amendment SC, Text of the Proposed Ballot Measure, City of Los Angeles Voter Information Pamphlet, November 3, 2026, pages 74 to 87"
+url = "https://cityclerk.lacity.org/election/ENG201_NOV-2026_Voter_Info_Pamphlet.pdf"
+file = "sources/vip201-sc.pdf"
+retrieved = "2026-10-28"

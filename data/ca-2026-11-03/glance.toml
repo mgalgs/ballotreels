@@ -1332,3 +1332,10 @@ quote = "It generates roughly $345 million annually for a special fund dedicated
 amount = 345000000
 period = "per-year"
 direction = "revenue-gain"
+
+# City of Los Angeles Measure SC: the City Administrative Officer
+# expects no financial impact on the city.
+[los-angeles-measure-sc]
+source = "financial-impact"
+status = "no-material-impact"
+quote = "This measure is not anticipated to have a financial impact on the City."
