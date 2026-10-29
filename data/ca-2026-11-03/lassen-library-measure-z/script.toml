@@ -1,0 +1,182 @@
+# Recipe E, about 60 seconds, distilled: one claim per line, in the shape
+# of the merged parcel tax scripts. The chain: what it asks and of whom;
+# the district's tax today, who pays it and what it needs to pass; the
+# new rate, when it starts and how long it lasts; what the money may pay for; the tax rate statement's estimate;
+# one line per side; what a vote does.
+#
+# The guide prints no "Shall ...?" question for Measure Z, only a Ballot
+# Summary (page 39), which the card quotes; its origin is the impartial
+# analysis's own sentence on who placed it on the ballot, and its YES and
+# NO boxes are the analysis's meanings of each vote. No name of the
+# library, district, city or county is narrated: the card, the title and
+# the `voters` line show them. The tax reaches only parcels inside one
+# city's limits, said as "the city limits".
+#
+# That the rate has not changed in 32 years is in the analysis, but the
+# supporters' argument makes it its point ("For more than three decades,
+# the tax rate has remained unchanged"), so it is left to their side
+# (STANDARD.md 6.3); so are the deficit and the library's services.
+#
+# The yearly revenue is the district's, and no archived source states
+# the district's budget, so it has no budget scale (STANDARD.md 6.5;
+# left open). The argument's "approximately $109,000" from today's tax is
+# the supporters' figure and is not used in a neutral section.
+#
+# No argument against Measure Z was submitted. The no side says so
+# plainly; its section is marked filed = false.
+
+contest = "ca-2026-11-03-lassen-library-measure-z"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-summary"
+number = "Z"
+title = "BALLOT SUMMARY FOR LASSEN LIBRARY DISTRICT SPECIAL TAX MEASURE “Z”"
+origin = "The Board of Trustees of the Lassen Library District (the “District”) has placed Measure Z on the ballot."
+summary = "This Measure would increase the existing library special tax from $28 to $50 per parcel per year for habitable parcels within Susanville city limits. Funds would support library materials, facility operations, technology, educational programs, and staffing. The tax would continue annually until repealed. An annual report would be required. Approval requires a two-thirds vote."
+yes = "A “yes” vote favors increasing the District’s special tax from Twenty-Eight dollars ($28.00) to Fifty dollars ($50.00) per year for each Parcel."
+no = "A “no” vote opposes increasing the District’s special tax and favors retaining the existing Twenty-Eight dollar ($28.00) tax per year for each Parcel."
+
+[[section]]
+id = "what"
+heading = "Measure Z"
+
+[[section.line]]
+text = "Measure Z asks the voters of this library district whether to raise the library parcel tax from $28 to $50 a year."
+sources = ["ballot-summary", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-summary"
+highlight = ["increase the existing library special tax from $28 to $50"]
+
+[[section]]
+id = "today"
+heading = "How the library tax works"
+
+[[section.line]]
+text = "The district runs the public library, and already charges a special tax of $28 a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "library-shelves"
+
+[[section.line]]
+id = "who-pays"
+text = "The tax falls on each habitable parcel or living unit inside the city limits."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-parcels"
+
+[[section.line]]
+text = "Measure Z needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rate"
+text = "The tax would rise to $50 in July 2027, with no exemptions, until voters or the district board repeal it."
+sources = ["impartial-analysis", "ballot-summary"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-summary"
+highlight = ["The tax would continue annually until repealed."]
+
+[[section.line]]
+id = "uses"
+text = "The money could pay only for library services, such as books, technology, programs and staff."
+sources = ["impartial-analysis", "ballot-summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+id = "revenue"
+text = "The district's tax rate statement estimates that the $50 tax would raise about $194,600 a year."
+sources = ["tax-statement", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the rate is unchanged in over three decades while costs rose sharply, and the library runs a deficit."
+sources = ["arguments"]
+basis = ["For more than three decades, the tax rate has remained unchanged while the cost of providing library services has increased dramatically.", "As a result, the library is operating at a deficit"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Rate unchanged for three decades", "Library running at a deficit"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure Z was submitted, so the county voter guide prints only the argument in favor of it."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote supports raising the tax to $50 a year for each parcel."
+sources = ["impartial-analysis", "ballot-summary"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-summary"
+highlight = ["favors increasing the District’s special tax"]
+
+[[section.line]]
+text = "A no vote opposes the increase and keeps the $28 tax."
+sources = ["impartial-analysis", "ballot-summary"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-summary"
+highlight = ["favors retaining the existing"]
+
+[[question]]
+ask = "Who would pay the tax?"
+lines = ["who-pays", "rate"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["uses"]
+
+[[question]]
+ask = "How big is $194,600 next to the library district's yearly budget?"
+unanswered = true
