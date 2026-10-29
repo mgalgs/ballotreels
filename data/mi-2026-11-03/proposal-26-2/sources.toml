@@ -7,9 +7,11 @@
 # designation, heading, "The proposal would:" bullets and question) and
 # nothing else: no "yes means" lines, no fiscal statement and no
 # arguments. The fiscal statement is the Senate Fiscal Agency's overview
-# of the proposal. The House Fiscal Agency's analysis
-# (ballot_proposal_2_of_2026.pdf), the Board of State Canvassers' staff
-# report on the petition's signatures (mmop-staff-report.pdf) and the
+# of the proposal. The House Fiscal Agency's analysis is the House's
+# fiscal statement on it, of the same standing and so the same kind; the
+# script cites it for how issue ads are treated today. The Board of
+# State Canvassers' staff report on the petition's signatures
+# (mmop-staff-report.pdf) and the
 # circulated petition (michiganders-for-money-out-of-politics.pdf, a
 # scan with no text layer) are archived beside them but not cited, so
 # they are not listed here.
@@ -44,4 +46,13 @@ publisher = "Senate Fiscal Agency, November 2026 Ballot Proposal 26-2: An Overvi
 credit = "Senate Fiscal Agency"
 url = "https://sfa.senate.michigan.gov/Publications/BallotProps/Proposal26-2.pdf"
 file = "sources/proposal-26-2-sfa-analysis.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "hfa"
+kind = "official-fiscal-analysis"
+publisher = "House Fiscal Agency, Ballot Proposal 2 of 2026: Campaign Contributions and Expenditures, complete to 10-7-26"
+credit = "House Fiscal Agency"
+url = "https://www.house.mi.gov/hfa/PDF/Alpha/Ballot_Proposal_2_of_2026.pdf"
+file = "sources/ballot_proposal_2_of_2026.pdf"
 retrieved = "2026-10-27"

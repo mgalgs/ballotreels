@@ -1,5 +1,6 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
-# is about; how ads that do not urge a vote are treated today; what the
+# is about; how ads that do not urge a vote are treated today, per the
+# House Fiscal Agency; what the
 # proposal would change (the contribution bans, then the two disclosure
 # rules, each in the ballot's own terms); what the Senate Fiscal Agency
 # says it would cost and bring in; the two sides; what a vote does.
@@ -18,15 +19,23 @@
 # filed; nothing in the script cites it.
 #
 # Cost: the Senate Fiscal Agency gives no total. It calls the costs to
-# the Attorney General and the district courts minor, says the
-# Department of State could need more staff depending on how many
-# investigations it opens (at about $145,700 a year for each; the script
-# leaves the per-position figure out rather than imply a total the
-# agency does not state). Its local-government paragraph pairs new
-# enforcement, court and jail costs with fine revenue for libraries; the
-# script states neither half rather than one without the other. With no
-# dollar total, no scale is needed (rule 6.5). The $250,000 is a contractor's own contracts, not
-# the state's budget, so it has no scale either.
+# the Attorney General and the district courts minor, and says the
+# Department of State (and the Attorney General, given many cases) could
+# need more staff depending on how many investigations it opens, at
+# about $145,700 a year for each; the script leaves the per-position
+# figure out rather than imply a total the agency does not state, and
+# says "minor state costs, perhaps more staff" to stay within 140 words
+# with the local line. Its local-government paragraph ("Corrections and
+# Fines", PDF page 7) pairs new law enforcement, court, community
+# supervision and jail costs with fine revenue for libraries; the script
+# says both halves in one line. With no dollar total, no scale is needed
+# (rule 6.5). The $250,000 is a contractor's own contracts, not the
+# state's budget, so it has no scale either.
+#
+# The "Today" line is the House Fiscal Agency's (PDF page 2): issue ads
+# that do not explicitly urge a vote "are currently not considered
+# expenditures" and so are "not subject to reporting requirements for
+# expenditures, contributions, and donors".
 
 contest = "mi-2026-11-03-proposal-26-2"
 template = "measure"
@@ -60,7 +69,7 @@ heading = "Today"
 [[section.line]]
 id = "issue-ads-today"
 text = "Today, ads that do not directly urge a vote need not report their donors."
-sources = ["sfa", "ballot"]
+sources = ["hfa", "ballot"]
 
 [section.line.visual]
 kind = "illustration"
@@ -104,12 +113,21 @@ heading = "What the official analysis says"
 
 [[section.line]]
 id = "costs"
-text = "The Senate Fiscal Agency expects minor costs for the Attorney General and courts, and perhaps more Department of State staff."
+text = "The Senate Fiscal Agency expects minor state costs, perhaps more staff."
 sources = ["sfa"]
 
 [section.line.visual]
 kind = "illustration"
 name = "analyst-review"
+
+[[section.line]]
+id = "local"
+text = "It sees new local costs for law enforcement, courts, community supervision and jails, and fine revenue for libraries."
+sources = ["sfa"]
+
+[section.line.visual]
+kind = "illustration"
+name = "library-shelves"
 
 [[section]]
 id = "yes"
@@ -169,4 +187,4 @@ lines = ["contribution-bans"]
 
 [[question]]
 ask = "What does this cost the state?"
-lines = ["costs"]
+lines = ["costs", "local"]
