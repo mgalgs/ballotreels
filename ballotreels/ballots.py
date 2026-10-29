@@ -555,6 +555,12 @@ BALLOTS: dict[str, Ballot] = {
                      "ca-2026-11-03-lincoln-measure-f":
                          "Measure F — Lincoln Public Safety/Taxpayer "
                          "Protection Measure",
+                     # Merced County's guide could not be fetched: the
+                     # City of Merced's card quotes its question from the
+                     # resolution in the Council's agenda, numbered as the
+                     # agenda numbers it (the copy's own number is blank)
+                     "ca-2026-11-03-merced-measure-b":
+                         "Resolution 2026-52",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
