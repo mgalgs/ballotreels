@@ -1,0 +1,163 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks; how a vacant elected county office is filled today, and
+# the fallback if the board does not act, which the measure keeps; what
+# would change (the longer deadline, the public meeting); who placed it and the
+# vote it needs; that no cost estimate was published; both sides,
+# neither of which has a published argument; what a vote does.
+#
+# The card quotes the ballot question from Resolution No. 081882, which
+# prints no yes/no lines, so (as for Utah) the vote lines take their two
+# meanings from the question itself and highlight its one phrase.
+#
+# No argument for or against Measure J is among the documents San Mateo
+# County posted, and the printed sample ballot pamphlet was not checked
+# (sources/sources.md), so the sides do not say none was filed: each says
+# none appears in the published documents (filed = false, STANDARD.md
+# 2.5). No fiscal or tax rate statement was published either, and the
+# impartial analysis names no cost.
+
+contest = "ca-2026-11-03-san-mateo-county-measure-j"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "J"
+title = "COUNTY CHARTER AMENDMENT"
+origin = "BOARD OF SUPERVISORS, COUNTY OF SAN MATEO, STATE OF CALIFORNIA"
+summary = "Shall the San Mateo County Charter be amended to extend the period in which the County Board of Supervisors is required to either call a special election or make an appointment in the event of a vacancy in an elected office other than the Board of Supervisors from 30 days to 60 days, and to require the Board to conduct at least one public meeting to receive public comment prior to any appointment?"
+
+[[section]]
+id = "what"
+heading = "Measure J"
+
+[[section.line]]
+text = "San Mateo County Measure J asks county voters whether to give the Board of Supervisors more time to fill a vacant elected county office."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["in the event of a vacancy in an elected office other than the Board of Supervisors"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "offices"
+text = "Today, when an elected county office other than a seat on the board falls vacant, the board has 30 days to appoint someone or call a special election."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "empty-commission-seat"
+
+[[section.line]]
+text = "If the board does not act in time, the county elections officer must call a special election."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+text = "No public meeting is required before the board appoints someone."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure J would extend the deadline from 30 days to 60 days."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Days the board has to fill a vacancy"
+source = "impartial-analysis"
+unit = ""
+labels = ["Today", "Measure J"]
+values = [30, 60]
+
+[[section.line]]
+text = "Before any appointment, the board would hold at least one public meeting for comment on the appointment and the candidates."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "nominee-list"
+
+[[section.line]]
+text = "The Board of Supervisors placed Measure J on the ballot, and it needs a majority of the vote to pass."
+sources = ["impartial-analysis", "resolution"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The published measure documents of San Mateo County do not include a cost estimate for the measure."
+sources = ["impartial-analysis", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure J appears in the published measure documents of San Mateo County."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "list"
+source = "impartial-analysis"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure J appears in the published measure documents of San Mateo County."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "list"
+source = "impartial-analysis"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means the charter would be amended to allow 60 days and require a public meeting."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["from 30 days to 60 days"]
+
+[[section.line]]
+text = "A no vote means the charter would not be amended, and the deadline stays 30 days."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["from 30 days to 60 days"]
+
+[[question]]
+ask = "Which offices does this cover?"
+lines = ["offices"]
+
+[[question]]
+ask = "How often do these offices fall vacant?"
+unanswered = true
