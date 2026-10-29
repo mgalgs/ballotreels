@@ -1,0 +1,54 @@
+# Archived sources for City of Roseville Measure A, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Placer County Elections publishes no combined guide document; it posts
+# each measure's guide pages as one PDF, headed "MEASURE A" and "COUNCIL
+# COMPENSATION ADJUSTMENT AND INFLATION LIMITATION MEASURE", paged MA1 to
+# MA5. One PDF backs every source here. The City Attorney's Impartial
+# Analysis is the measure's neutral explanation, of the kind the other
+# Placer County measures give it. Not a tax measure: the pages print no
+# fiscal statement.
+
+[contest]
+id = "ca-2026-11-03-roseville-measure-a"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:roseville"
+kind = "measure"
+title = "Roseville Measure A: City Council Compensation"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Placer County Elections, Measure A: Council Compensation Adjustment and Inflation Limitation Measure, page MA1: the ballot question"
+credit = "Measure A, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-A.pdf"
+file = "sources/11032026_Measure-A.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Roseville City Attorney, City Attorney’s Impartial Analysis of Measure A, Placer County Elections, Measure A, page MA1"
+credit = "Impartial Analysis, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-A.pdf"
+file = "sources/11032026_Measure-A.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments in Favor of and Against Measure A, and the rebuttals, Placer County Elections, Measure A, pages MA2 to MA3"
+credit = "Arguments, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-A.pdf"
+file = "sources/11032026_Measure-A.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure A Submitted by the City of Roseville, Resolution No. 26-040 and Exhibit “A”, Placer County Elections, Measure A, pages MA4 to MA5"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-A.pdf"
+file = "sources/11032026_Measure-A.pdf"
+retrieved = "2026-10-28"
