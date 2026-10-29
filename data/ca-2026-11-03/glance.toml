@@ -1670,3 +1670,13 @@ source = "ballot-question"
 quote = "providing approximately $240,000/year until ended by voters"
 amount = 240000
 period = "per-year"
+
+# City of Orange Cove Measure O: no tax rate statement or fiscal
+# analysis applies (a parcel tax, not a bond). The quote is the ballot
+# question's, from Resolution No. 2026-28; the City Attorney's
+# impartial analysis gives the same $460,907 a year.
+[orange-cove-measure-o]
+source = "ballot-question"
+quote = "To generate approximately $460,907 annually"
+amount = 460907
+period = "per-year"
