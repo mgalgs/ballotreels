@@ -1,0 +1,185 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; the district's tax today and what the
+# measure needs to pass; how the new rate and its units of benefit work,
+# with the analysis's own schedule on a chart; what the money may pay
+# for; the measure question's estimate; one line per side; what a vote
+# does.
+#
+# This is the Mendocino County contest for the same measure as
+# coast-life-support-measure-d-sonoma, and its script is that one's line
+# for line, so a voter in either county hears the same film, except the
+# no line, which names these pages. The analysis, argument and text are
+# cited from Mendocino's guide pages, which print the same words; the
+# card quotes the measure question from Sonoma's pages, since
+# Mendocino's print none.
+#
+# A parcel tax has no tax rate statement, and neither county's pages
+# print one; the one estimate is the measure question's ($1,972,934 a
+# year). The tax is paid into the district's budget, but no archived
+# source states that budget, so the figure has no budget scale
+# (STANDARD.md 6.5; left open). The pages do not print today's rate, so
+# the script gives only the new one; it does not multiply the rate by a
+# parcel's units, which no source does. The supporters' calls, costs and
+# distances are theirs, so the neutral sections leave them out
+# (STANDARD.md 6.3). The argument's "CLSD" is not said aloud. "Counsel"
+# is heard as "Council" (standard/speakability.txt), so the narration
+# says "the impartial analysis".
+#
+# The guide pages print "NO ARGUMENTS AGAINST MEASURE D WERE
+# SUBMITTED." The no side says so plainly; its section is marked
+# filed = false.
+
+contest = "ca-2026-11-03-coast-life-support-measure-d"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "measure-question"
+number = "D"
+title = "Coast Life Support District"
+origin = "This measure was placed on the ballot by the Board of Directors for the Coast Life Support District."
+summary = "Shall Measure D (the Coast Life Support District Emergency Medical Services Tax) be adopted? Allows Coast Life Support District to increase the current special parcel tax rate on real property to $ 101 per unit of benefit, for emergency medical services, including ambulance, life support and medical transport purposes and other necessary operating expenses, providing an estimated $1,972,934 annually, until the tax is amended or repealed; authorizes annual increases for inflation; and raises the District’s appropriations limit to permit spending of the tax revenue."
+yes = "A “yes” vote is a vote in favor of authorization of the special tax."
+no = "A “no” vote is a vote against authorization of the special tax."
+
+[[section]]
+id = "what"
+heading = "Measure D"
+
+[[section.line]]
+text = "Measure D asks the voters of this life support district whether to raise its parcel tax for ambulance and emergency medical services."
+sources = ["measure-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-question"
+highlight = ["increase the current special parcel tax rate"]
+
+[[section]]
+id = "today"
+heading = "How the district's tax works"
+
+[[section.line]]
+text = "The district already levies a parcel tax, which the two counties it serves collect for it."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "coastal-ambulance"
+
+[[section.line]]
+text = "Measure D needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rate"
+text = "Measure D would set the tax at $101 per unit of benefit, based on how each parcel's land is used."
+sources = ["impartial-analysis", "measure-question"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-question"
+highlight = ["$ 101 per unit of benefit"]
+
+[[section.line]]
+id = "units"
+text = "A single-family home counts as three units, a hotel or restaurant as 20, and undeveloped farm or timber land as none."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Units of benefit, by land use"
+source = "impartial-analysis"
+unit = ""
+labels = ["Undeveloped land", "Single-family home", "Hotel or restaurant"]
+values = [0, 3, 20]
+
+[[section.line]]
+id = "uses"
+text = "The rate would rise each July with inflation, and the money could pay only for emergency medical services and the district's operating costs."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What the measure question says"
+
+[[section.line]]
+text = "The measure question estimates that the tax would raise about $1.97 million a year."
+sources = ["measure-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "set-aside-funds"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say emergency calls have doubled and cost per call rose over 25 percent, without any parcel tax increase."
+sources = ["arguments"]
+basis = ["CLSD has experienced a doubling of emergency calls, and an over 25 percent increase in costs per call without any increase in the parcel tax funding."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Emergency calls have doubled", "Cost per call up over 25 percent"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure D was submitted for the printed county voter guide pages on this special district measure."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is a vote in favor of authorizing the special tax."
+sources = ["measure-question"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-question"
+highlight = ["in favor of authorization"]
+
+[[section.line]]
+text = "A no vote is a vote against authorizing the special tax."
+sources = ["measure-question"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-question"
+highlight = ["against authorization"]
+
+[[question]]
+ask = "How much would my property pay?"
+lines = ["rate", "units"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["uses"]
+
+[[question]]
+ask = "What is the district's tax rate today?"
+unanswered = true

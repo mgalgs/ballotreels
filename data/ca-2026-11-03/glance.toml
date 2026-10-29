@@ -2313,3 +2313,12 @@ source = "impartial-analysis"
 quote = "The additional 2% is anticipated to generate approximately $35,833 annually"
 amount = 35833
 period = "per-year"
+
+# Coast Life Support District Measure D (Mendocino County's contest): a
+# parcel tax has no tax rate statement; the one estimate is the measure
+# question's, as Sonoma's contest gives it.
+[coast-life-support-measure-d]
+source = "measure-question"
+quote = "providing an estimated $1,972,934 annually, until the tax is amended or repealed"
+amount = 1972934
+period = "per-year"
