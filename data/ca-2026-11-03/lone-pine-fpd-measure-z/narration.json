@@ -1,0 +1,265 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 86.65,
+  "phrases": [
+    {
+      "text": "Measure Z asks the voters of this fire protection district whether to bring back a $100 yearly parcel tax for emergency response services.",
+      "start": 0.03,
+      "end": 9.72
+    },
+    {
+      "text": "The district adopted a $100 parcel tax in 2014, and that tax expired on December 31, 2025.",
+      "start": 10.38,
+      "end": 18.87
+    },
+    {
+      "text": "Measure Z needs two-thirds of the vote to pass.",
+      "start": 19.53,
+      "end": 22.82
+    },
+    {
+      "text": "Measure Z would charge $100 a year on each taxable parcel in the district, from July 1, 2027, through June 30, 2037.",
+      "start": 23.48,
+      "end": 34.16
+    },
+    {
+      "text": "The money could pay only for emergency services, such as ambulance service, emergency equipment, and pay and training for responders.",
+      "start": 34.82,
+      "end": 43.45
+    },
+    {
+      "text": "Property owned by federal or state government agencies would not pay the tax.",
+      "start": 44.11,
+      "end": 49.07
+    },
+    {
+      "text": "The measure's full text estimates the tax would raise about $80,000 a year, depending on the number of taxable parcels.",
+      "start": 49.73,
+      "end": 57.42
+    },
+    {
+      "text": "Supporters say local emergency medical services face growing demands, aging equipment and rising costs, and Measure Z gives them dedicated local funding.",
+      "start": 58.08,
+      "end": 69.02
+    },
+    {
+      "text": "No argument against Measure Z was submitted, so the county voter guide prints only the argument in favor of the measure.",
+      "start": 69.68,
+      "end": 76.92
+    },
+    {
+      "text": "A yes vote is a vote to approve the tax on property in the district.",
+      "start": 77.58,
+      "end": 82.02
+    },
+    {
+      "text": "A no vote is a vote against the tax on property in the district.",
+      "start": 82.68,
+      "end": 86.62
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure Z asks the voters of this fire protection district whether to bring back a $100 yearly parcel tax for emergency response services.",
+      "The district adopted a $100 parcel tax in 2014, and that tax expired on December 31, 2025.",
+      "Measure Z needs two-thirds of the vote to pass.",
+      "Measure Z would charge $100 a year on each taxable parcel in the district, from July 1, 2027, through June 30, 2037.",
+      "The money could pay only for emergency services, such as ambulance service, emergency equipment, and pay and training for responders.",
+      "Property owned by federal or state government agencies would not pay the tax.",
+      "The measure's full text estimates the tax would raise about $80,000 a year, depending on the number of taxable parcels.",
+      "Supporters say local emergency medical services face growing demands, aging equipment and rising costs, and Measure Z gives them dedicated local funding.",
+      "No argument against Measure Z was submitted, so the county voter guide prints only the argument in favor of the measure.",
+      "A yes vote is a vote to approve the tax on property in the district.",
+      "A no vote is a vote against the tax on property in the district."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure Z asks the voters of this fire protection district whether to bring back a $100 yearly parcel tax for emergency response services."
+      },
+      "bounds": [
+        0,
+        234000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure Z asks the voters of this fire protection district whether to bring back a $100 yearly parcel tax for emergency response services.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The district adopted a $100 parcel tax in 2014, and that tax expired on December 31, 2025."
+      },
+      "bounds": [
+        248400,
+        453600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district adopted a $100 parcel tax in 2014, and that tax expired on December 31, 2025.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure Z needs two-thirds of the vote to pass."
+      },
+      "bounds": [
+        468000,
+        548400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure Z needs two-thirds of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure Z would charge $100 a year on each taxable parcel in the district, from July 1, 2027, through June 30, 2037."
+      },
+      "bounds": [
+        562800,
+        820560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure Z would charge $100 a year on each taxable parcel in the district, from July 1, 2027, through June 30, 2037.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money could pay only for emergency services, such as ambulance service, emergency equipment, and pay and training for responders."
+      },
+      "bounds": [
+        834960,
+        1043520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money could pay only for emergency services, such as ambulance service, emergency equipment, and pay and training for responders.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Property owned by federal or state government agencies would not pay the tax."
+      },
+      "bounds": [
+        1057920,
+        1178400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Property owned by federal or state government agencies would not pay the tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The measure's full text estimates the tax would raise about $80,000 a year, depending on the number of taxable parcels."
+      },
+      "bounds": [
+        1192800,
+        1378800
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The measure's full text estimates the tax would raise about $80,000 a year, depending on the number of taxable parcels.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say local emergency medical services face growing demands, aging equipment and rising costs, and Measure Z gives them dedicated local funding."
+      },
+      "bounds": [
+        1393200,
+        1657200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say local emergency medical services face growing demands, aging equipment and rising costs, and Measure Z gives them dedicated local funding.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument against Measure Z was submitted, so the county voter guide prints only the argument in favor of the measure."
+      },
+      "bounds": [
+        1671600,
+        1846800
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure Z was submitted, so the county voter guide prints only the argument in favor of the measure.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote is a vote to approve the tax on property in the district."
+      },
+      "bounds": [
+        1861200,
+        1969200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote is a vote to approve the tax on property in the district.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote is a vote against the tax on property in the district."
+      },
+      "bounds": [
+        1983600,
+        2079600
+      ]
+    }
+  ],
+  "sha256": "0ec46b8e4930deeb3bac69b47e1784c35197a4b6aabc794dae54d606a996d868"
+}
