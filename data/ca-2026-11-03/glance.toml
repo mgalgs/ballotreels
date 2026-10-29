@@ -2569,3 +2569,18 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $33,635,000."
 amount = 33635000
 period = "unstated"
+
+# City of Clearlake Measure D: the Voter's Pamphlet prints no fiscal
+# analysis (not a tax measure).
+[clearlake-measure-d]
+source = "impartial-analysis"
+status = "none-printed"
+
+# Middletown Unified School District Measure C: the district's Tax
+# Information Statement, its total debt service (the bonds are $38
+# million).
+[middletown-unified-measure-c]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all of the bonds are issued and sold is approximately $77,562,917."
+amount = 77562917
+period = "unstated"

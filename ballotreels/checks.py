@@ -609,6 +609,19 @@ def _normalise(s: str) -> str:
 _ONE_FOR_L = re.compile(r"(?<=[a-z])1(?![0-9A-Za-z])")
 
 
+# The Latin ligatures a PDF's text may hold where the page prints two or
+# three letters as one glyph (Lake County's Voter's Pamphlet sets
+# "Uniﬁed" in Middletown Unified Measure C's question). A card quotes the
+# letters as printed.
+_LIGATURES = str.maketrans({"ﬀ": "ff", "ﬁ": "fi", "ﬂ": "fl", "ﬃ": "ffi",
+                            "ﬄ": "ffl", "ﬅ": "st", "ﬆ": "st"})
+
+
+def _unligatured(archived: str) -> str:
+    """`archived` with each Latin ligature written as its letters."""
+    return archived.translate(_LIGATURES)
+
+
 def _digit_one_read_as_l(archived: str) -> str:
     return _ONE_FOR_L.sub("l", archived)
 
@@ -906,6 +919,7 @@ def check_card(c: Contest) -> list[Failure]:
                 and not _in_raw_columns(value, path) \
                 and not _in_unshifted(value, path) \
                 and not _card_quote_in(value, archived, blocks) \
+                and _normalise(value) not in _unligatured(archived) \
                 and _normalise(value) not in _digit_one_read_as_l(archived):
             fail(f"{key!r} does not appear verbatim in source "
                  f"{card.source!r} ({src.file})")

@@ -754,6 +754,12 @@ BALLOTS: dict[str, Ballot] = {
                         for slug in ("oroville-measure-r",
                                      "oroville-measure-s",
                                      "oroville-city-elementary-measure-q")},
+                     # The Lake County Registrar of Voters prints each
+                     # local measure's ballot question, impartial
+                     # analysis and arguments in its Voter's Pamphlet
+                     **{f"ca-2026-11-03-{slug}": "Voter’s Pamphlet"
+                        for slug in ("clearlake-measure-d",
+                                     "middletown-unified-measure-c")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

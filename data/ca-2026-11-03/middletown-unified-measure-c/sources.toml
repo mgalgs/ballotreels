@@ -1,0 +1,67 @@
+# Archived sources for Middletown Unified School District Measure C,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Lake County Registrar of Voters prints the whole measure in its
+# Voter's Pamphlet, "Measures, Analyses and Arguments", pamphlet pages
+# 017M501 to 017M506, posted as one PDF: the ballot question and the
+# start of the full text, Exhibit A (017M501), the rest of the full text
+# with the Bond Project List (017M502 to 017M504), County Counsel's
+# impartial analysis and the district's Tax Information Statement,
+# Exhibit B (017M505), and the argument in favor with "NO ARGUMENT
+# AGAINST MEASURE C WAS SUBMITTED" (017M506). The impartial analysis is
+# the measure's neutral explanation; the tax information statement is
+# its fiscal statement. No rebuttals are printed.
+
+[contest]
+id = "ca-2026-11-03-middletown-unified-measure-c"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:middletown_unified_school_district"
+kind = "measure"
+title = "Middletown Unified School District Measure C: School Facility Bonds"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Middletown Unified School District School Bond Measure “C”, ballot question, Lake County Registrar of Voters, Voter’s Pamphlet, Measures, Analyses and Arguments, page 017M501"
+credit = "Lake County Voter’s Pamphlet"
+url = "https://www.lakecountyca.gov/DocumentCenter/View/17942/Middletown-USD-Measure-C?bidId="
+file = "sources/middletown-usd-measure-c.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of School Bond Measure “C”, Lloyd C. Guintivano, County Counsel, County of Lake, Lake County Registrar of Voters, Voter’s Pamphlet, Measures, Analyses and Arguments, page 017M505"
+credit = "Impartial Analysis, Lake County Voter’s Pamphlet"
+url = "https://www.lakecountyca.gov/DocumentCenter/View/17942/Middletown-USD-Measure-C?bidId="
+file = "sources/middletown-usd-measure-c.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Tax Information Statement (Exhibit B) for Middletown Unified School District School Bond Measure “C”, signed by Jeff Crane, Superintendent, dated August 5, 2026, Lake County Registrar of Voters, Voter’s Pamphlet, Measures, Analyses and Arguments, page 017M505"
+credit = "Tax Information Statement, Middletown Unified School District"
+url = "https://www.lakecountyca.gov/DocumentCenter/View/17942/Middletown-USD-Measure-C?bidId="
+file = "sources/middletown-usd-measure-c.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure C, signed by Zoi Bracisco, School Board President; Jose Simon III, Chairman Middletown Rancheria; and Kurtis Woodard, Business Owner/Citizens Bond Oversight Committee, Lake County Registrar of Voters, Voter’s Pamphlet, Measures, Analyses and Arguments, page 017M506 (no argument against was submitted)"
+credit = "Arguments, Lake County Voter’s Pamphlet"
+url = "https://www.lakecountyca.gov/DocumentCenter/View/17942/Middletown-USD-Measure-C?bidId="
+file = "sources/middletown-usd-measure-c.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Exhibit A, Full Text of School Improvement Bond Measure, Middletown Unified School District, Lake County Registrar of Voters, Voter’s Pamphlet, Measures, Analyses and Arguments, pages 017M501 to 017M504"
+credit = "Full Text of Measure C, Lake County Voter’s Pamphlet"
+url = "https://www.lakecountyca.gov/DocumentCenter/View/17942/Middletown-USD-Measure-C?bidId="
+file = "sources/middletown-usd-measure-c.pdf"
+retrieved = "2026-10-28"
