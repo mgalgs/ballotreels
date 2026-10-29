@@ -1904,3 +1904,9 @@ source = "ballot-question"
 quote = "providing approximately an additional $250,000 annually until ended by voters"
 amount = 250000
 period = "per-year"
+
+# City of Davis Measure W: a general plan amendment; no fiscal statement
+# is printed for it.
+[davis-measure-w]
+source = "ballot-question"
+status = "none-printed"
