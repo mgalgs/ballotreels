@@ -1918,3 +1918,9 @@ source = "impartial-analysis"
 quote = "It is estimated that Measure “Y” will provide an additional $16,000,000 in annual local funding that could be used to maintain and improve City services."
 amount = 16000000
 period = "per-year"
+
+# City of Woodland Measure Z: a general plan amendment; no fiscal
+# statement is printed for it.
+[woodland-measure-z]
+source = "ballot-question"
+status = "none-printed"
