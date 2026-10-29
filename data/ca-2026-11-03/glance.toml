@@ -2648,3 +2648,11 @@ source = "ballot-question"
 quote = "generating approximately $80,000 annually for a period of ten years"
 amount = 80000
 period = "per-year"
+
+# Plumas Lake Elementary School District Measure H: the district's Tax
+# Rate Statement, its total debt service (the bonds are $9,000,000).
+[plumas-lake-elementary-measure-h]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $17.5 million."
+amount = 17500000
+period = "unstated"
