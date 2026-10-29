@@ -1,0 +1,169 @@
+# Recipe E, distilled: one claim per line. The chain: what it is about;
+# that the Constitution lists victims' rights today; the new rights the
+# amendment adds, and what it does not do; what the fiscal note says;
+# the two sides; what a vote does, and what it takes to pass.
+#
+# The card quotes the Secretary of State's page: its heading
+# "Constitutional Amendment #3" as the title, its "As proposed by" line
+# as the origin, the Attorney General's Summary, and the page's "yes"
+# and "no" lines, which are the same for every amendment. The Question
+# (the full amendatory text) is too long for a card.
+#
+# The new rights and the limits are the Attorney General's Summary's,
+# in its order; the existing rights it says the amendment keeps or
+# clarifies are summed up in one line rather than listed. News coverage
+# calls a law like this "Marsy's Law"; no staged official document uses
+# that name, so the script does not.
+#
+# Fiscal: the 114th General Assembly's fiscal note estimates one cost, a
+# one-time increase in local spending of $9,400 in FY26-27 for printing
+# a longer sample ballot, and no other. It is spread across counties'
+# printing with no budget it is compared against, so it is stated
+# without a scale (STANDARD.md rule 6.5, a figure with no official
+# total).
+#
+# Tennessee publishes no official arguments for or against an
+# amendment, so both sides are filed = false and each says so once, in
+# the same number of words.
+
+contest = "tn-2026-11-03-amendment-3"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "sos-page"
+number = "3"
+title = "Constitutional Amendment #3"
+origin = "As proposed by HOUSE JOINT RESOLUTION NO. 94 (113th) & SENATE JOINT RESOLUTION 9 (114th)"
+summary = "This amendment changes Article I, section 35 of the Tennessee Constitution by clarifying existing rights for crime victims and adding new rights. The amendment gives victims new rights: to fair treatment; to be informed about and participate in the parole process; to be protected from harassment, intimidation, and abuse; to be informed of the minimum sentence the convicted criminal will serve, as well as their scheduled release date; and to have their safety, their family's safety, and the public's safety taken into account before any decision is made to release the convicted criminal. The amendment also maintains or clarifies victims' existing rights: to be informed about legal proceedings involving the accused or convicted criminal; to be present at public criminal proceedings; to be informed of any release, transfer, or escape of the accused or convicted criminal; to talk to prosecutors; to make statements about conviction, sentencing, or release of the accused person; to a speedy resolution of the case; to restitution from the convicted criminal; and to be informed of their rights. The amendment does not restrict the powers of prosecutors or courts and does not create a cause of action or claim for damages against the State of Tennessee."
+yes = "A \"yes\" vote is a vote to amend the Constitution and adopt the language in the proposed amendment."
+no = "A \"no\" vote is a vote to keep the current language in the Constitution unchanged."
+
+[[section]]
+id = "what"
+heading = "Amendment 3"
+
+[[section.line]]
+text = "Amendment 3 is about the rights of crime victims."
+sources = ["sos-page", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["clarifying existing rights for crime victims and adding new rights"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the Constitution already lists rights for crime victims; the amendment would keep or clarify them."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "New rights would include being treated with fairness, taking part in the parole process, and protection from harassment, intimidation, and abuse."
+sources = ["sos-page", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["to fair treatment", "participate in the parole process", "to be protected from harassment, intimidation, and abuse"]
+
+[[section.line]]
+text = "Victims would be told the minimum sentence and release date, and the safety of victims, their families and the public would be considered before any release."
+sources = ["sos-page", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["the minimum sentence the convicted criminal will serve", "taken into account before any decision is made to release the convicted criminal"]
+
+[[section.line]]
+text = "The amendment does not restrict the powers of prosecutors or courts, and creates no claim for damages against the state."
+sources = ["sos-page", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["does not restrict the powers of prosecutors or courts"]
+
+[[section]]
+id = "fiscal"
+heading = "What the official documents say"
+
+[[section.line]]
+text = "The Fiscal Review Committee's one estimate is a one-time local cost of $9,400 to print a longer sample ballot."
+sources = ["fiscal-note"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sample-ballot-printing"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Tennessee publishes no official argument for the amendment."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "list"
+source = "sos-page"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Tennessee publishes no official argument against the amendment."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "list"
+source = "sos-page"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the proposed language."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["adopt the language in the proposed amendment"]
+
+[[section.line]]
+text = "A no vote keeps the current language."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["keep the current language in the Constitution unchanged"]
+
+[[section.line]]
+text = "To pass, yes votes must outnumber no votes and be more than half of all votes cast in the governor's race."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
