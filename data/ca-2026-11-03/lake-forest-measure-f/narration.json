@@ -1,0 +1,243 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 66.28,
+  "phrases": [
+    {
+      "text": "Lake Forest Measure F asks the voters of Lake Forest whether to change the term limits for City Council members.",
+      "start": 0.03,
+      "end": 6.81
+    },
+    {
+      "text": "Today, no one may serve on the City Council, or as mayor, for more than two four-year terms.",
+      "start": 7.47,
+      "end": 13.56
+    },
+    {
+      "text": "Measure F would allow two terms in a row, then require a break of at least four years.",
+      "start": 14.22,
+      "end": 19.83
+    },
+    {
+      "text": "After each break, a person could serve two more terms, with no limit on how many times.",
+      "start": 20.49,
+      "end": 26.2
+    },
+    {
+      "text": "Members serving now would get no added terms in a row, but could serve again after a four-year break.",
+      "start": 26.86,
+      "end": 33.03
+    },
+    {
+      "text": "The Orange County Voter Information Guide does not include a cost estimate for the measure.",
+      "start": 33.69,
+      "end": 38.54
+    },
+    {
+      "text": "No argument in favor of Measure F was submitted to the Orange County Voter Information Guide.",
+      "start": 39.2,
+      "end": 45.53
+    },
+    {
+      "text": "Opponents say Measure F replaces the lifetime limit voters passed in 2018, turning limits into careers.",
+      "start": 46.19,
+      "end": 53.8
+    },
+    {
+      "text": "A yes vote means no more than two four-year terms in a row without a four-year break.",
+      "start": 54.46,
+      "end": 60.33
+    },
+    {
+      "text": "A no vote keeps the limit of two four-year terms on council members and the mayor.",
+      "start": 60.99,
+      "end": 66.25
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Lake Forest Measure F asks the voters of Lake Forest whether to change the term limits for City Council members.",
+      "Today, no one may serve on the City Council, or as mayor, for more than two four-year terms.",
+      "Measure F would allow two terms in a row, then require a break of at least four years.",
+      "After each break, a person could serve two more terms, with no limit on how many times.",
+      "Members serving now would get no added terms in a row, but could serve again after a four-year break.",
+      "The Orange County Voter Information Guide does not include a cost estimate for the measure.",
+      "No argument in favor of Measure F was submitted to the Orange County Voter Information Guide.",
+      "Opponents say Measure F replaces the lifetime limit voters passed in 2018, turning limits into careers.",
+      "A yes vote means no more than two four-year terms in a row without a four-year break.",
+      "A no vote keeps the limit of two four-year terms on council members and the mayor."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Lake Forest Measure F asks the voters of Lake Forest whether to change the term limits for City Council members."
+      },
+      "bounds": [
+        0,
+        164160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Lake Forest Measure F asks the voters of Lake Forest whether to change the term limits for City Council members.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, no one may serve on the City Council, or as mayor, for more than two four-year terms."
+      },
+      "bounds": [
+        178560,
+        326160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, no one may serve on the City Council, or as mayor, for more than two four-year terms.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure F would allow two terms in a row, then require a break of at least four years."
+      },
+      "bounds": [
+        340560,
+        476640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure F would allow two terms in a row, then require a break of at least four years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "After each break, a person could serve two more terms, with no limit on how many times."
+      },
+      "bounds": [
+        491040,
+        629520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"After each break, a person could serve two more terms, with no limit on how many times.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Members serving now would get no added terms in a row, but could serve again after a four-year break."
+      },
+      "bounds": [
+        643920,
+        793440
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Members serving now would get no added terms in a row, but could serve again after a four-year break.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The Orange County Voter Information Guide does not include a cost estimate for the measure."
+      },
+      "bounds": [
+        807840,
+        925680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Orange County Voter Information Guide does not include a cost estimate for the measure.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument in favor of Measure F was submitted to the Orange County Voter Information Guide."
+      },
+      "bounds": [
+        940080,
+        1093440
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument in favor of Measure F was submitted to the Orange County Voter Information Guide.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say Measure F replaces the lifetime limit voters passed in 2018, turning limits into careers."
+      },
+      "bounds": [
+        1107840,
+        1291920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say Measure F replaces the lifetime limit voters passed in 2018, turning limits into careers.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote means no more than two four-year terms in a row without a four-year break."
+      },
+      "bounds": [
+        1306320,
+        1448640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote means no more than two four-year terms in a row without a four-year break.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote keeps the limit of two four-year terms on council members and the mayor."
+      },
+      "bounds": [
+        1463040,
+        1590720
+      ]
+    }
+  ],
+  "sha256": "656928874aba006d112fb473b48b7d2ef3f1a626d52e98f1351a2cf66cfbc749"
+}
