@@ -428,6 +428,18 @@ BALLOTS: dict[str, Ballot] = {
                          "Measure S - Ballot Question",
                      "ca-2026-11-03-yountville-measure-y":
                          "Yountville Town Council Staff Report",
+                     # Placer County Elections posts each measure's guide
+                     # pages as one PDF and no combined guide; the card
+                     # names the PDF by its own head.
+                     "ca-2026-11-03-rocklin-unified-measure-d":
+                         "Measure D — School Bond Election – Rocklin "
+                         "Unified School District",
+                     "ca-2026-11-03-tahoe-truckee-unified-measure-p":
+                         "Measure P — Education Parcel Tax Measure – Tahoe "
+                         "Truckee Unified School District",
+                     "ca-2026-11-03-south-placer-fire-measure-b":
+                         "Measure B — South Placer Fire Protection District, "
+                         "Fire and Emergency Medical Response Measure",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

@@ -1,0 +1,157 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; the parcel tax today and when it ends; what
+# it needs to pass; what would change (the new rate, its length,
+# inflation, what the money may pay for); the measure's revenue
+# estimate, as the impartial analysis reports it; one line per side;
+# what a vote does. The exemptions are left to the card's question
+# ("senior exemptions") to keep the film near 60 seconds.
+#
+# The card's title is the PDF's own head; its origin and yes and no lines
+# are County Counsel's Impartial Analysis (the origin stops before the
+# resolution's number, which pdftotext breaks at a hyphen). "Counsel" is
+# heard as "Council" (standard/speakability.txt), so the narration says
+# "the impartial analysis". The district prints its name without a
+# hyphen ("Tahoe Truckee"); the narration says it as printed.
+#
+# No archived source states the district's budget for the $7 million a
+# year to be compared with, so it has no scale (STANDARD.md 6.5; left
+# open). The measure's own findings put parcel tax funding at "over 5%"
+# of the budget and the argument in favor at "over 6%"; both describe
+# today's tax, not the $7 million, and the larger is a side's, so
+# neither is used. $148, $40 and $188 are amounts per parcel (exempt).
+#
+# Sides come from the argument in favor and the argument against; no
+# rebuttal to the argument in favor was submitted, and the rebuttal to
+# the argument against is not used.
+
+contest = "ca-2026-11-03-tahoe-truckee-unified-measure-p"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "P"
+title = "EDUCATION PARCEL TAX MEASURE – TAHOE TRUCKEE UNIFIED SCHOOL DISTRICT"
+origin = "This measure was placed on the ballot by the governing board of the District"
+summary = "To protect quality education in local schools, continue supporting math, science, engineering, technology, arts, and skilled trades/job training programs preparing students for success in college/careers; attracting/retaining highly qualified teachers; and maintaining manageable class sizes, shall Tahoe Truckee Unified School District’s measure be adopted, renewing the expiring $148 annual school parcel tax with a $40 increase, for nine years, with senior exemptions, annual inflation adjustments, independent oversight/ audits, and all funds (approximately $7,000,000 annually) benefiting local students?"
+yes = "A “YES” vote on this Measure is a vote to authorize the special tax described in the measure."
+no = "A “NO” vote on this Measure is a vote against the proposed special tax. If the measure is not approved, Measure AA will continue to be collected according to its existing terms."
+
+[[section]]
+id = "what"
+heading = "Measure P"
+
+[[section.line]]
+text = "Tahoe Truckee Unified School District Measure P asks the district's voters whether to renew its $148 school parcel tax with a $40 increase."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["renewing the expiring $148 annual school parcel tax with a $40 increase"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today's $148 parcel tax, approved in 2018, expires in July 2028."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+text = "Measure P needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "From July 1, 2027, the tax would be $188 per parcel for nine years, rising with inflation by up to 3 percent a year."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section.line]]
+id = "uses"
+text = "The money could pay for academic programs, career training, the arts, libraries, and counseling and nursing."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The measure estimates the tax would raise about $7 million a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say without renewal, over $5 million would be cut, forcing teacher layoffs, and that all funds go to classrooms."
+sources = ["arguments"]
+basis = ["Unless renewed by voters, this funding will expire soon and over $5,000,000 will need to be cut, forcing teacher layoffs, academic program reductions, and increased class sizes.", "All funds go straight to teaching and classroom instruction, and no funds can be used for administrator salaries"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Avoids $5 million in cuts and layoffs", "All funds go to classrooms"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure P raises the parcel tax by $40 with automatic yearly increases, years before the current tax expires."
+sources = ["arguments"]
+basis = ["Measure P is described as a renewal, but it also raises the existing parcel tax from $148 to $188 per parcel, authorizes automatic annual inflation increases, and extends the tax for another nine years.", "Voters should ask why they are being asked to approve a higher tax years before the current one expires."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Raises the tax, with automatic increases", "Asked years before the current tax ends"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is a vote to authorize the special tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["a vote to authorize the special tax"]
+
+[[section.line]]
+text = "A no vote is a vote against it, and the 2018 tax would continue under its existing terms."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["a vote against the proposed special tax"]
+
+[[question]]
+ask = "What would the tax money pay for?"
+lines = ["uses"]

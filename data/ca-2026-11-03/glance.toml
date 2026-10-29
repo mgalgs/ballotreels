@@ -1558,3 +1558,29 @@ direction = "revenue-gain"
 source = "financial-impact"
 status = "no-material-impact"
 quote = "This measure is not anticipated to have a financial impact on the City."
+
+# Rocklin Unified School District Measure D: the district's Tax Rate
+# Statement, its total debt service (the bonds are $288,000,000).
+[rocklin-unified-measure-d]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $657,200,000."
+amount = 657200000
+period = "unstated"
+
+# Tahoe Truckee Unified School District Measure P: a parcel tax, so no
+# tax rate statement; County Counsel's Impartial Analysis gives the
+# measure's revenue estimate.
+[tahoe-truckee-unified-measure-p]
+source = "impartial-analysis"
+quote = "The measure estimates that the tax would generate approximately $7 million annually"
+amount = 7000000
+period = "per-year"
+
+# South Placer Fire Protection District Measure B: a parcel tax, so no
+# tax rate statement; the ballot question gives the ordinance's revenue
+# estimate (its Section 5).
+[south-placer-fire-measure-b]
+source = "ballot-question"
+quote = "to generate approximately $5,750,000 annually"
+amount = 5750000
+period = "per-year"
