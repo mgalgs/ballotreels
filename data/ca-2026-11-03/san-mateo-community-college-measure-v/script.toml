@@ -1,0 +1,151 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; how a college bond is repaid and what it needs to
+# pass; what the money would pay for; the district's tax statement; one
+# line per side; what a vote does.
+#
+# San Mateo County posts the measure's documents one by one, so the card
+# quotes the ballot question, the resolution's heading and its order
+# calling the election from Resolution No. 26-25 (Appendix B and Section
+# 2), and names that resolution as its document. The resolution prints
+# no yes or no lines, so the card has none; the vote lines take their
+# meanings from the impartial analysis and highlight the resolution's
+# own phrases, as Utah's do. The impartial analysis prints no author, so
+# the script never names one. The bond total and the debt service are
+# repaid from a tax on property in the district, and no archived source
+# states the district's budget, so they have no budget scale
+# (STANDARD.md 6.5; left open). The fiscal line gives the tax
+# statement's highest rate beside its average, as it prints both.
+#
+# Whether Measure V raises taxes is what the two sides dispute
+# (supporters: "without raising taxes by a penny"; opponents: "THIS IS
+# A TAX INCREASE!"), so the neutral sections give only the tax
+# statement's rates, years and total, and leave the resolution's
+# "Without increasing current tax rates" to the card and the
+# statement's own "will not increase the 2025-26 tax rate" out of the
+# script (STANDARD.md 6.3). "Cañada" is not narrated (an accented
+# letter, standard/speakability.txt).
+
+contest = "ca-2026-11-03-san-mateo-community-college-measure-v"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "V"
+title = "Without increasing current tax rates and to protect affordable higher education at College of San Mateo, Cañada College, and Skyline College by repairing/constructing science, engineering, math, technology, skilled trades, and career-training classrooms that prepare students for in-demand careers; and repairing roofs, plumbing, electrical, shall San Mateo County Community College District's measure authorizing $848,000,000 in bonds at legal rates be adopted, levying approximately $18 per $100,000 assessed value ($75,000,000 annually) while bonds are outstanding, with independent audits, oversight, and all money locally controlled?"
+origin = "RESOLUTION OF THE BOARD OF TRUSTEES OF THE SAN MATEO COUNTY COMMUNITY COLLEGE DISTRICT ORDERING AN ELECTION TO AUTHORIZE THE ISSUANCE OF GENERAL OBLIGATION BONDS"
+summary = "The Board hereby orders an election and submits to the electors of the District the question of whether general obligation bonds of the District shall be issued and sold in a maximum principal amount of $848,000,000"
+
+[[section]]
+id = "what"
+heading = "Measure V"
+
+[[section.line]]
+text = "San Mateo County Community College District Measure V asks the district's voters whether to approve $848 million in college bonds."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $848,000,000 in bonds"]
+
+[[section]]
+id = "today"
+heading = "How a college bond works"
+
+[[section.line]]
+text = "The district would borrow the money and repay it from a tax on property in the district."
+sources = ["impartial-analysis", "tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure V needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The money would go to listed projects at the three colleges, such as pipes, roofs, safety systems and computer labs."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "university-hall"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+text = "The district's tax statement estimates an average tax of $10.50 per $100,000 of assessed value, and at most $18, through 2048-2049."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section.line]]
+text = "The statement estimates the total to repay, with interest, at about $1.35 billion."
+sources = ["tax-statement"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure V repairs campus buildings over 50 years old and keeps college affordable, all without raising taxes."
+sources = ["argument-for"]
+basis = ["Yet, many campus buildings are more than 50 years old and have never been updated.", "protect affordable college education, maintain quality job training, and repair aging classrooms and labs, all without raising taxes by a penny."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Repairs buildings over 50 years old", "Affordable college without raising taxes"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say this is the district's fifth bond request since 2001, and a new bond means decades more taxes."
+sources = ["argument-against"]
+basis = ["is San Mateo County Community College District's fifth request for more bond debt since 2001.", "A new bond means new debt and decades of additional taxes."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Fifth bond request since 2001", "A new bond means decades more taxes"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote would let the district issue the bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["shall be issued and sold"]
+
+[[section.line]]
+text = "A no vote would prevent the district from issuing the bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["whether general obligation bonds of the District"]
