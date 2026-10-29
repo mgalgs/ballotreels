@@ -1,0 +1,65 @@
+# Archived sources for Windsor Unified School District Measure J,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Sonoma County Registrar of Voters publishes each measure's pages
+# of its guide as one PDF, headed "Local Ballot Measure: J" and footed
+# "Sonoma County" with the guide's page numbers (049M536 to 049M541); no
+# cover page was archived, so the sources name those pages, not a guide
+# title. One PDF backs every source here. County Counsel's Impartial
+# Analysis is the measure's neutral explanation; the district's Tax Rate
+# Statement is its fiscal statement. The pages print an argument in
+# favor and "No Argument Was Submitted Against Measure J", and no
+# rebuttals.
+
+[contest]
+id = "ca-2026-11-03-windsor-unified-measure-j"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:windsor_unified_school_district"
+kind = "measure"
+title = "Windsor Unified School District Measure J: School Repair Bonds"
+
+[[source]]
+id = "measure-question"
+kind = "official-title-summary"
+publisher = "Sonoma County Registrar of Voters, Local Ballot Measure: J, page 049M536: Measure Question and What Your Vote Means"
+credit = "Measure Question, Sonoma County Registrar of Voters"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9321_MeasJ_WindsorUnifSchlDist_Bond_EN.pdf"
+file = "sources/MeasJ_EN.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "County Counsel’s Impartial Analysis of Measure J, Sonoma County Registrar of Voters, Local Ballot Measure: J, page 049M537"
+credit = "Impartial Analysis, Sonoma County Registrar of Voters"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9321_MeasJ_WindsorUnifSchlDist_Bond_EN.pdf"
+file = "sources/MeasJ_EN.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Windsor Unified School District, Tax Rate Statement — Measure J, Sonoma County Registrar of Voters, Local Ballot Measure: J, page 049M537"
+credit = "Tax Rate Statement, Windsor Unified School District"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9321_MeasJ_WindsorUnifSchlDist_Bond_EN.pdf"
+file = "sources/MeasJ_EN.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure J (no argument was submitted against), Sonoma County Registrar of Voters, Local Ballot Measure: J, page 049M538"
+credit = "Arguments, Sonoma County Registrar of Voters"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9321_MeasJ_WindsorUnifSchlDist_Bond_EN.pdf"
+file = "sources/MeasJ_EN.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure J, Sonoma County Registrar of Voters, Local Ballot Measure: J, pages 049M539 to 049M541"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9321_MeasJ_WindsorUnifSchlDist_Bond_EN.pdf"
+file = "sources/MeasJ_EN.pdf"
+retrieved = "2026-10-28"
