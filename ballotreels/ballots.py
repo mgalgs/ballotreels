@@ -265,15 +265,6 @@ BALLOTS: dict[str, Ballot] = {
                          "City of Grand Terrace Resolution No. 2026-21",
                      "ca-2026-11-03-needles-measure-l":
                          "City of Needles Ordinance 684-AC",
-                 },
-                 # pdftotext runs the ordinance's document footer into the
-                 # middle of Needles L's question, and the resolution's
-                 # ballot boxes into Grand Terrace N's
-                 card_strays={
-                     "ca-2026-11-03-grand-terrace-measure-n":
-                         ("Yes", "No"),
-                     "ca-2026-11-03-needles-measure-l":
-                         ("09960 00000\\45188769.I",),
                      "ca-2026-11-03-albany-measure-o":
                          "Alameda County Composite Voter Information Guide",
                      "ca-2026-11-03-albany-measure-p":
@@ -298,6 +289,15 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 081882",
                      "ca-2026-11-03-san-mateo-county-measure-u":
                          "Resolution No. 081882",
+                 },
+                 # pdftotext runs the ordinance's document footer into the
+                 # middle of Needles L's question, and the resolution's
+                 # ballot boxes into Grand Terrace N's
+                 card_strays={
+                     "ca-2026-11-03-grand-terrace-measure-n":
+                         ("Yes", "No"),
+                     "ca-2026-11-03-needles-measure-l":
+                         ("09960 00000\\45188769.I",),
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",
