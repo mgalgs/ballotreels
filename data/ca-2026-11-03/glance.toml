@@ -339,3 +339,13 @@ quote = "The measure could bring an average of $100 million to $150 million annu
 amount = 150000000
 period = "per-year"
 direction = "revenue-gain"
+
+# City of San Mateo Measure H: ACRE posts no tax rate statement or fiscal
+# analysis; the one estimate is the City Attorney's Impartial Analysis
+# (and the ballot question's).
+[san-mateo-measure-h]
+source = "impartial-analysis"
+quote = "the proposed tax is estimated to generate approximately $7 million a year in locally controlled funding."
+amount = 7000000
+period = "per-year"
+direction = "revenue-gain"
