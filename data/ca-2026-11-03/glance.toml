@@ -2630,3 +2630,12 @@ source = "impartial-analysis"
 quote = "The District estimates the tax would generate approximately $1.1 million annually."
 amount = 1100000
 period = "per-year"
+
+# Mesa Community Services District Measure Y: a parcel tax, so no tax
+# rate statement, and the impartial analysis gives no revenue figure; the
+# one estimate is the ballot question's first-year revenue.
+[mesa-csd-measure-y]
+source = "ballot-question"
+quote = "raising approximately $64,500 in year one"
+amount = 64500
+period = "per-year"
