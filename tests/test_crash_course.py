@@ -3,7 +3,6 @@ contest index, its cache key, and its layout from committed data alone.
 """
 
 import json
-import shutil
 import tempfile
 import unittest
 from pathlib import Path
@@ -15,6 +14,8 @@ from ballotreels.index import (CRASH_COURSE, ContestIndexError, key_for,
 from ballotreels.narration import match_phrases
 from ballotreels.narration_store import record
 from ballotreels.standard import load_standard
+
+from .helpers import copy_election
 
 REPO = Path(__file__).resolve().parent.parent
 UT = REPO / "data" / "ut-2026-11-03"
@@ -42,8 +43,8 @@ class ElectionCopyTestCase(unittest.TestCase):
     def setUp(self):
         tmp = tempfile.TemporaryDirectory()
         self.addCleanup(tmp.cleanup)
-        self.dir = Path(tmp.name) / self.source.name
-        shutil.copytree(self.source, self.dir)
+        self.dir = copy_election(self.source,
+                                 Path(tmp.name) / self.source.name)
 
 
 class IdentityTest(unittest.TestCase):

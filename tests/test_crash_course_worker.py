@@ -4,7 +4,6 @@ shown at the top of its state's page."""
 
 import http.client
 import json
-import shutil
 import tempfile
 import threading
 import unittest
@@ -19,7 +18,7 @@ from ballotreels.site.server import build_deps, make_servers
 from ballotreels.storage import LocalStorage
 from ballotreels.worker import Worker, WorkerClient
 
-from .helpers import git_commit_all
+from .helpers import copy_election, git_commit_all
 from .test_crash_course import UT, edit_vote_line
 from .test_serve_public import _make_config
 
@@ -45,7 +44,7 @@ class CrashCourseServeTestCase(unittest.TestCase):
         # one checkout for both tiers, as when they run the same commit
         self.repo = self.tmp / "repo"
         self.election = self.repo / "data" / UT.name
-        shutil.copytree(UT, self.election)
+        copy_election(UT, self.election)
         self._old_root = site_config.DATA_ROOT
         site_config.DATA_ROOT = self.repo / "data"
         self.addCleanup(self._restore_root)
