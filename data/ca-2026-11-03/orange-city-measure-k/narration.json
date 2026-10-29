@@ -1,0 +1,287 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 85.52,
+  "phrases": [
+    {
+      "text": "City of Orange Measure K asks city voters whether to adopt a city charter, making Orange a charter city.",
+      "start": 0.03,
+      "end": 7.27
+    },
+    {
+      "text": "Today, Orange is a general law city, governed mainly by state law.",
+      "start": 7.93,
+      "end": 12.85
+    },
+    {
+      "text": "A charter city still follows state law on statewide matters, but has authority over its own municipal affairs.",
+      "start": 13.51,
+      "end": 21.22
+    },
+    {
+      "text": "The City Council placed Measure K on the ballot, and it needs a majority to pass.",
+      "start": 21.88,
+      "end": 26.49
+    },
+    {
+      "text": "The charter would set lifetime limits of two four-year terms for mayor and three for council members, not counting earlier terms.",
+      "start": 27.15,
+      "end": 35.52
+    },
+    {
+      "text": "The charter would create an open space reserve of city land, and taking land out of it would need voter approval.",
+      "start": 36.18,
+      "end": 43.45
+    },
+    {
+      "text": "The charter also covers city contracting, the taking of private property, balanced budgets and yearly independent audits.",
+      "start": 44.11,
+      "end": 51.89
+    },
+    {
+      "text": "The Orange County Voter Information Guide does not include a cost estimate for the measure.",
+      "start": 52.55,
+      "end": 57.33
+    },
+    {
+      "text": "Supporters say Measure K gives voters the final say on open space and sets lifetime limits for mayor and council.",
+      "start": 57.99,
+      "end": 65.9
+    },
+    {
+      "text": "Opponents say Measure K lets the current council reset and extend its terms, and charter cities face higher legal costs.",
+      "start": 66.56,
+      "end": 74.63
+    },
+    {
+      "text": "A yes vote approves the charter and makes Orange a charter city.",
+      "start": 75.29,
+      "end": 79.33
+    },
+    {
+      "text": "A no vote rejects the charter, and Orange stays a general law city governed by state law.",
+      "start": 79.99,
+      "end": 85.49
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "City of Orange Measure K asks city voters whether to adopt a city charter, making Orange a charter city.",
+      "Today, Orange is a general law city, governed mainly by state law.",
+      "A charter city still follows state law on statewide matters, but has authority over its own municipal affairs.",
+      "The City Council placed Measure K on the ballot, and it needs a majority to pass.",
+      "The charter would set lifetime limits of two four-year terms for mayor and three for council members, not counting earlier terms.",
+      "The charter would create an open space reserve of city land, and taking land out of it would need voter approval.",
+      "The charter also covers city contracting, the taking of private property, balanced budgets and yearly independent audits.",
+      "The Orange County Voter Information Guide does not include a cost estimate for the measure.",
+      "Supporters say Measure K gives voters the final say on open space and sets lifetime limits for mayor and council.",
+      "Opponents say Measure K lets the current council reset and extend its terms, and charter cities face higher legal costs.",
+      "A yes vote approves the charter and makes Orange a charter city.",
+      "A no vote rejects the charter, and Orange stays a general law city governed by state law."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "City of Orange Measure K asks city voters whether to adopt a city charter, making Orange a charter city."
+      },
+      "bounds": [
+        0,
+        175200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"City of Orange Measure K asks city voters whether to adopt a city charter, making Orange a charter city.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, Orange is a general law city, governed mainly by state law."
+      },
+      "bounds": [
+        189600,
+        309120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, Orange is a general law city, governed mainly by state law.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A charter city still follows state law on statewide matters, but has authority over its own municipal affairs."
+      },
+      "bounds": [
+        323520,
+        510000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A charter city still follows state law on statewide matters, but has authority over its own municipal affairs.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The City Council placed Measure K on the ballot, and it needs a majority to pass."
+      },
+      "bounds": [
+        524400,
+        636480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Council placed Measure K on the ballot, and it needs a majority to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The charter would set lifetime limits of two four-year terms for mayor and three for council members, not counting earlier terms."
+      },
+      "bounds": [
+        650880,
+        853200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The charter would set lifetime limits of two four-year terms for mayor and three for council members, not counting earlier terms.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The charter would create an open space reserve of city land, and taking land out of it would need voter approval."
+      },
+      "bounds": [
+        867600,
+        1043520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The charter would create an open space reserve of city land, and taking land out of it would need voter approval.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The charter also covers city contracting, the taking of private property, balanced budgets and yearly independent audits."
+      },
+      "bounds": [
+        1057920,
+        1246080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The charter also covers city contracting, the taking of private property, balanced budgets and yearly independent audits.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The Orange County Voter Information Guide does not include a cost estimate for the measure."
+      },
+      "bounds": [
+        1260480,
+        1376640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Orange County Voter Information Guide does not include a cost estimate for the measure.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say Measure K gives voters the final say on open space and sets lifetime limits for mayor and council."
+      },
+      "bounds": [
+        1391040,
+        1582320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure K gives voters the final say on open space and sets lifetime limits for mayor and council.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say Measure K lets the current council reset and extend its terms, and charter cities face higher legal costs."
+      },
+      "bounds": [
+        1596720,
+        1791840
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say Measure K lets the current council reset and extend its terms, and charter cities face higher legal costs.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote approves the charter and makes Orange a charter city."
+      },
+      "bounds": [
+        1806240,
+        1904640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote approves the charter and makes Orange a charter city.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote rejects the charter, and Orange stays a general law city governed by state law."
+      },
+      "bounds": [
+        1919040,
+        2052480
+      ]
+    }
+  ],
+  "sha256": "90b3b02d5468a6a13fd520168ee40ed2ea1a39ea6947f198cdf849572e059b31"
+}
