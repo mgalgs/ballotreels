@@ -1,0 +1,61 @@
+# Archived sources for City of Pismo Beach Measure E, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The San Luis Obispo County Clerk-Recorder prints each ballot type's
+# County Voter Information Guide as one PDF; pages 30 to 33 of Ballot
+# Type 40 (the ordinance's full text, the City Attorney's impartial
+# analysis, the arguments for and against, the rebuttal to the argument
+# in favor, and the notice that no rebuttal to the argument against was
+# filed) were cut into one excerpt. The guide does not print the ballot
+# question; the City Council's Resolution No. R-2026-043, which places
+# the measure, prints it in Section 1 (with a blank for the letter the
+# county later assigned). Resolutions R-2026-044 and -045 (who may write
+# the arguments and rebuttals) are archived but not cited. The impartial
+# analysis is the measure's neutral explanation. No tax rate statement
+# or fiscal statement applies. The ballot labels the measure "Measure
+# E-26"; the project names it by its bare letter.
+
+[contest]
+id = "ca-2026-11-03-pismo-beach-measure-e"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:pismo_beach"
+kind = "measure"
+title = "Pismo Beach Measure E: Four-Year Mayoral Terms"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Pismo Beach, Resolution No. R-2026-043, Ordering the Submission to the Qualified Electors of the City a Measure and Ordinance Relating to Mayoral Terms, Section 1, as posted by the County of San Luis Obispo Clerk-Recorder"
+credit = "City of Pismo Beach Resolution No. R-2026-043"
+url = "https://www.slocounty.ca.gov/departments/clerk-recorder/forms-documents/elections-and-voting/current-elections/2026-11-03/measures/resolution-no-r-2026-043"
+file = "sources/resolution-no-r-2026-043.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City of Pismo Beach, Impartial Analysis of Measure E-26, Dean J. Pucci, City Attorney, County of San Luis Obispo Clerk-Recorder, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 40, page 31"
+credit = "City Attorney’s Impartial Analysis, San Luis Obispo County Voter Information Guide"
+url = "https://www.slocounty.ca.gov/departments/clerk-recorder/forms-documents/elections-and-voting/current-elections/2026-11-03/voter-information-guides/ballot-type-40-november-3,-2026,-general-election-voter-information-guide"
+file = "sources/VIG-bt40_pp30-33.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure E-26, Argument Against Measure E-26, and Rebuttal to the Argument in Favor, County of San Luis Obispo Clerk-Recorder, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 40, pages 32 to 33 (“There was no rebuttal to the argument against Measure E-26 filed”)"
+credit = "Arguments, San Luis Obispo County Voter Information Guide"
+url = "https://www.slocounty.ca.gov/departments/clerk-recorder/forms-documents/elections-and-voting/current-elections/2026-11-03/voter-information-guides/ballot-type-40-november-3,-2026,-general-election-voter-information-guide"
+file = "sources/VIG-bt40_pp30-33.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure E-26, City of Pismo Beach, an ordinance adding Section 2.04.005 of the Pismo Beach Municipal Code, County of San Luis Obispo Clerk-Recorder, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 40, pages 30 to 31"
+credit = "Measure E-26 full text, San Luis Obispo County Voter Information Guide"
+url = "https://www.slocounty.ca.gov/departments/clerk-recorder/forms-documents/elections-and-voting/current-elections/2026-11-03/voter-information-guides/ballot-type-40-november-3,-2026,-general-election-voter-information-guide"
+file = "sources/VIG-bt40_pp30-33.pdf"
+retrieved = "2026-10-28"
