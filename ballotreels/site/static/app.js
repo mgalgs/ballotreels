@@ -448,12 +448,14 @@ const SERVER_PATHS = /^\/(?:api|static|v|admin)(?:\/|$)/;
 
 // Same-site links navigate in the app rather than reloading the page.
 // An old-style "#/..." href is taken from the site root, so it never
-// lands on top of a short path (/ut#/zip/84101).
+// lands on top of a short path (/ut#/zip/84101). The target is read as
+// an attribute: an SVG link's .target is an object, so always truthy.
 document.addEventListener("click", (event) => {
   if (event.defaultPrevented || event.button !== 0 || event.metaKey ||
       event.ctrlKey || event.shiftKey || event.altKey) return;
   const link = event.target.closest("a[href]");
-  if (!link || link.target || link.hasAttribute("download")) return;
+  if (!link || link.getAttribute("target") ||
+      link.hasAttribute("download")) return;
   const raw = link.getAttribute("href");
   const url = new URL(raw.startsWith("#") ? `/${raw}` : raw, location.href);
   if (url.origin !== location.origin || SERVER_PATHS.test(url.pathname)) {
