@@ -1459,6 +1459,12 @@ a.contest:hover {
   line-height: 1.1;
 }
 
+@media (max-width: 380px) {
+  .picker-title {
+    font-size: 1.55rem;
+  }
+}
+
 .picker-close {
   flex: 0 0 auto;
 }
