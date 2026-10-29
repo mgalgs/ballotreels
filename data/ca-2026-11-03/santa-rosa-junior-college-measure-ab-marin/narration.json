@@ -1,0 +1,243 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 83.3,
+  "phrases": [
+    {
+      "text": "Measure AB asks voters in the district that runs Santa Rosa Junior College whether to approve $830 million in college bonds.",
+      "start": 0.03,
+      "end": 9.04
+    },
+    {
+      "text": "The district would sell the bonds over time and repay them from property taxes in the district.",
+      "start": 9.7,
+      "end": 15.62
+    },
+    {
+      "text": "Measure AB is on the ballot in Sonoma, Marin and Mendocino counties, and needs 55 percent of the vote to pass.",
+      "start": 16.28,
+      "end": 24.29
+    },
+    {
+      "text": "The money could upgrade classrooms, labs and equipment, modernize training facilities and repair leaky roofs.",
+      "start": 24.95,
+      "end": 32.68
+    },
+    {
+      "text": "The district's tax rate statement estimates an average tax of $22 per $100,000 of assessed value, and at most $25, until 2058-2059.",
+      "start": 33.34,
+      "end": 45.92
+    },
+    {
+      "text": "The statement estimates the total to repay, with interest, at about $1.76 billion.",
+      "start": 46.58,
+      "end": 53.12
+    },
+    {
+      "text": "Opponents say the district has not shown how it came up with $830 million, and interest greatly raises the payback.",
+      "start": 53.78,
+      "end": 62.13
+    },
+    {
+      "text": "Supporters say Measure AB trains local nurses, firefighters and skilled workers, and replaces expiring bonds without raising tax rates.",
+      "start": 62.79,
+      "end": 72.47
+    },
+    {
+      "text": "A yes vote will authorize the district to issue the bonds and levy taxes to repay them.",
+      "start": 73.13,
+      "end": 78.21
+    },
+    {
+      "text": "A no vote will not authorize the bonds or the taxes to repay them.",
+      "start": 78.87,
+      "end": 83.27
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure AB asks voters in the district that runs Santa Rosa Junior College whether to approve $830 million in college bonds.",
+      "The district would sell the bonds over time and repay them from property taxes in the district.",
+      "Measure AB is on the ballot in Sonoma, Marin and Mendocino counties, and needs 55 percent of the vote to pass.",
+      "The money could upgrade classrooms, labs and equipment, modernize training facilities and repair leaky roofs.",
+      "The district's tax rate statement estimates an average tax of $22 per $100,000 of assessed value, and at most $25, until 2058-2059.",
+      "The statement estimates the total to repay, with interest, at about $1.76 billion.",
+      "Opponents say the district has not shown how it came up with $830 million, and interest greatly raises the payback.",
+      "Supporters say Measure AB trains local nurses, firefighters and skilled workers, and replaces expiring bonds without raising tax rates.",
+      "A yes vote will authorize the district to issue the bonds and levy taxes to repay them.",
+      "A no vote will not authorize the bonds or the taxes to repay them."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure AB asks voters in the district that runs Santa Rosa Junior College whether to approve $830 million in college bonds."
+      },
+      "bounds": [
+        0,
+        217680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure AB asks voters in the district that runs Santa Rosa Junior College whether to approve $830 million in college bonds.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The district would sell the bonds over time and repay them from property taxes in the district."
+      },
+      "bounds": [
+        232080,
+        375600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district would sell the bonds over time and repay them from property taxes in the district.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure AB is on the ballot in Sonoma, Marin and Mendocino counties, and needs 55 percent of the vote to pass."
+      },
+      "bounds": [
+        390000,
+        583680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure AB is on the ballot in Sonoma, Marin and Mendocino counties, and needs 55 percent of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money could upgrade classrooms, labs and equipment, modernize training facilities and repair leaky roofs."
+      },
+      "bounds": [
+        598080,
+        785040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money could upgrade classrooms, labs and equipment, modernize training facilities and repair leaky roofs.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The district's tax rate statement estimates an average tax of $22 per $100,000 of assessed value, and at most $25, until 2058-2059."
+      },
+      "bounds": [
+        799440,
+        1102800
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district's tax rate statement estimates an average tax of $22 per $100,000 of assessed value, and at most $25, until 2058-2059.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The statement estimates the total to repay, with interest, at about $1.76 billion."
+      },
+      "bounds": [
+        1117200,
+        1275600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The statement estimates the total to repay, with interest, at about $1.76 billion.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say the district has not shown how it came up with $830 million, and interest greatly raises the payback."
+      },
+      "bounds": [
+        1290000,
+        1491840
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say the district has not shown how it came up with $830 million, and interest greatly raises the payback.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say Measure AB trains local nurses, firefighters and skilled workers, and replaces expiring bonds without raising tax rates."
+      },
+      "bounds": [
+        1506240,
+        1740000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure AB trains local nurses, firefighters and skilled workers, and replaces expiring bonds without raising tax rates.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote will authorize the district to issue the bonds and levy taxes to repay them."
+      },
+      "bounds": [
+        1754400,
+        1877760
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote will authorize the district to issue the bonds and levy taxes to repay them.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote will not authorize the bonds or the taxes to repay them."
+      },
+      "bounds": [
+        1892160,
+        1999200
+      ]
+    }
+  ],
+  "sha256": "33143860a42a825c3055fbded251ec712a6e175e6f2f12dd33c7b00fa86539cb"
+}
