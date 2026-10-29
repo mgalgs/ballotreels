@@ -8,9 +8,11 @@ lake or hole inside filled, and the edge of each piece of land left
 traced, simplified and kept if it is big enough to see at icon size.
 
 Both this outline and the state page's hero (ballotreels.geo.counties)
-draw the state's main body only (`drawn`): a ring both tiny and far from
-the rest, such as the Northwestern Hawaiian Islands strung 2,000 km
-west of Hawaii's main islands, is left out of the drawing and its box.
+draw the state's main body only (`drawn`): the rings farthest from the
+state's centre, if together they hold under 15% of its area and each is
+well outside the box of the rest, such as the Northwestern Hawaiian
+Islands strung 2,000 km west of Hawaii's main islands, are left out of
+the drawing and its box.
 """
 
 from __future__ import annotations
@@ -33,11 +35,11 @@ MIN_PART_AREA = 25.0
 
 _PAD = 2
 
-# The far, tiny rings `drawn` leaves out: among the rings that together
-# hold the last OUTLIER_SHARE of the state's area, smallest first, and
-# outside the box of the others by more than OUTLIER_GAP of its longer
-# side.
-OUTLIER_SHARE = 0.005
+# The far, tiny rings `drawn` leaves out: the most rings, farthest
+# from the state's centre first, that together hold under
+# OUTLIER_SHARE of the state's area, each outside the box of the rest
+# by more than OUTLIER_GAP of that box's longer side.
+OUTLIER_SHARE = 0.15
 OUTLIER_GAP = 0.15
 
 
@@ -45,7 +47,11 @@ def drawn(counties: list[list[list[tuple[float, float]]]]
           ) -> list[list[list[tuple[float, float]]]]:
     """Each county's rings (lon, lat) less the far, tiny outliers, in
     the same order (a county may be left with none); `counties` itself
-    if nothing is left out. Areas and distances are measured with
+    if nothing is left out. The rings are taken farthest first (their
+    box's centre from the state's area-weighted centre) and the longest
+    run of them dropped that holds under OUTLIER_SHARE of the area, each
+    of it outside the box of the rings kept by more than OUTLIER_GAP of
+    that box's longer side. Areas and distances are measured with
     longitude scaled by the cosine of the middle latitude."""
     pts = [p for rings in counties for ring in rings for p in ring]
     if not pts:
@@ -53,38 +59,44 @@ def drawn(counties: list[list[list[tuple[float, float]]]]
     y0 = min(y for _, y in pts)
     y1 = max(y for _, y in pts)
     squash = math.cos(math.radians((y0 + y1) / 2))
-    rings = [(i, j, [(x * squash, y) for x, y in ring])
-             for i, county in enumerate(counties)
-             for j, ring in enumerate(county) if ring]
-    areas = [_area(ring) for _, _, ring in rings]
-    total = sum(areas)
+    rings = []
+    for i, county in enumerate(counties):
+        for j, ring in enumerate(county):
+            if not ring:
+                continue
+            xs = [x * squash for x, _ in ring]
+            ys = [y for _, y in ring]
+            rings.append(((i, j), _area(list(zip(xs, ys))),
+                          (min(xs), min(ys), max(xs), max(ys))))
+    total = sum(area for _, area, _ in rings)
     if not total > 0:
         return counties
-    small, held = set(), 0.0
-    for k in sorted(range(len(rings)), key=lambda k: areas[k]):
-        held += areas[k]
-        if held > OUTLIER_SHARE * total:
+    cx = sum(area * (b[0] + b[2]) / 2 for _, area, b in rings) / total
+    cy = sum(area * (b[1] + b[3]) / 2 for _, area, b in rings) / total
+    rings.sort(key=lambda r: -math.hypot((r[2][0] + r[2][2]) / 2 - cx,
+                                         (r[2][1] + r[2][3]) / 2 - cy))
+    # rest[k]: the box of rings[k:], the rings kept if k are dropped.
+    rest = [None] * len(rings)
+    box = None
+    for k in range(len(rings) - 1, -1, -1):
+        b = rings[k][2]
+        box = b if box is None else (min(box[0], b[0]), min(box[1], b[1]),
+                                     max(box[2], b[2]), max(box[3], b[3]))
+        rest[k] = box
+    drop, held = 0, 0.0
+    for k in range(1, len(rings)):
+        held += rings[k - 1][1]
+        if not held < OUTLIER_SHARE * total:
             break
-        small.add(k)
-    if not small:
+        bx0, by0, bx1, by1 = rest[k]
+        gap = OUTLIER_GAP * max(bx1 - bx0, by1 - by0)
+        if all(b[0] > bx1 + gap or b[2] < bx0 - gap or
+               b[1] > by1 + gap or b[3] < by0 - gap
+               for _, _, b in rings[:k]):
+            drop = k
+    if not drop:
         return counties
-    body = [p for k, (_, _, ring) in enumerate(rings) if k not in small
-            for p in ring]
-    bx0 = min(x for x, _ in body)
-    bx1 = max(x for x, _ in body)
-    by0 = min(y for _, y in body)
-    by1 = max(y for _, y in body)
-    gap = OUTLIER_GAP * max(bx1 - bx0, by1 - by0)
-    dropped = set()
-    for k in small:
-        i, j, ring = rings[k]
-        if (min(x for x, _ in ring) > bx1 + gap or
-                max(x for x, _ in ring) < bx0 - gap or
-                min(y for _, y in ring) > by1 + gap or
-                max(y for _, y in ring) < by0 - gap):
-            dropped.add((i, j))
-    if not dropped:
-        return counties
+    dropped = {key for key, _, _ in rings[:drop]}
     return [[ring for j, ring in enumerate(county) if (i, j) not in dropped]
             for i, county in enumerate(counties)]
 
