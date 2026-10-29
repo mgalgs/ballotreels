@@ -1,9 +1,8 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what
 # the question asks, and that each town's ballot fills in its own names;
-# how it got on the ballot, when it returns and the vote it needs; what a
-# School Administrative Unit's central office is; the two limits, what
-# they leave out, and the override; that no cost estimate exists; the two
-# sides; what a vote does.
+# how it got on the ballot and when it returns; the vote it needs; the
+# two limits, what they leave out, and the supermajority override; that
+# no cost estimate exists; the two sides; what a vote does.
 #
 # New Hampshire has no voter guide. The card quotes the Secretary of
 # State's "Questions on the General Election Ballot 2026": the heading the
@@ -21,8 +20,8 @@
 # The explanation is the question's own words and HB 1300 as chaptered.
 # "These caps ... do not affect classroom instruction, school-based
 # services, or other municipal expenditures" is the question's wording,
-# quoted and attributed to it, not a claim the narrator makes. "SAU" is
-# said as "School Administrative Unit" for the transcript check. The
+# quoted and attributed to it, not a claim the narrator makes. The card's
+# "SAU" is not said; the narration says "central office". The
 # House Election Law committee's majority and minority reports are
 # committee reports, not voter arguments, and are not cited.
 #
@@ -51,23 +50,14 @@ id = "what"
 heading = "Question 2"
 
 [[section.line]]
-text = "Question 2 asks whether to limit school property tax growth for two years."
-sources = ["questions", "hb-1300"]
-
-[section.line.visual]
-kind = "page"
-source = "questions"
-highlight = ["limit property tax growth"]
-
-[[section.line]]
 id = "names"
-text = "The ballot in each town fills in its own names in the brackets."
+text = "Question 2 asks whether to limit school property tax growth for two years; each ballot fills in local names."
 sources = ["questions", "hb-1300"]
 
 [section.line.visual]
 kind = "page"
 source = "questions"
-highlight = ["[name of municipality]", "[name(s) of school district(s)]"]
+highlight = ["limit property tax growth", "[name of municipality]", "[name(s) of school district(s)]"]
 
 [[section]]
 id = "background"
@@ -75,12 +65,16 @@ heading = "How it got on the ballot"
 
 [[section.line]]
 id = "law"
-text = "A 2026 state law, House Bill 1300, puts the question on ballots this year and in 2028."
+text = "A 2026 state law puts the question on ballots this year and in 2028."
 sources = ["hb-1300"]
 
 [section.line.visual]
 kind = "illustration"
 name = "legislative-chamber"
+
+[[section]]
+id = "today"
+heading = "What it needs to pass"
 
 [[section.line]]
 id = "three-fifths"
@@ -88,23 +82,11 @@ text = "The question needs a three-fifths majority to pass."
 sources = ["questions", "hb-1300"]
 
 [[section]]
-id = "today"
-heading = "Today"
-
-[[section.line]]
-text = "A school administrative unit runs the central office for its school districts."
-sources = ["hb-1300"]
-
-[section.line.visual]
-kind = "illustration"
-name = "school-board-room"
-
-[[section]]
 id = "change"
 heading = "What would change"
 
 [[section.line]]
-text = "The school property tax levy could grow only with inflation and new construction."
+text = "The school tax levy could grow only with inflation and new construction."
 sources = ["questions", "hb-1300"]
 
 [section.line.visual]
@@ -113,7 +95,7 @@ source = "questions"
 highlight = ["adjusted for inflation and new construction"]
 
 [[section.line]]
-text = "Central office spending could not exceed 6 percent of school district appropriations."
+text = "Central office spending could not exceed 6 percent of district appropriations."
 sources = ["questions", "hb-1300"]
 
 [section.line.visual]
@@ -132,13 +114,23 @@ highlight = ["do not affect classroom instruction, school-based services, or oth
 
 [[section.line]]
 id = "bonds"
-text = "Bond payments for buildings are left out of both limits."
+text = "Bonded building costs count toward neither limit."
 sources = ["questions", "hb-1300"]
 
 [section.line.visual]
 kind = "page"
 source = "questions"
 highlight = ["bonded capital costs are excluded from both limits"]
+
+[[section.line]]
+id = "override"
+text = "A district could exceed either limit by a supermajority vote."
+sources = ["questions", "hb-1300"]
+
+[section.line.visual]
+kind = "page"
+source = "questions"
+highlight = ["These limits may be overridden as provided in RSA 32:5-i"]
 
 [[section]]
 id = "fiscal"
@@ -188,7 +180,7 @@ id = "vote"
 heading = "What your vote means"
 
 [[section.line]]
-text = "A yes vote is for both limits."
+text = "A yes vote adopts the limits."
 sources = ["questions", "hb-1300"]
 
 [section.line.visual]
@@ -197,12 +189,13 @@ source = "questions"
 highlight = ["If adopted for a two-year period"]
 
 [[section.line]]
-text = "A no vote is against them."
+text = "A no vote does not adopt the limits."
 sources = ["questions", "hb-1300"]
 
 [section.line.visual]
 kind = "page"
 source = "questions"
+highlight = ["Shall the [name of municipality] limit property tax growth"]
 
 [[question]]
 ask = "Why does the question on my ballot name my town?"
@@ -215,3 +208,7 @@ lines = ["three-fifths"]
 [[question]]
 ask = "Will the question come back?"
 lines = ["law"]
+
+[[question]]
+ask = "Can a district go over the limits?"
+lines = ["override"]
