@@ -1,0 +1,291 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 68.65,
+  "phrases": [
+    {
+      "text": "Proposal 26-1 asks whether Michigan should hold a convention to revise its constitution.",
+      "start": 0.03,
+      "end": 6.47
+    },
+    {
+      "text": "The constitution puts this question to voters every 16 years.",
+      "start": 7.13,
+      "end": 10.95
+    },
+    {
+      "text": "A convention could rewrite the constitution, change parts, or change nothing.",
+      "start": 11.61,
+      "end": 16.87
+    },
+    {
+      "text": "Today's constitution came from the last convention, in 1961.",
+      "start": 17.53,
+      "end": 21.87
+    },
+    {
+      "text": "A yes vote would mean electing 148 delegates in 2027 to draft a revision.",
+      "start": 22.53,
+      "end": 29.27
+    },
+    {
+      "text": "Voters would then approve or reject the revision.",
+      "start": 29.93,
+      "end": 33.3
+    },
+    {
+      "text": "The Senate Fiscal Agency estimates about $10.2 million for the convention, based on the 1961 convention's costs.",
+      "start": 33.96,
+      "end": 42.14
+    },
+    {
+      "text": "The House Fiscal Agency estimates about $78.3 million in all, including about $56 million for two elections of delegates.",
+      "start": 42.8,
+      "end": 52.65
+    },
+    {
+      "text": "No official argument for the proposal was published.",
+      "start": 53.31,
+      "end": 56.49
+    },
+    {
+      "text": "No official argument against the proposal was published.",
+      "start": 57.15,
+      "end": 60.16
+    },
+    {
+      "text": "A yes vote means delegates would draft a general revision.",
+      "start": 60.82,
+      "end": 64.47
+    },
+    {
+      "text": "A no vote means no convention in 2027.",
+      "start": 65.13,
+      "end": 68.62
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Proposal 26-1 asks whether Michigan should hold a convention to revise its constitution.",
+      "The constitution puts this question to voters every 16 years.",
+      "A convention could rewrite the constitution, change parts, or change nothing.",
+      "Today's constitution came from the last convention, in 1961.",
+      "A yes vote would mean electing 148 delegates in 2027 to draft a revision.",
+      "Voters would then approve or reject the revision.",
+      "The Senate Fiscal Agency estimates about $10.2 million for the convention, based on the 1961 convention's costs.",
+      "The House Fiscal Agency estimates about $78.3 million in all, including about $56 million for two elections of delegates.",
+      "No official argument for the proposal was published.",
+      "No official argument against the proposal was published.",
+      "A yes vote means delegates would draft a general revision.",
+      "A no vote means no convention in 2027."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Proposal 26-1 asks whether Michigan should hold a convention to revise its constitution."
+      },
+      "bounds": [
+        0,
+        156000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Proposal 26-1 asks whether Michigan should hold a convention to revise its constitution.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The constitution puts this question to voters every 16 years."
+      },
+      "bounds": [
+        170400,
+        263520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The constitution puts this question to voters every 16 years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A convention could rewrite the constitution, change parts, or change nothing."
+      },
+      "bounds": [
+        277920,
+        405600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A convention could rewrite the constitution, change parts, or change nothing.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today's constitution came from the last convention, in 1961."
+      },
+      "bounds": [
+        420000,
+        525600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today's constitution came from the last convention, in 1961.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote would mean electing 148 delegates in 2027 to draft a revision."
+      },
+      "bounds": [
+        540000,
+        703200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote would mean electing 148 delegates in 2027 to draft a revision.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Voters would then approve or reject the revision."
+      },
+      "bounds": [
+        717600,
+        799920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Voters would then approve or reject the revision.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The Senate Fiscal Agency estimates about $10.2 million for the convention, based on the 1961 convention's costs."
+      },
+      "bounds": [
+        814320,
+        1012080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Senate Fiscal Agency estimates about $10.2 million for the convention, based on the 1961 convention's costs.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The House Fiscal Agency estimates about $78.3 million in all, including about $56 million for two elections of delegates."
+      },
+      "bounds": [
+        1026480,
+        1264320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The House Fiscal Agency estimates about $78.3 million in all, including about $56 million for two elections of delegates.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No official argument for the proposal was published."
+      },
+      "bounds": [
+        1278720,
+        1356480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No official argument for the proposal was published.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No official argument against the proposal was published."
+      },
+      "bounds": [
+        1370880,
+        1444560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No official argument against the proposal was published.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote means delegates would draft a general revision."
+      },
+      "bounds": [
+        1458960,
+        1548000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote means delegates would draft a general revision.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote means no convention in 2027."
+      },
+      "bounds": [
+        1562400,
+        1647600
+      ]
+    }
+  ],
+  "sha256": "a59fe627d5f0c9c572727bb2d9e94d3fffde6c80b9fee2b23b341fa1d0c367b7",
+  "take": {
+    "sha256": "f6123b74bccefc34c6b8d83718aa8c5b20e59c3460d77e660e0e5f7d524cf9bf",
+    "bytes": 3295244
+  }
+}
