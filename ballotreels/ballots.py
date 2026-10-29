@@ -624,6 +624,9 @@ BALLOTS: dict[str, Ballot] = {
                      "ca-2026-11-03-imperial-county-measure-s":
                          "Measure S — Imperial County Public Safety Sales "
                          "and Use Tax Initiative",
+                     "ca-2026-11-03-imperial-valley-healthcare-measure-n":
+                         "Measure N — Maintaining Local Hospitals and "
+                         "Emergency Healthcare Services",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

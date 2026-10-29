@@ -2202,3 +2202,10 @@ source = "ballot-question"
 quote = "generating approximately $20,000,000 annually"
 amount = 20000000
 period = "per-year"
+
+# Imperial Valley Healthcare District Measure N: no tax rate statement
+# applies (a parcel tax); the ballot question prints the rate per
+# parcel, and the one revenue estimate is the full text's.
+[imperial-valley-healthcare-measure-n]
+source = "ballot-question"
+status = "none-printed"

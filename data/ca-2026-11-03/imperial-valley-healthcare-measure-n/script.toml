@@ -1,0 +1,200 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; the district today (created by state law,
+# covering the county, running its hospitals, required to put a funding
+# source to voters); what would change (when the tax starts and how long
+# it lasts, what it may pay for, the vote it needs); the full text's
+# revenue estimate; both sides, neither of which has an archived
+# argument; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this health care district", and no
+# hospital is named. The card and title carry the names. "Counsel" is
+# heard as "Council" and "county's" as "counties"
+# (standard/speakability.txt), so the narration says neither.
+#
+# The card quotes the ballot question as the Registrar's Measure N PDF
+# prints it, with blank Yes and No lines and no yes/no sentences, so the
+# card has no boxes, the vote lines give the impartial analysis's
+# meanings, and both highlight the same phrase of the question. The
+# analysis does not say who placed the measure, so the card's origin is
+# the District as the question names it.
+#
+# The background is the full text's own history of the District, as
+# fact: the 2023 law creating it, its hospitals, and the 2024 law
+# requiring its board to propose a funding source. The text's warnings of
+# what would happen without the tax ("risk service reduction, quality
+# decline, or potential closures") are its authors' case, not fact, so
+# the script leaves them out, as it does the consultant's range of
+# revenue "needed".
+#
+# The $8.9 million a year is the full text's estimate. No archived
+# source states the District's budget to give it a scale (STANDARD.md
+# 6.5; left open, under [[question]]).
+#
+# No argument for or against Measure N was archived: the Registrar's
+# Measure N PDF prints none, and with no full guide posted it is not
+# known whether any was filed. So each side says none is printed in the
+# posted pages (filed = false, STANDARD.md 2.5).
+
+contest = "ca-2026-11-03-imperial-valley-healthcare-measure-n"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "N"
+title = "Maintaining Local Hospitals and Emergency Healthcare Services"
+origin = "Imperial Valley Healthcare District"
+summary = "To maintain local access to emergency medical care, fund hospital operations, maintenance, technology and equipment, expand services, retain qualified doctors and nurses, and achieve a financial position allowing the District to finance legally required seismic upgrades; shall Imperial Valley Healthcare District impose a parcel tax of $111.00 per parcel on the secured property tax roll until repealed, with independent audits and all funds dedicated to hospital services?"
+
+[[section]]
+id = "what"
+heading = "Measure N"
+
+[[section.line]]
+text = "Measure N asks the voters of this health care district whether to approve a $111 yearly tax on each parcel of property."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["impose a parcel tax of $111.00 per parcel"]
+
+[[section]]
+id = "today"
+heading = "The district today"
+
+[[section.line]]
+id = "created"
+text = "A 2023 state law created the district, which covers the whole county."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "valley-hospital"
+
+[[section.line]]
+id = "hospitals"
+text = "The district runs one of the two hospitals in the county, and agreed in 2025 to take over the other."
+sources = ["text"]
+
+[[section.line]]
+id = "required"
+text = "A 2024 state law requires the board to put a permanent funding source before voters by this election."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "unsigned-bill"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "term"
+text = "The tax would start in July 2027 and last until repealed."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+id = "uses"
+text = "The money could pay for emergency care, hospital operations, doctors and nurses, and earthquake safety upgrades."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "health-form"
+
+[[section.line]]
+text = "Measure N needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+id = "revenue"
+text = "The measure's text estimates about $8.9 million a year in revenue."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure N is printed in its posted pages."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument for was printed"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure N is printed in its posted pages."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was printed"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the district to levy the $111 parcel tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["impose a parcel tax of $111.00 per parcel"]
+
+[[section.line]]
+text = "A no vote does not authorize the tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["impose a parcel tax of $111.00 per parcel"]
+
+[[question]]
+ask = "What is this district, and what area does it cover?"
+lines = ["created", "hospitals"]
+
+[[question]]
+ask = "Why is this on the ballot now?"
+lines = ["required"]
+
+[[question]]
+ask = "How long would the tax last, and what can it pay for?"
+lines = ["term", "uses"]
+
+[[question]]
+ask = "How big is about $8.9 million a year next to the district's budget?"
+unanswered = true

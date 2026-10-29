@@ -1,0 +1,54 @@
+# Archived sources for Imperial Valley Healthcare District Measure N,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Imperial County Registrar of Voters posts each measure's pages as
+# one PDF (the ballot question, full text and impartial analysis); no
+# countywide Voter Information Guide is posted online. County Counsel's
+# impartial analysis is the measure's neutral explanation, the kind a
+# state's attorney general's explanatory statement is. No tax rate
+# statement applies (a parcel tax, not a bond); the one revenue estimate
+# is the full text's. The Registrar's Measure N PDF prints no argument
+# for or against and no rebuttal; with no full guide posted, it is not
+# known whether any was filed.
+#
+# The District is a special district: its full text says its
+# jurisdiction "includes all of Imperial County", but it has no boundary
+# layer of its own, so the contest takes the county's division and names
+# its voters.
+
+[contest]
+id = "ca-2026-11-03-imperial-valley-healthcare-measure-n"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:imperial"
+kind = "measure"
+title = "Imperial Valley Healthcare District Measure N: Parcel Tax for Hospital Services"
+voters = "the Imperial Valley Healthcare District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Imperial County Registrar of Voters, Measure N, Maintaining Local Hospitals and Emergency Healthcare Services, Imperial Valley Healthcare District: ballot question, page 1"
+credit = "Measure N, Imperial County Registrar of Voters"
+url = "https://elections.imperialcounty.org/wp-content/uploads/2026/08/MeasureN_IVHD.pdf"
+file = "sources/measure-packet.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Imperial County Counsel, County Counsel’s Impartial Analysis of Measure N, Imperial County Registrar of Voters, Measure N, pages 3 to 4"
+credit = "County Counsel’s Impartial Analysis, Imperial County Registrar of Voters"
+url = "https://elections.imperialcounty.org/wp-content/uploads/2026/08/MeasureN_IVHD.pdf"
+file = "sources/impartial-analysis-pp3-4.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Ballot Measure N, Imperial Valley Healthcare District, Imperial County Registrar of Voters, Measure N, pages 1 to 3"
+credit = "Full text of Measure N, Imperial County Registrar of Voters"
+url = "https://elections.imperialcounty.org/wp-content/uploads/2026/08/MeasureN_IVHD.pdf"
+file = "sources/measure-packet.pdf"
+retrieved = "2026-10-28"
