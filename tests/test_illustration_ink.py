@@ -11,7 +11,9 @@ from unittest import mock
 import numpy as np
 from PIL import Image, ImageDraw
 
-from film import measure
+from tests.helpers import film_measure
+
+measure = film_measure()
 
 
 def pixels(surf):

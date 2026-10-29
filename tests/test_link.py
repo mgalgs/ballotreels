@@ -9,7 +9,9 @@ from unittest import mock
 import videobuilder as vb
 
 from ballotreels.site import pages
-from film import measure as m
+from tests.helpers import film_measure
+
+m = film_measure()
 
 
 def overlap(a, b):
@@ -46,7 +48,8 @@ class LinkTextTest(unittest.TestCase):
 
     def test_the_domain_follows_the_site_url_setting(self):
         with mock.patch.dict(os.environ, {
-                "BALLOTREELS_SITE_URL": "https://staging.example.org/"}):
+                "BALLOTREELS_SITE_URL": "https://staging.example.org/",
+                "BALLOTREELS_CONTEST": str(m.CONTEST_DIR)}):
             mod = vb.load_module(m.__file__)
         self.assertEqual(mod.LINK, "staging.example.org/ca/2026/prop-2")
 

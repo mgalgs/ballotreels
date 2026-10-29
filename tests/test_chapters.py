@@ -15,7 +15,7 @@ from ballotreels.pipeline import (FakeRunner, chapters_path, read_chapters,
 from ballotreels.queue import JobQueue
 from ballotreels.site.server import _valid_chapters
 from ballotreels.storyboard import chapters, layout
-from tests.helpers import PROP_2
+from tests.helpers import PROP_2, film_measure
 from tests.test_worker import WorkerTestCase
 
 HEADINGS = ["Proposition 2", "Why a rainy day fund", "Today",
@@ -37,7 +37,7 @@ class StoryboardChaptersTest(unittest.TestCase):
         self.assertEqual(got[0]["start"], 0)
 
     def test_the_film_s_chapters_match_its_sections(self):
-        from film import measure as m
+        m = film_measure()
         self.assertEqual([c["title"] for c in m.CHAPTERS], HEADINGS)
         # the film's own timeline starts each section there
         starts = {s.name: s.at for s in m.TIMELINE.segments}

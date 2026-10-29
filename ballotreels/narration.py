@@ -178,8 +178,9 @@ def narration_state(contest: Contest) -> str:
 def unreused_phrases(contest: Contest) -> tuple[NarrationLine, ...] | None:
     """The phrases `say` would synthesise afresh when re-narrating the
     current script, each as a NarrationLine whose `text` is the phrase
-    (not the whole line): every phrase when there is no narration.wav or
-    no narration.json `phrase_cache` to reuse from, otherwise each phrase
+    (not the whole line): every phrase when there is no narration (neither
+    a recorded take nor a narration.wav) or no narration.json
+    `phrase_cache` to reuse from, otherwise each phrase
     whose cache key no committed phrase has. A Gemini phrase's key is its
     own text plus the previous phrase's as context (videobuilder.speech
     `_gemini_style`), so an edited line's phrases and the phrase right
@@ -192,9 +193,14 @@ def unreused_phrases(contest: Contest) -> tuple[NarrationLine, ...] | None:
         lines = narration_lines(contest)
     except KeyError:
         return None
+    from .narration_store import recorded_take
     path = contest.path
     cache = []
-    if (path / "narration.wav").is_file() and (path / "narration.json").is_file():
+    # A recorded take is reused whether or not its audio is here:
+    # narrate.sh fetches it beside narration.json before `say` runs.
+    narrated = (recorded_take(path) is not None
+                or (path / "narration.wav").is_file())
+    if narrated and (path / "narration.json").is_file():
         try:
             doc = json.loads((path / "narration.json").read_text(encoding="utf-8"))
             cache = [e["key"]["text"] for e in doc.get("phrase_cache") or ()]

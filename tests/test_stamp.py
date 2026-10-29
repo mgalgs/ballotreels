@@ -8,7 +8,9 @@ from unittest import mock
 from ballotreels.contest import Visual
 from ballotreels.storyboard import ChartBeat
 
-from film import measure as m
+from tests.helpers import film_measure
+
+m = film_measure()
 
 
 def run(v, fmt):

@@ -19,7 +19,7 @@ import urllib.parse
 from pathlib import Path
 
 from . import geo_fixtures
-from .helpers import REPO
+from .helpers import REPO, copy_contest, git_commit_all
 
 TOKEN = "e2e-test-token"
 
@@ -86,13 +86,32 @@ class EndToEndTest(unittest.TestCase):
         self.assertIsNotNone(private_port)
         return proc, public_port, private_port
 
+    def _worker_repo(self, private_port):
+        """The worker's checkout: Prop 2 as committed, with a stand-in for
+        its take (the real audio is not in git), which the operator
+        pushes to the store as they would the real one."""
+        repo = self.data_dir.parent / "repo"
+        prop_2 = copy_contest(REPO / "data" / "ca-2026-11-03" / "prop-2",
+                              repo / "data" / "ca-2026-11-03" / "prop-2")
+        git_commit_all(repo)
+        proc = subprocess.run(
+            [sys.executable, "-u", "-m", "ballotreels", "narration", "push",
+             str(prop_2), "--server", f"http://127.0.0.1:{private_port}",
+             "--narration-cache", str(self.data_dir / "push-cache")],
+            cwd=REPO, env=self._env(), capture_output=True, text=True,
+            timeout=60)
+        self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
+        return repo
+
     def _run_worker_once(self, private_port):
         proc = subprocess.run(
             [sys.executable, "-u", "-m", "ballotreels", "worker",
              "--server", f"http://127.0.0.1:{private_port}",
              "--runner", "fake", "--once",
+             "--repo", str(self._worker_repo(private_port)),
              "--work-dir", str(self.data_dir / "work"),
-             "--masters-dir", str(self.data_dir / "masters")],
+             "--masters-dir", str(self.data_dir / "masters"),
+             "--narration-cache", str(self.data_dir / "worker-cache")],
             cwd=REPO, env=self._env(), capture_output=True, text=True,
             timeout=60)
         self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)

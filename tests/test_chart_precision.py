@@ -11,7 +11,7 @@ from ballotreels.checks import check_chart_precision, check_contest
 from ballotreels.contest import load_contest
 from ballotreels.standard import REPO_ROOT
 
-from .helpers import ContestCopyTestCase, unlinted_standard
+from .helpers import ContestCopyTestCase, film_measure, unlinted_standard
 
 # Prop 2's one bars chart, and the line it is on (change.line[0]).
 LINE = ("Proposition 2 raises the target from 10 to 20 percent of General "
@@ -103,7 +103,7 @@ class ChartPrecisionTest(ContestCopyTestCase):
 
 class FilmPrintsWithTheSameFunctionsTest(unittest.TestCase):
     def test_the_film_uses_ballotreels_printed(self):
-        from film import measure
+        measure = film_measure()
         self.assertIs(measure.number, printed.number)
         self.assertIs(measure.with_unit, printed.with_unit)
 

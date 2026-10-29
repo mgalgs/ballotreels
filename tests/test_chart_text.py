@@ -6,8 +6,10 @@ import unittest
 from ballotreels.contest import Source, Visual
 from ballotreels.storyboard import ChartBeat
 
-from film import measure as m
+from tests.helpers import film_measure
 from tests.test_sources_card import lettering
+
+m = film_measure()
 
 SOURCE = Source(id="lao", kind="official-analysis", publisher="Pub", url="https://example.com",
                 file="sources/a.html", retrieved="2026-01-01")
