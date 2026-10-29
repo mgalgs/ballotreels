@@ -185,8 +185,9 @@ def copy_contest(src, dest):
 
 def copy_election(src, dest, contests=None):
     """Copy the election directory `src` to `dest`: its own files, and
-    each contest directory (only those named in `contests`, when given)
-    by copy_contest."""
+    each contest directory by copy_contest; when `contests` names only
+    some, the rest are links to the originals, there for the index to
+    read, so not for a test to change."""
     src, dest = Path(src), Path(dest)
     dest.mkdir(parents=True)
     for path in sorted(src.iterdir()):
@@ -194,6 +195,8 @@ def copy_election(src, dest, contests=None):
             shutil.copy2(path, dest / path.name)
         elif contests is None or path.name in contests:
             copy_contest(path, dest / path.name)
+        else:
+            (dest / path.name).symlink_to(path, target_is_directory=True)
     return dest
 
 

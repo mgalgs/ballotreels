@@ -5,12 +5,15 @@ each tile is drawn on in its own slot, the same size as every other;
 and every frame leads to the state's page."""
 
 import os
+import tempfile
 import unittest
 from pathlib import Path
 from unittest import mock
 
 from ballotreels import crash_course as cc
+from ballotreels.index import load_index
 
+from .helpers import REPO, copy_election
 from .test_crash_course import CA
 
 
@@ -23,14 +26,21 @@ class CrashCourseFilmTest(unittest.TestCase):
     def setUpClass(cls):
         import videobuilder as vb
         from videobuilder import speech
+        # its members copied, each with a stand-in for its take
+        tmp = tempfile.TemporaryDirectory()
+        cls.addClassCleanup(tmp.cleanup)
+        index = load_index(CA)
+        election = copy_election(CA, Path(tmp.name) / CA.name, contests={
+            cc.member_dir(CA, index.election.id, cid).name
+            for cid in index.crash_course.members})
         old = os.environ.get("BALLOTREELS_CRASH_COURSE")
-        os.environ["BALLOTREELS_CRASH_COURSE"] = str(CA)
+        os.environ["BALLOTREELS_CRASH_COURSE"] = str(election)
         try:
             with mock.patch.object(speech, "say", refuse_tts), \
                     mock.patch.object(speech, "Gemini", refuse_tts), \
                     mock.patch.object(speech, "Kokoro", refuse_tts), \
                     mock.patch.object(speech, "Chatterbox", refuse_tts):
-                cls.m = vb.load_module(str(CA.parent.parent / "film" /
+                cls.m = vb.load_module(str(REPO / "film" /
                                            "crash_course.py"))
         finally:
             if old is None:
