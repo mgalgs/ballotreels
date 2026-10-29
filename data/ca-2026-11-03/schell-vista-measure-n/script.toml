@@ -1,0 +1,173 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; what a spending limit is, and how the
+# district's came to be raised; what the measure needs to pass; what a
+# yes and a no would each do, as the impartial analysis states both
+# (STANDARD.md 6.4); that the pages print no cost estimate; one line per
+# side; what a vote does.
+#
+# The measure raises a spending limit and levies no tax, and the pages
+# print no fiscal statement and no dollar figure, so the fiscal line
+# says there is no cost estimate, naming the county's guide as the
+# Alameda and Riverside scripts do. The analysis's "does not authorize
+# ... increase the property tax rate" is the supporters' "not a new
+# tax", so the neutral sections leave it out (STANDARD.md 6.3). The
+# card's origin is the analysis's first sentence, not the one that says
+# "Measure A" as printed. "Counsel" is heard as "Council"
+# (standard/speakability.txt), so the narration says "the impartial
+# analysis".
+#
+# No argument against Measure N was submitted. The no side says so
+# plainly; its section is marked filed = false.
+
+contest = "ca-2026-11-03-schell-vista-measure-n"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "measure-question"
+number = "N"
+title = "Schell-Vista Fire Protection District"
+origin = "The Schell Vista Fire Protection District (“District”) has called a special election to ask voters to increase the District’s appropriations (spending) limit for four years, the maximum period allowed by law."
+summary = "Shall the Schell Vista Fire Protection District adopt Ordinance No. 2026-01 retaining the District’s increased limits on appropriations to assure continued fire, rescue and emergency medical services?"
+yes = "A “yes” vote on Measure N is a vote to continue the previously approved increase in the District’s appropriations (spending) limit for an additional four years."
+no = "A “no” vote on Measure N is a vote against continuing the previously approved increase in the District’s appropriations (spending) limit."
+
+[[section]]
+id = "what"
+heading = "Measure N"
+
+[[section.line]]
+text = "Schell-Vista Fire Protection District Measure N asks the district's voters whether to keep its higher spending limit for four more years."
+sources = ["measure-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-question"
+highlight = ["retaining the District’s increased limits on appropriations"]
+
+[[section]]
+id = "today"
+heading = "How the spending limit works"
+
+[[section.line]]
+text = "The California Constitution sets a yearly limit on a government's spending of tax money, which voters may raise for up to four years at a time."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "spending-limit"
+
+[[section.line]]
+id = "history"
+text = "In 2018, district voters approved a special tax for fire and ambulance services, and raised the limit so the district could spend it."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "timeline"
+source = "impartial-analysis"
+labels = ["2018", "2022"]
+items = ["Special tax approved, limit raised", "Higher limit continued"]
+
+[[section.line]]
+text = "Voters continued the higher limit in 2022."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+text = "Measure N needs a simple majority to pass."
+sources = ["measure-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "if-passes"
+text = "Measure N would let the district keep spending all of the special tax through the 2029-2030 fiscal year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "fire-station-engine"
+
+[[section.line]]
+id = "if-fails"
+text = "The impartial analysis says that if Measure N fails, the limit would be reduced, reducing the funds for the district's current level of service."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Sonoma County guide does not include a cost estimate for the measure."
+sources = ["measure-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "spending-limit"
+stamp = "No cost estimate"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure N is not a new tax, and simply lets the fire department keep using voter-approved funding."
+sources = ["arguments"]
+basis = ["Measure N is not a new tax.", "It simply allows your fire department to continue to use voter-approved funding for our community’s fire and emergency services."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Not a new tax", "Keeps voter-approved fire funding in use"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure N was submitted for the Sonoma County Registrar of Voters' printed pages on this measure."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote continues the higher spending limit for four more years."
+sources = ["measure-question"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-question"
+highlight = ["a vote to continue the"]
+
+[[section.line]]
+text = "A no vote is a vote against continuing the higher limit."
+sources = ["measure-question"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-question"
+highlight = ["a vote against continuing the"]
+
+[[question]]
+ask = "What happens if it passes, and if it fails?"
+lines = ["if-passes", "if-fails"]
+
+[[question]]
+ask = "Why does the district need voters to approve this?"
+lines = ["history"]
