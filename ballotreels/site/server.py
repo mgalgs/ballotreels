@@ -106,6 +106,26 @@ class StateElection:
         prefix>, e.g. "/ut/2026/amendment-a"."""
         return pages.contest_path(self.abbr, self.index.election.id, entry.id)
 
+    def counties(self) -> dict[str, dict[str, Any]]:
+        """counties.json's counties (ballotreels.geo.counties), by
+        OCD-ID, in name order: none without it."""
+        return (self.geo.counties or {}) if self.geo else {}
+
+    def county_path(self, county: str) -> str:
+        """A county's page: /<st>/<year>/county/<its OCD-ID name, with
+        hyphens>, e.g. "/ca/2026/county/san-luis-obispo". Under "county/",
+        so no county can ever take a measure's path."""
+        return f"/{self.abbr}/{self.year}/county/{_county_slug(county)}"
+
+    def county_at(self, year: str, slug: str) -> str | None:
+        """The county whose page has this year and slug."""
+        if year != self.year:
+            return None
+        wanted = urllib.parse.unquote(slug).lower()
+        return next((c for c in self.counties()
+                     if urllib.parse.unquote(_county_slug(c)) == wanted),
+                    None)
+
     def contest_at(self, year: str, slug: str) -> IndexEntry | None:
         """The contest whose short path has this year and slug."""
         if year != self.year:
@@ -113,6 +133,12 @@ class StateElection:
         wanted = f"/{self.abbr}/{year}/{slug}"
         return next((e for e in self.index.entries
                      if self.contest_path(e) == wanted), None)
+
+
+def _county_slug(county: str) -> str:
+    """"ocd-division/country:us/state:ca/county:san_luis_obispo" ->
+    "san-luis-obispo" (percent-encoded past ASCII)."""
+    return urllib.parse.quote(county.rsplit(":", 1)[1].replace("_", "-"))
 
 
 @dataclass
@@ -223,6 +249,10 @@ def load_states(config: Config, warn=None) -> dict[str, StateElection]:
         geo_dir = config.data_dir / "geo" / abbr
         if (geo_dir / "zips.json").is_file():
             geo = GeoData.load(geo_dir)
+            if geo.counties is None:
+                warn(f"warning: no counties.json for {abbr!r} at {geo_dir} "
+                     f"(run `python -m ballotreels geo counties --state "
+                     f"{abbr}`); it will have no county pages")
         else:
             warn(f"warning: no geo data for {abbr!r} at {geo_dir} (run "
                  f"`python -m ballotreels geo build --state {abbr}`); its "
@@ -638,6 +668,57 @@ def _related(entry, state: StateElection,
             for *_, other_state, other in found]
 
 
+def _county_links(entry: IndexEntry,
+                  state: StateElection) -> list[dict[str, str]]:
+    """The county pages a county's, city's or school district's
+    contest is listed on, by name: none for any other."""
+    level = level_of(entry.division, state.index.election.state)
+    if state.geo is None or level not in ("county", "place",
+                                          "school_district"):
+        return []
+    counties = state.counties()
+    return [{"name": counties[c]["name"], "path": state.county_path(c)}
+            for c in state.geo.division_counties(entry.division)]
+
+
+# A county page's groups, in order: the county's own measures, its
+# cities', its school districts', and its special districts' (filed
+# under the county, with `voters`).
+COUNTY_LEVELS = ("county", "place", "school_district", "special")
+
+
+def _county_measures(state: StateElection,
+                     county: str) -> list[tuple[str, list[IndexEntry]]]:
+    """Every measure voted on anywhere in `county` but the statewide
+    ones, by COUNTY_LEVELS (each in ballot order), leaving out the empty
+    levels: the county's own and its special districts', and those of
+    every city and school district sharing ground with it
+    (counties.json)."""
+    members = set(state.counties()[county]["divisions"])
+    buckets: dict[str, list[IndexEntry]] = {l: [] for l in COUNTY_LEVELS}
+    for entry in ballot_order(state.index):
+        if entry.kind != "measure":
+            continue
+        if entry.division == county:
+            buckets["special" if entry.voters else "county"].append(entry)
+        elif entry.division in members:
+            buckets[level_of(entry.division,
+                             state.index.election.state)].append(entry)
+    return [(l, buckets[l]) for l in COUNTY_LEVELS if buckets[l]]
+
+
+def _hero(state: StateElection, county: str | None = None) -> str | None:
+    """The map at the top of a state's or county's page
+    (pages.hero_svg); None without counties.json. The state's flag is
+    used only if its file is there."""
+    hero = state.geo.hero if state.geo else None
+    if not hero or not hero.get("paths"):
+        return None
+    flag = pages.flag_path(state.abbr)
+    flag_url = f"/static/{flag}" if (STATIC_DIR / flag).is_file() else None
+    return pages.hero_svg(hero, county, flag_url)
+
+
 def _contest_detail(entry, state: StateElection,
                     deps: Deps) -> dict[str, Any]:
     key = key_for(state.index.election.id, entry, deps.standard)
@@ -671,6 +752,8 @@ def _contest_detail(entry, state: StateElection,
         "job": job,
         # Measures on the same subject, each linking to its own page.
         "related": _related(entry, state, deps),
+        # The county pages it is listed on.
+        "counties": _county_links(entry, state),
         # only a choice question says so: a yes/no measure's detail is
         # as it always was
         **({"choice": True} if entry.choice else {}),
@@ -846,6 +929,9 @@ class PublicHandler(_JsonHandler):
             m = re.fullmatch(r"/api/contest/([a-z]{2})/(\d{4})/([^/]+)", path)
             if m and method == "GET":
                 return self._contest_at(*m.groups())
+            m = re.fullmatch(r"/api/county/([a-z]{2})/(\d{4})/([^/]+)", path)
+            if m and method == "GET":
+                return self._county(*m.groups())
             m = re.fullmatch(r"/api/jobs/(\d+)", path)
             if m and method == "GET":
                 return self._job_status(int(m.group(1)))
@@ -910,6 +996,15 @@ class PublicHandler(_JsonHandler):
         entry = state.contest_at(m.group(2), m.group(3)) if state else None
         return (state, entry) if entry is not None else None
 
+    def _county_at(self, path: str) -> tuple[StateElection, str] | None:
+        """The county whose page is at `path`, or None."""
+        m = re.fullmatch(r"/([a-z]{2})/(\d{4})/county/([^/]+)", path)
+        if not m:
+            return None
+        state = self.server.deps.states.get(m.group(1))
+        county = state.county_at(m.group(2), m.group(3)) if state else None
+        return (state, county) if county is not None else None
+
     def _page_meta(self, path: str) -> pages.PageMeta | None:
         """The tags of the page at `path`, or None if there is none."""
         deps = self.server.deps
@@ -922,6 +1017,13 @@ class PublicHandler(_JsonHandler):
                 return None
             return pages.state_meta(_state_name(state.abbr), path,
                                     len(_statewide_measures(state)))
+        county = self._county_at(path)
+        if county:
+            state, county = county
+            return pages.county_meta(
+                state.counties()[county]["name"], _state_name(state.abbr),
+                state.index.election.id, state.county_path(county),
+                sum(len(e) for _, e in _county_measures(state, county)))
         measure = self._measure_at(path)
         if measure:
             state, entry = measure
@@ -952,7 +1054,8 @@ class PublicHandler(_JsonHandler):
 
     def _sitemap_paths(self) -> list[str]:
         """Every page worth indexing: the home page, each served state's
-        page, and each measure's page, in the states' name order."""
+        page, each measure's page, and each county's page, in the
+        states' name order."""
         deps = self.server.deps
         paths = ["/"]
         for abbr in sorted(deps.states, key=_sort_name):
@@ -960,6 +1063,7 @@ class PublicHandler(_JsonHandler):
             paths.append(state.path())
             paths.extend(state.contest_path(e) for e in ballot_order(state.index)
                          if e.kind == "measure")
+            paths.extend(state.county_path(c) for c in state.counties())
         return paths
 
     def _text(self, ext: str, text: str) -> None:
@@ -1102,7 +1206,44 @@ class PublicHandler(_JsonHandler):
                          "levels": ([{"level": "state", "contests": contests}]
                                     if contests else []),
                          # one video through every statewide measure
-                         "crash_course": _crash_course(state, deps)})
+                         "crash_course": _crash_course(state, deps),
+                         # every county's page, by name
+                         "counties": [{"name": c["name"],
+                                       "path": state.county_path(oid)}
+                                      for oid, c in state.counties().items()],
+                         "hero": _hero(state)})
+
+    def _county(self, abbr: str, year: str, slug: str) -> None:
+        """A county's page: every local measure voted on anywhere in it
+        (_county_measures), for /<st>/<year>/county/<slug>."""
+        deps = self.server.deps
+        state = deps.states.get(abbr)
+        county = state.county_at(year, slug) if state else None
+        if county is None:
+            return self._not_found()
+        index = state.index
+        name = state.counties()[county]["name"]
+        levels = [{"level": level,
+                   "contests": [_contest_summary(e, state, deps)
+                                for e in entries]}
+                  for level, entries in _county_measures(state, county)]
+        path = state.county_path(county)
+        self._json(200, {"election": index.election.id,
+                         "year": state.year,
+                         "state": abbr, "state_name": _state_name(abbr),
+                         "state_path": state.path(),
+                         "county": county, "county_name": name,
+                         "path": path,
+                         "heading": pages.county_heading(
+                             name, index.election.id),
+                         "page_title": pages.county_meta(
+                             name, _state_name(abbr), index.election.id,
+                             path, 0).title,
+                         "none_text": pages.no_county_measures(name),
+                         "empty_election": not index.entries,
+                         "chambers": chambers(abbr),
+                         "levels": levels,
+                         "hero": _hero(state, county)})
 
     def _contest(self, contest_id: str) -> None:
         deps = self.server.deps

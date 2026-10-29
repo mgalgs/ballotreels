@@ -123,6 +123,11 @@ class GeoData:
     names: dict[str, str]
     district_shapes: dict[str, dict[str, Any]]
     zcta_dir: Path
+    # counties.json (ballotreels.geo.counties), None for a build from
+    # before it: each county's cities and school districts, and the
+    # counties' outlines for the pages' map.
+    counties: dict[str, dict[str, Any]] | None = None
+    hero: dict[str, Any] | None = None
 
     @classmethod
     def load(cls, geo_dir: str | Path) -> "GeoData":
@@ -139,9 +144,25 @@ class GeoData:
                 oid = feat["properties"]["ocd_id"]
                 names[oid] = feat["properties"]["name"]
                 district_shapes[oid] = feat["geometry"]
+        counties = hero = None
+        counties_path = geo_dir / "counties.json"
+        if counties_path.is_file():
+            doc = json.loads(counties_path.read_text(encoding="utf-8"))
+            counties, hero = doc["counties"], doc.get("hero")
         return cls(state=geo_dir.name, zips=zips, names=names,
                    district_shapes=district_shapes,
-                   zcta_dir=geo_dir / "zcta")
+                   zcta_dir=geo_dir / "zcta", counties=counties, hero=hero)
+
+    def division_counties(self, division: str) -> list[str]:
+        """The counties a city or school district lies in (a county is
+        its own), by counties.json; none without it."""
+        if self.counties is None:
+            return []
+        if division in self.counties:
+            return [division]
+        division = ballot_division(division)
+        return [c for c, entry in self.counties.items()
+                if division in entry["divisions"]]
 
     def zip_districts(self, zip_code: str) -> dict[str, Any] | None:
         """`{zip, state, kinds:{kind:[{ocd_id,name}]}, ambiguous:[kind],

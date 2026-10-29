@@ -9,6 +9,7 @@
     python -m ballotreels geo build [--state ca] [--data-dir DIR]
     python -m ballotreels geo zip <zip> [--state ca] [--data-dir DIR]
     python -m ballotreels geo divisions <election-dir> [--data-dir DIR]
+    python -m ballotreels geo counties [--state ca] [--data-dir DIR]
     python -m ballotreels serve [--public-port PORT] [--private-port PORT]
     python -m ballotreels worker --server URL [--runner fake|subprocess]
 """
@@ -348,6 +349,17 @@ def _geo_divisions(data_dir: str, election_dir: str, state: str | None,
     return True
 
 
+def _geo_counties(data_dir: str, state: str, out) -> bool:
+    from .geo.counties import CountiesError, write_counties
+    try:
+        path = write_counties(Path(data_dir) / "geo" / state)
+    except CountiesError as e:
+        print(str(e), file=out)
+        return False
+    print(f"{path}: written", file=out)
+    return True
+
+
 def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
     parser = argparse.ArgumentParser(prog="python -m ballotreels")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -423,6 +435,12 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
                                help="default: the election directory's "
                                     "prefix (ca-2026-11-03 -> ca)")
     geo_divisions.add_argument("--data-dir", default=str(default_data_dir()))
+    geo_counties = geo_sub.add_parser(
+        "counties", help="write counties.json (the county pages' cities, "
+                         "school districts and map) from the geo build "
+                         "under --data-dir")
+    geo_counties.add_argument("--state", default="ca")
+    geo_counties.add_argument("--data-dir", default=str(default_data_dir()))
     serve = sub.add_parser("serve", help="run the serve tier")
     serve.add_argument("--data-dir", default=None,
                        help="default: $BALLOTREELS_DATA_DIR or <repo>/var")
@@ -531,6 +549,8 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
         if args.geo_command == "build":
             ok = _geo_build(args.data_dir, args.state, args.min_overlap,
                             args.tolerance, args.url, out)
+        elif args.geo_command == "counties":
+            ok = _geo_counties(args.data_dir, args.state, out)
         elif args.geo_command == "divisions":
             ok = _geo_divisions(args.data_dir, args.election_dir, args.state,
                                 out)

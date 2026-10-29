@@ -1,0 +1,82 @@
+# Fake fixture election for the county-page tests
+# (tests/test_county_pages.py). None of this is real data; the geography
+# is tests/fixtures/counties/geo/ca/: Alpha, Beta and Gamma Counties side
+# by side, Delta north of Alpha. Alphaville lies in Alpha; Edgetown in
+# Beta, touching Gamma's line; Sliverton in Beta with a sliver across
+# Gamma's line; Northedge in Alpha with a sliver across Delta's; Twin
+# Valley Unified spans Alpha and Beta.
+
+[election]
+id = "ca-2026-11-03"
+state = "ocd-division/country:us/state:ca"
+title = "Test Election"
+
+[[contest]]
+id = "ca-2026-11-03-prop-1"
+kind = "measure"
+division = "ocd-division/country:us/state:ca"
+title = "Proposition 1: Fake Statewide Measure"
+number = "1"
+
+[[contest]]
+id = "ca-2026-11-03-alpha-county-measure-a"
+kind = "measure"
+division = "ocd-division/country:us/state:ca/county:alpha"
+title = "Measure A: Fake Alpha County Sales Tax"
+number = "A"
+
+[[contest]]
+id = "ca-2026-11-03-beta-county-measure-b"
+kind = "measure"
+division = "ocd-division/country:us/state:ca/county:beta"
+title = "Measure B: Fake Beta County Measure"
+number = "B"
+
+[[contest]]
+id = "ca-2026-11-03-beta-fire-measure-f"
+kind = "measure"
+division = "ocd-division/country:us/state:ca/county:beta"
+title = "Measure F: Fake Fire District Parcel Tax"
+number = "F"
+
+[[contest]]
+id = "ca-2026-11-03-alphaville-measure-c"
+kind = "measure"
+division = "ocd-division/country:us/state:ca/place:alphaville"
+title = "Measure C: Fake Alphaville Measure"
+number = "C"
+
+[[contest]]
+id = "ca-2026-11-03-edgetown-measure-e"
+kind = "measure"
+division = "ocd-division/country:us/state:ca/place:edgetown"
+title = "Measure E: Fake Edgetown Measure"
+number = "E"
+
+[[contest]]
+id = "ca-2026-11-03-sliverton-measure-s"
+kind = "measure"
+division = "ocd-division/country:us/state:ca/place:sliverton"
+title = "Measure S: Fake Sliverton Measure"
+number = "S"
+
+[[contest]]
+id = "ca-2026-11-03-northedge-measure-n"
+kind = "measure"
+division = "ocd-division/country:us/state:ca/place:northedge"
+title = "Measure N: Fake Northedge Measure"
+number = "N"
+
+[[contest]]
+id = "ca-2026-11-03-twin-valley-measure-t"
+kind = "measure"
+division = "ocd-division/country:us/state:ca/school_district:twin_valley_unified_school_district"
+title = "Measure T: Fake Twin Valley Unified Bond"
+number = "T"
+
+[[contest]]
+id = "ca-2026-11-03-gamma-elementary-measure-g"
+kind = "measure"
+division = "ocd-division/country:us/state:ca/school_district:gamma_elementary_school_district"
+title = "Measure G: Fake Gamma Elementary Bond"
+number = "G"

@@ -1269,3 +1269,35 @@ a.contest:hover {
     margin: 0;
   }
 }
+
+/* -- a state's and a county's map ----------------------------------- */
+
+/* The state drawn large in pencil (the server's pages.hero_svg), its
+   flag inside it or, on a county's page, the county hatched in orange.
+   Decorative, and capped so on a phone the heading and the measures
+   still start on the first screen. */
+.hero-art {
+  margin: 4px 0 6px;
+}
+
+.hero-art .hero-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(30vh, 300px);
+  margin: 0 auto;
+}
+
+@media (min-width: 720px) {
+  .hero-art .hero-map {
+    max-height: 360px;
+  }
+}
+
+.county-browse {
+  margin-top: 30px;
+}
+
+.county-links {
+  margin-top: 18px;
+}
