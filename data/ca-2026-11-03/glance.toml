@@ -1558,3 +1558,11 @@ direction = "revenue-gain"
 source = "financial-impact"
 status = "no-material-impact"
 quote = "This measure is not anticipated to have a financial impact on the City."
+
+# Modesto City High School District Measure K: the district's tax rate
+# statement's total debt service.
+[modesto-city-high-measure-k]
+source = "tax-statement"
+quote = "The best estimate from official sources of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $480,000,000."
+amount = 480000000
+period = "unstated"
