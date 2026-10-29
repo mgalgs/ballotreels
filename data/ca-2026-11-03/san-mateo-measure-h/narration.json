@@ -1,0 +1,243 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 65.22,
+  "phrases": [
+    {
+      "text": "City of San Mateo Measure H asks voters in the city whether to add a quarter-cent sales tax.",
+      "start": 0.03,
+      "end": 6.3
+    },
+    {
+      "text": "Today, the city already charges a quarter-cent sales tax, set to expire in 2048.",
+      "start": 6.96,
+      "end": 13.37
+    },
+    {
+      "text": "The City Council placed Measure H on the ballot, and it needs a simple majority to pass.",
+      "start": 14.03,
+      "end": 19.22
+    },
+    {
+      "text": "The quarter-cent sales tax the city charges would rise to a half cent, until voters repeal it.",
+      "start": 19.88,
+      "end": 25.93
+    },
+    {
+      "text": "Measure H would be a general tax, so the money could pay for any city purpose.",
+      "start": 26.59,
+      "end": 31.71
+    },
+    {
+      "text": "The City Attorney's impartial analysis estimates the tax would raise about $7 million a year.",
+      "start": 32.37,
+      "end": 38.47
+    },
+    {
+      "text": "Opponents say living costs are already too high, and the tax has no end date and leaves the budget deficit unsolved.",
+      "start": 39.13,
+      "end": 46.64
+    },
+    {
+      "text": "Supporters say Measure H keeps police, fire and street repair going, and without it, much deeper service cuts will follow.",
+      "start": 47.3,
+      "end": 55.84
+    },
+    {
+      "text": "A yes vote approves Measure H and its quarter-cent sales tax.",
+      "start": 56.5,
+      "end": 60.6
+    },
+    {
+      "text": "A no vote rejects Measure H and its quarter-cent sales tax.",
+      "start": 61.26,
+      "end": 65.19
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "City of San Mateo Measure H asks voters in the city whether to add a quarter-cent sales tax.",
+      "Today, the city already charges a quarter-cent sales tax, set to expire in 2048.",
+      "The City Council placed Measure H on the ballot, and it needs a simple majority to pass.",
+      "The quarter-cent sales tax the city charges would rise to a half cent, until voters repeal it.",
+      "Measure H would be a general tax, so the money could pay for any city purpose.",
+      "The City Attorney's impartial analysis estimates the tax would raise about $7 million a year.",
+      "Opponents say living costs are already too high, and the tax has no end date and leaves the budget deficit unsolved.",
+      "Supporters say Measure H keeps police, fire and street repair going, and without it, much deeper service cuts will follow.",
+      "A yes vote approves Measure H and its quarter-cent sales tax.",
+      "A no vote rejects Measure H and its quarter-cent sales tax."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "City of San Mateo Measure H asks voters in the city whether to add a quarter-cent sales tax."
+      },
+      "bounds": [
+        0,
+        151920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"City of San Mateo Measure H asks voters in the city whether to add a quarter-cent sales tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, the city already charges a quarter-cent sales tax, set to expire in 2048."
+      },
+      "bounds": [
+        166320,
+        321600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, the city already charges a quarter-cent sales tax, set to expire in 2048.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The City Council placed Measure H on the ballot, and it needs a simple majority to pass."
+      },
+      "bounds": [
+        336000,
+        462000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Council placed Measure H on the ballot, and it needs a simple majority to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The quarter-cent sales tax the city charges would rise to a half cent, until voters repeal it."
+      },
+      "bounds": [
+        476400,
+        623040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The quarter-cent sales tax the city charges would rise to a half cent, until voters repeal it.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure H would be a general tax, so the money could pay for any city purpose."
+      },
+      "bounds": [
+        637440,
+        761760
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure H would be a general tax, so the money could pay for any city purpose.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The City Attorney's impartial analysis estimates the tax would raise about $7 million a year."
+      },
+      "bounds": [
+        776160,
+        924000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Attorney's impartial analysis estimates the tax would raise about $7 million a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say living costs are already too high, and the tax has no end date and leaves the budget deficit unsolved."
+      },
+      "bounds": [
+        938400,
+        1120080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say living costs are already too high, and the tax has no end date and leaves the budget deficit unsolved.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say Measure H keeps police, fire and street repair going, and without it, much deeper service cuts will follow."
+      },
+      "bounds": [
+        1134480,
+        1340880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure H keeps police, fire and street repair going, and without it, much deeper service cuts will follow.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote approves Measure H and its quarter-cent sales tax."
+      },
+      "bounds": [
+        1355280,
+        1455120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote approves Measure H and its quarter-cent sales tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote rejects Measure H and its quarter-cent sales tax."
+      },
+      "bounds": [
+        1469520,
+        1565280
+      ]
+    }
+  ],
+  "sha256": "2b59d9ebd18f73809a933eeb96766d55f46ad8835f200780a427b49bbe4b1359"
+}
