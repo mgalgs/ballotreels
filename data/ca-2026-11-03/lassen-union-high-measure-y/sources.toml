@@ -1,0 +1,65 @@
+# Archived sources for Lassen Union High School District Measure Y,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Lassen County Elections prints the whole measure in its Local Voter
+# Information Guide, cut here to pages 28 to 34 of the PDF: County
+# Counsel's impartial analysis (28), the argument in favor and "NO
+# ARGUMENT AGAINST MEASURE “Y” WAS SUBMITTED" (29), the full text
+# (30 to 33), and the abbreviated form (the ballot question) with the
+# district's tax rate statement (34). The impartial analysis is the
+# measure's neutral explanation; the tax rate statement is its fiscal
+# statement. No rebuttals are printed.
+
+[contest]
+id = "ca-2026-11-03-lassen-union-high-measure-y"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:lassen_union_high_school_district"
+kind = "measure"
+title = "Lassen Union High School District Measure Y: School Facility Bonds"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Abbreviated Form of Lassen Union High School District Bond Measure “Y”, Lassen County Elections, Local Voter Information Guide for the November 3, 2026 General Election, page 34 of the PDF"
+credit = "Lassen County Local Voter Information Guide"
+url = "https://www.lassencounty.gov/DocumentCenter/View/3261/Full-VIG-Nov-26-Gen-WEB-PDF?bidId="
+file = "sources/vig-pp28-34.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "County Counsel’s Impartial Analysis of Measure “Y”, Lassen County Elections, Local Voter Information Guide for the November 3, 2026 General Election, page 28 of the PDF"
+credit = "Impartial Analysis, Lassen County Local Voter Information Guide"
+url = "https://www.lassencounty.gov/DocumentCenter/View/3261/Full-VIG-Nov-26-Gen-WEB-PDF?bidId="
+file = "sources/vig-pp28-34.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Tax Rate Statement for Lassen Union High School District Bond Measure “Y”, signed by Mark Brewer, Superintendent, Lassen County Elections, Local Voter Information Guide for the November 3, 2026 General Election, page 34 of the PDF"
+credit = "Tax Rate Statement, Lassen Union High School District"
+url = "https://www.lassencounty.gov/DocumentCenter/View/3261/Full-VIG-Nov-26-Gen-WEB-PDF?bidId="
+file = "sources/vig-pp28-34.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Lassen Union High School District Bond Measure “Y”, Lassen County Elections, Local Voter Information Guide for the November 3, 2026 General Election, page 29 of the PDF (no argument against was submitted)"
+credit = "Arguments, Lassen County Local Voter Information Guide"
+url = "https://www.lassencounty.gov/DocumentCenter/View/3261/Full-VIG-Nov-26-Gen-WEB-PDF?bidId="
+file = "sources/vig-pp28-34.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Lassen Union High School District Bond Measure “Y”, Lassen County Elections, Local Voter Information Guide for the November 3, 2026 General Election, pages 30 to 33 of the PDF"
+credit = "Full Text of Measure Y, Lassen County Local Voter Information Guide"
+url = "https://www.lassencounty.gov/DocumentCenter/View/3261/Full-VIG-Nov-26-Gen-WEB-PDF?bidId="
+file = "sources/vig-pp28-34.pdf"
+retrieved = "2026-10-28"

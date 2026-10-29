@@ -1,0 +1,180 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; how a college bond is repaid and what it
+# needs to pass; what the money may pay for; the district's tax rate
+# statement; one line per side; what a vote does.
+#
+# Lassen County's copy of the merged Humboldt County contest
+# (shasta-tehama-trinity-jccd-measure-c-humboldt): the same title, facts
+# and lines, cited to Lassen's Local Voter Information Guide, which
+# prints every part of the measure. Changed only where Lassen's sources
+# differ: the card quotes the abbreviated form (the ballot question) as
+# the guide prints it on page 26, headed as printed and under the
+# guide's running head; the projects line also cites the full text,
+# which names the regional training center; and the no side says
+# "submitted", as Lassen's guide does. The guide prints no yes/no lines
+# with the question, so the card has no YES/NO boxes, and the vote lines
+# give the impartial analysis's own meanings (A "yes" vote would
+# "authorize the District to issue" the bonds; a "no" vote would
+# "disapprove the bond measure"), both highlighting the same phrase of
+# the question. No name of the college, district or counties is
+# narrated: the card, title and `voters` line show them.
+#
+# The bond total and the debt service are repaid from a tax on property
+# in the district, and no archived source states the district's budget,
+# so they have no budget scale (STANDARD.md 6.5; left open). The bond
+# total is said exactly as the question prints it. The tax statement's
+# average rate is the ballot's own figure; its highest rate, about twice
+# the average and for a dozen years, is said beside it so the average
+# does not stand alone. Its fiscal years are written in full
+# (standard/speakability.txt); "approximately $264,800,000" is said as
+# "about $264.8 million". The bar on paying salaries, the audits and the
+# oversight committee, and "without increasing tax rates" are in the
+# supporters' argument, so the neutral sections leave them out
+# (STANDARD.md 6.3).
+#
+# No argument against Measure C was submitted in Lassen County's guide.
+# The no side says so plainly; its section is marked filed = false.
+
+contest = "ca-2026-11-03-shasta-tehama-trinity-jccd-measure-c-lassen"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "C"
+title = "ABBREVIATED FORM OF SHASTA-TEHAMA-TRINITY JOINT COMMUNITY COLLEGE DISTRICT BOND: MEASURE “C”"
+origin = "LOCAL MEASURES"
+summary = "To improve college facilities serving students, veterans, and residents; renovate job training spaces including welding, public safety, agriculture and nursing; make accessibility improvements for the disabled; and acquire, construct, and renovate classrooms/ buildings; shall Shasta-Tehama-Trinity Joint Community College District’s measure be adopted authorizing $129,630,000 of bonds at legal rates, estimated levies averaging $7.76 per $100,000 assessed value (raising $7,800,000 annually) while bonds are outstanding with annual audits, independent citizens’ oversight committee, and all funds remaining local?"
+
+[[section]]
+id = "what"
+heading = "Measure C"
+
+[[section.line]]
+text = "Measure C asks the voters of this community college district whether to approve $129,630,000 in college bonds."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $129,630,000 of bonds"]
+
+[[section]]
+id = "today"
+heading = "How a college bond works"
+
+[[section.line]]
+text = "The district would sell the bonds and repay them from property taxes."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure C needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "projects"
+text = "The money could go to projects such as upgrading classrooms and career training facilities, a regional training center, and better disabled access."
+sources = ["impartial-analysis", "ballot-question", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-workshop"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+id = "tax-rate"
+text = "The district's tax rate statement estimates $7.76 a year per $100,000 of assessed value, on average, through 2060-2061."
+sources = ["tax-statement", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section.line]]
+id = "tax-peak"
+text = "The statement estimates the highest rate at $15.29 per $100,000, from 2031-2032 through 2042-2043."
+sources = ["tax-statement"]
+
+[[section.line]]
+text = "The statement estimates the total to repay, with interest, at about $264.8 million."
+sources = ["tax-statement"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure C would upgrade aging buildings, including main campus classrooms almost 60 years old, without increasing tax rates."
+sources = ["arguments"]
+basis = ["Shasta College's main campus has classrooms that are almost 60 years old.", "Approving Measure C will improve our campuses without increasing tax rates."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Upgrades classrooms almost 60 years old", "Will not increase tax rates"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure C was submitted, so the county voter guide prints only the argument in favor of it."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is to authorize the district to issue the bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $129,630,000 of bonds"]
+
+[[section.line]]
+text = "A no vote is against authorizing the bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $129,630,000 of bonds"]
+
+[[question]]
+ask = "What would the bond money pay for?"
+lines = ["projects"]
+
+[[question]]
+ask = "How much would property owners pay?"
+lines = ["tax-rate", "tax-peak"]
+
+[[question]]
+ask = "How big is $129,630,000 next to the district's yearly budget?"
+unanswered = true

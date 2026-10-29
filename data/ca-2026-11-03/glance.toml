@@ -2437,3 +2437,28 @@ source = "ballot-question"
 quote = "estimated to raise approximately $106,250 annually"
 amount = 106250
 period = "per-year"
+
+# Lassen Union High School District Measure Y: the district's Tax Rate
+# Statement, its total debt service (the bonds are $17,500,000).
+[lassen-union-high-measure-y]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $36,816,735."
+amount = 36816735
+period = "unstated"
+
+# Lassen Library District Measure Z: a flat parcel tax; the district's
+# Tax Rate Statement gives its yearly revenue (no debt service).
+[lassen-library-measure-z]
+source = "tax-statement"
+quote = "will raise approximately $194,600.00 per year"
+amount = 194600
+period = "per-year"
+
+# Shasta-Tehama-Trinity Joint Community College District Measure C,
+# Lassen County's contest: the district's Tax Rate Statement, its total
+# debt service (the bonds are $129,630,000), as Humboldt's contest gives it.
+[shasta-tehama-trinity-jccd-measure-c-lassen]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $264,800,000."
+amount = 264800000
+period = "unstated"

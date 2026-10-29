@@ -1,0 +1,74 @@
+# Archived sources for Lassen Library District Measure Z, 2026-11-03
+# general election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Lassen County Elections prints the whole measure in its Local Voter
+# Information Guide, cut here to pages 35 to 39 of the PDF: County
+# Counsel's impartial analysis (35), the argument in favor and "NO
+# ARGUMENT AGAINST MEASURE “Z” WAS SUBMITTED" (36), the full text,
+# "MEASURE Z- PRESERVE OUR LIBRARY" (37 and 38), and the ballot summary
+# with the district's tax rate statement (39). The guide prints no
+# "Shall ...?" ballot question for Measure Z; its Ballot Summary, which
+# cites Elections Code section 13119 (the ballot label's statute), is
+# what the card quotes. The impartial analysis is the measure's neutral
+# explanation; the tax rate statement is its fiscal statement. No
+# rebuttals are printed.
+#
+# The library district has no Census boundary, so the measure's division
+# is the county and `voters` names the district (docs/SCRIPT-FORMAT.md).
+# The tax itself reaches only parcels inside one city's limits, as the
+# script says without naming the city.
+
+[contest]
+id = "ca-2026-11-03-lassen-library-measure-z"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:lassen"
+kind = "measure"
+title = "Lassen Library District Measure Z: Library Parcel Tax Increase"
+voters = "the Lassen Library District"
+
+[[source]]
+id = "ballot-summary"
+kind = "official-title-summary"
+publisher = "Ballot Summary for Lassen Library District Special Tax Measure “Z”, Lassen County Elections, Local Voter Information Guide for the November 3, 2026 General Election, page 39 of the PDF"
+credit = "Lassen County Local Voter Information Guide"
+url = "https://www.lassencounty.gov/DocumentCenter/View/3261/Full-VIG-Nov-26-Gen-WEB-PDF?bidId="
+file = "sources/vig-pp35-39.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "County Counsel’s Impartial Analysis of Measure “Z”, Lassen County Elections, Local Voter Information Guide for the November 3, 2026 General Election, page 35 of the PDF"
+credit = "Impartial Analysis, Lassen County Local Voter Information Guide"
+url = "https://www.lassencounty.gov/DocumentCenter/View/3261/Full-VIG-Nov-26-Gen-WEB-PDF?bidId="
+file = "sources/vig-pp35-39.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Tax Rate Statement for Lassen Library District Special Tax Measure “Z”, Lassen County Elections, Local Voter Information Guide for the November 3, 2026 General Election, page 39 of the PDF"
+credit = "Tax Rate Statement, Lassen Library District"
+url = "https://www.lassencounty.gov/DocumentCenter/View/3261/Full-VIG-Nov-26-Gen-WEB-PDF?bidId="
+file = "sources/vig-pp35-39.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Lassen Library District Special Tax Measure “Z”, Lassen County Elections, Local Voter Information Guide for the November 3, 2026 General Election, page 36 of the PDF (no argument against was submitted)"
+credit = "Arguments, Lassen County Local Voter Information Guide"
+url = "https://www.lassencounty.gov/DocumentCenter/View/3261/Full-VIG-Nov-26-Gen-WEB-PDF?bidId="
+file = "sources/vig-pp35-39.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Lassen Library District Special Tax Measure “Z”, Lassen County Elections, Local Voter Information Guide for the November 3, 2026 General Election, pages 37 and 38 of the PDF"
+credit = "Full Text of Measure Z, Lassen County Local Voter Information Guide"
+url = "https://www.lassencounty.gov/DocumentCenter/View/3261/Full-VIG-Nov-26-Gen-WEB-PDF?bidId="
+file = "sources/vig-pp35-39.pdf"
+retrieved = "2026-10-28"
