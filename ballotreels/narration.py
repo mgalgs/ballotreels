@@ -139,14 +139,24 @@ MISSING, STALE, CURRENT = "missing", "stale", "current"
 
 def narration_state(contest: Contest) -> str:
     """Whether the contest's committed narration is MISSING (no
-    narration.json or narration.wav), STALE (its phrases no longer match
-    the script's lines) or CURRENT (narrated from exactly this script's
-    text). A current narration has passed `say`'s transcript check, so it
-    is reused as it is; the pre-narration checks (speakability, spoken
-    length, side basis) apply only to a script that is not."""
+    narration.json, or one that records no take with no narration.wav
+    beside it), STALE (its phrases no longer match the script's lines) or
+    CURRENT (narrated from exactly this script's text). A current
+    narration has passed `say`'s transcript check, so it is reused as it
+    is; the pre-narration checks (speakability, spoken length, side basis)
+    apply only to a script that is not.
+
+    A narration.json that records its take (narration_store) is narrated
+    whether or not the audio is here: narration_store.materialize puts it
+    in place wherever a stage plays it. One recorded before takes were
+    (`narration record` reports it) still counts while its narration.wav
+    sits beside it."""
+    from .narration_store import recorded_take
     path = contest.path
-    if not ((path / "narration.json").is_file()
-            and (path / "narration.wav").is_file()):
+    if not (path / "narration.json").is_file():
+        return MISSING
+    if (recorded_take(path) is None
+            and not (path / "narration.wav").is_file()):
         return MISSING
     try:
         match_phrases(contest)

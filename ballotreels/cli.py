@@ -56,6 +56,10 @@ def _check_one(path: str, standard, out) -> bool:
     failures = [*check_contest(contest, standard), *check_division(contest)]
     for f in failures:
         print(f"{path}: {f}", file=out)
+    unrecorded = _unrecorded(Path(path))
+    if unrecorded:
+        print(f"{path}: {unrecorded}", file=out)
+        failures.append(unrecorded)
     words = " ".join(f"{label}={word_count(s)}"
                      for label, s in contest.script.labelled())
     status = (f"FAIL {contest.id}: {len(failures)} failure"
@@ -66,6 +70,17 @@ def _check_one(path: str, standard, out) -> bool:
         summary += f"; {side_order(contest.id)[0]} plays first"
     print(summary, file=out)
     return not failures
+
+
+def _unrecorded(contest_dir: Path) -> str | None:
+    """What `check` reports for a narration.json that records no take
+    (ballotreels.narration_store): the audio cannot be found without it."""
+    from .narration_store import recorded_take
+    if ((contest_dir / "narration.json").is_file()
+            and recorded_take(contest_dir) is None):
+        return ("narration-take: narration.json records no take; run "
+                f"`python -m ballotreels narration record {contest_dir}`")
+    return None
 
 
 def _check_glance(election_dir: Path, out) -> bool:
