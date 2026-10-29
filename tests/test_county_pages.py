@@ -340,7 +340,9 @@ class CountyPageTest(CountyServerTestCase):
 
 class HeroTest(CountyServerTestCase):
     def test_state_hero_without_a_flag_falls_back_to_a_tone(self):
-        hero = self.get_json("/api/state/ca")["hero"]
+        with tempfile.TemporaryDirectory() as tmp, \
+                mock.patch.object(server, "STATIC_DIR", Path(tmp)):
+            hero = self.get_json("/api/state/ca")["hero"]
         self.assertTrue(hero.startswith('<svg class="hero-map"'))
         self.assertIn('aria-hidden="true"', hero)
         self.assertNotIn("<image", hero)
