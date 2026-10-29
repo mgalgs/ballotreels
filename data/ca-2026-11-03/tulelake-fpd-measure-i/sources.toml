@@ -1,0 +1,49 @@
+# Archived sources for Tulelake Multi-County Fire Protection District
+# Measure I, 2026-11-03 general election (sources/sources.md), as
+# archived from Modoc County: Siskiyou County's own copy prints only the
+# ballot question. Every id here may be cited by script.toml. `kind` must
+# be one the standard allows (docs/STANDARD.md, section 1).
+#
+# The district reaches into Siskiyou and Modoc counties: this is its
+# Siskiyou contest; tulelake-fpd-measure-i-modoc is its Modoc one.
+# Neither county posts an impartial analysis or a tax rate statement for
+# Measure I, and neither posts an argument against; whether one was
+# filed is not known. The packet is one PDF, a scan with a text layer:
+# the District's Resolution No. 2026-4 (pages 1 to 2), which prints the
+# ballot question, and its Ordinance No. 26-01 (pages 3 to 6), the
+# measure's full text.
+
+[contest]
+id = "ca-2026-11-03-tulelake-fpd-measure-i"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:siskiyou"
+kind = "measure"
+title = "Tulelake Multi-County Fire Protection District Measure I: Fire Protection Parcel Tax Increase"
+voters = "the Tulelake Multi-County Fire Protection District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Tulelake Multi-County Fire Protection District, Board of Directors Resolution No. 2026-4, calling a general election on a special tax increase, adopted August 7, 2026: the ballot question, pages 1 to 2, as posted by Modoc County Elections, Measure I - Tulelake Multi-County Fire District"
+credit = "Resolution No. 2026-4, Tulelake Multi-County Fire Protection District"
+url = "https://www.countyofmodoc.gov/DocumentCenter/View/1643/Measure-I---Tulelake-Multi-County-Fire-District-PDF"
+file = "sources/measure-i-county-packet.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Tulelake Multi-County Fire Protection District, Ordinance No. 26-01, imposing a special parcel tax increase for the purpose of maintaining and improving fire protection and prevention services, adopted August 7, 2026, pages 3 to 6, as posted by Modoc County Elections, Measure I - Tulelake Multi-County Fire District"
+credit = "Ordinance No. 26-01, Tulelake Multi-County Fire Protection District"
+url = "https://www.countyofmodoc.gov/DocumentCenter/View/1643/Measure-I---Tulelake-Multi-County-Fire-District-PDF"
+file = "sources/measure-i-county-packet.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure I (Ordinance No. 26-01), Modoc County Elections, Measure I - Argument in Favor"
+credit = "Argument in Favor, Modoc County Elections"
+url = "https://www.countyofmodoc.gov/DocumentCenter/View/1642/Measure-I---Argument-in-Favor-PDF"
+file = "sources/argument-in-favor.pdf"
+retrieved = "2026-10-28"
