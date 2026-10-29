@@ -343,6 +343,18 @@ class Worker:
         job_id, claim = job["id"], job["claim"]
         self._current = (job_id, claim)
         self._current_stage = None
+        if self._stop.is_set():
+            # stop() ran between the claim and the line above, saw no
+            # current job, and gave nothing back: give this one back now.
+            # (stop() sets the flag before it reads _current, so one of the
+            # two always sees the other; a second release just 409s.)
+            # No lock: stop() also runs as a signal handler on this thread.
+            self._current = None
+            try:
+                self.client.release(job_id, claim)
+            except Exception:
+                pass
+            return
         wd = self._job_work_dir(job_id)
         succeeded = False
         master_path = None
