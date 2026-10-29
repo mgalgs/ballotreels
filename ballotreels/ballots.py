@@ -708,6 +708,15 @@ BALLOTS: dict[str, Ballot] = {
                      # named as headed
                      "ca-2026-11-03-tulelake-fpd-measure-i":
                          "Resolution No. 2026-4",
+                     # Butte County Clerk-Recorder/Elections prints each
+                     # local measure's ballot question, impartial analysis
+                     # and arguments in its guide, titled "Local Voter
+                     # Information Guide" with no county name
+                     **{f"ca-2026-11-03-{slug}":
+                        "Local Voter Information Guide"
+                        for slug in ("oroville-measure-r",
+                                     "oroville-measure-s",
+                                     "oroville-city-elementary-measure-q")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
