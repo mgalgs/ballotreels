@@ -1052,3 +1052,11 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $1.79 billion."
 amount = 1790000000
 period = "unstated"
+
+# Sacramento City Unified School District Measure M: a parcel tax, so no
+# tax rate statement; the one estimate is in its ballot question.
+[sacramento-city-unified-measure-m]
+source = "ballot-label"
+quote = "raising $10 million annually"
+amount = 10000000
+period = "per-year"

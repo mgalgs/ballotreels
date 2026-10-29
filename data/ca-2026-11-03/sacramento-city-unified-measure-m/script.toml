@@ -1,0 +1,157 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; when the tax would start and how long it lasts; what
+# it needs to pass; what would change (the yearly rise, who is exempt,
+# what the money may pay for); the district's revenue estimate, as the
+# ballot question gives it; one line per side; what a vote does.
+#
+# A parcel tax, not a bond: the page prints no tax rate statement. The
+# card's title is the item's own head on the county's Current Measure
+# Information page. County Counsel's Impartial Analysis says nothing of
+# who placed the measure on the ballot, so the card's origin is the
+# analysis's own heading for the measure. "Counsel" is heard as
+# "Council" (standard/speakability.txt), so the narration says "the
+# impartial analysis".
+#
+# The revenue estimate ($10 million a year) is the district's, in the
+# ballot question. No archived source states the district's budget, so
+# it has no scale (STANDARD.md 6.5; left open); the $95 is an amount per
+# parcel (exempt). Both sides argue over whether the tax "never expires"
+# (opponents) or is "not forever" (supporters), so the neutral line gives
+# the analysis's own words, that it continues until voters amend or
+# repeal it. The opponents' points on oversight (no citizens' committee;
+# the yearly report goes to the same board) and the supporters' federal
+# share (13 percent of a promised 40) and pilot are theirs, so the neutral sections
+# leave out the separate fund, the yearly report and the federal share
+# (STANDARD.md 6.3). Sides come from the argument in favor and the
+# argument against, not the rebuttals.
+
+contest = "ca-2026-11-03-sacramento-city-unified-measure-m"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-label"
+number = "M"
+title = "Measure M: Sacramento City Unified School District"
+origin = "Sacramento City Unified School District Parcel Tax"
+summary = "To address the decline in Federal funding for Special Education and to expand early intervention programs to every school, shall Sacramento City Unified School District adopt a $95 per year Special Education tax on each parcel of property until repealed or replaced by voters, raising $10 million annually, with exemptions for seniors, including Social Security recipients, and recipients of Supplemental Security and Social Security Disability and annual inflation adjustments, providing funds exclusively for Special Education and intervention programs, be adopted?"
+yes = "A “YES” vote on Measure M means you wish to enact the special tax."
+no = "A “NO” vote on Measure M means you do not wish to enact the special tax."
+
+[[section]]
+id = "what"
+heading = "Measure M"
+
+[[section.line]]
+text = "Sacramento City Unified School District Measure M asks the district's voters whether to adopt a $95 yearly tax on each parcel of property for special education."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["$95 per year Special Education tax on each parcel of property"]
+
+[[section]]
+id = "today"
+heading = "How the tax would work"
+
+[[section.line]]
+text = "The county would collect the tax with property taxes from July 1, 2027, until voters amend or repeal it."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+text = "Measure M needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "From the second year, the tax would rise with inflation, by at most 3 percent a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section.line]]
+text = "Owners who live in their homes and are 65 or older, or receive certain disability benefits, could apply to be exempt."
+sources = ["impartial-analysis", "text"]
+
+[[section.line]]
+text = "The money could be spent only on special education and early intervention programs."
+sources = ["text"]
+
+[[section]]
+id = "fiscal"
+heading = "What the ballot question says"
+
+[[section.line]]
+text = "The ballot question says the tax would raise $10 million a year."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the federal government broke its promise to fund special education, and early intervention in 10 schools is succeeding."
+sources = ["arguments"]
+basis = ["The federal government has failed to deliver on its promise to provide 40% of the funds for Special Education.", "Last year, our School Board began an Early Intervention Project in 10 of our elementary schools. And it is succeeding."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Federal government broke its funding promise", "Early intervention is succeeding"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the district should repair its finances before seeking more money, and the tax never expires and can rise annually."
+sources = ["arguments"]
+basis = ["Yet Sacramento City Unified School District wants more money before it fixes its budget.", "Measure M is a tax that never expires.", "It starts at $95 per parcel and can rise up to 3% each year."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Fix the budget before a new tax", "Never expires and can rise each year"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote enacts the special tax."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["you wish to enact the special tax"]
+
+[[section.line]]
+text = "A no vote does not enact the special tax."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["you do not wish to enact the special tax"]
