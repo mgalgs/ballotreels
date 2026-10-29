@@ -162,8 +162,8 @@ def county_meta(county_name: str, state_name: str, election_id: str,
 
 def flag_path(abbr: str) -> str:
     """Where a state's coloured-pencil flag goes, under static/ (about
-    1600x1000): the state page's map shows it inside the state."""
-    return f"flags/{abbr}.png"
+    960x600, JPEG): the state page's map shows it inside the state."""
+    return f"flags/{abbr}.jpg"
 
 
 # The hero map's colours: the site's graphite, paper and orange pencil

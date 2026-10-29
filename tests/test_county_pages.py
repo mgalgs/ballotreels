@@ -352,11 +352,11 @@ class HeroTest(CountyServerTestCase):
         with tempfile.TemporaryDirectory() as tmp:
             static = Path(tmp)
             (static / "flags").mkdir()
-            (static / "flags" / "ca.png").write_bytes(b"\x89PNG")
+            (static / "flags" / "ca.jpg").write_bytes(b"\xff\xd8\xff")
             with mock.patch.object(server, "STATIC_DIR", static):
                 hero = server._hero(self.deps.states["ca"])
         self.assertRegex(hero, r'<image class="hero-flag" '
-                               r'href="/static/flags/ca.png" [^>]*'
+                               r'href="/static/flags/ca.jpg" [^>]*'
                                r'mask="url\(#hero-land\)"')
 
     def test_county_hero_fills_its_county(self):

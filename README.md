@@ -197,7 +197,7 @@ there. To write it again from a build already on disk (no download):
 
 The state and county pages draw the state from those outlines. A
 state's page shows its flag inside it if
-`ballotreels/site/static/flags/<st>.png` (about 1600x1000, a
+`ballotreels/site/static/flags/<st>.jpg` (about 960x600, a
 coloured-pencil drawing) is there, and a soft pencil tone without one.
 
 Look up what a zip code resolves to:
