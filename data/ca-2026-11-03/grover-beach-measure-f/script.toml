@@ -12,8 +12,8 @@
 # resolution submitting the initiative, which prints it under "CITY OF
 # GROVER BEACH INITIATIVE MEASURE F-26" with plain YES and NO boxes and
 # no yes/no lines; the guide does not print the question. So the card's
-# title is that heading, its origin is the part of the resolution's own
-# title that its scan reads cleanly, the vote lines take their meanings
+# title is that heading, its origin is the resolution's number as its
+# certification page prints it, the vote lines take their meanings
 # from the question, and both highlight the same phrase of it. No place
 # name is narrated: the opening says "the voters of this city", and the
 # card and title carry the name.
@@ -39,7 +39,7 @@ standard_version = 2
 source = "ballot-question"
 number = "F"
 title = "CITY OF GROVER BEACH INITIATIVE MEASURE F-26"
-origin = "A RESOLUTION OF THE CITY COUNCIL OF THE CITY OF GROVER BEACH, CALIFORNIA, SUBMITTING TO THE VOTERS AT THE NEXT GENERAL MUNICIPAL ELECTION ON NOVEMBER 3, 2026, AN INITIATIVE MEASURE TO ADOPT AN ORDINANCE TO LIMIT BUILDING HEIGHTS"
+origin = "Resolution No. 26-20"
 summary = "Grover Beach Citizen Initiative Ballot Measure. Shall the City of Grover Beach implement a building height limit and establish a minimum thirty-three percent (33%) commercial component in mixed-use development?"
 
 [[section]]
