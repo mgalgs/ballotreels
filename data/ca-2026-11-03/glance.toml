@@ -2456,3 +2456,13 @@ source = "impartial-analysis"
 quote = "generate approximately Ninety-Eight Thousand dollars ($98,000.00) per year"
 amount = 98000
 period = "per-year"
+
+# Tulelake Multi-County Fire Protection District Measure I (Modoc
+# County's contest): no impartial analysis or tax rate statement is
+# posted; the one estimate is the ballot question's, as Siskiyou's
+# contest gives it.
+[tulelake-fpd-measure-i-modoc]
+source = "ballot-question"
+quote = "estimated to raise approximately $106,250 annually"
+amount = 106250
+period = "per-year"
