@@ -1584,3 +1584,12 @@ source = "ballot-question"
 quote = "to generate approximately $5,750,000 annually"
 amount = 5750000
 period = "per-year"
+
+# Solano County Measure E: a business license tax, so no tax rate
+# statement; County Counsel's Impartial Analysis gives county staff's
+# revenue estimate.
+[solano-county-measure-e]
+source = "impartial-analysis"
+quote = "County staff estimate the measure would generate approximately $353,000 in additional annual revenue."
+amount = 353000
+period = "per-year"

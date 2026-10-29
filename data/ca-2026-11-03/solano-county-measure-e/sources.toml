@@ -1,0 +1,72 @@
+# Archived sources for Solano County Measure E, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# No printed Solano County voter guide was archived: these are the filed
+# documents the Solano County Registrar of Voters posts on its Current
+# Election Information page. The ballot question is quoted from
+# Resolution No. 2026-164, which orders it "included on the ballot". The
+# resolution and the argument in favor are scans with no text layer:
+# the passages `check` reads verbatim were typed from the page images
+# into .txt transcriptions beside the PDFs, which name the PDF and URL
+# they copy; those sources point at the transcriptions, and their urls
+# at the scans. County Counsel's impartial analysis is the measure's
+# neutral explanation. No tax rate statement or fiscal analysis was
+# posted (a business license tax); the one revenue estimate is county
+# staff's, as the analysis gives it.
+#
+# No rebuttal to the argument against was posted; the rebuttal to the
+# argument in favor is not cited.
+
+[contest]
+id = "ca-2026-11-03-solano-county-measure-e"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:solano"
+kind = "measure"
+title = "Solano County Measure E: Business License Tax on Energy Facilities and Data Centers"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Solano County Board of Supervisors, Resolution No. 2026-164, calling the election on Measure E, adopted July 28, 2026: the ballot question, page 2, and the vote, page 3 (transcribed from the scan), as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Resolution No. 2026-164, Solano County Board of Supervisors"
+url = "https://content.solanocounty.gov/sites/default/files/2026-07/Resolution_Solano_County_Measure_E_REDACTED.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "County Counsel’s Impartial Analysis of Measure E, as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Impartial Analysis of Measure E, Solano County Registrar of Voters"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Measure_E_-_Impartial_Analysis_ordinance_for_commercial_energy_production_facilities_business_license_tax.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Measure E, Full Text: the ordinance amending Article XII of Chapter 11 of the Solano County Code, as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Measure E full text, Solano County Registrar of Voters"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Measure_E_Tax_Ordinance_Full_Text.pdf"
+file = "sources/full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure E (transcribed from the scan), as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Argument in favor, Solano County Registrar of Voters"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Measure_E_-_Argument_in_Favor_Redacted.pdf"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure E, as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Argument against, Solano County Registrar of Voters"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Measure_E_-_Argument_Against_Redacted_0.pdf"
+file = "sources/argument-against.pdf"
+retrieved = "2026-10-28"
