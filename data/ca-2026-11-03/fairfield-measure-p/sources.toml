@@ -1,0 +1,69 @@
+# Archived sources for City of Fairfield Measure P, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# No printed Solano County voter guide was archived: these are the filed
+# documents the Solano County Registrar of Voters posts on its Current
+# Election Information page. The ballot question is quoted from
+# Resolution No. 2026-159, which orders it "printed on the ballot". The
+# resolution is a scan with no text layer: the passages `check` reads
+# verbatim were typed from the page images into
+# sources/resolution-transcription.txt, which names the PDF and URL it
+# copies; that source points at the transcription, and its url at the
+# scan. The City Attorney's impartial analysis is the measure's neutral
+# explanation. No tax rate statement or fiscal analysis applies (a sales
+# tax); the one revenue estimate is the City's, as the analysis gives
+# it. The rebuttals are not cited.
+
+[contest]
+id = "ca-2026-11-03-fairfield-measure-p"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:fairfield"
+kind = "measure"
+title = "City of Fairfield Measure P: Extend and Increase the City Sales Tax Until Ended by Voters"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Fairfield, Resolution No. 2026-159, adopted July 7, 2026: the ballot question, page 2, and the vote, page 3 (transcribed from the scan), as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Resolution No. 2026-159, City of Fairfield"
+url = "https://content.solanocounty.gov/sites/default/files/2026-07/Resolution_City_of_Fairfield_Measure_P_REDACTED.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney’s Impartial Analysis of Measure P, David G. Lim, Fairfield City Attorney, as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "City Attorney’s Impartial Analysis of Measure P"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Fairfield_-_Final_Impartial_Analysis__Measure_P_-_Sales_Tax_Measure_.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Fairfield, Exhibit A to Resolution No. 2026-159: the ordinance amending Article VII of Chapter 18 of the Fairfield Municipal Code to extend and increase the existing transactions and use tax (full text), as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Measure P ordinance, City of Fairfield"
+url = "https://content.solanocounty.gov/sites/default/files/2026-07/Resolution_City_of_Fairfield_Measure_P_Exhibit_A.pdf"
+file = "sources/full-text-exhibit-a.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure P, as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Argument in favor, Solano County Registrar of Voters"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Measure_P_-_Argument_in_Favor.pdf"
+file = "sources/argument-in-favor.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure P, as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Argument against, Solano County Registrar of Voters"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Measure_P_-_Argument_Against.pdf"
+file = "sources/argument-against.pdf"
+retrieved = "2026-10-28"

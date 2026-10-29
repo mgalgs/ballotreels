@@ -1602,3 +1602,12 @@ source = "impartial-analysis"
 quote = "According to the ballot question, the increase is estimated to generate approximately $58,500 in additional annual revenue."
 amount = 58500
 period = "per-year"
+
+# City of Fairfield Measure P: no tax rate statement or fiscal analysis
+# applies (a sales tax); the one estimate is the City Attorney's
+# impartial analysis's.
+[fairfield-measure-p]
+source = "impartial-analysis"
+quote = "The City estimated that this Measure will raise approximately $24 million per year in new local revenue for use in the City."
+amount = 24000000
+period = "per-year"
