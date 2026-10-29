@@ -1064,3 +1064,12 @@ quote = "Transitioning to the two-year budget cycle and establishing a capital i
 amount = 6000000
 period = "one-time"
 direction = "cost"
+
+# City of Los Angeles Measure PL: the City Administrative Officer's
+# estimate of yearly commission costs.
+[los-angeles-measure-pl]
+source = "financial-impact"
+quote = "The annual administrative costs for commission staffing and resources are estimated to be reduced by $360,000 from $1.1 million to $740,000."
+amount = 1100000
+period = "per-year"
+direction = "savings"
