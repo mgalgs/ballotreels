@@ -1,0 +1,195 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; the tax today and when it ends, and the vote
+# Measure P needs; what would change (the amount and years, what the
+# money may pay for, who is exempt, what happens if it fails); the
+# district's revenue estimate; one line per side; what a vote does.
+#
+# No name of the district, its schools or its town is narrated (the
+# narrator mispronounces them): the opening says "the voters of this
+# school district". The card and title carry the names. "Counsel" is
+# heard as "Council" (standard/speakability.txt), so the narration does
+# not say it.
+#
+# Measure P replaces the 2020 Measure G parcel tax: the script says so
+# only as the impartial analysis and the full text do (Measure G
+# "expires on June 30, 2027"; Measure P is a "replacement education
+# parcel tax, succeeding" it; if P fails, G "will continue in effect
+# until it expires"). Neither prints Measure G's rate, so the script
+# gives none.
+#
+# The card quotes the ballot label as the guide's sample ballot prints
+# it, with the impartial analysis's yes and no meanings as its YES and NO
+# boxes; the vote lines say those meanings, each highlighting its own box.
+#
+# The analysis's $1.1 million a year is district revenue, and no archived
+# source states the district's budget, so it has no scale (STANDARD.md
+# 6.5; left open). The tax per parcel is exempt.
+#
+# The guide prints "No Argument Against Measure P was Filed". The no
+# side says so plainly; its section is marked filed = false.
+
+contest = "ca-2026-11-03-mammoth-unified-measure-p"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "P"
+title = "THE SPECIAL TAX MEASURE FOR MAMMOTH UNIFIED SCHOOL DISTRICT"
+origin = "This measure was placed on the ballot by the Board of Education of the Mammoth Unified School District"
+summary = "With funds that cannot be taken by the State and spent elsewhere, shall Mammoth Unified School District's replacement parcel tax measure to attract and retain experienced teachers, preserve smaller class sizes, and maintain and enhance high quality programs including technology, art, music, math, science, and athletics at Mammoth Elementary School, Mammoth Middle School, Mammoth High School, and Sierra High School be adopted at $99 per parcel raising $1.1 million annually for six years with independent oversight, audits, senior exemptions, and public disclosure of all spending?"
+yes = "A “YES” vote on this measure is a vote to authorize the tax."
+no = "A “NO” vote is a vote not to authorize the tax."
+
+[[section]]
+id = "what"
+heading = "Measure P"
+
+[[section.line]]
+text = "Measure P asks the voters of this school district whether to approve a parcel tax of $99 a year for six years."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["$99 per parcel"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-tax"
+text = "Today, the district has a parcel tax that voters approved in 2020, and that tax expires on June 30, 2027."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+id = "threshold"
+text = "Measure P needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "amount"
+text = "Measure P would replace the 2020 tax with a tax of $99 per parcel each year, from 2027-2028 through 2032-2033."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+id = "uses"
+text = "The measure lists what the money may pay for, including keeping qualified teachers, small early-grade classes, and music, arts and athletics."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section.line]]
+id = "exempt"
+text = "Owners aged 65 or older who live on their parcel could be exempt, and so could property already exempt from property taxes."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+id = "if-fails"
+text = "If Measure P fails, the 2020 tax would still end on June 30, 2027."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What the analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The impartial analysis says the district estimates the tax would bring in about $1.1 million a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure P helps keep dedicated, qualified teachers and protects programs students rely on, and every dollar stays local."
+sources = ["arguments"]
+basis = ["helps retain dedicated, qualified teachers in Mammoth classrooms, and safeguards the academic programs our students rely on every day.", "Every dollar raised will stay local and cannot be taken by the State and Federal government."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Keeps qualified teachers", "Every dollar stays local"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure P was filed, so the county voter guide prints only the argument in favor of the measure."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is a vote to authorize the tax."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["a vote to authorize the tax"]
+
+[[section.line]]
+text = "A no vote is a vote not to authorize the tax."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["a vote not to authorize the tax"]
+
+[[question]]
+ask = "Is this a new tax, or does it replace one?"
+lines = ["today-tax", "amount", "if-fails"]
+
+[[question]]
+ask = "Who would be exempt?"
+lines = ["exempt"]
+
+[[question]]
+ask = "What would the money pay for?"
+lines = ["uses"]
+
+[[question]]
+ask = "How much is the tax that Measure P would replace?"
+unanswered = true
+
+[[question]]
+ask = "How large is $1.1 million a year next to the district's budget?"
+unanswered = true

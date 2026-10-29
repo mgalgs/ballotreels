@@ -2621,3 +2621,12 @@ source = "impartial-analysis"
 quote = "The best estimate of total debt service, including principal and interest, if all bonds are issued and sold, is approximately $11,300,000."
 amount = 11300000
 period = "unstated"
+
+# Mammoth Unified School District Measure P: a flat parcel tax, so no
+# tax rate statement; the impartial analysis gives the district's yearly
+# revenue estimate.
+[mammoth-unified-measure-p]
+source = "impartial-analysis"
+quote = "The District estimates the tax would generate approximately $1.1 million annually."
+amount = 1100000
+period = "per-year"

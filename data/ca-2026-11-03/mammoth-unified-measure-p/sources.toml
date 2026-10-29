@@ -1,0 +1,60 @@
+# Archived sources for Mammoth Unified School District Measure P,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Mono County Elections prints the whole measure in its Voter Information
+# Guide and Sample Ballot, cut here from ballot type B004 (amended) to
+# PDF pages 9 and 20 to 22: the sample ballot page with the ballot label
+# (9), the full text (20 and 21), the impartial analysis (21), and the
+# argument in favor with "No Argument Against Measure P was Filed" (22).
+# The impartial analysis is the measure's neutral explanation and gives
+# the district's revenue estimate; a parcel tax has no tax rate
+# statement. No rebuttals are printed. Of the two separate postings
+# archived beside it, sources/impartial-analysis.pdf is the county
+# site's "Object moved" HTML redirect, not the analysis, and
+# sources/argument-in-favor.pdf is a scan with no text layer; neither is
+# cited, and the guide prints both documents.
+
+[contest]
+id = "ca-2026-11-03-mammoth-unified-measure-p"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:mammoth_unified_school_district"
+kind = "measure"
+title = "Mammoth Unified School District Measure P: Replacement Education Parcel Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Measure P ballot label, sample ballot, Mono County Elections, Mono County Voter Information Guide and Sample Ballot, ballot type B004 (amended), November 3, 2026 General Election, page 9 of the PDF"
+credit = "Mono County Voter Information Guide and Sample Ballot"
+url = "https://monocounty.ca.gov/DocumentCenter/View/3627/B004_AMENDED"
+file = "sources/vig-B004-measure-p-pdfpp9,20-22.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure P, prepared by the Mono County Counsel, Mono County Elections, Mono County Voter Information Guide and Sample Ballot, ballot type B004 (amended), November 3, 2026 General Election, page 21 of the PDF"
+credit = "Impartial Analysis, Mono County Voter Information Guide and Sample Ballot"
+url = "https://monocounty.ca.gov/DocumentCenter/View/3627/B004_AMENDED"
+file = "sources/vig-B004-measure-p-pdfpp9,20-22.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure P, and \"No Argument Against Measure P was Filed\", Mono County Elections, Mono County Voter Information Guide and Sample Ballot, ballot type B004 (amended), November 3, 2026 General Election, page 22 of the PDF"
+credit = "Arguments, Mono County Voter Information Guide and Sample Ballot"
+url = "https://monocounty.ca.gov/DocumentCenter/View/3627/B004_AMENDED"
+file = "sources/vig-B004-measure-p-pdfpp9,20-22.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of the Special Tax Measure for Mammoth Unified School District, Measure P, Mono County Elections, Mono County Voter Information Guide and Sample Ballot, ballot type B004 (amended), November 3, 2026 General Election, pages 20 and 21 of the PDF"
+credit = "Full Text of Measure P, Mono County Voter Information Guide and Sample Ballot"
+url = "https://monocounty.ca.gov/DocumentCenter/View/3627/B004_AMENDED"
+file = "sources/vig-B004-measure-p-pdfpp9,20-22.pdf"
+retrieved = "2026-10-28"
