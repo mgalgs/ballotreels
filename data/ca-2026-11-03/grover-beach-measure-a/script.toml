@@ -1,0 +1,182 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is, and how it reached the ballot;
+# what the clerk does and how the office is filled today; what would
+# change (the term, the special election, the vote it needs); no cost
+# estimate; one line per side; what a vote does.
+#
+# The card quotes the ballot question from the City Council's
+# resolution submitting the initiative, which prints it under "CITY OF
+# GROVER BEACH INITIATIVE MEASURE A-26" with plain YES and NO boxes and
+# no yes/no lines; the guide does not print the question. So the card's
+# title is that heading, its origin is the resolution's own title, the
+# vote lines give the impartial analysis's meanings, and both highlight
+# the same phrase of the question. No place name is narrated: the
+# opening says "the voters of this city", and the card and title carry
+# the name. The question's "appointive" is misheard in narration
+# (standard/speakability.txt), so the lines say "appointed".
+#
+# The year the office was first filled by appointment (1959), the share
+# of California cities that appoint their clerk, and the court case over
+# a 2024 petition are in the sides' arguments as well as the analysis,
+# so the neutral sections leave them out (STANDARD.md 6.3). The special
+# election is the measure's own text (Section 3), so "change" states it;
+# its estimated cost is the opponents', and is not narrated.
+#
+# Not a tax: the guide prints no fiscal statement for the measure, so
+# the fiscal line says the guide does not include a cost estimate, and
+# names it "the county voter guide" (no place name is narrated).
+
+contest = "ca-2026-11-03-grover-beach-measure-a"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "A"
+title = "CITY OF GROVER BEACH INITIATIVE MEASURE A-26"
+origin = "A RESOLUTION OF THE CITY COUNCIL OF THE CITY OF GROVER BEACH, CALIFORNIA, SUBMITTING TO THE VOTERS AT THE GENERAL MUNICIPAL ELECTION ON NOVEMBER 3, 2026, AN INITIATIVE MEASURE REQUIRING THAT THE OFFICE OF CITY CLERK BE AN ELECTED POSITION"
+summary = "Shall the current appointive Office of the City Clerk be required to be an elected position?"
+
+[[section]]
+id = "what"
+heading = "Measure A"
+
+[[section.line]]
+text = "Measure A asks the voters of this city whether the city clerk should be elected instead of appointed."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["be required to be an elected position"]
+
+[[section.line]]
+id = "initiative"
+text = "Measure A is a citizen initiative that reached the ballot by petition."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "neighborhood-petition"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "duties"
+text = "The city clerk keeps the official city records and serves as the elections official for the city."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-clerk-office"
+
+[[section.line]]
+id = "appointed"
+text = "Today the city clerk is appointed, not elected."
+sources = ["impartial-analysis", "ballot-question"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "term"
+text = "Voters would elect the city clerk to four-year terms."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section.line]]
+id = "special"
+text = "The city would first hold a special election to fill the office until the next regular city election."
+sources = ["impartial-analysis", "text"]
+
+[[section.line]]
+text = "Measure A needs a simple majority to pass."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The county voter guide does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say an appointed clerk depends on the city manager for the job, while an elected clerk answers to voters."
+sources = ["arguments"]
+basis = ["Currently, as a city manager appointee, the clerk faces a conflict of interest: the clerk depends on the council-appointed city manager for employment.", "An elected City Clerk answers to the Voters and gives us a direct say in who administers our democratic processes."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Ends the clerk's conflict of interest", "An elected clerk answers to voters"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure A shrinks the pool of applicants to local voters, and drops requirements of competence and experience."
+sources = ["arguments"]
+basis = ["It shrinks the pool of potential applicants from nationwide to only registered Grover Beach voters.", "It throws out requirements of competency, experience, and temperament."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Shrinks the pool of applicants", "Drops competence and experience rules"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote makes the city clerk an elected office with a four-year term."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["be required to be an elected position"]
+
+[[section.line]]
+text = "A no vote keeps the city clerk an appointed office."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["be required to be an elected position"]
+
+[[question]]
+ask = "What does the city clerk do?"
+lines = ["duties"]
+
+[[question]]
+ask = "How did this get on the ballot?"
+lines = ["initiative"]
+
+[[question]]
+ask = "What happens right after it passes?"
+lines = ["special"]
