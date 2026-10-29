@@ -1,0 +1,47 @@
+# Contest index for the 2026-11-03 Missouri general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot: the five statewide measures, in ballot order (Amendments 1, 2,
+# 4 and 5 were on the August 4 primary ballot). `number` is a measure's
+# ballot designation (a string). The Secretary of State's "2026 Ballot
+# Measures" page prints no short title, so each title pairs the
+# designation with a short subject in the page's own words.
+
+[election]
+id = "mo-2026-11-03"
+state = "ocd-division/country:us/state:mo"
+title = "Missouri General Election, November 3, 2026"
+
+[[contest]]
+id = "mo-2026-11-03-amendment-3"
+kind = "measure"
+division = "ocd-division/country:us/state:mo"
+title = "Amendment 3: Abortion and Gender Transition Procedures for Minors"
+number = "3"
+
+[[contest]]
+id = "mo-2026-11-03-amendment-6"
+kind = "measure"
+division = "ocd-division/country:us/state:mo"
+title = "Amendment 6: Initiative and Referendum Petitions"
+number = "6"
+
+[[contest]]
+id = "mo-2026-11-03-amendment-7"
+kind = "measure"
+division = "ocd-division/country:us/state:mo"
+title = "Amendment 7: Show-Me Prosperity Fund"
+number = "7"
+
+[[contest]]
+id = "mo-2026-11-03-amendment-8"
+kind = "measure"
+division = "ocd-division/country:us/state:mo"
+title = "Amendment 8: County Sheriffs"
+number = "8"
+
+[[contest]]
+id = "mo-2026-11-03-proposition-a"
+kind = "measure"
+division = "ocd-division/country:us/state:mo"
+title = "Proposition A: Congressional District Boundaries"
+number = "A"
