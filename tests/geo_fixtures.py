@@ -207,10 +207,16 @@ SLD_REL_URLS = {
 def _zip_shapes(src_dir: Path, kind: str) -> bytes:
     """`<kind>.shp` and `.dbf` packed the way the Census ships them: a zip
     archive whose members are named after the TIGER file."""
+    from ballotreels.geo.counties import SHORELINE
+
+    # A fake with no shoreline counties of its own ships TIGER's again.
+    source = kind
+    if kind == SHORELINE and not (src_dir / f"{kind}.shp").exists():
+        source = "county"
     buf = io.BytesIO()
     with zipfile.ZipFile(buf, "w") as zf:
         for ext in (".shp", ".dbf"):
-            zf.write(src_dir / f"{kind}{ext}", f"tl_2024_fake_{kind}{ext}")
+            zf.write(src_dir / f"{source}{ext}", f"tl_2024_fake_{kind}{ext}")
     return buf.getvalue()
 
 
@@ -257,7 +263,9 @@ def build_fixture_geo(data_dir: Path, **build_kwargs) -> None:
 def write_simple_state_source(src_dir: Path, state: str, zips: list[str],
                               cd_code: str = "01",
                               county_name: str = "Example",
-                              county_namelsad: str | None = None) -> None:
+                              county_namelsad: str | None = None,
+                              sld: dict[str, tuple[str, str]] | None = None
+                              ) -> None:
     from ballotreels.geo.build import STATE_FIPS, kinds_for
 
     fips = STATE_FIPS[state]
@@ -267,11 +275,15 @@ def write_simple_state_source(src_dir: Path, state: str, zips: list[str],
     write_shapefile(src_dir / "cd", fields,
                     [{"GEOID": fips + cd_code, "STATEFP": fips, "NAME": ""}],
                     [[square]])
+    # `sld`: kind -> (district code, NAMELSAD) in place of "001", for a
+    # state whose codes are not numbers.
+    sld = sld or {}
     for kind in ("sldu", "sldl"):
         if kind in kinds:
-            write_shapefile(src_dir / kind, fields,
-                            [{"GEOID": fips + "001", "STATEFP": fips,
-                              "NAME": ""}], [[square]])
+            code, namelsad = sld.get(kind, ("001", ""))
+            write_shapefile(src_dir / kind, fields + [("NAMELSAD", "C", 60)],
+                            [{"GEOID": fips + code, "STATEFP": fips,
+                              "NAME": "", "NAMELSAD": namelsad}], [[square]])
     county_fields = fields + [("NAMELSAD", "C", 60)]
     write_shapefile(src_dir / "county", county_fields,
                     [{"GEOID": fips + "999", "STATEFP": fips,
@@ -283,7 +295,8 @@ def write_simple_state_source(src_dir: Path, state: str, zips: list[str],
     write_shapefile(src_dir / "zcta", [("GEOID20", "C", 10)],
                     [{"GEOID20": z} for z in zips], [[r] for r in rings])
     district = {"cd": fips + cd_code, "county": fips + "999",
-                "sldu": fips + "001", "sldl": fips + "001"}
+                "sldu": fips + sld.get("sldu", ("001",))[0],
+                "sldl": fips + sld.get("sldl", ("001",))[0]}
     for kind in kinds:
         column = "GEOID_CD_20" if kind == "cd" else f"GEOID_{kind.upper()}_20"
         lines = [f"GEOID_ZCTA5_20|{column}|AREALAND_PART"]
@@ -373,7 +386,13 @@ LOCAL_DISTRICTS = {
 }
 
 
-def write_local_source(src_dir: Path) -> None:
+# The shoreline counties `write_local_source(shoreline=True)` ships: San
+# Diego less a coast (x 0-2), under a name the build does not use;
+# Imperial absent; and a county of another state.
+SHORELINE_SAN_DIEGO = (2.0, 0.0, 20.0, 10.0)
+
+
+def write_local_source(src_dir: Path, shoreline: bool = False) -> None:
     fields = [("GEOID", "C", 10), ("STATEFP", "C", 2), ("NAME", "C", 40)]
     whole = _box(0.0, 0.0, 30.0, 10.0)
     write_shapefile(src_dir / "cd", fields,
@@ -390,6 +409,14 @@ def write_local_source(src_dir: Path) -> None:
           "NAMELSAD": f"{name} County"}
          for geoid, name in LOCAL_COUNTIES.items()],
         [[_box(0.0, 0.0, 20.0, 10.0)], [_box(20.0, 0.0, 30.0, 10.0)]])
+    if shoreline:
+        write_shapefile(
+            src_dir / "county_cb", county_fields,
+            [{"GEOID": "06073", "STATEFP": "06", "NAME": "Shore Diego",
+              "NAMELSAD": "Shore Diego County"},
+             {"GEOID": "32003", "STATEFP": "32", "NAME": "Clark",
+              "NAMELSAD": "Clark County"}],
+            [[_box(*SHORELINE_SAN_DIEGO)], [_box(20.0, 0.0, 30.0, 10.0)]])
     for layer, rows in LOCAL_DISTRICTS.items():
         write_shapefile(
             src_dir / layer, LOCAL_FIELDS,
@@ -410,7 +437,7 @@ def write_local_source(src_dir: Path) -> None:
                                                  encoding="utf-8")
 
 
-def build_local_geo(data_dir: Path) -> list[str]:
+def build_local_geo(data_dir: Path, **source_kwargs) -> list[str]:
     """Builds `write_local_source`'s fake San Diego into
     `<data_dir>/geo/ca/`."""
     import tempfile
@@ -419,7 +446,7 @@ def build_local_geo(data_dir: Path) -> list[str]:
 
     with tempfile.TemporaryDirectory() as tmp:
         src_dir = Path(tmp)
-        write_local_source(src_dir)
+        write_local_source(src_dir, **source_kwargs)
         urls = {**census_urls(STATE), **SLD_REL_URLS}
         url_to_name = {url: name for name, url in urls.items()}
 

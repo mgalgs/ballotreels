@@ -250,6 +250,54 @@ class OcdIdTest(unittest.TestCase):
     def test_ocd_id_skips_undefined(self):
         self.assertIsNone(ocd_id("cd", "06ZZ", "ca"))
         self.assertIsNone(ocd_id("sldu", "06ZZZ", "ca"))
+        self.assertIsNone(ocd_id("sldl", "27ZZZ", "mn",
+                                 display="State House Districts not defined"))
+
+    def test_numeric_code_ignores_namelsad(self):
+        # Every state built before lettered codes keeps its ids and names.
+        self.assertEqual(
+            ocd_id("sldl", "06017", "ca", None, "Assembly District 17"),
+            ("ocd-division/country:us/state:ca/sldl:17",
+             "State Assembly District 17"))
+
+    def test_lettered_codes(self):
+        state = "ocd-division/country:us/state"
+        cases = [
+            # Minnesota's House: NAMELSAD names the chamber's district.
+            ("sldl", "2701A", "mn", "State House District 1A",
+             f"{state}:mn/sldl:1a", "State House District 1A"),
+            # Vermont: the name first, the chamber after.
+            ("sldl", "50C-F", "vt", "Chittenden-Franklin State House District",
+             f"{state}:vt/sldl:c-f",
+             "Chittenden-Franklin State House District"),
+            ("sldu", "50BEN", "vt", "Bennington Senatorial District",
+             f"{state}:vt/sldu:ben", "Bennington Senatorial District"),
+            # Massachusetts' Senate: no chamber in NAMELSAD.
+            ("sldu", "25D03", "ma", "Hampden District",
+             f"{state}:ma/sldu:d03", "State Senate District Hampden"),
+            # A code an OCD-ID cannot hold: the name's slug.
+            ("sldu", "25D/3", "ma", "Second Hampden District",
+             f"{state}:ma/sldu:second_hampden",
+             "State Senate District Second Hampden"),
+        ]
+        for kind, geoid, st, namelsad, expect_id, expect_name in cases:
+            with self.subTest(geoid=geoid):
+                self.assertEqual(ocd_id(kind, geoid, st, None, namelsad),
+                                 (expect_id, expect_name))
+        # Congressional districts are always numbered.
+        self.assertIsNone(ocd_id("cd", "27AB", "mn"))
+
+    def test_lettered_codes_get_zip_picks(self):
+        tmp = Path(self.enterContext(tempfile.TemporaryDirectory()))
+        geo_fixtures.build_simple_state_geo(
+            tmp, "mn", ["55101"],
+            sld={"sldl": ("01A", "State House District 1A")})
+        kinds = GeoData.load(tmp / "geo" / "mn").zip_districts(
+            "55101")["kinds"]
+        self.assertEqual(kinds["sldl"], [{
+            "ocd_id": "ocd-division/country:us/state:mn/sldl:1a",
+            "name": "State House District 1A"}])
+        self.assertEqual(kinds["sldu"][0]["name"], "State Senate District 1")
 
 
 class RelationshipColumnsTest(unittest.TestCase):

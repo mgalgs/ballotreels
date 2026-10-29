@@ -157,7 +157,13 @@ most rings, farthest from the state's area-weighted centre first, that
 together hold under 15% of the state's area, each outside the box of
 the rest by more than 15% of that box's longer side, such as Hawaii's
 Northwestern Hawaiian Islands), from the drawing and its box only, so
-they frame the same main body. The serve tier only
+they frame the same main body. Both are drawn from the Census
+cartographic boundary counties, clipped to the shoreline
+(`county_cb.geojson`, joined to TIGER's counties on GEOID for their ids
+and names), where the build has them, else from TIGER's
+`county.geojson`, whose counties run out into the Great Lakes and the
+sea; which county a district is in, the zip lookup and which far
+pieces count as outliers (`drawn`'s `frame`) always use TIGER's. The serve tier only
 reads it: `/api/states`, which the home page already fetches to list
 the states, carries each state's coarse outline and its 160 px flag
 (`static/flags/<st>-mini.jpg`), never the county outlines.

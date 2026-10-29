@@ -71,7 +71,8 @@ def ocd_id(kind: str, geoid: str, state_abbr: str,
     when given (TIGER's NAMELSAD: "Sacramento County", "District of
     Columbia"), else "<name> County"; a place's is place_name()'s; a
     school district's is its NAME ("San Diego Unified School
-    District")."""
+    District"). A legislative district whose code is not a number is
+    lettered_district()'s."""
     state = f"ocd-division/country:us/state:{state_abbr}"
     if kind in ("county", "place", "school_district"):
         if not name or not slug(name):
@@ -84,15 +85,69 @@ def ocd_id(kind: str, geoid: str, state_abbr: str,
     district = geoid[2:]
     if district.upper() in ("ZZ", "ZZZ"):
         return None
-    try:
-        num = str(int(district))
-    except ValueError:
-        return None
+    if not (district.isascii() and district.isdigit()):
+        if kind == "cd":
+            return None
+        return lettered_district(kind, district, state_abbr, name, display)
+    num = str(int(district))
     label = district_label(kind, district, state_abbr)
     if label is None:
         return None
     return (f"ocd-division/country:us/state:{state_abbr}/{kind}:{num}",
             label)
+
+
+# What an OCD-ID part may hold besides lower-case letters and digits.
+_OCD_PUNCTUATION = "._~-"
+_DIGITS = "0123456789"
+
+
+def lettered_district(kind: str, district: str, state_abbr: str,
+                      name: str | None,
+                      display: str | None) -> tuple[str, str] | None:
+    """(ocd-id, display name) of a legislative district whose code is
+    not a number: Minnesota's House "01A" (sldl:1a), Vermont's
+    "C-F" and "BEN", Massachusetts' Senate "D01". The OCD part is the
+    code lower-cased, leading zeros stripped from a leading number; a
+    code with characters an OCD-ID may not hold uses slug() of the
+    district's name instead. The display name is TIGER's NAMELSAD
+    where it names the chamber ("State House District 1A", "Chittenden-13
+    State House District", "Bennington Senatorial District"), else
+    "<chamber> District <name>" ("State Senate District Hampden" for
+    "Hampden District"). TIGER's SLD files have no NAME, so the name is
+    NAMELSAD less its trailing " District"."""
+    chamber = chambers(state_abbr).get(kind)
+    if chamber is None:
+        return None
+    if not name and display:
+        name = display.strip().removesuffix(" District").strip()
+    code = district.strip().lower()
+    digits = len(code) - len(code.lstrip(_DIGITS))
+    if digits:
+        code = str(int(code[:digits])) + code[digits:]
+    if not code or not all(c.isascii() and (c.isalnum() or
+                                            c in _OCD_PUNCTUATION)
+                           for c in code):
+        code = slug(name or "")
+        if not code:
+            return None
+    if display and _names_chamber(kind, chamber, display):
+        label = display.strip()
+    else:
+        label = f"{chamber} District {name or district.strip()}"
+    return f"ocd-division/country:us/state:{state_abbr}/{kind}:{code}", label
+
+
+# Words that mark a NAMELSAD as naming a district of the chamber, besides
+# the chamber's own on-screen name (states.chambers).
+_CHAMBER_WORDS = {"sldu": ("Senate", "Senatorial"),
+                  "sldl": ("House", "Assembly", "Delegates",
+                           "Representative")}
+
+
+def _names_chamber(kind: str, chamber: str, display: str) -> bool:
+    words = (chamber,) + _CHAMBER_WORDS.get(kind, ())
+    return any(w in display for w in words)
 
 
 # The Census publishes some unified and high school districts twice: the

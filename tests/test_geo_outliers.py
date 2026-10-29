@@ -38,17 +38,23 @@ LONE_SPECK = _square(2, 7, 0.05)
 FAR_BIG = _square(6, 1, 2)
 
 
-def _doc(counties):
+def _write(path, counties):
+    path.write_text(json.dumps({
+        "type": "FeatureCollection",
+        "features": [{"type": "Feature",
+                      "properties": {"ocd_id": ocd_id, "name": ocd_id},
+                      "geometry": {"type": "Polygon",
+                                   "coordinates": rings}}
+                     for ocd_id, rings in counties.items()]}),
+        encoding="utf-8")
+
+
+def _doc(counties, shoreline=None):
     with tempfile.TemporaryDirectory() as tmp:
         geo = Path(tmp)
-        (geo / "county.geojson").write_text(json.dumps({
-            "type": "FeatureCollection",
-            "features": [{"type": "Feature",
-                          "properties": {"ocd_id": ocd_id, "name": ocd_id},
-                          "geometry": {"type": "Polygon",
-                                       "coordinates": rings}}
-                         for ocd_id, rings in counties.items()]}),
-            encoding="utf-8")
+        _write(geo / "county.geojson", counties)
+        if shoreline is not None:
+            _write(geo / f"{counties_mod.SHORELINE}.geojson", shoreline)
         return county_doc(geo)
 
 
@@ -116,8 +122,11 @@ class NoOutliersTest(unittest.TestCase):
 
     def assert_unchanged(self, make_doc):
         doc = make_doc()
-        with mock.patch.object(counties_mod, "drawn", lambda c: c), \
-                mock.patch("ballotreels.geo.outline.drawn", lambda c: c):
+        def unchanged(c, frame=None):
+            return c
+
+        with mock.patch.object(counties_mod, "drawn", unchanged), \
+                mock.patch("ballotreels.geo.outline.drawn", unchanged):
             before = make_doc()
         self.assertEqual(json.dumps(doc), json.dumps(before))
 
@@ -131,6 +140,34 @@ class NoOutliersTest(unittest.TestCase):
     def test_drawn_hands_back_the_counties_themselves(self):
         counties = [[BODY], NEAR_CHAIN, [FAR_BIG]]
         self.assertIs(drawn(counties), counties)
+
+
+class ShorelineTest(unittest.TestCase):
+    """Outlines clipped to the shoreline are drawn, but the outliers are
+    TIGER's: the far big piece, its water clipped off, would be a tiny
+    outlier by itself (as Hawaii's Kauai is)."""
+
+    def setUp(self):
+        self.shore_big = _square(6, 1, 0.5)
+        self.doc = _doc({MAIN: [BODY, FAR_SPECK], BIG: [FAR_BIG]},
+                        {MAIN: [BODY, FAR_SPECK], BIG: [self.shore_big]})
+
+    def test_the_far_piece_stays_in_both_drawings(self):
+        hero = self.doc["hero"]
+        self.assertEqual(len(_parts(hero["paths"][MAIN])), 1)
+        self.assertEqual(max(_hero_xs(hero["paths"][BIG])), 1000)
+        # x 0 to 6.5, y 0 to 4
+        self.assertEqual((hero["width"], hero["height"]),
+                         (1000, _height(6.5, 4, 1000)))
+        self.assertEqual(len(_parts(self.doc["mini"]["path"])), 2)
+
+    def test_on_its_own_it_would_go(self):
+        self.assertEqual(drawn([[BODY, FAR_SPECK], [self.shore_big]]),
+                         [[BODY], []])
+        self.assertEqual(
+            drawn([[BODY, FAR_SPECK], [self.shore_big]],
+                  frame=[[BODY, FAR_SPECK], [FAR_BIG]]),
+            [[BODY], [self.shore_big]])
 
 
 class DrawnTest(unittest.TestCase):

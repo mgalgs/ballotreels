@@ -151,6 +151,62 @@ class CountiesFileTest(unittest.TestCase):
                                        "--data-dir", tmp], out=out), 1)
             self.assertIn("geo build", out.getvalue())
 
+    def test_geo_build_writes_the_shoreline_counties(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            geo_fixtures.build_local_geo(Path(tmp), shoreline=True)
+            geo = Path(tmp) / "geo" / "ca"
+            shore = json.loads((geo / "county_cb.geojson").read_text(
+                encoding="utf-8"))
+            tiger = json.loads((geo / "county.geojson").read_text(
+                encoding="utf-8"))
+        # TIGER's id and name, the shoreline's shape; nothing of another
+        # state, nor of a county TIGER lacks
+        san_diego = f"{STATE}/county:san_diego"
+        self.assertEqual([f["properties"] for f in shore["features"]],
+                         [{"ocd_id": san_diego, "name": "San Diego County",
+                           "kind": "county"}])
+        x0, y0, x1, y1 = geo_fixtures.SHORELINE_SAN_DIEGO
+        xs = [x for x, _ in shore["features"][0]["geometry"]
+              ["coordinates"][0]]
+        self.assertEqual((min(xs), max(xs)), (x0, x1))
+        # county.geojson, which the lookups read, is TIGER's
+        xs = [x for f in tiger["features"] if
+              f["properties"]["ocd_id"] == san_diego
+              for x, _ in f["geometry"]["coordinates"][0]]
+        self.assertEqual(min(xs), 0.0)
+
+    def test_geo_counties_draws_the_shoreline_counties(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            geo = Path(tmp) / "geo" / "ca"
+            shutil.copytree(FIXTURE_GEO, geo)
+            without = county_doc(geo)
+            # Delta alone, and smaller: the drawings change, the
+            # counties' divisions do not.
+            doc = json.loads((geo / "county.geojson").read_text(
+                encoding="utf-8"))
+            doc["features"] = [f for f in doc["features"]
+                               if f["properties"]["ocd_id"] == DELTA]
+            ring = doc["features"][0]["geometry"]["coordinates"][0]
+            xs = [x for x, _ in ring]
+            middle = (min(xs) + max(xs)) / 2
+            doc["features"][0]["geometry"]["coordinates"] = [[
+                [min(x, middle), y] for x, y in ring]]
+            (geo / "county_cb.geojson").write_text(json.dumps(doc),
+                                                   encoding="utf-8")
+            self.assertEqual(cli_main(["geo", "counties", "--state", "ca",
+                                       "--data-dir", tmp],
+                                      out=io.StringIO()), 0)
+            with_shore = json.loads((geo / FILENAME).read_text(
+                encoding="utf-8"))
+        self.assertEqual(with_shore["counties"], without["counties"])
+        self.assertEqual(set(with_shore["hero"]["paths"]), {DELTA})
+        self.assertNotEqual(with_shore["hero"]["paths"][DELTA],
+                            without["hero"]["paths"][DELTA])
+        self.assertNotEqual(with_shore["mini"], without["mini"])
+        # no shoreline file (a build from before it): TIGER's counties
+        self.assertEqual(set(without["hero"]["paths"]),
+                         {ALPHA, BETA, GAMMA, DELTA})
+
     def test_write_counties_returns_its_path(self):
         with tempfile.TemporaryDirectory() as tmp:
             shutil.copytree(FIXTURE_GEO, tmp, dirs_exist_ok=True)
