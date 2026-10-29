@@ -379,3 +379,13 @@ status = "none-printed"
 [san-bruno-measure-dd]
 source = "ballot-label"
 status = "none-printed"
+
+# City of San Bruno Measure EE: no tax rate statement or fiscal analysis
+# (a business license tax); the one estimate is the city's, as the City
+# Attorney's Impartial Analysis reports it (and the ballot question).
+[san-bruno-measure-ee]
+source = "impartial-analysis"
+quote = "The City estimated that Measure EE would raise approximately $4,000,000 per year for use in the City."
+amount = 4000000
+period = "per-year"
+direction = "revenue-gain"
