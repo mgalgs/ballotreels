@@ -1322,3 +1322,13 @@ source = "financial-impact"
 quote = "The historical annual allocation to the PAIP is approximately $28.6 million."
 amount = 28600000
 period = "per-year"
+
+# City of Los Angeles Measure FD: the City Administrative Officer's
+# estimate of the sales tax's yearly revenue (the ballot question gives
+# the same "approximately $345 million annually").
+[los-angeles-measure-fd]
+source = "financial-impact"
+quote = "It generates roughly $345 million annually for a special fund dedicated exclusively to support the operation and services of the Los Angeles Fire Department (LAFD)"
+amount = 345000000
+period = "per-year"
+direction = "revenue-gain"

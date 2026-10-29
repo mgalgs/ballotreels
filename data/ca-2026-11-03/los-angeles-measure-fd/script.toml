@@ -1,0 +1,200 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot; how
+# the fire department is paid for today and the sales tax rate; what
+# would change: the new rate, what the money pays for, the condition on
+# collecting it, and the oversight; the City Administrative Officer's
+# estimate; one line per side; what a vote does.
+#
+# The card quotes the pamphlet: the title and ballot question from the
+# measure's own page (printed page 88), and the yes and no meanings from
+# its Ballot Summary (printed page 10). The heading above them, "CITY OF
+# LOS ANGELES INITIATIVE ORDINANCE FD", stands in for an origin, as for
+# the city's other measures; the background line says, from the Ballot
+# Summary, that it qualified by petition.
+#
+# The $345 million a year is revenue to a new city fund, which the
+# Financial Impact Statement compares against no total, and no official
+# archived source states the city's General Fund budget; so it has no
+# scale (STANDARD.md 6.5; left open, under [[question]]). The opponents'
+# "$8.1 billion" of General Fund revenue is their own figure (6.3), not
+# an official total, so it is not used for the scale. The opponents'
+# special-tax "loophole" and two-thirds vote, and the supporters'
+# response times and "locked fund", are each side's own (6.3) and stay
+# out of the neutral sections; the neutral lines give the separate fund
+# and the spending condition as the Impartial Summary states them. Both
+# sides' lines cite their arguments; the rebuttals are not quoted.
+
+contest = "ca-2026-11-03-los-angeles-measure-fd"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "summary"
+number = "FD"
+title = "FUNDING FOR THE LOS ANGELES FIRE DEPARTMENT THROUGH A ONE-HALF PERCENT SALES TAX."
+origin = "CITY OF LOS ANGELES INITIATIVE ORDINANCE FD"
+summary = "Shall an ordinance providing funding for the Los Angeles Fire Department, including for hiring firefighters, paramedics, and other staff, purchasing and maintaining vehicles and equipment, building and upgrading fire stations, and brush clearance; by imposing a one-half percent (0.5%) sales tax in the City of Los Angeles; with annual audits and a citizen’s oversight committee; generating approximately $345 million annually until ended by voters; be adopted?"
+yes = "A YES VOTE MEANS: You want to establish a 0.5% sales tax to provide additional funding for the Los Angeles Fire Department."
+no = "A NO VOTE MEANS: You do not want to establish a 0.5% sales tax to provide additional funding for the Los Angeles Fire Department."
+
+[[section]]
+id = "what"
+heading = "Measure FD"
+
+[[section.line]]
+text = "City of Los Angeles Measure FD asks voters in the city whether to add a 0.5 percent sales tax to fund the Los Angeles Fire Department."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["providing funding for the Los Angeles Fire Department"]
+
+[[section]]
+id = "background"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "Measure FD is a citizen initiative, which qualified for the ballot by petition."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "neighborhood-petition"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, nearly all fire department funding comes from the General Fund, the main operating fund of the city, which supports most city departments."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "fire-station-engine"
+
+[[section.line]]
+text = "The sales tax rate in the city is 10.25 percent."
+sources = ["summary", "financial-impact"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure FD would raise the rate to 10.75 percent, with the new money kept in a separate fund for the fire department."
+sources = ["summary", "financial-impact"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+id = "uses"
+text = "The fund would pay for firefighters, paramedics and other staff, vehicles, equipment, fire stations and brush clearance."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hillside-brush-clearing"
+
+[[section.line]]
+id = "baseline"
+text = "The tax could be collected only in years the city keeps fire department funding at or above its average share of the budget in the ten years before the tax begins."
+sources = ["summary", "financial-impact"]
+
+[section.line.visual]
+kind = "illustration"
+name = "balanced-budget"
+
+[[section.line]]
+id = "oversight"
+text = "Yearly audits and an oversight committee of five residents would review the spending."
+sources = ["summary", "financial-impact"]
+
+[section.line.visual]
+kind = "illustration"
+name = "recurring-review"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+id = "revenue"
+text = "The City Administrative Officer estimates the tax would raise about $345 million a year, and the tax would last until voters repeal it."
+sources = ["financial-impact", "summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure FD lets the department hire at least 1,000 more firefighters and paramedics, so that help can get to you faster."
+sources = ["arguments"]
+basis = ["With Measure FD, the LAFD will be able to hire at least 1,000 additional firefighters and paramedics so that we can arrive on time when you need us the most.", "to ensure faster 911 emergency response"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["1,000 more firefighters and paramedics", "Faster emergency response"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure FD is a third sales tax increase in two years, and the city should fully fund the fire department without one."
+sources = ["arguments"]
+basis = ["This would be the third sales tax increase in two years for Los Angeles city residents", "CITY LEADERS SHOULD FULLY FUND THE FIRE DEPARTMENT WITHOUT A TAX INCREASE"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Third sales tax increase in two years", "Fund it without a new tax"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means you want to establish a 0.5 percent sales tax to provide more funding for the fire department."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["You want to establish a 0.5% sales tax"]
+
+[[section.line]]
+text = "A no vote means you do not want to establish this sales tax."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["You do not want to establish a 0.5% sales tax"]
+
+[[question]]
+ask = "What would the money pay for, and who checks how it is spent?"
+lines = ["uses", "oversight"]
+
+[[question]]
+ask = "Could the city cut its own fire department funding and use the tax instead?"
+lines = ["baseline"]
+
+[[question]]
+ask = "How big is $345 million next to the city's General Fund budget?"
+unanswered = true
