@@ -1,0 +1,265 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 80.69,
+  "phrases": [
+    {
+      "text": "Measure H asks the voters of this health care district whether to lease the district's hospital to its current operator for another 20 years.",
+      "start": 0.03,
+      "end": 8.52
+    },
+    {
+      "text": "The district owns the hospital, and in 2011 its voters approved a 15-year lease, with an option to buy, to the operator that runs it today.",
+      "start": 9.18,
+      "end": 18.54
+    },
+    {
+      "text": "State law requires voter approval when a health care district transfers more than half of its assets, and the new lease involves more than half.",
+      "start": 19.2,
+      "end": 28.29
+    },
+    {
+      "text": "The new lease would run 20 years, with two five-year renewals and an option for the operator to buy the property.",
+      "start": 28.95,
+      "end": 36.61
+    },
+    {
+      "text": "The board's approval depends on an independent appraisal of the new lease's market value.",
+      "start": 37.27,
+      "end": 42.8
+    },
+    {
+      "text": "Measure H needs a simple majority to pass.",
+      "start": 43.46,
+      "end": 46.4
+    },
+    {
+      "text": "The ballot question says the lease comes with no new taxes, bonds or assessments on district residents.",
+      "start": 47.06,
+      "end": 53.97
+    },
+    {
+      "text": "No argument against Measure H was filed with the county registrar of voters, so the published measure documents include only the supporters' argument.",
+      "start": 54.63,
+      "end": 63.67
+    },
+    {
+      "text": "Supporters say the hospital gives easy access to an emergency room, a birthing center and specialties, and could close without its operator.",
+      "start": 64.33,
+      "end": 72.93
+    },
+    {
+      "text": "A yes vote approves the 20-year lease and its options.",
+      "start": 73.59,
+      "end": 77.28
+    },
+    {
+      "text": "A no vote does not approve the 20-year lease.",
+      "start": 77.94,
+      "end": 80.66
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure H asks the voters of this health care district whether to lease the district's hospital to its current operator for another 20 years.",
+      "The district owns the hospital, and in 2011 its voters approved a 15-year lease, with an option to buy, to the operator that runs it today.",
+      "State law requires voter approval when a health care district transfers more than half of its assets, and the new lease involves more than half.",
+      "The new lease would run 20 years, with two five-year renewals and an option for the operator to buy the property.",
+      "The board's approval depends on an independent appraisal of the new lease's market value.",
+      "Measure H needs a simple majority to pass.",
+      "The ballot question says the lease comes with no new taxes, bonds or assessments on district residents.",
+      "No argument against Measure H was filed with the county registrar of voters, so the published measure documents include only the supporters' argument.",
+      "Supporters say the hospital gives easy access to an emergency room, a birthing center and specialties, and could close without its operator.",
+      "A yes vote approves the 20-year lease and its options.",
+      "A no vote does not approve the 20-year lease."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure H asks the voters of this health care district whether to lease the district's hospital to its current operator for another 20 years."
+      },
+      "bounds": [
+        0,
+        205200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure H asks the voters of this health care district whether to lease the district's hospital to its current operator for another 20 years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The district owns the hospital, and in 2011 its voters approved a 15-year lease, with an option to buy, to the operator that runs it today."
+      },
+      "bounds": [
+        219600,
+        445680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district owns the hospital, and in 2011 its voters approved a 15-year lease, with an option to buy, to the operator that runs it today.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "State law requires voter approval when a health care district transfers more than half of its assets, and the new lease involves more than half."
+      },
+      "bounds": [
+        460080,
+        679680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"State law requires voter approval when a health care district transfers more than half of its assets, and the new lease involves more than half.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The new lease would run 20 years, with two five-year renewals and an option for the operator to buy the property."
+      },
+      "bounds": [
+        694080,
+        879360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The new lease would run 20 years, with two five-year renewals and an option for the operator to buy the property.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The board's approval depends on an independent appraisal of the new lease's market value."
+      },
+      "bounds": [
+        893760,
+        1027920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The board's approval depends on an independent appraisal of the new lease's market value.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure H needs a simple majority to pass."
+      },
+      "bounds": [
+        1042320,
+        1114320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure H needs a simple majority to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The ballot question says the lease comes with no new taxes, bonds or assessments on district residents."
+      },
+      "bounds": [
+        1128720,
+        1296000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The ballot question says the lease comes with no new taxes, bonds or assessments on district residents.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument against Measure H was filed with the county registrar of voters, so the published measure documents include only the supporters' argument."
+      },
+      "bounds": [
+        1310400,
+        1528800
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure H was filed with the county registrar of voters, so the published measure documents include only the supporters' argument.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say the hospital gives easy access to an emergency room, a birthing center and specialties, and could close without its operator."
+      },
+      "bounds": [
+        1543200,
+        1751040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the hospital gives easy access to an emergency room, a birthing center and specialties, and could close without its operator.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote approves the 20-year lease and its options."
+      },
+      "bounds": [
+        1765440,
+        1855440
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote approves the 20-year lease and its options.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote does not approve the 20-year lease."
+      },
+      "bounds": [
+        1869840,
+        1936560
+      ]
+    }
+  ],
+  "sha256": "ef805d0e4e2fb663cd6f5a2e62c5bd0fcb0b2ab91e5685cd69cd7c3951543ec8"
+}
