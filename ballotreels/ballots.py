@@ -374,7 +374,7 @@ BALLOTS: dict[str, Ballot] = {
                         for x in ("santa-cruz-county-measure-d",
                                   "santa-cruz-county-measure-e",
                                   "scotts-valley-measure-g",
-                                  "los-gatos-saratoga-measure-n-santa-cruz")},
+                                  "los-gatos-saratoga-measure-n")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

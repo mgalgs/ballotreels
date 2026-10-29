@@ -3,9 +3,8 @@
 # pass; what the money would pay for; the district's tax rate statement;
 # one line per side; what a vote does.
 #
-# This contest is the Santa Cruz County part of the district; Santa Clara
-# County, the lead county, carries its own for the rest. The script is
-# the same story either way, and names neither county.
+# This one contest serves the whole district, in both Santa Cruz and
+# Santa Clara counties, so the script names neither county.
 #
 # "Counsel" is heard as "Council" (standard/speakability.txt), so the
 # narration does not name County Counsel; a fiscal year is written with
@@ -30,7 +29,7 @@
 # meanings from County Counsel's impartial analysis and highlight the one
 # phrase of the question both votes turn on, as Utah's do.
 
-contest = "ca-2026-11-03-los-gatos-saratoga-measure-n-santa-cruz"
+contest = "ca-2026-11-03-los-gatos-saratoga-measure-n"
 template = "measure"
 template_version = 2
 standard_version = 2
