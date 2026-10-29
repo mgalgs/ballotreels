@@ -1521,3 +1521,11 @@ source = "impartial-analysis"
 quote = "If approved, Measure G would raise approximately $1,950,000 annually."
 amount = 1950000
 period = "per-year"
+
+# Waugh School District Measure E: the district's Tax Rate Statement,
+# its total debt service (the bonds are $16,000,000).
+[waugh-measure-e]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all of the bonds are issued and sold is approximately $32,000,000."
+amount = 32000000
+period = "unstated"
