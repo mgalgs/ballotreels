@@ -1214,6 +1214,20 @@ BALLOTS: dict[str, Ballot] = {
                          "[https://publications.tnsosfiles.com/acts/114/"
                          "resolutions/sjr0009.pdf]"),
                  }),
+
+    # Michigan mails no voter pamphlet. Its Bureau of Elections posts
+    # "2026 November ballot questions" (the PDF's own title): each
+    # proposal's designation ("Proposal 2026-1"), heading, question and
+    # the choices "[ ] Yes" and "[ ] No", with no "yes means" lines and
+    # no fiscal statement. The Senate and House Fiscal Agencies call the
+    # proposals "Proposal 26-1" and "Proposal 26-2" (badge PROPOSAL,
+    # from the title's designation). The Senate Fiscal Agency's analysis
+    # heads its fiscal statement "Fiscal Impact"; no card quotes it, so
+    # the heading is never drawn.
+    "mi": Ballot(guide="2026 November ballot questions",
+                 fiscal_label="Fiscal Impact",
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")

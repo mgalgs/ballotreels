@@ -1,0 +1,58 @@
+# Archived sources for Michigan Proposal 26-2, 2026-11-03 general
+# election. Every id here may be cited by script.toml. `kind` must be one
+# the standard allows (docs/STANDARD.md, section 1).
+#
+# Michigan mails no voter pamphlet. The Bureau of Elections' "2026
+# November ballot questions" prints each proposal's ballot wording (its
+# designation, heading, "The proposal would:" bullets and question) and
+# nothing else: no "yes means" lines, no fiscal statement and no
+# arguments. The fiscal statement is the Senate Fiscal Agency's overview
+# of the proposal. The House Fiscal Agency's analysis is the House's
+# fiscal statement on it, of the same standing and so the same kind; the
+# script cites it for how issue ads are treated today. The Board of
+# State Canvassers' staff report on the petition's signatures
+# (mmop-staff-report.pdf) and the
+# circulated petition (michiganders-for-money-out-of-politics.pdf, a
+# scan with no text layer) are archived beside them but not cited, so
+# they are not listed here.
+#
+# No official argument for or against the proposal is published, so
+# there is no source of kind official-argument: both side sections say
+# so, citing the ballot wording, which prints none. The Senate Fiscal
+# Agency's "Views on Proposal 26-2" is the agency's summary of what
+# others argue, not an argument either side wrote; the script does not
+# cite it.
+
+[contest]
+id = "mi-2026-11-03-proposal-26-2"
+election = "mi-2026-11-03"
+division = "ocd-division/country:us/state:mi"
+kind = "measure"
+title = "Proposal 26-2: Campaign Contributions and Expenditures"
+
+[[source]]
+id = "ballot"
+kind = "official-title-summary"
+publisher = "Michigan Bureau of Elections, 2026 November ballot questions, Proposal 2026-2"
+credit = "Michigan Bureau of Elections, ballot wording"
+url = "https://www.michigan.gov/sos/-/media/Project/Websites/sos/Elections/Home/Documents/2026-November-ballot-questions.pdf"
+file = "sources/sos-2026-november-ballot-questions.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "sfa"
+kind = "official-fiscal-analysis"
+publisher = "Senate Fiscal Agency, November 2026 Ballot Proposal 26-2: An Overview"
+credit = "Senate Fiscal Agency"
+url = "https://sfa.senate.michigan.gov/Publications/BallotProps/Proposal26-2.pdf"
+file = "sources/proposal-26-2-sfa-analysis.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "hfa"
+kind = "official-fiscal-analysis"
+publisher = "House Fiscal Agency, Ballot Proposal 2 of 2026: Campaign Contributions and Expenditures, complete to 10-7-26"
+credit = "House Fiscal Agency"
+url = "https://www.house.mi.gov/hfa/PDF/Alpha/Ballot_Proposal_2_of_2026.pdf"
+file = "sources/ballot_proposal_2_of_2026.pdf"
+retrieved = "2026-10-27"

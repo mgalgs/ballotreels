@@ -1,0 +1,200 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; why it is on the ballot; what a convention could do; what a yes
+# would set in motion; what the two fiscal agencies estimate it would
+# cost; the two sides; what a vote does.
+#
+# The card quotes the Bureau of Elections' ballot wording: the heading
+# under "Proposal 2026-1" and the question. It prints no "a YES vote
+# means" lines and no fiscal statement, so the card has neither, and the
+# vote lines take their two meanings from the question.
+#
+# Michigan publishes no official arguments for or against a proposal,
+# so both sides are filed = false and each says so once, in the same
+# number of words. The Senate Fiscal Agency's "Views" section is the
+# agency's summary of others' arguments, not an argument either side
+# filed; nothing in the script cites it.
+#
+# Cost: the two nonpartisan fiscal agencies disagree, so the script
+# gives each one's total, one line each, both called estimates. The
+# Senate Fiscal Agency: about $10.2 million for the convention itself,
+# from the 1961 convention's costs inflated (page 4). The House Fiscal
+# Agency: about $78.3 million in all (page 2), of which about $56.0
+# million is two elections (page 4): the delegate primary and general in
+# 2027, which it expects off the regular dates; it assumes the
+# ratification vote falls on one. The SFA's monthly figures and its
+# $20.3 million per election, which it expects to fall on regular
+# dates, are left out: with both totals said they are detail, and the
+# HFA expects the opposite. The chart shows both totals, each labelled
+# by its agency; a chart names one source, so it is the House line's,
+# and that line cites the SFA too for the other bar. Scale (rule 6.5):
+# no archived source states Michigan's general fund for 2026-27, so the
+# figures are said without one; that total is still to be archived.
+
+contest = "mi-2026-11-03-proposal-26-1"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot"
+number = "26-1"
+title = "A proposal to convene a constitutional convention for the purpose of drafting a general revision of the state constitution"
+origin = "Proposal 2026-1"
+summary = "Shall a convention of elected delegates be convened in 2027 to draft a general revision of the State Constitution for presentation to the state’s voters for their approval or rejection?"
+
+[[section]]
+id = "what"
+heading = "Proposal 26-1"
+
+[[section.line]]
+text = "Proposal 26-1 asks whether Michigan should hold a convention to revise its constitution."
+sources = ["ballot"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["convene a constitutional convention"]
+
+[[section]]
+id = "background"
+heading = "Why it is on the ballot"
+
+[[section.line]]
+id = "every-16-years"
+text = "The constitution puts this question to voters every 16 years."
+sources = ["sfa", "hfa"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section.line]]
+id = "scope"
+text = "A convention could rewrite the constitution, change parts, or change nothing."
+sources = ["hfa"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today's constitution came from the last convention, in 1961."
+sources = ["sfa"]
+
+[section.line.visual]
+kind = "illustration"
+name = "legislative-chamber"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "delegates"
+text = "A yes vote would mean electing 148 delegates in 2027 to draft a revision."
+sources = ["ballot", "sfa"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["a convention of elected delegates be convened in 2027"]
+
+[[section.line]]
+id = "voters-decide"
+text = "Voters would then approve or reject the revision."
+sources = ["ballot", "sfa"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["for their approval or rejection"]
+
+[[section]]
+id = "fiscal"
+heading = "What the official analysis says"
+
+[[section.line]]
+id = "cost-sfa"
+text = "The Senate Fiscal Agency estimates about $10.2 million for the convention, based on the 1961 convention's costs."
+sources = ["sfa"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section.line]]
+id = "cost-hfa"
+text = "The House Fiscal Agency estimates about $78.3 million in all, including about $56 million for two elections of delegates."
+sources = ["hfa", "sfa"]
+
+[section.line.visual]
+kind = "bars"
+title = "Estimated cost, by agency"
+source = "hfa"
+unit = " million"
+labels = ["Senate Fiscal Agency", "House Fiscal Agency"]
+values = [10.2, 78.3]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No official argument for the proposal was published."
+sources = ["ballot"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No official argument against the proposal was published."
+sources = ["ballot"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means delegates would draft a general revision."
+sources = ["ballot"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["draft a general revision of the State Constitution"]
+
+[[section.line]]
+text = "A no vote means no convention in 2027."
+sources = ["ballot"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["be convened in 2027"]
+
+[[question]]
+ask = "Why is this on the ballot?"
+lines = ["every-16-years"]
+
+[[question]]
+ask = "What would a convention change?"
+lines = ["scope", "voters-decide"]
+
+[[question]]
+ask = "How much would it cost?"
+lines = ["cost-sfa", "cost-hfa"]

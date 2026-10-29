@@ -1,0 +1,27 @@
+# Contest index for the 2026-11-03 Michigan general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string), as the
+# Senate and House Fiscal Agencies print it ("Proposal 26-1"; the
+# Bureau of Elections' ballot wording prints "Proposal 2026-1"). The
+# Bureau prints no short title, so titles pair the designation with the
+# short title the House Fiscal Agency's analysis heads each proposal
+# with.
+
+[election]
+id = "mi-2026-11-03"
+state = "ocd-division/country:us/state:mi"
+title = "Michigan General Election, November 3, 2026"
+
+[[contest]]
+id = "mi-2026-11-03-proposal-26-1"
+kind = "measure"
+division = "ocd-division/country:us/state:mi"
+title = "Proposal 26-1: State Constitutional Convention"
+number = "26-1"
+
+[[contest]]
+id = "mi-2026-11-03-proposal-26-2"
+kind = "measure"
+division = "ocd-division/country:us/state:mi"
+title = "Proposal 26-2: Campaign Contributions and Expenditures"
+number = "26-2"
