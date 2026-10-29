@@ -2295,3 +2295,12 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $15,444,000."
 amount = 15444000
 period = "unstated"
+
+# City of Fort Bragg Measure B: no tax rate statement or fiscal analysis
+# applies (a flat parcel tax); the one estimate is the City's, as the
+# City Attorney's impartial analysis gives it.
+[fort-bragg-measure-b]
+source = "impartial-analysis"
+quote = "The City estimates that the tax will raise approximately $123,900 per year."
+amount = 123900
+period = "per-year"
