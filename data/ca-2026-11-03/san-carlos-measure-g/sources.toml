@@ -1,0 +1,69 @@
+# Archived sources for City of San Carlos Measure G, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1). San Mateo County's Assessor-County Clerk-Recorder &
+# Elections (ACRE) posts each document of the measure separately, as the
+# City of San Carlos filed it; no printed voter guide was archived.
+#
+# The City Attorney's Impartial Analysis of Measure G is the measure's
+# neutral explanation, the kind a state's attorney general's explanatory
+# statement is, and the one estimate of revenue beside the ballot
+# question's. No tax rate statement applies (a general tax), and no
+# fiscal analysis is among ACRE's files.
+#
+# The resolution's text layer breaks up its lines, and the impartial
+# analysis and both arguments have none. Each source that `check` reads
+# verbatim (the card's ballot question, each side's basis) is a
+# transcription of its page, read from the page image, in a .txt beside
+# the PDF; the url is the PDF's.
+
+[contest]
+id = "ca-2026-11-03-san-carlos-measure-g"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:san_carlos"
+kind = "measure"
+title = "City of San Carlos Measure G: One-Half Cent Sales Tax for 14 Years"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of San Carlos, Resolution No. 2026 – 088, Section 4: the ballot question (page 3), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Ballot question, Resolution No. 2026 – 088"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M104-Contest%20Code-Reso-City%20of%20San%20Carlos%20Use%20Tax_Redacted.pdf"
+file = "sources/resolution-full-text.p1-3.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure G, Gregory J. Rubens, City Attorney, City of San Carlos (page 2), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "City Attorney's Impartial Analysis"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MG-ImpartialAnalysis-City-of-San-Carlos-Use-Tax.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of San Carlos, Resolution No. 2026 – 088 and Exhibit A, the ordinance adding Chapter 3.18 (pages 1 to 13), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M104-Contest%20Code-Reso-City%20of%20San%20Carlos%20Use%20Tax_Redacted.pdf"
+file = "sources/resolution-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure G (page 3), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Argument in favor, filed with San Mateo County"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MG-ArgInFavor-City-of-San-Carlos-Use-Tax-Redacted.pdf"
+file = "sources/argument-for.p3.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure G (page 4), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Argument against, filed with San Mateo County"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M104-Contest%20Code-7ArgAgainst-City%20of%20San%20Carlos%20Use%20Tax_Redacted%20%281%29.pdf"
+file = "sources/argument-against.p4.txt"
+retrieved = "2026-10-28"

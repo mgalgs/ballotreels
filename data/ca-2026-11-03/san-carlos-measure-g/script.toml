@@ -1,0 +1,182 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and whose measure it is; the sales tax today, who placed Measure G
+# on the ballot and the vote it needs; what would change (the rate, what
+# stays exempt, how long, where the money goes); the revenue estimate the
+# impartial analysis reports; one line per side; what a vote does.
+#
+# The card quotes the ballot question from Resolution No. 2026 – 088,
+# which prints no yes/no lines (the City Attorney's analysis has them, in
+# another document), so, as for Los Angeles County Measure A, the card has
+# no YES/NO boxes, the vote lines give the analysis's meanings, and both
+# highlight the one phrase of the question they turn on.
+#
+# The $6 million a year is city revenue, and no archived source states
+# the city budget it would scale against (STANDARD.md 6.5; left open,
+# under [[question]]). The opponents' $84 million and the other figures in
+# their argument are left out of their line for the same reason.
+#
+# Both arguments were filed as "Measure __"; the script says Measure G.
+
+contest = "ca-2026-11-03-san-carlos-measure-g"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "G"
+title = "A MEASURE RELATING TO A LOCAL TRANSACTION AND USE TAX"
+origin = "A RESOLUTION OF THE CITY COUNCIL OF THE CITY OF SAN CARLOS"
+summary = "To provide funding for San Carlos city services, such as keeping local streets, sidewalks, storm drains, parks, and community facilities safe, clean, and well-maintained; fixing streets and potholes; relieving traffic congestion; repairing aging infrastructure; and supporting fire protection, paramedic, crime prevention, and 911 emergency response; shall City of San Carlos’ ordinance establishing a one-half cent sales tax be adopted, providing $6,000,000 annually for general government use for 14 years, with independent audits and all funds locally-controlled?"
+
+[[section]]
+id = "what"
+heading = "Measure G"
+
+[[section.line]]
+text = "San Carlos Measure G asks city voters whether to add a half-cent sales tax for 14 years."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["one-half cent sales tax"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the sales tax rate in San Carlos is 9.375 percent."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section.line]]
+text = "The City Council placed Measure G on the ballot, and it needs a majority to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rate"
+text = "Measure G would add 50 cents on every $100 spent, for a total rate of 9.875 percent."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Sales tax rate in San Carlos"
+source = "impartial-analysis"
+unit = "%"
+labels = ["Today", "Measure G"]
+values = [9.375, 9.875]
+
+[[section.line]]
+id = "exempt"
+text = "Groceries, prescription medicines and diapers would stay exempt."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "grocery-bag"
+
+[[section.line]]
+text = "The tax would run from April 1, 2027, until March 31, 2041, unless voters extend it."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+text = "The money would go to the general fund, for any lawful city purpose."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The impartial analysis says the city estimates $6 million a year in added revenue."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "set-aside-funds"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the tax would fix potholes, streets and storm drains, and the money stays in San Carlos, with audits."
+sources = ["argument-for"]
+basis = ["This half cent sales tax provides locally controlled funding to fix potholes, repair aging streets and sidewalks, improve storm drains, maintain parks and community facilities, support emergency response, and keep San Carlos neighborhoods safe and well cared for.", "The funds generated will stay in San Carlos, cannot be taken by the State or County, and are subject to independent audits and public disclosure."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Fixes potholes, streets and storm drains", "Money stays local, with audits"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the half cent boosts city sales tax revenue by 50 percent, and a general tax is a blank check."
+sources = ["argument-against"]
+basis = ["Although proponents downplay this tax increase as just “one-half cent” more, it’s a massive 50% boost to City Hall’s take, with every purchase!", "Although this measure touts essential services, its text admits this tax increase is for “general government use.”", "That’s a legal blank check! Funds could feed bloated payrolls and councilmembers’ pet projects, instead of vital services we’d favor."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["A 50 percent boost for the city", "A general tax is a blank check"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is a vote in favor of the half-cent sales tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["one-half cent sales tax"]
+
+[[section.line]]
+text = "A no vote is a vote against the half-cent sales tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["one-half cent sales tax"]
+
+[[question]]
+ask = "What would the tax cost a shopper, and what is left out?"
+lines = ["rate", "exempt"]
+
+[[question]]
+ask = "How much money would Measure G raise?"
+lines = ["revenue"]
+
+[[question]]
+ask = "How big is $6 million a year next to the city budget?"
+unanswered = true

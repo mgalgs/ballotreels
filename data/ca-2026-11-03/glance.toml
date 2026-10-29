@@ -416,3 +416,13 @@ source = "ballot-question"
 quote = "providing an estimated $5,700,000 annually"
 amount = 5700000
 period = "per-year"
+
+# City of San Carlos Measure G: no tax rate statement applies (a general
+# tax) and no fiscal analysis is among the measure's published
+# documents; the ballot question's estimate (the City Attorney's
+# analysis gives the same, in a scan with no text layer).
+[san-carlos-measure-g]
+source = "ballot-question"
+quote = "providing $6,000,000 annually for general government use for 14 years"
+amount = 6000000
+period = "per-year"
