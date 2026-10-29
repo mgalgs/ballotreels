@@ -2,6 +2,7 @@
 (ballotreels.geo.outline, written into counties.json's `mini`), over
 hand-made county shapes (nothing here is real geography)."""
 
+import dataclasses
 import json
 import math
 import re
@@ -172,7 +173,8 @@ class StatesApiBeforeTheOutlineTest(CountyServerTestCase):
         del doc["mini"]
         path.write_text(json.dumps(doc), encoding="utf-8")
         # the served geo, as read from that file
-        self.deps.states["ca"].geo = GeoData.load(path.parent)
+        self.deps.states["ca"] = dataclasses.replace(
+            self.deps.states["ca"], geo=GeoData.load(path.parent))
         self.assertIsNone(self.deps.states["ca"].geo.mini)
 
     def test_listed_as_before(self):
