@@ -1,0 +1,309 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 88.3,
+  "phrases": [
+    {
+      "text": "Measure R asks the voters of this community services district whether to raise its yearly road tax from $120 to $300 per parcel.",
+      "start": 0.03,
+      "end": 10.02
+    },
+    {
+      "text": "Voters in the district approved today's $120 road tax in 1984, and the tax has not been raised since.",
+      "start": 10.68,
+      "end": 18.58
+    },
+    {
+      "text": "The district's board of directors placed Measure R on the ballot.",
+      "start": 19.24,
+      "end": 22.52
+    },
+    {
+      "text": "Measure R needs two-thirds of the vote to pass.",
+      "start": 23.18,
+      "end": 26.8
+    },
+    {
+      "text": "The new tax would apply to each parcel in the district, starting in the 2027-2028 fiscal year.",
+      "start": 27.46,
+      "end": 33.77
+    },
+    {
+      "text": "The tax could be adjusted each year with a construction cost index.",
+      "start": 34.43,
+      "end": 38.75
+    },
+    {
+      "text": "The money could pay only for road improvements and maintenance, and the tax would last until voters change or repeal it.",
+      "start": 39.41,
+      "end": 47.27
+    },
+    {
+      "text": "If Measure R fails, the $120 tax stays.",
+      "start": 47.93,
+      "end": 52.01
+    },
+    {
+      "text": "The county attorney's impartial analysis expects the tax to raise about $135,300 a year.",
+      "start": 52.67,
+      "end": 60.56
+    },
+    {
+      "text": "Supporters say repaving costs have climbed fast, and the higher tax would finish the next big project sooner, for less.",
+      "start": 61.22,
+      "end": 68.9
+    },
+    {
+      "text": "No argument against Measure R was submitted, the voter pamphlet of this county says, and it prints no rebuttals.",
+      "start": 69.56,
+      "end": 76.33
+    },
+    {
+      "text": "A yes vote authorizes the increased tax of $300 per parcel a year.",
+      "start": 76.99,
+      "end": 82.47
+    },
+    {
+      "text": "A no vote is against the increased tax, and the $120 tax stays.",
+      "start": 83.13,
+      "end": 88.27
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure R asks the voters of this community services district whether to raise its yearly road tax from $120 to $300 per parcel.",
+      "Voters in the district approved today's $120 road tax in 1984, and the tax has not been raised since.",
+      "The district's board of directors placed Measure R on the ballot.",
+      "Measure R needs two-thirds of the vote to pass.",
+      "The new tax would apply to each parcel in the district, starting in the 2027-2028 fiscal year.",
+      "The tax could be adjusted each year with a construction cost index.",
+      "The money could pay only for road improvements and maintenance, and the tax would last until voters change or repeal it.",
+      "If Measure R fails, the $120 tax stays.",
+      "The county attorney's impartial analysis expects the tax to raise about $135,300 a year.",
+      "Supporters say repaving costs have climbed fast, and the higher tax would finish the next big project sooner, for less.",
+      "No argument against Measure R was submitted, the voter pamphlet of this county says, and it prints no rebuttals.",
+      "A yes vote authorizes the increased tax of $300 per parcel a year.",
+      "A no vote is against the increased tax, and the $120 tax stays."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure R asks the voters of this community services district whether to raise its yearly road tax from $120 to $300 per parcel."
+      },
+      "bounds": [
+        0,
+        241200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure R asks the voters of this community services district whether to raise its yearly road tax from $120 to $300 per parcel.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Voters in the district approved today's $120 road tax in 1984, and the tax has not been raised since."
+      },
+      "bounds": [
+        255600,
+        446640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Voters in the district approved today's $120 road tax in 1984, and the tax has not been raised since.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The district's board of directors placed Measure R on the ballot."
+      },
+      "bounds": [
+        461040,
+        541200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district's board of directors placed Measure R on the ballot.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure R needs two-thirds of the vote to pass."
+      },
+      "bounds": [
+        555600,
+        643920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure R needs two-thirds of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The new tax would apply to each parcel in the district, starting in the 2027-2028 fiscal year."
+      },
+      "bounds": [
+        658320,
+        811200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The new tax would apply to each parcel in the district, starting in the 2027-2028 fiscal year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The tax could be adjusted each year with a construction cost index."
+      },
+      "bounds": [
+        825600,
+        930720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The tax could be adjusted each year with a construction cost index.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money could pay only for road improvements and maintenance, and the tax would last until voters change or repeal it."
+      },
+      "bounds": [
+        945120,
+        1135200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money could pay only for road improvements and maintenance, and the tax would last until voters change or repeal it.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "If Measure R fails, the $120 tax stays."
+      },
+      "bounds": [
+        1149600,
+        1248960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"If Measure R fails, the $120 tax stays.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The county attorney's impartial analysis expects the tax to raise about $135,300 a year."
+      },
+      "bounds": [
+        1263360,
+        1454160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The county attorney's impartial analysis expects the tax to raise about $135,300 a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say repaving costs have climbed fast, and the higher tax would finish the next big project sooner, for less."
+      },
+      "bounds": [
+        1468560,
+        1654320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say repaving costs have climbed fast, and the higher tax would finish the next big project sooner, for less.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument against Measure R was submitted, the voter pamphlet of this county says, and it prints no rebuttals."
+      },
+      "bounds": [
+        1668720,
+        1832640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure R was submitted, the voter pamphlet of this county says, and it prints no rebuttals.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote authorizes the increased tax of $300 per parcel a year."
+      },
+      "bounds": [
+        1847040,
+        1980000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote authorizes the increased tax of $300 per parcel a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote is against the increased tax, and the $120 tax stays."
+      },
+      "bounds": [
+        1994400,
+        2119200
+      ]
+    }
+  ],
+  "sha256": "b124321dc8a7c457d75707b13b2281a58800662f9d013034eda30d31ad206d3b"
+}
