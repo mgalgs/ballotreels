@@ -1,0 +1,60 @@
+# Archived sources for Ferndale Unified School District Measure E,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Humboldt County Office of Elections prints Measure E's impartial
+# analysis by County Counsel (page 15) and an argument in favor (page
+# 16) in its Full Voter Information Guide; it prints no argument
+# against, no rebuttals and no ballot question (its sample ballot pages
+# are placeholders). The ballot question (Appendix B, "Abbreviated Form
+# of Bond Measure") and the district's tax rate statement (Appendix C)
+# are in the county's packet for the measure; those pages are a scan
+# with no text layer, so they were typed from the page images into
+# sources/appendix-b-c-transcription.txt, whose url is the scan's (as
+# Dixon Unified Measure U's tax statement is). The full text (Appendix
+# A, the project list) is also only a scan and is not cited: the
+# analysis states what the project list covers.
+
+[contest]
+id = "ca-2026-11-03-ferndale-unified-measure-e"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:ferndale_unified_school_district"
+kind = "measure"
+title = "Ferndale Unified School District Measure E: Career Technical Education Facility Bonds"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Ferndale Unified School District, Appendix B, Abbreviated Form of Bond Measure, to the Board of Trustees’ resolution ordering the election, adopted June 9, 2026 (transcribed from the scan), as posted by the Humboldt County Office of Elections, Measure E - Ferndale Unified School District"
+credit = "Appendix B, Ferndale Unified School District"
+url = "https://humboldtgov.org/DocumentCenter/View/156837/Measure-E---Ferndale-Unified-School-District"
+file = "sources/appendix-b-c-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure E, Humboldt County Counsel, Humboldt County Office of Elections, Full Voter Information Guide – November 3, 2026 Statewide General Election, pages 15 and 16"
+credit = "County Counsel’s Impartial Analysis, Humboldt County Voter Information Guide"
+url = "https://humboldtgov.org/DocumentCenter/View/158656/Full-Voter-Information-Guide---November-3-2026-Statewide-General-Election"
+file = "sources/vig-pp15-16-analysis-argument.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Ferndale Unified School District, Appendix C, Tax Rate Statement Regarding Proposed Ferndale Unified School District General Obligation Bonds, signed by the Superintendent (transcribed from the scan), as posted by the Humboldt County Office of Elections, Measure E - Ferndale Unified School District"
+credit = "Tax Rate Statement, Ferndale Unified School District"
+url = "https://humboldtgov.org/DocumentCenter/View/156837/Measure-E---Ferndale-Unified-School-District"
+file = "sources/appendix-b-c-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure E, Humboldt County Office of Elections, Full Voter Information Guide – November 3, 2026 Statewide General Election, page 16 (the guide prints no argument against)"
+credit = "Argument in favor, Humboldt County Voter Information Guide"
+url = "https://humboldtgov.org/DocumentCenter/View/158656/Full-Voter-Information-Guide---November-3-2026-Statewide-General-Election"
+file = "sources/vig-pp15-16-analysis-argument.pdf"
+retrieved = "2026-10-28"
