@@ -154,8 +154,8 @@ def card(abbr: str, name: str, hero: dict, county: str | None = None,
 def has_local_measures(abbr: str) -> tuple[bool, str | None]:
     """Whether the state's election has any measure below statewide, and
     the election's id."""
-    for election_dir in sorted((REPO / "data").glob(f"{abbr}-*")):
-        index = load_index(election_dir)
+    for index_file in sorted((REPO / "data").glob(f"{abbr}-*/contests.toml")):
+        index = load_index(index_file.parent)
         local = any(e.kind == "measure"
                     and e.division != index.election.state
                     for e in index.entries)
