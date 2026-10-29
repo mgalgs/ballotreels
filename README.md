@@ -185,6 +185,16 @@ ballot's name typed for TIGER's; it fails one in an election with no
 prefix and `--data-dir` to the build's default. Rerun it after each
 `geo build`.
 
+The build's last step writes `counties.json` beside its shapes: which
+counties each city and school district lies in, for the county pages
+(`/ca/2026/county/humboldt`), and each county's outline for their map.
+A district is in a county only where the two share ground more than
+about 300 m across both ways, so a district whose edge merely is (or,
+from shape mismatch, slightly crosses) a county line is not listed
+there. To write it again from a build already on disk (no download):
+
+    python -m ballotreels geo counties --state ca --data-dir var
+
 Look up what a zip code resolves to:
 
     python -m ballotreels geo zip 90001 --state ca --data-dir var

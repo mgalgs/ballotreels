@@ -16,6 +16,7 @@ import zipfile
 from pathlib import Path
 from typing import Callable
 
+from .counties import write_counties
 from .lookup import LOCAL_KINDS, PARTIAL, ocd_id
 from .shapefile import iter_shapefile
 from .shapes import (overlap_length, point_in_polygon, row_intervals,
@@ -510,3 +511,6 @@ def _build_into(tmp_dir: Path, raw_dir: Path, fips: str, state_abbr: str,
         zips_doc[z] = kinds
     (tmp_dir / "zips.json").write_text(
         json.dumps(zips_doc, indent=2, sort_keys=True), encoding="utf-8")
+    # Which counties each city and school district is in, for the
+    # county pages (ballotreels.geo.counties).
+    write_counties(tmp_dir)
