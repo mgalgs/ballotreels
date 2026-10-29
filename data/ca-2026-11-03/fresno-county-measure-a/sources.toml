@@ -1,0 +1,85 @@
+# Archived sources for Fresno County Measure A, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Fresno County Registrar of Voters posts each measure's filed
+# documents on its election page; no printed Voter Information Guide
+# was found online. The ballot question is quoted from Board of
+# Supervisors Resolution No. 26-257, Section 5, whose recitals also say
+# who votes: "the voters of Fresno County, including the voters of both
+# the incorporated and the unincorporated areas", at a countywide
+# election. So, although the tax applies only in the unincorporated
+# area, the measure is on every county voter's ballot: the division is
+# the county and there is no `voters` line. County Counsel's impartial
+# analysis is the measure's neutral explanation, the kind a state's
+# attorney general's explanatory statement is. The Auditor-Controller/
+# Treasurer-Tax Collector's fiscal impact statement is the measure's
+# official fiscal statement.
+#
+# Every PDF is a scan with no text layer. The passages cited were typed
+# from the page images into sources/*-transcription.txt, each naming the
+# PDF and URL it copies; those sources point at the transcription, and
+# their url at the scan (as Clayton Measure M's do). The rebuttals are
+# archived but not cited.
+
+[contest]
+id = "ca-2026-11-03-fresno-county-measure-a"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:fresno"
+kind = "measure"
+title = "Fresno County Measure A: Short-Term Lodging Transient Occupancy Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "County of Fresno, Board of Supervisors Resolution No. 26-257, calling a countywide special election on Ordinance No. 26-004, the Fresno County Transient Occupancy Tax, adopted June 30, 2026: recitals, page 1; the ballot question, Section 5, page 3 (transcribed from the scan)"
+credit = "Resolution No. 26-257, County of Fresno"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/tot_resolution.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Fresno County Counsel, Impartial Analysis by County Counsel, Measure __, filed with the Fresno County Clerk July 21, 2026 (transcribed from the scan)"
+credit = "Impartial Analysis, Fresno County Counsel"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/impartial-analysis.pdf"
+file = "sources/impartial-analysis-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "fiscal-impact"
+kind = "official-fiscal-analysis"
+publisher = "County of Fresno, Auditor-Controller/Treasurer-Tax Collector, Fiscal Impact Statement, Transient Occupancy Tax, filed with the Fresno County Clerk July 24, 2026 (transcribed from the scan)"
+credit = "Fiscal Impact Statement, County of Fresno"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/fiscal-impact-statement.pdf"
+file = "sources/fiscal-impact-statement-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "County of Fresno, Ordinance No. 26-004, adding Chapter 4.14, Transient Occupancy Tax, to the Ordinance Code of Fresno County, Exhibit A to Resolution No. 26-257, pages 5-18 (transcribed in part from the scan)"
+credit = "Ordinance No. 26-004, County of Fresno"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/tot_resolution.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure A, as filed with the Fresno County Clerk July 23, 2026 (transcribed from the scan)"
+credit = "Argument in favor, Measure A"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/filed-argument-in-favor.pdf"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Fresno County Transient Occupancy Tax Measure, as filed with the Fresno County Clerk July 21, 2026 (transcribed from the scan)"
+credit = "Argument against, Measure A"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/filed-argument-against.pdf"
+file = "sources/argument-against-transcription.txt"
+retrieved = "2026-10-28"

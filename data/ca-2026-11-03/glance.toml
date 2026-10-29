@@ -1689,3 +1689,13 @@ source = "ballot-question"
 quote = "providing approximately $55,037 annually for general City services"
 amount = 55037
 period = "per-year"
+
+# Fresno County Measure A: the Auditor-Controller/Treasurer-Tax
+# Collector's fiscal impact statement, which also gives a one-time cost
+# of $50,000 and running costs of $130,000 a year.
+[fresno-county-measure-a]
+source = "fiscal-impact"
+quote = "If this measure passes, the County of Fresno estimates the annual revenue from this tax to be $4,500,000."
+amount = 4500000
+period = "per-year"
+direction = "revenue-gain"

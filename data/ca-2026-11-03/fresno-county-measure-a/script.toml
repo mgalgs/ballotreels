@@ -1,0 +1,200 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the county has no hotel tax
+# today, and who votes on one that would apply only outside the cities;
+# what would change (the rate and who pays, where the money goes, when
+# it starts and the vote it needs); the fiscal impact statement's
+# revenue and costs; one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "voters across this county". The card and title carry
+# it. "Counsel" is heard as "Council" (standard/speakability.txt), so the
+# narration does not name the impartial analysis's author.
+#
+# Who votes: Resolution No. 26-257 submits the measure to "the voters of
+# Fresno County, including the voters of both the incorporated and the
+# unincorporated areas", though the tax applies only in the
+# unincorporated area; a background line says both.
+#
+# How long it lasts: the ballot question and the fiscal statement say
+# "until changed or repealed", the impartial analysis "until ended by
+# voters"; the narration says only that it has no end date, which all
+# three agree on.
+#
+# The fiscal statement gives the revenue and the cost of collecting it,
+# and both are said (STANDARD.md 6.4). No archived source states the
+# county's general fund budget, so the figures have no scale (STANDARD.md
+# 6.5; left open, under [[question]]). The supporters' point that
+# nearly every county has such a tax is theirs, and stays in their line
+# (STANDARD.md 6.3); the neutral "today" line says only what the fiscal
+# statement says, that the county has none.
+
+contest = "ca-2026-11-03-fresno-county-measure-a"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "A"
+title = "Fresno County Hotel Tax."
+origin = "Resolution No. 26-257"
+summary = "Shall the measure to establish a tax paid only by guests staying in overnight short-term lodging in the unincorporated area of Fresno County at the rate of 12% of the rent for the stay, estimated to raise $4,500,000 annually, until changed or repealed, in general revenue for the County of Fresno, which provides public safety, wildfire/disaster response, 911, road maintenance, behavioral and public health, water infrastructure, parks, and other public services, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure A"
+
+[[section.line]]
+text = "Measure A asks voters across this county whether to tax short stays at hotels and rentals outside city limits, at 12 percent of the rent."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["at the rate of 12% of the rent for the stay"]
+
+[[section]]
+id = "background"
+heading = "Who votes"
+
+[[section.line]]
+id = "who-votes"
+text = "Every voter in the county votes on Measure A, in the cities too, though the tax would apply only outside them."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-line-map"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the county does not have a tax on hotel stays."
+sources = ["fiscal-impact"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hotel-front-desk"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "who-pays"
+text = "Guests staying 30 days or less would pay 12 percent of the rent, collected by the lodging operator."
+sources = ["impartial-analysis", "fiscal-impact"]
+
+[section.line.visual]
+kind = "bars"
+title = "Tax on lodging stays outside city limits, share of the rent"
+source = "fiscal-impact"
+unit = "%"
+labels = ["Today", "With Measure A"]
+values = [0, 12]
+
+[[section.line]]
+id = "general"
+text = "The money would go to the general fund of the county, for any governmental purpose."
+sources = ["impartial-analysis", "fiscal-impact"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+id = "end"
+text = "The tax would start in January 2027 with no end date, and needs a simple majority to pass."
+sources = ["impartial-analysis", "fiscal-impact"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "fiscal"
+heading = "What the fiscal impact statement says"
+
+[[section.line]]
+id = "revenue"
+text = "The auditor-controller's fiscal impact statement estimates $4.5 million a year in revenue."
+sources = ["fiscal-impact"]
+
+[section.line.visual]
+kind = "illustration"
+name = "travel-receipts"
+
+[[section.line]]
+id = "costs"
+text = "Setting up the tax would cost about $50,000, and running it about $130,000 a year."
+sources = ["fiscal-impact"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the tax is paid mainly by visitors, not residents, and nearly every county in the state already has one."
+sources = ["argument-for"]
+basis = ["A Transient Occupancy Tax is paid primarily by visitors staying in hotels, motels, and short-term rentals for fewer than 30 days - not by Fresno County residents.", "Nearly every county in California already has a Transient Occupancy Tax."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Paid mainly by visitors", "Nearly every county has one"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say a 12 percent tax is a substantial burden, and local short-term rental owners would end up shouldering the costs."
+sources = ["argument-against"]
+basis = ["a whopping 12% tax undoubtedly represents a substantial burden on their cost of living.", "The county residents that operate short-term rentals will end up shouldering the costs when they can't raise their rates sufficiently."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["A substantial burden", "Local rental owners shoulder the costs"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote establishes the 12 percent tax on short-term lodging outside city limits."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["at the rate of 12% of the rent for the stay"]
+
+[[section.line]]
+text = "A no vote leaves the county without a tax on hotel stays."
+sources = ["fiscal-impact", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["at the rate of 12% of the rent for the stay"]
+
+[[question]]
+ask = "Do voters in the cities vote on this, if the tax only applies outside them?"
+lines = ["who-votes"]
+
+[[question]]
+ask = "Who pays the tax?"
+lines = ["who-pays"]
+
+[[question]]
+ask = "What can the money be spent on, and when would the tax end?"
+lines = ["general", "end"]
+
+[[question]]
+ask = "How big is $4.5 million a year next to the county budget?"
+unanswered = true
