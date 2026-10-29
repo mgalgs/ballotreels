@@ -1,0 +1,287 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 69.79,
+  "phrases": [
+    {
+      "text": "Measure N asks the voters of this health care district whether to approve a $111 yearly tax on each parcel of property.",
+      "start": 0.03,
+      "end": 8.57
+    },
+    {
+      "text": "A 2023 state law created the district, which covers the whole county.",
+      "start": 9.23,
+      "end": 13.94
+    },
+    {
+      "text": "The district runs one of the two hospitals in the county, and agreed in 2025 to take over the other.",
+      "start": 14.6,
+      "end": 20.66
+    },
+    {
+      "text": "A 2024 state law requires the board to put a permanent funding source before voters by this election.",
+      "start": 21.32,
+      "end": 27.81
+    },
+    {
+      "text": "The tax would start in July 2027 and last until repealed.",
+      "start": 28.47,
+      "end": 33.28
+    },
+    {
+      "text": "The money could pay for emergency care, hospital operations, doctors and nurses, and earthquake safety upgrades.",
+      "start": 33.94,
+      "end": 41.86
+    },
+    {
+      "text": "Measure N needs two-thirds of the vote to pass.",
+      "start": 42.52,
+      "end": 45.61
+    },
+    {
+      "text": "The measure's text estimates about $8.9 million a year in revenue.",
+      "start": 46.27,
+      "end": 51.36
+    },
+    {
+      "text": "No argument against Measure N is printed in its posted pages.",
+      "start": 52.02,
+      "end": 56.35
+    },
+    {
+      "text": "No argument for Measure N is printed in its posted pages.",
+      "start": 57.01,
+      "end": 60.7
+    },
+    {
+      "text": "A yes vote authorizes the district to levy the $111 parcel tax.",
+      "start": 61.36,
+      "end": 66.44
+    },
+    {
+      "text": "A no vote does not authorize the tax.",
+      "start": 67.1,
+      "end": 69.76
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure N asks the voters of this health care district whether to approve a $111 yearly tax on each parcel of property.",
+      "A 2023 state law created the district, which covers the whole county.",
+      "The district runs one of the two hospitals in the county, and agreed in 2025 to take over the other.",
+      "A 2024 state law requires the board to put a permanent funding source before voters by this election.",
+      "The tax would start in July 2027 and last until repealed.",
+      "The money could pay for emergency care, hospital operations, doctors and nurses, and earthquake safety upgrades.",
+      "Measure N needs two-thirds of the vote to pass.",
+      "The measure's text estimates about $8.9 million a year in revenue.",
+      "No argument against Measure N is printed in its posted pages.",
+      "No argument for Measure N is printed in its posted pages.",
+      "A yes vote authorizes the district to levy the $111 parcel tax.",
+      "A no vote does not authorize the tax."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure N asks the voters of this health care district whether to approve a $111 yearly tax on each parcel of property."
+      },
+      "bounds": [
+        0,
+        206400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure N asks the voters of this health care district whether to approve a $111 yearly tax on each parcel of property.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A 2023 state law created the district, which covers the whole county."
+      },
+      "bounds": [
+        220800,
+        335280
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A 2023 state law created the district, which covers the whole county.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The district runs one of the two hospitals in the county, and agreed in 2025 to take over the other."
+      },
+      "bounds": [
+        349680,
+        496560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district runs one of the two hospitals in the county, and agreed in 2025 to take over the other.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A 2024 state law requires the board to put a permanent funding source before voters by this election."
+      },
+      "bounds": [
+        510960,
+        668160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A 2024 state law requires the board to put a permanent funding source before voters by this election.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The tax would start in July 2027 and last until repealed."
+      },
+      "bounds": [
+        682560,
+        799440
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The tax would start in July 2027 and last until repealed.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money could pay for emergency care, hospital operations, doctors and nurses, and earthquake safety upgrades."
+      },
+      "bounds": [
+        813840,
+        1005360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money could pay for emergency care, hospital operations, doctors and nurses, and earthquake safety upgrades.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure N needs two-thirds of the vote to pass."
+      },
+      "bounds": [
+        1019760,
+        1095360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure N needs two-thirds of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The measure's text estimates about $8.9 million a year in revenue."
+      },
+      "bounds": [
+        1109760,
+        1233360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The measure's text estimates about $8.9 million a year in revenue.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument against Measure N is printed in its posted pages."
+      },
+      "bounds": [
+        1247760,
+        1353120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure N is printed in its posted pages.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument for Measure N is printed in its posted pages."
+      },
+      "bounds": [
+        1367520,
+        1457520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure N is printed in its posted pages.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote authorizes the district to levy the $111 parcel tax."
+      },
+      "bounds": [
+        1471920,
+        1595280
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote authorizes the district to levy the $111 parcel tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote does not authorize the tax."
+      },
+      "bounds": [
+        1609680,
+        1674960
+      ]
+    }
+  ],
+  "sha256": "fdcf2f44a26f6529129d431db5ee09e8e31dee43bacc200a2f1d103145c64c3e"
+}
