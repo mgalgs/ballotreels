@@ -1895,3 +1895,12 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $37,050,000."
 amount = 37050000
 period = "unstated"
+
+# County of Yolo Measure X: a hotel tax increase, so no tax rate
+# statement and no fiscal statement; the one estimate is in its ballot
+# question.
+[yolo-county-measure-x]
+source = "ballot-question"
+quote = "providing approximately an additional $250,000 annually until ended by voters"
+amount = 250000
+period = "per-year"
