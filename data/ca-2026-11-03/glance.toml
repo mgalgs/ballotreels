@@ -2447,3 +2447,9 @@ quote = "The City’s estimate is that eliminating the position would save appro
 amount = 65000
 period = "per-year"
 direction = "savings"
+
+# City of Oroville Measure S (Butte): the guide prints no fiscal analysis
+# (not a tax measure).
+[oroville-measure-s]
+source = "guide-page"
+status = "none-printed"
