@@ -1,0 +1,50 @@
+# Archived sources for Carpinteria Measure I, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Santa Barbara County Elections prints each ballot type's County Voter
+# Information Guide as one PDF; pages 16 to 17 (impartial analysis,
+# argument in favor) and 22 to 23 (sample ballot) of Ballot Type 12 were
+# cut into one excerpt, which backs every source here. The ballot labels
+# the measure "Measure I2026"; the project names it by its bare letter.
+# The impartial analysis, written by the firm acting as City Attorney, is
+# the measure's neutral explanation and gives the one revenue estimate;
+# no tax rate statement or fiscal analysis applies to a sales tax. No
+# argument against was filed. The guide does not print the ordinance's
+# full text, and it was not fetched from the City, so no `official-text`
+# source is listed; the analysis covers what the script needs.
+
+[contest]
+id = "ca-2026-11-03-carpinteria-measure-i"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:carpinteria"
+kind = "measure"
+title = "Carpinteria Measure I: Quarter-Cent Sales Tax for City Services"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 12, page 23: Sample Ballot, City of Carpinteria Measure I2026"
+credit = "Sample Ballot, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000012.pdf"
+file = "sources/VIG-bt012_pp16-17_22-23.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure I2026, City of Carpinteria, Jena S. Acos, on behalf of Brownstein Hyatt Farber Schreck, LLP, acting as City Attorney, Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 12, page 16"
+credit = "City Attorney’s Impartial Analysis, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000012.pdf"
+file = "sources/VIG-bt012_pp16-17_22-23.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure I2026, City of Carpinteria, Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 12, page 17 (no argument against was filed)"
+credit = "Arguments, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000012.pdf"
+file = "sources/VIG-bt012_pp16-17_22-23.pdf"
+retrieved = "2026-10-28"

@@ -2022,3 +2022,12 @@ source = "impartial-analysis"
 quote = "It is estimated that Measure C2026 will provide an additional $13 million in annual local funding"
 amount = 13000000
 period = "per-year"
+
+# Carpinteria Measure I: no tax rate statement or fiscal analysis applies
+# (a sales tax); the one estimate is the City's projection, as the
+# impartial analysis gives it.
+[carpinteria-measure-i]
+source = "impartial-analysis"
+quote = "Measure I2026 is projected to generate approximately $700,000 in additional annual general fund revenue"
+amount = 700000
+period = "per-year"
