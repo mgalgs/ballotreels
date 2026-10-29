@@ -1,0 +1,61 @@
+# Archived sources for City of Riverbank Measure M, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Stanislaus County Registrar of Voters prints Measure M's full
+# text, the City Attorney's impartial analysis, the arguments for and
+# against and both rebuttals on PDF pages 93-102 of its bilingual Voter
+# Information Guide; sources/vig-measure-m-pdfpp93-102.pdf is those
+# pages cut from it, and every source from it cites the full guide's
+# URL with the pages. The guide does not print the ballot question: it
+# is quoted from the City Clerk's Notice Fixing Time for Submission of
+# Arguments For or Against Measure M. The City Attorney's impartial
+# analysis is the measure's neutral explanation, the kind a state's
+# attorney general's explanatory statement is; it states the City
+# Attorney's opinion that the measure is likely unconstitutional, which
+# the script gives as that opinion, attributed. No fiscal statement is
+# printed (not a tax measure).
+
+[contest]
+id = "ca-2026-11-03-riverbank-measure-m"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:riverbank"
+kind = "measure"
+title = "City of Riverbank Measure M: Voter Approval of Urban Development on Agricultural or Open Space Lands West of the City"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Riverbank, Office of the City Clerk, Notice Fixing Time for Submission of Arguments For or Against Measure M, July 1, 2026: the ballot question"
+credit = "Notice for Measure M, Riverbank City Clerk"
+url = "https://www.riverbank.org/DocumentCenter/View/5460/Notice-Calling-for-Arguments-FOR-and-AGAINST-Measure-M-07-01-2026"
+file = "sources/riverbank-notice-arguments-measure-m.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Riverbank City Attorney, Impartial Analysis by City Attorney, City of Riverbank – Measure M, Stanislaus County Voter Information Guide, General Election, November 3, 2026, PDF page 97"
+credit = "Impartial Analysis, Stanislaus County Voter Information Guide"
+url = "https://www.stanvote.gov/pdf/voter-guides/20261103.pdf"
+file = "sources/vig-measure-m-pdfpp93-102.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor, Rebuttal to Argument in Favor, Argument Against and Rebuttal to Argument Against, City of Riverbank – Measure M, Stanislaus County Voter Information Guide, General Election, November 3, 2026, PDF pages 99-102"
+credit = "Arguments, Stanislaus County Voter Information Guide"
+url = "https://www.stanvote.gov/pdf/voter-guides/20261103.pdf"
+file = "sources/vig-measure-m-pdfpp93-102.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text, City of Riverbank – Measure M, General Plan Amendment, Stanislaus County Voter Information Guide, General Election, November 3, 2026, PDF pages 93-96"
+credit = "Full Text of Measure M, Stanislaus County Voter Information Guide"
+url = "https://www.stanvote.gov/pdf/voter-guides/20261103.pdf"
+file = "sources/vig-measure-m-pdfpp93-102.pdf"
+retrieved = "2026-10-28"

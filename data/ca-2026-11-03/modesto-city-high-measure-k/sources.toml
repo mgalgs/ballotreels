@@ -1,0 +1,69 @@
+# Archived sources for Modesto City High School District Measure K,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Stanislaus County Registrar of Voters prints Measure K's full
+# text, County Counsel's impartial analysis, the district's tax rate
+# statement and the argument in favor on PDF pages 50-64 of its
+# bilingual Voter Information Guide; sources/vig-measure-k-pdfpp50-64.pdf
+# is those pages cut from it, and every source from it cites the full
+# guide's URL with the pages. The guide does not print the ballot
+# question: it is quoted from the Registrar's Notice of Election for
+# Measure K. County Counsel's impartial analysis is the measure's
+# neutral explanation, the kind a state's attorney general's
+# explanatory statement is; the district's tax rate statement is its
+# fiscal statement. The guide prints "None filed" under the argument
+# against, and no rebuttals.
+
+[contest]
+id = "ca-2026-11-03-modesto-city-high-measure-k"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:modesto_city_high_school_district"
+kind = "measure"
+title = "Modesto City High School District Measure K: High School Career Training and Classroom Repair Bonds"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Stanislaus County Registrar of Voters, Notice of Election / Notice of Argument Filing Deadlines, Modesto City Schools District - Measure K, dated July 12, 2026: the ballot question"
+credit = "Notice of Election, Stanislaus County Registrar of Voters"
+url = "https://www.stanvote.gov/pdf/public_notices/20261103_notice_of_election_publication-measure-k-modesto.pdf"
+file = "sources/notice-measure-k-modesto.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Stanislaus County Counsel, Impartial Analysis by County Counsel, Modesto City High School District – Measure K, Stanislaus County Voter Information Guide, General Election, November 3, 2026, PDF page 59"
+credit = "Impartial Analysis, Stanislaus County Voter Information Guide"
+url = "https://www.stanvote.gov/pdf/voter-guides/20261103.pdf"
+file = "sources/vig-measure-k-pdfpp50-64.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Modesto City High School District, Tax Rate Statement, Measure K, Stanislaus County Voter Information Guide, General Election, November 3, 2026, PDF page 61"
+credit = "Tax Rate Statement, Stanislaus County Voter Information Guide"
+url = "https://www.stanvote.gov/pdf/voter-guides/20261103.pdf"
+file = "sources/vig-measure-k-pdfpp50-64.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor, Modesto City High School District – Measure K, Stanislaus County Voter Information Guide, General Election, November 3, 2026, PDF page 63 (argument against: \"None filed\")"
+credit = "Arguments, Stanislaus County Voter Information Guide"
+url = "https://www.stanvote.gov/pdf/voter-guides/20261103.pdf"
+file = "sources/vig-measure-k-pdfpp50-64.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text, Modesto City High School District High School Career Training / Classroom Repair Extension Measure, Stanislaus County Voter Information Guide, General Election, November 3, 2026, PDF pages 50-58"
+credit = "Full Text of Measure K, Stanislaus County Voter Information Guide"
+url = "https://www.stanvote.gov/pdf/voter-guides/20261103.pdf"
+file = "sources/vig-measure-k-pdfpp50-64.pdf"
+retrieved = "2026-10-28"

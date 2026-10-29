@@ -1,0 +1,55 @@
+# Archived sources for City of Patterson Measure L, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Stanislaus County Registrar of Voters prints the City Attorney's
+# impartial analysis of Measure L and the argument in favor on PDF
+# pages 90-92 of its bilingual Voter Information Guide;
+# sources/vig-measure-l-pdfpp90-92.pdf is those pages cut from it, and
+# every source from it cites the full guide's URL with the pages. The
+# guide does not print the ballot question: it is quoted from the City
+# of Patterson's Notice of Election. The City Attorney's impartial
+# analysis is the measure's neutral explanation, the kind a state's
+# attorney general's explanatory statement is. No tax rate statement or
+# fiscal analysis applies (a sales tax); the one revenue estimate is the
+# analysis's. The guide prints "None filed" under the argument against,
+# and no rebuttals.
+#
+# The ordinance's full text is not printed in the guide and was not
+# found (the analysis offers a mailed copy from the City Clerk), so no
+# `official-text` source is listed and the script cites none.
+
+[contest]
+id = "ca-2026-11-03-patterson-measure-l"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:patterson"
+kind = "measure"
+title = "City of Patterson Measure L: A 1¢ Sales Tax Until Ended by Voters"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Patterson, Legal Public Notice, Notice of Election, Measure to Be Voted On, advertised July 2 and 9, 2026: the ballot question"
+credit = "Notice of Election, City of Patterson"
+url = "https://www.pattersonca.gov/DocumentCenter/View/14388/PUBLIC-NOTICE-OF-DISTRICT-ELECTION---Nov-3-2026-UPDATED-PDF"
+file = "sources/patterson-notice-of-election.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Patterson City Attorney, Impartial Analysis by City Attorney, City of Patterson – Measure L, Stanislaus County Voter Information Guide, General Election, November 3, 2026, PDF page 90"
+credit = "Impartial Analysis, Stanislaus County Voter Information Guide"
+url = "https://www.stanvote.gov/pdf/voter-guides/20261103.pdf"
+file = "sources/vig-measure-l-pdfpp90-92.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor, City of Patterson – Measure L, Stanislaus County Voter Information Guide, General Election, November 3, 2026, PDF page 92 (argument against: \"None filed\")"
+credit = "Arguments, Stanislaus County Voter Information Guide"
+url = "https://www.stanvote.gov/pdf/voter-guides/20261103.pdf"
+file = "sources/vig-measure-l-pdfpp90-92.pdf"
+retrieved = "2026-10-28"

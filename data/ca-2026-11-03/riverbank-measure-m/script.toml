@@ -1,0 +1,165 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot; what
+# would change (the vote it requires, the exceptions); the City Attorney's stated opinion; that the guide
+# gives no cost estimate; one line per side; what a vote does.
+#
+# The guide does not print the ballot question, so the card quotes the
+# City Clerk's notice. It prints only YES and NO boxes, no meanings, and
+# the impartial analysis's are only "in favor of" and "against adopting
+# Measure M"; so, as Utah's do, the vote lines take their meaning from
+# the card's own question, one phrase highlighted for each.
+#
+# The City Attorney's impartial analysis opens with the City Attorney's
+# opinion that the measure is "likely unconstitutional because of
+# conflicts with state housing and annexation laws". It is an official
+# explanation's own statement, so it is told, once, and as the City
+# Attorney's opinion, never as fact; the analysis's warning that the
+# city "may be sued" is a prediction and is left out. The measure's own
+# exception for land needed for the city's fair-share housing is told
+# beside it, as the text states it. The supporters' answer (it "does not
+# cap growth or block housing") is theirs, and is their line.
+#
+# Neither side's line names anyone (STANDARD.md 9.3: none on either
+# side). The opponents' land-grab framing and the measure's author are
+# theirs and stay in their argument.
+
+contest = "ca-2026-11-03-riverbank-measure-m"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "M"
+title = "CITIZEN INITIATIVE MEASURE TO REQUIRE VOTER APPROVAL OF URBAN DEVELOPMENT ON AGRICULTURAL OR OPEN SPACE LANDS LOCATED WEST OF RIVERBANK CITY LIMITS."
+origin = "NOTICE FIXING TIME FOR SUBMISSION OF ARGUMENTS FOR OR AGAINST MEASURE M"
+summary = "Shall the measure, to require that a majority of city voters approve at an election any decision of the Riverbank City Council that would authorize or facilitate development of urban uses on agricultural or open space lands located west of the current city limits of the City of Riverbank, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure M"
+
+[[section.line]]
+text = "City of Riverbank Measure M asks Riverbank voters whether city voters must approve urban development on farmland and open space west of the city."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["agricultural or open space lands located west of the current city limits"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "Measure M was placed on the ballot by a citizen petition."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "neighborhood-petition"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rule"
+text = "Measure M would amend the General Plan of the city, so a City Council decision allowing urban development there would need a majority vote of city voters."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "farm-and-timber-land"
+
+[[section.line]]
+id = "exceptions"
+text = "The measure makes exceptions, such as land the state certifies the city needs for its required share of housing."
+sources = ["text"]
+
+[[section.line]]
+id = "opinion"
+text = "The city attorney's impartial analysis says that, in the city attorney's opinion, Measure M is likely unconstitutional, because of conflicts with state housing and annexation laws."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "law-book"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Stanislaus County Voter Information Guide does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure M protects the most valuable farmland west of the city, and does not cap growth or block housing."
+sources = ["arguments"]
+basis = ["Measure “M” establishes an urban limit line along Riverbank’s western", "boundary — protecting the most valuable farmland while keeping", "Measure “M” does not cap growth or block housing."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Protects the most valuable farmland", "Does not cap growth or block housing"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure M lets Modesto control the land west of Riverbank, and loses revenue for a new fire station."
+sources = ["arguments"]
+basis = ["It’s this simple: Yes on M means Modesto controls the land.", "It means tax revenue that stays in Riverbank and funds public safety,", "including a new fire station in west Riverbank.", "That bright future goes away if Modesto gets its way with Measure M."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Lets Modesto control the land", "Loses revenue for a new fire station"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the requirement that city voters approve that development at an election."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to require that a majority of city voters approve at an election"]
+
+[[section.line]]
+text = "A no vote is against adopting Measure M, and its requirement for a vote."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["be adopted"]
+
+[[question]]
+ask = "Would this stop new housing in Riverbank?"
+lines = ["exceptions", "opinion"]
+
+[[question]]
+ask = "Which land does it cover?"
+lines = ["rule"]
+
+[[question]]
+ask = "What would it cost the city?"
+unanswered = true

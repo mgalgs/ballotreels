@@ -1,0 +1,180 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot; what
+# would change (the rate, where the money goes, the oversight, how long
+# it lasts and the vote it needs); the revenue estimate as the impartial
+# analysis gives it; one line per side; what a vote does.
+#
+# The guide does not print the ballot question, so the card quotes the
+# City's Notice of Election, which prints no yes/no lines: so, as for
+# American Canyon Measure P, the card has no YES/NO boxes; the vote
+# lines give the impartial analysis's own meanings, and both highlight
+# the same phrase of the question.
+#
+# The ordinance's full text was not archived (sources.toml), so every
+# line rests on the ballot question and the impartial analysis: how long
+# the tax lasts is the ballot question's "until ended by voters". No
+# archived source gives the Council's vote count, so the ballot line
+# gives only the month.
+#
+# No tax rate statement or fiscal analysis applies; the $9 million a
+# year is the impartial analysis's estimate, and no archived source
+# states the City's general fund budget to give it a scale (STANDARD.md
+# 6.5; left open, under [[question]]). The supporters' points (the Fire
+# Department's medical calls, the reserves running out) are theirs, so
+# they stay in their section or out (STANDARD.md 6.3).
+#
+# No argument against Measure L was filed: the guide prints "None
+# filed". The no side says so plainly; its section is marked
+# filed = false.
+
+contest = "ca-2026-11-03-patterson-measure-l"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "L"
+title = "Patterson Public Safety/ City Services Measure."
+origin = "NOTICE OF ELECTION"
+summary = "Shall the measure funding City of Patterson services such as maintaining 911 response, helping prevent crimes/ thefts/ burglaries /human trafficking; keeping public areas, children’s play areas safe/ clean; repairing streets/ potholes; protecting local drinking water sources; retaining/ attracting businesses; supporting youth programs, for general government use by establishing a 1¢ sales tax providing approximately $9,000,000 annually until ended by voters; requiring audits/ citizens’ oversight, spending disclosure, funds used locally, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure L"
+
+[[section.line]]
+text = "City of Patterson Measure L asks Patterson voters whether to add a 1 percent sales tax for city services."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by establishing a 1¢ sales tax"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The City Council placed Measure L on the ballot in June."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The sales tax rate in Patterson would rise from 7.875 percent to 8.875 percent."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Sales tax rate in Patterson"
+source = "impartial-analysis"
+unit = "%"
+labels = ["Today", "With Measure L"]
+values = [7.875, 8.875]
+
+[[section.line]]
+id = "general"
+text = "The money would go into the general fund of the city, for any lawful purpose."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "A seven-member citizens' oversight committee would review the spending each year."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+id = "end"
+text = "The tax would last until ended by voters, and needs a simple majority to pass."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The city attorney's impartial analysis estimates that Measure L would raise about $9 million a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure L keeps Patterson safe by retaining its experienced firefighters, and helps improve the drinking water infrastructure."
+sources = ["arguments"]
+basis = ["Yes on L keeps Patterson safe by retaining our experienced firefighters", "Yes on L protects our water. Measure L provides funding to improve", "drinking water infrastructure and help protect the quality of Patterson’s"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Retains experienced firefighters", "Improves drinking water infrastructure"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The Stanislaus County voter guide says that no argument against Measure L was filed by anyone in this election."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote on Measure L authorizes the 1 percent sales tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by establishing a 1¢ sales tax"]
+
+[[section.line]]
+text = "A no vote on Measure L does not authorize the 1 percent sales tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by establishing a 1¢ sales tax"]
+
+[[question]]
+ask = "When would the tax end?"
+lines = ["end"]
+
+[[question]]
+ask = "What can the money be spent on?"
+lines = ["general"]
+
+[[question]]
+ask = "How big is $9 million a year next to the city budget?"
+unanswered = true

@@ -1,0 +1,162 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; how a school bond is repaid and what it needs to
+# pass; what the money would pay for and what it may not; the
+# district's tax statement; one line per side; what a vote does.
+#
+# The guide does not print the ballot question, so the card quotes the
+# Registrar's Notice of Election: its title is the question's own head,
+# its origin the notice's heading. The notice prints no yes and no
+# sentences, so the card has no boxes, and the vote lines take their
+# meaning from the ballot question, as Escalon U's do. "Counsel" is
+# heard as "Council" (standard/speakability.txt), so the narration does
+# not say it.
+#
+# The tax statement's average and highest rates are both $25, so the
+# fiscal line gives the one rate, with its first and last years. The
+# bond total and the debt service are repaid from a tax on property in
+# the district, and no archived source states the district's budget,
+# so they have no budget scale (STANDARD.md 6.5; left open). The
+# supporters' points on the schools' age and the state's funding are
+# theirs, so the neutral sections leave them out (STANDARD.md 6.3).
+#
+# No argument against Measure N was filed: the guide prints "None
+# filed". The no side says so plainly; its section is marked
+# filed = false.
+
+contest = "ca-2026-11-03-sylvan-union-measure-n"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "N"
+title = "Student Safety and Classroom Modernization Measure."
+origin = "Sylvan Union School District - Measure N"
+summary = "To provide updated science/ technology/ engineering/ math classrooms and multipurpose spaces; improve campus and classroom security; update/ repair student restrooms/ plumbing; and upgrade student drop-off, pick-up, parking, shade, play and athletic areas; shall Sylvan Union School District’s measure be adopted authorizing $70,000,000 in bonds at legal rates, $25 per $100,000 assessed value, providing approximately $5,045,000 annually while bonds are outstanding, with audits, independent citizen oversight and all funds locally controlled?"
+
+[[section]]
+id = "what"
+heading = "Measure N"
+
+[[section.line]]
+text = "Sylvan Union School District Measure N asks the district's voters whether to approve $70 million in school bonds."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $70,000,000 in bonds"]
+
+[[section]]
+id = "today"
+heading = "How a school bond works"
+
+[[section.line]]
+text = "The district would borrow the money and repay it from a tax on property in the district."
+sources = ["impartial-analysis", "tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure N needs 55 percent of the vote to pass."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The money would update science and math classrooms, improve campus security, repair restrooms and plumbing, and upgrade drop-off, shade and play areas."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section.line]]
+text = "Bond money could not pay teacher or administrator salaries, and a citizens' oversight committee would review spending."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+id = "rate"
+text = "The district's tax statement estimates a tax of $25 per $100,000 of assessed value, from 2027-2028 through 2058-2059."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section.line]]
+text = "The statement estimates the total to repay, with interest, at about $148 million."
+sources = ["tax-statement"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say some schools were built in the 1960s, and the state does not adequately fund updates without Measure N."
+sources = ["arguments"]
+basis = ["However, some of our schools were built in the 1960s and need", "repairs and upgrades to meet modern education and safety standards.", "The State does not provide adequate funding for facility updates at our", "schools without a local funding source like Measure N."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Some schools built in the 1960s", "State funding falls short without N"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The Stanislaus County voter guide says that no argument against Measure N was filed by anyone in this election."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the district to issue up to $70 million in bonds."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $70,000,000 in bonds"]
+
+[[section.line]]
+text = "A no vote does not authorize the district to issue the bonds."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["be adopted"]
+
+[[question]]
+ask = "How much would my property tax go up?"
+lines = ["rate"]
+
+[[question]]
+ask = "How big is $70 million next to the district's budget?"
+unanswered = true
