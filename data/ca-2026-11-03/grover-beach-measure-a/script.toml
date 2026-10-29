@@ -22,9 +22,8 @@
 # election is the measure's own text (Section 3), so "change" states it;
 # its estimated cost is the opponents', and is not narrated.
 #
-# Not a tax: the guide prints no fiscal statement for the measure, so
-# the fiscal line says the guide does not include a cost estimate, and
-# names it "the county voter guide" (no place name is narrated).
+# Not a tax: the impartial analysis gives no cost estimate (the
+# opponents' argument does, for a special election, and is not neutral).
 
 contest = "ca-2026-11-03-grover-beach-measure-a"
 template = "measure"
@@ -109,7 +108,7 @@ id = "fiscal"
 heading = "What it would cost"
 
 [[section.line]]
-text = "The county voter guide does not include a cost estimate for the measure."
+text = "The impartial analysis does not include a cost estimate for the measure."
 sources = ["impartial-analysis"]
 
 [section.line.visual]
