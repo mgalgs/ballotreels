@@ -422,13 +422,18 @@ input.zip-input::placeholder {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin: 8px 0 4px;
+  margin: 8px 0 12px;
 }
 
 .home-head h1 {
   flex: 1 1 0;
   min-width: 0;
   margin: 0;
+  /* Two lines down to a 307px screen; three would tower over the flag. */
+  font-size: clamp(1.9rem, 10.5vw, 2.5rem);
+  /* Caveat's ink and the scribble sit low in the line box, so centring
+     the box leaves the words visibly below the flag's middle. */
+  transform: translateY(-0.3em);
 }
 
 .home-flag {
