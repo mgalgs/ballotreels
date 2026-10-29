@@ -375,6 +375,17 @@ BALLOTS: dict[str, Ballot] = {
                                   "santa-cruz-county-measure-e",
                                   "scotts-valley-measure-g",
                                   "los-gatos-saratoga-measure-n")},
+                     # Sacramento County issues each voter's guide through
+                     # a portal; its Current Measure Information page
+                     # prints each measure's ballot question, impartial
+                     # analysis, full text, tax rate statement and
+                     # arguments.
+                     **{f"ca-2026-11-03-{slug}": "Current Measure Information"
+                        for slug in ("los-rios-ccd-measure-h",
+                                     "sacramento-city-unified-measure-m",
+                                     "natomas-unified-measure-d",
+                                     "center-joint-unified-measure-e",
+                                     "galt-joint-union-high-measure-g")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

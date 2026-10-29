@@ -1,0 +1,66 @@
+# Archived sources for Galt Joint Union High School District Measure G,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Sacramento County publishes no single Voter Information Guide PDF (each
+# voter's guide is issued through a portal); its "Current Measure
+# Information" page prints each measure's ballot question, County
+# Counsel's Impartial Analysis, full text, tax rate statement, arguments
+# and rebuttals. sources/county-measure-page-item.txt is the text of
+# Measure G's item on that page; every source cites it.
+#
+# The district extends into San Joaquin County; this is Sacramento
+# County's copy of the measure. San Joaquin County's is staged as
+# galt-joint-union-high-measure-g-san-joaquin, with the same division.
+
+[contest]
+id = "ca-2026-11-03-galt-joint-union-high-measure-g"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:galt_joint_union_high_school_district"
+kind = "measure"
+title = "Galt Joint Union High School District Measure G: High School Repair and Job Training Bonds"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "Sacramento County Voter Registration and Elections, Current Measure Information, November 3, 2026, General Election: Measure G's ballot question, and the Impartial Analysis's statement of what a vote does"
+credit = "Current Measure Information, Sacramento County"
+url = "https://elections.saccounty.gov/us/en/election-information/current-measure-information.html"
+file = "sources/county-measure-page-item.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "Sacramento County Counsel, Impartial Analysis of Measure G, Current Measure Information, Sacramento County Voter Registration and Elections"
+credit = "Impartial Analysis, Current Measure Information"
+url = "https://elections.saccounty.gov/us/en/election-information/current-measure-information.html"
+file = "sources/county-measure-page-item.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Galt Joint Union High School District, Tax Rate Statement for Measure G, Current Measure Information, Sacramento County Voter Registration and Elections"
+credit = "Tax Rate Statement, Current Measure Information"
+url = "https://elections.saccounty.gov/us/en/election-information/current-measure-information.html"
+file = "sources/county-measure-page-item.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in favor of Measure G, and the notices that no rebuttal and no argument against were filed, as printed on Sacramento County Voter Registration and Elections' Current Measure Information page"
+credit = "Arguments, Current Measure Information"
+url = "https://elections.saccounty.gov/us/en/election-information/current-measure-information.html"
+file = "sources/county-measure-page-item.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure G, Current Measure Information, Sacramento County Voter Registration and Elections"
+url = "https://elections.saccounty.gov/us/en/election-information/current-measure-information.html"
+file = "sources/county-measure-page-item.txt"
+retrieved = "2026-10-28"
