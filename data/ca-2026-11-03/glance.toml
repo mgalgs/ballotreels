@@ -2110,3 +2110,13 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $24.9 million."
 amount = 24900000
 period = "unstated"
+
+# Isla Vista Community Services District Measure E: the guide prints no
+# tax rate statement; the one estimate is the ballot question's (the
+# measure's full text gives the same).
+[isla-vista-measure-e]
+source = "ballot-question"
+quote = "generating approximately $1,200,000 additional annually"
+amount = 1200000
+period = "per-year"
+direction = "revenue-gain"

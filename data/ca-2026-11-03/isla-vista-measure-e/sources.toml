@@ -1,0 +1,57 @@
+# Archived sources for Isla Vista Community Services District Measure E
+# (printed on the ballot as "Measure E2026"), 2026-11-03 general election
+# (sources/sources.md). Every id here may be cited by script.toml. `kind`
+# must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# All four are pages of one file: the Santa Barbara County Voter
+# Information Guide and Sample Ballot for Ballot Type 31, pages 18 to 24
+# (impartial analysis, argument in favor, notice that no argument against
+# was filed, full text) and 32 to 33 (sample ballot, with the ballot
+# question on page 33). County Counsel's impartial analysis is the
+# measure's neutral explanation, the kind a state's analyst's or
+# attorney general's explanation is. The guide prints no tax rate
+# statement or other fiscal statement for the measure.
+
+[contest]
+id = "ca-2026-11-03-isla-vista-measure-e"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:santa_barbara"
+kind = "measure"
+title = "Isla Vista Community Services District Measure E: A New Utility Users’ Tax of 7% on Gas and 6% on Other Utilities"
+voters = "the Isla Vista Community Services District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Santa Barbara County Elections, Santa Barbara County Voter Information Guide and Sample Ballot, November 3, 2026, General Election, Ballot Type 31, page 33: sample ballot, Measure E2026"
+credit = "Sample ballot, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000031.pdf"
+file = "sources/VIG-bt031_pp18-24_32-33.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Santa Barbara County Voter Information Guide and Sample Ballot, Ballot Type 31, page 18: Impartial Analysis of Measure E2026, Isla Vista Community Services District, County Counsel, County of Santa Barbara, August 7, 2026"
+credit = "Impartial Analysis of Measure E2026, County Counsel"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000031.pdf"
+file = "sources/VIG-bt031_pp18-24_32-33.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Santa Barbara County Voter Information Guide and Sample Ballot, Ballot Type 31, page 19: Argument in Favor of Measure E2026, signed by Katherine Carmichael, Spencer Brandt and EJ Raad, beside the notice “No Argument Against Measure E2026 Was Filed”"
+credit = "Argument in Favor of Measure E2026"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000031.pdf"
+file = "sources/VIG-bt031_pp18-24_32-33.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "full-text"
+kind = "official-text"
+publisher = "Santa Barbara County Voter Information Guide and Sample Ballot, Ballot Type 31, pages 20 to 24: Full Text of Measure E2026, Isla Vista Community Services District"
+credit = "Full Text of Measure E2026"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000031.pdf"
+file = "sources/VIG-bt031_pp18-24_32-33.pdf"
+retrieved = "2026-10-28"
