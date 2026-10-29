@@ -14,8 +14,9 @@
 # ordinance's recital says the measure keeps the exemptions "applicable
 # to nonprofit organizations", while the amended code strikes that
 # exemption and the impartial analysis lists it among those deleted
-# (sources/sources.md). The script gives both, each attributed, one
-# after the other, without choosing between them. No tax rate statement
+# (sources/sources.md). The script gives the analysis, then the
+# recital, and says in the same line that the amended code text strikes
+# the exemption, so the recital is not left standing alone. No tax rate statement
 # was filed; the $1,000,000 a year is the City's estimate, and no
 # archived source states the city's budget to give it a scale
 # (STANDARD.md 6.5; left open, under [[question]]). The supporters' "haven't been adjusted
@@ -81,13 +82,14 @@ sources = ["impartial-analysis", "ballot-question"]
 
 [section.line.visual]
 kind = "illustration"
-name = "special-tax"
+name = "city-storefronts"
 
 [[section.line]]
 text = "A business whose operating costs exceed its gross receipts would be taxed on its cost of operations."
 sources = ["ballot-question", "impartial-analysis"]
 
 [[section.line]]
+id = "exemptions-end"
 text = "The impartial analysis says Measure X would end some exemptions, including those for newspapers, nonprofits and veterans."
 sources = ["impartial-analysis"]
 
@@ -97,8 +99,8 @@ name = "amended-page"
 
 [[section.line]]
 id = "nonprofits"
-text = "But a preamble of the ordinance says existing exemptions would stay, including those for nonprofits."
-sources = ["impartial-analysis", "text"]
+text = "A preamble of the ordinance says nonprofit exemptions would stay, but the amended code it adopts strikes the nonprofit exemption."
+sources = ["text", "impartial-analysis"]
 
 [[section]]
 id = "fiscal"
@@ -175,4 +177,4 @@ unanswered = true
 
 [[question]]
 ask = "Would nonprofits still be exempt?"
-lines = ["nonprofits"]
+lines = ["exemptions-end", "nonprofits"]
