@@ -5,14 +5,10 @@
 # Alameda County Registrar of Voters' Composite Voter Information Guide
 # (PDF pages 843 to 848); "page" is the guide's printed footer number.
 #
-# vig-pp843-848.pdf is the cut as archived. Its Times New Roman fonts
-# are embedded as CID TrueType with no Unicode map, so pdftotext reads
-# most of the text as glyph numbers. vig-pp843-848-text-layer.pdf is the
-# same file with one change: a ToUnicode map added to those fonts, from
-# Times New Roman's own glyph order (glyph 3-97 is ASCII 32-126; the
-# ligatures, curly quotes, dashes and bullet by their glyph numbers),
-# checked against the printed pages. The sources below cite it, so the
-# checks can read the guide's words.
+# The guide's Times New Roman fonts are embedded as CID TrueType with no
+# Unicode map, so pdftotext reads most of the text as glyph ids
+# shifted 29 places from the letters; the checks read it through the
+# decoder another round adds to ballotreels/checks.py.
 
 [contest]
 id = "ca-2026-11-03-berkeley-measure-u"
@@ -27,7 +23,7 @@ kind = "official-title-summary"
 publisher = "Alameda County Registrar of Voters, Composite Voter Information Guide, page BMU-1: ballot question and City Attorney's Impartial Analysis of Bond Measure U"
 credit = "City Attorney's Impartial Analysis, Alameda County Composite Voter Information Guide"
 url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
-file = "sources/vig-pp843-848-text-layer.pdf"
+file = "sources/vig-pp843-848.pdf"
 retrieved = "2026-10-28"
 
 [[source]]
@@ -36,7 +32,7 @@ kind = "official-fiscal-analysis"
 publisher = "City of Berkeley, Tax Rate Statement of Bond Measure U, Alameda County Composite Voter Information Guide, page BMU-2"
 credit = "Tax Rate Statement, Alameda County Composite Voter Information Guide"
 url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
-file = "sources/vig-pp843-848-text-layer.pdf"
+file = "sources/vig-pp843-848.pdf"
 retrieved = "2026-10-28"
 
 [[source]]
@@ -45,7 +41,7 @@ kind = "official-argument"
 publisher = "Arguments for and against Bond Measure U and rebuttals, as printed in the Alameda County Composite Voter Information Guide, pages BMU-3 to BMU-4"
 credit = "Arguments, Alameda County Composite Voter Information Guide"
 url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
-file = "sources/vig-pp843-848-text-layer.pdf"
+file = "sources/vig-pp843-848.pdf"
 retrieved = "2026-10-28"
 
 [[source]]
@@ -53,5 +49,5 @@ id = "text"
 kind = "official-text"
 publisher = "Full Text of Bond Measure U, Alameda County Composite Voter Information Guide, pages BMU-5 to BMU-6"
 url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
-file = "sources/vig-pp843-848-text-layer.pdf"
+file = "sources/vig-pp843-848.pdf"
 retrieved = "2026-10-28"
