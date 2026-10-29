@@ -19,6 +19,7 @@ from ballotreels.site.server import build_deps, make_servers
 from ballotreels.storage import LocalStorage
 from ballotreels.worker import Worker, WorkerClient
 
+from .helpers import git_commit_all
 from .test_crash_course import UT, edit_vote_line
 from .test_serve_public import _make_config
 
@@ -70,6 +71,8 @@ class CrashCourseServeTestCase(unittest.TestCase):
             srv.server_close()
 
     def make_worker(self, runner=None, repo=None):
+        # it renders committed HEAD: commit the checkout as the test left it
+        git_commit_all(repo or self.repo)
         return Worker(client=self.client, worker_id="w1",
                       repo=repo or self.repo,
                       runner=runner or NeverNarrates(),

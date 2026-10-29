@@ -2,6 +2,7 @@ import http.client
 import io
 import re
 import shutil
+import subprocess
 import sys
 import tempfile
 import threading
@@ -24,7 +25,7 @@ from ballotreels.standard import Risk
 from ballotreels.storage import LocalStorage
 from ballotreels.worker import Worker, WorkerClient
 
-from .helpers import (NARRATION_SIDECARS, PROP_2, REPO,
+from .helpers import (NARRATION_SIDECARS, PROP_2, REPO, git_commit_all,
                       write_committed_narration)
 from .test_serve_public import _make_config
 
@@ -83,7 +84,11 @@ class WorkerTestCase(unittest.TestCase):
         self.private.server_close()
 
     def make_worker(self, runner=None, worker_id="w1",
-                    heartbeat_interval=0.2, standard=None):
+                    heartbeat_interval=0.2, standard=None, commit=True):
+        # The worker renders from committed HEAD: commit the fake repo as
+        # each test has left it.
+        if commit:
+            git_commit_all(self.fake_repo)
         runner = runner if runner is not None else FakeRunner()
         return Worker(client=self.client, worker_id=worker_id,
                      repo=self.fake_repo, runner=runner,
@@ -236,7 +241,8 @@ class CheckRunsWithoutSidecarsTest(WorkerTestCase):
         key = self.prop2_key()
         job, _ = self.deps.queue.create_job(key)
         worker = self.make_worker()
-        contest_dir = worker._prepare_scratch(job, worker._job_work_dir(job["id"]))
+        contest_dir = worker._prepare_scratch(
+            job, worker._job_work_dir(job["id"]), worker.snapshots.head())
         self.assertFalse((contest_dir / "narration.json").exists())
         run_check(contest_dir, self.standard)  # must not raise
 
@@ -719,7 +725,7 @@ class CommittedNarrationReusedTest(WorkerTestCase):
         job, _ = self.deps.queue.create_job(self.prop2_key())
         worker = self.make_worker()
         contest_dir = worker._prepare_scratch(
-            job, worker._job_work_dir(job["id"]))
+            job, worker._job_work_dir(job["id"]), worker.snapshots.head())
         for name in NARRATION_SIDECARS:
             self.assertEqual((contest_dir / name).read_bytes(),
                              (self.dest / name).read_bytes(), name)
@@ -807,3 +813,127 @@ class CheckJudgesFreshnessTest(WorkerTestCase):
         # The committed narration still covers every other phrase.
         self.assertNotIn("1980 to 2014", row["error"])
         self.assertEqual(runner.narrated, [])
+
+
+CONFLICT = "<<<<<<< HEAD\nours\n=======\ntheirs\n>>>>>>> other\n"
+
+
+class RecordingRunner(FakeRunner):
+    """A FakeRunner noting the tree it was pointed at and the script.toml
+    each render saw."""
+
+    def __init__(self):
+        super().__init__()
+        self.trees = []
+        self.rendered_scripts = []
+
+    def use_tree(self, tree):
+        self.trees.append(Path(tree))
+
+    def render(self, contest_dir, out_dir):
+        self.rendered_scripts.append(
+            (Path(contest_dir) / "script.toml").read_text(encoding="utf-8"))
+        return super().render(contest_dir, out_dir)
+
+
+def _git_state(repo):
+    """Every file under `repo`/.git: its bytes and mtime, to tell whether
+    anything wrote there."""
+    git = Path(repo) / ".git"
+    return {str(p.relative_to(git)): (p.read_bytes(), p.stat().st_mtime_ns)
+            for p in sorted(git.rglob("*")) if p.is_file()}
+
+
+class RendersCommittedHeadTest(WorkerTestCase):
+    """Every render claimed while the operator was mid-merge failed: the
+    worker copied the contest, and ran the code, from the live checkout,
+    conflict markers and all. A job renders from the commit HEAD names at
+    claim time, and never writes the live repo's git state."""
+
+    def setUp(self):
+        super().setUp()
+        self.dest = self.fake_repo / "data" / "ca-2026-11-03" / "prop-2"
+        self.code = self.fake_repo / "ballotreels" / "stage.py"
+        self.code.parent.mkdir()
+        self.code.write_text("COMMITTED = True\n", encoding="utf-8")
+        (self.fake_repo / "scripts" / "narrate.sh").write_text(
+            "#!/bin/sh\necho committed > \"$1/narrated-by\"\n",
+            encoding="utf-8")
+        (self.fake_repo / "scripts" / "narrate.sh").chmod(0o755)
+        self.sha = git_commit_all(self.fake_repo)
+        self.script = (self.dest / "script.toml").read_text(encoding="utf-8")
+        # Mid-merge: conflict markers in the contest and in code, one of
+        # them staged, so neither the working tree nor the index is used.
+        (self.dest / "script.toml").write_text(CONFLICT + self.script,
+                                                encoding="utf-8")
+        self.code.write_text(CONFLICT, encoding="utf-8")
+        (self.fake_repo / "scripts" / "narrate.sh").write_text(
+            "#!/bin/sh\n" + CONFLICT, encoding="utf-8")
+        subprocess.run(["git", "-C", str(self.fake_repo), "add",
+                        "ballotreels/stage.py"], check=True)
+
+    def test_prepared_inputs_carry_the_committed_content(self):
+        job, _ = self.deps.queue.create_job(self.prop2_key())
+        worker = self.make_worker(commit=False)
+        self.assertEqual(worker.snapshots.head(), self.sha)
+        contest_dir = worker._prepare_scratch(
+            job, worker._job_work_dir(job["id"]), self.sha)
+        self.assertEqual((contest_dir / "script.toml").read_text(
+            encoding="utf-8"), self.script)
+        lease = worker.snapshots.acquire(self.sha)
+        self.addCleanup(lease.release)
+        self.assertEqual((lease.tree / "ballotreels" / "stage.py")
+                         .read_text(encoding="utf-8"), "COMMITTED = True\n")
+        # contest data is the job's to take, not the shared snapshot's
+        self.assertFalse((lease.tree / "data").exists())
+
+    def test_a_job_renders_the_commit_and_leaves_git_alone(self):
+        before = _git_state(self.fake_repo)
+        job, _ = self.deps.queue.create_job(self.prop2_key())
+        runner = RecordingRunner()
+        stderr = io.StringIO()
+        with mock.patch("sys.stderr", stderr):
+            self.make_worker(runner=runner, commit=False).run_once()
+        row = self.deps.queue.get_job(job["id"])
+        self.assertEqual(row["state"], "done", row["error"])
+        self.assertEqual(runner.rendered_scripts, [self.script])
+        self.assertEqual(runner.trees,
+                         [self.tmp / "work" / "snapshots" / self.sha])
+        self.assertIn(f"from commit {self.sha}", stderr.getvalue())
+        self.assertEqual(_git_state(self.fake_repo), before)
+        # and the live checkout is as the operator left it
+        self.assertTrue(self.code.read_text(encoding="utf-8")
+                        .startswith("<<<<<<<"))
+
+    def test_the_subprocess_runner_runs_the_snapshot_s_scripts(self):
+        worker = self.make_worker(commit=False)
+        lease = worker.snapshots.acquire(self.sha)
+        self.addCleanup(lease.release)
+        runner = SubprocessRunner(self.fake_repo)
+        runner.use_tree(lease.tree)
+        out = self.tmp / "contest"
+        out.mkdir()
+        runner.narrate(out)
+        self.assertEqual((out / "narrated-by").read_text(), "committed\n")
+
+    def test_one_snapshot_per_commit_and_older_ones_pruned(self):
+        worker = self.make_worker(commit=False)
+        snapshots = self.tmp / "work" / "snapshots"
+        for _ in range(2):
+            job, _ = self.deps.queue.create_job(self.prop2_key())
+            worker.run_once()
+            self.assertEqual(self.deps.queue.get_job(job["id"])["state"],
+                             "done")
+            (snapshots / self.sha / "reused").touch()
+        self.assertTrue((snapshots / self.sha / "reused").exists())
+        # a held snapshot survives pruning; an unheld older one does not
+        held = worker.snapshots.acquire(self.sha)
+        new = git_commit_all(self.fake_repo, "next")
+        worker.snapshots.acquire(new).release()
+        worker.snapshots.prune(keep=new)
+        self.assertTrue((snapshots / self.sha).is_dir())
+        held.release()
+        job, _ = self.deps.queue.create_job(self.prop2_key())
+        worker.run_once()
+        self.assertEqual(sorted(p.name for p in snapshots.iterdir()
+                                if p.is_dir()), [new])

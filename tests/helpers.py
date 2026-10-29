@@ -114,3 +114,23 @@ def write_committed_narration(contest_dir):
                            for p in doc["phrases"]]
     path.write_text(json.dumps(doc, indent=2) + "\n", encoding="utf-8")
     (Path(contest_dir) / "narration.wav").write_bytes(b"")
+
+
+def git_commit_all(repo, message="fixture"):
+    """Commit everything in `repo` (made a git repo if it is not one yet)
+    and return the commit's sha: the worker renders from committed HEAD
+    only, so a test's edit to a fake repo counts once committed."""
+    import subprocess
+    repo = Path(repo)
+
+    def git(*args):
+        return subprocess.run(
+            ["git", "-C", str(repo), "-c", "user.name=test",
+             "-c", "user.email=test@example.org", "-c", "commit.gpgsign=false",
+             *args], check=True, capture_output=True).stdout.decode().strip()
+
+    if not (repo / ".git").exists():
+        git("init", "-q")
+    git("add", "-A")
+    git("commit", "-q", "--allow-empty", "-m", message)
+    return git("rev-parse", "HEAD")

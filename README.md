@@ -304,7 +304,10 @@ A worker claims jobs from the serve tier's private listener, runs them
 result. It needs its own checkout of this repository (for
 `scripts/narrate.sh`, the renderer, and the contest's sources and
 script) and, for a real render, the same `videobuilder` setup as
-"Rendering a contest" above.
+"Rendering a contest" above. Jobs render from that checkout's committed
+HEAD, not its working tree: uncommitted edits are not rendered. A
+snapshot of each commit's code and assets (some 225 MB, almost all of
+it `film/`) is kept under the work directory, older ones pruned.
 
     BALLOTREELS_TOKEN=<the same token> \
         python -m ballotreels worker --server http://<private-listener-host>:8081

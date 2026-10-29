@@ -76,7 +76,12 @@ stale; they are regenerated on next request.
 
 Steps 1-2 and 8 run on the serve tier; steps 3-7 run on a worker, in a
 scratch copy of the contest (never the worker's own committed copy),
-against the serve tier's job queue. The copy keeps the contest's
+against the serve tier's job queue. Everything a job reads, its
+contest's files and the code and assets that render them, comes from
+the commit the worker's checkout has at HEAD when it claims the job,
+read out of git (`ballotreels.snapshot`), never from the working tree,
+so a checkout mid-merge renders what was last committed; the worker
+never writes the checkout's git state. The copy keeps the contest's
 committed narration: one narrated from exactly the current script was
 made and transcript-checked on the host, so the worker uses it as it
 is and never asks the TTS again. A stale one fails the job, asking for

@@ -2,11 +2,16 @@
 the stages in `ballotreels.pipeline` in a scratch copy of the contest,
 and uploads the result. The worker pulls so the home cluster it runs on
 never needs inbound access (the brief).
+
+A job renders from the repo's committed HEAD as it is at claim time
+(ballotreels.snapshot), never from the live checkout, which may be
+mid-merge.
 """
 
 from __future__ import annotations
 
 import json
+import os
 import shutil
 import sys
 import threading
@@ -18,11 +23,17 @@ from typing import Any
 
 from .contest import load_contest
 from . import crash_course
+# What the stages import lazily, imported now, while the checkout is
+# whole: an import made mid-job would read whatever the working tree
+# holds then, conflict markers and all.
+from . import ballots, checks, index, narration, storyboard  # noqa: F401
+from .geo import states  # noqa: F401
 from .pipeline import (PipelineError, Runner, ScriptWriter, read_chapters,
                        run_check, run_crash_check, run_crash_narrate,
                        run_crash_script, run_crash_sources, run_encode,
                        run_narrate, run_render, run_script, run_sources)
 from .queue import hash_for_key
+from .snapshot import Snapshots, export, kind
 from .standard import Standard
 
 MAX_FAIL_OUTPUT = 256 * 1024
@@ -192,6 +203,8 @@ class Worker:
         self._cancelled = False
         self._hb_thread = None
         self._hb_stop = None
+        # Job directories are named by job id, so this never meets one.
+        self.snapshots = Snapshots(self.repo, self.work_dir / "snapshots")
 
     def run_once(self) -> bool:
         job = self.client.claim(self.worker_id)
@@ -240,41 +253,52 @@ class Worker:
               job["standard_version"], job["template_version"])
         return self.masters_dir / hash_for_key(key) / "master.mp4"
 
-    def _prepare_scratch(self, job: dict[str, Any], wd: Path) -> Path:
+    def _export_dir(self, sha: str, path: str, dest: Path) -> bool:
+        """Write the directory at repo-relative `path` in commit `sha` to
+        `dest`; False, writing nothing, when the commit has none."""
+        if kind(self.repo, sha, path) != "tree":
+            return False
+        stage = dest.parent / f".{dest.name}.export"
+        export(self.repo, sha, [path], stage)
+        os.rename(stage / path, dest)
+        shutil.rmtree(stage)
+        return True
+
+    def _prepare_scratch(self, job: dict[str, Any], wd: Path,
+                         sha: str) -> Path:
         election = job["election"]
         contest_id = job["contest"]
         prefix = f"{election}-"
         dir_name = (contest_id[len(prefix):]
                    if contest_id.startswith(prefix) else contest_id)
-        src = self.repo / "data" / election / dir_name
         dest = wd / dir_name
         wd.mkdir(parents=True, exist_ok=True)
-        if src.is_dir():
-            # With its committed narration sidecars: the narrate stage
-            # reuses them (run_narrate), and `say` needs narration.json's
-            # phrase_cache beside narration.wav to keep unchanged phrases.
-            shutil.copytree(src, dest)
-        else:
+        # With its committed narration sidecars: the narrate stage
+        # reuses them (run_narrate), and `say` needs narration.json's
+        # phrase_cache beside narration.wav to keep unchanged phrases.
+        if not self._export_dir(sha, f"data/{election}/{dir_name}", dest):
             dest.mkdir(parents=True, exist_ok=True)
         return dest
 
-    def _prepare_election_scratch(self, job: dict[str, Any],
-                                  wd: Path) -> Path:
+    def _prepare_election_scratch(self, job: dict[str, Any], wd: Path,
+                                  sha: str) -> Path:
         """A crash course's scratch copy: the election's contests.toml and
         each member's directory, committed narration and all."""
         from .index import load_index
         election = job["election"]
-        src = crash_course.election_dir_for(self.repo, election)
+        src = crash_course.election_dir_for(Path(), election).as_posix()
         dest = wd / election
         dest.mkdir(parents=True, exist_ok=True)
-        if not (src / "contests.toml").is_file():
+        if kind(self.repo, sha, f"{src}/contests.toml") != "blob":
             return dest  # the script stage reports it
-        shutil.copy2(src / "contests.toml", dest / "contests.toml")
-        entry = load_index(src).crash_course
+        stage = wd / f".{election}.export"
+        export(self.repo, sha, [f"{src}/contests.toml"], stage)
+        os.rename(stage / src / "contests.toml", dest / "contests.toml")
+        shutil.rmtree(stage)
+        entry = load_index(dest).crash_course
         for cid in (entry.members if entry is not None else ()):
-            member = crash_course.member_dir(src, election, cid)
-            if member.is_dir():
-                shutil.copytree(member, dest / member.name)
+            member = crash_course.member_dir(dest, election, cid)
+            self._export_dir(sha, f"{src}/{member.name}", member)
         return dest
 
     def _heartbeat_loop(self, job_id: int, claim: str) -> None:
@@ -358,12 +382,23 @@ class Worker:
         wd = self._job_work_dir(job_id)
         succeeded = False
         master_path = None
+        lease = None
         try:
             self._heartbeat_start(job_id, claim)
+            # Everything the stages read comes from this commit: the
+            # contest's files below, and the code and assets the runner
+            # runs (the snapshot).
+            sha = self.snapshots.head()
+            print(f"worker: job {job_id}: {job['contest']} from commit "
+                  f"{sha}", file=sys.stderr, flush=True)
+            lease = self.snapshots.acquire(sha)
+            self.snapshots.prune(keep=sha)
+            if hasattr(self.runner, "use_tree"):
+                self.runner.use_tree(lease.tree)
             if crash_course.is_crash_course(job["contest"]):
                 # The same stages over an election's statewide measures:
                 # nothing to write, and nothing ever narrated.
-                contest_dir = self._prepare_election_scratch(job, wd)
+                contest_dir = self._prepare_election_scratch(job, wd, sha)
                 stages = (
                     ("sources", lambda: run_crash_sources(contest_dir)),
                     ("script", lambda: run_crash_script(
@@ -374,7 +409,7 @@ class Worker:
                         contest_dir, self.standard)),
                 )
             else:
-                contest_dir = self._prepare_scratch(job, wd)
+                contest_dir = self._prepare_scratch(job, wd, sha)
                 stages = (
                     ("sources", lambda: run_sources(contest_dir)),
                     ("script", lambda: run_script(
@@ -441,6 +476,8 @@ class Worker:
         finally:
             self._heartbeat_stop()
             self._current = None
+            if lease is not None:
+                lease.release()
             if not succeeded and master_path is not None:
                 shutil.rmtree(master_path.parent, ignore_errors=True)
             shutil.rmtree(wd, ignore_errors=True)

@@ -44,6 +44,8 @@ class HandWrittenScriptWriter:
 
 
 class Runner(Protocol):
+    # Optional: `use_tree(path)`, the commit snapshot (ballotreels.snapshot)
+    # the next stages' tools run from.
     def narrate(self, contest_dir: Path) -> None: ...
     def render(self, contest_dir: Path, out_dir: Path) -> Path: ...
     def encode(self, master: Path, web: Path, poster: Path) -> None: ...
@@ -269,6 +271,9 @@ class SubprocessRunner:
                 bufsize: str = "3000k", site_url: str | None = None,
                 popen: Callable[..., Any] = subprocess.Popen):
         self.repo = Path(repo)
+        # The tree narrate.sh and the render run from: the worker points
+        # it at the job's commit snapshot (use_tree).
+        self.tree = self.repo
         self.ffmpeg = ffmpeg
         self.crf = crf
         self.maxrate = maxrate
@@ -280,8 +285,11 @@ class SubprocessRunner:
         self._lock = threading.Lock()
         self._current = None
 
+    def use_tree(self, tree: str | Path) -> None:
+        self.tree = Path(tree)
+
     def narrate(self, contest_dir: Path) -> None:
-        self._run([str(self.repo / "scripts" / "narrate.sh"),
+        self._run([str(self.tree / "scripts" / "narrate.sh"),
                    str(contest_dir)])
 
     def render(self, contest_dir: Path, out_dir: Path) -> Path:
@@ -306,8 +314,14 @@ class SubprocessRunner:
         ])
 
     def _run(self, argv: list[str]) -> None:
+        # `python -m` imports the package from its cwd, but not under
+        # PYTHONSAFEPATH, where an installed checkout would be found
+        # instead: put the tree first on the path either way.
+        path = os.environ.get("PYTHONPATH")
+        env = {**os.environ, "PYTHONPATH": str(self.tree) +
+               (os.pathsep + path if path else "")}
         with self._lock:
-            proc = self._popen(argv, cwd=str(self.repo),
+            proc = self._popen(argv, cwd=str(self.tree), env=env,
                                stdout=subprocess.PIPE,
                                stderr=subprocess.STDOUT,
                                start_new_session=True)

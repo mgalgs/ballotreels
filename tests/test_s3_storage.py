@@ -9,7 +9,7 @@ from ballotreels.queue import hash_for_key
 from ballotreels.storage import S3ConfigError, S3Storage
 
 from . import fake_s3
-from .helpers import REPO
+from .helpers import REPO, git_commit_all
 from .test_worker import WorkerTestCase
 
 
@@ -35,6 +35,7 @@ class S3WorkerTestCase(WorkerTestCase):
         from ballotreels.pipeline import FakeRunner, HandWrittenScriptWriter
         from ballotreels.worker import Worker
 
+        git_commit_all(self.fake_repo)  # it renders committed HEAD
         runner = runner if runner is not None else FakeRunner()
         return Worker(client=self.client, worker_id=worker_id,
                      repo=self.fake_repo, runner=runner,
