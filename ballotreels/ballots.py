@@ -474,6 +474,8 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 2026-72",
                      "ca-2026-11-03-fresno-county-measure-a":
                          "Resolution No. 26-257",
+                     "ca-2026-11-03-fresno-measure-d":
+                         "Resolution No. 2026-179",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

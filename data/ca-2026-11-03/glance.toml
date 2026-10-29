@@ -1699,3 +1699,13 @@ quote = "If this measure passes, the County of Fresno estimates the annual reven
 amount = 4500000
 period = "per-year"
 direction = "revenue-gain"
+
+# City of Fresno Measure D: no tax rate statement or fiscal analysis
+# applies (a sales tax). The quote is the ballot question's, from
+# Resolution No. 2026-179; the City Attorney's impartial analysis gives
+# the same $65,000,000 a year.
+[fresno-measure-d]
+source = "ballot-question"
+quote = "providing approximately $65,000,000 annually for 10 years"
+amount = 65000000
+period = "per-year"
