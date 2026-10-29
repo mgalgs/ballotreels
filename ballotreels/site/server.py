@@ -1605,6 +1605,8 @@ class PrivateHandler(_JsonHandler):
         store.mkdir(parents=True, exist_ok=True)
         fd, tmp = tempfile.mkstemp(dir=store, prefix=f".{sha}.",
                                    suffix=".tmp")
+        # Answered once the temporary file is renamed or gone.
+        status, reply = 500, {"error": "upload failed"}
         try:
             h = hashlib.sha256()
             left = length
@@ -1616,23 +1618,23 @@ class PrivateHandler(_JsonHandler):
                     h.update(chunk)
                     f.write(chunk)
                     left -= len(chunk)
+            got = h.hexdigest()
+            dest = store / f"{sha}.wav"
             if left:
                 self.close_connection = True
-                return self._json(400, {"error": "body shorter than "
-                                                 "Content-Length"})
-            got = h.hexdigest()
-            if got != sha:
-                return self._json(422, {"error": f"body's SHA-256 is {got}, "
-                                                 f"not {sha}"})
-            dest = store / f"{sha}.wav"
-            if dest.is_file():
-                return self._json(200, {"ok": True, "stored": False})
-            os.replace(tmp, dest)
-            tmp = None
-            self._json(200, {"ok": True, "stored": True})
+                status, reply = 400, {"error": "body shorter than "
+                                               "Content-Length"}
+            elif got != sha:
+                status, reply = 422, {"error": f"body's SHA-256 is {got}, "
+                                               f"not {sha}"}
+            elif dest.is_file():
+                status, reply = 200, {"ok": True, "stored": False}
+            else:
+                os.replace(tmp, dest)
+                status, reply = 200, {"ok": True, "stored": True}
         finally:
-            if tmp is not None:
-                Path(tmp).unlink(missing_ok=True)
+            Path(tmp).unlink(missing_ok=True)
+        self._json(status, reply)
 
     def _narration_get(self, sha: str, method: str) -> None:
         path = _narration_dir(self.server.deps.config.data_dir) / f"{sha}.wav"

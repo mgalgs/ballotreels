@@ -336,6 +336,7 @@ it `film/`) is kept under the work directory, older ones pruned.
 | `--runner` | — | `subprocess` (`fake` is for tests and CI) |
 | `--work-dir` | — | `<data-dir>/work` |
 | `--masters-dir` | `BALLOTREELS_MASTERS_DIR` | `<repo>/var/masters` |
+| `--narration-cache` | `BALLOTREELS_NARRATION_CACHE` | `<data-dir>/narration`: narration takes fetched from the serve tier, by hash (see "Narration audio" below) |
 | `--ffmpeg` | `BALLOTREELS_FFMPEG` | `ffmpeg` on `PATH` |
 | `--crf` | `BALLOTREELS_CRF` | `18` |
 | `--maxrate` | `BALLOTREELS_MAXRATE` | `1500k` |

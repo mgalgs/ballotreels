@@ -112,3 +112,81 @@ def record(contest_dir: str | Path) -> bool:
     _write_atomic(sidecar, (json.dumps(doc, indent=2, ensure_ascii=False)
                             + "\n").encode("utf-8"))
     return True
+
+
+class TakeCache:
+    """A local copy of the store, the same shape as the serve tier's:
+    `<root>/<sha256>.wav`. Outside git; anything here can be fetched again."""
+
+    def __init__(self, root: str | Path):
+        self.root = Path(root)
+
+    def path(self, sha: str) -> Path:
+        return self.root / f"{sha}.wav"
+
+    def get(self, take: Take) -> Path | None:
+        """The cached file for `take`, or None when there is none, or only
+        one whose bytes are not that take's (it is dropped)."""
+        path = self.path(take.sha256)
+        if not path.is_file():
+            return None
+        if hash_file(path) != take:
+            path.unlink(missing_ok=True)
+            return None
+        return path
+
+    def put(self, take: Take, data: bytes) -> Path:
+        path = self.path(take.sha256)
+        self.root.mkdir(parents=True, exist_ok=True)
+        _write_atomic(path, data)
+        return path
+
+
+def _mismatch(where, take: Take, got: Take, what: str) -> TakeError:
+    return TakeError(
+        f"{where}: {what} is not narration take {take.sha256} "
+        f"({take.bytes} bytes) that narration.json records: its SHA-256 is "
+        f"{got.sha256} ({got.bytes} bytes)")
+
+
+def materialize(contest_dir: str | Path, cache: TakeCache, client=None,
+                where: str | None = None) -> str:
+    """Put the take narration.json records at `contest_dir/narration.wav`:
+    from `cache`, else downloaded through `client` (a worker.WorkerClient)
+    and cached, checked against its hash either way. Returns how: "none"
+    (narration.json records no take), "present" (the right audio is
+    already there), "cache" or "server". Raises TakeError naming `where`
+    (default: the directory) and the hash when the take is nowhere to be
+    had, or when the audio found is not that take; a narration.wav already
+    there that is not the take is never replaced."""
+    contest_dir = Path(contest_dir)
+    where = where or str(contest_dir)
+    take = recorded_take(contest_dir)
+    if take is None:
+        return "none"
+    wav = contest_dir / "narration.wav"
+    if wav.is_file():
+        got = hash_file(wav)
+        if got != take:
+            raise _mismatch(where, take, got, "the narration.wav beside it")
+        return "present"
+    cached = cache.get(take)
+    if cached is not None:
+        _write_atomic(wav, cached.read_bytes())
+        return "cache"
+    if client is None:
+        raise TakeError(
+            f"{where}: narration take {take.sha256} is not in the local "
+            f"cache ({cache.root}), and no server was given to fetch it from")
+    data = client.narration_get(take.sha256)
+    if data is None:
+        raise TakeError(
+            f"{where}: narration take {take.sha256} is not on the server; "
+            f"upload it from a checkout that has it with `python -m "
+            f"ballotreels narration push`")
+    got = hash_bytes(data)
+    if got != take:
+        raise _mismatch(where, take, got, "the audio the server sent")
+    cache.put(take, data)
+    _write_atomic(wav, data)
+    return "server"

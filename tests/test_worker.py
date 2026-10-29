@@ -962,3 +962,91 @@ class RendersCommittedHeadTest(WorkerTestCase):
         worker.run_once()
         self.assertEqual(sorted(p.name for p in snapshots.iterdir()
                                 if p.is_dir()), [new])
+
+
+class CommittedTakeFetchedTest(WorkerTestCase):
+    """Narration audio is not in git: a commit's contest carries only
+    narration.json, recording its take's hash, and the worker puts the take
+    at the scratch copy's narration.wav from its cache or the serve tier's
+    store (narration_store), or fails the job naming it; never re-narrates."""
+
+    def setUp(self):
+        super().setUp()
+        dest = self.fake_repo / "data" / "ca-2026-11-03" / "prop-2"
+        for name in ("narration.json", "narration.vtt", "narration.txt"):
+            shutil.copy2(PROP_2 / name, dest / name)
+        self.take = (PROP_2 / "narration.wav").read_bytes()
+        from ballotreels.narration_store import recorded_take
+        self.sha = recorded_take(PROP_2).sha256
+
+    def run_job(self):
+        job, _ = self.deps.queue.create_job(self.prop2_key())
+        runner = NoTTSRunner()
+        self.make_worker(runner=runner).run_once()
+        self.assertEqual(runner.narrated, [])
+        return self.deps.queue.get_job(job["id"])
+
+    def scratch(self, worker):
+        job, _ = self.deps.queue.create_job(self.prop2_key())
+        return worker._prepare_scratch(
+            job, worker._job_work_dir(job["id"]), worker.snapshots.head())
+
+    def test_downloaded_from_the_server_and_cached(self):
+        self.assertTrue(self.client.narration_put(self.sha, self.take))
+        worker = self.make_worker()
+        contest_dir = self.scratch(worker)
+        self.assertEqual((contest_dir / "narration.wav").read_bytes(),
+                         self.take)
+        self.assertEqual(worker.takes.path(self.sha).read_bytes(), self.take)
+
+    def test_renders_with_the_fetched_take(self):
+        self.client.narration_put(self.sha, self.take)
+        row = self.run_job()
+        self.assertEqual(row["state"], "done", row["error"])
+
+    def test_from_the_cache_without_the_server(self):
+        worker = self.make_worker()
+        worker.takes.root.mkdir(parents=True)
+        worker.takes.path(self.sha).write_bytes(self.take)
+        with mock.patch.object(self.client, "narration_get",
+                               side_effect=AssertionError("asked server")):
+            contest_dir = self.scratch(worker)
+        self.assertEqual((contest_dir / "narration.wav").read_bytes(),
+                         self.take)
+
+    def test_a_corrupt_cached_copy_is_fetched_again(self):
+        self.client.narration_put(self.sha, self.take)
+        worker = self.make_worker()
+        worker.takes.root.mkdir(parents=True)
+        worker.takes.path(self.sha).write_bytes(b"truncated")
+        contest_dir = self.scratch(worker)
+        self.assertEqual((contest_dir / "narration.wav").read_bytes(),
+                         self.take)
+        self.assertEqual(worker.takes.path(self.sha).read_bytes(), self.take)
+
+    def test_missing_take_fails_the_job(self):
+        row = self.run_job()
+        self.assertEqual(row["state"], "failed")
+        self.assertIn("ca-2026-11-03-prop-2", row["error"])
+        self.assertIn(self.sha, row["error"])
+        self.assertIn("not on the server", row["error"])
+
+    def test_mismatched_take_fails_the_job(self):
+        # The server's file under that name is not that take.
+        store = self.data_dir / "narration"
+        store.mkdir(parents=True, exist_ok=True)
+        (store / f"{self.sha}.wav").write_bytes(b"RIFF not the take")
+        row = self.run_job()
+        self.assertEqual(row["state"], "failed")
+        self.assertIn("ca-2026-11-03-prop-2", row["error"])
+        self.assertIn(self.sha, row["error"])
+        self.assertIn("not narration take", row["error"])
+
+    def test_a_committed_wav_that_is_not_the_take_fails_the_job(self):
+        dest = self.fake_repo / "data" / "ca-2026-11-03" / "prop-2"
+        (dest / "narration.wav").write_bytes(b"RIFF another take")
+        self.client.narration_put(self.sha, self.take)
+        row = self.run_job()
+        self.assertEqual(row["state"], "failed")
+        self.assertIn(self.sha, row["error"])
+        self.assertIn("the narration.wav beside it", row["error"])

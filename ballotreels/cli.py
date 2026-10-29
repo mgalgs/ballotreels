@@ -41,6 +41,16 @@ def default_data_dir() -> Path:
     return Path(env) if env else REPO_ROOT / "var"
 
 
+NARRATION_CACHE_HELP = ("the local copy of the narration store, takes by "
+                        "hash (default: $BALLOTREELS_NARRATION_CACHE or "
+                        "<data-dir>/narration)")
+
+
+def _narration_cache(arg: str | None) -> Path:
+    return Path(arg or os.environ.get("BALLOTREELS_NARRATION_CACHE")
+                or default_data_dir() / "narration")
+
+
 def _default_worker_id() -> str:
     import socket
     return f"{socket.gethostname()}-{os.getpid()}"
@@ -314,7 +324,8 @@ def _worker_main(args, out, err) -> int:
                     work_dir=Path(args.work_dir),
                     masters_dir=masters_dir,
                     poll_interval=args.poll_interval,
-                    heartbeat_interval=args.heartbeat_interval)
+                    heartbeat_interval=args.heartbeat_interval,
+                    narration_cache=_narration_cache(args.narration_cache))
     import signal
     # Runner children (narrate.sh's TTS, the render, ffmpeg) run in their
     # own session, so a terminal's Ctrl-C or hang-up no longer reaches
@@ -515,6 +526,8 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
     worker.add_argument(
         "--masters-dir", default=None,
         help="default: $BALLOTREELS_MASTERS_DIR or <repo>/var/masters")
+    worker.add_argument("--narration-cache", default=None, metavar="DIR",
+                        help=NARRATION_CACHE_HELP)
     worker.add_argument("--ffmpeg", default=None,
                         help="default: $BALLOTREELS_FFMPEG or 'ffmpeg'")
     worker.add_argument("--crf", type=int, default=None,
