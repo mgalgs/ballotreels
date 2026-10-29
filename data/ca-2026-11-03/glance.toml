@@ -1827,3 +1827,12 @@ period = "per-year"
 [benicia-measure-y]
 source = "impartial-analysis"
 status = "none-printed"
+
+# City of Benicia Measure Z: no tax rate statement or fiscal analysis was
+# posted; the one estimate is the City's, as the City Attorney's
+# impartial analysis gives it (its largest figure, the 2050 high end).
+[benicia-measure-z]
+source = "impartial-analysis"
+quote = "The tax is estimated to generate approximately $230,000 annually, growing to between $3.3 million and $3.8 million by 2050."
+amount = 3800000
+period = "per-year"

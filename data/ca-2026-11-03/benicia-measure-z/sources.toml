@@ -1,0 +1,62 @@
+# Archived sources for City of Benicia Measure Z, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# No printed Solano County voter guide was archived: these are the filed
+# documents the Solano County Registrar of Voters posts on its Current
+# Election Information page. The ballot question is quoted from
+# Resolution No. 26-82, which orders it (its Section 4); the Registrar's
+# corrected Notice of Measures (August 10, 2026) prints the same
+# question. The City Attorney's impartial analysis is the measure's
+# neutral explanation; no tax rate statement or fiscal analysis was
+# posted, and the one revenue estimate is the City's, as the question
+# and the analysis give it. The argument against, and the first page of
+# the argument in favor, are scans with no text layer: the passages
+# `check` reads verbatim were typed from the page images into
+# transcriptions beside the PDFs, which name the PDF and URL they copy;
+# those sources point at the transcriptions, and their urls at the PDFs.
+# The rebuttals are not cited.
+
+[contest]
+id = "ca-2026-11-03-benicia-measure-z"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:benicia"
+kind = "measure"
+title = "City of Benicia Measure Z: Real Property Transfer Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Benicia, Resolution No. 26-82, adopted August 4, 2026: Section 4, Ballot Question, and the Real Property Transfer Tax Ordinance (full text), as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Resolution No. 26-82, City of Benicia"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Resolution_City_of_Benicia_Measure_Z_FINAL_REDACTED.pdf"
+file = "sources/resolution-and-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney’s Impartial Analysis of Measure Z, Benjamin Stock, City Attorney, City of Benicia, as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "City Attorney’s Impartial Analysis of Measure Z"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/City_Attorney_s_Impartial_Analysis_-_Measure_Z__RPTT_.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure Z (page 1 transcribed from the scan), as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Argument in favor, Solano County Registrar of Voters"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Measure_Z_-_Argument_in_Favor.pdf"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure Z (transcribed from the scan), as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Argument against, Solano County Registrar of Voters"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Measure_Z_-_Argument_Against_Redacted.pdf"
+file = "sources/argument-against-transcription.txt"
+retrieved = "2026-10-28"
