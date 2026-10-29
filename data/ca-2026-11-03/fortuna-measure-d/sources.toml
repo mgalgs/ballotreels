@@ -1,0 +1,53 @@
+# Archived sources for City of Fortuna Measure D, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Humboldt County Office of Elections prints Measure D's impartial
+# analysis (page 13) and an argument in favor (page 14) in its Full
+# Voter Information Guide; it prints no argument against, no rebuttals,
+# no fiscal statement and no ballot question (its sample ballot pages
+# are placeholders). The ballot question is the City Council's, from
+# Resolution No. 2026-12, Section 1, in the county's packet for the
+# measure; those pages are a scan with no text layer, so the passages
+# cited were typed from the page images into
+# sources/resolution-2026-12-transcription.txt, whose url is the
+# scan's (as Fowler Measure T's are). The ordinance itself is not
+# posted: the packet's Exhibit A is a placeholder ("[FINAL APPROVED
+# FORM OF ORDINAINCE 2026-785 TO BE ATTACHED ...]"), so no source here
+# is of kind official-text. The City Attorney's analysis gives the one
+# revenue estimate; no tax rate statement applies to a sales tax.
+
+[contest]
+id = "ca-2026-11-03-fortuna-measure-d"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:fortuna"
+kind = "measure"
+title = "City of Fortuna Measure D: Added Three-Quarter-Cent Sales Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Fortuna, City Council Resolution No. 2026-12, ordering the submission of a measure to authorize an additional transactions and use tax, adopted May 4, 2026: the ballot question and the rates, Sections 1 and 2, page 2 (transcribed from the scan), as posted by the Humboldt County Office of Elections, Measure D - City of Fortuna"
+credit = "Resolution No. 2026-12, City of Fortuna"
+url = "https://humboldtgov.org/DocumentCenter/View/156838/Measure-D---City-of-Fortuna"
+file = "sources/resolution-2026-12-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure D, Ryan T. Plotz, City Attorney, City of Fortuna, Humboldt County Office of Elections, Full Voter Information Guide – November 3, 2026 Statewide General Election, page 13"
+credit = "City Attorney’s Impartial Analysis, Humboldt County Voter Information Guide"
+url = "https://humboldtgov.org/DocumentCenter/View/158656/Full-Voter-Information-Guide---November-3-2026-Statewide-General-Election"
+file = "sources/vig-pp13-14-analysis-argument.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure D, Humboldt County Office of Elections, Full Voter Information Guide – November 3, 2026 Statewide General Election, page 14 (the guide prints no argument against)"
+credit = "Argument in favor, Humboldt County Voter Information Guide"
+url = "https://humboldtgov.org/DocumentCenter/View/158656/Full-Voter-Information-Guide---November-3-2026-Statewide-General-Election"
+file = "sources/vig-pp13-14-analysis-argument.pdf"
+retrieved = "2026-10-28"

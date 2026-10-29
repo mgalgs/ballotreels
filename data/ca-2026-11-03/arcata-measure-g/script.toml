@@ -1,0 +1,178 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; when voters approved the tax and
+# when it expires; what would change (no end date, the total rate stays
+# the same, where the money goes, the vote it needs); the City's revenue
+# estimate as the impartial analysis gives it; one line per side; what
+# a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city", and the card and title carry
+# the name. The rate is said as a percent ("0.75 percent", as the
+# question's "3/4 cent" per dollar is), since a sales tax said in cents
+# is transcribed in dollars (standard/speakability.txt).
+#
+# The guide prints no ballot question, so the card quotes it from the
+# City Council's Resolution No. 256-63, as typed from the scan. The
+# resolution prints only YES and NO boxes, no yes and no sentences, so
+# the card has no boxes; the vote lines give the City Attorney's
+# impartial analysis's own meanings, and both highlight the same phrase
+# of the question.
+#
+# The services the question lists, the money staying local, the audits
+# and the oversight committee are the supporters' points too, so the
+# neutral sections say only that a general tax may pay for any lawful
+# city purpose, and leave the list to the card and the yes side
+# (STANDARD.md 6.3). The $2.8 million is the City's estimate as the
+# analysis gives it; no archived source states the City's general fund
+# budget to give it a scale (STANDARD.md 6.5; left open, under
+# [[question]]). The supporters' own dollar figures are left out of
+# their line for the same reason.
+#
+# The guide prints no argument against Measure G and does not say
+# whether one was filed, so the no side says only that the guide prints
+# none, filed = false (STANDARD.md 2.5).
+
+contest = "ca-2026-11-03-arcata-measure-g"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "G"
+title = "ARCATA SALES TAX MEASURE"
+origin = "RESOLUTION NO. 256-63"
+summary = "Shall the measure to continue existing general government funding to maintain essential services including public safety staffing; filling potholes; maintaining and repairing City streets, sidewalks, multi-use trails, and bicycle paths; and expanding multi-modal circulation, by renewing and extending the voter-approved 3/4 cent sales tax until ended by voters, with all funds staying in Arcata, providing approximately $2.8 million annually, and requiring audited spending reports and citizens' oversight, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure G"
+
+[[section.line]]
+text = "Measure G asks the voters of this city whether to extend a 0.75 percent local sales tax until voters repeal it."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by renewing and extending the voter-approved 3/4 cent sales tax until ended by voters"]
+
+[[section]]
+id = "today"
+heading = "The sales tax today"
+
+[[section.line]]
+id = "history"
+text = "Voters approved the tax in 2008 for 20 years, and it expires on March 31, 2029."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rate"
+text = "If Measure G passes, the tax would continue past that date, and the total sales tax rate in the city would stay at 10.25 percent."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section.line]]
+id = "general"
+text = "As a general tax, the money goes into the city general fund, for any lawful city program, service or improvement."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "Measure G needs a majority of the vote to pass."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The city attorney's impartial analysis estimates that the tax provides about $2.8 million a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the tax paid for trail, street and sidewalk projects, and is not a new tax."
+sources = ["arguments"]
+basis = ["This current measure extends that funding source to continue to support public safety through maintenance and improvements to streets, multi-use trails, sidewalks, bike lanes", "annual paving, slurry, and sidewalk improvements", "Measure G is a continuation of a locally controlled funding source—not a new tax."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Paid for trails, streets and sidewalks", "Not a new tax"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The county voter guide prints only the argument in favor of Measure G, and none against it."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was printed"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote extends the 0.75 percent sales tax until voters repeal it."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by renewing and extending the voter-approved 3/4 cent sales tax until ended by voters"]
+
+[[section.line]]
+text = "A no vote does not authorize extending the sales tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by renewing and extending the voter-approved 3/4 cent sales tax until ended by voters"]
+
+[[question]]
+ask = "When does the tax end now, and would the rate go up?"
+lines = ["history", "rate"]
+
+[[question]]
+ask = "What can the money be spent on?"
+lines = ["general"]
+
+[[question]]
+ask = "How big is $2.8 million a year next to the city budget?"
+unanswered = true

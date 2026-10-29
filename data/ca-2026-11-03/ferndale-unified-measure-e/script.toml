@@ -1,0 +1,188 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; how a school bond is repaid and what it
+# needs to pass; what the money would pay for, and the legal cap on the
+# tax; the district's tax rate statement; one line per side; what a
+# vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this school district", and the card and
+# title carry the name. "Counsel" is heard as "Council"
+# (standard/speakability.txt), so the narration says "the impartial
+# analysis" and never names its author.
+#
+# The guide prints no ballot question, so the card quotes it from the
+# district's Appendix B, "Abbreviated Form of Bond Measure", as typed
+# from the scan (as Dixon Unified Measure U's card does). It prints only
+# "Bonds—Yes" and "Bonds—No", no yes and no sentences, and the
+# analysis prints none either; so the card has no YES/NO boxes, the vote
+# lines take their meaning from the analysis's description of what the
+# measure allows, and both highlight the same phrase of the question.
+#
+# The bond total and the debt service are repaid from a tax on property
+# in the district, and no archived source states the district's budget,
+# so they have no budget scale (STANDARD.md 6.5; left open, as for
+# Dixon Unified's Measure U). The fiscal line gives the statement's
+# average rate beside its highest, as it prints both, and writes its
+# "2058-59" in full (standard/speakability.txt). The state matching
+# grants, the bar on paying salaries, the audits and the oversight are
+# the supporters' points, so the neutral sections leave them out
+# (STANDARD.md 6.3); the card quotes the question's words on them as
+# printed.
+#
+# The guide prints no argument against Measure E and does not say
+# whether one was filed, so the no side says only that the guide prints
+# none, filed = false (STANDARD.md 2.5).
+
+contest = "ca-2026-11-03-ferndale-unified-measure-e"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "E"
+title = "ABBREVIATED FORM OF BOND MEASURE"
+origin = "APPENDIX B"
+summary = "To prepare students for careers and college and qualify for state matching grants by: constructing/ modernizing Career Technology Education classrooms, labs and related facilities; and making related improvements for health, safety and security; shall Ferndale Unified School District's measure be adopted authorizing $7,000,000 of bonds at legal rates, generating on average $483,000 annually while bonds are outstanding at approximate rates of $49.70 per $100,000 assessed value, with annual audits, oversight, no money for salaries, all money staying local?"
+
+[[section]]
+id = "what"
+heading = "Measure E"
+
+[[section.line]]
+text = "Measure E asks the voters of this school district whether to approve $7 million in school bonds."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $7,000,000 of bonds"]
+
+[[section]]
+id = "today"
+heading = "How a school bond works"
+
+[[section.line]]
+id = "repaid"
+text = "The district would sell the bonds and repay them, with interest, from a tax on property in the district."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure E needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "projects"
+text = "The money would build and upgrade classrooms, labs and other buildings for career technical education."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-workshop"
+
+[[section.line]]
+id = "cap"
+text = "State law caps this kind of tax at $60 per $100,000 of assessed value for a unified school district."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+id = "tax-rate"
+text = "The district's tax rate statement estimates an average tax of $49.70 per $100,000 of assessed value, and at most $49.95, until 2058-2059."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "bars"
+title = "Estimated tax per $100,000 of assessed value"
+source = "tax-statement"
+unit = ""
+labels = ["Average", "Highest"]
+values = [49.70, 49.95]
+
+[[section.line]]
+id = "total"
+text = "The statement estimates the total to repay, with interest, at about $15.4 million."
+sources = ["tax-statement", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say many labs and classrooms are outdated, and bonds give the local match for state grants."
+sources = ["arguments"]
+basis = ["many facilities in the Ferndale Unified School District utilize outdated equipment, classrooms and labs that are no longer able to meet students’ needs.", "Without Measure E, Ferndale would not have the required local matching dollars to receive these and other grants"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Outdated classrooms and labs", "Local match for state grants"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The county voter guide prints only the argument in favor of Measure E, and none against it."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was printed"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote allows up to $7 million in bonds for the school projects in the measure."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $7,000,000 of bonds"]
+
+[[section.line]]
+text = "A no vote does not authorize the bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $7,000,000 of bonds"]
+
+[[question]]
+ask = "What would the bond money pay for?"
+lines = ["projects"]
+
+[[question]]
+ask = "How much would property owners pay, and for how long?"
+lines = ["repaid", "tax-rate"]
+
+[[question]]
+ask = "How big is $7 million, or $15.4 million repaid, next to the district budget?"
+unanswered = true

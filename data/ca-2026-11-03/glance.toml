@@ -2254,3 +2254,44 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $6,345,171."
 amount = 6345171
 period = "unstated"
+
+# City of Eureka Measure H: the guide prints no fiscal statement, and the
+# City Attorney's impartial analysis gives no cost estimate.
+[eureka-measure-h]
+source = "impartial-analysis"
+status = "none-printed"
+
+# City of Eureka Measure I: no tax rate statement or fiscal analysis
+# applies (a hotel tax); the one estimate is the City's, as the City
+# Attorney's impartial analysis gives it.
+[eureka-measure-i]
+source = "impartial-analysis"
+quote = "The tax imposed by Measure I is estimated to generate approximately $700,000 per year"
+amount = 700000
+period = "per-year"
+
+# City of Arcata Measure G: no tax rate statement or fiscal analysis
+# applies (a sales tax); the one estimate is the City's, as the City
+# Attorney's impartial analysis gives it.
+[arcata-measure-g]
+source = "impartial-analysis"
+quote = "It is estimated that extending the three-fourths of one cent (3/4¢) transactions and use tax will provide 2.8 million dollars ($2,800,000) in annual local funding."
+amount = 2800000
+period = "per-year"
+
+# City of Fortuna Measure D: no tax rate statement or fiscal analysis
+# applies (a sales tax); the one estimate is the City's, as the City
+# Attorney's impartial analysis gives it.
+[fortuna-measure-d]
+source = "impartial-analysis"
+quote = "The measure is estimated to generate approximately $1.8 million annually."
+amount = 1800000
+period = "per-year"
+
+# Ferndale Unified School District Measure E: the district's Tax Rate
+# Statement, its total debt service (the bonds are $7,000,000).
+[ferndale-unified-measure-e]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $15,444,000."
+amount = 15444000
+period = "unstated"
