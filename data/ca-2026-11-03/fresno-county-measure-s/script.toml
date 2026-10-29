@@ -1,0 +1,214 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot (a
+# citizens' initiative); when it would start (as Measure C expires);
+# what would change (where the money goes, who runs it, the oversight,
+# how long it lasts and the vote it needs); the fiscal impact
+# statement's first-year revenue, beside the ballot question's figure,
+# and what it says follows if the measure fails; one line per side;
+# what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "voters across this county"; the transit agencies and
+# the airport are not named. The card and title carry it. "Counsel" is
+# heard as "Council" (standard/speakability.txt), so the narration does
+# not name the impartial analysis's author.
+#
+# Which election: Resolution No. 26-294 orders the measure onto the
+# March 7, 2028 primary ballot; the later impartial analysis says it is
+# submitted on November 3, 2026 as Assembly Bill 1923 requires, and the
+# registrar lists it for November 3 (sources.toml). The narration
+# follows the analysis and does not tell the conflict; it is flagged for
+# the operator.
+#
+# Measure C: the supporters say Measure S keeps "the current half-cent
+# sales tax rate the same"; the opponents say it is "NOT a continuation
+# of Measure C". The neutral line says only what the impartial analysis
+# says: the tax would begin on July 1, 2027, when Measure C expires.
+#
+# Revenue: the ballot question says about $113 million a year at first;
+# the fiscal impact statement $120 million in 2027-2028. The fiscal line
+# gives both, attributed. The money goes to the Council of Governments
+# for the county, the cities and transit, not to the county's general
+# fund, and no archived source states a budget to give it a scale
+# (STANDARD.md 6.5; left open, under [[question]]). The statement's
+# paragraph on what follows if the measure fails is the trade-off
+# (STANDARD.md 6.4), and a fiscal line gives it.
+
+contest = "ca-2026-11-03-fresno-county-measure-s"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "S"
+title = "Fresno County Transportation Improvement Act."
+origin = "Resolution No. 26-294"
+summary = "Shall the measure to impose a new half-cent sales tax to pay for streets and street repairs, busses, bike lanes, and safety improvements; free transit services for seniors, veterans, people with disabilities, and students; initially providing approximately $113 million annually for 30 years, requiring independent oversight and annual audits, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure S"
+
+[[section.line]]
+text = "Measure S asks voters across this county whether to adopt a new half-cent sales tax for transportation, for 30 years."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to impose a new half-cent sales tax"]
+
+[[section]]
+id = "background"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "Measure S is a citizens' initiative, which qualified for the ballot by a petition signed by voters."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "neighborhood-petition"
+
+[[section]]
+id = "today"
+heading = "Measure C"
+
+[[section.line]]
+id = "measure-c"
+text = "The tax would begin on July 1, 2027, when the existing transportation tax, Measure C, expires."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "split"
+text = "Sixty-five percent would go to the county and cities for local streets and roads, and 25 percent to public transit."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "share"
+title = "How Measure S would split the money"
+source = "impartial-analysis"
+unit = "%"
+labels = ["Local streets and roads", "Public transit", "Regional roads", "Free transit, then grants", "Airport", "Administration"]
+values = [65, 25, 4, 4, 1, 1]
+
+[[section.line]]
+text = "Four percent would go first to free transit for seniors, veterans, students and people with disabilities."
+sources = ["impartial-analysis", "ballot-question"]
+
+[[section.line]]
+id = "oversight"
+text = "A regional council of the county and its cities would hand out the money, with an 11-member citizens' committee overseeing it."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "inspection-clipboard"
+
+[[section.line]]
+id = "end"
+text = "The tax would end after 30 years unless voters extend it, and needs a simple majority to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "fiscal"
+heading = "What the fiscal impact statement says"
+
+[[section.line]]
+id = "revenue"
+text = "The auditor-controller's fiscal impact statement expects about $120 million in the 2027-2028 budget year; the ballot question says about $113 million."
+sources = ["fiscal-impact", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section.line]]
+id = "if-fails"
+text = "If Measure S fails, the statement says, projects that Measure C pays for now could need other funding, possibly from the county."
+sources = ["fiscal-impact"]
+
+[section.line.visual]
+kind = "illustration"
+name = "open-road"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure S fixes roads in every city and town at the same half-cent rate, with stricter oversight."
+sources = ["argument-for"]
+basis = ["to provide every city and town with the funding needed to fix our roads while keeping the current half-cent sales tax rate the same, but now with added transparency, stricter accountability, oversight, and auditing."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Fixes roads, same half-cent rate", "Stricter oversight and audits"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure S is not a continuation of Measure C, but a transit tax disguised as a roads tax."
+sources = ["argument-against"]
+basis = ["It's NOT a continuation of Measure C", "it's a public transportation tax disguised as a roads tax."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Not a continuation of Measure C", "A transit tax disguised as roads"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves the half-cent transportation sales tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to impose a new half-cent sales tax"]
+
+[[section.line]]
+text = "A no vote rejects the half-cent transportation sales tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to impose a new half-cent sales tax"]
+
+[[question]]
+ask = "Is this the same tax as Measure C?"
+lines = ["measure-c"]
+
+[[question]]
+ask = "Where does the money go, and who decides?"
+lines = ["split", "oversight"]
+
+[[question]]
+ask = "What happens if it fails?"
+lines = ["if-fails"]
+
+[[question]]
+ask = "How big is $120 million a year next to the county and city budgets?"
+unanswered = true

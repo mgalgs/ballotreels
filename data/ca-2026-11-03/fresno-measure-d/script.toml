@@ -1,0 +1,213 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the county's Measure C
+# transportation tax and when it is set to expire; the rate today; what
+# would change (when the tax starts and the rate it leaves, where the
+# money goes, when it ends, the oversight and the vote it needs); the
+# City's revenue estimate as the impartial analysis gives it; one line
+# per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city", and the county transportation
+# tax is "Measure C", never its full name. The card and title carry it.
+#
+# No printed guide was found, so the card quotes the ballot question
+# from Resolution No. 2026-179, as typed from the scan. It prints no
+# yes/no lines, so the card has no YES/NO boxes; the vote lines both
+# highlight the same phrase of the question.
+#
+# "No tax increase": the ballot title and the impartial analysis say
+# the rate stays at 8.35 percent; the argument against calls it a
+# "higher sales tax". The neutral sections give only the dated facts
+# both can check: Measure C is set to expire on June 30, 2027 (the
+# resolution), Measure D would start on July 1, 2027 (the ordinance),
+# and the rate would stay 8.35 percent (the analysis). No source says in
+# so many words what the rate would be if Measure D fails, so the
+# narration does not say it (under [[question]], unanswered). The
+# supporters' "absolutely no increase" is their own line.
+#
+# When it ends: the ordinance (Section 7-1617) ends the tax after ten
+# years, or sooner when a new county transportation sales tax takes
+# effect, including "the Fresno County Transportation Improvement Act,
+# a pending citizen initiative". The narration says so without the
+# name; Measure S's own documents are not cited here.
+#
+# The recitals' $1.2 billion in deferred maintenance and $55 million a
+# year backlog are the council's case, and the supporters make it (their
+# $56 million shortfall), so the neutral sections leave them out
+# (STANDARD.md 6.3). No archived source states the city's general fund
+# budget, so the $65 million a year has no scale (STANDARD.md 6.5; left
+# open, under [[question]]).
+
+contest = "ca-2026-11-03-fresno-measure-d"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "D"
+title = "CITY OF FRESNO ROADS/PUBLIC SAFETY/CITY SERVICES MEASURE (NO TAX INCREASE)"
+origin = "RESOLUTION NO. 2026-179"
+summary = "Without increasing current tax rates, shall the measure maintaining local streets, roads, sidewalks; improving police/fire staffing, 9-1-1 emergency response; maintaining transit services; accelerating airport improvements; other general services by establishing a 0.5¢ sales tax providing approximately $65,000,000 annually for 10 years or when a County transportation tax is adopted, whichever is sooner; with citizen oversight, all funds spent locally, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure D"
+
+[[section.line]]
+text = "Measure D asks the voters of this city whether to adopt a half-cent sales tax for general city services, for up to 10 years."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by establishing a 0.5¢ sales tax"]
+
+[[section]]
+id = "background"
+heading = "Measure C"
+
+[[section.line]]
+id = "measure-c"
+text = "A county sales tax for transportation, Measure C, is set to expire on June 30, 2027."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the sales tax rate in the city is 8.35 percent."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Sales tax rate in the city"
+source = "impartial-analysis"
+unit = "%"
+labels = ["Today", "With Measure D, from July 2027"]
+values = [8.35, 8.35]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rate"
+text = "Measure D's tax would begin on July 1, 2027, and the rate would remain at 8.35 percent."
+sources = ["text", "impartial-analysis"]
+
+[[section.line]]
+id = "general"
+text = "The money would go to the general fund of the city, for any city purpose, such as police, fire and roads."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+id = "end"
+text = "The tax would end after 10 years, or sooner if a new county transportation sales tax takes effect, including a pending citizens' initiative for one."
+sources = ["text", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "open-road"
+
+[[section.line]]
+text = "A citizens' oversight committee and yearly audits would review the spending, and Measure D needs a simple majority to pass."
+sources = ["text", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "inspection-clipboard"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The city attorney's impartial analysis says the city estimates about $65 million a year in added revenue."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure D keeps the sales tax at today's rate, and without it the city faces a $56 million shortfall."
+sources = ["argument-for"]
+basis = ["Measure D ensures that there will be absolutely no increase in the city's sales tax rate from what it is today.", "Without this measure, the City of Fresno faces a $56 million funding shortfall"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["No increase in today's rate", "Avoids a $56 million shortfall"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say even a half-percent sales tax is a heavy burden, and it charges every shopper the same, whatever their income."
+sources = ["argument-against"]
+basis = ["even a half-percent sales tax can be a heavy burden that adds up.", "A sales tax treats every shopper the same, no matter their income."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["A heavy burden that adds up", "Same tax whatever your income"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the half-cent sales tax, starting in July 2027."
+sources = ["ballot-question", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by establishing a 0.5¢ sales tax"]
+
+[[section.line]]
+text = "A no vote does not adopt the half-cent sales tax."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by establishing a 0.5¢ sales tax"]
+
+[[question]]
+ask = "If this is a new tax, why would the rate not go up?"
+lines = ["measure-c", "rate"]
+
+[[question]]
+ask = "What would the rate be if Measure D fails?"
+unanswered = true
+
+[[question]]
+ask = "What happens if a county transportation tax passes too?"
+lines = ["end"]
+
+[[question]]
+ask = "What can the money be spent on?"
+lines = ["general"]
+
+[[question]]
+ask = "How big is $65 million a year next to the city budget?"
+unanswered = true

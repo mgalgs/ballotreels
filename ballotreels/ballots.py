@@ -497,6 +497,24 @@ BALLOTS: dict[str, Ballot] = {
                             ("harmony-union-measure-m", "M"),
                             ("coast-life-support-measure-d-sonoma", "D"),
                             ("schell-vista-measure-n", "N"))},
+                     # Fresno County posts each measure's filed documents
+                     # and no printed guide: each card quotes the ballot
+                     # question from the resolution that prints it,
+                     # named as headed
+                     "ca-2026-11-03-coalinga-measure-j":
+                         "Resolution No. 4337",
+                     "ca-2026-11-03-firebaugh-measure-f":
+                         "Resolution No. 26-46",
+                     "ca-2026-11-03-orange-cove-measure-o":
+                         "Resolution No. 2026-28",
+                     "ca-2026-11-03-sanger-measure-b":
+                         "Resolution No. 2026-72",
+                     "ca-2026-11-03-fresno-county-measure-a":
+                         "Resolution No. 26-257",
+                     "ca-2026-11-03-fresno-measure-d":
+                         "Resolution No. 2026-179",
+                     "ca-2026-11-03-fresno-county-measure-s":
+                         "Resolution No. 26-294",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

@@ -1,0 +1,200 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the earlier parcel tax and its
+# end, as the resolution's recitals record them; what would change (the
+# rates, the yearly increase and no end date, the split of the money,
+# the oversight, the vote it needs); the revenue estimate as the
+# impartial analysis gives it; one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry it.
+#
+# No printed guide was found, so the card quotes the ballot question
+# from Resolution No. 2026-28, Section 2, as typed from the scan,
+# blanks ("Measure _") and all. It prints no yes/no lines, so the card
+# has no YES/NO boxes; the vote lines both highlight the same phrase.
+#
+# The recitals that the general fund "lacks funds" for police, parks
+# and recreation are the council's case, and the supporters make it, so
+# the neutral sections leave them out (STANDARD.md 6.3). The earlier
+# tax's history (approved, renewal rejected in March 2024, ended that
+# November) is a fact of the record and stays in the background.
+#
+# No archived source states the city's general fund budget, so the
+# $460,907 a year has no scale (STANDARD.md 6.5; left open, under
+# [[question]]).
+
+contest = "ca-2026-11-03-orange-cove-measure-o"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "O"
+title = "RESOLUTION NO. 2026-28"
+origin = "A RESOLUTION OF THE CITY COUNCIL OF THE CITY OF ORANGE COVE, CALIFORNIA"
+summary = "To generate approximately $460,907 annually to fund police, recreation, and park maintenance services where 70% of the special tax proceeds shall be used for police services, shall the measure levying $125/unit for single family homes and $140/unit for multifamily, $800/acre for non-residential, and $400/acre for undeveloped parcels, known as Measure _, be adopted without expiration, with 3% annual increase, with all funds generated staying in the City of Orange Cove?"
+
+[[section]]
+id = "what"
+heading = "Measure O"
+
+[[section.line]]
+text = "Measure O asks the voters of this city whether to add a parcel tax for police, recreation and park upkeep."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to fund police, recreation, and park maintenance services"]
+
+[[section]]
+id = "today"
+heading = "The earlier tax"
+
+[[section.line]]
+id = "history"
+text = "Voters had approved an earlier parcel tax for police and fire, but rejected continuing it in March 2024, and it ended that November."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "timeline"
+source = "ballot-question"
+labels = ["March 2024", "November 2024"]
+items = ["Voters reject continuing the police and fire parcel tax", "The earlier parcel tax ends"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rates"
+text = "Each single-family home would pay $125 a year, and each apartment unit $140, with other parcels taxed by the acre."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Yearly tax under Measure O, in dollars"
+source = "impartial-analysis"
+unit = ""
+labels = ["Single-family home", "Apartment unit"]
+values = [125, 140]
+
+[[section.line]]
+id = "end"
+text = "The rates would rise 3 percent each year, and the tax would have no end date."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+id = "split"
+text = "Seventy percent of the money would go to police services, and the rest to parks and recreation."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "share"
+title = "How the tax would be split"
+source = "ballot-question"
+unit = "%"
+labels = ["Police services"]
+values = [70]
+
+[[section.line]]
+text = "A citizen oversight committee would check that the money is spent as voters intended."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "inspection-clipboard"
+
+[[section.line]]
+text = "Measure O needs two-thirds of the votes to pass."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The city attorney's impartial analysis estimates that the tax would raise about $460,907 a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-parcels"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure O prevents police cuts that could slow response times, and keeps parks and recreation going."
+sources = ["argument-for"]
+basis = ["to prevent cuts in police personnel and equipment that could result in longer police response times and reductions in service.", "Measure _ will allow Police, Parks, and Recreation in the City to continue at the levels that the community deserves"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Prevents cuts to police", "Keeps parks and recreation going"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the tax would never end and rises 3 percent every year, making life harder for families."
+sources = ["argument-against"]
+basis = ["This tax would collect about $460,907 every year from the people of Orange Cove, and it would never end.", "It also goes up automatically each year by 3%!", "even a $125 parcel tax could make life noticeably harder"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Never ends, rising 3% a year", "Makes life harder for families"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the parcel tax, at $125 a year for each single-family home."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["levying $125/unit for single family homes"]
+
+[[section.line]]
+text = "A no vote does not adopt the parcel tax."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["levying $125/unit for single family homes"]
+
+[[question]]
+ask = "Wasn't there a tax like this before?"
+lines = ["history"]
+
+[[question]]
+ask = "How much would each property pay, and for how long?"
+lines = ["rates", "end"]
+
+[[question]]
+ask = "How much of the money goes to police?"
+lines = ["split"]
+
+[[question]]
+ask = "How big is $460,907 a year next to the city budget?"
+unanswered = true

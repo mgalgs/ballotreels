@@ -1,0 +1,71 @@
+# Archived sources for City of Firebaugh Measure F, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Fresno County Registrar of Voters posts each measure's filed
+# documents on its election page; no printed Voter Information Guide
+# was found online. The ballot question is quoted from City Council
+# Resolution No. 26-46, Section 4. The City Attorney's impartial
+# analysis is the measure's neutral explanation, the kind a state's
+# attorney general's explanatory statement is. No tax rate statement or
+# fiscal analysis applies (a parcel tax, not a bond); the one revenue
+# estimate is the analysis's.
+#
+# Every PDF is a scan with no text layer. The passages cited were typed
+# from the page images into sources/*-transcription.txt, each naming the
+# PDF and URL it copies; those sources point at the transcription, and
+# their url at the scan (as Clayton Measure M's do). The rebuttals are
+# archived but not cited.
+
+[contest]
+id = "ca-2026-11-03-firebaugh-measure-f"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:firebaugh"
+kind = "measure"
+title = "City of Firebaugh Measure F: Fire Department Parcel Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Firebaugh, City Council Resolution No. 26-46, calling an election to impose a special parcel tax for fire and emergency response, adopted August 3, 2026: the ballot language, Section 4, page 3, and the vote, page 4 (transcribed from the scan)"
+credit = "Resolution No. 26-46, City of Firebaugh"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/firebaugh-parcel-tax/filed-resolution_redacted.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Griswold, LaSalle, Cobb, Dowd & Gin, LLP, City Attorney for the City of Firebaugh, City of Firebaugh Parcel Tax Measure Impartial Analysis, filed with the Fresno County Clerk August 10, 2026 (transcribed from the scan)"
+credit = "Impartial Analysis, City Attorney of Firebaugh"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/firebaugh-parcel-tax/filed-impartial-analysis_redacted.pdf"
+file = "sources/impartial-analysis-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Firebaugh, Exhibit A to Resolution No. 26-46: the ordinance adding Chapter 11.5, Special Fire and Emergency Response Tax, to the Firebaugh Municipal Code (transcribed from the scan)"
+credit = "Exhibit A, City of Firebaugh"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/firebaugh-parcel-tax/exhibit-a-ordinance_redacted.pdf"
+file = "sources/ordinance-full-text-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Ballot Argument for Firebaugh Fire Measure, as filed with the Fresno County Clerk August 6, 2026 (transcribed from the scan)"
+credit = "Argument in favor, Measure F"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/firebaugh-parcel-tax/argument-in-favor_redacted.pdf"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against City of Firebaugh Parcel Tax Measure, as filed with the Fresno County Clerk August 19, 2026 (transcribed from the scan)"
+credit = "Argument against, Measure F"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/firebaugh-parcel-tax/argument-against_redacted.pdf"
+file = "sources/argument-against-transcription.txt"
+retrieved = "2026-10-28"

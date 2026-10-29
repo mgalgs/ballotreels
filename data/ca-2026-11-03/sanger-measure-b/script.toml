@@ -1,0 +1,182 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the tax today; what would change
+# (the rate, who pays, the lodgings it covers, where the money goes,
+# how long it lasts and the vote it needs); the revenue figure as the
+# ballot question gives it; one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry it.
+#
+# No printed guide was found, so the card quotes the ballot question
+# from Resolution No. 2026-72, Section 4, as typed from the scan. It
+# prints no yes/no lines, so the card has no YES/NO boxes; the vote
+# lines give the impartial analysis's own meanings of a yes and a no
+# vote, and both highlight the same phrase of the question.
+#
+# The $55,037 a year is the ballot question's figure (the analysis
+# gives none). No archived source states the city's general fund
+# budget, so it has no scale (STANDARD.md 6.5; left open, under
+# [[question]]).
+#
+# No argument in favor of Measure B was filed: the registrar posts only
+# the argument against. The yes side says so plainly; its section is
+# marked filed = false. The argument against's line keeps its own words
+# for who pays ("substantial burden", short-term rental owners
+# "shouldering the costs"); its "visitors and residents" is left out
+# beside the ballot question's "generally not paid by Sanger residents".
+
+contest = "ca-2026-11-03-sanger-measure-b"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "B"
+title = "RESOLUTION NO. 2026-72"
+origin = "A RESOLUTION OF THE CITY COUNCIL OF THE CITY OF SANGER, CALIFORNIA"
+summary = "Shall the measure increasing the City of Sanger transient occupancy tax on hotel, motel, short-term rental, and similar lodging guests staying 30 days or less, generally not paid by Sanger residents, to 12%, until ended by voters, providing approximately $55,037 annually for general City services and deposited into the City's general fund, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure B"
+
+[[section.line]]
+text = "Measure B asks the voters of this city whether to raise the tax on hotel and short-term rental stays from 4 to 12 percent."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["transient occupancy tax on hotel, motel, short-term rental, and similar lodging guests"]
+
+[[section]]
+id = "today"
+heading = "The tax today"
+
+[[section.line]]
+text = "Today, guests who stay 30 days or less pay a tax of 4 percent of the rent."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hotel-front-desk"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure B would raise the rate to 12 percent, paid by the guest rather than the lodging operator."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Tax on lodging stays, share of the rent"
+source = "impartial-analysis"
+unit = "%"
+labels = ["Today", "With Measure B"]
+values = [4, 12]
+
+[[section.line]]
+id = "covers"
+text = "The tax would expressly cover vacation rentals and home-sharing, and online booking platforms may have to collect it."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-hotel"
+
+[[section.line]]
+id = "general"
+text = "The money would go to the general fund of the city, for any lawful purpose, until ended by the voters."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "Measure B needs a simple majority of the votes to pass."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "fiscal"
+heading = "What the ballot question says"
+
+[[section.line]]
+id = "revenue"
+text = "The ballot question says that Measure B would provide about $55,037 a year for general city services."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "travel-receipts"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument in favor of Measure B appears among the filings that the county elections office posted for this election."
+sources = ["argument-against"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["No argument for was submitted"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say a 12 percent tax is a substantial burden, and local short-term rental owners would end up shouldering the costs."
+sources = ["argument-against"]
+basis = ["a whopping 12% tax undoubtedly represents a substantial burden on their cost of living", "residents that operate short-term rentals will end up shouldering the costs when they can't raise their rates sufficiently."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["A substantial burden", "Local rental owners shoulder the costs"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote increases the hotel tax rate from 4 to 12 percent, and adopts the amended ordinance."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to 12%"]
+
+[[section.line]]
+text = "A no vote is a vote against the measure, and the existing 4 percent tax would remain in effect."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to 12%"]
+
+[[question]]
+ask = "Which kinds of lodging would the tax cover?"
+lines = ["covers"]
+
+[[question]]
+ask = "What can the money be spent on, and when would the tax end?"
+lines = ["general"]
+
+[[question]]
+ask = "How big is $55,037 a year next to the city budget?"
+unanswered = true

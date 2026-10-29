@@ -1,0 +1,72 @@
+# Archived sources for City of Fresno Measure D, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Fresno County Registrar of Voters posts each measure's filed
+# documents on its election page; no printed Voter Information Guide
+# was found online. The ballot question, and the recital that the
+# county's Measure C transportation tax is set to expire on June 30,
+# 2027, are quoted from City Council Resolution No. 2026-179. The City
+# Attorney's impartial analysis is the measure's neutral explanation,
+# the kind a state's attorney general's explanatory statement is. No tax
+# rate statement or fiscal analysis applies (a sales tax); the one
+# revenue estimate is the City's, as the analysis gives it.
+#
+# Every PDF is a scan with no text layer. The passages cited were typed
+# from the page images into sources/*-transcription.txt, each naming the
+# PDF and URL it copies; those sources point at the transcription, and
+# their url at the scan (as Clayton Measure M's do). The rebuttals are
+# archived but not cited.
+
+[contest]
+id = "ca-2026-11-03-fresno-measure-d"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:fresno"
+kind = "measure"
+title = "City of Fresno Measure D: Roads, Public Safety and City Services Sales Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Fresno, City Council Resolution No. 2026-179, approving the Fresno Public Safety, Infrastructure Restoration, and City General Services Tax Ordinance and ordering its submission to city voters, certified copy August 7, 2026: recitals, pages 2-3; the ballot question, page 5 (\"4 of 7\"); passage, page 6 (transcribed from the scan)"
+credit = "Resolution No. 2026-179, City of Fresno"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/fresno-use-tax/resolution_redacted.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Andrew N. Janz, City Attorney, City of Fresno, Impartial Analysis, Fresno Public Safety, Infrastructure Restoration, and City General Services Tax Measure, filed with the Fresno County Clerk August 25, 2026 (transcribed from the scan)"
+credit = "Impartial Analysis, City Attorney of Fresno"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/fresno-use-tax/impartial-analysis-city-of-fresno_redacted.pdf"
+file = "sources/impartial-analysis-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Fresno, Ordinance No. 2026-21, the Fresno Public Safety, Infrastructure Restoration, and City General Services Tax Ordinance, certified copy August 7, 2026: operative date, fiscal oversight and termination date, Sections 7-1602, 7-1616 and 7-1617 (transcribed in part from the scan)"
+credit = "Ordinance No. 2026-21, City of Fresno"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/fresno-use-tax/ordinance_redacted.pdf"
+file = "sources/ordinance-full-text-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure D, as filed with the Fresno County Clerk August 24, 2026 (transcribed from the scan)"
+credit = "Argument in favor, Measure D"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/fresno-use-tax/filed-argument-in-favor_redacted.pdf"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against City of Fresno Transactions & Use Tax Measure, as filed with the Fresno County Clerk August 19, 2026 (transcribed from the scan)"
+credit = "Argument against, Measure D"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/fresno-use-tax/argument-against_redacted.pdf"
+file = "sources/argument-against-transcription.txt"
+retrieved = "2026-10-28"

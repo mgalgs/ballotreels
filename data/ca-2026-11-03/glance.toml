@@ -1811,3 +1811,72 @@ period = "per-year"
 [schell-vista-measure-n]
 source = "measure-question"
 status = "none-printed"
+
+# City of Coalinga Measure J: no tax rate statement or fiscal analysis
+# applies (a sales tax). The quote is the ballot question's, from
+# Resolution No. 4337, which also gives it as about 25% of the general
+# fund revenues.
+[coalinga-measure-j]
+source = "ballot-question"
+quote = "which is expected to generate $2,000,000 annually"
+amount = 2000000
+period = "per-year"
+
+# City of Firebaugh Measure F: no tax rate statement or fiscal analysis
+# applies (a parcel tax, not a bond). The quote is the ballot
+# question's, from Resolution No. 26-46; the City Attorney's impartial
+# analysis gives the same $240,000 a year.
+[firebaugh-measure-f]
+source = "ballot-question"
+quote = "providing approximately $240,000/year until ended by voters"
+amount = 240000
+period = "per-year"
+
+# City of Orange Cove Measure O: no tax rate statement or fiscal
+# analysis applies (a parcel tax, not a bond). The quote is the ballot
+# question's, from Resolution No. 2026-28; the City Attorney's
+# impartial analysis gives the same $460,907 a year.
+[orange-cove-measure-o]
+source = "ballot-question"
+quote = "To generate approximately $460,907 annually"
+amount = 460907
+period = "per-year"
+
+# City of Sanger Measure B: no tax rate statement or fiscal analysis
+# applies (a hotel tax). The quote is the ballot question's, from
+# Resolution No. 2026-72; the impartial analysis gives no figure.
+[sanger-measure-b]
+source = "ballot-question"
+quote = "providing approximately $55,037 annually for general City services"
+amount = 55037
+period = "per-year"
+
+# Fresno County Measure A: the Auditor-Controller/Treasurer-Tax
+# Collector's fiscal impact statement, which also gives a one-time cost
+# of $50,000 and running costs of $130,000 a year.
+[fresno-county-measure-a]
+source = "fiscal-impact"
+quote = "If this measure passes, the County of Fresno estimates the annual revenue from this tax to be $4,500,000."
+amount = 4500000
+period = "per-year"
+direction = "revenue-gain"
+
+# City of Fresno Measure D: no tax rate statement or fiscal analysis
+# applies (a sales tax). The quote is the ballot question's, from
+# Resolution No. 2026-179; the City Attorney's impartial analysis gives
+# the same $65,000,000 a year.
+[fresno-measure-d]
+source = "ballot-question"
+quote = "providing approximately $65,000,000 annually for 10 years"
+amount = 65000000
+period = "per-year"
+
+# Fresno County Measure S: the Auditor-Controller/Treasurer-Tax
+# Collector's fiscal impact statement. The ballot question says
+# "initially providing approximately $113 million annually".
+[fresno-county-measure-s]
+source = "fiscal-impact"
+quote = "the measure is expected to generate approximately $120 million in revenue during fiscal year 2027-28."
+amount = 120000000
+period = "per-year"
+direction = "revenue-gain"
