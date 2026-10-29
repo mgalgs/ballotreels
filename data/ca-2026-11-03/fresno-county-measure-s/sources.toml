@@ -1,0 +1,81 @@
+# Archived sources for Fresno County Measure S, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Fresno County Registrar of Voters posts each measure's filed
+# documents on its election page; no printed Voter Information Guide
+# was found online. The ballot question is quoted from Board of
+# Supervisors Resolution No. 26-294, Section 5. County Counsel's
+# impartial analysis is the measure's neutral explanation, the kind a
+# state's attorney general's explanatory statement is. The
+# Auditor-Controller/Treasurer-Tax Collector's fiscal impact statement
+# is the measure's official fiscal statement.
+#
+# Which election: Resolution No. 26-294 (August 11, 2026) consolidates
+# the measure with the March 7, 2028 Statewide Primary Election, reading
+# Assembly Bill 1923 together with the Elections Code's 88-day rule. The
+# later impartial analysis (filed September 2, 2026) says the measure
+# "is being submitted to the voters at the November 3, 2026 election as
+# required by Assembly Bill 1923", the arguments were filed for the
+# November 3, 2026 election, and the registrar lists Measure S on its
+# November 3, 2026 election page. The script follows the registrar and
+# the analysis; the resolution is cited only for the ballot question.
+#
+# Every PDF is a scan with no text layer. The passages cited were typed
+# from the page images into sources/*-transcription.txt, each naming the
+# PDF and URL it copies; those sources point at the transcription, and
+# their url at the scan (as Clayton Measure M's do). The rebuttals and
+# the Elections Code 9111 report are archived but not cited.
+
+[contest]
+id = "ca-2026-11-03-fresno-county-measure-s"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:fresno"
+kind = "measure"
+title = "Fresno County Measure S: Transportation Improvement Half-Cent Sales Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "County of Fresno, Board of Supervisors Resolution No. 26-294, calling a countywide election on an initiative measure establishing a new countywide retail transactions and use tax, adopted August 11, 2026: the ballot question, Section 5, page 4 (transcribed from the scan)"
+credit = "Resolution No. 26-294, County of Fresno"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/2/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/fresno-co-transportation/filed-resolution-fresno-county-transportation-imporvement-act_redacted.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Fresno County Counsel, Impartial Analysis by County Counsel, Measure S, filed with the Fresno County Clerk September 2, 2026 (transcribed from the scan)"
+credit = "Impartial Analysis, Fresno County Counsel"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/2/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/fresno-co-transportation/filed-impartial-analysis-county-counsel_redacted.pdf"
+file = "sources/impartial-analysis-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "fiscal-impact"
+kind = "official-fiscal-analysis"
+publisher = "County of Fresno, Auditor-Controller/Treasurer-Tax Collector, Fiscal Impact Statement, Fresno County Transportation Improvement Act Measure, filed with the Fresno County Clerk August 27, 2026 (transcribed from the scan)"
+credit = "Fiscal Impact Statement, County of Fresno"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/fresno-co-transportation/filed-fiscal-impact-statement_redacted.pdf"
+file = "sources/fiscal-impact-statement-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure S, as filed with the Fresno County Clerk August 27, 2026 (transcribed from the scan)"
+credit = "Argument in favor, Measure S"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/fresno-co-transportation/filed-argument-in-favor_redacted.pdf"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure S, as filed with the Fresno County Clerk August 27, 2026 (transcribed from the scan)"
+credit = "Argument against, Measure S"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/fresno-co-transportation/filed-argument-against_redacted.pdf"
+file = "sources/argument-against-transcription.txt"
+retrieved = "2026-10-28"

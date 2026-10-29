@@ -1709,3 +1709,13 @@ source = "ballot-question"
 quote = "providing approximately $65,000,000 annually for 10 years"
 amount = 65000000
 period = "per-year"
+
+# Fresno County Measure S: the Auditor-Controller/Treasurer-Tax
+# Collector's fiscal impact statement. The ballot question says
+# "initially providing approximately $113 million annually".
+[fresno-county-measure-s]
+source = "fiscal-impact"
+quote = "the measure is expected to generate approximately $120 million in revenue during fiscal year 2027-28."
+amount = 120000000
+period = "per-year"
+direction = "revenue-gain"
