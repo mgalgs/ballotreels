@@ -1,0 +1,287 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 83.2,
+  "phrases": [
+    {
+      "text": "Measure O asks the voters of this city whether to add a parcel tax for police, recreation and park upkeep.",
+      "start": 0.03,
+      "end": 7.95
+    },
+    {
+      "text": "Voters had approved an earlier parcel tax for police and fire, but rejected continuing it in March 2024, and it ended that November.",
+      "start": 8.61,
+      "end": 17.68
+    },
+    {
+      "text": "Each single-family home would pay $125 a year, and each apartment unit $140, with other parcels taxed by the acre.",
+      "start": 18.34,
+      "end": 27.79
+    },
+    {
+      "text": "The rates would rise 3 percent each year, and the tax would have no end date.",
+      "start": 28.45,
+      "end": 33.25
+    },
+    {
+      "text": "Seventy percent of the money would go to police services, and the rest to parks and recreation.",
+      "start": 33.91,
+      "end": 39.21
+    },
+    {
+      "text": "A citizen oversight committee would check that the money is spent as voters intended.",
+      "start": 39.87,
+      "end": 44.59
+    },
+    {
+      "text": "Measure O needs two-thirds of the votes to pass.",
+      "start": 45.25,
+      "end": 48.4
+    },
+    {
+      "text": "The city attorney's impartial analysis estimates that the tax would raise about $460,907 a year.",
+      "start": 49.06,
+      "end": 57.14
+    },
+    {
+      "text": "Opponents say the tax would never end and rises 3 percent every year, making life harder for families.",
+      "start": 57.8,
+      "end": 64.13
+    },
+    {
+      "text": "Supporters say Measure O prevents police cuts that could slow response times, and keeps parks and recreation going.",
+      "start": 64.79,
+      "end": 72.58
+    },
+    {
+      "text": "A yes vote adopts the parcel tax, at $125 a year for each single-family home.",
+      "start": 73.24,
+      "end": 79.64
+    },
+    {
+      "text": "A no vote does not adopt the parcel tax.",
+      "start": 80.3,
+      "end": 83.17
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure O asks the voters of this city whether to add a parcel tax for police, recreation and park upkeep.",
+      "Voters had approved an earlier parcel tax for police and fire, but rejected continuing it in March 2024, and it ended that November.",
+      "Each single-family home would pay $125 a year, and each apartment unit $140, with other parcels taxed by the acre.",
+      "The rates would rise 3 percent each year, and the tax would have no end date.",
+      "Seventy percent of the money would go to police services, and the rest to parks and recreation.",
+      "A citizen oversight committee would check that the money is spent as voters intended.",
+      "Measure O needs two-thirds of the votes to pass.",
+      "The city attorney's impartial analysis estimates that the tax would raise about $460,907 a year.",
+      "Opponents say the tax would never end and rises 3 percent every year, making life harder for families.",
+      "Supporters say Measure O prevents police cuts that could slow response times, and keeps parks and recreation going.",
+      "A yes vote adopts the parcel tax, at $125 a year for each single-family home.",
+      "A no vote does not adopt the parcel tax."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure O asks the voters of this city whether to add a parcel tax for police, recreation and park upkeep."
+      },
+      "bounds": [
+        0,
+        191520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure O asks the voters of this city whether to add a parcel tax for police, recreation and park upkeep.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Voters had approved an earlier parcel tax for police and fire, but rejected continuing it in March 2024, and it ended that November."
+      },
+      "bounds": [
+        205920,
+        425040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Voters had approved an earlier parcel tax for police and fire, but rejected continuing it in March 2024, and it ended that November.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Each single-family home would pay $125 a year, and each apartment unit $140, with other parcels taxed by the acre."
+      },
+      "bounds": [
+        439440,
+        667680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Each single-family home would pay $125 a year, and each apartment unit $140, with other parcels taxed by the acre.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The rates would rise 3 percent each year, and the tax would have no end date."
+      },
+      "bounds": [
+        682080,
+        798720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The rates would rise 3 percent each year, and the tax would have no end date.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Seventy percent of the money would go to police services, and the rest to parks and recreation."
+      },
+      "bounds": [
+        813120,
+        941760
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Seventy percent of the money would go to police services, and the rest to parks and recreation.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A citizen oversight committee would check that the money is spent as voters intended."
+      },
+      "bounds": [
+        956160,
+        1070880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A citizen oversight committee would check that the money is spent as voters intended.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure O needs two-thirds of the votes to pass."
+      },
+      "bounds": [
+        1085280,
+        1162320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure O needs two-thirds of the votes to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The city attorney's impartial analysis estimates that the tax would raise about $460,907 a year."
+      },
+      "bounds": [
+        1176720,
+        1372080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The city attorney's impartial analysis estimates that the tax would raise about $460,907 a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say the tax would never end and rises 3 percent every year, making life harder for families."
+      },
+      "bounds": [
+        1386480,
+        1539840
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say the tax would never end and rises 3 percent every year, making life harder for families.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say Measure O prevents police cuts that could slow response times, and keeps parks and recreation going."
+      },
+      "bounds": [
+        1554240,
+        1742640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure O prevents police cuts that could slow response times, and keeps parks and recreation going.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote adopts the parcel tax, at $125 a year for each single-family home."
+      },
+      "bounds": [
+        1757040,
+        1912080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote adopts the parcel tax, at $125 a year for each single-family home.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote does not adopt the parcel tax."
+      },
+      "bounds": [
+        1926480,
+        1996800
+      ]
+    }
+  ],
+  "sha256": "4641537162ddffa4dd8daac7f1c4af39a1eebbeca28709e88af211d45e46076e"
+}
