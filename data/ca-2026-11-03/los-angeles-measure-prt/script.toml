@@ -1,6 +1,7 @@
 # Recipe E, about 60 seconds, distilled: one claim per line. The chain:
-# what it asks and whose measure it is; the lease limits today; what would change, in the Impartial
-# Summary's four parts; the City Administrative Officer's statement; the
+# what it asks and whose measure it is; the lease limits today; what would change: the leases, the
+# airport board and the waterfront money, leaving the workforce
+# disclosure to the card's ballot question; the City Administrative Officer's statement; the
 # one side that argued; what a vote does.
 #
 # The card quotes the pamphlet: the title and ballot question from the
@@ -88,14 +89,6 @@ sources = ["summary", "text"]
 [section.line.visual]
 kind = "illustration"
 name = "shoreline-seawall"
-
-[[section.line]]
-text = "Anyone seeking a harbor lease, or a harbor development that needs a coastal permit, would have to disclose the expected effects on jobs."
-sources = ["summary", "text"]
-
-[section.line.visual]
-kind = "illustration"
-name = "warehouse-loading-docks"
 
 [[section]]
 id = "fiscal"

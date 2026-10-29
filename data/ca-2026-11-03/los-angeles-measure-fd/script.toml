@@ -1,8 +1,8 @@
 # Recipe E, about 60 seconds, distilled: one claim per line. The chain:
 # what it asks and whose measure it is; how it reached the ballot; how
 # the fire department is paid for today and the sales tax rate; what
-# would change: the new rate, what the money pays for, the condition on
-# collecting it, and the oversight; the City Administrative Officer's
+# would change: the new rate, what the money pays for and the condition on
+# collecting it; the City Administrative Officer's
 # estimate; one line per side; what a vote does.
 #
 # The card quotes the pamphlet: the title and ballot question from the
@@ -113,15 +113,6 @@ sources = ["summary", "financial-impact"]
 kind = "illustration"
 name = "balanced-budget"
 
-[[section.line]]
-id = "oversight"
-text = "Yearly audits and an oversight committee of five residents would review the spending."
-sources = ["summary", "financial-impact"]
-
-[section.line.visual]
-kind = "illustration"
-name = "recurring-review"
-
 [[section]]
 id = "fiscal"
 heading = "What it would raise"
@@ -188,8 +179,8 @@ source = "summary"
 highlight = ["You do not want to establish a 0.5% sales tax"]
 
 [[question]]
-ask = "What would the money pay for, and who checks how it is spent?"
-lines = ["uses", "oversight"]
+ask = "What would the money pay for?"
+lines = ["uses"]
 
 [[question]]
 ask = "Could the city cut its own fire department funding and use the tax instead?"

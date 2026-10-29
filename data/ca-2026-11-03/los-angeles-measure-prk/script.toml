@@ -1,7 +1,6 @@
 # Recipe E, about 60 seconds, distilled: one claim per line. The chain:
 # what it asks and whose measure it is; the charter's parks minimum
-# from the General Fund today and the Chief Legislative Analyst's
-# account of it; what would change, with the fiscal-emergency exception;
+# from the General Fund today; what would change, with the fiscal-emergency exception;
 # the City Administrative Officer's estimate and where the money comes
 # from; the one side that argued; what a vote does.
 #
@@ -62,10 +61,6 @@ sources = ["summary"]
 [section.line.visual]
 kind = "illustration"
 name = "city-parcels"
-
-[[section.line]]
-text = "The Chief Legislative Analyst says that share has not kept pace with a growing population, a larger park system and rising costs."
-sources = ["summary"]
 
 [[section]]
 id = "change"
