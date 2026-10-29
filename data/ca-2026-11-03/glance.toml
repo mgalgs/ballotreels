@@ -1584,3 +1584,9 @@ source = "ballot-question"
 quote = "providing approximately $9,400,000 annually until ended by voters"
 amount = 9400000
 period = "per-year"
+
+# City of Riverbank Measure M: not a tax measure; the guide prints no
+# fiscal statement.
+[riverbank-measure-m]
+source = "impartial-analysis"
+status = "none-printed"
