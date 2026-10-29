@@ -35,6 +35,7 @@ from pathlib import Path
 from .contest import Contest, ContestError, Line, Source, load_contest
 from .index import (CRASH_COURSE, ContestIndex, Election, IndexEntry,
                     load_index)
+from .narration_store import recorded_take
 from .narration import (CURRENT, MISSING, NarrationError, match_phrases,
                         narration_state, playback_sections)
 from .storyboard import FPS, frame
@@ -136,8 +137,13 @@ def digest(entry: IndexEntry) -> str:
     for cid in entry.members:
         d = member_dir(entry.election_dir, election_id, cid)
         h.update(cid.encode("utf-8") + b"\0")
+        take = recorded_take(d)
         for name in DIGEST_FILES:
-            h.update(f"{name}={_file_digest(d / name)}\0".encode("utf-8"))
+            # The take narration.json records is narration.wav's SHA-256:
+            # the same digest, whether or not the audio is here.
+            value = (take.sha256 if name == "narration.wav" and take
+                     else _file_digest(d / name))
+            h.update(f"{name}={value}\0".encode("utf-8"))
     return h.hexdigest()[:16]
 
 

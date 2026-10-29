@@ -32,6 +32,7 @@ from .pipeline import (PipelineError, Runner, ScriptWriter, read_chapters,
                        run_check, run_crash_check, run_crash_narrate,
                        run_crash_script, run_crash_sources, run_encode,
                        run_narrate, run_render, run_script, run_sources)
+from .narration_store import TakeCache, TakeError, materialize
 from .queue import hash_for_key
 from .snapshot import Snapshots, export, kind
 from .standard import Standard
@@ -72,10 +73,12 @@ class WorkerClient:
         self.retry_delays = retry_delays
 
     def _request(self, method: str, path: str, json_body: Any = None,
-                 data: bytes | None = None) -> tuple[int, Any]:
+                 data: bytes | None = None,
+                 raw: bool = False) -> tuple[int, Any]:
         for delay in (*self.retry_delays, None):
             try:
-                return self._request_once(method, path, json_body, data)
+                return self._request_once(method, path, json_body, data,
+                                          raw)
             except TransportError:
                 if delay is None:
                     raise
@@ -83,7 +86,10 @@ class WorkerClient:
         raise AssertionError("unreachable")
 
     def _request_once(self, method: str, path: str, json_body: Any,
-                      data: bytes | None) -> tuple[int, Any]:
+                      data: bytes | None,
+                      raw: bool = False) -> tuple[int, Any]:
+        """(status, the body parsed as JSON); with `raw`, a 200's body is
+        returned as bytes instead."""
         url = self.base_url + path
         headers = {"Authorization": f"Bearer {self.token}"}
         body = data
@@ -94,8 +100,10 @@ class WorkerClient:
                                      headers=headers)
         try:
             with urllib.request.urlopen(req, timeout=self.timeout) as resp:
-                raw = resp.read()
-                return resp.status, (json.loads(raw) if raw else None)
+                body = resp.read()
+                if raw:
+                    return resp.status, body
+                return resp.status, (json.loads(body) if body else None)
         except urllib.error.HTTPError as e:
             with e:
                 raw = e.read()
@@ -173,6 +181,35 @@ class WorkerClient:
         self._request("POST", f"/worker/jobs/{job_id}/release",
                       json_body={"claim": claim})
 
+    # The narration store (ballotreels.narration_store): takes by SHA-256.
+
+    def narration_has(self, sha: str) -> bool:
+        status, body = self._request("HEAD", f"/worker/narration/{sha}")
+        if status == 404:
+            return False
+        if status != 200:
+            raise WorkerApiError(status, body)
+        return True
+
+    def narration_get(self, sha: str) -> bytes | None:
+        """The take's audio, or None when the server has no such take."""
+        status, body = self._request("GET", f"/worker/narration/{sha}",
+                                     raw=True)
+        if status == 404:
+            return None
+        if status != 200:
+            raise WorkerApiError(status, body)
+        return body
+
+    def narration_put(self, sha: str, data: bytes) -> bool:
+        """Upload a take; True when the server stored it, False when it
+        already had it."""
+        status, body = self._request("PUT", f"/worker/narration/{sha}",
+                                     data=data)
+        if status != 200:
+            raise WorkerApiError(status, body)
+        return bool(body.get("stored"))
+
 
 def _source_dicts(contest) -> list[dict[str, Any]]:
     return [{"id": s.id, "kind": s.kind, "publisher": s.publisher,
@@ -185,7 +222,8 @@ class Worker:
                 runner: Runner, writer: ScriptWriter, storage,
                 standard: Standard, work_dir: str | Path,
                 masters_dir: str | Path, poll_interval: float = 2.0,
-                heartbeat_interval: float = 10.0):
+                heartbeat_interval: float = 10.0,
+                narration_cache: str | Path | None = None):
         self.client = client
         self.worker_id = worker_id
         self.repo = Path(repo)
@@ -195,6 +233,9 @@ class Worker:
         self.standard = standard
         self.work_dir = Path(work_dir)
         self.masters_dir = Path(masters_dir)
+        # Narration takes, by hash: the audio is not in the commit.
+        self.takes = TakeCache(narration_cache if narration_cache is not None
+                               else self.work_dir / "narration")
         self.poll_interval = poll_interval
         self.heartbeat_interval = heartbeat_interval
         self._stop = threading.Event()
@@ -278,7 +319,18 @@ class Worker:
         # phrase_cache beside narration.wav to keep unchanged phrases.
         if not self._export_dir(sha, f"data/{election}/{dir_name}", dest):
             dest.mkdir(parents=True, exist_ok=True)
+        self._materialize(dest, contest_id)
         return dest
+
+    def _materialize(self, contest_dir: Path, contest_id: str) -> None:
+        """Put the take the commit's narration.json records at
+        narration.wav (narration_store), or fail the job naming it: a
+        take that cannot be had is never re-narrated here."""
+        try:
+            materialize(contest_dir, self.takes, self.client,
+                        where=contest_id)
+        except TakeError as e:
+            raise PipelineError(str(e)) from None
 
     def _prepare_election_scratch(self, job: dict[str, Any], wd: Path,
                                   sha: str) -> Path:
@@ -298,7 +350,8 @@ class Worker:
         entry = load_index(dest).crash_course
         for cid in (entry.members if entry is not None else ()):
             member = crash_course.member_dir(dest, election, cid)
-            self._export_dir(sha, f"{src}/{member.name}", member)
+            if self._export_dir(sha, f"{src}/{member.name}", member):
+                self._materialize(member, cid)
         return dest
 
     def _checking(self, stage: str, path: Path, func):
@@ -455,7 +508,9 @@ class Worker:
         except PipelineError as e:
             if not self._cancelled:
                 try:
-                    self.client.fail(job_id, claim, self._current_stage,
+                    # (no stage yet: the scratch copy's narration take)
+                    self.client.fail(job_id, claim,
+                                     self._current_stage or "sources",
                                      str(e))
                 except Exception:
                     pass

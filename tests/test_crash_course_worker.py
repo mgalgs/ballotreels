@@ -222,5 +222,39 @@ class FailsTest(CrashCourseServeTestCase):
         self.assertIn("not the one the job was queued for", job["error"])
 
 
+class TakesFromTheStoreTest(CrashCourseServeTestCase):
+    """Each member's narration audio comes from the narration store, by
+    the take its narration.json records, as a single measure's does."""
+
+    def setUp(self):
+        super().setUp()
+        from ballotreels.narration_store import hash_file, record
+        self.shas = {}
+        for name in ("amendment-a", "amendment-b"):
+            d = self.election / name
+            record(d)
+            wav = d / "narration.wav"
+            self.shas[name] = hash_file(wav).sha256
+            self.client.narration_put(self.shas[name], wav.read_bytes())
+            wav.unlink()
+
+    def run_job(self):
+        job, _ = self.deps.queue.create_job(self.key())
+        self.assertTrue(self.make_worker().run_once())
+        return self.deps.queue.get_job(job["id"])
+
+    def test_renders_from_the_store(self):
+        job = self.run_job()
+        self.assertEqual(job["state"], "done", job["error"])
+
+    def test_a_member_take_not_in_the_store_fails_naming_it(self):
+        sha = self.shas["amendment-a"]
+        (self.tmp / "var" / "narration" / f"{sha}.wav").unlink()
+        job = self.run_job()
+        self.assertEqual(job["state"], "failed")
+        self.assertIn("ut-2026-11-03-amendment-a", job["error"])
+        self.assertIn(sha, job["error"])
+
+
 if __name__ == "__main__":
     unittest.main()

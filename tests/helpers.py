@@ -106,7 +106,8 @@ def write_committed_narration(contest_dir):
     script: write_narration's narration.json, with a phrase_cache keyed as
     `say` records one, beside an empty narration.wav. Editing a line
     afterwards leaves only its phrases, and the phrase after them, to be
-    synthesised afresh (narration.unreused_phrases)."""
+    synthesised afresh (narration.unreused_phrases). Its take is recorded
+    in narration.json, as `narration record` records one."""
     write_narration(contest_dir)
     path = Path(contest_dir) / "narration.json"
     doc = json.loads(path.read_text(encoding="utf-8"))
@@ -114,6 +115,8 @@ def write_committed_narration(contest_dir):
                            for p in doc["phrases"]]
     path.write_text(json.dumps(doc, indent=2) + "\n", encoding="utf-8")
     (Path(contest_dir) / "narration.wav").write_bytes(b"")
+    from ballotreels.narration_store import record
+    record(contest_dir)
 
 
 def git_commit_all(repo, message="fixture"):

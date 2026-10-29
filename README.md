@@ -70,8 +70,11 @@ Kokoro: Kokoro mis-phrases long noun-phrase subjects, and fixing that
 by rewording the script or adding break marks is not an option, since
 the script must say what the sources say.
 
-This writes `narration.wav` plus its `.vtt`/`.json` sidecars beside it;
-commit all three along with `narration.txt`. Re-run `narration` and `say`
+This writes `narration.wav` plus its `.vtt`/`.json` sidecars beside it.
+`narrate.sh` then records the take in `narration.json` (`narration
+record`, below); commit the sidecars along with `narration.txt`, and
+upload the audio with `narration push` (see "Narration audio" below).
+Re-run `narration` and `say`
 together whenever `script.toml` changes, so the sidecars stay in sync —
 `python -m ballotreels check` includes an airtime check that reads them
 when they're present, and a stale pair is reported as a `NarrationError`
@@ -105,6 +108,52 @@ pages of tiles three across and two down) is made only here:
 which writes `out/<election>-crash-course-16x9.mp4` beside it;
 `--format all` writes both. The site and the worker only ever make the
 9:16 one.
+
+### Narration audio
+
+The audio does not belong in git. A contest's `narration.json` records
+its take: the SHA-256 of `narration.wav`'s bytes and its length, under
+`"take"` (videobuilder's own top-level `"sha256"` hashes the decoded
+samples, not the file). That hash is how everything finds the audio,
+and a contest is narrated when its `narration.json` records one. The
+audio itself lives in the serve tier's narration store,
+`<data-dir>/narration/<sha256>.wav`, reached only through its private
+(worker) listener with the worker token, and in a local cache of the
+same shape on each machine (`<data-dir>/narration` by default, so
+`var/narration/` in a checkout; outside git). Workers fetch each job's
+take from there themselves.
+
+    python -m ballotreels narration record (--all | <contest-dir>...)
+    python -m ballotreels narration push (--all | <contest-dir>...)
+    python -m ballotreels narration fetch (--all | <contest-dir>...)
+
+- `record` writes each `narration.wav`'s hash into its `narration.json`
+  (a no-op when it is already there; it reports the ones it changed).
+  `scripts/narrate.sh` runs it after every new take, and `check` fails
+  a `narration.json` that records no take.
+- `push` uploads every recorded take the server does not have yet (it
+  asks first), and keeps a copy in the local cache.
+- `fetch` puts `narration.wav` back beside each `narration.json` from
+  the cache or the server: after a fresh clone, or before re-narrating
+  a contest (`narrate.sh` runs it first, since `say` reuses the old
+  take's unchanged phrases). It never replaces a `narration.wav` that
+  is not the recorded take. With no server given it works from the
+  cache alone, token or not. When it fails, `narrate.sh` warns and
+  synthesises every phrase afresh; a worker's narrate stage fetches from
+  that worker's own server and cache.
+
+`--all` is every contest under `data/` with a `narration.json`.
+
+| Flag | Environment variable | Default |
+|---|---|---|
+| `--server` (`push`, `fetch`) | `BALLOTREELS_SERVER` | the serve tier's private listener URL, as for `worker`; `fetch` needs it only for a take the cache lacks |
+| (none) | `BALLOTREELS_TOKEN` | the worker token, as for `worker`; required whenever a server is |
+| `--narration-cache` (`push`, `fetch`) | `BALLOTREELS_NARRATION_CACHE` | `<data-dir>/narration` |
+| `--repo` | — | this repo: the checkout `--all` reads |
+
+Moving a checkout whose takes are still committed into the store is
+`record --all`, then `push --all`; commit the changed `narration.json`
+files.
 
 ## Extending the contest index
 
@@ -352,6 +401,7 @@ it `film/`) is kept under the work directory, older ones pruned.
 | `--runner` | — | `subprocess` (`fake` is for tests and CI) |
 | `--work-dir` | — | `<data-dir>/work` |
 | `--masters-dir` | `BALLOTREELS_MASTERS_DIR` | `<repo>/var/masters` |
+| `--narration-cache` | `BALLOTREELS_NARRATION_CACHE` | `<data-dir>/narration`: narration takes fetched from the serve tier, by hash (see "Narration audio" below) |
 | `--ffmpeg` | `BALLOTREELS_FFMPEG` | `ffmpeg` on `PATH` |
 | `--crf` | `BALLOTREELS_CRF` | `18` |
 | `--maxrate` | `BALLOTREELS_MAXRATE` | `1500k` |
