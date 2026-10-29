@@ -1,0 +1,64 @@
+# Archived sources for Pleasant Ridge Union Elementary School District
+# Measure M, 2026-11-03 general election (sources/sources.md). Every id
+# here may be cited by script.toml. `kind` must be one the standard
+# allows (docs/STANDARD.md, section 1).
+#
+# Nevada County Elections prints each local measure in Section 3 of its
+# Voter Information Guide; pages 56 to 62 of the guide's PDF were cut
+# into one excerpt, which backs every source here. The Impartial
+# Analysis is the measure's neutral explanation; the District's Tax Rate
+# Statement is its fiscal statement. The guide prints an argument in
+# favor and "No Argument Against Measure M was submitted", and no
+# rebuttals.
+
+[contest]
+id = "ca-2026-11-03-pleasant-ridge-elementary-measure-m"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:pleasant_ridge_union_elementary_school_district"
+kind = "measure"
+title = "Pleasant Ridge Union Elementary Measure M: School Repair Bonds"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Nevada County Elections, Voter Information Guide, November 3, 2026 General Election, Section 3: Local Measures on the Ballot, PDF page 56: Measure M Ballot Question and What Your Vote Means"
+credit = "Ballot Question, Nevada County Voter Information Guide"
+url = "https://www.nevadacountyca.gov/DocumentCenter/View/71371/Master-VIG-Revised"
+file = "sources/vig-pp56-62-measure-m.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis, Measure M, Nevada County Elections, Voter Information Guide, November 3, 2026 General Election, PDF page 57"
+credit = "Impartial Analysis, Nevada County Voter Information Guide"
+url = "https://www.nevadacountyca.gov/DocumentCenter/View/71371/Master-VIG-Revised"
+file = "sources/vig-pp56-62-measure-m.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Ballot Argument for Measure M (No Argument Against Measure M was submitted), Nevada County Elections, Voter Information Guide, November 3, 2026 General Election, PDF page 58"
+credit = "Arguments, Nevada County Voter Information Guide"
+url = "https://www.nevadacountyca.gov/DocumentCenter/View/71371/Master-VIG-Revised"
+file = "sources/vig-pp56-62-measure-m.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Bond Measure, Measure M, Nevada County Elections, Voter Information Guide, November 3, 2026 General Election, PDF pages 59 to 62"
+credit = "Full Text of Bond Measure, Nevada County Voter Information Guide"
+url = "https://www.nevadacountyca.gov/DocumentCenter/View/71371/Master-VIG-Revised"
+file = "sources/vig-pp56-62-measure-m.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Tax Rate Statement, Gregg S. Motarjeme, Superintendent, Pleasant Ridge Union Elementary School District, Nevada County Elections, Voter Information Guide, November 3, 2026 General Election, PDF page 62"
+credit = "Tax Rate Statement, Nevada County Voter Information Guide"
+url = "https://www.nevadacountyca.gov/DocumentCenter/View/71371/Master-VIG-Revised"
+file = "sources/vig-pp56-62-measure-m.pdf"
+retrieved = "2026-10-28"

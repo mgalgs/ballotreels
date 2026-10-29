@@ -1880,3 +1880,18 @@ quote = "the measure is expected to generate approximately $120 million in reven
 amount = 120000000
 period = "per-year"
 direction = "revenue-gain"
+
+# Nevada City Measure Q: a rental permit ordinance; the guide prints no
+# fiscal statement for it.
+[nevada-city-measure-q]
+source = "ballot-question"
+status = "none-printed"
+
+# Pleasant Ridge Union Elementary School District Measure M: the
+# district's Tax Rate Statement, its total debt service (the bonds are
+# $19,800,000).
+[pleasant-ridge-elementary-measure-m]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $37,050,000."
+amount = 37050000
+period = "unstated"
