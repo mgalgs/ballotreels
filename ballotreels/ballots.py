@@ -733,6 +733,12 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 6-18-26B",
                      "ca-2026-11-03-shasta-tehama-trinity-jccd-measure-c-tehama":
                          "Resolution No. 2025-26-18",
+                     # The Lake County Registrar of Voters prints each
+                     # local measure's ballot question, impartial
+                     # analysis and arguments in its Voter's Pamphlet
+                     **{f"ca-2026-11-03-{slug}": "Voter’s Pamphlet"
+                        for slug in ("clearlake-measure-d",
+                                     "middletown-unified-measure-c")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
