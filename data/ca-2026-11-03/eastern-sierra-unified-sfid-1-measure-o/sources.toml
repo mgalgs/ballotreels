@@ -1,0 +1,79 @@
+# Archived sources for Eastern Sierra Unified School District Measure O,
+# the School Facilities Improvement District No. 1 bond, 2026-11-03
+# general election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Who votes: the impartial analysis says the bonds would be issued
+# "within School Facilities Improvement District No. 1 of the District",
+# and the tax rate statement that the election "will be held in School
+# Facilities Improvement District No. 1 of the Eastern Sierra Unified
+# School District". The improvement district has no boundary layer of its
+# own, so the division is the county with a `voters` line, as Yosemite
+# Unified's SFID No. 1 Measure W's is.
+#
+# Mono County Elections prints the whole measure in its Voter Information
+# Guide and Sample Ballot, cut here from ballot type B001 (amended) to
+# PDF pages 9 and 13 to 17: the sample ballot page with the ballot label
+# (9), the full text (13 to 15), the impartial analysis and the tax rate
+# statement (16), and the argument in favor with "No Argument Against
+# Measure O was Filed" (17). The impartial analysis is the measure's
+# neutral explanation; the tax rate statement is its fiscal statement.
+# No rebuttals are printed. Of the two separate postings archived beside
+# it, sources/impartial-analysis.pdf is the county site's "Object moved"
+# HTML redirect, not the analysis, and sources/argument-in-favor.pdf is a
+# scan with no text layer; neither is cited, and the guide prints both
+# documents.
+
+[contest]
+id = "ca-2026-11-03-eastern-sierra-unified-sfid-1-measure-o"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:mono"
+kind = "measure"
+title = "Eastern Sierra Unified School District Measure O: School Facilities Improvement District No. 1 Bond"
+voters = "School Facilities Improvement District No. 1 of the Eastern Sierra Unified School District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Measure O ballot label, sample ballot, Mono County Elections, Mono County Voter Information Guide and Sample Ballot, ballot type B001 (amended), November 3, 2026 General Election, page 9 of the PDF"
+credit = "Mono County Voter Information Guide and Sample Ballot"
+url = "https://monocounty.ca.gov/DocumentCenter/View/3624/B001_AMENDED"
+file = "sources/vig-B001-measure-o-pdfpp9,13-17.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure O, prepared by the Mono County Counsel, Mono County Elections, Mono County Voter Information Guide and Sample Ballot, ballot type B001 (amended), November 3, 2026 General Election, page 16 of the PDF"
+credit = "Impartial Analysis, Mono County Voter Information Guide and Sample Ballot"
+url = "https://monocounty.ca.gov/DocumentCenter/View/3624/B001_AMENDED"
+file = "sources/vig-B001-measure-o-pdfpp9,13-17.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Tax Rate Statement, Measure O, signed by Heidi Torix, Superintendent, Eastern Sierra Unified School District, Mono County Elections, Mono County Voter Information Guide and Sample Ballot, ballot type B001 (amended), November 3, 2026 General Election, page 16 of the PDF"
+credit = "Tax Rate Statement, Eastern Sierra Unified School District"
+url = "https://monocounty.ca.gov/DocumentCenter/View/3624/B001_AMENDED"
+file = "sources/vig-B001-measure-o-pdfpp9,13-17.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure O, and \"No Argument Against Measure O was Filed\", Mono County Elections, Mono County Voter Information Guide and Sample Ballot, ballot type B001 (amended), November 3, 2026 General Election, page 17 of the PDF"
+credit = "Arguments, Mono County Voter Information Guide and Sample Ballot"
+url = "https://monocounty.ca.gov/DocumentCenter/View/3624/B001_AMENDED"
+file = "sources/vig-B001-measure-o-pdfpp9,13-17.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Bond Measure, Measure O, with its Bond Project List, Mono County Elections, Mono County Voter Information Guide and Sample Ballot, ballot type B001 (amended), November 3, 2026 General Election, pages 13 to 15 of the PDF"
+credit = "Full Text of Measure O, Mono County Voter Information Guide and Sample Ballot"
+url = "https://monocounty.ca.gov/DocumentCenter/View/3624/B001_AMENDED"
+file = "sources/vig-B001-measure-o-pdfpp9,13-17.pdf"
+retrieved = "2026-10-28"

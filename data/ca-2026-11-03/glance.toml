@@ -2610,3 +2610,14 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the Bonds are issued and sold is approximately $161,600,000."
 amount = 161600000
 period = "unstated"
+
+# Eastern Sierra Unified School District Measure O, its School
+# Facilities Improvement District No. 1 bond: the total debt service
+# (the bonds are $6,000,000), quoted from the impartial analysis's
+# "Financial Effect", which restates the Tax Rate Statement; pdftotext
+# runs the statement's own sentence into the analysis's column.
+[eastern-sierra-unified-sfid-1-measure-o]
+source = "impartial-analysis"
+quote = "The best estimate of total debt service, including principal and interest, if all bonds are issued and sold, is approximately $11,300,000."
+amount = 11300000
+period = "unstated"
