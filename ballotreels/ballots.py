@@ -639,6 +639,9 @@ BALLOTS: dict[str, Ballot] = {
                      "ca-2026-11-03-meadows-elementary-measure-q":
                          "Measure Q — Meadows Union Elementary School "
                          "District $2.2M Bond Measure",
+                     "ca-2026-11-03-westmorland-elementary-measure-r":
+                         "Measure R — Westmorland Union Elementary School "
+                         "District Bond Measure",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
