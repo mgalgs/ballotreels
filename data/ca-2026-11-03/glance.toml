@@ -1971,3 +1971,12 @@ source = "impartial-analysis"
 quote = "It is estimated that the proposed sales tax will provide an additional Six Million Dollars ($6,000,000) in annual local funding."
 amount = 6000000
 period = "per-year"
+
+# Madera County Measure U: the Auditor-Controller's Fiscal Impact
+# Statement, which states both the revenue and the added expenses.
+[madera-county-measure-u]
+source = "fiscal-impact"
+quote = "The proposed increase in TOT tax in Madera County from 9% to 11% is estimated to generate approximately $1,850,000 in revenues and $25,000 in additional expenses on an annual basis."
+amount = 1850000
+period = "per-year"
+direction = "mixed"
