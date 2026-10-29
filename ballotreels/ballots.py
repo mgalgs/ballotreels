@@ -427,6 +427,18 @@ BALLOTS: dict[str, Ballot] = {
                          "Measure S - Ballot Question",
                      "ca-2026-11-03-yountville-measure-y":
                          "Yountville Town Council Staff Report",
+                     # El Dorado County prints each measure's full text,
+                     # ballot question, arguments and impartial analysis
+                     # in its Voter Information Pamphlet.
+                     **{f"ca-2026-11-03-{slug}":
+                        "El Dorado County Voter Information Pamphlet"
+                        for slug in (
+                            "el-dorado-county-measure-s",
+                            "lynx-trail-road-zone-measure-a",
+                            "walnut-drive-road-zone-measure-j",
+                            "tegra-road-zone-measure-k",
+                            "rancho-ponderosa-estates-road-zone-measure-l",
+                            "fernwood-cothrin-ranch-road-zone-measure-m")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
