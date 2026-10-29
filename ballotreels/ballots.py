@@ -708,6 +708,18 @@ BALLOTS: dict[str, Ballot] = {
                      # named as headed
                      "ca-2026-11-03-tulelake-fpd-measure-i":
                          "Resolution No. 2026-4",
+                     # Modoc County posts no voter guide, only each
+                     # measure's documents: each card quotes the ballot
+                     # question from the district's resolution or
+                     # appendix that prints it, named as headed
+                     "ca-2026-11-03-cal-pines-csd-measure-p":
+                         "Resolution No. 2026-G",
+                     "ca-2026-11-03-cal-pines-csd-measure-o":
+                         "Resolution No. 2026-F",
+                     "ca-2026-11-03-tulelake-fpd-measure-i-modoc":
+                         "Resolution No. 2026-4",
+                     "ca-2026-11-03-shasta-tehama-trinity-jccd-measure-c-modoc":
+                         "Abbreviated Form of Bond Measure",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
