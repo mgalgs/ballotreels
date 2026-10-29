@@ -458,6 +458,19 @@ class LouisianaStatementsStitchTest(unittest.TestCase):
         self.assertEqual(badge(wi, "Question 1: Partial veto", "1"),
                          "QUESTION")
 
+    def test_new_hampshire_uses_its_secretary_of_states_words(self):
+        nh = BALLOTS["nh"]
+        self.assertEqual((nh.guide, nh.fiscal_label, nh.choices,
+                          nh.card_source_kind, nh.card_column_breaks),
+                         ("Questions on the General Election Ballot 2026",
+                          None, ("Yes", "No"), "official-title-summary",
+                          True))
+        # "Question 2", with the title's designation as its badge
+        self.assertEqual(
+            badge(nh, "Question 2: School district property tax limits",
+                  "2"),
+            "QUESTION")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):

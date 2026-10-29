@@ -1155,6 +1155,22 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label=None,
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+
+    # New Hampshire prints no voter guide. The Secretary of State's
+    # "Questions on the General Election Ballot 2026" prints each
+    # question as the ballot does, numbered "1." and "2." under its
+    # heading ("Questions Relating to Constitutional Amendments proposed
+    # by the 2026 General Court"; "Statutory Question required by HB
+    # 1300, ..."), with the choices "Yes" and "No" (badge QUESTION, from
+    # the title's designation). It prints no "yes means" lines, no short
+    # titles and no fiscal statement. Question 2 breaks "three-fifths" at
+    # a line's end, which pdftotext joins, so a card quote may lose that
+    # hyphen (card_column_breaks); the sheet has one column.
+    "nh": Ballot(guide="Questions on the General Election Ballot 2026",
+                 fiscal_label=None,
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary",
+                 card_column_breaks=True),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
