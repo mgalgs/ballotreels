@@ -486,6 +486,18 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 2026-158",
                      "ca-2026-11-03-vacaville-measure-v":
                          "Resolution No. 2026-106",
+                     "ca-2026-11-03-benicia-measure-x":
+                         "Resolution No. 26-77",
+                     "ca-2026-11-03-benicia-measure-y":
+                         "Resolution No. 26-81",
+                     "ca-2026-11-03-benicia-measure-z":
+                         "Resolution No. 26-82",
+                     "ca-2026-11-03-rio-vista-measure-o":
+                         "Resolution No. 2026-033",
+                     # Dixon Unified's question is its resolution's
+                     # Appendix B, revised and refiled under that heading
+                     "ca-2026-11-03-dixon-unified-measure-u":
+                         "Abbreviated Form of Bond Measure",
                      # More Sonoma County measures, each headed as its
                      # pages are, as Sonoma's Measure H is.
                      **{f"ca-2026-11-03-{slug}": f"Local Ballot Measure: {x}"
@@ -500,8 +512,10 @@ BALLOTS: dict[str, Ballot] = {
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
-                 # ballot boxes into Grand Terrace N's
+                 # ballot boxes into Grand Terrace N's; it reads the
+                 # bullets of Benicia Z's question as an "x" each
                  card_strays={
+                     "ca-2026-11-03-benicia-measure-z": ("x",),
                      "ca-2026-11-03-grand-terrace-measure-n":
                          ("Yes", "No"),
                      "ca-2026-11-03-needles-measure-l":
