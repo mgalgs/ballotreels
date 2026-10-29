@@ -160,6 +160,90 @@ def county_meta(county_name: str, state_name: str, election_id: str,
                     description=description, path=path)
 
 
+def flag_path(abbr: str) -> str:
+    """Where a state's coloured-pencil flag goes, under static/ (about
+    1600x1000): the state page's map shows it inside the state."""
+    return f"flags/{abbr}.png"
+
+
+# The hero map's colours: the site's graphite, paper and orange pencil
+# (style.css's --ink, --scrap and --accent).
+_INK = "#2e2b27"
+_PAPER = "#fbf8ef"
+_ACCENT = "#e07b33"
+# Room around the state for its outline's stroke and wobble.
+_HERO_PAD = 14
+
+
+def hero_svg(hero: dict, county: str | None = None,
+             flag_url: str | None = None) -> str:
+    """The decorative map at the top of a state's or a county's page,
+    from counties.json's `hero` (ballotreels.geo.counties): the state
+    drawn as one shape in a heavy pencil line. On a state's page
+    (`county` None) the state's flag (`flag_url`) fills it, or without
+    one a soft pencil tone; on a county's page the counties are plain
+    paper with faint lines between them and `county` is hatched in
+    orange. Hidden from screen readers: the page's heading says the
+    same."""
+    esc = lambda text: html.escape(str(text), quote=True)
+    w, h = int(hero["width"]), int(hero["height"])
+    pad = _HERO_PAD
+    paths = "".join(f'<path d="{esc(d)}"/>' for d in hero["paths"].values())
+    land = f'x="0" y="0" width="{w}" height="{h}" mask="url(#hero-land)"'
+    defs = (
+        '<defs>'
+        '<filter id="hero-pencil" x="-5%" y="-5%" width="110%" '
+        'height="110%"><feTurbulence type="fractalNoise" '
+        'baseFrequency="0.035" numOctaves="2" seed="7" result="grain"/>'
+        '<feDisplacementMap in="SourceGraphic" in2="grain" scale="6" '
+        'xChannelSelector="R" yChannelSelector="G"/></filter>'
+        '<pattern id="hero-tone" patternUnits="userSpaceOnUse" width="12" '
+        'height="12" patternTransform="rotate(-35)">'
+        f'<rect width="12" height="12" fill="{_ACCENT}" fill-opacity="0.08"/>'
+        f'<line x1="0" y1="6" x2="12" y2="6" stroke="{_ACCENT}" '
+        'stroke-opacity="0.3" stroke-width="2.5"/></pattern>'
+        '<pattern id="hero-hatch" patternUnits="userSpaceOnUse" width="9" '
+        'height="9" patternTransform="rotate(-40)">'
+        f'<rect width="9" height="9" fill="{_ACCENT}" fill-opacity="0.18"/>'
+        f'<line x1="0" y1="4.5" x2="9" y2="4.5" stroke="{_ACCENT}" '
+        'stroke-opacity="0.85" stroke-width="2.6"/></pattern>'
+        f'<g id="hero-counties">{paths}</g>'
+        # The state as one shape: every county, a little fattened, so
+        # the hairline gaps between independently simplified neighbours
+        # never show the outline underneath.
+        '<mask id="hero-land" maskUnits="userSpaceOnUse" '
+        f'x="{-pad}" y="{-pad}" width="{w + 2 * pad}" height="{h + 2 * pad}">'
+        '<use href="#hero-counties" fill="#fff" stroke="#fff" '
+        'stroke-width="3" stroke-linejoin="round"/></mask>'
+        '</defs>')
+    # Every county stroked heavily, then the land drawn over it: only
+    # the outer half of the state's own edge is left showing.
+    edge = (f'<use href="#hero-counties" class="hero-edge" fill="none" '
+            f'stroke="{_INK}" stroke-width="9" stroke-linejoin="round" '
+            f'filter="url(#hero-pencil)"/>')
+    if county is None:
+        if flag_url:
+            body = (f'<rect class="hero-tone" fill="url(#hero-tone)" {land}/>'
+                    f'<image class="hero-flag" href="{esc(flag_url)}" '
+                    f'preserveAspectRatio="xMidYMid slice" {land}/>')
+        else:
+            body = (f'<rect fill="{_PAPER}" {land}/>'
+                    f'<rect class="hero-tone" fill="url(#hero-tone)" {land}/>')
+    else:
+        selected = hero["paths"].get(county, "")
+        body = (f'<rect fill="{_PAPER}" {land}/>'
+                f'<use href="#hero-counties" fill="none" stroke="{_INK}" '
+                'stroke-opacity="0.22" stroke-width="1.4" '
+                'stroke-linejoin="round"/>'
+                f'<path class="hero-county" data-county="{esc(county)}" '
+                f'd="{esc(selected)}" fill="url(#hero-hatch)" '
+                f'stroke="{_ACCENT}" stroke-width="4" stroke-linejoin="round" '
+                'filter="url(#hero-pencil)"/>')
+    return (f'<svg class="hero-map" xmlns="http://www.w3.org/2000/svg" '
+            f'viewBox="{-pad} {-pad} {w + 2 * pad} {h + 2 * pad}" '
+            f'aria-hidden="true" focusable="false">{defs}{edge}{body}</svg>')
+
+
 def home_meta() -> PageMeta:
     return PageMeta(title=HOME_TITLE, description=HOME_DESCRIPTION, path="/")
 

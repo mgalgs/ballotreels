@@ -707,6 +707,18 @@ def _county_measures(state: StateElection,
     return [(l, buckets[l]) for l in COUNTY_LEVELS if buckets[l]]
 
 
+def _hero(state: StateElection, county: str | None = None) -> str | None:
+    """The map at the top of a state's or county's page
+    (pages.hero_svg); None without counties.json. The state's flag is
+    used only if its file is there."""
+    hero = state.geo.hero if state.geo else None
+    if not hero or not hero.get("paths"):
+        return None
+    flag = pages.flag_path(state.abbr)
+    flag_url = f"/static/{flag}" if (STATIC_DIR / flag).is_file() else None
+    return pages.hero_svg(hero, county, flag_url)
+
+
 def _contest_detail(entry, state: StateElection,
                     deps: Deps) -> dict[str, Any]:
     key = key_for(state.index.election.id, entry, deps.standard)
@@ -1198,7 +1210,8 @@ class PublicHandler(_JsonHandler):
                          # every county's page, by name
                          "counties": [{"name": c["name"],
                                        "path": state.county_path(oid)}
-                                      for oid, c in state.counties().items()]})
+                                      for oid, c in state.counties().items()],
+                         "hero": _hero(state)})
 
     def _county(self, abbr: str, year: str, slug: str) -> None:
         """A county's page: every local measure voted on anywhere in it
@@ -1229,7 +1242,8 @@ class PublicHandler(_JsonHandler):
                          "none_text": pages.no_county_measures(name),
                          "empty_election": not index.entries,
                          "chambers": chambers(abbr),
-                         "levels": levels})
+                         "levels": levels,
+                         "hero": _hero(state, county)})
 
     def _contest(self, contest_id: str) -> None:
         deps = self.server.deps

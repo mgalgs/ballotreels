@@ -940,6 +940,7 @@ async function renderState(abbr, year, old) {
   const when = electionDate(body.election);
   const section = el("section", {}, [
     backLink("Find your ballot", "/"),
+    heroArt(body.hero),
     heading("h1", `${name} statewide measures`),
     when ? el("p", { class: "muted", text: `Election day: ${when}` }) : null,
   ]);
@@ -963,6 +964,15 @@ async function renderState(abbr, year, old) {
   const counties = countyList(body.counties);
   if (counties) section.appendChild(counties);
   app.appendChild(section);
+}
+
+// The decorative map at the top of a state's or county's page: SVG the
+// server draws (pages.hero_svg), hidden from screen readers.
+function heroArt(svg) {
+  if (!svg) return null;
+  const node = el("div", { class: "hero-art", "aria-hidden": "true" });
+  node.innerHTML = svg;
+  return node;
 }
 
 // A state page's list of its counties' pages.
@@ -1010,6 +1020,7 @@ async function renderCounty(apiPath) {
   const ready = contests.filter((c) => c.status === "cached").length;
   const section = el("section", {}, [
     backLink(`${stateName} measures`, body.state_path),
+    heroArt(body.hero),
     heading("h1", body.heading),
   ]);
   if (contests.length === 0) {

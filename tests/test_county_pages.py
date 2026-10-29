@@ -5,18 +5,20 @@ tests/fixtures/counties/ (see its contests.toml)."""
 
 import io
 import json
+import re
 import shutil
 import tempfile
 import threading
 import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from unittest import mock
 
 import ballotreels.site.config as site_config
 from ballotreels.cli import main as cli_main
 from ballotreels.geo.counties import FILENAME, county_doc, write_counties
 from ballotreels.index import ballot_order, load_index
-from ballotreels.site import pages
+from ballotreels.site import pages, server
 from ballotreels.site.server import build_deps, make_servers
 
 from . import geo_fixtures
@@ -301,6 +303,48 @@ class CountyPageTest(CountyServerTestCase):
         self.assertIn("renderCounty(`/api/county/", app)
 
 
+class HeroTest(CountyServerTestCase):
+    def test_state_hero_without_a_flag_falls_back_to_a_tone(self):
+        hero = self.get_json("/api/state/ca")["hero"]
+        self.assertTrue(hero.startswith('<svg class="hero-map"'))
+        self.assertIn('aria-hidden="true"', hero)
+        self.assertNotIn("<image", hero)
+        self.assertIn('class="hero-tone" fill="url(#hero-tone)"', hero)
+        self.assertEqual(hero.count("<path "), 4)
+        self.assertNotIn("hero-county", hero)
+
+    def test_state_hero_with_a_flag_draws_it_inside_the_state(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            static = Path(tmp)
+            (static / "flags").mkdir()
+            (static / "flags" / "ca.png").write_bytes(b"\x89PNG")
+            with mock.patch.object(server, "STATIC_DIR", static):
+                hero = server._hero(self.deps.states["ca"])
+        self.assertRegex(hero, r'<image class="hero-flag" '
+                               r'href="/static/flags/ca.png" [^>]*'
+                               r'mask="url\(#hero-land\)"')
+
+    def test_county_hero_fills_its_county(self):
+        hero = self.county("beta")["hero"]
+        beta_path = county_doc(FIXTURE_GEO)["hero"]["paths"][BETA]
+        filled = re.findall(r'<path class="hero-county" '
+                            r'data-county="([^"]+)" d="([^"]+)" '
+                            r'fill="url\(#hero-hatch\)"', hero)
+        self.assertEqual(filled, [(BETA, beta_path)])
+        self.assertNotIn("<image", hero)
+        # every county drawn, for the state's outline
+        self.assertEqual(hero.count("<path "), 5)
+
+    def test_hero_is_small(self):
+        self.assertLess(len(self.county("beta")["hero"]), 4000)
+
+    def test_hero_svg_escapes(self):
+        hero = pages.hero_svg({"width": 10, "height": 10,
+                               "paths": {"a": "M0 0l1 1z"}}, None,
+                              '/static/flags/x.png"><script>')
+        self.assertNotIn("<script>", hero)
+
+
 class WithoutCountiesFileTest(CountyServerTestCase):
     with_counties = False
 
@@ -310,6 +354,7 @@ class WithoutCountiesFileTest(CountyServerTestCase):
         self.page("/ca/2026/county/alpha", status=404)
         doc = self.get_json("/api/state/ca")
         self.assertEqual(doc["counties"], [])
+        self.assertIsNone(doc["hero"])
         resp, body = self.get(self.public_port, "/sitemap.xml")
         self.assertNotIn(b"/county/", body)
 
