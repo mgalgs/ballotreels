@@ -1576,10 +1576,11 @@ amount = 148328230
 period = "unstated"
 
 # City of Ceres Measure P: no tax rate statement or fiscal analysis
-# applies (a sales tax); the one estimate is the City Attorney's
-# impartial analysis's.
+# applies (a sales tax). The City Attorney's impartial analysis gives
+# the same $9,400,000 a year, but the guide's English and Spanish
+# columns interleave in its text, so the quote is the ballot question's.
 [ceres-measure-p]
-source = "impartial-analysis"
-quote = "It is estimated that the proposed sales tax will provide an additional Nine Million Four Hundred Thousand Dollars ($9,400,000) in annual local funding."
+source = "ballot-question"
+quote = "providing approximately $9,400,000 annually until ended by voters"
 amount = 9400000
 period = "per-year"
