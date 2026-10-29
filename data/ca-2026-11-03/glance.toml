@@ -1754,3 +1754,14 @@ status = "none-printed"
 [vacaville-measure-v]
 source = "ballot-question"
 status = "none-printed"
+
+# Garden Valley Ranch Estates Community Services District Measure H: the
+# pamphlet prints no tax rate statement; the one estimate is County
+# Counsel's impartial analysis's (the ballot question gives the same
+# figure). It replaces a $150 tax the pamphlet does not total, so no
+# direction is given.
+[garden-valley-ranch-measure-h]
+source = "guide-page"
+quote = "The special parcel tax authorized by this Measure is expected to generate revenue of approximately $44,000 per year."
+amount = 44000
+period = "per-year"
