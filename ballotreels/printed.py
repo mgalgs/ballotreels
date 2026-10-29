@@ -6,11 +6,12 @@ from __future__ import annotations
 
 
 def number(v):
-    """A value as printed: no trailing .0, at most two decimals."""
+    """A value as printed: no trailing .0, at most three decimals (a sales
+    tax rate such as 8.375 percent)."""
     v = float(v)
     if v.is_integer():
         return f'{int(v):,}'
-    return f'{v:,.2f}'.rstrip('0').rstrip('.')
+    return f'{v:,.3f}'.rstrip('0').rstrip('.')
 
 
 def with_unit(v, unit):

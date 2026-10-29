@@ -22,18 +22,7 @@ VALUES = "values = [10, 20]"
 # than edited here (the handoff's rule: no data edits in a code round).
 # Remove each as its data is fixed; the test fails if one starts passing,
 # so the list only shrinks.
-KNOWN = {
-    # says 8.375 percent (and the like); the chart prints two decimals
-    "ca-2026-11-03/ceres-measure-p",
-    "ca-2026-11-03/fairfield-measure-p",
-    "ca-2026-11-03/patterson-measure-l",
-    "ca-2026-11-03/san-carlos-measure-g",
-    "ca-2026-11-03/vacaville-measure-v",
-    # prints 268.2 million; says "about $268 million"
-    "ca-2026-11-03/east-palo-alto-measure-o",
-    # prints 62.87% and 29.14%; says "about 63 percent" and "29 percent"
-    "ca-2026-11-03/san-francisco-county-measure-rtm",
-}
+KNOWN: set[str] = set()
 
 
 class ChartPrecisionTest(ContestCopyTestCase):
@@ -84,11 +73,21 @@ class ChartPrecisionTest(ContestCopyTestCase):
         # "Proposition 2" is not 2.25 rounded
         self.assertEqual(self.chart(LINE, "[10, 2.25]"), [])
 
+    def test_a_sales_tax_rate_s_three_decimals_print(self):
+        self.assertEqual(self.chart(
+            "The rate would rise from 10 to 8.375 percent.", "[10, 8.375]"),
+            [])
+
     def test_more_decimals_said_than_the_chart_prints(self):
-        [f] = self.chart("The rate would rise from 10 to 8.375 percent.",
-                         "[10, 8.375]")
-        self.assertIn("'8.375'", f.message)
-        self.assertIn("at most two decimals", f.message)
+        [f] = self.chart("The rate would rise from 10 to 8.3755 percent.",
+                         "[10, 8.3755]")
+        self.assertIn("'8.3755'", f.message)
+        self.assertIn("at most three decimals", f.message)
+
+    def test_a_line_that_approximates_passes(self):
+        self.assertEqual(self.chart(
+            "About 63 percent would go to Muni, and 29 percent to BART.",
+            "[62.87, 29.14]"), [])
 
     def test_a_series_prints_only_its_last_value(self):
         self.edit("script.toml", 'kind = "bars"', 'kind = "series"')

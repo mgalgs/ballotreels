@@ -625,6 +625,10 @@ def _significant(figure: str) -> int:
     return len(figure.replace(",", "").replace(".", "").lstrip("0"))
 
 
+_APPROXIMATES = re.compile(
+    r"\b(about|around|roughly|nearly|almost|approximately)\b", re.I)
+
+
 def check_chart_precision(c: Contest) -> list[Failure]:
     """A chart and its line's narration state a quantity at one precision:
     a value the chart prints (as film/measure.py does, ballotreels.printed)
@@ -637,11 +641,15 @@ def check_chart_precision(c: Contest) -> list[Failure]:
     A figure the chart prints exactly for one value is that value's, not a
     rounding of its neighbour's ("from 1 percent ... to 3 percent" over
     bars of 1 to 3 by halves), and a figure of one significant digit is
-    too coarse to call the same figure ("Proposition 1" over 1.25)."""
+    too coarse to call the same figure ("Proposition 1" over 1.25).
+
+    A line that says it approximates ("about 63 percent ..., and 29
+    percent") rounds on purpose, over a chart printing the exact figures,
+    and passes."""
     out = []
     for label, sec in c.script.labelled():
         for i, line in enumerate(sec.lines):
-            if line.visual is None:
+            if line.visual is None or _APPROXIMATES.search(line.text):
                 continue
             values = _printed_values(line.visual)
             shown = {v: Decimal(number(v).replace(",", "").lstrip("-"))
@@ -658,12 +666,12 @@ def check_chart_precision(c: Contest) -> list[Failure]:
                     if _rounded(abs(value), places) != n:
                         continue
                     printed = with_unit(value, line.visual.unit)
-                    if places <= 2:
+                    if places <= 3:
                         why = (f"the same figure rounded: the chart and the "
                                f"voice must state it alike; make the value "
                                f"{f.replace(',', '')}")
                     else:
-                        why = ("which the chart, printing at most two "
+                        why = ("which the chart, printing at most three "
                                "decimals (ballotreels.printed.number), "
                                "cannot show as said: the chart and the voice "
                                "must state it alike")
