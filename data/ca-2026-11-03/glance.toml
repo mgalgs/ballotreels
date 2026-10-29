@@ -1811,3 +1811,13 @@ period = "per-year"
 [schell-vista-measure-n]
 source = "measure-question"
 status = "none-printed"
+
+# City of Benicia Measure X: no tax rate statement or fiscal analysis was
+# posted; the one estimate is the City's first-year revenue, as the City
+# Attorney's impartial analysis gives it. The tax replaces the current
+# one, which no source sizes, so no direction is given.
+[benicia-measure-x]
+source = "impartial-analysis"
+quote = "First-year revenue under this structure is estimated to be approximately $1,612,000."
+amount = 1612000
+period = "per-year"

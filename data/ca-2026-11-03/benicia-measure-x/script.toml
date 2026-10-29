@@ -1,0 +1,197 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; who pays the tax; how it is
+# charged today; what would change (the receipts rates, the exemption,
+# the cap, the marine terminal rate, where the money goes and the vote
+# it needs); the City's first-year estimate; one line per side; what a
+# vote does.
+#
+# The card quotes the ballot question from Resolution No. 26-77, which
+# prints no yes/no lines. So the card has no YES/NO boxes, the vote
+# lines give the impartial analysis's meanings, and both highlight the
+# same phrase of the question. The question's rates per $1,000 are under
+# a dollar, which the narration cannot say reliably
+# (standard/speakability.txt); they are on the chart and the card. The
+# exemption is the question's "$100,000 or less" (the analysis says
+# "less than $100,000").
+#
+# No tax rate statement or fiscal analysis was posted; the $1,612,000 is
+# the City's estimate, in the question and the analysis, and no archived
+# source states the City's general fund budget to give it a scale
+# (STANDARD.md 6.5; left open, under [[question]]). The number of
+# businesses that would pay less or nothing is the supporters' point,
+# so it stays in their section (STANDARD.md 6.3).
+#
+# The Registrar posted no argument against Measure X and no rebuttals;
+# whether one was filed for the printed guide is not confirmed (the
+# guide was not archived). The no side says what the posted record
+# shows, as American Canyon's Measure P does; its section is marked
+# filed = false.
+
+contest = "ca-2026-11-03-benicia-measure-x"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "X"
+title = "Benicia Business License Modernization"
+origin = "RESOLUTION NO. 26- 77"
+summary = "Shall the City of Benicia adopt a Business License Tax measure, exempting businesses with $100,000 or less in annual receipts, setting tax rates by business category ranging from $0.25 to $1.25 per $1,000 in receipts, capping those annual taxes at $1,500 in the first year with 10% annual increases until the cap is $25,000, with a separate Marine Terminal rate of $3 per $100 in receipts, generating approximately $1,612,000 in the first year, until repealed by voters?"
+
+[[section]]
+id = "what"
+heading = "Measure X"
+
+[[section.line]]
+text = "Measure X asks the voters of this city whether to change the tax that businesses pay for a city business license."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["adopt a Business License Tax measure"]
+
+[[section]]
+id = "background"
+heading = "Who pays it"
+
+[[section.line]]
+id = "who"
+text = "The tax falls on businesses, not on residents or consumers who do not run a business."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, most businesses pay a tax per worker, per rental unit, and on gross receipts, capped at $450 a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "business-license-certificate"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "From 2027, the tax would be based on gross receipts, at a rate for each type of business."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "bars"
+title = "Yearly tax per $1,000 of gross receipts, in dollars"
+source = "impartial-analysis"
+unit = ""
+labels = ["General and retail", "Contractors", "Services", "Industrial", "Professional", "Property rental", "Petroleum"]
+values = [0.25, 0.75, 0.75, 1.00, 1.00, 1.00, 1.25]
+
+[[section.line]]
+id = "exempt"
+text = "Businesses with $100,000 or less in yearly receipts would pay no tax."
+sources = ["ballot-question"]
+
+[[section.line]]
+id = "cap"
+text = "The most a business would pay starts at $1,500 a year, rising 10 percent a year until it reaches $25,000."
+sources = ["impartial-analysis", "ballot-question"]
+
+[[section.line]]
+text = "Marine terminal businesses would pay 3 percent of gross receipts, with no maximum."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "marine-terminal"
+
+[[section.line]]
+text = "The money could pay for any city purpose, and Measure X needs a simple majority."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The city attorney's impartial analysis estimates first-year revenue at about $1.6 million."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure X replaces an outdated system with a simpler, fairer one, and over 1,800 businesses stop paying."
+sources = ["argument-for"]
+basis = ["It replaces an outdated system with one that is simpler, fairer, and better reflects the size and type of business operating here.", "Businesses with $100,000 or less in annual receipts will pay no business license tax, resulting in more than 1,800 businesses no longer paying a tax."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Simpler and fairer than the outdated system", "Over 1,800 small businesses stop paying"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure X appears among the measure documents that the county Registrar of Voters has posted online."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "list"
+source = "impartial-analysis"
+items = ["No argument against was posted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is a vote in favor of the tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["adopt a Business License Tax measure"]
+
+[[section.line]]
+text = "A no vote is a vote against the tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["adopt a Business License Tax measure"]
+
+[[question]]
+ask = "Who pays the tax?"
+lines = ["who"]
+
+[[question]]
+ask = "Which businesses would pay nothing, and what is the most any would pay?"
+lines = ["exempt", "cap"]
+
+[[question]]
+ask = "How big is $1.6 million next to the city budget?"
+unanswered = true
