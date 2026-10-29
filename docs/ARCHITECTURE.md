@@ -82,7 +82,8 @@ the commit the worker's checkout has at HEAD when it claims the job,
 read out of git (`ballotreels.snapshot`), never from the working tree,
 so a checkout mid-merge renders what was last committed; the worker
 never writes the checkout's git state. The copy keeps the contest's
-committed narration: one narrated from exactly the current script was
+committed narration (its audio fetched by hash; see "Where narration
+audio lives" below): one narrated from exactly the current script was
 made and transcript-checked on the host, so the worker uses it as it
 is and never asks the TTS again. A stale one fails the job, asking for
 it to be re-narrated on the host: the worker never re-makes a committed
@@ -216,7 +217,9 @@ statewide measures, never listed in `contests.toml`. Its template
 (`film/crash_course.py`) has its own version. Its cache key's contest
 part is `<election>-crash-course@<digest>`, the digest hashing every
 member's `script.toml`, `sources.toml`, `narration.json` and
-`narration.wav`, so a change to any member is a new key, and an older
+`narration.wav` (read as the take `narration.json` records, so the key
+is the same with or without the audio in the checkout), so a change to
+any member is a new key, and an older
 crash course is never shown beside measure videos it disagrees with.
 
 The operator queues it like any contest: `POST /api/generate` with its
@@ -266,6 +269,39 @@ interface with two backends (`BALLOTREELS_STORAGE`):
   (DigitalOcean Spaces), signed with a stdlib AWS Signature Version 4
   implementation, then tells the serve tier the object's CDN URLs; the
   serve tier never sees the video bytes in this mode.
+
+## Where narration audio lives
+
+Not in git, once the takes committed before the store are moved into it
+(`narration record --all`, then `narration push --all`). Each contest's `narration.json` records its take, the
+SHA-256 of `narration.wav`'s bytes and its length (`"take"`), and that
+hash is how everything finds the audio; a contest is narrated when its
+`narration.json` records one (`python -m ballotreels check` fails one
+that records none, asking for `narration record`).
+
+- **The store** is on the serve tier, beside its finished videos:
+  `<data-dir>/narration/<sha256>.wav`. Only the private listener reaches
+  it, behind the worker token: `PUT /worker/narration/<sha256>` stores a
+  body whose SHA-256 is the one named (a mismatch is refused, a take
+  already stored is left as it is, the size is capped), written to a
+  temporary file and renamed into place; `GET` (and `HEAD`) reads one
+  back. The public listener never serves it.
+- **A worker** puts each job's take at its scratch copy's
+  `narration.wav` (each member's, for a crash course) from its local
+  cache (`--narration-cache`, by default `<data-dir>/narration`) if a
+  copy there checks out against the hash, otherwise downloaded and
+  cached. A take that is nowhere to be had, or audio that is not the
+  take, fails the job naming the contest and the hash; it is never
+  re-narrated.
+- **The operator's checkout** gets the same: `scripts/narrate.sh`
+  fetches the old take before re-narrating (`say` reuses its unchanged
+  phrases) and records each new one; `narration push` uploads takes the
+  server lacks, and `narration fetch` puts them back beside their
+  sidecars (README.md, "Narration audio"). Every stage still reads
+  `<contest>/narration.wav`; it just need not be tracked.
+
+A `narration.json` recorded before takes were (no `"take"`) still counts
+as narrated while its `narration.wav` sits beside it.
 
 ## Serving: a public tier and a pull worker
 
