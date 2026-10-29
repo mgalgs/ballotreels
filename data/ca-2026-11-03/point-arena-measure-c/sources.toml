@@ -1,0 +1,57 @@
+# Archived sources for City of Point Arena Measure C, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Mendocino County Elections posts each measure's Voter Information
+# Guide pages as one PDF, linked from its "Measures on the Ballot" page;
+# Measure C's are guide pages 23C1 to 23C2: the ordinance's full text,
+# the City Attorney's Impartial Analysis, an argument in favor, and "NO
+# ARGUMENT AGAINST MEASURE C WAS SUBMITTED." The pages print no ballot
+# question and no fiscal statement. The ballot question is quoted from
+# the City's own notice of the measure, archived on 2026-10-29 as
+# sources/public-notice-tot-measure.html (the research round named the
+# page but did not save it).
+
+[contest]
+id = "ca-2026-11-03-point-arena-measure-c"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:point_arena"
+kind = "measure"
+title = "City of Point Arena Measure C: Hotel Tax Increase from 12 to 14 Percent"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Point Arena, City Clerk, Public Notice: Transient Occupancy Tax Measure, August 7, 2026 (the ballot question)"
+credit = "Public Notice, City of Point Arena"
+url = "https://pointarena.ca.gov/notices/public-notice-transient-occupancy-tax-measure/"
+file = "sources/public-notice-tot-measure.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney’s Impartial Analysis of Measure C, City of Point Arena, Mendocino County Elections, Voter Information Guide pages for Measure C, page 23C1"
+credit = "City Attorney’s Impartial Analysis, Mendocino County Elections"
+url = "https://www.mendocinocounty.gov/files/assets/public/v/1/acre/elections/measure-c-pa-tot-tax.pdf"
+file = "sources/measure-c-pa-tot-tax.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure C (no argument against was submitted), Mendocino County Elections, Voter Information Guide pages for Measure C, page 23C2"
+credit = "Argument in favor, Mendocino County Elections"
+url = "https://www.mendocinocounty.gov/files/assets/public/v/1/acre/elections/measure-c-pa-tot-tax.pdf"
+file = "sources/measure-c-pa-tot-tax.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full text of Measure C, an Ordinance Amending Chapter 3.30.030 of the Point Arena Municipal Code to Increase the City’s Transient Occupancy Tax Rate from 12 Percent to 14 Percent, Mendocino County Elections, Voter Information Guide pages for Measure C, page 23C1"
+credit = "Full text of Measure C, Mendocino County Elections"
+url = "https://www.mendocinocounty.gov/files/assets/public/v/1/acre/elections/measure-c-pa-tot-tax.pdf"
+file = "sources/measure-c-pa-tot-tax.pdf"
+retrieved = "2026-10-28"

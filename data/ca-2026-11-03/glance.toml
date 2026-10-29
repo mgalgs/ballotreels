@@ -2304,3 +2304,12 @@ source = "impartial-analysis"
 quote = "The City estimates that the tax will raise approximately $123,900 per year."
 amount = 123900
 period = "per-year"
+
+# City of Point Arena Measure C: no tax rate statement or fiscal analysis
+# applies (a hotel tax); the one estimate is the City Attorney's
+# impartial analysis's.
+[point-arena-measure-c]
+source = "impartial-analysis"
+quote = "The additional 2% is anticipated to generate approximately $35,833 annually"
+amount = 35833
+period = "per-year"
