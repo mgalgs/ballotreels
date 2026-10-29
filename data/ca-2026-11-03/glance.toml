@@ -1551,3 +1551,13 @@ source = "guide-page"
 quote = "The special tax authorized by this Measure is expected to generate annual revenue of approximately $39,375."
 amount = 39375
 period = "per-year"
+
+# Tegra Road Zone of Benefit Measure K: the pamphlet prints no tax rate
+# statement; the one estimate is County Counsel's impartial analysis's
+# (the ballot question gives the same figure). It replaces a $260
+# assessment the pamphlet does not total, so no direction is given.
+[tegra-road-zone-measure-k]
+source = "guide-page"
+quote = "The special tax authorized by this Measure is expected to generate revenue of approximately $11,960 per year."
+amount = 11960
+period = "per-year"
