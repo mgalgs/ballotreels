@@ -708,6 +708,17 @@ BALLOTS: dict[str, Ballot] = {
                      # named as headed
                      "ca-2026-11-03-tulelake-fpd-measure-i":
                          "Resolution No. 2026-4",
+                     # Lassen County Elections prints each local measure's
+                     # impartial analysis, arguments, full text, ballot
+                     # question (or, for Measure Z, ballot summary) and
+                     # tax rate statement in its Local Voter Information
+                     # Guide
+                     **{f"ca-2026-11-03-{slug}":
+                        "Local Voter Information Guide"
+                        for slug in (
+                            "lassen-union-high-measure-y",
+                            "lassen-library-measure-z",
+                            "shasta-tehama-trinity-jccd-measure-c-lassen")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
