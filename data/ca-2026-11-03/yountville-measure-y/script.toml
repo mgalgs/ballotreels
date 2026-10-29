@@ -1,0 +1,184 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how the spending limit works and
+# what happens to revenue above it; that voters may raise it for four
+# years at a time; what would change (the increase, the vote it needs and
+# what a failure leaves); the impartial analysis's statement on taxes;
+# one line per side; what a vote does.
+#
+# The card quotes the ballot question from the Town Clerk's staff report
+# (the adopted resolution was not retrieved), which prints no yes/no
+# lines, only the ballot's Yes and No boxes, which pdftotext runs into
+# the question (ballots.py card_strays). So, as for Clayton Measure M,
+# the card has no YES/NO boxes, the vote lines give the impartial
+# analysis's meanings, and both highlight the same phrase of the
+# question.
+#
+# The analysis's "does not approve or impose any new taxes or increase
+# any existing taxes" is said in the fiscal section although the
+# supporters also say it: it is the measure's own effect, which the
+# ballot question prints too (STANDARD.md 6.2), and leaving it to a side
+# would leave a viewer to take a spending limit for a tax. The supporters'
+# line keeps their other points: what the taxes fund, and that without
+# the measure the funds are returned.
+#
+# No fiscal statement was published; the $3 million a year is the
+# measure's own increase, and no archived source states the Town's
+# budget or its current limit to give it a scale (STANDARD.md 6.5; left
+# open, under [[question]]).
+#
+# No argument against appears among the documents the Town posted, and
+# the printed county guide was not seen (sources/sources.md), so the no
+# side does not say none was filed: it says none was posted (filed =
+# false, STANDARD.md 2.5), as for San Mateo County Measure J.
+
+contest = "ca-2026-11-03-yountville-measure-y"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "Y"
+title = "Proposed Ballot Measure – Increase in Appropriations (GANN) Limit"
+origin = "Yountville Town Council Staff Report"
+summary = "To fully utilize TOT and sales tax generated from visitors for public services, parks and recreation, police, and fire emergency programs, shall the appropriations limit set by Article 13B of the California Constitution be increased by $3,000,000 plus 1/4 of TOT revenues for the prior fiscal year, for each year for a four year period commencing FY 2027/2028? By approving this appropriation limit, no existing tax is increased, and no new taxes are created."
+
+[[section]]
+id = "what"
+heading = "Measure Y"
+
+[[section.line]]
+text = "Town of Yountville Measure Y asks Yountville voters whether to raise the yearly limit on how much tax revenue the town may spend."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["shall the appropriations limit"]
+
+[[section]]
+id = "background"
+heading = "How the limit works"
+
+[[section.line]]
+text = "Since 1979, the state constitution has required local governments to adopt a yearly limit on the tax revenue they may spend."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "spending-limit"
+
+[[section.line]]
+text = "If the town takes in more than its limit over two years, it must return the excess by revising tax rates or fees."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+id = "four-years"
+text = "Voters may raise the limit for up to four years at a time, and the Town Council placed Measure Y on the ballot."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "increase"
+text = "Measure Y would raise the limit by $3 million plus one-fourth of the prior year's transient occupancy tax revenue, each year for four years."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hotel-front-desk"
+
+[[section.line]]
+id = "fails"
+text = "It needs a simple majority; if it fails, the limit stays as it is, adjusted each year under state law."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The town attorney's impartial analysis says Measure Y approves no new taxes and raises no existing ones."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure Y keeps already collected taxes funding police, fire and parks, instead of returning them under state law."
+sources = ["argument-for"]
+basis = ["TOT and sales tax revenue fund the Town's general services including law enforcement, fire and emergency medical services, parks", "Measure Y only authorizes the Town of Yountville to continue using already collected tax dollars to continue funding these services.", "A NO vote on Measure Y requires the Town to return these funds in accordance with state law."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Keeps collected taxes funding police, fire, parks", "Otherwise the funds are returned under state law"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure Y appears among the documents for the measure that the Town of Yountville posted online."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "list"
+source = "impartial-analysis"
+items = ["No argument against was posted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote increases the yearly limit for four years."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["shall the appropriations limit"]
+
+[[section.line]]
+text = "A no vote rejects the increase and keeps the limit as adjusted under state law."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["shall the appropriations limit"]
+
+[[question]]
+ask = "How long would the higher limit last?"
+lines = ["increase", "four-years"]
+
+[[question]]
+ask = "What happens if it fails?"
+lines = ["fails"]
+
+[[question]]
+ask = "How big is $3 million a year next to the town budget, or the current limit?"
+unanswered = true

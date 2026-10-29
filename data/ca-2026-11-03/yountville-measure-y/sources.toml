@@ -1,0 +1,57 @@
+# Archived sources for Town of Yountville Measure Y, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Napa County's Voter Information Guide could not be fetched
+# (napacounty.gov answers plain requests with a 403), so these are the
+# Town of Yountville's own copies from its Measure Y page. The ballot
+# question is quoted from the Town Clerk's June 16, 2026 staff report,
+# which the Town's page labels "Staff report with official ballot
+# language"; the adopted Resolution No. 26-4427 was not retrieved. The
+# Town Attorney's impartial analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is. No full text was posted beyond the question, and no tax
+# rate statement or fiscal analysis applies (not a tax).
+#
+# The impartial analysis and the argument in favor are scans with no
+# text layer. Their words were typed from the page images into
+# sources/*-transcription.txt, each naming the PDF and URL it copies;
+# those sources point at the transcription, and their url at the scan.
+#
+# The Town posts no argument against and no rebuttals; whether any was
+# filed is not confirmed against the printed county guide.
+
+[contest]
+id = "ca-2026-11-03-yountville-measure-y"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:yountville"
+kind = "measure"
+title = "Town of Yountville Measure Y: An Increase in the Town’s Appropriations Limit"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Town of Yountville, Yountville Town Council Staff Report, 2026 Consolidated Election and Measure Y, June 16, 2026: the proposed ballot measure, page 2"
+credit = "Yountville Town Council Staff Report, June 16, 2026"
+url = "https://townofyountville.gov/DocumentCenter/View/4198/2026-Consolidated-Election-and-Measure-Y-Staff-Report?bidId="
+file = "sources/yountville-measure-y-staff-report.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Town of Yountville, Impartial Analysis of Measure Y, Increase of Appropriation Limits – Gann Limit, Town Attorney, August 4, 2026 (transcribed from the scan)"
+credit = "Town Attorney’s Impartial Analysis of Measure Y"
+url = "https://townofyountville.gov/DocumentCenter/View/4199/Impartial-Analysis?bidId="
+file = "sources/impartial-analysis-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure Y, signed by the Yountville Town Council, as posted by the Town of Yountville (transcribed from the scan)"
+credit = "Argument in favor, Town of Yountville"
+url = "https://townofyountville.gov/DocumentCenter/View/4200/Measure-Y-Argument-in-Favor---Signed?bidId="
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"

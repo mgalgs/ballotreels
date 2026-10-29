@@ -1420,3 +1420,11 @@ source = "impartial-analysis"
 quote = "It is estimated that Measure S will provide an additional $2,000,000 in annual local funding"
 amount = 2000000
 period = "per-year"
+
+# Town of Yountville Measure Y: an increase in the Town's appropriations
+# limit, not a tax; no fiscal statement or revenue estimate was
+# published (the county's guide could not be fetched), and the
+# impartial analysis prints no cost.
+[yountville-measure-y]
+source = "impartial-analysis"
+status = "none-printed"
