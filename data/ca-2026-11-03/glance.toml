@@ -2194,3 +2194,13 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $618,176,000."
 amount = 618176000
 period = "unstated"
+
+# Southern Humboldt Community Healthcare District Measure K (Humboldt
+# County): County Counsel's Impartial Analysis, giving the district's
+# estimate of total debt service (the bonds are $25 million). The tax
+# rate statement says the same, but only as a scan.
+[southern-humboldt-healthcare-measure-k]
+source = "impartial-analysis"
+quote = "the total cost of debt service, including principal and interest, would be approximately $50.4 million"
+amount = 50400000
+period = "unstated"

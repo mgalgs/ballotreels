@@ -1,0 +1,77 @@
+# Archived sources for Southern Humboldt Community Healthcare District
+# Measure K, 2026-11-03 general election, as Humboldt County's voters see
+# it (sources/sources.md). Every id here may be cited by script.toml.
+# `kind` must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# The Humboldt County Office of Elections prints County Counsel's
+# impartial analysis and the argument in favor in its Full Voter
+# Information Guide (pages 26 and 27 of the PDF, cut into one excerpt),
+# and posts the district's own documents as one packet: the board's
+# resolution, the full text of the measure, the ballot question (Exhibit
+# B) and the tax rate statement (Exhibit C). Those packet pages are scans
+# with no text layer; the passages used were typed from the page images
+# into sources/packet-transcription.txt, which names the PDF and URL it
+# copies, and the ballot question and tax rate statement point at it. The
+# impartial analysis is the measure's neutral explanation; the tax rate
+# statement is its fiscal statement. No argument against was filed, and no
+# rebuttals are printed.
+#
+# A health care district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md). The district reaches into Mendocino County (the
+# resolution's recitals), where the same measure is staged separately as
+# southern-humboldt-healthcare-measure-k-mendocino; Humboldt County, where
+# the district mostly lies, keeps the plain name.
+
+[contest]
+id = "ca-2026-11-03-southern-humboldt-healthcare-measure-k"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:humboldt"
+kind = "measure"
+title = "Southern Humboldt Community Healthcare District Measure K: Hospital Bonds"
+voters = "the Southern Humboldt Community Healthcare District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Southern Humboldt Community Healthcare District, Resolution No. 26:06, Exhibit B: Ballot Question/Abbreviated Form of Ballot Measure, packet page 10, as posted by the Humboldt County Office of Elections (transcribed from the scan)"
+credit = "Resolution No. 26:06, Southern Humboldt Community Healthcare District"
+url = "https://humboldtgov.org/DocumentCenter/View/156831/Measure-K---Southern-Humboldt-Community-Healthcare-District"
+file = "sources/packet-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure K, Humboldt County Counsel, Humboldt County Office of Elections, Full Voter Information Guide, November 3, 2026 Statewide General Election, page 26 of the PDF"
+credit = "County Counsel’s Impartial Analysis, Humboldt County Full Voter Information Guide"
+url = "https://humboldtgov.org/DocumentCenter/View/158656/Full-Voter-Information-Guide---November-3-2026-Statewide-General-Election"
+file = "sources/vig-pp26-27-analysis-argument.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Southern Humboldt Community Healthcare District, Exhibit C: Tax Rate Statement, packet page 11, as posted by the Humboldt County Office of Elections (transcribed from the scan)"
+credit = "Tax Rate Statement, Southern Humboldt Community Healthcare District"
+url = "https://humboldtgov.org/DocumentCenter/View/156831/Measure-K---Southern-Humboldt-Community-Healthcare-District"
+file = "sources/packet-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure K, Humboldt County Office of Elections, Full Voter Information Guide, November 3, 2026 Statewide General Election, page 27 of the PDF (no argument against was filed)"
+credit = "Arguments, Humboldt County Full Voter Information Guide"
+url = "https://humboldtgov.org/DocumentCenter/View/158656/Full-Voter-Information-Guide---November-3-2026-Statewide-General-Election"
+file = "sources/vig-pp26-27-analysis-argument.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Southern Humboldt Community Healthcare District, Resolution No. 26:06 ordering the bond election, with Exhibit A, the full text of the measure, packet pages 1 to 9, as posted by the Humboldt County Office of Elections"
+credit = "Resolution No. 26:06, Southern Humboldt Community Healthcare District"
+url = "https://humboldtgov.org/DocumentCenter/View/156831/Measure-K---Southern-Humboldt-Community-Healthcare-District"
+file = "sources/measure-k-county-packet.pdf"
+retrieved = "2026-10-28"
