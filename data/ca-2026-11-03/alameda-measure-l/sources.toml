@@ -1,0 +1,54 @@
+# Archived sources for City of Alameda Measure L, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the
+# Alameda County Registrar of Voters' Composite Voter Information Guide
+# (PDF pages 783 to 789, printed AML-1 to AML-7).
+#
+# One guide page prints the ballot question and the City Attorney's
+# Impartial Analysis; the Tax Rate Statement, the measure's fiscal
+# statement, follows it. Some lines of the guide are set in a font with
+# no Unicode map; the checks do not yet read them (a decoder from
+# another round will).
+
+[contest]
+id = "ca-2026-11-03-alameda-measure-l"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:alameda"
+kind = "measure"
+title = "City of Alameda Measure L: $300 Million in Bonds for Flood, Earthquake and Street Projects"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "Alameda County Registrar of Voters, Composite Voter Information Guide, page AML-1: ballot question and City Attorney's Impartial Analysis of Bond Measure L"
+credit = "City Attorney's Impartial Analysis, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp783-789.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Tax Rate Statement of Bond Measure L, City of Alameda Finance Director, Alameda County Composite Voter Information Guide, page AML-2"
+credit = "Tax Rate Statement, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp783-789.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments for and against Bond Measure L and rebuttals, as printed in the Alameda County Composite Voter Information Guide, pages AML-3 to AML-4"
+credit = "Arguments, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp783-789.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Bond Measure L, City of Alameda Uncodified Ordinance No. 3408, Alameda County Composite Voter Information Guide, pages AML-5 to AML-7"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp783-789.pdf"
+retrieved = "2026-10-28"

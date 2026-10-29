@@ -1,0 +1,40 @@
+# Archived sources for City of Hayward Measure CC, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the
+# Alameda County Registrar of Voters' Composite Voter Information Guide
+# (PDF pages 919 to 920, printed HMCC-1 to HMCC-2).
+#
+# The guide prints no full text of the ordinance (the City Clerk mails
+# one on request) and no tax rate statement or fiscal analysis; the one
+# revenue estimate is in the ballot question and the City Attorney's
+# Impartial Analysis. No argument against was submitted; the guide says
+# so on page HMCC-2. The Registrar's scanned filing packet
+# (sources/rov-measure-packet.pdf) has no text layer and is not cited.
+# Some lines of the guide are set in a font with no Unicode map;
+# the checks do not yet read them (a decoder from another round will).
+
+[contest]
+id = "ca-2026-11-03-hayward-measure-cc"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:hayward"
+kind = "measure"
+title = "City of Hayward Measure CC: Business License Tax Update"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "Alameda County Registrar of Voters, Composite Voter Information Guide, page HMCC-1: ballot question and City Attorney's Impartial Analysis of Measure CC"
+credit = "City Attorney's Impartial Analysis, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp919-920.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in favor of Measure CC, as printed in the Alameda County Composite Voter Information Guide, page HMCC-2 (no argument against was submitted)"
+credit = "Argument in favor, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp919-920.pdf"
+retrieved = "2026-10-28"

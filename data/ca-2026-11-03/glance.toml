@@ -744,3 +744,62 @@ source = "ballot-label"
 quote = "providing $11,300,000 annually until ended by voters"
 amount = 11300000
 period = "per-year"
+
+# Alameda County Regional Transit Measure RTM: the guide prints no fiscal
+# analysis or tax rate statement; the one estimate is in its ballot
+# question (and the Legal Counsel's Impartial Analysis), for the whole
+# five-county district.
+[alameda-county-measure-rtm]
+source = "guide-page"
+quote = "generating approximately $980,000,000 annually"
+amount = 980000000
+period = "per-year"
+
+# City of Oakland Measure EE: the City Auditor's Impartial Analysis is the
+# fiscal statement; its total is a first-year cost, with ongoing costs
+# after it.
+[oakland-measure-ee]
+source = "auditor"
+quote = "the overall cost to the City ranges from $2.0 million to $2.6 million for the first year"
+amount = 2600000
+period = "per-year"
+direction = "cost"
+
+# City of Oakland Measure FF: the City Auditor's Impartial Analysis is the
+# fiscal statement (the ballot question's own estimate is "$4-$13 million
+# annually").
+[oakland-measure-ff]
+source = "auditor"
+quote = "would generate between $10.4 and $13.8 million of revenue in the first year"
+amount = 13800000
+period = "per-year"
+direction = "revenue-gain"
+
+# City of Hayward Measure CC: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is in its ballot question (and the City
+# Attorney's Impartial Analysis).
+[hayward-measure-cc]
+source = "guide-page"
+quote = "generating an additional $12 million annually until repealed"
+amount = 12000000
+period = "per-year"
+
+# City of Alameda Measure L: the city's Tax Rate Statement, its total debt
+# service.
+[alameda-measure-l]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $662,197,756."
+amount = 662197756
+period = "unstated"
+
+# City of Alameda Measure M: the guide prints no fiscal analysis (not a
+# tax measure).
+[alameda-measure-m]
+source = "guide-page"
+status = "none-printed"
+
+# City of Alameda Measure N: the guide prints no fiscal analysis (not a
+# tax measure).
+[alameda-measure-n]
+source = "guide-page"
+status = "none-printed"

@@ -1,0 +1,51 @@
+# Archived sources for Alameda County Regional Transit Measure RTM,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the
+# Alameda County Registrar of Voters' Composite Voter Information Guide
+# (PDF pages 758 to 768, printed RTM-1 to RTM-11).
+#
+# The Public Transit Revenue Measure District spans Alameda, Contra
+# Costa, San Mateo and Santa Clara counties and San Francisco; every
+# Alameda County voter votes on it, so its division is the county and it
+# has no `voters`. The same measure is staged under each other county's
+# `<county>-county-measure-rtm`.
+#
+# The guide prints no tax rate statement or fiscal analysis; the revenue
+# estimate is in the ballot question and the Legal Counsel's Impartial
+# Analysis. Some lines of the guide are set in a font with no Unicode
+# map; the checks do not yet read them (a decoder from another round
+# will).
+
+[contest]
+id = "ca-2026-11-03-alameda-county-measure-rtm"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:alameda"
+kind = "measure"
+title = "Alameda County Regional Transit Measure RTM: Half-Cent Sales Tax for Public Transit for 14 Years"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "Alameda County Registrar of Voters, Composite Voter Information Guide, page RTM-1: ballot question and Legal Counsel Impartial Analysis of Measure RTM"
+credit = "Legal Counsel Impartial Analysis, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp758-768.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments for and against Measure RTM and rebuttals, as printed in the Alameda County Composite Voter Information Guide, pages RTM-2 to RTM-4"
+credit = "Arguments, Alameda County Composite Voter Information Guide"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp758-768.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure RTM, the Connect Bay Area Transit Initiative, Alameda County Composite Voter Information Guide, pages RTM-4 to RTM-11"
+url = "https://acvote.alamedacountyca.gov/acvote-assets/02_election_information/PDFs/20261103/Voter%20Information%20Guide/vig_nov2026_eng.pdf"
+file = "sources/vig-pp758-768.pdf"
+retrieved = "2026-10-28"

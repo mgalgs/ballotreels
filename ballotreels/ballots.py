@@ -54,6 +54,9 @@ BALLOTS: dict[str, Ballot] = {
     # its ballot label only in the measure's proposed ordinance.
     # Riverside's guide is titled "County Voter Information Guide" on its
     # pages, with no county name, so its cards use that name as printed.
+    # its ballot label only in the measure's proposed ordinance. Alameda
+    # County's Registrar calls its guide the Composite Voter Information
+    # Guide.
     "ca": Ballot(guide="Official Voter Information Guide",
                  fiscal_label="Fiscal Impact:",
                  choices=("Yes", "No"),
@@ -216,6 +219,20 @@ BALLOTS: dict[str, Ballot] = {
                          "County Voter Information Guide",
                      "ca-2026-11-03-san-bernardino-ccd-measure-y-riverside":
                          "County Voter Information Guide",
+                     "ca-2026-11-03-alameda-county-measure-rtm":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-oakland-measure-ee":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-oakland-measure-ff":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-hayward-measure-cc":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-alameda-measure-l":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-alameda-measure-m":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-alameda-measure-n":
+                         "Alameda County Composite Voter Information Guide",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",
