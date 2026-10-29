@@ -97,6 +97,14 @@ def _say_number(m: re.Match) -> str:
     return f" {words} "
 
 
+def figures(text: str) -> list[str]:
+    """The numbers `text` says in figures, as written there ("33.6",
+    "1,500", "20" of "20%"): every one spoken_text says as a number,
+    ordinals ("3rd") aside."""
+    return [m.group("num") for m in _NUMBER.finditer(text)
+            if not m.group("ord")]
+
+
 def spoken_text(text: str) -> str:
     """`text` as the narrator says it: years, money, percents, numbers,
     acronyms (letter by letter) and symbols written out in words."""

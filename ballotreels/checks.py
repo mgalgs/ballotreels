@@ -17,6 +17,7 @@ import subprocess
 import unicodedata
 from collections import Counter
 from dataclasses import dataclass
+from decimal import ROUND_HALF_UP, Decimal
 from functools import lru_cache
 from pathlib import Path
 
@@ -27,6 +28,7 @@ from .geo import divisions
 from .geo.lookup import ballot_division
 from .illustrations import load_library
 from .index import voters_problem
+from .printed import number, with_unit
 from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, CHOICE_TEMPLATES,
                        CHOICES, FISCAL, NAMING_KINDS, PRECEDENT_RECORD,
                        SOURCE_KINDS, TEMPLATES, UNIVERSITY_GUIDE,
@@ -594,6 +596,83 @@ def check_visuals(c: Contest) -> list[Failure]:
             for msg in (_visual_problems(c, line, line.visual)
                         + _stamp_problems(line.visual)):
                 out.append(Failure("visual", f"{what} {msg}", label, i))
+    return out
+
+
+def _printed_values(v: Visual) -> list:
+    """The values a chart prints beside its marks: each bar's and each
+    share's, and a series' last (its axis prints round steps, not data)."""
+    if not isinstance(v.values, list) or not v.values or \
+            not all(_is_number(x) for x in v.values):
+        return []  # check_visuals reports it
+    if v.kind in ("bars", "share"):
+        return list(v.values)
+    if v.kind == "series":
+        return [v.values[-1]]
+    return []
+
+
+def _rounded(value: float, places: int) -> Decimal:
+    """`value` rounded half up to `places` decimals, as a person rounds
+    the figure written in the script (33.635 to one place is 33.6)."""
+    return Decimal(repr(float(value))).quantize(
+        Decimal(1).scaleb(-places), rounding=ROUND_HALF_UP)
+
+
+def _significant(figure: str) -> int:
+    """How many significant digits a figure is written with: "33.6" 3,
+    "0.5" 1, "1,500" 4."""
+    return len(figure.replace(",", "").replace(".", "").lstrip("0"))
+
+
+def check_chart_precision(c: Contest) -> list[Failure]:
+    """A chart and its line's narration state a quantity at one precision:
+    a value the chart prints (as film/measure.py does, ballotreels.printed)
+    must not differ from a figure its own line says that it rounds to at
+    the line's precision. Butte County's Measure Q printed 33.64 while its
+    line said "33.6 million", and the value was fixed by hand. A printed
+    value the line says exactly passes, and so does one the line does not
+    say at all: a chart often shows figures the voice leaves out.
+
+    A figure the chart prints exactly for one value is that value's, not a
+    rounding of its neighbour's ("from 1 percent ... to 3 percent" over
+    bars of 1 to 3 by halves), and a figure of one significant digit is
+    too coarse to call the same figure ("Proposition 1" over 1.25)."""
+    out = []
+    for label, sec in c.script.labelled():
+        for i, line in enumerate(sec.lines):
+            if line.visual is None:
+                continue
+            values = _printed_values(line.visual)
+            shown = {v: Decimal(number(v).replace(",", "").lstrip("-"))
+                     for v in values}
+            said = [(f, Decimal(f.replace(",", "")))
+                    for f in spoken.figures(line.text)]
+            loose = [(f, n) for f, n in said
+                     if n not in shown.values() and _significant(f) >= 2]
+            for value in values:
+                if any(n == shown[value] for _, n in said):
+                    continue
+                for f, n in loose:
+                    places = max(0, -n.as_tuple().exponent)
+                    if _rounded(abs(value), places) != n:
+                        continue
+                    printed = with_unit(value, line.visual.unit)
+                    if places <= 2:
+                        why = (f"the same figure rounded: the chart and the "
+                               f"voice must state it alike; make the value "
+                               f"{f.replace(',', '')}")
+                    else:
+                        why = ("which the chart, printing at most two "
+                               "decimals (ballotreels.printed.number), "
+                               "cannot show as said: the chart and the voice "
+                               "must state it alike")
+                    out.append(Failure(
+                        "chart-precision",
+                        f"the chart prints the value {value!r} as "
+                        f"{printed!r}, but the line says {f!r}, {why}",
+                        label, i))
+                    break
     return out
 
 
@@ -1943,6 +2022,7 @@ def check_contest(c: Contest, standard: Standard | None = None
         *check_university_guide(c),
         *check_questions(c),
         *check_visuals(c),
+        *check_chart_precision(c),
         *check_ballot(c),
         *check_card(c),
         *check_highlight_balance(c),
