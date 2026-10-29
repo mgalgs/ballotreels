@@ -18,9 +18,9 @@
 # their meanings from the question's words.
 #
 # The explanation is the question's own words and HB 1300 as chaptered.
-# "These caps ... do not affect classroom instruction, school-based
-# services, or other municipal expenditures" is the question's wording,
-# quoted and attributed to it, not a claim the narrator makes. The card's
+# "These caps ... do not affect classroom instruction" is on the card but
+# not narrated: said alone it reads as covering the levy cap too, and
+# whether the caps reach classrooms is the two sides' dispute. The card's
 # "SAU" is not said; the narration says "central office". The
 # House Election Law committee's majority and minority reports are
 # committee reports, not voter arguments, and are not cited.
@@ -104,15 +104,6 @@ source = "questions"
 highlight = ["6 percent of total school district appropriations"]
 
 [[section.line]]
-text = "The question says the caps do not affect classroom instruction, school-based services, or other municipal expenditures."
-sources = ["questions"]
-
-[section.line.visual]
-kind = "page"
-source = "questions"
-highlight = ["do not affect classroom instruction, school-based services, or other municipal expenditures"]
-
-[[section.line]]
 id = "bonds"
 text = "Bonded building costs count toward neither limit."
 sources = ["questions", "hb-1300"]
@@ -180,7 +171,7 @@ id = "vote"
 heading = "What your vote means"
 
 [[section.line]]
-text = "A yes vote adopts the limits."
+text = "A yes vote is for adopting the limits."
 sources = ["questions", "hb-1300"]
 
 [section.line.visual]
@@ -189,7 +180,7 @@ source = "questions"
 highlight = ["If adopted for a two-year period"]
 
 [[section.line]]
-text = "A no vote does not adopt the limits."
+text = "A no vote is against adopting the limits."
 sources = ["questions", "hb-1300"]
 
 [section.line.visual]
