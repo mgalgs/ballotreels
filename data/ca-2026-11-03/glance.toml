@@ -389,3 +389,13 @@ quote = "The City estimated that Measure EE would raise approximately $4,000,000
 amount = 4000000
 period = "per-year"
 direction = "revenue-gain"
+
+# City of Pacifica Measure BB: no tax rate statement or fiscal analysis (a
+# sales tax); the one estimate is the city's, as the City Attorney's
+# Impartial Analysis reports it (and the ballot question).
+[pacifica-measure-bb]
+source = "impartial-analysis"
+quote = "The City estimates that Measure BB, if approved, would generate approximately $5,000,000 in annual tax revenue until ended by voters."
+amount = 5000000
+period = "per-year"
+direction = "revenue-gain"

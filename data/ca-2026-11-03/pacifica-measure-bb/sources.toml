@@ -1,0 +1,75 @@
+# Archived sources for City of Pacifica Measure BB, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). Each document is the copy the San Mateo
+# County Assessor-County Clerk-Recorder & Elections (ACRE) posts on its
+# election page; the county publishes each measure's documents
+# separately, not as one pamphlet.
+#
+# The impartial analysis has a text layer, so it is cited as the PDF
+# itself. The resolution and the argument against are scans with no
+# text layer; the argument in favor has only a rough OCR layer on its
+# annotated copy (page 5), which the verbatim checks cannot use. Each of
+# those three has a typed transcription beside it (sources/*.txt, its
+# first lines saying which pages it copies), and `file` names the
+# transcription; `url` is the PDF's.
+#
+# The ballot question is printed only in the Council's resolution (its
+# Section 3), so the resolution backs two sources: the ballot label the
+# card quotes, and the full text. ACRE posts no tax rate statement or
+# fiscal analysis for this measure (a sales tax needs none); the one
+# revenue estimate is the city's, printed in the resolution and the
+# City Attorney's impartial analysis. The two rebuttals are archived and
+# not cited.
+
+[contest]
+id = "ca-2026-11-03-pacifica-measure-bb"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:pacifica"
+kind = "measure"
+title = "City of Pacifica Measure BB: One-Cent Sales Tax for City Services"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "City of Pacifica, Resolution No. 61-2026, Section 3: the ballot question, filed with the San Mateo County Chief Elections Officer"
+credit = "City of Pacifica Resolution No. 61-2026"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M402-Contest%20Code-Reso-Pacifica%20Transactions%20and%20Use%20Tax_Redacted.pdf"
+file = "sources/resolution-full-text.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney Impartial Analysis of Measure BB, by Michelle Marchetta Kenyon, City Attorney, City of Pacifica"
+credit = "City Attorney's Impartial Analysis"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MBB-ImpartialAnalysis-Pacifica-Transactions-and-Use-Tax.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure BB, filed with the Pacifica City Clerk"
+credit = "Argument in favor of Measure BB"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MBB-ArgInFavor-Pacifica-Transactions-and-Use-Tax_Redacted.pdf"
+file = "sources/argument-for.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure BB, filed with the Pacifica City Clerk"
+credit = "Argument against Measure BB"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M402-Contest%20Code-7ArgAgainst-Pacifica%20Transactions%20and%20Use%20Tax_Redacted.pdf"
+file = "sources/argument-against.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Pacifica, Resolution No. 61-2026, submitting the transactions and use tax measure to the voters"
+credit = "City of Pacifica Resolution No. 61-2026"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M402-Contest%20Code-Reso-Pacifica%20Transactions%20and%20Use%20Tax_Redacted.pdf"
+file = "sources/resolution-full-text.txt"
+retrieved = "2026-10-28"
