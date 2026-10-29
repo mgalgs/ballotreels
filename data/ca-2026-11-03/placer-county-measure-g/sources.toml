@@ -1,0 +1,45 @@
+# Archived sources for Placer County Measure G, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Placer County Elections publishes no combined guide document; it posts
+# each measure's guide pages as one PDF, headed "MEASURE G" and
+# "PROPOSAL TO AMEND PLACER COUNTY CHARTER SECTION 206", paged MG1 to
+# MG2. One PDF backs every source here. County Counsel's Impartial
+# Analysis is the measure's neutral explanation, of the kind the other
+# Placer County measures give it. Not a tax measure: the pages print no
+# fiscal statement, and no argument for or against was submitted.
+
+[contest]
+id = "ca-2026-11-03-placer-county-measure-g"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:placer"
+kind = "measure"
+title = "Placer County Measure G: Filling Vacancies on the Board of Supervisors"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Placer County Elections, Measure G: Proposal to Amend Placer County Charter Section 206, pages MG1 to MG2: the ballot question, and the notices that no argument in favor or against was submitted"
+credit = "Measure G, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-G.pdf"
+file = "sources/11032026_Measure-G.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Placer County Counsel, County Counsel’s Impartial Analysis of Measure G, Placer County Elections, Measure G, page MG1"
+credit = "Impartial Analysis, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-G.pdf"
+file = "sources/11032026_Measure-G.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Proposed Charter Text Revision, Article II, Section 206, Placer County Elections, Measure G, page MG2"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-G.pdf"
+file = "sources/11032026_Measure-G.pdf"
+retrieved = "2026-10-28"
