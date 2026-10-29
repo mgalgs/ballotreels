@@ -1402,3 +1402,12 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $93,507,933."
 amount = 93507933
 period = "unstated"
+
+# City of American Canyon Measure P: no tax rate statement or fiscal
+# analysis applies (a sales tax); the one estimate is the City's, as
+# the City Attorney's impartial analysis gives it.
+[american-canyon-measure-p]
+source = "impartial-analysis"
+quote = "The City estimates that Measure P will generate approximately $3.7 million in new local revenue per year."
+amount = 3700000
+period = "per-year"
