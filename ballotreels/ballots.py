@@ -616,6 +616,14 @@ BALLOTS: dict[str, Ballot] = {
                                      "guadalupe-measure-j",
                                      "santa-ynez-valley-measure-d",
                                      "allan-hancock-measure-h")},
+                     # The Imperial County Registrar of Voters posts each
+                     # measure's ballot question, full text, impartial
+                     # analysis and any argument as one PDF; no
+                     # countywide guide is posted, so each card names
+                     # its measure's PDF as headed, as Placer's do.
+                     "ca-2026-11-03-imperial-county-measure-s":
+                         "Measure S — Imperial County Public Safety Sales "
+                         "and Use Tax Initiative",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
