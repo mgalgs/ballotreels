@@ -134,6 +134,21 @@ district and its territory served for grades 9-12 only
 the district, so a contest names only the district, and is "May be"
 unless some piece of the district covers the whole zip.
 
+**Counties and the state maps.** The geo build's last step
+(`ballotreels/geo/counties.py`, or `geo counties` on a build already on
+disk) writes `counties.json`: each county's cities and school
+districts, every county's outline for the state and county pages' hero
+map, and the state's coarse outer outline (`mini`) for its button on
+the home page. The coarse outline is worked out by painting the
+counties onto a grid, closing the hairline gaps between neighbours
+(their outlines are simplified independently), filling holes and
+tracing the edge of each piece of land left
+(`ballotreels/geo/outline.py`); a piece too small to see at icon size
+is dropped and the path kept to at most 800 bytes. The serve tier only
+reads it: `/api/states`, which the home page already fetches to list
+the states, carries each state's coarse outline and its 160 px flag
+(`static/flags/<st>-mini.jpg`), never the county outlines.
+
 **Special districts.** A water, fire, health care, community services
 or community college district has no free statewide boundary layer.
 Its contest's division is its county, and its `sources.toml` names who

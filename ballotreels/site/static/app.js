@@ -606,7 +606,7 @@ function renderHome() {
                     "ballot, with every claim sourced." }),
     form,
   ]));
-  const states = el("ul", { class: "state-list" });
+  const states = el("ul", { class: "state-list home-states" });
   const browse = el("section", { class: "browse", hidden: "hidden" }, [
     el("h2", { class: "browse-title", text: "Or browse a state's measures" }),
     states,
@@ -629,11 +629,77 @@ function renderHome() {
 async function fillStates(list, section, token) {
   const { ok, body } = await getJson("/api/states");
   if (isStale(token) || !ok || !body.states.length) return;
-  list.replaceChildren(...body.states.map((s) => el("li", {}, [
-    el("a", { class: "btn btn-quiet state-link", href: `/${s.state}`,
-              text: s.name.replace(/^the /, "") }),
-  ])));
+  list.replaceChildren(...body.states.map((s) => {
+    const name = s.name.replace(/^the /, "");
+    const icon = s.mini ? stateIcon(s) : null;
+    return el("li", {}, [icon ?
+      el("a", { class: "btn btn-quiet state-link has-icon",
+                href: `/${s.state}` }, [icon, el("span", { text: name })]) :
+      el("a", { class: "btn btn-quiet state-link", href: `/${s.state}`,
+                text: name })]);
+  }));
   section.hidden = false;
+}
+
+// A state button's icon, the state page's hero drawn small: the state's
+// coarse outline (counties.json's `mini`, from /api/states) in the same
+// heavy pencil line, its 160 px flag inside or, without one, the pencil
+// tone. Sized to the button's text in px, so the line reads the same on
+// every state; the stylesheet colours it. Decorative: the button's text
+// is its name.
+const ICON_HEIGHT = 30;
+const ICON_WIDTH = 42;
+function stateIcon(s) {
+  const { width: w, height: h, path } = s.mini;
+  const fit = Math.min((ICON_HEIGHT - 4) / h, (ICON_WIDTH - 4) / w);
+  const px = (n) => +(n / fit).toFixed(2);  // n px in outline units
+  const pad = px(2);
+  const id = (what) => `state-icon-${s.state}-${what}`;
+  const svg = svgNode("svg", {
+    class: "state-icon", "aria-hidden": "true", focusable: "false",
+    viewBox: `${-pad} ${-pad} ${w + 2 * pad} ${h + 2 * pad}`,
+    width: ((w + 2 * pad) * fit).toFixed(1),
+    height: ((h + 2 * pad) * fit).toFixed(1),
+  });
+  const defs = svgNode("defs", {});
+  const clip = svgNode("clipPath", { id: id("land") });
+  clip.appendChild(svgNode("path", { d: path }));
+  const pencil = svgNode("filter", { id: id("pencil"), x: "-10%",
+    y: "-10%", width: "120%", height: "120%" });
+  pencil.append(
+    svgNode("feTurbulence", { type: "fractalNoise",
+      baseFrequency: String(+(0.12 / Math.max(w, h) * 100).toFixed(3)),
+      numOctaves: "1", seed: "7", result: "grain" }),
+    svgNode("feDisplacementMap", { in: "SourceGraphic", in2: "grain",
+      scale: String(px(0.9)), xChannelSelector: "R",
+      yChannelSelector: "G" }));
+  const tone = svgNode("pattern", { id: id("tone"),
+    patternUnits: "userSpaceOnUse", width: px(4), height: px(4),
+    patternTransform: "rotate(-35)" });
+  tone.append(
+    svgNode("rect", { class: "state-icon-tone-wash", width: px(4),
+                      height: px(4) }),
+    svgNode("line", { class: "state-icon-tone-line", x1: "0", y1: px(2),
+                      x2: px(4), y2: px(2), "stroke-width": px(1.2) }));
+  defs.append(clip, pencil, tone);
+  const land = { x: "0", y: "0", width: w, height: h,
+                 "clip-path": `url(#${id("land")})` };
+  // The line drawn first and the land over it, so only its outer half
+  // shows (as the hero's), with a lighter second pass a hair off it.
+  svg.append(defs,
+    svgNode("path", { class: "state-icon-edge", d: path,
+                      "stroke-width": px(3.4),
+                      filter: `url(#${id("pencil")})` }),
+    svgNode("path", { class: "state-icon-edge state-icon-soft", d: path,
+                      "stroke-width": px(2.2),
+                      transform: `translate(${px(1)} ${px(-0.6)})` }),
+    svgNode("rect", { class: "state-icon-paper", ...land }),
+    svgNode("rect", { fill: `url(#${id("tone")})`, ...land }));
+  if (s.flag) {
+    svg.appendChild(svgNode("image", { href: s.flag,
+      preserveAspectRatio: "xMidYMid slice", ...land }));
+  }
+  return svg;
 }
 
 // Where the contest page's back link goes: the ballot or state page

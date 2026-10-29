@@ -27,6 +27,7 @@ from pathlib import Path
 from typing import Any
 
 from .lookup import ballot_division
+from .outline import mini_outline
 from .shapes import point_in_polygon, row_intervals, simplify_ring
 
 FILENAME = "counties.json"
@@ -219,7 +220,9 @@ def _hero(counties: list[dict]) -> dict[str, Any]:
 def county_doc(geo_dir: str | Path) -> dict[str, Any]:
     """counties.json's content: `{"counties": {county ocd-id: {"name",
     "divisions": [the city and school-district ocd-ids in it, sorted]}},
-    "hero": {"width", "height", "paths": {county ocd-id: SVG path}}}`.
+    "hero": {"width", "height", "paths": {county ocd-id: SVG path}},
+    "mini": {"width", "height", "path"}}`, `mini` the state's outer
+    outline for the home page's icon (ballotreels.geo.outline).
     A school district's 9-12-only territory counts as the district
     (ballotreels.geo.lookup.ballot_division)."""
     geo_dir = Path(geo_dir)
@@ -237,6 +240,7 @@ def county_doc(geo_dir: str | Path) -> dict[str, Any]:
                                    "divisions": sorted(members[c["ocd_id"]])}
                      for c in sorted(counties, key=lambda c: c["name"])},
         "hero": _hero(counties) if counties else None,
+        "mini": mini_outline([c["rings"] for c in counties]),
     }
 
 

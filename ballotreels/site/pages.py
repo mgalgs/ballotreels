@@ -166,6 +166,12 @@ def flag_path(abbr: str) -> str:
     return f"flags/{abbr}.jpg"
 
 
+def mini_flag_path(abbr: str) -> str:
+    """The same flag 160 px wide, under static/: the home page's state
+    buttons show it inside the state's small outline."""
+    return f"flags/{abbr}-mini.jpg"
+
+
 # The hero map's colours: the site's graphite, paper and orange pencil
 # (style.css's --ink, --scrap and --accent).
 _INK = "#2e2b27"
