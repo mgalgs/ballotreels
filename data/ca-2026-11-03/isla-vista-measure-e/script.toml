@@ -16,7 +16,9 @@
 # The card quotes the ballot question from the sample ballot (page 33),
 # which prints only YES and NO boxes, no yes and no sentences, so the
 # card has no boxes and the vote lines take their meaning from the
-# question itself, both highlighting the same phrase. The ballot prints
+# question itself, both highlighting the same phrase. The card's origin
+# is the impartial analysis's sentence on who placed the measure, in the
+# same file. The ballot prints
 # the letter "E2026"; the card's number is the bare letter, as the title.
 #
 # The guide prints no tax rate statement or fiscal statement. The one
@@ -40,7 +42,7 @@ standard_version = 2
 source = "ballot-question"
 number = "E"
 title = "Increased Isla Vista Municipal Infrastructure and Services."
-origin = "ISLA VISTA COMMUNITY SERVICES DISTRICT"
+origin = "This Measure was placed on the ballot by the Board of Directors of the Isla Vista Community Services District"
 summary = "To fund local improvements to housing services; community based public safety; transportation, parking, and public transit; clean and safe public spaces, including lighting and sidewalks; and community facilities and events, shall voters authorize a Utility Users' Tax of 7% on methane and 6% on trash, sewage, water, and electric, authorizing establishment of exemptions, generating approximately $1,200,000 additional annually, until repealed by voters?"
 
 [[section]]
