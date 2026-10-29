@@ -1,0 +1,66 @@
+# Archived sources for Petrolia Fire Protection District Measure J,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Humboldt County Office of Elections prints County Counsel's
+# impartial analysis and the argument in favor in its Full Voter
+# Information Guide (pages 24 and 25 of the PDF, cut into one excerpt),
+# and posts the district's own documents as one packet: Resolution No.
+# 2026-0723, whose section 4 sets out the ballot question, and Ordinance
+# No. 2026-01, the full text. The resolution and ordinance pages are
+# scans with no text layer; the passages used were typed from the page
+# images into sources/packet-transcription.txt, which names the PDF and
+# URL it copies, and the ballot question points at it. The impartial
+# analysis is the measure's neutral explanation. A parcel tax has no tax
+# rate statement, and the guide prints no fiscal analysis; the one
+# revenue estimate is the ballot question's. No argument against was
+# filed, and no rebuttals are printed.
+#
+# A fire protection district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md).
+
+[contest]
+id = "ca-2026-11-03-petrolia-fpd-measure-j"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:humboldt"
+kind = "measure"
+title = "Petrolia Fire Protection District Measure J: Fire and Emergency Services Parcel Tax"
+voters = "the Petrolia Fire Protection District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Petrolia Fire Protection District, Resolution No. 2026-0723, Section 4: Ballot Question, packet pages 1 and 2, as posted by the Humboldt County Office of Elections (transcribed from the scan)"
+credit = "Resolution No. 2026-0723, Petrolia Fire Protection District"
+url = "https://humboldtgov.org/DocumentCenter/View/156832/Measure-J---Petrolia-Fire-Protection-District"
+file = "sources/packet-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure J, Humboldt County Office of Elections, Full Voter Information Guide, November 3, 2026 Statewide General Election, page 24 of the PDF"
+credit = "County Counsel’s Impartial Analysis, Humboldt County Full Voter Information Guide"
+url = "https://humboldtgov.org/DocumentCenter/View/158656/Full-Voter-Information-Guide---November-3-2026-Statewide-General-Election"
+file = "sources/vig-pp24-25-analysis-argument.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure J, Humboldt County Office of Elections, Full Voter Information Guide, November 3, 2026 Statewide General Election, page 25 of the PDF (no argument against was filed)"
+credit = "Arguments, Humboldt County Full Voter Information Guide"
+url = "https://humboldtgov.org/DocumentCenter/View/158656/Full-Voter-Information-Guide---November-3-2026-Statewide-General-Election"
+file = "sources/vig-pp24-25-analysis-argument.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Petrolia Fire Protection District, Resolution No. 2026-0723 and Exhibit A, Ordinance No. 2026-01, establishing a special tax, with the district's exemption request forms, packet pages 1 to 16, as posted by the Humboldt County Office of Elections"
+credit = "Ordinance No. 2026-01, Petrolia Fire Protection District"
+url = "https://humboldtgov.org/DocumentCenter/View/156832/Measure-J---Petrolia-Fire-Protection-District"
+file = "sources/measure-j-county-packet.pdf"
+retrieved = "2026-10-28"

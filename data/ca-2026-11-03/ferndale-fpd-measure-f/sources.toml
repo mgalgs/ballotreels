@@ -1,0 +1,63 @@
+# Archived sources for Ferndale Fire Protection District Measure F,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Humboldt County Office of Elections prints County Counsel's
+# impartial analysis and the argument in favor in its Full Voter
+# Information Guide (pages 17 and 18 of the PDF, cut into one excerpt),
+# and posts the district's own documents as one packet: Resolution No.
+# 2026-01, whose section 4 sets out the ballot question, and Ordinance No.
+# 2026-1, the full text, with its schedule of rates. The impartial
+# analysis is the measure's neutral explanation. A parcel tax has no tax
+# rate statement, and the guide prints no fiscal analysis; the one
+# revenue estimate is the ballot question's. No argument against was
+# filed, and no rebuttals are printed.
+#
+# A fire protection district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md).
+
+[contest]
+id = "ca-2026-11-03-ferndale-fpd-measure-f"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:humboldt"
+kind = "measure"
+title = "Ferndale Fire Protection District Measure F: Fire and Emergency Services Parcel Tax"
+voters = "the Ferndale Fire Protection District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Ferndale Fire Protection District, Resolution No. 2026-01, Section 4: Ballot Question, packet pages 1 and 2, as posted by the Humboldt County Office of Elections"
+credit = "Resolution No. 2026-01, Ferndale Fire Protection District"
+url = "https://humboldtgov.org/DocumentCenter/View/156836/Measure-F---Ferndale-Fire-Protection-District"
+file = "sources/measure-f-county-packet.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure F, Humboldt County Office of Elections, Full Voter Information Guide, November 3, 2026 Statewide General Election, page 17 of the PDF"
+credit = "County Counsel’s Impartial Analysis, Humboldt County Full Voter Information Guide"
+url = "https://humboldtgov.org/DocumentCenter/View/158656/Full-Voter-Information-Guide---November-3-2026-Statewide-General-Election"
+file = "sources/vig-pp17-18-analysis-argument.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure F, Humboldt County Office of Elections, Full Voter Information Guide, November 3, 2026 Statewide General Election, page 18 of the PDF (no argument against was filed)"
+credit = "Arguments, Humboldt County Full Voter Information Guide"
+url = "https://humboldtgov.org/DocumentCenter/View/158656/Full-Voter-Information-Guide---November-3-2026-Statewide-General-Election"
+file = "sources/vig-pp17-18-analysis-argument.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Ferndale Fire Protection District, Resolution No. 2026-01 and Ordinance No. 2026-1, establishing a special tax, with its Section 4 schedule of rates and Attachment A, packet pages 1 to 14, as posted by the Humboldt County Office of Elections"
+credit = "Ordinance No. 2026-1, Ferndale Fire Protection District"
+url = "https://humboldtgov.org/DocumentCenter/View/156836/Measure-F---Ferndale-Fire-Protection-District"
+file = "sources/measure-f-county-packet.pdf"
+retrieved = "2026-10-28"

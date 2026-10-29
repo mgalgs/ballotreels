@@ -1,0 +1,81 @@
+# Archived sources for Shasta-Tehama-Trinity Joint Community College
+# District Measure C, 2026-11-03 general election, as Humboldt County's
+# voters see it (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Humboldt County Office of Elections prints the impartial analysis
+# and the argument in favor in its Full Voter Information Guide (pages 11
+# and 12 of the PDF, cut into one excerpt), under a page heading that
+# misnames the measure a "Special Utilities Improvement and Operations
+# Parcel Tax Measure"; the analysis beneath it describes the bond, and
+# only the analysis is quoted. The county also posts the district's own
+# documents as one packet of scans with no text layer: the board's
+# resolution, the full text of the measure (Appendix A), the ballot
+# question (Appendix B) and the tax rate statement (Appendix C). The
+# passages used were typed from the page images into
+# sources/packet-transcription.txt, which names the PDF and URL it
+# copies, and the ballot question and tax rate statement point at it. The
+# impartial analysis is the measure's neutral explanation; the tax rate
+# statement is its fiscal statement. No argument against was filed in
+# Humboldt's guide, and no rebuttals are printed.
+#
+# A community college district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md). The district reaches into six counties (the
+# tax rate statement names them); Shasta, its home county, keeps the
+# plain shasta-tehama-trinity-jccd-measure-c, and Tehama, Trinity, Lassen,
+# Modoc and Humboldt each stage the same measure under a suffixed id.
+
+[contest]
+id = "ca-2026-11-03-shasta-tehama-trinity-jccd-measure-c-humboldt"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:humboldt"
+kind = "measure"
+title = "Shasta-Tehama-Trinity Joint Community College District Measure C: College Facility Bonds"
+voters = "the Shasta-Tehama-Trinity Joint Community College District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Shasta-Tehama-Trinity Joint Community College District, Resolution No. 2025-26-18, Appendix B: Abbreviated Form of Bond Measure, packet page 13, as posted by the Humboldt County Office of Elections (transcribed from the scan)"
+credit = "Resolution No. 2025-26-18, Shasta-Tehama-Trinity Joint Community College District"
+url = "https://humboldtgov.org/DocumentCenter/View/156839/Measure-C---Shasta-Tehama-Joint-Community-College-District"
+file = "sources/packet-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure C, Humboldt County Office of Elections, Full Voter Information Guide, November 3, 2026 Statewide General Election, page 11 of the PDF"
+credit = "Impartial Analysis, Humboldt County Full Voter Information Guide"
+url = "https://humboldtgov.org/DocumentCenter/View/158656/Full-Voter-Information-Guide---November-3-2026-Statewide-General-Election"
+file = "sources/vig-pp11-12-analysis-argument.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Shasta-Tehama-Trinity Joint Community College District, Appendix C: Tax Rate Statement, signed by Dr. Frank Nigro, Superintendent/President, packet pages 14 and 15, as posted by the Humboldt County Office of Elections (transcribed from the scan)"
+credit = "Tax Rate Statement, Shasta-Tehama-Trinity Joint Community College District"
+url = "https://humboldtgov.org/DocumentCenter/View/156839/Measure-C---Shasta-Tehama-Joint-Community-College-District"
+file = "sources/packet-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument In Favor Of Measure C, Humboldt County Office of Elections, Full Voter Information Guide, November 3, 2026 Statewide General Election, page 12 of the PDF (no argument against was filed)"
+credit = "Arguments, Humboldt County Full Voter Information Guide"
+url = "https://humboldtgov.org/DocumentCenter/View/158656/Full-Voter-Information-Guide---November-3-2026-Statewide-General-Election"
+file = "sources/vig-pp11-12-analysis-argument.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Shasta-Tehama-Trinity Joint Community College District, Resolution No. 2025-26-18 ordering the bond election, with Appendix A, the full text of the bond measure and its project list, packet pages 1 to 12, as posted by the Humboldt County Office of Elections"
+credit = "Resolution No. 2025-26-18, Shasta-Tehama-Trinity Joint Community College District"
+url = "https://humboldtgov.org/DocumentCenter/View/156839/Measure-C---Shasta-Tehama-Joint-Community-College-District"
+file = "sources/measure-c-county-packet.pdf"
+retrieved = "2026-10-28"

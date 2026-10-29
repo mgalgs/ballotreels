@@ -2346,3 +2346,39 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $618,176,000."
 amount = 618176000
 period = "unstated"
+
+# Southern Humboldt Community Healthcare District Measure K (Humboldt
+# County): County Counsel's Impartial Analysis, giving the district's
+# estimate of total debt service (the bonds are $25 million). The tax
+# rate statement says the same, but only as a scan.
+[southern-humboldt-healthcare-measure-k]
+source = "impartial-analysis"
+quote = "the total cost of debt service, including principal and interest, would be approximately $50.4 million"
+amount = 50400000
+period = "unstated"
+
+# Shasta-Tehama-Trinity Joint Community College District Measure C,
+# Humboldt County's contest: the district's Tax Rate Statement, its total
+# debt service (the bonds are $129,630,000).
+[shasta-tehama-trinity-jccd-measure-c-humboldt]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $264,800,000."
+amount = 264800000
+period = "unstated"
+
+# Ferndale Fire Protection District Measure F: a parcel tax, so no tax
+# rate statement; the one estimate is in its ballot question. It replaces
+# an assessment the guide does not size, so no direction is given.
+[ferndale-fpd-measure-f]
+source = "ballot-question"
+quote = "raising an estimated $116,000 annually"
+amount = 116000
+period = "per-year"
+
+# Petrolia Fire Protection District Measure J: a parcel tax, so no tax
+# rate statement; the one estimate is in its ballot question.
+[petrolia-fpd-measure-j]
+source = "ballot-question"
+quote = "raising an estimated $21,181 annually"
+amount = 21181
+period = "per-year"
