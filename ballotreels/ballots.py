@@ -34,6 +34,12 @@ class Ballot:
     # run across one column break and lose a hyphen at a line's end
     # (checks._card_quote_in)
     card_column_breaks: bool = False
+    # text pdftotext sets inside a card's quote that the page prints
+    # beside it, by contest id: a document footer, the ballot's "Yes" and
+    # "No" boxes. Each is dropped wherever it stands as whole words in
+    # that contest's card source before the verbatim check
+    # (checks.check_card); every other contest's check is unchanged.
+    card_strays: dict[str, tuple[str, ...]] = field(default_factory=dict)
 
     # the publication a measure's card is a page of where it is not the
     # guide (a measure the guide does not cover), by contest id
@@ -242,6 +248,29 @@ BALLOTS: dict[str, Ballot] = {
                         "San Francisco Voter Information Pamphlet & "
                         "Sample Ballot"
                         for x in ("rtm", "a", "b", "c", "d", "e", "f")},
+                     # San Bernardino's guide prints no ballot question:
+                     # these cards quote it from the city's resolution
+                     "ca-2026-11-03-adelanto-measure-p":
+                         "City of Adelanto Resolution No. 26-37",
+                     "ca-2026-11-03-twentynine-palms-measure-g":
+                         "City of Twentynine Palms Resolution No. 26-22",
+                     "ca-2026-11-03-needles-measure-d":
+                         "City of Needles Resolution No. 2026-29",
+                     "ca-2026-11-03-needles-measure-k":
+                         "City of Needles Resolution No. 2026-27",
+                     "ca-2026-11-03-grand-terrace-measure-n":
+                         "City of Grand Terrace Resolution No. 2026-21",
+                     "ca-2026-11-03-needles-measure-l":
+                         "City of Needles Ordinance 684-AC",
+                 },
+                 # pdftotext runs the ordinance's document footer into the
+                 # middle of Needles L's question, and the resolution's
+                 # ballot boxes into Grand Terrace N's
+                 card_strays={
+                     "ca-2026-11-03-grand-terrace-measure-n":
+                         ("Yes", "No"),
+                     "ca-2026-11-03-needles-measure-l":
+                         ("09960 00000\\45188769.I",),
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",

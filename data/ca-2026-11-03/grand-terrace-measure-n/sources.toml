@@ -1,0 +1,55 @@
+# Archived sources for City of Grand Terrace Measure N, 2026-11-03
+# general election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's page is cut from the San
+# Bernardino County Registrar of Voters' Voter Information Guide; "page"
+# is the guide's printed footer number (its PDF page is two higher).
+#
+# The guide prints no ballot question and no arguments. The ballot
+# question is in the City Council's resolution (its Section 3.A), and the
+# card quotes it from there; pdftotext runs the ballot's "Yes" and "No"
+# boxes into the middle of it, which the card check drops for this
+# contest (ballots.py, card_strays).
+
+[contest]
+id = "ca-2026-11-03-grand-terrace-measure-n"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:grand_terrace"
+kind = "measure"
+title = "City of Grand Terrace Measure N: 1% Sales Tax for General City Services"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "San Bernardino County Registrar of Voters, Voter Information Guide, page SB COMPREHENSIVE-238: City Attorney's Impartial Analysis of Measure N and Summary of Measure N"
+credit = "City Attorney's Impartial Analysis, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_p240.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Grand Terrace, Resolution No. 2026-21, Section 3.A: the ballot question, as posted by the San Bernardino County Registrar of Voters"
+credit = "Ballot question, City of Grand Terrace Resolution No. 2026-21"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofGrandTerrace/RES_GT.pdf"
+file = "sources/RES_GT.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City of Grand Terrace, Resolution No. 2026-21, calling for the placement of a general tax measure on the ballot, as posted by the San Bernardino County Registrar of Voters"
+credit = "City of Grand Terrace Resolution No. 2026-21"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofGrandTerrace/RES_GT.pdf"
+file = "sources/RES_GT.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "full-text"
+kind = "official-text"
+publisher = "City of Grand Terrace, ordinance imposing a one percent (1.00%) transactions and use tax (Exhibit A to Resolution No. 2026-21), as posted by the San Bernardino County Registrar of Voters"
+credit = "Full text of Measure N, City of Grand Terrace"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofGrandTerrace/FT_GT.pdf"
+file = "sources/FT_GT.pdf"
+retrieved = "2026-10-28"

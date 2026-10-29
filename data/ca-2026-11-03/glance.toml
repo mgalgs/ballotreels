@@ -863,3 +863,56 @@ quote = "Should the proposed Charter amendment be approved by the voters, in my 
 source = "controller"
 status = "not-determined"
 quote = "Should the proposed Charter amendment be approved by the voters, in my opinion, it would have a minimal impact on the cost of government, although at a level that cannot be determined at this time."
+
+# City of Adelanto Measure P: the guide prints no tax rate statement; the
+# one estimate is in the ballot question (and, without "annually", in the
+# City Attorney's Impartial Analysis).
+[adelanto-measure-p]
+source = "ballot-question"
+quote = "providing approximately $3,000,000 annually until ended by voters"
+amount = 3000000
+period = "per-year"
+
+# City of Twentynine Palms Measure G: the guide prints no tax rate
+# statement; the one estimate is in the ballot question (and the City
+# Attorney's Impartial Analysis).
+[twentynine-palms-measure-g]
+source = "ballot-question"
+quote = "providing approximately $2,000,000 in funds annually until ended by voters"
+amount = 2000000
+period = "per-year"
+
+# City of Grand Terrace Measure N: the guide prints no tax rate
+# statement; the one estimate is the City Attorney's Impartial Analysis's.
+[grand-terrace-measure-n]
+source = "guide-page"
+quote = "It is estimated that this tax will generate approximately $1,200,000 annually in revenue."
+amount = 1200000
+period = "per-year"
+direction = "revenue-gain"
+
+# City of Needles Measure D: the guide prints no fiscal statement; the
+# one estimate is the City Attorney's Impartial Analysis's (the argument
+# in favor's "$12,600 per year" is the supporters').
+[needles-measure-d]
+source = "impartial-analysis"
+quote = "If approved, the City has determined Measure D would result in an additional annual cost of $20,916 to the City."
+amount = 20916
+period = "per-year"
+direction = "cost"
+
+# City of Needles Measure K: the guide prints no fiscal statement; the
+# one estimate is the City's, in the City Attorney's Impartial Analysis.
+[needles-measure-k]
+source = "impartial-analysis"
+quote = "the City has determined that Measure K would generate approximately $200,000 annually beginning in 2027, $300,000 annually beginning in 2029, and approximately $400,000 annually upon full implementation beginning in 2030."
+amount = 400000
+period = "per-year"
+
+# City of Needles Measure L: the Tax Rate Statement's total debt service
+# (the bonds are $11,200,000).
+[needles-measure-l]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $25.16 million."
+amount = 25160000
+period = "unstated"
