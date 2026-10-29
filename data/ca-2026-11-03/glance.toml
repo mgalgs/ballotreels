@@ -673,3 +673,27 @@ source = "ballot-question"
 quote = "generating approximately $510,000 the first year"
 amount = 510000
 period = "per-year"
+
+# City of Rancho Mirage Measure R: the Riverside County guide prints no
+# fiscal analysis or tax rate statement; the one estimate is the city's,
+# in the City Attorney's Impartial Analysis (and the ballot question).
+[rancho-mirage-measure-r]
+source = "analysis"
+quote = "The City estimates that the Measure could generate approximately $7,500,000 annually in additional revenue."
+amount = 7500000
+period = "per-year"
+
+# City of Canyon Lake Measure E: the Riverside County guide prints no
+# fiscal analysis or tax rate statement; the one estimate is in the City
+# Attorney's Impartial Analysis (and the ballot question).
+[canyon-lake-measure-e]
+source = "analysis"
+quote = "It is estimated that Measure “E” will provide an additional $1,140,000 in annual local funding."
+amount = 1140000
+period = "per-year"
+
+# City of Indian Wells Measure H: the Riverside County guide prints no
+# fiscal analysis (not a new tax).
+[indian-wells-measure-h]
+source = "analysis"
+status = "none-printed"

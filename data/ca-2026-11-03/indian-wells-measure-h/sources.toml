@@ -1,0 +1,55 @@
+# Archived sources for City of Indian Wells Measure H, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The pages are cut from the County of
+# Riverside Registrar of Voters' County Voter Information Guide (ballot
+# type 270, an Indian Wells precinct); "page" is the guide's page.
+#
+# The guide prints the ballot question, the ordinance's full text, the
+# City Attorney's Impartial Analysis and an argument in favor; it prints
+# "NO ARGUMENT FILED AGAINST MEASURE “H”", no rebuttals and no fiscal
+# analysis. The 2026 measure reuses the letter of the 2005 admissions-tax
+# measure it amends, which the analysis also calls "Measure H".
+
+[contest]
+id = "ca-2026-11-03-indian-wells-measure-h"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:indian_wells"
+kind = "measure"
+title = "City of Indian Wells Measure H: Exemptions from the City Admissions Tax"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "County of Riverside Registrar of Voters, County Voter Information Guide, page 22: sample ballot, Measure H ballot question"
+credit = "Sample ballot, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000270.pdf"
+file = "sources/sample-ballot-page.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "analysis"
+kind = "official-title-summary"
+publisher = "County of Riverside Registrar of Voters, County Voter Information Guide, page 30: City Attorney Impartial Analysis of Measure H"
+credit = "City Attorney Impartial Analysis, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000270.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in favor of Measure H, as printed in the County of Riverside Registrar of Voters' County Voter Information Guide, page 30 (no argument against was filed)"
+credit = "Argument in favor, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000270.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Measure H, City of Indian Wells, Full Text Ballot Proposition: an ordinance amending section 3.14.040 of the Indian Wells Municipal Code, County of Riverside Registrar of Voters' County Voter Information Guide, page 29"
+credit = "Full text of Measure H, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000270.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"

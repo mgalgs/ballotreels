@@ -1,0 +1,45 @@
+# Archived sources for City of Rancho Mirage Measure R, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The pages are cut from the County of
+# Riverside Registrar of Voters' County Voter Information Guide (ballot
+# type 261, a Rancho Mirage precinct); "page" is the guide's page.
+#
+# The guide prints the ballot question, the City Attorney's Impartial
+# Analysis and an argument in favor; it prints "NO ARGUMENT FILED AGAINST
+# MEASURE “R”", no rebuttals, no fiscal analysis and not the ordinance's
+# full text (the City of Rancho Mirage's clerk has it; not archived).
+
+[contest]
+id = "ca-2026-11-03-rancho-mirage-measure-r"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:rancho_mirage"
+kind = "measure"
+title = "City of Rancho Mirage Measure R: One Cent Sales Tax for City Services"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "County of Riverside Registrar of Voters, County Voter Information Guide, page 22: sample ballot, Measure R ballot question"
+credit = "Sample ballot, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000261.pdf"
+file = "sources/sample-ballot-page.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "analysis"
+kind = "official-title-summary"
+publisher = "County of Riverside Registrar of Voters, County Voter Information Guide, page 30: City Attorney Impartial Analysis of Measure R"
+credit = "City Attorney Impartial Analysis, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000261.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in favor of Measure R, as printed in the County of Riverside Registrar of Voters' County Voter Information Guide, page 30 (no argument against was filed)"
+credit = "Argument in favor, Riverside County Voter Information Guide"
+url = "https://docs.voteinfo.net/voterInformation/root1103/ballots/bt000261.pdf"
+file = "sources/voter-guide-measure-pages.pdf"
+retrieved = "2026-10-28"

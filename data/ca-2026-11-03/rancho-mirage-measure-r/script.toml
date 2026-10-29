@@ -1,0 +1,150 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; who put it on the ballot and what it needs to pass; what would
+# change (no end date, where the money goes, the audit); the revenue
+# estimate; one line per side; what a vote does.
+#
+# The guide prints no fiscal analysis or tax rate statement; the one
+# revenue estimate is the city's, in the ballot question and the City
+# Attorney's Impartial Analysis. No archived source states the general
+# fund budget of the city, so the $7.5 million has no scale (STANDARD.md
+# 6.5; left open). The argument in favor says public safety is half of
+# the general fund's operating expenses, but gives no total, and it is
+# that side's fact (6.3).
+#
+# The card quotes the sample ballot, which prints the question but no
+# yes/no lines; the vote lines take the Impartial Analysis's yes/no
+# meanings and highlight the question's own words, as Los Angeles County
+# Measure A does.
+#
+# The guide prints an argument in favor and "NO ARGUMENT FILED AGAINST
+# MEASURE “R”": the no side is filed = false, as for Proposition 37, and
+# says so in the guide's own word.
+
+contest = "ca-2026-11-03-rancho-mirage-measure-r"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-label"
+number = "R"
+title = "RANCHO MIRAGE PUBLIC SAFETY, ROADS, CITY SERVICES MEASURE."
+origin = "CITY OF RANCHO MIRAGE"
+summary = "Shall the measure maintaining Rancho Mirage’s long-term financial stability, City services such as 9-1-1 emergency medical/fire response, fire protection, Sheriff’s patrols, crime prevention/response programs; keeping public areas safe/clean; maintaining streets, roads, parks, libraries, fire stations; retaining/attracting local businesses, other services, by establishing a 1¢ sales tax generating approximately $7,500,000 (seven point five million dollars) annually until ended by voters, requiring public spending disclosure, funds for Rancho Mirage only, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure R"
+
+[[section.line]]
+text = "City of Rancho Mirage Measure R asks voters in the city whether to add a one-cent sales tax."
+sources = ["ballot-label", "analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["establishing a 1¢ sales tax"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The City Council voted unanimously to place Measure R on the ballot, and it needs a simple majority to pass."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The 1 percent tax would be added to current sales taxes and would stay until voters end it."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section.line]]
+text = "Measure R is a general tax, so its money would go into the general fund of the city for any lawful purpose."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "An independent firm would audit the tax money and its spending every year."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The City Attorney's impartial analysis says the city estimates the tax could raise about $7.5 million a year."
+sources = ["analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say costs outpace revenues, and tourists and visitors pay an estimated 75 percent of sales tax."
+sources = ["arguments"]
+basis = ["In recent years, costs of providing essential services have risen faster than existing revenues", "Notably, an estimated 75% of sales tax revenue is paid by tourists and visitors."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Service costs rising faster than revenues", "75% of sales tax paid by visitors"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure R was filed, and none is in the Riverside County Voter Information Guide."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was filed"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is a vote in favor of adopting the 1 percent sales tax."
+sources = ["analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["establishing a 1¢ sales tax"]
+
+[[section.line]]
+text = "A no vote is a vote against adopting the 1 percent sales tax."
+sources = ["analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["establishing a 1¢ sales tax"]
