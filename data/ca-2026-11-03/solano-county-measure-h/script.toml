@@ -1,0 +1,179 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the tax today; what would change
+# (the rate and its start, where the money goes, how long it lasts, the
+# vote it needs); the revenue estimate as the impartial analysis gives
+# it; one line per side; what a vote does.
+#
+# Who votes: the tax applies only in unincorporated areas, but
+# Resolution No. 2026-150 orders the measure submitted "to the qualified
+# voters of Solano County", and the Registrar's Notice of Measures names
+# no narrower electorate, so the opening says county voters. Not
+# confirmed against a sample ballot.
+#
+# The card quotes the ballot question from the resolution, which prints
+# no yes/no lines, and the impartial analysis prints none either: the
+# vote lines give what the analysis says follows from approval and from
+# rejection ("would remain at 5%"), and both highlight the same phrase
+# of the question.
+#
+# How long it lasts: the ballot question says "until ended by the
+# voters"; the impartial analysis says "unless repealed or amended by
+# the Solano County Board of Supervisors or by the voters". The
+# narration gives the analysis's fuller wording.
+#
+# "Counsel" is heard as "Council" and "County's" as "Counties", so the
+# narration names neither. No tax rate statement or fiscal analysis
+# applies; the $58,500 a year is the ballot question's estimate, as the
+# analysis reports it, and no archived source states the county's
+# general fund budget to give it a scale (STANDARD.md 6.5; left open,
+# under [[question]]). The rate comparison with nearby counties is the
+# supporters', and the 140 percent increase and "tiny fraction of the
+# budget" are the opponents', so each stays in its side's section or out
+# (STANDARD.md 6.3).
+#
+# No rebuttal to the argument against was posted (sources/sources.md).
+
+contest = "ca-2026-11-03-solano-county-measure-h"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "H"
+title = "SOLANO COUNTY UNINCORPORATED TRANSIENT OCCUPANCY TAX"
+origin = "RESOLUTION NO. 2026-150"
+summary = "To fund local programs and essential public services, shall Solano County increase its existing Transient Occupancy Tax, paid by tourists and others staying overnight at short-term lodging facilities in unincorporated areas (excluding cities), from 5% to 12% of the total rent charged, providing approximately an additional $58,500 annually, until ended by the voters?"
+
+[[section]]
+id = "what"
+heading = "Measure H"
+
+[[section.line]]
+text = "Solano County Measure H asks county voters whether to raise the tax on short-term lodging outside the cities from 5 to 12 percent."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["from 5% to 12% of the total rent charged"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "who"
+text = "Today, guests at hotels, vacation rentals, campgrounds and other lodging in unincorporated areas pay 5 percent of the rent, for stays of 30 days or less."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "country-campground"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure H would raise that tax to 12 percent of the rent, starting in January 2027."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hotel-front-desk"
+
+[[section.line]]
+id = "general"
+text = "The money would go into the county general fund, for any lawful purpose set through the yearly budget."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+id = "end"
+text = "The tax would last until repealed or changed by the board of supervisors or by voters, and the measure needs a simple majority."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The impartial analysis says the ballot question estimates the increase would raise about $58,500 more each year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the county rate is far below many nearby counties and cities, and visitors would help pay for services they use."
+sources = ["argument-for"]
+basis = ["Solano County's current TOT rate is significantly lower than those of many surrounding counties and cities.", "This allows visitors to help support the community and services they use while minimizing the impact on local residents."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Rate below many nearby areas", "Visitors help pay for services"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the tax would make rural lodging less competitive and hurt small businesses that rely on tourism, with no spending guarantees."
+sources = ["argument-against"]
+basis = ["it will make Solano County's rural lodging less competitive. Higher lodging taxes will hurt small businesses that rely on tourism.", "But the money goes into the general fund where it can be spent on any purpose the Board of Supervisors chooses, with no spending guarantees."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Rural lodging less competitive", "No guarantees on spending"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves raising the tax from 5 to 12 percent of the rent."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["from 5% to 12% of the total rent charged"]
+
+[[section.line]]
+text = "A no vote keeps the tax at 5 percent."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["from 5% to 12% of the total rent charged"]
+
+[[question]]
+ask = "Who pays the tax, and where?"
+lines = ["who"]
+
+[[question]]
+ask = "When would the higher rate end, and what can the money be spent on?"
+lines = ["general", "end"]
+
+[[question]]
+ask = "How big is $58,500 a year next to the county budget?"
+unanswered = true
