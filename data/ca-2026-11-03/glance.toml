@@ -1053,3 +1053,11 @@ source = "fiscal-statement"
 quote = "the measure is estimated to generate approximately $17.1 million in the first full fiscal year (2029-30)."
 amount = 17100000
 period = "per-year"
+
+# Sonoma County Junior College District Measure AB (Sonoma County
+# voters): the district's Tax Rate Statement's total debt service.
+[santa-rosa-junior-college-measure-ab]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $1.76 billion."
+amount = 1760000000
+period = "unstated"

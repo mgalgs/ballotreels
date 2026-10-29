@@ -1,0 +1,71 @@
+# Archived sources for Sonoma County Junior College District Measure AB,
+# 2026-11-03 general election, for Sonoma County voters
+# (sources/sources.md). Every id here may be cited by script.toml.
+# `kind` must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# The Sonoma County Registrar of Voters publishes each measure's pages
+# of its guide as one PDF, headed "Local Ballot Measure: AB" and footed
+# "Sonoma County" with the guide's page numbers (049M501 to 049M506); no
+# cover page was archived, so the sources name those pages, not a guide
+# title. One PDF backs every source here. The County Counsels' Impartial
+# Analysis (Sonoma, Mendocino and Marin) is the measure's neutral
+# explanation; the district's Tax Rate Statement is its fiscal statement.
+#
+# A community college district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md). The district reaches Sonoma, Marin and
+# Mendocino counties: this contest is Sonoma's, the lead county where the
+# arguments were filed; santa-rosa-junior-college-measure-ab-marin is
+# Marin's, and Mendocino's is not staged.
+
+[contest]
+id = "ca-2026-11-03-santa-rosa-junior-college-measure-ab"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:sonoma"
+kind = "measure"
+title = "Sonoma County Junior College District Measure AB: College Facility Bonds"
+voters = "the Sonoma County Junior College District (Santa Rosa Junior College)"
+
+[[source]]
+id = "measure-question"
+kind = "official-title-summary"
+publisher = "Sonoma County Registrar of Voters, Local Ballot Measure: AB, page 049M501: Measure Question and What Your Vote Means"
+credit = "Measure Question, Sonoma County Registrar of Voters"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9311_MeasAB_SoCoJrCollDist_Bond_EN.pdf"
+file = "sources/MeasAB_EN.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "County Counsels’ Impartial Analysis of Measure AB, Sonoma County Registrar of Voters, Local Ballot Measure: AB, page 049M502"
+credit = "Impartial Analysis, Sonoma County Registrar of Voters"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9311_MeasAB_SoCoJrCollDist_Bond_EN.pdf"
+file = "sources/MeasAB_EN.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Sonoma County Junior College District, Tax Rate Statement — Measure AB, Sonoma County Registrar of Voters, Local Ballot Measure: AB, page 049M502"
+credit = "Tax Rate Statement, Sonoma County Junior College District"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9311_MeasAB_SoCoJrCollDist_Bond_EN.pdf"
+file = "sources/MeasAB_EN.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments in Favor of and Against Measure AB, and the rebuttals, Sonoma County Registrar of Voters, Local Ballot Measure: AB, pages 049M503 to 049M504"
+credit = "Arguments, Sonoma County Registrar of Voters"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9311_MeasAB_SoCoJrCollDist_Bond_EN.pdf"
+file = "sources/MeasAB_EN.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure AB (Sonoma County Junior College District, Santa Rosa Junior College), Sonoma County Registrar of Voters, Local Ballot Measure: AB, pages 049M505 to 049M506"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9311_MeasAB_SoCoJrCollDist_Bond_EN.pdf"
+file = "sources/MeasAB_EN.pdf"
+retrieved = "2026-10-28"
