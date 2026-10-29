@@ -1,0 +1,165 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; the district's fire taxes today; what it
+# needs to pass; what would change (the new tax replacing them, its
+# length, inflation, what the money may pay for); the ordinance's
+# revenue estimate; one line per side; what a vote does.
+#
+# The card's title is the PDF's own head; its origin and yes and no lines
+# are County Counsel's Impartial Analysis (the origin stops before the
+# resolution's number, which pdftotext breaks at a hyphen). "Counsel" is
+# heard as "Council" (standard/speakability.txt), so the narration says
+# "the impartial analysis".
+#
+# Who pays more and who pays less is the dispute between the sides: the
+# argument against puts Granite Bay's increase at $305 a parcel and says
+# Loomis would pay less; the rebuttal says everyone would pay the same.
+# The neutral sections say only what the ordinance and the analysis
+# state: which charges each area pays today, and that one tax would
+# replace them. The argument in favor's closed stations and the
+# rebuttal's district revenue figures stay with the sides (STANDARD.md
+# 6.3). No neutral archived source states the district's budget for the
+# $5.75 million a year to be compared with, so it has no scale
+# (STANDARD.md 6.5; left open). $375 is an amount per parcel (exempt).
+#
+# Sides come from the argument in favor and the argument against, not
+# the rebuttals.
+
+contest = "ca-2026-11-03-south-placer-fire-measure-b"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "B"
+title = "SOUTH PLACER FIRE PROTECTION DISTRICT, FIRE AND EMERGENCY MEDICAL RESPONSE MEASURE – SOUTH PLACER FIRE PROTECTION DISTRICT"
+origin = "This measure was placed on the ballot by the governing board of the District"
+summary = "To reopen closed fire stations; improve response times/firefighting capabilities; and attract/retain experienced emergency medical responders, shall South Placer Fire Protection District repeal two parcel taxes, require its Board to repeal an assessment, and establish a single, uniform $375 annual parcel tax on single-family parcels, and other parcels as specified, to generate approximately $5,750,000 annually until ended by voters, with considerations for low-income residents, disclosures, audits and citizen oversight, be adopted?"
+yes = "A “YES” vote on this Measure is a vote to authorize the special tax described in the measure."
+no = "A “NO” vote on this Measure is a vote against the proposed special tax."
+
+[[section]]
+id = "what"
+heading = "Measure B"
+
+[[section.line]]
+text = "South Placer Fire Protection District Measure B asks the district's voters whether to replace its fire taxes and assessment with one $375 yearly tax on each single-family parcel."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establish a single, uniform $375 annual parcel tax on single-family parcels"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the district charges an assessment and a special tax in its Loomis area, and a special tax in its Granite Bay area."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "fire-station-engine"
+
+[[section.line]]
+text = "Measure B needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "From 2027-2028, the new tax would replace those charges and continue until voters repeal it."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+text = "Other homes and buildings would pay by unit or by square foot, and the board could raise the tax each year with inflation."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+id = "uses"
+text = "The money could pay for firefighting, fire prevention, emergency medical service, equipment, staff and facilities."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "fire-station-engine"
+
+[[section]]
+id = "fiscal"
+heading = "What the measure says"
+
+[[section.line]]
+text = "The measure says the district board expects the tax to raise about $5.75 million a year."
+sources = ["text", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "set-aside-funds"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure B helps reopen two closed fire stations, and replaces an outdated patchwork of funding with one districtwide measure."
+sources = ["arguments"]
+basis = ["Two Granite Bay fire stations have been closed since 2022.", "Measure B will support reopening two strategically located fire stations, bringing fire fighters, emergency medical responders and critical response equipment closer to the people and businesses they serve.", "Measure B replaces an outdated patchwork of funding mechanisms with one consistent districtwide funding measure dedicated to fire and emergency medical services within South Placer Fire District."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Helps reopen two closed fire stations", "One districtwide tax replaces a patchwork"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Granite Bay would pay $305 more a parcel and Loomis would pay less, when the entire district should pay."
+sources = ["arguments"]
+basis = ["If there is a Districtwide need for funding, the entire District should pay, not just Granite Bay.", "This Ballot Measure increases the special tax currently paid by Granite Bay Division residents by $305 per parcel, yet reduces the amount paid by all Loomis residents."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Granite Bay pays $305 more a parcel", "Loomis pays less; the cost is not shared"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is a vote to authorize the special tax described in the measure."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["a vote to authorize the special tax"]
+
+[[section.line]]
+text = "A no vote is a vote against the proposed special tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["a vote against the proposed special tax"]
+
+[[question]]
+ask = "What would the tax money pay for?"
+lines = ["uses"]

@@ -1,0 +1,60 @@
+# Archived sources for South Placer Fire Protection District Measure B,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Placer County Elections publishes no combined guide document; it posts
+# each measure's guide pages as one PDF, headed "MEASURE B" and "SOUTH
+# PLACER FIRE PROTECTION DISTRICT, FIRE AND EMERGENCY MEDICAL RESPONSE
+# MEASURE – SOUTH PLACER FIRE PROTECTION DISTRICT", paged MB1 to MB6. One
+# PDF backs every source here. A parcel tax has no tax rate statement:
+# County Counsel's Impartial Analysis is the measure's neutral
+# explanation, and the revenue estimate is the ordinance's own (Section
+# 5), repeated in the ballot question.
+#
+# A fire protection district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md). The district lies within Placer County.
+
+[contest]
+id = "ca-2026-11-03-south-placer-fire-measure-b"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:placer"
+kind = "measure"
+title = "South Placer Fire Protection District Measure B: Fire and Emergency Medical Parcel Tax"
+voters = "the South Placer Fire Protection District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Placer County Elections, Measure B: South Placer Fire Protection District, Fire and Emergency Medical Response Measure, page MB1: the ballot question"
+credit = "Measure B, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-B.pdf"
+file = "sources/11032026_Measure-B.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Placer County Counsel, County Counsel’s Impartial Analysis of Measure B, Placer County Elections, Measure B, page MB1"
+credit = "Impartial Analysis, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-B.pdf"
+file = "sources/11032026_Measure-B.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments in Favor of and Against Measure B, and the rebuttals, Placer County Elections, Measure B, pages MB2 to MB3"
+credit = "Arguments, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-B.pdf"
+file = "sources/11032026_Measure-B.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure B Submitted by South Placer Fire Protection District (the District's ordinance), Placer County Elections, Measure B, pages MB4 to MB6"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-B.pdf"
+file = "sources/11032026_Measure-B.pdf"
+retrieved = "2026-10-28"

@@ -1419,3 +1419,12 @@ source = "impartial-analysis"
 quote = "The measure estimates that the tax would generate approximately $7 million annually"
 amount = 7000000
 period = "per-year"
+
+# South Placer Fire Protection District Measure B: a parcel tax, so no
+# tax rate statement; the ballot question gives the ordinance's revenue
+# estimate (its Section 5).
+[south-placer-fire-measure-b]
+source = "ballot-question"
+quote = "to generate approximately $5,750,000 annually"
+amount = 5750000
+period = "per-year"
