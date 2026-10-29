@@ -2194,3 +2194,13 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $618,176,000."
 amount = 618176000
 period = "unstated"
+
+# Arroyo Grande Measure C: no tax rate statement or fiscal analysis
+# applies; the one estimate is the City staff's, as the City Attorney's
+# impartial analysis gives it (the ballot question prints the same
+# $500,000).
+[arroyo-grande-measure-c]
+source = "impartial-analysis"
+quote = "City staff has estimated that Measure “C-26” could provide an additional $500,000 in annual local funding if the tax were levied at a 6% rate."
+amount = 500000
+period = "per-year"
