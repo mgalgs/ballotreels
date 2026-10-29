@@ -1,5 +1,6 @@
 """Draws the site-wide link-preview card (ballotreels/site/static/
-og-card.png, 1200x630): the site's graph paper, brand mark and fonts.
+og-card.png, 1200x630): the site's graph paper, the home hero's flag and
+the fonts.
 Run it again only to change the card:
 
     python scripts/og_card.py
@@ -36,15 +37,20 @@ def main():
     for y in range(0, H, 30):
         d.line([(0, y), (W, y)], fill=GRID, width=1)
 
-    # The header's brand mark, scaled up: a phone with a play triangle.
-    s = 6.2
-    ox, oy = 110, 175
-    d.rounded_rectangle([ox + 6 * s, oy + 2.5 * s, ox + 20 * s, oy + 23.5 * s],
-                        radius=2.5 * s, outline=INK, width=12)
-    d.polygon([(ox + 11 * s, oy + 9.5 * s), (ox + 16.5 * s, oy + 13 * s),
-               (ox + 11 * s, oy + 16.5 * s)], fill=ACCENT)
+    # The home hero's flag, as style.css's .home-flag draws it: tilted
+    # 1.5deg, with a soft offset shadow.
+    flag = Image.open(STATIC / "flags" / "us.jpg").convert("RGBA")
+    fw = 270
+    flag = flag.resize((fw, round(flag.height * fw / flag.width)),
+                       Image.LANCZOS)
+    shade = Image.new("RGBA", flag.size, INK + (46,))
+    flag = flag.rotate(1.5, resample=Image.BICUBIC, expand=True)
+    shade = shade.rotate(1.5, resample=Image.BICUBIC, expand=True)
+    fx, fy = 55, 300 - flag.height // 2
+    img.paste(shade, (fx + 5, fy + 7), shade)
+    img.paste(flag, (fx, fy), flag)
 
-    left = 330
+    left = 375
     d.text((left, 120), "ballotreels", font=font("Caveat-Variable.ttf", 150, 700),
            fill=INK)
     tagline = "Your ballot, explained"
