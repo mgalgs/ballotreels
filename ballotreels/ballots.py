@@ -624,7 +624,8 @@ BALLOTS: dict[str, Ballot] = {
                      **{f"ca-2026-11-03-{slug}":
                         "Full Voter Information Guide"
                         for slug in (
-                            "southern-humboldt-healthcare-measure-k",)},
+                            "southern-humboldt-healthcare-measure-k",
+                            "shasta-tehama-trinity-jccd-measure-c-humboldt")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
