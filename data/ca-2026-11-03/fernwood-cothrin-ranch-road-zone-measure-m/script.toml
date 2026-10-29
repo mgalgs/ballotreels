@@ -1,0 +1,196 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; what the zone is, who votes in
+# it and who placed the measure; the vote it needs; what would change
+# (the new tax, how it may change, what it pays for, how long it lasts,
+# what happens if it fails); the impartial analysis's revenue estimate;
+# one line per side; what a vote does.
+#
+# An argument in favor was printed; no argument against was ("NO
+# ARGUMENTS AGAINST THIS MEASURE WERE SUBMITTED"), so the no side says
+# so, filed = false (STANDARD.md 2.5), citing the pamphlet page that
+# prints the notice. The supporters' figures (the parcel count, today's
+# revenue, the county's fees, the cost per day, past projects) are
+# theirs, so they stay in their section or out (STANDARD.md 6.3).
+#
+# The pamphlet prints no tax rate statement; the revenue estimate is in
+# the ballot question and County Counsel's impartial analysis, which the
+# fiscal line names as the county attorney's ("Counsel" is heard as
+# "Council", standard/speakability.txt). The money is the zone's own
+# road revenue, and no archived source states a budget it would be part
+# of, so it has no scale (STANDARD.md 6.5; left open). The per-parcel
+# amounts are exempt. The ballot question and the analysis tie the
+# yearly adjustment to a construction cost index and state no cap, so
+# the script states none.
+
+contest = "ca-2026-11-03-fernwood-cothrin-ranch-road-zone-measure-m"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "M"
+title = "IMPARTIAL ANALYSIS OF MEASURE M"
+origin = "This Measure was placed on the ballot by the Board of Supervisors of the County of El Dorado at the request of the advisory committee for the Zone"
+summary = "Shall the measure to levy an annual special tax in an amount of $375.00 with annual adjustments tied to the Engineering News Record Construction Cost Index on each parcel of land within the Fernwood-Cothrin Ranch Zone of Benefit commencing fiscal year 2027/2028 and continuing for an unlimited duration, to be used only for road improvements and maintenance and generating an annual revenue of approximately $99,000.00, to replace the current special tax of $150.00, be adopted?"
+yes = "A “YES” vote is a vote to increase the annual special tax in the Fernwood-Cothrin Ranch Road Zone of Benefit from $150 to $375 per parcel, as provided in the Measure."
+no = "A “NO” vote is a vote against the increase of the special tax."
+
+[[section]]
+id = "what"
+heading = "Measure M"
+
+[[section.line]]
+text = "Measure M asks the voters of this road zone whether to raise its yearly road tax from $150 to $375 per parcel."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["an annual special tax in an amount of $375.00"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "The county formed the zone in 1985 to pay for road improvements and maintenance."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "country-road"
+
+[[section.line]]
+id = "voters"
+text = "The county counts 490 registered voters living in the zone."
+sources = ["resolution"]
+
+[[section.line]]
+text = "The Board of Supervisors placed Measure M on the ballot at the request of the zone's advisory committee."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section.line]]
+text = "Measure M needs two-thirds of the vote to pass."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The new tax would apply to every parcel, built on or not, starting in the 2027-2028 fiscal year."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "bars"
+title = "Yearly road tax per parcel, in dollars"
+source = "guide-page"
+unit = ""
+labels = ["Today", "Under Measure M"]
+values = [150, 375]
+
+[[section.line]]
+text = "The tax could be adjusted each year with a construction cost index."
+sources = ["guide-page"]
+
+[[section.line]]
+id = "use"
+text = "The money could pay only for the roads in the zone, and the tax would last until voters change or repeal it."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+text = "If Measure M fails, the $150 tax stays."
+sources = ["guide-page"]
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The county attorney's impartial analysis expects the tax to raise about $99,000 a year."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say no other public funds can pay for the zone's roads, and there is no reserve for emergency repairs."
+sources = ["argument-for"]
+basis = ["Outside of the Zone of Benefit Special Tax, there are no other public funds that can be used for our roads.", "There is no reserve for emergency repairs"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["No other public funds for these roads", "No reserve for emergency repairs"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure M was submitted, the voter pamphlet of this county says, and it prints no rebuttals."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "list"
+source = "guide-page"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is a vote to increase the tax to $375 per parcel a year."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["a vote to increase the annual special tax"]
+
+[[section.line]]
+text = "A no vote is a vote against the increase, and the $150 tax stays."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["a vote against the increase"]
+
+[[question]]
+ask = "Who votes on this?"
+lines = ["voters"]
+
+[[question]]
+ask = "What can the money be spent on?"
+lines = ["use"]
+
+[[question]]
+ask = "Where is the zone, and how many parcels are in it?"
+unanswered = true
+
+[[question]]
+ask = "How big is $99,000 a year next to what the zone spends on its roads?"
+unanswered = true

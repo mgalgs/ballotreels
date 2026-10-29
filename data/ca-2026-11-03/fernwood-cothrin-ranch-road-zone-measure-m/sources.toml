@@ -1,0 +1,49 @@
+# Archived sources for Fernwood-Cothrin Ranch Road Zone of Benefit Measure M,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The pages are cut from the El Dorado
+# County Elections Department's Voter Information Pamphlet (PDF pages
+# 76 to 79, printed pages 20 to 23); "pages" below are the printed numbers.
+#
+# A zone of benefit of County Service Area 9 is a special district: the
+# division is the county, and `voters` names the zone as the impartial
+# analysis does (docs/SCRIPT-FORMAT.md). The pamphlet prints the
+# Board of Supervisors' resolution with the ballot question, an argument
+# in favor, the notice that no argument against was submitted, and
+# County Counsel's impartial analysis; no rebuttals and no tax rate
+# statement (a special parcel tax).
+
+[contest]
+id = "ca-2026-11-03-fernwood-cothrin-ranch-road-zone-measure-m"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:el_dorado"
+kind = "measure"
+title = "Fernwood-Cothrin Ranch Road Zone of Benefit Measure M: Raising the Road Tax per Parcel from $150 to $375"
+voters = "the Fernwood-Cothrin Ranch Road Zone of Benefit #98114 of County Service Area 9"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "El Dorado County Elections Department, El Dorado County Voter Information Pamphlet, Statewide General Election, November 3, 2026, pages 21 to 23: ballot question, notice that no argument against was submitted, and County Counsel’s Impartial Analysis of Measure M"
+credit = "Impartial Analysis of Measure M, El Dorado County Voter Information Pamphlet"
+url = "https://www.eldoradocounty.ca.gov/files/assets/county/v/2/documents/government/elections/20261103/complete-booklet.pdf"
+file = "sources/vip-pp76-79-measure-m.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Full Text of Measure M: El Dorado County Board of Supervisors Resolution No. 101-2026, El Dorado County Voter Information Pamphlet, pages 20 and 21"
+credit = "Full Text of Measure M, El Dorado County Voter Information Pamphlet"
+url = "https://www.eldoradocounty.ca.gov/files/assets/county/v/2/documents/government/elections/20261103/complete-booklet.pdf"
+file = "sources/vip-pp76-79-measure-m.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure M, as printed in the El Dorado County Voter Information Pamphlet, page 22"
+credit = "Argument in favor, El Dorado County Voter Information Pamphlet"
+url = "https://www.eldoradocounty.ca.gov/files/assets/county/v/2/documents/government/elections/20261103/complete-booklet.pdf"
+file = "sources/vip-pp76-79-measure-m.pdf"
+retrieved = "2026-10-28"

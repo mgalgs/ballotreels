@@ -1,0 +1,39 @@
+# Archived sources for Tegra Road Zone of Benefit Measure K,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The pages are cut from the El Dorado
+# County Elections Department's Voter Information Pamphlet (PDF pages
+# 70 to 72, printed pages 14 to 16); "pages" below are the printed numbers.
+#
+# A zone of benefit of County Service Area 9 is a special district: the
+# division is the county, and `voters` names the zone as the impartial
+# analysis does (docs/SCRIPT-FORMAT.md). The pamphlet prints the
+# Board of Supervisors' resolution with the ballot question, the notice
+# that no arguments were submitted, and County Counsel's impartial
+# analysis; no tax rate statement applies (a special parcel tax).
+
+[contest]
+id = "ca-2026-11-03-tegra-road-zone-measure-k"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:el_dorado"
+kind = "measure"
+title = "Tegra Road Zone of Benefit Measure K: A $520 Road Tax per Parcel, Replacing the $260 Assessment"
+voters = "the Tegra Road Zone of Benefit #98123 of County Service Area 9"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "El Dorado County Elections Department, El Dorado County Voter Information Pamphlet, Statewide General Election, November 3, 2026, pages 15 and 16: ballot question, notice that no arguments were submitted, and County Counsel’s Impartial Analysis of Measure K"
+credit = "Impartial Analysis of Measure K, El Dorado County Voter Information Pamphlet"
+url = "https://www.eldoradocounty.ca.gov/files/assets/county/v/2/documents/government/elections/20261103/complete-booklet.pdf"
+file = "sources/vip-pp70-72-measure-k.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Full Text of Measure K: El Dorado County Board of Supervisors Resolution No. 099-2026, El Dorado County Voter Information Pamphlet, pages 14 and 15"
+credit = "Full Text of Measure K, El Dorado County Voter Information Pamphlet"
+url = "https://www.eldoradocounty.ca.gov/files/assets/county/v/2/documents/government/elections/20261103/complete-booklet.pdf"
+file = "sources/vip-pp70-72-measure-k.pdf"
+retrieved = "2026-10-28"

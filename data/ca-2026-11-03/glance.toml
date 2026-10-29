@@ -1650,3 +1650,64 @@ source = "ballot-question"
 quote = "providing approximately $9,000,000 annually until ended by voters"
 amount = 9000000
 period = "per-year"
+
+# Lynx Trail Road Zone of Benefit Measure A: the pamphlet prints no tax
+# rate statement; the one estimate is County Counsel's impartial
+# analysis's (the ballot question gives the same figure). It replaces a
+# $300 tax the pamphlet does not total, so no direction is given.
+[lynx-trail-road-zone-measure-a]
+source = "guide-page"
+quote = "The special tax authorized by this Measure is expected to generate revenue of approximately $33,300 per year."
+amount = 33300
+period = "per-year"
+
+# El Dorado County Measure S: the pamphlet prints no fiscal analysis or
+# tax rate statement (a sales tax); the one estimate is the ballot
+# question's.
+[el-dorado-county-measure-s]
+source = "guide-page"
+quote = "a 3/8% sales tax for 30 years in El Dorado County, providing approximately $13,000,000 annually"
+amount = 13000000
+period = "per-year"
+
+# Walnut Drive Road Zone of Benefit Measure J: the pamphlet prints no
+# tax rate statement; the one estimate is County Counsel's impartial
+# analysis's (the ballot question gives the same figure). It replaces a
+# $325 assessment the pamphlet does not total, so no direction is given.
+[walnut-drive-road-zone-measure-j]
+source = "guide-page"
+quote = "The special tax authorized by this Measure is expected to generate annual revenue of approximately $39,375."
+amount = 39375
+period = "per-year"
+
+# Tegra Road Zone of Benefit Measure K: the pamphlet prints no tax rate
+# statement; the one estimate is County Counsel's impartial analysis's
+# (the ballot question gives the same figure). It replaces a $260
+# assessment the pamphlet does not total, so no direction is given.
+[tegra-road-zone-measure-k]
+source = "guide-page"
+quote = "The special tax authorized by this Measure is expected to generate revenue of approximately $11,960 per year."
+amount = 11960
+period = "per-year"
+
+# Rancho Ponderosa Estates Road Zone of Benefit Measure L: the pamphlet
+# prints no tax rate statement; the one estimate is County Counsel's
+# impartial analysis's (the ballot question gives the same figure). It
+# replaces a $225 assessment the pamphlet does not total, so no
+# direction is given.
+[rancho-ponderosa-estates-road-zone-measure-l]
+source = "guide-page"
+quote = "The special tax authorized by this Measure is expected to generate revenue of approximately $14,500 per year."
+amount = 14500
+period = "per-year"
+
+# Fernwood-Cothrin Ranch Road Zone of Benefit Measure M: the pamphlet
+# prints no tax rate statement; the one estimate is County Counsel's
+# impartial analysis's (the ballot question gives the same figure). It
+# replaces a $150 tax the pamphlet does not total, so no direction is
+# given.
+[fernwood-cothrin-ranch-road-zone-measure-m]
+source = "guide-page"
+quote = "The special tax authorized by this Measure is expected to generate annual revenue of approximately $99,000."
+amount = 99000
+period = "per-year"

@@ -1,0 +1,55 @@
+# Archived sources for El Dorado County Measure S, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The pages are cut from the El Dorado
+# County Elections Department's Voter Information Pamphlet (PDF pages
+# 101 to 117, printed pages 45 to 61); "pages" below are the printed
+# numbers.
+#
+# The pamphlet prints the full text, which ends with the ballot
+# question, both arguments, both rebuttals and County Counsel's
+# impartial analysis. No tax rate statement or fiscal analysis applies
+# (a sales tax); the one revenue estimate is the ballot question's.
+
+[contest]
+id = "ca-2026-11-03-el-dorado-county-measure-s"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:el_dorado"
+kind = "measure"
+title = "El Dorado County Measure S: A 3/8% Sales Tax for 30 Years for Hospitals, Fire Protection and Emergency Response"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "El Dorado County Elections Department, El Dorado County Voter Information Pamphlet, Statewide General Election, November 3, 2026, pages 56 and 61: the ballot question and County Counsel’s Impartial Analysis of Measure S"
+credit = "Impartial Analysis of Measure S, El Dorado County Voter Information Pamphlet"
+url = "https://www.eldoradocounty.ca.gov/files/assets/county/v/2/documents/government/elections/20261103/complete-booklet.pdf"
+file = "sources/vip-pp101-117-measure-s.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure S, The El Dorado County Emergency Preparedness, Healthcare Access, and Wildfire Prevention Initiative, El Dorado County Voter Information Pamphlet, pages 45 to 56"
+credit = "Full Text of Measure S, El Dorado County Voter Information Pamphlet"
+url = "https://www.eldoradocounty.ca.gov/files/assets/county/v/2/documents/government/elections/20261103/complete-booklet.pdf"
+file = "sources/vip-pp101-117-measure-s.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure S and Rebuttal to the Argument Against Measure S, as printed in the El Dorado County Voter Information Pamphlet, pages 57 and 60"
+credit = "Argument in favor, El Dorado County Voter Information Pamphlet"
+url = "https://www.eldoradocounty.ca.gov/files/assets/county/v/2/documents/government/elections/20261103/complete-booklet.pdf"
+file = "sources/vip-pp101-117-measure-s.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure S and Rebuttal to Argument in Favor of Measure S, as printed in the El Dorado County Voter Information Pamphlet, pages 58 and 59"
+credit = "Argument against, El Dorado County Voter Information Pamphlet"
+url = "https://www.eldoradocounty.ca.gov/files/assets/county/v/2/documents/government/elections/20261103/complete-booklet.pdf"
+file = "sources/vip-pp101-117-measure-s.pdf"
+retrieved = "2026-10-28"
