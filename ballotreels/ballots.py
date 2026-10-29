@@ -616,6 +616,22 @@ BALLOTS: dict[str, Ballot] = {
                                      "guadalupe-measure-j",
                                      "santa-ynez-valley-measure-d",
                                      "allan-hancock-measure-h")},
+                     # Humboldt County's Full Voter Information Guide
+                     # prints each local measure's impartial analysis and
+                     # arguments but no ballot question (its sample ballot
+                     # pages are placeholders): each card quotes it from
+                     # the resolution or appendix that prints it, named as
+                     # headed
+                     "ca-2026-11-03-eureka-measure-h":
+                         "Resolution No. 2026-32",
+                     "ca-2026-11-03-eureka-measure-i":
+                         "Resolution No. 2026-42",
+                     "ca-2026-11-03-arcata-measure-g":
+                         "Resolution No. 256-63",
+                     "ca-2026-11-03-fortuna-measure-d":
+                         "Resolution No. 2026-12",
+                     "ca-2026-11-03-ferndale-unified-measure-e":
+                         "Abbreviated Form of Bond Measure",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
