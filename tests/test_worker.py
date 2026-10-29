@@ -826,9 +826,13 @@ class RecordingRunner(FakeRunner):
         super().__init__()
         self.trees = []
         self.rendered_scripts = []
+        self.checked = []
 
     def use_tree(self, tree):
         self.trees.append(Path(tree))
+
+    def check(self, stage, path):
+        self.checked.append(stage)
 
     def render(self, contest_dir, out_dir):
         self.rendered_scripts.append(
@@ -900,6 +904,8 @@ class RendersCommittedHeadTest(WorkerTestCase):
         self.assertEqual(runner.trees,
                          [self.tmp / "work" / "snapshots" / self.sha])
         self.assertIn(f"from commit {self.sha}", stderr.getvalue())
+        # the check, and the re-check after narrating, go to the snapshot
+        self.assertEqual(runner.checked, ["check", "check"])
         self.assertEqual(_git_state(self.fake_repo), before)
         # and the live checkout is as the operator left it
         self.assertTrue(self.code.read_text(encoding="utf-8")
@@ -915,6 +921,25 @@ class RendersCommittedHeadTest(WorkerTestCase):
         out.mkdir()
         runner.narrate(out)
         self.assertEqual((out / "narrated-by").read_text(), "committed\n")
+
+    def test_the_subprocess_runner_checks_with_the_snapshot_s_code(self):
+        # The check reads code and film/illustrations/ too: they come from
+        # the commit, not the worker's own imports or the live checkout.
+        package = self.fake_repo / "ballotreels"
+        (package / "__init__.py").write_text("", encoding="utf-8")
+        (package / "checkstage.py").write_text(
+            "import sys\nsys.stdout.write('checked by ' + sys.argv[1])\n"
+            "sys.exit(1)\n", encoding="utf-8")
+        sha = git_commit_all(self.fake_repo, "checkstage")
+        (package / "checkstage.py").write_text(CONFLICT, encoding="utf-8")
+        worker = self.make_worker(commit=False)
+        lease = worker.snapshots.acquire(sha)
+        self.addCleanup(lease.release)
+        runner = SubprocessRunner(self.fake_repo)
+        runner.use_tree(lease.tree)
+        with self.assertRaises(PipelineError) as cm:
+            runner.check("check", self.tmp)
+        self.assertEqual(str(cm.exception), "checked by check")
 
     def test_one_snapshot_per_commit_and_older_ones_pruned(self):
         worker = self.make_worker(commit=False)

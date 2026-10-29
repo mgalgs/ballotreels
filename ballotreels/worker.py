@@ -301,6 +301,14 @@ class Worker:
             self._export_dir(sha, f"{src}/{member.name}", member)
         return dest
 
+    def _checking(self, stage: str, path: Path, func):
+        """A checking stage's work: in the commit snapshot's own process
+        when the runner has one, so the commit's code and assets
+        (film/illustrations/, standard/) judge it, not this process's."""
+        if hasattr(self.runner, "check"):
+            return lambda: self.runner.check(stage, path)
+        return lambda: func(path, self.standard)
+
     def _heartbeat_loop(self, job_id: int, claim: str) -> None:
         while not self._hb_stop.is_set():
             if self._hb_stop.wait(self.heartbeat_interval):
@@ -403,10 +411,10 @@ class Worker:
                     ("sources", lambda: run_crash_sources(contest_dir)),
                     ("script", lambda: run_crash_script(
                         contest_dir, job, self.standard)),
-                    ("check", lambda: run_crash_check(
-                        contest_dir, self.standard)),
-                    ("narrate", lambda: run_crash_narrate(
-                        contest_dir, self.standard)),
+                    ("check", self._checking(
+                        "crash-check", contest_dir, run_crash_check)),
+                    ("narrate", self._checking(
+                        "crash-narrate", contest_dir, run_crash_narrate)),
                 )
             else:
                 contest_dir = self._prepare_scratch(job, wd, sha)
@@ -414,7 +422,8 @@ class Worker:
                     ("sources", lambda: run_sources(contest_dir)),
                     ("script", lambda: run_script(
                         contest_dir, self.writer, job, self.standard)),
-                    ("check", lambda: run_check(contest_dir, self.standard)),
+                    ("check", self._checking(
+                        "check", contest_dir, run_check)),
                     ("narrate", lambda: run_narrate(
                         contest_dir, self.runner, self.standard)),
                 )
