@@ -32,8 +32,10 @@ NEAR_CHAIN = [_square(4.2, 1, 0.05), _square(4.3, 2, 0.05),
 FAR_SPECK = _square(-3, 2, 0.05)
 # A county that is only a speck 3 degrees north of it: far.
 LONE_SPECK = _square(2, 7, 0.05)
-# A 1-degree square 4 degrees east: far, but too big to be an outlier.
-FAR_BIG = _square(8, 1, 1)
+# A 2-degree square 2 degrees east: far, but at 20% of the area too big
+# to be an outlier; nearer the middle than the specks, so it does not
+# shield them.
+FAR_BIG = _square(6, 1, 2)
 
 
 def _doc(counties):
@@ -68,9 +70,9 @@ class OutliersTest(unittest.TestCase):
 
     def test_the_hero_frames_the_body_and_its_far_big_piece(self):
         hero = self.doc["hero"]
-        # x 0 to 9, y 0 to 4: neither speck in the box
+        # x 0 to 8, y 0 to 4: neither speck in the box
         self.assertEqual((hero["width"], hero["height"]),
-                         (1000, _height(9, 4, 1000)))
+                         (1000, _height(8, 4, 1000)))
         self.assertEqual(len(_parts(hero["paths"][MAIN])), 1)
         self.assertEqual(min(_hero_xs(hero["paths"][MAIN])), 0)
         self.assertEqual(len(_parts(hero["paths"][CHAIN])), 3)
@@ -83,11 +85,11 @@ class OutliersTest(unittest.TestCase):
     def test_the_mini_frames_the_same(self):
         mini = self.doc["mini"]
         self.assertEqual((mini["width"], mini["height"]),
-                         (100, _height(9, 4, 100)))
+                         (100, _height(8, 4, 100)))
         parts = _parts(mini["path"])
         self.assertEqual(len(parts), 2)
         self.assertEqual(sorted(min(x for x, _ in p) for p in parts),
-                         [0, 89])
+                         [0, 75])
 
 
 class NearChainTest(unittest.TestCase):
@@ -137,9 +139,9 @@ class DrawnTest(unittest.TestCase):
             drawn([[BODY, FAR_SPECK], NEAR_CHAIN, [FAR_BIG], [LONE_SPECK]]),
             [[BODY], NEAR_CHAIN, [FAR_BIG], []])
 
-    def test_a_far_speck_too_big_to_be_tiny_stays(self):
-        # Alone with the body, a 0.3-degree island is over 0.5% of it.
-        island = _square(-3, 2, 0.3)
+    def test_a_far_piece_over_the_share_stays(self):
+        # Alone with the body, a 1.8-degree island is 17% of the area.
+        island = _square(-3, 2, 1.8)
         counties = [[BODY, island]]
         self.assertIs(drawn(counties), counties)
 
