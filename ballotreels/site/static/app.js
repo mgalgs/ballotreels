@@ -181,24 +181,63 @@ function ringsBox(rings) {
   return { minX, maxX, minY, maxY };
 }
 
-// Where to pin a district's letter: the middle of the part of it that
-// lies within the zip (that is where the choice matters), or the middle
-// of the district if none of a coarse grid over the zip falls in it.
-function labelPoint(districtRings, zipRings) {
-  const box = ringsBox(zipRings || districtRings);
-  let sx = 0, sy = 0, n = 0;
-  const steps = 24;
+// The point of a coarse grid over `box` that passes `inside` and lies
+// deepest in that area, farthest from any grid point that fails it. Not
+// the average of the passing points: in a curved or C-shaped area that
+// average can land outside it, where the letter can't be tapped.
+function deepestPoint(box, inside, steps = 24) {
+  const kx = Math.cos(((box.minY + box.maxY) / 2) * Math.PI / 180);
+  const dx = ((box.maxX - box.minX) / steps) * kx;
+  const dy = (box.maxY - box.minY) / steps;
+  const grid = [];
+  const outside = [];
   for (let i = 0; i <= steps; i++) {
+    grid.push([]);
     for (let j = 0; j <= steps; j++) {
       const x = box.minX + ((box.maxX - box.minX) * i) / steps;
       const y = box.minY + ((box.maxY - box.minY) * j) / steps;
-      if (insidePolygon(x, y, districtRings) &&
-          (!zipRings || insidePolygon(x, y, zipRings))) {
-        sx += x; sy += y; n++;
-      }
+      const ok = inside(x, y);
+      grid[i].push(ok);
+      if (!ok) outside.push([i, j]);
     }
   }
-  if (n) return [sx / n, sy / n];
+  let best = null, bestDepth = -1;
+  for (let i = 0; i <= steps; i++) {
+    for (let j = 0; j <= steps; j++) {
+      if (!grid[i][j]) continue;
+      // Beyond the box counts as outside, as nothing there passes.
+      let depth = Math.min((i + 1) * dx, (steps + 1 - i) * dx,
+                           (j + 1) * dy, (steps + 1 - j) * dy);
+      for (const [oi, oj] of outside) {
+        depth = Math.min(depth, Math.hypot((i - oi) * dx, (j - oj) * dy));
+      }
+      if (depth > bestDepth) { bestDepth = depth; best = [i, j]; }
+    }
+  }
+  if (!best) return null;
+  return [box.minX + ((box.maxX - box.minX) * best[0]) / steps,
+          box.minY + ((box.maxY - box.minY) * best[1]) / steps];
+}
+
+// Where to pin a district's letter: well inside the part of it that
+// lies within the zip (that is where the choice matters). When that part
+// is too thin for the grid, inside the district where the map shows it:
+// the zip's box padded as the map frames it.
+function labelPoint(districtRings, zipRings) {
+  const inDistrict = (x, y) => insidePolygon(x, y, districtRings);
+  let point = null;
+  if (zipRings) {
+    const box = ringsBox(zipRings);
+    const padX = (box.maxX - box.minX) * 0.1;
+    const padY = (box.maxY - box.minY) * 0.1;
+    point = deepestPoint(box,
+      (x, y) => inDistrict(x, y) && insidePolygon(x, y, zipRings))
+      || deepestPoint({ minX: box.minX - padX, maxX: box.maxX + padX,
+                        minY: box.minY - padY, maxY: box.maxY + padY },
+                      inDistrict, 48);
+  }
+  point = point || deepestPoint(ringsBox(districtRings), inDistrict);
+  if (point) return point;
   const own = ringsBox(districtRings);
   return [(own.minX + own.maxX) / 2, (own.minY + own.maxY) / 2];
 }
