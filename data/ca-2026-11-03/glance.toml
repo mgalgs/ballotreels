@@ -985,3 +985,12 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $1,350,000,000."
 amount = 1350000000
 period = "unstated"
+
+# Jefferson Union High School District Measure M: a parcel tax, so no
+# tax rate statement; the estimate is the Impartial Analysis's (the
+# ballot question rounds it to $3.4 million).
+[jefferson-union-high-measure-m]
+source = "impartial-analysis"
+quote = "is estimated to raise approximately $3,400,000 annually."
+amount = 3400000
+period = "per-year"
