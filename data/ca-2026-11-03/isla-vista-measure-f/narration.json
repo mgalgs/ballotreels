@@ -1,0 +1,243 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 56.35,
+  "phrases": [
+    {
+      "text": "Measure F asks the voters of this community services district to set a yearly limit on the district's spending of tax money.",
+      "start": 0.03,
+      "end": 8.04
+    },
+    {
+      "text": "The state constitution requires units of government, including this district, to have such a spending limit.",
+      "start": 8.7,
+      "end": 14.9
+    },
+    {
+      "text": "Voters may set the first limit, and the district's board then adjusts it each year for inflation and population.",
+      "start": 15.56,
+      "end": 22.16
+    },
+    {
+      "text": "Measure F needs a majority of the vote to pass.",
+      "start": 22.82,
+      "end": 25.85
+    },
+    {
+      "text": "Measure F would set the limit at $3.5 million each fiscal year, adjusted under state law, until voters change it.",
+      "start": 26.51,
+      "end": 34.54
+    },
+    {
+      "text": "The official voter guide for this election does not include a cost estimate for the measure.",
+      "start": 35.2,
+      "end": 40.02
+    },
+    {
+      "text": "The voter guide says no argument against Measure F was filed.",
+      "start": 40.68,
+      "end": 44.43
+    },
+    {
+      "text": "The voter guide says no argument for Measure F was filed.",
+      "start": 45.09,
+      "end": 48.72
+    },
+    {
+      "text": "A yes vote sets the yearly limit at $3.5 million.",
+      "start": 49.38,
+      "end": 53.27
+    },
+    {
+      "text": "A no vote does not set that limit.",
+      "start": 53.93,
+      "end": 56.32
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure F asks the voters of this community services district to set a yearly limit on the district's spending of tax money.",
+      "The state constitution requires units of government, including this district, to have such a spending limit.",
+      "Voters may set the first limit, and the district's board then adjusts it each year for inflation and population.",
+      "Measure F needs a majority of the vote to pass.",
+      "Measure F would set the limit at $3.5 million each fiscal year, adjusted under state law, until voters change it.",
+      "The official voter guide for this election does not include a cost estimate for the measure.",
+      "The voter guide says no argument against Measure F was filed.",
+      "The voter guide says no argument for Measure F was filed.",
+      "A yes vote sets the yearly limit at $3.5 million.",
+      "A no vote does not set that limit."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure F asks the voters of this community services district to set a yearly limit on the district's spending of tax money."
+      },
+      "bounds": [
+        0,
+        193680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure F asks the voters of this community services district to set a yearly limit on the district's spending of tax money.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The state constitution requires units of government, including this district, to have such a spending limit."
+      },
+      "bounds": [
+        208080,
+        358320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The state constitution requires units of government, including this district, to have such a spending limit.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Voters may set the first limit, and the district's board then adjusts it each year for inflation and population."
+      },
+      "bounds": [
+        372720,
+        532560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Voters may set the first limit, and the district's board then adjusts it each year for inflation and population.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure F needs a majority of the vote to pass."
+      },
+      "bounds": [
+        546960,
+        621120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure F needs a majority of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure F would set the limit at $3.5 million each fiscal year, adjusted under state law, until voters change it."
+      },
+      "bounds": [
+        635520,
+        829680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure F would set the limit at $3.5 million each fiscal year, adjusted under state law, until voters change it.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The official voter guide for this election does not include a cost estimate for the measure."
+      },
+      "bounds": [
+        844080,
+        961200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The official voter guide for this election does not include a cost estimate for the measure.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The voter guide says no argument against Measure F was filed."
+      },
+      "bounds": [
+        975600,
+        1067040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The voter guide says no argument against Measure F was filed.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The voter guide says no argument for Measure F was filed."
+      },
+      "bounds": [
+        1081440,
+        1170000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The voter guide says no argument for Measure F was filed.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote sets the yearly limit at $3.5 million."
+      },
+      "bounds": [
+        1184400,
+        1279200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote sets the yearly limit at $3.5 million.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote does not set that limit."
+      },
+      "bounds": [
+        1293600,
+        1352400
+      ]
+    }
+  ],
+  "sha256": "e3f2665107a2097e87931d68b2312d6d60e5f685a01726a74f490a884d1db276"
+}
