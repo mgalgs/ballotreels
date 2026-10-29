@@ -1143,6 +1143,40 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label=None,
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+
+    # Tennessee has no voter pamphlet. The Secretary of State's page
+    # "2026 Proposed Constitutional Amendments" prints, for each
+    # "Constitutional Amendment #1" (the contest title drops the "#" so
+    # designation() finds "Amendment"; badge AMENDMENT), the resolutions
+    # that proposed it, the Attorney General's Summary, the Question,
+    # the lines 'A "yes" vote is a vote to ...' and 'A "no" vote ...',
+    # and the choices "Yes" and "No". It prints no fiscal statement; the
+    # Fiscal Review Committee's fiscal note heads its own "FISCAL
+    # IMPACT:". No card quotes it, so the heading is never drawn. The
+    # archived page is a browser snapshot that sets each resolution's
+    # link target in brackets after its name; the strays drop them, so
+    # the card's origin quotes the line as the page prints it.
+    "tn": Ballot(guide="2026 Proposed Constitutional Amendments",
+                 fiscal_label="FISCAL IMPACT:",
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary",
+                 card_strays={
+                     "tn-2026-11-03-amendment-1": (
+                         "[https://publications.tnsosfiles.com/acts/113/"
+                         "resolutions/sjr0919.pdf]",
+                         "[https://publications.tnsosfiles.com/acts/114/"
+                         "resolutions/sjr0025.pdf]"),
+                     "tn-2026-11-03-amendment-2": (
+                         "[https://publications.tnsosfiles.com/acts/113/"
+                         "resolutions/hjr0081.pdf]",
+                         "[https://publications.tnsosfiles.com/acts/114/"
+                         "resolutions/sjr0001.pdf]"),
+                     "tn-2026-11-03-amendment-3": (
+                         "[https://publications.tnsosfiles.com/acts/113/"
+                         "resolutions/hjr0094.pdf]",
+                         "[https://publications.tnsosfiles.com/acts/114/"
+                         "resolutions/sjr0009.pdf]"),
+                 }),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
