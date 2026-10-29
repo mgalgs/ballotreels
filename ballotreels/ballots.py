@@ -123,6 +123,8 @@ BALLOTS: dict[str, Ballot] = {
                          "Orange County Voter Information Guide",
                      "ca-2026-11-03-westminster-measure-o":
                          "Orange County Voter Information Guide",
+                     "ca-2026-11-03-half-moon-bay-measure-i":
+                         "Resolution No. 2026-39",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",
