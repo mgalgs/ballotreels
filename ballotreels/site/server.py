@@ -701,6 +701,11 @@ def _county_links(entry: IndexEntry,
 COUNTY_LEVELS = ("county", "place", "school_district", "special")
 
 
+def _card(rel: str) -> str | None:
+    """A preview card's URL, if its file (under static/) is there."""
+    return f"/static/{rel}" if (STATIC_DIR / rel).is_file() else None
+
+
 def _county_measures(state: StateElection,
                      county: str) -> list[tuple[str, list[IndexEntry]]]:
     """Every measure voted on anywhere in `county` but the statewide
@@ -1057,20 +1062,20 @@ class PublicHandler(_JsonHandler):
             state = deps.states.get(m.group(1))
             if state is None or m.group(2) not in (None, state.year):
                 return None
-            card = pages.state_card_path(state.abbr)
             return pages.state_meta(
                 _state_name(state.abbr), path,
                 len(_statewide_measures(state)),
                 election_id=state.index.election.id,
-                image=(f"/static/{card}" if (STATIC_DIR / card).is_file()
-                       else None))
+                image=_card(pages.state_card_path(state.abbr)))
         county = self._county_at(path)
         if county:
             state, county = county
             return pages.county_meta(
                 state.counties()[county]["name"], _state_name(state.abbr),
                 state.index.election.id, state.county_path(county),
-                sum(len(e) for _, e in _county_measures(state, county)))
+                sum(len(e) for _, e in _county_measures(state, county)),
+                image=_card(pages.county_card_path(state.abbr, county))
+                or _card(pages.state_card_path(state.abbr)))
         measure = self._measure_at(path)
         if measure:
             state, entry = measure

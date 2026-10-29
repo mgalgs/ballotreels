@@ -259,6 +259,14 @@ class CountyPageTest(CountyServerTestCase):
                       '/ca/2026/county/alpha">', html)
         self.assertIn("4 measures on the ballot in Alpha County, "
                       "California", html)
+        # no card of its own (a fixture county), so the state's
+        self.assertIn('<meta property="og:image" content="https://'
+                      'ballotreels.org/static/og/ca.jpg">', html)
+
+    def test_county_card_path(self):
+        self.assertEqual(pages.county_card_path(
+            "ca", "ocd-division/country:us/state:ca/county:san_luis_obispo"),
+            "og/ca/san-luis-obispo.jpg")
 
     def test_a_county_with_no_measures_says_so(self):
         doc = self.county("delta")

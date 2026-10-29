@@ -150,8 +150,10 @@ def no_county_measures(county_name: str) -> str:
 
 
 def county_meta(county_name: str, state_name: str, election_id: str,
-                path: str, measures: int) -> PageMeta:
-    """A county's page: every local measure voted on anywhere in it."""
+                path: str, measures: int,
+                image: str | None = None) -> PageMeta:
+    """A county's page: every local measure voted on anywhere in it;
+    `image` its preview card, if it has one."""
     where = f"{county_name}, {state_name.removeprefix('the ')}"
     if not measures:
         description = (f"{no_county_measures(county_name)} ballotreels "
@@ -164,7 +166,8 @@ def county_meta(county_name: str, state_name: str, election_id: str,
                        f"school and special district, every claim "
                        f"sourced.")
     return PageMeta(title=county_heading(county_name, election_id),
-                    description=description, path=path)
+                    description=description, path=path,
+                    image=image or DEFAULT_IMAGE)
 
 
 def flag_path(abbr: str) -> str:
@@ -177,6 +180,14 @@ def state_card_path(abbr: str) -> str:
     """A state's own link-preview card under static/ (1200x630, JPEG,
     drawn by scripts/og_state_cards.py): its flag inside its outline."""
     return f"og/{abbr}.jpg"
+
+
+def county_card_path(abbr: str, county: str) -> str:
+    """A county's own card under static/, as state_card_path's, with
+    the county hatched: og/<st>/<the county page's slug>.jpg. Only a
+    state with local measures has them."""
+    slug = county.rsplit(":", 1)[1].replace("_", "-")
+    return f"og/{abbr}/{slug}.jpg"
 
 
 def mini_flag_path(abbr: str) -> str:

@@ -1,6 +1,8 @@
 """Draws each state's link-preview card (ballotreels/site/static/og/
 <st>.jpg, 1200x630): the state's flag inside its outline, from the state
-page's hero (var/geo/<st>/counties.json), beside its name. Run it after
+page's hero (var/geo/<st>/counties.json), beside its name. In a state
+with local measures each county gets one too (og/<st>/<county slug>.jpg,
+pages.county_card_path), its county hatched in orange. Run it after
 `geo counties` or a new flag:
 
     python scripts/og_state_cards.py [st...]
@@ -16,6 +18,9 @@ from PIL import Image, ImageChops, ImageDraw, ImageFilter
 sys.path[:0] = [str(Path(__file__).resolve().parent.parent),
                 str(Path(__file__).resolve().parent)]
 from ballotreels.geo.states import STATE_NAMES  # noqa: E402
+from ballotreels.index import load_index  # noqa: E402
+from ballotreels.site.pages import (county_card_path,  # noqa: E402
+                                    election_date, state_card_path)
 from og_card import (ACCENT, GRID, H, INK, INK_SOFT, PAPER,  # noqa: E402
                      STATIC, W, font)
 
@@ -51,16 +56,27 @@ def fitted(text: str, name: str, size: int, weight, width: float):
     return font(name, size, weight)
 
 
-def card(abbr: str, name: str) -> Image.Image:
-    hero = json.loads((REPO / "var" / "geo" / abbr / "counties.json")
-                      .read_text(encoding="utf-8"))["hero"]
+def _mask(shapes) -> Image.Image:
+    mask = Image.new("L", (W, H), 0)
+    md = ImageDraw.Draw(mask)
+    for ring in shapes:
+        if len(ring) > 2:
+            md.polygon(ring, fill=255, outline=255, width=2)
+    return mask
+
+
+def card(abbr: str, name: str, hero: dict, county: str | None = None,
+         lines_below: tuple[str, str] = ("Short, even-handed videos.",
+                                         "Every claim sourced.")
+         ) -> Image.Image:
     hw, hh = int(hero["width"]), int(hero["height"])
     bx0, by0, bx1, by1 = BOX
     scale = min((bx1 - bx0) / hw, (by1 - by0) / hh)
     ox = bx0 + ((bx1 - bx0) - hw * scale) / 2
     oy = by0 + ((by1 - by0) - hh * scale) / 2
-    shapes = [[(ox + x * scale, oy + y * scale) for x, y in ring]
-              for d in hero["paths"].values() for ring in rings(d)]
+    place = lambda d: [[(ox + x * scale, oy + y * scale) for x, y in ring]
+                       for ring in rings(d)]
+    shapes = [ring for d in hero["paths"].values() for ring in place(d)]
 
     img = Image.new("RGB", (W, H), PAPER)
     d = ImageDraw.Draw(img)
@@ -69,11 +85,7 @@ def card(abbr: str, name: str) -> Image.Image:
     for y in range(0, H, 30):
         d.line([(0, y), (W, y)], fill=GRID, width=1)
 
-    land = Image.new("L", (W, H), 0)
-    ld = ImageDraw.Draw(land)
-    for ring in shapes:
-        if len(ring) > 2:
-            ld.polygon(ring, fill=255, outline=255, width=2)
+    land = _mask(shapes)
     # The pencil edge: the land grown a few pixels, less the land.
     edge = ImageChops.subtract(land.filter(ImageFilter.MaxFilter(9)), land)
     img.paste(INK, mask=edge)
@@ -90,6 +102,22 @@ def card(abbr: str, name: str) -> Image.Image:
     layer = Image.new("RGB", (W, H), PAPER)
     layer.paste(flag, (round(ox), round(oy)))
     img.paste(layer, mask=land)
+
+    if county is not None:
+        # As the county page's hero: the county hatched and edged in
+        # orange; the rest of the state washed back so it stands out.
+        mine = _mask(place(hero["paths"][county]))
+        rest = ImageChops.subtract(land, mine)
+        img.paste(Image.blend(img, Image.new("RGB", (W, H), PAPER), 0.55),
+                  mask=rest)
+        hatch = Image.new("L", (W, H), 0)
+        hd = ImageDraw.Draw(hatch)
+        for x in range(-H, W, 11):
+            hd.line([(x, H), (x + H, 0)], fill=220, width=3)
+        img.paste(ACCENT, mask=ImageChops.multiply(hatch, mine))
+        ring = ImageChops.subtract(mine.filter(ImageFilter.MaxFilter(9)),
+                                   mine)
+        img.paste(ACCENT, mask=ring)
 
     d = ImageDraw.Draw(img)
     width = RIGHT - LEFT
@@ -113,11 +141,26 @@ def card(abbr: str, name: str) -> Image.Image:
     uy = y + round(tag.size * 1.05)
     d.line([(LEFT, uy + 4), (LEFT + tw * 0.5, uy - 2), (LEFT + tw, uy + 6)],
            fill=ACCENT, width=8, joint="curve")
-    body = font("PatrickHand-Regular.ttf", 40)
-    d.text((LEFT, uy + 40), "Short, even-handed videos.", font=body,
+    first, second = lines_below
+    d.text((LEFT, uy + 40), first,
+           font=fitted(first, "PatrickHand-Regular.ttf", 40, None, width),
            fill=INK_SOFT)
-    d.text((LEFT, uy + 90), "Every claim sourced.", font=body, fill=INK_SOFT)
+    d.text((LEFT, uy + 90), second,
+           font=fitted(second, "PatrickHand-Regular.ttf", 40, None, width),
+           fill=INK_SOFT)
     return img
+
+
+def has_local_measures(abbr: str) -> tuple[bool, str | None]:
+    """Whether the state's election has any measure below statewide, and
+    the election's id."""
+    for election_dir in sorted((REPO / "data").glob(f"{abbr}-*")):
+        index = load_index(election_dir)
+        local = any(e.kind == "measure"
+                    and e.division != index.election.state
+                    for e in index.entries)
+        return local, index.election.id
+    return False, None
 
 
 def main(argv: list[str]) -> int:
@@ -128,10 +171,26 @@ def main(argv: list[str]) -> int:
         if not (STATIC / "flags" / f"{abbr}.jpg").is_file():
             print(f"{abbr}: no flag; skipped", file=sys.stderr)
             continue
-        path = OUT / f"{abbr}.jpg"
+        geo = json.loads((REPO / "var" / "geo" / abbr / "counties.json")
+                         .read_text(encoding="utf-8"))
         name = STATE_NAMES[abbr].removeprefix("the ")
-        card(abbr, name).save(path, quality=86, optimize=True)
+        path = STATIC / state_card_path(abbr)
+        card(abbr, name, geo["hero"]).save(path, quality=86, optimize=True)
         print(f"{path}: written")
+        local, election_id = has_local_measures(abbr)
+        if not local:
+            continue
+        when = election_date(election_id) or ""
+        below = (f"{name}, {when}" if when else name,
+                 "Short, even-handed videos.")
+        for county, info in geo["counties"].items():
+            if county not in geo["hero"]["paths"]:
+                continue
+            path = STATIC / county_card_path(abbr, county)
+            path.parent.mkdir(exist_ok=True)
+            card(abbr, info["name"], geo["hero"], county, below).save(
+                path, quality=86, optimize=True)
+        print(f"{STATIC / 'og' / abbr}/: {len(geo['counties'])} counties")
     return 0
 
 
