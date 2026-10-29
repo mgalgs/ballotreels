@@ -1313,3 +1313,12 @@ source = "financial-impact"
 quote = "with estimated annual increases attributed to the measure as follows: 2027-28 ($32 million), 2028-29 ($66 million), 2029-30 ($105 million), 2030-31 ($147 million), 2031-32 ($193 million), 2032-33 ($244 million), 2033-34 ($299 million), 2034-35 ($359 million), 2035-36 ($426 million), and 2036-37 ($497 million)."
 amount = 497000000
 period = "per-year"
+
+# City of Los Angeles Measure PRT: the City Administrative Officer's
+# figure is the harbor's past yearly allocation, which the measure writes
+# into the charter; the other three changes are "cost-neutral".
+[los-angeles-measure-prt]
+source = "financial-impact"
+quote = "The historical annual allocation to the PAIP is approximately $28.6 million."
+amount = 28600000
+period = "per-year"
