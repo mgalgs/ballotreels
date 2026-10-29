@@ -1,0 +1,149 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; the parcel tax today and when it ends; what it needs
+# to pass; what would change (the new rate, its length, inflation, what
+# the money may pay for); the impartial analysis's
+# revenue estimate; one line per side; what a vote does.
+#
+# San Mateo County posts the measure's documents one by one, so the card
+# quotes the ballot question (Section 4), the resolution's heading and
+# its Section 3 from Resolution No. 11:25/26, and names that resolution
+# as its document. The resolution prints no yes or no lines, so the card
+# has none; the vote lines take their meanings from the impartial
+# analysis and highlight the resolution's own phrases, as Utah's do. The
+# impartial analysis prints no author, so the script never names one.
+#
+# The resolution's recital puts today's parcel tax revenue at $3.029
+# million, about 5.57% of the district's revenue; the supporters' "$3
+# million will disappear" is that figure, so it stays in their section
+# (STANDARD.md 6.3), and no archived source states the total revenue the
+# $4.4 million would be compared with, so it has no scale (6.5; left
+# open). $334.60 and $489 are amounts per parcel (exempt).
+#
+# No argument against Measure K appears among the documents San Mateo
+# County posted for it (sources.md does not say whether one was filed),
+# so the no side says that plainly and is marked filed = false.
+
+contest = "ca-2026-11-03-san-carlos-elementary-measure-k"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "K"
+title = "To protect outstanding educational programs, hands-on science, math, technology, arts, reading and writing, attract and retain high-quality teachers, maintain reasonable class sizes, and sustain property values, shall the San Carlos School District's measure be adopted to replace its existing parcel tax at a $489 per parcel rate (raising approximately $4,400,000 annually) for 8 years, with annual cost-of-living adjustments, citizen oversight, senior exemptions, all funds spent locally and no funds used for administrator salaries?"
+origin = "RESOLUTION OF THE BOARD OF EDUCATION OF THE SAN CARLOS SCHOOL DISTRICT, COUNTY OF SAN MATEO, STATE OF CALIFORNIA, ORDERING AN EDUCATION PARCEL TAX ELECTION"
+summary = "The Board of Education hereby requests the Registrar of Voters of the County (the \"Registrar of Voters\") to submit to the voters of the District on November 3, 2026, the following ballot measure:"
+
+[[section]]
+id = "what"
+heading = "Measure K"
+
+[[section.line]]
+text = "San Carlos School District Measure K asks the district's voters whether to replace its existing parcel tax with a tax of $489 per parcel."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["replace its existing parcel tax at a $489 per parcel rate"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the district levies a $334.60 parcel tax that voters passed in 2020, which ends in June 2028."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+text = "Measure K needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "From July 1, 2027, the new tax would replace the 2020 tax for up to eight years, rising each year with inflation."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section.line]]
+text = "The money could pay for teachers, small classes, science, libraries and the arts, but not administrators' pay."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The impartial analysis says the tax is estimated to raise about $4.4 million a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure K is not a brand-new tax; without it, $3 million would disappear, forcing teacher layoffs."
+sources = ["argument-for"]
+basis = ["is NOT a brand-new tax. It simply renews our existing school funding with a modest increase", "When it expires, $3 million will disappear from our district's budget, forcing teacher layoffs"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Renews funding, not a brand-new tax", "Keeps 24 teaching positions"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure K appears in the published measure documents of San Mateo County for this election."
+sources = ["argument-for"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["No argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote would impose the $489 parcel tax, adjusted each year, for up to eight years."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["$489 per parcel rate"]
+
+[[section.line]]
+text = "A no vote would not allow the new parcel tax to be levied."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["submit to the voters of the District"]

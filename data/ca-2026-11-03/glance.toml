@@ -1019,3 +1019,12 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $195,482,493."
 amount = 195482493
 period = "unstated"
+
+# San Carlos School District Measure K: a parcel tax, so no tax rate
+# statement; the estimate is the Impartial Analysis's (and the ballot
+# question's).
+[san-carlos-elementary-measure-k]
+source = "impartial-analysis"
+quote = "and is estimated to raise approximately $4,400,000 annually."
+amount = 4400000
+period = "per-year"
