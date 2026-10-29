@@ -7,8 +7,8 @@
 #
 # The measure raises a spending limit and levies no tax, and the pages
 # print no fiscal statement and no dollar figure, so the fiscal line
-# says there is no cost estimate, naming the county's guide as the
-# Alameda and Riverside scripts do. The analysis's "does not authorize
+# says there is no cost estimate, naming "the county voter guide" (no place
+# name is narrated, by the operator's rule). The analysis's "does not authorize
 # ... increase the property tax rate" is the supporters' "not a new
 # tax", so the neutral sections leave it out (STANDARD.md 6.3). The
 # card's origin is the analysis's first sentence, not the one that says
@@ -38,7 +38,7 @@ id = "what"
 heading = "Measure N"
 
 [[section.line]]
-text = "Schell-Vista Fire Protection District Measure N asks the district's voters whether to keep its higher spending limit for four more years."
+text = "Measure N asks the voters of this fire protection district whether to keep its higher spending limit for four more years."
 sources = ["measure-question", "impartial-analysis"]
 
 [section.line.visual]
@@ -51,7 +51,7 @@ id = "today"
 heading = "How the spending limit works"
 
 [[section.line]]
-text = "The California Constitution sets a yearly limit on a government's spending of tax money, which voters may raise for up to four years at a time."
+text = "The state constitution sets a yearly limit on a government's spending of tax money, which voters may raise for up to four years at a time."
 sources = ["impartial-analysis"]
 
 [section.line.visual]
@@ -104,7 +104,7 @@ id = "fiscal"
 heading = "What it would cost"
 
 [[section.line]]
-text = "The Sonoma County guide does not include a cost estimate for the measure."
+text = "The county voter guide does not include a cost estimate for the measure."
 sources = ["measure-question"]
 
 [section.line.visual]
@@ -134,7 +134,7 @@ side = "no"
 filed = false
 
 [[section.line]]
-text = "No argument against Measure N was submitted for the Sonoma County Registrar of Voters' printed pages on this measure."
+text = "No argument against Measure N was submitted for the county Registrar of Voters' printed voter guide pages on this measure."
 sources = ["arguments"]
 
 [section.line.visual]
