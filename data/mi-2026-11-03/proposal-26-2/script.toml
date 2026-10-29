@@ -22,9 +22,10 @@
 # Department of State could need more staff depending on how many
 # investigations it opens (at about $145,700 a year for each; the script
 # leaves the per-position figure out rather than imply a total the
-# agency does not state), and says fines would support local libraries
-# in an amount it calls indeterminate. With no dollar total, no scale is
-# needed (rule 6.5). The $250,000 is a contractor's own contracts, not
+# agency does not state). Its local-government paragraph pairs new
+# enforcement, court and jail costs with fine revenue for libraries; the
+# script states neither half rather than one without the other. With no
+# dollar total, no scale is needed (rule 6.5). The $250,000 is a contractor's own contracts, not
 # the state's budget, so it has no scale either.
 
 contest = "mi-2026-11-03-proposal-26-2"
@@ -110,15 +111,6 @@ sources = ["sfa"]
 kind = "illustration"
 name = "analyst-review"
 
-[[section.line]]
-id = "fines"
-text = "Fines collected would support local libraries."
-sources = ["sfa"]
-
-[section.line.visual]
-kind = "illustration"
-name = "library-shelves"
-
 [[section]]
 id = "yes"
 heading = "Why some vote yes"
@@ -177,4 +169,4 @@ lines = ["contribution-bans"]
 
 [[question]]
 ask = "What does this cost the state?"
-lines = ["costs", "fines"]
+lines = ["costs"]

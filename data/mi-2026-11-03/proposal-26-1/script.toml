@@ -17,8 +17,12 @@
 # Cost: the Senate Fiscal Agency gives three estimates of the convention
 # itself (about $10.2 million in total from the 1961 convention's costs
 # inflated; $0.85 million, $1.8 million and $3.9 million a month from
-# that, the redistricting commission and the Oklahoma Legislature) and
-# about $20.3 million for each election not held on a regular date. The
+# that same estimate, the redistricting commission and the Oklahoma
+# Legislature) and about $20.3 million for each election not held on a
+# regular date. The script does not repeat the agency's expectation that
+# elections fall on regular dates: the House Fiscal Agency expects the
+# opposite for the delegate election, so stating one agency's guess
+# alone would tilt the line. The
 # monthly figure is said "$850,000" because "$0.85" is not speakable
 # (standard/speakability.txt). Scale (rule 6.5): no archived source
 # states Michigan's general fund for 2026-27, so the figures are said
@@ -118,7 +122,7 @@ name = "analyst-review"
 
 [[section.line]]
 id = "cost-monthly"
-text = "Other estimates run between $850,000 and $3.9 million a month."
+text = "Estimates run between $850,000 and $3.9 million a month."
 sources = ["sfa"]
 
 [section.line.visual]
@@ -131,7 +135,7 @@ values = [0.85, 1.8, 3.9]
 
 [[section.line]]
 id = "cost-elections"
-text = "Elections off regular dates would add about $20.3 million each; the agency expects regular dates."
+text = "Elections off regular dates would add about $20.3 million each."
 sources = ["sfa"]
 
 [section.line.visual]
