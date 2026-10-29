@@ -1012,3 +1012,35 @@ status = "none-printed"
 [san-mateo-county-measure-u]
 source = "impartial-analysis"
 status = "none-printed"
+
+# City of Half Moon Bay Measure I: not a tax measure; San Mateo County's
+# published measure documents include no fiscal statement.
+[half-moon-bay-measure-i]
+source = "ballot-question"
+status = "none-printed"
+
+# City of Half Moon Bay Measure Q: not a tax measure; San Mateo County's
+# published measure documents include no fiscal statement.
+[half-moon-bay-measure-q]
+source = "ballot-question"
+status = "none-printed"
+
+# City of Brisbane Measure X: no tax rate statement or fiscal analysis
+# was filed; the one estimate is the City's, which the ballot question
+# prints (the City Attorney's impartial analysis gives the same
+# "approximately $1,000,000 in additional annual revenue").
+[brisbane-measure-x]
+source = "ballot-question"
+quote = "raising approximately $1,000,000 annually, until repealed by voters"
+amount = 1000000
+period = "per-year"
+
+# Town of Portola Valley Measure N: no tax rate statement or fiscal
+# analysis was filed; the one estimate is the Town's, which the ballot
+# question prints (the Town Attorney's impartial analysis gives
+# "approximately $2 million of additional revenue annually").
+[portola-valley-measure-n]
+source = "ballot-question"
+quote = "providing approximately $2,000,000 in locally controlled funding annually"
+amount = 2000000
+period = "per-year"

@@ -1,0 +1,60 @@
+# Archived sources for City of Half Moon Bay Measure I, 2026-11-03
+# general election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# San Mateo County publishes each measure's documents separately, as
+# PDFs filed by the city with the Assessor-County Clerk-Recorder &
+# Elections office, not as one pamphlet. The ballot question is printed
+# in the City Council's Resolution No. 2026-39, Section 3(a); the City
+# Attorney's impartial analysis is the measure's neutral explanation, the
+# kind a state's attorney general's explanatory statement is. Not a tax
+# measure: no fiscal analysis or tax rate statement was filed.
+#
+# The resolution and the argument in favor are scans with no text layer.
+# The verbatim checks read each one's transcription
+# (sources/*.transcription.txt, made from the page images), which a
+# source whose file is not a PDF gives them; the PDF beside it is the
+# archived copy, and the url is the PDF's.
+
+[contest]
+id = "ca-2026-11-03-half-moon-bay-measure-i"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:half_moon_bay"
+kind = "measure"
+title = "City of Half Moon Bay Measure I: Redefining the Measure D Downtown Area as the Town Center"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Half Moon Bay, Resolution No. 2026-39, Section 3(a): the ballot question, pages 2 to 3, as filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Ballot question, Resolution No. 2026-39"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M309-Contest%20Code-Reso-Half%20Moon%20Bay%20Coastal%20Land_Redacted_0.pdf"
+file = "sources/resolution-full-text.transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Denise S. Bazzano, City Attorney, City of Half Moon Bay, City Attorney Impartial Analysis of Measure I, San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "City Attorney Impartial Analysis of Measure I"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MI-ImpartialAnalysis-Half-Moon-Bay-Coastal-Land_Redacted.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure I, filed with San Mateo County Assessor-County Clerk-Recorder & Elections, page 3"
+credit = "Argument in favor, San Mateo County Assessor-County Clerk-Recorder & Elections"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M309-Contest%20Code-4ArgInFavor-Half%20Moon%20Bay%20Coastal%20Land_Redacted.pdf"
+file = "sources/argument-for.transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Half Moon Bay, Resolution No. 2026-39 and its Exhibit A, the proposed ordinance, as filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M309-Contest%20Code-Reso-Half%20Moon%20Bay%20Coastal%20Land_Redacted_0.pdf"
+file = "sources/resolution-full-text.pdf"
+retrieved = "2026-10-28"
