@@ -1044,3 +1044,13 @@ source = "ballot-question"
 quote = "providing approximately $2,000,000 in locally controlled funding annually"
 amount = 2000000
 period = "per-year"
+
+# City of Los Angeles Measure TE: the City Administrative Officer's
+# estimate is a total "through January 2030", from sales since the fire;
+# the statement names no number of years, so the period is unstated.
+[los-angeles-measure-te]
+source = "financial-impact"
+quote = "The estimated reduction in ULA revenue is between $35 million and $66 million through January 2030."
+amount = 66000000
+period = "unstated"
+direction = "revenue-loss"

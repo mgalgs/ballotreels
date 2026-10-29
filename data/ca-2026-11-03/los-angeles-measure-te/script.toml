@@ -1,0 +1,175 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; what the ULA tax is and what its
+# money pays for; the fire and how the tax applies today; what would
+# change; the City Administrative Officer's estimate; the one argument
+# filed; what a vote does.
+#
+# The card quotes the pamphlet: the title and ballot question from the
+# measure's own page (printed page 11), and the yes and no meanings from
+# its Ballot Summary (printed page 3). The heading above them, "CITY OF
+# LOS ANGELES PROPOSITION TE", stands in for an origin: the pamphlet
+# does not say who placed the measure on the ballot.
+#
+# The Financial Impact Statement compares the $35 million to $66 million
+# against no total, and says the General Fund is untouched; the money is
+# the House LA Fund's, whose size no archived source states. So the
+# figure has no scale (STANDARD.md 6.5; left open, under [[question]]).
+# Its "affordable housing production and homelessness prevention
+# programs" is stated with it, so the line gives the cost beside the
+# exemption (6.4). The supporters' "penalize survivors" and "not a
+# loophole for investors" are theirs (6.3), so they stay in their
+# section. No argument against was submitted: the no side is
+# filed = false, as for Proposition 37.
+
+contest = "ca-2026-11-03-los-angeles-measure-te"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "summary"
+number = "TE"
+title = "PROPERTY TRANSFER TAX EXEMPTION FOR VICTIMS OF JANUARY 2025 FIRE DISASTER."
+origin = "CITY OF LOS ANGELES PROPOSITION TE"
+summary = "Shall an ordinance be adopted to provide a one-time exemption from the City’s special documentary transfer tax (Proposition ULA) for residential properties that were damaged or destroyed in the Palisades Fire and are sold within five years of the date of the Fire?"
+yes = "A YES VOTE MEANS: You want sales of residential properties over $5 million (as adjusted for inflation) that were damaged or destroyed by the Palisades Fire to qualify for a one-time refund or exemption from the Proposition ULA tax if sold within five years from the date the Fire began."
+no = "A NO VOTE MEANS: You do not want sales of residential properties over $5 million (as adjusted for inflation) that were damaged or destroyed by the Palisades Fire to qualify for a one-time refund or exemption from the Proposition ULA tax if sold within five years from the date the Fire began."
+
+[[section]]
+id = "what"
+heading = "Measure TE"
+
+[[section.line]]
+text = "City of Los Angeles Measure TE asks voters in the city whether to exempt sales of homes damaged in the Palisades Fire from the Proposition ULA tax."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["one-time exemption"]
+
+[[section]]
+id = "background"
+heading = "The ULA tax"
+
+[[section.line]]
+text = "In 2022, city voters approved Proposition ULA, a tax on property sales over $5 million that pays for affordable housing and help for tenants."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-parcels"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "The Palisades Fire began on January 7, 2025, and damaged or destroyed about 5,495 residential structures."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "fire-damaged-lot"
+
+[[section.line]]
+text = "Today, a damaged home that sells for over the threshold owes the tax."
+sources = ["summary"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "who-qualifies"
+text = "Measure TE would exempt the sale once, if the owner on the day the fire began sells by January 6, 2030."
+sources = ["summary", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+text = "Owners who already paid the tax on such a sale could get a refund."
+sources = ["summary", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "penalty-refund"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+id = "cost"
+text = "The City Administrative Officer says the General Fund is not affected, but the housing and homelessness prevention fund would lose between $35 million and $66 million through January 2030."
+sources = ["financial-impact"]
+
+[section.line.visual]
+kind = "illustration"
+name = "revenue-drop"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say fire survivors who must sell should not pay the ULA tax, and the purpose of ULA stays."
+sources = ["argument-for"]
+basis = ["They should not be further penalized by the ULA tax for circumstances beyond their control.", "It preserves the core purpose of ULA"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Tax relief for fire survivors", "Keeps the purpose of ULA"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure TE was submitted, so the voter pamphlet prints only the argument in favor of it."
+sources = ["argument-for"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means you want these sales to qualify for a one-time refund or exemption from the tax."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["You want sales"]
+
+[[section.line]]
+text = "A no vote means you do not want these sales to qualify."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["You do not want sales"]
+
+[[question]]
+ask = "Which fire-damaged homes would qualify?"
+lines = ["who-qualifies"]
+
+[[question]]
+ask = "How much tax money would the exemption cost, and what does that money pay for?"
+lines = ["cost"]
+
+[[question]]
+ask = "How big is that loss next to the fund's yearly revenue?"
+unanswered = true
