@@ -8,8 +8,11 @@ they read and write the same state.
 
 from __future__ import annotations
 
+import hashlib
 import hmac
 import io
+import os
+import tempfile
 import json
 import math
 import re
@@ -28,6 +31,7 @@ from ..geo.states import STATE_NAMES, chambers, state_for_zip
 from ..index import (ContestIndex, IndexEntry, ballot_order, key_for,
                      level_of, load_index, voters_line)
 from ..crash_course import split_key_contest
+from ..narration_store import MAX_TAKE_BYTES
 from ..queue import TRANSITIONS, JobQueue
 from ..related import load_related, related_to
 from ..standard import Standard, load_standard
@@ -179,6 +183,12 @@ def _incoming_dir(data_dir: Path, job_id: int, claim: str) -> Path:
     return data_dir / "cache" / ".incoming" / f"{job_id}-{claim}"
 
 
+def _narration_dir(data_dir: Path) -> Path:
+    """The narration store: each take's audio as <sha256>.wav, written
+    and read only through the private listener."""
+    return data_dir / "narration"
+
+
 def _local_video_path(key_hash: str, job_id: int | str, name: str) -> str:
     """The public path of a locally stored file. The job id is part of
     it, so a regenerated video gets a new URL rather than one that
@@ -188,14 +198,18 @@ def _local_video_path(key_hash: str, job_id: int | str, name: str) -> str:
 
 def _sweep_orphaned_dirs(data_dir: Path, queue: JobQueue) -> None:
     """On every start: drop an `.incoming/` upload directory whose job is
-    no longer running under that claim, and anything under `cache/` that
-    is not the current local video for a `videos` row (R-Q8)."""
+    no longer running under that claim, a narration upload's leftover
+    temporary file, and anything under `cache/` that is not the current
+    local video for a `videos` row (R-Q8)."""
     incoming_root = data_dir / "cache" / ".incoming"
     if incoming_root.is_dir():
         live = queue.live_claims()
         for d in incoming_root.iterdir():
             if d.is_dir() and d.name not in live:
                 shutil.rmtree(d, ignore_errors=True)
+    # a narration upload cut off before its rename
+    for tmp in _narration_dir(data_dir).glob(".*.tmp"):
+        tmp.unlink(missing_ok=True)
     cache_root = data_dir / "cache"
     if cache_root.is_dir():
         known = queue.known_hashes()
@@ -1310,6 +1324,9 @@ class PrivateHandler(_JsonHandler):
     def do_PUT(self):
         self._dispatch("PUT")
 
+    def do_HEAD(self):
+        self._dispatch("HEAD")
+
     def _authorized(self) -> bool:
         token = self.server.deps.config.token
         auth = self.headers.get("Authorization", "")
@@ -1379,6 +1396,13 @@ class PrivateHandler(_JsonHandler):
             m = re.fullmatch(r"/worker/jobs/(\d+)/release", path)
             if m and method == "POST":
                 return self._release(int(m.group(1)))
+            # The narration store (ballotreels.narration_store): a take's
+            # audio by its SHA-256.
+            m = re.fullmatch(r"/worker/narration/([0-9a-f]{64})", path)
+            if m and method == "PUT":
+                return self._narration_put(m.group(1))
+            if m and method in ("GET", "HEAD"):
+                return self._narration_get(m.group(1), method)
             self._not_found()
         except BadRequest as e:
             self._json(e.status, {"error": e.message})
@@ -1550,6 +1574,81 @@ class PrivateHandler(_JsonHandler):
         dest_dir.mkdir(parents=True, exist_ok=True)
         (dest_dir / name).write_bytes(body)
         self._json(200, {"ok": True})
+
+    def _narration_put(self, sha: str) -> None:
+        """Store the body as the take `sha` names, if it is that take:
+        hashed while it is read, refused (422) when it is not, written
+        under a temporary name and renamed into place. A take already
+        stored is left as it is (stored: false)."""
+        length_header = self.headers.get("Content-Length")
+        if length_header is None:
+            self.send_response(411)
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+            return
+        try:
+            length = int(length_header)
+        except ValueError:
+            length = -1
+        if length < 0:
+            self.close_connection = True
+            return self._json(400, {"error": "bad Content-Length"})
+        if length > MAX_TAKE_BYTES:
+            self.send_response(413)
+            self.send_header("Connection", "close")
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+            return
+        # As for a worker's upload: only the idle timeout applies.
+        self.read_deadline = None
+        store = _narration_dir(self.server.deps.config.data_dir)
+        store.mkdir(parents=True, exist_ok=True)
+        fd, tmp = tempfile.mkstemp(dir=store, prefix=f".{sha}.",
+                                   suffix=".tmp")
+        try:
+            h = hashlib.sha256()
+            left = length
+            with os.fdopen(fd, "wb") as f:
+                while left:
+                    chunk = self.rfile.read(min(left, 1 << 20))
+                    if not chunk:
+                        break
+                    h.update(chunk)
+                    f.write(chunk)
+                    left -= len(chunk)
+            if left:
+                self.close_connection = True
+                return self._json(400, {"error": "body shorter than "
+                                                 "Content-Length"})
+            got = h.hexdigest()
+            if got != sha:
+                return self._json(422, {"error": f"body's SHA-256 is {got}, "
+                                                 f"not {sha}"})
+            dest = store / f"{sha}.wav"
+            if dest.is_file():
+                return self._json(200, {"ok": True, "stored": False})
+            os.replace(tmp, dest)
+            tmp = None
+            self._json(200, {"ok": True, "stored": True})
+        finally:
+            if tmp is not None:
+                Path(tmp).unlink(missing_ok=True)
+
+    def _narration_get(self, sha: str, method: str) -> None:
+        path = _narration_dir(self.server.deps.config.data_dir) / f"{sha}.wav"
+        try:
+            f = path.open("rb")
+        except FileNotFoundError:
+            return self._not_found(f"no narration take {sha}")
+        with f:
+            size = os.fstat(f.fileno()).st_size
+            self.send_response(200)
+            self.send_header("Content-Type", "audio/wav")
+            self.send_header("Content-Length", str(size))
+            self.send_header("Cache-Control", "no-store")
+            self.end_headers()
+            if method != "HEAD":
+                shutil.copyfileobj(f, self.wfile, 1 << 20)
 
     def _complete(self, job_id: int) -> None:
         deps = self.server.deps
