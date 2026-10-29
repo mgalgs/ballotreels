@@ -1258,3 +1258,48 @@ direction = "savings"
 source = "financial-impact"
 status = "not-determined"
 quote = "The changes to the Fire and Police commissions may require hiring new investigators, retaining external auditors, or expanding investigative staff depending on case volume resulting in costs that cannot be determined at this time."
+
+# County of Sonoma Measure H: the County Auditor's Fiscal Impact
+# Statement estimates the first full year's revenue (the ballot question
+# and the Impartial Analysis say "approximately $15.5 million annually").
+[sonoma-county-measure-h]
+source = "fiscal-statement"
+quote = "the measure is estimated to generate approximately $17.1 million in the first full fiscal year (2029-30)."
+amount = 17100000
+period = "per-year"
+
+# Sonoma County Junior College District Measure AB (Sonoma County
+# voters): the district's Tax Rate Statement's total debt service.
+[santa-rosa-junior-college-measure-ab]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $1.76 billion."
+amount = 1760000000
+period = "unstated"
+
+# City of Santa Rosa Measure L: the guide prints no fiscal analysis or
+# tax rate statement; the one estimate is the City Attorney's Impartial
+# Analysis's (the ballot question gives the same $46,000,000).
+[santa-rosa-measure-l]
+source = "impartial-analysis"
+quote = "Measure L is estimated to produce $46 million annually, including approximately $23 million in additional annual revenue compared to the existing one-half cent tax."
+amount = 46000000
+period = "per-year"
+
+# City of Rohnert Park Measure K: the guide prints no fiscal analysis or
+# tax rate statement; the one estimate is the City's, as the City
+# Attorney's Impartial Analysis gives it.
+[rohnert-park-measure-k]
+source = "impartial-analysis"
+quote = "The City estimates that Measure K, if approved, would generate approximately $5,500,000 in annual tax revenue"
+amount = 5500000
+period = "per-year"
+
+# Town of Windsor Measure I: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is the Town Attorney's Impartial
+# Analysis's, from the Council's resolution and the town staff's report
+# (the ballot question gives the same $5,700,000).
+[windsor-measure-i]
+source = "impartial-analysis"
+quote = "the tax would provide approximately $5.7 million annually for the Town’s general fund"
+amount = 5700000
+period = "per-year"

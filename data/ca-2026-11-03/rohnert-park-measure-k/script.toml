@@ -1,0 +1,143 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; who placed it and what it needs
+# to pass; what would change (the rate, how long, what is exempt, where
+# the money goes); the City's revenue estimate as the impartial analysis
+# reports it; one line per side; what a vote does.
+#
+# The guide prints no fiscal analysis or tax rate statement; the one
+# estimate is the City's, as the City Attorney's Impartial Analysis
+# gives it. No archived source states the city's general fund budget,
+# so the $5.5 million has no scale (STANDARD.md 6.5; left open). The
+# deficit and deferred-maintenance figures are the arguments' own and
+# stay out of the neutral sections (STANDARD.md 6.3), as do the
+# exemptions for groceries and medicine and the tax visitors pay, which
+# the argument in favor cites. A rate in cents
+# is transcribed in dollars (standard/speakability.txt), so the
+# narration gives it as a percent.
+#
+# Sides come from the argument in favor and the argument against, not
+# the rebuttals. Both are signed by former mayors; the script names no
+# one on either side.
+
+contest = "ca-2026-11-03-rohnert-park-measure-k"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "measure-question"
+number = "K"
+title = "City of Rohnert Park"
+origin = "The City Council of the City of Rohnert Park placed Measure K on the November 3, 2026, ballot"
+summary = "Rohnert Park Financial Viability, Community Health/Safety Measure. To maintain 911 response/fire protection/wildfire preparedness; protect local drinking water; keep parks clean/safe; prevent property crime/burglary/public safety officer reductions; repair streets/potholes; and other general city services; shall the measure, establishing a half-cent local sales tax, providing approximately $5,500,000 annually for locally controlled funding that cannot be taken by the state, until ended by voters, requiring audits/public spending disclosure, be adopted?"
+yes = "A “YES” vote is a vote to approve the tax."
+no = "A “NO” vote is a vote against the tax."
+
+[[section]]
+id = "what"
+heading = "Measure K"
+
+[[section.line]]
+text = "City of Rohnert Park Measure K asks voters in Rohnert Park whether to add a one-half percent sales tax."
+sources = ["measure-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-question"
+highlight = ["establishing a half-cent local sales tax"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The City Council placed Measure K on the ballot, and it needs a simple majority to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The tax would be added to existing sales taxes on purchases in the city, until voters repeal it."
+sources = ["impartial-analysis", "measure-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section.line]]
+text = "As a general tax, the money would go into the general fund of the city."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The City estimates the tax would raise about $5.5 million a year, the City Attorney's impartial analysis says."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure K helps prevent cuts to public safety and 911 response, and funds aging parks, streets and water services."
+sources = ["arguments"]
+basis = ["which is critical to maintaining 911 response times. Measure K will help prevent cuts to public safety in Rohnert Park.", "Our public safety services, streets, water services, and parks need real investment."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Prevents cuts to public safety", "Funds parks, streets and water"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the city should explore alternatives before asking residents to pay more, and sales taxes burden working families and seniors."
+sources = ["arguments"]
+basis = ["Before asking residents to pay more, the City should fully explore alternatives and prioritize existing resources.", "Sales taxes place a greater burden on working families, seniors, and residents living on fixed incomes."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Explore alternatives first", "Burdens families and seniors"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is a vote to approve the tax."
+sources = ["measure-question"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-question"
+highlight = ["a vote to approve the tax"]
+
+[[section.line]]
+text = "A no vote is a vote against the tax."
+sources = ["measure-question"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-question"
+highlight = ["a vote against the tax"]
