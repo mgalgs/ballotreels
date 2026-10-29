@@ -1845,3 +1845,11 @@ source = "impartial-analysis"
 quote = "If adopted, Measure O would generate between $1,398,000 and $1,467,000 annually."
 amount = 1467000
 period = "per-year"
+
+# Dixon Unified School District Measure U: the district's Tax Rate
+# Statement, its total debt service (the bonds are $49,000,000).
+[dixon-unified-measure-u]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $105,000,000."
+amount = 105000000
+period = "unstated"

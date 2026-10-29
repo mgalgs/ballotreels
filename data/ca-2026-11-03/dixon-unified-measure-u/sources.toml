@@ -1,0 +1,71 @@
+# Archived sources for Dixon Unified School District Measure U,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# No printed Solano County voter guide was archived: these are the filed
+# documents the Solano County Registrar of Voters posts on its Current
+# Election Information page. The ballot question is quoted from the
+# district's revised Appendix B, "Abbreviated Form of Bond Measure",
+# which its July 28, 2026 letter asks the Registrar to put in place of
+# the first one (to give the tax rate per $100,000 rather than per $100);
+# sources.md finds the Notice of Measures prints the same words. County
+# Counsel's impartial analysis is the measure's neutral explanation; the
+# district's Tax Rate Statement (Appendix C) is its fiscal statement. The
+# statement is a scan with no text layer: the passages `check` reads
+# verbatim were typed from the page image into a transcription beside
+# the PDF, which names the PDF and URL it copies; that source points at
+# the transcription, and its url at the scan. The rebuttals are not
+# cited.
+
+[contest]
+id = "ca-2026-11-03-dixon-unified-measure-u"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:dixon_unified_school_district"
+kind = "measure"
+title = "Dixon Unified School District Measure U: School Repair Bonds"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Dixon Unified School District, revised Appendix B, Abbreviated Form of Bond Measure, with the Superintendent’s transmittal letter of July 28, 2026, as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Abbreviated Form of Bond Measure, Dixon Unified School District"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Revised_75_Words_-_Transmittal_Letter_to_Registrar_-_Dixon_USD_Redacted.pdf"
+file = "sources/revised-ballot-question.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure U, Dixon Unified School District General Obligation Bond Measure, Carrie Blacklock, Solano County Counsel, as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Impartial Analysis of Measure U, Solano County Counsel"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Measure_U.Impartial_Analysis.Dixon_School_Bond.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Dixon Unified School District, Appendix C, Tax Rate Statement (transcribed from the scan), as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Tax Rate Statement, Dixon Unified School District"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/ixon_USD_Measure_U_Tax_Rate_Statement_Redacted.pdf"
+file = "sources/tax-rate-statement-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure U, as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Argument in favor, Solano County Registrar of Voters"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Measure_U_-_Argument_in_Favor.pdf"
+file = "sources/argument-in-favor.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure U, as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Argument against, Solano County Registrar of Voters"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Measure_U_-_Argument_Against_Redacted.pdf"
+file = "sources/argument-against.pdf"
+retrieved = "2026-10-28"
