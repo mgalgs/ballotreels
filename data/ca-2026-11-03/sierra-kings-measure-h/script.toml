@@ -1,0 +1,222 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; who owns the hospital and how
+# it came to be leased (the 2011 lease); why it is on the ballot (state
+# law on a district's assets); what would change (the term, the option
+# to buy, the care the board's resolution describes, fair market value,
+# the vote it needs); what it costs as the ballot question states it;
+# one line per side; what a vote does.
+#
+# No place or organisation name is narrated (the narrator mispronounces
+# them): the opening says "the voters of this health care district", and
+# the hospital's operator is "its current operator". The card, title and
+# voters line carry the names.
+#
+# No printed guide was found, so the card quotes the ballot question
+# from Resolution No. 328, paragraph 2, as typed from the scan. It
+# prints no yes/no lines, so the card has no YES/NO boxes; the vote
+# lines both highlight the same phrase of the question.
+#
+# The lease itself is not posted. What the new lease would do comes from
+# County Counsel's impartial analysis (the term and renewals, the
+# possible sale, the independent appraisal) and from the resolution's recital of
+# the Memorandum of Understanding (the full-time acute care hospital
+# with walk-in emergency care, and the board's approval subject to a
+# fair market value appraisal), attributed to the board's resolution.
+# "Fair" is on the judgment-word list, so the narration says "market
+# value".
+# Neither states the rent or a price, so the narration says nothing of
+# them (under [[question]], unanswered).
+#
+# "No new taxes, bonds, or assessments": the ballot question's own
+# words, so the fiscal section quotes them as the ballot question's.
+# The argument in favor says the same ("not a tax, bond, or
+# assessment"); its line distils its other two points (access to the
+# hospital's care, and that it could close without its operator) so
+# the neutral section and the side do not repeat each other
+# (STANDARD.md 6.3).
+
+contest = "ca-2026-11-03-sierra-kings-measure-h"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "H"
+title = "RESOLUTION NO. 328"
+origin = "SIERRA KINGS HEALTH CARE DISTRICT"
+summary = "Shall the measure to assure continued operation of Sierra Kings Health Care District's hospital facility at 372 West Cypress Avenue, Reedley, California, as an acute care hospital, in accordance with District Board Resolution No. 328 adopted July 27, 2026, by having the District enter with Reedley Community Hospital, the existing operator, a twenty year lease with options to extend the lease and purchase the property, with no new taxes, bonds, or assessments on District residents, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure H"
+
+[[section.line]]
+text = "Measure H asks the voters of this health care district whether to lease the district's hospital to its current operator for another 20 years."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["a twenty year lease"]
+
+[[section]]
+id = "background"
+heading = "The hospital"
+
+[[section.line]]
+id = "owner"
+text = "The district owns the land and buildings of the hospital, and once ran the hospital itself."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "valley-hospital"
+
+[[section.line]]
+id = "original"
+text = "In 2011, district voters approved a 15-year lease of the hospital, with an option to buy, to the operator that runs it today."
+sources = ["ballot-question", "impartial-analysis"]
+
+[[section]]
+id = "today"
+heading = "Why it is on the ballot"
+
+[[section.line]]
+id = "law"
+text = "State law requires voter approval when a health care district transfers more than half of its assets, and the new lease involves more than half."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "term"
+text = "The new lease would replace the 2011 lease, with a 20-year term and two five-year renewals."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "lease-keys"
+
+[[section.line]]
+id = "buy"
+text = "The new lease would also give the operator an option to buy the hospital property."
+sources = ["impartial-analysis", "ballot-question"]
+
+[[section.line]]
+id = "care"
+text = "The board's resolution says the hospital would stay a full-time acute care hospital, with walk-in emergency care around the clock."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "valley-hospital"
+
+[[section.line]]
+id = "value"
+text = "The board's approval depends on an independent appraisal of the market value of the new lease."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "inspection-clipboard"
+
+[[section.line]]
+text = "Measure H needs a simple majority to pass."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+id = "no-taxes"
+text = "The ballot question says the lease comes with no new taxes, bonds or assessments on district residents."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["with no new taxes, bonds, or assessments on District residents"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the hospital gives easy access to an emergency room, a birthing center and specialties, and could close without its operator."
+sources = ["argument-for"]
+basis = ["the easy access of our full-service Reedley Hospital with Emergency Room, birthing center, and health specialties", "Without Adventist running the hospital, the hospital could close."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Easy access to emergency care", "Without its operator, it could close"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure H was filed with the county registrar of voters, so the published measure documents include only the supporters' argument."
+sources = ["argument-for"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves the 20-year lease, with its options to extend the lease and to buy the property."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["a twenty year lease with options to extend the lease and purchase the property"]
+
+[[section.line]]
+text = "A no vote does not approve the 20-year lease."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["a twenty year lease with options to extend the lease and purchase the property"]
+
+[[question]]
+ask = "Who runs the hospital now, and who would run it?"
+lines = ["owner", "original", "care"]
+
+[[question]]
+ask = "Why does this need a vote at all?"
+lines = ["law"]
+
+[[question]]
+ask = "How long would the lease last, and could the operator buy the hospital?"
+lines = ["term", "buy", "value"]
+
+[[question]]
+ask = "How much would the operator pay the district?"
+unanswered = true
+
+[[question]]
+ask = "What happens to the hospital if Measure H fails?"
+unanswered = true

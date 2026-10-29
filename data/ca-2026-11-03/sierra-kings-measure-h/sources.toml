@@ -1,0 +1,60 @@
+# Archived sources for Sierra Kings Health Care District Measure H,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The District is a health care district with no boundary layer of its
+# own, so the division is Fresno County and `voters` names the
+# District (docs/SCRIPT-FORMAT.md).
+#
+# The Fresno County Registrar of Voters posts each measure's filed
+# documents on its election page; no printed Voter Information Guide
+# was found online. The ballot question is quoted from the District
+# Board's Resolution No. 328, paragraph 2. County Counsel's impartial
+# analysis is the measure's neutral explanation, the kind a state's
+# attorney general's explanatory statement is. It is a lease, not a
+# tax: no tax rate statement or fiscal analysis was filed, and the
+# lease (or the Memorandum of Understanding the resolution describes)
+# is not posted.
+#
+# Every PDF is a scan with no text layer. The passages cited were typed
+# from the page images into sources/*-transcription.txt, each naming the
+# PDF and URL it copies; those sources point at the transcription, and
+# their url at the scan (as Firebaugh Measure F's do). No argument
+# against and no rebuttals were filed (the Registrar's page lists none).
+# The proof of publication is archived but not cited.
+
+[contest]
+id = "ca-2026-11-03-sierra-kings-measure-h"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:fresno"
+kind = "measure"
+title = "Sierra Kings Health Care District Measure H: Hospital Lease Approval"
+voters = "the Sierra Kings Health Care District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Sierra Kings Health Care District, Board of Directors Resolution No. 328, calling an election on the new lease with an option to purchase the leased property, adopted July 27, 2026: recitals, pages 1-2; the ballot question, paragraph 2, page 2; the vote needed, paragraph 6, page 3 (transcribed from the scan)"
+credit = "Resolution No. 328, Sierra Kings Health Care District"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/sierra-kings/resolution_redacted.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Douglas T. Sloan, Fresno County Counsel, Impartial Analysis by County Counsel of the Sierra Kings Health Care District November 2026 Measure, filed with the Fresno County Clerk August 24, 2026 (transcribed from the scan)"
+credit = "Impartial Analysis, Fresno County Counsel"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/sierra-kings/measure-h-impartial-analysis_redacted.pdf"
+file = "sources/impartial-analysis-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure H, Sierra Kings Health Care District Hospital Lease Measure, as filed with the Fresno County Clerk August 18, 2026 (transcribed from the scan)"
+credit = "Argument in favor, Measure H"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/sierra-kings/filed-argument-in-favor-_redacted.pdf"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"

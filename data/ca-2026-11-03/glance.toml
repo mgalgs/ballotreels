@@ -1981,3 +1981,10 @@ source = "ballot-question"
 quote = "providing approximately $300,000.00 annually until ended by voters"
 amount = 300000
 period = "per-year"
+
+# Sierra Kings Health Care District Measure H: a hospital lease, not a
+# tax or bond; no fiscal statement was filed, and the ballot question
+# (Resolution No. 328) prints no dollar figure.
+[sierra-kings-measure-h]
+source = "ballot-question"
+status = "none-printed"
