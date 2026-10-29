@@ -1,0 +1,65 @@
+# Archived sources for City of Ceres Measure P, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Stanislaus County Registrar of Voters prints Measure P's full
+# text, the City Attorney's impartial analysis and the argument in favor
+# on PDF pages 77-89 of its bilingual Voter Information Guide;
+# sources/vig-measure-p-pdfpp77-89.pdf is those pages cut from it, and
+# every source from it cites the full guide's URL with the pages. The
+# guide does not print the ballot question: it is quoted from City of
+# Ceres Resolution No. 2026-79, Section 2, which submits it to the
+# voters. The resolution is a scan whose text layer is rough OCR: its
+# ballot question, Section 1 and adoption vote were typed from the page
+# images into sources/resolution-2026-79-transcription.txt, which names
+# the PDF and URL it copies; that source points at the transcription,
+# and its url at the scan (as American Canyon Measure P's does). The
+# City Attorney's impartial analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is. No tax rate statement or fiscal analysis applies (a
+# sales tax); the one revenue estimate is the analysis's. The guide
+# prints "None filed" under the argument against, and no rebuttals.
+
+[contest]
+id = "ca-2026-11-03-ceres-measure-p"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:ceres"
+kind = "measure"
+title = "City of Ceres Measure P: A 1¢ Local Sales Tax Until Ended by Voters"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Ceres, Resolution No. 2026-79, submitting a general local one cent (1¢) sales tax ballot measure to the City’s voters, adopted June 22, 2026: the ballot question, Section 2, page 2, and the vote, page 3 (transcribed from the scan)"
+credit = "Resolution No. 2026-79, City of Ceres"
+url = "https://www.ceres.gov/DocumentCenter/View/8510/Resolution-2026-79_Ballot-Measure"
+file = "sources/resolution-2026-79-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Ceres City Attorney, Impartial Analysis by City Attorney, City of Ceres – Measure P, Stanislaus County Voter Information Guide, General Election, November 3, 2026, PDF page 88"
+credit = "Impartial Analysis, Stanislaus County Voter Information Guide"
+url = "https://www.stanvote.gov/pdf/voter-guides/20261103.pdf"
+file = "sources/vig-measure-p-pdfpp77-89.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor, City of Ceres – Measure P, Stanislaus County Voter Information Guide, General Election, November 3, 2026, PDF page 89 (argument against: \"None filed\")"
+credit = "Arguments, Stanislaus County Voter Information Guide"
+url = "https://www.stanvote.gov/pdf/voter-guides/20261103.pdf"
+file = "sources/vig-measure-p-pdfpp77-89.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text, City of Ceres – Measure P, Ordinance No. 2026-XXXX adding Chapter 14, Transactions and Use Tax, to the Ceres Municipal Code, Stanislaus County Voter Information Guide, General Election, November 3, 2026, PDF pages 77-87"
+credit = "Full Text of Measure P, Stanislaus County Voter Information Guide"
+url = "https://www.stanvote.gov/pdf/voter-guides/20261103.pdf"
+file = "sources/vig-measure-p-pdfpp77-89.pdf"
+retrieved = "2026-10-28"
