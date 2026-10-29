@@ -291,6 +291,11 @@ BALLOTS: dict[str, Ballot] = {
                          "RESOLUTION NO. 2026-28",
                      "ca-2026-11-03-portola-valley-measure-n":
                          "RESOLUTION NO. 3010-2026",
+                     # Contra Costa County's guide could not be fetched:
+                     # Measure RTM's card quotes Alameda County's copy of
+                     # the District's ballot question and analysis
+                     "ca-2026-11-03-contra-costa-county-measure-rtm":
+                         "Alameda County Composite Voter Information Guide",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

@@ -1044,3 +1044,13 @@ source = "ballot-question"
 quote = "providing approximately $2,000,000 in locally controlled funding annually"
 amount = 2000000
 period = "per-year"
+
+# Contra Costa County Regional Transit Measure RTM: quoted from Alameda
+# County's guide (Contra Costa County's could not be fetched), which
+# prints no fiscal analysis or tax rate statement; the one estimate is in
+# the District's ballot question, for the whole five-county district.
+[contra-costa-county-measure-rtm]
+source = "guide-page"
+quote = "generating approximately $980,000,000 annually"
+amount = 980000000
+period = "per-year"

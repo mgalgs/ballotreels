@@ -1,0 +1,182 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; whose measure it is (a five-county district the Legislature
+# made) and how it reached the ballot; what would change (the rates and
+# where Contra Costa County's share goes); the analysis's revenue
+# estimate; one line per side; what a vote does.
+#
+# Contra Costa County's own guide could not be fetched, so every source
+# is Alameda County's guide (sources.toml). The card quotes the ballot
+# question and the impartial analysis, the District's own words for all
+# five counties; the badge and card name the guide they are quoted from.
+# The arguments are those filed in Alameda County. Each side's line takes
+# only the passages that speak to the whole district, not Alameda
+# County's own stations or tax rate, and the list's source line under the
+# two boxes names Alameda County's guide. Contra Costa County's guide may
+# print other arguments.
+#
+# The guide prints no fiscal analysis or tax rate statement; the one
+# revenue estimate is the Legal Counsel's, in the ballot question and the
+# Impartial Analysis. The $980 million is the district's, across five
+# counties; no archived source states a budget of the district or its
+# transit agencies to compare it with, so it has no scale (STANDARD.md
+# 6.5; left open). Contra Costa County's share to BART is the measure's
+# full text (Section 12), not the impartial analysis, which gives only
+# Alameda's and Santa Clara's as examples.
+
+contest = "ca-2026-11-03-contra-costa-county-measure-rtm"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "RTM"
+title = "REGIONAL TRANSIT MEASURE RTM"
+origin = "This measure was placed on the ballot by voter initiative, signed by the requisite number of voters within the Public Transit Revenue Measure District (“District”)."
+summary = "To prevent major service cuts to BART and other transit, avoid increased traffic, and reduce pollution by: Preserving BART, Caltrain, VTA, SamTrans, AC Transit, Muni, other transit for everyone, including workers, students, seniors, persons with disabilities; Supporting transit safety, cleanliness, affordability, reliability; Repairing targeted roads/potholes; Requiring financial transparency, oversight, accountability; shall the measure enacting a 0.5% (Alameda, Contra Costa, San Mateo, Santa Clara counties), and 1% (San Francisco) sales tax for 14 years generating approximately $980,000,000 annually, be adopted?"
+yes = "A “yes” vote is a vote to impose the tax described above for 14 years."
+no = "A “no” vote is a vote against imposing the tax."
+
+[[section]]
+id = "what"
+heading = "Measure RTM"
+
+[[section.line]]
+text = "Regional Transit Measure RTM asks voters across Contra Costa County whether to add a half-cent sales tax for public transit, for 14 years."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["sales tax for 14 years"]
+
+[[section]]
+id = "background"
+heading = "Whose measure it is"
+
+[[section.line]]
+id = "district"
+text = "In 2025 the Legislature created a transit district covering Contra Costa, Alameda, San Mateo and Santa Clara counties and San Francisco."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-line-map"
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+id = "majority"
+text = "Voters placed Measure RTM on the ballot by petition, and it needs a majority of votes across the whole district."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The tax would be half a percent in the four counties and 1 percent in San Francisco."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section.line]]
+id = "allocation"
+text = "In Contra Costa County, 58.59 percent of the money raised would go to BART for transit operations."
+sources = ["text"]
+
+[section.line.visual]
+kind = "share"
+title = "Contra Costa County's tax money going to BART"
+source = "text"
+unit = "%"
+labels = ["BART"]
+values = [58.59]
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The impartial analysis estimates the tax would raise about $980 million a year across the five counties."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say that if it fails, BART, AC Transit, Muni and Caltrain could close stations and cut service, and large agencies must show savings."
+sources = ["arguments"]
+basis = ["If this measure fails we could see major station closures and drastic service cuts for BART, AC Transit, Muni, and Caltrain.", "requires large transit agencies to show cost savings to continue to receive dedicated operating funding"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Prevents station closures and service cuts", "Agencies must show cost savings to keep funds"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say everybody would pay the tax every day, on most things they buy, and that both BART and AC Transit are grossly mismanaged."
+sources = ["arguments"]
+basis = ["Everybody would pay this tax every day, on most things you buy.", "BART and AC Transit are grossly mismanaged."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Everybody pays it on most things they buy", "BART and AC Transit are grossly mismanaged"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is a vote to impose the tax for 14 years."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["a vote to impose the tax"]
+
+[[section.line]]
+text = "A no vote is a vote against imposing the tax."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["a vote against imposing the tax"]
+
+[[question]]
+ask = "Do people outside Contra Costa County vote on this too?"
+lines = ["district"]
+
+[[question]]
+ask = "Does Contra Costa County need to pass it on its own?"
+lines = ["majority"]
+
+[[question]]
+ask = "Which transit agencies would get Contra Costa County's money?"
+lines = ["allocation"]
+
+[[question]]
+ask = "How much is $980 million next to what the transit agencies spend now?"
+unanswered = true
