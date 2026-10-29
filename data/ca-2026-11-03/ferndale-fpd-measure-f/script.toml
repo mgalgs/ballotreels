@@ -1,0 +1,180 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; the assessment it would replace; how the new
+# tax is charged and what a home would pay; what it needs to pass; the ballot question's revenue estimate; one
+# line per side; what a vote does.
+#
+# The card quotes the ballot question from section 4 of the district's
+# Resolution No. 2026-01, as the county posts it; its title is the
+# resolution's number and its origin the resolution's own title. The
+# resolution's YES and NO boxes stand beside the question and carry no
+# meanings, so the card has none; the vote lines take their meanings
+# from the question and highlight its own words. "Counsel" is heard as
+# "Council" (standard/speakability.txt), so the narration says "the
+# impartial analysis". No name of the district or county is narrated:
+# the card, title and `voters` line show them.
+#
+# The rates are the analysis's range ("from a vacant lot ... $5 per year,
+# to a large commercial lodging of over 20 units ... $600 per year") and
+# the ordinance's schedule for a single-family home ($60 in a hydrant
+# area, $90 outside one); the yearly inflation adjustment of up to 4
+# percent is section 5 of the resolution. The guide prints no tax rate
+# statement or fiscal analysis; the one revenue estimate is the ballot
+# question's "an estimated $116,000 annually". No official archived
+# source states the district's budget or what the assessment being
+# replaced raises, so the estimate has no budget scale (STANDARD.md 6.5;
+# left open). The hardship waiver is the analysis's; "stays local" and
+# the rising costs are the supporters' points and stay in their section
+# (STANDARD.md 6.3).
+#
+# No argument against Measure F was filed. The no side says so plainly;
+# its section is marked filed = false.
+
+contest = "ca-2026-11-03-ferndale-fpd-measure-f"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "F"
+title = "RESOLUTION NO. 2026-01"
+origin = "A RESOLUTION OF THE BOARD OF DIRECTORS OF THE FERNDALE FIRE PROTECTION DISTRICT ORDERING THE SUBMISSION OF A SPECIAL TAX MEASURE TO THE QUALIFIED VOTERS OF THE DISTRICT"
+summary = "To ensure a stable, locally controlled source of funding to maintain and improve fire protection, emergency medical, and rescue services–including equipment, facility improvements, and firefighter safety–shall the Ferndale Fire Protection District Ordinance No. 2026-1, establishing a new special tax raising an estimated $116,000 annually until repealed by voters, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure F"
+
+[[section.line]]
+text = "Measure F asks the voters of this fire protection district whether to approve a new yearly parcel tax for fire and emergency services."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establishing a new special tax"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "The new tax would replace the assessment the district now collects."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "fire-station-engine"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rates"
+text = "Each parcel would pay by its use, from $5 a year for a vacant lot to $600 for the largest lodgings."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+id = "home"
+text = "A home would pay $60 a year, or $90 in a rural area without fire hydrants."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "farm-and-timber-land"
+
+[[section.line]]
+id = "inflation"
+text = "The rates could rise with inflation by up to 4 percent a year."
+sources = ["text"]
+
+[[section.line]]
+id = "waiver"
+text = "Owners with very low incomes could apply for a hardship waiver."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+text = "Measure F needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+text = "The ballot question estimates the tax would raise about $116,000 a year."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["raising an estimated $116,000 annually"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the district's assessment has not changed in nearly 30 years, while fire and medical service costs rose dramatically."
+sources = ["arguments"]
+basis = ["The District's existing assessment has remained unchanged for nearly 30 years.", "During that time, the cost of providing fire and emergency medical services has increased dramatically."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Assessment unchanged for nearly 30 years", "Every dollar stays local"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure F was filed, so the county voter guide prints only the argument in favor of it."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the new special tax."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establishing a new special tax"]
+
+[[section.line]]
+text = "A no vote rejects the new special tax."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establishing a new special tax"]
+
+[[question]]
+ask = "How much would a property owner pay?"
+lines = ["rates", "home", "inflation", "waiver"]
+
+[[question]]
+ask = "How much does the assessment it replaces raise, and how big is $116,000 next to the district's budget?"
+unanswered = true

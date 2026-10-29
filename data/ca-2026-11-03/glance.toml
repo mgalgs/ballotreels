@@ -2213,3 +2213,12 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $264,800,000."
 amount = 264800000
 period = "unstated"
+
+# Ferndale Fire Protection District Measure F: a parcel tax, so no tax
+# rate statement; the one estimate is in its ballot question. It replaces
+# an assessment the guide does not size, so no direction is given.
+[ferndale-fpd-measure-f]
+source = "ballot-question"
+quote = "raising an estimated $116,000 annually"
+amount = 116000
+period = "per-year"
