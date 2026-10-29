@@ -1,0 +1,155 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what
+# the partial veto is; how the question got on the ballot; how the
+# constitution limits the partial veto today; the limit the amendment
+# would add, and that the old ones stay; that no cost estimate exists;
+# the two sides; what a vote does.
+#
+# Wisconsin has no voter guide. The card quotes the Wisconsin Elections
+# Commission's Type A Notice of Referendum: the question's title ("Partial
+# veto.") as its title, under the badge QUESTION 1, and the question as
+# its summary, the words the ballot prints. The notice prints no "a yes
+# vote means" lines, so the card has none, and the vote lines take their
+# meanings from the question's words.
+#
+# What changes is told in the Legislative Reference Bureau's terms. Its
+# analysis also notes a 2020 state Supreme Court decision that further
+# restricted the partial veto; the line is left out for length, and no
+# governor and no past veto is named.
+#
+# Fiscal: Wisconsin attaches no fiscal estimate to a joint resolution and
+# the notice prints no cost; no dollar figure appears, so none needs a
+# scale.
+#
+# Wisconsin publishes no official arguments for or against a referendum
+# question, so both sides are filed = false and each says so once, in the
+# same number of words.
+
+contest = "wi-2026-11-03-question-1"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "notice"
+number = "1"
+title = "Partial veto."
+origin = "2025 Senate Joint Resolution 116"
+summary = "Shall section 10 (1) (c) of article V of the constitution be amended to prohibit the governor, in exercising his or her partial veto authority, from creating or increasing or authorizing the creation or increase of any tax or fee?"
+
+[[section]]
+id = "what"
+heading = "Question 1"
+
+[[section.line]]
+text = "Question 1 is about the partial veto, which lets the governor approve a spending bill in part."
+sources = ["notice", "resolution", "lrb-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["Partial veto."]
+
+[[section]]
+id = "background"
+heading = "How it got on the ballot"
+
+[[section.line]]
+text = "The Legislature approved the amendment in 2023 and again in 2025."
+sources = ["resolution", "lrb-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "legislative-chamber"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, a partial veto may not make new words from single letters, or new sentences from parts of others."
+sources = ["lrb-analysis", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "amended-page"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would also bar using the partial veto to create or increase any tax or fee, or to authorize one."
+sources = ["lrb-analysis", "notice", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["from creating or increasing or authorizing the creation or increase of any tax or fee"]
+
+[[section.line]]
+text = "The current limits would stay."
+sources = ["lrb-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Wisconsin's Type A Notice of Referendum does not include a cost estimate for the amendment."
+sources = ["notice"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Wisconsin publishes no official argument for the amendment."
+sources = ["notice"]
+
+[section.line.visual]
+kind = "list"
+source = "notice"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Wisconsin publishes no official argument against the amendment."
+sources = ["notice"]
+
+[section.line.visual]
+kind = "list"
+source = "notice"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means a partial veto could not create or increase a tax or fee."
+sources = ["notice", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"
+highlight = ["prohibit the governor"]
+
+[[section.line]]
+text = "A no vote leaves the limits on the partial veto as they are today."
+sources = ["notice", "lrb-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "notice"

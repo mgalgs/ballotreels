@@ -1,0 +1,32 @@
+# Contest index for the 2026-11-03 Wisconsin general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string).
+# Wisconsin has no voter guide; each title pairs the question's number
+# with its title as the Wisconsin Elections Commission's Type A Notice of
+# Referendum prints it.
+
+[election]
+id = "wi-2026-11-03"
+state = "ocd-division/country:us/state:wi"
+title = "Wisconsin General Election, November 3, 2026"
+
+[[contest]]
+id = "wi-2026-11-03-question-1"
+kind = "measure"
+division = "ocd-division/country:us/state:wi"
+title = "Question 1: Partial veto"
+number = "1"
+
+[[contest]]
+id = "wi-2026-11-03-question-2"
+kind = "measure"
+division = "ocd-division/country:us/state:wi"
+title = "Question 2: Freedom to gather in places of worship during an emergency"
+number = "2"
+
+[[contest]]
+id = "wi-2026-11-03-question-3"
+kind = "measure"
+division = "ocd-division/country:us/state:wi"
+title = "Question 3: Governmental entity discrimination prohibited"
+number = "3"

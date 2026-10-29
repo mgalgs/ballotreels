@@ -1,0 +1,50 @@
+# Archived sources for Wisconsin Question 1, 2026-11-03 general election.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+#
+# Wisconsin has no voter guide, no official arguments for or against a
+# referendum question, and no fiscal estimate for a joint resolution, so
+# there is no source of kind official-argument or
+# official-fiscal-analysis. The Wisconsin Elections Commission's Type A
+# Notice of Referendum prints the question's title and text, the words
+# the ballot prints. The enrolled joint resolution is the amendment's
+# full text; the resolution as introduced carries the Legislative
+# Reference Bureau's analysis, which explains what it changes.
+#
+# The Commission's own copy of the resolution (sources/2025-sjr-116.pdf)
+# is a scan with no text layer and the same text as the enrolled copy;
+# it is archived for reference and not cited.
+
+[contest]
+id = "wi-2026-11-03-question-1"
+election = "wi-2026-11-03"
+division = "ocd-division/country:us/state:wi"
+kind = "measure"
+title = "Question 1: Partial veto"
+
+[[source]]
+id = "notice"
+kind = "official-title-summary"
+publisher = "Wisconsin Elections Commission, Type A Notice of Referendum, November 3, 2026 General Election"
+credit = "Wisconsin Elections Commission, Type A Notice of Referendum"
+url = "https://elections.wi.gov/sites/default/files/documents/Type%20A%20Notice%20of%20Referendum_November%202026%20General%20Election.pdf"
+file = "sources/type-a-notice-of-referendum-nov-2026.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Wisconsin Legislature, 2025 Senate Joint Resolution 116, Enrolled Joint Resolution"
+credit = "Wisconsin Legislature, 2025 Senate Joint Resolution 116"
+url = "https://docs.legis.wisconsin.gov/2025/related/enrolled/sjr116.pdf"
+file = "sources/2025-sjr116-enrolled.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "lrb-analysis"
+kind = "legislative-record"
+publisher = "Wisconsin Legislature, 2025 Senate Joint Resolution 116 as introduced, with Analysis by the Legislative Reference Bureau"
+credit = "Wisconsin Legislative Reference Bureau"
+url = "https://docs.legis.wisconsin.gov/2025/related/proposals/sjr116.pdf"
+file = "sources/2025-sjr116-introduced-with-lrb-analysis.pdf"
+retrieved = "2026-10-27"
