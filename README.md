@@ -187,7 +187,9 @@ prefix and `--data-dir` to the build's default. Rerun it after each
 
 The build's last step writes `counties.json` beside its shapes: which
 counties each city and school district lies in, for the county pages
-(`/ca/2026/county/humboldt`), and each county's outline for their map.
+(`/ca/2026/county/humboldt`), each county's outline for their map, and
+the state's own outer outline, coarse (a few hundred bytes of path,
+islands too small to see dropped), for its button on the home page.
 A district is in a county only where the two share ground more than
 about 300 m across both ways, so a district whose edge merely is (or,
 from shape mismatch, slightly crosses) a county line is not listed
@@ -199,6 +201,11 @@ The state and county pages draw the state from those outlines. A
 state's page shows its flag inside it if
 `ballotreels/site/static/flags/<st>.jpg` (about 960x600, a
 coloured-pencil drawing) is there, and a soft pencil tone without one.
+The home page's button for each state shows a small version of the
+same: the coarse outline, with `flags/<st>-mini.jpg` (the same flag 160
+px wide) inside it or the pencil tone. A `counties.json` written before
+the coarse outline existed gives the state a plain button until `geo
+counties` is run again.
 
 Look up what a zip code resolves to:
 
@@ -236,7 +243,8 @@ state of the statewide division it is given, and the district labels
 follow each state's chamber names (State Assembly in California and New
 York, State House in most others; none in D.C.).
 
-The home page also lists every served state, by name; each links to
+The home page also lists every served state, by name (with its small
+outline and flag, from `/api/states`); each links to
 `/<st>` (e.g. `/ut`), a shareable page of that state's statewide
 measures, without a district lookup. `/<st>/<year>` (e.g. `/ut/2026`)
 is the same page for that year's election, and a measure's page is
