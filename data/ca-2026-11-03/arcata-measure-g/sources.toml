@@ -1,0 +1,62 @@
+# Archived sources for City of Arcata Measure G, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Humboldt County Office of Elections prints Measure G's impartial
+# analysis (page 19) and an argument in favor (page 20) in its Full
+# Voter Information Guide; it prints no argument against, no rebuttals,
+# no fiscal statement and no ballot question (its sample ballot pages
+# are placeholders). The ballot question is the City Council's, from
+# Resolution No. 256-63, page 3, in the county's packet for the
+# measure; that page is a scan with no text layer, so it was typed from
+# the page image into sources/resolution-256-63-transcription.txt,
+# whose url is the scan's (as Fowler Measure T's are). The packet's
+# text-layer copy of Ordinance No. 1589 (packet pages 14 to 22) is the
+# full text. The City Attorney's analysis gives the one revenue
+# estimate; no tax rate statement applies to a sales tax. The packet's
+# copies of the argument carry a 2020 "received" stamp; the guide's
+# printed argument is the one cited.
+
+[contest]
+id = "ca-2026-11-03-arcata-measure-g"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:arcata"
+kind = "measure"
+title = "City of Arcata Measure G: Extending the Three-Quarter-Cent Sales Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Arcata, City Council Resolution No. 256-63, calling for the placement of a general tax measure on the November 3, 2026 ballot: the ballot question and the vote needed, page 3 (transcribed from the scan), as posted by the Humboldt County Office of Elections, Measure G - City of Arcata Tax Measure"
+credit = "Resolution No. 256-63, City of Arcata"
+url = "https://humboldtgov.org/DocumentCenter/View/156835/Measure-G---City-of-Arcata-Tax-Measure"
+file = "sources/resolution-256-63-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney’s Impartial Analysis of Measure “G”, Humboldt County Office of Elections, Full Voter Information Guide – November 3, 2026 Statewide General Election, page 19"
+credit = "City Attorney’s Impartial Analysis, Humboldt County Voter Information Guide"
+url = "https://humboldtgov.org/DocumentCenter/View/158656/Full-Voter-Information-Guide---November-3-2026-Statewide-General-Election"
+file = "sources/vig-pp19-20-analysis-argument.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure G, Humboldt County Office of Elections, Full Voter Information Guide – November 3, 2026 Statewide General Election, page 20 (the guide prints no argument against)"
+credit = "Argument in favor, Humboldt County Voter Information Guide"
+url = "https://humboldtgov.org/DocumentCenter/View/158656/Full-Voter-Information-Guide---November-3-2026-Statewide-General-Election"
+file = "sources/vig-pp19-20-analysis-argument.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Arcata, Ordinance No. 1589 (Exhibit “A” to Resolution No. 256-63), replacing the City’s transactions and use tax article of the Arcata Municipal Code, as posted by the Humboldt County Office of Elections, Measure G - City of Arcata Tax Measure, packet pages 14 to 22"
+credit = "Ordinance No. 1589, City of Arcata"
+url = "https://humboldtgov.org/DocumentCenter/View/156835/Measure-G---City-of-Arcata-Tax-Measure"
+file = "sources/measure-g-county-packet.pdf"
+retrieved = "2026-10-28"
