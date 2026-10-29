@@ -2446,3 +2446,13 @@ source = "impartial-analysis"
 quote = "The increased tax is expected to generate approximately Seven Hundred Fifty-Five Thousand dollars ($755,000.00) in additional annual revenue"
 amount = 755000
 period = "per-year"
+
+# California Pines Community Services District Measure O (Modoc): a
+# parcel tax has no tax rate statement; the one estimate is County
+# Counsel's Impartial Analysis's, what the increased tax would raise a
+# year.
+[cal-pines-csd-measure-o]
+source = "impartial-analysis"
+quote = "generate approximately Ninety-Eight Thousand dollars ($98,000.00) per year"
+amount = 98000
+period = "per-year"
