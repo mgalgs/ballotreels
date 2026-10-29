@@ -2022,3 +2022,10 @@ source = "ballot-question"
 quote = "providing approximately $18,000,000 annually until ended by voters"
 amount = 18000000
 period = "per-year"
+
+# City of Livingston Measure T: not a tax; the City's notice, the one
+# official text archived, prints no cost estimate (the county guide
+# could not be fetched).
+[livingston-measure-t]
+source = "notice"
+status = "none-printed"

@@ -561,6 +561,11 @@ BALLOTS: dict[str, Ballot] = {
                      # agenda numbers it (the copy's own number is blank)
                      "ca-2026-11-03-merced-measure-b":
                          "Resolution 2026-52",
+                     # and the City of Livingston's cards quote the City's
+                     # own notice, headed "Measures to be Voted On"
+                     **{f"ca-2026-11-03-{slug}": "Measures to be Voted On"
+                        for slug in ("livingston-measure-t",
+                                     "livingston-measure-u")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
