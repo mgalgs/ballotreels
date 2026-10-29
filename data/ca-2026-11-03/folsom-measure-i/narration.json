@@ -1,0 +1,243 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 69.01,
+  "phrases": [
+    {
+      "text": "City of Folsom Measure I asks voters in the city whether the City Council, not the city manager, should appoint the City Attorney.",
+      "start": 0.03,
+      "end": 8.41
+    },
+    {
+      "text": "Today, the city manager appoints and removes the City Attorney, Folsom's chief legal officer.",
+      "start": 9.07,
+      "end": 15.0
+    },
+    {
+      "text": "The City Council placed Measure I on the ballot, and it needs a simple majority.",
+      "start": 15.66,
+      "end": 20.74
+    },
+    {
+      "text": "Measure I would let the City Council appoint, suspend or remove the City Attorney.",
+      "start": 21.4,
+      "end": 27.23
+    },
+    {
+      "text": "The City Attorney would get a public hearing before removal, and could not be removed within 90 days of a new council member taking office.",
+      "start": 27.89,
+      "end": 36.37
+    },
+    {
+      "text": "The Sacramento County Current Measure Information page does not include a cost estimate for the measure.",
+      "start": 37.03,
+      "end": 42.47
+    },
+    {
+      "text": "Supporters say most California councils appoint their city attorney, keeping accountability with elected officials.",
+      "start": 43.13,
+      "end": 50.07
+    },
+    {
+      "text": "No argument against Measure I was filed with Sacramento County Voter Registration and Elections.",
+      "start": 50.73,
+      "end": 57.14
+    },
+    {
+      "text": "A yes vote authorizes the charter amendment letting the City Council appoint, suspend or remove the City Attorney.",
+      "start": 57.8,
+      "end": 65.15
+    },
+    {
+      "text": "A no vote does not authorize that charter amendment.",
+      "start": 65.81,
+      "end": 68.98
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "City of Folsom Measure I asks voters in the city whether the City Council, not the city manager, should appoint the City Attorney.",
+      "Today, the city manager appoints and removes the City Attorney, Folsom's chief legal officer.",
+      "The City Council placed Measure I on the ballot, and it needs a simple majority.",
+      "Measure I would let the City Council appoint, suspend or remove the City Attorney.",
+      "The City Attorney would get a public hearing before removal, and could not be removed within 90 days of a new council member taking office.",
+      "The Sacramento County Current Measure Information page does not include a cost estimate for the measure.",
+      "Supporters say most California councils appoint their city attorney, keeping accountability with elected officials.",
+      "No argument against Measure I was filed with Sacramento County Voter Registration and Elections.",
+      "A yes vote authorizes the charter amendment letting the City Council appoint, suspend or remove the City Attorney.",
+      "A no vote does not authorize that charter amendment."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "City of Folsom Measure I asks voters in the city whether the City Council, not the city manager, should appoint the City Attorney."
+      },
+      "bounds": [
+        0,
+        202560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"City of Folsom Measure I asks voters in the city whether the City Council, not the city manager, should appoint the City Attorney.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, the city manager appoints and removes the City Attorney, Folsom's chief legal officer."
+      },
+      "bounds": [
+        216960,
+        360720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, the city manager appoints and removes the City Attorney, Folsom's chief legal officer.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The City Council placed Measure I on the ballot, and it needs a simple majority."
+      },
+      "bounds": [
+        375120,
+        498480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Council placed Measure I on the ballot, and it needs a simple majority.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure I would let the City Council appoint, suspend or remove the City Attorney."
+      },
+      "bounds": [
+        512880,
+        654240
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure I would let the City Council appoint, suspend or remove the City Attorney.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The City Attorney would get a public hearing before removal, and could not be removed within 90 days of a new council member taking office."
+      },
+      "bounds": [
+        668640,
+        873600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Attorney would get a public hearing before removal, and could not be removed within 90 days of a new council member taking office.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The Sacramento County Current Measure Information page does not include a cost estimate for the measure."
+      },
+      "bounds": [
+        888000,
+        1020000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Sacramento County Current Measure Information page does not include a cost estimate for the measure.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say most California councils appoint their city attorney, keeping accountability with elected officials."
+      },
+      "bounds": [
+        1034400,
+        1202400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say most California councils appoint their city attorney, keeping accountability with elected officials.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument against Measure I was filed with Sacramento County Voter Registration and Elections."
+      },
+      "bounds": [
+        1216800,
+        1372080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure I was filed with Sacramento County Voter Registration and Elections.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote authorizes the charter amendment letting the City Council appoint, suspend or remove the City Attorney."
+      },
+      "bounds": [
+        1386480,
+        1564320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote authorizes the charter amendment letting the City Council appoint, suspend or remove the City Attorney.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote does not authorize that charter amendment."
+      },
+      "bounds": [
+        1578720,
+        1656240
+      ]
+    }
+  ],
+  "sha256": "b383ea6affef802a31dcc1c95e6929208687bd1fda058c3fdb5515b8e66dc4c8"
+}
