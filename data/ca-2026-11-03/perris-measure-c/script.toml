@@ -1,0 +1,147 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; who put it on the ballot; what would change (the rate, how it
+# grows, who is exempt, where the money goes and for how long); the
+# City's revenue estimate; one line per side; what a vote does.
+#
+# The guide prints no fiscal analysis or tax rate statement, and the
+# ordinance itself was not archived; the City Attorney's Impartial
+# Analysis is the neutral explanation. Neither states the vote needed
+# to pass, so the script does not say. No official source archived
+# states the city's general fund budget (the reserve figures are the
+# opponents' argument's), so the $2.5 million has no scale (STANDARD.md
+# 6.5; left open). The card is the sample ballot's question, which has
+# no short title and no yes/no lines: the card's title is the ballot's
+# own header for the city's block, and the vote lines take their words
+# from the Impartial Analysis.
+#
+# Sides come from the argument in favor and the argument against, not
+# the rebuttals.
+
+contest = "ca-2026-11-03-perris-measure-c"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot"
+number = "C"
+title = "CITY OF PERRIS"
+origin = "SAMPLE BALLOT"
+summary = "Shall the measure with no tax on residents, funding public services including maintaining 911 emergency response, public safety; repairing streets/potholes, improving traffic/safety; retaining small businesses, by establishing a business license tax of up to 10¢ per square foot of industrial/ warehouse/ manufacturing businesses with large truck activity, 3% annual increase limit, providing approximately $2,500,000 annually until ended by voters, requiring spending disclosure, all funds used locally, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure C"
+
+[[section.line]]
+text = "City of Perris Measure C asks voters in the city whether to tax large warehouse, industrial and truck yard businesses by their size in square feet."
+sources = ["ballot", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["business license tax of up to 10¢ per square foot"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The City Council placed Measure C on the ballot."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Each year, a business would pay up to 10 cents per square foot of the area it uses, at a rate the City Council sets."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "warehouse-loading-docks"
+
+[[section.line]]
+text = "The rate would rise each year with inflation, by no more than 3 percent."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+text = "Online-order warehouses, and businesses of 50,000 square feet or less, would not pay."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+text = "The money could go to any lawful city purpose, and only voters could repeal the tax."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The City Attorney's impartial analysis says the city estimates about $2.5 million a year in revenue."
+sources = ["impartial-analysis", "ballot"]
+
+[section.line.visual]
+kind = "illustration"
+name = "country-road"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say heavy trucks damage local streets, and Measure C would help pay for repairs without raising taxes on residents."
+sources = ["arguments"]
+basis = ["Large commercial trucks take massive toll on our local infrastructure, causing potholes, ruts, and severe road damage.", "Measure C does not increase taxes on residents or local small businesses."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Repairs streets damaged by heavy trucks", "No new tax on residents"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the money is not restricted to road repairs, and the cost would mean higher prices and fewer jobs."
+sources = ["arguments"]
+basis = ["Politicians claim the tax funds infrastructure, but the money goes into the General Fund and cannot be legally restricted to road repairs.", "Higher operating costs are passed along through higher prices, fewer jobs"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Money not restricted to road repairs", "Costs passed on in prices and jobs"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is a vote in favor of the new business license tax."
+sources = ["impartial-analysis", "ballot"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["business license tax of up to 10¢ per square foot"]
+
+[[section.line]]
+text = "A no vote is a vote against the new business license tax."
+sources = ["impartial-analysis", "ballot"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["business license tax of up to 10¢ per square foot"]

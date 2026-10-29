@@ -167,6 +167,20 @@ BALLOTS: dict[str, Ballot] = {
                          "Alameda County Composite Voter Information Guide",
                      "ca-2026-11-03-sunol-glen-unified-measure-k":
                          "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-riverside-county-measure-a":
+                         "Riverside County Voter Information Guide",
+                     "ca-2026-11-03-hemet-measure-q":
+                         "Riverside County Voter Information Guide",
+                     "ca-2026-11-03-perris-measure-c":
+                         "Riverside County Voter Information Guide",
+                     "ca-2026-11-03-lake-elsinore-measure-t":
+                         "Riverside County Voter Information Guide",
+                     "ca-2026-11-03-banning-measure-u":
+                         "Riverside County Voter Information Guide",
+                     "ca-2026-11-03-banning-measure-v":
+                         "Riverside County Voter Information Guide",
+                     "ca-2026-11-03-banning-measure-w":
+                         "Riverside County Voter Information Guide",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",

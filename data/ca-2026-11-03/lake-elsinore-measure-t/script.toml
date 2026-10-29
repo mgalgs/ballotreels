@@ -1,0 +1,166 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; what the treasurer does and how the office is filled today; how
+# other cities fill it; who put it on the ballot and what it needs to
+# pass; what would change (when, and who appoints); no cost estimate;
+# the argument in favor and the missing argument against; what a vote
+# does.
+#
+# The guide prints no fiscal analysis. The Impartial Analysis's own
+# words lean (it says an appointed treasurer "will make certain" the
+# finances are well managed); the script takes from it only the facts of
+# the office and the vote. That today's office has no qualifications
+# beyond age, registration and residence is the argument in favor's
+# point (STANDARD.md 6.3), so it is said only in that side. The card is
+# the sample ballot's question, which has no short title and no yes/no
+# lines: the card's title is the ballot's own header for the city's
+# block, and the vote lines take their words from the Impartial
+# Analysis.
+#
+# The guide prints "NO ARGUMENT FILED AGAINST MEASURE “T”": the no side
+# is filed = false.
+
+contest = "ca-2026-11-03-lake-elsinore-measure-t"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot"
+number = "T"
+title = "CITY OF LAKE ELSINORE"
+origin = "SAMPLE BALLOT"
+summary = "Shall the office of City Treasurer be appointive?"
+
+[[section]]
+id = "what"
+heading = "Measure T"
+
+[[section.line]]
+text = "City of Lake Elsinore Measure T asks voters in the city whether the City Treasurer should be appointed instead of elected."
+sources = ["ballot", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["be appointive"]
+
+[[section]]
+id = "background"
+heading = "The City Treasurer"
+
+[[section.line]]
+text = "The City Treasurer has custody of the public funds of the city."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "public-funds-locked"
+
+[[section.line]]
+text = "Today, voters elect the treasurer every four years."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+text = "State law lets the voters of each city choose an elected or an appointed treasurer."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-two-questions"
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The City Council placed Measure T on the ballot, and it needs a majority of the vote to pass."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The office would become appointed when the term of the current treasurer ends."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+text = "The city manager would appoint the treasurer: the manager, the finance director, or another government finance professional."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "job-application"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Riverside County guide does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the job has no minimum qualifications today, and Measure T would ensure a qualified treasurer and save money."
+sources = ["argument"]
+basis = ["Currently individuals that serve this position are selected by popular", "contest without any minimum qualifications for education, relative", "Measure T would ensure the quality of those that serve the position, have", "a positive impact on operations, and save money."]
+
+[section.line.visual]
+kind = "list"
+source = "argument"
+items = ["No minimum qualifications today", "Ensures a qualified treasurer and saves money"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure T was filed, so the county guide prints only the argument from the measure's supporters."
+sources = ["argument"]
+
+[section.line.visual]
+kind = "list"
+source = "argument"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote will change the City Treasurer to an appointed position when the current term ends."
+sources = ["impartial-analysis", "ballot"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["be appointive"]
+
+[[section.line]]
+text = "A no vote will leave the City Treasurer an elected office, with the next election in 2028."
+sources = ["impartial-analysis", "ballot"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot"
+highlight = ["office of City Treasurer"]

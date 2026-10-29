@@ -560,4 +560,58 @@ period = "per-year"
 source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $13,815,000."
 amount = 13815000
+
+# Riverside County Measure A: the guide prints no fiscal analysis or tax
+# rate statement; the one yearly estimate is in its ballot question
+# (the line pdftotext keeps whole; the sample ballot is set in columns).
+[riverside-county-measure-a]
+source = "ballot"
+quote = "sales tax providing approximately $280,000,000 annually"
+amount = 280000000
+period = "per-year"
+
+# City of Hemet Measure Q: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is the City Attorney's Impartial
+# Analysis's (and the ballot question's).
+[hemet-measure-q]
+source = "impartial-analysis"
+quote = "It is estimated that Measure “Q” will provide an additional $16,000,000 in annual local funding"
+amount = 16000000
+period = "per-year"
+
+# City of Perris Measure C: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is the City's, as the City Attorney's
+# Impartial Analysis gives it (the ballot question rounds it to
+# $2,500,000).
+[perris-measure-c]
+source = "impartial-analysis"
+quote = "The City estimates $2,523,877 in annual revenue."
+amount = 2523877
+period = "per-year"
+
+# City of Lake Elsinore Measure T: the guide prints no fiscal analysis
+# (not a tax measure).
+[lake-elsinore-measure-t]
+source = "impartial-analysis"
+status = "none-printed"
+
+# City of Banning Measure U: the guide prints no fiscal analysis (a
+# referendum on a zoning ordinance).
+[banning-measure-u]
+source = "impartial-analysis"
+status = "none-printed"
+
+# City of Banning Measure V: the guide prints no fiscal analysis (a
+# referendum on a zoning ordinance).
+[banning-measure-v]
+source = "impartial-analysis"
+status = "none-printed"
+
+# City of Banning Measure W: the guide prints no fiscal analysis; the one
+# figure is the public benefits its ballot question gives the
+# development agreement.
+[banning-measure-w]
+source = "ballot"
+quote = "over $40,000,000 in public benefits"
+amount = 40000000
 period = "unstated"
