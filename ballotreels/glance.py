@@ -17,8 +17,7 @@ from dataclasses import dataclass
 from decimal import Decimal
 from pathlib import Path
 
-from .checks import (Failure, UnreadableSource, _loose, _loose_archived,
-                     _loose_unshifted)
+from .checks import Failure, UnreadableSource, _loose, _loose_archived
 from .contest import ContestError, load_contest
 from .index import ContestIndexError, load_index
 
@@ -257,14 +256,10 @@ def check_glance(election_dir: str | Path) -> list[Failure] | None:
             continue
         try:
             text = _loose_archived(path)
-            # a PDF's shifted-font lines decoded (checks._unshift_line)
-            unshifted = _loose_unshifted(path)
         except UnreadableSource as e:
             fail(f"cannot read source {entry.source!r} ({src.file}): {e}")
             continue
-        quote = _loose(entry.quote)
-        if quote not in text \
-                and (unshifted is None or quote not in unshifted):
+        if _loose(entry.quote) not in text:
             fail(f"quote does not appear verbatim in source "
                  f"{entry.source!r} ({src.file})")
         if entry.amount is not None:
