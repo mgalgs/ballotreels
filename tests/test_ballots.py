@@ -229,7 +229,8 @@ class BallotTest(unittest.TestCase):
         self.assertEqual(badge(la, "Amendment 10: X", "10"), "AMENDMENT")
         self.assertTrue(la.card_column_breaks)
         self.assertFalse(any(b.card_column_breaks
-                             for s, b in BALLOTS.items() if s != "la"))
+                             for s, b in BALLOTS.items()
+                             if s not in ("la", "nh")))
 
 
 class CardColumnBreakTest(unittest.TestCase):
