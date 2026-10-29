@@ -1829,3 +1829,11 @@ status = "none-printed"
 [roseville-measure-a]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Rocklin Measure C: a sales tax, so no tax rate statement; the
+# City Attorney's Impartial Analysis gives the revenue estimate.
+[rocklin-measure-c]
+source = "impartial-analysis"
+quote = "It is estimated that Measure “C” will provide an additional $8,000,000 in annual local funding"
+amount = 8000000
+period = "per-year"
