@@ -410,3 +410,13 @@ status = "none-printed"
 [half-moon-bay-measure-q]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Brisbane Measure X: no tax rate statement or fiscal analysis
+# was filed; the one estimate is the City's, which the ballot question
+# prints (the City Attorney's impartial analysis gives the same
+# "approximately $1,000,000 in additional annual revenue").
+[brisbane-measure-x]
+source = "ballot-question"
+quote = "raising approximately $1,000,000 annually, until repealed by voters"
+amount = 1000000
+period = "per-year"

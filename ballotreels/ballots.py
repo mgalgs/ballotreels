@@ -127,6 +127,8 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 2026-39",
                      "ca-2026-11-03-half-moon-bay-measure-q":
                          "RESOLUTION NO. C-2026-63",
+                     "ca-2026-11-03-brisbane-measure-x":
+                         "RESOLUTION NO. 2026-28",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",
