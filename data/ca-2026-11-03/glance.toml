@@ -1522,3 +1522,39 @@ period = "per-year"
 [yountville-measure-y]
 source = "impartial-analysis"
 status = "none-printed"
+
+# City of Los Angeles Measure PRK: the City Administrative Officer's
+# yearly increases "attributed to the measure", the largest in 2036-37.
+# (The statement's "$303 million to $995 million" is the department's
+# whole funding with property value growth, not the measure's share.)
+[los-angeles-measure-prk]
+source = "financial-impact"
+quote = "with estimated annual increases attributed to the measure as follows: 2027-28 ($32 million), 2028-29 ($66 million), 2029-30 ($105 million), 2030-31 ($147 million), 2031-32 ($193 million), 2032-33 ($244 million), 2033-34 ($299 million), 2034-35 ($359 million), 2035-36 ($426 million), and 2036-37 ($497 million)."
+amount = 497000000
+period = "per-year"
+
+# City of Los Angeles Measure PRT: the City Administrative Officer's
+# figure is the harbor's past yearly allocation, which the measure writes
+# into the charter; the other three changes are "cost-neutral".
+[los-angeles-measure-prt]
+source = "financial-impact"
+quote = "The historical annual allocation to the PAIP is approximately $28.6 million."
+amount = 28600000
+period = "per-year"
+
+# City of Los Angeles Measure FD: the City Administrative Officer's
+# estimate of the sales tax's yearly revenue (the ballot question gives
+# the same "approximately $345 million annually").
+[los-angeles-measure-fd]
+source = "financial-impact"
+quote = "It generates roughly $345 million annually for a special fund dedicated exclusively to support the operation and services of the Los Angeles Fire Department (LAFD)"
+amount = 345000000
+period = "per-year"
+direction = "revenue-gain"
+
+# City of Los Angeles Measure SC: the City Administrative Officer
+# expects no financial impact on the city.
+[los-angeles-measure-sc]
+source = "financial-impact"
+status = "no-material-impact"
+quote = "This measure is not anticipated to have a financial impact on the City."

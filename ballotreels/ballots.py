@@ -344,7 +344,8 @@ BALLOTS: dict[str, Ballot] = {
                      # Summary and yes/no meanings.
                      **{f"ca-2026-11-03-los-angeles-measure-{x}":
                         "City of Los Angeles Voter Information Pamphlet"
-                        for x in ("te", "la", "pl", "ee")},
+                        for x in ("te", "la", "pl", "ee",
+                                  "prk", "prt", "fd", "sc")},
                      # Sonoma County's Registrar of Voters publishes each
                      # measure's guide pages as one PDF headed "Local
                      # Ballot Measure: H"; no page naming the guide was
