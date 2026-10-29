@@ -1,0 +1,38 @@
+# Archived sources for New Hampshire Question 1, 2026-11-03 general
+# election. Every id here may be cited by script.toml. `kind` must be one
+# the standard allows (docs/STANDARD.md, section 1).
+#
+# New Hampshire has no voter guide, no official arguments for or against
+# a ballot question, and no fiscal note for a constitutional amendment
+# concurrent resolution, so there is no source of kind official-argument
+# or official-fiscal-analysis. The Secretary of State's "Questions on the
+# General Election Ballot 2026" prints the question as the ballot does.
+# CACR 13, as adopted by both bodies, is the amendment's full text; its
+# section VIII is the short Voters' Guide the resolution writes ("AT THE
+# PRESENT TIME ..." / "IF THE AMENDMENT IS ADOPTED ..."), and its section
+# VII sets the two-thirds vote.
+
+[contest]
+id = "nh-2026-11-03-question-1"
+election = "nh-2026-11-03"
+division = "ocd-division/country:us/state:nh"
+kind = "measure"
+title = "Question 1: Eliminating the office of register of probate"
+
+[[source]]
+id = "questions"
+kind = "official-title-summary"
+publisher = "New Hampshire Secretary of State, Questions on the General Election Ballot 2026"
+credit = "New Hampshire Secretary of State"
+url = "https://mm.nh.gov/files/uploads/sos/docs/questions-on-general-election-ballot-2026-for-web.pdf"
+file = "sources/sos-questions-on-general-election-ballot-2026.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "cacr-13"
+kind = "official-text"
+publisher = "New Hampshire General Court, CACR 13, Version Adopted by Both Bodies, 2026 Session"
+credit = "New Hampshire General Court, CACR 13"
+url = "https://gc.nh.gov/bill_status/legacy/bs2016/billText.aspx?sy=2026&id=1803&txtFormat=pdf&v=current"
+file = "sources/question-1-cacr13-current-version.pdf"
+retrieved = "2026-10-27"

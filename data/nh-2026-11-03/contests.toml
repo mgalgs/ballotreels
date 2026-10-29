@@ -1,0 +1,28 @@
+# Contest index for the 2026-11-03 New Hampshire general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string).
+# New Hampshire has no voter guide, and the Secretary of State's
+# "Questions on the General Election Ballot 2026" prints no short title
+# for either question; each title pairs the question's number with a
+# short title in its own documents' words (CACR 13: "the office of
+# register of probate ... be eliminated"; HB 1300: a "school district
+# local tax cap").
+
+[election]
+id = "nh-2026-11-03"
+state = "ocd-division/country:us/state:nh"
+title = "New Hampshire General Election, November 3, 2026"
+
+[[contest]]
+id = "nh-2026-11-03-question-1"
+kind = "measure"
+division = "ocd-division/country:us/state:nh"
+title = "Question 1: Eliminating the office of register of probate"
+number = "1"
+
+[[contest]]
+id = "nh-2026-11-03-question-2"
+kind = "measure"
+division = "ocd-division/country:us/state:nh"
+title = "Question 2: School district property tax limits"
+number = "2"
