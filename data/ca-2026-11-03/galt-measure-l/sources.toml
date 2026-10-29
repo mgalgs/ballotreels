@@ -1,0 +1,47 @@
+# Archived sources for City of Galt Measure L, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Sacramento County publishes no single Voter Information Guide PDF (each
+# voter's guide is issued through a portal); its "Current Measure
+# Information" page prints each measure's ballot question, impartial
+# analysis and arguments. sources/county-measure-page-item.txt is the
+# text of Measure L's item on that page; every source cites it. Measure L
+# is not a tax: the page prints no fiscal statement. The page prints no
+# full text of Measure L (it says a copy can be had from the Assistant
+# City Clerk), and none was archived, so there is no official-text source.
+
+[contest]
+id = "ca-2026-11-03-galt-measure-l"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:galt"
+kind = "measure"
+title = "City of Galt Measure L: Appointed City Treasurer and City Clerk"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "Sacramento County Voter Registration and Elections, Current Measure Information, November 3, 2026, General Election: Measure L's ballot question, and the Impartial Analysis's statement of what a vote does"
+credit = "Current Measure Information, Sacramento County"
+url = "https://elections.saccounty.gov/us/en/election-information/current-measure-information.html"
+file = "sources/county-measure-page-item.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "City of Galt Interim City Attorney, Impartial Analysis of Measure L, Current Measure Information, Sacramento County Voter Registration and Elections"
+credit = "Impartial Analysis, Current Measure Information"
+url = "https://elections.saccounty.gov/us/en/election-information/current-measure-information.html"
+file = "sources/county-measure-page-item.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in favor of Measure L, as printed on Sacramento County Voter Registration and Elections' Current Measure Information page (no argument against was filed)"
+credit = "Arguments, Current Measure Information"
+url = "https://elections.saccounty.gov/us/en/election-information/current-measure-information.html"
+file = "sources/county-measure-page-item.txt"
+retrieved = "2026-10-28"

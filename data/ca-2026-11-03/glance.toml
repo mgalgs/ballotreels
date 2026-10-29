@@ -1584,3 +1584,27 @@ source = "ballot-question"
 quote = "to generate approximately $5,750,000 annually"
 amount = 5750000
 period = "per-year"
+
+# City of Folsom Measure I: a charter amendment, not a tax; the county's
+# Current Measure Information page prints no fiscal statement.
+[folsom-measure-i]
+source = "ballot-label"
+status = "none-printed"
+
+# City of Folsom Measure J: a charter amendment, not a tax; the county's
+# Current Measure Information page prints no fiscal statement.
+[folsom-measure-j]
+source = "ballot-label"
+status = "none-printed"
+
+# City of Folsom Measure K: not a tax; the county's Current Measure
+# Information page prints no fiscal statement.
+[folsom-measure-k]
+source = "ballot-label"
+status = "none-printed"
+
+# City of Galt Measure L: not a tax; the county's Current Measure
+# Information page prints no fiscal statement.
+[galt-measure-l]
+source = "ballot-label"
+status = "none-printed"
