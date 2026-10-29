@@ -1,0 +1,54 @@
+# Archived sources for City of Santa Rosa Measure L, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Sonoma County Registrar of Voters publishes each measure's pages
+# of its guide as one PDF, headed "Local Ballot Measure: L" and footed
+# "Sonoma County" with the guide's page numbers (049M550 to 049M552); no
+# cover page was archived, so the sources name those pages, not a guide
+# title. One PDF backs every source here. The City Attorney's Impartial
+# Analysis is the measure's neutral explanation. The guide prints no
+# fiscal analysis or tax rate statement (a sales tax, not a bond).
+
+[contest]
+id = "ca-2026-11-03-santa-rosa-measure-l"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:santa_rosa"
+kind = "measure"
+title = "City of Santa Rosa Measure L: Reauthorizing the City Sales Tax at a 1 Percent Rate"
+
+[[source]]
+id = "measure-question"
+kind = "official-title-summary"
+publisher = "Sonoma County Registrar of Voters, Local Ballot Measure: L, page 049M550: Measure Question and What Your Vote Means"
+credit = "Measure Question, Sonoma County Registrar of Voters"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9561_MeasL_CityOfSantaRosa_SalesTax_EN.pdf"
+file = "sources/MeasL_EN.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney’s Impartial Analysis of Measure L, Sonoma County Registrar of Voters, Local Ballot Measure: L, page 049M551"
+credit = "City Attorney’s Impartial Analysis, Sonoma County Registrar of Voters"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9561_MeasL_CityOfSantaRosa_SalesTax_EN.pdf"
+file = "sources/MeasL_EN.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure L, and the notice that no argument was submitted against it, Sonoma County Registrar of Voters, Local Ballot Measure: L, page 049M551"
+credit = "Arguments, Sonoma County Registrar of Voters"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9561_MeasL_CityOfSantaRosa_SalesTax_EN.pdf"
+file = "sources/MeasL_EN.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure L: the proposed ordinance amending Chapter 3-30 of the Santa Rosa Municipal Code, Sonoma County Registrar of Voters, Local Ballot Measure: L, page 049M552"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9561_MeasL_CityOfSantaRosa_SalesTax_EN.pdf"
+file = "sources/MeasL_EN.pdf"
+retrieved = "2026-10-28"
