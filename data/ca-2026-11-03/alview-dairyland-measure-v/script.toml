@@ -1,0 +1,164 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; how a school bond is repaid and what it
+# needs to pass; what the money would pay for and what it may not; the
+# district's tax statement; one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this school district". The card and title
+# carry the names. "Counsel" is heard as "Council"
+# (standard/speakability.txt), so the narration does not say it.
+#
+# The card quotes the board's own abbreviated form (Appendix B of its
+# resolution); it prints no yes and no sentences, so the card has no
+# boxes and the vote lines take their meaning from the impartial
+# analysis. The bond total and the debt service are repaid from a tax
+# on property in the district, not from the district's budget, and no
+# archived source states that budget, so they have no budget scale
+# (STANDARD.md 6.5; left open), as Escalon Unified Measure U's do. The
+# tax statement's average ($28.25) and highest ($30.00) rates differ,
+# and both are said.
+#
+# The ballot question's "for the first time in District history" is also
+# a point the argument in favor makes ("A Historic First"), so the
+# neutral sections leave it out (STANDARD.md 6.3); the card shows it as
+# printed.
+#
+# No argument against Measure V is among the registrar's postings. The
+# no side says so plainly; its section is marked filed = false.
+
+contest = "ca-2026-11-03-alview-dairyland-measure-v"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "V"
+title = "ABBREVIATED FORM OF BOND MEASURE"
+origin = "RESOLUTION NO. 26-27-02"
+summary = "To improve the quality of education; build a gymnasium at Dairyland for school and community use; upgrade classrooms; repair roofs, windows, electrical, HVAC and plumbing; and make safety/security improvements; shall Alview-Dairyland Union School District's measure be adopted to issue $7,300,000 of bonds at legal rates, for the first time in District history, with average rates of $28.25 per $100,000 assessed value ($454,000 annually) while bonds are outstanding, audits, oversight, NO money for salaries, all money staying local?"
+
+[[section]]
+id = "what"
+heading = "Measure V"
+
+[[section.line]]
+text = "Measure V asks the voters of this school district whether to approve $7.3 million in school bonds."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to issue $7,300,000 of bonds"]
+
+[[section]]
+id = "today"
+heading = "How a school bond works"
+
+[[section.line]]
+text = "The district would borrow the money and repay it from a tax on property in the district."
+sources = ["impartial-analysis", "tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure V needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The money would build a gymnasium for school and community use, upgrade classrooms, repair roofs and building systems, and add safety improvements."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-gym"
+
+[[section.line]]
+text = "The money could not pay teacher or administrator salaries, and a citizens' oversight committee and yearly audits would check the spending."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+text = "The district's tax statement estimates an average tax of $28.25 per $100,000 of assessed value, and at most $30, through 2060-2061."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "bars"
+title = "Estimated tax per $100,000 of assessed value, dollars"
+source = "tax-statement"
+unit = ""
+labels = ["Average", "Highest"]
+values = [28.25, 30]
+
+[[section.line]]
+text = "The statement estimates the total to repay, with interest, at about $16.1 million."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say facilities are over 100 years old, and the district is among the few without a school gym."
+sources = ["argument-for"]
+basis = ["our facilities are now over 100 years old and falling behind.", "Alview-Dairyland is one of the few districts in the entire state without a school gym."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Facilities over 100 years old", "Among the few without a school gym"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure V appears among the filings that the county elections office has posted for this election."
+sources = ["argument-for"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the district to issue $7.3 million in bonds, repaid by a yearly property tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to issue $7,300,000 of bonds"]
+
+[[section.line]]
+text = "A no vote does not authorize the district to issue the bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["be adopted"]
