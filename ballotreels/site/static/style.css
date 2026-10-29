@@ -417,15 +417,26 @@ input.zip-input::placeholder {
   margin-top: 0.4rem;
 }
 
-/* The home page's coloured-pencil flag: small enough on a phone that the
-   zip field still starts on the first screen. */
+/* The home page's coloured-pencil flag, beside the heading. */
+.home-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 8px 0 4px;
+}
+
+.home-head h1 {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+}
+
 .home-flag {
   display: block;
-  width: auto;
+  flex: 0 0 auto;
+  width: 44%;
+  max-width: 280px;
   height: auto;
-  max-width: min(100%, 320px);
-  max-height: 18vh;
-  margin: 8px 0 4px;
   transform: rotate(-1.5deg);
   box-shadow: 2px 3px 0 rgba(46, 43, 39, 0.18);
 }
