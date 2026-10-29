@@ -36,5 +36,6 @@
 (?i)\bfavors\b | the transcript may spell it the British way ("favours") | say "supports"
 (?<!from )\b\d[\d.]* to \d[\d.]* percent\b | a range of percents is transcribed with a hyphen and a sign ("1-2%") | say "between 1 and 2 percent" ("from 10 to 14 percent", a change, is fine)
 \b\d[\d.]* cents? (?:sales )?tax\b | a sales tax in cents is transcribed in dollars ("1 cent" as "$0.01") | give the rate as a percent ("a 1 percent sales tax"; a 1-cent sales tax is 1 percent)
-(?<![\d.])[1-9] cents\b | a few cents is transcribed in dollars ("5 cents" as "$0.05") | write it in dollars, as the source does ("$0.05 per square foot")
+(?<![\d.$])\d+ cents\b | an amount in cents is often transcribed in dollars ("5 cents" as "$0.05", "30 cents" as "$0.30") | write it in dollars ("$0.05 per square foot")
 \bPerris\b | the city name "Perris" is heard as "Paris" | name it another way ("this city", "this high school district"); the card and title show its name
+\bMurrieta\b | the name "Murrieta" is heard as "Marietta" | name it another way ("this school district"); the card and title show its name
