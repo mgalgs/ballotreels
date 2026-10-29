@@ -420,3 +420,13 @@ source = "ballot-question"
 quote = "raising approximately $1,000,000 annually, until repealed by voters"
 amount = 1000000
 period = "per-year"
+
+# Town of Portola Valley Measure N: no tax rate statement or fiscal
+# analysis was filed; the one estimate is the Town's, which the ballot
+# question prints (the Town Attorney's impartial analysis gives
+# "approximately $2 million of additional revenue annually").
+[portola-valley-measure-n]
+source = "ballot-question"
+quote = "providing approximately $2,000,000 in locally controlled funding annually"
+amount = 2000000
+period = "per-year"

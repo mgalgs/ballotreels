@@ -1,0 +1,74 @@
+# Archived sources for Town of Portola Valley Measure N, 2026-11-03
+# general election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# San Mateo County publishes each measure's documents separately, as
+# PDFs filed by the town with the Assessor-County Clerk-Recorder &
+# Elections office, not as one pamphlet. Measure N both adopts a town
+# charter and enacts a real property transfer tax. The ballot question
+# is printed in the Town Council's Resolution No. 3010-2026, Section 3;
+# the Town Attorney's impartial analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is. No tax rate statement or separate fiscal analysis was
+# filed. The rebuttals are archived beside the arguments but not listed
+# here: the script quotes only the arguments.
+#
+# Every file is a scan with no text layer. The verbatim checks read the
+# transcriptions (sources/*.transcription.txt, made from the page images)
+# of the resolution and the two arguments, which a source whose file is
+# not a PDF gives them; the PDF beside each is the archived copy, and the
+# url is the PDF's.
+
+[contest]
+id = "ca-2026-11-03-portola-valley-measure-n"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:portola_valley"
+kind = "measure"
+title = "Town of Portola Valley Measure N: Adopting a Town Charter and a $10 per $1,000 Real Property Transfer Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Town of Portola Valley, Resolution No. 3010-2026, Section 3: the ballot question, pages 3 to 4, as filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Ballot question, Resolution No. 3010-2026"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M205-Contest%20Code-Reso-Portola%20Valley%20Transfer%20Tax_Redacted.pdf"
+file = "sources/resolution-full-text.transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Catherine Engberg, Town Attorney, Town of Portola Valley, Measure N Town Attorney's Impartial Analysis, San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Town Attorney's Impartial Analysis of Measure N"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MN-ImpartialAnalysis-PortolaValley-Transfer-Tax.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure N, filed with San Mateo County Assessor-County Clerk-Recorder & Elections, page 3"
+credit = "Argument in favor, San Mateo County Assessor-County Clerk-Recorder & Elections"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M205-Contest%20Code-5ArgInFavor-Portola%20Valley%20Transfer%20Tax_Redacted.pdf"
+file = "sources/argument-for.transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure N, filed with San Mateo County Assessor-County Clerk-Recorder & Elections, page 3"
+credit = "Argument against, San Mateo County Assessor-County Clerk-Recorder & Elections"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M205-Contest%20Code-6ArgAgainst-Portola%20Valley%20Transfer%20Tax_Redacted.pdf"
+file = "sources/argument-against.transcription.txt"
+retrieved = "2026-10-28"
+
+
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Town of Portola Valley, Resolution No. 3010-2026, with Exhibit A, the proposed Town Charter, and Exhibit B, Ordinance No. 2026-456, as filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M205-Contest%20Code-Reso-Portola%20Valley%20Transfer%20Tax_Redacted.pdf"
+file = "sources/resolution-full-text.pdf"
+retrieved = "2026-10-28"
