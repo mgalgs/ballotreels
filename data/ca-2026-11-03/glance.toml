@@ -1971,3 +1971,13 @@ source = "impartial-analysis"
 quote = "It is estimated that the proposed sales tax will provide an additional Six Million Dollars ($6,000,000) in annual local funding."
 amount = 6000000
 period = "per-year"
+
+# City of Fowler Measure T: a sales tax, so no tax rate statement or
+# fiscal analysis applies. The quote is the ballot question's, from
+# Resolution No. 2854; the City Attorney's impartial analysis gives the
+# same $300,000 a year.
+[fowler-measure-t]
+source = "ballot-question"
+quote = "providing approximately $300,000.00 annually until ended by voters"
+amount = 300000
+period = "per-year"
