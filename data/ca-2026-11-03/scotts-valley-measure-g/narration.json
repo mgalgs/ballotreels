@@ -1,0 +1,243 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 64.01,
+  "phrases": [
+    {
+      "text": "City of Scotts Valley Measure G asks voters in the city whether to raise the hotel tax from 11 to 13 percent.",
+      "start": 0.03,
+      "end": 8.23
+    },
+    {
+      "text": "The hotel tax is paid by hotel and motel guests who stay in the city for fewer than 30 days.",
+      "start": 8.89,
+      "end": 15.22
+    },
+    {
+      "text": "All of the hotel tax goes into the general fund for city services.",
+      "start": 15.88,
+      "end": 19.83
+    },
+    {
+      "text": "Measure G would raise the rate to 13 percent, which is $13 a night on a $100 room.",
+      "start": 20.49,
+      "end": 27.19
+    },
+    {
+      "text": "Measure G is a general tax, so it needs a simple majority to pass.",
+      "start": 27.85,
+      "end": 32.63
+    },
+    {
+      "text": "The measure documents that Santa Cruz County Elections published do not include a cost estimate for the measure.",
+      "start": 33.29,
+      "end": 39.27
+    },
+    {
+      "text": "No argument against Measure G appears among the measure documents that Santa Cruz County Elections has published for the November election.",
+      "start": 39.93,
+      "end": 47.67
+    },
+    {
+      "text": "Supporters say Measure G is paid by visitors, not local families, and keeps all of the money in Scotts Valley.",
+      "start": 48.33,
+      "end": 55.24
+    },
+    {
+      "text": "A yes vote raises the hotel tax from 11 to 13 percent.",
+      "start": 55.9,
+      "end": 60.36
+    },
+    {
+      "text": "A no vote leaves the hotel tax unchanged.",
+      "start": 61.02,
+      "end": 63.98
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "City of Scotts Valley Measure G asks voters in the city whether to raise the hotel tax from 11 to 13 percent.",
+      "The hotel tax is paid by hotel and motel guests who stay in the city for fewer than 30 days.",
+      "All of the hotel tax goes into the general fund for city services.",
+      "Measure G would raise the rate to 13 percent, which is $13 a night on a $100 room.",
+      "Measure G is a general tax, so it needs a simple majority to pass.",
+      "The measure documents that Santa Cruz County Elections published do not include a cost estimate for the measure.",
+      "No argument against Measure G appears among the measure documents that Santa Cruz County Elections has published for the November election.",
+      "Supporters say Measure G is paid by visitors, not local families, and keeps all of the money in Scotts Valley.",
+      "A yes vote raises the hotel tax from 11 to 13 percent.",
+      "A no vote leaves the hotel tax unchanged."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "City of Scotts Valley Measure G asks voters in the city whether to raise the hotel tax from 11 to 13 percent."
+      },
+      "bounds": [
+        0,
+        198240
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"City of Scotts Valley Measure G asks voters in the city whether to raise the hotel tax from 11 to 13 percent.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The hotel tax is paid by hotel and motel guests who stay in the city for fewer than 30 days."
+      },
+      "bounds": [
+        212640,
+        366000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The hotel tax is paid by hotel and motel guests who stay in the city for fewer than 30 days.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "All of the hotel tax goes into the general fund for city services."
+      },
+      "bounds": [
+        380400,
+        476640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"All of the hotel tax goes into the general fund for city services.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure G would raise the rate to 13 percent, which is $13 a night on a $100 room."
+      },
+      "bounds": [
+        491040,
+        653280
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure G would raise the rate to 13 percent, which is $13 a night on a $100 room.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure G is a general tax, so it needs a simple majority to pass."
+      },
+      "bounds": [
+        667680,
+        783840
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure G is a general tax, so it needs a simple majority to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The measure documents that Santa Cruz County Elections published do not include a cost estimate for the measure."
+      },
+      "bounds": [
+        798240,
+        943200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The measure documents that Santa Cruz County Elections published do not include a cost estimate for the measure.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument against Measure G appears among the measure documents that Santa Cruz County Elections has published for the November election."
+      },
+      "bounds": [
+        957600,
+        1144800
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure G appears among the measure documents that Santa Cruz County Elections has published for the November election.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say Measure G is paid by visitors, not local families, and keeps all of the money in Scotts Valley."
+      },
+      "bounds": [
+        1159200,
+        1326480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure G is paid by visitors, not local families, and keeps all of the money in Scotts Valley.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote raises the hotel tax from 11 to 13 percent."
+      },
+      "bounds": [
+        1340880,
+        1449360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote raises the hotel tax from 11 to 13 percent.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote leaves the hotel tax unchanged."
+      },
+      "bounds": [
+        1463760,
+        1536240
+      ]
+    }
+  ],
+  "sha256": "1669be2f199f830d1350c6d0f300c29f1e87ca65e8c5541c51cb309ad8aab5f1"
+}
