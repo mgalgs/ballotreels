@@ -6,11 +6,10 @@
 # is the guide's printed footer number (its PDF pages are two higher).
 #
 # The guide prints no ballot question. The question is in the City
-# Council's ordinance (its Section 7, "Ballot Proposition"), but the
-# ordinance's text runs a document footer into the middle of it, so no
-# card can quote it verbatim; the card quotes the guide's own page
-# instead: the City Attorney's Impartial Analysis and its yes/no
-# statements.
+# Council's ordinance (its Section 7, "Ballot Proposition"), and the card
+# quotes it from there; pdftotext runs a document footer into the middle
+# of it, which the card check drops for this contest (ballots.py,
+# card_strays).
 
 [contest]
 id = "ca-2026-11-03-needles-measure-l"
@@ -53,6 +52,15 @@ publisher = "Full Text for Bond Measure L, San Bernardino County Voter Informati
 credit = "Full text of Measure L, San Bernardino County Voter Information Guide"
 url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
 file = "sources/VIG_pp232-235.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Needles, Ordinance 684-AC, Section 7: the ballot proposition, as posted by the San Bernardino County Registrar of Voters"
+credit = "Ballot proposition, City of Needles Ordinance 684-AC"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/CityofNeedles/30/FT_CityofNeedles.pdf"
+file = "sources/FT_CityofNeedles.pdf"
 retrieved = "2026-10-28"
 
 [[source]]

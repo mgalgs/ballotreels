@@ -741,6 +741,9 @@ def check_card(c: Contest) -> list[Failure]:
         fail(f"cannot read source {card.source!r} ({src.file}) to check "
              f"the card's quotes: {e}")
         return out
+    strays = ballot.card_strays.get(c.id, ())
+    if strays:
+        archived = _without_strays(archived, strays)
     for key, value in card.quoted():
         # a hyphen may be missing where pdftotext joined a word hyphenated
         # across a line break ("eighty-" / "two" -> "eightytwo")
@@ -752,6 +755,15 @@ def check_card(c: Contest) -> list[Failure]:
             fail(f"{key!r} does not appear verbatim in source "
                  f"{card.source!r} ({src.file})")
     return out
+
+
+def _without_strays(archived: str, strays: tuple[str, ...]) -> str:
+    """`archived` with each of `strays` (Ballot.card_strays) dropped
+    wherever it stands as whole words, whitespace collapsed again."""
+    for stray in strays:
+        archived = re.sub(r"(?<!\S)" + re.escape(stray) + r"(?!\S)", " ",
+                          archived)
+    return _normalise(archived)
 
 
 CARD_PIECE_MIN_WORDS = 6

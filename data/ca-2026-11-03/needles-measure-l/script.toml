@@ -4,8 +4,10 @@
 # tax rate statement's rate and total; one line per side; what a vote
 # does.
 #
-# The card quotes the guide's page, not the ballot question
-# (sources.toml); the vote lines quote its yes/no statements. The bond
+# The guide prints no ballot question: the card quotes it from the City
+# Council's ordinance (sources.toml), and the vote lines quote the City
+# Attorney's yes/no statements, highlighting the card's own "shall the
+# City of Needles measure be approved". The bond
 # total and the debt service are repaid by a property tax on property in
 # the city, not from the city's budget, so neither takes a scale
 # (STANDARD.md 6.5, exempt). The tax rate statement's last year of
@@ -21,13 +23,11 @@ template_version = 2
 standard_version = 2
 
 [card]
-source = "impartial-analysis"
+source = "ballot-question"
 number = "L"
 title = "CITY OF NEEDLES"
-origin = "The City Council of Needles has voted to place a Measure on the November 3, 2026 ballot to seek voter approval to issue general obligation bonds up to $11,200,000."
-summary = "The funds raised through these bonds would finance the cost of acquiring, constructing, improving, renovating, and equipping municipal improvements and public infrastructure within the City, including but not limited to, improvements to roads and transportation infrastructure, street rehabilitation, street repaving, and pothole repair, public facilities, parks and recreational facilities, community safety improvements, and the revitalization of Downtown Main Street."
-yes = "A \"yes\" vote would authorize the issuance and sale of general obligation bonds in the amount up to $11,200,000 to fund street, roadway, and pothole repair improvements, sidewalk and pedestrian safety improvements, and upgrade park and recreational facilities including restrooms, irrigation, landscaping, and parking at City parks and recreational facilities."
-no = "A \"no\" vote would not authorize the issuance and sale of the bonds."
+origin = "AN ORDINANCE OF THE CITY COUNCIL OF THE CITY OF NEEDLES"
+summary = "To improve the City of Needles including roads and transportation infrastructure; repairing and repaving streets; fixing potholes; maintaining community safety; improving parks and recreational facilities; and revitalizing downtown Main Street; shall the City of Needles measure be approved authorizing $11,200,000 of bonds at legal rates, generating on average $739,971 annually while bonds are outstanding at a rate of $60 per $100,000 assessed value, with annual audits, independent citizens' oversight, NO money for salaries and all money staying in Needles?"
 
 [[section]]
 id = "what"
@@ -35,12 +35,12 @@ heading = "Measure L"
 
 [[section.line]]
 text = "City of Needles Measure L asks Needles voters whether the city may borrow up to $11,200,000 through bonds for streets, parks and other public works."
-sources = ["impartial-analysis"]
+sources = ["impartial-analysis", "ballot-question"]
 
 [section.line.visual]
 kind = "page"
-source = "impartial-analysis"
-highlight = ["general obligation bonds up to $11,200,000"]
+source = "ballot-question"
+highlight = ["$11,200,000 of bonds"]
 
 [[section]]
 id = "background"
@@ -147,21 +147,21 @@ heading = "What your vote means"
 
 [[section.line]]
 text = "A yes vote would authorize the city to sell up to $11,200,000 in bonds for these repairs."
-sources = ["impartial-analysis"]
+sources = ["impartial-analysis", "ballot-question"]
 
 [section.line.visual]
 kind = "page"
-source = "impartial-analysis"
-highlight = ["would authorize"]
+source = "ballot-question"
+highlight = ["shall the City of Needles measure be approved"]
 
 [[section.line]]
 text = "A no vote would not authorize the bonds."
-sources = ["impartial-analysis"]
+sources = ["impartial-analysis", "ballot-question"]
 
 [section.line.visual]
 kind = "page"
-source = "impartial-analysis"
-highlight = ["would not authorize"]
+source = "ballot-question"
+highlight = ["shall the City of Needles measure be approved"]
 
 [[question]]
 ask = "How much would a property owner pay?"

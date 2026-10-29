@@ -287,6 +287,49 @@ class CardColumnBreakTest(unittest.TestCase):
             "2028)", self.TEXT, self.BLOCKS))
 
 
+class CardStraysTest(unittest.TestCase):
+    """Text pdftotext sets inside a card's quote (a document footer, the
+    ballot's Yes and No boxes) is dropped only as whole words, and only
+    for the contests that name it."""
+
+    def test_named_only_for_two_san_bernardino_cards(self):
+        self.assertEqual(sorted(BALLOTS["ca"].card_strays),
+                         ["ca-2026-11-03-grand-terrace-measure-n",
+                          "ca-2026-11-03-needles-measure-l"])
+        self.assertFalse(any(b.card_strays
+                             for s, b in BALLOTS.items() if s != "ca"))
+
+    def test_dropped_as_whole_words(self):
+        from ballotreels.checks import _without_strays
+        text = "emergency response, Yes and rapid. Resolution No. 2026-21"
+        self.assertEqual(_without_strays(text, ("Yes", "No")),
+                         "emergency response, and rapid. "
+                         "Resolution No. 2026-21")
+        self.assertEqual(_without_strays("Yesterday No", ("Yes",)),
+                         "Yesterday No")
+
+
+@unittest.skipIf(shutil.which("pdftotext") is None, "needs pdftotext")
+class SanBernardinoCardStraysTest(unittest.TestCase):
+    """On the real resolution and ordinance, the ballot question is a
+    verbatim card quote once its strays are dropped, and not before."""
+
+    def test_question_needs_its_strays_dropped(self):
+        from pathlib import Path
+
+        from ballotreels.checks import _archived_text, _without_strays
+        for slug, pdf, quote in (
+                ("grand-terrace-measure-n", "RES_GT.pdf",
+                 "9-1-1 emergency response, and rapid response times"),
+                ("needles-measure-l", "FT_CityofNeedles.pdf",
+                 "generating on average $739,971 annually")):
+            text = _archived_text(Path(
+                f"data/ca-2026-11-03/{slug}/sources/{pdf}").resolve())
+            strays = BALLOTS["ca"].card_strays[f"ca-2026-11-03-{slug}"]
+            self.assertNotIn(quote, text)
+            self.assertIn(quote, _without_strays(text, strays))
+
+
 @unittest.skipIf(shutil.which("pdftotext") is None, "needs pdftotext")
 class LouisianaStatementsStitchTest(unittest.TestCase):
     """On Louisiana's real one-sheet statements, the one column break a
