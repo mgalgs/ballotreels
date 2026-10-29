@@ -1,0 +1,62 @@
+# Archived sources for City of Vacaville Measure V, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# No printed Solano County voter guide was archived: these are the filed
+# documents the Solano County Registrar of Voters posts on its Current
+# Election Information page. The ballot question is quoted from
+# Resolution No. 2026-106, which orders it "submitted to the voters".
+# Every file is a scan with no text layer: the passages `check` reads
+# verbatim were typed from the page images into .txt transcriptions
+# beside the PDFs, which name the PDF and URL they copy; those sources
+# point at the transcriptions, and their urls at the scans. The City
+# Attorney's impartial analysis is the measure's neutral explanation; it
+# gives no revenue estimate, and no tax rate statement or fiscal
+# analysis applies (a sales tax), so the one estimate is the ballot
+# question's. The posted "Resolution & Full Text" holds the resolution
+# only: the Exhibit A ordinance it names is not among its pages, so no
+# full text is cited. The rebuttals are not cited.
+
+[contest]
+id = "ca-2026-11-03-vacaville-measure-v"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:vacaville"
+kind = "measure"
+title = "City of Vacaville Measure V: Additional One-Cent Sales Tax Until Ended by Voters"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Vacaville, Resolution No. 2026-106, adopted June 23, 2026: the ballot question, page 3, and the vote, page 6 (transcribed from the scan), as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Resolution No. 2026-106, City of Vacaville"
+url = "https://content.solanocounty.gov/sites/default/files/2026-07/Resolution_City_of_Vacaville_Measure_V_REDACTED.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney’s Impartial Analysis of Measure V, Andria Borba, City Attorney (transcribed from the scan), as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "City Attorney’s Impartial Analysis of Measure V"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Impartial_Analysis.FINAL_Measure_V.pdf"
+file = "sources/impartial-analysis-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure V (transcribed from the scan), as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Argument in favor, Solano County Registrar of Voters"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Measure_V_-_Argument_in_Favor_Redacted.pdf"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure V (transcribed from the scan), as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Argument against, Solano County Registrar of Voters"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Measure_V_-_Argument_Against_Redacted.pdf"
+file = "sources/argument-against-transcription.txt"
+retrieved = "2026-10-28"

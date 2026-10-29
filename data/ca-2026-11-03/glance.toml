@@ -1711,3 +1711,46 @@ source = "guide-page"
 quote = "The special tax authorized by this Measure is expected to generate annual revenue of approximately $99,000."
 amount = 99000
 period = "per-year"
+
+# Solano County Measure E: a business license tax, so no tax rate
+# statement; County Counsel's Impartial Analysis gives county staff's
+# revenue estimate.
+[solano-county-measure-e]
+source = "impartial-analysis"
+quote = "County staff estimate the measure would generate approximately $353,000 in additional annual revenue."
+amount = 353000
+period = "per-year"
+
+# Solano County Measure H: no tax rate statement or fiscal analysis
+# applies; County Counsel's Impartial Analysis gives the ballot
+# question's revenue estimate.
+[solano-county-measure-h]
+source = "impartial-analysis"
+quote = "According to the ballot question, the increase is estimated to generate approximately $58,500 in additional annual revenue."
+amount = 58500
+period = "per-year"
+
+# City of Fairfield Measure P: no tax rate statement or fiscal analysis
+# applies (a sales tax); the one estimate is the City Attorney's
+# impartial analysis's.
+[fairfield-measure-p]
+source = "impartial-analysis"
+quote = "The City estimated that this Measure will raise approximately $24 million per year in new local revenue for use in the City."
+amount = 24000000
+period = "per-year"
+
+# City of Fairfield Measure Q: no fiscal statement was posted, and the
+# City Attorney's impartial analysis gives no cost estimate.
+[fairfield-measure-q]
+source = "impartial-analysis"
+status = "none-printed"
+
+# City of Vacaville Measure V: no tax rate statement or fiscal analysis
+# applies (a sales tax), and the City Attorney's impartial analysis gives
+# no estimate. The ballot question sizes the revenue only spelled out,
+# "approximately twenty-eight million dollars annually", which is
+# neither a figure with a dollar sign nor one of the format's word
+# sizes, so the entry can give no amount.
+[vacaville-measure-v]
+source = "ballot-question"
+status = "none-printed"

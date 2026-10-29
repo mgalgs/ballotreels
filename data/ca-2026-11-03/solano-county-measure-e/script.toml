@@ -1,0 +1,173 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the tax today; what would change
+# (the new categories, the yearly inflation adjustment, where the money
+# goes and how long it lasts); county staff's revenue estimate as the
+# impartial analysis gives it; one line per side; what a vote does.
+#
+# Who votes: the tax applies only in unincorporated areas, but
+# Resolution No. 2026-164 orders the measure submitted "to the qualified
+# voters of Solano County", and the Registrar's Notice of Measures names
+# no narrower electorate, so the opening says county voters. Not
+# confirmed against a sample ballot.
+#
+# The card quotes the ballot question from the resolution, which prints
+# no yes/no lines. So the card has no YES/NO boxes, the vote lines give
+# the impartial analysis's meanings, and both highlight the same phrase
+# of the question. The rates per kilowatt-hour are left to the card:
+# fractions of a cent cannot be narrated (standard/speakability.txt).
+#
+# "Counsel" is heard as "Council" and "County's" as "Counties", so the
+# narration names neither. No tax rate statement or fiscal analysis
+# applies; the $353,000 a year is county staff's estimate, and no
+# archived source states the county's general fund budget to give it a
+# scale (STANDARD.md 6.5; left open, under [[question]]). That the wind
+# rate has not changed since 1994 is the supporters' point, and that
+# rates would climb is the opponents', so each stays in its side's
+# section (STANDARD.md 6.3); the neutral lines give the inflation
+# adjustment only as the analysis states it.
+#
+# No rebuttal to the argument against was posted (sources/sources.md).
+
+contest = "ca-2026-11-03-solano-county-measure-e"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "E"
+title = "SOLANO COUNTY UNINCORPORATED BUSINESS LICENSE TAX"
+origin = "RESOLUTION NO. 2026-164"
+summary = "Shall Solano County update its business license tax to raise the commercial wind turbine rate ($0.00003 to $0.00008 per kWh) and extend the tax to commercial solar energy systems ($0.00008 per kWh), battery energy storage systems ($1.50 per MWh), natural gas extraction facilities ($0.30 per McF), and data centers ($5.00 per building square foot), with annual inflation adjustments, generating approximately an additional $353,000 annually, until ended by the voters?"
+
+[[section]]
+id = "what"
+heading = "Measure E"
+
+[[section.line]]
+text = "Measure E asks the voters of this county whether to raise and widen a business tax on energy facilities and data centers."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["update its business license tax"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, commercial wind turbines in the unincorporated parts of the county pay a business license tax on the power they generate."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "wind-and-solar-farm"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "who"
+text = "Measure E would raise the wind turbine rate, and add new taxes on commercial solar, battery storage, natural gas extraction and data centers."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "battery-storage-yard"
+
+[[section.line]]
+text = "Starting in 2028, the rates would be adjusted each year for inflation, but could not go down."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+id = "general"
+text = "The money would go into the county general fund for any lawful purpose, with no end date, and the measure needs a simple majority."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The impartial analysis says county staff estimate Measure E would raise about $353,000 more each year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the wind rate has not changed since 1994, and new energy facilities should help pay for county services."
+sources = ["argument-for"]
+basis = ["This is an important update because the existing tax rate has not been adjusted since 1994.", "they will contribute their fair share toward the County services and infrastructure they rely upon."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Wind rate unchanged since 1994", "New facilities help pay for services"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say higher business taxes raise everyday prices for residents, and would discourage clean energy investment that creates local jobs."
+sources = ["argument-against"]
+basis = ["When business taxes go up, prices rise, and residents pay more for everyday goods and services", "This discourages investment in clean-energy projects that create local jobs and long-term revenue."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Higher business taxes raise prices", "Discourages clean energy investment"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves the changes to the county business license tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["update its business license tax"]
+
+[[section.line]]
+text = "A no vote keeps the current business license tax, without the new categories or the inflation adjustments."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["update its business license tax"]
+
+[[question]]
+ask = "Which businesses would pay the tax?"
+lines = ["who"]
+
+[[question]]
+ask = "When would the tax end, and what can the money be spent on?"
+lines = ["general"]
+
+[[question]]
+ask = "How big is $353,000 a year next to the county budget?"
+unanswered = true
