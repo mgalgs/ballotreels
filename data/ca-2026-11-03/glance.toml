@@ -1003,3 +1003,11 @@ source = "impartial-analysis"
 quote = "which tax is estimated to raise approximately $2.6 million annually."
 amount = 2600000
 period = "per-year"
+
+# San Mateo-Foster City School District Measure W: the Tax Rate
+# Statement's total debt service (the bonds are $498,000,000).
+[san-mateo-foster-city-measure-w]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $900 million."
+amount = 900000000
+period = "unstated"
