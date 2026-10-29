@@ -1,0 +1,173 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how the ordinance came to the
+# ballot (the Council adopted it, a referendum petition suspended it);
+# what adopting it would do (the lease, who builds, the community
+# space); no cost estimate; one line per side; what a vote does.
+#
+# The card quotes the ballot question, printed only in the City
+# Council's resolution, which prints no yes/no lines (the impartial
+# analysis has them, in another document). So, as for Los Angeles
+# County Measure E, the card has no YES/NO boxes, the vote lines give
+# the analysis's meanings, and both highlight the same phrase of the
+# question.
+#
+# The supporters' account of the state's lawsuit, state housing law and
+# possible fines is theirs (STANDARD.md 6.3), so it stays in their
+# section. The $1 a year lease is a contract price, not a sum against
+# which any archived source states a city budget (STANDARD.md 6.5; left
+# open). The petition was filed "on behalf of" a named committee, which
+# filed no argument; the script names no one on either side.
+#
+# No argument against is among the measure documents San Mateo County
+# publishes: the no side is filed = false, as for Proposition 37.
+
+contest = "ca-2026-11-03-half-moon-bay-measure-q"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "Q"
+title = "A RESOLUTION OF THE CITY COUNCIL OF THE CITY OF HALF MOON BAY APPROVING PLACING A MEASURE ON THE NOVEMBER 3, 2026, GENERAL ELECTION BALLOT SEEKING VOTER APPROVAL OF ORDINANCE 2026-01 AND AUTHORIZING RELATED ACTIONS"
+origin = "The City Council hereby approves the submission of Ordinance No. 2026-01, as set forth in Exhibit A, to the voters of the City of Half Moon Bay at the November 3, 2026, general municipal election."
+summary = "Shall Ordinance No. 2026-01, approving agreements with Mercy Housing California 110, L.P. (including a Ground Lease of Real Property for 99 years at a rate of $1/year, which is customary, and Affordable Housing and Property Disposition Agreement) providing for the development/operation of a Senior Affordable 40-Unit Residential Project for Agricultural Workers, which includes 2,653-square foot Community Space, at 535-555 Kelly Avenue in the City of Half Moon Bay, and authorizing other related actions, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure Q"
+
+[[section.line]]
+text = "City of Half Moon Bay Measure Q asks the voters of Half Moon Bay whether to adopt an ordinance for 40 affordable homes for senior agricultural workers."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["Senior Affordable 40-Unit Residential Project for Agricultural Workers"]
+
+[[section]]
+id = "background"
+heading = "How it got here"
+
+[[section.line]]
+text = "In May, the City Council adopted the ordinance, approving agreements with Mercy Housing California to build on land the city owns on Kelly Avenue."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "project-site"
+
+[[section.line]]
+text = "Voters then filed a referendum petition, which suspended the ordinance and sent it to the ballot."
+sources = ["impartial-analysis", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the ordinance is on hold, and takes effect only if a majority of voters approve it."
+sources = ["resolution", "impartial-analysis"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "lease"
+text = "Adopting the ordinance would lease the land to Mercy Housing for 99 years, at $1 a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "home-building"
+
+[[section.line]]
+text = "Mercy Housing would have to build and maintain the project, which includes 2,653 square feet of community space."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+text = "The city manager would review the lease at least every seven years."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "recurring-review"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The published measure documents of San Mateo County do not include a cost estimate for the measure."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "No estimate printed"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the apartments cost taxpayers nothing; state law bars rejecting them, even by referendum."
+sources = ["argument-for"]
+basis = ["555 Kelly provides 40 affordable apartments at no cost to taxpayers for senior farmworkers who have worked in our fields for decades.", "State law bars cities from rejecting housing like this, even by referendum."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["No cost to taxpayers", "State law bars rejecting it"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure Q appears in the published measure documents of San Mateo County."
+sources = ["argument-for"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["No argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is in favor of adopting the ordinance and its agreements for the project."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["approving agreements with Mercy Housing California 110, L.P."]
+
+[[section.line]]
+text = "A no vote is against adopting the ordinance and its agreements for the project."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["approving agreements with Mercy Housing California 110, L.P."]
+
+[[question]]
+ask = "What would the city get for the land?"
+lines = ["lease"]
+
+[[question]]
+ask = "How would residents be chosen for the homes?"
+unanswered = true

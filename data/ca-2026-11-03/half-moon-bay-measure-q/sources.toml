@@ -1,0 +1,62 @@
+# Archived sources for City of Half Moon Bay Measure Q, 2026-11-03
+# general election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# San Mateo County publishes each measure's documents separately, as
+# PDFs filed by the city with the Assessor-County Clerk-Recorder &
+# Elections office, not as one pamphlet. Measure Q is a referendum on
+# Ordinance No. 2026-01. The ballot question is printed in the City
+# Council's Resolution No. C-2026-63, Section 2(a); the City Attorney's
+# impartial analysis is the measure's neutral explanation, the kind a
+# state's attorney general's explanatory statement is. Not a tax
+# measure: no fiscal analysis or tax rate statement was filed. The
+# ordinance itself (the resolution's Exhibit A) is not in the filed PDF.
+#
+# The resolution and the argument in favor are scans with no text layer.
+# The verbatim checks read each one's transcription
+# (sources/*.transcription.txt, made from the page images), which a
+# source whose file is not a PDF gives them; the PDF beside it is the
+# archived copy, and the url is the PDF's.
+
+[contest]
+id = "ca-2026-11-03-half-moon-bay-measure-q"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:half_moon_bay"
+kind = "measure"
+title = "City of Half Moon Bay Measure Q: Approving Agreements for 40 Affordable Senior Homes for Agricultural Workers at 535-555 Kelly Avenue"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Half Moon Bay, Resolution No. C-2026-63, Section 2(a): the ballot question, page 3, as filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Ballot question, Resolution No. C-2026-63"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M401-Contest%20Code-Reso-Half%20Moon%20Bay%20Housing%20Initiative_Redacted.pdf"
+file = "sources/resolution-full-text.transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Denise S. Bazzano, City Attorney, City of Half Moon Bay, City Attorney Impartial Analysis of Measure Q, San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "City Attorney Impartial Analysis of Measure Q"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MQ-ImpartialAnalysis-Half-Moon-Bay-Housing_Redacted.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure Q, filed with San Mateo County Assessor-County Clerk-Recorder & Elections, page 3"
+credit = "Argument in favor, San Mateo County Assessor-County Clerk-Recorder & Elections"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M401-Contest%20Code-4ArgInFavor-Half%20Moon%20Bay%20Housing%20Initiative_Redacted.pdf"
+file = "sources/argument-for.transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City of Half Moon Bay, Resolution No. C-2026-63, submitting Ordinance No. 2026-01 to the voters, as filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M401-Contest%20Code-Reso-Half%20Moon%20Bay%20Housing%20Initiative_Redacted.pdf"
+file = "sources/resolution-full-text.transcription.txt"
+retrieved = "2026-10-28"
