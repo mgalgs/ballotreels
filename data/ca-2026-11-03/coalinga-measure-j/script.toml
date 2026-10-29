@@ -1,0 +1,185 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the tax today (approved in 2018,
+# ending April 1, 2029); what would change (the end date, the same
+# rate, the same general fund, the oversight, the vote it needs); the
+# revenue and its share of the general fund, as the ballot question
+# itself states them; one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry it.
+#
+# The guide's ballot question is not archived, so the card quotes it
+# from Resolution No. 4337, Section 4, as typed from the scan; its
+# origin is the resolution's synopsis's own sentence. The resolution
+# prints no yes/no lines, so the card has no YES/NO boxes; the vote
+# lines both highlight the same phrase of the question.
+#
+# Rate: the synopsis says the renewal "does not increase the sale tax
+# above current levels"; the argument against calls it a "higher sales
+# tax" (against the tax ending in 2029). The neutral sections say only
+# what both documents agree on: the rate stays 1 percent, and the end
+# date moves from 2029 to 2039. The supporters' "not a new tax" is their
+# own line.
+#
+# Scale (STANDARD.md 6.5): the ballot question itself compares the
+# $2,000,000 a year with the general fund ("approximately 25% of the
+# City's General Fund revenues"), so the fiscal line uses its words.
+
+contest = "ca-2026-11-03-coalinga-measure-j"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "J"
+title = "RESOLUTION NO. 4337"
+origin = "The tax measure was placed on the ballot by the Coalinga City Council."
+summary = "Shall the measure for The City of Coalinga that seeks to extend its general-purpose, one-cent sales tax, Measure J, which is expected to generate $2,000,000 annually, representing approximately 25% of the City's General Fund revenues, with annual citizen review and independent audits to April 1, 2039 be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure J"
+
+[[section.line]]
+text = "Measure J asks the voters of this city whether to extend its 1 percent sales tax for ten more years."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["extend its general-purpose, one-cent sales tax"]
+
+[[section]]
+id = "today"
+heading = "The tax today"
+
+[[section.line]]
+id = "today-tax"
+text = "Voters approved the 1 percent sales tax in 2018, and it is set to expire on April 1, 2029."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "timeline"
+source = "ballot-question"
+labels = ["2018", "April 1, 2029", "April 1, 2039"]
+items = ["Voters approve the 1% sales tax", "The tax expires today", "The new end date under Measure J"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "end"
+text = "Measure J would keep the rate at 1 percent, and move the end date to April 1, 2039."
+sources = ["ballot-question", "impartial-analysis"]
+
+[[section.line]]
+id = "general"
+text = "The money would still go to the general fund of the city, for any general purpose."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "A citizens advisory committee would review the spending plans each year, with an annual independent audit."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "inspection-clipboard"
+
+[[section.line]]
+text = "Measure J needs a simple majority of the votes to pass."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "fiscal"
+heading = "What the resolution says"
+
+[[section.line]]
+id = "revenue"
+text = "The ballot question says the tax brings in about $2 million a year, about 25 percent of the general fund revenues of the city."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "share"
+title = "Measure J's share of general fund revenues"
+source = "ballot-question"
+unit = "%"
+labels = ["Measure J"]
+values = [25]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure J is not a new tax, and it has helped pay for more police officers, firefighters and fire engines."
+sources = ["argument-for"]
+basis = ["Measure J is not a new tax.", "Measure J has helped fund additional police officers and firefighters, public-safety vehicles, fire engines"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Not a new tax", "Has paid for police and firefighters"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say even a 1 percent sales tax can be a heavy burden on families, and voluntary giving should come first."
+sources = ["argument-against"]
+basis = ["even a 1% sales tax can be a heavy burden", "We simply ask that they try voluntary giving first, especially when so many families are already facing hard times."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["A heavy burden on families", "Try voluntary giving first"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote extends the 1 percent sales tax to April 1, 2039."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to April 1, 2039"]
+
+[[section.line]]
+text = "A no vote leaves the tax set to expire on April 1, 2029."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to April 1, 2039"]
+
+[[question]]
+ask = "Does Measure J raise the sales tax rate?"
+lines = ["end"]
+
+[[question]]
+ask = "When does the tax end today, and when would it end?"
+lines = ["today-tax", "end"]
+
+[[question]]
+ask = "What can the money be spent on?"
+lines = ["general"]
+
+[[question]]
+ask = "How big is $2 million a year next to the city budget?"
+lines = ["revenue"]

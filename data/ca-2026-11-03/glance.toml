@@ -1650,3 +1650,13 @@ source = "ballot-question"
 quote = "providing approximately $9,000,000 annually until ended by voters"
 amount = 9000000
 period = "per-year"
+
+# City of Coalinga Measure J: no tax rate statement or fiscal analysis
+# applies (a sales tax). The quote is the ballot question's, from
+# Resolution No. 4337, which also gives it as about 25% of the general
+# fund revenues.
+[coalinga-measure-j]
+source = "ballot-question"
+quote = "which is expected to generate $2,000,000 annually"
+amount = 2000000
+period = "per-year"

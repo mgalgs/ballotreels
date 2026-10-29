@@ -460,6 +460,12 @@ BALLOTS: dict[str, Ballot] = {
                          "For or Against Measure M",
                      "ca-2026-11-03-patterson-measure-l":
                          "Notice of Election",
+                     # Fresno County posts each measure's filed documents
+                     # and no printed guide: each card quotes the ballot
+                     # question from the resolution that prints it,
+                     # named as headed
+                     "ca-2026-11-03-coalinga-measure-j":
+                         "Resolution No. 4337",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

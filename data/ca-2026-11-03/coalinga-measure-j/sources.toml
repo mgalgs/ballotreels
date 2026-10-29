@@ -1,0 +1,73 @@
+# Archived sources for City of Coalinga Measure J, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Fresno County Registrar of Voters posts each measure's filed
+# documents on its election page; no printed Voter Information Guide
+# was found online. The ballot question is quoted from City Council
+# Resolution No. 4337, Section 4 ("Form of Measure"), which also gives
+# the synopsis and the tax's present expiry. The City Attorney's
+# impartial analysis is the measure's neutral explanation, the kind a
+# state's attorney general's explanatory statement is. No tax rate
+# statement or fiscal analysis applies (a sales tax); the revenue figure
+# and its share of the general fund are the ballot question's own.
+#
+# Every PDF is a scan with no text layer. The passages cited were typed
+# from the page images into sources/*-transcription.txt, each naming the
+# PDF and URL it copies; those sources point at the transcription, and
+# their url at the scan (as Clayton Measure M's do). No rebuttal to the
+# argument in favor was filed; the rebuttal to the argument against is
+# archived but not cited.
+
+[contest]
+id = "ca-2026-11-03-coalinga-measure-j"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:coalinga"
+kind = "measure"
+title = "City of Coalinga Measure J: Extending the One-Cent Sales Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Coalinga, City Council Resolution No. 4337, calling a municipal election to extend the sunset clause for the one-percent transactions and use (sales) tax, adopted July 16, 2026: recitals, page 1; Form of Measure and Synopsis, page 2 (transcribed from the scan)"
+credit = "Resolution No. 4337, City of Coalinga"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/coalinga-sales-tax/resolution-no.-4337_redacted.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Griswold, LaSalle, Cobb, Dowd & Gin, LLP, City Attorney for the City of Coalinga, City of Coalinga Sales Tax Measure Impartial Analysis, filed with the Fresno County Clerk August 18, 2026 (transcribed from the scan)"
+credit = "Impartial Analysis, City Attorney of Coalinga"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/coalinga-sales-tax/filed-impartial-analysis_redacted.pdf"
+file = "sources/impartial-analysis-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Coalinga, Exhibit A to Resolution No. 4337: the ordinance extending the sunset clause of the transactions and use tax (transcribed from the scan)"
+credit = "Exhibit A, City of Coalinga"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/coalinga-sales-tax/exhibit-a_redacted.pdf"
+file = "sources/ordinance-full-text-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure J, as filed with the Fresno County Clerk August 19, 2026 (transcribed from the scan)"
+credit = "Argument in favor, Measure J"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/coalinga-sales-tax/filed-argument-in-favor_redacted.pdf"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against City of Coalinga Sales Tax Renewal Measure, as filed with the Fresno County Clerk August 19, 2026 (transcribed from the scan)"
+credit = "Argument against, Measure J"
+url = "https://www.fresnocountyca.gov/files/sharedassets/county/v/1/county-clerk-registrar-of-voters/1_election-pages/2026_3_nov_statewide-general/measures/coalinga-sales-tax/argument-against_redacted.pdf"
+file = "sources/argument-against-transcription.txt"
+retrieved = "2026-10-28"
