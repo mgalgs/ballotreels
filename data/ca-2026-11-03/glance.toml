@@ -2200,3 +2200,12 @@ period = "unstated"
 [eureka-measure-h]
 source = "impartial-analysis"
 status = "none-printed"
+
+# City of Eureka Measure I: no tax rate statement or fiscal analysis
+# applies (a hotel tax); the one estimate is the City's, as the City
+# Attorney's impartial analysis gives it.
+[eureka-measure-i]
+source = "impartial-analysis"
+quote = "The tax imposed by Measure I is estimated to generate approximately $700,000 per year"
+amount = 700000
+period = "per-year"
