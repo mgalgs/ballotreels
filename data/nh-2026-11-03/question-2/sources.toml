@@ -1,0 +1,43 @@
+# Archived sources for New Hampshire Question 2, 2026-11-03 general
+# election. Every id here may be cited by script.toml. `kind` must be one
+# the standard allows (docs/STANDARD.md, section 1).
+#
+# New Hampshire has no voter guide, no official arguments for or against
+# a ballot question, and no fiscal note for this question, so there is no
+# source of kind official-argument or official-fiscal-analysis. The
+# Secretary of State's "Questions on the General Election Ballot 2026"
+# prints the question as the ballot does, with its bracketed blanks for
+# each town's names. HB 1300 as chaptered (2026 chapter 324) is the law
+# that puts the question on the ballot and sets out the limits.
+#
+# Also archived and not cited: the Secretary of State's HB 1300 Ballot
+# Question page (a list of links), HB 1300's current version (the same
+# text as the chaptered one), and the House, Senate and committee of
+# conference reports. The House Election Law committee's majority and
+# minority reports are legislative committee reports, not arguments
+# printed for voters, so they are not used for the sides.
+
+[contest]
+id = "nh-2026-11-03-question-2"
+election = "nh-2026-11-03"
+division = "ocd-division/country:us/state:nh"
+kind = "measure"
+title = "Question 2: School district property tax limits"
+
+[[source]]
+id = "questions"
+kind = "official-title-summary"
+publisher = "New Hampshire Secretary of State, Questions on the General Election Ballot 2026"
+credit = "New Hampshire Secretary of State"
+url = "https://mm.nh.gov/files/uploads/sos/docs/questions-on-general-election-ballot-2026-for-web.pdf"
+file = "sources/sos-questions-on-general-election-ballot-2026.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "hb-1300"
+kind = "official-text"
+publisher = "New Hampshire General Court, HB 1300, Chapter 324, Final Version, 2026 Session"
+credit = "New Hampshire General Court, HB 1300"
+url = "https://www.sos.nh.gov/sites/g/files/ehbemt561/files/inline-documents/sonh/hb-1300-chaptered-final-version.pdf"
+file = "sources/hb-1300-chaptered-final-version.pdf"
+retrieved = "2026-10-27"

@@ -229,7 +229,8 @@ class BallotTest(unittest.TestCase):
         self.assertEqual(badge(la, "Amendment 10: X", "10"), "AMENDMENT")
         self.assertTrue(la.card_column_breaks)
         self.assertFalse(any(b.card_column_breaks
-                             for s, b in BALLOTS.items() if s != "la"))
+                             for s, b in BALLOTS.items()
+                             if s not in ("la", "nh")))
 
 
 class CardColumnBreakTest(unittest.TestCase):
@@ -519,6 +520,19 @@ class LouisianaStatementsStitchTest(unittest.TestCase):
                           ("Yes", "No"), "official-title-summary"))
         # "Proposal 26-1", as the fiscal agencies print it
         self.assertEqual(badge(mi, "Proposal 26-1: X", "26-1"), "PROPOSAL")
+
+    def test_new_hampshire_uses_its_secretary_of_states_words(self):
+        nh = BALLOTS["nh"]
+        self.assertEqual((nh.guide, nh.fiscal_label, nh.choices,
+                          nh.card_source_kind, nh.card_column_breaks),
+                         ("Questions on the General Election Ballot 2026",
+                          None, ("Yes", "No"), "official-title-summary",
+                          True))
+        # "Question 2", with the title's designation as its badge
+        self.assertEqual(
+            badge(nh, "Question 2: School district property tax limits",
+                  "2"),
+            "QUESTION")
 
 
 class SideHeadingTest(ContestCopyTestCase):
