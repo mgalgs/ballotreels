@@ -1060,3 +1060,11 @@ source = "ballot-label"
 quote = "raising $10 million annually"
 amount = 10000000
 period = "per-year"
+
+# Natomas Unified School District Measure D: the district's Tax
+# Rate Statement, its total debt service (the bonds are $300,000,000).
+[natomas-unified-measure-d]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $599,856,974."
+amount = 599856974
+period = "unstated"
