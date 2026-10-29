@@ -1,0 +1,82 @@
+# Archived sources for Southern Humboldt Community Healthcare District
+# Measure K, 2026-11-03 general election, as it appears in Mendocino
+# County (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Mendocino County Elections posts each measure's Voter Information
+# Guide pages as one PDF, linked from its "Measures on the Ballot" page;
+# Measure K's are guide pages 23K1 to 23K3: the full text, the
+# District's Tax Rate Statement, Humboldt County Counsel's Impartial
+# Analysis, an argument in favor, and "NO ARGUMENT AGAINST MEASURE K WAS
+# SUBMITTED." They print no ballot question. The question is the
+# District's, Exhibit B to its Resolution No. 26:06, in the packet
+# Humboldt County Elections posts; that page is a scan with no text
+# layer, so it was typed from the page image into
+# sources/exhibit-b-ballot-question-transcription.txt, whose url is the
+# scan's.
+#
+# Mendocino's copy of the impartial analysis prints the average tax as
+# "$8 per $100,000"; Humboldt's copy of the same analysis, the Tax Rate
+# Statement ("8¢ per $100 ($80 per $100,000)") and the ballot question
+# ("8 cents per $100") all give $80 per $100,000. The script takes the
+# rate only from the Tax Rate Statement.
+#
+# A health care district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md). The district is mostly in Humboldt County and
+# partly in Mendocino County: this contest is Mendocino's, hence the
+# "-mendocino" id; southern-humboldt-healthcare-measure-k is Humboldt's.
+
+[contest]
+id = "ca-2026-11-03-southern-humboldt-healthcare-measure-k-mendocino"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:mendocino"
+kind = "measure"
+title = "Southern Humboldt Community Healthcare District Measure K: Hospital Bonds"
+voters = "the Southern Humboldt Community Healthcare District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Southern Humboldt Community Healthcare District, Exhibit B to Resolution No. 26:06, Ballot Question/Abbreviated Form of Ballot Measure (transcribed from the scan), as posted by Humboldt County Elections, Measure K - Southern Humboldt Community Healthcare District, page 10"
+credit = "Exhibit B, Southern Humboldt Community Healthcare District"
+url = "https://humboldtgov.org/DocumentCenter/View/156831/Measure-K---Southern-Humboldt-Community-Healthcare-District"
+file = "sources/exhibit-b-ballot-question-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Measure K - Impartial Analysis, Humboldt County Counsel, Mendocino County Elections, Voter Information Guide pages for Measure K, page 23K3"
+credit = "Impartial Analysis, Mendocino County Elections"
+url = "https://www.mendocinocounty.gov/files/assets/public/v/1/acre/elections/measure-k-bond-measure-shchcd.pdf"
+file = "sources/measure-k-bond-measure-shchcd.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Southern Humboldt Community Healthcare District, Tax Rate Statement, Measure K, Mendocino County Elections, Voter Information Guide pages for Measure K, page 23K2"
+credit = "Tax Rate Statement, Southern Humboldt Community Healthcare District"
+url = "https://www.mendocinocounty.gov/files/assets/public/v/1/acre/elections/measure-k-bond-measure-shchcd.pdf"
+file = "sources/measure-k-bond-measure-shchcd.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure K (no argument against was submitted), Mendocino County Elections, Voter Information Guide pages for Measure K, page 23K3"
+credit = "Argument in favor, Mendocino County Elections"
+url = "https://www.mendocinocounty.gov/files/assets/public/v/1/acre/elections/measure-k-bond-measure-shchcd.pdf"
+file = "sources/measure-k-bond-measure-shchcd.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure K, Southern Humboldt Community Healthcare District General Bond Measure, Mendocino County Elections, Voter Information Guide pages for Measure K, pages 23K1 to 23K2"
+credit = "Full Text of Measure K, Mendocino County Elections"
+url = "https://www.mendocinocounty.gov/files/assets/public/v/1/acre/elections/measure-k-bond-measure-shchcd.pdf"
+file = "sources/measure-k-bond-measure-shchcd.pdf"
+retrieved = "2026-10-28"

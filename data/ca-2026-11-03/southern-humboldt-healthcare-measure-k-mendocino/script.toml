@@ -1,0 +1,178 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; how the bonds are repaid and what they need
+# to pass; what the money may pay for, and the impartial analysis's
+# caution on equipment; the district's tax rate statement; one line per
+# side; what a vote does.
+#
+# No place, district or hospital name is narrated (the narrator
+# mispronounces them): the opening says "the voters of this health care
+# district", and the card and title carry the names.
+#
+# The guide pages print no ballot question, so the card quotes the
+# District's Exhibit B, as typed from the scan. It prints only "BONDS –
+# YES" and "BONDS – NO" boxes, no yes and no sentences, so the card has
+# no boxes, and the vote lines take their meanings from the question's
+# own words, both highlighting the same phrase.
+#
+# The rate is the Tax Rate Statement's $80 per $100,000, which the
+# question's "8 cents per $100" and Humboldt's copy of the analysis
+# match; Mendocino's copy of the analysis misprints it as $8, so no line
+# takes a rate from the analysis. The bonds and their debt service are
+# repaid from a tax on property in the district, and no archived source
+# states the district's budget, so they have no budget scale
+# (STANDARD.md 6.5; left open, under [[question]]). The hospital's age,
+# the state's deadline, the matching funds and the services the
+# supporters list are their argument, so the neutral sections leave them
+# out (STANDARD.md 6.3); the analysis's projects and its caution on
+# medical equipment are the official explanation's, and stay.
+#
+# The guide pages print "NO ARGUMENT AGAINST MEASURE K WAS SUBMITTED."
+# The no side says so plainly; its section is marked filed = false.
+
+contest = "ca-2026-11-03-southern-humboldt-healthcare-measure-k-mendocino"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "K"
+title = "EXHIBIT B"
+origin = "BALLOT QUESTION/ABBREVIATED FORM OF BALLOT MEASURE"
+summary = "To replace 77 year-old Jerold Phelps Community Hospital with a modern hospital to provide life-saving emergency care for victims of accidents, heart attacks, strokes, and other emergencies, improve Emergency Room facilities, operating rooms, provide advanced medical equipment/technology and life flight services; and qualify for matching funds shall Southern Humboldt Healthcare District's measure authorizing $25,000,000 in bonds be adopted, levying 8 cents per $100 assessed value (raising $2,000,000 annually) while bonds are outstanding, with independent citizen oversight and all funds staying local?"
+
+[[section]]
+id = "what"
+heading = "Measure K"
+
+[[section.line]]
+text = "Measure K asks the voters of this health care district whether to approve $25 million in bonds for hospital projects."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $25,000,000 in bonds"]
+
+[[section]]
+id = "today"
+heading = "How the bonds work"
+
+[[section.line]]
+text = "The district would sell the bonds and repay them from a property tax in the district."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure K needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "projects"
+text = "The money could pay for a new hospital, an upgraded emergency room, a helicopter landing site and earthquake safety work."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "mountain-hospital"
+
+[[section.line]]
+id = "equipment"
+text = "The impartial analysis says buying medical equipment, one planned use, likely falls outside the constitutional exception that allows this bond tax."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+id = "tax-rate"
+text = "The district's tax rate statement estimates $80 per $100,000 of assessed value a year, through 2052-2053."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+text = "The statement estimates the total to repay, with interest, at about $50.4 million."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say state law requires replacing the hospital within 3 years or closing it, and Measure K funds a modern hospital."
+sources = ["arguments"]
+basis = ["State law requires the building be replaced with a modern facility in the next 3 years or be closed.", "Measure K will provide the funds to build a modern hospital with state-of-the-art Emergency Rooms and medical technology for improved patient care and shorter wait times."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Hospital must be replaced or close", "Funds a modern hospital and ER"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure K was submitted for the printed county voter guide pages on this health care district measure."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the measure authorizing $25 million in bonds."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $25,000,000 in bonds"]
+
+[[section.line]]
+text = "A no vote does not adopt the measure authorizing the bonds."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $25,000,000 in bonds"]
+
+[[question]]
+ask = "What would the bond money pay for?"
+lines = ["projects", "equipment"]
+
+[[question]]
+ask = "How much would property owners pay?"
+lines = ["tax-rate"]
+
+[[question]]
+ask = "How big is $25 million next to the district budget?"
+unanswered = true

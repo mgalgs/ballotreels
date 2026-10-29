@@ -1,0 +1,176 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the tax's last approval and its
+# end; what would change (the new rate, for how long, what the money may
+# buy, the vote it needs); the City's revenue estimate as the impartial
+# analysis gives it; one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city", and the card and title carry
+# the name.
+#
+# The guide pages print no ballot question, so the card quotes it from
+# the City Council's Resolution No. 5039-2026, Section 3, as typed from
+# the scan. The resolution prints only Yes and No boxes, no yes and no
+# sentences, so the card has no boxes; the vote lines give the City
+# Attorney's impartial analysis's own meanings, and both highlight the
+# same phrase of the question.
+#
+# The voters' approvals of the tax in four past elections are in the
+# analysis, but the supporters make them an argument ("repeatedly
+# approved"), so the neutral sections give only the last one, which set
+# the old rate and has expired (STANDARD.md 6.3). The $123,900 is the
+# City's estimate as the analysis gives it; no archived source states the
+# City's budget to give it a scale (STANDARD.md 6.5; left open, under
+# [[question]]). The $22 and $50 are per parcel, exempt.
+#
+# The guide pages print "NO ARGUMENT AGAINST MEASURE B WAS SUBMITTED."
+# The no side says so plainly; its section is marked filed = false.
+
+contest = "ca-2026-11-03-fort-bragg-measure-b"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "B"
+title = "RESOLUTION NO. 5039-2026"
+origin = "A RESOLUTION OF THE FORT BRAGG CITY COUNCIL SUBMITTING A MEASURE TO THE VOTERS AT THE NOVEMBER 3, 2026 GENERAL MUNICIPAL ELECTION"
+summary = "Fort Bragg Fire Protection Measure. To maintain reliable local fire protection services; replace aging fire engines and emergency response equipment; keep funds locally controlled and unavailable for State use; and require annual audit and public reporting, shall the City of Fort Bragg authorize a $50 annual parcel tax for 10 years, generating approximately $123,900 annually?"
+
+[[section]]
+id = "what"
+heading = "Measure B"
+
+[[section.line]]
+text = "Measure B asks the voters of this city whether to renew a yearly parcel tax that pays for fire equipment."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorize a $50 annual parcel tax for 10 years"]
+
+[[section]]
+id = "today"
+heading = "The tax today"
+
+[[section.line]]
+id = "expired"
+text = "Voters last approved the tax in 2014, at $22 per parcel a year, and that approval has now expired."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "fire-station-engine"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rate"
+text = "Measure B would set the tax at $50 per parcel a year, for 10 years, starting with the 2027-2028 tax year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Fire equipment tax, dollars per parcel a year"
+source = "impartial-analysis"
+unit = ""
+labels = ["2014 measure", "Measure B"]
+values = [22, 50]
+
+[[section.line]]
+id = "uses"
+text = "The money could be spent only on buying fire equipment for the city fire department."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "set-aside-funds"
+
+[[section.line]]
+text = "Measure B needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The city attorney's impartial analysis says the city estimates the tax would raise about $123,900 a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say volunteer firefighters deserve safe, modern equipment, and every dollar stays local, only for fire equipment."
+sources = ["arguments"]
+basis = ["They deserve safe, modern, and reliable equipment to do their jobs.", "Every dollar stays in Fort Bragg and, by law, can only be used to purchase fire apparatus and equipment for the Fort Bragg Fire Department."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Modern equipment for volunteer firefighters", "Every dollar stays local"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure B was submitted for the printed voter guide pages on this city measure."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves the ordinance continuing the fire equipment tax for ten years."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorize a $50 annual parcel tax for 10 years"]
+
+[[section.line]]
+text = "A no vote rejects the ordinance continuing the fire equipment tax for ten years."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorize a $50 annual parcel tax for 10 years"]
+
+[[question]]
+ask = "How much would my property pay?"
+lines = ["rate"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["uses"]
+
+[[question]]
+ask = "How big is $123,900 a year next to the city budget?"
+unanswered = true

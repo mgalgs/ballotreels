@@ -2382,3 +2382,48 @@ source = "ballot-question"
 quote = "raising an estimated $21,181 annually"
 amount = 21181
 period = "per-year"
+
+# City of Fort Bragg Measure B: no tax rate statement or fiscal analysis
+# applies (a flat parcel tax); the one estimate is the City's, as the
+# City Attorney's impartial analysis gives it.
+[fort-bragg-measure-b]
+source = "impartial-analysis"
+quote = "The City estimates that the tax will raise approximately $123,900 per year."
+amount = 123900
+period = "per-year"
+
+# City of Point Arena Measure C: no tax rate statement or fiscal analysis
+# applies (a hotel tax); the one estimate is the City Attorney's
+# impartial analysis's.
+[point-arena-measure-c]
+source = "impartial-analysis"
+quote = "The additional 2% is anticipated to generate approximately $35,833 annually"
+amount = 35833
+period = "per-year"
+
+# Coast Life Support District Measure D (Mendocino County's contest): a
+# parcel tax has no tax rate statement; the one estimate is the measure
+# question's, as Sonoma's contest gives it.
+[coast-life-support-measure-d]
+source = "measure-question"
+quote = "providing an estimated $1,972,934 annually, until the tax is amended or repealed"
+amount = 1972934
+period = "per-year"
+
+# Sonoma County Junior College District Measure AB (Mendocino County's
+# contest): the district's Tax Rate Statement, its total debt service,
+# as Sonoma's and Marin's contests give it.
+[santa-rosa-jc-measure-ab-mendocino]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $1.76 billion."
+amount = 1760000000
+period = "unstated"
+
+# Southern Humboldt Community Healthcare District Measure K (Mendocino
+# County's contest): the district's Tax Rate Statement, its total debt
+# service (the bonds are $25 million).
+[southern-humboldt-healthcare-measure-k-mendocino]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $50.4 million."
+amount = 50400000
+period = "unstated"
