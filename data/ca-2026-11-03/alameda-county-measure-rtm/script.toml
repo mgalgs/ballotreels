@@ -1,8 +1,8 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
 # asks; whose measure it is (a five-county district the Legislature
-# made) and how it reached the ballot; what would change (the rates,
-# where Alameda County's share goes, the oversight); the analysis's
-# revenue estimate; one line per side; what a vote does.
+# made) and how it reached the ballot; what would change (the rates and
+# where Alameda County's share goes); the analysis's revenue estimate;
+# one line per side; what a vote does.
 #
 # The guide prints no fiscal analysis or tax rate statement; the one
 # revenue estimate is the Legal Counsel's, in the ballot question and the
@@ -92,14 +92,6 @@ source = "guide-page"
 unit = "%"
 labels = ["BART"]
 values = [64.7]
-
-[[section.line]]
-text = "An independent oversight committee would check that the money is handed out as the measure requires."
-sources = ["guide-page"]
-
-[section.line.visual]
-kind = "illustration"
-name = "analyst-review"
 
 [[section]]
 id = "fiscal"

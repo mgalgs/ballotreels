@@ -1,8 +1,7 @@
 # Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
 # asks and of whom; how it reached the ballot and the two-thirds it
-# needs; what the money would pay for, how the bonds are repaid and who
-# oversees them; the tax rate statement's estimates; one line per side;
-# what a vote does.
+# needs; what the money would pay for and how the bonds are repaid; the
+# tax rate statement's estimates; one line per side; what a vote does.
 #
 # The Tax Rate Statement is the fiscal statement; its tax rates and
 # debt service are given as it prints them (the total rounded to the
@@ -86,14 +85,6 @@ sources = ["guide-page"]
 [section.line.visual]
 kind = "illustration"
 name = "homestead"
-
-[[section.line]]
-text = "An oversight committee appointed by the City Council would review how the money is spent."
-sources = ["guide-page"]
-
-[section.line.visual]
-kind = "illustration"
-name = "analyst-review"
 
 [[section]]
 id = "fiscal"
