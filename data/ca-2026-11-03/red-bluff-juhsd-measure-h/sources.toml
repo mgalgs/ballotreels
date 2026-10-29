@@ -1,0 +1,75 @@
+# Archived sources for Red Bluff Joint Union High School District
+# Measure H, 2026-11-03 general election (sources/sources.md). Every id
+# here may be cited by script.toml. `kind` must be one the standard
+# allows (docs/STANDARD.md, section 1).
+#
+# Tehama County Elections posts no local voter guide for this election:
+# it posts each measure's filed documents separately on its elections
+# page. For Measure H these are the district's Resolution No. 2026.27-1
+# (so printed on its first page; the county's sources notes call it
+# 2026-27), a scan with no text layer whose passages used were typed
+# from the page images into sources/resolution-2026-27-transcription.txt
+# (it names the PDF and URL it copies): Exhibit A, the full text with its
+# project list; Exhibit B, the abbreviated form (the ballot question);
+# and Exhibit C, the tax rate statement, the measure's fiscal statement.
+# County Counsel's impartial analysis is the neutral explanation, and
+# the argument in favor is as filed (a scan, transcribed the same way).
+# No argument against or rebuttal is posted; whether one was filed is
+# not known. The district reaches into Shasta County too (the
+# resolution's "of Tehama and Shasta Counties"); Shasta's copies were
+# not checked.
+#
+# A high school district with a Census boundary: the division is its
+# school_district, which covers its voters in both counties.
+
+[contest]
+id = "ca-2026-11-03-red-bluff-juhsd-measure-h"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:red_bluff_joint_union_high_school_district"
+kind = "measure"
+title = "Red Bluff Joint Union High School District Measure H: School Facility Bonds"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Red Bluff Joint Union High School District, Resolution No. 2026.27-1, Exhibit B: Ballot Measure Abbreviated Form, adopted July 16, 2026, as posted by Tehama County Elections (transcribed from the scan)"
+credit = "Resolution No. 2026.27-1, Red Bluff Joint Union High School District"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Red-Bluff-JUHSD-Resolution-No.-2026.27-1-1002217.1.pdf"
+file = "sources/resolution-2026-27-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis by County Counsel, Red Bluff Joint Union High School District, Measure H, Margaret Long, Tehama County Counsel, as posted by Tehama County Elections"
+credit = "Impartial Analysis, Tehama County Counsel"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Impartial-Analysis-Red-Bluff-JUHSD-Measure-H.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Red Bluff Joint Union High School District, Resolution No. 2026.27-1, Exhibit C: Tax Rate Statement, signed by Todd Brose, Superintendent, as posted by Tehama County Elections (transcribed from the scan)"
+credit = "Tax Rate Statement, Red Bluff Joint Union High School District"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Red-Bluff-JUHSD-Resolution-No.-2026.27-1-1002217.1.pdf"
+file = "sources/resolution-2026-27-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Red Bluff Joint Union High School District, Resolution No. 2026.27-1, Exhibit A: Full Text of the Measure, with its Bond Project List, as posted by Tehama County Elections (transcribed from the scan)"
+credit = "Resolution No. 2026.27-1, Red Bluff Joint Union High School District"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Red-Bluff-JUHSD-Resolution-No.-2026.27-1-1002217.1.pdf"
+file = "sources/resolution-2026-27-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Red Bluff Joint Union High School District Measure H, signed by Scott Spangler, Lonnie Scott and Carmel Growney, as filed and posted by Tehama County Elections (transcribed from the scan; no argument against is posted)"
+credit = "Argument in Favor, Tehama County Elections"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Argument-in-Favor-of-Measure-H.pdf"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"
