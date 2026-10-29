@@ -1176,3 +1176,10 @@ quote = "The proposed one-half percent increase in the local sales tax rate woul
 amount = 27000000
 period = "per-year"
 direction = "revenue-gain"
+
+# City of Scotts Valley Measure G: no fiscal impact or tax rate statement
+# was posted, and the City Attorney's Impartial Analysis gives no revenue
+# estimate.
+[scotts-valley-measure-g]
+source = "impartial-analysis"
+status = "none-printed"
