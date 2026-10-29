@@ -101,22 +101,29 @@ def measure_meta(state_name: str, title: str, path: str,
         video_made=video_made if poster else None)
 
 
-def state_meta(state_name: str, path: str, measures: int) -> PageMeta:
+def state_meta(state_name: str, path: str, measures: int,
+               election_id: str | None = None,
+               image: str | None = None) -> PageMeta:
+    """A state's page; `image` its own preview card, if it has one."""
     name = capitalize(state_name)
+    image = image or DEFAULT_IMAGE
+    when = election_date(election_id) if election_id else None
+    ballot = (f"{state_name}'s {when} ballot" if when
+              else f"{state_name}'s ballot")
     if not measures:
         return PageMeta(
             title=f"{name} statewide measures · ballotreels",
-            description=(f"There are no statewide measures on "
-                         f"{state_name}'s ballot this election. ballotreels "
-                         f"makes short, even-handed explainers of ballot "
-                         f"measures, every claim sourced."),
-            path=path)
+            description=(f"There are no statewide measures on {ballot}. "
+                         f"ballotreels makes short, even-handed explainers "
+                         f"of ballot measures, every claim sourced."),
+            path=path, image=image)
+    what = ("the statewide measure" if measures == 1
+            else f"all {measures} statewide measures")
     return PageMeta(
         title=f"{name} statewide measures, explained in 60 seconds",
-        description=(f"Short, even-handed explainers of the statewide "
-                     f"measures on {state_name}'s ballot, every claim "
-                     f"sourced."),
-        path=path)
+        description=(f"Short, even-handed video explainers of {what} on "
+                     f"{ballot}, every claim sourced."),
+        path=path, image=image)
 
 
 def election_date(election_id: str) -> str | None:
@@ -164,6 +171,12 @@ def flag_path(abbr: str) -> str:
     """Where a state's coloured-pencil flag goes, under static/ (about
     960x600, JPEG): the state page's map shows it inside the state."""
     return f"flags/{abbr}.jpg"
+
+
+def state_card_path(abbr: str) -> str:
+    """A state's own link-preview card under static/ (1200x630, JPEG,
+    drawn by scripts/og_state_cards.py): its flag inside its outline."""
+    return f"og/{abbr}.jpg"
 
 
 def mini_flag_path(abbr: str) -> str:
@@ -279,7 +292,8 @@ def meta_tags(meta: PageMeta, site_url: str) -> str:
                         ("og:description", meta.description),
                         ("og:url", url), ("og:image", image)):
         tags.append(("meta", ("property", prop), value))
-    if meta.image == DEFAULT_IMAGE:
+    # The site card and the state cards are all DEFAULT_IMAGE_SIZE.
+    if meta.image == DEFAULT_IMAGE or meta.image.startswith("/static/og/"):
         w, h = DEFAULT_IMAGE_SIZE
         tags.append(("meta", ("property", "og:image:width"), str(w)))
         tags.append(("meta", ("property", "og:image:height"), str(h)))

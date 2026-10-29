@@ -1057,8 +1057,13 @@ class PublicHandler(_JsonHandler):
             state = deps.states.get(m.group(1))
             if state is None or m.group(2) not in (None, state.year):
                 return None
-            return pages.state_meta(_state_name(state.abbr), path,
-                                    len(_statewide_measures(state)))
+            card = pages.state_card_path(state.abbr)
+            return pages.state_meta(
+                _state_name(state.abbr), path,
+                len(_statewide_measures(state)),
+                election_id=state.index.election.id,
+                image=(f"/static/{card}" if (STATIC_DIR / card).is_file()
+                       else None))
         county = self._county_at(path)
         if county:
             state, county = county

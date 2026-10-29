@@ -16,6 +16,7 @@ from pathlib import Path
 
 import ballotreels.site.config as site_config
 from ballotreels.index import key_for
+from ballotreels.site import pages
 from ballotreels.site.config import load_config
 from ballotreels.site.server import build_deps, make_servers
 from ballotreels.standard import judgment_word_pattern, load_standard
@@ -212,9 +213,21 @@ class StatePageTest(ShortUrlTestCase):
         self.assertEqual(tags.title,
                          "Utah statewide measures, explained in 60 seconds")
         self.assertEqual(tags.meta["og:url"], "https://ballotreels.org/ut")
+        # its own card: the flag inside the state
         self.assertEqual(tags.meta["og:image"],
-                         "https://ballotreels.org/static/og-card.png")
-        self.assertIn("Utah's ballot", tags.meta["description"])
+                         "https://ballotreels.org/static/og/ut.jpg")
+        self.assertEqual(tags.meta["og:image:width"], "1200")
+        self.assertIn("Utah's November 3, 2026 ballot",
+                      tags.meta["description"])
+        resp, _ = self.request("/static/og/ut.jpg")
+        self.assertEqual(resp.status, 200)
+
+    def test_every_built_state_has_a_card(self):
+        for counties in (REPO / "var" / "geo").glob("*/counties.json"):
+            abbr = counties.parent.name
+            with self.subTest(abbr):
+                self.assertTrue(
+                    (STATIC_DIR / pages.state_card_path(abbr)).is_file())
 
     def test_state_page_by_year(self):
         tags, _ = self.page("/ut/2026")
