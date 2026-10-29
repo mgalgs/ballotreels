@@ -1,10 +1,9 @@
 # Recipe E, about 60 seconds, distilled: one claim per line. The chain:
 # what it asks and whose measure it is; who owns the hospital and how
 # it came to be leased (the 2011 lease); why it is on the ballot (state
-# law on a district's assets); what would change (the term, the option
-# to buy, the care the board's resolution describes, fair market value,
-# the vote it needs); what it costs as the ballot question states it;
-# one line per side; what a vote does.
+# law on a district's assets); what would change (the term and option
+# to buy, fair market value, the vote it needs); what it costs as the
+# ballot question states it; one line per side; what a vote does.
 #
 # No place or organisation name is narrated (the narrator mispronounces
 # them): the opening says "the voters of this health care district", and
@@ -19,9 +18,10 @@
 # The lease itself is not posted. What the new lease would do comes from
 # County Counsel's impartial analysis (the term and renewals, the
 # possible sale, the independent appraisal) and from the resolution's recital of
-# the Memorandum of Understanding (the full-time acute care hospital
-# with walk-in emergency care, and the board's approval subject to a
-# fair market value appraisal), attributed to the board's resolution.
+# the Memorandum of Understanding (the board's approval subject to a
+# fair market value appraisal). The resolution's description of the
+# care the hospital would give is left out for length; the side for
+# speaks to it.
 # "Fair" is on the judgment-word list, so the narration says "market
 # value".
 # Neither states the rent or a price, so the narration says nothing of
@@ -66,17 +66,12 @@ heading = "The hospital"
 
 [[section.line]]
 id = "owner"
-text = "The district owns the land and buildings of the hospital, and once ran the hospital itself."
-sources = ["ballot-question"]
+text = "The district owns the hospital, and in 2011 its voters approved a 15-year lease, with an option to buy, to the operator that runs it today."
+sources = ["ballot-question", "impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
 name = "valley-hospital"
-
-[[section.line]]
-id = "original"
-text = "In 2011, district voters approved a 15-year lease of the hospital, with an option to buy, to the operator that runs it today."
-sources = ["ballot-question", "impartial-analysis"]
 
 [[section]]
 id = "today"
@@ -97,30 +92,16 @@ heading = "What would change"
 
 [[section.line]]
 id = "term"
-text = "The new lease would replace the 2011 lease, with a 20-year term and two five-year renewals."
-sources = ["impartial-analysis"]
+text = "The new lease would run 20 years, with two five-year renewals and an option for the operator to buy the property."
+sources = ["impartial-analysis", "ballot-question"]
 
 [section.line.visual]
 kind = "illustration"
 name = "lease-keys"
 
 [[section.line]]
-id = "buy"
-text = "The new lease would also give the operator an option to buy the hospital property."
-sources = ["impartial-analysis", "ballot-question"]
-
-[[section.line]]
-id = "care"
-text = "The board's resolution says the hospital would stay a full-time acute care hospital, with walk-in emergency care around the clock."
-sources = ["ballot-question"]
-
-[section.line.visual]
-kind = "illustration"
-name = "valley-hospital"
-
-[[section.line]]
 id = "value"
-text = "The board's approval depends on an independent appraisal of the market value of the new lease."
+text = "The board's approval depends on an independent appraisal of the new lease's market value."
 sources = ["ballot-question", "impartial-analysis"]
 
 [section.line.visual]
@@ -184,7 +165,7 @@ id = "vote"
 heading = "What your vote means"
 
 [[section.line]]
-text = "A yes vote approves the 20-year lease, with its options to extend the lease and to buy the property."
+text = "A yes vote approves the 20-year lease and its options."
 sources = ["ballot-question", "impartial-analysis"]
 
 [section.line.visual]
@@ -203,7 +184,7 @@ highlight = ["a twenty year lease with options to extend the lease and purchase 
 
 [[question]]
 ask = "Who runs the hospital now, and who would run it?"
-lines = ["owner", "original", "care"]
+lines = ["owner"]
 
 [[question]]
 ask = "Why does this need a vote at all?"
@@ -211,7 +192,7 @@ lines = ["law"]
 
 [[question]]
 ask = "How long would the lease last, and could the operator buy the hospital?"
-lines = ["term", "buy", "value"]
+lines = ["term", "value"]
 
 [[question]]
 ask = "How much would the operator pay the district?"

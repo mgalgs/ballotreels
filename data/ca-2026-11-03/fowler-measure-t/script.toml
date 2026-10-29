@@ -2,8 +2,8 @@
 # what it asks and whose measure it is; why the council placed it (the
 # county's Measure C transportation tax is set to expire); the city's
 # own rate today; what would change (the new rate and when it starts,
-# what is exempt, where the money goes, how long it lasts and when it
-# would end sooner, the vote it needs); the revenue estimate as the
+# what is exempt, how long it lasts and when it would end sooner, the
+# vote it needs); the revenue estimate as the
 # impartial analysis gives it; one line per side; what a vote does.
 #
 # No place name is narrated (the narrator mispronounces them): the
@@ -21,7 +21,8 @@
 # succeed or replace Measure C, the State sets its start, and the
 # council confirms by resolution that it is that successor. The
 # narration gives both official wordings, side by side, and the early
-# end. The opponents' "would never end" is theirs; their line distils
+# end, in one line. That the money goes to the general fund is left
+# out for length; the opening's "for general city services" carries it. The opponents' "would never end" is theirs; their line distils
 # the two points the rest of their argument makes (the burden, and
 # voluntary giving first), so it does not set their words against the
 # ordinance's.
@@ -92,12 +93,12 @@ heading = "What would change"
 
 [[section.line]]
 id = "rate"
-text = "Measure T would add half a percent, for a city rate of 1.5 percent, starting on July 1, 2027."
+text = "Measure T would raise it to 1.5 percent, starting on July 1, 2027."
 sources = ["impartial-analysis", "text"]
 
 [[section.line]]
 id = "exempt"
-text = "Groceries and prescription medicine would be exempt, and visitors would pay the tax too."
+text = "Groceries and prescription medicine would be exempt."
 sources = ["impartial-analysis"]
 
 [section.line.visual]
@@ -105,27 +106,13 @@ kind = "illustration"
 name = "city-storefronts"
 
 [[section.line]]
-id = "general"
-text = "The money would go to the general fund, for any city purpose."
-sources = ["impartial-analysis"]
-
-[section.line.visual]
-kind = "illustration"
-name = "state-budget"
-
-[[section.line]]
 id = "term"
-text = "The ballot question says the tax runs until voters stop it, and the measure's text sets a term of 30 years."
+text = "The ballot question says the tax runs until voters stop it; the measure's text sets 30 years, or less if a county tax replaces Measure C."
 sources = ["ballot-question", "text"]
 
 [section.line.visual]
 kind = "illustration"
 name = "end-date"
-
-[[section.line]]
-id = "sooner"
-text = "The tax would end sooner if county voters approve a tax to replace Measure C, and the council confirms it."
-sources = ["text"]
 
 [[section.line]]
 text = "Measure T needs a simple majority to pass."
@@ -202,19 +189,15 @@ highlight = ["establishing a one-half cent (½¢) transactions and use tax"]
 
 [[question]]
 ask = "How long would the tax last?"
-lines = ["term", "sooner"]
+lines = ["term"]
 
 [[question]]
 ask = "What happens if a county tax to replace Measure C passes?"
-lines = ["sooner"]
+lines = ["term"]
 
 [[question]]
 ask = "Which purchases would be taxed, and who pays?"
 lines = ["exempt"]
-
-[[question]]
-ask = "What can the money be spent on?"
-lines = ["general"]
 
 [[question]]
 ask = "How big is $300,000 a year next to the city budget?"
