@@ -265,6 +265,24 @@ BALLOTS: dict[str, Ballot] = {
                          "City of Grand Terrace Resolution No. 2026-21",
                      "ca-2026-11-03-needles-measure-l":
                          "City of Needles Ordinance 684-AC",
+                     # San Mateo County posts each district measure's
+                     # documents one by one, not as a pamphlet: these
+                     # cards quote the ballot question from the board's
+                     # resolution, named as its first page titles it
+                     "ca-2026-11-03-san-mateo-community-college-measure-v":
+                         "Resolution No. 26-25",
+                     "ca-2026-11-03-jefferson-union-high-measure-m":
+                         "Resolution No. 2025-2026/19",
+                     "ca-2026-11-03-cabrillo-unified-measure-z":
+                         "Resolution No. 09-2026",
+                     "ca-2026-11-03-san-mateo-foster-city-measure-w":
+                         "Resolution No. 06/25-26",
+                     "ca-2026-11-03-burlingame-elementary-measure-r":
+                         "Resolution No. 2025/2026-25",
+                     "ca-2026-11-03-san-carlos-elementary-measure-k":
+                         "Resolution No. 11:25/26",
+                     "ca-2026-11-03-pacifica-school-measure-t":
+                         "Resolution No. 2026-06-10-B",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
