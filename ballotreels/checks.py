@@ -771,8 +771,10 @@ def _unshifted_form(s: str) -> str:
     """`s` as _in_unshifted compares it: parentheses and the vote boxes'
     labels dropped, every hyphen, with the spaces around it, removed
     (pdftotext drops a printed hyphen at a line's end), and the space
-    after a slash ending a line ("paramedics/ fire")."""
+    after a slash ending a line ("paramedics/ fire"), and apostrophes,
+    which the font drops after a plural ("Councilmembers' right")."""
     s = _normalise(re.sub(r"[()]", " ", s))
+    s = re.sub(r"['’]", "", s)
     s = _BOX_LABELS.sub("", f" {s} ").strip()
     return re.sub(r"\s*-\s*", "", re.sub(r"/ ", "/", s))
 

@@ -10,7 +10,8 @@ from ballotreels.checks import (_archived_text, _in_unshifted,
 
 ROOT = Path(__file__).resolve().parent.parent
 PLEASANTON = ROOT / "data/ca-2026-11-03/pleasanton-measure-hh/sources/vig-pp956-958.pdf"
-PROP_2 = ROOT / "data/ca-2026-11-03/prop-2/sources"
+OAKLAND_EE = ROOT / "data/ca-2026-11-03/oakland-measure-ee/sources/vig-pp933-946.pdf"
+PROP_2 =ROOT / "data/ca-2026-11-03/prop-2/sources"
 
 
 class UnshiftTest(unittest.TestCase):
@@ -44,6 +45,13 @@ class UnshiftTest(unittest.TestCase):
         self.assertTrue(_in_unshifted(question, PLEASANTON))
         self.assertFalse(_in_unshifted(question.replace("8%", "9%"),
                                        PLEASANTON))
+
+    def test_apostrophe_the_font_drops(self):
+        quote = ("(3) affirm Councilmembers' right to acquire information "
+                 "from other City officials")
+        self.assertTrue(_in_unshifted(quote, OAKLAND_EE))
+        self.assertFalse(_in_unshifted(quote.replace("other", "all"),
+                                       OAKLAND_EE))
 
     def test_basis_found(self):
         basis = _loose("allows the City to continue providing programs "
