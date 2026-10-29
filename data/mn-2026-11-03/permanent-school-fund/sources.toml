@@ -1,0 +1,55 @@
+# Archived sources for Minnesota's constitutional amendment on the
+# permanent school fund, 2026-11-03 general election. Every id here may
+# be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Minnesota prints no voter guide. The Secretary of State's
+# "Constitutional amendments" page prints the ballot's instructions, the
+# amendment's title and question as the ballot prints them, its choices
+# and the amended section, so the card quotes it. The Attorney General's
+# statement of purpose and effect (Minn. Stat. 3.21) is the state's
+# neutral description of the amendment and of the laws that take effect
+# with it. The session law marks the words the amendment deletes
+# ("deleted text begin") and adds; its HTML is cited, since its PDF's
+# text loses the strike-through.
+#
+# Not cited, so not listed: the Secretary of State's spreadsheet of 2026
+# ballot questions (it heads the question "CONSTITUTIONAL AMENDMENT 1",
+# which the page does not) and the House Research summary of HF 3900,
+# which may describe an earlier version of the bill. Minnesota publishes
+# no official arguments for or against an amendment, and no fiscal note
+# exists for HF 3900.
+
+[contest]
+id = "mn-2026-11-03-permanent-school-fund"
+election = "mn-2026-11-03"
+division = "ocd-division/country:us/state:mn"
+kind = "measure"
+title = "Constitutional Amendment: Increasing funding to school districts"
+
+[[source]]
+id = "sos-page"
+kind = "official-title-summary"
+publisher = "Minnesota Secretary of State, Constitutional amendments: ballot language and instructions, and text of proposed constitutional amendment"
+credit = "Minnesota Secretary of State"
+url = "https://www.sos.mn.gov/elections-voting/whats-on-my-ballot/constitutional-amendments/"
+file = "sources/constitutional-amendments.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "ag-statement"
+kind = "official-title-summary"
+publisher = "Minnesota Attorney General's Office, statement of purpose and effect of the proposed 2026 constitutional amendment (Minn. Stat. § 3.21), July 28, 2026"
+credit = "Minnesota Attorney General's Office"
+url = "https://www.sos.mn.gov/media/xa4b2h3i/ag-letter-to-simon-explaining-proposed-2026-constitutional-amendment.pdf"
+file = "sources/permanent-school-fund-ag-statement-of-purpose-and-effect.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "session-law"
+kind = "official-text"
+publisher = "Minnesota Revisor of Statutes, Laws of Minnesota 2026, Chapter 114 (H.F. No. 3900)"
+credit = "Laws of Minnesota 2026, Chapter 114"
+url = "https://www.revisor.mn.gov/laws/2026/0/Session+Law/Chapter/114/"
+file = "sources/permanent-school-fund-session-law-2026-ch114.html"
+retrieved = "2026-10-27"
