@@ -1,0 +1,243 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 68.68,
+  "phrases": [
+    {
+      "text": "City of Berkeley Measure U asks voters in the city whether to approve $300 million in bonds.",
+      "start": 0.03,
+      "end": 6.4
+    },
+    {
+      "text": "The city would borrow the money and repay it from a tax on property in Berkeley.",
+      "start": 7.06,
+      "end": 11.99
+    },
+    {
+      "text": "Measure U needs two-thirds of the vote to pass.",
+      "start": 12.65,
+      "end": 15.78
+    },
+    {
+      "text": "The money could pay for fire stations, emergency response facilities, parks, earthquake upgrades and other city facilities.",
+      "start": 16.44,
+      "end": 25.54
+    },
+    {
+      "text": "The tax rate statement estimates an average tax of $22 a year per $100,000 of assessed value, through 2066-2067.",
+      "start": 26.2,
+      "end": 36.45
+    },
+    {
+      "text": "The statement estimates the total to repay, with interest, at $610 million.",
+      "start": 37.11,
+      "end": 42.97
+    },
+    {
+      "text": "Opponents say Measure U is a $300 million blank check, with no binding commitment to specific projects.",
+      "start": 43.63,
+      "end": 51.16
+    },
+    {
+      "text": "Supporters say Measure U keeps Berkeley safe, replacing unsafe fire stations and building seawalls for sea-level rise.",
+      "start": 51.82,
+      "end": 59.56
+    },
+    {
+      "text": "A yes vote means the city could issue the $300 million in bonds.",
+      "start": 60.22,
+      "end": 64.58
+    },
+    {
+      "text": "A no vote means the city could not issue these bonds.",
+      "start": 65.24,
+      "end": 68.65
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "City of Berkeley Measure U asks voters in the city whether to approve $300 million in bonds.",
+      "The city would borrow the money and repay it from a tax on property in Berkeley.",
+      "Measure U needs two-thirds of the vote to pass.",
+      "The money could pay for fire stations, emergency response facilities, parks, earthquake upgrades and other city facilities.",
+      "The tax rate statement estimates an average tax of $22 a year per $100,000 of assessed value, through 2066-2067.",
+      "The statement estimates the total to repay, with interest, at $610 million.",
+      "Opponents say Measure U is a $300 million blank check, with no binding commitment to specific projects.",
+      "Supporters say Measure U keeps Berkeley safe, replacing unsafe fire stations and building seawalls for sea-level rise.",
+      "A yes vote means the city could issue the $300 million in bonds.",
+      "A no vote means the city could not issue these bonds."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "City of Berkeley Measure U asks voters in the city whether to approve $300 million in bonds."
+      },
+      "bounds": [
+        0,
+        154320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"City of Berkeley Measure U asks voters in the city whether to approve $300 million in bonds.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The city would borrow the money and repay it from a tax on property in Berkeley."
+      },
+      "bounds": [
+        168720,
+        288480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The city would borrow the money and repay it from a tax on property in Berkeley.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure U needs two-thirds of the vote to pass."
+      },
+      "bounds": [
+        302880,
+        379440
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure U needs two-thirds of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money could pay for fire stations, emergency response facilities, parks, earthquake upgrades and other city facilities."
+      },
+      "bounds": [
+        393840,
+        613680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money could pay for fire stations, emergency response facilities, parks, earthquake upgrades and other city facilities.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The tax rate statement estimates an average tax of $22 a year per $100,000 of assessed value, through 2066-2067."
+      },
+      "bounds": [
+        628080,
+        875520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The tax rate statement estimates an average tax of $22 a year per $100,000 of assessed value, through 2066-2067.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The statement estimates the total to repay, with interest, at $610 million."
+      },
+      "bounds": [
+        889920,
+        1032000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The statement estimates the total to repay, with interest, at $610 million.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say Measure U is a $300 million blank check, with no binding commitment to specific projects."
+      },
+      "bounds": [
+        1046400,
+        1228560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say Measure U is a $300 million blank check, with no binding commitment to specific projects.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say Measure U keeps Berkeley safe, replacing unsafe fire stations and building seawalls for sea-level rise."
+      },
+      "bounds": [
+        1242960,
+        1430160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure U keeps Berkeley safe, replacing unsafe fire stations and building seawalls for sea-level rise.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote means the city could issue the $300 million in bonds."
+      },
+      "bounds": [
+        1444560,
+        1550640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote means the city could issue the $300 million in bonds.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote means the city could not issue these bonds."
+      },
+      "bounds": [
+        1565040,
+        1648320
+      ]
+    }
+  ],
+  "sha256": "e2d3c487b6abb4a22de6f5198e2113427f7318c08e06bec07afe007121847fcc"
+}
