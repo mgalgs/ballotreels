@@ -1303,3 +1303,13 @@ source = "impartial-analysis"
 quote = "the tax would provide approximately $5.7 million annually for the Town’s general fund"
 amount = 5700000
 period = "per-year"
+
+# City of Los Angeles Measure PRK: the City Administrative Officer's
+# yearly increases "attributed to the measure", the largest in 2036-37.
+# (The statement's "$303 million to $995 million" is the department's
+# whole funding with property value growth, not the measure's share.)
+[los-angeles-measure-prk]
+source = "financial-impact"
+quote = "with estimated annual increases attributed to the measure as follows: 2027-28 ($32 million), 2028-29 ($66 million), 2029-30 ($105 million), 2030-31 ($147 million), 2031-32 ($193 million), 2032-33 ($244 million), 2033-34 ($299 million), 2034-35 ($359 million), 2035-36 ($426 million), and 2036-37 ($497 million)."
+amount = 497000000
+period = "per-year"

@@ -1,0 +1,175 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the charter's parks minimum
+# from the General Fund today and the Chief Legislative Analyst's
+# account of it; what would change, with the fiscal-emergency exception;
+# the City Administrative Officer's estimate and where the money comes
+# from; the one side that argued; what a vote does.
+#
+# The card quotes the pamphlet: the title and ballot question from the
+# measure's own page (printed page 58), and the yes and no meanings from
+# its Ballot Summary (printed page 7). The heading above them, "CITY OF
+# LOS ANGELES CHARTER AMENDMENT PRK", stands in for an origin: the
+# pamphlet does not say who placed the measure on the ballot.
+#
+# The Financial Impact Statement compares its $32 million to $497 million
+# a year against no total, and no archived source states the city's
+# General Fund budget; so the figures have no scale (STANDARD.md 6.5;
+# left open, under [[question]]). It states both the added parks money
+# and that "the City must reallocate resources from other services", and
+# the fiscal section says both (6.4). The supporters' "without raising
+# taxes" is theirs (6.3), so it stays in their section; the fiscal line
+# says "no new revenue", after the officer's own words for the cost.
+# No argument against was submitted: the no side is filed = false, as
+# for Measure TE. The pamphlet's "Rebuttal Argument in Favor", printed
+# with no argument against to rebut, is archived with the argument in
+# favor; the line's basis quotes the argument in favor only.
+
+contest = "ca-2026-11-03-los-angeles-measure-prk"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "summary"
+number = "PRK"
+title = "CITY DEPARTMENT OF RECREATION AND PARKS BUDGET."
+origin = "CITY OF LOS ANGELES CHARTER AMENDMENT PRK"
+summary = "Shall the City Charter be amended to increase the minimum budget allocated to the Department of Recreation and Parks, phased in over ten years until it is double the current minimum budget allocation, with exceptions for fiscal emergencies?"
+yes = "A YES VOTE MEANS: You want to increase the minimum budget for the Department of Recreation and Parks, phased in over ten years, with exceptions for fiscal emergencies."
+no = "A NO VOTE MEANS: You do not want to increase the minimum budget for the Department of Recreation and Parks."
+
+[[section]]
+id = "what"
+heading = "Measure PRK"
+
+[[section.line]]
+text = "City of Los Angeles Measure PRK asks voters in the city whether to raise the minimum budget the charter sets for the Department of Recreation and Parks."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["increase the minimum budget allocated"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the charter requires the General Fund, the main operating fund of the city, to give parks a minimum share of the assessed value of city property."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-parcels"
+
+[[section.line]]
+text = "The Chief Legislative Analyst says that share has not kept pace with a growing population, a larger park system and rising costs."
+sources = ["summary"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure PRK would double that share over ten years, starting in the 2027-2028 budget year."
+sources = ["summary", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "fund-target"
+
+[[section.line]]
+id = "emergency"
+text = "In a declared fiscal emergency, the City Council could cut the added money by up to 30 percent, but never below the share required today."
+sources = ["summary", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "rainy-day"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+id = "cost"
+text = "The City Administrative Officer estimates Measure PRK would add $32 million to parks in its first year, rising to $497 million by the 2036-2037 budget year."
+sources = ["financial-impact"]
+
+[section.line.visual]
+kind = "illustration"
+name = "save-more"
+
+[[section.line]]
+id = "shift"
+text = "With no new revenue, the officer says the city must move money from other services, including public safety, public works and homeless services."
+sources = ["financial-impact"]
+
+[section.line.visual]
+kind = "illustration"
+name = "trade-off"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure PRK would keep parks clean, repair park facilities, and keep recreation and senior centers open without raising taxes."
+sources = ["argument-for"]
+basis = ["Charter Amendment PRK will keep our parks, waters, and beaches clean; repair and maintain park facilities; and keep recreation and senior centers open without raising taxes by a single penny."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Repairs parks, keeps centers open", "Without raising taxes"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure PRK was submitted, so the City Clerk's voter pamphlet prints only arguments in favor of it."
+sources = ["argument-for"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means you want to increase the minimum budget for the Department of Recreation and Parks."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["You want to increase the minimum budget"]
+
+[[section.line]]
+text = "A no vote means you do not want to increase that minimum budget."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["You do not want to increase the minimum budget"]
+
+[[question]]
+ask = "How much more money would parks get, and where would it come from?"
+lines = ["cost", "shift"]
+
+[[question]]
+ask = "Could the city cut the money in a budget crisis?"
+lines = ["emergency"]
+
+[[question]]
+ask = "How big are those amounts next to the city's General Fund budget?"
+unanswered = true
