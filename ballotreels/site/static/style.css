@@ -417,6 +417,19 @@ input.zip-input::placeholder {
   margin-top: 0.4rem;
 }
 
+/* The home page's coloured-pencil flag: small enough on a phone that the
+   zip field still starts on the first screen. */
+.home-flag {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(100%, 320px);
+  max-height: 18vh;
+  margin: 8px 0 4px;
+  transform: rotate(-1.5deg);
+  box-shadow: 2px 3px 0 rgba(46, 43, 39, 0.18);
+}
+
 .promise {
   list-style: none;
   padding: 0;

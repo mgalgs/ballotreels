@@ -549,6 +549,8 @@ function renderHome() {
   input.addEventListener("input", () => { note.textContent = ""; });
 
   app.appendChild(el("section", { class: "hero" }, [
+    el("img", { class: "home-flag", src: "/static/flags/us.jpg", alt: "",
+                width: "960", height: "597" }),
     heading("h1", "Your ballot, explained"),
     el("p", { class: "lead",
               text: "Short, even-handed videos on everything on your " +
