@@ -1,0 +1,60 @@
+# Archived sources for Rim of the World Recreation and Park District
+# Measure R, 2026-11-03 general election (sources/sources.md). Every id
+# here may be cited by script.toml. `kind` must be one the standard
+# allows (docs/STANDARD.md, section 1). The guide's pages are cut from the
+# San Bernardino County Registrar of Voters' comprehensive Voter
+# Information Guide, PDF pages 254 to 257; "page" is the guide's printed
+# footer number (SB COMPREHENSIVE-252 to -255).
+#
+# The archived guide pages print no ballot question for Measure R, so the
+# card quotes it from the Board of Directors' Resolution No. 07132026.3,
+# which recites it. Measure R is a special parcel tax, not a bond: the
+# guide prints no tax rate statement, and the one revenue estimate is the
+# ballot question's.
+#
+# A recreation and park district has no Census boundary, so the
+# measure's division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md).
+
+[contest]
+id = "ca-2026-11-03-rim-of-the-world-park-measure-r"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:san_bernardino"
+kind = "measure"
+title = "Rim of the World Recreation and Park District Measure R: Parcel Tax Increase for Parks and Recreation"
+voters = "the Rim of the World Recreation and Park District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Board of Directors of the Rim of the World Recreation and Park District, Resolution No. 07132026.3 (July 13, 2026), reciting the measure, as posted by the Registrar of Voters"
+credit = "Ballot question, Board of Directors Resolution No. 07132026.3"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/RimoftheWorldRPD/RES_ROTW.pdf"
+file = "sources/RES_ROTW.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "County Counsel Impartial Analysis of Measure R, San Bernardino County Voter Information Guide, page SB COMPREHENSIVE-252"
+credit = "Impartial Analysis, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp254-257.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure R, San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-252 to -253 (no argument against was filed)"
+credit = "Arguments, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp254-257.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text for Measure R (Resolution No. 07132026), San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-253 to -255"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp254-257.pdf"
+retrieved = "2026-10-28"

@@ -1,0 +1,144 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; how a college bond is repaid and what it needs to
+# pass; what the money would pay for; the district's tax statement; one
+# line per side; what a vote does.
+#
+# The archived guide pages print no ballot question for Measure C, so the
+# card quotes the question, and the order calling the election, from the
+# Board of Trustees' resolution (its Appendix B and Section 2). The
+# resolution prints no yes or no lines, so the card has none; the vote
+# lines take their meanings from County Counsel's Impartial Analysis and
+# highlight the resolution's own phrases, as Utah's do. "Counsel" is heard
+# as "Council" (standard/speakability.txt). The bond total and the debt
+# service are repaid from a tax on property in the district, and no
+# archived source states the district's budget, so they have no budget
+# scale (STANDARD.md 6.5; left open). The tax statement gives $25 per
+# $100,000 as both its average and its highest rate.
+#
+# No argument against Measure C was filed. The no side says so plainly;
+# its section is marked filed = false.
+
+contest = "ca-2026-11-03-barstow-ccd-measure-c"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "C"
+title = "Barstow Community College Repair, Safety, Affordable Higher Education Measure."
+origin = "The Board hereby orders an election and submits to the electors of the District the question of whether general obligation bonds of the District shall be issued and sold in a maximum principal amount of $37,000,000"
+summary = "To repair/upgrade local community college classrooms/labs, maintain affordable higher education in classrooms preparing students/veterans for high-demand jobs/careers, including skilled trades, engineering, nursing; update aging computer technology, emergency systems; repair deteriorating gas/electrical lines; shall Barstow Community College District’s measure be adopted authorizing $37,000,000 in bonds at legal rates, levying approximately $25 per $100,000 assessed valuation ($2,500,000 annually) while bonds are outstanding, requiring spending disclosure, oversight, audits?"
+
+[[section]]
+id = "what"
+heading = "Measure C"
+
+[[section.line]]
+text = "Barstow Community College District Measure C asks the district's voters whether to approve $37 million in college bonds."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["Barstow Community College Repair, Safety, Affordable Higher Education Measure."]
+
+[[section]]
+id = "today"
+heading = "How a college bond works"
+
+[[section.line]]
+text = "The district would borrow the money and repay it from a tax on property in the district."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure C needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The money would go to listed projects, such as skilled trades classrooms, facilities for veterans starting civilian careers, and roof and air conditioning repairs."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-workshop"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+text = "The district's tax statement estimates a tax of $25 per $100,000 of assessed value, on average and at most, through 2056-2057."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section.line]]
+text = "The statement estimates the total to repay, with interest, at about $73.7 million."
+sources = ["tax-statement"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure C repairs aging buildings and keeps college affordable close to home."
+sources = ["arguments"]
+basis = ["After more than 60 years of continuous use, many campus buildings and infrastructure systems require repairs", "VOTE YES on Measure C to protect access to an affordable, high-quality education", "rely on Barstow Community College for a high-quality education close to home."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Repairs to buildings in use over 60 years", "Affordable training for students and veterans"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure C was filed for the San Bernardino County voter guide."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is in favor of letting the district issue the bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $37,000,000 in bonds"]
+
+[[section.line]]
+text = "A no vote is against letting the district issue the bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["whether general obligation bonds of the District shall be issued and sold"]

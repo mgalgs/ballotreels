@@ -181,6 +181,20 @@ BALLOTS: dict[str, Ballot] = {
                          "Riverside County Voter Information Guide",
                      "ca-2026-11-03-banning-measure-w":
                          "Riverside County Voter Information Guide",
+                     "ca-2026-11-03-san-bernardino-ccd-measure-y":
+                         "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-san-bernardino-city-unified-measure-z":
+                         "Board of Education Resolution No. 10.6",
+                     "ca-2026-11-03-upland-unified-measure-a":
+                         "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-barstow-ccd-measure-c":
+                         "Board of Trustees Resolution, Appendix B",
+                     "ca-2026-11-03-beaumont-unified-measure-b":
+                         "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-sb-mountains-hospital-measure-q":
+                         "San Bernardino County Voter Information Guide",
+                     "ca-2026-11-03-rim-of-the-world-park-measure-r":
+                         "Board of Directors Resolution No. 07132026.3",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",

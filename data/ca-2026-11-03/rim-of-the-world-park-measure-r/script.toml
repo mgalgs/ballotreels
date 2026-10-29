@@ -1,0 +1,153 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; the parcel tax today; what the measure would change
+# and what the money could pay for; what it needs to pass; the ballot
+# question's revenue estimate; one line per side; what a vote does.
+#
+# The archived guide pages print no ballot question for Measure R, so the
+# card quotes it from the Board of Directors' Resolution No. 07132026.3,
+# which recites it; the question has no title line, so the card's title
+# is the whole question, its origin the board that adopted the
+# resolution, and its summary the resolution's sentence submitting the
+# measure to the voters, verbatim. The resolution
+# prints no yes or no lines, so the card has none; the vote lines take
+# their meanings from County Counsel's Impartial Analysis and highlight
+# the question's own figures. "Counsel" is heard as "Council"
+# (standard/speakability.txt).
+#
+# The guide prints no tax rate statement for a parcel tax; the one
+# revenue estimate is the ballot question's "approximately $510,000 the
+# first year", which its grammar ties to the increase, not the whole $37
+# tax (the argument in favor agrees: "additional first-year revenue"). No official archived source states the district's budget
+# (the $1.1 million in the argument in favor is that side's figure), so
+# the estimate has no budget scale (STANDARD.md 6.5; left open). The
+# per-parcel amounts are what one property owner pays, not the district's
+# money, so they need none.
+#
+# No argument against Measure R was filed. The no side says so plainly;
+# its section is marked filed = false.
+
+contest = "ca-2026-11-03-rim-of-the-world-park-measure-r"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "R"
+title = "Shall Rim of the World Recreation & Park District adopt a resolution increasing its annual special parcel tax from $22 to $37/parcel/year, with an annual escalator of 1%, until ended by voters, generating approximately $510,000 the first year, to sustain essential recreation services; improve and maintain parks, recreational facilities, and community amenities; address rising costs, emergency repair and disaster recovery; all funds remain local used only for these purposes with annual audit/ reporting?"
+origin = "Board of Directors of the Rim of the World Recreation and Park District"
+summary = "a General District Election is to be held in the Rim of the World Recreation and Park District, California on November 3, 2026, at which there will be submitted to the voters the following measure:"
+
+[[section]]
+id = "what"
+heading = "Measure R"
+
+[[section.line]]
+text = "Rim of the World Recreation and Park District Measure R asks the district's voters whether to raise its yearly parcel tax."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["increasing its annual special parcel tax"]
+
+[[section]]
+id = "today"
+heading = "The parcel tax today"
+
+[[section.line]]
+text = "Property owners in the district now pay a special tax of $22 a parcel each year, on their property tax bill."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure R would raise the tax to $37 a parcel from July 2027, then by 1 percent a year until voters end it."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+text = "The money could be used only for the district's parks, recreation programs and staff, and emergency repairs."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "mountain-park"
+
+[[section.line]]
+text = "Measure R needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+text = "The ballot question estimates the increase would bring in about $510,000 in its first year."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["generating approximately $510,000 the first year"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure R sustains parks and programs as insurance and repair costs rise."
+sources = ["arguments"]
+basis = ["Despite these efforts, revenues cannot keep pace with increasing insurance, utility, maintenance, and repair costs, putting at risk the District's ability to continue to provide consistent recreational facilities and programs for the community."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Parks and programs kept going as costs rise", "Money stays local, with yearly audits"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure R was filed for the San Bernardino County voter guide."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote raises the tax to $37 a parcel, with the yearly 1 percent increase."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to $37/parcel/year"]
+
+[[section.line]]
+text = "A no vote keeps the tax at $22 a parcel, as it is now."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["from $22"]

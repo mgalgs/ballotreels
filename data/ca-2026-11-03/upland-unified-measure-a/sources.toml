@@ -1,0 +1,73 @@
+# Archived sources for Upland Unified School District Measure A,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). The guide's pages are cut from the San
+# Bernardino County Registrar of Voters' comprehensive Voter Information
+# Guide, PDF pages 168 to 176; "page" is the guide's printed footer
+# number (SB COMPREHENSIVE-166 to -174).
+#
+# The guide's Full Text prints the ballot question ("the full proposition
+# presented to the voters"); with County Counsel's Impartial Analysis,
+# which states what a yes and a no vote do, it is the card's source. Its
+# wording differs a little from both versions in the district's
+# resolution (it ends "NO money for salaries, including administrators,
+# only Upland USD educational facilities?"); the card quotes the guide's.
+
+[contest]
+id = "ca-2026-11-03-upland-unified-measure-a"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:upland_unified_school_district"
+kind = "measure"
+title = "Upland Unified School District Measure A: School Facility Bonds"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "San Bernardino County Registrar of Voters, Voter Information Guide, pages SB COMPREHENSIVE-166 to -174: Bond Measure A's ballot question and Impartial Analysis"
+credit = "San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp168-176.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "County Counsel Impartial Analysis of Bond Measure A, San Bernardino County Voter Information Guide, page SB COMPREHENSIVE-166"
+credit = "Impartial Analysis, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp168-176.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Upland Unified School District, Tax Rate Statement for Bond Measure A, San Bernardino County Voter Information Guide, page SB COMPREHENSIVE-168"
+credit = "Tax Rate Statement, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp168-176.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments in Favor of and Against Bond Measure A, with their rebuttals, San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-166 to -168"
+credit = "Arguments, San Bernardino County Voter Information Guide"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp168-176.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text for Bond Measure A, San Bernardino County Voter Information Guide, pages SB COMPREHENSIVE-169 to -174"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/VIG.pdf"
+file = "sources/VIG_pp168-176.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "legislative-record"
+publisher = "Board of Education of the Upland Unified School District, Resolution No. 08-06-26 (A) ordering the bond election, as posted by the Registrar of Voters"
+url = "https://uploads.rov.sbcounty.gov/ROV/Elections/2026/1103/Measures/UplandUSD/RES_UplandUSD.pdf"
+file = "sources/RES_UplandUSD.pdf"
+retrieved = "2026-10-28"

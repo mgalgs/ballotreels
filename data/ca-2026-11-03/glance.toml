@@ -615,3 +615,61 @@ source = "ballot"
 quote = "over $40,000,000 in public benefits"
 amount = 40000000
 period = "unstated"
+
+# San Bernardino Community College District Measure Y: the Tax Rate
+# Statement's total debt service (the bonds are $898,000,000).
+[san-bernardino-ccd-measure-y]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $1.9 billion."
+amount = 1900000000
+period = "unstated"
+
+# San Bernardino City Unified School District Measure Z: the Tax Rate
+# Statement's total debt service (the bonds are $345,000,000).
+[san-bernardino-city-unified-measure-z]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all of the bonds are issued and sold is approximately $670,286,938."
+amount = 670286938
+period = "unstated"
+
+# Upland Unified School District Measure A: the Tax Rate Statement's
+# total debt service (the bonds are $236,700,000).
+[upland-unified-measure-a]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $511,360,000."
+amount = 511360000
+period = "unstated"
+
+# Barstow Community College District Measure C: the Tax Rate Statement's
+# total debt service (the bonds are $37,000,000).
+[barstow-ccd-measure-c]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $73,723,057."
+amount = 73723057
+period = "unstated"
+
+# Beaumont Unified School District Measure B: the Tax Rate Statement's
+# total debt service (the bonds are $86,000,000).
+[beaumont-unified-measure-b]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $178,000,000."
+amount = 178000000
+period = "unstated"
+
+# San Bernardino Mountains Community Hospital District Measure Q: the Tax
+# Rate Statement's total debt service (the bonds are $61,000,000).
+[sb-mountains-hospital-measure-q]
+source = "tax-statement"
+quote = "The best estimate from official sources of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $106,182,725."
+amount = 106182725
+period = "unstated"
+
+# Rim of the World Recreation and Park District Measure R: a special
+# parcel tax; the guide prints no tax rate statement, and the one
+# estimate is the ballot question's first-year revenue from the $15
+# increase (additional revenue, not the whole $37 tax's yield).
+[rim-of-the-world-park-measure-r]
+source = "ballot-question"
+quote = "generating approximately $510,000 the first year"
+amount = 510000
+period = "per-year"
