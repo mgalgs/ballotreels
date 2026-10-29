@@ -1924,3 +1924,11 @@ period = "per-year"
 [woodland-measure-z]
 source = "ballot-question"
 status = "none-printed"
+
+# Winters Joint Unified School District Measure B: the district's Tax
+# Rate Statement, its total debt service (the bonds are $29,900,000).
+[winters-unified-measure-b]
+source = "tax-statement"
+quote = "The best estimate from official sources of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $58,600,000."
+amount = 58600000
+period = "unstated"

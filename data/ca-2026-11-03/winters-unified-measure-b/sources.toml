@@ -1,0 +1,79 @@
+# Archived sources for Winters Joint Unified School District Measure B,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The district lies in Yolo and Solano counties; the measure was filed
+# with Yolo County, and its `school_district:` division reaches its
+# voters in both, so this is the district's one contest. Solano's copy
+# of the same documents is archived under winters-unified-measure-b-solano
+# (scans with no text layer) and is not cited.
+#
+# Yolo County ACE's Elections Branch posts each local measure on its own
+# web page, with tabs for the ballot question, the impartial analysis,
+# the tax rate statement, the full text, the arguments and the
+# rebuttals; the county says this is the material published in its voter
+# guide. sources/county-measure-b-page.html is Measure B's page and backs
+# every source here; County Counsel's Impartial Analysis (a scan with no
+# text layer) and the signed argument in favor are also archived as the
+# PDFs the page links. County Counsel's Impartial Analysis is the
+# measure's neutral explanation and the district's Tax Rate Statement
+# its fiscal statement. No argument against was filed, so there are no
+# rebuttals.
+#
+# The credits call the guide the "Yolo County Voter Information Guide":
+# the county's pages name it only as the "County Voter Information
+# Guide" and no cover page was archived, so the county name in the title
+# is unconfirmed.
+
+[contest]
+id = "ca-2026-11-03-winters-unified-measure-b"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:winters_joint_unified_school_district"
+kind = "measure"
+title = "Winters Joint Unified School District Measure B: School Repair Bonds"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Yolo County Assessor/Clerk-Recorder/Elections, Elections Branch, Measure B - Winters Joint Unified School District: ballot question, and County Counsel's Impartial Analysis's statement of what a vote does"
+credit = "Ballot question, Yolo County Voter Information Guide"
+url = "https://elections.yolocounty.gov/415/Measure-B---Winters-Joint-Unified-School"
+file = "sources/county-measure-b-page.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "County Counsel's Impartial Analysis of Measure B, Philip J. Pogledich, County Counsel, County of Yolo, by Cedric Hopkins, Senior Deputy, on Yolo County Elections' Measure B page"
+credit = "County Counsel’s Impartial Analysis, Yolo County Voter Information Guide"
+url = "https://elections.yolocounty.gov/415/Measure-B---Winters-Joint-Unified-School"
+file = "sources/county-measure-b-page.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Winters Joint Unified School District, Tax Rate Statement of Measure B, on Yolo County Elections' Measure B page"
+credit = "Tax Rate Statement, Yolo County Voter Information Guide"
+url = "https://elections.yolocounty.gov/415/Measure-B---Winters-Joint-Unified-School"
+file = "sources/county-measure-b-page.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure B, and the notice that no argument against was filed, on Yolo County Elections' Measure B page"
+credit = "Arguments, Yolo County Voter Information Guide"
+url = "https://elections.yolocounty.gov/415/Measure-B---Winters-Joint-Unified-School"
+file = "sources/county-measure-b-page.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Ballot Text of Measure B, on Yolo County Elections' Measure B page"
+credit = "Full Text of Measure B, Yolo County Voter Information Guide"
+url = "https://elections.yolocounty.gov/415/Measure-B---Winters-Joint-Unified-School"
+file = "sources/county-measure-b-page.html"
+retrieved = "2026-10-28"
