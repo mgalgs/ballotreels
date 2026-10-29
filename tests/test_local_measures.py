@@ -284,6 +284,79 @@ class LocalBallotTest(LocalServerTestCase):
         self.assertIn("depending on your address", app)
 
 
+GROSSMONT_9_12 = f"{GROSSMONT}_9-12"
+SD_UNIFIED_9_12 = f"{SD_UNIFIED}_9-12"
+
+
+class SecondaryOnlyTerritoryTest(LocalServerTestCase):
+    """A school district's 9-12-only territory (`<name>_9-12`) has the
+    district's contests, which name only the district."""
+
+    def ballot(self, d, p=()):
+        query = "&".join([f"d={SAN_DIEGO}"] + [f"d={x}" for x in d] +
+                         [f"p={x}" for x in p])
+        return self.get_json(f"/api/ballot?{query}")
+
+    def test_only_the_territory(self):
+        doc = self.ballot([GROSSMONT_9_12])
+        self.assertEqual(_maybe(doc["levels"]),
+                         {"ca-2026-11-03-grossmont-measure-g": False})
+
+    def test_partial_territory_is_maybe(self):
+        doc = self.ballot([GROSSMONT_9_12], p=[GROSSMONT_9_12])
+        self.assertEqual(_maybe(doc["levels"]),
+                         {"ca-2026-11-03-grossmont-measure-g": True})
+
+    def test_both_partial_is_maybe(self):
+        doc = self.ballot([GROSSMONT, GROSSMONT_9_12],
+                          p=[GROSSMONT, GROSSMONT_9_12])
+        self.assertEqual(_maybe(doc["levels"]),
+                         {"ca-2026-11-03-grossmont-measure-g": True})
+
+    def test_a_whole_piece_makes_it_certain(self):
+        for whole, part in ((GROSSMONT, GROSSMONT_9_12),
+                            (GROSSMONT_9_12, GROSSMONT)):
+            with self.subTest(whole=whole):
+                doc = self.ballot([whole, part], p=[part])
+                self.assertEqual(
+                    _maybe(doc["levels"]),
+                    {"ca-2026-11-03-grossmont-measure-g": False})
+
+    def test_both_show_each_contest_once(self):
+        doc = self.ballot([GROSSMONT, GROSSMONT_9_12, SD_UNIFIED_9_12],
+                          p=[SD_UNIFIED_9_12])
+        ids = _ids(doc["levels"])
+        self.assertEqual(ids.count("ca-2026-11-03-grossmont-measure-g"), 1)
+        self.assertEqual(_maybe(doc["levels"]),
+                         {"ca-2026-11-03-grossmont-measure-g": False,
+                          "ca-2026-11-03-sd-unified-measure-f": True})
+
+    def test_neither_is_unchanged(self):
+        doc = self.ballot([CAJON_VALLEY])
+        self.assertEqual(_maybe(doc["levels"]), {})
+        self.assertIn("ca-2026-11-03-helix-water-measure-h",
+                      _ids(doc["levels"]))
+
+
+
+class BallotDivisionTest(unittest.TestCase):
+    def test_only_school_districts_have_territory(self):
+        from ballotreels.geo.lookup import ballot_division
+        self.assertEqual(ballot_division(GROSSMONT_9_12), GROSSMONT)
+        self.assertEqual(ballot_division(f"{STATE}/place:x_9-12"),
+                         f"{STATE}/place:x_9-12")
+        self.assertEqual(ballot_division(SD_CITY), SD_CITY)
+
+    def test_no_contest_names_the_territory(self):
+        # The ballot no longer matches a `_9-12` division as written, so
+        # a contest naming one would lose its voters.
+        for election_dir in sorted((REPO / "data").glob("*-*-*")):
+            for entry in load_index(election_dir).entries:
+                with self.subTest(contest=entry.id):
+                    self.assertFalse(entry.division.endswith("_9-12"),
+                                     entry.division)
+
+
 class VotersRuleTest(unittest.TestCase):
     def problem(self, slug, voters=None, division=SAN_DIEGO, kind="measure"):
         from ballotreels.index import voters_problem

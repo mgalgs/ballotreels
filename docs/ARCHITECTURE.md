@@ -123,7 +123,11 @@ listed in the zip's `partial`. A zip split between counties asks which,
 as for any district; a zip's cities and school districts are not asked
 about. The ballot lists the contests of every one overlapping the zip,
 and those of a `partial` one say "May be on your ballot, depending on
-your address."
+your address." Some unified and high school districts come twice, the
+district and its territory served for grades 9-12 only
+(`school_district:<name>_9-12`); the ballot counts that territory as
+the district, so a contest names only the district, and is "May be"
+unless some piece of the district covers the whole zip.
 
 **Special districts.** A water, fire, health care, community services
 or community college district has no free statewide boundary layer.
