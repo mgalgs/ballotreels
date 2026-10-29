@@ -1,0 +1,177 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; how it is collected and what it needs to
+# pass; how the tax is charged and who is exempt; the ballot question's revenue estimate; one line
+# per side; what a vote does.
+#
+# The card quotes the ballot question from section 4 of the district's
+# Resolution No. 2026-0723, transcribed from the scan the county posts;
+# its title is the resolution's number and its origin the resolution's
+# own title. The resolution's YES and NO boxes carry no meanings, so the
+# card has none; the vote lines take their meanings from the question and
+# highlight its own words. "Counsel" is heard as "Council"
+# (standard/speakability.txt), so the narration says "the impartial
+# analysis" where it needs to. No name of the district, the neighbouring
+# fire services or the county is narrated: the card, title and `voters`
+# line show them.
+#
+# The rates, the yearly inflation adjustment and the exemptions are the
+# impartial analysis's. The guide prints no tax rate statement or fiscal
+# analysis; the one revenue estimate is the ballot question's "an
+# estimated $21,181 annually". No official archived source states the
+# district's budget, so the estimate has no budget scale (STANDARD.md
+# 6.5; left open). The proposed reorganization of three fire services and
+# the property tax exchange it might bring are the supporters' points,
+# in their argument only, so they stay in that section (STANDARD.md 6.3).
+#
+# No argument against Measure J was filed. The no side says so plainly;
+# its section is marked filed = false.
+
+contest = "ca-2026-11-03-petrolia-fpd-measure-j"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "J"
+title = "RESOLUTION NO. 2026-0723"
+origin = "A RESOLUTION OF THE BOARD OF DIRECTORS OF THE PETROLIA FIRE PROTECTION DISTRICT ORDERING THE SUBMISSION OF A SPECIAL TAX MEASURE TO THE QUALIFIED VOTERS OF THE DISTRICT"
+summary = "To provide a stable, locally controlled source of funding to maintain and improve fire protection and emergency response services and to support long-term fire service sustainability in the region, shall Ordinance No. 2026-01 of the Petrolia Fire Protection District establishing an annual special tax of $75 per taxable unimproved parcel, $95 per taxable improved parcel, and $160 per qualifying contiguous parcel group, raising an estimated $21,181 annually unless repealed by the voters, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure J"
+
+[[section.line]]
+text = "Measure J asks the voters of this fire protection district whether to approve a yearly parcel tax for fire and emergency services."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establishing an annual special tax"]
+
+[[section]]
+id = "today"
+heading = "How a special tax works"
+
+[[section.line]]
+text = "The tax would be collected on the property tax bill, like other property taxes."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+text = "Measure J needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rates"
+text = "A parcel with a home or business would pay $95 a year, and land that could be built on but is not, $75."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "fire-station-engine"
+
+[[section.line]]
+id = "group"
+text = "An owner of adjoining parcels could apply to pay $160 a year for the group."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "farm-and-timber-land"
+
+[[section.line]]
+id = "inflation"
+text = "The rates could rise each year with inflation."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+id = "exempt"
+text = "Owners with very low incomes and active volunteer firefighters could apply to be exempt."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+text = "The ballot question estimates the tax would raise $21,181 a year."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["raising an estimated $21,181 annually"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure J provides the funding needed to continue a proposed reorganization of three fire services into one district."
+sources = ["arguments"]
+basis = ["Approval provides the local funding needed to continue the proposed reorganization of Petrolia, Honeydew, and Telegraph Ridge fire services into the Mattole Fire Protection District."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Costs keep climbing for volunteer crews", "Funds a regional fire reorganization"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure J was filed, so the county voter guide prints only the argument in favor of it."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the annual special tax."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establishing an annual special tax"]
+
+[[section.line]]
+text = "A no vote rejects the annual special tax."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establishing an annual special tax"]
+
+[[question]]
+ask = "How much would a property owner pay?"
+lines = ["rates", "group", "inflation", "exempt"]
+
+[[question]]
+ask = "How big is $21,181 next to the district's budget?"
+unanswered = true

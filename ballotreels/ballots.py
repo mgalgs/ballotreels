@@ -626,7 +626,8 @@ BALLOTS: dict[str, Ballot] = {
                         for slug in (
                             "southern-humboldt-healthcare-measure-k",
                             "shasta-tehama-trinity-jccd-measure-c-humboldt",
-                            "ferndale-fpd-measure-f")},
+                            "ferndale-fpd-measure-f",
+                            "petrolia-fpd-measure-j")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

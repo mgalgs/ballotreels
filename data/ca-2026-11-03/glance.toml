@@ -2222,3 +2222,11 @@ source = "ballot-question"
 quote = "raising an estimated $116,000 annually"
 amount = 116000
 period = "per-year"
+
+# Petrolia Fire Protection District Measure J: a parcel tax, so no tax
+# rate statement; the one estimate is in its ballot question.
+[petrolia-fpd-measure-j]
+source = "ballot-question"
+quote = "raising an estimated $21,181 annually"
+amount = 21181
+period = "per-year"
