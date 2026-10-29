@@ -386,6 +386,18 @@ BALLOTS: dict[str, Ballot] = {
                                      "natomas-unified-measure-d",
                                      "center-joint-unified-measure-e",
                                      "galt-joint-union-high-measure-g")},
+                     "ca-2026-11-03-menlo-park-measure-p":
+                         "Resolution No. 7008",
+                     "ca-2026-11-03-burlingame-measure-d":
+                         "Resolution No 104-2026",
+                     "ca-2026-11-03-san-carlos-measure-g":
+                         "Resolution No. 2026 – 088",
+                     "ca-2026-11-03-east-palo-alto-measure-o":
+                         "Resolution No. 57 – 2026",
+                     "ca-2026-11-03-east-palo-alto-measure-cc":
+                         "Resolution No. 30 - 2026",
+                     "ca-2026-11-03-belmont-measure-y":
+                         "Resolution No. 2026 – 69",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
@@ -395,6 +407,10 @@ BALLOTS: dict[str, Ballot] = {
                          ("Yes", "No"),
                      "ca-2026-11-03-needles-measure-l":
                          ("09960 00000\\45188769.I",),
+                     # San Mateo County publishes each measure's documents
+                     # separately, not as one guide: the card is a page of
+                     # the city's resolution that prints the ballot
+                     # question, named as its first page titles it.
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",

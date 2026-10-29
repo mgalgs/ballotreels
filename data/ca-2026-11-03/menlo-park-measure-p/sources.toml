@@ -1,0 +1,68 @@
+# Archived sources for City of Menlo Park Measure P, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1). San Mateo County's Assessor-County Clerk-Recorder &
+# Elections (ACRE) posts each document of the measure separately, as the
+# City of Menlo Park filed it; no printed voter guide was archived.
+#
+# The City Attorney's Impartial Analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is. No fiscal analysis is among ACRE's files (Measure P is
+# not a tax measure).
+#
+# The resolution and both arguments are scans: the resolution's text
+# layer misreads words ("ofthe"), and the arguments have none. Each
+# source that `check` reads verbatim (the card's ballot question, each
+# side's basis) is a transcription of its page, read from the page
+# image, in a .txt beside the PDF; the url is the PDF's.
+
+[contest]
+id = "ca-2026-11-03-menlo-park-measure-p"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:menlo_park"
+kind = "measure"
+title = "City of Menlo Park Measure P: Voter Approval for Changes to City-Owned Downtown Parking Lots"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Menlo Park, Resolution No. 7008, Section 2: ballot language (page 2), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Ballot question, Resolution No. 7008"
+url = "https://smcacre.gov/system/files/2026-05/52-ENG-M102-Contest%20Code-Reso-Menlo%20Park%20Muni%20Amendment_Redacted.pdf"
+file = "sources/resolution-full-text.p1-2.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Measure P, City Attorney's Impartial Analysis, City of Menlo Park, filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "City Attorney's Impartial Analysis"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MP-ImpartialAnalysis-MenloPark-Muni-Amendment.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Menlo Park, Resolution No. 7008 and Exhibit A, Downtown Parking Plazas Ordinance (pages 1 to 10), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+url = "https://smcacre.gov/system/files/2026-05/52-ENG-M102-Contest%20Code-Reso-Menlo%20Park%20Muni%20Amendment_Redacted.pdf"
+file = "sources/resolution-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure P (page 2), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Argument in favor, filed with San Mateo County"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M102-ContestCode-7ArgInFavor-Menlo%20Park%20Muni%20Amendment_Redacted.pdf"
+file = "sources/argument-for.p2.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure P (page 7), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Argument against, filed with San Mateo County"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M102-Contest%20Code-6ArgAgainst-Menlo%20Park%20Muni%20Amendment_Redacted_0.pdf"
+file = "sources/argument-against.p7.txt"
+retrieved = "2026-10-28"

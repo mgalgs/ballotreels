@@ -1402,3 +1402,57 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $93,507,933."
 amount = 93507933
 period = "unstated"
+
+# City of Menlo Park Measure P: not a tax measure; no fiscal analysis is
+# among the measure's published documents, and the ballot question
+# prints no figure.
+[menlo-park-measure-p]
+source = "ballot-question"
+status = "none-printed"
+
+# City of Burlingame Measure D: no tax rate statement applies (a general
+# tax) and no fiscal analysis is among the measure's published
+# documents; the ballot question's estimate (the City Attorney's
+# analysis gives the same, "an estimated additional $5.7 million
+# annually", in a scan with no text layer).
+[burlingame-measure-d]
+source = "ballot-question"
+quote = "providing an estimated $5,700,000 annually"
+amount = 5700000
+period = "per-year"
+
+# City of San Carlos Measure G: no tax rate statement applies (a general
+# tax) and no fiscal analysis is among the measure's published
+# documents; the ballot question's estimate (the City Attorney's
+# analysis gives the same, in a scan with no text layer).
+[san-carlos-measure-g]
+source = "ballot-question"
+quote = "providing $6,000,000 annually for general government use for 14 years"
+amount = 6000000
+period = "per-year"
+
+# City of East Palo Alto Measure O: the total debt service, the City's
+# estimate as the City Attorney's Impartial Analysis gives it (the tax
+# rate statement is not among the measure's published documents).
+[east-palo-alto-measure-o]
+source = "impartial-analysis"
+quote = "the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $268,205,658."
+amount = 268205658
+period = "unstated"
+
+# City of East Palo Alto Measure CC: not a tax measure; no fiscal
+# analysis is among the measure's published documents, and the ballot
+# question prints no figure.
+[east-palo-alto-measure-cc]
+source = "ballot-question"
+status = "none-printed"
+
+# City of Belmont Measure Y: a special tax; no tax rate statement or
+# fiscal analysis is among the measure's published documents. The ballot
+# question's estimate (the City Attorney's analysis gives "approximately
+# $7.1 million" for the first tax year, in a scan with no text layer).
+[belmont-measure-y]
+source = "ballot-question"
+quote = "providing $7,100,000 annually until ended by voters"
+amount = 7100000
+period = "per-year"
