@@ -1,0 +1,72 @@
+# Archived sources for City of San Bruno Measure DD, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). Each document is the copy the San Mateo
+# County Assessor-County Clerk-Recorder & Elections (ACRE) posts on its
+# election page; the county publishes each measure's documents
+# separately, not as one pamphlet.
+#
+# The resolution and both arguments are scans with no text layer, so
+# each has a typed transcription beside it (sources/*.txt, its first
+# lines saying which pages it copies), and `file` names the
+# transcription, which the verbatim checks read as plain text; `url` is
+# the PDF's. The City Attorney's impartial analysis has a text layer, so
+# it is cited as the PDF itself.
+#
+# The ballot question is printed only in the Council's resolution (its
+# Section 2), so the resolution backs two sources: the ballot label the
+# card quotes, and the full text (with Exhibit A, the ordinance). The
+# measure is not a tax, and ACRE posts no fiscal analysis or cost
+# estimate for it. The two rebuttals are archived and not cited.
+
+[contest]
+id = "ca-2026-11-03-san-bruno-measure-dd"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:san_bruno"
+kind = "measure"
+title = "City of San Bruno Measure DD: Ban on Safe and Sane Fireworks"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "City of San Bruno, Resolution No. 2026-077, Section 2: the ballot question, filed with the San Mateo County Chief Elections Officer"
+credit = "City of San Bruno Resolution No. 2026-077"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M304-Contest%20Code-Reso-San%20Bruno%20Fireworks%20Ban_Redacted.pdf"
+file = "sources/resolution-full-text.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney Impartial Analysis of Measure DD, by Trisha Ortiz, City Attorney for the City of San Bruno"
+credit = "City Attorney's Impartial Analysis"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MDD-ImpartialAnalysis-San-Bruno-Fireworks-Ban.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure DD, by the San Bruno City Council, filed with the San Mateo County elections office"
+credit = "Argument in favor of Measure DD"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MDD-ArgInFavor-San-Bruno-Fireworks-Ban_Redacted.pdf"
+file = "sources/argument-for.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure DD, filed with the San Mateo County elections office"
+credit = "Argument against Measure DD"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M304-Contest%20Code-6ArgAgainst-San%20Bruno%20Fireworks%20Ban_Redacted.pdf"
+file = "sources/argument-against.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of San Bruno, Resolution No. 2026-077 and its Exhibit A, the proposed ordinance banning safe and sane fireworks"
+credit = "City of San Bruno Resolution No. 2026-077"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M304-Contest%20Code-Reso-San%20Bruno%20Fireworks%20Ban_Redacted.pdf"
+file = "sources/resolution-full-text.txt"
+retrieved = "2026-10-28"
