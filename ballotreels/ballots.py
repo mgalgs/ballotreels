@@ -129,6 +129,8 @@ BALLOTS: dict[str, Ballot] = {
                      # question, named as its first page titles it.
                      "ca-2026-11-03-menlo-park-measure-p":
                          "Resolution No. 7008",
+                     "ca-2026-11-03-burlingame-measure-d":
+                         "Resolution No 104-2026",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",

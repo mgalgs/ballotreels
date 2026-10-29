@@ -1,0 +1,69 @@
+# Archived sources for City of Burlingame Measure D, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1). San Mateo County's Assessor-County Clerk-Recorder &
+# Elections (ACRE) posts each document of the measure separately, as the
+# City of Burlingame filed it; no printed voter guide was archived.
+#
+# The City Attorney Impartial Analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is, and the one estimate of revenue beside the ballot
+# question's. No tax rate statement applies (a general tax), and no
+# fiscal analysis is among ACRE's files.
+#
+# Every file is a scan with no text layer, except the ordinance pages
+# (6 to 8) of the resolution. Each source that `check` reads verbatim
+# (the card's ballot question, each side's basis) is a transcription of
+# its page, read from the page image, in a .txt beside the PDF; the url
+# is the PDF's.
+
+[contest]
+id = "ca-2026-11-03-burlingame-measure-d"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:burlingame"
+kind = "measure"
+title = "City of Burlingame Measure D: Raising the Hotel Tax From 12% to 15%"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Burlingame, Resolution No 104-2026, Section 2: ballot language (page 2), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Ballot question, Resolution No 104-2026"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M107-Contest%20Code-Reso-Burlingame%20Occupancy%20Tax_Redacted_0.pdf"
+file = "sources/resolution-full-text.p1-2.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney Impartial Analysis – Measure D, Michael Guina, City Attorney, City of Burlingame, filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "City Attorney Impartial Analysis"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MD-ImpartialAnalysis-Burlingame-Occupancy-Tax_Redacted.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Burlingame, Resolution No 104-2026 and Exhibit A, Ordinance Number 2052 (pages 1 to 8), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M107-Contest%20Code-Reso-Burlingame%20Occupancy%20Tax_Redacted_0.pdf"
+file = "sources/resolution-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure D (page 4), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Argument in favor, filed with San Mateo County"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M107-Contest%20Code-4ArgInFavor-Burlingame%20Occupancy%20Tax_Redacted.pdf"
+file = "sources/argument-for.p4.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure D (page 3), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Argument against, filed with San Mateo County"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M107-Contest%20Code-7ArgAgainst-Burlingame%20Occupancy%20Tax_Redacted.pdf"
+file = "sources/argument-against.p3.txt"
+retrieved = "2026-10-28"

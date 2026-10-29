@@ -405,3 +405,14 @@ period = "per-year"
 [menlo-park-measure-p]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Burlingame Measure D: no tax rate statement applies (a general
+# tax) and no fiscal analysis is among the measure's published
+# documents; the ballot question's estimate (the City Attorney's
+# analysis gives the same, "an estimated additional $5.7 million
+# annually", in a scan with no text layer).
+[burlingame-measure-d]
+source = "ballot-question"
+quote = "providing an estimated $5,700,000 annually"
+amount = 5700000
+period = "per-year"
