@@ -1331,3 +1331,34 @@ period = "per-year"
 [clayton-measure-n]
 source = "ballot-question"
 status = "none-printed"
+
+# County of Santa Cruz Measure D: the Auditor-Controller's fiscal impact
+# statement, which prints no dollar figure.
+[santa-cruz-county-measure-d]
+source = "fiscal-statement"
+status = "no-material-impact"
+quote = "The measure is not expected to have a significant fiscal impact on the County of Santa Cruz."
+
+# County of Santa Cruz Measure E: the Auditor-Controller's fiscal impact
+# statement's yearly estimate.
+[santa-cruz-county-measure-e]
+source = "fiscal-statement"
+quote = "The proposed one-half percent increase in the local sales tax rate would annually generate approximately $27 million in additional revenue for the County General Fund."
+amount = 27000000
+period = "per-year"
+direction = "revenue-gain"
+
+# City of Scotts Valley Measure G: no fiscal impact or tax rate statement
+# was posted, and the City Attorney's Impartial Analysis gives no revenue
+# estimate.
+[scotts-valley-measure-g]
+source = "impartial-analysis"
+status = "none-printed"
+
+# Los Gatos-Saratoga Union High School District Measure N (Santa Cruz
+# County part): the district's Tax Rate Statement, its total debt service.
+[los-gatos-saratoga-measure-n-santa-cruz]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $690 million."
+amount = 690000000
+period = "unstated"

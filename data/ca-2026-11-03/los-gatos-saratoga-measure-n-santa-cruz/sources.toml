@@ -1,0 +1,76 @@
+# Archived sources for Los Gatos-Saratoga Union High School District
+# Measure N, 2026-11-03 general election, the Santa Cruz County part of
+# the district (sources/sources.md). Santa Clara County is the district's
+# lead county and carries its own contest for the rest of the district.
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+#
+# Santa Cruz County Elections posts each measure's documents as separate
+# PDFs on the measure's page. The ballot question is printed in the
+# district's full text of the measure (Exhibit B, page B-1); County
+# Counsel's impartial analysis is the measure's neutral explanation, the
+# kind a state's attorney general's explanatory statement is; the
+# district's tax rate statement is its fiscal statement. The Santa Cruz
+# notice of election heads this measure "(Majority Voter Approval
+# Required)", but the impartial analysis states the 55 percent a school
+# bond needs, and the script follows the analysis.
+#
+# The full text, the tax rate statement and both arguments are scans with
+# no text layer (the arguments on Santa Clara County Registrar of Voters
+# filing forms, their measure letter left blank). Their verbatim checks
+# read their transcriptions (sources/*.transcription.txt, made from the
+# page images); the PDFs beside them are the archived copies, and the urls
+# are the PDFs'. Both rebuttals are archived beside them; the script
+# quotes neither, so they are not listed here.
+
+[contest]
+id = "ca-2026-11-03-los-gatos-saratoga-measure-n-santa-cruz"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:los_gatos-saratoga_joint_union_school_district"
+kind = "measure"
+title = "Los Gatos-Saratoga Union High School District Measure N: $321 Million School Bond"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Gatos-Saratoga Union High School District, Full Text Ballot Proposition (Exhibit B), page B-1, as posted by Santa Cruz County Elections"
+credit = "Ballot question, district's full text of Measure N"
+url = "https://votescount.santacruzcountyca.gov/Portals/16/nov26/Measure%20N%20Full%20Text.pdf"
+file = "sources/full-text.transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Jason M. Heath, Santa Cruz County Counsel, by Ruby Márquez, Chief Assistant County Counsel, Impartial Analysis of Measure N (August 11, 2026), Santa Cruz County Elections"
+credit = "County Counsel's Impartial Analysis of Measure N"
+url = "https://votescount.santacruzcountyca.gov/Portals/16/nov26/Measure%20N%20Impartial.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Heath Rocha, Superintendent, Los Gatos-Saratoga Union High School District, Tax Rate Statement Concerning Measure (filed July 15, 2026), Santa Cruz County Elections"
+credit = "District's Tax Rate Statement, Measure N"
+url = "https://votescount.santacruzcountyca.gov/Portals/16/nov26/Measure%20N%20Tax%20Rate%20Statement.pdf"
+file = "sources/tax-rate-statement.transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure N (filed August 7, 2026 with the Santa Clara County Registrar of Voters), page 8, as posted by Santa Cruz County Elections"
+credit = "Argument in favor of Measure N, Santa Cruz County Elections"
+url = "https://votescount.santacruzcountyca.gov/Portals/16/nov26/Measure%20N%20Argument%20For.pdf"
+file = "sources/argument-for.transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure N (filed August 11, 2026 with the Santa Clara County Registrar of Voters), page 6, as posted by Santa Cruz County Elections"
+credit = "Argument against Measure N, Santa Cruz County Elections"
+url = "https://votescount.santacruzcountyca.gov/Portals/16/nov26/Measure%20N%20Argument%20Against.pdf"
+file = "sources/argument-against.transcription.txt"
+retrieved = "2026-10-28"

@@ -1,0 +1,161 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; what Measure A has required since 1986; what Measure
+# D would add; the Auditor-Controller's fiscal impact statement; one line
+# per side; what a vote does.
+#
+# "Counsel" is heard as "Council" (standard/speakability.txt), so the
+# narration does not name County Counsel. The fiscal statement prints no
+# dollar figure, so nothing needs a budget scale (STANDARD.md 6.5). The
+# supporters' "strengthen the legal defensibility" is their argument; the
+# neutral sections leave it to the card, which quotes the ballot question
+# (STANDARD.md 6.3).
+#
+# The county's measure page posts no argument against Measure D and no
+# rebuttals; the printed guide was not seen. The no side says only that
+# none appears in the published measure documents, and is filed = false,
+# as for Proposition 37.
+#
+# The card quotes the ballot question from the Board's resolution, which
+# prints no yes and no statements, so the vote lines take their meanings
+# from County Counsel's impartial analysis and highlight the one phrase of
+# the question both votes turn on, as Utah's do.
+
+contest = "ca-2026-11-03-santa-cruz-county-measure-d"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "D"
+title = "SANTA CRUZ COUNTY COASTAL PROTECTION MEASURE TO REGULATE OIL AND GAS DRILLING AND SEABED MINING FACILITIES"
+origin = "A County election is hereby called to be held throughout the County at the regular election date of November 3, 2026, for the purpose of submitting to the qualified electors of the County of Santa Cruz the following measure:"
+summary = "Measure A, passed in 1986, requires voters to approve land use changes for onshore facilities that support offshore oil and gas development. To protect our economy, environment, and quality of life, shall voters enact an ordinance to update Measure A to also require voter approval for land use changes related to deep-sea mining facilities and strengthen the law against legal challenges?"
+
+[[section]]
+id = "what"
+heading = "Measure D"
+
+[[section.line]]
+text = "County of Santa Cruz Measure D asks county voters whether to require a public vote on land use changes for deep-sea mining facilities."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["deep-sea mining facilities"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "measure-a"
+text = "Since 1986, a county law voters passed as Measure A has required voter approval for onshore facilities that support offshore oil and gas."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "offshore-oil-platform"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "extend"
+text = "Measure D would extend that requirement to onshore facilities for deep-sea mining."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "seabed-nodules"
+
+[[section.line]]
+text = "Measure D would also add a purpose, findings and definitions to the law, and exempt certain projects."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "coastal-industrial-yard"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+id = "fiscal"
+text = "The county auditor-controller says Measure D is not expected to have a significant fiscal impact on the county."
+sources = ["fiscal-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure D gives county voters the ultimate say on onshore facilities for offshore oil, gas and seabed mining."
+sources = ["argument-for"]
+basis = ["Vote YES on Measure D to give Santa Cruz County voters the ultimate say on whether onshore industrial facilities for offshore oil, gas, and seabed mining will be allowed."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Voters get the final say on oil, gas and seabed mining sites", "Makes the county law harder to overturn in court"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure D appears among the measure documents that Santa Cruz County Elections has published for the November election."
+sources = ["argument-for"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["No argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adds deep-sea mining facilities to the land use changes that need voter approval."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["require voter approval for land use changes related to deep-sea mining facilities"]
+
+[[section.line]]
+text = "A no vote keeps the county law the same as it is now."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["require voter approval for land use changes related to deep-sea mining facilities"]
+
+[[question]]
+ask = "What does the county require today?"
+lines = ["measure-a"]
+
+[[question]]
+ask = "What would Measure D add?"
+lines = ["extend"]
+
+[[question]]
+ask = "Would Measure D cost the county money?"
+lines = ["fiscal"]
+
+[[question]]
+ask = "Is anyone proposing such a facility in the county now?"
+unanswered = true

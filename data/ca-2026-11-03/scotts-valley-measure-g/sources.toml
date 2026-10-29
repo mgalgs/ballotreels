@@ -1,0 +1,60 @@
+# Archived sources for City of Scotts Valley Measure G, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Santa Cruz County Elections posts each measure's documents as separate
+# PDFs on the measure's page. The ballot question is printed in the City
+# Council's Resolution No. 2095.2, Section 3; the City Attorney's
+# impartial analysis is the measure's neutral explanation, the kind a
+# state's attorney general's explanatory statement is. No fiscal impact
+# or tax rate statement was posted, and the impartial analysis gives no
+# revenue estimate: the one estimate is the argument in favor's.
+#
+# The resolution and the argument in favor are scans with no text layer.
+# Their verbatim checks read their transcriptions
+# (sources/*.transcription.txt, made from the page images); the PDFs
+# beside them are the archived copies, and the urls are the PDFs'. The
+# county's page posts no argument against and no rebuttals.
+
+[contest]
+id = "ca-2026-11-03-scotts-valley-measure-g"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:scotts_valley"
+kind = "measure"
+title = "City of Scotts Valley Measure G: Raising the Hotel Tax from 11% to 13%"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Scotts Valley City Council, Resolution No. 2095.2, Section 3, as posted by Santa Cruz County Elections"
+credit = "Ballot question, Resolution No. 2095.2"
+url = "https://votescount.santacruzcountyca.gov/Portals/16/nov26/Measure%20G%20Resolution.pdf"
+file = "sources/resolution.transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Kirsten Powell, Scotts Valley City Attorney, Impartial Analysis by City Attorney, Measure G (August 12, 2026), Santa Cruz County Elections"
+credit = "City Attorney's Impartial Analysis of Measure G"
+url = "https://votescount.santacruzcountyca.gov/Portals/16/nov26/Measure%20G%20Impartial.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure G, filed with the Scotts Valley City Clerk, as posted by Santa Cruz County Elections"
+credit = "Argument in favor of Measure G, Santa Cruz County Elections"
+url = "https://votescount.santacruzcountyca.gov/Portals/16/nov26/Measure%20G%20Argument%20For.pdf"
+file = "sources/argument-for.transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Scotts Valley, Measure G Text (ordinance amending Section 3.24.030 of the Scotts Valley Municipal Code), Santa Cruz County Elections"
+url = "https://votescount.santacruzcountyca.gov/Portals/16/nov26/Measure%20G%20Text.pdf"
+file = "sources/full-text.pdf"
+retrieved = "2026-10-28"

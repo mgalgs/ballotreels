@@ -1,0 +1,68 @@
+# Archived sources for County of Santa Cruz Measure D, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Santa Cruz County Elections posts each measure's documents as separate
+# PDFs on the measure's page. The ballot question is printed in the
+# Board of Supervisors' resolution calling the election (page 2); County
+# Counsel's impartial analysis is the measure's neutral explanation, the
+# kind a state's attorney general's explanatory statement is; the County
+# Auditor-Controller's fiscal impact statement is its fiscal statement.
+#
+# The argument for is a scan whose text layer holds only its signers. Its
+# verbatim checks read its transcription
+# (sources/argument-for.transcription.txt, made from the page image); the
+# PDF beside it is the archived copy, and the url is the PDF's. The
+# county's page posts no argument against and no rebuttals.
+
+[contest]
+id = "ca-2026-11-03-santa-cruz-county-measure-d"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:santa_cruz"
+kind = "measure"
+title = "County of Santa Cruz Measure D: Voter Approval for Onshore Oil, Gas and Deep-Sea Mining Facilities"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Santa Cruz County Board of Supervisors, Resolution Calling for a Countywide Election to Amend Chapter 16.55 of the Santa Cruz County Code (Item 17, 26-14113), page 2, as posted by Santa Cruz County Elections"
+credit = "Ballot question, Board of Supervisors resolution"
+url = "https://votescount.santacruzcountyca.gov/Portals/16/nov26/Measure%20D%20Resolution.pdf"
+file = "sources/resolution.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Jason M. Heath, Santa Cruz County Counsel, Impartial Analysis of Measure \"D\", Santa Cruz County Elections"
+credit = "County Counsel's Impartial Analysis of Measure D"
+url = "https://votescount.santacruzcountyca.gov/Portals/16/nov26/Measure%20D%20Impartial.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "fiscal-statement"
+kind = "official-fiscal-analysis"
+publisher = "Laura Bowers, Santa Cruz County Auditor-Controller/Treasurer-Tax Collector, Fiscal Impact Statement, Ballot Measure D, Santa Cruz County Elections"
+credit = "Auditor-Controller's Fiscal Impact Statement, Measure D"
+url = "https://votescount.santacruzcountyca.gov/Portals/16/nov26/Measure%20D%20Fiscal.pdf"
+file = "sources/fiscal-impact-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument for Measure D, filed with Santa Cruz County Elections August 13, 2026"
+credit = "Argument for Measure D, Santa Cruz County Elections"
+url = "https://votescount.santacruzcountyca.gov/Portals/16/nov26/Measure%20D%20Argument%20For.pdf"
+file = "sources/argument-for.transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "County of Santa Cruz, Measure D Text (ordinance amending Chapter 16.55 of the Santa Cruz County Code), Santa Cruz County Elections"
+url = "https://votescount.santacruzcountyca.gov/Portals/16/nov26/Measure%20D%20Text.pdf"
+file = "sources/full-text.pdf"
+retrieved = "2026-10-28"

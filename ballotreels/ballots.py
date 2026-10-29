@@ -59,7 +59,9 @@ BALLOTS: dict[str, Ballot] = {
     # "County Voter Information Guide" on its pages, with no county name,
     # so its cards use that name as printed. Alameda's Composite Voter
     # Information Guide prints each measure's ballot question and
-    # impartial analysis.
+    # impartial analysis. Santa Cruz County posts each measure's
+    # documents separately; its cards quote the ballot question from the
+    # resolution placing the measure, and name the county's guide.
     "ca": Ballot(guide="Official Voter Information Guide",
                  fiscal_label="Fiscal Impact:",
                  choices=("Yes", "No"),
@@ -367,6 +369,12 @@ BALLOTS: dict[str, Ballot] = {
                          "Notice of Special Measure Election for the City of Clayton",
                      "ca-2026-11-03-clayton-measure-n":
                          "Notice of Special Measure Election for the City of Clayton",
+                     **{f"ca-2026-11-03-{x}":
+                        "Santa Cruz County Voter Information Guide"
+                        for x in ("santa-cruz-county-measure-d",
+                                  "santa-cruz-county-measure-e",
+                                  "scotts-valley-measure-g",
+                                  "los-gatos-saratoga-measure-n-santa-cruz")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
