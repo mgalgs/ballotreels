@@ -1,0 +1,287 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 87.58,
+  "phrases": [
+    {
+      "text": "East Palo Alto Measure O asks city voters whether to borrow $125 million through bonds for a library, civic center, water pipes and storm drains.",
+      "start": 0.03,
+      "end": 11.9
+    },
+    {
+      "text": "Bonds are borrowed money, repaid with interest from a tax on property in the city.",
+      "start": 12.56,
+      "end": 17.8
+    },
+    {
+      "text": "Measure O needs a two-thirds vote to pass.",
+      "start": 18.46,
+      "end": 21.46
+    },
+    {
+      "text": "The bonds would buy land for a civic center with a police building, a library and city hall.",
+      "start": 22.12,
+      "end": 28.43
+    },
+    {
+      "text": "They would also pay for water tanks and pipes, storm drains, and land for a park.",
+      "start": 29.09,
+      "end": 34.55
+    },
+    {
+      "text": "The money would be kept in a separate fund, with a yearly independent audit.",
+      "start": 35.21,
+      "end": 39.6
+    },
+    {
+      "text": "The city estimates the tax would average $105.26 per $100,000 of assessed value a year, through 2057-2058.",
+      "start": 40.26,
+      "end": 52.31
+    },
+    {
+      "text": "The city estimates repaying all the bonds would take about $268 million, principal and interest.",
+      "start": 52.97,
+      "end": 60.26
+    },
+    {
+      "text": "Supporters say Measure O upgrades deteriorating water pipes, and builds a modern library with safe places for kids after school.",
+      "start": 60.92,
+      "end": 69.18
+    },
+    {
+      "text": "Opponents say the bonds could cost twice as much or more with interest, and safety repairs should come from today's budget.",
+      "start": 69.84,
+      "end": 77.23
+    },
+    {
+      "text": "A yes vote lets the city issue up to $125 million in bonds for these projects.",
+      "start": 77.89,
+      "end": 84.02
+    },
+    {
+      "text": "A no vote means the city could not issue the bonds.",
+      "start": 84.68,
+      "end": 87.55
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "East Palo Alto Measure O asks city voters whether to borrow $125 million through bonds for a library, civic center, water pipes and storm drains.",
+      "Bonds are borrowed money, repaid with interest from a tax on property in the city.",
+      "Measure O needs a two-thirds vote to pass.",
+      "The bonds would buy land for a civic center with a police building, a library and city hall.",
+      "They would also pay for water tanks and pipes, storm drains, and land for a park.",
+      "The money would be kept in a separate fund, with a yearly independent audit.",
+      "The city estimates the tax would average $105.26 per $100,000 of assessed value a year, through 2057-2058.",
+      "The city estimates repaying all the bonds would take about $268 million, principal and interest.",
+      "Supporters say Measure O upgrades deteriorating water pipes, and builds a modern library with safe places for kids after school.",
+      "Opponents say the bonds could cost twice as much or more with interest, and safety repairs should come from today's budget.",
+      "A yes vote lets the city issue up to $125 million in bonds for these projects.",
+      "A no vote means the city could not issue the bonds."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "East Palo Alto Measure O asks city voters whether to borrow $125 million through bonds for a library, civic center, water pipes and storm drains."
+      },
+      "bounds": [
+        0,
+        286320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"East Palo Alto Measure O asks city voters whether to borrow $125 million through bonds for a library, civic center, water pipes and storm drains.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Bonds are borrowed money, repaid with interest from a tax on property in the city."
+      },
+      "bounds": [
+        300720,
+        427920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Bonds are borrowed money, repaid with interest from a tax on property in the city.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure O needs a two-thirds vote to pass."
+      },
+      "bounds": [
+        442320,
+        515760
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure O needs a two-thirds vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The bonds would buy land for a civic center with a police building, a library and city hall."
+      },
+      "bounds": [
+        530160,
+        683040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The bonds would buy land for a civic center with a police building, a library and city hall.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "They would also pay for water tanks and pipes, storm drains, and land for a park."
+      },
+      "bounds": [
+        697440,
+        829920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"They would also pay for water tanks and pipes, storm drains, and land for a park.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money would be kept in a separate fund, with a yearly independent audit."
+      },
+      "bounds": [
+        844320,
+        951120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money would be kept in a separate fund, with a yearly independent audit.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The city estimates the tax would average $105.26 per $100,000 of assessed value a year, through 2057-2058."
+      },
+      "bounds": [
+        965520,
+        1256160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The city estimates the tax would average $105.26 per $100,000 of assessed value a year, through 2057-2058.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The city estimates repaying all the bonds would take about $268 million, principal and interest."
+      },
+      "bounds": [
+        1270560,
+        1446960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The city estimates repaying all the bonds would take about $268 million, principal and interest.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say Measure O upgrades deteriorating water pipes, and builds a modern library with safe places for kids after school."
+      },
+      "bounds": [
+        1461360,
+        1661040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure O upgrades deteriorating water pipes, and builds a modern library with safe places for kids after school.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say the bonds could cost twice as much or more with interest, and safety repairs should come from today's budget."
+      },
+      "bounds": [
+        1675440,
+        1854240
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say the bonds could cost twice as much or more with interest, and safety repairs should come from today's budget.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote lets the city issue up to $125 million in bonds for these projects."
+      },
+      "bounds": [
+        1868640,
+        2017200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote lets the city issue up to $125 million in bonds for these projects.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote means the city could not issue the bonds."
+      },
+      "bounds": [
+        2031600,
+        2101920
+      ]
+    }
+  ],
+  "sha256": "479e744f5acb762caecf98d95638c1a20e44d22517e2e4a9f90bea3bd081eb39"
+}
