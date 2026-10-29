@@ -1,0 +1,221 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 69.9,
+  "phrases": [
+    {
+      "text": "Measure D asks the voters of this school district whether to approve $288 million in school bonds.",
+      "start": 0.03,
+      "end": 7.52
+    },
+    {
+      "text": "The district would repay the bonds from a yearly tax on property in the district.",
+      "start": 8.18,
+      "end": 13.15
+    },
+    {
+      "text": "Measure D needs 55 percent of the vote to pass.",
+      "start": 13.81,
+      "end": 17.69
+    },
+    {
+      "text": "The money would upgrade classrooms and career training buildings, replace leaky roofs and old heating and cooling, and improve safety.",
+      "start": 18.35,
+      "end": 26.59
+    },
+    {
+      "text": "The district's tax rate statement estimates an average tax of $58.55 per $100,000 of assessed value, and at most $60, until 2062-2063.",
+      "start": 27.25,
+      "end": 40.34
+    },
+    {
+      "text": "Supporters say Measure D renovates schools without raising tax rates, and qualifies them for $82 million in state matching funds.",
+      "start": 41.0,
+      "end": 49.37
+    },
+    {
+      "text": "Opponents say falling enrollment leaves schools with room to spare, and claims that tax rates will not rise deserve careful scrutiny.",
+      "start": 50.03,
+      "end": 58.25
+    },
+    {
+      "text": "A yes vote would authorize up to $288 million in bonds, repaid by a property tax.",
+      "start": 58.91,
+      "end": 65.82
+    },
+    {
+      "text": "A no vote is a vote against authorizing the bonds.",
+      "start": 66.48,
+      "end": 69.87
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure D asks the voters of this school district whether to approve $288 million in school bonds.",
+      "The district would repay the bonds from a yearly tax on property in the district.",
+      "Measure D needs 55 percent of the vote to pass.",
+      "The money would upgrade classrooms and career training buildings, replace leaky roofs and old heating and cooling, and improve safety.",
+      "The district's tax rate statement estimates an average tax of $58.55 per $100,000 of assessed value, and at most $60, until 2062-2063.",
+      "Supporters say Measure D renovates schools without raising tax rates, and qualifies them for $82 million in state matching funds.",
+      "Opponents say falling enrollment leaves schools with room to spare, and claims that tax rates will not rise deserve careful scrutiny.",
+      "A yes vote would authorize up to $288 million in bonds, repaid by a property tax.",
+      "A no vote is a vote against authorizing the bonds."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure D asks the voters of this school district whether to approve $288 million in school bonds."
+      },
+      "bounds": [
+        0,
+        181200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure D asks the voters of this school district whether to approve $288 million in school bonds.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The district would repay the bonds from a yearly tax on property in the district."
+      },
+      "bounds": [
+        195600,
+        316320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district would repay the bonds from a yearly tax on property in the district.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure D needs 55 percent of the vote to pass."
+      },
+      "bounds": [
+        330720,
+        425280
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure D needs 55 percent of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money would upgrade classrooms and career training buildings, replace leaky roofs and old heating and cooling, and improve safety."
+      },
+      "bounds": [
+        439680,
+        638880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money would upgrade classrooms and career training buildings, replace leaky roofs and old heating and cooling, and improve safety.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The district's tax rate statement estimates an average tax of $58.55 per $100,000 of assessed value, and at most $60, until 2062-2063."
+      },
+      "bounds": [
+        653280,
+        968880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district's tax rate statement estimates an average tax of $58.55 per $100,000 of assessed value, and at most $60, until 2062-2063.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say Measure D renovates schools without raising tax rates, and qualifies them for $82 million in state matching funds."
+      },
+      "bounds": [
+        983280,
+        1185600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure D renovates schools without raising tax rates, and qualifies them for $82 million in state matching funds.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say falling enrollment leaves schools with room to spare, and claims that tax rates will not rise deserve careful scrutiny."
+      },
+      "bounds": [
+        1200000,
+        1398720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say falling enrollment leaves schools with room to spare, and claims that tax rates will not rise deserve careful scrutiny.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote would authorize up to $288 million in bonds, repaid by a property tax."
+      },
+      "bounds": [
+        1413120,
+        1580400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote would authorize up to $288 million in bonds, repaid by a property tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote is a vote against authorizing the bonds."
+      },
+      "bounds": [
+        1594800,
+        1677600
+      ]
+    }
+  ],
+  "sha256": "b9fc318eded2699d11024f411500abb4f644b73858bcabc909a8954753d10232"
+}
