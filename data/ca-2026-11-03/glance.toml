@@ -1522,3 +1522,13 @@ period = "per-year"
 [yountville-measure-y]
 source = "impartial-analysis"
 status = "none-printed"
+
+# Lynx Trail Road Zone of Benefit Measure A: the pamphlet prints no tax
+# rate statement; the one estimate is County Counsel's impartial
+# analysis's (the ballot question gives the same figure). It replaces a
+# $300 tax the pamphlet does not total, so no direction is given.
+[lynx-trail-road-zone-measure-a]
+source = "guide-page"
+quote = "The special tax authorized by this Measure is expected to generate revenue of approximately $33,300 per year."
+amount = 33300
+period = "per-year"
