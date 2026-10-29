@@ -658,6 +658,13 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 2026-12",
                      "ca-2026-11-03-ferndale-unified-measure-e":
                          "Abbreviated Form of Bond Measure",
+                     # Siskiyou County posts no voter guide, only a Notice
+                     # of Election per measure: Tulelake Multi-County FPD
+                     # I's card quotes the ballot question from the
+                     # District's resolution, as posted by Modoc County,
+                     # named as headed
+                     "ca-2026-11-03-tulelake-fpd-measure-i":
+                         "Resolution No. 2026-4",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
