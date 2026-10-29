@@ -79,12 +79,13 @@ class MiniOutlineTest(unittest.TestCase):
         self.assertEqual(xs, [0, 75])
 
     def test_a_tiny_island_is_dropped(self):
-        # 0.03 degrees across: under a unit at icon size.
-        mini = mini_outline([[_square(0, 0, 2)], [_square(2.5, 1, 0.03)],
-                             [_square(2.5, 0, 0.08)]])
+        # 0.03 degrees across: under a unit at icon size. Near enough
+        # to stay in the box (not an outlier: test_geo_outliers).
+        mini = mini_outline([[_square(0, 0, 2)], [_square(2.2, 1, 0.03)],
+                             [_square(2.2, 0, 0.08)]])
         parts = _parts(mini["path"])
         self.assertEqual(len(parts), 1)
-        self.assertEqual(max(x for x, _ in parts[0]), 78)
+        self.assertEqual(max(x for x, _ in parts[0]), 88)
         # the box is still the state's, island and all
         self.assertEqual(mini["width"], MINI_SIZE)
 

@@ -6,6 +6,11 @@ independently, so neighbours never quite share an edge): they are
 painted onto a grid, the hairline gaps between neighbours closed, every
 lake or hole inside filled, and the edge of each piece of land left
 traced, simplified and kept if it is big enough to see at icon size.
+
+Both this outline and the state page's hero (ballotreels.geo.counties)
+draw the state's main body only (`drawn`): a ring both tiny and far from
+the rest, such as the Northwestern Hawaiian Islands strung 2,000 km
+west of Hawaii's main islands, is left out of the drawing and its box.
 """
 
 from __future__ import annotations
@@ -27,6 +32,61 @@ MINI_TOLERANCE = 0.8
 MIN_PART_AREA = 25.0
 
 _PAD = 2
+
+# The far, tiny rings `drawn` leaves out: among the rings that together
+# hold the last OUTLIER_SHARE of the state's area, smallest first, and
+# outside the box of the others by more than OUTLIER_GAP of its longer
+# side.
+OUTLIER_SHARE = 0.005
+OUTLIER_GAP = 0.15
+
+
+def drawn(counties: list[list[list[tuple[float, float]]]]
+          ) -> list[list[list[tuple[float, float]]]]:
+    """Each county's rings (lon, lat) less the far, tiny outliers, in
+    the same order (a county may be left with none); `counties` itself
+    if nothing is left out. Areas and distances are measured with
+    longitude scaled by the cosine of the middle latitude."""
+    pts = [p for rings in counties for ring in rings for p in ring]
+    if not pts:
+        return counties
+    y0 = min(y for _, y in pts)
+    y1 = max(y for _, y in pts)
+    squash = math.cos(math.radians((y0 + y1) / 2))
+    rings = [(i, j, [(x * squash, y) for x, y in ring])
+             for i, county in enumerate(counties)
+             for j, ring in enumerate(county) if ring]
+    areas = [_area(ring) for _, _, ring in rings]
+    total = sum(areas)
+    if not total > 0:
+        return counties
+    small, held = set(), 0.0
+    for k in sorted(range(len(rings)), key=lambda k: areas[k]):
+        held += areas[k]
+        if held > OUTLIER_SHARE * total:
+            break
+        small.add(k)
+    if not small:
+        return counties
+    body = [p for k, (_, _, ring) in enumerate(rings) if k not in small
+            for p in ring]
+    bx0 = min(x for x, _ in body)
+    bx1 = max(x for x, _ in body)
+    by0 = min(y for _, y in body)
+    by1 = max(y for _, y in body)
+    gap = OUTLIER_GAP * max(bx1 - bx0, by1 - by0)
+    dropped = set()
+    for k in small:
+        i, j, ring = rings[k]
+        if (min(x for x, _ in ring) > bx1 + gap or
+                max(x for x, _ in ring) < bx0 - gap or
+                min(y for _, y in ring) > by1 + gap or
+                max(y for _, y in ring) < by0 - gap):
+            dropped.add((i, j))
+    if not dropped:
+        return counties
+    return [[ring for j, ring in enumerate(county) if (i, j) not in dropped]
+            for i, county in enumerate(counties)]
 
 
 def _project(counties: list[list[list[tuple[float, float]]]]):
@@ -188,8 +248,9 @@ def mini_outline(counties: list[list[list[tuple[float, float]]]]
     """The state's outer outline from its counties' rings (lon, lat):
     `{"width", "height", "path"}`, the path one SVG subpath per piece of
     land kept, in a box whose longer side is MINI_SIZE, at most
-    MINI_BUDGET bytes. None if nothing is left."""
-    counties = [rings for rings in counties if rings]
+    MINI_BUDGET bytes, far tiny outliers left out (`drawn`). None if
+    nothing is left."""
+    counties = [rings for rings in drawn(counties) if rings]
     if not counties:
         return None
     projected, w, h = _project(counties)
