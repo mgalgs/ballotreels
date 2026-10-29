@@ -589,6 +589,17 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 26-27-02",
                      "ca-2026-11-03-yosemite-unified-sfid-1-measure-w":
                          "Resolution No. 2025/2026-19",
+                     # Merced County's guide could not be fetched: the
+                     # City of Merced's card quotes its question from the
+                     # resolution in the Council's agenda, numbered as the
+                     # agenda numbers it (the copy's own number is blank)
+                     "ca-2026-11-03-merced-measure-b":
+                         "Resolution 2026-52",
+                     # and the City of Livingston's cards quote the City's
+                     # own notice, headed "Measures to be Voted On"
+                     **{f"ca-2026-11-03-{slug}": "Measures to be Voted On"
+                        for slug in ("livingston-measure-t",
+                                     "livingston-measure-u")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

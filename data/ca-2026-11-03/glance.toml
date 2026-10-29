@@ -2110,3 +2110,26 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $24.9 million."
 amount = 24900000
 period = "unstated"
+
+# City of Merced Measure B: no tax rate statement applies (a sales tax),
+# and no impartial analysis was archived; the one estimate is the ballot
+# question's, from draft Resolution 2026-52.
+[merced-measure-b]
+source = "ballot-question"
+quote = "providing approximately $18,000,000 annually until ended by voters"
+amount = 18000000
+period = "per-year"
+
+# City of Livingston Measure T: not a tax; the City's notice, the one
+# official text archived, prints no cost estimate (the county guide
+# could not be fetched).
+[livingston-measure-t]
+source = "notice"
+status = "none-printed"
+
+# City of Livingston Measure U: not a tax; the City's notice, the one
+# official text archived, prints no cost estimate (the county guide
+# could not be fetched).
+[livingston-measure-u]
+source = "notice"
+status = "none-printed"

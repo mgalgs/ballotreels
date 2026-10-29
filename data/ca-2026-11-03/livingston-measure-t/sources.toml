@@ -1,0 +1,32 @@
+# Archived sources for City of Livingston Measure T, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Merced County voter guide could not be fetched (blocked), and the
+# City of Livingston posts no impartial analysis, argument or rebuttal,
+# so none was archived, and it is not known whether any was filed. The
+# one official text of Measure T archived is the City's own notice,
+# "Measures to be Voted On" (Deputy City Clerk, dated October 16,
+# 2026, published October 21, 2026), which prints the measure's
+# explanatory statement and ballot question in one box; its page 1 lists
+# the nominees for the same election. The resolution placing the measure
+# (the City Council's January 21, 2026 agenda packet) was not reached,
+# so the notice is treated as the measure's full text. Not a tax: no
+# fiscal statement applies.
+
+[contest]
+id = "ca-2026-11-03-livingston-measure-t"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:livingston"
+kind = "measure"
+title = "City of Livingston Measure T: Making the City Clerk Appointive"
+
+[[source]]
+id = "notice"
+kind = "official-title-summary"
+publisher = "City of Livingston, Nominees for Public Office and Voting Assistance Centers, and Measures to be Voted On, Livingston Deputy City Clerk, dated October 16, 2026, published October 21, 2026: the nominees, page 1; Measure T, page 3"
+credit = "Measures to be Voted On, City of Livingston"
+url = "https://www.livingstonca.gov/api/storage/objects/uploads/4b2da524-4f14-4589-98c3-1048fed02cd4"
+file = "sources/notice-nominees-and-measures-t-u-2026-10-21.pdf"
+retrieved = "2026-10-28"
