@@ -1,0 +1,63 @@
+# Archived sources for County of Yolo Measure X, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Yolo County ACE's Elections Branch posts each local measure on its own
+# web page, with tabs for the ballot question, the impartial analysis,
+# the full text, the arguments and the rebuttals; the page says this is
+# the material published in the county's voter guide.
+# sources/county-measure-x-page.html is that page, and backs every source
+# here. The signed argument in favor is also archived as
+# sources/argument-in-favor-measure-x.pdf; the page prints the same text.
+# County Counsel's Impartial Analysis is the measure's neutral
+# explanation. No tax rate statement or fiscal statement is printed (not
+# a bond); no argument against was filed, so there are no rebuttals.
+#
+# The credits call the guide the "Yolo County Voter Information Guide":
+# the page names it only as the "County Voter Information Guide" and no
+# cover page was archived, so the county name in the title is
+# unconfirmed.
+
+[contest]
+id = "ca-2026-11-03-yolo-county-measure-x"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:yolo"
+kind = "measure"
+title = "County of Yolo Measure X: Unincorporated Area Hotel Tax Increase"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Yolo County Assessor/Clerk-Recorder/Elections, Elections Branch, Measure X - Yolo County Unincorporated Area Hotel Tax: ballot question, and County Counsel's Impartial Analysis's statement of what a vote does"
+credit = "Ballot question, Yolo County Voter Information Guide"
+url = "https://elections.yolocounty.gov/420/Measure-X---Yolo-County-Unincorporated-A"
+file = "sources/county-measure-x-page.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "County Counsel's Impartial Analysis of Measure X, Philip J. Pogledich, County Counsel, County of Yolo, on Yolo County Elections' Measure X page"
+credit = "County Counsel’s Impartial Analysis, Yolo County Voter Information Guide"
+url = "https://elections.yolocounty.gov/420/Measure-X---Yolo-County-Unincorporated-A"
+file = "sources/county-measure-x-page.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure X, and the notice that no argument against was filed, on Yolo County Elections' Measure X page"
+credit = "Arguments, Yolo County Voter Information Guide"
+url = "https://elections.yolocounty.gov/420/Measure-X---Yolo-County-Unincorporated-A"
+file = "sources/county-measure-x-page.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Ordinance No. 1585 of the Board of Supervisors of the County of Yolo (full text of Measure X), on Yolo County Elections' Measure X page"
+credit = "Ordinance No. 1585, Yolo County Voter Information Guide"
+url = "https://elections.yolocounty.gov/420/Measure-X---Yolo-County-Unincorporated-A"
+file = "sources/county-measure-x-page.html"
+retrieved = "2026-10-28"

@@ -2030,3 +2030,49 @@ period = "per-year"
 [sierra-kings-measure-h]
 source = "ballot-question"
 status = "none-printed"
+
+# County of Yolo Measure X: a hotel tax increase, so no tax rate
+# statement and no fiscal statement; the one estimate is in its ballot
+# question.
+[yolo-county-measure-x]
+source = "ballot-question"
+quote = "providing approximately an additional $250,000 annually until ended by voters"
+amount = 250000
+period = "per-year"
+
+# City of Davis Measure W: a general plan amendment; no fiscal statement
+# is printed for it.
+[davis-measure-w]
+source = "ballot-question"
+status = "none-printed"
+
+# City of Woodland Measure Y: a sales tax, so no tax rate statement; the
+# City Attorney's Impartial Analysis gives the revenue estimate.
+[woodland-measure-y]
+source = "impartial-analysis"
+quote = "It is estimated that Measure “Y” will provide an additional $16,000,000 in annual local funding that could be used to maintain and improve City services."
+amount = 16000000
+period = "per-year"
+
+# City of Woodland Measure Z: a general plan amendment; no fiscal
+# statement is printed for it.
+[woodland-measure-z]
+source = "ballot-question"
+status = "none-printed"
+
+# Winters Joint Unified School District Measure B: the district's Tax
+# Rate Statement, its total debt service (the bonds are $29,900,000).
+[winters-unified-measure-b]
+source = "tax-statement"
+quote = "The best estimate from official sources of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $58,600,000."
+amount = 58600000
+period = "unstated"
+
+# Los Rios Community College District SFID No. 1 Measure H, Yolo County's
+# contest: the same Tax Rate Statement as Sacramento's
+# los-rios-ccd-measure-h (the bonds are $1.1 billion).
+[los-rios-ccd-measure-h-yolo]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $1.79 billion."
+amount = 1790000000
+period = "unstated"

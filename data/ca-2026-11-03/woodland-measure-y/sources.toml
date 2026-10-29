@@ -1,0 +1,59 @@
+# Archived sources for City of Woodland Measure Y, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Yolo County ACE's Elections Branch posts each local measure on its own
+# web page, with tabs for the ballot question, the impartial analysis,
+# the full text, the arguments and the rebuttals; the county says this is
+# the material published in its voter guide.
+# sources/county-measure-y-page.html is Measure Y's page and backs every
+# source here; the City Attorney's Impartial Analysis (a scan with no
+# text layer) and the signed argument in favor are also archived as the
+# PDFs the page links; every id cites the page. The City Attorney's
+# Impartial Analysis is the measure's neutral explanation.
+#
+# Missing: the ordinance (full text). The page's "Full Text" tab says
+# only to ask the City Clerk for a copy, so no official-text source is
+# listed, and the script relies on the ballot question and the impartial
+# analysis for what the measure does. No fiscal statement is printed; no
+# argument against was filed, so there are no rebuttals.
+#
+# The credits call the guide the "Yolo County Voter Information Guide":
+# the county's pages name it only as the "County Voter Information
+# Guide" and no cover page was archived, so the county name in the title
+# is unconfirmed.
+
+[contest]
+id = "ca-2026-11-03-woodland-measure-y"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:woodland"
+kind = "measure"
+title = "City of Woodland Measure Y: One Cent General Sales Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Yolo County Assessor/Clerk-Recorder/Elections, Elections Branch, Measure Y - City of Woodland: ballot question, and the City Attorney's Impartial Analysis's statement of what a vote does"
+credit = "Ballot question, Yolo County Voter Information Guide"
+url = "https://elections.yolocounty.gov/419/Measure-Y---City-of-Woodland"
+file = "sources/county-measure-y-page.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "City Attorney's Impartial Analysis of Measure “Y”, One Cent Transactions and Use (Sales) Tax, Ethan Walsh, City Attorney, City of Woodland, on Yolo County Elections' Measure Y page"
+credit = "City Attorney’s Impartial Analysis, Yolo County Voter Information Guide"
+url = "https://elections.yolocounty.gov/419/Measure-Y---City-of-Woodland"
+file = "sources/county-measure-y-page.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure Y, and the notice that no argument against was filed, on Yolo County Elections' Measure Y page"
+credit = "Arguments, Yolo County Voter Information Guide"
+url = "https://elections.yolocounty.gov/419/Measure-Y---City-of-Woodland"
+file = "sources/county-measure-y-page.html"
+retrieved = "2026-10-28"

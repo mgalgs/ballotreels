@@ -559,6 +559,22 @@ BALLOTS: dict[str, Ballot] = {
                      "ca-2026-11-03-lincoln-measure-f":
                          "Measure F — Lincoln Public Safety/Taxpayer "
                          "Protection Measure",
+                     # Yolo County Elections posts each local measure's
+                     # ballot question, impartial analysis, full text and
+                     # arguments as the material of its voter guide, which
+                     # it calls the "County Voter Information Guide" (no
+                     # cover page archived to confirm the county's name
+                     # in the title). Los Rios H's Yolo contest quotes
+                     # Sacramento County's page, as Sacramento's does.
+                     **{f"ca-2026-11-03-{slug}":
+                        "Yolo County Voter Information Guide"
+                        for slug in ("yolo-county-measure-x",
+                                     "davis-measure-w",
+                                     "woodland-measure-y",
+                                     "woodland-measure-z",
+                                     "winters-unified-measure-b")},
+                     "ca-2026-11-03-los-rios-ccd-measure-h-yolo":
+                         "Current Measure Information",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
