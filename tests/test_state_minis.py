@@ -190,3 +190,59 @@ class StatesApiWithoutCountiesTest(CountyServerTestCase):
         self.assertEqual(self.get_json("/api/states")["states"],
                          [{"state": "ca", "name": "California",
                            "election": "ca-2026-11-03"}])
+
+
+STATIC = REPO / "ballotreels" / "site" / "static"
+
+
+def _between(text, start, end):
+    text = text[text.index(start):]
+    return text[:text.index(end)]
+
+
+class HomeIconTest(unittest.TestCase):
+    def setUp(self):
+        self.app = (STATIC / "app.js").read_text(encoding="utf-8")
+        self.css = (STATIC / "style.css").read_text(encoding="utf-8")
+
+    def test_a_state_with_an_outline_gets_an_icon_beside_its_name(self):
+        fill = _between(self.app, "async function fillStates", "\n}\n")
+        self.assertIn('getJson("/api/states")', fill)
+        self.assertIn("s.mini ? stateIcon(s) : null", fill)
+        self.assertIn('[icon, el("span", { text: name })]', fill)
+        # without one, the button as it always was
+        self.assertIn('el("a", { class: "btn btn-quiet state-link", '
+                      'href: `/${s.state}`,\n                text: name })',
+                      fill)
+
+    def test_the_icon_is_decorative(self):
+        icon = _between(self.app, "function stateIcon", "\n}\n")
+        self.assertIn('"aria-hidden": "true", focusable: "false"', icon)
+        self.assertNotIn("tabindex", icon.lower())
+        self.assertNotIn("<title", icon)
+        self.assertNotIn("animate", icon)
+
+    def test_the_flag_is_clipped_to_the_outline_over_the_tone(self):
+        icon = _between(self.app, "function stateIcon", "\n}\n")
+        self.assertIn('svgNode("clipPath"', icon)
+        self.assertIn('"clip-path": `url(#${id("land")})`', icon)
+        self.assertIn("if (s.flag)", icon)
+        self.assertIn("href: s.flag", icon)
+        self.assertIn('preserveAspectRatio: "xMidYMid slice"', icon)
+        self.assertLess(icon.index('fill: `url(#${id("tone")})`'),
+                        icon.index("if (s.flag)"))
+
+    def test_the_home_page_uses_only_the_mini_flags(self):
+        self.assertNotIn("flags/${", self.app)
+        for path in (STATIC / "flags").glob("*-mini.jpg"):
+            self.assertLess(path.stat().st_size, 12_000, path.name)
+
+    def test_two_columns_down_to_320px(self):
+        self.assertIn('el("ul", { class: "state-list home-states" })',
+                      self.app)
+        rule = _between(self.css, ".home-states {", "}")
+        self.assertIn("minmax(min(140px, calc(50% - 5px)), 1fr)", rule)
+        link = _between(self.css, ".state-link.has-icon {", "}")
+        self.assertIn("overflow-wrap: anywhere", link)
+        self.assertIn("flex: 0 0 auto",
+                      _between(self.css, ".state-icon {", "}"))

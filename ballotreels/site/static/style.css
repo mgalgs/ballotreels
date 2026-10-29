@@ -507,6 +507,60 @@ input.zip-input::placeholder {
   text-align: center;
 }
 
+/* The home page's states: two columns down to a 320px screen. */
+.home-states {
+  grid-template-columns: repeat(auto-fill,
+                                minmax(min(140px, calc(50% - 5px)), 1fr));
+}
+
+/* A state's button with its icon (app.js's stateIcon): the icon beside
+   the name, the name wrapping beside it. */
+.state-link.has-icon {
+  justify-content: flex-start;
+  padding: 0.35rem 0.5rem;
+  text-align: left;
+  /* a long name ("Massachusetts") breaks inside the button, with a
+     hyphen where the browser knows where */
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 380px) {
+  .state-link.has-icon {
+    font-size: 1.1rem;
+  }
+}
+
+.state-icon {
+  flex: 0 0 auto;
+  display: block;
+}
+
+.state-icon-edge {
+  fill: none;
+  stroke: var(--ink);
+  stroke-linejoin: round;
+}
+
+.state-icon-soft {
+  stroke-opacity: 0.35;
+}
+
+.state-icon-paper {
+  fill: var(--scrap);
+}
+
+/* the hero's flagless tone (pages.hero_svg's hero-tone) */
+.state-icon-tone-wash {
+  fill: var(--accent);
+  fill-opacity: 0.08;
+}
+
+.state-icon-tone-line {
+  stroke: var(--accent);
+  stroke-opacity: 0.3;
+}
+
 /* -- loading -------------------------------------------------------- */
 
 .loading {
