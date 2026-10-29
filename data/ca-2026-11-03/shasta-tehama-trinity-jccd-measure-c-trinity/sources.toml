@@ -1,0 +1,76 @@
+# Archived sources for Shasta-Tehama-Trinity Joint Community College
+# District Measure C, 2026-11-03 general election, as Trinity County's
+# voters see it (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Trinity County Elections prints the whole measure in its Consolidated
+# County Voter Information Guide, cut here to pages 11 to 17 of the PDF
+# (printed pages 10 to 16): the ballot question, with its yes and no
+# meanings and the list of signers "For" and "Against None submitted."
+# (11), the impartial analysis (12), the argument in favor (13), the
+# full text (14 to 16) and the district's tax rate statement (17). The
+# impartial analysis is the measure's neutral explanation; the tax rate
+# statement is its fiscal statement. No rebuttals are printed. The
+# district's Resolution No. 2025-26-18, posted by the county as a scan,
+# is archived beside it and not cited.
+#
+# A community college district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md). The district reaches into six counties (the
+# tax rate statement names them); Shasta, its home county, keeps the
+# plain shasta-tehama-trinity-jccd-measure-c, and Tehama, Trinity, Lassen,
+# Modoc and Humboldt each stage the same measure under a suffixed id.
+
+[contest]
+id = "ca-2026-11-03-shasta-tehama-trinity-jccd-measure-c-trinity"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:trinity"
+kind = "measure"
+title = "Shasta-Tehama-Trinity Joint Community College District Measure C: College Facility Bonds"
+voters = "the Shasta-Tehama-Trinity Joint Community College District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Local Ballot Measure C, Ballot Question, Trinity County Elections, Consolidated Trinity County Voter Information Guide, November 3, 2026 General Election, page 11 of the PDF (printed page 10)"
+credit = "Consolidated Trinity County Voter Information Guide"
+url = "https://www.trinitycounty.org/DocumentCenter/View/4334/November-3-2026-Consolidated-County-Voter-Information-Guide-PDF?bidId="
+file = "sources/vig-pp11-17-label-analysis-argument-fulltext-taxstatement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure C, Trinity County Elections, Consolidated Trinity County Voter Information Guide, November 3, 2026 General Election, page 12 of the PDF (printed page 11)"
+credit = "Impartial Analysis, Consolidated Trinity County Voter Information Guide"
+url = "https://www.trinitycounty.org/DocumentCenter/View/4334/November-3-2026-Consolidated-County-Voter-Information-Guide-PDF?bidId="
+file = "sources/vig-pp11-17-label-analysis-argument-fulltext-taxstatement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Tax Rate Statement Regarding Proposed Shasta-Tehama-Trinity Joint Community College District General Obligation Bonds, signed by Dr. Frank Nigro, Superintendent/President, Trinity County Elections, Consolidated Trinity County Voter Information Guide, November 3, 2026 General Election, page 17 of the PDF (printed page 16)"
+credit = "Tax Rate Statement, Shasta-Tehama-Trinity Joint Community College District"
+url = "https://www.trinitycounty.org/DocumentCenter/View/4334/November-3-2026-Consolidated-County-Voter-Information-Guide-PDF?bidId="
+file = "sources/vig-pp11-17-label-analysis-argument-fulltext-taxstatement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure C, with the list of signers For and Against (\"None submitted.\"), Trinity County Elections, Consolidated Trinity County Voter Information Guide, November 3, 2026 General Election, pages 11 and 13 of the PDF (printed pages 10 and 12)"
+credit = "Arguments, Consolidated Trinity County Voter Information Guide"
+url = "https://www.trinitycounty.org/DocumentCenter/View/4334/November-3-2026-Consolidated-County-Voter-Information-Guide-PDF?bidId="
+file = "sources/vig-pp11-17-label-analysis-argument-fulltext-taxstatement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure C, with its project list, Trinity County Elections, Consolidated Trinity County Voter Information Guide, November 3, 2026 General Election, pages 14 to 16 of the PDF (printed pages 13 to 15)"
+credit = "Full Text of Measure C, Consolidated Trinity County Voter Information Guide"
+url = "https://www.trinitycounty.org/DocumentCenter/View/4334/November-3-2026-Consolidated-County-Voter-Information-Guide-PDF?bidId="
+file = "sources/vig-pp11-17-label-analysis-argument-fulltext-taxstatement.pdf"
+retrieved = "2026-10-28"
