@@ -448,6 +448,15 @@ class LouisianaStatementsStitchTest(unittest.TestCase):
         # "PROPOSAL 3", as the ballot prints it
         self.assertEqual(badge(vt, "Proposal 3: X", "3"), "PROPOSAL")
 
+    def test_michigan_uses_its_ballot_questions_words(self):
+        mi = BALLOTS["mi"]
+        self.assertEqual((mi.guide, mi.fiscal_label, mi.choices,
+                          mi.card_source_kind),
+                         ("2026 November ballot questions", "Fiscal Impact",
+                          ("Yes", "No"), "official-title-summary"))
+        # "Proposal 26-1", as the fiscal agencies print it
+        self.assertEqual(badge(mi, "Proposal 26-1: X", "26-1"), "PROPOSAL")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):
