@@ -1,0 +1,190 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; what a general law city and a
+# charter city are; what would change (the one new power, its link to
+# Measure Z, the form of government the question keeps, the vote it
+# needs); that no cost estimate is given; one line per side; what a
+# vote does.
+#
+# The card quotes the ballot question from Resolution No. 26-81, which
+# prints no yes/no lines. So the card has no YES/NO boxes, the vote
+# lines give the impartial analysis's meanings, and both highlight the
+# same phrase of the question. The question's own condition, that the
+# Measure Z transfer tax takes effect only "if voters approve both
+# Measures Y and Z", has its own line.
+#
+# The council-manager form of government is in the ballot question, so
+# a neutral line says the question keeps it. That the charter can be
+# amended only by voters, and gives the council no power to raise its
+# own pay, are the supporters' points; that the City can seek to expand
+# the charter, the opponents'; each stays in its side's section
+# (STANDARD.md 6.3). No fiscal statement applies and the analysis gives
+# no cost estimate: the fiscal line follows the no-cost-estimate
+# wording, naming the analysis as Fairfield's Measure Q does.
+
+contest = "ca-2026-11-03-benicia-measure-y"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "Y"
+title = "Limited City Charter"
+origin = "RESOLUTION NO. 26- 81"
+summary = "Shall the measure, adopting a limited City Charter for the City of Benicia that allows the real property transfer tax in Measure Z to take effect if voters approve both Measures Y and Z, and continues the City’s existing council-manager form of government, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure Y"
+
+[[section.line]]
+text = "Measure Y asks the voters of this city whether to adopt a limited city charter."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["adopting a limited City Charter"]
+
+[[section]]
+id = "background"
+heading = "Two kinds of city"
+
+[[section.line]]
+id = "charter"
+text = "A charter city may govern itself on local matters, while state law still governs matters of statewide concern."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "general-law"
+text = "Today, the city is a general law city, so its powers are set by the general laws of the state."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "law-book"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "power"
+text = "The charter would give the city one new power: to set a tax charged when real property is sold."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "home-for-sale"
+
+[[section.line]]
+id = "link"
+text = "That tax is Measure Z, which takes effect only if voters approve both Measures Y and Z."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["if voters approve both Measures Y and Z"]
+
+[[section.line]]
+text = "The ballot question says the charter keeps the council-manager form of government the city has now."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["continues the City’s existing council-manager form of government"]
+
+[[section.line]]
+text = "Measure Y needs a simple majority to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The city attorney's impartial analysis does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the charter is narrow, made only so voters can decide on Measure Z, and the current council-manager form of government stays in place."
+sources = ["argument-for"]
+basis = ["Measure Y does NOT create a broad new charter government.", "It creates a limited City Charter for one purpose: allowing Benicia voters to approve the real property transfer tax in Measure Z.", "Benicia keeps its existing council-manager form of government"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Narrow: only so voters can decide Z", "Current form of government stays"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the charter only looks limited, opening the door to major government and tax changes, and the city can seek to expand it anytime."
+sources = ["argument-against"]
+basis = ["Measure Y is a Trojan Horse — designed to look \"limited\" while quietly opening the door to major changes in Benicia's government and tax structure.", "If Measure Y passes, the City can seek to expand the charter at any time."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Only looks limited, opens the door", "City can seek to expand it anytime"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the city charter."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["adopting a limited City Charter"]
+
+[[section.line]]
+text = "A no vote keeps the city a general law city."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["adopting a limited City Charter"]
+
+[[question]]
+ask = "What is the difference between a general law city and a charter city?"
+lines = ["charter", "general-law"]
+
+[[question]]
+ask = "What new power would the city get?"
+lines = ["power"]
+
+[[question]]
+ask = "What happens to Measure Z if Measure Y fails?"
+lines = ["link"]

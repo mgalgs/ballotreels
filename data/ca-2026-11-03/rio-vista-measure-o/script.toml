@@ -1,0 +1,167 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the tax today; what would change
+# (the three years, the end unless voters approve it again, where the
+# money goes, the vote it needs); the City's revenue estimate as the
+# impartial analysis gives it; one line per side; what a vote does.
+#
+# The card quotes the ballot question from Resolution No. 2026-033,
+# which sets it out with blank YES and NO boxes and no yes/no lines. So
+# the card has no YES/NO boxes, the vote lines give the impartial
+# analysis's meanings, and both highlight the same phrase of the
+# question. The resolution is a scan; its question and the recital with
+# the tax's dates are typed into a transcription. The question's
+# "three-quarter (3/4%) percent" is narrated as "0.75 percent", as the
+# analysis gives it.
+#
+# The date today's tax ends (March 31, 2027) and its 2020 renewal are
+# stated only in the argument in favor, so the neutral sections say only
+# that the tax exists and when the extension would run (STANDARD.md
+# 6.3). No tax rate statement or fiscal analysis applies; the revenue is
+# the City's estimate, and no archived source states the City's general
+# fund budget to give it a scale (STANDARD.md 6.5; left open, under
+# [[question]]).
+
+contest = "ca-2026-11-03-rio-vista-measure-o"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "O"
+title = "MEASURE “O” – EXTENSION OF GENERAL CITY SERVICES TAX MEASURE."
+origin = "RESOLUTION NO. 2026-033"
+summary = "Shall the existing three-quarter (3/4%) percent transactions and use tax measure to support the City of Rio Vista’s general services, including police, fire, parks, and other unrestricted general fund expenditures, be extended for three years, commencing on April 1, 2027, and which is projected to provide between $1,398,000 to $1,467,000 of revenue annually for the City?"
+
+[[section]]
+id = "what"
+heading = "Measure O"
+
+[[section.line]]
+text = "Measure O asks the voters of this city whether to extend a 0.75 percent city sales tax for three more years."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["be extended for three years"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the city already collects this sales tax to support general city services."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "dates"
+text = "Measure O would keep the tax from April 1, 2027, to March 31, 2030."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+id = "expire"
+text = "After that, the tax would end unless voters approve it again at a later election."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+id = "general"
+text = "The money would go to the general fund, for police, fire, parks or any other lawful city purpose."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "Measure O needs a simple majority to pass."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The city attorney's impartial analysis says Measure O would raise between $1,398,000 and $1,467,000 a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the tax pays for paramedic, fire and police services, and since it is an extension, will not increase local taxes."
+sources = ["argument-for"]
+basis = ["Leading the list of services presently being provided through Measure O are paramedic services to Rio Vista residents along with such other critical services as fire, police services, and public works.", "Since this is an EXTENSION, keeping this sales tax in place will NOT increase local taxes"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Pays for paramedics, fire and police", "An extension, not a tax increase"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the city has not solved its budget problems, and nothing guarantees the money will improve police, fire or parks."
+sources = ["argument-against"]
+basis = ["The City has not solved its underlying budget problems and now asks residents to continue paying higher taxes without accountability.", "There is no guarantee that the money will improve police staffing, fire protection, or park maintenance."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Budget problems not solved", "No guarantee for police, fire, parks"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves the 0.75 percent sales tax for three years."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["be extended for three years"]
+
+[[section.line]]
+text = "A no vote is a vote against the sales tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["be extended for three years"]
+
+[[question]]
+ask = "How long would the tax last?"
+lines = ["dates", "expire"]
+
+[[question]]
+ask = "What can the money be spent on?"
+lines = ["general"]
+
+[[question]]
+ask = "How big is about $1.4 million a year next to the city budget?"
+unanswered = true

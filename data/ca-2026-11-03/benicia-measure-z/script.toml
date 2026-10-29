@@ -1,0 +1,188 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the transfer tax today; what
+# would change (its link to Measure Y, the rates, the exemption for
+# existing homes, where the money goes and the vote it needs); the
+# City's revenue estimate; one line per side; what a vote does.
+#
+# The card quotes the ballot question from Resolution No. 26-82, which
+# prints no yes/no lines. So the card has no YES/NO boxes, the vote
+# lines give the impartial analysis's meanings, and both highlight the
+# same phrase of the question. The resolution prints the question's
+# three rates as a bulleted list, which pdftotext reads as a stray "x"
+# before each; the card quotes the question without the bullets
+# (ballots.py, card_strays). The rates are narrated per $1,000, as the
+# analysis gives them, not as the question's decimals. Measure Y's own
+# question ties the two ("if voters approve both Measures Y and Z"), and
+# this analysis says the same, so the link has its own line here too.
+#
+# Today's rate ($0.275 for each $500) is under a dollar, which the
+# narration cannot say reliably (standard/speakability.txt); the line
+# says it is set by state law, as the analysis does. No tax rate
+# statement or fiscal analysis was posted; the $230,000 is the City's
+# estimate, and no archived source states the City's general fund
+# budget to give it a scale (STANDARD.md 6.5; left open, under
+# [[question]]). The opponents' "$119 million budget" is their argument
+# and not a source for a neutral line. That the exemption could be cut
+# later, and that growth should help pay for services, are the sides'
+# points and stay in their sections (STANDARD.md 6.3).
+
+contest = "ca-2026-11-03-benicia-measure-z"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "Z"
+title = "Real Property Transfer Tax"
+origin = "RESOLUTION NO. 26- 82"
+summary = "Shall the Measure, to primarily ensure newly constructed property sales contribute to maintaining city services and infrastructure, establish a real property transfer tax that will not apply to existing homes that sell for $2 million or less, but apply to other property sales at rates of 0.004 for sales $2,000,000 or less, 0.006 for sales $2,000,001 - $10,000,000, and 0.008 for sales over $10,000,000, providing approximately $230,000 annually, until ended by voters, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure Z"
+
+[[section.line]]
+text = "Measure Z asks the voters of this city whether to set a new tax that is charged when real property is sold."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establish a real property transfer tax"]
+
+[[section]]
+id = "background"
+heading = "Tied to Measure Y"
+
+[[section.line]]
+id = "link"
+text = "Measure Z can take effect only if voters also approve Measure Y, a limited city charter."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-two-questions"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-rate"
+text = "Today, the city charges a property transfer tax at a rate that state law authorizes."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "home-for-sale"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The tax would be $4 per $1,000 of the price for sales up to $2 million, $6 up to $10 million, and $8 above that."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Tax per $1,000 of the sale price, in dollars"
+source = "impartial-analysis"
+unit = ""
+labels = ["$2 million or less", "Over $2 million to $10 million", "Over $10 million"]
+values = [4, 6, 8]
+
+[[section.line]]
+id = "exempt"
+text = "Homes built before 2027 that sell for $2 million or less would not pay the tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "single-family-street"
+
+[[section.line]]
+text = "The money could pay for any city purpose, and Measure Z needs a simple majority."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The city attorney's impartial analysis estimates about $230,000 a year, growing to between $3.3 million and $3.8 million by 2050."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure Z protects existing homeowners, and asks new development and higher-value sales to help pay for city services."
+sources = ["argument-for"]
+basis = ["Vote YES on Measure Z to protect existing homeowners while asking future development and higher-value property sales to help maintain Benicia's essential services and infrastructure."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Protects existing homeowners", "Growth helps pay for services"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the city can later seek to cut the home exemption, and inflation will push more homes over the threshold."
+sources = ["argument-against"]
+basis = ["Once Measure Z passes, City Hall can seek to reduce or eliminate that exemption.", "Inflation guarantees more and more homes will be pushed over the threshold."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Home exemption could be cut", "Inflation pushes homes over it"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the transfer tax ordinance."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establish a real property transfer tax"]
+
+[[section.line]]
+text = "A no vote rejects the ordinance, and the current transfer tax stays in effect."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establish a real property transfer tax"]
+
+[[question]]
+ask = "What happens to Measure Z if Measure Y fails?"
+lines = ["link"]
+
+[[question]]
+ask = "Whose home sales would not be taxed?"
+lines = ["exempt"]
+
+[[question]]
+ask = "How big is $230,000 a year next to the city budget?"
+unanswered = true

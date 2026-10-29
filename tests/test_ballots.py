@@ -292,9 +292,10 @@ class CardStraysTest(unittest.TestCase):
     ballot's Yes and No boxes) is dropped only as whole words, and only
     for the contests that name it."""
 
-    def test_named_only_for_two_san_bernardino_cards(self):
+    def test_named_only_for_two_san_bernardino_cards_and_benicia_z(self):
         self.assertEqual(sorted(BALLOTS["ca"].card_strays),
-                         ["ca-2026-11-03-grand-terrace-measure-n",
+                         ["ca-2026-11-03-benicia-measure-z",
+                          "ca-2026-11-03-grand-terrace-measure-n",
                           "ca-2026-11-03-needles-measure-l"])
         self.assertFalse(any(b.card_strays
                              for s, b in BALLOTS.items() if s != "ca"))
@@ -322,7 +323,10 @@ class SanBernardinoCardStraysTest(unittest.TestCase):
                 ("grand-terrace-measure-n", "RES_GT.pdf",
                  "9-1-1 emergency response, and rapid response times"),
                 ("needles-measure-l", "FT_CityofNeedles.pdf",
-                 "generating on average $739,971 annually")):
+                 "generating on average $739,971 annually"),
+                # the question's bullets, read as an "x" each
+                ("benicia-measure-z", "resolution-and-full-text.pdf",
+                 "rates of 0.004 for sales $2,000,000 or less, 0.006")):
             text = _archived_text(Path(
                 f"data/ca-2026-11-03/{slug}/sources/{pdf}").resolve())
             strays = BALLOTS["ca"].card_strays[f"ca-2026-11-03-{slug}"]

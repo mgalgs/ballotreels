@@ -1971,3 +1971,45 @@ source = "impartial-analysis"
 quote = "It is estimated that the proposed sales tax will provide an additional Six Million Dollars ($6,000,000) in annual local funding."
 amount = 6000000
 period = "per-year"
+
+# City of Benicia Measure X: no tax rate statement or fiscal analysis was
+# posted; the one estimate is the City's first-year revenue, as the City
+# Attorney's impartial analysis gives it. The tax replaces the current
+# one, which no source sizes, so no direction is given.
+[benicia-measure-x]
+source = "impartial-analysis"
+quote = "First-year revenue under this structure is estimated to be approximately $1,612,000."
+amount = 1612000
+period = "per-year"
+
+# City of Benicia Measure Y: a charter; no fiscal statement applies, and
+# the City Attorney's impartial analysis gives no estimate.
+[benicia-measure-y]
+source = "impartial-analysis"
+status = "none-printed"
+
+# City of Benicia Measure Z: no tax rate statement or fiscal analysis was
+# posted; the one estimate is the City's, as the City Attorney's
+# impartial analysis gives it (its largest figure, the 2050 high end).
+[benicia-measure-z]
+source = "impartial-analysis"
+quote = "The tax is estimated to generate approximately $230,000 annually, growing to between $3.3 million and $3.8 million by 2050."
+amount = 3800000
+period = "per-year"
+
+# City of Rio Vista Measure O: no tax rate statement or fiscal analysis
+# applies (a sales tax); the one estimate is the City's, as the City
+# Attorney's impartial analysis gives it (a range; its high end sorts).
+[rio-vista-measure-o]
+source = "impartial-analysis"
+quote = "If adopted, Measure O would generate between $1,398,000 and $1,467,000 annually."
+amount = 1467000
+period = "per-year"
+
+# Dixon Unified School District Measure U: the district's Tax Rate
+# Statement, its total debt service (the bonds are $49,000,000).
+[dixon-unified-measure-u]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $105,000,000."
+amount = 105000000
+period = "unstated"
