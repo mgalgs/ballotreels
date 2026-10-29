@@ -1,0 +1,70 @@
+# Archived sources for City of Red Bluff Measure D, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Tehama County Elections posts no local voter guide for this election:
+# it posts each measure's filed documents separately on its elections
+# page. For Measure D these are the City Council's staff report and
+# Resolution No. 21-2026 as one scan with no text layer (the passages
+# used were typed from the page images into
+# sources/resolution-21-2026-transcription.txt, which names the PDF and
+# URL it copies): the resolution prints the ballot question (Section 1)
+# and the measure's text (Section 2), and the staff report's "CITY
+# FISCAL IMPACT" is the one fiscal statement; the City Attorney's
+# impartial analysis, the measure's neutral explanation; and the
+# argument in favor as filed (a scan, transcribed the same way). No
+# argument against or rebuttal is posted; whether one was filed is not
+# known.
+
+[contest]
+id = "ca-2026-11-03-red-bluff-measure-d"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:red_bluff"
+kind = "measure"
+title = "City of Red Bluff Measure D: Appointed City Clerk and City Treasurer"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Red Bluff, City Council Resolution No. 21-2026, Section 1, the ballot question, adopted July 21, 2026, as posted by Tehama County Elections (transcribed from the scan)"
+credit = "Resolution No. 21-2026, City of Red Bluff"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/21-2026-Call-Election-Ballot-Measure-City-Clerk-and-Treasurer.pdf"
+file = "sources/resolution-21-2026-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure D, Sophia Meyer, City Attorney, City of Red Bluff, as posted by Tehama County Elections"
+credit = "Impartial Analysis, Red Bluff City Attorney"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Impartial-Analysis-City-Clerk-andTreasurer-2-1.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Red Bluff, City Council Resolution No. 21-2026, Sections 2 and 3, the proposed measure, adopted July 21, 2026, as posted by Tehama County Elections (transcribed from the scan)"
+credit = "Resolution No. 21-2026, City of Red Bluff"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/21-2026-Call-Election-Ballot-Measure-City-Clerk-and-Treasurer.pdf"
+file = "sources/resolution-21-2026-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "staff-report"
+kind = "official-fiscal-analysis"
+publisher = "City of Red Bluff, City Council Staff Report, File #21-2026, agenda date July 21, 2026, from Sophia Meyer, City Attorney: City Fiscal Impact, page 3, as posted by Tehama County Elections (transcribed from the scan)"
+credit = "City Council Staff Report, City of Red Bluff"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/21-2026-Call-Election-Ballot-Measure-City-Clerk-and-Treasurer.pdf"
+file = "sources/resolution-21-2026-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure D, signed by JR Gonzales, Mayor, and Mark Clement, Mayor Pro Tem, as filed and posted by Tehama County Elections (transcribed from the scan; no argument against is posted)"
+credit = "Argument in Favor, Tehama County Elections"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Ballot-Measure-Argument-Signed-with-Signature-Statement.pdf"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"

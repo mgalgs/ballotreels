@@ -1,0 +1,75 @@
+# Archived sources for Los Molinos Unified School District Measure G,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Tehama County Elections posts no local voter guide for this election:
+# it posts each measure's filed documents separately on its elections
+# page, where it labels this one "Los Molinos Elementary School
+# District"; the district's own resolution and the impartial analysis
+# say Los Molinos Unified School District, as divisions.tsv does. The
+# district's Resolution No. 6-18-26B is a scan with no text layer; the
+# passages used were typed from the page images into
+# sources/resolution-transcription.txt (it names the PDF and URL it
+# copies): Exhibit A, the ballot label (the ballot question); Exhibit B,
+# the full ballot text with its project list; and Exhibit C, the tax
+# rate statement, the measure's fiscal statement. County Counsel's
+# impartial analysis is the neutral explanation, and the argument in
+# favor is as filed (a scan, transcribed the same way; the argument page
+# names no signers). No argument against or rebuttal is posted; whether
+# one was filed is not known.
+#
+# A unified school district with a Census boundary: the division is its
+# school_district.
+
+[contest]
+id = "ca-2026-11-03-los-molinos-unified-measure-g"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:los_molinos_unified_school_district"
+kind = "measure"
+title = "Los Molinos Unified School District Measure G: School Facility Bonds"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Molinos Unified School District, Resolution No. 6-18-26B, Exhibit A: Ballot Label, adopted June 18, 2026, as posted by Tehama County Elections (transcribed from the scan)"
+credit = "Resolution No. 6-18-26B, Los Molinos Unified School District"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Signed-Resolution-6.18.26B-Bond-Measure.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis by County Counsel, Los Molinos Unified School District, Measure G, Margaret Long, Tehama County Counsel, as posted by Tehama County Elections"
+credit = "Impartial Analysis, Tehama County Counsel"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Impartial-Analysis-Los-Molinos-Measure-G.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Los Molinos Unified School District, Resolution No. 6-18-26B, Exhibit C: Tax Rate Statement, signed by Stan Mojsich, Superintendent, as posted by Tehama County Elections (transcribed from the scan)"
+credit = "Tax Rate Statement, Los Molinos Unified School District"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Signed-Resolution-6.18.26B-Bond-Measure.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Los Molinos Unified School District, Resolution No. 6-18-26B, Exhibit B: Full Ballot Text, with its Bond Project List, as posted by Tehama County Elections (transcribed from the scan)"
+credit = "Resolution No. 6-18-26B, Los Molinos Unified School District"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Signed-Resolution-6.18.26B-Bond-Measure.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure G, Los Molinos Unified School District, with its signature statement signed by Stan Mojsich, as filed and posted by Tehama County Elections (transcribed from the scan; no argument against is posted)"
+credit = "Argument in Favor, Tehama County Elections"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Argument-in-Favor-of-Measure-G.pdf"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"

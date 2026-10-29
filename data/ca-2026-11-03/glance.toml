@@ -2462,3 +2462,46 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $264,800,000."
 amount = 264800000
 period = "unstated"
+
+# Tehama County Measure E: a charter amendment setting supervisors'
+# salary, not a tax; no fiscal statement was filed, and the impartial
+# analysis gives no cost estimate.
+[tehama-county-measure-e]
+source = "impartial-analysis"
+status = "none-printed"
+
+# City of Red Bluff Measure D: no fiscal statement was filed with the
+# measure; the one estimate is the City Council staff report's cost of
+# putting it on this ballot. It prints the range as "$5,000-8,000", with
+# one dollar sign, so the check reads $5,000 as its one dollar figure.
+[red-bluff-measure-d]
+source = "staff-report"
+quote = "The Tehama County Clerk's Office estimates that the cost of adding this ballot measure to the November 3, 2026, election would be $5,000-8,000."
+amount = 5000
+period = "one-time"
+direction = "cost"
+
+# Red Bluff Joint Union High School District Measure H: the district's
+# Tax Rate Statement, its total debt service (the bonds are $19 million).
+[red-bluff-juhsd-measure-h]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the Bonds are issued and sold is $37,695,817."
+amount = 37695817
+period = "unstated"
+
+# Los Molinos Unified School District Measure G: the district's Tax Rate
+# Statement, its total debt service (the bonds are $9.8 million).
+[los-molinos-unified-measure-g]
+source = "tax-statement"
+quote = "The best estimate from official sources of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $20,667,118."
+amount = 20667118
+period = "unstated"
+
+# Shasta-Tehama-Trinity Joint Community College District Measure C
+# (Tehama County's contest): the district's Tax Rate Statement, its
+# total debt service (the bonds are $129.63 million), as Humboldt's.
+[shasta-tehama-trinity-jccd-measure-c-tehama]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $264,800,000."
+amount = 264800000
+period = "unstated"

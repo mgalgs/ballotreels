@@ -1,0 +1,82 @@
+# Archived sources for Shasta-Tehama-Trinity Joint Community College
+# District Measure C, 2026-11-03 general election, as Tehama County's
+# voters see it (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Tehama County Elections posts no local voter guide for this election:
+# it posts each measure's filed documents separately on its elections
+# page, here three scans with no text layer, whose passages used were
+# typed from the page images into sources/*-transcription.txt (each
+# names the PDF and URL it copies). The district's resolution (17
+# pages: a cover letter, Resolution No. 2025-26-18, and its Appendix A,
+# the full text; Appendix B, the ballot question; and Appendix C, the
+# tax rate statement, the measure's fiscal statement) is complete in
+# this copy, and its appendices B and C read word for word as the
+# Humboldt County copy does. The impartial analysis the county posts is
+# signed by Joseph Larmour, County Counsel, by Renee Belcastro, Deputy
+# County Counsel, and names no county; it is the measure's neutral
+# explanation. The argument in favor is as filed (the copy received by
+# Trinity County). No argument against is posted; Trinity's and
+# Lassen's guides print that none was submitted.
+#
+# A community college district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md). The district reaches into six counties (the
+# tax rate statement names them); Shasta, its home county, keeps the
+# plain shasta-tehama-trinity-jccd-measure-c, and Tehama, Trinity,
+# Lassen, Modoc and Humboldt each stage the same measure under a
+# suffixed id.
+
+[contest]
+id = "ca-2026-11-03-shasta-tehama-trinity-jccd-measure-c-tehama"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:tehama"
+kind = "measure"
+title = "Shasta-Tehama-Trinity Joint Community College District Measure C: College Facility Bonds"
+voters = "the Shasta-Tehama-Trinity Joint Community College District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Shasta-Tehama-Trinity Joint Community College District, Resolution No. 2025-26-18, Appendix B: Abbreviated Form of Bond Measure, PDF page 15, as posted by Tehama County Elections (transcribed from the scan)"
+credit = "Resolution No. 2025-26-18, Shasta-Tehama-Trinity Joint Community College District"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Shasta-Tehama-Trinity-Bond-Measure-Resolution.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis by County Counsel, Shasta-Tehama-Trinity Joint Community College District, Measure C, signed by Joseph Larmour, County Counsel, by Renee Belcastro, Deputy County Counsel, as posted by Tehama County Elections (transcribed from the scan)"
+credit = "Impartial Analysis of Measure C"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Signed_Impartial-Analysis_Measure-C.pdf"
+file = "sources/impartial-analysis-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Shasta-Tehama-Trinity Joint Community College District, Appendix C: Tax Rate Statement, signed by Dr. Frank Nigro, Superintendent/President, PDF pages 16 and 17, as posted by Tehama County Elections (transcribed from the scan)"
+credit = "Tax Rate Statement, Shasta-Tehama-Trinity Joint Community College District"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Shasta-Tehama-Trinity-Bond-Measure-Resolution.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure C, Shasta-Tehama-Trinity Joint Community College District, as filed and posted by Tehama County Elections (transcribed from the scan; no argument against is posted)"
+credit = "Argument in Favor, Tehama County Elections"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/ShastaCollegeMeasureCArgument-in-Favor.pdf"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Shasta-Tehama-Trinity Joint Community College District, Resolution No. 2025-26-18 ordering the bond election, with Appendix A, the full text of the bond measure and its project list, PDF pages 3 to 14, as posted by Tehama County Elections"
+credit = "Resolution No. 2025-26-18, Shasta-Tehama-Trinity Joint Community College District"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Shasta-Tehama-Trinity-Bond-Measure-Resolution.pdf"
+file = "sources/resolution.pdf"
+retrieved = "2026-10-28"
