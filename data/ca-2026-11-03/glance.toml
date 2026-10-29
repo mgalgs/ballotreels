@@ -1895,3 +1895,45 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $37,050,000."
 amount = 37050000
 period = "unstated"
+
+# Garden Valley Ranch Estates Community Services District Measure H: the
+# pamphlet prints no tax rate statement; the one estimate is County
+# Counsel's impartial analysis's (the ballot question gives the same
+# figure). It replaces a $150 tax the pamphlet does not total, so no
+# direction is given.
+[garden-valley-ranch-measure-h]
+source = "guide-page"
+quote = "The special parcel tax authorized by this Measure is expected to generate revenue of approximately $44,000 per year."
+amount = 44000
+period = "per-year"
+
+# Rolling Hills Community Services District Measure N: the pamphlet
+# prints no tax rate statement; the one estimate is County Counsel's
+# impartial analysis's (the ballot question gives the same figure). A
+# new tax, levied beside the district's $200 assessment.
+[rolling-hills-measure-n]
+source = "guide-page"
+quote = "The special parcel tax authorized by this Measure is expected to generate revenue of approximately $87,250 per year."
+amount = 87250
+period = "per-year"
+
+# Showcase Ranches Community Services District Measure Q: the pamphlet
+# prints no tax rate statement; the one estimate is County Counsel's
+# impartial analysis's (the ballot question gives the same figure). It
+# replaces a $125 tax the pamphlet does not total, so no direction is
+# given.
+[showcase-ranches-measure-q]
+source = "guide-page"
+quote = "The special parcel tax authorized by this Measure is expected to generate revenue of approximately $37,750 per year."
+amount = 37750
+period = "per-year"
+
+# Golden West Community Services District Measure R: the pamphlet prints
+# no tax rate statement; the one estimate is County Counsel's impartial
+# analysis's (the ballot question gives the same figure). It replaces a
+# $120 tax the pamphlet does not total, so no direction is given.
+[golden-west-measure-r]
+source = "guide-page"
+quote = "The special parcel tax authorized by this Measure is expected to generate revenue of approximately $135,300 per year."
+amount = 135300
+period = "per-year"

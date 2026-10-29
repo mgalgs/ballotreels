@@ -1,0 +1,42 @@
+# Archived sources for Showcase Ranches Community Services District
+# Measure Q, 2026-11-03 general election (sources/sources.md). Every id
+# here may be cited by script.toml. `kind` must be one the standard
+# allows (docs/STANDARD.md, section 1). The pages are cut from the El
+# Dorado County Elections Department's Voter Information Pamphlet (PDF
+# pages 96 and 97, printed pages 40 and 41); "pages" below are the
+# printed numbers.
+#
+# A community services district is a special district: the division is
+# the county, and `voters` names the district as County Counsel's
+# impartial analysis does (docs/SCRIPT-FORMAT.md). The pamphlet prints
+# the district's resolution with the ballot question, the notice that no
+# arguments for or against were submitted, and the impartial analysis;
+# no rebuttals and no tax rate statement (a special parcel tax). The
+# resolution's heading names the county's Board of Supervisors, but its
+# body and the analysis say the district's Board of Directors adopted it.
+
+[contest]
+id = "ca-2026-11-03-showcase-ranches-measure-q"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:el_dorado"
+kind = "measure"
+title = "Showcase Ranches Community Services District Measure Q: Raising the Road and Dam Tax per Parcel from $125 to $250"
+voters = "the Showcase Ranches Community Services District"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "El Dorado County Elections Department, El Dorado County Voter Information Pamphlet, Statewide General Election, November 3, 2026, pages 40 and 41: ballot question, notice that no arguments were submitted, and County Counsel’s Impartial Analysis of Measure Q"
+credit = "Impartial Analysis of Measure Q, El Dorado County Voter Information Pamphlet"
+url = "https://www.eldoradocounty.ca.gov/files/assets/county/v/2/documents/government/elections/20261103/complete-booklet.pdf"
+file = "sources/vip-pp96-97-measure-q.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Full Text of Measure Q: Resolution No. 2026-06-1, El Dorado County Voter Information Pamphlet, pages 40 and 41"
+credit = "Full Text of Measure Q, El Dorado County Voter Information Pamphlet"
+url = "https://www.eldoradocounty.ca.gov/files/assets/county/v/2/documents/government/elections/20261103/complete-booklet.pdf"
+file = "sources/vip-pp96-97-measure-q.pdf"
+retrieved = "2026-10-28"

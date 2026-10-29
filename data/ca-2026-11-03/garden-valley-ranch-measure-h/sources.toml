@@ -1,0 +1,52 @@
+# Archived sources for Garden Valley Ranch Estates Community Services
+# District Measure H, 2026-11-03 general election (sources/sources.md).
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1). The pages are cut from
+# the El Dorado County Elections Department's Voter Information Pamphlet
+# (PDF pages 64 to 66, printed pages 8 to 10); "pages" below are the
+# printed numbers.
+#
+# A community services district is a special district: the division is
+# the county, and `voters` names the district as County Counsel's
+# impartial analysis does (docs/SCRIPT-FORMAT.md). The ballot question
+# and the district's resolution call it the "Garden Valley Ranch
+# Community Service District"; the analysis's fuller name is used as the
+# legal one. The pamphlet prints the district's resolution with the
+# ballot question, an argument in favor, the notice that no argument
+# against was submitted, and the impartial analysis; no rebuttals and no
+# tax rate statement (a special parcel tax).
+
+[contest]
+id = "ca-2026-11-03-garden-valley-ranch-measure-h"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:el_dorado"
+kind = "measure"
+title = "Garden Valley Ranch Estates Community Services District Measure H: Raising the Road Tax per Parcel from $150 to $250"
+voters = "the Garden Valley Ranch Estates Community Services District"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "El Dorado County Elections Department, El Dorado County Voter Information Pamphlet, Statewide General Election, November 3, 2026, pages 9 and 10: ballot question, notice that no argument against was submitted, and County Counsel’s Impartial Analysis of Measure H"
+credit = "Impartial Analysis of Measure H, El Dorado County Voter Information Pamphlet"
+url = "https://www.eldoradocounty.ca.gov/files/assets/county/v/2/documents/government/elections/20261103/complete-booklet.pdf"
+file = "sources/vip-pp64-66-measure-h.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Full Text of Measure H: Garden Valley Ranch Community Service District Board of Directors Resolution No. 01-2026, El Dorado County Voter Information Pamphlet, pages 8 and 9"
+credit = "Full Text of Measure H, El Dorado County Voter Information Pamphlet"
+url = "https://www.eldoradocounty.ca.gov/files/assets/county/v/2/documents/government/elections/20261103/complete-booklet.pdf"
+file = "sources/vip-pp64-66-measure-h.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure H, as printed in the El Dorado County Voter Information Pamphlet, page 9"
+credit = "Argument in favor, El Dorado County Voter Information Pamphlet"
+url = "https://www.eldoradocounty.ca.gov/files/assets/county/v/2/documents/government/elections/20261103/complete-booklet.pdf"
+file = "sources/vip-pp64-66-measure-h.pdf"
+retrieved = "2026-10-28"
