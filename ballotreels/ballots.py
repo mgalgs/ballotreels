@@ -1143,6 +1143,19 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label=None,
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+
+    # Missouri has no voter pamphlet. The Secretary of State's "2026
+    # Ballot Measures" page prints each measure's designation ("Amendment
+    # 3", "Proposition A"; the badge is the title's designation), its
+    # Official Ballot Title (the question, then the State Auditor's fiscal
+    # note summary under no heading of its own) and its Fair Ballot
+    # Language ('A "yes" vote will ...', 'A "no" vote will ...'). The
+    # Auditor's fiscal note heads that paragraph "Fiscal Note Summary".
+    # Its Fair Ballot Language names the two votes "yes" and "no".
+    "mo": Ballot(guide="2026 Ballot Measures",
+                 fiscal_label="Fiscal Note Summary",
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
