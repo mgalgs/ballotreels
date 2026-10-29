@@ -1,0 +1,68 @@
+# Archived sources for City of Fairfield Measure Q, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# No printed Solano County voter guide was archived: these are the filed
+# documents the Solano County Registrar of Voters posts on its Current
+# Election Information page. The ballot question is quoted from
+# Resolution No. 2026-158, which orders it "printed on the ballot". The
+# resolution and the argument against are scans with no text layer: the
+# passages `check` reads verbatim were typed from the page images into
+# .txt transcriptions beside the PDFs, which name the PDF and URL they
+# copy; those sources point at the transcriptions, and their urls at the
+# scans. The City Attorney's impartial analysis is the measure's neutral
+# explanation; it gives no cost estimate, and no fiscal statement was
+# posted. The rebuttals are not cited.
+
+[contest]
+id = "ca-2026-11-03-fairfield-measure-q"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:fairfield"
+kind = "measure"
+title = "City of Fairfield Measure Q: Appointive City Clerk"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Fairfield, Resolution No. 2026-158, adopted July 7, 2026: the city clerk's duties, page 1, the ballot question, page 3, and the vote, page 4 (transcribed from the scan), as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Resolution No. 2026-158, City of Fairfield"
+url = "https://content.solanocounty.gov/sites/default/files/2026-07/Resolution_City_of_Fairfield_Measure_Q_REDACTED.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney’s Impartial Analysis of Measure Q, David Lim, City Attorney, City of Fairfield, as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "City Attorney’s Impartial Analysis of Measure Q"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Fairfield_-_Final_Impartial_Analysis__Measure_Q_.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Fairfield, Ordinance No. 2026-05, Exhibit A to Resolution No. 2026-158: adding Article IX (City Clerk) to Chapter 2 of the Fairfield Municipal Code (full text), as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Measure Q ordinance, City of Fairfield"
+url = "https://content.solanocounty.gov/sites/default/files/2026-07/Resolution_City_of_Fairfield_Measure_Q_Exhibit_A.pdf"
+file = "sources/full-text-exhibit-a.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure Q, as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Argument in favor, Solano County Registrar of Voters"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Measure_Q_-_Argument_in_Favor_Redacted.pdf"
+file = "sources/argument-in-favor.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure Q (transcribed from the scan), as posted by the Solano County Registrar of Voters, Current Election Information"
+credit = "Argument against, Solano County Registrar of Voters"
+url = "https://content.solanocounty.gov/sites/default/files/2026-08/Measure_Q_-_Argument_Against_Redacted.pdf"
+file = "sources/argument-against-transcription.txt"
+retrieved = "2026-10-28"

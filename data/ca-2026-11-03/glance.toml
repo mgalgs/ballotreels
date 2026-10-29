@@ -1611,3 +1611,9 @@ source = "impartial-analysis"
 quote = "The City estimated that this Measure will raise approximately $24 million per year in new local revenue for use in the City."
 amount = 24000000
 period = "per-year"
+
+# City of Fairfield Measure Q: no fiscal statement was posted, and the
+# City Attorney's impartial analysis gives no cost estimate.
+[fairfield-measure-q]
+source = "impartial-analysis"
+status = "none-printed"
