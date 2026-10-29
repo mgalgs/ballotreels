@@ -1,0 +1,17 @@
+# Contest index for the 2026-11-03 Minnesota general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. The Secretary of State's page numbers Minnesota's one
+# amendment nowhere, so the entry has no `number`. The title pairs the
+# designation with the amendment's title as the page and the ballot
+# print it, "Increasing funding to school districts".
+
+[election]
+id = "mn-2026-11-03"
+state = "ocd-division/country:us/state:mn"
+title = "Minnesota General Election, November 3, 2026"
+
+[[contest]]
+id = "mn-2026-11-03-permanent-school-fund"
+kind = "measure"
+division = "ocd-division/country:us/state:mn"
+title = "Constitutional Amendment: Increasing funding to school districts"

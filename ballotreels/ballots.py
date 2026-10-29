@@ -1155,6 +1155,18 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label=None,
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+
+    # Minnesota prints no voter guide. The Secretary of State's
+    # "Constitutional amendments" page prints the ballot's instructions,
+    # the amendment's title and question as the ballot prints them, its
+    # choices "Yes" and "No", and the amended section, and no fiscal
+    # statement (there is no fiscal note for the law that proposes it).
+    # The page numbers no amendment, so the card has no
+    # number and draws no badge.
+    "mn": Ballot(guide="Constitutional amendments",
+                 fiscal_label=None,
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
