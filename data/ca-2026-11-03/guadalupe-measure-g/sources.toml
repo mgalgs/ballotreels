@@ -1,0 +1,59 @@
+# Archived sources for Guadalupe Measure G, 2026-11-03 general election
+# (sources/sources.md). Every id here may be cited by script.toml.
+# `kind` must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# Santa Barbara County Elections prints each ballot type's County Voter
+# Information Guide as one PDF; pages 28 to 38 (impartial analysis,
+# argument in favor, full text) and 48 to 49 (sample ballot) of Ballot
+# Type 103 were cut into one excerpt, which backs every source here. The
+# ballot labels the measure "Measure G2026"; the project names it by its
+# bare letter. The City Attorney's impartial analysis is the measure's
+# neutral explanation; it gives no revenue estimate, and the one
+# estimate is the ballot label's. No tax rate statement or fiscal
+# analysis applies. No argument against was filed, and no rebuttals are
+# printed. Measure G (a cannabis business tax) is a separate measure
+# from the same City Council's Measure J (a transient occupancy tax) on
+# the same ballot.
+
+[contest]
+id = "ca-2026-11-03-guadalupe-measure-g"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:guadalupe"
+kind = "measure"
+title = "Guadalupe Measure G: Cannabis Business Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 103, page 49: Sample Ballot, City of Guadalupe Measure G2026"
+credit = "Sample Ballot, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000103.pdf"
+file = "sources/VIG-bt103_pp28-38_48-49.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure G2026, City of Guadalupe, Philip F. Sinco, City Attorney, Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 103, page 28"
+credit = "City Attorney’s Impartial Analysis, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000103.pdf"
+file = "sources/VIG-bt103_pp28-38_48-49.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure G2026, City of Guadalupe, Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 103, page 29 (no argument against was filed)"
+credit = "Arguments, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000103.pdf"
+file = "sources/VIG-bt103_pp28-38_48-49.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure G2026, City of Guadalupe: Ordinance No. 2026-528, adding Chapter 3.34 (Cannabis Business Tax) to the Guadalupe Municipal Code, Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 103, pages 29 to 38"
+credit = "Measure G2026 ordinance, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000103.pdf"
+file = "sources/VIG-bt103_pp28-38_48-49.pdf"
+retrieved = "2026-10-28"

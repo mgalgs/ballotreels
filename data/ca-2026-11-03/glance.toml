@@ -2031,3 +2031,12 @@ source = "impartial-analysis"
 quote = "Measure I2026 is projected to generate approximately $700,000 in additional annual general fund revenue"
 amount = 700000
 period = "per-year"
+
+# Guadalupe Measure G: no tax rate statement or fiscal analysis applies,
+# and the impartial analysis gives no estimate; the one estimate is the
+# ballot question's.
+[guadalupe-measure-g]
+source = "ballot-question"
+quote = "with all revenue estimated at approximately $78,000 annually"
+amount = 78000
+period = "per-year"
