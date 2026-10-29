@@ -1,0 +1,186 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; the sales tax rate today; how it reached the
+# ballot and what it needs; what would change (the new rate, a general
+# tax, what the City Council proposes it pay for, how long it lasts);
+# the impartial analysis's revenue estimate; one line per side; what a
+# vote does.
+#
+# The card's title is the PDF's own head; its origin and yes and no lines
+# are the City Attorney's Impartial Analysis. No city name is narrated
+# ("this city"). The rate is said as a percent, "a 1 percent sales tax"
+# (standard/speakability.txt: a sales tax in cents is transcribed in
+# dollars).
+#
+# The pages print no fiscal statement or tax rate statement; the one
+# estimate is the analysis's, "Six Million Dollars ($6,000,000) in annual
+# local funding". No archived source states the city's general fund
+# total, so it has no scale (STANDARD.md 6.5; left open). The argument in
+# favor cites that the money stays local, the audits and citizen
+# oversight, and that groceries, medicine and utilities are not taxed;
+# the analysis states each too, but they stay with that side
+# (STANDARD.md 6.3). The analysis's account of the uses is the City
+# Council's, and is attributed to it (STANDARD.md 6.2).
+#
+# The pages print an argument in favor and "NO ARGUMENT AGAINST MEASURE
+# F WAS SUBMITTED": the no side is filed = false and says so.
+
+contest = "ca-2026-11-03-lincoln-measure-f"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "F"
+title = "LINCOLN PUBLIC SAFETY/TAXPAYER PROTECTION MEASURE"
+origin = "On June 23, 2026, the City Council of the City of Lincoln (“City”), acting on its own motion, not by voter petition, voted to place Measure F on the ballot for the November 3, 2026, general municipal election."
+summary = "Shall the measure to prevent cuts to public safety services (911 emergency/medical response, police/fire protection, qualified police/firefighters); add life-saving equipment for medical emergencies; keep public areas/streets/parks safe and clean; and other general government uses, by establishing a one-cent sales tax, providing $6,000,000 annually with all funds spent locally, until ended by voters, with a citizen oversight committee, and annual audits/public spending disclosure, be adopted?"
+yes = "A “yes” vote on Measure F will authorize the one cent (1¢) sales tax."
+no = "A “no” vote on Measure F will not authorize the one cent (1¢) sales tax."
+
+[[section]]
+id = "what"
+heading = "Measure F"
+
+[[section.line]]
+text = "Measure F asks the voters of this city whether to add a 1 percent sales tax for public safety and other city services."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by establishing a one-cent sales tax"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the sales tax rate in the city is 7.25 percent."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Sales tax rate in the city"
+source = "impartial-analysis"
+unit = "%"
+labels = ["Today", "Measure F"]
+values = [7.25, 8.25]
+
+[[section.line]]
+text = "The City Council placed Measure F on the ballot, and it needs a majority to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure F would raise the rate to 8.25 percent."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section.line]]
+id = "general-tax"
+text = "Measure F would be a general tax: the money would go into the city general fund, for any lawful city purpose."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+id = "uses"
+text = "The City Council proposes using it to prevent cuts to police and fire, add medical emergency equipment, and keep streets and parks safe and clean."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "fire-station-engine"
+
+[[section.line]]
+text = "The tax would last until voters repeal it."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The impartial analysis estimates the tax would raise about $6 million a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the city usually has as few as three officers on patrol, and the state cannot take the money."
+sources = ["arguments"]
+basis = ["Lincoln usually has only as few as three police officers on patrol at any one time!", "Not a penny can be taken by the State."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["As few as three officers on patrol", "The state cannot take the money"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure F was submitted, and the Measure F voter guide pages include no argument against the measure."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the 1 percent sales tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["will authorize the one cent"]
+
+[[section.line]]
+text = "A no vote does not authorize the 1 percent sales tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["will not authorize the one cent"]
+
+[[question]]
+ask = "What would the money pay for?"
+lines = ["general-tax", "uses"]
+
+[[question]]
+ask = "How big is the city's budget, compared with the tax?"
+unanswered = true

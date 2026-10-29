@@ -1837,3 +1837,11 @@ source = "impartial-analysis"
 quote = "It is estimated that Measure “C” will provide an additional $8,000,000 in annual local funding"
 amount = 8000000
 period = "per-year"
+
+# City of Lincoln Measure F: a sales tax, so no tax rate statement; the
+# City Attorney's Impartial Analysis gives the revenue estimate.
+[lincoln-measure-f]
+source = "impartial-analysis"
+quote = "It is estimated that the proposed sales tax will provide an additional Six Million Dollars ($6,000,000) in annual local funding."
+amount = 6000000
+period = "per-year"
