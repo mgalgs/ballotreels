@@ -2602,3 +2602,11 @@ source = "impartial-analysis"
 quote = "The District estimates that the special tax would raise approximately one hundred thousand ($100,000.00) dollars annually."
 amount = 100000
 period = "per-year"
+
+# Calaveras Unified School District Measure A: the district's Tax Rate
+# Statement, its total debt service (the bonds are $66,800,000).
+[calaveras-unified-measure-a]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the Bonds are issued and sold is approximately $161,600,000."
+amount = 161600000
+period = "unstated"
