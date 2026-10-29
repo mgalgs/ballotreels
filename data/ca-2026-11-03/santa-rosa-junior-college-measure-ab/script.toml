@@ -10,7 +10,8 @@
 # line gives the statement's average rate beside its highest, as it
 # prints both. The supporters' "without increasing tax rates" (it
 # replaces expiring bonds) is their argument, so the neutral sections
-# keep to the new bonds' own figures (STANDARD.md 6.3); the card quotes
+# keep to the new bonds' own figures (STANDARD.md 6.3), and leave out
+# the bar on spending bond money on salaries, which supporters cite; the card quotes
 # the question's "Without increasing tax rates" as printed. "Counsel" is
 # heard as "Council" (standard/speakability.txt), so the narration says
 # "the impartial analysis".
@@ -77,14 +78,6 @@ sources = ["impartial-analysis"]
 [section.line.visual]
 kind = "illustration"
 name = "school-workshop"
-
-[[section.line]]
-text = "State law bars spending it on teacher or administrator salaries."
-sources = ["impartial-analysis"]
-
-[section.line.visual]
-kind = "illustration"
-name = "public-funds-locked"
 
 [[section]]
 id = "fiscal"

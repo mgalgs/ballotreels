@@ -9,7 +9,9 @@
 # gives it. No archived source states the city's general fund budget,
 # so the $5.5 million has no scale (STANDARD.md 6.5; left open). The
 # deficit and deferred-maintenance figures are the arguments' own and
-# stay out of the neutral sections (STANDARD.md 6.3). A rate in cents
+# stay out of the neutral sections (STANDARD.md 6.3), as do the
+# exemptions for groceries and medicine and the tax visitors pay, which
+# the argument in favor cites. A rate in cents
 # is transcribed in dollars (standard/speakability.txt), so the
 # narration gives it as a percent.
 #
@@ -69,16 +71,7 @@ kind = "illustration"
 name = "city-storefronts"
 
 [[section.line]]
-id = "exempt"
-text = "Residents and visitors would both pay it, and groceries and prescription medicine would be exempt."
-sources = ["impartial-analysis"]
-
-[section.line.visual]
-kind = "illustration"
-name = "grocery-bag"
-
-[[section.line]]
-text = "As a general tax, the money would go into the general fund of the city, for any city purpose."
+text = "As a general tax, the money would go into the general fund of the city."
 sources = ["impartial-analysis"]
 
 [section.line.visual]
@@ -148,7 +141,3 @@ sources = ["measure-question"]
 kind = "page"
 source = "measure-question"
 highlight = ["a vote against the tax"]
-
-[[question]]
-ask = "Would it apply to groceries and medicine?"
-lines = ["exempt"]
