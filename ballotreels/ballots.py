@@ -658,6 +658,22 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 2026-12",
                      "ca-2026-11-03-ferndale-unified-measure-e":
                          "Abbreviated Form of Bond Measure",
+                     # Mendocino County Elections posts each measure's
+                     # guide pages; most print no ballot question, so
+                     # each card quotes it from the page that does, named
+                     # as headed: the resolution or exhibit that prints
+                     # it, Point Arena's notice, Sonoma's pages for
+                     # Measure D; AB's pages print it in its full text
+                     "ca-2026-11-03-fort-bragg-measure-b":
+                         "Resolution No. 5039-2026",
+                     "ca-2026-11-03-point-arena-measure-c":
+                         "Public Notice: Transient Occupancy Tax Measure",
+                     "ca-2026-11-03-coast-life-support-measure-d":
+                         "Local Ballot Measure: D",
+                     "ca-2026-11-03-santa-rosa-jc-measure-ab-mendocino":
+                         "Full Text of Measure AB",
+                     "ca-2026-11-03-southern-humboldt-healthcare-measure-k-mendocino":
+                         "Ballot Question/Abbreviated Form of Ballot Measure",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
