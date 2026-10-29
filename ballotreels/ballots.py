@@ -555,6 +555,19 @@ BALLOTS: dict[str, Ballot] = {
                      "ca-2026-11-03-lincoln-measure-f":
                          "Measure F — Lincoln Public Safety/Taxpayer "
                          "Protection Measure",
+                     # Santa Barbara County Elections prints each local
+                     # measure's impartial analysis, arguments, full text
+                     # and sample ballot label in its guide, one PDF per
+                     # ballot type.
+                     **{f"ca-2026-11-03-{slug}":
+                        "Santa Barbara County Voter Information Guide "
+                        "and Sample Ballot"
+                        for slug in ("santa-maria-measure-c",
+                                     "carpinteria-measure-i",
+                                     "guadalupe-measure-g",
+                                     "guadalupe-measure-j",
+                                     "santa-ynez-valley-measure-d",
+                                     "allan-hancock-measure-h")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
