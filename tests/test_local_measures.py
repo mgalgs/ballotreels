@@ -280,7 +280,7 @@ class LocalBallotTest(LocalServerTestCase):
         app = (REPO / "ballotreels" / "site" / "static" /
                "app.js").read_text(encoding="utf-8")
         self.assertIn('params.getAll("p")', app)
-        self.assertIn("ballotParams(body.kinds, body.partial)", app)
+        self.assertIn("renderBallot(divisions, body.partial || [])", app)
         self.assertIn("depending on your address", app)
 
 
