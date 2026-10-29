@@ -4,6 +4,10 @@
 #
 # Usage: scripts/narrate.sh <contest-dir>...
 #
+# The audio lives in the serve tier's narration store, by the SHA-256
+# narration.json records (`python -m ballotreels narration record`, run here
+# after each take); `python -m ballotreels narration push` uploads it.
+#
 # Needs the project .venv (see README.md) and GEMINI_API_KEY. The transcript
 # check that catches a reworded take runs faster-whisper in the Chatterbox
 # interpreter, found at $VIDEOBUILDER_CHATTERBOX_PYTHON or else
@@ -23,9 +27,17 @@ style=$(cat "$repo/voices/narration-style.txt")
 
 for dir in "$@"; do
     "$python" -m ballotreels narration "$dir"
+    # `say` reuses the unchanged phrases of the take narration.json records,
+    # so put that take's audio here first (from the local cache, or the
+    # serve tier at $BALLOTREELS_SERVER with $BALLOTREELS_TOKEN): without
+    # it every phrase would be synthesised afresh.
+    "$python" -m ballotreels narration fetch "$dir"
     "$python" -m videobuilder say "$dir/narration.txt" \
         --engine gemini --voice Rasalgethi --style "$style" --gap 0.6 \
         --out "$dir/narration.wav"
+    # The new take's identity, in narration.json: commit that; upload the
+    # audio with `python -m ballotreels narration push`.
+    "$python" -m ballotreels narration record "$dir"
     # The airtime and transcript checks need the new take, so a narration
     # is not done until it passes here.
     "$python" -m ballotreels check "$dir"

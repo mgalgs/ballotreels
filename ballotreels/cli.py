@@ -2,6 +2,9 @@
 
     python -m ballotreels check <contest-dir>...
     python -m ballotreels narration <contest-dir>...
+    python -m ballotreels narration record (--all | <contest-dir>...)
+    python -m ballotreels narration push (--all | <contest-dir>...)
+    python -m ballotreels narration fetch (--all | <contest-dir>...)
     python -m ballotreels render <contest-dir> [--format 9x16|16x9|all]
     python -m ballotreels render <election-dir> [--format 9x16|16x9|all]
                                   (its crash course; 9x16 unless asked)
@@ -120,6 +123,184 @@ def _narration_one(path: str, out) -> bool:
     dest.write_text(text, encoding="utf-8")
     print(f"{dest}: wrote {len(text.splitlines())} lines", file=out)
     return True
+
+
+TAKE_ACTIONS = ("record", "push", "fetch")
+
+
+def _take_dirs(args, out) -> list[Path] | None:
+    """The contest directories a `narration record|push|fetch` names: each
+    one given, or with --all every one under <repo>/data that has a
+    narration.json."""
+    if args.all == bool(args.contests):
+        print("give contest directories or --all, not both or neither",
+              file=out)
+        return None
+    if args.all:
+        return sorted(p.parent for p in
+                      (Path(args.repo) / "data").glob("*/*/narration.json"))
+    return [Path(p) for p in args.contests]
+
+
+def _take_client(args, err, required: bool):
+    """A worker.WorkerClient for --server and $BALLOTREELS_TOKEN, as the
+    `worker` command takes them; None when neither is given and the
+    command can do without one. Raises SystemExit(2) when half given or
+    required and missing."""
+    from .worker import WorkerClient
+    server = args.server or os.environ.get("BALLOTREELS_SERVER")
+    token = (os.environ.get("BALLOTREELS_TOKEN") or "").strip() or None
+    if not server and not token and not required:
+        return None
+    if not server:
+        print("no server URL: pass --server or set BALLOTREELS_SERVER",
+              file=err)
+        raise SystemExit(2)
+    if not token:
+        print("BALLOTREELS_TOKEN is not set", file=err)
+        raise SystemExit(2)
+    return WorkerClient(server, token)
+
+
+def _take_record(dirs: list[Path], out) -> bool:
+    from .narration_store import TakeError, record, recorded_take
+    changed, failed = 0, 0
+    for d in dirs:
+        if (not (d / "narration.wav").is_file()
+                and recorded_take(d) is not None):
+            continue  # recorded, and its audio is in the store
+        try:
+            if record(d):
+                changed += 1
+                print(f"{d}: recorded take {recorded_take(d).sha256}",
+                      file=out)
+        except (TakeError, ValueError) as e:
+            print(f"{d}: {e}", file=out)
+            failed += 1
+    print(f"recorded {changed} take(s), {len(dirs) - changed - failed} "
+          f"already recorded, {failed} failed, of {len(dirs)}", file=out)
+    return not failed
+
+
+def _take_push(dirs: list[Path], cache, client, out) -> bool:
+    from .narration_store import hash_file, recorded_take
+    ok, uploaded, had = True, 0, 0
+    for d in dirs:
+        take = recorded_take(d)
+        if take is None:
+            print(f"{d}: narration.json records no take; run `python -m "
+                  f"ballotreels narration record {d}` first", file=out)
+            ok = False
+            continue
+        wav = d / "narration.wav"
+        if wav.is_file():
+            got = hash_file(wav)
+            if got != take:
+                print(f"{d}: narration.wav (SHA-256 {got.sha256}) is not "
+                      f"the take narration.json records ({take.sha256}); "
+                      f"if it is a new take, run `python -m ballotreels "
+                      f"narration record {d}`", file=out)
+                ok = False
+                continue
+            data = wav.read_bytes()
+        elif (cached := cache.get(take)) is not None:
+            data = cached.read_bytes()
+        else:
+            data = None
+        if client.narration_has(take.sha256):
+            had += 1
+        elif data is None:
+            print(f"{d}: take {take.sha256} is on neither this checkout, "
+                  f"the cache, nor the server", file=out)
+            ok = False
+            continue
+        else:
+            client.narration_put(take.sha256, data)
+            uploaded += 1
+            print(f"{d}: uploaded take {take.sha256}", file=out)
+        if data is not None and cache.get(take) is None:
+            cache.put(take, data)
+    print(f"uploaded {uploaded} take(s), {had} already on the server, of "
+          f"{len(dirs)}", file=out)
+    return ok
+
+
+def _take_fetch(dirs: list[Path], cache, client, out) -> bool:
+    from .narration_store import TakeError, materialize
+    ok, how = True, {}
+    for d in dirs:
+        try:
+            got = materialize(d, cache, client)
+        except TakeError as e:
+            print(str(e), file=out)
+            ok = False
+            continue
+        how[got] = how.get(got, 0) + 1
+        if got in ("cache", "server"):
+            print(f"{d}: narration.wav from the {got}", file=out)
+        elif got == "none":
+            print(f"{d}: narration.json records no take; nothing to fetch",
+                  file=out)
+    print(f"fetched {how.get('cache', 0)} from the cache, "
+          f"{how.get('server', 0)} from the server, {how.get('present', 0)} "
+          f"already here, of {len(dirs)}", file=out)
+    return ok
+
+
+def _narration_takes(argv: list[str], out, err) -> int:
+    """`narration record|push|fetch`: the narration store's operator
+    commands (ballotreels.narration_store). Migrating a checkout whose
+    takes are still in git is `record --all`, then `push --all`."""
+    parser = argparse.ArgumentParser(
+        prog="python -m ballotreels narration",
+        description="narration audio lives in the serve tier's narration "
+                    "store, by the take narration.json records")
+    sub = parser.add_subparsers(dest="action", required=True)
+    helps = {
+        "record": "write each narration.wav's SHA-256 and length into its "
+                  "narration.json",
+        "push": "upload each recorded take the server lacks, and keep a "
+                "copy in the local cache",
+        "fetch": "put each recorded take's narration.wav beside its "
+                 "narration.json, from the local cache or the server",
+    }
+    for action in TAKE_ACTIONS:
+        p = sub.add_parser(action, help=helps[action])
+        p.add_argument("contests", nargs="*", metavar="contest-dir")
+        p.add_argument("--all", action="store_true",
+                       help="every contest under <repo>/data with a "
+                            "narration.json")
+        p.add_argument("--repo", default=str(REPO_ROOT),
+                       help="the checkout --all reads (default: this repo)")
+        if action != "record":
+            p.add_argument("--server", default=None,
+                           help="the serve tier's private listener URL; "
+                                "default: $BALLOTREELS_SERVER (the token "
+                                "is $BALLOTREELS_TOKEN)")
+            p.add_argument("--narration-cache", default=None, metavar="DIR",
+                           help=NARRATION_CACHE_HELP)
+    args = parser.parse_args(argv)
+    dirs = _take_dirs(args, err)
+    if dirs is None:
+        return 2
+    if args.action == "record":
+        return 0 if _take_record(dirs, out) else 1
+    from .narration_store import TakeCache
+    from .worker import TransportError, WorkerApiError
+    cache = TakeCache(_narration_cache(args.narration_cache))
+    try:
+        client = _take_client(args, err, required=args.action == "push")
+    except SystemExit as e:
+        return e.code
+    try:
+        if args.action == "push":
+            ok = _take_push(dirs, cache, client, out)
+        else:
+            ok = _take_fetch(dirs, cache, client, out)
+    except (TransportError, WorkerApiError) as e:
+        print(f"narration {args.action}: {e}", file=err)
+        return 1
+    return 0 if ok else 1
 
 
 def _render_crash_course(path: str, fmt_arg: str | None, out_dir: Path,
@@ -387,6 +568,11 @@ def _geo_counties(data_dir: str, state: str, out) -> bool:
 
 
 def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
+    argv = sys.argv[1:] if argv is None else list(argv)
+    # `narration <contest-dir>...` writes narration.txt; these three words
+    # are never a contest directory's name.
+    if argv[:1] == ["narration"] and argv[1:2] and argv[1] in TAKE_ACTIONS:
+        return _narration_takes(argv[1:], out, err)
     parser = argparse.ArgumentParser(prog="python -m ballotreels")
     sub = parser.add_subparsers(dest="command", required=True)
     check = sub.add_parser(
@@ -395,7 +581,8 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
     narration = sub.add_parser(
         "narration",
         help="write narration.txt: each script line's text, one per line, "
-             "in playback order, for `videobuilder say`")
+             "in playback order, for `videobuilder say`; or `narration "
+             "record|push|fetch ...`, the narration store's commands")
     narration.add_argument("contests", nargs="+", metavar="contest-dir")
     render = sub.add_parser(
         "render", help="render the contest's video with videobuilder; "
