@@ -2040,3 +2040,13 @@ source = "ballot-question"
 quote = "with all revenue estimated at approximately $78,000 annually"
 amount = 78000
 period = "per-year"
+
+# Guadalupe Measure J: no tax rate statement or fiscal analysis applies,
+# and the impartial analysis gives no estimate; the one estimate is the
+# ballot question's ("and more, if additional lodging facilities open"
+# sizes nothing further).
+[guadalupe-measure-j]
+source = "ballot-question"
+quote = "which is anticipated to raise up to $20,000 annually, and more, if additional lodging facilities open in the City"
+amount = 20000
+period = "per-year"

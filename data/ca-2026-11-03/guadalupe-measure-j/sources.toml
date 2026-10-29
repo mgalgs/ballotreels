@@ -1,0 +1,64 @@
+# Archived sources for Guadalupe Measure J, 2026-11-03 general election
+# (sources/sources.md). Every id here may be cited by script.toml.
+# `kind` must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# Santa Barbara County Elections prints each ballot type's County Voter
+# Information Guide as one PDF; pages 39 to 43 (impartial analysis,
+# argument in favor, full text) and 48 to 49 (sample ballot) of Ballot
+# Type 103 were cut into one excerpt, which backs every source here but
+# the ballot question. The sample ballot sets the Measure J label beside
+# Proposition 44's, and pdftotext reads the two columns into each other,
+# so the label `check` reads verbatim was typed from the page into a
+# transcription beside the PDF, which names the PDF, page and URL it
+# copies; that source points at the transcription, and its url at the
+# guide. The ballot labels the measure "Measure J2026"; the project names
+# it by its bare letter. The City Attorney's impartial analysis is the
+# measure's neutral explanation; it gives no revenue estimate, and the
+# one estimate is the ballot label's. No tax rate statement or fiscal
+# analysis applies. No argument against was filed, and no rebuttals are
+# printed. Measure J (a transient occupancy tax) is a separate measure
+# from the same City Council's Measure G (a cannabis business tax) on the
+# same ballot.
+
+[contest]
+id = "ca-2026-11-03-guadalupe-measure-j"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:guadalupe"
+kind = "measure"
+title = "Guadalupe Measure J: Transient Occupancy Tax Increase"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 103, page 49: Sample Ballot, City of Guadalupe Measure J2026 (transcribed from the page)"
+credit = "Sample Ballot, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000103.pdf"
+file = "sources/ballot-question-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure J2026, City of Guadalupe, Philip F. Sinco, City Attorney, Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 103, page 39"
+credit = "City Attorney’s Impartial Analysis, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000103.pdf"
+file = "sources/VIG-bt103_pp39-43_48-49.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure J2026, City of Guadalupe, Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 103, page 40 (no argument against was filed)"
+credit = "Arguments, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000103.pdf"
+file = "sources/VIG-bt103_pp39-43_48-49.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure J2026, City of Guadalupe: an ordinance amending Chapter 3.20 (Transient Occupancy Tax) of the Guadalupe Municipal Code, Santa Barbara County Elections, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 103, pages 40 to 43"
+credit = "Measure J2026 ordinance, Santa Barbara County Voter Information Guide"
+url = "https://sbcvote.com/SampleballotandpollplaceLookup/ballots/bt000103.pdf"
+file = "sources/VIG-bt103_pp39-43_48-49.pdf"
+retrieved = "2026-10-28"
