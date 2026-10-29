@@ -288,6 +288,16 @@ BALLOTS: dict[str, Ballot] = {
                          "Alameda County Composite Voter Information Guide",
                      "ca-2026-11-03-piedmont-measure-gg":
                          "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-san-mateo-county-measure-rtm":
+                         "Public Transit Revenue Measure District Resolution No. 2",
+                     "ca-2026-11-03-san-mateo-county-measure-l":
+                         "Resolution No. 081882",
+                     "ca-2026-11-03-san-mateo-county-measure-aa":
+                         "Resolution No. 081882",
+                     "ca-2026-11-03-san-mateo-county-measure-j":
+                         "Resolution No. 081882",
+                     "ca-2026-11-03-san-mateo-county-measure-u":
+                         "Resolution No. 081882",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",

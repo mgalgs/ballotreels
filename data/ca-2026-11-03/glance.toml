@@ -977,3 +977,38 @@ quote = "It is estimated that this tax will generate approximately $1,521,000 of
 amount = 1521000
 period = "per-year"
 direction = "revenue-gain"
+
+# San Mateo County Measure RTM: no fiscal or tax rate statement was
+# published; the one estimate is the ballot question's (the impartial
+# analysis gives the same, "approximately $980 million per year"), for
+# the whole five-county district.
+[san-mateo-county-measure-rtm]
+source = "ballot-question"
+quote = "generating approximately $980,000,000 annually"
+amount = 980000000
+period = "per-year"
+direction = "revenue-gain"
+
+# San Mateo County Measure L: a charter amendment; no fiscal or tax rate
+# statement was published, and the impartial analysis names no cost.
+[san-mateo-county-measure-l]
+source = "impartial-analysis"
+status = "none-printed"
+
+# San Mateo County Measure AA: a charter amendment; no fiscal or tax rate
+# statement was published, and the impartial analysis names no cost.
+[san-mateo-county-measure-aa]
+source = "impartial-analysis"
+status = "none-printed"
+
+# San Mateo County Measure J: a charter amendment; no fiscal or tax rate
+# statement was published, and the impartial analysis names no cost.
+[san-mateo-county-measure-j]
+source = "impartial-analysis"
+status = "none-printed"
+
+# San Mateo County Measure U: a charter amendment; no fiscal or tax rate
+# statement was published, and the impartial analysis names no cost.
+[san-mateo-county-measure-u]
+source = "impartial-analysis"
+status = "none-printed"

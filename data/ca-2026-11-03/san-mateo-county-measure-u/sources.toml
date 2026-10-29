@@ -1,0 +1,62 @@
+# Archived sources for San Mateo County Measure U, 2026-11-03
+# consolidated general election (sources/sources.md). Every id here may
+# be cited by script.toml. Each is a document San Mateo County's
+# Assessor-County Clerk-Recorder & Elections (ACRE) posts on its election
+# page; the county publishes no single pamphlet file, so each source
+# names its own document.
+#
+# Measures L, AA, J and U are four charter amendments the Board of
+# Supervisors placed on the ballot in one resolution, No. 081882, which
+# prints each one's ballot question and new charter text; the same file
+# backs the card's source (the ballot question) and the full text. The
+# impartial analysis is a scan with no text layer, headed "IMPARTIAL
+# ANALYSIS OF MEASURE [TBD]" and printing no author (the resolution
+# assigns it to the County Attorney's Office); nothing in the script
+# quotes it verbatim, so it is cited as archived. The argument in favor
+# is a scan with no text layer too; its text, which the yes side's
+# basis quotes, was typed from the page image into
+# sources/argument-for-transcription.txt (naming the PDF and URL it
+# copies), and that source points at the transcription. No argument
+# against is among the documents the county posted.
+
+[contest]
+id = "ca-2026-11-03-san-mateo-county-measure-u"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:san_mateo"
+kind = "measure"
+title = "San Mateo County Measure U: Independent Redistricting Commission for Supervisorial Districts"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Board of Supervisors of the County of San Mateo, Resolution No. 081882, the ballot question of Measure U, San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Resolution No. 081882, County of San Mateo"
+url = "https://smcacre.gov/system/files/2026-07/San%20Mateo%20County%20Amendments.pdf"
+file = "sources/charter-amendments-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure U, San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Impartial Analysis, San Mateo County Elections"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MU-ImpartialAnalysis-SMC-Charter-Reapportionment.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Board of Supervisors of the County of San Mateo, Resolution No. 081882 and Ordinance No. 4920, calling the special election on four charter amendments, San Mateo County Assessor-County Clerk-Recorder & Elections"
+url = "https://smcacre.gov/system/files/2026-07/San%20Mateo%20County%20Amendments.pdf"
+file = "sources/charter-amendments-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure U (printed with a blank for its letter), San Mateo County Assessor-County Clerk-Recorder & Elections (page 6, transcribed from the scan)"
+credit = "Argument in favor, San Mateo County Elections"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-204-Contest%20Code-5ArgInFavor-SMC%20Charter_Redacted.pdf"
+file = "sources/argument-for-transcription.txt"
+retrieved = "2026-10-28"

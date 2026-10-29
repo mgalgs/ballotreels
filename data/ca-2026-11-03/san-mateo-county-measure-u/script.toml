@@ -1,0 +1,161 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks; how district lines are drawn today; what would change
+# (who draws them, what state law says such a commission is) and what
+# stays; who placed it and the vote it needs; that no cost estimate was
+# published; one line per side; what a vote does.
+#
+# The card quotes the ballot question from Resolution No. 081882, which
+# prints no yes/no lines, so (as for Utah) the vote lines take their two
+# meanings from the question itself and highlight its one phrase.
+#
+# Only an argument in favor is among the documents San Mateo County
+# posted; the printed sample ballot pamphlet was not checked
+# (sources/sources.md), so the no side does not say none was filed: it
+# says none appears in the published documents (filed = false,
+# STANDARD.md 2.5). The argument is signed by two supervisors among
+# others; no signer is named, since no one is on the record for the
+# other side and naming is never required (STANDARD.md 9.4). No fiscal or
+# tax rate statement was published, and the impartial analysis names no
+# cost.
+
+contest = "ca-2026-11-03-san-mateo-county-measure-u"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "U"
+title = "COUNTY CHARTER AMENDMENT"
+origin = "BOARD OF SUPERVISORS, COUNTY OF SAN MATEO, STATE OF CALIFORNIA"
+summary = "Shall the San Mateo County Charter be amended to require that supervisorial districts be reapportioned following each federal decennial census by an independent redistricting commission pursuant to applicable provisions of the California Elections Code?"
+
+[[section]]
+id = "what"
+heading = "Measure U"
+
+[[section.line]]
+text = "San Mateo County Measure U asks county voters whether an independent commission should redraw the districts of the Board of Supervisors after each census."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by an independent redistricting commission"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the Board of Supervisors itself adopts the ordinance that sets the boundaries of its five districts."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "district-map"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure U would have an independent redistricting commission draw the five districts after each federal census, instead of the board."
+sources = ["impartial-analysis", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "empty-commission-seat"
+
+[[section.line]]
+id = "commission"
+text = "State law defines that commission as a body other than the board, and limits who may serve on it."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+text = "Supervisors would still be elected by district, live in their districts and serve at most three terms in a row."
+sources = ["impartial-analysis", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "amended-page"
+
+[[section.line]]
+text = "The Board of Supervisors placed Measure U on the ballot, and it needs a majority of the vote to pass."
+sources = ["impartial-analysis", "resolution"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The published measure documents of San Mateo County do not include a cost estimate for the measure."
+sources = ["impartial-analysis", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the board has overridden citizen members of a redistricting commission, and a truly independent one keeps districts competitive."
+sources = ["argument-for"]
+basis = ["But this is a self-interested group that has, most recently, overridden the recommendations of citizen members of a redistricting commission.", "A truly independent redistricting commission is our best tool to keep districts competitive, so voters have meaningful choices."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Board overrode citizen commission members", "Independent lines keep districts competitive"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure U appears in the published measure documents of San Mateo County, only the supporters' argument."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "list"
+source = "impartial-analysis"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means the charter would be amended so an independent redistricting commission draws the districts."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by an independent redistricting commission"]
+
+[[section.line]]
+text = "A no vote means the charter would not be amended, and the board keeps drawing the districts."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by an independent redistricting commission"]
+
+[[question]]
+ask = "Who may sit on the commission?"
+lines = ["commission"]
+
+[[question]]
+ask = "Who would pick the commission's members?"
+unanswered = true
+
+[[question]]
+ask = "When would the districts next be redrawn?"
+unanswered = true
