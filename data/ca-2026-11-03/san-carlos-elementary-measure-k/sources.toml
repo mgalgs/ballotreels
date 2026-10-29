@@ -1,0 +1,66 @@
+# Archived sources for San Carlos School District Measure K, 2026-11-03
+# general election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# San Mateo County publishes each measure's documents separately, not as
+# one pamphlet: the Board of Education's resolution (whose Section 3 is
+# the full measure and Section 4 the ballot question), the impartial
+# analysis, and the argument in favor, as its own PDF on the
+# Assessor-County Clerk-Recorder & Elections page. No argument against
+# and no rebuttal is among the posted documents. The impartial analysis
+# prints no author. A parcel tax has no tax rate statement; the revenue
+# estimate is the impartial analysis's (and the ballot question's).
+#
+# Every PDF here is a scan, with no text layer or a rough OCR one. Each
+# source's `file` is therefore a transcription of the pages the script
+# quotes, made by reading the page images (the resolution's from its
+# OCR, corrected against them), beside the PDF it transcribes
+# (sources/<name>.txt for sources/<name>.pdf); `url` is the PDF's. The
+# check reads a non-PDF file as plain text.
+#
+# The Census calls the district "San Carlos Elementary School District";
+# its division follows divisions.tsv.
+
+[contest]
+id = "ca-2026-11-03-san-carlos-elementary-measure-k"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:san_carlos_elementary_school_district"
+kind = "measure"
+title = "San Carlos School District Measure K: Replacement Education Parcel Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Board of Education of the San Carlos School District, Resolution No. 11:25/26, Section 4: Abbreviation of Measure, as posted by San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Resolution No. 11:25/26"
+url = "https://smcacre.gov/system/files/2026-05/52-ENG-M101-Contest%20Code-Reso-San%20Carlos%20SD%20Parcel%20Tax_Redacted.pdf"
+file = "sources/resolution-full-text.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "Impartial Analysis of Measure K (no author printed), as posted by San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Impartial Analysis"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MK-ImpartialAnalysis-San-Carlos-SD-Parcel-Tax.pdf"
+file = "sources/impartial-analysis.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Board of Education of the San Carlos School District, Resolution No. 11:25/26, with the full measure in its Section 3"
+credit = "Resolution No. 11:25/26"
+url = "https://smcacre.gov/system/files/2026-05/52-ENG-M101-Contest%20Code-Reso-San%20Carlos%20SD%20Parcel%20Tax_Redacted.pdf"
+file = "sources/resolution-full-text.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure K, as filed with the San Mateo County Chief Elections Officer (no argument against appears in the published measure documents)"
+credit = "Argument in Favor"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M101-Contest%20Code-5ArgInFavor-San%20Carlos%20SD%20Parcel%20Tax_Redacted.pdf"
+file = "sources/argument-for.txt"
+retrieved = "2026-10-28"

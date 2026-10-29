@@ -1160,3 +1160,63 @@ source = "guide-page"
 quote = "estimated to generate approximately $2,200,000 annually"
 amount = 2200000
 period = "per-year"
+
+# San Mateo County Community College District Measure V: the Tax Rate
+# Statement's total debt service (the bonds are $848,000,000).
+[san-mateo-community-college-measure-v]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $1,350,000,000."
+amount = 1350000000
+period = "unstated"
+
+# Jefferson Union High School District Measure M: a parcel tax, so no
+# tax rate statement; the estimate is the Impartial Analysis's (the
+# ballot question rounds it to $3.4 million).
+[jefferson-union-high-measure-m]
+source = "impartial-analysis"
+quote = "is estimated to raise approximately $3,400,000 annually."
+amount = 3400000
+period = "per-year"
+
+# Cabrillo Unified School District Measure Z: a parcel tax, so no tax
+# rate statement; the estimate is the Impartial Analysis's (the ballot
+# label gives it as $2,600,000).
+[cabrillo-unified-measure-z]
+source = "impartial-analysis"
+quote = "which tax is estimated to raise approximately $2.6 million annually."
+amount = 2600000
+period = "per-year"
+
+# San Mateo-Foster City School District Measure W: the Tax Rate
+# Statement's total debt service (the bonds are $498,000,000).
+[san-mateo-foster-city-measure-w]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $900 million."
+amount = 900000000
+period = "unstated"
+
+# Burlingame Elementary School District Measure R: the Tax Rate
+# Statement's total debt service (the bonds are $100,000,000).
+[burlingame-elementary-measure-r]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $195,482,493."
+amount = 195482493
+period = "unstated"
+
+# San Carlos School District Measure K: a parcel tax, so no tax rate
+# statement; the estimate is the Impartial Analysis's (and the ballot
+# question's).
+[san-carlos-elementary-measure-k]
+source = "impartial-analysis"
+quote = "and is estimated to raise approximately $4,400,000 annually."
+amount = 4400000
+period = "per-year"
+
+# Pacifica School District Measure T: a parcel tax, so no tax rate
+# statement; the estimate is the Impartial Analysis's (and the ballot
+# question's).
+[pacifica-school-measure-t]
+source = "impartial-analysis"
+quote = "and is estimated to raise $1,300,000 each year."
+amount = 1300000
+period = "per-year"

@@ -1,0 +1,74 @@
+# Archived sources for San Mateo County Community College District
+# Measure V, 2026-11-03 general election (sources/sources.md). Every id
+# here may be cited by script.toml. `kind` must be one the standard
+# allows (docs/STANDARD.md, section 1).
+#
+# San Mateo County publishes each measure's documents separately, not as
+# one pamphlet: the Board of Trustees' resolution (whose Appendix B is
+# the ballot question and Appendix C the tax rate statement), the
+# impartial analysis, and each argument and rebuttal, as its own PDF on
+# the Assessor-County Clerk-Recorder & Elections page. The impartial
+# analysis prints no author.
+#
+# Every PDF here is a scan, and most have no text layer (the arguments'
+# is a rough OCR). Each source's `file` is therefore a transcription of
+# the pages the script quotes, made by reading the page images, beside
+# the PDF it transcribes (sources/<name>.txt for sources/<name>.pdf);
+# `url` is the PDF's. The check reads a non-PDF file as plain text.
+#
+# A community college district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md). The district lies in San Mateo County only.
+
+[contest]
+id = "ca-2026-11-03-san-mateo-community-college-measure-v"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:san_mateo"
+kind = "measure"
+title = "San Mateo County Community College District Measure V: College Facility Bonds"
+voters = "the San Mateo County Community College District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Board of Trustees of the San Mateo County Community College District, Resolution No. 26-25, Appendix B: Abbreviated Form of Bond Measure, as posted by San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Resolution No. 26-25"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M307-Contest%20Code-Reso-SMCCD%20Bond_Redacted.pdf"
+file = "sources/resolution-full-text.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "Impartial Analysis of Measure V (no author printed), as posted by San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Impartial Analysis"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MV-ImpartialAnalysis-SMCCD-Bond.pdf"
+file = "sources/impartial-analysis.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "San Mateo County Community College District, Tax Rate Statement, Resolution No. 26-25, Appendix C"
+credit = "Tax Rate Statement"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M307-Contest%20Code-Reso-SMCCD%20Bond_Redacted.pdf"
+file = "sources/resolution-full-text.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure V, as filed with the San Mateo County Chief Elections Officer"
+credit = "Argument in Favor"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M307-Contest%20Code-5ArgInFavor-SMCCD%20Bond_Redacted.pdf"
+file = "sources/argument-for.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure V, as filed with the San Mateo County Chief Elections Officer"
+credit = "Argument Against"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M307-Contest%20Code-6ArgAgainst-SMCCD%20Bond_Redacted.pdf"
+file = "sources/argument-against.txt"
+retrieved = "2026-10-28"

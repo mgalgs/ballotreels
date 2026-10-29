@@ -1,0 +1,70 @@
+# Archived sources for Jefferson Union High School District Measure M,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# San Mateo County publishes each measure's documents separately, not as
+# one pamphlet: the Board of Trustees' resolution (whose Exhibit B is the
+# ballot question), the impartial analysis, and each argument and
+# rebuttal, as its own PDF on the Assessor-County Clerk-Recorder &
+# Elections page. The impartial analysis prints no author. A parcel tax
+# has no tax rate statement; the revenue estimate is the impartial
+# analysis's (and the ballot question's).
+#
+# Every PDF here is a scan, with no text layer or a rough OCR one. Each
+# source's `file` is therefore a transcription of the pages the script
+# quotes, made by reading the page images, beside the PDF it transcribes
+# (sources/<name>.txt for sources/<name>.pdf); `url` is the PDF's. The
+# check reads a non-PDF file as plain text.
+
+[contest]
+id = "ca-2026-11-03-jefferson-union-high-measure-m"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:jefferson_union_high_school_district"
+kind = "measure"
+title = "Jefferson Union High School District Measure M: Replacement Education Parcel Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Board of Trustees of the Jefferson Union High School District, Resolution No. 2025-2026/19, Exhibit B: Ballot Measure Abbreviated Form, as posted by San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Resolution No. 2025-2026/19"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M106-Contest%20Code-Reso-JUHSD%20Parcel%20Tax_Redacted.pdf"
+file = "sources/resolution-full-text.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "Impartial Analysis of Measure M (no author printed), as posted by San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Impartial Analysis"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MM-ImpartialAnalysis-JUHSD-Parcel-Tax.pdf"
+file = "sources/impartial-analysis.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Board of Trustees of the Jefferson Union High School District, Resolution No. 2025-2026/19, Exhibit A: Full Text of Measure"
+credit = "Full Text of Measure"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M106-Contest%20Code-Reso-JUHSD%20Parcel%20Tax_Redacted.pdf"
+file = "sources/resolution-full-text.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure M, as filed with the San Mateo County Chief Elections Officer"
+credit = "Argument in Favor"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M106-Contest%20Code-4ArgInFavor-JUHSD%20Parcel%20Tax_Redacted.pdf"
+file = "sources/argument-for.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure M, as filed with the San Mateo County Chief Elections Officer"
+credit = "Argument Against"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M106-Contest%20Code-7ArgAgainst-JUHSD%20Parcel%20Tax_Redacted.pdf"
+file = "sources/argument-against.txt"
+retrieved = "2026-10-28"
