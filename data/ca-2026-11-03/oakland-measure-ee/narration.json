@@ -1,0 +1,287 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 83.55,
+  "phrases": [
+    {
+      "text": "City of Oakland Measure EE asks voters in the city whether to change the City Charter to make the Mayor the chief executive of the city.",
+      "start": 0.03,
+      "end": 8.68
+    },
+    {
+      "text": "Today, the city administrator manages most departments, and the Mayor can break ties on the Council.",
+      "start": 9.34,
+      "end": 15.35
+    },
+    {
+      "text": "The City Council placed Measure EE on the ballot, and it needs a simple majority to pass.",
+      "start": 16.01,
+      "end": 22.25
+    },
+    {
+      "text": "The Mayor would manage most departments and could veto Council laws and budget items, but would no longer break ties.",
+      "start": 22.91,
+      "end": 30.33
+    },
+    {
+      "text": "Six members of the Council could override a veto.",
+      "start": 30.99,
+      "end": 33.76
+    },
+    {
+      "text": "The Council could create an independent budget analyst office and confirm some department heads.",
+      "start": 34.42,
+      "end": 40.1
+    },
+    {
+      "text": "Council members would work full time, with pay set by the Public Ethics Commission.",
+      "start": 40.76,
+      "end": 45.27
+    },
+    {
+      "text": "The City Auditor estimates a first-year cost to the city between $2 million and $2.6 million, including the analyst office and higher Council pay.",
+      "start": 45.93,
+      "end": 56.16
+    },
+    {
+      "text": "Supporters say department heads would answer to one leader, the Mayor, and voters could keep or replace that leader based on results.",
+      "start": 56.82,
+      "end": 64.69
+    },
+    {
+      "text": "Opponents say the measure makes government less transparent, raises the risk of corruption, and lets the Mayor block almost any Council action.",
+      "start": 65.35,
+      "end": 74.04
+    },
+    {
+      "text": "A yes vote means the Mayor would become the chief executive of the city, with a veto.",
+      "start": 74.7,
+      "end": 79.76
+    },
+    {
+      "text": "A no vote means the City Charter stays as it is.",
+      "start": 80.42,
+      "end": 83.52
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "City of Oakland Measure EE asks voters in the city whether to change the City Charter to make the Mayor the chief executive of the city.",
+      "Today, the city administrator manages most departments, and the Mayor can break ties on the Council.",
+      "The City Council placed Measure EE on the ballot, and it needs a simple majority to pass.",
+      "The Mayor would manage most departments and could veto Council laws and budget items, but would no longer break ties.",
+      "Six members of the Council could override a veto.",
+      "The Council could create an independent budget analyst office and confirm some department heads.",
+      "Council members would work full time, with pay set by the Public Ethics Commission.",
+      "The City Auditor estimates a first-year cost to the city between $2 million and $2.6 million, including the analyst office and higher Council pay.",
+      "Supporters say department heads would answer to one leader, the Mayor, and voters could keep or replace that leader based on results.",
+      "Opponents say the measure makes government less transparent, raises the risk of corruption, and lets the Mayor block almost any Council action.",
+      "A yes vote means the Mayor would become the chief executive of the city, with a veto.",
+      "A no vote means the City Charter stays as it is."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "City of Oakland Measure EE asks voters in the city whether to change the City Charter to make the Mayor the chief executive of the city."
+      },
+      "bounds": [
+        0,
+        209040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"City of Oakland Measure EE asks voters in the city whether to change the City Charter to make the Mayor the chief executive of the city.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, the city administrator manages most departments, and the Mayor can break ties on the Council."
+      },
+      "bounds": [
+        223440,
+        369120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, the city administrator manages most departments, and the Mayor can break ties on the Council.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The City Council placed Measure EE on the ballot, and it needs a simple majority to pass."
+      },
+      "bounds": [
+        383520,
+        534720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Council placed Measure EE on the ballot, and it needs a simple majority to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The Mayor would manage most departments and could veto Council laws and budget items, but would no longer break ties."
+      },
+      "bounds": [
+        549120,
+        728640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Mayor would manage most departments and could veto Council laws and budget items, but would no longer break ties.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Six members of the Council could override a veto."
+      },
+      "bounds": [
+        743040,
+        810960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Six members of the Council could override a veto.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The Council could create an independent budget analyst office and confirm some department heads."
+      },
+      "bounds": [
+        825360,
+        963120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Council could create an independent budget analyst office and confirm some department heads.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Council members would work full time, with pay set by the Public Ethics Commission."
+      },
+      "bounds": [
+        977520,
+        1087200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Council members would work full time, with pay set by the Public Ethics Commission.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The City Auditor estimates a first-year cost to the city between $2 million and $2.6 million, including the analyst office and higher Council pay."
+      },
+      "bounds": [
+        1101600,
+        1348560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Auditor estimates a first-year cost to the city between $2 million and $2.6 million, including the analyst office and higher Council pay.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say department heads would answer to one leader, the Mayor, and voters could keep or replace that leader based on results."
+      },
+      "bounds": [
+        1362960,
+        1553280
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say department heads would answer to one leader, the Mayor, and voters could keep or replace that leader based on results.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say the measure makes government less transparent, raises the risk of corruption, and lets the Mayor block almost any Council action."
+      },
+      "bounds": [
+        1567680,
+        1777680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say the measure makes government less transparent, raises the risk of corruption, and lets the Mayor block almost any Council action.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote means the Mayor would become the chief executive of the city, with a veto."
+      },
+      "bounds": [
+        1792080,
+        1914960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote means the Mayor would become the chief executive of the city, with a veto.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote means the City Charter stays as it is."
+      },
+      "bounds": [
+        1929360,
+        2005200
+      ]
+    }
+  ],
+  "sha256": "0e8fe05b1d61e9741036bd5d4942108ddef9e432d616ab312d7cd02d25a137e5"
+}
