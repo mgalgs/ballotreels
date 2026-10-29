@@ -1143,6 +1143,18 @@ BALLOTS: dict[str, Ballot] = {
                  fiscal_label=None,
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary"),
+
+    # Wisconsin prints no voter guide. The Wisconsin Elections Commission's
+    # "Type A Notice of Referendum" for the election prints each question
+    # the Legislature submits, "QUESTION 1: “Partial veto. Shall ...?”"
+    # (badge QUESTION, from the title's designation): its title and
+    # question, the words the ballot prints over the choices "Yes" and
+    # "No". It prints no "yes means" lines and no fiscal statement, and
+    # none exists for a joint resolution.
+    "wi": Ballot(guide="Type A Notice of Referendum",
+                 fiscal_label=None,
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")

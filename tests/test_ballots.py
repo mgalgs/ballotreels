@@ -448,6 +448,16 @@ class LouisianaStatementsStitchTest(unittest.TestCase):
         # "PROPOSAL 3", as the ballot prints it
         self.assertEqual(badge(vt, "Proposal 3: X", "3"), "PROPOSAL")
 
+    def test_wisconsin_uses_its_notices_words(self):
+        wi = BALLOTS["wi"]
+        self.assertEqual((wi.guide, wi.fiscal_label, wi.choices,
+                          wi.card_source_kind),
+                         ("Type A Notice of Referendum", None, ("Yes", "No"),
+                          "official-title-summary"))
+        # "QUESTION 1", as the notice prints it
+        self.assertEqual(badge(wi, "Question 1: Partial veto", "1"),
+                         "QUESTION")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):
