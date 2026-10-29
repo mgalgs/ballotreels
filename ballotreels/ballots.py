@@ -123,6 +123,12 @@ BALLOTS: dict[str, Ballot] = {
                          "Orange County Voter Information Guide",
                      "ca-2026-11-03-westminster-measure-o":
                          "Orange County Voter Information Guide",
+                     # San Mateo County publishes each measure's documents
+                     # separately, not as one guide: the card is a page of
+                     # the city's resolution that prints the ballot
+                     # question, named as its first page titles it.
+                     "ca-2026-11-03-menlo-park-measure-p":
+                         "Resolution No. 7008",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",

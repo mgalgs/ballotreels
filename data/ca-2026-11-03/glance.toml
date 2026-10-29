@@ -398,3 +398,10 @@ source = "guide-page"
 quote = "providing approximately $452,000 annually in new funds until ended by voters"
 amount = 452000
 period = "per-year"
+
+# City of Menlo Park Measure P: not a tax measure; no fiscal analysis is
+# among the measure's published documents, and the ballot question
+# prints no figure.
+[menlo-park-measure-p]
+source = "ballot-question"
+status = "none-printed"
