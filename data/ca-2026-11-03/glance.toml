@@ -1104,3 +1104,59 @@ quote = "The City estimates that Measure BB, if approved, would generate approxi
 amount = 5000000
 period = "per-year"
 direction = "revenue-gain"
+
+# City of Berkeley Measure U: the city's Tax Rate Statement, its total
+# debt service.
+[berkeley-measure-u]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $610,000,000."
+amount = 610000000
+period = "unstated"
+
+# City of Berkeley Measure V: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is in its ballot question (and the
+# City Attorney's Impartial Analysis).
+[berkeley-measure-v]
+source = "guide-page"
+quote = "estimated to generate $9,000,000 to $10,000,000 annually"
+amount = 10000000
+period = "per-year"
+
+# City of Berkeley Measure W: the guide prints no fiscal analysis (not a
+# tax measure).
+[berkeley-measure-w]
+source = "guide-page"
+status = "none-printed"
+
+# City of Berkeley Measure X: the guide prints no fiscal analysis (not a
+# tax measure).
+[berkeley-measure-x]
+source = "guide-page"
+status = "none-printed"
+
+# City of Berkeley Measure Y: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is in its ballot question (and the
+# City Attorney's Impartial Analysis).
+[berkeley-measure-y]
+source = "guide-page"
+quote = "estimated to generate approximately $6,300,000 annually and $84,800,000 over its twelve-year duration"
+amount = 84800000
+period = "over 12 years"
+
+# City of Berkeley Measure Z: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is in its ballot question (and the
+# City Attorney's Impartial Analysis).
+[berkeley-measure-z]
+source = "guide-page"
+quote = "estimated to generate approximately $9,200,000 the first year and $58,300,000 over its six-year duration"
+amount = 58300000
+period = "over 6 years"
+
+# City of Berkeley Measure AA: the guide prints no fiscal analysis or tax
+# rate statement; the one estimate is in its ballot question (and the
+# City Attorney's Impartial Analysis).
+[berkeley-measure-aa]
+source = "guide-page"
+quote = "estimated to generate approximately $2,200,000 annually"
+amount = 2200000
+period = "per-year"

@@ -305,6 +305,20 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 2026-079",
                      "ca-2026-11-03-pacifica-measure-bb":
                          "Resolution No. 61-2026",
+                     "ca-2026-11-03-berkeley-measure-u":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-berkeley-measure-v":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-berkeley-measure-w":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-berkeley-measure-x":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-berkeley-measure-y":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-berkeley-measure-z":
+                         "Alameda County Composite Voter Information Guide",
+                     "ca-2026-11-03-berkeley-measure-aa":
+                         "Alameda County Composite Voter Information Guide",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

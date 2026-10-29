@@ -1,0 +1,148 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; the tax today; how it reached the ballot and what it
+# needs to pass; what would change (the rate, the special fund); the
+# impartial analysis's revenue estimate; one line per side; what a vote
+# does.
+#
+# The guide prints no fiscal analysis or tax rate statement (not a
+# bond); the one revenue estimate is the city's, in the ballot question
+# and the City Attorney's Impartial Analysis, which also compares it
+# with the current tax ("an increase of approximately $1,000,000"); the
+# fiscal line says that comparison. No archived source states the
+# city's general fund budget, so the estimate has no further scale
+# (STANDARD.md 6.5; left open).
+#
+# The split of the money (42.5 percent each to community programs and
+# the school district, up to 15 percent for administration) is in the
+# supporters' argument, and the small-retailer exemption is argued by
+# both sides, so the neutral sections leave them to the card's question
+# and the sides (STANDARD.md 6.3).
+#
+# The guide prints no yes/no lines for this measure, so, as for Utah, the
+# card has no YES/NO boxes, and the two vote lines highlight the one
+# phrase of the question they turn on.
+
+contest = "ca-2026-11-03-berkeley-measure-aa"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "AA"
+title = "CITY OF BERKELEY MEASURE AA"
+origin = "This measure was placed on the ballot by an initiative petition signed by the requisite number of registered voters in the City of Berkeley."
+summary = "Shall the measure replacing the City’s $0.01 per fluid ounce general tax on the distribution of sugar-sweetened beverages with a $0.02 per fluid ounce special tax to fund public health, nutrition, and drinking water accessibility programs by nonprofits, the City, or Berkeley Unified School District, retaining current exemptions for small retailers, milk products, baby formula, alcoholic beverages, and medical and weight-loss products, estimated to generate approximately $2,200,000 annually, until repealed by the voters, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure AA"
+
+[[section.line]]
+text = "City of Berkeley Measure AA asks voters in the city whether to raise the tax on sugary drinks to 2 cents an ounce."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["$0.02 per fluid ounce special tax"]
+
+[[section]]
+id = "today"
+heading = "How it works today"
+
+[[section.line]]
+text = "Today, distributors of sugar-sweetened drinks in Berkeley pay a general tax of 1 cent per fluid ounce."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "soda-bottles"
+
+[[section.line]]
+text = "Voters signed a petition to put Measure AA on the ballot, and it needs a majority vote to pass."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "A special tax of 2 cents per ounce would replace the general tax, adjusted for inflation from 2028."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+text = "The money would go to a special fund for public health, nutrition and drinking water programs."
+sources = ["guide-page"]
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The City Attorney's impartial analysis estimates $2.2 million a year, about $1 million more than the current tax raises."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "income-taxes"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the tax funds school gardens, nutrition education and health programs, and the higher rate keeps funding in step with rising costs."
+sources = ["arguments"]
+basis = ["Berkeley’s tax on sugary drink distributors has successfully funded school gardens, nutrition education and community health programs", "by increasing the rate to 2 cents per ounce, ensuring that funding for programs keeps pace with rising costs."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Funds school gardens and nutrition education", "Keeps pace with rising costs"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say doubling the tax makes soda drinkers pay more to support city-funded outreach programs with no accountability or proof of health outcomes."
+sources = ["arguments"]
+basis = ["Double the soda tax? Lemonade, dairy-free Boba teas, Coke and Gatorade drinkers will pay more", "to support city-funded outreach programs with no accountability or proof of actual health outcomes."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Outreach programs with no proof of results", "Shoppers may go to untaxed cities"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote replaces the 1-cent general tax with the 2-cent special tax."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["replacing the City’s $0.01 per fluid ounce general tax"]
+
+[[section.line]]
+text = "A no vote keeps the current 1-cent general tax."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["replacing the City’s $0.01 per fluid ounce general tax"]
