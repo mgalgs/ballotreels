@@ -13,6 +13,7 @@ from ballotreels.contest import load_contest
 from ballotreels.index import (CRASH_COURSE, ContestIndexError, key_for,
                                key_string, load_index)
 from ballotreels.narration import match_phrases
+from ballotreels.narration_store import record
 from ballotreels.standard import load_standard
 
 REPO = Path(__file__).resolve().parent.parent
@@ -118,6 +119,8 @@ class KeyTest(ElectionCopyTestCase):
         data = bytearray(path.read_bytes())
         data[-1] ^= 0x01
         path.write_bytes(bytes(data))
+        # a new take is only the member's narration once it is recorded
+        record(path.parent)
         self.assertNotEqual(self.key(), before)
         middle = self.key()
         path = self.dir / "amendment-a" / "narration.json"
@@ -277,7 +280,9 @@ class StaleMemberTest(ElectionCopyTestCase):
         self.assertNotIn("amendment-a", msg)
 
     def test_a_member_with_no_narration_fails_naming_it(self):
+        # a recorded take is a narration even without its WAV beside it
         (self.dir / "amendment-a" / "narration.wav").unlink()
+        (self.dir / "amendment-a" / "narration.json").unlink()
         with self.assertRaisesRegex(cc.CrashCourseError,
                                     r"Amendment A.*no committed narration"):
             cc.plan(self.dir)
