@@ -1,0 +1,139 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; what the mayor can and cannot do today, over departments and
+# their heads; what would change, in the digest's order; the
+# Controller's finding; one line per side; what a vote does.
+#
+# The Controller sizes no cost: its $250,000 for a deputy mayor and the
+# 2022-2023 merger savings are examples of costs and savings it says
+# cannot be determined, so the fiscal line gives its finding alone. The
+# supporters' corruption cases and the opponents' "too much power in one
+# person" stay in the sides (STANDARD.md 6.3). The exemptions (the
+# Controller, the Ethics Commission and others) are left to the card's
+# source; naming a few would pick which.
+
+contest = "ca-2026-11-03-san-francisco-county-measure-f"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "digest"
+number = "F"
+title = "Changes to Executive Branch Management"
+origin = "On July 23, 2026, the Department of Elections certified that the initiative petition calling for Proposition F to be placed on the ballot had a sufficient number of valid signatures to qualify the measure for the ballot."
+summary = "Shall the City amend the Charter to expand the Mayor’s authority to transfer responsibilities between departments, hire deputy mayors, and hire some and fire most department heads; and to allow City officials to remove members of boards and commissions without cause?"
+yes = "If you vote “yes,” you want to expand the Mayor’s authority to transfer responsibilities, hire deputy mayors, hire some and fire most department heads, and allow City officials to remove members of boards or commissions without cause."
+no = "If you vote “no,” you do not want to make these changes."
+
+[[section]]
+id = "what"
+heading = "Proposition F"
+
+[[section.line]]
+text = "San Francisco Proposition F asks voters whether to give the mayor more authority over city departments, their heads, and commissions."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "page"
+source = "digest"
+highlight = ["Shall the City amend the Charter"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today the mayor supervises nearly 50 departments, but cannot move duties between most of them."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section.line]]
+text = "The mayor usually picks department heads from a commission's candidates, and the commission, not the mayor, can usually fire them."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "illustration"
+name = "empty-commission-seat"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Proposition F would let the mayor move duties between most departments, or combine them, unless the Board of Supervisors objects."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "illustration"
+name = "amended-page"
+
+[[section.line]]
+text = "The mayor could hire deputy mayors, hire some and fire most department heads, and officials could remove commissioners they appointed without cause."
+sources = ["digest"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The City Controller says Proposition F would have a minimal impact on the cost of government, at a level that cannot be determined."
+sources = ["controller"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Proposition F tackles corruption, letting the mayor hire and remove most department heads so officials answer to the public."
+sources = ["arguments"]
+basis = ["PROP F TACKLES CITY HALL CORRUPTION.", "Allowing the mayor to hire and remove most of their department heads will ensure city officials are accountable to the public."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Tackles corruption at City Hall", "Makes department heads accountable"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Proposition F removes essential checks and balances, and would concentrate too much power in the hands of one person."
+sources = ["arguments"]
+basis = ["Vote No on F to keep essential checks and balances the Board of Supervisors and Oversight Commissions provide.", "And concentrating so much power in the hands of one person can lead to disastrous effects"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Removes essential checks and balances", "Commissioners removed for any reason"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means you want to expand the authority of the mayor."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "page"
+source = "digest"
+highlight = ["you want to expand the Mayor’s authority"]
+
+[[section.line]]
+text = "A no vote means you do not want these changes."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "page"
+source = "digest"
+highlight = ["you do not want to make these changes"]

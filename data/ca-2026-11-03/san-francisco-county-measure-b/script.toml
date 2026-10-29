@@ -1,0 +1,157 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; what the two kinds of lender are; that no local law allows them
+# today; what would change, as the digest puts it; the Controller's
+# finding that B itself costs nothing directly, and the costs if the city
+# goes ahead, with the General Fund's yearly total beside them; one line
+# per side; what a vote does.
+#
+# The Controller's $310 million to $460 million is over eight years and
+# the archived General Fund total (the Controller's Statement on
+# Proposition C) is for one year, so no share is computed: the total is
+# stated beside the figure, with its period (STANDARD.md 6.5). The range
+# is said "between ... and ..." (standard/speakability.txt). The
+# supporters' "not a tax" and the opponents' "no dedicated funding" stay
+# in the sides (6.3).
+
+contest = "ca-2026-11-03-san-francisco-county-measure-b"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "digest"
+number = "B"
+title = "Establishing a Municipal Finance Corporation and a Public Bank"
+origin = "On July 7, 2026, the Board of Supervisors voted 9 to 2 to place Proposition B on the ballot."
+summary = "Shall the City amend the Charter to authorize the City to establish a municipal finance corporation and a public bank?"
+yes = "If you vote “yes,” you want to authorize the City to establish a municipal finance corporation and a public bank."
+no = "If you vote “no,” you do not want to authorize the City to establish a municipal finance corporation and a public bank."
+
+[[section]]
+id = "what"
+heading = "Proposition B"
+
+[[section.line]]
+text = "San Francisco Proposition B asks voters whether to let the city set up a municipal finance corporation and a public bank."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "page"
+source = "digest"
+highlight = ["establish a municipal finance corporation and a public bank"]
+
+[[section]]
+id = "background"
+heading = "What they are"
+
+[[section.line]]
+text = "A municipal finance corporation is a government-owned nonprofit that makes loans but takes no deposits."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "illustration"
+name = "loan-papers"
+
+[[section.line]]
+text = "A public bank also makes loans, and takes deposits."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bank-vault"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "No local law lets San Francisco create either one."
+sources = ["digest"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Proposition B would let the city start the corporation if it has enough funding; after three years, it could become a public bank."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hourglass-plans"
+
+[[section.line]]
+text = "Both would lend for affordable housing, homeownership and small businesses."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The City Controller says Proposition B itself would not directly affect city costs."
+sources = ["controller"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section.line]]
+text = "If the city goes ahead, the Controller cites costs between $310 million and $460 million over eight years; the General Fund is about $7 billion a year."
+sources = ["controller", "general-fund"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Proposition B puts the people of San Francisco over private profits, with a bank run by professionals, not politicians."
+sources = ["arguments"]
+basis = ["A Public Bank puts the people of San Francisco over private profits to finance the things we need.", "Prop B ensures that the Public Bank will be run by banking professionals, not politicians"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Affordable loans for housing and small businesses", "Run by banking professionals, not politicians"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Proposition B would create a city-controlled bank without any dedicated funding, and would leave taxpayers holding the bag later."
+sources = ["arguments"]
+basis = ["Proposition B asks San Francisco voters to create a City Hall-controlled public bank and municipal finance corporation — without any dedicated funding", "It simply builds the structure and leaves taxpayers holding the bag later."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Creates a bank with no dedicated funding", "Leaves taxpayers holding the bag later"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means you want to authorize both."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "page"
+source = "digest"
+highlight = ["you want to authorize the City"]
+
+[[section.line]]
+text = "A no vote means you do not want to authorize them."
+sources = ["digest"]
+
+[section.line.visual]
+kind = "page"
+source = "digest"
+highlight = ["you do not want to authorize the City"]

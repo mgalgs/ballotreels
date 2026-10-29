@@ -233,6 +233,15 @@ BALLOTS: dict[str, Ballot] = {
                          "Alameda County Composite Voter Information Guide",
                      "ca-2026-11-03-alameda-measure-n":
                          "Alameda County Composite Voter Information Guide",
+                     # San Francisco's Department of Elections prints
+                     # each proposition's ballot question, digest and
+                     # Controller's Statement, and Regional Measure RTM's
+                     # ballot question and impartial analysis, in its
+                     # Voter Information Pamphlet & Sample Ballot.
+                     **{f"ca-2026-11-03-san-francisco-county-measure-{x}":
+                        "San Francisco Voter Information Pamphlet & "
+                        "Sample Ballot"
+                        for x in ("rtm", "a", "b", "c", "d", "e", "f")},
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",

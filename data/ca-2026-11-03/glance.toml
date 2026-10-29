@@ -807,3 +807,59 @@ status = "none-printed"
 [alameda-measure-n]
 source = "guide-page"
 status = "none-printed"
+
+# Regional Measure RTM (San Francisco's copy): the pamphlet prints no
+# Controller's Statement; the one estimate is the District's impartial
+# analysis's yearly revenue across all five counties.
+[san-francisco-county-measure-rtm]
+source = "analysis"
+quote = "It is estimated that the tax would raise approximately $980 million per year."
+amount = 980000000
+period = "per-year"
+direction = "revenue-gain"
+
+# San Francisco Proposition A: the Controller's Statement's estimate.
+[san-francisco-county-measure-a]
+source = "controller"
+quote = "Should the proposed Charter amendment be approved by the voters, in my opinion, it would have a moderate impact on the cost of government, saving $365,000 to $450,000 annually."
+amount = 450000
+period = "per-year"
+direction = "savings"
+
+# San Francisco Proposition B: the Controller finds no direct cost (B
+# does not require the city to create either body); this is the cost if
+# the city does, over eight years.
+[san-francisco-county-measure-b]
+source = "controller"
+quote = "However, if the City moves forward with establishing a MFC and subsequently a Public Bank, as authorized by the proposed Charter amendment, the costs would be significant, ranging from approximately $310 million to $460 million over an eight-year period"
+amount = 460000000
+period = "over 8 years"
+direction = "cost"
+
+# San Francisco Proposition C: the Controller's Statement's estimate.
+[san-francisco-county-measure-c]
+source = "controller"
+quote = "Should the proposed Charter amendment be approved by the voters, in my opinion, it would have a significant impact on the cost of government of approximately $6 million in additional General Fund costs starting in Fiscal Year 2028-29, growing over time to approximately $60 million annually by Fiscal Year 2034-35."
+amount = 60000000
+period = "per-year"
+direction = "cost"
+
+# San Francisco Proposition D: the Controller's finding, which sizes no
+# cost (its dollar figures are examples of savings it cannot determine).
+[san-francisco-county-measure-d]
+source = "controller"
+status = "no-material-impact"
+quote = "Should the proposed Charter amendment be approved by the voters, in my opinion, it would have a minimal impact on the cost of government."
+
+# San Francisco Proposition E: the Controller's finding.
+[san-francisco-county-measure-e]
+source = "controller"
+status = "not-determined"
+quote = "Should the proposed Charter amendment be approved by the voters, in my opinion, it would have a minimal impact on the cost of government, although at a level that cannot be determined at this time."
+
+# San Francisco Proposition F: the Controller's finding (its dollar
+# figures are examples of costs and savings it cannot determine).
+[san-francisco-county-measure-f]
+source = "controller"
+status = "not-determined"
+quote = "Should the proposed Charter amendment be approved by the voters, in my opinion, it would have a minimal impact on the cost of government, although at a level that cannot be determined at this time."
