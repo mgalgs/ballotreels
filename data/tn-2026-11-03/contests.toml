@@ -1,0 +1,35 @@
+# Contest index for the 2026-11-03 Tennessee general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). The
+# Secretary of State's page heads each "Constitutional Amendment #1";
+# the "#" is dropped so the badge finds its designation word. Titles
+# pair the designation with the short title the 114th General
+# Assembly's resolution gives the amendment, in its own words ("relative
+# to bail", "to prohibit taxation of property by the State", "relative
+# to the rights of crime victims"); the page prints none.
+
+[election]
+id = "tn-2026-11-03"
+state = "ocd-division/country:us/state:tn"
+title = "Tennessee General Election, November 3, 2026"
+
+[[contest]]
+id = "tn-2026-11-03-amendment-1"
+kind = "measure"
+division = "ocd-division/country:us/state:tn"
+title = "Constitutional Amendment 1: Bail"
+number = "1"
+
+[[contest]]
+id = "tn-2026-11-03-amendment-2"
+kind = "measure"
+division = "ocd-division/country:us/state:tn"
+title = "Constitutional Amendment 2: Prohibit taxation of property by the State"
+number = "2"
+
+[[contest]]
+id = "tn-2026-11-03-amendment-3"
+kind = "measure"
+division = "ocd-division/country:us/state:tn"
+title = "Constitutional Amendment 3: Rights of crime victims"
+number = "3"

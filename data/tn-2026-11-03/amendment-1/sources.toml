@@ -1,0 +1,50 @@
+# Archived sources for Tennessee Constitutional Amendment 1, 2026-11-03
+# general election. Every id here may be cited by script.toml. `kind`
+# must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# Tennessee has no voter pamphlet and no official argument process. The
+# Secretary of State's page "2026 Proposed Constitutional Amendments"
+# prints each amendment's resolutions, the Attorney General's Summary,
+# the Question (the full amendatory text) and what a "yes" and a "no"
+# vote mean. sos.tn.gov returns 403 to scripted fetches, so the archived
+# copy is a verbatim snapshot of the page as rendered in Chrome,
+# 2026-10-27, 2026 section only, with each resolution's link target set
+# in brackets after its name.
+#
+# The fiscal statement is the Fiscal Review Committee's fiscal note on
+# the 114th General Assembly's resolution, the one that sent the
+# amendment to the ballot.
+
+[contest]
+id = "tn-2026-11-03-amendment-1"
+election = "tn-2026-11-03"
+division = "ocd-division/country:us/state:tn"
+kind = "measure"
+title = "Constitutional Amendment 1: Bail"
+
+[[source]]
+id = "sos-page"
+kind = "official-title-summary"
+publisher = "Tennessee Secretary of State, 2026 Proposed Constitutional Amendments, Constitutional Amendment #1"
+credit = "Tennessee Secretary of State, 2026 Proposed Constitutional Amendments"
+url = "https://sos.tn.gov/elections/announcements/2026-proposed-constitutional-amendments"
+file = "sources/sos-2026-proposed-amendments-page.txt"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Tennessee General Assembly, Senate Joint Resolution 25 (114th General Assembly), as adopted"
+credit = "Tennessee General Assembly, Senate Joint Resolution 25"
+url = "https://publications.tnsosfiles.com/acts/114/resolutions/sjr0025.pdf"
+file = "sources/114-sjr0025.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "fiscal-note"
+kind = "official-fiscal-analysis"
+publisher = "Tennessee General Assembly, Fiscal Review Committee, Fiscal Note, SJR 25 (114th General Assembly), January 18, 2025"
+credit = "Fiscal Review Committee, Fiscal Note, SJR 25"
+url = "https://www.capitol.tn.gov/Bills/114/Fiscal/SJR0025.pdf"
+file = "sources/amendment-1-fiscal-note-sjr25-114th.pdf"
+retrieved = "2026-10-27"
