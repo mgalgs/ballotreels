@@ -1,0 +1,69 @@
+# Archived sources for Lone Pine Fire Protection District Measure Z,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Inyo County Elections prints the whole measure in its Voter Information
+# Guide & Sample Ballot, cut here from ballot type 9 to PDF pages 15, 20
+# and 21: the sample ballot page with the ballot label (15), the full
+# text, headed "FULL TEXT OF BOND MEASURE Z" as printed although it is a
+# parcel tax (20), and the impartial analysis (headed "BY INYO CITY
+# COUNSEL" as printed, signed by the Deputy County Counsel), the argument
+# in favor and "NO ARGUMENT AGAINST MEASURE Z WAS SUBMITTED" (21). The
+# impartial analysis is the measure's neutral explanation; a parcel tax
+# has no tax rate statement, and the full text gives the revenue
+# estimate. No rebuttals are printed.
+#
+# The District's filing (its Exhibit A), archived beside it, is not
+# cited: its question says the earlier tax "expired June 30, 2025",
+# where the guide's ballot question and impartial analysis both say
+# "December 31, 2025". The script follows the guide, which prints the
+# question voters see.
+#
+# A fire protection district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md).
+
+[contest]
+id = "ca-2026-11-03-lone-pine-fpd-measure-z"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:inyo"
+kind = "measure"
+title = "Lone Pine Fire Protection District Measure Z: Special Emergency Response Services Tax Reinstatement"
+voters = "the Lone Pine Fire Protection District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Measure Z ballot label, sample ballot, Inyo County Elections, Inyo County Voter Information Guide & Sample Ballot, Type 9, November 3, 2026 General Election, page 15 of the PDF"
+credit = "Inyo County Voter Information Guide & Sample Ballot"
+url = "https://drive.google.com/file/d/1R51gjGbEfFe6IOKS_zZUPiBOWvrSuAgo/view?usp=drive_link"
+file = "sources/vig-type9-measure-z-pdfpp15,20-21.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure Z, signed by the Inyo Deputy County Counsel, dated August 11, 2026, Inyo County Elections, Inyo County Voter Information Guide & Sample Ballot, Type 9, November 3, 2026 General Election, page 21 of the PDF"
+credit = "Impartial Analysis, Inyo County Voter Information Guide & Sample Ballot"
+url = "https://drive.google.com/file/d/1R51gjGbEfFe6IOKS_zZUPiBOWvrSuAgo/view?usp=drive_link"
+file = "sources/vig-type9-measure-z-pdfpp15,20-21.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure Z, and \"No Argument Against Measure Z Was Submitted\", Inyo County Elections, Inyo County Voter Information Guide & Sample Ballot, Type 9, November 3, 2026 General Election, page 21 of the PDF"
+credit = "Arguments, Inyo County Voter Information Guide & Sample Ballot"
+url = "https://drive.google.com/file/d/1R51gjGbEfFe6IOKS_zZUPiBOWvrSuAgo/view?usp=drive_link"
+file = "sources/vig-type9-measure-z-pdfpp15,20-21.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure Z (headed \"Full Text of Bond Measure Z\"), Lone Pine Fire Protection District Special Emergency Response Services Tax, Inyo County Elections, Inyo County Voter Information Guide & Sample Ballot, Type 9, November 3, 2026 General Election, page 20 of the PDF"
+credit = "Full Text of Measure Z, Inyo County Voter Information Guide & Sample Ballot"
+url = "https://drive.google.com/file/d/1R51gjGbEfFe6IOKS_zZUPiBOWvrSuAgo/view?usp=drive_link"
+file = "sources/vig-type9-measure-z-pdfpp15,20-21.pdf"
+retrieved = "2026-10-28"

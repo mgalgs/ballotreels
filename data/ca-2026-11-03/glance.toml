@@ -2639,3 +2639,12 @@ source = "ballot-question"
 quote = "raising approximately $64,500 in year one"
 amount = 64500
 period = "per-year"
+
+# Lone Pine Fire Protection District Measure Z: a flat parcel tax, so no
+# tax rate statement; the full text gives the district's yearly revenue
+# estimate, as the ballot question does.
+[lone-pine-fpd-measure-z]
+source = "ballot-question"
+quote = "generating approximately $80,000 annually for a period of ten years"
+amount = 80000
+period = "per-year"
