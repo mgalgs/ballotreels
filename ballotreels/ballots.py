@@ -392,7 +392,8 @@ BALLOTS: dict[str, Ballot] = {
                      **{f"ca-2026-11-03-{slug}":
                         "County of San Joaquin Voter Information Guide & "
                         "Sample Ballot"
-                        for slug in ("lodi-unified-measure-t",)},
+                        for slug in ("lodi-unified-measure-t",
+                                     "lincoln-unified-measure-v")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
