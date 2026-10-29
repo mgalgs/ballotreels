@@ -131,6 +131,40 @@ class NarrationCommandsTest(ServerTestCaseWithConfig):
         self.assertEqual(code, 2)
         self.assertIn("no server URL", out)
 
+    def test_fetch_without_a_server_works_from_the_cache(self):
+        self.run_cli("record", "--all")
+        self.run_cli("push", str(self.dirs[0]))
+        for d in self.dirs:
+            (d / "narration.wav").unlink()
+        cases = [
+            ("token only", {"BALLOTREELS_SERVER": ""}),
+            ("neither", {"BALLOTREELS_SERVER": "", "BALLOTREELS_TOKEN": ""}),
+        ]
+        for name, env in cases:
+            with self.subTest(name), mock.patch.dict(os.environ, env):
+                code, out = self.run_cli("fetch", str(self.dirs[0]))
+                self.assertEqual(code, 0, out)
+                self.assertIn("1 from the cache", out)
+                (self.dirs[0] / "narration.wav").unlink()
+                # a take not in the cache fails that contest alone
+                code, out = self.run_cli("fetch", "--all")
+                self.assertEqual(code, 1, out)
+                self.assertIn(f"{self.dirs[1]}: narration take "
+                              f"{recorded_take(self.dirs[1]).sha256} is not "
+                              f"in the local cache", out)
+                self.assertIn("no server was given", out)
+                self.assertIn("fetched 1 from the cache", out)
+                (self.dirs[0] / "narration.wav").unlink()
+
+    def test_fetch_or_push_with_a_server_and_no_token_is_refused(self):
+        self.run_cli("record", "--all")
+        for action in ("fetch", "push"):
+            with self.subTest(action), \
+                    mock.patch.dict(os.environ, {"BALLOTREELS_TOKEN": ""}):
+                code, out = self.run_cli(action, "--all")
+                self.assertEqual(code, 2, out)
+                self.assertIn("BALLOTREELS_TOKEN is not set", out)
+
     def test_fetch_of_a_take_nowhere_fails_naming_it(self):
         self.run_cli("record", str(self.dirs[0]))
         sha = recorded_take(self.dirs[0]).sha256

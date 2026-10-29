@@ -144,13 +144,14 @@ def _take_dirs(args, out) -> list[Path] | None:
 
 def _take_client(args, err, required: bool):
     """A worker.WorkerClient for --server and $BALLOTREELS_TOKEN, as the
-    `worker` command takes them; None when neither is given and the
-    command can do without one. Raises SystemExit(2) when half given or
-    required and missing."""
+    `worker` command takes them; None when no server is given and the
+    command can do without one (a token alone, as a worker's environment
+    has it, is no server to ask). Raises SystemExit(2) when required and
+    missing, or given a server and no token."""
     from .worker import WorkerClient
     server = args.server or os.environ.get("BALLOTREELS_SERVER")
     token = (os.environ.get("BALLOTREELS_TOKEN") or "").strip() or None
-    if not server and not token and not required:
+    if not server and not required:
         return None
     if not server:
         print("no server URL: pass --server or set BALLOTREELS_SERVER",
