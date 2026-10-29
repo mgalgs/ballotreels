@@ -1028,3 +1028,12 @@ source = "impartial-analysis"
 quote = "and is estimated to raise approximately $4,400,000 annually."
 amount = 4400000
 period = "per-year"
+
+# Pacifica School District Measure T: a parcel tax, so no tax rate
+# statement; the estimate is the Impartial Analysis's (and the ballot
+# question's).
+[pacifica-school-measure-t]
+source = "impartial-analysis"
+quote = "and is estimated to raise $1,300,000 each year."
+amount = 1300000
+period = "per-year"
