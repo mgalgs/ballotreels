@@ -9,6 +9,7 @@ import time
 import unittest
 from dataclasses import replace
 from pathlib import Path
+from unittest import mock
 
 import ballotreels.site.config as site_config
 from ballotreels.cli import main
@@ -305,6 +306,36 @@ class StopReleasesJobTest(WorkerTestCase):
 
         row = self.deps.queue.get_job(job["id"])
         self.assertEqual(row["state"], "queued")
+        self.assertFalse((worker.work_dir / str(job["id"])).exists())
+
+        worker2 = self.make_worker(worker_id="w2")
+        self.assertTrue(worker2.run_once())
+        self.assertEqual(self.deps.queue.get_job(job["id"])["state"], "done")
+
+
+class StopBetweenClaimAndWorkTest(WorkerTestCase):
+    def test_stop_after_claim_before_current_releases_job(self):
+        # stop() lands once the serve tier has marked the job running but
+        # before the worker has recorded it as current: the job must go
+        # back to the queue, not stay running with nobody on it.
+        key = self.prop2_key()
+        job, _ = self.deps.queue.create_job(key)
+        worker = self.make_worker()
+        real_claim = self.client.claim
+
+        def claim_then_stop(worker_id):
+            claimed = real_claim(worker_id)
+            self.assertEqual(
+                self.deps.queue.get_job(claimed["id"])["state"], "running")
+            worker.stop()
+            return claimed
+
+        with mock.patch.object(self.client, "claim", claim_then_stop):
+            self.assertTrue(worker.run_once())
+
+        self.assertEqual(self.deps.queue.get_job(job["id"])["state"],
+                         "queued")
+        self.assertIsNone(worker._current)
         self.assertFalse((worker.work_dir / str(job["id"])).exists())
 
         worker2 = self.make_worker(worker_id="w2")

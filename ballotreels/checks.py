@@ -24,6 +24,7 @@ from . import grid, narration, spoken, storyboard
 from .ballots import BALLOTS, Ballot, badge, ballot_for, guide_of
 from .contest import CARD_KEYS, Card, Choice, Contest, Line, Section, Visual
 from .geo import divisions
+from .geo.lookup import ballot_division
 from .illustrations import load_library
 from .index import voters_problem
 from .standard import (BACKGROUND, BACKGROUND_ONLY_KINDS, CHOICE_TEMPLATES,
@@ -100,7 +101,19 @@ def check_division(c: Contest) -> list[Failure]:
     Not part of check_contest: the film worker runs that on a scratch
     copy of the contest dir with no election around it, and a division
     matters to the zip lookup, not the film. `python -m ballotreels
-    check` runs it beside check_contest."""
+    check` runs it beside check_contest.
+
+    A school district's 9-12-only piece (`<name>_9-12`) fails too, listed
+    or not: the zip lookup counts a voter there as in the district
+    (ballotreels.geo.lookup.ballot_division), so a contest naming the
+    piece would reach only part of its electorate."""
+    district = ballot_division(c.division)
+    if district != c.division:
+        return [Failure(
+            "division",
+            f"{c.id}: division {c.division!r} is only the district's "
+            f"9-12 territory, and its voters see the district's contests; "
+            f"use the plain district division {district!r}")]
     level, _, name = c.division.rsplit("/", 1)[-1].partition(":")
     if level not in divisions.LEVELS:
         return []

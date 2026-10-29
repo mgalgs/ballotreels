@@ -191,6 +191,32 @@ class CheckDivisionTest(unittest.TestCase):
         self.assertIn(f"[division] ca-2026-11-03-prop-2: division "
                       f"{wrong!r}", out.getvalue())
 
+    def test_cli_check_refuses_the_9_12_territory(self):
+        # The geo build lists the 9-12 piece as a shape of its own, but a
+        # voter there sees the district's contests: name the district.
+        piece = f"{SAN_DIEGO_UNIFIED}_9-12"
+        with (self.election / "divisions.tsv").open(
+                "a", encoding="utf-8") as f:
+            f.write(f"{piece}\tSan Diego City Unified School District\n")
+        contest_dir = self.local_prop_2(self.election, piece)
+        out = io.StringIO()
+        code = main(["check", str(contest_dir)], out=out)
+        self.assertNotEqual(code, 0)
+        self.assertIn(f"[division] ca-2026-11-03-prop-2: division "
+                      f"{piece!r} is only the district's 9-12 territory",
+                      out.getvalue())
+        self.assertIn(f"use the plain district division "
+                      f"{SAN_DIEGO_UNIFIED!r}", out.getvalue())
+
+        # The same contest naming the district passes the rule.
+        sources = contest_dir / "sources.toml"
+        sources.write_text(sources.read_text(encoding="utf-8").replace(
+            piece, SAN_DIEGO_UNIFIED), encoding="utf-8")
+        self.assertEqual(check_division(load_contest(contest_dir)), [])
+        out = io.StringIO()
+        main(["check", str(contest_dir)], out=out)
+        self.assertNotIn("[division]", out.getvalue())
+
     def test_film_check_of_a_scratch_copy_passes(self):
         # The worker checks a copy at <work_dir>/<job_id>/<dir>, with no
         # election (and so no divisions.tsv) around it.
