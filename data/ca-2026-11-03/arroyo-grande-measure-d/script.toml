@@ -1,0 +1,190 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; what the State Water Project is;
+# the two earlier measures that govern the city's part in it today; what
+# would change and the vote it needs; no cost estimate; one line per
+# side; what a vote does.
+#
+# The card quotes the ballot question from the City's election page,
+# which prints it under "CITY OF ARROYO GRANDE" and "MEASURE D-26" with
+# no title line and no yes/no lines; the guide's pages for the measure
+# do not print the question. So the card's title is the city's heading
+# as printed, its origin is the page's own heading, the vote lines give
+# the impartial analysis's meanings, and both highlight the same phrase
+# of the question. No place name is narrated: the opening says "the
+# voters of this city", and the card and title carry the name. The
+# reservoir and the lawsuit the supporters name are theirs, and are not
+# narrated.
+#
+# The analysis says participation "could be authorized by a majority
+# vote of a quorum of the City Council"; the change line says "a city
+# council vote", not "a majority of the council", which would misstate
+# the quorum rule.
+#
+# Not a tax: the guide prints no fiscal statement for the measure, so
+# the fiscal line says the guide does not include a cost estimate, and
+# names it "the county voter guide" (no place name is narrated).
+#
+# The guide prints only the argument in favor: no argument against, no
+# rebuttals, and no notice saying whether any was filed. So the no side
+# says no argument against appears in the guide, not that none was
+# filed; its section is marked filed = false (STANDARD.md 2.5).
+
+contest = "ca-2026-11-03-arroyo-grande-measure-d"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "D"
+title = "CITY OF ARROYO GRANDE MEASURE D-26"
+origin = "General Municipal Election - Nov 3, 2026"
+summary = "Shall the measure to repeal and replace Measure A (1990) and Measure E-16 (2016) to allow the City of Arroyo Grande to participate in the California State Water Project without requiring prior voter approval, providing another potential water supply source, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure D"
+
+[[section.line]]
+text = "Measure D asks the voters of this city whether the city may take part in the California State Water Project without voter approval."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to participate in the California State Water Project without requiring prior voter approval"]
+
+[[section]]
+id = "background"
+heading = "The State Water Project"
+
+[[section.line]]
+id = "project"
+text = "The State Water Project is a system of reservoirs and aqueducts that stores and delivers water across California."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-water-aqueduct"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "rule-1990"
+text = "Under a 1990 measure, the city may not take part in the project without majority voter approval."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "timeline"
+source = "impartial-analysis"
+labels = ["1990", "2016"]
+items = ["Voters must approve taking part", "Exception for declared water emergencies"]
+
+[[section.line]]
+id = "rule-2016"
+text = "A 2016 measure lets the city buy state water without a vote only during a local water emergency the council declares."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "council"
+text = "Measure D would repeal and replace both, so a city council vote could approve taking part and buying state water."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section.line]]
+text = "Measure D needs a simple majority to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The county voter guide does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say local water supplies are not reliable, and this gives the city flexibility to get water from different sources for dry years."
+sources = ["arguments"]
+basis = ["These local sources have worked for us, but they are not reliable.", "This would give the city more flexibility to get water from different sources and better prepare for dry years."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Local water supplies are not reliable", "Flexibility to prepare for dry years"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure D appears in the county voter guide, which prints only the one argument in favor of the measure."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was printed"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote lets the city take part in the State Water Project without voter approval or a declared water emergency."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to participate in the California State Water Project without requiring prior voter approval"]
+
+[[section.line]]
+text = "A no vote keeps the need for voter approval or a declared water emergency."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to participate in the California State Water Project without requiring prior voter approval"]
+
+[[question]]
+ask = "What is the State Water Project?"
+lines = ["project"]
+
+[[question]]
+ask = "What are the rules today?"
+lines = ["rule-1990", "rule-2016"]
+
+[[question]]
+ask = "Who would decide instead of voters?"
+lines = ["council"]
+
+[[question]]
+ask = "Would the city have to build anything or pay anything to take part?"
+unanswered = true

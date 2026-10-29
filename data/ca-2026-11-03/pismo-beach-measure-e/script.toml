@@ -1,0 +1,167 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how the mayor and council are
+# elected today; what would change and from when, what stays, who
+# placed it and the vote it needs; no cost estimate; one line per side;
+# what a vote does.
+#
+# The card quotes the ballot question from the City Council's
+# resolution placing the measure, which prints it as "FOUR-YEAR MAYORAL
+# TERMS MEASURE. Shall the measure ...?" over plain YES and NO boxes and
+# no yes/no lines; the guide does not print the question. So the card's
+# title is the measure's own name as printed, its origin is the
+# resolution's number, the vote lines give the impartial analysis's
+# meanings, and both highlight the same phrase of the question. No place
+# name is narrated: the opening says "the voters of this city", and the
+# card and title carry the name.
+#
+# The 2004 vote that set the two-year term, and its share, are the
+# opponents' (their argument), and the staggering of council seats is
+# the opponents' rebuttal to the supporters' "aligning", so the neutral
+# sections say neither (STANDARD.md 6.3). The council members' four-year
+# terms are the impartial analysis's plain account of today, which a
+# viewer needs to follow either side.
+#
+# Not a tax: the guide prints no fiscal statement for the measure, so
+# the fiscal line says the guide does not include a cost estimate, and
+# names it "the county voter guide" (no place name is narrated).
+
+contest = "ca-2026-11-03-pismo-beach-measure-e"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "E"
+title = "FOUR-YEAR MAYORAL TERMS MEASURE"
+origin = "RESOLUTION NO. R-2026-043"
+summary = "Shall the measure changing the Mayor’s term of office to four years, beginning with the term elected on November 7, 2028, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure E"
+
+[[section.line]]
+text = "Measure E asks the voters of this city whether the mayor should serve four-year terms instead of two-year terms."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["changing the Mayor’s term of office to four years"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-terms"
+text = "Today, voters elect the mayor directly to a two-year term, and elect four council members to four-year terms."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Length of term, in years"
+source = "impartial-analysis"
+unit = ""
+labels = ["Mayor, today", "Mayor, Measure E", "Council members"]
+values = [2, 4, 4]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "start"
+text = "Measure E would make the mayor's term four years, starting with the mayor elected in November 2028."
+sources = ["impartial-analysis", "text"]
+
+[[section.line]]
+id = "stays"
+text = "The mayor elected in 2026 would still serve two years, and council terms and elections would not change."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section.line]]
+text = "The City Council placed Measure E on the ballot, and it needs a simple majority to pass."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The county voter guide does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say matching the four-year terms of council members frees the mayor from constant campaigning to focus on long-term goals."
+sources = ["arguments"]
+basis = ["Aligning the terms for all five elected officials gives the Mayor the opportunity to focus on achieving meaningful results by dedicating more time and energy to long-term objectives.", "Implementing a unified term structure eliminates the distraction of constant campaigning."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Ends constant campaigning", "More time for long-term goals"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say voters chose two-year terms in 2004 by nearly 70 percent, and have not asked the council for a change."
+sources = ["arguments"]
+basis = ["The electorate passed Measure D-04 providing that the term of the Mayor shall be two (2) years by 69.8 percent (%).", "Neither the City’s citizens nor its voters have requested or petitioned the Pismo Beach City Council to change the Mayor’s term of office from two (2) years to four (4) years."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Voters chose two-year terms", "Voters have not asked for change"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves changing the mayor's term from two years to four, starting with the 2028 election."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["changing the Mayor’s term of office to four years"]
+
+[[section.line]]
+text = "A no vote keeps the mayor's two-year term."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["changing the Mayor’s term of office to four years"]
+
+[[question]]
+ask = "When would the change start?"
+lines = ["start", "stays"]
+
+[[question]]
+ask = "Would council members' terms change too?"
+lines = ["stays"]

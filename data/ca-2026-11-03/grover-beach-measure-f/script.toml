@@ -1,0 +1,190 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is, and how it reached the ballot;
+# today's height limits; what would change (the new limits, how height
+# is measured, the commercial share of mixed-use buildings, the
+# vote it needs); no cost estimate; one line per side; what a vote does.
+# Which projects must comply is left out: the analysis says only
+# applications received after the effective date, while the text's
+# Section 4 says all new decisions or changes, "regardless of the
+# original date of approval"; the script states neither.
+#
+# The card quotes the ballot question from the City Council's
+# resolution submitting the initiative, which prints it under "CITY OF
+# GROVER BEACH INITIATIVE MEASURE F-26" with plain YES and NO boxes and
+# no yes/no lines; the guide does not print the question. So the card's
+# title is that heading, its origin is the resolution's number as its
+# certification page prints it, the vote lines take their meanings
+# from the question, and both highlight the same phrase of it. No place
+# name is narrated: the opening says "the voters of this city", and the
+# card and title carry the name.
+#
+# The impartial analysis also says the measure would require the City
+# to re-evaluate its Housing Element and might require it to plan for
+# housing in other locations. The opponents' argument makes that its
+# case (housing law, buildings moved into residential neighborhoods), so
+# it is left to their side and not repeated in a neutral section
+# (STANDARD.md 6.3). The supporters' 2022 building code, vacant acreage
+# and housing-goal figures stay in their argument likewise.
+#
+# Not a tax: the guide prints no fiscal statement for the measure, so
+# the fiscal line says the guide does not include a cost estimate, and
+# names it "the county voter guide" (no place name is narrated).
+
+contest = "ca-2026-11-03-grover-beach-measure-f"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "F"
+title = "CITY OF GROVER BEACH INITIATIVE MEASURE F-26"
+origin = "Resolution No. 26-20"
+summary = "Grover Beach Citizen Initiative Ballot Measure. Shall the City of Grover Beach implement a building height limit and establish a minimum thirty-three percent (33%) commercial component in mixed-use development?"
+
+[[section]]
+id = "what"
+heading = "Measure F"
+
+[[section.line]]
+text = "Measure F asks the voters of this city whether to lower building height limits and require a minimum of commercial space in mixed-use buildings."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["implement a building height limit"]
+
+[[section.line]]
+id = "initiative"
+text = "Measure F is a citizen initiative that reached the ballot by petition."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "neighborhood-petition"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "limits-today"
+text = "Today, city rules allow buildings up to 55 feet tall in some commercial zones, and up to 40 feet in industrial zones."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Building height limit, in feet"
+source = "impartial-analysis"
+unit = ""
+labels = ["Some commercial zones, today", "Commercial, Measure F", "Industrial, today", "Industrial, Measure F"]
+values = [55, 40, 40, 33]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "limits-new"
+text = "Measure F would limit commercial buildings to three stories and 40 feet, and industrial buildings to 33 feet."
+sources = ["impartial-analysis", "text"]
+
+[[section.line]]
+id = "measured"
+text = "Height would be measured to the very top, counting rooftop features like equipment and elevator towers, which today's rules leave out."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "rooftop-equipment"
+
+[[section.line]]
+id = "mixed-use"
+text = "At least 33 percent of a mixed-use building would have to be commercial, with commercial uses on the ground floor facing the main street."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "mixed-use-storefronts"
+
+[[section.line]]
+text = "Measure F needs a simple majority to pass."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The county voter guide does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say restoring earlier height limits preserves a small coastal-town character, and commercial space brings in more city revenue."
+sources = ["arguments"]
+basis = ["The Citizens Measure will restore and preserve Grover Beach's small coastal-town character.", "restoring limits to the 2022 building code.", "Commercial use generates more city revenue through both property taxes and sales taxes."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Preserves a small coastal-town character", "Commercial space brings city revenue"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure F risks state fines and lawsuits under housing law, and could push taller buildings into residential neighborhoods."
+sources = ["arguments"]
+basis = ["Voting YES puts the City at risk of being fined and sued by the State of California to enforce compliance with state housing laws.", "A YES vote means that the City will need to relocate taller buildings outside of present commercial and industrial zones, potentially into the middle of residential neighborhoods."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Risks state fines and lawsuits", "Taller buildings in residential areas"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is in favor of the lower height limits and the minimum commercial share."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["implement a building height limit"]
+
+[[section.line]]
+text = "A no vote is against the lower height limits and the minimum commercial share."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["implement a building height limit"]
+
+[[question]]
+ask = "How tall can buildings be today, and how tall could they be?"
+lines = ["limits-today", "limits-new", "measured"]
+
+[[question]]
+ask = "What does the commercial share mean?"
+lines = ["mixed-use"]

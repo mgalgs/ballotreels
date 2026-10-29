@@ -1,0 +1,78 @@
+# Archived sources for Allan Hancock Joint Community College District
+# Measure H, 2026-11-03 general election, as San Luis Obispo County's
+# voters see it (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The San Luis Obispo County Clerk-Recorder prints each ballot type's
+# County Voter Information Guide as one PDF; pages 25 to 36 of Ballot
+# Type 53 (full text, impartial analysis, tax rate statement, argument in
+# favor, and the notice that no argument against was filed) were cut
+# into one excerpt, which backs every source here. The guide's full text
+# opens with the ballot label and its "Bonds – Yes" and "Bonds - No"
+# boxes. The ballot labels the measure "Measure H-26"; the project names
+# it by its bare letter. County Counsel's impartial analysis is the
+# measure's neutral explanation; the district's Tax Rate Statement is
+# its fiscal statement. No argument against was filed, and no rebuttals
+# are printed. The district's resolution ordering the election
+# (sources/resolution-no-26-21.pdf) is archived but not cited: the guide
+# prints everything the script says.
+#
+# A community college district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md). Santa Barbara County administers the district
+# and stages the same bond as allan-hancock-measure-h; this copy carries
+# the county suffix.
+
+[contest]
+id = "ca-2026-11-03-allan-hancock-measure-h-san-luis-obispo"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:san_luis_obispo"
+kind = "measure"
+title = "Allan Hancock Joint Community College District Measure H: College Facility Bonds"
+voters = "the Allan Hancock Joint Community College District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "County of San Luis Obispo Clerk-Recorder, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 53, page 25: Full Text of Measure H-26, Allan Hancock Joint Community College District, its ballot label"
+credit = "Ballot label, San Luis Obispo County Voter Information Guide"
+url = "https://www.slocounty.ca.gov/departments/clerk-recorder/forms-documents/elections-and-voting/current-elections/2026-11-03/voter-information-guides/ballot-type-53-november-3,-2026,-general-election-voter-information-guide"
+file = "sources/VIG-bt53_pp25-36.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure H-26, Rachel Van Mullem, County Counsel, County of Santa Barbara, County of San Luis Obispo Clerk-Recorder, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 53, pages 34 to 35"
+credit = "County Counsel’s Impartial Analysis, San Luis Obispo County Voter Information Guide"
+url = "https://www.slocounty.ca.gov/departments/clerk-recorder/forms-documents/elections-and-voting/current-elections/2026-11-03/voter-information-guides/ballot-type-53-november-3,-2026,-general-election-voter-information-guide"
+file = "sources/VIG-bt53_pp25-36.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Allan Hancock Joint Community College District, Tax Rate Statement for Measure H-26, County of San Luis Obispo Clerk-Recorder, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 53, page 35"
+credit = "Tax Rate Statement, San Luis Obispo County Voter Information Guide"
+url = "https://www.slocounty.ca.gov/departments/clerk-recorder/forms-documents/elections-and-voting/current-elections/2026-11-03/voter-information-guides/ballot-type-53-november-3,-2026,-general-election-voter-information-guide"
+file = "sources/VIG-bt53_pp25-36.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure H-26, County of San Luis Obispo Clerk-Recorder, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 53, page 36 (“There was no argument against Measure H-26 filed”)"
+credit = "Arguments, San Luis Obispo County Voter Information Guide"
+url = "https://www.slocounty.ca.gov/departments/clerk-recorder/forms-documents/elections-and-voting/current-elections/2026-11-03/voter-information-guides/ballot-type-53-november-3,-2026,-general-election-voter-information-guide"
+file = "sources/VIG-bt53_pp25-36.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure H-26, Allan Hancock Joint Community College District, with its Project List, County of San Luis Obispo Clerk-Recorder, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 53, pages 25 to 33"
+credit = "Measure H-26 full text, San Luis Obispo County Voter Information Guide"
+url = "https://www.slocounty.ca.gov/departments/clerk-recorder/forms-documents/elections-and-voting/current-elections/2026-11-03/voter-information-guides/ballot-type-53-november-3,-2026,-general-election-voter-information-guide"
+file = "sources/VIG-bt53_pp25-36.pdf"
+retrieved = "2026-10-28"

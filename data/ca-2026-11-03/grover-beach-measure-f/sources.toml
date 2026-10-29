@@ -1,0 +1,59 @@
+# Archived sources for City of Grover Beach Initiative Measure F,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The San Luis Obispo County Clerk-Recorder prints each ballot type's
+# County Voter Information Guide as one PDF; pages 32 to 37 of Ballot
+# Type 38 (the measure's full text, the City Attorney's impartial
+# analysis, the arguments for and against, and a rebuttal to each) were
+# cut into one excerpt. The guide does not print the ballot question;
+# the City Council's Resolution No. 26-20, which submits the citizens'
+# initiative to the voters, prints it in Section 1. The resolution is a
+# scan with a text layer. The impartial analysis is the measure's
+# neutral explanation. No tax rate statement or fiscal
+# statement applies. The ballot labels the measure "Initiative Measure
+# F-26"; the project names it by its bare letter.
+
+[contest]
+id = "ca-2026-11-03-grover-beach-measure-f"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:grover_beach"
+kind = "measure"
+title = "Grover Beach Measure F: Building Height Limits and Mixed-Use Commercial Space"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Grover Beach, Resolution No. 26-20, Submitting to the Voters at the Next General Municipal Election on November 3, 2026, an Initiative Measure to Adopt an Ordinance to Limit Building Heights and Establish a Minimum Thirty-Three Percent (33%) Commercial Component in Mixed-Use Development, Section 1, as posted by the County of San Luis Obispo Clerk-Recorder"
+credit = "City of Grover Beach Resolution No. 26-20"
+url = "https://www.slocounty.ca.gov/departments/clerk-recorder/forms-documents/elections-and-voting/current-elections/2026-11-03/measures/resolution-no-26-20"
+file = "sources/resolution-no-26-20.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City of Grover Beach, Impartial Analysis of Measure F-26, Jennifer Thompson, City Attorney, County of San Luis Obispo Clerk-Recorder, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 38, page 33"
+credit = "City Attorney’s Impartial Analysis, San Luis Obispo County Voter Information Guide"
+url = "https://www.slocounty.ca.gov/departments/clerk-recorder/forms-documents/elections-and-voting/current-elections/2026-11-03/voter-information-guides/ballot-type-38-november-3,-2026,-general-election-voter-information-guide"
+file = "sources/VIG-bt38_pp32-37.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure F-26, Argument Against Measure F-26, and the Rebuttals to each, County of San Luis Obispo Clerk-Recorder, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 38, pages 34 to 37"
+credit = "Arguments, San Luis Obispo County Voter Information Guide"
+url = "https://www.slocounty.ca.gov/departments/clerk-recorder/forms-documents/elections-and-voting/current-elections/2026-11-03/voter-information-guides/ballot-type-38-november-3,-2026,-general-election-voter-information-guide"
+file = "sources/VIG-bt38_pp32-37.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure F-26, City of Grover Beach, County of San Luis Obispo Clerk-Recorder, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 38, page 32"
+credit = "Measure F-26 full text, San Luis Obispo County Voter Information Guide"
+url = "https://www.slocounty.ca.gov/departments/clerk-recorder/forms-documents/elections-and-voting/current-elections/2026-11-03/voter-information-guides/ballot-type-38-november-3,-2026,-general-election-voter-information-guide"
+file = "sources/VIG-bt38_pp32-37.pdf"
+retrieved = "2026-10-28"

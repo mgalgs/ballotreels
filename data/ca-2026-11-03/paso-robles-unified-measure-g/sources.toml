@@ -1,0 +1,73 @@
+# Archived sources for Paso Robles Joint Unified School District Measure
+# G, 2026-11-03 general election (sources/sources.md). Every id here may
+# be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The San Luis Obispo County Clerk-Recorder prints each ballot type's
+# County Voter Information Guide as one PDF; pages 33 to 43 of Ballot
+# Type 1 (full text, impartial analysis, tax rate statement, argument in
+# favor, argument against, rebuttal to the argument against, and the
+# notice that no rebuttal to the argument in favor was filed) were cut
+# into one excerpt, which backs every source here. The guide's full text
+# opens with the ballot question. The ballot labels the measure "Measure
+# G-26"; the project names it by its bare letter. County Counsel's
+# impartial analysis is the measure's neutral explanation; the
+# district's Tax Rate Statement is its fiscal statement. The county's
+# separate postings of the resolution, notice, analysis and arguments
+# (sources/) are archived but not cited: the guide prints all of them.
+#
+# The district also lies in Monterey County, which is not staged here;
+# San Luis Obispo County, where the district's city lies, keeps the
+# plain name.
+
+[contest]
+id = "ca-2026-11-03-paso-robles-unified-measure-g"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:paso_robles_joint_unified_school_district"
+kind = "measure"
+title = "Paso Robles Joint Unified School District Measure G: School Facility Bonds"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "County of San Luis Obispo Clerk-Recorder, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 1, pages 33 and 39: Full Text of Measure G-26, Paso Robles Joint Unified School District, its bond measure question, and the Impartial Analysis's statement of what a vote does"
+credit = "Ballot question, San Luis Obispo County Voter Information Guide"
+url = "https://www.slocounty.ca.gov/departments/clerk-recorder/forms-documents/elections-and-voting/current-elections/2026-11-03/voter-information-guides/ballot-type-1-november-3,-2026,-general-election-voter-information-guide"
+file = "sources/VIG-bt01_pp33-43.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure G-26, Jon Ansolabehere, County Counsel, County of San Luis Obispo Clerk-Recorder, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 1, page 39"
+credit = "County Counsel’s Impartial Analysis, San Luis Obispo County Voter Information Guide"
+url = "https://www.slocounty.ca.gov/departments/clerk-recorder/forms-documents/elections-and-voting/current-elections/2026-11-03/voter-information-guides/ballot-type-1-november-3,-2026,-general-election-voter-information-guide"
+file = "sources/VIG-bt01_pp33-43.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Paso Robles Joint Unified School District, Tax Rate Statement for Measure G-26, County of San Luis Obispo Clerk-Recorder, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 1, page 40"
+credit = "Tax Rate Statement, San Luis Obispo County Voter Information Guide"
+url = "https://www.slocounty.ca.gov/departments/clerk-recorder/forms-documents/elections-and-voting/current-elections/2026-11-03/voter-information-guides/ballot-type-1-november-3,-2026,-general-election-voter-information-guide"
+file = "sources/VIG-bt01_pp33-43.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure G-26, Argument Against Measure G-26 and Rebuttal to the Argument Against Measure G-26, County of San Luis Obispo Clerk-Recorder, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 1, pages 41 to 43 (“There was no rebuttal to the argument in favor of Measure G-26 filed”)"
+credit = "Arguments, San Luis Obispo County Voter Information Guide"
+url = "https://www.slocounty.ca.gov/departments/clerk-recorder/forms-documents/elections-and-voting/current-elections/2026-11-03/voter-information-guides/ballot-type-1-november-3,-2026,-general-election-voter-information-guide"
+file = "sources/VIG-bt01_pp33-43.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure G-26, Paso Robles Joint Unified School District, County of San Luis Obispo Clerk-Recorder, County Voter Information Guide, November 3, 2026 General Election, Ballot Type 1, pages 33 to 38"
+credit = "Measure G-26 full text, San Luis Obispo County Voter Information Guide"
+url = "https://www.slocounty.ca.gov/departments/clerk-recorder/forms-documents/elections-and-voting/current-elections/2026-11-03/voter-information-guides/ballot-type-1-november-3,-2026,-general-election-voter-information-guide"
+file = "sources/VIG-bt01_pp33-43.pdf"
+retrieved = "2026-10-28"

@@ -2295,3 +2295,54 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $15,444,000."
 amount = 15444000
 period = "unstated"
+
+# Arroyo Grande Measure C: no tax rate statement or fiscal analysis
+# applies; the one estimate is the City staff's, as the City Attorney's
+# impartial analysis gives it (the ballot question prints the same
+# $500,000).
+[arroyo-grande-measure-c]
+source = "impartial-analysis"
+quote = "City staff has estimated that Measure “C-26” could provide an additional $500,000 in annual local funding if the tax were levied at a 6% rate."
+amount = 500000
+period = "per-year"
+
+# Arroyo Grande Measure D: not a tax; the guide prints no fiscal
+# statement for it.
+[arroyo-grande-measure-d]
+source = "impartial-analysis"
+status = "none-printed"
+
+# Grover Beach Measure F: not a tax; the guide prints no fiscal statement
+# for it.
+[grover-beach-measure-f]
+source = "impartial-analysis"
+status = "none-printed"
+
+# Grover Beach Measure A: not a tax; the guide prints no fiscal statement
+# for it.
+[grover-beach-measure-a]
+source = "impartial-analysis"
+status = "none-printed"
+
+# Pismo Beach Measure E: not a tax; the guide prints no fiscal statement
+# for it.
+[pismo-beach-measure-e]
+source = "impartial-analysis"
+status = "none-printed"
+
+# Paso Robles Joint Unified School District Measure G: the district's Tax
+# Rate Statement, its total debt service (the bonds are $205 million).
+[paso-robles-unified-measure-g]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $377,831,054."
+amount = 377831054
+period = "unstated"
+
+# Allan Hancock Joint Community College District Measure H (San Luis
+# Obispo County): the district's Tax Rate Statement, its total debt
+# service (the bonds are $290 million).
+[allan-hancock-measure-h-san-luis-obispo]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $618,176,000."
+amount = 618176000
+period = "unstated"
