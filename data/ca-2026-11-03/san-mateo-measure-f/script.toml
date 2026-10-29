@@ -1,0 +1,179 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; how council members are elected today (the Charter says
+# citywide, a 2021 ordinance made it by district); what would change (district
+# elections in the Charter, the vacancy deadline, the meeting schedule,
+# outdated provisions); no cost estimate; one line per side; what a vote
+# does.
+#
+# Measure F is not a tax: ACRE posts no fiscal analysis or tax rate
+# statement, and neither the resolution nor the impartial analysis gives
+# a cost estimate, so the fiscal line says none is included.
+#
+# The card quotes the Council's resolution, where the ballot question is
+# printed; its title is the resolution's heading, cut before its election
+# details, and its origin the resolution's adoption line. The resolution
+# prints YES and NO boxes but no yes/no statements, so the card has none;
+# the vote lines take the impartial analysis's "approves" and "rejects"
+# and highlight the same phrase of the ballot question.
+#
+# Of the impartial analysis's changes, the script keeps those the ballot
+# question names (district elections, Council meetings, vacancies,
+# obsolete provisions). The census redistricting is left to the
+# supporters, whose argument cites it (rule 6.3); the smaller changes
+# (absence forfeiture, emergency ordinances, candidate statements,
+# newspaper bids, the Finance Director) are left out for length.
+#
+# ACRE posts an argument in favor and no argument against (and no
+# rebuttals): the no side is filed = false. No archived source says an
+# argument against "was not submitted", so the no line says only that
+# none appears in the published measure documents.
+
+contest = "ca-2026-11-03-san-mateo-measure-f"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-label"
+number = "F"
+title = "SUBMITTING TO THE VOTERS A MEASURE TO AMEND THE CITY CHARTER TO REFLECT THE CHANGE TO DISTRICT ELECTIONS AND UPDATE CERTAIN PROVISIONS"
+origin = "RESOLUTION NO. 85 (2026) adopted by the City Council of the City of San Mateo, California, at a regular meeting held on July 20, 2026"
+summary = "Shall the measure amending the City of San Mateo's Charter to reflect the City's current district-based election system, update the process for scheduling Council meetings and filling Council vacancies, update or remove obsolete provisions, and make other technical and conforming changes, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure F"
+
+[[section.line]]
+text = "City of San Mateo Measure F asks voters in the city whether to update the City Charter for district elections."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["reflect the City's current district-based election system"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the City Charter says voters citywide elect the City Council."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "law-book"
+
+[[section.line]]
+text = "Since 2022, under a 2021 city ordinance, voters in each district have elected their own council member."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "district-map"
+
+[[section.line]]
+text = "The City Council placed Measure F on the ballot, and it needs a simple majority to pass."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The Charter would say council members are elected by district."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "amended-page"
+
+[[section.line]]
+text = "The city would have 60 days to fill a council vacancy, instead of 30 days."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Days to fill a council vacancy"
+source = "impartial-analysis"
+unit = ""
+labels = ["Today", "Measure F"]
+values = [30, 60]
+
+[[section.line]]
+text = "The Council would set its meeting times by resolution, and outdated rules would be removed."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "legislative-chamber"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The published measure documents of San Mateo County do not include a cost estimate for the measure."
+sources = ["impartial-analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say decades-old parts of the Charter are outdated, and the changes raise no taxes."
+sources = ["argument-for"]
+basis = ["Portions were written decades ago and no longer reflect California law or how our City operates today.", "These changes don't raise taxes, create new programs, or fundamentally change how our City is governed."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Brings decades-old rules up to date", "Raises no taxes and adds no programs"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure F appears in the published measure documents of San Mateo County."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-label"
+items = ["No argument against was printed"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves Measure F and its Charter changes."
+sources = ["impartial-analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["Shall the measure amending the City of San Mateo's Charter"]
+
+[[section.line]]
+text = "A no vote rejects Measure F and its Charter changes."
+sources = ["impartial-analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["Shall the measure amending the City of San Mateo's Charter"]
