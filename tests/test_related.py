@@ -149,6 +149,7 @@ class RealDataApiTest(unittest.TestCase):
                           ("Louisiana", "la-2026-11-03-amendment-10"),
                           ("North Carolina",
                            "nc-2026-11-03-property-tax-levy-limit"),
+                          ("Tennessee", "tn-2026-11-03-amendment-2"),
                           ("Wyoming",
                            "wy-2026-11-03-initiative-proposition-1")])
 

@@ -1,0 +1,163 @@
+# Recipe E, distilled: one claim per line. The chain: what it is about;
+# what the Constitution allows today, and what the resolution says of
+# the state property tax's history; what the amendment would change;
+# what the fiscal note says; the two sides; what a vote does, and what
+# it takes to pass.
+#
+# The card quotes the Secretary of State's page: its heading
+# "Constitutional Amendment #2" as the title, its "As proposed by" line
+# as the origin, the Attorney General's Summary, and the page's "yes"
+# and "no" lines, which are the same for every amendment.
+#
+# The history (the state taxed property until 1949; property tax is now
+# imposed at county and city rates) is the resolution's own WHEREAS
+# clauses, so the line attributes it to the resolution. Neither the
+# resolution nor the fiscal note says more about today's taxes, and the
+# script says no more.
+#
+# Fiscal: the 114th General Assembly's fiscal note estimates one cost, a
+# one-time increase in local spending of $9,400 in FY26-27 for printing
+# a longer sample ballot, and no other: no change in state or local
+# revenue. It is spread across counties' printing with no budget it is
+# compared against, so it is stated without a scale (STANDARD.md rule
+# 6.5, a figure with no official total).
+#
+# Tennessee publishes no official arguments for or against an
+# amendment, so both sides are filed = false and each says so once, in
+# the same number of words.
+
+contest = "tn-2026-11-03-amendment-2"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "sos-page"
+number = "2"
+title = "Constitutional Amendment #2"
+origin = "As proposed by HOUSE JOINT RESOLUTION NO. 81 (113th) & SENATE JOINT RESOLUTION 1 (114th)"
+summary = "This amendment adds text to Article II, section 28 of the Tennessee Constitution that prohibits the Legislature from imposing a State property tax on real, personal, or mixed property."
+yes = "A \"yes\" vote is a vote to amend the Constitution and adopt the language in the proposed amendment."
+no = "A \"no\" vote is a vote to keep the current language in the Constitution unchanged."
+
+[[section]]
+id = "what"
+heading = "Amendment 2"
+
+[[section.line]]
+text = "Amendment 2 is about a state tax on property."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["a State property tax"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the Constitution allows property to be taxed by the state, counties and cities."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section.line]]
+text = "The resolution says the Legislature repealed the state property tax in 1949, and property tax is now imposed at county and city rates."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The amendment would bar the Legislature from imposing a state property tax on any kind of property."
+sources = ["sos-page", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["prohibits the Legislature from imposing a State property tax on real, personal, or mixed property"]
+
+[[section.line]]
+text = "All property would still be subject to taxation, but not to a state tax."
+sources = ["resolution"]
+
+[[section]]
+id = "fiscal"
+heading = "What the official documents say"
+
+[[section.line]]
+text = "The Fiscal Review Committee estimates a one-time local cost of $9,400 to print a longer sample ballot."
+sources = ["fiscal-note"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sample-ballot-printing"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Tennessee publishes no official argument for the amendment."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "list"
+source = "sos-page"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Tennessee publishes no official argument against the amendment."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "list"
+source = "sos-page"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "Yes adopts the proposed language."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["adopt the language in the proposed amendment"]
+
+[[section.line]]
+text = "No keeps the current language."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["keep the current language in the Constitution unchanged"]
+
+[[section.line]]
+text = "To pass, yes must outnumber no and exceed half of all votes cast for governor."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"

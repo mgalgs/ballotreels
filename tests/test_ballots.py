@@ -297,8 +297,8 @@ class CardStraysTest(unittest.TestCase):
                          ["ca-2026-11-03-benicia-measure-z",
                           "ca-2026-11-03-grand-terrace-measure-n",
                           "ca-2026-11-03-needles-measure-l"])
-        self.assertFalse(any(b.card_strays
-                             for s, b in BALLOTS.items() if s != "ca"))
+        self.assertFalse(any(b.card_strays for s, b in BALLOTS.items()
+                             if s not in ("ca", "tn")))
 
     def test_dropped_as_whole_words(self):
         from ballotreels.checks import _without_strays
@@ -330,6 +330,32 @@ class SanBernardinoCardStraysTest(unittest.TestCase):
             text = _archived_text(Path(
                 f"data/ca-2026-11-03/{slug}/sources/{pdf}").resolve())
             strays = BALLOTS["ca"].card_strays[f"ca-2026-11-03-{slug}"]
+            self.assertNotIn(quote, text)
+            self.assertIn(quote, _without_strays(text, strays))
+
+
+class TennesseeCardStraysTest(unittest.TestCase):
+    """On the Secretary of State's page, each amendment's "As proposed by"
+    line is a verbatim card quote once the snapshot's bracketed link
+    targets are dropped, and not before; only its own are dropped."""
+
+    def test_origin_needs_its_link_targets_dropped(self):
+        from pathlib import Path
+
+        from ballotreels.checks import _archived_text, _without_strays
+        for n, first, second in (
+                (1, "SENATE JOINT RESOLUTION NO. 919 (113th)",
+                 "SENATE JOINT RESOLUTION 25 (114th)"),
+                (2, "HOUSE JOINT RESOLUTION NO. 81 (113th)",
+                 "SENATE JOINT RESOLUTION 1 (114th)"),
+                (3, "HOUSE JOINT RESOLUTION NO. 94 (113th)",
+                 "SENATE JOINT RESOLUTION 9 (114th)")):
+            text = _archived_text(Path(
+                f"data/tn-2026-11-03/amendment-{n}/sources/"
+                f"sos-2026-proposed-amendments-page.txt").resolve())
+            strays = BALLOTS["tn"].card_strays[
+                f"tn-2026-11-03-amendment-{n}"]
+            quote = f"As proposed by {first} & {second}"
             self.assertNotIn(quote, text)
             self.assertIn(quote, _without_strays(text, strays))
 
@@ -473,6 +499,17 @@ class LouisianaStatementsStitchTest(unittest.TestCase):
                           ("Yes", "No"), "official-title-summary"))
         self.assertEqual(badge(mo, "Amendment 3: X", "3"), "AMENDMENT")
         self.assertEqual(badge(mo, "Proposition A: X", "A"), "PROPOSITION")
+
+    def test_tennessee_uses_its_secretary_of_states_words(self):
+        tn = BALLOTS["tn"]
+        self.assertEqual((tn.guide, tn.fiscal_label, tn.choices,
+                          tn.card_source_kind),
+                         ("2026 Proposed Constitutional Amendments",
+                          "FISCAL IMPACT:", ("Yes", "No"),
+                          "official-title-summary"))
+        # "Constitutional Amendment #1", the "#" dropped from the title
+        self.assertEqual(badge(tn, "Constitutional Amendment 1: X", "1"),
+                         "AMENDMENT")
 
 
 class SideHeadingTest(ContestCopyTestCase):
