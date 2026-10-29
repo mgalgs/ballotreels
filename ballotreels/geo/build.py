@@ -37,11 +37,13 @@ LOCAL_LAYERS = {"place": ("place",),
 # The spacing, in degrees of latitude, of the lines a zip's overlap with
 # a local district is measured along (about 220 m).
 SCAN_STEP = 0.002
-# A local district covering less than this share of a zip is left off
+# A district covering less than this share of a zip's land is left off
 # it: the zip and district outlines are drawn from different years'
 # boundaries, so where they mean the same line they can differ by a
-# sliver. One covering more than 1 - SLIVER of it covers all of it; any
-# other is `partial`.
+# sliver. That holds for the relationship-file kinds too, whose files
+# list every overlap however small (_drop_slivers). A local district
+# covering more than 1 - SLIVER of a zip covers all of it; any other is
+# `partial`.
 SLIVER = 0.01
 
 # U.S. state and D.C. FIPS codes, abbreviation -> 2-digit code.
@@ -205,12 +207,17 @@ def _check_relationship(name: str, url: str, path: Path) -> None:
 
 def parse_relationship(text: str) -> list[dict]:
     """Rows of a Census ZCTA-to-district relationship file, columns found
-    by header name (not position), so a renamed vintage keeps working."""
+    by header name (not position), so a renamed vintage keeps working.
+    Where the file gives the zip's whole land area (AREALAND_ZCTA5_20),
+    a row carries it as `area_land_zip`."""
     lines = [l for l in text.lstrip("\ufeff").splitlines() if l.strip()]
     if not lines:
         return []
     delim, zip_col, district_col, arealand_col = \
         _relationship_columns(lines[0])
+    header = [h.strip() for h in lines[0].split(delim)]
+    zip_area_col = (header.index("AREALAND_ZCTA5_20")
+                    if "AREALAND_ZCTA5_20" in header else None)
     rows = []
     for line in lines[1:]:
         parts = line.split(delim)
@@ -221,24 +228,37 @@ def parse_relationship(text: str) -> list[dict]:
         if not zip_code or not district:
             continue
         area = parts[arealand_col].strip()
-        rows.append({
+        row = {
             "zip": zip_code,
             "district_geoid": district,
             "area_land_part": float(area) if area else 0.0,
-        })
+        }
+        if zip_area_col is not None:
+            zip_area = parts[zip_area_col].strip()
+            row["area_land_zip"] = float(zip_area) if zip_area else 0.0
+        rows.append(row)
     return rows
 
 
-def _filter_min_overlap(rows: list[dict], min_overlap: float) -> list[dict]:
-    totals: dict[str, float] = {}
-    for row in rows:
-        totals[row["zip"]] = totals.get(row["zip"], 0.0) + row["area_land_part"]
-    out = []
-    for row in rows:
-        total = totals.get(row["zip"], 0.0)
-        frac = row["area_land_part"] / total if total else 0.0
-        if frac >= min_overlap:
-            out.append(row)
+def _drop_slivers(parts: dict[str, dict[str, float]],
+                  zip_areas: dict[str, float],
+                  min_overlap: float) -> dict[str, list[str]]:
+    """zip -> its districts of one kind, from zip -> {district: land area
+    of their overlap}, leaving off any covering under
+    max(min_overlap, SLIVER) of the zip's land area, as the local layers
+    do (the relationship files list every overlap however small). The
+    zip's area is the file's own figure where it gives one, else the sum
+    of its parts. A zip whose every district is under the bound keeps
+    the largest, so it is never left with none of a kind it had."""
+    bound = max(min_overlap, SLIVER)
+    out = {}
+    for z, areas in parts.items():
+        total = zip_areas.get(z) or sum(areas.values())
+        kept = [d for d, a in areas.items() if total and a / total >= bound]
+        if not kept:
+            largest = max(areas.values())
+            kept = [d for d, a in areas.items() if a == largest]
+        out[z] = kept
     return out
 
 
@@ -431,19 +451,21 @@ def _build_into(tmp_dir: Path, raw_dir: Path, fips: str, state_abbr: str,
         rel_path = raw_dir / f"{kind}_rel.txt"
         if not rel_path.exists():
             continue  # an optional one (OPTIONAL_DOWNLOADS) not supplied
-        rows = _filter_min_overlap(
-            parse_relationship(rel_path.read_text(encoding="utf-8",
-                                                  errors="replace")),
-            min_overlap)
-        for row in rows:
+        parts: dict[str, dict[str, float]] = {}
+        zip_areas: dict[str, float] = {}
+        for row in parse_relationship(rel_path.read_text(encoding="utf-8",
+                                                         errors="replace")):
             division = geoid_to_ocd.get(row["district_geoid"])
             if division is None:
                 continue
-            z = row["zip"]
+            areas = parts.setdefault(row["zip"], {})
+            areas[division] = areas.get(division, 0.0) + row["area_land_part"]
+            if "area_land_zip" in row:
+                zip_areas[row["zip"]] = row["area_land_zip"]
+        for z, divisions in _drop_slivers(parts, zip_areas,
+                                          min_overlap).items():
             relevant_zips.add(z)
-            bucket = zip_kinds.setdefault(z, {}).setdefault(kind, [])
-            if division not in bucket:
-                bucket.append(division)
+            zip_kinds.setdefault(z, {})[kind] = divisions
 
     zip_scan = _ZipScan()
     zcta_records = iter_shapefile(_shp_base(raw_dir, "zcta"),

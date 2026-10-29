@@ -260,6 +260,13 @@ class RelationshipColumnsTest(unittest.TestCase):
                                  "area_land_part": 500.0}])
 
 
+CD = "ocd-division/country:us/state:ca/cd"
+
+
+def _ids(result, kind):
+    return sorted(d["ocd_id"] for d in result["kinds"][kind])
+
+
 class ZipLookupTest(GeoBuildTestCase):
     def setUp(self):
         super().setUp()
@@ -280,16 +287,18 @@ class ZipLookupTest(GeoBuildTestCase):
         self.assertEqual(r3["ambiguous"], ["cd", "sldu"])
 
     def test_min_overlap(self):
+        # 99904's 0.1% of cd:1 is a sliver, left off by default.
         r4 = self.geo.zip_districts("99904")
-        self.assertIn("cd", r4["ambiguous"])
-        self.assertEqual(len(r4["kinds"]["cd"]), 2)
+        self.assertNotIn("cd", r4["ambiguous"])
+        self.assertEqual(_ids(r4, "cd"), [f"{CD}:2"])
 
+        # --min-overlap raises the bound: 99903's 40% of cd:1 goes.
         filtered_dir = self.root / "data_filtered"
-        _build(filtered_dir, STATE, _fetch_from(self.src_dir), min_overlap=0.01)
+        _build(filtered_dir, STATE, _fetch_from(self.src_dir), min_overlap=0.5)
         geo2 = GeoData.load(filtered_dir / "geo" / STATE)
-        r4b = geo2.zip_districts("99904")
-        self.assertNotIn("cd", r4b["ambiguous"])
-        self.assertEqual(len(r4b["kinds"]["cd"]), 1)
+        r3b = geo2.zip_districts("99903")
+        self.assertNotIn("cd", r3b["ambiguous"])
+        self.assertEqual(_ids(r3b, "cd"), [f"{CD}:2"])
 
     def test_unknown_zip(self):
         self.assertIsNone(self.geo.zip_districts("00000"))
