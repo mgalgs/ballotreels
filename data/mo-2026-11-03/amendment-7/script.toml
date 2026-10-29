@@ -1,0 +1,171 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; that the Constitution has no such fund today; where the
+# fund's money would come from, when it could be spent, and what happens
+# to the taxes it replaces (and the exception); what the State Auditor's
+# fiscal note summary and the page's tax sentence say; the two sides;
+# what a vote does.
+#
+# The card quotes the Secretary of State's "2026 Ballot Measures" page:
+# the Official Ballot Title's question as title, the resolution it was
+# proposed by as origin, the Fair Ballot Language's tax sentence as
+# summary, the fiscal note summary paragraph printed under the title as
+# fiscal (headed "Fiscal Note Summary", as the State Auditor's fiscal
+# note heads it), and the Fair Ballot Language's "yes" and "no" vote
+# sentences.
+#
+# The tax sentence ("could lead to the elimination of state-imposed
+# taxes if ...") is the state's own wording, quoted with its condition,
+# never as a promise. The fiscal note summary gives no dollar figure, so
+# there is nothing to scale. The resolution names an index by its
+# trademark; the narration does not, and leaves out the investment rule
+# and the 3 percent yearly cap to stay within length.
+#
+# Missouri publishes no official arguments for or against a measure:
+# both sides are filed = false and each says so once, in the same number
+# of words. No person is named.
+#
+# Highlights in the YES and NO boxes balance at one each, one phrase per
+# vote line.
+
+contest = "mo-2026-11-03-amendment-7"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "sos-page"
+number = "7"
+title = "Shall the Missouri Constitution be amended to establish a permanent public endowment fund to support state government instead of taxing Missouri residents, prohibit the General Assembly from appropriating or diverting the fund, and eliminate state-imposed taxes once the fund generates sufficient revenue to replace them?"
+origin = "Proposed by 103rd General Assembly (Second Regular Session) SS SCS SJR 95"
+summary = "If passed, this measure will have no immediate impact on taxes but could lead to the elimination of state-imposed taxes if the net investment earnings of the fund become sufficient to support that outcome."
+fiscal = "State and local governmental entities estimate no costs or savings."
+yes = "A \"yes\" vote will amend the Missouri Constitution to establish the \"Show-Me Prosperity Fund,\" a permanent public endowment fund to support state government with the goal of eliminating state-imposed taxes without impairing the real value of the fund's principal; prohibit the General Assembly from appropriating or diverting monies from the fund until notification is given by the State Treasurer that the net investment earnings of the fund are sufficient to eliminate state-imposed taxes; cap the total amount of moneys that may be appropriated from the fund in a fiscal year to three percent of the average market value of the fund over the preceding five fiscal years; and prohibit the General Assembly from enacting the eliminated state-imposed taxes, provided, however, that in the event the fund is unable to meet its obligations due to insolvency, revenue shortfall, or program failure, the General Assembly shall retain full authority to appropriate funds from any lawful source and to enact legislation establishing or increasing taxes or other revenues as necessary."
+no = "A \"no\" vote will not amend the Missouri Constitution to establish a permanent public endowment fund to support state government with the goal of eliminating state-imposed taxes."
+
+[[section]]
+id = "what"
+heading = "Amendment 7"
+
+[[section.line]]
+text = "Amendment 7 is about the Show-Me Prosperity Fund, a permanent public endowment to support state government."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["Shall the Missouri Constitution be amended to establish a permanent public endowment fund"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the Missouri Constitution has no such fund."
+sources = ["sos-page", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The General Assembly could put money into the fund, which could also accept gifts."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "save-more"
+
+[[section.line]]
+text = "No money could be spent from the fund until its earnings are enough to eliminate state-imposed taxes."
+sources = ["sos-page", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "public-funds-locked"
+
+[[section.line]]
+text = "Once eliminated, those taxes could not be enacted again, unless the fund is unable to meet its obligations."
+sources = ["sos-page", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["eliminate state-imposed taxes once the fund generates sufficient revenue to replace them"]
+
+[[section]]
+id = "fiscal"
+heading = "What the State Auditor says"
+
+[[section.line]]
+text = "The State Auditor's fiscal note summary says state and local governmental entities estimate no costs or savings."
+sources = ["fiscal-note", "sos-page"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["State and local governmental entities estimate no costs or savings."]
+
+[[section.line]]
+text = "The ballot language says there is no immediate impact on taxes, but the fund could lead to the elimination of state-imposed taxes if its earnings become sufficient."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["no immediate impact on taxes", "could lead to the elimination of state-imposed taxes"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Missouri publishes no official argument for the amendment."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "list"
+source = "sos-page"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Missouri publishes no official argument against the amendment."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "list"
+source = "sos-page"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote will establish the Show-Me Prosperity Fund."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["Show-Me Prosperity Fund"]
+
+[[section.line]]
+text = "A no vote will not establish the fund."
+sources = ["sos-page"]
+
+[section.line.visual]
+kind = "page"
+source = "sos-page"
+highlight = ["will not amend the Missouri Constitution"]
