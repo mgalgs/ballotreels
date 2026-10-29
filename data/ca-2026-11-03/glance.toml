@@ -1496,3 +1496,9 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $61,000,000."
 amount = 61000000
 period = "unstated"
+
+# City of Folsom Measure I: a charter amendment, not a tax; the county's
+# Current Measure Information page prints no fiscal statement.
+[folsom-measure-i]
+source = "ballot-label"
+status = "none-printed"
