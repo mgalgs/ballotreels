@@ -471,7 +471,11 @@ BALLOTS: dict[str, Ballot] = {
                             "walnut-drive-road-zone-measure-j",
                             "tegra-road-zone-measure-k",
                             "rancho-ponderosa-estates-road-zone-measure-l",
-                            "fernwood-cothrin-ranch-road-zone-measure-m")},
+                            "fernwood-cothrin-ranch-road-zone-measure-m",
+                            "garden-valley-ranch-measure-h",
+                            "rolling-hills-measure-n",
+                            "showcase-ranches-measure-q",
+                            "golden-west-measure-r")},
                      # Solano County's printed guide was not archived; the
                      # Registrar posts each measure's filed documents, and
                      # each card quotes its ballot question from the
