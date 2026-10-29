@@ -44,6 +44,10 @@ class HandWrittenScriptWriter:
 
 
 class Runner(Protocol):
+    # Optional: `use_tree(path)`, the commit snapshot (ballotreels.snapshot)
+    # the next stages' tools run from; and `check(stage, path)`, which runs
+    # a ballotreels.checkstage stage from that snapshot's own code (the
+    # stage runs in-process, with the worker's code, without one).
     def narrate(self, contest_dir: Path) -> None: ...
     def render(self, contest_dir: Path, out_dir: Path) -> Path: ...
     def encode(self, master: Path, web: Path, poster: Path) -> None: ...
@@ -140,7 +144,10 @@ def run_narrate(contest_dir: Path, runner: Runner, standard: Standard) -> None:
     # STANDARD.md rule 7 ("A video that fails any rule is not published"):
     # re-check now that the sidecars exist, since airtime can only be
     # measured once they do.
-    _check_or_raise(contest_dir, standard)
+    if hasattr(runner, "check"):
+        runner.check("check", contest_dir)
+    else:
+        _check_or_raise(contest_dir, standard)
 
 
 # ---- a crash course (ballotreels.crash_course): an election directory,
@@ -269,6 +276,9 @@ class SubprocessRunner:
                 bufsize: str = "3000k", site_url: str | None = None,
                 popen: Callable[..., Any] = subprocess.Popen):
         self.repo = Path(repo)
+        # The tree narrate.sh and the render run from: the worker points
+        # it at the job's commit snapshot (use_tree).
+        self.tree = self.repo
         self.ffmpeg = ffmpeg
         self.crf = crf
         self.maxrate = maxrate
@@ -280,8 +290,11 @@ class SubprocessRunner:
         self._lock = threading.Lock()
         self._current = None
 
+    def use_tree(self, tree: str | Path) -> None:
+        self.tree = Path(tree)
+
     def narrate(self, contest_dir: Path) -> None:
-        self._run([str(self.repo / "scripts" / "narrate.sh"),
+        self._run([str(self.tree / "scripts" / "narrate.sh"),
                    str(contest_dir)])
 
     def render(self, contest_dir: Path, out_dir: Path) -> Path:
@@ -291,6 +304,10 @@ class SubprocessRunner:
             argv += ["--site-url", self.site_url]
         self._run(argv)
         return out_dir / f"{_video_id(contest_dir)}-9x16.mp4"
+
+    def check(self, stage: str, path: Path) -> None:
+        self._run([sys.executable, "-m", "ballotreels.checkstage", stage,
+                   str(path)])
 
     def encode(self, master: Path, web: Path, poster: Path) -> None:
         self._run([
@@ -306,8 +323,14 @@ class SubprocessRunner:
         ])
 
     def _run(self, argv: list[str]) -> None:
+        # `python -m` imports the package from its cwd, but not under
+        # PYTHONSAFEPATH, where an installed checkout would be found
+        # instead: put the tree first on the path either way.
+        path = os.environ.get("PYTHONPATH")
+        env = {**os.environ, "PYTHONPATH": str(self.tree) +
+               (os.pathsep + path if path else "")}
         with self._lock:
-            proc = self._popen(argv, cwd=str(self.repo),
+            proc = self._popen(argv, cwd=str(self.tree), env=env,
                                stdout=subprocess.PIPE,
                                stderr=subprocess.STDOUT,
                                start_new_session=True)

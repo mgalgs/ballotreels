@@ -111,6 +111,7 @@ from ballotreels.illustrations import load_library  # noqa: E402
 from ballotreels.index import voters_line  # noqa: E402
 from ballotreels.narration import padded_phrases, padded_spans  # noqa: E402
 from ballotreels.narration import shift_track, side_pad  # noqa: E402
+from ballotreels.printed import number, with_unit  # noqa: E402,F401
 from ballotreels.storyboard import frame as to_frame  # noqa: E402
 from ballotreels.site import pages  # noqa: E402
 from ballotreels.site.config import DEFAULT_SITE_URL, state_abbr  # noqa: E402
@@ -191,22 +192,6 @@ def draw_budget(f0, f1):
 
 def write_frames(px):
     return max(4, px / WRITE_PX * FPS)
-
-
-def number(v):
-    """A value as printed: no trailing .0, at most two decimals."""
-    v = float(v)
-    if v.is_integer():
-        return f'{int(v):,}'
-    return f'{v:,.2f}'.rstrip('0').rstrip('.')
-
-
-def with_unit(v, unit):
-    """A value label, always with its unit (rule 7.2): '20%', '5 billion'."""
-    unit = unit or ''
-    if unit and unit[0].isalpha():
-        return f'{number(v)} {unit}'
-    return f'{number(v)}{unit}'
 
 
 def short_name():
