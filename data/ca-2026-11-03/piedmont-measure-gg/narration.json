@@ -1,0 +1,265 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 86.72,
+  "phrases": [
+    {
+      "text": "City of Piedmont Measure GG asks Piedmont voters whether to raise the tax paid when property is sold, from 1.3 percent to 1.75 percent.",
+      "start": 0.03,
+      "end": 10.79
+    },
+    {
+      "text": "Today, when property is sold or transferred, Piedmont charges a tax of $13 for each $1,000 of the price.",
+      "start": 11.45,
+      "end": 19.25
+    },
+    {
+      "text": "The money pays for the usual and current expenses of the city.",
+      "start": 19.91,
+      "end": 23.81
+    },
+    {
+      "text": "Measure GG would raise the tax to $17.50 for each $1,000, and rename it the real estate transfer tax.",
+      "start": 24.47,
+      "end": 32.66
+    },
+    {
+      "text": "Transfers from a public agency to a nonprofit using certain tax-exempt bonds would no longer be exempt.",
+      "start": 33.32,
+      "end": 40.57
+    },
+    {
+      "text": "Measure GG needs a majority of the votes cast to pass.",
+      "start": 41.23,
+      "end": 45.15
+    },
+    {
+      "text": "The impartial analysis estimates the increase would raise about $1,521,000 a year, which may be used for any general city purpose.",
+      "start": 45.81,
+      "end": 56.19
+    },
+    {
+      "text": "The Alameda County Composite Voter Information Guide says that no argument against Measure GG was submitted for this election.",
+      "start": 56.85,
+      "end": 64.75
+    },
+    {
+      "text": "Supporters say the tax, last updated over 30 years ago, funds city services and would be closer to neighboring cities.",
+      "start": 65.41,
+      "end": 73.7
+    },
+    {
+      "text": "A yes vote is in favor of Measure GG and its 1.75 percent transfer tax.",
+      "start": 74.36,
+      "end": 80.29
+    },
+    {
+      "text": "A no vote is against Measure GG and its 1.75 percent transfer tax.",
+      "start": 80.95,
+      "end": 86.69
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "City of Piedmont Measure GG asks Piedmont voters whether to raise the tax paid when property is sold, from 1.3 percent to 1.75 percent.",
+      "Today, when property is sold or transferred, Piedmont charges a tax of $13 for each $1,000 of the price.",
+      "The money pays for the usual and current expenses of the city.",
+      "Measure GG would raise the tax to $17.50 for each $1,000, and rename it the real estate transfer tax.",
+      "Transfers from a public agency to a nonprofit using certain tax-exempt bonds would no longer be exempt.",
+      "Measure GG needs a majority of the votes cast to pass.",
+      "The impartial analysis estimates the increase would raise about $1,521,000 a year, which may be used for any general city purpose.",
+      "The Alameda County Composite Voter Information Guide says that no argument against Measure GG was submitted for this election.",
+      "Supporters say the tax, last updated over 30 years ago, funds city services and would be closer to neighboring cities.",
+      "A yes vote is in favor of Measure GG and its 1.75 percent transfer tax.",
+      "A no vote is against Measure GG and its 1.75 percent transfer tax."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "City of Piedmont Measure GG asks Piedmont voters whether to raise the tax paid when property is sold, from 1.3 percent to 1.75 percent."
+      },
+      "bounds": [
+        0,
+        259680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"City of Piedmont Measure GG asks Piedmont voters whether to raise the tax paid when property is sold, from 1.3 percent to 1.75 percent.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, when property is sold or transferred, Piedmont charges a tax of $13 for each $1,000 of the price."
+      },
+      "bounds": [
+        274080,
+        462720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, when property is sold or transferred, Piedmont charges a tax of $13 for each $1,000 of the price.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money pays for the usual and current expenses of the city."
+      },
+      "bounds": [
+        477120,
+        572160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money pays for the usual and current expenses of the city.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure GG would raise the tax to $17.50 for each $1,000, and rename it the real estate transfer tax."
+      },
+      "bounds": [
+        586560,
+        784560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure GG would raise the tax to $17.50 for each $1,000, and rename it the real estate transfer tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Transfers from a public agency to a nonprofit using certain tax-exempt bonds would no longer be exempt."
+      },
+      "bounds": [
+        798960,
+        974400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Transfers from a public agency to a nonprofit using certain tax-exempt bonds would no longer be exempt.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure GG needs a majority of the votes cast to pass."
+      },
+      "bounds": [
+        988800,
+        1084320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure GG needs a majority of the votes cast to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The impartial analysis estimates the increase would raise about $1,521,000 a year, which may be used for any general city purpose."
+      },
+      "bounds": [
+        1098720,
+        1349280
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The impartial analysis estimates the increase would raise about $1,521,000 a year, which may be used for any general city purpose.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The Alameda County Composite Voter Information Guide says that no argument against Measure GG was submitted for this election."
+      },
+      "bounds": [
+        1363680,
+        1554720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Alameda County Composite Voter Information Guide says that no argument against Measure GG was submitted for this election.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say the tax, last updated over 30 years ago, funds city services and would be closer to neighboring cities."
+      },
+      "bounds": [
+        1569120,
+        1769520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the tax, last updated over 30 years ago, funds city services and would be closer to neighboring cities.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote is in favor of Measure GG and its 1.75 percent transfer tax."
+      },
+      "bounds": [
+        1783920,
+        1927680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote is in favor of Measure GG and its 1.75 percent transfer tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote is against Measure GG and its 1.75 percent transfer tax."
+      },
+      "bounds": [
+        1942080,
+        2081280
+      ]
+    }
+  ],
+  "sha256": "63c8e69568d3f99828814f7a406f7766f7b5b73b119cae6458d7010f30688ee9"
+}
