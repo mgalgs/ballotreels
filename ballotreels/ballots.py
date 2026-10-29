@@ -497,6 +497,14 @@ BALLOTS: dict[str, Ballot] = {
                             ("harmony-union-measure-m", "M"),
                             ("coast-life-support-measure-d-sonoma", "D"),
                             ("schell-vista-measure-n", "N"))},
+                     # Nevada County Elections prints each local
+                     # measure's ballot question, what your vote means,
+                     # impartial analysis, arguments and full text in its
+                     # Voter Information Guide.
+                     **{f"ca-2026-11-03-{slug}":
+                        "Nevada County Voter Information Guide"
+                        for slug in ("nevada-city-measure-q",
+                                     "pleasant-ridge-elementary-measure-m")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
