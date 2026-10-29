@@ -1,0 +1,67 @@
+# Archived sources for Calaveras Unified School District Measure A,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Calaveras County Clerk-Recorder / Registrar of Voters prints the
+# whole measure in its Voter Information Pamphlet, cut here to pages 16
+# to 28 of the PDF: the section cover (16), the impartial analysis with
+# the ballot question at its head and the yes and no meanings (17), the
+# district's tax rate statement (18), the argument in favor and
+# "ARGUMENT AGAINST MEASURE A (None Filed)" (19), and the full text
+# (20 to 28). The impartial analysis is the measure's neutral
+# explanation; the tax rate statement is its fiscal statement. No
+# rebuttals are printed. The district's Resolution No. 2025-26-31,
+# posted by the county, is archived beside it and not cited.
+
+[contest]
+id = "ca-2026-11-03-calaveras-unified-measure-a"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:calaveras_unified_school_district"
+kind = "measure"
+title = "Calaveras Unified School District Measure A: School Facilities Bonds"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Calaveras Unified School District Measure A, Ballot Question, as printed at the head of the Impartial Analysis, Calaveras County Clerk-Recorder / Registrar of Voters, Calaveras County Voter Information Pamphlet, General Election, November 3, 2026, page 17 of the PDF"
+credit = "Calaveras County Voter Information Pamphlet"
+url = "https://elections.calaverasgov.us/Portals/Elections/Documents/Guides/Master%20VIP.pdf"
+file = "sources/vip-measure-a-pdfpp16-28.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis by County Counsel, Measure A, Calaveras County Clerk-Recorder / Registrar of Voters, Calaveras County Voter Information Pamphlet, General Election, November 3, 2026, page 17 of the PDF"
+credit = "Impartial Analysis, Calaveras County Voter Information Pamphlet"
+url = "https://elections.calaverasgov.us/Portals/Elections/Documents/Guides/Master%20VIP.pdf"
+file = "sources/vip-measure-a-pdfpp16-28.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Tax Rate Statement, Measure A, signed by Dr. Ronald Estes, Interim Superintendent, Calaveras Unified School District, Calaveras County Clerk-Recorder / Registrar of Voters, Calaveras County Voter Information Pamphlet, General Election, November 3, 2026, page 18 of the PDF"
+credit = "Tax Rate Statement, Calaveras Unified School District"
+url = "https://elections.calaverasgov.us/Portals/Elections/Documents/Guides/Master%20VIP.pdf"
+file = "sources/vip-measure-a-pdfpp16-28.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure A, and Argument Against Measure A (None Filed), Calaveras County Clerk-Recorder / Registrar of Voters, Calaveras County Voter Information Pamphlet, General Election, November 3, 2026, page 19 of the PDF"
+credit = "Arguments, Calaveras County Voter Information Pamphlet"
+url = "https://elections.calaverasgov.us/Portals/Elections/Documents/Guides/Master%20VIP.pdf"
+file = "sources/vip-measure-a-pdfpp16-28.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text Ballot Proposition of the Calaveras Unified School District Bond Election for November 3, 2026, Measure A, with its project list, Calaveras County Clerk-Recorder / Registrar of Voters, Calaveras County Voter Information Pamphlet, General Election, November 3, 2026, pages 20 to 28 of the PDF"
+credit = "Full Text of Measure A, Calaveras County Voter Information Pamphlet"
+url = "https://elections.calaverasgov.us/Portals/Elections/Documents/Guides/Master%20VIP.pdf"
+file = "sources/vip-measure-a-pdfpp16-28.pdf"
+retrieved = "2026-10-28"

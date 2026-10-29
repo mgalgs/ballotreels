@@ -770,6 +770,39 @@ BALLOTS: dict[str, Ballot] = {
                         for slug in (
                             "shasta-tehama-trinity-jccd-measure-c-trinity",
                             "post-mountain-pud-measure-d")},
+                     # The Calaveras County Clerk-Recorder / Registrar of
+                     # Voters prints each local measure's impartial
+                     # analysis (with the ballot question at its head),
+                     # tax rate statement, arguments and full text in its
+                     # Voter Information Pamphlet
+                     "ca-2026-11-03-calaveras-unified-measure-a":
+                         "Calaveras County Voter Information Pamphlet",
+                     # Mono County Elections prints each local measure's
+                     # ballot label (on its sample ballot pages), full
+                     # text, impartial analysis, any tax rate statement
+                     # and arguments in its Voter Information Guide and
+                     # Sample Ballot, one PDF per ballot type
+                     **{f"ca-2026-11-03-{slug}":
+                        "Mono County Voter Information Guide and Sample "
+                        "Ballot"
+                        for slug in (
+                            "eastern-sierra-unified-sfid-1-measure-o",
+                            "mammoth-unified-measure-p")},
+                     # Inyo County Elections does the same in its Voter
+                     # Information Guide & Sample Ballot
+                     **{f"ca-2026-11-03-{slug}":
+                        "Inyo County Voter Information Guide & Sample "
+                        "Ballot"
+                        for slug in ("mesa-csd-measure-y",
+                                     "lone-pine-fpd-measure-z")},
+                     # Yuba County Elections posts each measure's ballot
+                     # question, full text, impartial analysis, tax rate
+                     # statement and arguments as one PDF naming no
+                     # guide, so the card names it as headed, as
+                     # Imperial's are
+                     "ca-2026-11-03-plumas-lake-elementary-measure-h":
+                         "Measure H — Plumas Lake Elementary School "
+                         "District",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

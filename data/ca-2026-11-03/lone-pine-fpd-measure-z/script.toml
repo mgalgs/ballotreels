@@ -1,0 +1,191 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; the earlier tax and when it ended, and the
+# vote Measure Z needs; what would change (the amount and years, what the
+# money may pay for, who does not pay); the full text's revenue estimate;
+# one line per side; what a vote does.
+#
+# No place or district name is narrated (the narrator mispronounces
+# them): the opening says "the voters of this fire protection district".
+# The card, title and `voters` line carry the names. "Counsel" is heard
+# as "Council" (standard/speakability.txt), so the narration does not
+# say it.
+#
+# The earlier tax's dates are the guide's: the ballot question and the
+# impartial analysis both say it was adopted in 2014 and "expired
+# December 31, 2025" (the District's filing says June 30, 2025; see
+# sources.toml).
+#
+# The card quotes the ballot question as the guide's sample ballot
+# prints it. pdftotext reads the label's heading in two pieces around
+# the question, so the card's title is the heading the guide prints over
+# the full text and the argument; its YES and NO boxes are the impartial
+# analysis's yes and no meanings, which the vote lines say, each
+# highlighting its own box.
+#
+# The full text's $80,000 a year is district revenue, and no archived
+# source states the district's budget, so it has no scale (STANDARD.md
+# 6.5; left open). The tax per parcel is exempt. That the funds stay
+# under local control is in the ballot question and the supporters'
+# argument, so the neutral sections leave it to the card (STANDARD.md
+# 6.3).
+#
+# The guide prints "NO ARGUMENT AGAINST MEASURE Z WAS SUBMITTED". The no
+# side says so plainly; its section is marked filed = false.
+
+contest = "ca-2026-11-03-lone-pine-fpd-measure-z"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "Z"
+title = "LONE PINE FIRE PROTECTION DISTRICT SPECIAL EMERGENCY RESPONSE SERVICES TAX"
+origin = "LONE PINE FIRE PROTECTION DISTRICT"
+summary = "Shall the measure reinstating the Lone Pine Fire Protection District's previously approved $100 parcel tax, originally adopted in 2014 and expired December 31, 2025, be adopted to continue funding Lone Pine Fire Protection District Special Emergency Response Services, generating approximately $80,000 annually for a period of ten years, with all funds remaining under local control?"
+yes = "A “YES” vote is a vote to approve imposing and levying a Special Emergency Response Services Tax upon real property within the District."
+no = "A “NO” vote is a vote against imposing and levying a Special Emergency Response Services Tax upon real property within the District."
+
+[[section]]
+id = "what"
+heading = "Measure Z"
+
+[[section.line]]
+text = "Measure Z asks the voters of this fire protection district whether to bring back a $100 yearly parcel tax for emergency response services."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["previously approved $100 parcel tax"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "earlier-tax"
+text = "The district adopted a $100 parcel tax in 2014, and that tax expired on December 31, 2025."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+id = "threshold"
+text = "Measure Z needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "amount"
+text = "Measure Z would charge $100 a year on each taxable parcel in the district, from July 1, 2027, through June 30, 2037."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+id = "uses"
+text = "The money could pay only for emergency services, such as ambulance service, emergency equipment, and pay and training for responders."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "desert-town-ambulance"
+
+[[section.line]]
+id = "exempt"
+text = "Property owned by federal or state government agencies would not pay the tax."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What the full text says"
+
+[[section.line]]
+id = "revenue"
+text = "The measure's full text estimates the tax would raise about $80,000 a year, depending on the number of taxable parcels."
+sources = ["text", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["generating approximately $80,000 annually"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say local emergency medical services face growing demands, aging equipment and rising costs, and Measure Z gives them dedicated local funding."
+sources = ["arguments"]
+basis = ["face growing operational demands, aging equipment, and rising costs.", "Measure Z provides a dedicated, locally controlled funding source to strengthen our EMS system from the ground up."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Growing demands, aging equipment", "Dedicated local funding"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure Z was submitted, so the county voter guide prints only the argument in favor of the measure."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is a vote to approve the tax on property in the district."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["a vote to approve imposing and levying"]
+
+[[section.line]]
+text = "A no vote is a vote against the tax on property in the district."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["a vote against imposing and levying"]
+
+[[question]]
+ask = "Is this a new tax?"
+lines = ["earlier-tax", "amount"]
+
+[[question]]
+ask = "What would the money pay for?"
+lines = ["uses"]
+
+[[question]]
+ask = "Who would pay the tax?"
+lines = ["amount", "exempt"]
+
+[[question]]
+ask = "How large is $80,000 a year next to the district's budget?"
+unanswered = true

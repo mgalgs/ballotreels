@@ -1,0 +1,64 @@
+# Archived sources for Mesa Community Services District Measure Y,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Inyo County Elections prints the whole measure in its Voter Information
+# Guide & Sample Ballot, cut here from ballot type 2 to PDF pages 15, 21
+# and 22: the sample ballot page with the ballot label (15), the full
+# text, the District's ordinance, headed "FULL TEXT OF BOND MEASURE Y"
+# as printed (21), and the impartial analysis with "NO ARGUMENT IN FAVOR
+# OF MEASURE Y WAS SUBMITTED" and "NO ARGUMENT AGAINST MEASURE Y WAS
+# SUBMITTED" (22). The impartial analysis is the measure's neutral
+# explanation; a parcel tax has no tax rate statement, and the one
+# revenue estimate is the ballot question's. The District's filing
+# (Resolution No. 2026-1 and its Exhibit A) is archived beside it and
+# not cited: the guide prints the same question and ordinance.
+#
+# A community services district has no Census boundary, so the
+# measure's division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md).
+
+[contest]
+id = "ca-2026-11-03-mesa-csd-measure-y"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:inyo"
+kind = "measure"
+title = "Mesa Community Services District Measure Y: Special Parcel Tax for Fire Protection Services"
+voters = "the Mesa Community Services District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Measure Y ballot label, sample ballot, Inyo County Elections, Inyo County Voter Information Guide & Sample Ballot, Type 2, November 3, 2026 General Election, page 15 of the PDF"
+credit = "Inyo County Voter Information Guide & Sample Ballot"
+url = "https://drive.google.com/file/d/1vNNmoHQIEOJsce3_Jl5LT8SoSdCDfhsY/view?usp=drive_link"
+file = "sources/vig-type2-measure-y-pdfpp15,21-22.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure Y by Inyo County Counsel, dated August 11, 2026, Inyo County Elections, Inyo County Voter Information Guide & Sample Ballot, Type 2, November 3, 2026 General Election, page 22 of the PDF"
+credit = "Impartial Analysis, Inyo County Voter Information Guide & Sample Ballot"
+url = "https://drive.google.com/file/d/1vNNmoHQIEOJsce3_Jl5LT8SoSdCDfhsY/view?usp=drive_link"
+file = "sources/vig-type2-measure-y-pdfpp15,21-22.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "\"No Argument in Favor of Measure Y Was Submitted\" and \"No Argument Against Measure Y Was Submitted\", Inyo County Elections, Inyo County Voter Information Guide & Sample Ballot, Type 2, November 3, 2026 General Election, page 22 of the PDF"
+credit = "Arguments, Inyo County Voter Information Guide & Sample Ballot"
+url = "https://drive.google.com/file/d/1vNNmoHQIEOJsce3_Jl5LT8SoSdCDfhsY/view?usp=drive_link"
+file = "sources/vig-type2-measure-y-pdfpp15,21-22.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure Y (headed \"Full Text of Bond Measure Y\"), the Mesa Community Services District's ordinance establishing a special parcel tax for fire protection services, Inyo County Elections, Inyo County Voter Information Guide & Sample Ballot, Type 2, November 3, 2026 General Election, page 21 of the PDF"
+credit = "Full Text of Measure Y, Inyo County Voter Information Guide & Sample Ballot"
+url = "https://drive.google.com/file/d/1vNNmoHQIEOJsce3_Jl5LT8SoSdCDfhsY/view?usp=drive_link"
+file = "sources/vig-type2-measure-y-pdfpp15,21-22.pdf"
+retrieved = "2026-10-28"

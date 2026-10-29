@@ -2602,3 +2602,57 @@ source = "impartial-analysis"
 quote = "The District estimates that the special tax would raise approximately one hundred thousand ($100,000.00) dollars annually."
 amount = 100000
 period = "per-year"
+
+# Calaveras Unified School District Measure A: the district's Tax Rate
+# Statement, its total debt service (the bonds are $66,800,000).
+[calaveras-unified-measure-a]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the Bonds are issued and sold is approximately $161,600,000."
+amount = 161600000
+period = "unstated"
+
+# Eastern Sierra Unified School District Measure O, its School
+# Facilities Improvement District No. 1 bond: the total debt service
+# (the bonds are $6,000,000), quoted from the impartial analysis's
+# "Financial Effect", which restates the Tax Rate Statement; pdftotext
+# runs the statement's own sentence into the analysis's column.
+[eastern-sierra-unified-sfid-1-measure-o]
+source = "impartial-analysis"
+quote = "The best estimate of total debt service, including principal and interest, if all bonds are issued and sold, is approximately $11,300,000."
+amount = 11300000
+period = "unstated"
+
+# Mammoth Unified School District Measure P: a flat parcel tax, so no
+# tax rate statement; the impartial analysis gives the district's yearly
+# revenue estimate.
+[mammoth-unified-measure-p]
+source = "impartial-analysis"
+quote = "The District estimates the tax would generate approximately $1.1 million annually."
+amount = 1100000
+period = "per-year"
+
+# Mesa Community Services District Measure Y: a parcel tax, so no tax
+# rate statement, and the impartial analysis gives no revenue figure; the
+# one estimate is the ballot question's first-year revenue.
+[mesa-csd-measure-y]
+source = "ballot-question"
+quote = "raising approximately $64,500 in year one"
+amount = 64500
+period = "per-year"
+
+# Lone Pine Fire Protection District Measure Z: a flat parcel tax, so no
+# tax rate statement; the ballot question gives the district's yearly
+# revenue estimate, as the full text does.
+[lone-pine-fpd-measure-z]
+source = "ballot-question"
+quote = "generating approximately $80,000 annually for a period of ten years"
+amount = 80000
+period = "per-year"
+
+# Plumas Lake Elementary School District Measure H: the district's Tax
+# Rate Statement, its total debt service (the bonds are $9,000,000).
+[plumas-lake-elementary-measure-h]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $17.5 million."
+amount = 17500000
+period = "unstated"
