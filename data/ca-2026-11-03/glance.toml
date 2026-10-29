@@ -1044,3 +1044,12 @@ source = "ballot-question"
 quote = "providing approximately $2,000,000 in locally controlled funding annually"
 amount = 2000000
 period = "per-year"
+
+# County of Sonoma Measure H: the County Auditor's Fiscal Impact
+# Statement estimates the first full year's revenue (the ballot question
+# and the Impartial Analysis say "approximately $15.5 million annually").
+[sonoma-county-measure-h]
+source = "fiscal-statement"
+quote = "the measure is estimated to generate approximately $17.1 million in the first full fiscal year (2029-30)."
+amount = 17100000
+period = "per-year"
