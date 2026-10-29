@@ -486,6 +486,17 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 2026-158",
                      "ca-2026-11-03-vacaville-measure-v":
                          "Resolution No. 2026-106",
+                     # More Sonoma County measures, each headed as its
+                     # pages are, as Sonoma's Measure H is.
+                     **{f"ca-2026-11-03-{slug}": f"Local Ballot Measure: {x}"
+                        for slug, x in (
+                            ("windsor-unified-measure-j", "J"),
+                            ("old-adobe-union-measure-o", "O"),
+                            ("west-sonoma-county-union-high-measure-g", "G"),
+                            ("waugh-measure-e", "E"),
+                            ("harmony-union-measure-m", "M"),
+                            ("coast-life-support-measure-d-sonoma", "D"),
+                            ("schell-vista-measure-n", "N"))},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

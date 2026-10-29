@@ -1754,3 +1754,60 @@ status = "none-printed"
 [vacaville-measure-v]
 source = "ballot-question"
 status = "none-printed"
+
+# Windsor Unified School District Measure J: the district's Tax Rate
+# Statement, its total debt service (the bonds are $96,000,000).
+[windsor-unified-measure-j]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $216,342,122."
+amount = 216342122
+period = "unstated"
+
+# Old Adobe Union School District Measure O: the district's Tax Rate
+# Statement, its total debt service (the bonds are $48,000,000).
+[old-adobe-union-measure-o]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $97,000,000."
+amount = 97000000
+period = "unstated"
+
+# West Sonoma County Union High School District Measure G: the pages
+# print no tax rate statement for the parcel tax; the one estimate is
+# County Counsel's Impartial Analysis's.
+[west-sonoma-county-union-high-measure-g]
+source = "impartial-analysis"
+quote = "If approved, Measure G would raise approximately $1,950,000 annually."
+amount = 1950000
+period = "per-year"
+
+# Waugh School District Measure E: the district's Tax Rate Statement,
+# its total debt service (the bonds are $16,000,000).
+[waugh-measure-e]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all of the bonds are issued and sold is approximately $32,000,000."
+amount = 32000000
+period = "unstated"
+
+# Harmony Union School District Measure M: the pages print no tax rate
+# statement for the parcel tax; the one estimate is County Counsel's
+# Impartial Analysis's.
+[harmony-union-measure-m]
+source = "impartial-analysis"
+quote = "Measure M would impose a special tax of $75 per year per parcel, raising approximately $177,600 annually to fund educational programs."
+amount = 177600
+period = "per-year"
+
+# Coast Life Support District Measure D (Sonoma's copy): the pages print
+# no tax rate statement for the parcel tax; the one estimate is the
+# measure question's.
+[coast-life-support-measure-d-sonoma]
+source = "measure-question"
+quote = "providing an estimated $1,972,934 annually, until the tax is amended or repealed"
+amount = 1972934
+period = "per-year"
+
+# Schell-Vista Fire Protection District Measure N: a spending limit; the
+# pages print no fiscal statement.
+[schell-vista-measure-n]
+source = "measure-question"
+status = "none-printed"

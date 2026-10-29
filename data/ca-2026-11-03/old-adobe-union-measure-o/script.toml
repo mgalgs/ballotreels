@@ -1,0 +1,164 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; how a school bond is repaid and what it
+# needs to pass; what the money may pay for; the district's tax rate
+# statement; one line per side; what a vote does.
+#
+# The bond total and the debt service are repaid from a tax on property
+# in the district, and no archived source states the district's budget,
+# so they have no budget scale (STANDARD.md 6.5; left open). The fiscal
+# line gives the statement's average rate beside its highest, as it
+# prints both. The impartial analysis says the tax would be in addition
+# to current property taxes, so the neutral line says so. The bar on
+# spending bond money on salaries, the audits and the oversight
+# committee are in the supporters' argument ("strong taxpayer
+# protections"), so the neutral sections leave them out (STANDARD.md
+# 6.3). "Counsel" is heard as "Council" (standard/speakability.txt), so
+# the narration says "the impartial analysis".
+#
+# No argument against Measure O was submitted. The no side says so
+# plainly; its section is marked filed = false.
+
+contest = "ca-2026-11-03-old-adobe-union-measure-o"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "measure-question"
+number = "O"
+title = "Old Adobe Union School District"
+origin = "The Old Adobe Union School District Board of Education has placed on the ballot the question of whether to issue $48,000,000 in bonds for such purposes."
+summary = "To improve the quality of education; repair/replace leaky roofs; make health, safety and security improvements; replace outdated HVAC systems; make accessibility (ADA) improvements, modernize classrooms, restrooms and school facilities, including multi-purpose rooms; shall Old Adobe Union School District’s measure be adopted authorizing $48,000,000 of bonds at legal rates, generating on average $2,800,000 annually while bonds are outstanding at approximate rates of $25 per $100,000 assessed value, with annual audits, oversight, no money for salaries, all money staying local?"
+yes = "A “yes” vote on Measure O will authorize the District to issue the bonds and levy taxes to pay for the indebtedness."
+no = "A “no” vote on Measure O will not authorize either the issuance of bonds or the associated levy of taxes."
+
+[[section]]
+id = "what"
+heading = "Measure O"
+
+[[section.line]]
+text = "Measure O asks the voters of this school district whether to approve $48 million in school bonds."
+sources = ["measure-question"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-question"
+highlight = ["authorizing $48,000,000 of bonds"]
+
+[[section]]
+id = "today"
+heading = "How a school bond works"
+
+[[section.line]]
+text = "The district would sell the bonds over time and repay them from property taxes in the district, in addition to current property taxes."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure O needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "projects"
+text = "The money could repair leaky roofs, replace outdated heating and cooling systems, make safety and accessibility improvements, and modernize classrooms."
+sources = ["measure-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+id = "tax-rate"
+text = "The district's tax rate statement estimates an average tax of $24.15 per $100,000 of assessed value, and at most $25, until 2059-2060."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "bars"
+title = "Estimated tax per $100,000 of assessed value"
+source = "tax-statement"
+unit = ""
+labels = ["Average", "Highest"]
+values = [24.15, 25]
+
+[[section.line]]
+text = "The statement estimates the total to repay, with interest, at about $97 million."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say many older classrooms and buildings no longer meet modern standards, and Measure O has strong taxpayer protections."
+sources = ["arguments"]
+basis = ["older classrooms and buildings need updating because many no longer meet modern educational and technology standards.", "Measure O is fiscally responsible and includes strong taxpayer protections."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Older classrooms below modern standards", "Strong taxpayer protections"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure O was submitted for the county Registrar of Voters' printed voter guide pages on this measure."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote will authorize the district to issue the bonds and levy taxes to repay them."
+sources = ["measure-question"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-question"
+highlight = ["will authorize the District to issue the bonds"]
+
+[[section.line]]
+text = "A no vote will not authorize the bonds or the taxes to repay them."
+sources = ["measure-question"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-question"
+highlight = ["will not authorize either the issuance of bonds"]
+
+[[question]]
+ask = "What would the bond money pay for?"
+lines = ["projects"]
+
+[[question]]
+ask = "How much would property owners pay?"
+lines = ["tax-rate"]

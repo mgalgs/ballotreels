@@ -1,0 +1,69 @@
+# Archived sources for Old Adobe Union School District Measure O,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Sonoma County Registrar of Voters publishes each measure's pages
+# of its guide as one PDF, headed "Local Ballot Measure: O" and footed
+# "Sonoma County" with the guide's page numbers (049M559 to 049M563); no
+# cover page was archived, so the sources name those pages, not a guide
+# title. One PDF backs every source here. County Counsel's Impartial
+# Analysis is the measure's neutral explanation; the district's Tax Rate
+# Statement is its fiscal statement. The pages print an argument in
+# favor and "No Argument Was Submitted Against Measure O", and no
+# rebuttals.
+#
+# The Census names the district Old Adobe Union Elementary School
+# District (divisions.tsv); the ballot's name is Old Adobe Union School
+# District.
+
+[contest]
+id = "ca-2026-11-03-old-adobe-union-measure-o"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:old_adobe_union_elementary_school_district"
+kind = "measure"
+title = "Old Adobe Union School District Measure O: School Repair and Modernization Bonds"
+
+[[source]]
+id = "measure-question"
+kind = "official-title-summary"
+publisher = "Sonoma County Registrar of Voters, Local Ballot Measure: O, page 049M559: Measure Question and What Your Vote Means"
+credit = "Measure Question, Sonoma County Registrar of Voters"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9419_MeasO_OldAdobeUnionSchlDist_Bond_EN.pdf"
+file = "sources/MeasO_EN.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "County Counsel’s Impartial Analysis of Measure O, Sonoma County Registrar of Voters, Local Ballot Measure: O, page 049M560"
+credit = "Impartial Analysis, Sonoma County Registrar of Voters"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9419_MeasO_OldAdobeUnionSchlDist_Bond_EN.pdf"
+file = "sources/MeasO_EN.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Old Adobe Union School District, Tax Rate Statement — Measure O, Sonoma County Registrar of Voters, Local Ballot Measure: O, page 049M560"
+credit = "Tax Rate Statement, Old Adobe Union School District"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9419_MeasO_OldAdobeUnionSchlDist_Bond_EN.pdf"
+file = "sources/MeasO_EN.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure O (no argument was submitted against), Sonoma County Registrar of Voters, Local Ballot Measure: O, page 049M561"
+credit = "Arguments, Sonoma County Registrar of Voters"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9419_MeasO_OldAdobeUnionSchlDist_Bond_EN.pdf"
+file = "sources/MeasO_EN.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure O, Sonoma County Registrar of Voters, Local Ballot Measure: O, pages 049M562 to 049M563"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9419_MeasO_OldAdobeUnionSchlDist_Bond_EN.pdf"
+file = "sources/MeasO_EN.pdf"
+retrieved = "2026-10-28"
