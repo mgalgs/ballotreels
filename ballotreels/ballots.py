@@ -428,6 +428,22 @@ BALLOTS: dict[str, Ballot] = {
                          "Measure S - Ballot Question",
                      "ca-2026-11-03-yountville-measure-y":
                          "Yountville Town Council Staff Report",
+                     # Stanislaus County's Voter Information Guide prints
+                     # each measure's impartial analysis, arguments and
+                     # text but no ballot question: each card quotes it
+                     # from the notice or resolution that prints it,
+                     # named as headed
+                     "ca-2026-11-03-modesto-city-high-measure-k":
+                         "Notice of Election",
+                     "ca-2026-11-03-sylvan-union-measure-n":
+                         "Notice of Election",
+                     "ca-2026-11-03-ceres-measure-p":
+                         "Resolution No. 2026-79",
+                     "ca-2026-11-03-riverbank-measure-m":
+                         "Notice Fixing Time for Submission of Arguments "
+                         "For or Against Measure M",
+                     "ca-2026-11-03-patterson-measure-l":
+                         "Notice of Election",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
