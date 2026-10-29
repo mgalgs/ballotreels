@@ -2437,3 +2437,12 @@ source = "ballot-question"
 quote = "estimated to raise approximately $106,250 annually"
 amount = 106250
 period = "per-year"
+
+# California Pines Community Services District Measure P (Modoc): a
+# parcel tax has no tax rate statement; the one estimate is County
+# Counsel's Impartial Analysis's, the added revenue a year.
+[cal-pines-csd-measure-p]
+source = "impartial-analysis"
+quote = "The increased tax is expected to generate approximately Seven Hundred Fifty-Five Thousand dollars ($755,000.00) in additional annual revenue"
+amount = 755000
+period = "per-year"
