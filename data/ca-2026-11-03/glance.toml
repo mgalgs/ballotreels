@@ -1456,3 +1456,19 @@ source = "ballot-question"
 quote = "providing $7,100,000 annually until ended by voters"
 amount = 7100000
 period = "per-year"
+
+# Sonoma County Junior College District Measure AB (Marin County
+# voters): the district's Tax Rate Statement's total debt service, as
+# for the Sonoma County contest.
+[santa-rosa-junior-college-measure-ab-marin]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $1.76 billion."
+amount = 1760000000
+period = "unstated"
+
+# City of Sausalito Measure X: no fiscal statement was archived (the
+# Marin County guide could not be); the City Attorney's Impartial
+# Analysis, the one neutral statement archived, prints no estimate.
+[sausalito-measure-x]
+source = "impartial-analysis"
+status = "none-printed"

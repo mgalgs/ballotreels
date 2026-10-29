@@ -1,0 +1,182 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; what rule it changes and how it reached the
+# ballot; what would change in the two zones; that no cost estimate was
+# archived; one line per side; what a vote does.
+#
+# The Marin County guide could not be archived, so the card quotes the
+# City Clerk's Measure X page (its heading, the Clerk's certification
+# and the ballot question), and the fiscal line names the City
+# Attorney's Impartial Analysis, the one neutral statement archived,
+# rather than a guide (sources.toml). The page prints no yes/no lines,
+# so, as for Utah, the card has no YES/NO boxes and the vote lines
+# highlight the question's own phrase. No archived source states the
+# vote needed to pass, so the script does not say it.
+#
+# The floor area ratio change (to 3.0, from 0.4 and 0.3) is the
+# arithmetic behind the opponents' "900%" and "650%", so the neutral
+# sections leave it out and give the coverage and height changes
+# (STANDARD.md 6.3); the opponents' line carries their figure. "The
+# Marinship" is the plan's and the analysis's name for the area; the
+# arguments' "waterfront" stays in the sides.
+
+contest = "ca-2026-11-03-sausalito-measure-x"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "city-page"
+number = "X"
+title = "Measure X - Arts, Industrial & Maritime Preservation and Improvement Initiative (AIM Initiative)"
+origin = "On July 07, 2026, the City Clerk certified that the initiative petition for the Arts, Industrial & Maritime Preservation and Improvement Initiative (\"AIM Initiative\") qualified for the ballot."
+summary = "Shall the measure named the \"Arts, Industrial & Maritime Preservation and Improvement Initiative,\" which revises zoning standards in the I and W zoning districts to increase permitted height, building coverage limits and floor area ratio and allow certain new land uses; repeals the Marinship Specific Plan; revises Ordinance No. 1022 to allow future city council modifications to zoning outside the Downtown Historic District; and modifies various portions of the Sausalito General Plan, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure X"
+
+[[section.line]]
+text = "City of Sausalito Measure X asks voters in the city whether to raise building limits in two zoning districts and repeal the Marinship Specific Plan."
+sources = ["city-page"]
+
+[section.line.visual]
+kind = "page"
+source = "city-page"
+highlight = ["revises zoning standards in the I and W zoning districts"]
+
+[[section]]
+id = "today"
+heading = "How zoning changes today"
+
+[[section.line]]
+text = "Today, a city ordinance bars zoning changes in commercial and industrial districts without voter approval."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "zoning-map"
+
+[[section.line]]
+text = "Measure X reached the ballot by an initiative petition."
+sources = ["qualification"]
+
+[section.line.visual]
+kind = "illustration"
+name = "neighborhood-petition"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "council"
+text = "The City Council could then change zoning without a further vote, except downtown, where voter approval would still be needed."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "downtown-boundary-map"
+
+[[section.line]]
+id = "coverage"
+text = "In the I and W zones, buildings could cover up to 70 percent of a lot, up from 50 and 30 percent."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Building coverage limit, percent of a lot"
+source = "impartial-analysis"
+unit = "%"
+labels = ["I zone today", "W zone today", "Both, under Measure X"]
+values = [50, 30, 70]
+
+[[section.line]]
+id = "height"
+text = "Height limits could rise from 32 to 47 feet, in the W zone only for some marine uses with a permit."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+id = "uses"
+text = "The W zone would allow new uses, such as arts and some manufacturing."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "warehouse-loading-docks"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The City Attorney's impartial analysis does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure X lets Marinship businesses innovate and grow, helping to pay for city repairs without raising taxes."
+sources = ["argument-for"]
+basis = ["YES on Measure X allows our Marinship businesses to innovate and grow, creating the economic vitality to help pay for infrastructure repairs, without raising taxes."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Lets Marinship businesses grow", "Helps pay for repairs, no new taxes"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure X ends the public vote on zoning and allows 900 percent more building on waterfront lots."
+sources = ["argument-against"]
+basis = ["Changes in commercial zoning must be approved by the voters. Measure X takes away that right everywhere except the Historic District", "Measure X increases how much can be built on every waterfront lot by 900%"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Ends the public vote on zoning", "900% more waterfront building"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the zoning changes in Measure X."
+sources = ["city-page"]
+
+[section.line.visual]
+kind = "page"
+source = "city-page"
+highlight = ["revises zoning standards in the I and W zoning districts"]
+
+[[section.line]]
+text = "A no vote leaves the zoning rules as they are."
+sources = ["city-page"]
+
+[section.line.visual]
+kind = "page"
+source = "city-page"
+highlight = ["revises zoning standards in the I and W zoning districts"]
+
+[[question]]
+ask = "Who would decide future zoning changes?"
+lines = ["council"]
+
+[[question]]
+ask = "How much bigger could buildings be?"
+lines = ["coverage", "height"]
+
+[[question]]
+ask = "What would it cost the city?"
+unanswered = true

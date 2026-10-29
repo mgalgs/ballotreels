@@ -1,0 +1,78 @@
+# Archived sources for City of Sausalito Measure X, the Arts, Industrial
+# & Maritime Preservation and Improvement Initiative, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Every file is the City of Sausalito's, from the City Clerk's "Measure
+# X (2026)" page and the documents it links. The Marin County guide
+# could not be archived (marincounty.gov refused the requests), so these
+# are the city's copies of the impartial analysis and the arguments,
+# not the guide's printed pages. The card quotes the page's "AIM Ballot
+# Question" (the resolution's scanned copy of the ballot label reads
+# badly through pdftotext). The City Attorney's Impartial Analysis is
+# the measure's neutral explanation; no fiscal analysis or tax rate
+# statement was archived (the page lists two Elections Code 9212 impact
+# reports, not archived). The full text and both rebuttals are scans
+# with no text layer; no line cites them.
+
+[contest]
+id = "ca-2026-11-03-sausalito-measure-x"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:sausalito"
+kind = "measure"
+title = "City of Sausalito Measure X: Zoning Changes in the I and W Districts and Repeal of the Marinship Specific Plan"
+
+[[source]]
+id = "city-page"
+kind = "official-title-summary"
+publisher = "City of Sausalito, City Clerk, Measure X (2026): AIM Ballot Question"
+credit = "Measure X (2026), City of Sausalito"
+url = "https://www.sausalito.gov/departments/administration/city_clerk/local_elections/measure_x_(2026).php"
+file = "sources/city-measure-x-page.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "qualification"
+kind = "election-filing"
+publisher = "City of Sausalito, City Clerk, Measure X (2026): the City Clerk's certification that the initiative petition qualified for the ballot"
+credit = "Measure X (2026), City of Sausalito"
+url = "https://www.sausalito.gov/departments/administration/city_clerk/local_elections/measure_x_(2026).php"
+file = "sources/city-measure-x-page.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City of Sausalito, City Attorney's Impartial Analysis of Measure X"
+credit = "City Attorney's Impartial Analysis, City of Sausalito"
+url = "https://www.sausalito.gov/Documents/Departments/Administration/City%20Clerk/Local%20Elections/Measure%20X/City%20Attorneys%20Impartial%20Analysis%20of%20Measure%20X.pdf?t=202609240822560"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "City of Sausalito, City Clerk, Primary Argument: Yes on Measure X (Argument in Favor of Measure X)"
+credit = "Argument in Favor, City of Sausalito"
+url = "https://www.sausalito.gov/Documents/Departments/Administration/City%20Clerk/Local%20Elections/Measure%20X/Argument%20-%20Yes%20on%20Measure%20X.pdf?t=202610141313240"
+file = "sources/argument-in-favor.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "City of Sausalito, City Clerk, Primary Argument: No on Measure X (Primary Ballot Argument in Opposition to Measure X)"
+credit = "Argument Against, City of Sausalito"
+url = "https://www.sausalito.gov/Documents/Departments/Administration/City%20Clerk/Local%20Elections/Measure%20X/Argument%20-%20No%20on%20Measure%20X.pdf?t=202610141313420"
+file = "sources/argument-against.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Sausalito, Arts, Industrial & Maritime Preservation and Improvement Initiative (AIM), full text"
+credit = "Full Text of Measure X, City of Sausalito"
+url = "https://www.sausalito.gov/Documents/Departments/Administration/City%20Clerk/Local%20Elections/Measure%20X/AIM%20Petition%20Text%20Document.pdf?t=202609221341070"
+file = "sources/full-text-aim-initiative.pdf"
+retrieved = "2026-10-28"
