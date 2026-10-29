@@ -1512,3 +1512,12 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $97,000,000."
 amount = 97000000
 period = "unstated"
+
+# West Sonoma County Union High School District Measure G: the pages
+# print no tax rate statement for the parcel tax; the one estimate is
+# County Counsel's Impartial Analysis's.
+[west-sonoma-county-union-high-measure-g]
+source = "impartial-analysis"
+quote = "If approved, Measure G would raise approximately $1,950,000 annually."
+amount = 1950000
+period = "per-year"

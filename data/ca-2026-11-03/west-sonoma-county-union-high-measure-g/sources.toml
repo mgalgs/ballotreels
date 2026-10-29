@@ -1,0 +1,56 @@
+# Archived sources for West Sonoma County Union High School District
+# Measure G, 2026-11-03 general election (sources/sources.md). Every id
+# here may be cited by script.toml. `kind` must be one the standard
+# allows (docs/STANDARD.md, section 1).
+#
+# The Sonoma County Registrar of Voters publishes each measure's pages
+# of its guide as one PDF, headed "Local Ballot Measure: G" and footed
+# "Sonoma County" with the guide's page numbers (049M517 to 049M519); no
+# cover page was archived, so the sources name those pages, not a guide
+# title. One PDF backs every source here. County Counsel's Impartial
+# Analysis is the measure's neutral explanation, and the one estimate of
+# what the tax would raise: a parcel tax has no tax rate statement, and
+# the pages print none. The pages print an argument in favor and "No
+# Argument Was Submitted Against Measure G", and no rebuttals.
+
+[contest]
+id = "ca-2026-11-03-west-sonoma-county-union-high-measure-g"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:west_sonoma_county_union_high_school_district"
+kind = "measure"
+title = "West Sonoma County Union High School District Measure G: Education Parcel Tax Renewal"
+
+[[source]]
+id = "measure-question"
+kind = "official-title-summary"
+publisher = "Sonoma County Registrar of Voters, Local Ballot Measure: G, page 049M517: Measure Question and What Your Vote Means"
+credit = "Measure Question, Sonoma County Registrar of Voters"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9379_MeasG_WestSoCoUnionHghSchlDist_ParcelTax_EN.pdf"
+file = "sources/MeasG_EN.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "County Counsel’s Impartial Analysis of Measure G, Sonoma County Registrar of Voters, Local Ballot Measure: G, page 049M518"
+credit = "Impartial Analysis, Sonoma County Registrar of Voters"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9379_MeasG_WestSoCoUnionHghSchlDist_ParcelTax_EN.pdf"
+file = "sources/MeasG_EN.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure G (no argument was submitted against), Sonoma County Registrar of Voters, Local Ballot Measure: G, page 049M518"
+credit = "Arguments, Sonoma County Registrar of Voters"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9379_MeasG_WestSoCoUnionHghSchlDist_ParcelTax_EN.pdf"
+file = "sources/MeasG_EN.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure G, Sonoma County Registrar of Voters, Local Ballot Measure: G, page 049M519"
+url = "https://sonomacounty.gov/Main%20County%20Site/Administrative%20Support%20%26%20Fiscal%20Services/Registrar%20of%20Voters/Documents/Elections/2026/11-03-2026/SoCo_Nov2026GenElec_9379_MeasG_WestSoCoUnionHghSchlDist_ParcelTax_EN.pdf"
+file = "sources/MeasG_EN.pdf"
+retrieved = "2026-10-28"
