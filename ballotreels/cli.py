@@ -487,12 +487,18 @@ def _worker_main(args, out, err) -> int:
     masters_dir = Path(args.masters_dir or
                        os.environ.get("BALLOTREELS_MASTERS_DIR",
                                      str(REPO_ROOT / "var" / "masters")))
+    narration_cache = _narration_cache(args.narration_cache).absolute()
     if args.runner == "fake":
         runner = FakeRunner()
     else:
         site_url = args.site_url or os.environ.get("BALLOTREELS_SITE_URL")
-        runner = SubprocessRunner(args.repo, ffmpeg=ffmpeg, crf=crf,
-                                  maxrate=maxrate, site_url=site_url or None)
+        # narrate.sh fetches the job's take from the worker's own server
+        # and cache: hand them to its stages (the token is already here).
+        runner = SubprocessRunner(
+            args.repo, ffmpeg=ffmpeg, crf=crf, maxrate=maxrate,
+            site_url=site_url or None,
+            env={"BALLOTREELS_SERVER": server,
+                 "BALLOTREELS_NARRATION_CACHE": str(narration_cache)})
     client = WorkerClient(server, token)
     from .storage import S3ConfigError
     try:
@@ -507,7 +513,7 @@ def _worker_main(args, out, err) -> int:
                     masters_dir=masters_dir,
                     poll_interval=args.poll_interval,
                     heartbeat_interval=args.heartbeat_interval,
-                    narration_cache=_narration_cache(args.narration_cache))
+                    narration_cache=narration_cache)
     import signal
     # Runner children (narrate.sh's TTS, the render, ffmpeg) run in their
     # own session, so a terminal's Ctrl-C or hang-up no longer reaches

@@ -655,6 +655,61 @@ class WorkerCliTest(unittest.TestCase):
                     self.assertEqual(len(stops), before + 1)
 
 
+    def test_worker_hands_its_server_and_cache_to_its_stages(self):
+        # narrate.sh's `narration fetch` must ask the worker's own server
+        # and cache, which the worker may have only on its command line.
+        import http.server
+        import os
+        from unittest import mock
+
+        from ballotreels import pipeline
+
+        class NoJobs(http.server.BaseHTTPRequestHandler):
+            def do_POST(self):
+                self.send_response(204)
+                self.end_headers()
+
+            def log_message(self, *a):
+                pass
+
+        srv = http.server.ThreadingHTTPServer(("127.0.0.1", 0), NoJobs)
+        threading.Thread(target=srv.serve_forever, daemon=True).start()
+        self.addCleanup(srv.server_close)
+        self.addCleanup(srv.shutdown)
+        server = f"http://127.0.0.1:{srv.server_address[1]}"
+        tmp = Path(self.enterContext(tempfile.TemporaryDirectory()))
+        envs, runners = [], []
+
+        def fake_popen(argv, env=None, **kwargs):
+            envs.append(env)
+            return FakePopenProcess(argv)
+
+        real = pipeline.SubprocessRunner
+
+        def runner(*a, **k):
+            runners.append(real(*a, popen=fake_popen, **k))
+            return runners[-1]
+
+        with mock.patch.dict(os.environ, {"BALLOTREELS_TOKEN": "t"}), \
+                mock.patch.object(pipeline, "SubprocessRunner", runner), \
+                mock.patch.object(Worker, "stop", lambda self: None):
+            os.environ.pop("BALLOTREELS_SERVER", None)
+            os.environ.pop("BALLOTREELS_NARRATION_CACHE", None)
+            code = main(["worker", "--server", server, "--once",
+                         "--work-dir", str(tmp / "work"),
+                         "--masters-dir", str(tmp / "masters"),
+                         "--narration-cache", str(tmp / "cache")],
+                        out=io.StringIO(), err=io.StringIO())
+            self.assertEqual(code, 0)
+            runners[0].narrate(tmp / "c")
+            # the worker's own environment is left as it was
+            self.assertNotIn("BALLOTREELS_SERVER", os.environ)
+            self.assertNotIn("BALLOTREELS_NARRATION_CACHE", os.environ)
+        self.assertEqual(envs[-1]["BALLOTREELS_SERVER"], server)
+        self.assertEqual(envs[-1]["BALLOTREELS_NARRATION_CACHE"],
+                         str(tmp / "cache"))
+        self.assertEqual(envs[-1]["BALLOTREELS_TOKEN"], "t")
+
 
 class UnreachableServerTest(unittest.TestCase):
     def test_run_forever_survives_unreachable_server(self):

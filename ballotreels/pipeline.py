@@ -274,6 +274,7 @@ class SubprocessRunner:
     def __init__(self, repo: str | Path, ffmpeg: str = "ffmpeg",
                 crf: int = 18, maxrate: str = "1500k",
                 bufsize: str = "3000k", site_url: str | None = None,
+                env: dict[str, str] | None = None,
                 popen: Callable[..., Any] = subprocess.Popen):
         self.repo = Path(repo)
         # The tree narrate.sh and the render run from: the worker points
@@ -286,6 +287,9 @@ class SubprocessRunner:
         # The site's address for the link on every frame; None leaves it
         # to the render's own default ($BALLOTREELS_SITE_URL, inherited).
         self.site_url = site_url
+        # Set in every child's environment over the runner's own: the
+        # worker's server and narration cache, for narrate.sh's fetch.
+        self.env = dict(env or {})
         self._popen = popen
         self._lock = threading.Lock()
         self._current = None
@@ -327,7 +331,7 @@ class SubprocessRunner:
         # PYTHONSAFEPATH, where an installed checkout would be found
         # instead: put the tree first on the path either way.
         path = os.environ.get("PYTHONPATH")
-        env = {**os.environ, "PYTHONPATH": str(self.tree) +
+        env = {**os.environ, **self.env, "PYTHONPATH": str(self.tree) +
                (os.pathsep + path if path else "")}
         with self._lock:
             proc = self._popen(argv, cwd=str(self.tree), env=env,
