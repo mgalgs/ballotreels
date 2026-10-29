@@ -1,0 +1,72 @@
+# Archived sources for Tehama County Measure E, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Tehama County Elections posts no local voter guide for this election:
+# it posts each measure's filed documents separately on its elections
+# page. For Measure E these are the Board of Supervisors' Ordinance No.
+# 2158 (a scan with no text layer; the passages used were typed from
+# the page images into sources/full-text-charter-amendment-ordinance-
+# transcription.txt, which names the PDF and URL it copies), which
+# prints the ballot question and the charter's new text; County
+# Counsel's impartial analysis, the measure's neutral explanation; and
+# the arguments for and against with their rebuttals, as filed (not
+# confirmed as printed in a guide). Measure E is not a tax: no fiscal
+# statement was filed. The two rebuttals are archived under sources/ but
+# the script does not cite them, so they are not listed here.
+#
+# A countywide measure: the division is the county, with no `voters`.
+
+[contest]
+id = "ca-2026-11-03-tehama-county-measure-e"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:tehama"
+kind = "measure"
+title = "Tehama County Measure E: Supervisors' Salary Set by the State Minimum Wage"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Tehama County Board of Supervisors, Ordinance No. 2158, Section 2, Form of Ballot Question, as posted by Tehama County Elections (transcribed from the scan)"
+credit = "Ordinance No. 2158, Tehama County Board of Supervisors"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Measure-E-Charter-Amendment-Ordinance.pdf"
+file = "sources/full-text-charter-amendment-ordinance-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis by County Counsel, the County of Tehama, Measure E, Margaret Long, Tehama County Counsel, as posted by Tehama County Elections"
+credit = "Impartial Analysis, Tehama County Counsel"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Impartial-Analysis-Tehama-County-Measure-E.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Tehama County Board of Supervisors, Ordinance No. 2158, amending the Tehama County Charter, adopted August 4, 2026, as posted by Tehama County Elections"
+credit = "Ordinance No. 2158, Tehama County Board of Supervisors"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Measure-E-Charter-Amendment-Ordinance.pdf"
+file = "sources/full-text-charter-amendment-ordinance-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Arguments in support of Measure E County Charter Amendment Ordinance, signed by Parker R. Hunt, Treasurer/Tax Collector, Tehama County, as filed and posted by Tehama County Elections"
+credit = "Argument in Favor, Tehama County Elections"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Arguments-in-support-of-Measure-E.pdf"
+file = "sources/argument-in-favor.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure E, signed by Robert Burroughs, Tehama County Supervisor, District 1, signing in his individual capacity, and Fred Ehrensvard, Property Manager, as filed and posted by Tehama County Elections"
+credit = "Argument Against, Tehama County Elections"
+url = "https://www.tehama.gov/wp-content/uploads/2026/08/Final-Argument-Against-E.pdf"
+file = "sources/argument-against.pdf"
+retrieved = "2026-10-28"
+

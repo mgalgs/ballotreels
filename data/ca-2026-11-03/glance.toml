@@ -2437,3 +2437,10 @@ source = "ballot-question"
 quote = "estimated to raise approximately $106,250 annually"
 amount = 106250
 period = "per-year"
+
+# Tehama County Measure E: a charter amendment setting supervisors'
+# salary, not a tax; no fiscal statement was filed, and the impartial
+# analysis gives no cost estimate.
+[tehama-county-measure-e]
+source = "impartial-analysis"
+status = "none-printed"
