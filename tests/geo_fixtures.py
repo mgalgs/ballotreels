@@ -257,7 +257,9 @@ def build_fixture_geo(data_dir: Path, **build_kwargs) -> None:
 def write_simple_state_source(src_dir: Path, state: str, zips: list[str],
                               cd_code: str = "01",
                               county_name: str = "Example",
-                              county_namelsad: str | None = None) -> None:
+                              county_namelsad: str | None = None,
+                              sld: dict[str, tuple[str, str]] | None = None
+                              ) -> None:
     from ballotreels.geo.build import STATE_FIPS, kinds_for
 
     fips = STATE_FIPS[state]
@@ -267,11 +269,15 @@ def write_simple_state_source(src_dir: Path, state: str, zips: list[str],
     write_shapefile(src_dir / "cd", fields,
                     [{"GEOID": fips + cd_code, "STATEFP": fips, "NAME": ""}],
                     [[square]])
+    # `sld`: kind -> (district code, NAMELSAD) in place of "001", for a
+    # state whose codes are not numbers.
+    sld = sld or {}
     for kind in ("sldu", "sldl"):
         if kind in kinds:
-            write_shapefile(src_dir / kind, fields,
-                            [{"GEOID": fips + "001", "STATEFP": fips,
-                              "NAME": ""}], [[square]])
+            code, namelsad = sld.get(kind, ("001", ""))
+            write_shapefile(src_dir / kind, fields + [("NAMELSAD", "C", 60)],
+                            [{"GEOID": fips + code, "STATEFP": fips,
+                              "NAME": "", "NAMELSAD": namelsad}], [[square]])
     county_fields = fields + [("NAMELSAD", "C", 60)]
     write_shapefile(src_dir / "county", county_fields,
                     [{"GEOID": fips + "999", "STATEFP": fips,
@@ -283,7 +289,8 @@ def write_simple_state_source(src_dir: Path, state: str, zips: list[str],
     write_shapefile(src_dir / "zcta", [("GEOID20", "C", 10)],
                     [{"GEOID20": z} for z in zips], [[r] for r in rings])
     district = {"cd": fips + cd_code, "county": fips + "999",
-                "sldu": fips + "001", "sldl": fips + "001"}
+                "sldu": fips + sld.get("sldu", ("001",))[0],
+                "sldl": fips + sld.get("sldl", ("001",))[0]}
     for kind in kinds:
         column = "GEOID_CD_20" if kind == "cd" else f"GEOID_{kind.upper()}_20"
         lines = [f"GEOID_ZCTA5_20|{column}|AREALAND_PART"]
