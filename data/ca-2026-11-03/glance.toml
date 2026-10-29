@@ -1532,3 +1532,12 @@ source = "guide-page"
 quote = "The special tax authorized by this Measure is expected to generate revenue of approximately $33,300 per year."
 amount = 33300
 period = "per-year"
+
+# El Dorado County Measure S: the pamphlet prints no fiscal analysis or
+# tax rate statement (a sales tax); the one estimate is the ballot
+# question's.
+[el-dorado-county-measure-s]
+source = "guide-page"
+quote = "a 3/8% sales tax for 30 years in El Dorado County, providing approximately $13,000,000 annually"
+amount = 13000000
+period = "per-year"
