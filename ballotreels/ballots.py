@@ -109,6 +109,8 @@ BALLOTS: dict[str, Ballot] = {
                          "San Francisco Voter Information Pamphlet & Sample Ballot",
                      "ca-2026-11-03-san-mateo-county-measure-rtm":
                          "Public Transit Revenue Measure District Resolution No. 2",
+                     "ca-2026-11-03-san-mateo-county-measure-l":
+                         "Resolution No. 081882",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",
