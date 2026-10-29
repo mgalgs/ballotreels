@@ -137,14 +137,17 @@ take from there themselves.
   the cache or the server: after a fresh clone, or before re-narrating
   a contest (`narrate.sh` runs it first, since `say` reuses the old
   take's unchanged phrases). It never replaces a `narration.wav` that
-  is not the recorded take.
+  is not the recorded take. With no server given it works from the
+  cache alone, token or not. When it fails, `narrate.sh` warns and
+  synthesises every phrase afresh; a worker's narrate stage fetches from
+  that worker's own server and cache.
 
 `--all` is every contest under `data/` with a `narration.json`.
 
 | Flag | Environment variable | Default |
 |---|---|---|
 | `--server` (`push`, `fetch`) | `BALLOTREELS_SERVER` | the serve tier's private listener URL, as for `worker`; `fetch` needs it only for a take the cache lacks |
-| (none) | `BALLOTREELS_TOKEN` | the worker token, as for `worker` |
+| (none) | `BALLOTREELS_TOKEN` | the worker token, as for `worker`; required whenever a server is |
 | `--narration-cache` (`push`, `fetch`) | `BALLOTREELS_NARRATION_CACHE` | `<data-dir>/narration` |
 | `--repo` | — | this repo: the checkout `--all` reads |
 

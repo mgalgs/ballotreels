@@ -295,7 +295,8 @@ that records none, asking for `narration record`).
   re-narrated.
 - **The operator's checkout** gets the same: `scripts/narrate.sh`
   fetches the old take before re-narrating (`say` reuses its unchanged
-  phrases) and records each new one; `narration push` uploads takes the
+  phrases; a failed fetch only costs synthesising them afresh) and
+  records each new one; `narration push` uploads takes the
   server lacks, and `narration fetch` puts them back beside their
   sidecars (README.md, "Narration audio"). Every stage still reads
   `<contest>/narration.wav`; it just need not be tracked.
