@@ -30,8 +30,13 @@ for dir in "$@"; do
     # `say` reuses the unchanged phrases of the take narration.json records,
     # so put that take's audio here first (from the local cache, or the
     # serve tier at $BALLOTREELS_SERVER with $BALLOTREELS_TOKEN): without
-    # it every phrase would be synthesised afresh.
-    "$python" -m ballotreels narration fetch "$dir"
+    # it every phrase would be synthesised afresh. That is all a failed
+    # fetch costs (no server, a leftover take from an interrupted `say`),
+    # so it warns and carries on.
+    if ! "$python" -m ballotreels narration fetch "$dir"; then
+        echo "$0: $dir: could not fetch its recorded take; every phrase" \
+            "will be synthesised afresh" >&2
+    fi
     "$python" -m videobuilder say "$dir/narration.txt" \
         --engine gemini --voice Rasalgethi --style "$style" --gap 0.6 \
         --out "$dir/narration.wav"

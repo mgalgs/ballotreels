@@ -183,10 +183,10 @@ PYTHONPATH=@REPO@ exec @PYTHON@ -B "$@"
 
 
 class NarrateScriptRecordsTest(unittest.TestCase):
-    def test_a_new_take_is_recorded(self):
+    def setUp(self):
         tmp = tempfile.TemporaryDirectory()
         self.addCleanup(tmp.cleanup)
-        repo = Path(tmp.name)
+        self.repo = repo = Path(tmp.name)
         (repo / "scripts").mkdir()
         shutil.copy2(REPO / "scripts" / "narrate.sh", repo / "scripts")
         (repo / "voices").mkdir()
@@ -196,15 +196,46 @@ class NarrateScriptRecordsTest(unittest.TestCase):
         python.write_text(FAKE_PYTHON.replace("@REPO@", str(REPO))
                           .replace("@PYTHON@", sys.executable))
         python.chmod(0o755)
-        d = repo / "prop-2"
-        shutil.copytree(PROP_2, d,
+        self.dir = repo / "prop-2"
+        shutil.copytree(PROP_2, self.dir,
                         ignore=shutil.ignore_patterns(*NARRATION_SIDECARS))
-        env = {k: v for k, v in os.environ.items()
-               if k not in ("BALLOTREELS_SERVER", "BALLOTREELS_TOKEN")}
-        result = subprocess.run(
-            ["bash", str(repo / "scripts" / "narrate.sh"), str(d)],
-            capture_output=True, text=True, env=env, timeout=120)
+        self.env = {k: v for k, v in os.environ.items()
+                    if k not in ("BALLOTREELS_SERVER", "BALLOTREELS_TOKEN")}
+        self.env["BALLOTREELS_NARRATION_CACHE"] = str(repo / "cache")
+
+    def narrate(self):
+        return subprocess.run(
+            ["bash", str(self.repo / "scripts" / "narrate.sh"),
+             str(self.dir)],
+            capture_output=True, text=True, env=self.env, timeout=120)
+
+    def test_a_new_take_is_recorded(self):
+        result = self.narrate()
         self.assertEqual(result.returncode, 0,
                          result.stdout + result.stderr)
+        d = self.dir
         self.assertEqual(recorded_take(d), hash_file(d / "narration.wav"))
         self.assertEqual(recorded_take(d).bytes, len(b"RIFF a new take"))
+
+    def test_a_failed_fetch_still_narrates(self):
+        # a take recorded, then a `say` interrupted after writing new
+        # audio: the WAV left beside narration.json is not its take
+        self.assertEqual(self.narrate().returncode, 0)
+        d = self.dir
+        (d / "narration.wav").write_bytes(b"RIFF half a take")
+        cases = [
+            ("a leftover WAV", {}),
+            ("a server and no token",
+             {"BALLOTREELS_SERVER": "http://127.0.0.1:9"}),
+        ]
+        for name, env in cases:
+            with self.subTest(name):
+                self.env.update(env)
+                result = self.narrate()
+                self.assertEqual(result.returncode, 0,
+                                 result.stdout + result.stderr)
+                self.assertIn(f"{d}: could not fetch its recorded take",
+                              result.stderr)
+                self.assertEqual(recorded_take(d),
+                                 hash_file(d / "narration.wav"))
+                (d / "narration.wav").write_bytes(b"RIFF half a take")
