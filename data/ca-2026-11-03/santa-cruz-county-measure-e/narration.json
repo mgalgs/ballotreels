@@ -1,0 +1,221 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 69.1,
+  "phrases": [
+    {
+      "text": "County of Santa Cruz Measure E asks county voters whether to add a half-cent sales tax for five years.",
+      "start": 0.03,
+      "end": 7.16
+    },
+    {
+      "text": "The board of supervisors placed Measure E on the ballot, declaring the county in fiscal distress from cuts in federal and state funding.",
+      "start": 7.82,
+      "end": 16.09
+    },
+    {
+      "text": "Today, the sales tax is 9.5 percent outside the cities, and up to 9.75 percent within them.",
+      "start": 16.75,
+      "end": 24.41
+    },
+    {
+      "text": "Measure E would raise each rate by half a percent, from April 2027 through April 2032.",
+      "start": 25.07,
+      "end": 32.49
+    },
+    {
+      "text": "The county auditor-controller estimates Measure E would add about $27 million a year to the general fund, about 3 percent of its $844 million this year.",
+      "start": 33.15,
+      "end": 43.96
+    },
+    {
+      "text": "Supporters say Measure E keeps hospitals and emergency rooms open, and partly replaces federal funding the county has lost.",
+      "start": 44.62,
+      "end": 52.55
+    },
+    {
+      "text": "Opponents say Measure E is a regressive tax that hits low-income workers, and the county could spend it on anything.",
+      "start": 53.21,
+      "end": 60.56
+    },
+    {
+      "text": "A yes vote approves a half-cent sales tax increase for five years.",
+      "start": 61.22,
+      "end": 65.52
+    },
+    {
+      "text": "A no vote keeps the sales tax rate as it is now.",
+      "start": 66.18,
+      "end": 69.07
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "County of Santa Cruz Measure E asks county voters whether to add a half-cent sales tax for five years.",
+      "The board of supervisors placed Measure E on the ballot, declaring the county in fiscal distress from cuts in federal and state funding.",
+      "Today, the sales tax is 9.5 percent outside the cities, and up to 9.75 percent within them.",
+      "Measure E would raise each rate by half a percent, from April 2027 through April 2032.",
+      "The county auditor-controller estimates Measure E would add about $27 million a year to the general fund, about 3 percent of its $844 million this year.",
+      "Supporters say Measure E keeps hospitals and emergency rooms open, and partly replaces federal funding the county has lost.",
+      "Opponents say Measure E is a regressive tax that hits low-income workers, and the county could spend it on anything.",
+      "A yes vote approves a half-cent sales tax increase for five years.",
+      "A no vote keeps the sales tax rate as it is now."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "County of Santa Cruz Measure E asks county voters whether to add a half-cent sales tax for five years."
+      },
+      "bounds": [
+        0,
+        172560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"County of Santa Cruz Measure E asks county voters whether to add a half-cent sales tax for five years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The board of supervisors placed Measure E on the ballot, declaring the county in fiscal distress from cuts in federal and state funding."
+      },
+      "bounds": [
+        186960,
+        386880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The board of supervisors placed Measure E on the ballot, declaring the county in fiscal distress from cuts in federal and state funding.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, the sales tax is 9.5 percent outside the cities, and up to 9.75 percent within them."
+      },
+      "bounds": [
+        401280,
+        586560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, the sales tax is 9.5 percent outside the cities, and up to 9.75 percent within them.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure E would raise each rate by half a percent, from April 2027 through April 2032."
+      },
+      "bounds": [
+        600960,
+        780480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure E would raise each rate by half a percent, from April 2027 through April 2032.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The county auditor-controller estimates Measure E would add about $27 million a year to the general fund, about 3 percent of its $844 million this year."
+      },
+      "bounds": [
+        794880,
+        1055760
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The county auditor-controller estimates Measure E would add about $27 million a year to the general fund, about 3 percent of its $844 million this year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say Measure E keeps hospitals and emergency rooms open, and partly replaces federal funding the county has lost."
+      },
+      "bounds": [
+        1070160,
+        1261920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure E keeps hospitals and emergency rooms open, and partly replaces federal funding the county has lost.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say Measure E is a regressive tax that hits low-income workers, and the county could spend it on anything."
+      },
+      "bounds": [
+        1276320,
+        1454160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say Measure E is a regressive tax that hits low-income workers, and the county could spend it on anything.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote approves a half-cent sales tax increase for five years."
+      },
+      "bounds": [
+        1468560,
+        1573200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote approves a half-cent sales tax increase for five years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote keeps the sales tax rate as it is now."
+      },
+      "bounds": [
+        1587600,
+        1658400
+      ]
+    }
+  ],
+  "sha256": "7d0bdaa4ac280f8b16188f10616880a372254c46cd927e15d6646df47583afe1"
+}
