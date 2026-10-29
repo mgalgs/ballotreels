@@ -199,6 +199,19 @@ class CardTest(ContestCopyTestCase):
             "[card] 'summary' does not appear verbatim in source "
             "'quick-reference' (sources/quick-reference.html)"])
 
+    def test_a_ligature_is_quoted_as_its_letters(self):
+        # pdftotext reads "Uniﬁed" in Lake County's Voter's Pamphlet for
+        # Middletown Unified Measure C as one ligature character; the card
+        # quotes its letters
+        self.edit("sources/quick-reference.html", "essential services",
+                  "speciﬁc services")
+        self.edit("script.toml", "essential services", "specific services")
+        self.assertEqual(self.failures(), [])
+        self.edit("script.toml", "specific services", "specifc services")
+        self.assertEqual(self.failures(), [
+            "[card] 'summary' does not appear verbatim in source "
+            "'quick-reference' (sources/quick-reference.html)"])
+
     def test_plain_text(self):
         self.assertEqual(
             plain_text('<head><style>p { x }</style><script>var a = "<b>";'
