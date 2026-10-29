@@ -136,10 +136,13 @@ shapes; each a `.zip` archive, whose `.shp` and `.dbf` it extracts)
 and the ZCTA-to-congressional-district and ZCTA-to-county relationship
 files, then writes `<data-dir>/geo/<state>/`: one simplified GeoJSON file per
 district kind, one per zip outline, and a `zips.json` lookup table.
-Cities and school districts have no relationship file, so their zips
-are measured from the shapes themselves: one covering under 1% of a
-zip is left off it (a boundary sliver), one covering under 99% of it
-is marked `partial`, and `--min-overlap` raises the first bound. It
+A district covering under 1% of a zip's land is left off it (a
+boundary sliver): for congressional, legislative and county districts
+measured on the relationship file's land areas, and a zip whose every
+district of a kind is under 1% keeps the largest. Cities and school
+districts have no relationship file, so their zips are measured from
+the shapes themselves, and one covering under 99% of a zip is marked
+`partial`. `--min-overlap` raises the 1% bound. It
 is safe and idempotent to re-run: a file already downloaded is not
 re-fetched, and the build only replaces the previous output once it has
 fully succeeded.
@@ -147,7 +150,7 @@ fully succeeded.
 Flags: `--state` (a two-letter abbreviation, default `ca`; `dc` builds
 without state legislative districts, since D.C. has no legislature), `--data-dir` (default `$BALLOTREELS_DATA_DIR` or `<repo>/var`),
 `--min-overlap` (drop a zip/district overlap smaller than this fraction
-of the zip's land area; default `0`, keep every sliver), `--tolerance`
+of the zip's land area; the bound is never below 1%), `--tolerance`
 (Douglas-Peucker simplification tolerance in degrees; default `0.001`),
 and `--url NAME=URL` (repeatable, overrides one download by name, e.g.
 `--url cd.zip=https://...`, for when a Census URL has moved). The names

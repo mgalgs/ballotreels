@@ -124,7 +124,13 @@ school district from the shapes themselves, along horizontal lines
 about 220 m apart. A district covering under 1% of a zip is left off it
 (the zip and district outlines come from different years' boundaries,
 which may disagree by a sliver); one covering under 99% of it is
-listed in the zip's `partial`. A zip split between counties asks which,
+listed in the zip's `partial`. The same 1% rule covers the
+relationship-file kinds (congressional, legislative, county), measured
+on the file's land areas (the zip's whole land, AREALAND_ZCTA5_20,
+where given, else the sum of its parts), since those files list every
+overlap however small; a zip whose every district of a kind is under
+1% keeps the largest, so it is never left with none. A zip left with
+one district of a kind is not asked about it. A zip split between counties asks which,
 as for any district; a zip's cities and school districts are not asked
 about. The ballot lists the contests of every one overlapping the zip,
 and those of a `partial` one say "May be on your ballot, depending on

@@ -260,6 +260,69 @@ class RelationshipColumnsTest(unittest.TestCase):
                                  "area_land_part": 500.0}])
 
 
+CD = "ocd-division/country:us/state:ca/cd"
+
+
+def _ids(result, kind):
+    return sorted(d["ocd_id"] for d in result["kinds"][kind])
+
+
+class DistrictSliverTest(GeoBuildTestCase):
+    """A relationship-file kind drops a district covering under SLIVER of
+    a zip's land, as the local layers do, but never leaves a zip with
+    none of a kind it had."""
+
+    def setUp(self):
+        super().setUp()
+        # The zip's own land area (AREALAND_ZCTA5_20) is the measure
+        # where the file gives it: 99901's 12,000 is 0.8% of its
+        # 1,500,000 (the rest across a state line), though 2% of the
+        # parts listed. 99902's cd:2 is exactly 1%; 99903's districts
+        # are both under 1% of it; 99904's cd:1 is 0.1%.
+        (self.src_dir / "cd_rel.txt").write_text(
+            "GEOID_ZCTA5_20|GEOID_CD_20|AREALAND_ZCTA5_20|AREALAND_PART\n"
+            "99901|0601|1500000|600000\n"
+            "99901|0602|1500000|12000\n"
+            "99902|0601|1000000|990000\n"
+            "99902|0602|1000000|10000\n"
+            "99903|0601|1000000|9000\n"
+            "99903|0602|1000000|5000\n"
+            "99904|0601|1000000|1000\n"
+            "99904|0602|1000000|999000\n",
+            encoding="utf-8")
+        _build(self.data_dir, STATE, _fetch_from(self.src_dir))
+        self.geo = GeoData.load(self.data_dir / "geo" / STATE)
+
+    def test_under_one_percent_is_left_off(self):
+        for z, kept in (("99901", "1"), ("99904", "2")):
+            r = self.geo.zip_districts(z)
+            self.assertEqual(_ids(r, "cd"), [f"{CD}:{kept}"], z)
+            self.assertNotIn("cd", r["ambiguous"], z)
+
+    def test_one_percent_stays(self):
+        r = self.geo.zip_districts("99902")
+        self.assertEqual(_ids(r, "cd"), [f"{CD}:1", f"{CD}:2"])
+        self.assertIn("cd", r["ambiguous"])
+
+    def test_all_under_keeps_the_largest(self):
+        r = self.geo.zip_districts("99903")
+        self.assertEqual(_ids(r, "cd"), [f"{CD}:1"])
+        self.assertNotIn("cd", r["ambiguous"])
+
+    def test_sum_of_parts_without_the_zip_area(self):
+        # The fixture's sldu file has no AREALAND_ZCTA5_20: 99903's
+        # 45/55 split is measured against the parts' sum, and both stay.
+        self.assertEqual(_ids(self.geo.zip_districts("99903"), "sldu"),
+                         ["ocd-division/country:us/state:ca/sldu:1",
+                          "ocd-division/country:us/state:ca/sldu:2"])
+
+    def test_zip_area_is_parsed(self):
+        rows = parse_relationship(
+            "GEOID_ZCTA5_20|GEOID_CD_20|AREALAND_ZCTA5_20|AREALAND_PART\n"
+            "99901|0601|1500000|600000\n")
+        self.assertEqual(rows[0]["area_land_zip"], 1500000.0)
+
+
 class ZipLookupTest(GeoBuildTestCase):
     def setUp(self):
         super().setUp()
@@ -280,16 +343,18 @@ class ZipLookupTest(GeoBuildTestCase):
         self.assertEqual(r3["ambiguous"], ["cd", "sldu"])
 
     def test_min_overlap(self):
+        # 99904's 0.1% of cd:1 is a sliver, left off by default.
         r4 = self.geo.zip_districts("99904")
-        self.assertIn("cd", r4["ambiguous"])
-        self.assertEqual(len(r4["kinds"]["cd"]), 2)
+        self.assertNotIn("cd", r4["ambiguous"])
+        self.assertEqual(_ids(r4, "cd"), [f"{CD}:2"])
 
+        # --min-overlap raises the bound: 99903's 40% of cd:1 goes.
         filtered_dir = self.root / "data_filtered"
-        _build(filtered_dir, STATE, _fetch_from(self.src_dir), min_overlap=0.01)
+        _build(filtered_dir, STATE, _fetch_from(self.src_dir), min_overlap=0.5)
         geo2 = GeoData.load(filtered_dir / "geo" / STATE)
-        r4b = geo2.zip_districts("99904")
-        self.assertNotIn("cd", r4b["ambiguous"])
-        self.assertEqual(len(r4b["kinds"]["cd"]), 1)
+        r3b = geo2.zip_districts("99903")
+        self.assertNotIn("cd", r3b["ambiguous"])
+        self.assertEqual(_ids(r3b, "cd"), [f"{CD}:2"])
 
     def test_unknown_zip(self):
         self.assertIsNone(self.geo.zip_districts("00000"))
