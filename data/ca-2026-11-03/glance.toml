@@ -356,3 +356,13 @@ direction = "revenue-gain"
 [san-mateo-measure-f]
 source = "ballot-label"
 status = "none-printed"
+
+# City of Redwood City Measure E: no tax rate statement or fiscal
+# analysis (not a tax); the one estimate is the ballot question's cost of
+# new city administration, funded by fees on rental property owners.
+[redwood-city-measure-e]
+source = "ballot-label"
+quote = "requires new City administration estimated to cost $5 million to $11 million annually, funded by annual rental property owner fees"
+amount = 11000000
+period = "per-year"
+direction = "cost"
