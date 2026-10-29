@@ -63,6 +63,32 @@ class CountyMembershipTest(unittest.TestCase):
         self.assertEqual(_counties_of(self.doc, f"{STATE}/place:northedge"),
                          [ALPHA])
 
+    def test_slivers_both_ways_along_a_bending_line_do_not_count(self):
+        # Kink lies in A but for a 0.0008-degree overshoot past A's
+        # north line and its east line, both into B, an L around A.
+        def fc(*features):
+            return {"type": "FeatureCollection", "features": [
+                {"type": "Feature",
+                 "properties": {"ocd_id": f"{STATE}/{i}", "name": i},
+                 "geometry": {"type": "Polygon", "coordinates": [ring]}}
+                for i, ring in features]}
+        a = [[-120, 38], [-119.5, 38], [-119.5, 38.5], [-120, 38.5],
+             [-120, 38]]
+        b = [[-120, 38.5], [-120, 39], [-119, 39], [-119, 38],
+             [-119.5, 38], [-119.5, 38.5], [-120, 38.5]]
+        kink = [[-119.8, 38.2], [-119.4992, 38.2], [-119.4992, 38.5008],
+                [-119.8, 38.5008], [-119.8, 38.2]]
+        with tempfile.TemporaryDirectory() as tmp:
+            geo = Path(tmp)
+            for kind, doc in (("county", fc(("county:a", a),
+                                            ("county:b", b))),
+                              ("place", fc(("place:kink", kink)))):
+                (geo / f"{kind}.geojson").write_text(json.dumps(doc),
+                                                     encoding="utf-8")
+            self.assertEqual(_counties_of(county_doc(geo),
+                                          f"{STATE}/place:kink"),
+                             [f"{STATE}/county:a"])
+
     def test_a_district_too_small_to_measure_is_in_its_county(self):
         tiny = f"{STATE}/school_district:pinpoint_elementary_school_district"
         self.assertEqual(_counties_of(self.doc, tiny), [GAMMA])

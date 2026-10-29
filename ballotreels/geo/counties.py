@@ -12,8 +12,10 @@ outlines can cross each other by a sliver as wide as about twice that
 tolerance. Each county's share of a district is measured along
 horizontal and along vertical lines (ballotreels.geo.shapes.
 row_intervals), and each piece of it on a line is trimmed by MARGIN at
-both ends: a sliver, narrow one way or the other, leaves nothing, while
-ground any wider than 2 * MARGIN both ways counts. A district too small
+both ends; the county counts only where a kept piece of a row crosses a
+kept piece of a column. A sliver, narrow one way or the other (or an L
+of slivers, one each way), leaves no such crossing, while ground any
+wider than 2 * MARGIN both ways does. A district too small
 to leave anything anywhere is in the county holding most of it.
 """
 
@@ -115,18 +117,35 @@ def _pieces(a, b) -> list[tuple[float, float]]:
     return out
 
 
-def _shared(mine: dict, theirs: dict) -> tuple[float, float]:
-    """(the length the two shapes share over all lines, what is left of
-    it with each piece trimmed by MARGIN at both ends)."""
-    raw = kept = 0.0
+def _kept(mine: dict, theirs: dict) -> tuple[float, dict]:
+    """(the length the two shapes share over all lines, line k -> the
+    pieces of it left with each trimmed by MARGIN at both ends)."""
+    raw = 0.0
+    kept: dict[int, list[tuple[float, float]]] = {}
     for k, ivs in mine.items():
         other = theirs.get(k)
         if not other:
             continue
         for lo, hi in _pieces(ivs, other):
             raw += hi - lo
-            kept += max(0.0, hi - lo - 2 * MARGIN)
+            if hi - lo > 2 * MARGIN:
+                kept.setdefault(k, []).append((lo + MARGIN, hi - MARGIN))
     return raw, kept
+
+
+def _crossing(across: dict, down: dict) -> bool:
+    """Whether a kept piece of a row and a kept piece of a column cross:
+    a point of the shared ground at least MARGIN from its edge both east-
+    west and north-south. A sliver one way on one stretch and the other
+    way on another leaves pieces of both that never meet."""
+    for col, ivs in down.items():
+        x = (col + 0.5) * STEP
+        for lo, hi in ivs:
+            for row in range(math.ceil(lo / STEP - 0.5),
+                             math.floor(hi / STEP - 0.5) + 1):
+                if any(a <= x <= b for a, b in across.get(row, ())):
+                    return True
+    return False
 
 
 def _overlaps(box, other) -> bool:
@@ -143,13 +162,13 @@ def district_counties(district: _Shape,
     for county_id, county in counties.items():
         if not _overlaps(district.box, county.box):
             continue
-        raw, across = _shared(district.rows, county.rows)
+        raw, across = _kept(district.rows, county.rows)
         if raw > best_raw:
             best, best_raw = county_id, raw
-        if across <= 0:
+        if not across:
             continue
-        _, down = _shared(district.cols, county.cols)
-        if down > 0:
+        _, down = _kept(district.cols, county.cols)
+        if _crossing(across, down):
             found.append(county_id)
     if found:
         return found
