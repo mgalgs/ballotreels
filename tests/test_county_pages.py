@@ -328,6 +328,15 @@ class CountyPageTest(CountyServerTestCase):
                "app.js").read_text(encoding="utf-8")
         self.assertIn("renderCounty(`/api/county/", app)
 
+    def test_a_state_with_no_statewide_measures_still_lists_counties(self):
+        app = (REPO / "ballotreels" / "site" / "static" /
+               "app.js").read_text(encoding="utf-8")
+        state = app[app.index("function renderState"):]
+        state = state[state.index("if (contests.length === 0)"):]
+        early = state[:state.index("return;")]
+        self.assertIn("noMeasuresNotice(", early)
+        self.assertIn("section.appendChild(counties)", early)
+
 
 class HeroTest(CountyServerTestCase):
     def test_state_hero_without_a_flag_falls_back_to_a_tone(self):

@@ -944,9 +944,11 @@ async function renderState(abbr, year, old) {
     heading("h1", `${name} statewide measures`),
     when ? el("p", { class: "muted", text: `Election day: ${when}` }) : null,
   ]);
+  const counties = countyList(body.counties);
   if (contests.length === 0) {
     section.appendChild(noMeasuresNotice(body, [
       linkButton("Find your ballot", "/", "btn-primary")]));
+    if (counties) section.appendChild(counties);
     app.appendChild(section);
     return;
   }
@@ -961,7 +963,6 @@ async function renderState(abbr, year, old) {
     el("a", { href: "/", text: "Find it by zip code" }),
     ".",
   ]));
-  const counties = countyList(body.counties);
   if (counties) section.appendChild(counties);
   app.appendChild(section);
 }
