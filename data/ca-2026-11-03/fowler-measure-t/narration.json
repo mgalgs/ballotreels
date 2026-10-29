@@ -1,0 +1,287 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 82.44,
+  "phrases": [
+    {
+      "text": "Measure T asks the voters of this city whether to add a half-cent sales tax for general city services.",
+      "start": 0.03,
+      "end": 6.77
+    },
+    {
+      "text": "The city council placed it on the ballot to help make up for the loss of Measure C, a county transportation sales tax set to expire in June 2027.",
+      "start": 7.43,
+      "end": 17.96
+    },
+    {
+      "text": "Today, the city charges its own 1 percent sales tax.",
+      "start": 18.62,
+      "end": 22.08
+    },
+    {
+      "text": "Measure T would raise it to 1.5 percent, starting on July 1, 2027.",
+      "start": 22.74,
+      "end": 28.56
+    },
+    {
+      "text": "Groceries and prescription medicine would be exempt.",
+      "start": 29.22,
+      "end": 32.18
+    },
+    {
+      "text": "The ballot question says the tax runs until voters stop it; the measure's text sets 30 years, or less if a county tax replaces Measure C.",
+      "start": 32.84,
+      "end": 42.87
+    },
+    {
+      "text": "Measure T needs a simple majority to pass.",
+      "start": 43.53,
+      "end": 46.77
+    },
+    {
+      "text": "The city attorney's impartial analysis says the tax would raise about $300,000 a year.",
+      "start": 47.43,
+      "end": 53.95
+    },
+    {
+      "text": "Opponents say even a half-percent sales tax is a heavy burden for struggling neighbors, and those raising money should try voluntary giving first.",
+      "start": 54.61,
+      "end": 64.68
+    },
+    {
+      "text": "No argument for Measure T was filed with the county registrar of voters, so the published measure documents include only the opponents' argument.",
+      "start": 65.34,
+      "end": 74.62
+    },
+    {
+      "text": "A yes vote adopts the half-cent sales tax.",
+      "start": 75.28,
+      "end": 78.23
+    },
+    {
+      "text": "A no vote does not adopt the half-cent sales tax.",
+      "start": 78.89,
+      "end": 82.41
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure T asks the voters of this city whether to add a half-cent sales tax for general city services.",
+      "The city council placed it on the ballot to help make up for the loss of Measure C, a county transportation sales tax set to expire in June 2027.",
+      "Today, the city charges its own 1 percent sales tax.",
+      "Measure T would raise it to 1.5 percent, starting on July 1, 2027.",
+      "Groceries and prescription medicine would be exempt.",
+      "The ballot question says the tax runs until voters stop it; the measure's text sets 30 years, or less if a county tax replaces Measure C.",
+      "Measure T needs a simple majority to pass.",
+      "The city attorney's impartial analysis says the tax would raise about $300,000 a year.",
+      "Opponents say even a half-percent sales tax is a heavy burden for struggling neighbors, and those raising money should try voluntary giving first.",
+      "No argument for Measure T was filed with the county registrar of voters, so the published measure documents include only the opponents' argument.",
+      "A yes vote adopts the half-cent sales tax.",
+      "A no vote does not adopt the half-cent sales tax."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure T asks the voters of this city whether to add a half-cent sales tax for general city services."
+      },
+      "bounds": [
+        0,
+        163200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure T asks the voters of this city whether to add a half-cent sales tax for general city services.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The city council placed it on the ballot to help make up for the loss of Measure C, a county transportation sales tax set to expire in June 2027."
+      },
+      "bounds": [
+        177600,
+        431760
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The city council placed it on the ballot to help make up for the loss of Measure C, a county transportation sales tax set to expire in June 2027.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, the city charges its own 1 percent sales tax."
+      },
+      "bounds": [
+        446160,
+        530640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, the city charges its own 1 percent sales tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure T would raise it to 1.5 percent, starting on July 1, 2027."
+      },
+      "bounds": [
+        545040,
+        686160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure T would raise it to 1.5 percent, starting on July 1, 2027.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Groceries and prescription medicine would be exempt."
+      },
+      "bounds": [
+        700560,
+        773040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Groceries and prescription medicine would be exempt.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The ballot question says the tax runs until voters stop it; the measure's text sets 30 years, or less if a county tax replaces Measure C."
+      },
+      "bounds": [
+        787440,
+        1029600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The ballot question says the tax runs until voters stop it; the measure's text sets 30 years, or less if a county tax replaces Measure C.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure T needs a simple majority to pass."
+      },
+      "bounds": [
+        1044000,
+        1123200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure T needs a simple majority to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The city attorney's impartial analysis says the tax would raise about $300,000 a year."
+      },
+      "bounds": [
+        1137600,
+        1295520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The city attorney's impartial analysis says the tax would raise about $300,000 a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say even a half-percent sales tax is a heavy burden for struggling neighbors, and those raising money should try voluntary giving first."
+      },
+      "bounds": [
+        1309920,
+        1553040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say even a half-percent sales tax is a heavy burden for struggling neighbors, and those raising money should try voluntary giving first.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument for Measure T was filed with the county registrar of voters, so the published measure documents include only the opponents' argument."
+      },
+      "bounds": [
+        1567440,
+        1791600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure T was filed with the county registrar of voters, so the published measure documents include only the opponents' argument.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote adopts the half-cent sales tax."
+      },
+      "bounds": [
+        1806000,
+        1878240
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote adopts the half-cent sales tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote does not adopt the half-cent sales tax."
+      },
+      "bounds": [
+        1892640,
+        1978560
+      ]
+    }
+  ],
+  "sha256": "37f9ebe1e428d2c87dab61f17aaeb96d60cc5d9f1ed3809f035aea3150adaf3c"
+}
