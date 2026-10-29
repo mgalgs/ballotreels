@@ -7,7 +7,9 @@ import unittest
 from ballotreels.contest import Line, Section, Source, Visual
 from ballotreels.storyboard import ChartBeat, LineBeat, SectionBeat
 
-from film import measure as m
+from tests.helpers import film_measure
+
+m = film_measure()
 
 SOURCE = Source(id="arguments", kind="official-argument", publisher="Pub",
                 url="https://example.com", file="sources/a.html",

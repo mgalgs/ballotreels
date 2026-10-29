@@ -9,7 +9,7 @@ from ballotreels.contest import load_contest
 from ballotreels.narration import match_phrases, padded_spans, side_pad
 from ballotreels.storyboard import layout
 
-from .helpers import PROP_2, ContestCopyTestCase, write_narration
+from .helpers import PROP_2, ContestCopyTestCase, film_measure, write_narration
 
 
 class SidePadTest(ContestCopyTestCase):
@@ -87,7 +87,7 @@ class CommittedProp2Test(unittest.TestCase):
         self.assertAlmostEqual(pad.seconds, 1.4, delta=0.05)
 
     def test_measure_pads_the_playing_audio_by_exactly_the_pad(self):
-        from film import measure as m
+        m = film_measure()
         self.assertIsNotNone(m.PAD)
         sounds = m.voice_sounds()
         self.assertEqual(len(sounds), 2)
@@ -95,7 +95,7 @@ class CommittedProp2Test(unittest.TestCase):
         self.assertEqual(span, m.VOICE.frames(m.FPS) + m.to_frame(m.PAD.seconds, m.FPS))
 
     def test_measure_sides_match_to_the_frame(self):
-        from film import measure as m
+        m = film_measure()
         by_side = {sb.section.side: sb for sb in m.BOARD.sections
                   if sb.section.side is not None}
         a, b = by_side.values()

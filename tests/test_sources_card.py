@@ -9,7 +9,9 @@ from unittest import mock
 
 from ballotreels.contest import load_contest
 from ballotreels.storyboard import SOURCES_CARD_SECONDS, cited_sources
-from film import measure as m
+from tests.helpers import film_measure
+
+m = film_measure()
 
 REPO = Path(__file__).resolve().parent.parent
 # DC Initiative 86: 14 cited sources, most of them two or three lines long

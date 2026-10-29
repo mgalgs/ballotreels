@@ -4,7 +4,9 @@ most two lines, and shrinks to fit a long one rather than spill."""
 
 import unittest
 
-from film import measure as m
+from tests.helpers import film_measure
+
+m = film_measure()
 
 # the longest California title, as the ballot words it and as the data has it
 PROP_3 = ("Proposition 3: Provides permanent funding for schools and health care by "

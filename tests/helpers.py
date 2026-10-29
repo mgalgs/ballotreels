@@ -137,3 +137,93 @@ def git_commit_all(repo, message="fixture"):
     git("add", "-A")
     git("commit", "-q", "--allow-empty", "-m", message)
     return git("rev-parse", "HEAD")
+
+
+def write_take(contest_dir, rms=NARRATION_RMS):
+    """Stand in for the take `contest_dir`'s narration.json records, whose
+    audio is not in git (narration_store): a tone as long as its
+    `seconds`, at a typical narration's level, written to narration.wav
+    and recorded as the take. Only ever in a scratch copy."""
+    import array
+    import math
+    import sys
+    import wave
+
+    from ballotreels.narration_store import record
+
+    contest_dir = Path(contest_dir)
+    doc = json.loads((contest_dir / "narration.json").read_text(
+        encoding="utf-8"))
+    rate, period = 24000, 120  # 200 Hz, a whole number of samples a cycle
+    amp = rms * math.sqrt(2) * 32767
+    cycle = array.array("h", (round(amp * math.sin(2 * math.pi * i / period))
+                              for i in range(period)))
+    n = round(doc["seconds"] * rate)
+    pcm = cycle * (n // period) + cycle[:n % period]
+    if sys.byteorder == "big":
+        pcm.byteswap()
+    with wave.open(str(contest_dir / "narration.wav"), "wb") as w:
+        w.setnchannels(1)
+        w.setsampwidth(2)
+        w.setframerate(rate)
+        w.writeframes(pcm.tobytes())
+    record(contest_dir)
+
+
+def copy_contest(src, dest):
+    """Copy the contest directory `src` to `dest`, giving the copy a
+    stand-in for its recorded take (write_take) in place of the audio,
+    which git does not hold: never the checkout's own narration.wav, so
+    the copy is the same with or without one there."""
+    from ballotreels.narration_store import recorded_take
+
+    shutil.copytree(src, dest, ignore=shutil.ignore_patterns("narration.wav"))
+    if recorded_take(dest) is not None:
+        write_take(dest)
+    return Path(dest)
+
+
+def copy_election(src, dest, contests=None):
+    """Copy the election directory `src` to `dest`: its own files, and
+    each contest directory (only those named in `contests`, when given)
+    by copy_contest."""
+    src, dest = Path(src), Path(dest)
+    dest.mkdir(parents=True)
+    for path in sorted(src.iterdir()):
+        if not path.is_dir():
+            shutil.copy2(path, dest / path.name)
+        elif contests is None or path.name in contests:
+            copy_contest(path, dest / path.name)
+    return dest
+
+
+FILM_CONTEST = REPO / "data" / "ca-2026-11-03" / "prop-2"
+_film_dir = None
+
+
+@functools.cache
+def film_measure():
+    """film/measure.py, as `from film import measure` imports it, for its
+    default contest (live Prop 2): read from a scratch copy (copy_contest),
+    whose stand-in take the film reads at import for its level, since the
+    real audio is not in the checkout. Every test's `film.measure` is this
+    one."""
+    import importlib
+    import os
+    import sys
+
+    global _film_dir
+    assert "film.measure" not in sys.modules, "film.measure imported first"
+    # kept for the whole run: the module plays VOICE.path whenever asked
+    _film_dir = tempfile.TemporaryDirectory()
+    contest = copy_contest(FILM_CONTEST, Path(_film_dir.name) /
+                           FILM_CONTEST.parent.name / FILM_CONTEST.name)
+    old = os.environ.get("BALLOTREELS_CONTEST")
+    os.environ["BALLOTREELS_CONTEST"] = str(contest)
+    try:
+        return importlib.import_module("film.measure")
+    finally:
+        if old is None:
+            del os.environ["BALLOTREELS_CONTEST"]
+        else:
+            os.environ["BALLOTREELS_CONTEST"] = old
