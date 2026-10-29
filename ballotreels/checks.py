@@ -655,6 +655,21 @@ _WHITESPACE = re.compile(r"\s+")
 
 
 @lru_cache(maxsize=8)
+def _raw_text(path: Path) -> str | None:
+    """A PDF's text in the order it is printed (pdftotext -raw); None for
+    a page, or where the PDF cannot be read."""
+    if path.suffix.lower() != ".pdf" or shutil.which("pdftotext") is None:
+        return None
+    try:
+        out = subprocess.run(["pdftotext", "-raw", "-enc", "UTF-8",
+                              str(path), "-"],
+                             capture_output=True, check=True, timeout=60)
+    except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
+        return None
+    return out.stdout.decode("utf-8", errors="replace")
+
+
+@lru_cache(maxsize=8)
 def _unspaced_raw_text(path: Path) -> str | None:
     """A PDF's text in the order it is printed (pdftotext -raw), every
     space removed; None for a page, or where the PDF cannot be read.
@@ -666,15 +681,8 @@ def _unspaced_raw_text(path: Path) -> str | None:
     the default text may instead be in this one, compared with all
     whitespace removed from both: the words and their order still match
     exactly."""
-    if path.suffix.lower() != ".pdf" or shutil.which("pdftotext") is None:
-        return None
-    try:
-        out = subprocess.run(["pdftotext", "-raw", "-enc", "UTF-8",
-                              str(path), "-"],
-                             capture_output=True, check=True, timeout=60)
-    except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
-        return None
-    return _WHITESPACE.sub("", out.stdout.decode("utf-8", errors="replace"))
+    raw = _raw_text(path)
+    return None if raw is None else _WHITESPACE.sub("", raw)
 
 
 def _in_raw_columns(value: str, path: Path) -> bool:
@@ -1359,9 +1367,13 @@ def _loose(s: str) -> str:
 
 @lru_cache(maxsize=8)
 def _loose_archived(path: Path) -> str:
-    text = _loose(_archived_text(path))
-    unshifted = _unshifted_text(path)
-    return text if unshifted is None else f"{text} {_loose(unshifted)}"
+    """`path`'s text for a basis comparison: as pdftotext reads it, then
+    any glyph-id lines read back, then, for a PDF, its text in printed
+    order (pdftotext -raw), since a scan's doubled text layer (Tulelake
+    Multi-County FPD's argument for Measure I) can defeat the default
+    reading order, which interleaves the copies word by word."""
+    parts = [_archived_text(path), _unshifted_text(path), _raw_text(path)]
+    return " ".join(_loose(p) for p in parts if p is not None)
 
 
 def check_side_basis(c: Contest, required: bool) -> list[Failure]:
