@@ -23,7 +23,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any
 
-from ..geo.lookup import GeoData
+from ..geo.lookup import GeoData, ballot_division
 from ..geo.states import STATE_NAMES, chambers, state_for_zip
 from ..index import (ContestIndex, IndexEntry, ballot_order, key_for,
                      level_of, load_index, voters_line)
@@ -1045,8 +1045,13 @@ class PublicHandler(_JsonHandler):
             return self._json(404, {"error": "no covered state in this "
                                              "ballot"})
         index = state.index
-        wanted = set(divisions)
+        # A district's contests are its 9-12-only territory's too
+        # (ballot_division), and certain where any piece of the district
+        # covers the whole zip.
+        wanted = {ballot_division(d) for d in divisions}
         wanted.add(index.election.state)
+        certain = {ballot_division(d) for d in divisions if d not in partial}
+        maybe = {ballot_division(d) for d in partial} - certain
         levels: list[dict[str, Any]] = []
         current = None
         bucket = None
@@ -1059,7 +1064,7 @@ class PublicHandler(_JsonHandler):
                 levels.append(bucket)
                 current = lvl
             summary = _contest_summary(entry, state, deps)
-            if entry.division in partial:
+            if entry.division in maybe:
                 summary["maybe"] = True
             bucket["contests"].append(summary)
         self._json(200, {"election": index.election.id,

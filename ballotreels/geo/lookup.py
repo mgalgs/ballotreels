@@ -95,6 +95,21 @@ def ocd_id(kind: str, geoid: str, state_abbr: str,
             label)
 
 
+# The Census publishes some unified and high school districts twice: the
+# district, and apart from it the territory it serves for grades 9-12
+# only ("<name>_9-12"), whose residents are the district's electors too.
+SECONDARY_ONLY = "_9-12"
+
+
+def ballot_division(ocd_id: str) -> str:
+    """The division whose contests a voter in division `ocd_id` sees: a
+    school district's 9-12-only territory counts as the district, so
+    contests name only the district."""
+    if "/school_district:" in ocd_id and ocd_id.endswith(SECONDARY_ONLY):
+        return ocd_id[:-len(SECONDARY_ONLY)]
+    return ocd_id
+
+
 # The key in a zip's zips.json entry listing its local divisions that
 # cover only part of it, so a contest of theirs may or may not be on a
 # voter's ballot there.
