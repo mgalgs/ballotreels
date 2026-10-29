@@ -1,0 +1,177 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; how a school bond is repaid and what it
+# needs to pass; what the money may pay for; the district's tax rate
+# statement; one line per side; what a vote does.
+#
+# The card quotes the bond measure question as the guide's full text
+# prints it, under the district's name; its origin is the impartial
+# analysis's sentence placing the measure, and its YES/NO boxes are the
+# analysis's statements of what a vote does, which the same excerpt
+# prints. No name of the district or its city is narrated: the card and
+# title show it.
+#
+# The bond total and the debt service are repaid from a tax on property
+# in the district, and no archived source states the district's budget,
+# so they have no budget scale (STANDARD.md 6.5; left open, as for the
+# Allan Hancock and Santa Ynez Valley bonds). The fiscal line writes the
+# statement's "2057-58" in full (standard/speakability.txt); the total
+# to repay, "approximately $377,831,054", is said as "about $378
+# million". The bar on paying salaries from the bonds, the audits and
+# the oversight are in both sides' arguments (supporters cite them,
+# opponents dispute the oversight), so the neutral sections leave them
+# out (STANDARD.md 6.3); the card quotes the question as printed.
+#
+# Both sides filed. The opponents' line keeps to their own two points,
+# academic performance first and shortfalls left after the 2016 bond
+# (said as "an earlier bond", for spoken length; the list keeps the
+# year); their figures for that bond, and their charges about its
+# oversight committee and the campaign, are not narrated.
+
+contest = "ca-2026-11-03-paso-robles-unified-measure-g"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "G"
+title = "PASO ROBLES JOINT UNIFIED SCHOOL DISTRICT"
+origin = "The Board of Trustees of the Paso Robles Joint Unified School District (“the District”) has placed Measure G-26 on the ballot"
+summary = "With funds that cannot be taken by the State and spent elsewhere, shall Paso Robles Joint Unified School District’s measure to renovate and expand classrooms and career training facilities; and repair leaky roofs and inefficient heating and air-conditioning be adopted authorizing $205 million of bonds with legal rates, average levies below $50 per $100,000 of assessed value (raising $12.2 million annually) while outstanding, audits, taxpayer oversight, no funds for administrator salaries, pensions or benefits, and full disclosure of all spending?"
+yes = "A “yes” vote on this measure is a vote in favor of the issuance of $205 million in general obligation bonds to be used for the purposes set forth in Measure G-26."
+no = "A “no” vote on this measure is a vote against the issuance of $205 million in general obligation bonds for the purposes set forth in Measure G-26."
+
+[[section]]
+id = "what"
+heading = "Measure G"
+
+[[section.line]]
+text = "Measure G asks the voters of this school district whether to approve $205 million in school bonds."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $205 million of bonds"]
+
+[[section]]
+id = "today"
+heading = "How a school bond works"
+
+[[section.line]]
+text = "The district would sell the bonds and repay them with a yearly tax on property in the district."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure G needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "projects"
+text = "The money could pay only for school facilities, such as renovating classrooms and career training facilities and repairing leaky roofs."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-roof-repair"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+id = "tax-rate"
+text = "The district's tax rate statement estimates an average tax of $49.59 per $100,000 of assessed value through 2057-2058."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "bars"
+title = "Estimated tax per $100,000 of assessed value"
+source = "tax-statement"
+unit = ""
+labels = ["Average rate", "Highest rate"]
+values = [49.59, 54.90]
+
+[[section.line]]
+text = "The statement estimates the total to repay, with interest, at about $378 million."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the state cannot take the money, which would update career training classrooms and repair leaky roofs and plumbing."
+sources = ["arguments"]
+basis = ["Measure G-26 funds cannot be taken by Sacramento and spent elsewhere.", "Updating and expanding Career Technical Education classrooms and facilities to prepare students for college, careers and skilled trades.", "Repairing and replacing leaky roofs, deteriorated plumbing, aging electrical, and inefficient heating, ventilation and air-conditioning systems."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["The state cannot take the money", "Career classrooms and roof repairs"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the district should focus on academic performance first, as serious facility shortfalls still remain after an earlier bond."
+sources = ["arguments"]
+basis = ["The district’s priority must be improving academic performance, not saddling taxpayers with another massive debt burden atop the troubled 2016 Measure M.", "Nearly a decade later, serious facility shortfalls remain."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Academic performance comes first", "Shortfalls remain from the 2016 bond"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is in favor of issuing $205 million in bonds for the measure's purposes."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["is a vote in favor of the issuance of $205 million"]
+
+[[section.line]]
+text = "A no vote is against issuing the bonds."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["is a vote against the issuance of $205 million"]
+
+[[question]]
+ask = "What would the bond money pay for?"
+lines = ["projects"]
+
+[[question]]
+ask = "How much would property owners pay?"
+lines = ["tax-rate"]
+
+[[question]]
+ask = "How big is $205 million next to the district's yearly budget?"
+unanswered = true
