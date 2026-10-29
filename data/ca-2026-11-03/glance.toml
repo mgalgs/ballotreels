@@ -1054,3 +1054,13 @@ source = "guide-page"
 quote = "generating approximately $980,000,000 annually"
 amount = 980000000
 period = "per-year"
+
+# City of Clayton Measure M: no tax rate statement or fiscal analysis
+# applies; the one estimate is the City Attorney's impartial analysis's
+# (the ballot question prints the same "approximately $1,000,000
+# annually", but its PDF text runs the ballot's NO box into it).
+[clayton-measure-m]
+source = "impartial-analysis"
+quote = "It is estimated that Measure M will provide an additional $1,000,000 in annual local funding"
+amount = 1000000
+period = "per-year"
