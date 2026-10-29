@@ -1,0 +1,61 @@
+# Archived sources for Meadows Union Elementary School District Measure
+# P, 2026-11-03 general election (sources/sources.md). Every id here may
+# be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Imperial County Registrar of Voters posts each measure's pages as
+# one PDF (the ballot question, full text and project list, the
+# District's tax rate statement and County Counsel's impartial
+# analysis); no countywide Voter Information Guide is posted online.
+# County Counsel's impartial analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is; the District's tax rate statement is its fiscal
+# statement. The Registrar's Measure P PDF prints no argument for or
+# against and no rebuttal; with no full guide posted, it is not known
+# whether any was filed.
+#
+# The ballot question says "$1,808,320 of bonds"; the tax rate statement
+# and the impartial analysis say "up to $1,810,000".
+
+[contest]
+id = "ca-2026-11-03-meadows-elementary-measure-p"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:meadows_union_elementary_school_district"
+kind = "measure"
+title = "Meadows Union Elementary School District Measure P: $1.8 Million School Facilities Bond"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Imperial County Registrar of Voters, Measure P, Meadows Union Elementary School District $1.8M Bond Measure: ballot question, page 1, and impartial analysis, page 4"
+credit = "Measure P, Imperial County Registrar of Voters"
+url = "https://elections.imperialcounty.org/wp-content/uploads/2026/08/MeasureP_Meadows_1.8M-1.pdf"
+file = "sources/measure-packet.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Imperial County Counsel, County Counsel’s Impartial Analysis of Bond Measure P, Imperial County Registrar of Voters, Measure P, pages 4 to 5"
+credit = "County Counsel’s Impartial Analysis, Imperial County Registrar of Voters"
+url = "https://elections.imperialcounty.org/wp-content/uploads/2026/08/MeasureP_Meadows_1.8M-1.pdf"
+file = "sources/tax-rate-statement-and-impartial-analysis-pp3-5.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Meadows Union Elementary School District, Tax Rate Statement, Keila Rodriguez, Superintendent, Imperial County Registrar of Voters, Measure P, pages 3 to 4"
+credit = "Tax Rate Statement, Meadows Union Elementary School District"
+url = "https://elections.imperialcounty.org/wp-content/uploads/2026/08/MeasureP_Meadows_1.8M-1.pdf"
+file = "sources/tax-rate-statement-and-impartial-analysis-pp3-5.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Ballot Measure P, with its Project List, Meadows Union Elementary School District, Imperial County Registrar of Voters, Measure P, pages 1 to 3"
+credit = "Full text of Measure P, Imperial County Registrar of Voters"
+url = "https://elections.imperialcounty.org/wp-content/uploads/2026/08/MeasureP_Meadows_1.8M-1.pdf"
+file = "sources/measure-packet.pdf"
+retrieved = "2026-10-28"

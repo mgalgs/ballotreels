@@ -2228,3 +2228,12 @@ source = "impartial-analysis"
 quote = "It is estimated that Measure O will provide an additional $4,000,000 in annual local funding when collected at a ½% rate, increasing to $8,000,000 when collected at a 1% rate."
 amount = 8000000
 period = "per-year"
+
+# Meadows Union Elementary School District Measure P: the district's Tax
+# Rate Statement, its total debt service (the bonds are $1,808,320 in the
+# ballot question, up to $1,810,000 in the statement).
+[meadows-elementary-measure-p]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $3,162,130."
+amount = 3162130
+period = "unstated"
