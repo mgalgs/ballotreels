@@ -350,8 +350,8 @@ class BallotDivisionTest(unittest.TestCase):
     def test_no_contest_names_the_territory(self):
         # The ballot no longer matches a `_9-12` division as written, so
         # a contest naming one would lose its voters.
-        for election_dir in sorted((REPO / "data").glob("*-*-*")):
-            for entry in load_index(election_dir).entries:
+        for index_file in sorted((REPO / "data").glob("*-*-*/contests.toml")):
+            for entry in load_index(index_file.parent).entries:
                 with self.subTest(contest=entry.id):
                     self.assertFalse(entry.division.endswith("_9-12"),
                                      entry.division)
