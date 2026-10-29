@@ -113,6 +113,8 @@ BALLOTS: dict[str, Ballot] = {
                          "City of San Mateo Resolution No. 85 (2026)",
                      "ca-2026-11-03-redwood-city-measure-e":
                          "Resolution No. 16425",
+                     "ca-2026-11-03-san-bruno-measure-s":
+                         "Resolution No. 2026-075",
                  }),
     "ut": Ballot(guide="Voter Information Pamphlet",
                  fiscal_label="Fiscal Effects",

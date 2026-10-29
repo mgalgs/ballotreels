@@ -1,0 +1,63 @@
+# Archived sources for City of San Bruno Measure S, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1). Each document is the copy the San Mateo
+# County Assessor-County Clerk-Recorder & Elections (ACRE) posts on its
+# election page; the county publishes each measure's documents
+# separately, not as one pamphlet.
+#
+# The resolution and the argument in favor are scans with no text
+# layer, so each has a typed transcription beside it (sources/*.txt, its
+# first lines saying which pages it copies), and `file` names the
+# transcription; `url` is the PDF's. The impartial analysis has a text
+# layer and is cited as the PDF itself.
+#
+# The ballot question is printed only in the Council's resolution (its
+# Section 2), so the resolution backs two sources: the ballot label the
+# card quotes, and the full text (with its Exhibit A, the one-page
+# repealing ordinance). This is not a tax: ACRE posts no fiscal analysis
+# or cost estimate. ACRE posts no argument against and no rebuttals, so
+# only the argument in favor is listed.
+
+[contest]
+id = "ca-2026-11-03-san-bruno-measure-s"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:san_bruno"
+kind = "measure"
+title = "City of San Bruno Measure S: Repeal of the 1977 Zoning Initiative Requiring Voter Approval for Some Buildings"
+
+[[source]]
+id = "ballot-label"
+kind = "official-title-summary"
+publisher = "City of San Bruno, Resolution No. 2026 - 075, Section 2: the ballot question, filed with the San Mateo County Chief Elections Officer"
+credit = "City of San Bruno Resolution No. 2026 - 075"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M303-Contest%20Code-Reso-San%20Bruno%20Hosuing%20Permit%20and%20Development_Redacted.pdf"
+file = "sources/resolution-full-text.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney Impartial Analysis of Measure S, by Trisha Ortiz, City Attorney for the City of San Bruno"
+credit = "City Attorney Impartial Analysis"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MS-ImpartialAnalysis-San-Bruno-Hosuing-Permit-and-Development.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure S, submitted by the San Bruno City Council and filed with the San Mateo County elections office"
+credit = "Argument in favor of Measure S"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MS-ArgInFavor-San-Bruno-Housing-Permit-and-Development_Redacted.pdf"
+file = "sources/argument-for.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of San Bruno, Resolution No. 2026 - 075, submitting to the voters the ordinance repealing Initiative Ordinance No. 1284 (Exhibit A)"
+credit = "City of San Bruno Resolution No. 2026 - 075"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M303-Contest%20Code-Reso-San%20Bruno%20Hosuing%20Permit%20and%20Development_Redacted.pdf"
+file = "sources/resolution-full-text.txt"
+retrieved = "2026-10-28"

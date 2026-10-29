@@ -1,0 +1,155 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks; what the 1977 ordinance requires today and who put the repeal on
+# the ballot; what would change (who would decide those projects); that
+# no cost estimate is published; one line per side; what a vote does.
+#
+# Not a tax: ACRE posts no fiscal analysis, and neither the resolution
+# nor the impartial analysis gives a cost or revenue estimate, so the
+# fiscal line says none is published. The argument's "up to $4 million
+# annually" for the Crossings hotel is the supporters' own figure, not an
+# official estimate: it is left out of the neutral sections and out of
+# the supporters' line too (it would need a scale no source gives).
+#
+# The ballot question's own premise, that "State housing laws supersede
+# local height limits", is also the supporters' central point, so the
+# neutral sections leave it to the supporters' line (rule 6.3); it is not
+# the measure's legal effect, which is only the repeal of Chapter 12.26.
+# The Council's recital that projects would stay subject to the General
+# Plan, zoning and environmental review is left out for the same reason
+# (the Council also wrote the argument); the change line follows the
+# impartial analysis instead.
+#
+# The card quotes the Council's resolution, where the ballot question is
+# printed; its title is the resolution's heading, cut after the height
+# limits, and its origin is the City Clerk's adoption line. The
+# resolution prints only "Yes" and "No" boxes, no yes/no statements, so
+# the card has none; the vote lines take the impartial analysis's own
+# meanings ("remove" and "continue" the voter approval requirements) and
+# highlight the same phrase of the ballot question.
+#
+# ACRE posts only an argument in favor: no argument against and no
+# rebuttals. The no side is filed = false; its line says only that none
+# appears in the published measure documents, since no "no argument was
+# submitted" notice is posted.
+
+contest = "ca-2026-11-03-san-bruno-measure-s"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-label"
+number = "S"
+title = "A MEASURE THAT PROPOSES ADOPTION OF AN ORDINANCE REPEALING INITIATIVE ORDINANCE NO. 1284 RELATING TO VOTER APPROVAL TO PERMIT BUILDINGS EXCEEDING THREE STORIES OR FIFTY FEET IN HEIGHT"
+origin = "I hereby certify that foregoing Resolution No. 2026 - 075 was introduced and adopted by the San Bruno City Council at a regular meeting on July 28, 2026"
+summary = "Shall City of San Bruno Ordinance No. 1284, the 1977 zoning initiative that requires voter approval before the City Council can approve buildings exceeding specified height limits, residential density increases beyond 1974 zoning, multi-story parking structures, and certain roadway changes, be repealed given that State housing laws supersede local height limits and the ordinance interacts with current City economic development goals?"
+
+[[section]]
+id = "what"
+heading = "Measure S"
+
+[[section.line]]
+text = "City of San Bruno Measure S asks voters in the city whether to repeal a 1977 zoning law requiring voter approval for some buildings."
+sources = ["ballot-label", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["the 1977 zoning initiative that requires voter approval"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, city voters must approve buildings over three stories or fifty feet tall, denser housing, and multistory parking structures."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section.line]]
+text = "The City Council placed Measure S on the ballot, and it needs a simple majority to pass."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure S would end the citywide vote, leaving such projects to city staff, the planning commission or the City Council."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The published measure documents of San Mateo County do not include a cost estimate for the measure."
+sources = ["impartial-analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say state housing laws overrule the 1977 law, and repeal would attract tax-paying development."
+sources = ["argument-for"]
+basis = ["Nearly fifty years later, new state housing laws overrule these local restrictions.", "Ordinance 1284 limits our ability to attract commercial and market-rate housing projects", "the only types of development that generate significant property tax revenue, impact fees, and community benefit funds.", "Repealing it restores local control, supports responsible development, and ensures we can fund the services our community depends on."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["State housing laws overrule it", "Attracts tax-paying development"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure S appears in the published measure documents of San Mateo County."
+sources = ["ballot-label"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-label"
+items = ["No argument against was printed"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote on Measure S removes the voter approval requirements."
+sources = ["impartial-analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["requires voter approval before the City Council can approve buildings"]
+
+[[section.line]]
+text = "A no vote on Measure S keeps the voter approval requirements."
+sources = ["impartial-analysis", "ballot-label"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-label"
+highlight = ["requires voter approval before the City Council can approve buildings"]
