@@ -1,0 +1,62 @@
+# Archived sources for Rocklin Unified School District Measure D,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Placer County Elections publishes no combined guide document; it posts
+# each measure's guide pages as one PDF, headed "MEASURE D" and "SCHOOL
+# BOND ELECTION – ROCKLIN UNIFIED SCHOOL DISTRICT", paged MD1 to MD8. One
+# PDF backs every source here. County Counsel's Impartial Analysis is the
+# measure's neutral explanation; the district's Tax Rate Statement is its
+# fiscal statement.
+
+[contest]
+id = "ca-2026-11-03-rocklin-unified-measure-d"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:rocklin_unified_school_district"
+kind = "measure"
+title = "Rocklin Unified Measure D: School Facility Bonds"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Placer County Elections, Measure D: School Bond Election – Rocklin Unified School District, page MD1: the ballot question"
+credit = "Measure D, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-D.pdf"
+file = "sources/11032026_Measure-D.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Placer County Counsel, County Counsel’s Impartial Analysis of Measure D, Placer County Elections, Measure D, page MD1"
+credit = "Impartial Analysis, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-D.pdf"
+file = "sources/11032026_Measure-D.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Rocklin Unified School District, Tax Rate Statement, Placer County Elections, Measure D, page MD8"
+credit = "Tax Rate Statement, Rocklin Unified School District"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-D.pdf"
+file = "sources/11032026_Measure-D.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Arguments in Favor of and Against Measure D, and the rebuttals, Placer County Elections, Measure D, pages MD2 to MD3"
+credit = "Arguments, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-D.pdf"
+file = "sources/11032026_Measure-D.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure D Submitted by Rocklin Unified School District, Placer County Elections, Measure D, pages MD4 to MD8"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/measures/11032026_Measure-D.pdf"
+file = "sources/11032026_Measure-D.pdf"
+retrieved = "2026-10-28"
