@@ -1,0 +1,184 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; what the charter is; how the
+# budget, the Board of Public Works and city property work today; what
+# would change, in the Impartial Summary's groups; the City
+# Administrative Officer's estimate; one line per side; what a vote does.
+#
+# The card quotes the pamphlet: the title and ballot question from the
+# measure's own page (printed page 17), and the yes and no meanings from
+# its Ballot Summary (printed page 4). The heading above them, "CITY OF
+# LOS ANGELES CHARTER AMENDMENT LA", stands in for an origin: the
+# pamphlet does not say who placed the measure on the ballot.
+#
+# The $4 million to $6 million is one-time General Fund money, which
+# the statement compares against no total, and no archived source states
+# the city's General Fund budget; so it has no scale (STANDARD.md 6.5;
+# left open, under [[question]]). The supporters' "billions of dollars in
+# needed infrastructure repairs" and the opponents' "billions of tax
+# payer dollars" are each side's own (6.3), and stay in the sides. The
+# rebuttal to the argument against is not cited.
+
+contest = "ca-2026-11-03-los-angeles-measure-la"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "summary"
+number = "LA"
+title = "CITY INFRASTRUCTURE, BUDGET, FINANCE, AND CONTRACTING."
+origin = "CITY OF LOS ANGELES CHARTER AMENDMENT LA"
+summary = "Shall the City Charter be amended to: establish a capital infrastructure plan and two-year budget cycle for the City; increase the authority of the Director of Public Works and allow for the elimination of or changes to the Board of Public Works; remove restrictions prohibiting the City from engaging in business enterprises and mortgaging City-owned property; and change certain contracting rules and procedures?"
+yes = "A YES VOTE MEANS: You want the Charter to be amended to make the changes described above regarding City infrastructure, budget, finance, and contracting."
+no = "A NO VOTE MEANS: You do not want the Charter to be amended to make the changes described above regarding City infrastructure, budget, finance, and contracting."
+
+[[section]]
+id = "what"
+heading = "Measure LA"
+
+[[section.line]]
+text = "City of Los Angeles Measure LA asks voters in the city whether to change the charter rules on the budget, infrastructure, public works and city contracts."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["Shall the City Charter be amended"]
+
+[[section]]
+id = "background"
+heading = "What the charter is"
+
+[[section.line]]
+text = "The City Charter sets the rules for how the city manages its budget, contracts, property and Department of Public Works."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the city budgets one year at a time, and needs no capital plan for infrastructure."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+text = "A full-time Board of Public Works oversees the department, and the charter bars the city from mortgaging property or running commercial businesses."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "empty-commission-seat"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure LA would require two-year budgets and a capital plan for roads, parks, bridges and buildings."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hourglass-plans"
+
+[[section.line]]
+id = "board"
+text = "The Director of Public Works would gain powers, and the City Council could change or eliminate the board."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "empty-commission-seat"
+
+[[section.line]]
+text = "The city could also mortgage property, run commercial businesses, and change some contracting rules."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "loan-papers"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+id = "cost"
+text = "The City Administrative Officer estimates one-time General Fund costs between $4 million and $6 million, and says other effects cannot be quantified yet."
+sources = ["financial-impact"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say long-term planning and two-year budgets let the city fix infrastructure before problems become more expensive."
+sources = ["arguments"]
+basis = ["It establishes long-term infrastructure planning so the City can prioritize repairs, address maintenance before problems become more expensive", "It also requires two-year budgeting so City leaders consider tomorrow’s costs when making decisions today."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Plans infrastructure repairs ahead", "Budgets for tomorrow's costs"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say letting the council eliminate the board removes independent review of contracts and weakens public accountability."
+sources = ["arguments"]
+basis = ["would give the City Council the authority to eliminate the Board of Public Works and consolidate its powers under a single individual.", "The Board was established to provide independent review of City contracting", "Removing this important check and balance would reduce public scrutiny and weaken accountability"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Ends independent review of contracts", "Less public scrutiny of projects"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means you want the charter amended to make these changes."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["You want the Charter to be amended"]
+
+[[section.line]]
+text = "A no vote means you do not want the charter amended."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["You do not want the Charter to be amended"]
+
+[[question]]
+ask = "What would happen to the Board of Public Works?"
+lines = ["board"]
+
+[[question]]
+ask = "How much would the changes cost?"
+lines = ["cost"]
+
+[[question]]
+ask = "How big is that cost next to the city's General Fund budget?"
+unanswered = true

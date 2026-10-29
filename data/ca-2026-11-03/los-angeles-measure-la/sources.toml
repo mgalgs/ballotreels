@@ -1,0 +1,52 @@
+# Archived sources for City of Los Angeles Charter Amendment LA (scripted
+# as Measure LA, the site's convention), 2026-11-03 general election
+# (sources/sources.md). All four come from one cut of the City Clerk's
+# Voter Information Pamphlet, edition 201: the PDF's pages 6 and 19 to 37,
+# the pamphlet's printed pages 4 (Ballot Summary) and 17 to 35.
+#
+# The Chief Legislative Analyst's Impartial Summary is the measure's
+# neutral explanation, and the City Administrative Officer's Financial
+# Impact Statement its fiscal analysis. Both sides argued; a rebuttal to
+# the argument against was filed, none to the argument in favor.
+
+[contest]
+id = "ca-2026-11-03-los-angeles-measure-la"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:los_angeles"
+kind = "measure"
+title = "City of Los Angeles Measure LA: Charter Changes to City Infrastructure, Budget, Finance and Contracting"
+
+[[source]]
+id = "summary"
+kind = "official-title-summary"
+publisher = "Office of the City Clerk, City of Los Angeles Voter Information Pamphlet, November 3, 2026, pages 4 and 17 to 18: Ballot Summary, ballot question, and Impartial Summary by the Chief Legislative Analyst"
+credit = "Impartial Summary, City of Los Angeles Voter Information Pamphlet"
+url = "https://cityclerk.lacity.org/election/ENG201_NOV-2026_Voter_Info_Pamphlet.pdf"
+file = "sources/vip201-la.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "financial-impact"
+kind = "official-fiscal-analysis"
+publisher = "City Administrative Officer, Financial Impact Statement, City of Los Angeles Voter Information Pamphlet, November 3, 2026, page 18"
+credit = "Financial Impact Statement, City of Los Angeles Voter Information Pamphlet"
+url = "https://cityclerk.lacity.org/election/ENG201_NOV-2026_Voter_Info_Pamphlet.pdf"
+file = "sources/vip201-la.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Argument in Favor of, Argument Against, and Rebuttal to the Argument Against Charter Amendment LA, City of Los Angeles Voter Information Pamphlet, November 3, 2026, pages 19 to 22"
+credit = "Arguments, City of Los Angeles Voter Information Pamphlet"
+url = "https://cityclerk.lacity.org/election/ENG201_NOV-2026_Voter_Info_Pamphlet.pdf"
+file = "sources/vip201-la.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Charter Amendment LA, Text of the Proposed Ballot Measure, City of Los Angeles Voter Information Pamphlet, November 3, 2026, pages 23 to 35"
+url = "https://cityclerk.lacity.org/election/ENG201_NOV-2026_Voter_Info_Pamphlet.pdf"
+file = "sources/vip201-la.pdf"
+retrieved = "2026-10-28"
