@@ -1660,3 +1660,13 @@ source = "ballot-question"
 quote = "which is expected to generate $2,000,000 annually"
 amount = 2000000
 period = "per-year"
+
+# City of Firebaugh Measure F: no tax rate statement or fiscal analysis
+# applies (a parcel tax, not a bond). The quote is the ballot
+# question's, from Resolution No. 26-46; the City Attorney's impartial
+# analysis gives the same $240,000 a year.
+[firebaugh-measure-f]
+source = "ballot-question"
+quote = "providing approximately $240,000/year until ended by voters"
+amount = 240000
+period = "per-year"
