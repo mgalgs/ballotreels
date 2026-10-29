@@ -1,0 +1,265 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 75.49,
+  "phrases": [
+    {
+      "text": "Measure Z asks the voters of this library district whether to raise the library parcel tax from $28 to $50 a year.",
+      "start": 0.03,
+      "end": 8.02
+    },
+    {
+      "text": "The district runs the public library, and already charges a special tax of $28 a year.",
+      "start": 8.68,
+      "end": 14.74
+    },
+    {
+      "text": "The tax falls on each habitable parcel or living unit inside the city limits.",
+      "start": 15.4,
+      "end": 20.62
+    },
+    {
+      "text": "Measure Z needs two-thirds of the vote to pass.",
+      "start": 21.28,
+      "end": 24.42
+    },
+    {
+      "text": "The tax would rise to $50 in July 2027, with no exemptions, until voters or the district board repeal it.",
+      "start": 25.08,
+      "end": 33.32
+    },
+    {
+      "text": "The money could pay only for library services, such as books, technology, programs and staff.",
+      "start": 33.98,
+      "end": 40.95
+    },
+    {
+      "text": "The district's tax rate statement estimates that the $50 tax would raise about $194,600 a year.",
+      "start": 41.61,
+      "end": 49.3
+    },
+    {
+      "text": "Supporters say the rate is unchanged in over three decades while costs rose sharply, and the library runs a deficit.",
+      "start": 49.96,
+      "end": 57.71
+    },
+    {
+      "text": "No argument against Measure Z was submitted, so the county voter guide prints only the argument in favor of it.",
+      "start": 58.37,
+      "end": 65.16
+    },
+    {
+      "text": "A yes vote supports raising the tax to $50 a year for each parcel.",
+      "start": 65.82,
+      "end": 70.5
+    },
+    {
+      "text": "A no vote opposes the increase and keeps the $28 tax.",
+      "start": 71.16,
+      "end": 75.46
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure Z asks the voters of this library district whether to raise the library parcel tax from $28 to $50 a year.",
+      "The district runs the public library, and already charges a special tax of $28 a year.",
+      "The tax falls on each habitable parcel or living unit inside the city limits.",
+      "Measure Z needs two-thirds of the vote to pass.",
+      "The tax would rise to $50 in July 2027, with no exemptions, until voters or the district board repeal it.",
+      "The money could pay only for library services, such as books, technology, programs and staff.",
+      "The district's tax rate statement estimates that the $50 tax would raise about $194,600 a year.",
+      "Supporters say the rate is unchanged in over three decades while costs rose sharply, and the library runs a deficit.",
+      "No argument against Measure Z was submitted, so the county voter guide prints only the argument in favor of it.",
+      "A yes vote supports raising the tax to $50 a year for each parcel.",
+      "A no vote opposes the increase and keeps the $28 tax."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure Z asks the voters of this library district whether to raise the library parcel tax from $28 to $50 a year."
+      },
+      "bounds": [
+        0,
+        193200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure Z asks the voters of this library district whether to raise the library parcel tax from $28 to $50 a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The district runs the public library, and already charges a special tax of $28 a year."
+      },
+      "bounds": [
+        207600,
+        354480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district runs the public library, and already charges a special tax of $28 a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The tax falls on each habitable parcel or living unit inside the city limits."
+      },
+      "bounds": [
+        368880,
+        495600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The tax falls on each habitable parcel or living unit inside the city limits.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure Z needs two-thirds of the vote to pass."
+      },
+      "bounds": [
+        510000,
+        586800
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure Z needs two-thirds of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The tax would rise to $50 in July 2027, with no exemptions, until voters or the district board repeal it."
+      },
+      "bounds": [
+        601200,
+        800400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The tax would rise to $50 in July 2027, with no exemptions, until voters or the district board repeal it.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money could pay only for library services, such as books, technology, programs and staff."
+      },
+      "bounds": [
+        814800,
+        983520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money could pay only for library services, such as books, technology, programs and staff.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The district's tax rate statement estimates that the $50 tax would raise about $194,600 a year."
+      },
+      "bounds": [
+        997920,
+        1183920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district's tax rate statement estimates that the $50 tax would raise about $194,600 a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say the rate is unchanged in over three decades while costs rose sharply, and the library runs a deficit."
+      },
+      "bounds": [
+        1198320,
+        1385760
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the rate is unchanged in over three decades while costs rose sharply, and the library runs a deficit.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument against Measure Z was submitted, so the county voter guide prints only the argument in favor of it."
+      },
+      "bounds": [
+        1400160,
+        1564560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure Z was submitted, so the county voter guide prints only the argument in favor of it.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote supports raising the tax to $50 a year for each parcel."
+      },
+      "bounds": [
+        1578960,
+        1692720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote supports raising the tax to $50 a year for each parcel.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote opposes the increase and keeps the $28 tax."
+      },
+      "bounds": [
+        1707120,
+        1811760
+      ]
+    }
+  ],
+  "sha256": "49e927b6eb50ed358e400f0b58f3c22fa2cf4cd3120b6420e66e1af64dec0256"
+}
