@@ -2209,3 +2209,13 @@ period = "per-year"
 [imperial-valley-healthcare-measure-n]
 source = "ballot-question"
 status = "none-printed"
+
+# El Centro Measure T: no fiscal analysis or tax rate statement applies
+# (a sales tax); the one estimate is the City's, as the impartial
+# analysis gives it.
+[el-centro-measure-t]
+source = "impartial-analysis"
+quote = "will generate approximately $8,400,000 annually in additional revenue until ended by voters"
+amount = 8400000
+period = "per-year"
+direction = "revenue-gain"

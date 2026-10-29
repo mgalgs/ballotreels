@@ -627,6 +627,9 @@ BALLOTS: dict[str, Ballot] = {
                      "ca-2026-11-03-imperial-valley-healthcare-measure-n":
                          "Measure N — Maintaining Local Hospitals and "
                          "Emergency Healthcare Services",
+                     "ca-2026-11-03-el-centro-measure-t":
+                         "Measure T — El Centro Public Safety/City "
+                         "Services Measure",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
