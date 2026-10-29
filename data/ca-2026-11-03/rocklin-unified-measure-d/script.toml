@@ -7,11 +7,12 @@
 # are County Counsel's Impartial Analysis (the origin stops before the
 # resolution's number, which pdftotext breaks at a hyphen). "Counsel" is
 # heard as "Council" (standard/speakability.txt), so the narration says
-# "the impartial analysis". The bond total and the debt service are
-# repaid from a tax on property in the district, and no archived source
-# states the district's budget, so they have no budget scale
+# "the impartial analysis". The bond total is repaid from a tax on
+# property in the district, and no archived source states the district's
+# budget, so it has no budget scale
 # (STANDARD.md 6.5; left open). The fiscal line gives the statement's
-# average rate beside its highest, as it prints both.
+# average rate beside its highest, as it prints both. The statement's
+# total debt service is left out to keep the film near 60 seconds.
 #
 # Whether Measure D raises taxes is the dispute between the sides
 # (supporters: "Without increasing existing tax rates"; opponents: those
@@ -54,7 +55,7 @@ id = "today"
 heading = "How a school bond works"
 
 [[section.line]]
-text = "The district would sell the bonds and repay them from a yearly tax on property in the district."
+text = "The district would repay the bonds from a yearly tax on property in the district."
 sources = ["impartial-analysis"]
 
 [section.line.visual]
@@ -99,14 +100,6 @@ unit = ""
 labels = ["Average", "Highest"]
 values = [58.55, 60]
 
-[[section.line]]
-text = "The statement estimates the total to repay, with interest, at about $657 million."
-sources = ["tax-statement"]
-
-[section.line.visual]
-kind = "illustration"
-name = "debt-payments"
-
 [[section]]
 id = "yes"
 heading = "Why some vote yes"
@@ -142,7 +135,7 @@ id = "vote"
 heading = "What your vote means"
 
 [[section.line]]
-text = "A yes vote would authorize the district to sell up to $288 million in bonds, repaid by a yearly tax on property."
+text = "A yes vote would authorize up to $288 million in bonds, repaid by a property tax."
 sources = ["impartial-analysis", "ballot-question"]
 
 [section.line.visual]
@@ -151,7 +144,7 @@ source = "ballot-question"
 highlight = ["would authorize the Rocklin Unified School District to borrow money"]
 
 [[section.line]]
-text = "A no vote is a vote against authorizing the district to issue the proposed bonds."
+text = "A no vote is a vote against authorizing the bonds."
 sources = ["impartial-analysis", "ballot-question"]
 
 [section.line.visual]

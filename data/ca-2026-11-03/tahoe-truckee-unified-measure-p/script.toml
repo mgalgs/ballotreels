@@ -1,9 +1,10 @@
 # Recipe E, about 60 seconds, distilled: one claim per line. The chain:
 # what it asks and of whom; the parcel tax today and when it ends; what
 # it needs to pass; what would change (the new rate, its length,
-# inflation, what the money may pay for, who may be exempt); the
-# impartial analysis's revenue estimate; one line per side; what a vote
-# does.
+# inflation, what the money may pay for); the measure's revenue
+# estimate, as the impartial analysis reports it; one line per side;
+# what a vote does. The exemptions are left to the card's question
+# ("senior exemptions") to keep the film near 60 seconds.
 #
 # The card's title is the PDF's own head; its origin and yes and no lines
 # are County Counsel's Impartial Analysis (the origin stops before the
@@ -55,7 +56,7 @@ id = "today"
 heading = "Today"
 
 [[section.line]]
-text = "Today, the district levies a $148 tax on each parcel, which voters approved in 2018 and which expires in July 2028."
+text = "Today's $148 parcel tax, approved in 2018, expires in July 2028."
 sources = ["impartial-analysis"]
 
 [section.line.visual]
@@ -87,16 +88,12 @@ id = "uses"
 text = "The money could pay for academic programs, career training, the arts, libraries, and counseling and nursing."
 sources = ["impartial-analysis"]
 
-[[section.line]]
-text = "Owners 65 and older, and some with disabilities, could be exempt."
-sources = ["impartial-analysis"]
-
 [[section]]
 id = "fiscal"
 heading = "What the impartial analysis says"
 
 [[section.line]]
-text = "The impartial analysis says the measure estimates the tax would raise about $7 million a year."
+text = "The measure estimates the tax would raise about $7 million a year."
 sources = ["impartial-analysis"]
 
 [section.line.visual]
@@ -138,7 +135,7 @@ id = "vote"
 heading = "What your vote means"
 
 [[section.line]]
-text = "A yes vote is a vote to authorize the special tax described in the measure."
+text = "A yes vote is a vote to authorize the special tax."
 sources = ["impartial-analysis", "ballot-question"]
 
 [section.line.visual]
@@ -147,7 +144,7 @@ source = "ballot-question"
 highlight = ["a vote to authorize the special tax"]
 
 [[section.line]]
-text = "A no vote is a vote against the proposed tax, and the 2018 tax would continue under its existing terms."
+text = "A no vote is a vote against it, and the 2018 tax would continue under its existing terms."
 sources = ["impartial-analysis", "ballot-question"]
 
 [section.line.visual]
