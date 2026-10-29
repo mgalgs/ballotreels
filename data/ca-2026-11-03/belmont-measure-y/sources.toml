@@ -1,0 +1,68 @@
+# Archived sources for City of Belmont Measure Y, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1). San Mateo County's Assessor-County Clerk-Recorder &
+# Elections (ACRE) posts each document of the measure separately, as the
+# City of Belmont filed it; no printed voter guide was archived.
+#
+# The City Attorney's Impartial Analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is, and the one estimate of revenue beside the ballot
+# question's. Measure Y is a special tax, not a bond: no tax rate
+# statement or fiscal analysis is among ACRE's files.
+#
+# Every file is a scan with no usable text layer. Each source that
+# `check` reads verbatim (the card's ballot question, each side's basis)
+# is a transcription of its page, read from the page image, in a .txt
+# beside the PDF; the url is the PDF's.
+
+[contest]
+id = "ca-2026-11-03-belmont-measure-y"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:belmont"
+kind = "measure"
+title = "City of Belmont Measure Y: Special Tax Per Square Foot of Buildings for a New Community Center"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Belmont, Resolution No. 2026 – 69, Section 3(c): the question to be presented to the voters (page 2), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Ballot question, Resolution No. 2026 – 69"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M308-Contest%20Code-Reso-Belmont%20Special%20Tax_Redacted.pdf"
+file = "sources/resolution-full-text.p1-2.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis, Measure “Y”, Belmont Community Center Measure, Scott M. Rennie, City Attorney, City of Belmont, filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "City Attorney's Impartial Analysis"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-MY-ImpartialAnalysis-Belmont-Special-Tax.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Belmont, Resolution No. 2026 – 69 and the initiative ordinance adding Article VII, Community Center Special Tax, to Chapter 23 of the Belmont City Code (pages 1 to 12), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M308-Contest%20Code-Reso-Belmont%20Special%20Tax_Redacted.pdf"
+file = "sources/resolution-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure Y (page 3), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Argument in favor, filed with San Mateo County"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M308-Contest%20Code-ArgInFavor-Belmont%20Special%20Tax_Redacted.pdf"
+file = "sources/argument-for.p3.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure Y (page 3), filed with San Mateo County Assessor-County Clerk-Recorder & Elections"
+credit = "Argument against, filed with San Mateo County"
+url = "https://smcacre.gov/system/files/2026-08/52-ENG-M308-Contest%20Code-7ArgAgainst-Belmont%20Special%20Tax_Redacted.pdf"
+file = "sources/argument-against.p3.txt"
+retrieved = "2026-10-28"

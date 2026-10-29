@@ -442,3 +442,13 @@ period = "unstated"
 [east-palo-alto-measure-cc]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Belmont Measure Y: a special tax; no tax rate statement or
+# fiscal analysis is among the measure's published documents. The ballot
+# question's estimate (the City Attorney's analysis gives "approximately
+# $7.1 million" for the first tax year, in a scan with no text layer).
+[belmont-measure-y]
+source = "ballot-question"
+quote = "providing $7,100,000 annually until ended by voters"
+amount = 7100000
+period = "per-year"
