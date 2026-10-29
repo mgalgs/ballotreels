@@ -149,8 +149,12 @@ source = "ballot-question"
 highlight = ["by an independent redistricting commission"]
 
 [[question]]
-ask = "Who would sit on the commission, and who picks them?"
+ask = "Who may sit on the commission?"
 lines = ["commission"]
+
+[[question]]
+ask = "Who would pick the commission's members?"
+unanswered = true
 
 [[question]]
 ask = "When would the districts next be redrawn?"
