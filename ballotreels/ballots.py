@@ -719,6 +719,16 @@ BALLOTS: dict[str, Ballot] = {
                             "lassen-union-high-measure-y",
                             "lassen-library-measure-z",
                             "shasta-tehama-trinity-jccd-measure-c-lassen")},
+                     # Trinity County Elections prints each local
+                     # measure's ballot question, impartial analysis,
+                     # arguments, full text and any tax rate statement in
+                     # its Consolidated County Voter Information Guide
+                     **{f"ca-2026-11-03-{slug}":
+                        "Consolidated Trinity County Voter Information "
+                        "Guide"
+                        for slug in (
+                            "shasta-tehama-trinity-jccd-measure-c-trinity",
+                            "post-mountain-pud-measure-d")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
