@@ -413,7 +413,8 @@ def main(argv: list[str] | None = None, out=sys.stdout, err=sys.stderr) -> int:
                            metavar="FRACTION",
                            help="drop a zip/district overlap smaller than "
                                 "this fraction of the zip's land area "
-                                "(default: 0, keep every sliver)")
+                                "(default and floor: 0.01, the sliver "
+                                "bound)")
     geo_build.add_argument("--tolerance", type=float, default=0.001,
                            metavar="DEGREES",
                            help="Douglas-Peucker simplification tolerance, "
