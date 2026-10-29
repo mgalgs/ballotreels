@@ -1590,3 +1590,13 @@ period = "per-year"
 [riverbank-measure-m]
 source = "impartial-analysis"
 status = "none-printed"
+
+# City of Patterson Measure L: no tax rate statement or fiscal analysis
+# applies (a sales tax). The City Attorney's impartial analysis gives
+# the same $9,000,000 a year; the quote is the ballot question's, as
+# for Ceres Measure P.
+[patterson-measure-l]
+source = "ballot-question"
+quote = "providing approximately $9,000,000 annually until ended by voters"
+amount = 9000000
+period = "per-year"
