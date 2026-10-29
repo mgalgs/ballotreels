@@ -1220,3 +1220,41 @@ source = "impartial-analysis"
 quote = "and is estimated to raise $1,300,000 each year."
 amount = 1300000
 period = "per-year"
+
+# City of Los Angeles Measure TE: the City Administrative Officer's
+# estimate is a total "through January 2030", from sales since the fire;
+# the statement names no number of years, so the period is unstated.
+[los-angeles-measure-te]
+source = "financial-impact"
+quote = "The estimated reduction in ULA revenue is between $35 million and $66 million through January 2030."
+amount = 66000000
+period = "unstated"
+direction = "revenue-loss"
+
+# City of Los Angeles Measure LA: the City Administrative Officer
+# estimates the one-time cost of the two-year budget and capital plan,
+# and says the rest "cannot be quantified at this time".
+[los-angeles-measure-la]
+source = "financial-impact"
+quote = "Transitioning to the two-year budget cycle and establishing a capital infrastructure plan will require an estimated $4 million to $6 million in one-time costs"
+amount = 6000000
+period = "one-time"
+direction = "cost"
+
+# City of Los Angeles Measure PL: the City Administrative Officer's
+# estimate of yearly commission costs.
+[los-angeles-measure-pl]
+source = "financial-impact"
+quote = "The annual administrative costs for commission staffing and resources are estimated to be reduced by $360,000"
+amount = 360000
+period = "per-year"
+direction = "savings"
+
+# City of Los Angeles Measure EE: the City Administrative Officer gives
+# no dollar figure; fewer council meetings "may result in General Fund
+# cost savings", and the oversight changes bring costs that cannot be
+# determined.
+[los-angeles-measure-ee]
+source = "financial-impact"
+status = "not-determined"
+quote = "The changes to the Fire and Police commissions may require hiring new investigators, retaining external auditors, or expanding investigative staff depending on case volume resulting in costs that cannot be determined at this time."

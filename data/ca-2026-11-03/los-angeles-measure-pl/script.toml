@@ -1,0 +1,183 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; what the charter does for
+# planning; the area commissions and the floor area limit today; what
+# would change, in the Impartial Summary's order; the City Administrative
+# Officer's estimate; the one argument filed; what a vote does.
+#
+# The card quotes the pamphlet: the title and ballot question from the
+# measure's own page (printed page 36), and the yes and no meanings from
+# its Ballot Summary (printed page 5). The heading above them, "CITY OF
+# LOS ANGELES CHARTER AMENDMENT PL", stands in for an origin: the
+# pamphlet does not say who placed the measure on the ballot.
+#
+# The Financial Impact Statement gives the $360,000 saving with its own
+# comparison ("from $1.1 million to $740,000"), and the fiscal line
+# quotes it (STANDARD.md 6.5). The supporters' "harder for anyone to
+# manipulate the system" is theirs (6.3) and stays in their section. No
+# argument against was submitted: the no side is filed = false, as for
+# Proposition 37.
+
+contest = "ca-2026-11-03-los-angeles-measure-pl"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "summary"
+number = "PL"
+title = "CITY PLANNING DEPARTMENT."
+origin = "CITY OF LOS ANGELES CHARTER AMENDMENT PL"
+summary = "Shall the City Charter be amended to: establish a Neighborhood Appeals Commission to replace Area Planning Commissions and establish a process for City Council review of Neighborhood Appeals Commission and City Planning Commission decisions; change the timing and process for City Council action on certain planning decisions; grant the Planning Department the authority to investigate, hear, and determine applications for quasi-judicial review; and allow for changes to floor area regulations by ordinance?"
+yes = "A YES VOTE MEANS: You want to amend the Charter with the changes above regarding the City Planning Department."
+no = "A NO VOTE MEANS: You do not want to amend the Charter with the changes above regarding the City Planning Department."
+
+[[section]]
+id = "what"
+heading = "Measure PL"
+
+[[section.line]]
+text = "City of Los Angeles Measure PL asks voters in the city whether to change the charter rules on who decides planning and land use matters."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["Shall the City Charter be amended"]
+
+[[section]]
+id = "background"
+heading = "What the charter does"
+
+[[section.line]]
+text = "The City Charter, the constitution of the city, sets the powers of planning commissions, the Planning Department and the City Council."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, seven Area Planning Commissions, with 35 commissioners in all, have been in place since 2000."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "empty-commission-seat"
+
+[[section.line]]
+text = "The charter limits floor area to 13 times the buildable area of a site."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "office-tower"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "commission"
+text = "Measure PL would replace them with one Neighborhood Appeals Commission of at least seven members, to hear appeals anew."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "empty-commission-seat"
+
+[[section.line]]
+text = "Planning Department staff would decide some applications, and some approval rules would move from the charter into ordinances."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "zoning-map"
+
+[[section.line]]
+text = "Changes to the general plan would be approved, not rejected, if the City Council does not act within 75 days, and the council could change the floor area limit by ordinance."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+id = "cost"
+text = "The City Administrative Officer says commission costs would fall by $360,000 a year, from $1.1 million to $740,000, with no expected effect on revenue."
+sources = ["financial-impact"]
+
+[section.line.visual]
+kind = "bars"
+title = "Yearly commission costs, in thousands of dollars"
+source = "financial-impact"
+unit = ""
+labels = ["Today", "Measure PL"]
+values = [1100, 740]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say one appeals commission and clearer rules make planning more consistent and harder to manipulate for special treatment."
+sources = ["argument-for"]
+basis = ["The measure replaces the existing Area Planning Commissions with a Neighborhood Appeals Commission, creating a more consistent citywide process for hearing planning appeals.", "clearer lines of authority and consistent procedures make it harder for anyone to manipulate the system for preferential treatment."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["One citywide appeals process", "Harder to manipulate for favors"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure PL was submitted, so the voter pamphlet prints only the argument in favor of it."
+sources = ["argument-for"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means you want to amend the charter with these planning changes."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["You want to amend the Charter"]
+
+[[section.line]]
+text = "A no vote means you do not want to amend the charter."
+sources = ["summary"]
+
+[section.line.visual]
+kind = "page"
+source = "summary"
+highlight = ["You do not want to amend the Charter"]
+
+[[question]]
+ask = "What would replace the area planning commissions?"
+lines = ["commission"]
+
+[[question]]
+ask = "Would it cost or save money?"
+lines = ["cost"]

@@ -337,6 +337,12 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 11:25/26",
                      "ca-2026-11-03-pacifica-school-measure-t":
                          "Resolution No. 2026-06-10-B",
+                     # The City Clerk's own pamphlet prints each City of
+                     # Los Angeles measure's ballot question, Impartial
+                     # Summary and yes/no meanings.
+                     **{f"ca-2026-11-03-los-angeles-measure-{x}":
+                        "City of Los Angeles Voter Information Pamphlet"
+                        for x in ("te", "la", "pl", "ee")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

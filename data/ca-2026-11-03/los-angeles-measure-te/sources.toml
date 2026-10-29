@@ -1,0 +1,52 @@
+# Archived sources for City of Los Angeles Proposition TE (scripted as
+# Measure TE, the site's convention), 2026-11-03 general election
+# (sources/sources.md). All four come from one cut of the City Clerk's
+# Voter Information Pamphlet, edition 201: the PDF's pages 5 and 13 to 18,
+# the pamphlet's printed pages 3 (Ballot Summary) and 11 to 16.
+#
+# The Chief Legislative Analyst's Impartial Summary is the measure's
+# neutral explanation, and the City Administrative Officer's Financial
+# Impact Statement its fiscal analysis. No argument against was submitted
+# (printed page 14), and no rebuttals.
+
+[contest]
+id = "ca-2026-11-03-los-angeles-measure-te"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:los_angeles"
+kind = "measure"
+title = "City of Los Angeles Measure TE: One-Time Exemption From the Proposition ULA Transfer Tax for Palisades Fire-Damaged Homes"
+
+[[source]]
+id = "summary"
+kind = "official-title-summary"
+publisher = "Office of the City Clerk, City of Los Angeles Voter Information Pamphlet, November 3, 2026, pages 3 and 11 to 12: Ballot Summary, ballot question, and Impartial Summary by the Chief Legislative Analyst"
+credit = "Impartial Summary, City of Los Angeles Voter Information Pamphlet"
+url = "https://cityclerk.lacity.org/election/ENG201_NOV-2026_Voter_Info_Pamphlet.pdf"
+file = "sources/vip201-te.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "financial-impact"
+kind = "official-fiscal-analysis"
+publisher = "City Administrative Officer, Financial Impact Statement, City of Los Angeles Voter Information Pamphlet, November 3, 2026, page 12"
+credit = "Financial Impact Statement, City of Los Angeles Voter Information Pamphlet"
+url = "https://cityclerk.lacity.org/election/ENG201_NOV-2026_Voter_Info_Pamphlet.pdf"
+file = "sources/vip201-te.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Proposition TE, City of Los Angeles Voter Information Pamphlet, November 3, 2026, pages 13 to 14"
+credit = "Argument in Favor, City of Los Angeles Voter Information Pamphlet"
+url = "https://cityclerk.lacity.org/election/ENG201_NOV-2026_Voter_Info_Pamphlet.pdf"
+file = "sources/vip201-te.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Proposition TE, Text of the Proposed Ballot Measure, City of Los Angeles Voter Information Pamphlet, November 3, 2026, pages 15 to 16"
+url = "https://cityclerk.lacity.org/election/ENG201_NOV-2026_Voter_Info_Pamphlet.pdf"
+file = "sources/vip201-te.pdf"
+retrieved = "2026-10-28"
