@@ -1,0 +1,82 @@
+# Archived sources for South Monterey County Joint Union High School
+# District Measure J, 2026-11-03 general election
+# (sources/county-sources.md). Every id here may be cited by script.toml.
+# `kind` must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# The County of Monterey Elections Department posts each local measure's
+# letter, vote threshold and ballot question on its "List of Local
+# Measures" page, with links to each filed document. The card quotes the
+# ballot question from that page. County Counsel's impartial analysis is
+# the measure's neutral explanation, the kind a state's attorney
+# general's explanatory statement is. The "Full Text" the county posts is
+# a one-page statement of the reorganization (a text PDF). Measure J is
+# not a tax and has no tax rate statement. Both sides filed an argument,
+# and the proponents a rebuttal to the argument against; no rebuttal to
+# the argument in favor was filed.
+#
+# The county's other PDFs are scans with no text layer. The passages
+# cited were typed from the page images into
+# sources/county-*-transcription.txt, each naming the PDF and URL it
+# copies; those sources point at the transcription, and their url at the
+# scan.
+
+[contest]
+id = "ca-2026-11-03-south-monterey-county-joint-union-high-measure-j"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:south_monterey_county_joint_union_high_school_district"
+kind = "measure"
+title = "South Monterey County Joint Union High School District Measure J: Reorganization into Two Unified School Districts"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "County of Monterey Elections Department, List of Local Measures, November 3, 2026 General Election: Measure J - South Monterey County Joint Union High School District"
+credit = "List of Local Measures, County of Monterey Elections"
+url = "https://www.countyofmonterey.gov/government/departments-a-h/elections/list-of-local-measures"
+file = "sources/county-measure-list.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Monterey County Counsel, Impartial Analysis of Measure J, as posted by the County of Monterey Elections Department (transcribed from the scan)"
+credit = "Impartial Analysis, Monterey County Counsel"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147809/639222453723730000"
+file = "sources/county-impartial-analysis-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure J, as posted by the County of Monterey Elections Department"
+credit = "Full Text of Measure J"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147331/639217289099870000"
+file = "sources/county-full-text.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure J, as filed with the County of Monterey Elections Department (transcribed from the scan)"
+credit = "Argument in favor, Measure J"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147807/639222453721570000"
+file = "sources/county-argument-for-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure J, as filed with the County of Monterey Elections Department (transcribed from the scan)"
+credit = "Argument against, Measure J"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147805/639222453718100000"
+file = "sources/county-argument-against-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "rebuttal-for"
+kind = "official-argument"
+publisher = "Rebuttal to Argument Against Measure J, as filed with the County of Monterey Elections Department (transcribed from the scan)"
+credit = "Rebuttal to argument against, Measure J"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147889/639228423552570000"
+file = "sources/county-rebuttal-to-argument-against-transcription.txt"
+retrieved = "2026-10-29"
