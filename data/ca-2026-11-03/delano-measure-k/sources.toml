@@ -1,0 +1,57 @@
+# Archived sources for City of Delano Measure K, 2026-11-03 general
+# election (sources/county-sources.md, sources/sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Kern County Elections posts each local measure's documents on its page
+# "November 3, 2026, General Election", which renders its document list
+# in the browser, so each file's url is that page. For Delano's three
+# mayor measures (K, L and M) it posts one file, the City's Resolution
+# No. 2025-43, which orders the three questions submitted together, each
+# in its own box, and attaches the two ordinances they would bring in:
+# an elected mayor with a two-year term, and with a four-year term. The
+# resolution never uses the letters; the county's measure letter list
+# gives them by subject ("City of Delano – Elective Office of Mayor" is K). The
+# resolution is a scan with no text layer: its nine pages were typed
+# from the page images into sources/county-resolution-transcription.txt,
+# which those sources point at. The City's agenda copies archived
+# earlier hold the same questions and are not cited.
+#
+# The page posts no impartial analysis and no argument for or against,
+# and no document says none was filed: the script explains the measure
+# from the resolution's own text alone. Not a tax: no fiscal statement
+# applies, and none was posted.
+
+[contest]
+id = "ca-2026-11-03-delano-measure-k"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:delano"
+kind = "measure"
+title = "City of Delano Measure K: Electing the Mayor Directly"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Delano, Resolution No. 2025-43, Section 1, the three measures as they are to appear on the ballot, as posted by Kern County Elections, November 3, 2026, General Election (transcribed from the scan)"
+credit = "Resolution No. 2025-43, City of Delano"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-resolution-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City of Delano, Resolution No. 2025-43, adopted June 2, 2025, with the two ordinances it attaches (an elected mayor with a two-year term; with a four-year term), as posted by Kern County Elections, November 3, 2026, General Election (transcribed from the scan)"
+credit = "Resolution No. 2025-43 and ordinances, City of Delano"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-resolution-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "Kern County Elections, Auditor-Controller-County Clerk, measure letter designations for the November 3, 2026, Consolidated General Election, dated August 12, 2026"
+credit = "Measure letter designations, Kern County Elections"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-measure-list.pdf"
+retrieved = "2026-10-29"
