@@ -3127,3 +3127,12 @@ status = "none-printed"
 [mcfarland-measure-n]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Rancho Palos Verdes Measure RS: a general tax, so no tax rate
+# statement; the City Attorney's impartial analysis gives the revenue
+# estimate.
+[rancho-palos-verdes-measure-rs]
+source = "impartial-analysis"
+quote = "provide an additional $2,200,000 annually to the City’s General Fund"
+amount = 2200000
+period = "per-year"
