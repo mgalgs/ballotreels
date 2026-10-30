@@ -595,6 +595,17 @@ BALLOTS: dict[str, Ballot] = {
                      **{f"ca-2026-11-03-{slug}": "Measures to be Voted On"
                         for slug in ("livingston-measure-t",
                                      "livingston-measure-u")},
+                     # Merced County Elections posts each measure's ballot
+                     # question, impartial analysis, full text, arguments
+                     # and any tax rate statement on its page "November 3,
+                     # 2026, General Election" and no printed guide, so
+                     # these cards name that page
+                     **{f"ca-2026-11-03-{slug}":
+                        "November 3, 2026, General Election"
+                        for slug in ("merced-measure-b",
+                                     "los-banos-measure-v",
+                                     "le-grand-union-high-measure-a",
+                                     "los-banos-unified-measure-c")},
                      # Santa Barbara County Elections prints each local
                      # measure's impartial analysis, arguments, full text
                      # and (on its sample ballot pages) ballot question in
