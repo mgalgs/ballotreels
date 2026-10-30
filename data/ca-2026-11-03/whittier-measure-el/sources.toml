@@ -1,0 +1,71 @@
+# Archived sources for City of Whittier Measure EL, 2026-11-03 general
+# election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" (sources/county-measure-list-excerpt.txt, the
+# measure's entry) gives its letter, vote threshold and ballot question,
+# which the card quotes, and says "Opponents: None submitted.", which the
+# no side cites as the official statement of filing. The same list says
+# "Supporters: None submitted.", but the Registrar's Interactive Sample
+# Ballot prints an argument in favor (sources/argument-for.html), so the
+# yes side follows that argument; the Sample Ballot's page also prints
+# "NO ARGUMENT AGAINST THIS MEASURE WAS SUBMITTED".
+#
+# The City Attorney's impartial analysis and the full text of the
+# ordinance amending the charter, as the Registrar prints them, are the
+# measure's neutral explanation and its text. Neither gives a cost
+# estimate.
+
+[contest]
+id = "ca-2026-11-03-whittier-measure-el"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:whittier"
+kind = "measure"
+title = "City of Whittier Measure EL: A 12-Year Limit for the Mayor and City Council"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): City of Whittier, Measure EL"
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "arguments-filed"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): Measure EL, \"Opponents: None submitted.\""
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure EL, by Keith Collins, City Attorney, as printed by the Los Angeles County Registrar-Recorder/County Clerk in its Interactive Sample Ballot"
+credit = "City Attorney's Impartial Analysis of Measure EL"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10877.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Ballot Measure EL, an ordinance of the people of the City of Whittier amending the City Charter to impose term limits on elected officials, as printed by the Los Angeles County Registrar-Recorder/County Clerk in its Interactive Sample Ballot"
+credit = "Full Text of Measure EL"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10877.json"
+file = "sources/full-text.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure EL, signed by Vicky Santana and Aida Macedo, Whittier City Councilmembers, as printed by the Los Angeles County Registrar-Recorder/County Clerk in its Interactive Sample Ballot (\"No argument against this measure was submitted\")"
+credit = "Argument in favor of Measure EL"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10877.json"
+file = "sources/argument-for.html"
+retrieved = "2026-10-30"
