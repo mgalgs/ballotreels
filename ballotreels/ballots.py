@@ -457,6 +457,11 @@ BALLOTS: dict[str, Ballot] = {
                          "Local Ballot Measure: AB",
                      "ca-2026-11-03-sausalito-measure-x":
                          "Measure X (2026)",
+                     # The Ross Valley Paramedic Authority tax measures'
+                     # cards quote the ballot question from the document
+                     # placing each, named as headed
+                     "ca-2026-11-03-san-anselmo-measure-v":
+                         "Resolution No. 2026-4628",
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.

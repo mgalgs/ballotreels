@@ -3824,3 +3824,13 @@ source = "measure-list"
 quote = "providing $12 million annually"
 amount = 12000000
 period = "per-year"
+
+# Town of San Anselmo Measure V: a parcel tax, so no tax rate statement;
+# the revenue estimate its ballot question (Resolution No. 2026-4628,
+# Section 3) prints. It continues an existing tax, so no direction is
+# given.
+[san-anselmo-measure-v]
+source = "ballot-question"
+quote = "generating approximately $688,000 annually"
+amount = 688000
+period = "per-year"
