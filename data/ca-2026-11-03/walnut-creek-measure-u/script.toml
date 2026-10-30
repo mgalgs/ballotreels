@@ -31,7 +31,9 @@
 # claims (seniors pushed away from their families; over 200 senior homes
 # near transit without raising taxes), naming no signer; the no side
 # says, attributed to the county, that none was filed (filed = false,
-# STANDARD.md 2.5), as for CA Proposition 1. No rebuttal was filed.
+# STANDARD.md 2.5), as for CA Proposition 1, citing the county's
+# statement under its "Argument Against" heading (argument-against), not
+# the argument in favor. No rebuttal was filed.
 
 contest = "ca-2026-11-03-walnut-creek-measure-u"
 template = "measure"
@@ -131,7 +133,7 @@ heading = "Why some vote yes"
 side = "yes"
 
 [[section.line]]
-text = "Supporters say seniors are being pushed far from their families, and Measure U allows over 200 senior homes near transit, without raising taxes."
+text = "Supporters say seniors are pushed away from family; Measure U allows over 200 senior homes near transit without raising taxes."
 sources = ["argument-for"]
 basis = ["many seniors and older adults are being pushed out further and further into the East Bay, away from their families", "updating zoning in North Downtown Walnut Creek to permit over 200 units of high-quality senior housing and community-serving retail near BART – without raising taxes."]
 
@@ -147,12 +149,12 @@ side = "no"
 filed = false
 
 [[section.line]]
-text = "The county says no argument against Measure U was filed, so its page prints only the argument in favor of the measure."
-sources = ["argument-for"]
+text = "The county elections office says on its page for this measure that no argument against Measure U was filed."
+sources = ["argument-against"]
 
 [section.line.visual]
 kind = "list"
-source = "argument-for"
+source = "argument-against"
 items = ["No argument against was filed"]
 
 [[section]]

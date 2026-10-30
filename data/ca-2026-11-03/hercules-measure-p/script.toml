@@ -29,11 +29,11 @@
 # lasts.
 #
 # The ballot question lists "audits, public disclosure"; the tax
-# ordinance's text sets no audit, report or committee, so the script
-# narrates none (the phrase stays on the card). The impartial analysis
-# says the revenues "will be subject to an independent financial audit
-# conducted annually"; no line is added for it in this update, and the
-# question on who would check the spending stays unanswered (left open).
+# ordinance's text sets no audit, report or committee. The impartial
+# analysis says the revenues "will be subject to an independent
+# financial audit conducted annually by a certified public accountant",
+# presented and reviewed by the City Council in an open public meeting,
+# so the audit line rests on the analysis alone and is attributed to it.
 #
 # The $4 million a year is the ballot question's figure, and the
 # impartial analysis's estimate. No archived
@@ -124,6 +124,15 @@ sources = ["text", "ordinance", "impartial-analysis"]
 [section.line.visual]
 kind = "illustration"
 name = "state-budget"
+
+[[section.line]]
+id = "audit"
+text = "The impartial analysis by the City Attorney says the revenue would be audited every year by an independent accountant, and the audit reviewed at a public council meeting."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
 
 [[section.line]]
 id = "threshold"
@@ -218,7 +227,7 @@ lines = ["uses"]
 
 [[question]]
 ask = "Who would check how the money is spent?"
-unanswered = true
+lines = ["audit"]
 
 [[question]]
 ask = "How big is $4 million a year next to the city budget?"

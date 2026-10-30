@@ -8,9 +8,10 @@
 # answers scripted fetches with a bot challenge) prints the ballot
 # question, the City Attorney's impartial analysis, the argument in
 # favor, and the county's statements that no argument against and no
-# rebuttal to either side was filed. The City Attorney's impartial
-# analysis is the measure's neutral explanation, the kind a state's
-# attorney general's explanatory statement is. The county's question is
+# rebuttal to either side was filed (the statement on the argument
+# against is cited as its own source, argument-against). The City
+# Attorney's impartial analysis is the measure's neutral explanation,
+# the kind a state's attorney general's explanatory statement is. The county's question is
 # word for word the one in Section 2 of the City's resolution, which the
 # card quotes.
 #
@@ -88,6 +89,15 @@ id = "argument-for"
 kind = "official-argument"
 publisher = "Argument in Favor of Measure U, Contra Costa County Elections, Measure U, November 3, 2026 General Election"
 credit = "Argument in favor, Contra Costa County Elections"
+url = "https://www.contracostavote.gov/m9013-en/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "election-filing"
+publisher = "Contra Costa County Elections, Measure U, November 3, 2026 General Election: Argument Against Measure U, \"No Argument Against was filed.\""
+credit = "Argument against, Contra Costa County Elections"
 url = "https://www.contracostavote.gov/m9013-en/"
 file = "sources/county-page.txt"
 retrieved = "2026-10-30"
