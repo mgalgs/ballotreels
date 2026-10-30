@@ -1,0 +1,53 @@
+# Archived sources for City of Dinuba Measure S, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The City's site (dinuba.org) and the county's (tularecounty.ca.gov)
+# blocked downloads. The Tulare County Registrar of Voters' measure page
+# is archived as the Internet Archive's capture of October 9, 2026; it
+# prints the Registrar's published notice of election, whose ballot
+# question ("to be displayed on each individual ballot") and vote
+# requirement the card and script quote, so its url is that capture.
+# The page links the City's placing resolution (a 3-page scan) and its
+# Exhibit A, the ordinance (an 8-page scan), both archived as the
+# Registrar posted them, with no text layer; each is cited by what its
+# page images show.
+#
+# No impartial analysis, argument or rebuttal was reached (the county's
+# guide is blocked), and no document says whether any argument was
+# filed.
+
+[contest]
+id = "ca-2026-11-03-dinuba-measure-s"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:dinuba"
+kind = "measure"
+title = "City of Dinuba Measure S: A ¾¢ Sales Tax for City Services Until Ended by Voters"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Tulare County Registrar of Voters, Publication Notice of a Transaction and Use Tax Election and Notice of Date Fixed for Submitting Arguments for the City of Dinuba, dated July 2, 2026, on the county's page City of Dinuba Transaction and Use Tax Measure Information (Internet Archive capture of October 9, 2026)"
+credit = "Notice of Election, Tulare County Registrar of Voters"
+url = "http://web.archive.org/web/20261009122132/https://tularecounty.ca.gov/elections/city-dinuba-transaction-and-use-tax-measure-information"
+file = "sources/county-measure-page.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-title-summary"
+publisher = "City of Dinuba, Resolution No. 2026-41, A Resolution of the City Council of the City of Dinuba Calling and Giving Notice of a Municipal Election to Be Held on November 3, 2026, Ordering the Submission to the Qualified Voters of a Transactions and Use Tax Measure, adopted June 23, 2026, as posted by the Tulare County Registrar of Voters (pages 1-3)"
+credit = "Resolution No. 2026-41, City of Dinuba"
+url = "https://tc-web.widen.net/s/w5mwhgbjlb/resolution-no-2026-41"
+file = "sources/county-resolution-no-2026-41.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "ordinance"
+kind = "official-text"
+publisher = "City of Dinuba, Exhibit A, An Ordinance Adding Chapter 3.13 to Title 3 of the Dinuba Municipal Code to Provide for an Additional Three Quarter Percent (.75 Cent) General Purposes Transactions and Use Tax, as posted by the Tulare County Registrar of Voters (pages 1-8)"
+credit = "Transactions and Use Tax Ordinance, City of Dinuba"
+url = "https://tc-web.widen.net/s/bnwkg8z87v/ordinance"
+file = "sources/county-ordinance.pdf"
+retrieved = "2026-10-30"

@@ -3771,3 +3771,38 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $15,113,922."
 amount = 15113922
 period = "unstated"
+
+# City of Farmersville Measure P: a hotel (transient occupancy) tax, so
+# no tax rate statement, and no impartial analysis was archived; the
+# revenue estimate its ballot question (the Registrar's notice of
+# election) prints, per hotel.
+[farmersville-measure-p]
+source = "ballot-question"
+quote = "which is expected to generate an estimated $250,000 annually per hotel"
+amount = 250000
+period = "per-year"
+
+# City of Porterville Measure U: a charter amendment; neither the
+# Registrar's notice of election (its ballot question) nor the City's
+# resolution prints a cost estimate, and no impartial analysis was
+# archived.
+[porterville-measure-u]
+source = "ballot-question"
+status = "none-printed"
+
+# City of Porterville Measure V: a charter amendment; neither the
+# Registrar's notice of election (its ballot question) nor the City's
+# resolution prints a cost estimate, and no impartial analysis was
+# archived.
+[porterville-measure-v]
+source = "ballot-question"
+status = "none-printed"
+
+# City of Dinuba Measure S: a sales tax, so no tax rate statement, and
+# no impartial analysis was archived; the revenue estimate its ballot
+# question (the Registrar's notice of election) prints.
+[dinuba-measure-s]
+source = "ballot-question"
+quote = "providing approximately $3,400,000 annually until ended by voters"
+amount = 3400000
+period = "per-year"

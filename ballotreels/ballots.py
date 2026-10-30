@@ -1125,6 +1125,17 @@ BALLOTS: dict[str, Ballot] = {
                                      "exeter-unified-measure-t",
                                      "pixley-union-elementary-measure-w",
                                      "three-rivers-union-elementary-measure-y")},
+                     # and these city measures' cards quote the notice
+                     # of election on the Registrar's page, named as
+                     # headed
+                     "ca-2026-11-03-farmersville-measure-p":
+                         "Notice of General Tax Election",
+                     "ca-2026-11-03-porterville-measure-u":
+                         "Notice of Election for Two Charter Amendments",
+                     "ca-2026-11-03-porterville-measure-v":
+                         "Notice of Election for Two Charter Amendments",
+                     "ca-2026-11-03-dinuba-measure-s":
+                         "Notice of a Transaction and Use Tax Election",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

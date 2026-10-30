@@ -1,0 +1,211 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot; what
+# would change (the rate and whom it applies to, what the money is
+# for, how long it lasts and who may repeal it, the vote
+# it needs); the revenue estimate as the ballot question gives it; both
+# sides, neither of which has an archived argument; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry the
+# names.
+#
+# The card quotes the Tulare County Registrar of Voters' published
+# notice of election, the question "to be displayed on each individual
+# ballot", which prints no yes/no statements: so the card has no YES/NO
+# boxes, and both vote lines highlight the same phrase of the question.
+#
+# The Registrar's copy of Resolution No. 2026-016 is signed and records
+# its adoption "at a regular meeting on this 26 day of May" (page 2,
+# handwritten). The City's June 8 staff report calls that meeting the
+# first reading and June 8 the second reading and adoption; the
+# Registrar's copy wins, so the script says May 2026.
+#
+# What the tax does comes from the full text, Ordinance No. 538 (read
+# from the scanned packet's page images): ten percent of the rent paid
+# by each transient (3.44.020), a transient being an occupant for "thirty
+# (30) consecutive days or less" (3.44.010 J), and repealable or
+# amendable by the Council "without a vote of the people", while any
+# increase needs voter approval (3.44.150). The
+# ballot question's "remain in effect until repealed by the voters" is
+# attributed to it, and the Council's power under 3.44.150 is stated
+# beside it so neither reads as the whole story. The draft impartial
+# analysis and draft argument in the same packet are not the printed
+# ones and are not used (so nothing here says how many hotels the city
+# has).
+#
+# The $250,000 a year per hotel is the ballot question's estimate. No
+# archived source states the City's general fund budget to give it a
+# scale (STANDARD.md 6.5; left open, under [[question]]).
+#
+# No argument for or against Measure P was archived (the county's guide
+# could not be fetched), and no document says whether any was filed. So
+# the sides do not say none was filed: each says none is among the
+# documents gathered (filed = false, STANDARD.md 2.5), as for Walnut
+# Creek Measure U.
+
+contest = "ca-2026-11-03-farmersville-measure-p"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "P"
+title = "CITY OF FARMERSVILLE"
+origin = "NOTICE OF GENERAL TAX ELECTION"
+summary = "Shall the measure enacting a ten percent (10%) Transient Occupancy Tax to be paid by hotel guests in the City of Farmersville, providing funding for general purposes such as city services, programs, economic development, and capital improvements, which is expected to generate an estimated $250,000 annually per hotel and remain in effect until repealed by the voters, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure P"
+
+[[section.line]]
+text = "Measure P asks the voters of this city whether to tax hotel stays at 10 percent of the rent."
+sources = ["ballot-question", "ordinance"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["enacting a ten percent (10%) Transient Occupancy Tax to be paid by hotel guests"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The City Council placed Measure P on the ballot in May 2026."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rate"
+text = "Guests would pay 10 percent of their rent for hotel stays of 30 days or less."
+sources = ["ordinance"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-hotel"
+
+[[section.line]]
+id = "general"
+text = "Measure P is a general tax, which the ballot question says would fund city services, programs, economic development and capital improvements."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+id = "end"
+text = "The ballot question says the tax would remain until repealed by the voters."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+id = "council"
+text = "The measure also lets the City Council repeal the tax without a vote."
+sources = ["ordinance"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hotel-front-desk"
+
+[[section.line]]
+id = "majority"
+text = "It needs a majority of the vote to pass."
+sources = ["ballot-question"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+id = "revenue"
+text = "The ballot question estimates that the tax would raise about $250,000 a year for each hotel."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "travel-receipts"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure P appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure P appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote on Measure P adopts the 10 percent hotel tax."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["enacting a ten percent (10%) Transient Occupancy Tax to be paid by hotel guests"]
+
+[[section.line]]
+text = "A no vote on Measure P does not adopt the 10 percent hotel tax."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["enacting a ten percent (10%) Transient Occupancy Tax to be paid by hotel guests"]
+
+[[question]]
+ask = "Who pays the tax?"
+lines = ["rate"]
+
+[[question]]
+ask = "Can the tax be changed later?"
+lines = ["end", "council"]
+
+[[question]]
+ask = "What can the money be spent on?"
+lines = ["general"]
+
+[[question]]
+ask = "How many hotels are in the city today?"
+unanswered = true
+
+[[question]]
+ask = "How big is $250,000 a year next to the city budget?"
+unanswered = true
