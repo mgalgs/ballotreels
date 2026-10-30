@@ -3642,3 +3642,12 @@ period = "per-year"
 [burbank-measure-cc]
 source = "impartial-analysis"
 status = "none-printed"
+
+# City of Richmond Measure Q: a general obligation bond; the Finance
+# Director's financial analysis (its tax rate statement) gives the total
+# debt service.
+[richmond-measure-q]
+source = "tax-statement"
+quote = "Estimated total debt service (principal + interest): $249,749,206 over the life of the bonds."
+amount = 249749206
+period = "unstated"
