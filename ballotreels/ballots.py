@@ -861,12 +861,19 @@ BALLOTS: dict[str, Ballot] = {
                      # each local measure's letter, vote threshold and
                      # ballot question on its List of Local Measures page,
                      # with the impartial analysis and arguments beside
-                     # it; the cards quote the question from that page
+                     # it (for a city's measure, a note that they are
+                     # filed with the city clerk); the cards quote the
+                     # question from that page
                      **{f"ca-2026-11-03-{slug}":
                         "Monterey County Elections, List of Local Measures"
                         for slug in (
                             "monterey-county-measure-e",
-                            "north-monterey-county-unified-measure-l")},
+                            "north-monterey-county-unified-measure-l",
+                            "salinas-measure-g",
+                            "salinas-measure-h",
+                            "carmel-by-the-sea-measure-m",
+                            "carmel-by-the-sea-measure-n",
+                            "king-city-measure-p")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
