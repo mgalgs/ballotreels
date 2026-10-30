@@ -1,0 +1,126 @@
+# Archived sources for Rio Elementary School District Measure B,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The division is the district's Census school district,
+# school_district:rio_elementary_school_district (divisions.tsv). The
+# County of Ventura Board of Supervisors' August 4, 2026 consent item 12
+# (the board letter, its Exhibit 1 listing "RIO ELEMENTARY SCHOOL
+# DISTRICT" among the six local measures, and the minute order recording
+# its approval) is the record that the measure is on the county's
+# November 3, 2026 ballot; it gives no letters. Ventura County's measures
+# page and voter guide could not be read (a bot challenge), so the letter
+# B comes from the District's own Measure B page, and no impartial
+# analysis, argument or rebuttal was reached; no document says whether
+# any argument was filed.
+#
+# The District's Resolution No. 2526/20 ordering the election is a scan
+# with no text layer, archived as the pages of the June 24, 2026 board
+# packet that hold it (item 9.1). The pages cited were typed from the
+# page images into
+# sources/rio-2026-06-24-packet-resolution-2526-20-transcription.txt,
+# which names the scan and its URL. The packet copy is unsigned (its
+# adoption date and vote lines are blank, as are the tax rate
+# statement's date and signature), so it is cited as the packet copy,
+# and the fact and date of adoption come from the minutes of the June 24,
+# 2026 meeting (also a scan, transcribed beside it). The minutes' item
+# title says "November 2, 2026"; the resolution says November 3, which
+# the script follows. Exhibit B is the ballot question the card quotes;
+# Exhibit A is the full text with the project list and the
+# accountability provisions; Exhibit C is the tax rate statement, the
+# measure's fiscal statement.
+#
+# Exhibit A's statements of the measure's goal and of need are the
+# District's: the script uses only what Exhibit A enacts (what the money
+# may and may not pay for, how it is to be shared among schools, the
+# oversight and audits). The District's Measure B page is cited only for
+# the letter.
+
+[contest]
+id = "ca-2026-11-03-rio-esd-measure-b"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:rio_elementary_school_district"
+kind = "measure"
+title = "Rio Elementary School District Measure B: $78 Million in School Facilities, Safety and Modernization Bonds"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Rio Elementary School District, Board of Trustees, Resolution No. 2526/20, Exhibit B, Abbreviated Ballot Measure (June 24, 2026 board packet, item 9.1; page 15 of the packet extract; transcribed)"
+credit = "Resolution No. 2526/20, Exhibit B, Rio Elementary School District"
+url = "https://files.smartsites.parentsquare.com/5005/rgular_board_meeting_agenda_june_24_2026_1.pdf?scrlybrkr=9b8ecef1"
+file = "sources/rio-2026-06-24-packet-resolution-2526-20-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Rio Elementary School District, Board of Trustees, Resolution No. 2526/20, Resolution Ordering a School Bond Election, Establishing Specifications of the Election Order, and Requesting Consolidation with Other Elections Occurring on November 3, 2026 (unsigned packet copy, June 24, 2026 board packet, item 9.1; printed pages 1 to 3 and 7; transcribed)"
+credit = "Resolution No. 2526/20, Rio Elementary School District"
+url = "https://files.smartsites.parentsquare.com/5005/rgular_board_meeting_agenda_june_24_2026_1.pdf?scrlybrkr=9b8ecef1"
+file = "sources/rio-2026-06-24-packet-resolution-2526-20-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Rio Elementary School District, Ballot Measure, Full Text of the Measure (Exhibit A to Resolution No. 2526/20; pages A-1 and A-2; transcribed)"
+credit = "Full Text of the Measure, Rio Elementary School District"
+url = "https://files.smartsites.parentsquare.com/5005/rgular_board_meeting_agenda_june_24_2026_1.pdf?scrlybrkr=9b8ecef1"
+file = "sources/rio-2026-06-24-packet-resolution-2526-20-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Rio Elementary School District, Tax Rate Statement (Exhibit C to Resolution No. 2526/20; pages C-1 and C-2; transcribed)"
+credit = "Tax Rate Statement, Rio Elementary School District"
+url = "https://files.smartsites.parentsquare.com/5005/rgular_board_meeting_agenda_june_24_2026_1.pdf?scrlybrkr=9b8ecef1"
+file = "sources/rio-2026-06-24-packet-resolution-2526-20-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "minutes"
+kind = "public-record"
+publisher = "Rio School District, Minutes, Regular Board Meeting, June 24, 2026, item 9.1 (pages 3 and 4; transcribed)"
+credit = "Board minutes, June 24, 2026, Rio School District"
+url = "https://files.smartsites.parentsquare.com/5005/regular_board_meeting_minutes_june_24.pdf"
+file = "sources/rio-2026-06-24-regular-board-minutes-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "county-letter"
+kind = "public-record"
+publisher = "County of Ventura, County Clerk-Recorder & Registrar of Voters, Board letter of August 4, 2026 (Board of Supervisors consent item 12): Approval of requests for election services for the General Election to be held on November 3, 2026"
+credit = "Board letter, item 12, August 4, 2026, County of Ventura"
+url = "https://ventura.primegov.com/api/compilemeetingattachmenthistory/historyattachment/?historyId=0693a4f1-2f94-4ce3-ad05-56b313f1f921"
+file = "sources/bos-2026-08-04-item12-board-letter.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "county-exhibit"
+kind = "public-record"
+publisher = "County of Ventura, Board of Supervisors, August 4, 2026, item 12, Exhibit 1: Agencies Requesting Consolidation with the November 3, 2026, General Election (Local Measures)"
+credit = "Exhibit 1, item 12, August 4, 2026, County of Ventura"
+url = "https://ventura.primegov.com/api/compilemeetingattachmenthistory/historyattachment/?historyId=4205c26b-060e-4e8d-9a3a-a871b442d8fe"
+file = "sources/bos-2026-08-04-item12-exhibit1-agencies-consolidation.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "county-minutes"
+kind = "public-record"
+publisher = "County of Ventura, Board of Supervisors, Board Minutes, August 4, 2026: minute order for item 12"
+credit = "Board minutes, August 4, 2026, County of Ventura"
+url = "https://ventura.primegov.com/Public/CompiledDocument?meetingTemplateId=27625&compileOutputType=1"
+file = "sources/bos-2026-08-04-item12-minute-order.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "district-page"
+kind = "public-record"
+publisher = "Rio School District, Measure B (district web page)"
+credit = "Measure B page, Rio School District"
+url = "https://www.rioschools.org/measure-b"
+file = "sources/rio-measure-b-page.html"
+retrieved = "2026-10-30"

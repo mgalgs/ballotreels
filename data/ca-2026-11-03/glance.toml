@@ -3996,3 +3996,12 @@ source = "ballot-question"
 quote = "generating approximately One Hundred Five Thousand Dollars ($105,000) annually"
 amount = 105000
 period = "per-year"
+
+# Rio Elementary School District Measure B: the total debt service, from
+# the District's Tax Rate Statement (Exhibit C to Resolution No. 2526/20,
+# transcribed from the packet scan); the bonds are $78,000,000.
+[rio-esd-measure-b]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the Bonds are issued and sold is $158,188,000."
+amount = 158188000
+period = "unstated"
