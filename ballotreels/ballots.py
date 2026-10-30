@@ -885,6 +885,19 @@ BALLOTS: dict[str, Ballot] = {
                             "santa-lucia-csd-measure-t",
                             "soledad-mission-recreation-measure-u",
                             "north-county-recreation-measure-v")},
+                     # Shasta County Elections prints each local measure's
+                     # pages in its guide, headed on its contest index
+                     # "This is the County Voter Information Guide";
+                     # Tuolumne County Elections prints Measure C in its
+                     # Local Voter Information Guide
+                     **{f"ca-2026-11-03-{slug}":
+                        "County Voter Information Guide"
+                        for slug in ("columbia-elementary-measure-d",
+                                     "shasta-county-measure-e",
+                                     "shasta-county-measure-f",
+                                     "shasta-fpd-measure-g")},
+                     "ca-2026-11-03-summerville-elementary-measure-c":
+                         "Local Voter Information Guide",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
