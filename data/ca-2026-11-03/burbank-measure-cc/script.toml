@@ -1,0 +1,207 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how council members are elected
+# today, who can change it, and how the measure reached the ballot; what
+# would change (who sets the election method, how it ties to Measure CD,
+# what follows if CD fails, the vote it needs); that the analysis gives
+# no cost estimate; both sides; what a vote does.
+#
+# Measure CD is said as "a separate measure on this ballot" and the
+# California Voting Rights Act as "the state's voting rights law": the
+# narration names neither, and the naming check would read each as a
+# name a neutral line may not say.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry it.
+#
+# Every explaining line is the City Attorney's impartial analysis, with
+# the amendment's text beside it. The analysis says the Council placed
+# the measure under a settlement of a California Voting Rights Act
+# lawsuit; that is how it reached the ballot, so it is told there. The
+# argument's point about future lawsuits is its own and stays with that
+# side (STANDARD.md 6.3). "At large" is said as "citywide", as the
+# analysis explains it.
+#
+# The card quotes the Los Angeles County Registrar-Recorder/County
+# Clerk's list "Measures Appearing on the Ballot": the City's heading,
+# the vote needed and the ballot question, which has no yes or no
+# sentences, so the card has no boxes. The impartial analysis gives no
+# yes or no meanings either, so the vote lines take them from the
+# question, and both highlight the same phrase.
+#
+# The argument in favor is the Registrar's printed copy, signed by all
+# five Council members. The list says "Opponents: None submitted.", so
+# the no side says plainly that no argument against was submitted,
+# citing the list (filed = false). Neither side names anyone: the record
+# names no one on the no side.
+
+contest = "ca-2026-11-03-burbank-measure-cc"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "CC"
+title = "CITY OF BURBANK"
+origin = "VOTE PASSAGE – Majority Vote 50%+1"
+summary = "CHARTER AMENDMENT MEASURE CC: Shall the Burbank City Charter be amended to remove the requirement for at-large elections of City Council members and permit the City's electoral system to be specified by ordinance adopted by the City Council or by the voters by initiative?"
+
+[[section]]
+id = "what"
+heading = "Measure CC"
+
+[[section.line]]
+text = "Measure CC asks the voters of this city whether to drop the charter rule that council members be elected citywide."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["remove the requirement for at-large elections of City Council members"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-citywide"
+text = "Today, every voter can vote for as many council candidates as there are open seats, and candidates run citywide."
+sources = ["impartial-analysis", "full-text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-two-questions"
+
+[[section.line]]
+text = "Only the voters can change that method, by amending the charter."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section.line]]
+id = "settlement"
+text = "The City Council placed Measure CC on the ballot under the settlement of a lawsuit brought under the state's voting rights law."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "ordinance"
+text = "Measure CC would let an ordinance, passed by the City Council or by the voters, set how council members are elected."
+sources = ["impartial-analysis", "full-text", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["specified by ordinance adopted by the City Council or by the voters by initiative"]
+
+[[section.line]]
+id = "cd"
+text = "A separate measure on this ballot would create council districts, but could take effect only if Measure CC passes too."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "district-map"
+
+[[section.line]]
+id = "cd-fails"
+text = "If that district measure fails, Measure CC would still let the council or the voters adopt a different district plan later."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "zoning-map"
+
+[[section.line]]
+text = "Measure CC needs a majority yes vote to pass."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The city attorney's impartial analysis does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure CC lets the city adapt its elections to changing law and reduces the risk of costly lawsuits."
+sources = ["argument-for"]
+basis = ["Currently, Burbank's options for responding to new legal requirements are limited by the City Charter.", "Measure CC would allow the City to adapt to changes in the law and help REDUCE THE RISK OF FUTURE COSTLY LITIGATION."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Adapts to changing law", "Less risk of lawsuits"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The official county list of measures, which names who filed each argument, says no argument against Measure CC was submitted."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote removes the citywide election rule, so an ordinance would set how council members are elected."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["remove the requirement for at-large elections of City Council members"]
+
+[[section.line]]
+text = "A no vote keeps the charter rule that council members be elected citywide."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["remove the requirement for at-large elections of City Council members"]
+
+[[question]]
+ask = "How does this measure relate to the district measure on the same ballot?"
+lines = ["cd", "cd-fails"]
+
+[[question]]
+ask = "Why is this on the ballot?"
+lines = ["settlement"]
+
+[[question]]
+ask = "Who would decide the new election method?"
+lines = ["ordinance"]
