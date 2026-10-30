@@ -943,6 +943,22 @@ BALLOTS: dict[str, Ballot] = {
                                      "mcfarland-measure-o",
                                      "mcfarland-measure-p",
                                      "shafter-measure-q")},
+                     # The Los Angeles County Registrar-Recorder/County
+                     # Clerk prints each local measure's letter, vote
+                     # threshold and ballot question, and who filed its
+                     # arguments, in its list "Measures Appearing on the
+                     # Ballot"; the cards quote the question from it
+                     **{f"ca-2026-11-03-{slug}":
+                        "Los Angeles County Registrar-Recorder/County "
+                        "Clerk, Measures Appearing on the Ballot"
+                        for slug in ("santa-monica-measure-es",
+                                     "santa-monica-measure-gg",
+                                     "santa-monica-measure-rr",
+                                     "santa-monica-measure-vv",
+                                     "santa-monica-measure-tt",
+                                     "hermosa-beach-measure-hb",
+                                     "south-gate-measure-sg",
+                                     "lynwood-measure-l")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
