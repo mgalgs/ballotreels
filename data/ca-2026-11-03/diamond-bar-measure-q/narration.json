@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 76.63,
+  "seconds": 77.48,
   "phrases": [
     {
       "text": "Measure Q asks the voters of this city whether to add a 1 percent local sales tax for general city services.",
@@ -49,19 +49,19 @@
       "end": 61.12
     },
     {
-      "text": "Two supporters filed an argument for Measure Q; its text is not among the official documents gathered for this video.",
+      "text": "Supporters say state mandates and rising costs have led to a structural budget deficit, and every dollar would stay local.",
       "start": 61.78,
-      "end": 69.18
+      "end": 69.91
     },
     {
       "text": "A yes vote authorizes the 1 percent sales tax.",
-      "start": 69.84,
-      "end": 73.14
+      "start": 70.57,
+      "end": 73.99
     },
     {
       "text": "A no vote does not authorize the sales tax.",
-      "start": 73.8,
-      "end": 76.6
+      "start": 74.65,
+      "end": 77.45
     }
   ],
   "inputs": {
@@ -75,7 +75,7 @@
       "Measure Q needs a majority yes vote to pass.",
       "The city attorney's impartial analysis says the city estimates $6 million more a year, varying with retail sales.",
       "The official county list of measures, which names who filed each argument, says no argument against Measure Q was submitted.",
-      "Two supporters filed an argument for Measure Q; its text is not among the official documents gathered for this video.",
+      "Supporters say state mandates and rising costs have led to a structural budget deficit, and every dollar would stay local.",
       "A yes vote authorizes the 1 percent sales tax.",
       "A no vote does not authorize the sales tax."
     ],
@@ -243,11 +243,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Two supporters filed an argument for Measure Q; its text is not among the official documents gathered for this video."
+        "text": "Supporters say state mandates and rising costs have led to a structural budget deficit, and every dollar would stay local."
       },
       "bounds": [
         1482000,
-        1661040
+        1678560
       ]
     },
     {
@@ -255,15 +255,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Two supporters filed an argument for Measure Q; its text is not among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say state mandates and rising costs have led to a structural budget deficit, and every dollar would stay local.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote authorizes the 1 percent sales tax."
       },
       "bounds": [
-        1675440,
-        1756080
+        1692960,
+        1776480
       ]
     },
     {
@@ -278,14 +278,14 @@
         "text": "A no vote does not authorize the sales tax."
       },
       "bounds": [
-        1770480,
-        1839120
+        1790880,
+        1859520
       ]
     }
   ],
-  "sha256": "cd42f50d26930258827033386bee2f0af73e62e65cb67afcc1402123802f892d",
+  "sha256": "101c7dd1e69088758f5aacddaf38bb0645324d67436de99b2ce61f156ee30191",
   "take": {
-    "sha256": "2fb4b372faef4cc2fe4ec9247ce0893bdf46e772b48c350c4267b0fe54aa3fa9",
-    "bytes": 3678284
+    "sha256": "97b3b9ce37f81a20a35582d8b65d9dbfd1bd39d9687dea56cce70fb8edb2358d",
+    "bytes": 3719084
   }
 }

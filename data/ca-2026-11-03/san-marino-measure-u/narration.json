@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 89.75,
+  "seconds": 89.19,
   "phrases": [
     {
       "text": "Measure U asks the voters of this city whether to extend the utility users tax with no end date, and raise its rate from 5 to 6 percent.",
@@ -44,29 +44,29 @@
       "end": 48.19
     },
     {
-      "text": "The ballot question says the tax would raise $2.62 million a year; no impartial analysis is among the documents gathered.",
+      "text": "The city attorney's impartial analysis says the city estimates about $2.62 million a year in revenue.",
       "start": 48.85,
-      "end": 57.5
+      "end": 56.69
     },
     {
       "text": "The official county list of measures, which names who filed each argument, says that no argument against Measure U was submitted.",
-      "start": 58.16,
-      "end": 65.96
+      "start": 57.35,
+      "end": 65.4
     },
     {
       "text": "Supporters say the tax has funded police, fire and other services for decades, and renewing it avoids further cuts to core services.",
-      "start": 66.62,
-      "end": 76.38
+      "start": 66.06,
+      "end": 75.82
     },
     {
       "text": "A yes vote extends the utility users tax at 6 percent, until ended by voters.",
-      "start": 77.04,
-      "end": 83.22
+      "start": 76.48,
+      "end": 82.66
     },
     {
       "text": "A no vote rejects the extension, and the tax would end on March 31, 2027.",
-      "start": 83.88,
-      "end": 89.72
+      "start": 83.32,
+      "end": 89.16
     }
   ],
   "inputs": {
@@ -79,7 +79,7 @@
       "Measure U would remove the end date, so the tax would last until ended by voters.",
       "As a general tax, the money would go to the general fund, for the usual expenses of the city.",
       "Measure U needs a majority yes vote to pass.",
-      "The ballot question says the tax would raise $2.62 million a year; no impartial analysis is among the documents gathered.",
+      "The city attorney's impartial analysis says the city estimates about $2.62 million a year in revenue.",
       "The official county list of measures, which names who filed each argument, says that no argument against Measure U was submitted.",
       "Supporters say the tax has funded police, fire and other services for decades, and renewing it avoids further cuts to core services.",
       "A yes vote extends the utility users tax at 6 percent, until ended by voters.",
@@ -233,11 +233,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The ballot question says the tax would raise $2.62 million a year; no impartial analysis is among the documents gathered."
+        "text": "The city attorney's impartial analysis says the city estimates about $2.62 million a year in revenue."
       },
       "bounds": [
         1171680,
-        1380720
+        1361280
       ]
     },
     {
@@ -245,15 +245,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The ballot question says the tax would raise $2.62 million a year; no impartial analysis is among the documents gathered.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The city attorney's impartial analysis says the city estimates about $2.62 million a year in revenue.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "The official county list of measures, which names who filed each argument, says that no argument against Measure U was submitted."
       },
       "bounds": [
-        1395120,
-        1583760
+        1375680,
+        1570320
       ]
     },
     {
@@ -268,8 +268,8 @@
         "text": "Supporters say the tax has funded police, fire and other services for decades, and renewing it avoids further cuts to core services."
       },
       "bounds": [
-        1598160,
-        1833840
+        1584720,
+        1820400
       ]
     },
     {
@@ -284,8 +284,8 @@
         "text": "A yes vote extends the utility users tax at 6 percent, until ended by voters."
       },
       "bounds": [
-        1848240,
-        1998000
+        1834800,
+        1984560
       ]
     },
     {
@@ -300,14 +300,14 @@
         "text": "A no vote rejects the extension, and the tax would end on March 31, 2027."
       },
       "bounds": [
-        2012400,
-        2154000
+        1998960,
+        2140560
       ]
     }
   ],
-  "sha256": "77a692b2ea932bc5b798b3a9c2f9c87f003b95207364d78d714c8d047c834bfd",
+  "sha256": "4c8a812a5a7172948edf3ee2b2a37c268c55a3da44cf6ee2faf9bf53cc4f6d83",
   "take": {
-    "sha256": "0695e4cd5243af8c5d23e673a004183a4c68ca58a04af7e1285e4553f556e188",
-    "bytes": 4308044
+    "sha256": "e418a818828d6f3aeb2da279e868bf674c6ceaaff28ca7ce085dcb5594e3a383",
+    "bytes": 4281164
   }
 }

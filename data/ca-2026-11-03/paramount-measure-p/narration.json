@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 84.17,
+  "seconds": 82.96,
   "phrases": [
     {
       "text": "Measure P asks the voters of this city whether to tax commercial and industrial property each year, by the square foot, for set purposes.",
@@ -44,24 +44,24 @@
       "end": 57.24
     },
     {
-      "text": "The mayor, the sheriff, two organizations and a business owner filed an argument for Measure P; its text was not gathered.",
+      "text": "Supporters say heavy truck traffic damages local streets, and a typical small business property would pay less than $100 a year.",
       "start": 57.9,
-      "end": 66.66
+      "end": 66.29
     },
     {
       "text": "The official county list of measures, which names who filed each argument, says that no argument against Measure P was submitted.",
-      "start": 67.32,
-      "end": 75.62
+      "start": 66.95,
+      "end": 74.41
     },
     {
       "text": "A yes vote is to adopt the parcel tax ordinance.",
-      "start": 76.28,
-      "end": 79.83
+      "start": 75.07,
+      "end": 78.62
     },
     {
       "text": "A no vote is to not adopt the parcel tax ordinance.",
-      "start": 80.49,
-      "end": 84.14
+      "start": 79.28,
+      "end": 82.93
     }
   ],
   "inputs": {
@@ -74,7 +74,7 @@
       "An oversight committee would monitor the money, and the tax would last until ended by voters.",
       "Measure P needs two-thirds of the votes to pass.",
       "The city attorney's impartial analysis says the city estimates about $4 million a year in new local revenue.",
-      "The mayor, the sheriff, two organizations and a business owner filed an argument for Measure P; its text was not gathered.",
+      "Supporters say heavy truck traffic damages local streets, and a typical small business property would pay less than $100 a year.",
       "The official county list of measures, which names who filed each argument, says that no argument against Measure P was submitted.",
       "A yes vote is to adopt the parcel tax ordinance.",
       "A no vote is to not adopt the parcel tax ordinance."
@@ -227,11 +227,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The mayor, the sheriff, two organizations and a business owner filed an argument for Measure P; its text was not gathered."
+        "text": "Supporters say heavy truck traffic damages local streets, and a typical small business property would pay less than $100 a year."
       },
       "bounds": [
         1388880,
-        1600560
+        1591680
       ]
     },
     {
@@ -239,15 +239,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The mayor, the sheriff, two organizations and a business owner filed an argument for Measure P; its text was not gathered.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say heavy truck traffic damages local streets, and a typical small business property would pay less than $100 a year.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "The official county list of measures, which names who filed each argument, says that no argument against Measure P was submitted."
       },
       "bounds": [
-        1614960,
-        1815600
+        1606080,
+        1786560
       ]
     },
     {
@@ -262,8 +262,8 @@
         "text": "A yes vote is to adopt the parcel tax ordinance."
       },
       "bounds": [
-        1830000,
-        1916640
+        1800960,
+        1887600
       ]
     },
     {
@@ -278,14 +278,14 @@
         "text": "A no vote is to not adopt the parcel tax ordinance."
       },
       "bounds": [
-        1931040,
-        2020080
+        1902000,
+        1991040
       ]
     }
   ],
-  "sha256": "4780081f78702d7bba71f10d960e0462aa381f5ded70556dd825300c0a7f93aa",
+  "sha256": "f2ba57b219a60c525f86216e6bade9fc75700ff54b0f03e694ac84e1f87f4b70",
   "take": {
-    "sha256": "9cbd4f626ce022592b6777bde997302cf8e70abef4fe4ae6321ee5f6be1c040b",
-    "bytes": 4040204
+    "sha256": "6d003a8a3f1f22497edef9454fd1cfb21c2127923a622f3b95fb542a3d1b6e47",
+    "bytes": 3982124
   }
 }

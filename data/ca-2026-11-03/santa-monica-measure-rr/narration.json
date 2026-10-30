@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 85.77,
+  "seconds": 87.98,
   "phrases": [
     {
       "text": "Measure RR asks the voters of this city whether to bar evictions for unpaid rent when a tenant owes less than one month of rent.",
@@ -9,72 +9,78 @@
       "end": 8.73
     },
     {
-      "text": "The City Council says evictions over rent debts of hundreds of dollars or less may be legal today.",
+      "text": "Today, the charter's eviction rules let a landlord evict a tenant who owes any amount of rent.",
       "start": 9.39,
-      "end": 15.66
+      "end": 14.9
     },
     {
       "text": "The charter's eviction rules cover most rentals, but generally not single-family homes or condominiums.",
-      "start": 16.32,
-      "end": 23.21
+      "start": 15.56,
+      "end": 23.16
     },
     {
       "text": "The rent board recommended the change, which the Council says would protect tenants from unnecessary displacement.",
-      "start": 23.87,
-      "end": 30.14
+      "start": 23.82,
+      "end": 30.09
     },
     {
       "text": "An eviction for unpaid rent would be allowed only when the tenant owes more than one month of rent, at a set rate.",
-      "start": 30.8,
-      "end": 38.44
+      "start": 30.75,
+      "end": 38.39
     },
     {
       "text": "That rate is the average market rent the federal housing department sets each year for local ZIP codes, for a unit of that size.",
-      "start": 39.1,
-      "end": 46.97
+      "start": 39.05,
+      "end": 46.92
     },
     {
       "text": "The eviction notice would have to state the number of bedrooms and that amount.",
-      "start": 47.63,
-      "end": 52.01
+      "start": 47.58,
+      "end": 51.96
     },
     {
-      "text": "The official list of measures from the county does not include a cost estimate for the measure.",
-      "start": 52.67,
-      "end": 57.53
+      "text": "Landlords could still collect unpaid rent by means other than eviction.",
+      "start": 52.62,
+      "end": 57.0
     },
     {
-      "text": "The mayor, a rent board member, a council member and two others filed an argument for Measure RR; its text was not gathered.",
-      "start": 58.19,
-      "end": 66.95
+      "text": "The impartial analysis does not include a cost estimate for the measure.",
+      "start": 57.66,
+      "end": 61.87
+    },
+    {
+      "text": "Supporters say no one should lose their home over a small amount of rent, and tenants would get time to catch up.",
+      "start": 62.53,
+      "end": 69.07
     },
     {
       "text": "The official county list of measures for this election says that no argument against Measure RR was submitted, by any group or person.",
-      "start": 67.61,
-      "end": 76.01
+      "start": 69.73,
+      "end": 78.22
     },
     {
       "text": "A yes vote sets the one-month minimum before an eviction for unpaid rent.",
-      "start": 76.67,
-      "end": 81.6
+      "start": 78.88,
+      "end": 83.81
     },
     {
       "text": "A no vote leaves the eviction rules in the charter as they are.",
-      "start": 82.26,
-      "end": 85.74
+      "start": 84.47,
+      "end": 87.95
     }
   ],
   "inputs": {
     "phrases": [
       "Measure RR asks the voters of this city whether to bar evictions for unpaid rent when a tenant owes less than one month of rent.",
-      "The City Council says evictions over rent debts of hundreds of dollars or less may be legal today.",
+      "Today, the charter's eviction rules let a landlord evict a tenant who owes any amount of rent.",
       "The charter's eviction rules cover most rentals, but generally not single-family homes or condominiums.",
       "The rent board recommended the change, which the Council says would protect tenants from unnecessary displacement.",
       "An eviction for unpaid rent would be allowed only when the tenant owes more than one month of rent, at a set rate.",
       "That rate is the average market rent the federal housing department sets each year for local ZIP codes, for a unit of that size.",
       "The eviction notice would have to state the number of bedrooms and that amount.",
-      "The official list of measures from the county does not include a cost estimate for the measure.",
-      "The mayor, a rent board member, a council member and two others filed an argument for Measure RR; its text was not gathered.",
+      "Landlords could still collect unpaid rent by means other than eviction.",
+      "The impartial analysis does not include a cost estimate for the measure.",
+      "Supporters say no one should lose their home over a small amount of rent, and tenants would get time to catch up.",
       "The official county list of measures for this election says that no argument against Measure RR was submitted, by any group or person.",
       "A yes vote sets the one-month minimum before an eviction for unpaid rent.",
       "A no vote leaves the eviction rules in the charter as they are."
@@ -115,11 +121,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The City Council says evictions over rent debts of hundreds of dollars or less may be legal today."
+        "text": "Today, the charter's eviction rules let a landlord evict a tenant who owes any amount of rent."
       },
       "bounds": [
         224640,
-        376560
+        358320
       ]
     },
     {
@@ -127,15 +133,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Council says evictions over rent debts of hundreds of dollars or less may be legal today.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, the charter's eviction rules let a landlord evict a tenant who owes any amount of rent.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "The charter's eviction rules cover most rentals, but generally not single-family homes or condominiums."
       },
       "bounds": [
-        390960,
-        557760
+        372720,
+        556560
       ]
     },
     {
@@ -150,8 +156,8 @@
         "text": "The rent board recommended the change, which the Council says would protect tenants from unnecessary displacement."
       },
       "bounds": [
-        572160,
-        724080
+        570960,
+        722880
       ]
     },
     {
@@ -166,8 +172,8 @@
         "text": "An eviction for unpaid rent would be allowed only when the tenant owes more than one month of rent, at a set rate."
       },
       "bounds": [
-        738480,
-        923280
+        737280,
+        922080
       ]
     },
     {
@@ -182,8 +188,8 @@
         "text": "That rate is the average market rent the federal housing department sets each year for local ZIP codes, for a unit of that size."
       },
       "bounds": [
-        937680,
-        1128000
+        936480,
+        1126800
       ]
     },
     {
@@ -198,8 +204,8 @@
         "text": "The eviction notice would have to state the number of bedrooms and that amount."
       },
       "bounds": [
-        1142400,
-        1248960
+        1141200,
+        1247760
       ]
     },
     {
@@ -211,11 +217,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The official list of measures from the county does not include a cost estimate for the measure."
+        "text": "Landlords could still collect unpaid rent by means other than eviction."
       },
       "bounds": [
-        1263360,
-        1381440
+        1262160,
+        1368720
       ]
     },
     {
@@ -223,15 +229,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The official list of measures from the county does not include a cost estimate for the measure.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Landlords could still collect unpaid rent by means other than eviction.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The mayor, a rent board member, a council member and two others filed an argument for Measure RR; its text was not gathered."
+        "text": "The impartial analysis does not include a cost estimate for the measure."
       },
       "bounds": [
-        1395840,
-        1607520
+        1383120,
+        1485600
       ]
     },
     {
@@ -239,15 +245,31 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The mayor, a rent board member, a council member and two others filed an argument for Measure RR; its text was not gathered.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The impartial analysis does not include a cost estimate for the measure.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say no one should lose their home over a small amount of rent, and tenants would get time to catch up."
+      },
+      "bounds": [
+        1500000,
+        1658400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say no one should lose their home over a small amount of rent, and tenants would get time to catch up.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "The official county list of measures for this election says that no argument against Measure RR was submitted, by any group or person."
       },
       "bounds": [
-        1621920,
-        1824960
+        1672800,
+        1878000
       ]
     },
     {
@@ -262,8 +284,8 @@
         "text": "A yes vote sets the one-month minimum before an eviction for unpaid rent."
       },
       "bounds": [
-        1839360,
-        1959120
+        1892400,
+        2012160
       ]
     },
     {
@@ -278,14 +300,14 @@
         "text": "A no vote leaves the eviction rules in the charter as they are."
       },
       "bounds": [
-        1973520,
-        2058480
+        2026560,
+        2111520
       ]
     }
   ],
-  "sha256": "ac9a738579610d4f9559dcd9fb75dd72c67b21d9be725de3850480e7d9d06b21",
+  "sha256": "1004b6916b2e5770033e921c85eb07a95d0c1a3f46ed3c703be7cc7a87caec13",
   "take": {
-    "sha256": "e5a6d7aa9812bf38f48526b37f6a45b8aa7b8cd47fdba1e0a528444c1e631a09",
-    "bytes": 4117004
+    "sha256": "8d00ed09b3c343aaadc246252b243af97912d26ea09403ecf9c5fec57e683030",
+    "bytes": 4223084
   }
 }

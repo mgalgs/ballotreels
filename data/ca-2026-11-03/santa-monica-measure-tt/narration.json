@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 93.08,
+  "seconds": 92.79,
   "phrases": [
     {
       "text": "Measure TT asks the voters of this city whether to change how the hotel tax applies to rooms that companies book for long stays.",
@@ -44,29 +44,29 @@
       "end": 61.04
     },
     {
-      "text": "The official list of measures from the county does not include a cost estimate for the measure.",
+      "text": "The impartial analysis does not include a cost estimate for the measure.",
       "start": 61.7,
-      "end": 66.41
+      "end": 65.88
     },
     {
       "text": "The official county list of measures for this election says that no argument against Measure TT was submitted, by any group or person.",
-      "start": 67.07,
-      "end": 75.94
+      "start": 66.54,
+      "end": 75.14
     },
     {
-      "text": "A local firefighters union, a former mayor and three other people filed an argument for Measure TT; its text was not gathered.",
-      "start": 76.6,
-      "end": 84.86
+      "text": "Supporters say large corporations booking room blocks during major events could not avoid the hotel tax, and it creates no new tax.",
+      "start": 75.8,
+      "end": 84.98
     },
     {
       "text": "A yes vote adopts these changes to the hotel tax.",
-      "start": 85.52,
-      "end": 88.98
+      "start": 85.64,
+      "end": 88.69
     },
     {
       "text": "A no vote leaves the hotel tax rules as they are.",
-      "start": 89.64,
-      "end": 93.05
+      "start": 89.35,
+      "end": 92.76
     }
   ],
   "inputs": {
@@ -79,9 +79,9 @@
       "The Council could declare major event periods, like the 2028 Olympics, when rooms companies book for over 30 days would be taxed.",
       "During those periods, the Council could set the rate on rooms booked by companies anywhere from 15 percent down to zero.",
       "A refund of the tax on a long stay would require the same person to stay in the room at least 31 days in a row.",
-      "The official list of measures from the county does not include a cost estimate for the measure.",
+      "The impartial analysis does not include a cost estimate for the measure.",
       "The official county list of measures for this election says that no argument against Measure TT was submitted, by any group or person.",
-      "A local firefighters union, a former mayor and three other people filed an argument for Measure TT; its text was not gathered.",
+      "Supporters say large corporations booking room blocks during major events could not avoid the hotel tax, and it creates no new tax.",
       "A yes vote adopts these changes to the hotel tax.",
       "A no vote leaves the hotel tax rules as they are."
     ],
@@ -233,11 +233,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The official list of measures from the county does not include a cost estimate for the measure."
+        "text": "The impartial analysis does not include a cost estimate for the measure."
       },
       "bounds": [
         1480080,
-        1594560
+        1581840
       ]
     },
     {
@@ -245,15 +245,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The official list of measures from the county does not include a cost estimate for the measure.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The impartial analysis does not include a cost estimate for the measure.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "The official county list of measures for this election says that no argument against Measure TT was submitted, by any group or person."
       },
       "bounds": [
-        1608960,
-        1823280
+        1596240,
+        1804080
       ]
     },
     {
@@ -265,11 +265,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "A local firefighters union, a former mayor and three other people filed an argument for Measure TT; its text was not gathered."
+        "text": "Supporters say large corporations booking room blocks during major events could not avoid the hotel tax, and it creates no new tax."
       },
       "bounds": [
-        1837680,
-        2037360
+        1818480,
+        2040240
       ]
     },
     {
@@ -277,15 +277,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A local firefighters union, a former mayor and three other people filed an argument for Measure TT; its text was not gathered.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say large corporations booking room blocks during major events could not avoid the hotel tax, and it creates no new tax.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote adopts these changes to the hotel tax."
       },
       "bounds": [
-        2051760,
-        2136240
+        2054640,
+        2129280
       ]
     },
     {
@@ -300,14 +300,14 @@
         "text": "A no vote leaves the hotel tax rules as they are."
       },
       "bounds": [
-        2150640,
-        2233920
+        2143680,
+        2226960
       ]
     }
   ],
-  "sha256": "e3f90af320ab6ca5b88732c73d6104eebbd4dcb250008c10163dabd937cc5510",
+  "sha256": "416289e866e21ffada05115ea5d87304df7beab8c09b26b41449ee41359d9c59",
   "take": {
-    "sha256": "c6ea659317dd795bd6cadde35581607f9db0a05426ff24bbf157f14d3cade3e3",
-    "bytes": 4467884
+    "sha256": "79918b157ccc817407e51df24bb226f5ba12bde34e6c68fc89f7c9a97d42bbe0",
+    "bytes": 4453964
   }
 }

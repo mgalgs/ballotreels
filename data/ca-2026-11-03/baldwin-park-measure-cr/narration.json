@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 77.93,
+  "seconds": 77.89,
   "phrases": [
     {
       "text": "Measure CR asks the voters of this city whether to tax cannabis businesses that are not stores.",
@@ -39,24 +39,24 @@
       "end": 51.89
     },
     {
-      "text": "Supporters filed an argument for Measure CR; its text is not among the documents gathered here.",
+      "text": "Supporters say all cannabis businesses would pay, not just some, and the money cannot be seized.",
       "start": 52.55,
-      "end": 58.74
+      "end": 58.78
     },
     {
       "text": "According to the county registrar's official list of measures, no argument against Measure CR was submitted.",
-      "start": 59.4,
-      "end": 65.96
+      "start": 59.44,
+      "end": 65.92
     },
     {
       "text": "A yes vote approves the 4 percent tax on cannabis businesses that are not stores.",
-      "start": 66.62,
-      "end": 72.03
+      "start": 66.58,
+      "end": 71.99
     },
     {
       "text": "A no vote rejects the 4 percent tax on cannabis businesses that are not stores.",
-      "start": 72.69,
-      "end": 77.9
+      "start": 72.65,
+      "end": 77.86
     }
   ],
   "inputs": {
@@ -68,7 +68,7 @@
       "As a general tax, the money would go to the general fund, for any lawful city purpose.",
       "The tax would start in 2027 and last until ended by voters; it needs a majority yes vote to pass.",
       "The ballot question itself projects $1 million a year in added funding; no separate fiscal analysis was gathered.",
-      "Supporters filed an argument for Measure CR; its text is not among the documents gathered here.",
+      "Supporters say all cannabis businesses would pay, not just some, and the money cannot be seized.",
       "According to the county registrar's official list of measures, no argument against Measure CR was submitted.",
       "A yes vote approves the 4 percent tax on cannabis businesses that are not stores.",
       "A no vote rejects the 4 percent tax on cannabis businesses that are not stores."
@@ -205,11 +205,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Supporters filed an argument for Measure CR; its text is not among the documents gathered here."
+        "text": "Supporters say all cannabis businesses would pay, not just some, and the money cannot be seized."
       },
       "bounds": [
         1260480,
-        1410480
+        1411440
       ]
     },
     {
@@ -217,15 +217,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters filed an argument for Measure CR; its text is not among the documents gathered here.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say all cannabis businesses would pay, not just some, and the money cannot be seized.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "According to the county registrar's official list of measures, no argument against Measure CR was submitted."
       },
       "bounds": [
-        1424880,
-        1583760
+        1425840,
+        1582800
       ]
     },
     {
@@ -240,8 +240,8 @@
         "text": "A yes vote approves the 4 percent tax on cannabis businesses that are not stores."
       },
       "bounds": [
-        1598160,
-        1729440
+        1597200,
+        1728480
       ]
     },
     {
@@ -256,14 +256,14 @@
         "text": "A no vote rejects the 4 percent tax on cannabis businesses that are not stores."
       },
       "bounds": [
-        1743840,
-        1870320
+        1742880,
+        1869360
       ]
     }
   ],
-  "sha256": "8e172b71023598eb097aa91fae60a8c810c34ba33aed7e8e20f2191ab71d5b17",
+  "sha256": "d1fb18961be8ebd0932558a846d67821aff07f6a68e7a77dc9f698813eee0154",
   "take": {
-    "sha256": "dddb62de67ce82adeacab81927725d2a8648b11ac856aadbd7a96a99d8d5e3e2",
-    "bytes": 3740684
+    "sha256": "be5243a7afa089b852c62c3b419d1df6f2c1b49af1d0ea1b2a0ac2f4e49dcf3f",
+    "bytes": 3738764
   }
 }

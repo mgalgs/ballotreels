@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 78.69,
+  "seconds": 78.76,
   "phrases": [
     {
       "text": "Measure RS asks the voters of this city whether to raise the hotel and motel guest tax from 10 to 13 percent.",
@@ -44,19 +44,19 @@
       "end": 57.15
     },
     {
-      "text": "Four organizations and a retired judge filed an argument for Measure RS; its text is not among the documents gathered.",
+      "text": "Supporters say Measure RS would help prepare for wildfires and landslides, and only overnight hotel and motel visitors pay it.",
       "start": 57.81,
-      "end": 66.38
+      "end": 66.83
     },
     {
       "text": "A yes vote approves raising the hotel and motel guest tax from 10 to 13 percent.",
-      "start": 67.04,
-      "end": 73.37
+      "start": 67.49,
+      "end": 73.44
     },
     {
       "text": "A no vote disapproves of raising the hotel and motel guest tax at this time.",
-      "start": 74.03,
-      "end": 78.66
+      "start": 74.1,
+      "end": 78.73
     }
   ],
   "inputs": {
@@ -69,7 +69,7 @@
       "The higher rate would last until ended by voters, and needs a majority yes vote to pass.",
       "The city attorney's impartial analysis says the increase would add $2.2 million a year to the general fund.",
       "The official county list of measures, which names who filed each argument, says no argument against Measure RS was submitted.",
-      "Four organizations and a retired judge filed an argument for Measure RS; its text is not among the documents gathered.",
+      "Supporters say Measure RS would help prepare for wildfires and landslides, and only overnight hotel and motel visitors pay it.",
       "A yes vote approves raising the hotel and motel guest tax from 10 to 13 percent.",
       "A no vote disapproves of raising the hotel and motel guest tax at this time."
     ],
@@ -221,11 +221,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Four organizations and a retired judge filed an argument for Measure RS; its text is not among the documents gathered."
+        "text": "Supporters say Measure RS would help prepare for wildfires and landslides, and only overnight hotel and motel visitors pay it."
       },
       "bounds": [
         1386720,
-        1593840
+        1604640
       ]
     },
     {
@@ -233,15 +233,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Four organizations and a retired judge filed an argument for Measure RS; its text is not among the documents gathered.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure RS would help prepare for wildfires and landslides, and only overnight hotel and motel visitors pay it.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote approves raising the hotel and motel guest tax from 10 to 13 percent."
       },
       "bounds": [
-        1608240,
-        1761600
+        1619040,
+        1763280
       ]
     },
     {
@@ -256,14 +256,14 @@
         "text": "A no vote disapproves of raising the hotel and motel guest tax at this time."
       },
       "bounds": [
-        1776000,
-        1888560
+        1777680,
+        1890240
       ]
     }
   ],
-  "sha256": "a2b50a9d5e60ed36580985ea7eeadda3c38bb64dd60b4514b9a8d25523f8c966",
+  "sha256": "4606305acaa7c2771a6d893c9c583b14197739a9a82aa8e66cdb55198aff70cc",
   "take": {
-    "sha256": "afd6ca429b73962d1852aadcaf1bb2f8657e8b379d837876fbefc9de604de326",
-    "bytes": 3777164
+    "sha256": "7596f3312d136f1850f57e057dfb36532ec920d0e0f18115f897e0df6cb97021",
+    "bytes": 3780524
   }
 }
