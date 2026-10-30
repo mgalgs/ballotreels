@@ -1,0 +1,93 @@
+# Archived sources for Merced Union High School District Measure W, the
+# School Facilities Improvement District No. 1 bond (Livingston High School area),
+# 2026-11-03 general election (sources/county-sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Who votes: the full text authorizes the bonds "By approval of this
+# measure by at least 55% of the voters of School Facilities Improvement
+# District No. 1 of the Merced Union High School District", and the tax
+# rate statement says the bonds are repaid from "tax levies made upon the
+# taxable property in the School Facilities Improvement District". The
+# SFID has no boundary layer of its own, so the division is the county
+# with a `voters` line, worded as the ballot question names it, as
+# Yosemite Unified's SFID No. 1 Measure W is.
+#
+# Merced County Elections posts each measure's documents on its
+# "November 3, 2026, General Election" page; no printed county guide was
+# archived. The ballot question is quoted from the county's Measure W
+# PDF. County Counsel's impartial analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is; the district's tax rate statement (headed "Tax
+# Information Statement") is its fiscal statement. The county's list of
+# ballot measures is the filing record.
+#
+# The full text and the tax rate statement are scans with no text layer; the passages cited
+# were typed from the page images into sources/*-transcription.txt,
+# each naming the PDF and URL it copies; those sources point at the
+# transcription, and their url at the scan.
+#
+# No argument against Measure W and no rebuttals are among the
+# county's postings (sources/county-sources.md).
+
+[contest]
+id = "ca-2026-11-03-merced-union-high-sfid-1-measure-w"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:merced"
+kind = "measure"
+title = "Merced Union High School District SFID No. 1 Measure W: Livingston High School Area School Bonds"
+voters = "the Merced Union High School District's School Facilities Improvement District No. 1"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Merced County Elections, Measure W, ballot question, page 1"
+credit = "Measure W, Merced County Elections"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53624/Measure-W"
+file = "sources/county-ballot-question.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Merced County Counsel (Forrest W. Hansen; signed by Thomas E. Ebersole, Assistant County Counsel), County Counsel Impartial Analysis of Measure W, Merced Union High School District General Obligation Bond for Facilities Improvement District No. 1, posted by Merced County Elections"
+credit = "Impartial Analysis, Merced County Counsel"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53694/Impartial-Analysis-Measure-W-District-1-IA-Livingston"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Merced Union High School District, Exhibit B, Tax Information Statement, School Facilities Improvement District No. 1, dated June 2, 2026, posted by Merced County Elections (transcribed from the scan)"
+credit = "Tax Information Statement, Merced Union High School District"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53700/Measure-W-Tax-Information-Statement"
+file = "sources/county-tax-rate-statement-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Merced Union High School District, Exhibit A, Full Text of Bond Measure, School Facilities Improvement District No. 1, posted by Merced County Elections (page A-1 transcribed from the scan)"
+credit = "Full Text of Bond Measure, Merced Union High School District"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53697/Measure-W-Full-Text"
+file = "sources/county-full-text-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure W, Merced Union High School District, School Facilities Improvement District No. 1, as filed with Merced County Elections (no argument against was posted)"
+credit = "Argument in favor, Measure W"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53695/Measure-W-Argument-Merced-SFID1-Livingston-Nov2026"
+file = "sources/county-argument-for.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "measure-list"
+kind = "election-filing"
+publisher = "Merced County Registrar of Voters, List of Ballot Measures, November 3 2026 General Election (CFMR004, printed 8/7/2026), page 2"
+credit = "List of Ballot Measures, Merced County Registrar of Voters"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53380/List-of-Ballot-Measures-for-November-3-2026-General-Election"
+file = "sources/county-measure-list.pdf"
+retrieved = "2026-10-29"
