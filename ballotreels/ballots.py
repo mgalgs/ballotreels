@@ -527,6 +527,11 @@ BALLOTS: dict[str, Ballot] = {
                      "ca-2026-11-03-allan-hancock-measure-h-ventura":
                          "Santa Barbara County Voter Information Guide "
                          "and Sample Ballot",
+                     # Marin measures whose cards quote the ballot
+                     # question from the county's own measure pages
+                     **{f"ca-2026-11-03-{slug}":
+                        "Marin County Elections: List of measures 11/03/26"
+                        for slug in ("miller-creek-measure-n",)},
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.

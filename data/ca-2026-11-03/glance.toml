@@ -4044,3 +4044,12 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $618,176,000."
 amount = 618176000
 period = "unstated"
+
+# Miller Creek School District Measure N: the total debt service, from
+# the District's tax rate statement as the county's Measure N page prints
+# it; the bonds are $67,000,000.
+[miller-creek-measure-n]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $132,500,000."
+amount = 132500000
+period = "unstated"
