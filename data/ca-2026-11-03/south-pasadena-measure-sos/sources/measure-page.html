@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-US">
+<!--<![endif]-->
+<head>
+	<!-- Published by OpenCities, 1.38.0.1 -->
+
+    
+        
+    
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="theme-color" content="#FFFFFF"/>
+    <title>Measure SOS - City of South Pasadena</title>
+	<meta name="generator" content="OpenCities - https://granicus.com/product/opencities" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Using mobile-web-app-capable for now to enable full-screen experience on supported platforms -->
+    <!-- Note: This tag works mainly on Android Chrome. It does NOT enable full-screen mode on iOS Safari. -->
+    <!-- For iOS, the correct tag is: <meta name="apple-mobile-web-app-capable" content="yes"> -->
+    <!-- TODO: Monitor for updated meta tag standards from Apple or other browser vendors -->
+    <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="description" content="South Pasadena Bond Measure related to street repair." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS" />
+    <meta property="og:title" content="Measure SOS" />
+    <meta property="og:description" content="South Pasadena Bond Measure related to street repair." />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Measure SOS" />
+    <meta property="twitter:description" content="South Pasadena Bond Measure related to street repair." />
+    <link rel="canonical" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS" />
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/files/ocfavicon/Public/apple-touch-icon.png?V=638488653979061469">
+<link rel="icon" type="image/png" sizes="32x32" href="/files/ocfavicon/Public/favicon-32x32.png?V=638488653979061469">
+<link rel="icon" type="image/png" sizes="16x16" href="/files/ocfavicon/Public/favicon-16x16.png?V=638488653979061469">
+<link rel="manifest" href="/files/ocfavicon/Public/site.webmanifest?V=638488653979061469">
+<link rel="shortcut icon" href="/files/ocfavicon/Public/favicon.ico?V=638488653979061469">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-config" content="/files/ocfavicon/Public/browserconfig.xml?V=638488653979061469">
+    <script>
+        (function () {
+            if (window.__UNLOAD_LAZY_PATCH__) return;
+            window.__UNLOAD_LAZY_PATCH__ = true;
+
+            var supportsPageHide = ("onpagehide" in window);
+            var mappedType = supportsPageHide ? "pagehide" : "beforeunload";
+            var nativeAdd = window.addEventListener;
+            var nativeRemove = window.removeEventListener;
+            var unloadMap = null;
+            var patched = false;
+
+            function ensurePatched() {
+                if (patched) return;
+                unloadMap = new WeakMap();
+
+                window.addEventListener = function (type, listener, options) {
+                    if (type === "unload") {
+                        var wrapped = function (evt) {
+                            if (supportsPageHide && evt.persisted) return;
+                            listener.call(this, evt);
+                        };
+                        unloadMap.set(listener, wrapped);
+                        return nativeAdd.call(this, mappedType, wrapped, options);
+                    }
+                    return nativeAdd.call(this, type, listener, options);
+                };
+
+                window.removeEventListener = function (type, listener, options) {
+                    if (type === "unload") {
+                        var wrapped = unloadMap.get(listener);
+                        if (wrapped) {
+                            nativeRemove.call(this, mappedType, wrapped, options);
+                            unloadMap.delete(listener);
+                        }
+                        return;
+                    }
+                    return nativeRemove.call(this, type, listener, options);
+                };
+
+                var orig = null;
+                Object.defineProperty(window, "onunload", {
+                    configurable: true, enumerable: true,
+                    get: function () { return orig; },
+                    set: function (h) {
+                        orig = h;
+                        if (typeof h === "function") window.addEventListener("unload", h);
+                    }
+                });
+                patched = true;
+            }
+
+            window.addEventListener = function (type, listener, options) {
+                if (type === "unload") {
+                    ensurePatched();
+                    return window.addEventListener(type, listener, options);
+                }
+                return nativeAdd.call(this, type, listener, options);
+            };
+
+            window.removeEventListener = function (type, listener, options) {
+                if (type === "unload" && !patched) {
+                    return;
+                }
+                return nativeRemove.call(this, type, listener, options);
+            };
+
+            function patchTelerik() {
+                ensurePatched();
+                var ns = window.RadAjaxNamespace;
+                if (!ns || !ns.EventManager || !ns.EventManager.Add || ns.EventManager.__UnloadPatched) return;
+                var origAdd = ns.EventManager.Add;
+                ns.EventManager.Add = function (el, evtName, handler, clientId) {
+                    if (el === window && evtName === "unload") {
+                        return window.addEventListener("unload", handler);
+                    }
+                    return origAdd.call(this, el, evtName, handler, clientId);
+                };
+                ns.EventManager.__UnloadPatched = true;
+            }
+
+            if (window.RadAjaxNamespace)
+                patchTelerik();
+            else (window.requestIdleCallback || function (cb)
+            {
+                setTimeout(cb, 120);
+            })(patchTelerik);
+        })();
+    </script>
+    <!-- Preconnecting to Google Fonts servers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Defer Roboto font loading to avoid render-blocking -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const robotoLink = document.createElement('link');
+            robotoLink.rel = 'stylesheet';
+            robotoLink.href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap';
+            document.head.appendChild(robotoLink);
+        });
+    </script>
+
+    <style>
+        .gm-style, .gm-style * {
+            font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", Arial, sans-serif !important;
+        }
+    </style>
+
+    <script>
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, "js");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,400;0,600;0,700;1,600&display=swap" rel="stylesheet">
+    
+        
+            <script type="text/javascript">
+                window.__oc_flags_ImprovedBreakpointEventHandling = true;
+            </script>
+            
+        
+    
+    
+    
+        <script type="text/javascript">
+            var __metaQueryBreakpoints = {
+                'sc-size-4': '(max-width: 480px)',
+                'sc-size-3': '(min-width: 480px) and (max-width: 768px)',
+                'sc-size-2': '(min-width: 768px) and (max-width: 992px)',
+                'sc-size-1': '(min-width: 992px)'
+            }
+
+            var __ocSizePoints = [
+                { min: 0, name: 'sc-size-4' },
+                { min: 480, name: 'sc-size-3' },
+                { min: 768, name: 'sc-size-2' },
+                { min: 992, name: 'sc-size-1' }
+            ];
+
+        </script>
+    
+
+    <!-- Framework Section -->
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/files/templates/00000000-0000-0000-0000-000000000000/41b06e2f-71c4-4d16-bb89-6b28bb6dd892/v/192/jquery-3.7.1.min.js?seamlessts=639263243605815041" ><\/script>')</script>
+
+    <!--Google Maps API Loader – Improved Version to avoid Warning
+    This script loads the Google Maps JavaScript API using a dynamic and async method.
+    It replaces the old static <script> tag to avoid performance warnings from Google.
+
+    Dynamically creates the <script> tag with loading = async for better performance
+    Builds the API URL with required libraries(places, geometry, marker, geocoding)
+    Uses a Promise and callback(google.maps.__ib__) to confirm when the script is ready
+
+    It Avoids Google’s warning about direct script loading
+    Improves page load speed by loading the API asynchronously-->
+
+    
+    <script src="/files/templates/00000000-0000-0000-0000-000000000000/41b06e2f-71c4-4d16-bb89-6b28bb6dd892/v/192/modernizr.custom.710f3bf.js?seamlessts=639263243605815041" defer></script>
+    
+    <!--// End Framework Section -->
+    <!-- OpenCities Section -->
+    <script>
+        var OpenCities = OpenCities || {};
+        OpenCities.Paths = {
+            SiteTemplate: '/files/templates/00000000-0000-0000-0000-000000000000/41b06e2f-71c4-4d16-bb89-6b28bb6dd892/v/192/',
+            ThemePath: '/files/templates/00000000-0000-0000-0000-000000000000/41b06e2f-71c4-4d16-bb89-6b28bb6dd892/v/192/'
+        };
+    </script>
+    <script src='/ocapi/053f79da-f6f4-4ab0-b0b5-d2e3e99590cb/en-US/websitesettings.js'></script>
+    <script src="/files/templates/00000000-0000-0000-0000-000000000000/41b06e2f-71c4-4d16-bb89-6b28bb6dd892/v/192/oc_head.js?applied=20260729053702"></script>
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<link href="/files/oc-templates/00000000-0000-0000-0000-000000000000/41b06e2f-71c4-4d16-bb89-6b28bb6dd892/v/192/oc_grid.css~oc_style.css~oc_wizard_style.css~oc_main.css~oc_forms.css~oc_wizard.css~oc_wizard_menu.css~oc_main_s1.css~oc_wizard_s1.css~oc_wizard_menu_s1.css~oc_grid_s1.css~OcScriptCombine_Minify0?uniqueid=20260729053702" rel="stylesheet" type="text/css">
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<link href="/files/oc-templates/00000000-0000-0000-0000-000000000000/41b06e2f-71c4-4d16-bb89-6b28bb6dd892/v/192/client_style.css~client.css~client_menu.css~client_s1.css~client_menu_s1.css~client_forms.css~OcScriptCombine_Minify0?uniqueid=20260729053702" rel="stylesheet" type="text/css">
+    <script>
+(function (BackgroundSettings, $, undefined) {
+    BackgroundSettings.initialise = function () {
+        this.Application = {"CSSSelector":".content-outer-container","EnableFade":true,"MediaType":"image"};
+    };
+} (OpenCities.BackgroundSettings = OpenCities.BackgroundSettings || {}, jQuery));
+OpenCities.BackgroundSettings.initialise();
+</script>
+    
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<link href="/files/oc-templates/00000000-0000-0000-0000-000000000000/41b06e2f-71c4-4d16-bb89-6b28bb6dd892/v/192/oc_print.css~client_print.css~OcScriptCombine_Minify0?uniqueid=20260729053702" rel="stylesheet" type="text/css" media="print">
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<script src="/files/oc-templates/00000000-0000-0000-0000-000000000000/41b06e2f-71c4-4d16-bb89-6b28bb6dd892/v/192/external_plugins.js~oc_form_helper.js~oc_main.js~plugins.js~oc_main_init.js~OcScriptCombine_Minify0?uniqueid=20260729053702" defer="true"></script>
+    
+    
+
+                                <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="DYTCK-JM9C8-ED4EP-C3GGK-Z575H",function(){function e(){if(!r){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.appendChild(e),r=!0}}function t(e){r=!0;var n,t,a,i,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",i=(a.frameElement||a).style,i.width=0,i.height=0,i.border=0,i.display="none",o.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void 0;",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=14,window.BOOMR.url=n+"DYTCK-JM9C8-ED4EP-C3GGK-Z575H";var i=document.currentScript||document.getElementsByTagName("script")[0],o=i.parentNode,r=!1,d=document.createElement("link");if(d.relList&&"function"==typeof d.relList.supports&&d.relList.supports("preload")&&"as"in d)window.BOOMR.snippetMethod="p",d.href=window.BOOMR.url,d.rel="preload",d.as="script",d.addEventListener("load",e),d.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!r)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.appendChild(d);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="iqd2coaxei7kw2xekkla-f-9156672e1-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"41","ak.cp":"1700647","ak.ai":parseInt("1075935",10),"ak.ol":"0","ak.cr":9,"ak.ipv":4,"ak.proto":"h2","ak.rid":"1aac0248","ak.r":53846,"ak.a2":n,"ak.m":"","ak.n":"essl","ak.cport":37280,"ak.gh":"23.15.245.167","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"","ak.t":"1793348246","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==94URvJTDMq0UmUDPlnICLgabbVAuQ8RqBquj7euSFveT2wJTySccWWMJT7lJQP6VdQHuUai3y0AMORxcItJ/+F3wGGS/QWoA4hp4tdk1uyhcAPdcBY5Pi5UwK+CBMcxJFCtXgk7YSHYDV+JNftOvRvv6mNbvnI3yHAxYTbhBBEP3tYnlZ8n17PB9sUUkNoKk5BhCPxCDXQ+Ztv1cO4dTgImxu9TqMzRgth+45u3SrJ86JGC/rpQYBcICxBsKElYSfkFt/tabQmgeMR964cWI9z5BPwuaIlNAyZTfKxXTr5GObI5Lufp35cnpdp9yp+MiagDcojvKyR8KpxsKmEsqY+h5hpg5OX5TSXan734jzozLLeMFyqOT2EYBklX0o5c+La83H5fcg2NQFDCyR0nQiZE0bYciKNvU+C/pl6Qz2Hw=","ak.pv":"359","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body class="body layout-modern  site-search-always-visble  content-type-oc-general content-template-oc-full-width group-template-oc-full-width-with-default-header page-name-measure-sos page-sequence-2 page-depth-5 page-section-6 website-type-primary device-desktop " id="body-top">
+    <div id="skip-to-content-container">
+        <a href="#main-content" class="visuallyhidden focusable" id="skip-to-content-link">Skip to main content</a>
+    </div>
+    <script>
+        // OCNOW-11988 (Cursor): Proactively focus skip link when returning from browser chrome.
+        // Must run inline (not deferred oc_main.js) so focus is intercepted before NVDA speaks footer.
+        (function () {
+            var awaitingReentry = false;
+            var inertSupported = 'inert' in HTMLElement.prototype;
+
+            function isExplicitlyOutsideDocument(node) {
+                return node != null && !document.documentElement.contains(node);
+            }
+
+            function getSkipContainer() {
+                return document.getElementById('skip-to-content-container');
+            }
+
+            function getSkipLink() {
+                return document.getElementById('skip-to-content-link');
+            }
+
+            function applyGuard() {
+                awaitingReentry = true;
+                if (!inertSupported) {
+                    return;
+                }
+                var skipContainer = getSkipContainer();
+                var children = document.body.children;
+                for (var i = 0; i < children.length; i++) {
+                    if (children[i] !== skipContainer) {
+                        children[i].setAttribute('inert', '');
+                    }
+                }
+            }
+
+            function clearGuard() {
+                awaitingReentry = false;
+                if (!inertSupported) {
+                    return;
+                }
+                var children = document.body.children;
+                for (var i = 0; i < children.length; i++) {
+                    children[i].removeAttribute('inert');
+                }
+            }
+
+            function isSkipLinkElement(target) {
+                if (!target) {
+                    return false;
+                }
+                var skipContainer = getSkipContainer();
+                return target.id === 'skip-to-content-link' ||
+                    (skipContainer && skipContainer.contains(target));
+            }
+
+            function focusSkipLink() {
+                var skipLink = getSkipLink();
+                if (!skipLink) {
+                    return;
+                }
+                if (window.scrollY > 0) {
+                    window.scrollTo(0, 0);
+                }
+                skipLink.focus({ preventScroll: true });
+            }
+
+            function scheduleGuardIfDocumentLostFocus() {
+                window.setTimeout(function () {
+                    if (!document.hasFocus()) {
+                        applyGuard();
+                    }
+                }, 0);
+            }
+
+            document.addEventListener('focusout', function (e) {
+                if (isExplicitlyOutsideDocument(e.relatedTarget)) {
+                    applyGuard();
+                }
+            }, true);
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Tab') {
+                    scheduleGuardIfDocumentLostFocus();
+                } else if (e.key === 'F6' || (e.key === 'l' && e.ctrlKey)) {
+                    scheduleGuardIfDocumentLostFocus();
+                }
+            }, true);
+
+            window.addEventListener('focus', function () {
+                if (!awaitingReentry) {
+                    return;
+                }
+                applyGuard();
+                focusSkipLink();
+            }, true);
+
+            document.addEventListener('focusin', function (e) {
+                var reentryFromChrome = awaitingReentry || isExplicitlyOutsideDocument(e.relatedTarget);
+                if (!reentryFromChrome) {
+                    return;
+                }
+                if (isSkipLinkElement(e.target)) {
+                    clearGuard();
+                    return;
+                }
+                applyGuard();
+                focusSkipLink();
+                clearGuard();
+            }, true);
+        })();
+    </script>
+    <form name="mainForm" method="post" action="/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS" id="mainForm">
+<input type="hidden" name="ctl04_seamless_script_manager_TSM" id="ctl04_seamless_script_manager_TSM" value="" />
+<input type="hidden" name="__SEAMLESSVIEWSTATE" id="__SEAMLESSVIEWSTATE" value="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" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="" />
+
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl04_seamless_script_manager_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-GB%3add3ac3d5-1e29-4112-8fed-529caffa8f24%3aea597d4b%3bOpenCities.CustomControls%3aen-GB%3a7197b077-b068-4a69-9481-a6cf2e7718f9%3a8e1d32bf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=EYVjNsQ7oYmzBqCI0dkEyYe0LYmPcVFL4WPcQCXhKfQwUqkAT7lLra0za-OLMuUUcCyPINdTVMHIWti96-8R_oN-trjXUUZnJRzckxTjid4ecctwwEJyNI-05jZYvXHBRiEKL0MUQMEyEJ2FXanyE1uBk88RxZ1wVK6AUn9D4v8rW-LNx2OOtB8vE3hC8P0jk4XZt7GAPiCeYQolxUlwFZA8cuOfgd4u08OASxFdh8mChz3A0YHhuwRrXGVlulfs9SJVkAvulhjdHYIIp1SRohDxt9acTwxUQrOlxuxC847b00zOOWg9SlpwD_iBuQQ1rOK9WH9O_wN9c2TXm4GeXaQHHT4yQ9IlzZXw6th8ch3f-k_n1yYeeurDMbwChXW1Vh_7rpu00kgmegsg9w2J3ququXIPfy2Gq8IscVTmtwouupfmUzAOicU_yESgQ-dG0" type="text/javascript"></script>
+    
+<script type="text/javascript">
+    try{
+        function SeamlessEndRequestHandler(sender, args) {
+            try {
+                var dataItems = args.get_dataItems();
+                if(dataItems.ctl04_seamless_script_manager)
+                    document.getElementById('__SEAMLESSVIEWSTATE').value = dataItems.ctl04_seamless_script_manager;
+            }
+            catch (e) { }
+        }
+
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(SeamlessEndRequestHandler);
+    }
+    catch (e) { }
+</script>
+
+    <div class="unsupported-browser-warning js-element"></div>
+    
+    <div hidden>
+        <span id="new-window-0">opens in new tab or window </span>
+    </div>
+    <div class="overlay-container"></div>
+    
+    <div class="background-container">
+        <div class="page-container">
+            <!-- OC Layout Element GROUP TEMPLATE -->
+            <!--groupTemplateStart--><header>
+            <div class="toolbar-outer-container">
+  <div class="toolbar-inner-container clearfix">
+    <div class="toolbar-item toolbar-quicklinks toolbar-display-dropdown">
+	<button type="button" aria-controls="toolbar-quicklinks-drop-down" aria-expanded="false" class="toolbar-button toolbar-button-quicklinks js-element"><span>Quick Links</span><i aria-hidden="true"></i></button>	
+	<div id="toolbar-quicklinks-drop-down" class="toolbar-drop-down toolbar-quicklinks-drop-down clearfix">
+		<ul>
+		  <li><a href="https://www.facebook.com/SouthPasadena/" class="oc-icon-b oc-i-facebook link-type-external" target="_blank"><span>City of South Pasadena Facebook</span></a></li><li><a href="https://www.linkedin.com/company/city-of-south-pasadena/mycompany/verification/?viewAsMember=true" class="oc-icon-b oc-i-linkedin link-type-external" target="_blank"><span>City of South Pasadena LinkedIn</span></a></li><li><a href="https://twitter.com/SouthPasadenaCA?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="oc-icon-b oc-i-twitter link-type-external" target="_blank"><span>City of South Pasadena Twitter</span></a></li><li><a href="https://www.instagram.com/southpasadenaca/" class="oc-icon-b oc-i-instagram link-type-external"><span>City of South Pasadena Instagram</span></a></li>
+		</ul>
+	</div>
+</div><div class="toolbar-item toolbar-language notranslate toolbar-display-dropdown"><div class="no-js-element">
+		  <ul>
+		    <li id="toolbar-language-option-en-us-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=en-US" class="lang-item lang-en-us" data-translate-to="en-us" lang="en-US">English (United States)<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-es-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=es" class="lang-item lang-es" data-translate-to="es" lang="en">Spanish<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-zh-cn-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=zh-CN" class="lang-item lang-zh-cn" data-translate-to="zh-cn" lang="en">Chinese (Simplified)<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-zh-tw-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=zh-TW" class="lang-item lang-zh-tw" data-translate-to="zh-tw" lang="en">Chinese (Traditional)<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-ar-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=ar" class="lang-item lang-ar" data-translate-to="ar" lang="en">Arabic<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-hy-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=hy" class="lang-item lang-hy" data-translate-to="hy" lang="en">Armenian<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-iw-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=iw" class="lang-item lang-iw" data-translate-to="iw" lang="en">Hebrew<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-fr-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=fr" class="lang-item lang-fr" data-translate-to="fr" lang="en">French<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-de-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=de" class="lang-item lang-de" data-translate-to="de" lang="en">German<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-haw-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=haw" class="lang-item lang-haw" data-translate-to="haw" lang="en">Hawaiian<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-fa-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=fa" class="lang-item lang-fa" data-translate-to="fa" lang="en">Persian<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-ko-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=ko" class="lang-item lang-ko" data-translate-to="ko" lang="en">Korean<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-vi-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=vi" class="lang-item lang-vi" data-translate-to="vi" lang="en">Vietnamese<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-ru-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=ru" class="lang-item lang-ru" data-translate-to="ru" lang="en">Russian<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-th-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=th" class="lang-item lang-th" data-translate-to="th" lang="en">Thai<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-id-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=id" class="lang-item lang-id" data-translate-to="id" lang="en">Indonesian<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-uk-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=uk" class="lang-item lang-uk" data-translate-to="uk" lang="en">Ukrainian<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-ja-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=ja" class="lang-item lang-ja" data-translate-to="ja" lang="en">Japanese<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-tl-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=tl" class="lang-item lang-tl" data-translate-to="tl" lang="en">Tagalog (Filipino)<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-pl-noscript"><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=pl" class="lang-item lang-pl" data-translate-to="pl" lang="en">Polish<span class="visuallyhidden"> Select this as your preferred language</span></a></li>
+          </ul>
+		</div>
+	<button type="button" role="combobox" aria-controls="toolbar-language-drop-down" aria-expanded="false" aria-haspopup="listbox" aria-autocomplete="none" aria-labelledby="toolbar-language-label" class="toolbar-button toolbar-button-language js-element">  
+        <span class="toolbar-language-globe-icon" aria-hidden="true"></span>
+        <span id="toolbar-language-label" class="current-language">
+            Select a language to translate to
+		</span>
+		<i aria-hidden="true"></i>
+	</button>
+	<div id="toolbar-language-drop-down" role="listbox" aria-label="Available languages" class="toolbar-drop-down toolbar-language-drop-down js-element clearfix">
+		<ul role="group">
+		    <li role="presentation"><a id="toolbar-language-option-en-us" role="option" aria-selected="true" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=en-US" class="lang-item lang-en-us" data-translate-to="en-us" lang="en-US">English (United States)<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-es" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=es" class="lang-item lang-es" data-translate-to="es" lang="en">Spanish<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-zh-cn" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=zh-CN" class="lang-item lang-zh-cn" data-translate-to="zh-cn" lang="en">Chinese (Simplified)<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-zh-tw" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=zh-TW" class="lang-item lang-zh-tw" data-translate-to="zh-tw" lang="en">Chinese (Traditional)<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-ar" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=ar" class="lang-item lang-ar" data-translate-to="ar" lang="en">Arabic<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-hy" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=hy" class="lang-item lang-hy" data-translate-to="hy" lang="en">Armenian<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-iw" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=iw" class="lang-item lang-iw" data-translate-to="iw" lang="en">Hebrew<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-fr" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=fr" class="lang-item lang-fr" data-translate-to="fr" lang="en">French<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-de" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=de" class="lang-item lang-de" data-translate-to="de" lang="en">German<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-haw" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=haw" class="lang-item lang-haw" data-translate-to="haw" lang="en">Hawaiian<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-fa" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=fa" class="lang-item lang-fa" data-translate-to="fa" lang="en">Persian<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-ko" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=ko" class="lang-item lang-ko" data-translate-to="ko" lang="en">Korean<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-vi" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=vi" class="lang-item lang-vi" data-translate-to="vi" lang="en">Vietnamese<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-ru" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=ru" class="lang-item lang-ru" data-translate-to="ru" lang="en">Russian<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-th" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=th" class="lang-item lang-th" data-translate-to="th" lang="en">Thai<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-id" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=id" class="lang-item lang-id" data-translate-to="id" lang="en">Indonesian<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-uk" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=uk" class="lang-item lang-uk" data-translate-to="uk" lang="en">Ukrainian<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-ja" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=ja" class="lang-item lang-ja" data-translate-to="ja" lang="en">Japanese<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-tl" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=tl" class="lang-item lang-tl" data-translate-to="tl" lang="en">Tagalog (Filipino)<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-pl" role="option" aria-selected="false" href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1/Measure-SOS?oc_lang=pl" class="lang-item lang-pl" data-translate-to="pl" lang="en">Polish<span class="visuallyhidden"> Select this as your preferred language</span></a></li>
+        </ul>
+	</div></div>
+  </div>
+</div>
+            <div class="header-outer-container">
+    <div class="header-container header-layout-2  clearfix">
+			<div class="header-site-logo">
+				<a href="https://www.southpasadenaca.gov/Home" lang="en-US" aria-label="City of South Pasadena - Home - Logo">
+				</a>
+			</div>
+		    <div class="header-website-settings">
+                <button id="btn-mob-nav" type="button" aria-expanded="false" aria-controls="nav">
+                    <i aria-hidden="true"></i><span class="side-menu-btn-text">Menu</span>
+                </button>
+        	</div>
+			
+			<div class="header-search-control-container" id="header-search">
+				<div class="search-inner-container">
+					<div class="sc-search-panel">
+	<label for="ctl07_txtSearch" id="ctl07_lblSearch" class="sc-search-label">Search</label><input name="ctl07$txtSearch" type="text" id="ctl07_txtSearch" class="sc-search-text" placeholder="How can we help you?" /><input type="submit" name="ctl07$btnSearch" value="Search" id="ctl07_btnSearch" class="sc-search-button" />
+</div>
+					<div role="status" id="predictiveResults"></div>
+				</div>
+			</div>
+    </div>
+</div>
+<div class="navigation-outer-container">
+	<div id="nav" role="navigation" class="navigation-container navigation-container-option-1" data-menu-type="horizontal" aria-label="primary">
+        <div class="grid">
+            <div class="col-xs-12">                
+                <ul class="sf-menu mega-menu" id="sc-main-menu"><li class="nav-section-quarters-1   first-item nav-item-seq-1">
+<a href="https://www.southpasadenaca.gov/How-Do-I" class="nav-level-1 nav-has-children"  target="">
+	<i class="item-icon" aria-hidden="true"></i><span class="item-text">How Do I…</span>
+</a>
+<button aria-label="Expand" aria-controls="sc-menu-second-level-nav-item-seq-1" aria-haspopup="true" class="mobnav-subarrow" ><i aria-hidden="true"></i></button>
+<ul id="sc-menu-second-level-nav-item-seq-1" class="second-level-container ch-7">
+
+          
+            <li class="second-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Apply-For" class="nav-has-children"  target="">Apply For</a><button aria-label="Expand" aria-controls="sc-menu-third-level-nav-item-seq-1-nav-item-seq-1" class="mobnav-subarrow-child"><i aria-hidden="true"></i>
+              </button>
+<ul  id="sc-menu-third-level-nav-item-seq-1-nav-item-seq-1" class="third-level-container">
+          
+            <li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Apply-For/Library-Card"  target="">Library Card</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Apply-For/Business-License"  target="_self">Business License</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Apply-For/Film-Permit"  target="">Film Permit</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Apply-For/Public-Works-Permits"  target="">Public Works Permits</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Apply-For/City-Job"  target="_self">City Job</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Apply-For/Building-Permit"  target="_self">Building Permit</a></li></ul></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Pay-For" class="nav-has-children"  target="">Pay For</a><button aria-label="Expand" aria-controls="sc-menu-third-level-nav-item-seq-1-nav-item-seq-2" class="mobnav-subarrow-child"><i aria-hidden="true"></i>
+              </button>
+<ul  id="sc-menu-third-level-nav-item-seq-1-nav-item-seq-2" class="third-level-container">
+          
+            <li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Pay-For/Utility-Bill"  target="_self">Utility Bill</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Pay-For/Parking-Citation"  target="_blank">Parking Citation</a></li></ul></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Connect" class="nav-has-children"  target="">Connect</a><button aria-label="Expand" aria-controls="sc-menu-third-level-nav-item-seq-1-nav-item-seq-3" class="mobnav-subarrow-child"><i aria-hidden="true"></i>
+              </button>
+<ul  id="sc-menu-third-level-nav-item-seq-1-nav-item-seq-3" class="third-level-container">
+          
+            <li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Connect/Sign-Up-for-City-Newsletter"  target="">Sign Up for City Newsletter</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Connect/Download-City-Mobile-App"  target="">Download City Mobile App</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Connect/Connect-on-Social-Media"  target="">Connect on Social Media</a></li></ul></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Find" class="nav-has-children"  target="">Find</a><button aria-label="Expand" aria-controls="sc-menu-third-level-nav-item-seq-1-nav-item-seq-4" class="mobnav-subarrow-child"><i aria-hidden="true"></i>
+              </button>
+<ul  id="sc-menu-third-level-nav-item-seq-1-nav-item-seq-4" class="third-level-container">
+          
+            <li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Find/My-City-Council-Member-District"  target="_self">My City Council Member/District</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Find/Agendas-Minutes"  target="_self">Agendas & Minutes</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Find/Department-Contact-Information"  target="">Department Contact Information</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Find/Social-Services-Resource-Guide"  target="">Social Services Resource Guide</a></li></ul></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Request" class="nav-has-children"  target="">Request</a><button aria-label="Expand" aria-controls="sc-menu-third-level-nav-item-seq-1-nav-item-seq-5" class="mobnav-subarrow-child"><i aria-hidden="true"></i>
+              </button>
+<ul  id="sc-menu-third-level-nav-item-seq-1-nav-item-seq-5" class="third-level-container">
+          
+            <li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Request/Public-Records"  target="_blank">Public Records</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Request/A-City-Service"  target="">A City Service</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Request/Contracting-Opportunities"  target="">Contracting Opportunities</a></li></ul></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Reserve" class="nav-has-children"  target="">Reserve</a><button aria-label="Expand" aria-controls="sc-menu-third-level-nav-item-seq-1-nav-item-seq-6" class="mobnav-subarrow-child"><i aria-hidden="true"></i>
+              </button>
+<ul  id="sc-menu-third-level-nav-item-seq-1-nav-item-seq-6" class="third-level-container">
+          
+            <li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Reserve/Library-Community-Room"  target="">Library Community Room</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Reserve/Gazebo-Field-Reservations"  target="">Gazebo & Field Reservations</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/Reserve/Indoor-Facilities-Reservations"  target="">Indoor Facilities Reservations</a></li></ul></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/View" class="nav-has-children"  target="">View</a><button aria-label="Expand" aria-controls="sc-menu-third-level-nav-item-seq-1-nav-item-seq-7" class="mobnav-subarrow-child"><i aria-hidden="true"></i>
+              </button>
+<ul  id="sc-menu-third-level-nav-item-seq-1-nav-item-seq-7" class="third-level-container">
+          
+            <li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/View/Form-700-Campaign-Statements"  target="_self">Form 700/ Campaign Statements</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/View/Public-Documents"  target="_self">Public Documents</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/View/Information-on-Citys-Trash-Services"  target="_blank">Information on City's Trash Services</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/View/Public-Works-Projects"  target="_self">Public Works Projects</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/How-Do-I/View/City-Calendar"  target="_blank">City Calendar</a></li></ul></li></ul></li>
+          
+            <li class="nav-section-quarters-1   nav-item-seq-2">
+<a href="https://www.southpasadenaca.gov/About-Us" class="nav-level-1 nav-has-children"  target="">About Us</a>
+<button aria-label="Expand" aria-controls="sc-menu-second-level-nav-item-seq-2" aria-haspopup="true" class="mobnav-subarrow" ><i aria-hidden="true"></i></button>
+<ul id="sc-menu-second-level-nav-item-seq-2" class="second-level-container ch-6">
+
+          
+            <li class="second-level-item  "><a href="https://www.southpasadenaca.gov/About-Us/Our-History" class=""  target="">Our History</a></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/About-Us/City-Calendar" class=""  target="">City Calendar</a></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/About-Us/Demographics" class=""  target="">Demographics</a></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/About-Us/Municipal-Code" class=""  target="_blank">Municipal Code</a></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/About-Us/City-News" class=""  target="">City News</a></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/About-Us/Compensation" class=""  target="">Compensation</a></li></ul></li>
+          
+            <li class="nav-section-quarters-2   nav-item-seq-3">
+<a href="https://www.southpasadenaca.gov/Businesses" class="nav-level-1 nav-has-children"  target="">Businesses</a>
+<button aria-label="Expand" aria-controls="sc-menu-second-level-nav-item-seq-3" aria-haspopup="true" class="mobnav-subarrow" ><i aria-hidden="true"></i></button>
+<ul id="sc-menu-second-level-nav-item-seq-3" class="second-level-container ch-3">
+
+          
+            <li class="second-level-item  "><a href="https://www.southpasadenaca.gov/Businesses/Economic-Development" class=""  target="">Economic Development</a></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/Businesses/Guide-to-Doing-Business" class=""  target="">Guide to Doing Business</a></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/Businesses/Business-License" class=""  target="_self">Business Licenses</a></li></ul></li>
+          
+            <li class="nav-section-quarters-2   nav-item-seq-4">
+<a href="https://www.southpasadenaca.gov/Visitors" class="nav-level-1 nav-has-children"  target="">Visitors</a>
+<button aria-label="Expand" aria-controls="sc-menu-second-level-nav-item-seq-4" aria-haspopup="true" class="mobnav-subarrow" ><i aria-hidden="true"></i></button>
+<ul id="sc-menu-second-level-nav-item-seq-4" class="second-level-container ch-1">
+
+          
+            <li class="second-level-item  "><a href="https://www.southpasadenaca.gov/Visitors/Guide-to-South-Pas" class=""  target="">Guide to South Pas</a></li></ul></li>
+          
+            <li class="nav-section-quarters-3 nav-active-path  nav-item-seq-5">
+<a href="https://www.southpasadenaca.gov/Your-Government" class="nav-level-1 nav-has-children"  target="">Your Government</a>
+<button aria-label="Expand" aria-controls="sc-menu-second-level-nav-item-seq-5" aria-haspopup="true" class="mobnav-subarrow" ><i aria-hidden="true"></i></button>
+<ul id="sc-menu-second-level-nav-item-seq-5" class="second-level-container ch-8">
+
+          
+            <li class="second-level-item nav-active-path "><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas" class="nav-has-children"  target="">Service Areas</a><button aria-label="Expand" aria-controls="sc-menu-third-level-nav-item-seq-5-nav-item-seq-1" class="mobnav-subarrow-child"><i aria-hidden="true"></i>
+              </button>
+<ul  id="sc-menu-third-level-nav-item-seq-5-nav-item-seq-1" class="third-level-container">
+          
+            <li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Managers-Office"  target="">City Manager's Office</a></li><li  class="third-level-item nav-active-path "><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office"  target="">City Clerk's Office</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/Community-Development"  target="">Community Development</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/Community-Services"  target="">Community Services</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/Finance"  target="">Finance</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/Fire"  target="">Fire</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/Human-Resources"  target="">Human Resources</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/Library"  target="">Library</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/Police"  target="">Police</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/Public-Works"  target="">Public Works</a></li></ul></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Your-City-Council" class="nav-has-children"  target="">Your City Council</a><button aria-label="Expand" aria-controls="sc-menu-third-level-nav-item-seq-5-nav-item-seq-2" class="mobnav-subarrow-child"><i aria-hidden="true"></i>
+              </button>
+<ul  id="sc-menu-third-level-nav-item-seq-5-nav-item-seq-2" class="third-level-container">
+          
+            <li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Your-City-Council/City-Council-Agendas"  target="">City Council Agendas</a></li></ul></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Boards-Commissions" class="nav-has-children"  target="">Boards & Commissions</a><button aria-label="Expand" aria-controls="sc-menu-third-level-nav-item-seq-5-nav-item-seq-3" class="mobnav-subarrow-child"><i aria-hidden="true"></i>
+              </button>
+<ul  id="sc-menu-third-level-nav-item-seq-5-nav-item-seq-3" class="third-level-container">
+          
+            <li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Boards-Commissions/Community-Services-Commission"  target="">Community Services Commission</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Boards-Commissions/Cultural-Heritage-Commission"  target="">Cultural Heritage Commission</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Boards-Commissions/Design-Review-Board"  target="">Design Review Board</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Boards-Commissions/Finance-Commission"  target="">Finance Commission</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Boards-Commissions/Library-Board-of-Trustees"  target="">Library Board of Trustees</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Boards-Commissions/Natural-Resources-and-Environmental-Commission"  target="">Natural Resources and Environmental Commission</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Boards-Commissions/Planning-Commission"  target="">Planning Commission</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Boards-Commissions/Public-Art-Commission"  target="">Public Art Commission</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Boards-Commissions/Public-Safety-Commission"  target="">Public Safety Commission</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Boards-Commissions/Public-Works-Infrastructure-Commission"  target="">Public Works Infrastructure Commission</a></li></ul></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Committees" class="nav-has-children"  target="">Committees</a><button aria-label="Expand" aria-controls="sc-menu-third-level-nav-item-seq-5-nav-item-seq-4" class="mobnav-subarrow-child"><i aria-hidden="true"></i>
+              </button>
+<ul  id="sc-menu-third-level-nav-item-seq-5-nav-item-seq-4" class="third-level-container">
+          
+            <li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Committees/LibraryCommunity-Center-Site-Plan-Ad-Hoc-Committee"  target="">Library/Community Center Site Plan Ad Hoc Committee</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Committees/South-Pasadena-Tournament-of-Roses-Committee"  target="">South Pasadena Tournament of Roses Committee</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Committees/City-of-South-Pasadena-and-SPUSD-Ad-Hoc-Committee"  target="">City of South Pasadena and SPUSD Ad Hoc Committee</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Committees/South-Pasadena-Objective-Design-Standards-Subcommittee"  target="">South Pasadena Objective Design Standards Subcommittee</a></li></ul></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/City-Attorney" class=""  target="">City Attorney</a></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/City-Treasurer" class=""  target="">City Treasurer</a></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/South-Pas-Forward-Reimagine-our-Library-Park-Campus" class="nav-has-children"  target="">South Pas Forward: Reimagine our Library Park Campus</a><button aria-label="Expand" aria-controls="sc-menu-third-level-nav-item-seq-5-nav-item-seq-7" class="mobnav-subarrow-child"><i aria-hidden="true"></i>
+              </button>
+<ul  id="sc-menu-third-level-nav-item-seq-5-nav-item-seq-7" class="third-level-container">
+          
+            <li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/South-Pas-Forward-Reimagine-our-Library-Park-Campus/Frequently-Asked-Questions"  target="">Frequently Asked Questions</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/South-Pas-Forward-Reimagine-our-Library-Park-Campus/Get-Involved-Share-Your-Ideas"  target="">Get Involved & Share Your Ideas</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/South-Pas-Forward-Reimagine-our-Library-Park-Campus/Site-Plan-Ad-Hoc-Committee"  target="_self">Site Plan Ad Hoc Committee</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/South-Pas-Forward-Reimagine-our-Library-Park-Campus/Sign-Up-for-Email-Updates"  target="_self">Sign Up for Email Updates</a></li><li  class="third-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/South-Pas-Forward-Reimagine-our-Library-Park-Campus/Resources"  target="">Resources</a></li></ul></li><li class="second-level-item  "><a href="https://www.southpasadenaca.gov/Your-Government/Infrastructure-Financing" class=""  target="_blank">Infrastructure Financing</a></li></ul></li>
+          
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+            </header>
+            <div class="content-outer-container">
+                <div id="main" role="main" class="main-outer-container clearfix">
+                        
+                        <div class="content-main-container">
+                            <div class="grid">
+					            <div class="col-xs-12">
+						            <nav id="breadcrumbs-container" aria-label="You Are Here :">
+							            <span role="list">
+<span role="listitem">
+	<a href="https://www.southpasadenaca.gov/Home"  lang="en-US">Home</a>
+	<span class="nav-separator" aria-hidden="true" role="presentation">/</span>
+</span>
+          <span role="listitem"><a href="https://www.southpasadenaca.gov/Your-Government" >Your Government</a><span class='nav-separator' aria-hidden="true" role="presentation">/</span></span><span role="listitem">
+	<a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas" >
+		Service Areas
+	</a>
+	<span class='nav-separator' aria-hidden="true" role="presentation">/</span>
+</span>
+<span role="listitem">
+	<a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office" >
+		City Clerk's Office
+	</a>
+	<span class='nav-separator' aria-hidden="true" role="presentation">/</span>
+</span>
+<span role="listitem">
+	<a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Clerks-Office/Elections-1" >
+		Elections
+	</a>
+	<span class='nav-separator' aria-hidden="true" role="presentation">/</span>
+</span>
+<span class="current-page" role="listitem" aria-current="page" >Measure SOS</span>
+          
+          
+          </span>
+						            </nav>
+					            </div>
+                      
+					            <div class="col-xs-12">
+						            <div class="main-inner-container">
+							            <div id="main-content" class="main-container clearfix">
+							              
+                            <!-- OC Layout Element Conent Template -->
+							              <!--normalTemplateStart--><div class="grid">
+    <div class="col-xs-12">
+        <h1 class='oc-page-title '>Measure SOS</h1>
+        
+      
+        
+        <h3><strong>Ballot question: What is the question being asked of South Pasadena voters?&nbsp;</strong></h3>
+<table>
+<tbody>
+<tr>
+<td style="text-align: center; border-width: 1px; border-style: solid; border-color: rgb(0,0,0);"><strong>Measure SOS</strong></td>
+<td><strong>&nbsp;</strong></td>
+</tr>
+<tr>
+<td rowspan="2" style="border-width: 1px; border-style: solid; border-color: rgb(0,0,0);"><strong>South Pasadena Street/Road/Pothole Repair, 9-1-1 Safety Measure.</strong> To fix damaged local streets/roads/sidewalks, repair potholes, address speeding/unsafe driving; improve emergency evacuation routes; upgrade/repair storm drains to prevent flooding, prevent cuts to City services; shall the City of South Pasadena measure authorizing $80,000,000 in bonds at legal rates, levying on average $33 per $100,000 of assessed valuation, generating approximately $4,400,000 annually while bonds are outstanding be adopted, requiring public spending disclosure, audits, all funds spent locally?</td>
+<td style="border-width: 1px; border-style: solid; border-color: rgb(0,0,0);">&nbsp;Bonds Yes</td>
+</tr>
+<tr>
+<td style="border-color: rgb(0,0,0); border-width: 1px; border-style: solid;">&nbsp;Bonds No</td>
+</tr>
+</tbody>
+</table>
+<table class="" style="border-color: rgb(0,0,0);">
+<tbody>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.38;">&nbsp;</p>
+<h3 dir="ltr" style="margin-top: 0pt; margin-bottom: 0pt; line-height: 1.38;">Official Measure Documents</h3>
+<ul>
+<li><a title="Ordinance No. 2416.pdf" href="/files/assets/public/v/1/management-services/documents/ordinance-no.-2416.pdf" target="_self" class="document ext-pdf"><i aria-hidden="true"></i>Text of Measure (Ordinance No. 2416)<span class="file-info">(PDF,&nbsp;361KB)</span></a></li>
+<li><a title="Tax Statement.pdf" href="/files/assets/public/v/1/management-services/documents/tax-statement.pdf" target="_self" class="document ext-pdf"><i aria-hidden="true"></i>Tax Statement<span class="file-info">(PDF,&nbsp;86KB)</span></a></li>
+<li><a title="Final South Pasadena City Attorney Impartial Analysis GO Bond Measure with Letter Designation.pdf" href="/files/assets/public/v/1/management-services/documents/final-south-pasadena-city-attorney-impartial-analysis-go-bond-measure-with-letter-designation.pdf" target="_self" class="document ext-pdf"><i aria-hidden="true"></i>Impartial Analysis<span class="file-info">(PDF,&nbsp;94KB)</span></a></li>
+<li><a title="Final argument with Signers.pdf" href="/files/assets/public/v/1/management-services/documents/final-argument-with-signers.pdf" target="_self" class="document ext-pdf"><i aria-hidden="true"></i>Argument in Favor<span class="file-info">(PDF,&nbsp;108KB)</span></a></li>
+</ul>
+
+
+      
+        
+            
+        
+    </div>
+    
+    
+</div><!--normalTemplateEnd-->
+                            
+                            
+                            
+							            </div>
+						            </div>
+					            </div>
+                        
+                            </div>
+                        </div>
+                        <div class="back-to-top-container text-center">
+                            <a href="#body-top" id="back-to-top"><i aria-hidden="true"></i><span class="js-visuallyhidden">Back to top</span></a>
+                        </div>
+                </div>
+            </div><!--groupTemplateEnd-->
+            <footer>
+                
+                    <div class="footer-outer-container footer-first-row">
+                        <div class="footer-container clearfix">
+                            <div class="grid grid-pad">
+                                <div class="col-xs-12 col-s-12 col-m-12 col-lg-12 footer-address" >
+	
+			<h2 class="visuallyhidden">Site Footer</h2>
+			<h3 class="footer-title">City of South Pasadena</h3>
+			
+	<p><span class="street">1414 Mission Street,</span> South Pasadena, CA 91030</p>
+<p><a class="footer-phone" href="tel:(626)%20403-7200">(626) 403-7200</a></p>
+
+
+	<ul class="footer-links with-icons ">   </ul>
+	
+</div><div class="col-xs-12 col-s-12 col-m-12 col-lg-12 footer-nav" >
+	
+	
+	<ul class="footer-links with-icons ">  <li class="footer-link-">
+	<a href="https://www.southpasadenaca.gov/How-Do-I/Find" target="_self"  >
+<i aria-hidden="true"></i>City Directory
+</a>
+</li>
+          <li class="footer-link-">
+	<a href="https://www.governmentjobs.com/careers/spasadenaca" target="_self"  >
+<i aria-hidden="true"></i>Job Opportunities
+</a>
+</li>
+          <li class="footer-link-">
+	<a href="https://cityhallscoop.com/" target="_self"  >
+<i aria-hidden="true"></i>Follow the City Hall Scoop Blog
+</a>
+</li>
+          <li class="footer-link-">
+	<a href="https://www.southpasadenaca.gov/Your-Government/Department-Service-Areas/City-Managers-Office/Communications-and-Outreach/Sign-up-for-City-Newsletter" target="_self"  >
+<i aria-hidden="true"></i>Subscribe to our Emails
+</a>
+</li>
+           </ul>
+	
+</div><div class="col-xs-12 col-s-12 col-m-12 col-lg-12" >
+	
+	
+	<ul class="footer-links with-icons social-media-links">  <li class="footer-link-instagram">
+	<a href="https://www.instagram.com/southpasadenaca/" target="_blank"  >
+<i aria-hidden="true"></i>Instagram
+</a>
+</li>
+          <li class="footer-link-facebook">
+	<a href="https://www.facebook.com/SouthPasadena/" target="_blank"  >
+<i aria-hidden="true"></i>Facebook
+</a>
+</li>
+          <li class="footer-link-twitter">
+	<a href="https://twitter.com/SouthPasadenaCA" target="_blank"  >
+<i aria-hidden="true"></i>X
+</a>
+</li>
+          <li class="footer-link-tiktok">
+	<a href="https://www.tiktok.com/@southpasadenaca" target="_blank"  >
+<i aria-hidden="true"></i>TikTok
+</a>
+</li>
+           </ul>
+	
+</div>
+                            </div>
+                        </div>
+                    </div>
+                
+                <div class="footer-outer-container footer-second-row">
+                    <div class="footer-container clearfix">
+                        <div class="grid grid-pad footer-secondary-links">
+                            <div class="col-xs-12 col-m-7">
+                                
+                                    
+                                
+                            </div>
+                            <div class="col-xs-12 col-m-5 powered-by">
+                                <div class="right">
+                                    &copy; 2026 City of South Pasadena&nbsp;|&nbsp;<span class="powered-by">Powered by <a href="https://granicus.com/solution/govaccess/opencities/" target="_blank">Granicus</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="/files/oc-resources/b9015858-988c-48a4-9473-7c193df083e4/JsTextSnippets.js?ocsvclang=en-US" type="text/javascript"></script><script></script>
+    
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T4YTF6S5NM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T4YTF6S5NM');
+</script>
+    
+    
+
+<script type="text/javascript">
+//<![CDATA[
+window.__TsmHiddenField = $get('ctl04_seamless_script_manager_TSM');//]]>
+</script>
+</form>
+</body>
+</html>

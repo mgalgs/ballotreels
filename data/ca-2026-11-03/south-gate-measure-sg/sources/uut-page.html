@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-US">
+<!--<![endif]-->
+<head>
+	<!-- Published by OpenCities, 1.38.0.1 -->
+
+    
+        
+    
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="theme-color" content="#FFFFFF"/>
+    <title>Understanding the Budget and Utility Users Tax (UUT) City of South Gate</title>
+	<meta name="generator" content="OpenCities - https://granicus.com/product/opencities" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Using mobile-web-app-capable for now to enable full-screen experience on supported platforms -->
+    <!-- Note: This tag works mainly on Android Chrome. It does NOT enable full-screen mode on iOS Safari. -->
+    <!-- For iOS, the correct tag is: <meta name="apple-mobile-web-app-capable" content="yes"> -->
+    <!-- TODO: Monitor for updated meta tag standards from Apple or other browser vendors -->
+    <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="description" content=" INFORMACI&#211;N EN ESPA&#209;OL The City of South Gate faces an ongoing structural budget gap of approximately $9 million, with ongoing expenditures exceeding ongoing revenues. The gap is driven in large part by increasing costs, including pension obligations, health insurance..." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.cityofsouthgate.org/Government/Departments/Administrative-Services/Finance/Budgets-Financial-Transparency/Understanding-the-Budget-and-Utility-Users-Tax-UUT" />
+    <meta property="og:title" content="Understanding the Budget and Utility Users Tax (UUT)" />
+    <meta property="og:description" content=" INFORMACI&#211;N EN ESPA&#209;OL The City of South Gate faces an ongoing structural budget gap of approximately $9 million, with ongoing expenditures exceeding ongoing revenues. The gap is driven in large part by increasing costs, including pension obligations, health insurance..." />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Understanding the Budget and Utility Users Tax (UUT)" />
+    <meta property="twitter:description" content=" INFORMACI&#211;N EN ESPA&#209;OL The City of South Gate faces an ongoing structural budget gap of approximately $9 million, with ongoing expenditures exceeding ongoing revenues. The gap is driven in large part by increasing costs, including pension obligations, health insurance..." />
+    <link rel="canonical" href="https://www.cityofsouthgate.org/Government/Departments/Administrative-Services/Finance/Budgets-Financial-Transparency/Understanding-the-Budget-and-Utility-Users-Tax-UUT" />
+
+    
+    
+    <script>
+        (function () {
+            if (window.__UNLOAD_LAZY_PATCH__) return;
+            window.__UNLOAD_LAZY_PATCH__ = true;
+
+            var supportsPageHide = ("onpagehide" in window);
+            var mappedType = supportsPageHide ? "pagehide" : "beforeunload";
+            var nativeAdd = window.addEventListener;
+            var nativeRemove = window.removeEventListener;
+            var unloadMap = null;
+            var patched = false;
+
+            function ensurePatched() {
+                if (patched) return;
+                unloadMap = new WeakMap();
+
+                window.addEventListener = function (type, listener, options) {
+                    if (type === "unload") {
+                        var wrapped = function (evt) {
+                            if (supportsPageHide && evt.persisted) return;
+                            listener.call(this, evt);
+                        };
+                        unloadMap.set(listener, wrapped);
+                        return nativeAdd.call(this, mappedType, wrapped, options);
+                    }
+                    return nativeAdd.call(this, type, listener, options);
+                };
+
+                window.removeEventListener = function (type, listener, options) {
+                    if (type === "unload") {
+                        var wrapped = unloadMap.get(listener);
+                        if (wrapped) {
+                            nativeRemove.call(this, mappedType, wrapped, options);
+                            unloadMap.delete(listener);
+                        }
+                        return;
+                    }
+                    return nativeRemove.call(this, type, listener, options);
+                };
+
+                var orig = null;
+                Object.defineProperty(window, "onunload", {
+                    configurable: true, enumerable: true,
+                    get: function () { return orig; },
+                    set: function (h) {
+                        orig = h;
+                        if (typeof h === "function") window.addEventListener("unload", h);
+                    }
+                });
+                patched = true;
+            }
+
+            window.addEventListener = function (type, listener, options) {
+                if (type === "unload") {
+                    ensurePatched();
+                    return window.addEventListener(type, listener, options);
+                }
+                return nativeAdd.call(this, type, listener, options);
+            };
+
+            window.removeEventListener = function (type, listener, options) {
+                if (type === "unload" && !patched) {
+                    return;
+                }
+                return nativeRemove.call(this, type, listener, options);
+            };
+
+            function patchTelerik() {
+                ensurePatched();
+                var ns = window.RadAjaxNamespace;
+                if (!ns || !ns.EventManager || !ns.EventManager.Add || ns.EventManager.__UnloadPatched) return;
+                var origAdd = ns.EventManager.Add;
+                ns.EventManager.Add = function (el, evtName, handler, clientId) {
+                    if (el === window && evtName === "unload") {
+                        return window.addEventListener("unload", handler);
+                    }
+                    return origAdd.call(this, el, evtName, handler, clientId);
+                };
+                ns.EventManager.__UnloadPatched = true;
+            }
+
+            if (window.RadAjaxNamespace)
+                patchTelerik();
+            else (window.requestIdleCallback || function (cb)
+            {
+                setTimeout(cb, 120);
+            })(patchTelerik);
+        })();
+    </script>
+    <!-- Preconnecting to Google Fonts servers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Defer Roboto font loading to avoid render-blocking -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const robotoLink = document.createElement('link');
+            robotoLink.rel = 'stylesheet';
+            robotoLink.href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap';
+            document.head.appendChild(robotoLink);
+        });
+    </script>
+
+    <style>
+        .gm-style, .gm-style * {
+            font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", Arial, sans-serif !important;
+        }
+    </style>
+
+    <script>
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, "js");
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700|Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    
+        
+            <script type="text/javascript">
+                window.__oc_flags_ImprovedBreakpointEventHandling = true;
+            </script>
+            
+        
+    
+    
+    
+        <script type="text/javascript">
+            var __metaQueryBreakpoints = {
+                'sc-size-4': '(max-width: 480px)',
+                'sc-size-3': '(min-width: 480px) and (max-width: 768px)',
+                'sc-size-2': '(min-width: 768px) and (max-width: 992px)',
+                'sc-size-1': '(min-width: 992px)'
+            }
+
+            var __ocSizePoints = [
+                { min: 0, name: 'sc-size-4' },
+                { min: 480, name: 'sc-size-3' },
+                { min: 768, name: 'sc-size-2' },
+                { min: 992, name: 'sc-size-1' }
+            ];
+
+        </script>
+    
+
+    <!-- Framework Section -->
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/files/templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/166/jquery-1.12.4.min.js?seamlessts=639263244363646542" ><\/script>')</script>
+
+    <!--Google Maps API Loader – Improved Version to avoid Warning
+    This script loads the Google Maps JavaScript API using a dynamic and async method.
+    It replaces the old static <script> tag to avoid performance warnings from Google.
+
+    Dynamically creates the <script> tag with loading = async for better performance
+    Builds the API URL with required libraries(places, geometry, marker, geocoding)
+    Uses a Promise and callback(google.maps.__ib__) to confirm when the script is ready
+
+    It Avoids Google’s warning about direct script loading
+    Improves page load speed by loading the API asynchronously-->
+
+    
+        <script>
+            (function (root) {
+                root.OpenCities = root.OpenCities || {};
+                if (!root.OpenCities.GoogleMapsLoader) {
+                    root.OpenCities.GoogleMapsLoader = {
+                        _cbs: [],
+                        _ready: false,
+                        onReady: function (cb) {
+                            if (this._ready) { try { cb(); } catch (e) { console.error(e); } }
+                            else if (typeof cb === 'function') this._cbs.push(cb);
+                        },
+                        _fire: function () {
+                            if (this._ready) return;
+                            this._ready = true;
+                            var q = this._cbs.splice(0);
+                            for (var i = 0; i < q.length; i++) {
+                                try { q[i](); } catch (e) { console.error(e); }
+                            }
+                        }
+                    };
+                }
+            })(window);
+
+            (g => {
+                var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__",
+                    m = document, b = window;
+                b = b[c] || (b[c] = {});
+                var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams,
+                    u = () => h || (h = new Promise(async (resolve, reject) => {
+                        a = m.createElement("script");
+                        e.set("libraries", [...r] + "");
+                        for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
+                        e.set("callback", c + ".maps." + q);
+                        a.src = "https://maps." + c + "apis.com/maps/api/js?" + e.toString();
+                        a.loading = "async";
+                        a.async = true;
+                        a.defer = true;
+                        d[q] = resolve;
+                        a.onerror = () => reject(Error(p + " could not load."));
+                        a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+                        m.head.append(a);
+                    }));
+                if (d[l]) {
+                    console.warn(p + " only loads once. Ignoring duplicate load.");
+                } else {
+                    d[l] = (f, ...n) => (r.add(f), u().then(() => d[l](f, ...n)));
+                }
+            })({
+                key: "AIzaSyDXpCA1xreGBjOLp0m2vIyMpihaSgIzZXI",
+                v: "3.65"
+            });
+
+            (async () => {
+                try {
+                    if (!google?.maps?.importLibrary) return;
+
+                    if (!window.OpenCities.__mapsLibsPromise) {
+                        window.OpenCities.__mapsLibsPromise = Promise.all([
+                            google.maps.importLibrary('maps'),
+                            google.maps.importLibrary('places'),
+                            google.maps.importLibrary('geocoding'),
+                            google.maps.importLibrary('marker'),
+                            google.maps.importLibrary('geometry')
+                        ]);
+                    }
+                    await window.OpenCities.__mapsLibsPromise;
+
+                    if (window.OpenCities?.GoogleMapsLoader) {
+                        window.OpenCities.GoogleMapsLoader._fire();
+                    }
+                } catch (err) {
+                    console.error('Google Maps failed to initialise', err);
+                }
+            })();
+        </script>
+    
+    <script src="/files/templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/166/modernizr.custom.710f3bf.js?seamlessts=639263244363646542" defer></script>
+    
+    <!--// End Framework Section -->
+    <!-- OpenCities Section -->
+    <script>
+        var OpenCities = OpenCities || {};
+        OpenCities.Paths = {
+            SiteTemplate: '/files/templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/166/',
+            ThemePath: '/files/templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/166/'
+        };
+    </script>
+    <script src='/ocapi/59353387-ce1f-48c8-84e8-28550803c8cd/en-US/websitesettings.js'></script>
+    <script src="/files/templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/166/oc_head.js?applied=20230123033846"></script>
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<link href="/files/oc-templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/166/oc_grid.css~oc_style.css~oc_wizard_style.css~oc_main.css~oc_forms.css~oc_wizard.css~oc_wizard_menu.css~oc_main_s1.css~oc_wizard_s1.css~oc_wizard_menu_s1.css~oc_grid_s1.css~OcScriptCombine_Minify0?uniqueid=20230123033846" rel="stylesheet" type="text/css">
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<link href="/files/oc-templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/166/client_style.css~client.css~client_menu.css~client_s1.css~client_menu_s1.css~client_forms.css~OcScriptCombine_Minify0?uniqueid=20230123033846" rel="stylesheet" type="text/css">
+    <script>
+(function (BackgroundSettings, $, undefined) {
+    BackgroundSettings.initialise = function () {
+        this.Application = {"CSSSelector":".content-outer-container","EnableFade":true,"MediaType":"image"};
+    };
+} (OpenCities.BackgroundSettings = OpenCities.BackgroundSettings || {}, jQuery));
+OpenCities.BackgroundSettings.initialise();
+</script>
+    
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<link href="/files/oc-templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/166/oc_print.css~client_print.css~OcScriptCombine_Minify0?uniqueid=20230123033846" rel="stylesheet" type="text/css" media="print">
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<script src="/files/oc-templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/166/external_plugins.js~oc_form_helper.js~oc_main.js~plugins.js~oc_main_init.js~OcScriptCombine_Minify0?uniqueid=20230123033846" defer="true"></script>
+    
+    
+
+                                <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="DYTCK-JM9C8-ED4EP-C3GGK-Z575H",function(){function e(){if(!r){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.appendChild(e),r=!0}}function t(e){r=!0;var n,t,a,i,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",i=(a.frameElement||a).style,i.width=0,i.height=0,i.border=0,i.display="none",o.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void 0;",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=14,window.BOOMR.url=n+"DYTCK-JM9C8-ED4EP-C3GGK-Z575H";var i=document.currentScript||document.getElementsByTagName("script")[0],o=i.parentNode,r=!1,d=document.createElement("link");if(d.relList&&"function"==typeof d.relList.supports&&d.relList.supports("preload")&&"as"in d)window.BOOMR.snippetMethod="p",d.href=window.BOOMR.url,d.rel="preload",d.as="script",d.addEventListener("load",e),d.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!r)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.appendChild(d);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="iqd2coaxei7ko2xekoqq-f-53112fb66-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"41","ak.cp":"1700510","ak.ai":parseInt("1075935",10),"ak.ol":"0","ak.cr":14,"ak.ipv":4,"ak.proto":"h2","ak.rid":"1e6430d9","ak.r":53846,"ak.a2":n,"ak.m":"","ak.n":"essl","ak.cport":47096,"ak.gh":"23.15.245.181","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"","ak.t":"1793348513","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==yaqsuX7ouFNhCCWPPQ9YVfXbVmcp1wzsOffM0tRoerhle0u06dmbu/o2ysT9hejv3gquT4cCz85APF/8kjUTWTOormDfedvIFt6xRleXCYq9dRBbqGMNSxYTD8z8oxP3IhdwLYG7EfcKRtwTg4zBavbSnZyKK5vheW4S8NIDbC13oj6x2e8dKaaELXSkoODBd9qy14Brg0lVgWTBYdbBbEJlDQG8Y7B88ZCl39BkwL1BI/WJX/Y2+1Qge7xe6u73iq6jSsaoeP/tTftOeHg0TFO0Y/kj9seVvFuk+QwEDapCZP50B50EJmuoYpXILu0I2TlnU40greQIWVRq0YqV7kywRonRCtdNAjBXmT5Kuo0b5ZJH+rFbEhd/m/dtr2Oqpea1wFBnVQBTd+GnQHN4m8Wmt6DJ8rm9r2i5nXDf0Qk=","ak.pv":"359","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body class="body layout-modern side-menu side-menu-left site-search-always-visble header-full-width content-type-oc-general content-template-oc-full-width group-template-oc-full-width-with-default-header page-name-understanding-the-budget-and-utility-users-tax-uut page-sequence-3 page-depth-6 page-section-20 website-type-primary device-desktop " id="body-top">
+    <div id="skip-to-content-container">
+        <a href="#main-content" class="visuallyhidden focusable" id="skip-to-content-link">Skip to main content</a>
+    </div>
+    <script>
+        // OCNOW-11988 (Cursor): Proactively focus skip link when returning from browser chrome.
+        // Must run inline (not deferred oc_main.js) so focus is intercepted before NVDA speaks footer.
+        (function () {
+            var awaitingReentry = false;
+            var inertSupported = 'inert' in HTMLElement.prototype;
+
+            function isExplicitlyOutsideDocument(node) {
+                return node != null && !document.documentElement.contains(node);
+            }
+
+            function getSkipContainer() {
+                return document.getElementById('skip-to-content-container');
+            }
+
+            function getSkipLink() {
+                return document.getElementById('skip-to-content-link');
+            }
+
+            function applyGuard() {
+                awaitingReentry = true;
+                if (!inertSupported) {
+                    return;
+                }
+                var skipContainer = getSkipContainer();
+                var children = document.body.children;
+                for (var i = 0; i < children.length; i++) {
+                    if (children[i] !== skipContainer) {
+                        children[i].setAttribute('inert', '');
+                    }
+                }
+            }
+
+            function clearGuard() {
+                awaitingReentry = false;
+                if (!inertSupported) {
+                    return;
+                }
+                var children = document.body.children;
+                for (var i = 0; i < children.length; i++) {
+                    children[i].removeAttribute('inert');
+                }
+            }
+
+            function isSkipLinkElement(target) {
+                if (!target) {
+                    return false;
+                }
+                var skipContainer = getSkipContainer();
+                return target.id === 'skip-to-content-link' ||
+                    (skipContainer && skipContainer.contains(target));
+            }
+
+            function focusSkipLink() {
+                var skipLink = getSkipLink();
+                if (!skipLink) {
+                    return;
+                }
+                if (window.scrollY > 0) {
+                    window.scrollTo(0, 0);
+                }
+                skipLink.focus({ preventScroll: true });
+            }
+
+            function scheduleGuardIfDocumentLostFocus() {
+                window.setTimeout(function () {
+                    if (!document.hasFocus()) {
+                        applyGuard();
+                    }
+                }, 0);
+            }
+
+            document.addEventListener('focusout', function (e) {
+                if (isExplicitlyOutsideDocument(e.relatedTarget)) {
+                    applyGuard();
+                }
+            }, true);
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Tab') {
+                    scheduleGuardIfDocumentLostFocus();
+                } else if (e.key === 'F6' || (e.key === 'l' && e.ctrlKey)) {
+                    scheduleGuardIfDocumentLostFocus();
+                }
+            }, true);
+
+            window.addEventListener('focus', function () {
+                if (!awaitingReentry) {
+                    return;
+                }
+                applyGuard();
+                focusSkipLink();
+            }, true);
+
+            document.addEventListener('focusin', function (e) {
+                var reentryFromChrome = awaitingReentry || isExplicitlyOutsideDocument(e.relatedTarget);
+                if (!reentryFromChrome) {
+                    return;
+                }
+                if (isSkipLinkElement(e.target)) {
+                    clearGuard();
+                    return;
+                }
+                applyGuard();
+                focusSkipLink();
+                clearGuard();
+            }, true);
+        })();
+    </script>
+    <form name="mainForm" method="post" action="/Government/Departments/Administrative-Services/Finance/Budgets-Financial-Transparency/Understanding-the-Budget-and-Utility-Users-Tax-UUT" id="mainForm">
+<input type="hidden" name="ctl04_seamless_script_manager_TSM" id="ctl04_seamless_script_manager_TSM" value="" />
+<input type="hidden" name="__SEAMLESSVIEWSTATE" id="__SEAMLESSVIEWSTATE" value="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" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="" />
+
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl04_seamless_script_manager_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-GB%3add3ac3d5-1e29-4112-8fed-529caffa8f24%3aea597d4b%3bOpenCities.CustomControls%3aen-GB%3a7197b077-b068-4a69-9481-a6cf2e7718f9%3a8e1d32bf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=EYVjNsQ7oYmzBqCI0dkEyYe0LYmPcVFL4WPcQCXhKfQwUqkAT7lLra0za-OLMuUUcCyPINdTVMHIWti96-8R_oN-trjXUUZnJRzckxTjid4ecctwwEJyNI-05jZYvXHBRiEKL0MUQMEyEJ2FXanyE1uBk88RxZ1wVK6AUn9D4v8rW-LNx2OOtB8vE3hC8P0jk4XZt7GAPiCeYQolxUlwFZA8cuOfgd4u08OASxFdh8mChz3A0YHhuwRrXGVlulfs9SJVkAvulhjdHYIIp1SRohDxt9acTwxUQrOlxuxC847b00zOOWg9SlpwD_iBuQQ1rOK9WH9O_wN9c2TXm4GeXaQHHT4yQ9IlzZXw6th8ch3f-k_n1yYeeurDMbwChXW1Vh_7rpu00kgmegsg9w2J3ququXIPfy2Gq8IscVTmtwouupfmUzAOicU_yESgQ-dG0" type="text/javascript"></script>
+    
+<script type="text/javascript">
+    try{
+        function SeamlessEndRequestHandler(sender, args) {
+            try {
+                var dataItems = args.get_dataItems();
+                if(dataItems.ctl04_seamless_script_manager)
+                    document.getElementById('__SEAMLESSVIEWSTATE').value = dataItems.ctl04_seamless_script_manager;
+            }
+            catch (e) { }
+        }
+
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(SeamlessEndRequestHandler);
+    }
+    catch (e) { }
+</script>
+
+    <div class="unsupported-browser-warning js-element"></div>
+    
+    <div hidden>
+        <span id="new-window-0">opens in new tab or window </span>
+    </div>
+    <div class="overlay-container"></div>
+    
+    <div class="background-container">
+        <div class="page-container">
+            <!-- OC Layout Element GROUP TEMPLATE -->
+            <!--groupTemplateStart--><header><div class="print-header-outer-container print-element">
+<img src="/files/templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/165/print-header.png" alt="City of South Gate - Logo" />
+</div>
+            <div class="toolbar-outer-container">
+  <div class="toolbar-inner-container clearfix">
+    <div class="toolbar-item toolbar-language notranslate toolbar-display-dropdown"><div class="no-js-element">
+		  <ul>
+		    <li id="toolbar-language-option-en-us-noscript"><a href="https://www.cityofsouthgate.org/Government/Departments/Administrative-Services/Finance/Budgets-Financial-Transparency/Understanding-the-Budget-and-Utility-Users-Tax-UUT?oc_lang=en-US" class="lang-item lang-en-us" data-translate-to="en-us" lang="en-US">English (United States)<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-es-noscript"><a href="https://www.cityofsouthgate.org/Government/Departments/Administrative-Services/Finance/Budgets-Financial-Transparency/Understanding-the-Budget-and-Utility-Users-Tax-UUT?oc_lang=es" class="lang-item lang-es" data-translate-to="es" lang="en">Spanish<span class="visuallyhidden"> Select this as your preferred language</span></a></li>
+          </ul>
+		</div>
+	<button type="button" role="combobox" aria-controls="toolbar-language-drop-down" aria-expanded="false" aria-haspopup="listbox" aria-autocomplete="none" aria-labelledby="toolbar-language-label" class="toolbar-button toolbar-button-language js-element">  
+        <span class="toolbar-language-globe-icon" aria-hidden="true"></span>
+        <span id="toolbar-language-label" class="current-language">
+            Select a language to translate to
+		</span>
+		<i aria-hidden="true"></i>
+	</button>
+	<div id="toolbar-language-drop-down" role="listbox" aria-label="Available languages" class="toolbar-drop-down toolbar-language-drop-down js-element clearfix">
+		<ul role="group">
+		    <li role="presentation"><a id="toolbar-language-option-en-us" role="option" aria-selected="true" href="https://www.cityofsouthgate.org/Government/Departments/Administrative-Services/Finance/Budgets-Financial-Transparency/Understanding-the-Budget-and-Utility-Users-Tax-UUT?oc_lang=en-US" class="lang-item lang-en-us" data-translate-to="en-us" lang="en-US">English (United States)<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-es" role="option" aria-selected="false" href="https://www.cityofsouthgate.org/Government/Departments/Administrative-Services/Finance/Budgets-Financial-Transparency/Understanding-the-Budget-and-Utility-Users-Tax-UUT?oc_lang=es" class="lang-item lang-es" data-translate-to="es" lang="en">Spanish<span class="visuallyhidden"> Select this as your preferred language</span></a></li>
+        </ul>
+	</div></div>
+  </div>
+</div>
+            <div class="header-outer-container clearfix">
+<div class="side-menu-btn js-element">
+		<button type="button" aria-expanded="false" aria-controls="nav"><i aria-hidden="true"></i><span class="side-menu-btn-text">Menu</span></button>
+		</div>
+ 	<div class="header-container header-layout-1 clearfix">
+		
+			<div class="header-site-logo">
+				<a href="https://www.cityofsouthgate.org/Home" lang="en-US" aria-label="City of South Gate - Home - Logo">
+				</a>
+			</div>
+		    <div class="mobile-search-btn js-element">
+		        <button><i aria-hidden="true"></i><span class="mobile-search-btn-text"><span class="visuallyhidden">Open </span>Search</span></button>
+		    </div>
+			<div class="header-search-control-container" id="header-search">
+				<div class="search-inner-container">
+					<div class="sc-search-panel">
+	<label for="ctl07_txtSearch" id="ctl07_lblSearch" class="sc-search-label">Search</label><input name="ctl07$txtSearch" type="text" id="ctl07_txtSearch" class="sc-search-text" placeholder="Search for a service or a page" /><input type="submit" name="ctl07$btnSearch" value="Search" id="ctl07_btnSearch" class="sc-search-button" />
+</div>
+					<div role="status" id="predictiveResults"></div>
+				</div>
+			</div>
+	</div>
+</div>
+<div class="navigation-outer-container">
+	<div id="nav" role="navigation" class="navigation-container" data-menu-type="offscreen" data-offscreen-position="left" aria-label="primary">
+		<div class="grid">
+			<div class="col-xs-12">              
+                <ul class="sf-menu" id="sc-main-menu"><li class="nav-section-quarters-1   first-item nav-item-seq-1">
+<a href="https://www.cityofsouthgate.org/Events-directory" class="nav-level-1 "  target="">
+	<i class="item-icon" aria-hidden="true"></i><span class="item-text">Events listing</span>
+</a>
+</li>
+          
+            <li class="nav-section-quarters-1 nav-active-path  nav-item-seq-2">
+<a href="https://www.cityofsouthgate.org/Government" class="nav-level-1 nav-has-children"  target="">Government</a>
+<button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow" aria-controls="sc-menu-second-level-nav-item-seq-2">
+              <i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-second-level-nav-item-seq-2">
+
+          
+            <li class=" "><a  href="https://www.cityofsouthgate.org/Government/Agendas-Minutes" class=""  target="_self">Agendas & Minutes</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/Government/Budgets-Financial-Transparency" class=""  target="_blank">Budgets & Financial Transparency</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/Government/City-Council" class="nav-has-children"  target="">City Council</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-2-nav-item-seq-3"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-2-nav-item-seq-3">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/Government/City-Council/Resolutions-by-Council"  target="">Resolutions by Council</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/City-Council/Meet-the-City-Council"  target="">Meet the City Council</a></li></ul></li><li class="nav-active-path "><a  href="https://www.cityofsouthgate.org/Government/Departments" class="nav-has-children"  target="">Departments</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-2-nav-item-seq-4"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-2-nav-item-seq-4">
+          
+            <li  class="nav-active-path "><a href="https://www.cityofsouthgate.org/Government/Departments/Administrative-Services"  target="">Administrative Services</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/Departments/City-Clerks-Office"  target="">City Clerk’s Office</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/Departments/City-Manager"  target="">City Manager</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/Departments/City-Treasurer"  target="">City Treasurer</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/Departments/Community-Development"  target="">Community Development</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/Departments/Human-Resources"  target="">Human Resources</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/Departments/Parks-and-Recreation"  target="">Parks & Recreation</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/Departments/Police"  target="_self">South Gate Police Department</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/Departments/Public-Works"  target="">Public Works</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/Government/How-Do-I" class="nav-has-children"  target="">How Do I</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-2-nav-item-seq-5"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-2-nav-item-seq-5">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/Government/How-Do-I/Apply-For"  target="">Apply For</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/How-Do-I/Contact"  target="">Contact</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/How-Do-I/View"  target="">View</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/How-Do-I/Reserve"  target="">Reserve</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/How-Do-I/Request"  target="">Request</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/How-Do-I/Report"  target="">Report</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/How-Do-I/Register"  target="">Register</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/Government/Municipal-Code" class=""  target="_blank">Municipal Code</a></li></ul></li>
+          
+            <li class="nav-section-quarters-2   nav-item-seq-3">
+<a href="https://www.cityofsouthgate.org/Business" class="nav-level-1 nav-has-children"  target="">Business</a>
+<button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow" aria-controls="sc-menu-second-level-nav-item-seq-3">
+              <i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-second-level-nav-item-seq-3">
+
+          
+            <li class=" "><a  href="https://www.cityofsouthgate.org/Business/Your-Business" class="nav-has-children"  target="">Your Business</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-3-nav-item-seq-1"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-3-nav-item-seq-1">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/Business/Your-Business/Permits-Licenses"  target="">Permits & Licenses</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Business/Your-Business/Business-Resources"  target="">Business Resources</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Business/Your-Business/Resources"  target="">Resources</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Business/Your-Business/Starting-a-Business"  target="">Starting Your Business</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/Business/Doing-Business-with-South-Gate" class="nav-has-children"  target="">Doing Business with South Gate</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-3-nav-item-seq-2"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-3-nav-item-seq-2">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/Business/Doing-Business-with-South-Gate/Bids-RFPs"  target="">Bids & RFPs</a></li></ul></li></ul></li>
+          
+            <li class="nav-section-quarters-2   nav-item-seq-4">
+<a href="https://www.cityofsouthgate.org/City-Services" class="nav-level-1 nav-has-children"  target="">City Services</a>
+<button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow" aria-controls="sc-menu-second-level-nav-item-seq-4">
+              <i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-second-level-nav-item-seq-4">
+
+          
+            <li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Fire-Stations" class=""  target="_self">Fire Stations</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Housing-Authority" class=""  target="_self">Housing Authority</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Housing-Assistance" class="nav-has-children"  target="">Housing Assistance</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-4-nav-item-seq-3"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-4-nav-item-seq-3">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Housing-Assistance/Fair-Housing"  target="">Fair Housing</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Parks-Recreation" class=""  target="_self">Parks & Recreation</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Pay-Online" class="nav-has-children"  target="">Pay Online</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-4-nav-item-seq-5"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-4-nav-item-seq-5">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Pay-Online/Parking-Ticket"  target="_self">Parking Ticket</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Pay-Online/Utility-Bill"  target="_self">Utility Bill</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Police-Services" class=""  target="_self">Police Services</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Public-Safety" class="nav-has-children"  target="">Public Safety</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-4-nav-item-seq-7"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-4-nav-item-seq-7">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Public-Safety/Fire-Stations"  target="">Fire Stations</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Public-Safety/Emergency-Preparedness"  target="">Emergency Preparedness</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Regional-Services" class="nav-has-children"  target="">Regional Services</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-4-nav-item-seq-8"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-4-nav-item-seq-8">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Regional-Services/Hub-Cities-Consortium"  target="_blank">Hub Cities Consortium</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Regional-Services/SEAACA"  target="_self">SEAACA</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Regional-Services/Southern-California-Edison"  target="_self">Southern California Edison</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Regional-Services/Southern-California-Gas-Company"  target="_self">Southern California Gas Company</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Regional-Services/Vector-Control"  target="_blank">Vector Control</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Regional-Services/Universal-Waste-Systems"  target="_self">Universal Waste Systems</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Resources-Support" class="nav-has-children"  target="">Resources & Support</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-4-nav-item-seq-9"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-4-nav-item-seq-9">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Resources-Support/Mental-Health-Resources"  target="">Mental Health Resources</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Resources-Support/Food-Bank-Resources"  target="">Food Bank Resources</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/City-Fees" class=""  target="">City Fees</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Transportation" class="nav-has-children"  target="">Transportation</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-4-nav-item-seq-11"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-4-nav-item-seq-11">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Transportation/GATE-Buses"  target="">GATE Buses</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Transportation/Metro-Services"  target="">Metro Services</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Transportation/Phone-A-Ride"  target="">Phone A Ride</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Utilities" class=""  target="_self">Utilities</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Water-Conservation-Program" class=""  target="_self">Water Conservation Program</a></li></ul></li>
+          
+            <li class="nav-section-quarters-3   nav-item-seq-5">
+<a href="https://www.cityofsouthgate.org/Engage-South-Gate" class="nav-level-1 nav-has-children"  target="">Engage South Gate</a>
+<button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow" aria-controls="sc-menu-second-level-nav-item-seq-5">
+              <i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-second-level-nav-item-seq-5">
+
+          
+            <li class=" "><a  href="https://www.cityofsouthgate.org/Engage-South-Gate/About-Our-City" class="nav-has-children"  target="">About Our City</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-5-nav-item-seq-1"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-5-nav-item-seq-1">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/Engage-South-Gate/About-Our-City/City-Stats"  target="">City Stats</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Engage-South-Gate/About-Our-City/Did-You-Know"  target="">Did You Know?</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Engage-South-Gate/About-Our-City/History"  target="">History of South Gate</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Engage-South-Gate/About-Our-City/Elected-Representatives"  target="">Elected Representatives</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/Engage-South-Gate/Go-South-Gate-App" class=""  target="">Go South Gate App</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/Engage-South-Gate/Community-Questions" class=""  target="">Community Questions</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/Engage-South-Gate/E-Newsletter" class=""  target="">E-Newsletter</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/Engage-South-Gate/Social-Media" class=""  target="">Social Media</a></li></ul></li>
+          
+            <li class="nav-section-quarters-3   nav-item-seq-6">
+<a href="https://www.cityofsouthgate.org/Things-To-Do" class="nav-level-1 nav-has-children"  target="">Things To Do</a>
+<button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow" aria-controls="sc-menu-second-level-nav-item-seq-6">
+              <i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-second-level-nav-item-seq-6">
+
+          
+            <li class=" "><a  href="https://www.cityofsouthgate.org/Things-To-Do/Library" class=""  target="">Library</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/Things-To-Do/Parks-Facilities-Enjoy-the-Outdoors" class=""  target="">Parks & Facilities: Enjoy the Outdoors</a></li></ul></li>
+          
+            </ul>
+			</div>
+		</div>
+	</div>
+</div>
+            </header>
+            <div class="content-outer-container">
+                <div id="main" role="main" class="main-outer-container clearfix">
+                        
+                        <div class="content-main-container">
+                            <div class="grid">
+					            <div class="col-xs-12">
+						            <nav id="breadcrumbs-container" aria-label="You Are Here :">
+							            <span role="list">
+<span role="listitem">
+	<a href="https://www.cityofsouthgate.org/Home"  lang="en-US">Home</a>
+	<span class="nav-separator" aria-hidden="true" role="presentation">/</span>
+</span>
+          <span role="listitem"><a href="https://www.cityofsouthgate.org/Government" >Government</a><span class='nav-separator' aria-hidden="true" role="presentation">/</span></span><span role="listitem">
+	<a href="https://www.cityofsouthgate.org/Government/Departments" >
+		Departments
+	</a>
+	<span class='nav-separator' aria-hidden="true" role="presentation">/</span>
+</span>
+<span role="listitem">
+	<a href="https://www.cityofsouthgate.org/Government/Departments/Administrative-Services" >
+		Administrative Services
+	</a>
+	<span class='nav-separator' aria-hidden="true" role="presentation">/</span>
+</span>
+<span role="listitem">
+	<a href="https://www.cityofsouthgate.org/Government/Departments/Administrative-Services/Finance" >
+		Finance
+	</a>
+	<span class='nav-separator' aria-hidden="true" role="presentation">/</span>
+</span>
+<span role="listitem">
+	<a href="https://www.cityofsouthgate.org/Government/Departments/Administrative-Services/Finance/Budgets-Financial-Transparency" >
+		Budgets & Financial Transparency
+	</a>
+	<span class='nav-separator' aria-hidden="true" role="presentation">/</span>
+</span>
+<span class="current-page" role="listitem" aria-current="page" >Understanding the Budget and Utility Users Tax (UUT)</span>
+          
+          
+          
+          </span>
+						            </nav>
+					            </div>
+                      
+					            <div class="col-xs-12">
+						            <div class="main-inner-container">
+							            <div id="main-content" class="main-container clearfix">
+							              
+                            <!-- OC Layout Element Conent Template -->
+							              <!--normalTemplateStart--><div class="grid">
+    <div class="col-xs-12 col-m-8">
+        <h1 class='oc-page-title '>Understanding the Budget and Utility Users Tax (UUT)</h1>
+        
+        
+        <p><a href="https://www.cityofsouthgate.org/Government/Departments/Administrative-Services/Finance/Budgets-Financial-Transparency/Impuesto-Sobre-el-Uso-de-Servicios-P%C3%BAblicos-UUT" class="styled-button-calltoaction">INFORMACI&Oacute;N EN ESPA&Ntilde;OL
+</a></p>
+<p>The City of South Gate faces an ongoing structural budget gap of approximately $9 million, with ongoing expenditures exceeding ongoing revenues. The gap is driven in large part by increasing costs, including pension obligations, health insurance, workers&rsquo; compensation, and liability insurance.</p>
+<p>Federal relief funds and City reserves have helped maintain current services, but these resources are nearly exhausted. Without a sustainable long-term revenue solution, future budgets may require reductions in services, staffing, response times, programs, events, and facility hours.</p>
+<p>To address this ongoing fiscal challenge, the City Council is considering whether to place a Utility Users Tax (UUT) measure on a future ballot for voters to consider.&nbsp;</p>
+<h3>Budget and Fiscal Challenges Frequently Asked Questions</h3>
+<h3>
+</h3>
+<p>
+</p>
+<div data-type="0" data-title-level="2" class="oc-wysiwyg-container">
+<div class="oc-wysiwyg-container-panel">
+<h2>Why is the City of South Gate facing a budget deficit?</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>South Gate operates with a lean budget and has already implemented cost-saving measures. However, several factors are contributing to a growing budget gap:</p>
+<ul>
+    <li>Inflation driven cost increases for maintenance and utilities Steep increases for both general and health insurance</li>
+</ul>
+<ul>
+    <li>A growing backlog of needed maintenance and repairs to streets, facilities, and equipment</li>
+</ul>
+<ul>
+    <li>State mandates and retirement system obligations</li>
+</ul>
+<p><br>
+</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Has the City done everything it can to balance the budget?</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>Yes. The City has taken steps over the years to control costs, reduce staﬃng levels, consolidate services, and pursue revenue development opportunities. However, without identifying a new local revenue source, cuts to services may become unavoidable.</p>
+<p><br>
+</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>What other revenue options has the City explored?</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>The City considered several alternatives, including a parcel tax, business license tax increase, and higher transient occupancy tax, but none would generate enough revenue to close the gap. A parcel tax would burden only property owners, a business license tax would yield limited funds and strain small businesses, and South Gate lacks enough hotels for a TOT increase to make a real impact.</p>
+<p>After careful review, the City found that a Utility Users Tax is the most practical and equitable option, providing stable, locally controlled funding from a broad base of users.</p>
+<p><br>
+</p>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+<p data-start="351" data-end="461"><span style="font-weight: bold; color: inherit; font-family: inherit; font-size: 1.444em;">Utility Users Tax Frequently Asked Questions</span></p>
+<p>
+</p>
+<div data-type="0" data-title-level="2" class="oc-wysiwyg-container">
+<div class="oc-wysiwyg-container-panel">
+<h2>What is a Utility Users Tax (UUT)?</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p data-start="68" data-end="107">The Utility Users Tax (UUT) is a local tax applied to certain utility services, including electricity, gas, water, sewer, cable, and telephone services (landline and mobile). The tax is collected monthly through utility bills and must be approved by local voters.</p>
+<p>More than 160 cities and public agencies across California have adopted a UUT to provide locally controlled funding for essential public services. South Gate is among the few cities in Los Angeles County without a UUT. A UUT could provide the City with a dedicated source of local revenue to help support essential services, including public safety, street maintenance, and emergency response.</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Do other neighboring cities have a UUT?</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>Nearby cities rely on a UUT to help fund essential services:</p>
+<ul>
+    <li>Downey: 5% on electricity and gas, and 4.8% on telecommunications</li>
+    <li>Bell: 10% on electricity, gas, water, telephone, and cable</li>
+    <li>Bellﬂower: 5% on electricity, gas, water, telephone, and cable</li>
+    <li>Lynwood: 9% on electricity, gas, water, telephone, and cable</li>
+</ul>
+<p>If passed, a UUT in South Gate would reﬂect a similar structure and rate to those already in place in neighboring communities.</p>
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Why is the City considering a Utility Users Tax?</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>South Gate is facing growing budget challenges due to rising costs and maintenance needs. Like many cities in California, South Gate is experiencing structural budget pressures, costs for public safety, infrastructure maintenance, and community services are increasing faster than current revenue streams allow. The City&rsquo;s General Fund, which pays for most day-to-day services, is under strain.</p>
+<p>The UUT is a critical, locally controlled revenue stream that helps South Gate maintain services for our residents.</p>
+<p><br>
+</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>What services would the UUT help fund?</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>The Utility Users Tax would help South Gate invest in the services that keep our city safe, clean, and thriving:</p>
+<ul>
+    <li>Maintain reliable 911 emergency response and police staﬃng levels</li>
+    <li>Keep our school crossing guards at our schools</li>
+    <li>Keep our recreation facilities open and available for youth sports</li>
+    <li>Repair and maintain city streets, including pothole repairs</li>
+    <li>Maintain senior and youth services</li>
+</ul>
+<p><br>
+</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Who pays the UUT?</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>The UUT is paid by anyone who uses taxed utilities in South Gate, this includes both residents and businesses. The tax is included on utility bills and collected by service providers, who then remit it to the City.</p>
+<p><br>
+</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Will there be any exemptions available?</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<h5><a name="senior-exemption-do-you-qualify" id="senior-exemption-do-you-qualify">Senior Exemption &mdash; Do You Qualify?</a></h5>
+<p>If you are a low-income senior resident, you may be <strong>fully exempt</strong> from the UUT &mdash; meaning you pay $0 in utility users tax.</p>
+<p><strong>You qualify if you meet all three of the following:</strong></p>
+<ol>
+    <li><strong>Age</strong> &mdash; You are 65 years of age or older.</li>
+    <li><strong>Account Holder</strong> &ndash; You (qualifying senior) are the named account holder.</li>
+    <li><strong>Residence</strong> &mdash; The utility service address is your primary residence (where you live most of the time).</li>
+    <li><strong>Household income</strong> &mdash; The combined gross income of everyone living in your home does not exceed the City&rsquo;s income limit. Income limits are set annually using the California Public Utilities Commission (CPUC) low-income utility assistance standards. Current limits are available at City Hall and on this page (see below).</li>
+</ol>
+<h5><a name="current-income-limits" id="current-income-limits">Current Income Limits</a></h5>
+<p>Income limits are updated each year to match the CPUC&rsquo;s low-income utility assistance guidelines.</p>
+<table border="0" cellspacing="0" cellpadding="0">
+    <thead>
+        <tr>
+            <td valign="bottom">
+            <p>Household Size</p>
+            </td>
+            <td valign="bottom">
+            <p>Annual Gross Income Limit</p>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td valign="top">
+            <p>1&ndash;2 persons</p>
+            </td>
+            <td valign="top">
+            <p>$43,280</p>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+            <p>3 persons</p>
+            <p>4 persons</p>
+            <p>5 persons</p>
+            <p>6 persons</p>
+            <p>Each additional person</p>
+            </td>
+            <td valign="top">
+            <p>$54,640</p>
+            <p>$66,000</p>
+            <p>$77,360</p>
+            <p>$88,720</p>
+            <p>+$11,360</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h5>&nbsp;</h5>
+<h5><a name="how-to-apply" id="how-to-apply">How to Apply</a></h5>
+<p>Applying is free. The exact process will be communicated to the public if the ballot measure is approved. In general, it involves the following steps:</p>
+<ol>
+    <li><strong>Completing an application.</strong>
+    <p>The application must include:</p>
+    <ul>
+        <li>&ndash;Proof of age (driver&rsquo;s license, passport, birth certificate, or other government-issued ID)</li>
+        <li>&ndash;Documentation of all household members&rsquo; income for the prior calendar year (tax return, Social Security award letter, pension statement, or equivalent)</li>
+    </ul>
+    </li>
+    <li><strong>Sign and submit.</strong> The form must be signed under penalty of perjury. Return the completed application to the Finance Department by mail or in person.</li>
+</ol>
+<p>Once approved, your exemption stays in effect as long as you continue to qualify. The City will ask you to re-verify your eligibility each year.</p>
+<h5><a name="what-happens-after-you-apply" id="what-happens-after-you-apply">What Happens After You Apply?</a></h5>
+<p>The City will review your application and notify you in writing of the decision. If approved, your utility service provider will be notified and the UUT will no longer appear on your utility bills.</p>
+<p><strong>Important:</strong> If your circumstances change &mdash; for example, you move, your income increases beyond the limit, or another household member&rsquo;s income changes &mdash; you must notify the Finance Department <strong>in writing within 30 days</strong>.</p>
+<p>If you do not report a change in time, you will not be entitled to a refund of taxes already collected during the period you no longer qualified.<a name="español-spanish"></a></p>
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Will there be public input or a vote?</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>Measure SG is a proposed Utility Users Tax (UUT) measure that will appear on the November 3, 2026 ballot. The measure will allow the community to decide if new revenue will be added to the city budget.</p>
+</div>
+</div>
+</div>
+
+<p>&nbsp;</p>
+<p><strong>Understanding the City Budget &amp; Utility Users Tax (UUT) | Council Meeting Presentation</strong></p>
+<p>&nbsp;&nbsp;&nbsp;<iframe width="560" height="315" src="https://www.youtube.com/embed/uDUbDpm7wIU?si=FTkoFEOXiul-j31F&amp;start=6181" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+</p>
+<h5>School Crossing Guard Program Update&nbsp;</h5>
+<p>
+</p>
+<div data-type="0" data-title-level="2" class="oc-wysiwyg-container">
+<div class="oc-wysiwyg-container-panel">
+<h2>Why are crossing guards being reduced? </h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>The program is part of more than $9 million in City service reductions resulting from the City's ongoing structural budget deficit.</p>
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>How much does the program cost?</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>$750,000 annually.</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Who has paid for it?</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>The City of South Gate has historically fully funded the program.</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Is it permanent?</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>It will remain suspended until additional revenue becomes available.</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Will it come back if UUT passes? </h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>The City intends to evaluate restoring services, including crossing guards, as part of the budget restoring process.</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>What other cuts are happening?</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>PUBLIC SAFETY</p>
+<ul>
+    <li>Fewer officers per shift causing slower response</li>
+    <li>Reduced low-priority call responses</li>
+    <li>Crossing guard program eliminated</li>
+    <li>Reduced crime prevention programs</li>
+</ul>
+<p>MAINTENANCE SERVICES</p>
+<ul>
+    <li>Slower graffiti removal</li>
+    <li>&nbsp;Longer streetlight repair times</li>
+    <li>Less frequent tree trimming</li>
+</ul>
+<p>PARKS &amp; RECREATION</p>
+<ul>
+    <li>Reduced recreation programs</li>
+    <li>Fewer community events</li>
+    <li>Reduced pool operations</li>
+    <li>Pool and sports fields scheduled to be closed in November.</li>
+</ul>
+</div>
+</div>
+</div>
+<h5>&nbsp;</h5>
+<h5>Follow the City of South Gate on social media for the latest updates.</h5>
+<p><a href="https://www.facebook.com/CityofSouthGate">Facebook</a> , <a href="https://www.instagram.com/cityofsouthgateca/">Instagram</a>,&nbsp;<a href="https://youtube.com/playlist?list=PL2SdQnHlztN3JIIllCDPleUJg8J8scWR9&amp;si=-l08fTjI99xnEzQL">YouTube</a></p>
+<p><div class="image-gallery-container masonry-theme" data-theme="masonry">
+   <div class="grid">
+          <div class="image-gallery-item col-xs-12 col-m-6 col-lg-4">
+   <a href="/files/sharedassets/public/v/1/engage-south-gate/images/uut/uut-social-media-posts.png" target="_self" class="document ext-png"><i aria-hidden="true"></i>
+      <figure>
+         <div class="image-container">
+            <img src="/files/sharedassets/public/v/1/engage-south-gate/images/uut/uut-social-media-posts.png?w=375" alt="UUT-Social-Media-Posts.png">
+         </div>
+         <figcaption>
+            <p class="caption">UUT 1</p>
+         </figcaption>
+      </figure>
+   <span class="file-info">(PNG,&nbsp;2MB)</span></a>
+</div>
+          <div class="image-gallery-item col-xs-12 col-m-6 col-lg-4">
+   <a href="/files/sharedassets/public/v/1/engage-south-gate/images/uut/uut-social-media-posts-1.png" target="_self" class="document ext-png"><i aria-hidden="true"></i>
+      <figure>
+         <div class="image-container">
+            <img src="/files/sharedassets/public/v/1/engage-south-gate/images/uut/uut-social-media-posts-1.png?w=375" alt="UUT-Social-Media-Posts-1.png">
+         </div>
+         <figcaption>
+            <p class="caption">UUT 2</p>
+         </figcaption>
+      </figure>
+   <span class="file-info">(PNG,&nbsp;263KB)</span></a>
+</div>
+          <div class="image-gallery-item col-xs-12 col-m-6 col-lg-4">
+   <a href="/files/sharedassets/public/v/1/engage-south-gate/images/uut/uut-social-media-posts-2.png" target="_self" class="document ext-png"><i aria-hidden="true"></i>
+      <figure>
+         <div class="image-container">
+            <img src="/files/sharedassets/public/v/1/engage-south-gate/images/uut/uut-social-media-posts-2.png?w=375" alt="UUT-Social-Media-Posts-2.png">
+         </div>
+         <figcaption>
+            <p class="caption">UUT 3</p>
+         </figcaption>
+      </figure>
+   <span class="file-info">(PNG,&nbsp;4MB)</span></a>
+</div>
+          <div class="image-gallery-item col-xs-12 col-m-6 col-lg-4">
+   <a href="/files/sharedassets/public/v/1/engage-south-gate/images/uut/uut-social-media-posts-4.png" target="_self" class="document ext-png"><i aria-hidden="true"></i>
+      <figure>
+         <div class="image-container">
+            <img src="/files/sharedassets/public/v/1/engage-south-gate/images/uut/uut-social-media-posts-4.png?w=375" alt="UUT-Social-Media-Posts-4.png">
+         </div>
+         <figcaption>
+            <p class="caption">UUT 4</p>
+         </figcaption>
+      </figure>
+   <span class="file-info">(PNG,&nbsp;132KB)</span></a>
+</div>
+          </div>
+</div>
+          
+</p>
+<p>&nbsp;</p>
+      
+        
+    </div>
+    
+        <div class="col-xs-12 col-m-4">
+            <div class="side-box consultation-snapshot">
+		
+			<h2 class="side-box-title">
+				Related Documents 
+			</h2>
+		
+		
+		<div class="side-box-content">
+			<div class="side-box-section body-content">
+				<ul>
+<li>
+<p data-start="463" data-end="644"><a href="/files/sharedassets/public/v/1/government/city-manager/documents/uut/sg-water-bills-insert-measure-sg.pdf" class="document ext-pdf"><i aria-hidden="true"></i>Informational Flyer- Measure SG&nbsp;<span class="file-info">(PDF,&nbsp;1MB)</span></a></p>
+</li>
+<li>
+<p data-start="463" data-end="644"><a href="https://www.cityofsouthgate.org/files/sharedassets/public/v/1/government/departments/administrative-services/budgets-amp-financial-transparency/documents/fy26-27-adopted-budget.pdf">FY 2026-2027 Adopted Budget</a></p>
+</li>
+</ul>
+<ul>
+<li>
+<p data-start="463" data-end="644">Budget Reductions and Service Impacts - August 2026 -&nbsp;<a href="https:///files/sharedassets/public/v/1/government/city-manager/documents/uut/260818-budget-cut-update-presentation-final.pdf">English</a>, <a href="/files/sharedassets/public/v/1/government/city-manager/documents/uut/260827_reducciones-presupuestarias-presentacion_es.pdf" class="document ext-pdf"><i aria-hidden="true"></i>Spanish<span class="file-info">(PDF,&nbsp;512KB)</span></a></p>
+</li>
+</ul>
+<ul>
+<li><a href="/files/sharedassets/public/v/1/government/departments/administrative-services/budgets-amp-financial-transparency/documents/item-no.-1-fy2627-budget-cuts-presentation-4.20.26-website.pdf" class="document ext-pdf"><i aria-hidden="true"></i>FY 2026&ndash;27 Budget Cuts (April 2026)<span class="file-info">(PDF,&nbsp;375KB)</span></a></li>
+</ul>
+<ul>
+<li data-start="463" data-end="644"><a href="/files/sharedassets/public/v/2/government/departments/administrative-services/budgets-amp-financial-transparency/documents/item-no.-2-uut-understanding-fiscal-challenge-presentation-4.20.26-website.pdf" class="document ext-pdf"><i aria-hidden="true"></i>UUT Fiscal Challenge (April 2026)<span class="file-info">(PDF,&nbsp;1MB)</span></a></li>
+</ul>
+<ul>
+<li data-start="463" data-end="644">South Gate's Fiscal Challenge - <a href="/files/sharedassets/public/v/1/government/city-manager/documents/uut/understanding-south-gates-fiscal-challenge-english.pdf" class="document ext-pdf"><i aria-hidden="true"></i>English<span class="file-info">(PDF,&nbsp;185KB)</span></a>, <a href="/files/sharedassets/public/v/2/government/city-manager/documents/uut/understanding-south-gates-fiscal-challenge-spanish.pdf" class="document ext-pdf"><i aria-hidden="true"></i>Spanish<span class="file-info">(PDF,&nbsp;189KB)</span></a></li>
+</ul>
+<ul>
+<li data-start="463" data-end="644">Fiscal Emergency (January 2026) -&nbsp;<a href="/files/sharedassets/public/v/1/government/city-manager/documents/uut/260113-fiscal-emergency-presentation_final.pdf" class="document ext-pdf"><i aria-hidden="true"></i>English<span class="file-info">(PDF,&nbsp;10MB)</span></a>, <a href="/files/sharedassets/public/v/1/government/city-manager/documents/uut/260113-fiscal-emergency-presentation_spanish.pdf" class="document ext-pdf"><i aria-hidden="true"></i>Spanish<span class="file-info">(PDF,&nbsp;5MB)</span></a></li>
+</ul>
+<ul>
+<li data-start="463" data-end="644">2025-26 Fiscal Education -&nbsp;<a href="/files/sharedassets/public/v/1/government/city-manager/documents/2025-26-fiscal-education-presentation.pdf" class="document ext-pdf"><i aria-hidden="true"></i>English<span class="file-info">(PDF,&nbsp;12MB)</span></a>, <a href="/files/sharedassets/public/v/1/government/city-manager/documents/2025-26-fiscal-education-presentation-spanish.pdf" class="document ext-pdf"><i aria-hidden="true"></i>Spanish<span class="file-info">(PDF,&nbsp;12MB)</span></a></li>
+</ul>
+<ul>
+<li data-start="463" data-end="644">Community Input Flyer <a href="/files/sharedassets/public/v/1/government/city-manager/documents/uut/community-input-flyer-english.pdf" class="document ext-pdf"><i aria-hidden="true"></i>English,<span class="file-info">(PDF,&nbsp;273KB)</span></a> <a href="/files/sharedassets/public/v/1/government/city-manager/documents/uut/community-input-flyer-spanish.pdf" class="document ext-pdf"><i aria-hidden="true"></i>Spanish<span class="file-info">(PDF,&nbsp;235KB)</span></a></li>
+</ul>
+<ul>
+<li data-start="463" data-end="644">How South Gate is Funded -&nbsp;<a href="/files/sharedassets/public/v/1/news-amp-calendar/how-south-gate-is-funded-3.pdf" class="document ext-pdf"><i aria-hidden="true"></i>English<span class="file-info">(PDF,&nbsp;10MB)</span></a>, <a href="/files/sharedassets/public/v/1/news-amp-calendar/how-south-gate-is-funded-spanish-1.pdf" class="document ext-pdf"><i aria-hidden="true"></i>Spanish<span class="file-info">(PDF,&nbsp;10MB)</span></a></li>
+</ul>
+
+
+			</div>
+		</div>
+		
+	</div>
+            
+        </div>
+    
+    
+</div><!--normalTemplateEnd-->
+                            
+                            
+                            
+							            </div>
+						            </div>
+					            </div>
+                        
+                            </div>
+                        </div>
+                        <div class="back-to-top-container text-center">
+                            <a href="#body-top" id="back-to-top"><i aria-hidden="true"></i><span class="js-visuallyhidden">Back to top</span></a>
+                        </div>
+                </div>
+            </div><!--groupTemplateEnd-->
+            <footer>
+                
+                    <div class="footer-outer-container footer-first-row">
+                        <div class="footer-container clearfix">
+                            <div class="grid grid-pad">
+                                <div class="col-xs-12 col-s-6 col-m-4 col-lg-4" >
+	
+			<h2 class="visuallyhidden">Site Footer</h2>
+			<h3 class="footer-title">Contact Us</h3>
+			
+	<p><strong>City of South Gate<br /></strong> 8650 California Ave<br />
+South Gate, CA 90280&nbsp;<br />
+<a href="tel:3235639500" style="font-family: inherit; font-size: 1em;">(323) 563-9500</a></p>
+<p>Monday-Thursday<br />
+7:00am-5:30pm<br />
+(Closed Fridays)</p>
+
+
+	<ul class="footer-links with-icons ">   </ul>
+	
+</div><div class="col-xs-12 col-s-6 col-m-4 col-lg-4" >
+	
+			<h2 class="visuallyhidden">Site Footer</h2>
+			<h3 class="footer-title">Quick Links</h3>
+			
+	<p><span style="white-space: pre-wrap;"><a href="https://www.cityofsouthgate.org/Engage-South-Gate/E-Newsletter">City Newsletter</a></span></p>
+<p><span style="white-space: pre-wrap;"><a href="https://www.cityofsouthgate.org/Engage-South-Gate/Community-Questions">Community Questions</a></span></p>
+<p><span style="white-space: pre-wrap;"><a href="https://cosouthgateca.prelive.opencities.com/City-Services/Pay-Online">Make a payment</a></span><span style="font-size: 1.125em;">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="white-space: pre-wrap;"><a href="https://cosouthgateca.prelive.opencities.com/City-Services/Pay-Online"></a><br /></span></p>
+
+
+	<ul class="footer-links with-icons ">   </ul>
+	<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+</div><div class="col-xs-12 col-s-6 col-m-4 col-lg-4" >
+	
+			<h2 class="visuallyhidden">Site Footer</h2>
+			<h3 class="footer-title">Share &amp; Connect</h3>
+			
+	
+	<ul class="footer-links with-icons social-media-links">  <li class="footer-link-facebook">
+	<a href="https://www.facebook.com/CityofSouthGate" target="_self"  >
+<i aria-hidden="true"></i>Facebook
+</a>
+</li>
+          <li class="footer-link-instagram">
+	<a href="https://www.instagram.com/cityofsouthgateca/" target="_self"  >
+<i aria-hidden="true"></i>Instagram
+</a>
+</li>
+          <li class="footer-link-youtube">
+	<a href="https://www.youtube.com/c/SouthGateCA90280" target="_self"  >
+<i aria-hidden="true"></i>YouTube
+</a>
+</li>
+          <li class="footer-link-linkedin">
+	<a href="https://www.linkedin.com/company/city-of-south-gate" target="_self"  >
+<i aria-hidden="true"></i>LinkedIn
+</a>
+</li>
+          <li class="footer-link-twitter">
+	<a href="https://twitter.com/SouthGateCAgov" target="_self"  >
+<i aria-hidden="true"></i>Twitter
+</a>
+</li>
+           </ul>
+	
+</div>
+                            </div>
+                        </div>
+                    </div>
+                
+                <div class="footer-outer-container footer-second-row">
+                    <div class="footer-container clearfix">
+                        <div class="grid grid-pad footer-secondary-links">
+                            <div class="col-xs-12 col-m-7">
+                                
+                                    
+                                
+                            </div>
+                            <div class="col-xs-12 col-m-5 powered-by">
+                                <div class="right">
+                                    &copy; 2026 City of South Gate&nbsp;|&nbsp;<span class="powered-by">Powered by <a href="https://granicus.com/solution/govaccess/opencities/" target="_blank">Granicus</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="/files/oc-resources/b9015858-988c-48a4-9473-7c193df083e4/JsTextSnippets.js?ocsvclang=en-US" type="text/javascript"></script><script></script>
+    
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4MZEMP020Z"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-4MZEMP020Z');
+</script>
+
+<!-- Begin Constant Contact Active Forms -->
+<script> var _ctct_m = "cb1165eb2e0b1d51c1429c286d702b41"; </script>
+<script id="signupScript" src="//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js" async defer></script>
+<!-- End Constant Contact Active Forms -->
+    
+    
+
+<script type="text/javascript">
+//<![CDATA[
+window.__TsmHiddenField = $get('ctl04_seamless_script_manager_TSM');//]]>
+</script>
+</form>
+</body>
+</html>

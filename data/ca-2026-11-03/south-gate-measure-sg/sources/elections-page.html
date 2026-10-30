@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-US">
+<!--<![endif]-->
+<head>
+	<!-- Published by OpenCities, 1.38.0.1 -->
+
+    
+        
+    
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="theme-color" content="#FFFFFF"/>
+    <title>Elections City of South Gate</title>
+	<meta name="generator" content="OpenCities - https://granicus.com/product/opencities" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Using mobile-web-app-capable for now to enable full-screen experience on supported platforms -->
+    <!-- Note: This tag works mainly on Android Chrome. It does NOT enable full-screen mode on iOS Safari. -->
+    <!-- For iOS, the correct tag is: <meta name="apple-mobile-web-app-capable" content="yes"> -->
+    <!-- TODO: Monitor for updated meta tag standards from Apple or other browser vendors -->
+    <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="description" content="Welcome to the City Clerk’s election information page. Here you can find Frequently Asked Election Questions, Poll Worker Information, Election Notices, and Election Results." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.cityofsouthgate.org/Government/Departments/City-Clerks-Office/Elections" />
+    <meta property="og:title" content="Elections" />
+    <meta property="og:description" content="Welcome to the City Clerk’s election information page. Here you can find Frequently Asked Election Questions, Poll Worker Information, Election Notices, and Election Results." />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Elections" />
+    <meta property="twitter:description" content="Welcome to the City Clerk’s election information page. Here you can find Frequently Asked Election Questions, Poll Worker Information, Election Notices, and Election Results." />
+    <link rel="canonical" href="https://www.cityofsouthgate.org/Government/Departments/City-Clerks-Office/Elections" />
+
+    
+    
+    <script>
+        (function () {
+            if (window.__UNLOAD_LAZY_PATCH__) return;
+            window.__UNLOAD_LAZY_PATCH__ = true;
+
+            var supportsPageHide = ("onpagehide" in window);
+            var mappedType = supportsPageHide ? "pagehide" : "beforeunload";
+            var nativeAdd = window.addEventListener;
+            var nativeRemove = window.removeEventListener;
+            var unloadMap = null;
+            var patched = false;
+
+            function ensurePatched() {
+                if (patched) return;
+                unloadMap = new WeakMap();
+
+                window.addEventListener = function (type, listener, options) {
+                    if (type === "unload") {
+                        var wrapped = function (evt) {
+                            if (supportsPageHide && evt.persisted) return;
+                            listener.call(this, evt);
+                        };
+                        unloadMap.set(listener, wrapped);
+                        return nativeAdd.call(this, mappedType, wrapped, options);
+                    }
+                    return nativeAdd.call(this, type, listener, options);
+                };
+
+                window.removeEventListener = function (type, listener, options) {
+                    if (type === "unload") {
+                        var wrapped = unloadMap.get(listener);
+                        if (wrapped) {
+                            nativeRemove.call(this, mappedType, wrapped, options);
+                            unloadMap.delete(listener);
+                        }
+                        return;
+                    }
+                    return nativeRemove.call(this, type, listener, options);
+                };
+
+                var orig = null;
+                Object.defineProperty(window, "onunload", {
+                    configurable: true, enumerable: true,
+                    get: function () { return orig; },
+                    set: function (h) {
+                        orig = h;
+                        if (typeof h === "function") window.addEventListener("unload", h);
+                    }
+                });
+                patched = true;
+            }
+
+            window.addEventListener = function (type, listener, options) {
+                if (type === "unload") {
+                    ensurePatched();
+                    return window.addEventListener(type, listener, options);
+                }
+                return nativeAdd.call(this, type, listener, options);
+            };
+
+            window.removeEventListener = function (type, listener, options) {
+                if (type === "unload" && !patched) {
+                    return;
+                }
+                return nativeRemove.call(this, type, listener, options);
+            };
+
+            function patchTelerik() {
+                ensurePatched();
+                var ns = window.RadAjaxNamespace;
+                if (!ns || !ns.EventManager || !ns.EventManager.Add || ns.EventManager.__UnloadPatched) return;
+                var origAdd = ns.EventManager.Add;
+                ns.EventManager.Add = function (el, evtName, handler, clientId) {
+                    if (el === window && evtName === "unload") {
+                        return window.addEventListener("unload", handler);
+                    }
+                    return origAdd.call(this, el, evtName, handler, clientId);
+                };
+                ns.EventManager.__UnloadPatched = true;
+            }
+
+            if (window.RadAjaxNamespace)
+                patchTelerik();
+            else (window.requestIdleCallback || function (cb)
+            {
+                setTimeout(cb, 120);
+            })(patchTelerik);
+        })();
+    </script>
+    <!-- Preconnecting to Google Fonts servers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Defer Roboto font loading to avoid render-blocking -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const robotoLink = document.createElement('link');
+            robotoLink.rel = 'stylesheet';
+            robotoLink.href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap';
+            document.head.appendChild(robotoLink);
+        });
+    </script>
+
+    <style>
+        .gm-style, .gm-style * {
+            font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", Arial, sans-serif !important;
+        }
+    </style>
+
+    <script>
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, "js");
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700|Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    
+        
+            <script type="text/javascript">
+                window.__oc_flags_ImprovedBreakpointEventHandling = true;
+            </script>
+            
+        
+    
+    
+    
+        <script type="text/javascript">
+            var __metaQueryBreakpoints = {
+                'sc-size-4': '(max-width: 480px)',
+                'sc-size-3': '(min-width: 480px) and (max-width: 768px)',
+                'sc-size-2': '(min-width: 768px) and (max-width: 992px)',
+                'sc-size-1': '(min-width: 992px)'
+            }
+
+            var __ocSizePoints = [
+                { min: 0, name: 'sc-size-4' },
+                { min: 480, name: 'sc-size-3' },
+                { min: 768, name: 'sc-size-2' },
+                { min: 992, name: 'sc-size-1' }
+            ];
+
+        </script>
+    
+
+    <!-- Framework Section -->
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/files/templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/166/jquery-1.12.4.min.js?seamlessts=639263244363646542" ><\/script>')</script>
+
+    <!--Google Maps API Loader – Improved Version to avoid Warning
+    This script loads the Google Maps JavaScript API using a dynamic and async method.
+    It replaces the old static <script> tag to avoid performance warnings from Google.
+
+    Dynamically creates the <script> tag with loading = async for better performance
+    Builds the API URL with required libraries(places, geometry, marker, geocoding)
+    Uses a Promise and callback(google.maps.__ib__) to confirm when the script is ready
+
+    It Avoids Google’s warning about direct script loading
+    Improves page load speed by loading the API asynchronously-->
+
+    
+        <script>
+            (function (root) {
+                root.OpenCities = root.OpenCities || {};
+                if (!root.OpenCities.GoogleMapsLoader) {
+                    root.OpenCities.GoogleMapsLoader = {
+                        _cbs: [],
+                        _ready: false,
+                        onReady: function (cb) {
+                            if (this._ready) { try { cb(); } catch (e) { console.error(e); } }
+                            else if (typeof cb === 'function') this._cbs.push(cb);
+                        },
+                        _fire: function () {
+                            if (this._ready) return;
+                            this._ready = true;
+                            var q = this._cbs.splice(0);
+                            for (var i = 0; i < q.length; i++) {
+                                try { q[i](); } catch (e) { console.error(e); }
+                            }
+                        }
+                    };
+                }
+            })(window);
+
+            (g => {
+                var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__",
+                    m = document, b = window;
+                b = b[c] || (b[c] = {});
+                var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams,
+                    u = () => h || (h = new Promise(async (resolve, reject) => {
+                        a = m.createElement("script");
+                        e.set("libraries", [...r] + "");
+                        for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
+                        e.set("callback", c + ".maps." + q);
+                        a.src = "https://maps." + c + "apis.com/maps/api/js?" + e.toString();
+                        a.loading = "async";
+                        a.async = true;
+                        a.defer = true;
+                        d[q] = resolve;
+                        a.onerror = () => reject(Error(p + " could not load."));
+                        a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+                        m.head.append(a);
+                    }));
+                if (d[l]) {
+                    console.warn(p + " only loads once. Ignoring duplicate load.");
+                } else {
+                    d[l] = (f, ...n) => (r.add(f), u().then(() => d[l](f, ...n)));
+                }
+            })({
+                key: "AIzaSyDXpCA1xreGBjOLp0m2vIyMpihaSgIzZXI",
+                v: "3.65"
+            });
+
+            (async () => {
+                try {
+                    if (!google?.maps?.importLibrary) return;
+
+                    if (!window.OpenCities.__mapsLibsPromise) {
+                        window.OpenCities.__mapsLibsPromise = Promise.all([
+                            google.maps.importLibrary('maps'),
+                            google.maps.importLibrary('places'),
+                            google.maps.importLibrary('geocoding'),
+                            google.maps.importLibrary('marker'),
+                            google.maps.importLibrary('geometry')
+                        ]);
+                    }
+                    await window.OpenCities.__mapsLibsPromise;
+
+                    if (window.OpenCities?.GoogleMapsLoader) {
+                        window.OpenCities.GoogleMapsLoader._fire();
+                    }
+                } catch (err) {
+                    console.error('Google Maps failed to initialise', err);
+                }
+            })();
+        </script>
+    
+    <script src="/files/templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/166/modernizr.custom.710f3bf.js?seamlessts=639263244363646542" defer></script>
+    
+    <!--// End Framework Section -->
+    <!-- OpenCities Section -->
+    <script>
+        var OpenCities = OpenCities || {};
+        OpenCities.Paths = {
+            SiteTemplate: '/files/templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/166/',
+            ThemePath: '/files/templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/166/'
+        };
+    </script>
+    <script src='/ocapi/d27af10e-529e-4047-8ed6-4c9235ef5441/en-US/websitesettings.js'></script>
+    <script src="/files/templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/166/oc_head.js?applied=20230123033846"></script>
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<link href="/files/oc-templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/166/oc_grid.css~oc_style.css~oc_wizard_style.css~oc_main.css~oc_forms.css~oc_wizard.css~oc_wizard_menu.css~oc_main_s1.css~oc_wizard_s1.css~oc_wizard_menu_s1.css~oc_grid_s1.css~OcScriptCombine_Minify0?uniqueid=20230123033846" rel="stylesheet" type="text/css">
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<link href="/files/oc-templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/166/client_style.css~client.css~client_menu.css~client_s1.css~client_menu_s1.css~client_forms.css~OcScriptCombine_Minify0?uniqueid=20230123033846" rel="stylesheet" type="text/css">
+    <script>
+(function (BackgroundSettings, $, undefined) {
+    BackgroundSettings.initialise = function () {
+        this.Application = {"CSSSelector":".content-outer-container","EnableFade":true,"MediaType":"image"};
+    };
+} (OpenCities.BackgroundSettings = OpenCities.BackgroundSettings || {}, jQuery));
+OpenCities.BackgroundSettings.initialise();
+</script>
+    
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<link href="/files/oc-templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/166/oc_print.css~client_print.css~OcScriptCombine_Minify0?uniqueid=20230123033846" rel="stylesheet" type="text/css" media="print">
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<script src="/files/oc-templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/166/external_plugins.js~oc_form_helper.js~oc_main.js~plugins.js~oc_main_init.js~OcScriptCombine_Minify0?uniqueid=20230123033846" defer="true"></script>
+    
+    
+
+                                <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="DYTCK-JM9C8-ED4EP-C3GGK-Z575H",function(){function e(){if(!r){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.appendChild(e),r=!0}}function t(e){r=!0;var n,t,a,i,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",i=(a.frameElement||a).style,i.width=0,i.height=0,i.border=0,i.display="none",o.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void 0;",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=14,window.BOOMR.url=n+"DYTCK-JM9C8-ED4EP-C3GGK-Z575H";var i=document.currentScript||document.getElementsByTagName("script")[0],o=i.parentNode,r=!1,d=document.createElement("link");if(d.relList&&"function"==typeof d.relList.supports&&d.relList.supports("preload")&&"as"in d)window.BOOMR.snippetMethod="p",d.href=window.BOOMR.url,d.rel="preload",d.as="script",d.addEventListener("load",e),d.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!r)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.appendChild(d);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="iqd2coaxei7ko2xekrea-f-9dd8c91fe-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"41","ak.cp":"1700510","ak.ai":parseInt("1075935",10),"ak.ol":"0","ak.cr":14,"ak.ipv":4,"ak.proto":"h2","ak.rid":"1e676bfb","ak.r":53846,"ak.a2":n,"ak.m":"dscb","ak.n":"essl","ak.cport":56548,"ak.gh":"23.15.245.181","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"","ak.t":"1793348680","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==SmnceWrE6KMZjHVcw/GQPDz/bG2aTWlx88D8kQGeEvw9banbE0/jFb6ntiydxFb0D2A6dxVLBZToe+1uCf9bdE6m+EpoTOmF3gWAIgmTydbiYN1AAkqvBy0g8wDpqZFiw+xzD4Sj6Jrsj8CTJ1pFCcOF7+AQRHAkaWo9F4OU3spaUZr0VQTXypPbcgWyFWMW+J6kAzHYw4T+B/ufuA/566otcyBUcgjce8pM6GDo3i3AUfNxe5WtDaSbEwaYUycPW8fX/K3R9LLlla0Ht1ByrFpwL1ZCFCOddXtXKOYIbj2J/qi9X08dqTAuRs0aMUTyzIQfwYUbrXQSr6xC5YkFpgx7SOUuTqZTaGFT0n9A+ILfOkhw7Bs4i5Fdb4IH3GD7AB7TTiEjmI8FPfmtdcSZQ1eXvYPurr0PuJC/0OQTyCA=","ak.pv":"359","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body class="body layout-modern side-menu side-menu-left site-search-always-visble header-full-width content-type-oc-general content-template-oc-full-width group-template-oc-full-width-with-default-header page-name-elections page-sequence-4 page-depth-4 page-section-20 website-type-primary device-desktop " id="body-top">
+    <div id="skip-to-content-container">
+        <a href="#main-content" class="visuallyhidden focusable" id="skip-to-content-link">Skip to main content</a>
+    </div>
+    <script>
+        // OCNOW-11988 (Cursor): Proactively focus skip link when returning from browser chrome.
+        // Must run inline (not deferred oc_main.js) so focus is intercepted before NVDA speaks footer.
+        (function () {
+            var awaitingReentry = false;
+            var inertSupported = 'inert' in HTMLElement.prototype;
+
+            function isExplicitlyOutsideDocument(node) {
+                return node != null && !document.documentElement.contains(node);
+            }
+
+            function getSkipContainer() {
+                return document.getElementById('skip-to-content-container');
+            }
+
+            function getSkipLink() {
+                return document.getElementById('skip-to-content-link');
+            }
+
+            function applyGuard() {
+                awaitingReentry = true;
+                if (!inertSupported) {
+                    return;
+                }
+                var skipContainer = getSkipContainer();
+                var children = document.body.children;
+                for (var i = 0; i < children.length; i++) {
+                    if (children[i] !== skipContainer) {
+                        children[i].setAttribute('inert', '');
+                    }
+                }
+            }
+
+            function clearGuard() {
+                awaitingReentry = false;
+                if (!inertSupported) {
+                    return;
+                }
+                var children = document.body.children;
+                for (var i = 0; i < children.length; i++) {
+                    children[i].removeAttribute('inert');
+                }
+            }
+
+            function isSkipLinkElement(target) {
+                if (!target) {
+                    return false;
+                }
+                var skipContainer = getSkipContainer();
+                return target.id === 'skip-to-content-link' ||
+                    (skipContainer && skipContainer.contains(target));
+            }
+
+            function focusSkipLink() {
+                var skipLink = getSkipLink();
+                if (!skipLink) {
+                    return;
+                }
+                if (window.scrollY > 0) {
+                    window.scrollTo(0, 0);
+                }
+                skipLink.focus({ preventScroll: true });
+            }
+
+            function scheduleGuardIfDocumentLostFocus() {
+                window.setTimeout(function () {
+                    if (!document.hasFocus()) {
+                        applyGuard();
+                    }
+                }, 0);
+            }
+
+            document.addEventListener('focusout', function (e) {
+                if (isExplicitlyOutsideDocument(e.relatedTarget)) {
+                    applyGuard();
+                }
+            }, true);
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Tab') {
+                    scheduleGuardIfDocumentLostFocus();
+                } else if (e.key === 'F6' || (e.key === 'l' && e.ctrlKey)) {
+                    scheduleGuardIfDocumentLostFocus();
+                }
+            }, true);
+
+            window.addEventListener('focus', function () {
+                if (!awaitingReentry) {
+                    return;
+                }
+                applyGuard();
+                focusSkipLink();
+            }, true);
+
+            document.addEventListener('focusin', function (e) {
+                var reentryFromChrome = awaitingReentry || isExplicitlyOutsideDocument(e.relatedTarget);
+                if (!reentryFromChrome) {
+                    return;
+                }
+                if (isSkipLinkElement(e.target)) {
+                    clearGuard();
+                    return;
+                }
+                applyGuard();
+                focusSkipLink();
+                clearGuard();
+            }, true);
+        })();
+    </script>
+    <form name="mainForm" method="post" action="/Government/Departments/City-Clerks-Office/Elections" id="mainForm">
+<input type="hidden" name="ctl04_seamless_script_manager_TSM" id="ctl04_seamless_script_manager_TSM" value="" />
+<input type="hidden" name="__SEAMLESSVIEWSTATE" id="__SEAMLESSVIEWSTATE" value="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" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="" />
+
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl04_seamless_script_manager_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-GB%3add3ac3d5-1e29-4112-8fed-529caffa8f24%3aea597d4b%3bOpenCities.CustomControls%3aen-GB%3a7197b077-b068-4a69-9481-a6cf2e7718f9%3a8e1d32bf" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=EYVjNsQ7oYmzBqCI0dkEyYe0LYmPcVFL4WPcQCXhKfQwUqkAT7lLra0za-OLMuUUcCyPINdTVMHIWti96-8R_oN-trjXUUZnJRzckxTjid4ecctwwEJyNI-05jZYvXHBRiEKL0MUQMEyEJ2FXanyE1uBk88RxZ1wVK6AUn9D4v8rW-LNx2OOtB8vE3hC8P0jk4XZt7GAPiCeYQolxUlwFZA8cuOfgd4u08OASxFdh8mChz3A0YHhuwRrXGVlulfs9SJVkAvulhjdHYIIp1SRohDxt9acTwxUQrOlxuxC847b00zOOWg9SlpwD_iBuQQ1rOK9WH9O_wN9c2TXm4GeXaQHHT4yQ9IlzZXw6th8ch3f-k_n1yYeeurDMbwChXW1Vh_7rpu00kgmegsg9w2J3ququXIPfy2Gq8IscVTmtwouupfmUzAOicU_yESgQ-dG0" type="text/javascript"></script>
+    
+<script type="text/javascript">
+    try{
+        function SeamlessEndRequestHandler(sender, args) {
+            try {
+                var dataItems = args.get_dataItems();
+                if(dataItems.ctl04_seamless_script_manager)
+                    document.getElementById('__SEAMLESSVIEWSTATE').value = dataItems.ctl04_seamless_script_manager;
+            }
+            catch (e) { }
+        }
+
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(SeamlessEndRequestHandler);
+    }
+    catch (e) { }
+</script>
+
+    <div class="unsupported-browser-warning js-element"></div>
+    
+    <div hidden>
+        <span id="new-window-0">opens in new tab or window </span>
+    </div>
+    <div class="overlay-container"></div>
+    
+    <div class="background-container">
+        <div class="page-container">
+            <!-- OC Layout Element GROUP TEMPLATE -->
+            <!--groupTemplateStart--><header><div class="print-header-outer-container print-element">
+<img src="/files/templates/00000000-0000-0000-0000-000000000000/b45888fd-1cc7-486a-8e3c-c12bdaf63c3e/v/165/print-header.png" alt="City of South Gate - Logo" />
+</div>
+            <div class="toolbar-outer-container">
+  <div class="toolbar-inner-container clearfix">
+    <div class="toolbar-item toolbar-language notranslate toolbar-display-dropdown"><div class="no-js-element">
+		  <ul>
+		    <li id="toolbar-language-option-en-us-noscript"><a href="https://www.cityofsouthgate.org/Government/Departments/City-Clerks-Office/Elections?oc_lang=en-US" class="lang-item lang-en-us" data-translate-to="en-us" lang="en-US">English (United States)<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li id="toolbar-language-option-es-noscript"><a href="https://www.cityofsouthgate.org/Government/Departments/City-Clerks-Office/Elections?oc_lang=es" class="lang-item lang-es" data-translate-to="es" lang="en">Spanish<span class="visuallyhidden"> Select this as your preferred language</span></a></li>
+          </ul>
+		</div>
+	<button type="button" role="combobox" aria-controls="toolbar-language-drop-down" aria-expanded="false" aria-haspopup="listbox" aria-autocomplete="none" aria-labelledby="toolbar-language-label" class="toolbar-button toolbar-button-language js-element">  
+        <span class="toolbar-language-globe-icon" aria-hidden="true"></span>
+        <span id="toolbar-language-label" class="current-language">
+            Select a language to translate to
+		</span>
+		<i aria-hidden="true"></i>
+	</button>
+	<div id="toolbar-language-drop-down" role="listbox" aria-label="Available languages" class="toolbar-drop-down toolbar-language-drop-down js-element clearfix">
+		<ul role="group">
+		    <li role="presentation"><a id="toolbar-language-option-en-us" role="option" aria-selected="true" href="https://www.cityofsouthgate.org/Government/Departments/City-Clerks-Office/Elections?oc_lang=en-US" class="lang-item lang-en-us" data-translate-to="en-us" lang="en-US">English (United States)<span class="visuallyhidden"> Select this as your preferred language</span></a></li><li role="presentation"><a id="toolbar-language-option-es" role="option" aria-selected="false" href="https://www.cityofsouthgate.org/Government/Departments/City-Clerks-Office/Elections?oc_lang=es" class="lang-item lang-es" data-translate-to="es" lang="en">Spanish<span class="visuallyhidden"> Select this as your preferred language</span></a></li>
+        </ul>
+	</div></div>
+  </div>
+</div>
+            <div class="header-outer-container clearfix">
+<div class="side-menu-btn js-element">
+		<button type="button" aria-expanded="false" aria-controls="nav"><i aria-hidden="true"></i><span class="side-menu-btn-text">Menu</span></button>
+		</div>
+ 	<div class="header-container header-layout-1 clearfix">
+		
+			<div class="header-site-logo">
+				<a href="https://www.cityofsouthgate.org/Home" lang="en-US" aria-label="City of South Gate - Home - Logo">
+				</a>
+			</div>
+		    <div class="mobile-search-btn js-element">
+		        <button><i aria-hidden="true"></i><span class="mobile-search-btn-text"><span class="visuallyhidden">Open </span>Search</span></button>
+		    </div>
+			<div class="header-search-control-container" id="header-search">
+				<div class="search-inner-container">
+					<div class="sc-search-panel">
+	<label for="ctl07_txtSearch" id="ctl07_lblSearch" class="sc-search-label">Search</label><input name="ctl07$txtSearch" type="text" id="ctl07_txtSearch" class="sc-search-text" placeholder="Search for a service or a page" /><input type="submit" name="ctl07$btnSearch" value="Search" id="ctl07_btnSearch" class="sc-search-button" />
+</div>
+					<div role="status" id="predictiveResults"></div>
+				</div>
+			</div>
+	</div>
+</div>
+<div class="navigation-outer-container">
+	<div id="nav" role="navigation" class="navigation-container" data-menu-type="offscreen" data-offscreen-position="left" aria-label="primary">
+		<div class="grid">
+			<div class="col-xs-12">              
+                <ul class="sf-menu" id="sc-main-menu"><li class="nav-section-quarters-1   first-item nav-item-seq-1">
+<a href="https://www.cityofsouthgate.org/Events-directory" class="nav-level-1 "  target="">
+	<i class="item-icon" aria-hidden="true"></i><span class="item-text">Events listing</span>
+</a>
+</li>
+          
+            <li class="nav-section-quarters-1 nav-active-path  nav-item-seq-2">
+<a href="https://www.cityofsouthgate.org/Government" class="nav-level-1 nav-has-children"  target="">Government</a>
+<button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow" aria-controls="sc-menu-second-level-nav-item-seq-2">
+              <i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-second-level-nav-item-seq-2">
+
+          
+            <li class=" "><a  href="https://www.cityofsouthgate.org/Government/Agendas-Minutes" class=""  target="_self">Agendas & Minutes</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/Government/Budgets-Financial-Transparency" class=""  target="_blank">Budgets & Financial Transparency</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/Government/City-Council" class="nav-has-children"  target="">City Council</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-2-nav-item-seq-3"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-2-nav-item-seq-3">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/Government/City-Council/Resolutions-by-Council"  target="">Resolutions by Council</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/City-Council/Meet-the-City-Council"  target="">Meet the City Council</a></li></ul></li><li class="nav-active-path "><a  href="https://www.cityofsouthgate.org/Government/Departments" class="nav-has-children"  target="">Departments</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-2-nav-item-seq-4"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-2-nav-item-seq-4">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/Government/Departments/Administrative-Services"  target="">Administrative Services</a></li><li  class="nav-active-path "><a href="https://www.cityofsouthgate.org/Government/Departments/City-Clerks-Office"  target="">City Clerk’s Office</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/Departments/City-Manager"  target="">City Manager</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/Departments/City-Treasurer"  target="">City Treasurer</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/Departments/Community-Development"  target="">Community Development</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/Departments/Human-Resources"  target="">Human Resources</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/Departments/Parks-and-Recreation"  target="">Parks & Recreation</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/Departments/Police"  target="_self">South Gate Police Department</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/Departments/Public-Works"  target="">Public Works</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/Government/How-Do-I" class="nav-has-children"  target="">How Do I</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-2-nav-item-seq-5"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-2-nav-item-seq-5">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/Government/How-Do-I/Apply-For"  target="">Apply For</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/How-Do-I/Contact"  target="">Contact</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/How-Do-I/View"  target="">View</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/How-Do-I/Reserve"  target="">Reserve</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/How-Do-I/Request"  target="">Request</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/How-Do-I/Report"  target="">Report</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Government/How-Do-I/Register"  target="">Register</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/Government/Municipal-Code" class=""  target="_blank">Municipal Code</a></li></ul></li>
+          
+            <li class="nav-section-quarters-2   nav-item-seq-3">
+<a href="https://www.cityofsouthgate.org/Business" class="nav-level-1 nav-has-children"  target="">Business</a>
+<button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow" aria-controls="sc-menu-second-level-nav-item-seq-3">
+              <i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-second-level-nav-item-seq-3">
+
+          
+            <li class=" "><a  href="https://www.cityofsouthgate.org/Business/Your-Business" class="nav-has-children"  target="">Your Business</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-3-nav-item-seq-1"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-3-nav-item-seq-1">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/Business/Your-Business/Permits-Licenses"  target="">Permits & Licenses</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Business/Your-Business/Business-Resources"  target="">Business Resources</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Business/Your-Business/Resources"  target="">Resources</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Business/Your-Business/Starting-a-Business"  target="">Starting Your Business</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/Business/Doing-Business-with-South-Gate" class="nav-has-children"  target="">Doing Business with South Gate</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-3-nav-item-seq-2"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-3-nav-item-seq-2">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/Business/Doing-Business-with-South-Gate/Bids-RFPs"  target="">Bids & RFPs</a></li></ul></li></ul></li>
+          
+            <li class="nav-section-quarters-2   nav-item-seq-4">
+<a href="https://www.cityofsouthgate.org/City-Services" class="nav-level-1 nav-has-children"  target="">City Services</a>
+<button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow" aria-controls="sc-menu-second-level-nav-item-seq-4">
+              <i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-second-level-nav-item-seq-4">
+
+          
+            <li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Fire-Stations" class=""  target="_self">Fire Stations</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Housing-Authority" class=""  target="_self">Housing Authority</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Housing-Assistance" class="nav-has-children"  target="">Housing Assistance</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-4-nav-item-seq-3"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-4-nav-item-seq-3">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Housing-Assistance/Fair-Housing"  target="">Fair Housing</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Parks-Recreation" class=""  target="_self">Parks & Recreation</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Pay-Online" class="nav-has-children"  target="">Pay Online</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-4-nav-item-seq-5"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-4-nav-item-seq-5">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Pay-Online/Parking-Ticket"  target="_self">Parking Ticket</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Pay-Online/Utility-Bill"  target="_self">Utility Bill</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Police-Services" class=""  target="_self">Police Services</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Public-Safety" class="nav-has-children"  target="">Public Safety</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-4-nav-item-seq-7"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-4-nav-item-seq-7">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Public-Safety/Fire-Stations"  target="">Fire Stations</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Public-Safety/Emergency-Preparedness"  target="">Emergency Preparedness</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Regional-Services" class="nav-has-children"  target="">Regional Services</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-4-nav-item-seq-8"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-4-nav-item-seq-8">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Regional-Services/Hub-Cities-Consortium"  target="_blank">Hub Cities Consortium</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Regional-Services/SEAACA"  target="_self">SEAACA</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Regional-Services/Southern-California-Edison"  target="_self">Southern California Edison</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Regional-Services/Southern-California-Gas-Company"  target="_self">Southern California Gas Company</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Regional-Services/Vector-Control"  target="_blank">Vector Control</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Regional-Services/Universal-Waste-Systems"  target="_self">Universal Waste Systems</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Resources-Support" class="nav-has-children"  target="">Resources & Support</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-4-nav-item-seq-9"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-4-nav-item-seq-9">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Resources-Support/Mental-Health-Resources"  target="">Mental Health Resources</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Resources-Support/Food-Bank-Resources"  target="">Food Bank Resources</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/City-Fees" class=""  target="">City Fees</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Transportation" class="nav-has-children"  target="">Transportation</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-4-nav-item-seq-11"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-4-nav-item-seq-11">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Transportation/GATE-Buses"  target="">GATE Buses</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Transportation/Metro-Services"  target="">Metro Services</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/City-Services/Transportation/Phone-A-Ride"  target="">Phone A Ride</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Utilities" class=""  target="_self">Utilities</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/City-Services/Water-Conservation-Program" class=""  target="_self">Water Conservation Program</a></li></ul></li>
+          
+            <li class="nav-section-quarters-3   nav-item-seq-5">
+<a href="https://www.cityofsouthgate.org/Engage-South-Gate" class="nav-level-1 nav-has-children"  target="">Engage South Gate</a>
+<button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow" aria-controls="sc-menu-second-level-nav-item-seq-5">
+              <i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-second-level-nav-item-seq-5">
+
+          
+            <li class=" "><a  href="https://www.cityofsouthgate.org/Engage-South-Gate/About-Our-City" class="nav-has-children"  target="">About Our City</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-5-nav-item-seq-1"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-5-nav-item-seq-1">
+          
+            <li  class=" "><a href="https://www.cityofsouthgate.org/Engage-South-Gate/About-Our-City/City-Stats"  target="">City Stats</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Engage-South-Gate/About-Our-City/Did-You-Know"  target="">Did You Know?</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Engage-South-Gate/About-Our-City/History"  target="">History of South Gate</a></li><li  class=" "><a href="https://www.cityofsouthgate.org/Engage-South-Gate/About-Our-City/Elected-Representatives"  target="">Elected Representatives</a></li></ul></li><li class=" "><a  href="https://www.cityofsouthgate.org/Engage-South-Gate/Go-South-Gate-App" class=""  target="">Go South Gate App</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/Engage-South-Gate/Community-Questions" class=""  target="">Community Questions</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/Engage-South-Gate/E-Newsletter" class=""  target="">E-Newsletter</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/Engage-South-Gate/Social-Media" class=""  target="">Social Media</a></li></ul></li>
+          
+            <li class="nav-section-quarters-3   nav-item-seq-6">
+<a href="https://www.cityofsouthgate.org/Things-To-Do" class="nav-level-1 nav-has-children"  target="">Things To Do</a>
+<button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow" aria-controls="sc-menu-second-level-nav-item-seq-6">
+              <i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-second-level-nav-item-seq-6">
+
+          
+            <li class=" "><a  href="https://www.cityofsouthgate.org/Things-To-Do/Library" class=""  target="">Library</a></li><li class=" "><a  href="https://www.cityofsouthgate.org/Things-To-Do/Parks-Facilities-Enjoy-the-Outdoors" class=""  target="">Parks & Facilities: Enjoy the Outdoors</a></li></ul></li>
+          
+            </ul>
+			</div>
+		</div>
+	</div>
+</div>
+            </header>
+            <div class="content-outer-container">
+                <div id="main" role="main" class="main-outer-container clearfix">
+                        
+                        <div class="content-main-container">
+                            <div class="grid">
+					            <div class="col-xs-12">
+						            <nav id="breadcrumbs-container" aria-label="You Are Here :">
+							            <span role="list">
+<span role="listitem">
+	<a href="https://www.cityofsouthgate.org/Home"  lang="en-US">Home</a>
+	<span class="nav-separator" aria-hidden="true" role="presentation">/</span>
+</span>
+          <span role="listitem"><a href="https://www.cityofsouthgate.org/Government" >Government</a><span class='nav-separator' aria-hidden="true" role="presentation">/</span></span><span role="listitem">
+	<a href="https://www.cityofsouthgate.org/Government/Departments" >
+		Departments
+	</a>
+	<span class='nav-separator' aria-hidden="true" role="presentation">/</span>
+</span>
+<span role="listitem">
+	<a href="https://www.cityofsouthgate.org/Government/Departments/City-Clerks-Office" >
+		City Clerk’s Office
+	</a>
+	<span class='nav-separator' aria-hidden="true" role="presentation">/</span>
+</span>
+<span class="current-page" role="listitem" aria-current="page" >Elections</span>
+          
+          </span>
+						            </nav>
+					            </div>
+                      
+					            <div class="col-xs-12">
+						            <div class="main-inner-container">
+							            <div id="main-content" class="main-container clearfix">
+							              
+                            <!-- OC Layout Element Conent Template -->
+							              <!--normalTemplateStart--><div class="grid">
+    <div class="col-xs-12 col-m-8">
+        <h1 class='oc-page-title '>Elections</h1>
+        
+      
+        
+        <div>
+<h3><strong>City of South Gate&nbsp;Municipal Election: November 3, 2026&nbsp;</strong></h3>
+</div>
+<div>
+<p>The election will be held for the following offices:</p>
+<ul type="disc" data-start="249" data-end="316">
+<li>Two (2) Members of the City Council</li>
+<li>City Clerk</li>
+<li>City Treasurer&nbsp;</li>
+</ul>
+<p><a href="/files/sharedassets/public/v/1/government/departments/city-clerks-office/elections/documents/resolution-no.-2026-30-cc-calling-for-november-3-election.pdf" class="document ext-pdf"><i aria-hidden="true"></i>Resolution No. 2026-30-CC<span class="file-info">(PDF,&nbsp;506KB)</span></a></p>
+<p><a title="Notice of Election 11.3.2026.pdf" href="/files/sharedassets/public/v/1/government/departments/city-clerks-office/elections/documents/notice-of-election-november_3_2026.pdf" target="_self" class="document ext-pdf"><i aria-hidden="true"></i>Notice of Election-11.3.2026<span class="file-info">(PDF,&nbsp;558KB)</span></a></p>
+<p><a title="LA County Calendar of Events.pdf" href="/files/sharedassets/public/v/1/government/departments/city-clerks-office/elections/documents/la-county-calendar-of-events.pdf" target="_self" class="document ext-pdf"><i aria-hidden="true"></i>LA County Calendar of Events<span class="file-info">(PDF,&nbsp;311KB)</span></a></p>
+</div>
+<p><a title="List of Qualified Candidates- Nov 3 2026 General Election.pdf" href="/files/sharedassets/public/v/2/government/departments/city-clerks-office/elections/documents/list-of-qualified-candidates-nov-3-2026-general-election-2.pdf" target="_self" class="document ext-pdf"><i aria-hidden="true"></i>List of Qualified Candidates-Nov 3, 2026 General Election<span class="file-info">(PDF,&nbsp;277KB)</span></a></p>
+<p>&nbsp;</p>
+<div>
+<p>Certified candidates are encouraged to review FPPC Campaign Rules, election manuals, and campaign forms:</p>
+<span style="font-size: 100%;"><a href="https://fppc.ca.gov/learn/campaign-rules.html">Campaign Rules</a></span></div>
+<div><a href="https://www.fppc.ca.gov/forms/all-fppc-manuals.html">FPPC (Fair Political Practices Commission) Manuals</a>
+<div><a href="https://www.fppc.ca.gov/forms/" target="_blank">Campaign Forms</a></div>
+<div><a href="https://www.fppc.ca.gov/learn/campaign-rules/candidate-toolkit-getting-started.html" target="_blank">Candidate Toolkit</a></div>
+<div>&nbsp;</div>
+<div>For more information, contact City Clerk Yodit Glaze at (323) 563-9511 or yglaze@sogate.org</div>
+<p>&nbsp;</p>
+<h3>Vote Center Locations</h3>
+<p><strong>Leland R Weaver Library</strong>: 4035 Tweedy Blvd</p>
+<p><strong>Montara Ave Elementary School</strong>: 10018 Montara Ave&nbsp;</p>
+<p><strong>Primera Iglesia Bautista El Pelegrino</strong>: 2702 Glenwood Pl</p>
+<p><strong>Salon South Gate - Hall</strong>: 3424 Ardmore Ave&nbsp;</p>
+<p><strong>South Gate Middle School - Auditorium</strong>: 4100 Firestone Blvd&nbsp;</p>
+<p><strong>South Gate Park Sports Center</strong>: 9520 Hildreth Ave&nbsp;</p>
+<h3>Ballot Drop Boxes&nbsp;</h3>
+<p><strong>Azalea City Park</strong>: 2541 Southern Ave&nbsp;</p>
+<p><strong>Hollydale Community Park</strong>: 12221 Industrial Ave&nbsp;</p>
+<p><strong>Leland R Weaver Library</strong>: 4035 Tweedy Blvd&nbsp;</p>
+<p><strong>South Gate Civic Center</strong>: 8680 California Blvd&nbsp;</p>
+<p>For more information, please visit: LAVOTE.GOV</p>
+<h3>Ballot Tax Measure</h3>
+<p><a title="Resolution No. 2026-35-CC.pdf" href="/files/sharedassets/public/v/1/government/departments/city-clerks-office/elections/documents/resolution-no.-2026-35-cc.pdf" target="_self" class="document ext-pdf"><i aria-hidden="true"></i>Resolution-No.-2026-35-CC.pdf<span class="file-info">(PDF,&nbsp;593KB)</span></a></p>
+<p><a title="Notice to Voters of Date after which no Arguments.pdf" href="/files/sharedassets/public/v/1/government/departments/city-clerks-office/elections/documents/notice-to-voters-of-date-after-which-no-arguments.pdf" target="_self" class="document ext-pdf"><i aria-hidden="true"></i>Notice-to-Voters-of-Date-after-which-no-Arguments.pdf<span class="file-info">(PDF,&nbsp;274KB)</span></a></p>
+<div><a href="https://www.lavote.gov/home/voting-elections/candidate-measure-information/measure-information/argument-rebuttal-information?utm_source=chatgpt.com">Ballot Label/Argument and Rebuttal Information</a></div>
+<ul type="disc">
+<li>Friday, August 14, 2026 &ndash; Arguments for and against the measure are due (maximum 300 words each).</li>
+<li>Friday, August 14, 2026 &ndash; Recommended last day for the City Attorney's impartial analysis (maximum 500 words).</li>
+<li>Saturday, August 15, 2026, through Monday, August 24, 2026 &ndash; Public examination period for the measure text, arguments, and impartial analysis.</li>
+<li>Monday, August 24, 2026 &ndash; Rebuttal arguments for and against are due (maximum 250 words each).</li>
+<li>Tuesday, August 25, 2026, through Thursday, September 3, 2026 &ndash; Public examination period for rebuttal arguments.</li>
+</ul>
+<p>&nbsp;</p>
+<div data-type="0" data-title-level="2" class="oc-wysiwyg-container">
+<div class="oc-wysiwyg-container-panel">
+<h2>Campaign Finance Disclosure Forms</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p><strong>FPPC Form 460 - 496 - 497 - 461 - 465 transactions</strong></p>
+<p><a href="https://netfile.com/public/SGC/campaign">Public Portal - City of South Gate</a></p>
+<p>Forms can be requested with the City Clerk's Office via email CityClerk@sogate.org or by phone (323) 563-9511.</p>
+</div>
+</div>
+</div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<p><div data-type="0" data-title-level="2" class="oc-wysiwyg-container">
+<div class="oc-wysiwyg-container-panel">
+<h2>FAQs</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<h3>When are elections held in South Gate?</h3>
+<p><span style="font-size: 1em; font-family: inherit; color: inherit;">Elections are held in odd-numbered years and in accordance with established city ordinances. Elections are held in staggered terms, meaning that every 2 years in the odd-numbered years, there are either 2 seats for City Council, 1 seat for City Treasurer, and 1 seat for City Clerk; or 3 seats for City Council up for reelection.</span></p>
+<h3><strong>How do I register to vote?</strong></h3>
+<p>Registration forms are available at the City Clerk&rsquo;s Office in City Hall (8650 California Avenue). Your local post office and the Los Angeles County Registrar Recorder (12400 E Imperial Highway, Norwalk) also have the forms available. Voter registration is processed by the California Secretary of State's Office.</p>
+<p><a href="https://www.lavote.gov/home/voting-elections/voter-registration/register-to-vote/register" target="_blank" class="styled-button-calltoaction">Register to Vote</a></p>
+<h3><strong>How do I find my polling place during an election?</strong></h3>
+<p>Find your polling place by calling the City Clerk's Office at <a href="tel:3235639573">323-563-9573</a>, or online.</p>
+<p><a href="http://www.lavote.net/" target="_blank" class="styled-button-calltoaction">Find Your Polling Place</a></p>
+<h3><strong>What is the deadline to register to vote?</strong></h3>
+<p>In California the deadline to register to vote for any election is 15 days before Election Day.</p>
+<h3>What is a provisional ballot?</h3>
+<p>While provisional voting may be relatively new in some areas of the country, California's provisional voting statutes have been in effect since 1984. First, provisional voting ensures that no properly registered voter is denied their right to cast a ballot if that voter's name is not on the polling place roster due to a clerical, processing, computer, or other error. Second, provisional voting allows elections officials to ensure that no voter votes twice, either intentionally or inadvertently, in a given election.&nbsp;</p>
+<h3>What if I want to work at the polls? How do I apply?</h3>
+<p>Election Workers play an essential role in elections and in our democracy. They are trusted community members who assist the in-person voting experience throughout Los Angeles County.</p>
+<p>Interested in serving your community? Apply to be an Election Worker today.</p>
+<p><a title="Application-Poll-Workers_201412021317411606.pdf" href="https://www.lavote.gov/home/voting-elections/pollworker-information/become-an-election-worker/community-election-workers" target="_blank">Poll Worker Application</a></p>
+<h3>Where can I see a precinct map for the City of South Gate?</h3>
+<p>City of South Gate precinct maps can be viewed at the City Clerk&rsquo;s Office:</p>
+<p>8650 California Avenue<br />
+South Gate, CA 90280</p>
+<p>Please call <a href="tel:3235639573">323-563-9573</a> for more information.</p>
+</div>
+</div>
+</div>
+
+</p>
+<p>&nbsp;</p>
+
+
+      
+        
+    </div>
+    
+        <div class="col-xs-12 col-m-4">
+            <div class="side-box consultation-snapshot">
+		
+			<h2 class="side-box-title">
+				Contact Us
+			</h2>
+		
+		
+		<div class="side-box-content">
+			<div class="side-box-section body-content">
+				<p><p><strong>City Clerk's Office</strong></p>
+<p>8650 California Avenue<br />
+South Gate, CA 90280</p>
+<p>Phone: <a href="tel:3235639573">323-563-9573</a><br />
+Fax: 323-563-5411</p>
+<p>&nbsp;</p>
+<p><strong>Hours</strong></p>
+<p><a href="/37749dcc-c0af-4b64-8ad3-5e3b06ca5e6d">Except Holidays</a><br />
+<strong>Monday - Thursday</strong><br />
+7 a.m. - 5:30 p.m.</p>
+<p><strong>Friday</strong><br />
+Closed</p>
+<p><a href="https://www.cityofsouthgate.org/Government/Departments/City-Clerks-Office#staffdirectory">Staff Directory</a></p>
+
+</p>
+
+
+			</div>
+		</div>
+		
+	</div>
+            
+        </div>
+    
+    
+</div><!--normalTemplateEnd-->
+                            
+                            
+                            
+							            </div>
+						            </div>
+					            </div>
+                        
+                            </div>
+                        </div>
+                        <div class="back-to-top-container text-center">
+                            <a href="#body-top" id="back-to-top"><i aria-hidden="true"></i><span class="js-visuallyhidden">Back to top</span></a>
+                        </div>
+                </div>
+            </div><!--groupTemplateEnd-->
+            <footer>
+                
+                    <div class="footer-outer-container footer-first-row">
+                        <div class="footer-container clearfix">
+                            <div class="grid grid-pad">
+                                <div class="col-xs-12 col-s-6 col-m-4 col-lg-4" >
+	
+			<h2 class="visuallyhidden">Site Footer</h2>
+			<h3 class="footer-title">Contact Us</h3>
+			
+	<p><strong>City of South Gate<br /></strong> 8650 California Ave<br />
+South Gate, CA 90280&nbsp;<br />
+<a href="tel:3235639500" style="font-family: inherit; font-size: 1em;">(323) 563-9500</a></p>
+<p>Monday-Thursday<br />
+7:00am-5:30pm<br />
+(Closed Fridays)</p>
+
+
+	<ul class="footer-links with-icons ">   </ul>
+	
+</div><div class="col-xs-12 col-s-6 col-m-4 col-lg-4" >
+	
+			<h2 class="visuallyhidden">Site Footer</h2>
+			<h3 class="footer-title">Quick Links</h3>
+			
+	<p><span style="white-space: pre-wrap;"><a href="https://www.cityofsouthgate.org/Engage-South-Gate/E-Newsletter">City Newsletter</a></span></p>
+<p><span style="white-space: pre-wrap;"><a href="https://www.cityofsouthgate.org/Engage-South-Gate/Community-Questions">Community Questions</a></span></p>
+<p><span style="white-space: pre-wrap;"><a href="https://cosouthgateca.prelive.opencities.com/City-Services/Pay-Online">Make a payment</a></span><span style="font-size: 1.125em;">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><span style="white-space: pre-wrap;"><a href="https://cosouthgateca.prelive.opencities.com/City-Services/Pay-Online"></a><br /></span></p>
+
+
+	<ul class="footer-links with-icons ">   </ul>
+	<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+</div><div class="col-xs-12 col-s-6 col-m-4 col-lg-4" >
+	
+			<h2 class="visuallyhidden">Site Footer</h2>
+			<h3 class="footer-title">Share &amp; Connect</h3>
+			
+	
+	<ul class="footer-links with-icons social-media-links">  <li class="footer-link-facebook">
+	<a href="https://www.facebook.com/CityofSouthGate" target="_self"  >
+<i aria-hidden="true"></i>Facebook
+</a>
+</li>
+          <li class="footer-link-instagram">
+	<a href="https://www.instagram.com/cityofsouthgateca/" target="_self"  >
+<i aria-hidden="true"></i>Instagram
+</a>
+</li>
+          <li class="footer-link-youtube">
+	<a href="https://www.youtube.com/c/SouthGateCA90280" target="_self"  >
+<i aria-hidden="true"></i>YouTube
+</a>
+</li>
+          <li class="footer-link-linkedin">
+	<a href="https://www.linkedin.com/company/city-of-south-gate" target="_self"  >
+<i aria-hidden="true"></i>LinkedIn
+</a>
+</li>
+          <li class="footer-link-twitter">
+	<a href="https://twitter.com/SouthGateCAgov" target="_self"  >
+<i aria-hidden="true"></i>Twitter
+</a>
+</li>
+           </ul>
+	
+</div>
+                            </div>
+                        </div>
+                    </div>
+                
+                <div class="footer-outer-container footer-second-row">
+                    <div class="footer-container clearfix">
+                        <div class="grid grid-pad footer-secondary-links">
+                            <div class="col-xs-12 col-m-7">
+                                
+                                    
+                                
+                            </div>
+                            <div class="col-xs-12 col-m-5 powered-by">
+                                <div class="right">
+                                    &copy; 2026 City of South Gate&nbsp;|&nbsp;<span class="powered-by">Powered by <a href="https://granicus.com/solution/govaccess/opencities/" target="_blank">Granicus</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="/files/oc-resources/b9015858-988c-48a4-9473-7c193df083e4/JsTextSnippets.js?ocsvclang=en-US" type="text/javascript"></script><script></script>
+    
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4MZEMP020Z"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-4MZEMP020Z');
+</script>
+
+<!-- Begin Constant Contact Active Forms -->
+<script> var _ctct_m = "cb1165eb2e0b1d51c1429c286d702b41"; </script>
+<script id="signupScript" src="//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js" async defer></script>
+<!-- End Constant Contact Active Forms -->
+    
+    
+
+<script type="text/javascript">
+//<![CDATA[
+window.__TsmHiddenField = $get('ctl04_seamless_script_manager_TSM');//]]>
+</script>
+</form>
+</body>
+</html>

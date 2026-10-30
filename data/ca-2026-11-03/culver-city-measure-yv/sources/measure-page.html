@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-US">
+<!--<![endif]-->
+<head>
+	<!-- Published by OpenCities, 1.38.0.1 -->
+
+    
+        
+    
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="theme-color" content="#FFFFFF"/>
+    <title>Upcoming Election Information - City of Culver City</title>
+	<meta name="generator" content="OpenCities - https://granicus.com/product/opencities" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Using mobile-web-app-capable for now to enable full-screen experience on supported platforms -->
+    <!-- Note: This tag works mainly on Android Chrome. It does NOT enable full-screen mode on iOS Safari. -->
+    <!-- For iOS, the correct tag is: <meta name="apple-mobile-web-app-capable" content="yes"> -->
+    <!-- TODO: Monitor for updated meta tag standards from Apple or other browser vendors -->
+    <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="description" content=" November 3, 2026 General Municipal Election Information List of Qualified Candidates and Contact Information Before any candidate raises or spends any money in connection with their campaign, they must first complete and sign the Fair Political Practices..." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Upcoming-Election-Information" />
+    <meta property="og:title" content="Upcoming Election Information" />
+    <meta property="og:description" content=" November 3, 2026 General Municipal Election Information List of Qualified Candidates and Contact Information Before any candidate raises or spends any money in connection with their campaign, they must first complete and sign the Fair Political Practices..." />
+    <meta property="og:image" content="https://www.culvercity.gov/files/assets/public/v/2/images/city-clerk/election-information/birdie.png?w=1200" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Upcoming Election Information" />
+    <meta property="twitter:description" content=" November 3, 2026 General Municipal Election Information List of Qualified Candidates and Contact Information Before any candidate raises or spends any money in connection with their campaign, they must first complete and sign the Fair Political Practices..." />
+    <meta property="twitter:image" content="https://www.culvercity.gov/files/assets/public/v/2/images/city-clerk/election-information/birdie.png?w=1080" />
+    <meta name="data-item-id" content="c6839dc0-ed23-4591-88ef-4f86d21405ed" />
+    <link rel="canonical" href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Upcoming-Election-Information" />
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/files/ocfavicon/Public/apple-touch-icon.png?V=637330177823759392">
+<link rel="icon" type="image/png" sizes="32x32" href="/files/ocfavicon/Public/favicon-32x32.png?V=637330177823759392">
+<link rel="icon" type="image/png" sizes="16x16" href="/files/ocfavicon/Public/favicon-16x16.png?V=637330177823759392">
+<link rel="manifest" href="/files/ocfavicon/Public/site.webmanifest?V=637330177823759392">
+<link rel="shortcut icon" href="/files/ocfavicon/Public/favicon.ico?V=637330177823759392">
+<meta name="msapplication-TileColor" content="#000000">
+<meta name="msapplication-config" content="/files/ocfavicon/Public/browserconfig.xml?V=637330177823759392">
+    <script>
+        (function () {
+            if (window.__UNLOAD_LAZY_PATCH__) return;
+            window.__UNLOAD_LAZY_PATCH__ = true;
+
+            var supportsPageHide = ("onpagehide" in window);
+            var mappedType = supportsPageHide ? "pagehide" : "beforeunload";
+            var nativeAdd = window.addEventListener;
+            var nativeRemove = window.removeEventListener;
+            var unloadMap = null;
+            var patched = false;
+
+            function ensurePatched() {
+                if (patched) return;
+                unloadMap = new WeakMap();
+
+                window.addEventListener = function (type, listener, options) {
+                    if (type === "unload") {
+                        var wrapped = function (evt) {
+                            if (supportsPageHide && evt.persisted) return;
+                            listener.call(this, evt);
+                        };
+                        unloadMap.set(listener, wrapped);
+                        return nativeAdd.call(this, mappedType, wrapped, options);
+                    }
+                    return nativeAdd.call(this, type, listener, options);
+                };
+
+                window.removeEventListener = function (type, listener, options) {
+                    if (type === "unload") {
+                        var wrapped = unloadMap.get(listener);
+                        if (wrapped) {
+                            nativeRemove.call(this, mappedType, wrapped, options);
+                            unloadMap.delete(listener);
+                        }
+                        return;
+                    }
+                    return nativeRemove.call(this, type, listener, options);
+                };
+
+                var orig = null;
+                Object.defineProperty(window, "onunload", {
+                    configurable: true, enumerable: true,
+                    get: function () { return orig; },
+                    set: function (h) {
+                        orig = h;
+                        if (typeof h === "function") window.addEventListener("unload", h);
+                    }
+                });
+                patched = true;
+            }
+
+            window.addEventListener = function (type, listener, options) {
+                if (type === "unload") {
+                    ensurePatched();
+                    return window.addEventListener(type, listener, options);
+                }
+                return nativeAdd.call(this, type, listener, options);
+            };
+
+            window.removeEventListener = function (type, listener, options) {
+                if (type === "unload" && !patched) {
+                    return;
+                }
+                return nativeRemove.call(this, type, listener, options);
+            };
+
+            function patchTelerik() {
+                ensurePatched();
+                var ns = window.RadAjaxNamespace;
+                if (!ns || !ns.EventManager || !ns.EventManager.Add || ns.EventManager.__UnloadPatched) return;
+                var origAdd = ns.EventManager.Add;
+                ns.EventManager.Add = function (el, evtName, handler, clientId) {
+                    if (el === window && evtName === "unload") {
+                        return window.addEventListener("unload", handler);
+                    }
+                    return origAdd.call(this, el, evtName, handler, clientId);
+                };
+                ns.EventManager.__UnloadPatched = true;
+            }
+
+            if (window.RadAjaxNamespace)
+                patchTelerik();
+            else (window.requestIdleCallback || function (cb)
+            {
+                setTimeout(cb, 120);
+            })(patchTelerik);
+        })();
+    </script>
+    <!-- Preconnecting to Google Fonts servers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Defer Roboto font loading to avoid render-blocking -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const robotoLink = document.createElement('link');
+            robotoLink.rel = 'stylesheet';
+            robotoLink.href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap';
+            document.head.appendChild(robotoLink);
+        });
+    </script>
+
+    <style>
+        .gm-style, .gm-style * {
+            font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", Arial, sans-serif !important;
+        }
+    </style>
+
+    <script>
+        document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, "js");
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+        
+            <script type="text/javascript">
+                window.__oc_flags_ImprovedBreakpointEventHandling = true;
+            </script>
+            
+        
+    
+    
+    
+        <script type="text/javascript">
+            var __metaQueryBreakpoints = {
+                'sc-size-4': '(max-width: 480px)',
+                'sc-size-3': '(min-width: 480px) and (max-width: 768px)',
+                'sc-size-2': '(min-width: 768px) and (max-width: 992px)',
+                'sc-size-1': '(min-width: 992px)'
+            }
+
+            var __ocSizePoints = [
+                { min: 0, name: 'sc-size-4' },
+                { min: 480, name: 'sc-size-3' },
+                { min: 768, name: 'sc-size-2' },
+                { min: 992, name: 'sc-size-1' }
+            ];
+
+        </script>
+    
+
+    <!-- Framework Section -->
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/files/templates/00000000-0000-0000-0000-000000000000/befc9f66-d2a5-4a31-a79c-19364d2ae424/v/502/jquery-1.12.4.min.js?seamlessts=639263242021039508" ><\/script>')</script>
+
+    <!--Google Maps API Loader – Improved Version to avoid Warning
+    This script loads the Google Maps JavaScript API using a dynamic and async method.
+    It replaces the old static <script> tag to avoid performance warnings from Google.
+
+    Dynamically creates the <script> tag with loading = async for better performance
+    Builds the API URL with required libraries(places, geometry, marker, geocoding)
+    Uses a Promise and callback(google.maps.__ib__) to confirm when the script is ready
+
+    It Avoids Google’s warning about direct script loading
+    Improves page load speed by loading the API asynchronously-->
+
+    
+        <script>
+            (function (root) {
+                root.OpenCities = root.OpenCities || {};
+                if (!root.OpenCities.GoogleMapsLoader) {
+                    root.OpenCities.GoogleMapsLoader = {
+                        _cbs: [],
+                        _ready: false,
+                        onReady: function (cb) {
+                            if (this._ready) { try { cb(); } catch (e) { console.error(e); } }
+                            else if (typeof cb === 'function') this._cbs.push(cb);
+                        },
+                        _fire: function () {
+                            if (this._ready) return;
+                            this._ready = true;
+                            var q = this._cbs.splice(0);
+                            for (var i = 0; i < q.length; i++) {
+                                try { q[i](); } catch (e) { console.error(e); }
+                            }
+                        }
+                    };
+                }
+            })(window);
+
+            (g => {
+                var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__",
+                    m = document, b = window;
+                b = b[c] || (b[c] = {});
+                var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams,
+                    u = () => h || (h = new Promise(async (resolve, reject) => {
+                        a = m.createElement("script");
+                        e.set("libraries", [...r] + "");
+                        for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
+                        e.set("callback", c + ".maps." + q);
+                        a.src = "https://maps." + c + "apis.com/maps/api/js?" + e.toString();
+                        a.loading = "async";
+                        a.async = true;
+                        a.defer = true;
+                        d[q] = resolve;
+                        a.onerror = () => reject(Error(p + " could not load."));
+                        a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+                        m.head.append(a);
+                    }));
+                if (d[l]) {
+                    console.warn(p + " only loads once. Ignoring duplicate load.");
+                } else {
+                    d[l] = (f, ...n) => (r.add(f), u().then(() => d[l](f, ...n)));
+                }
+            })({
+                key: "AIzaSyByUNIufGy9H2f4v_EE76Q1Zsx3TSjYqRs",
+                v: "3.65"
+            });
+
+            (async () => {
+                try {
+                    if (!google?.maps?.importLibrary) return;
+
+                    if (!window.OpenCities.__mapsLibsPromise) {
+                        window.OpenCities.__mapsLibsPromise = Promise.all([
+                            google.maps.importLibrary('maps'),
+                            google.maps.importLibrary('places'),
+                            google.maps.importLibrary('geocoding'),
+                            google.maps.importLibrary('marker'),
+                            google.maps.importLibrary('geometry')
+                        ]);
+                    }
+                    await window.OpenCities.__mapsLibsPromise;
+
+                    if (window.OpenCities?.GoogleMapsLoader) {
+                        window.OpenCities.GoogleMapsLoader._fire();
+                    }
+                } catch (err) {
+                    console.error('Google Maps failed to initialise', err);
+                }
+            })();
+        </script>
+    
+    <script src="/files/templates/00000000-0000-0000-0000-000000000000/befc9f66-d2a5-4a31-a79c-19364d2ae424/v/502/modernizr.custom.710f3bf.js?seamlessts=639263242021039508" defer></script>
+    
+    <!--// End Framework Section -->
+    <!-- OpenCities Section -->
+    <script>
+        var OpenCities = OpenCities || {};
+        OpenCities.Paths = {
+            SiteTemplate: '/files/templates/00000000-0000-0000-0000-000000000000/befc9f66-d2a5-4a31-a79c-19364d2ae424/v/502/',
+            ThemePath: '/files/templates/00000000-0000-0000-0000-000000000000/befc9f66-d2a5-4a31-a79c-19364d2ae424/v/502/'
+        };
+    </script>
+    <script src='/ocapi/4c6a4da2-813a-4539-ac6d-c49a4ceb9b41/en-US/websitesettings.js'></script>
+    <script src="/files/templates/00000000-0000-0000-0000-000000000000/befc9f66-d2a5-4a31-a79c-19364d2ae424/v/502/oc_head.js?applied=20260610115317"></script>
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<link href="/files/oc-templates/00000000-0000-0000-0000-000000000000/befc9f66-d2a5-4a31-a79c-19364d2ae424/v/502/oc_grid.css~oc_style.css~oc_wizard_style.css~oc_main.css~oc_forms.css~oc_wizard.css~oc_wizard_menu.css~oc_main_s1.css~oc_wizard_s1.css~oc_wizard_menu_s1.css~oc_grid_s1.css~OcScriptCombine_Minify0?uniqueid=20260610115317" rel="stylesheet" type="text/css">
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<link href="/files/oc-templates/00000000-0000-0000-0000-000000000000/befc9f66-d2a5-4a31-a79c-19364d2ae424/v/502/client_style.css~client.css~client_menu.css~client_s1.css~client_menu_s1.css~client_forms.css~OcScriptCombine_Minify0?uniqueid=20260610115317" rel="stylesheet" type="text/css">
+    <script>
+(function (BackgroundSettings, $, undefined) {
+    BackgroundSettings.initialise = function () {
+        this.Application = {"CSSSelector":".background-container","EnableFade":true,"MediaType":"image"};
+    };
+} (OpenCities.BackgroundSettings = OpenCities.BackgroundSettings || {}, jQuery));
+OpenCities.BackgroundSettings.initialise();
+</script>
+    
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<link href="/files/oc-templates/00000000-0000-0000-0000-000000000000/befc9f66-d2a5-4a31-a79c-19364d2ae424/v/502/oc_print.css~client_print.css~OcScriptCombine_Minify0?uniqueid=20260610115317" rel="stylesheet" type="text/css" media="print">
+    <!-- Script Combine. To enter debug mode for this browser session, enter OcScriptCombineDebug=true as a querystring -->
+<script src="/files/oc-templates/00000000-0000-0000-0000-000000000000/befc9f66-d2a5-4a31-a79c-19364d2ae424/v/502/external_plugins.js~oc_form_helper.js~oc_main.js~plugins.js~oc_main_init.js~OcScriptCombine_Minify0?uniqueid=20260610115317" defer="true"></script>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PC4G7JR');</script>
+<!-- End Google Tag Manager -->
+
+<!-- SilkTide Analytics -->
+<script defer src="https://analytics.silktide.com/1415cf7201cadc3cd86426ddfe9b68fd.js"></script>
+<script>
+  (function (s,i,l,k,y) {
+    s[i] = s[i] || y;
+    s[l] = s[l] || [];
+    s[k] = function(e, p) { p = p || {}; p.event = e; s[l].push(p); };
+    s[k]('page_load');
+  })(window, 'stConfig', 'stEvents', 'silktide', {});
+</script>
+<!-- End SilkTide Analytics -->
+<!-- GXIF Code -->
+<script id="kyc-embed" src="https://app.govexperience.org/embed.js"></script>
+<script id="gxif-config" type="text/javascript">
+kyc.init({
+    region: "US",
+    organization: "culvercityca",
+    friendly: "Culver City, CA",
+    delay: 3,
+    type: "sticky_footer",
+    sentimentAreas: [
+        {
+            url: "/City-Hall",
+            topics: [
+                "CommunityPerception",
+                "EconomicProsperity",
+                "EmergencyServices",
+                "EnvironmentalSustainability",
+                "GovernmentManagement",
+                "HousingNeighborhoodsAndBuildings",
+                "ParksAndRecreation",
+                "PublicWorks",
+                "TransportAndMobility"
+            ],
+            type: "sticky_footer"
+        },
+        {
+            url: "/Explore",
+            topics: [
+                "CommunityPerception",
+                "EconomicProsperity",
+                "EmergencyServices",
+                "EnvironmentalSustainability",
+                "GovernmentManagement",
+                "HousingNeighborhoodsAndBuildings",
+                "ParksAndRecreation",
+                "PublicWorks",
+                "TransportAndMobility"
+            ],
+            type: "sticky_footer"
+        },
+        {
+            url: "/Contact-Us",
+            topics: [
+                "CommunityPerception",
+                "EconomicProsperity",
+                "EmergencyServices",
+                "EnvironmentalSustainability",
+                "GovernmentManagement",
+                "HousingNeighborhoodsAndBuildings",
+                "ParksAndRecreation",
+                "PublicWorks",
+                "TransportAndMobility"
+            ],
+            type: "sticky_footer"
+        }
+    ]
+});
+</script>
+<!-- End GXIF Code -->
+<!-- START DocAccess -->
+<script async src="https://docaccess.com/docbox.js"></script>
+<!-- END DocAccess -->
+    
+
+                                <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="DYTCK-JM9C8-ED4EP-C3GGK-Z575H",function(){function e(){if(!r){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.appendChild(e),r=!0}}function t(e){r=!0;var n,t,a,i,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",i=(a.frameElement||a).style,i.width=0,i.height=0,i.border=0,i.display="none",o.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void 0;",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=14,window.BOOMR.url=n+"DYTCK-JM9C8-ED4EP-C3GGK-Z575H";var i=document.currentScript||document.getElementsByTagName("script")[0],o=i.parentNode,r=!1,d=document.createElement("link");if(d.relList&&"function"==typeof d.relList.supports&&d.relList.supports("preload")&&"as"in d)window.BOOMR.snippetMethod="p",d.href=window.BOOMR.url,d.rel="preload",d.as="script",d.addEventListener("load",e),d.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!r)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.appendChild(d);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="iqd2coaxei7km2xekkca-f-17617ea98-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"41","ak.cp":"1700517","ak.ai":parseInt("1075935",10),"ak.ol":"0","ak.cr":8,"ak.ipv":4,"ak.proto":"h2","ak.rid":"229d0c7e","ak.r":53846,"ak.a2":n,"ak.m":"dscb","ak.n":"essl","ak.cport":34316,"ak.gh":"23.15.245.166","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.0rtt.ed":"","ak.csrc":"-","ak.acc":"","ak.t":"1793348228","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==Hf/kJ6RdMLRv5PMIE83jXe6YAmec2NgUlPCZOPWxkB0MAdAAVCoc/ntBJmuVFSjjMp2S2t9zxakMSwB44hTrmxZ2ka48jNvRFAa/zx7BtEWkLIhsho5nxagzd8tPN5B1eDSAIhsIETFiUg3qZAEBFSe5DvAqeNrH8qRxw5aWGkvOTbOttrEV6MFlpH5e7PfqO3U8CcvB6Ijz6nwMO2x95dVOD6XxerXRl+4ZM91I7s7G4JBLQMnwednSrIz+xnCykiBGtOeOHFzMRsJRKsHUjCLZ/Hr0KIKMf8yUlen72ibx4IZtRv4kr6R4IaRmo83qKPMkFbRcxUVRWFimh0w16kAmptBiD7FCa2VyBTf0SRShC7vZzTurzFhDYB4npo/Z0qpjaQZVO206TALIV1Qf6BIIwBRV9Z1nXKSpf9WnMtA=","ak.pv":"359","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.0rtt.ed","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body class="body layout-modern  site-search-always-visble  content-type-oc-general content-template-oc-2-column-without-image group-template-oc-2-column-with-default-header page-name-upcoming-election-information page-sequence-1 page-depth-3 page-section-3 website-type-primary device-desktop " id="body-top">
+    <div id="skip-to-content-container">
+        <a href="#main-content" class="visuallyhidden focusable" id="skip-to-content-link">Skip to main content</a>
+    </div>
+    <script>
+        // OCNOW-11988 (Cursor): Proactively focus skip link when returning from browser chrome.
+        // Must run inline (not deferred oc_main.js) so focus is intercepted before NVDA speaks footer.
+        (function () {
+            var awaitingReentry = false;
+            var inertSupported = 'inert' in HTMLElement.prototype;
+
+            function isExplicitlyOutsideDocument(node) {
+                return node != null && !document.documentElement.contains(node);
+            }
+
+            function getSkipContainer() {
+                return document.getElementById('skip-to-content-container');
+            }
+
+            function getSkipLink() {
+                return document.getElementById('skip-to-content-link');
+            }
+
+            function applyGuard() {
+                awaitingReentry = true;
+                if (!inertSupported) {
+                    return;
+                }
+                var skipContainer = getSkipContainer();
+                var children = document.body.children;
+                for (var i = 0; i < children.length; i++) {
+                    if (children[i] !== skipContainer) {
+                        children[i].setAttribute('inert', '');
+                    }
+                }
+            }
+
+            function clearGuard() {
+                awaitingReentry = false;
+                if (!inertSupported) {
+                    return;
+                }
+                var children = document.body.children;
+                for (var i = 0; i < children.length; i++) {
+                    children[i].removeAttribute('inert');
+                }
+            }
+
+            function isSkipLinkElement(target) {
+                if (!target) {
+                    return false;
+                }
+                var skipContainer = getSkipContainer();
+                return target.id === 'skip-to-content-link' ||
+                    (skipContainer && skipContainer.contains(target));
+            }
+
+            function focusSkipLink() {
+                var skipLink = getSkipLink();
+                if (!skipLink) {
+                    return;
+                }
+                if (window.scrollY > 0) {
+                    window.scrollTo(0, 0);
+                }
+                skipLink.focus({ preventScroll: true });
+            }
+
+            function scheduleGuardIfDocumentLostFocus() {
+                window.setTimeout(function () {
+                    if (!document.hasFocus()) {
+                        applyGuard();
+                    }
+                }, 0);
+            }
+
+            document.addEventListener('focusout', function (e) {
+                if (isExplicitlyOutsideDocument(e.relatedTarget)) {
+                    applyGuard();
+                }
+            }, true);
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Tab') {
+                    scheduleGuardIfDocumentLostFocus();
+                } else if (e.key === 'F6' || (e.key === 'l' && e.ctrlKey)) {
+                    scheduleGuardIfDocumentLostFocus();
+                }
+            }, true);
+
+            window.addEventListener('focus', function () {
+                if (!awaitingReentry) {
+                    return;
+                }
+                applyGuard();
+                focusSkipLink();
+            }, true);
+
+            document.addEventListener('focusin', function (e) {
+                var reentryFromChrome = awaitingReentry || isExplicitlyOutsideDocument(e.relatedTarget);
+                if (!reentryFromChrome) {
+                    return;
+                }
+                if (isSkipLinkElement(e.target)) {
+                    clearGuard();
+                    return;
+                }
+                applyGuard();
+                focusSkipLink();
+                clearGuard();
+            }, true);
+        })();
+    </script>
+    <form name="mainForm" method="post" action="/City-Hall/Election-Information-Updated/Upcoming-Election-Information" id="mainForm">
+<input type="hidden" name="ctl05_seamless_script_manager_TSM" id="ctl05_seamless_script_manager_TSM" value="" />
+<input type="hidden" name="__SEAMLESSVIEWSTATE" id="__SEAMLESSVIEWSTATE" value="H4sIAAAAAAAEAAFwD4/wopqMu6eyuPX642pSmiSyZApYtPlufHNe19SXChZdWzSuHOOkO+OEKZeHYH7exzYrNIk3YrPHB70JI52jdoonGwY0eyt+xvweIFETOcWg6pHYGS3GkYgvCRoLvjzYNhdnx7I1r7pG5h4MGJ2QSC4ZeqWOQFDYwvT4SowIviqV6L0GA7vo98Q+CEUf+QzYxL1z4MKxZk8LhnKKEgHbMDRoYcRnGxU9lC0MkLijELEEkhbJzG5ZIRR3kTbpkhbtBf9IMI9PGaDrA5uKxwmd9nHEdibBWcczH8hAwpLuiZJVwPe6i/4Oi+eLO5JwVvSqaXaVDFk7C2fiDiX6gbWIRq+hE3voM4ABrjlyV3Lu2eoF6Odt8BAvFVzVKejnlukc2HIMiffTSwAT53faOoTlPxHCaRE0QOr8ZMr5Utx2HFLP4qolY+Gr1MPV5lbg2gT+J1to5PsPuE8/2Phi5sG7mECyG1ZjffAC/kRzSBAnju4UowydPo8/9sbHgYv54ti97SJOJcDbQPXKiMxU31aW4qr1p78cbW10HkjfG6yFkVSiIWmsSqey9VYvK1JOvuYARj+apZ9Q6cAjWwfz4+shogXVctb5pdY8PrLpKZn6ZJJHfPMgJ0E6C8+OHbb7arZsR3bKOHQAK9bqq1wm5qJZOPsEDK2hnotSu9Btxlb6cTz1eyKyzUe5t+YpGYM1+WNdOwkSmAAI5XW15XMFUB3fpOfUXsc0Gfnthq9yyJ+iEDEzSLcvn55x6Wd48N5PnsShlma3EfH2O5YaexxzfdKHqBlg7WN/yOBw/ozCOwOxwypklDtB4IgSWhBLwaOmtGIzVknukvLjOU+nFvtyOiUdU/W+dTpV92K2CG1TJHTcU4RYyzrpLssFaFx8wiNFdRMZ+BqjJt1H9aN1+quVlFVAd4GZ62D/5hl68tx4uihBGkGiVlBw61qxrqu1SFi7JfiSV80WAzTZMwVai72p0LjAzzjc7kmPnbbY+NgFMBIOnQRn1sXMyMRF0MSHvyndvwpXiCrj8cqe/WfJ2gQWHpvCOlR7NpP3TZTKo7VYU2Zp+OSaBz3DwLbXhYj19Dze6t39RT7gMggn3Kco6QUmX1IuphbDrmLzIXU9OMHNX78amVTltSJeC4g5BqT1AZQDPQyGFK/bttJb8zKQMrrWS7mBzg/HenS/FUkrSl4xUzZf8vHGil/o1vgihymHcWGAT2SD4qcJmZN5cnnrBygCSSRPgP6HgziFcfNzebdQPqrwJYvSKPPU05eIcT4rowBXFjsRZjg54ucYcH2ZgYcrpuHk7hZo1u4VEdEz4QXUge8yAucKoodwdZBUfeDeEJ9sUscn7C+fbMskjDkG1C7zBBWwnErTh5JLLaN9LBoyFCxCfjdxpus9zAZK9/7pPk1M+EjckiBljiy77c21hqulDEAc5OC7SqMDmUxNgYBlS5KfSuloO31tCWGyie8gU6eG4qrHxsJ22BOHUblujRLwnGiZ/Ib8zyxpO6YNRVZ2CmVAiGvRSZeCG3b35fOl7u/rDt+ZDPD2FoKg+T7LwnabEO9M2Y4zp5XioKd0ZcRcJIYMxw1IL7j22joTIxRaM+D1MeU13cSGGzogODBE7vCORNe+zUASIMdqlx/WorWF9FytopwpKxHOBG4MtNhBXpBuvSop1OPHp4VM/v5q6xO70AFxcMbbTKXscMnsDNcTvnq1fKcpWj3azqVe5fa2rMLGOk5Kq1AAqeNbUA8utUWkJlRWgTNg7gNOwaZQJPiXIcfGtpWgZSwhC3NBLvTJAtaFfokopT/1MNjWy9DvFJdEBPo3EMDPh3nMD/FPy1NaY0sMQrtn5GbLlqetlJjDRO7uYb93a9cQNT8b08isbBr40JMGv/hJNuXChqiZoXHR10RyX4hMSX53gzNFzBek/yJFmePLR8zBRmzBQz498hQOktBJPa/dqK8ZjgWu2PHNwgGcXwbtbimiNevDzcgFtKLTrCE/aNldkpQiawhUJYkCIDn4pHUdqCGLJi3eHthe8b3LAP07S2jNgMhwk7t2WiyiYKXNH+h2agp/uSnKJIMSuDvihxn6NVPfwxYrHBP2SqfBmpzthsHmWfnfIhWERIWytEaPhgOGF2AM0BgZDdKFB3MGfUqXooa+BSTvcmM2+45E0TNmXoJTpdLkcxh3tFbRmHt++ZYP/lND3vRsYXdbMUPZB23kw2Xztfz1o2YxTqTvFQ8yULQ95pPfV1dNuTZa1gzT/1gXMQyiY36m8xA/0h+NQan/hTxlRv91UTidhjcMXEkD695Sj1ZMuBLDoT7bmf5t7du//f/058A8CBWF9H7DY00eUYGNBNHOXQ8UmZiNyqEsMyXvG6UIjlwmIKEphDFdvFsJy0hoLfEP2N9KsWfeZ9KCR70hEbvxpM7gwL1sI+GPuHIp1WrLx7VqEqZiY2jgAeAsRsOigjrgwzlOcc+ZEbN6Lctvtd5QsjVdVRSbh+5FkEC4YhaEFIShxObl21NBR5alDsL+yg8gG/SVp1MDMCFtCmXnQLpe466DgFk2X1ppLJ94w0kgo+7/P8LVKJhfB971Or1iiv+O9VdDSxFmaoek1XxFOE1qAxyoR/CuN/V2Iv83s7ciGSdCZtMG1+gxtp8MjunZ79iH6BEbaAwK+HpU4uJTwAdZX4H3zvorEcqcWC1R7uWGdFulDGXPdk4xuLLcmvhYhYo39W74XLCeQFlGtAHR9Aedzu0kfUQyfWXGv3LMghRjHFWTAkC1TuHu2qNprcfJfA800qWM0kVsDVSWsl+9nSBkJTBXbvZfS1ANoYraT2RsqFB6/9gr1A717HEEm+d3Ln8FhjeXilVR3F842oxDMzxzIPYJl9ZO3CAVNMK0veo/GF5VInNzPEZF+G7wuvzZMmVXSyRMcXfJdIhQwV+atCOmbaeXuqd7tAuHvP6OWjgqGfY8ZQ4sraVVYNlxTQQrz5gHaDsUeT43p8sYw/Iyy7l4401QhsloSw3gSjf1aQZInK5tXgQWL79QotDAcdfUxIQTjUullzFBzMJPvT7mntmeHDPtxYFtj1G7uORRNv7kWpIHgwFdF2ypFBXVpQC7C4+ncOKGuw+or1QAIXsxbGbtl+5jPcB8KWZCCwcZ88mUwE+BAwAyjcvz4h+zQORpIu4GY8B9nkaGxOyTk2/yN9+qUWa6NPPU56Ch6SjBlUfqCEc33dh494+XC10ZTHDqH+4wLFKe5A1pfPs79s3XiOPTxIDzMMM7J0Q3RS55i+FxBOY8JrEFSSy6x3Eok7OiNYC7zfaN0nDYKjfz902DI31sKhDfgqKkhsEfN3kXunxvcYuC2Nj7plpFSn5udsXEnCa2kPZfCS9Du/Y3s6ueGBDdn/H7bsSoJxrVKSDHb67jXX7Xldr6m86EQBCpU4z7XYdslCoY0lX+nF1XB6sodO3ftcp09HgzRk/WdVEymoPO+eLbQmuidh+rECgkQMN0YGbHq0YKcY9Yj6c5gXZ/HQyqwIkNVujGju+1xxB7Nx57wZWO00HufCyB8fgr5+/8SaQzghs45VI2bynbEKxWG8fmZfPQUrecMMgNL66BJUCp67WrONRfZq2sXoKCZ+xYD9cacOGLgNChcBZ5sduoRkwYrJM9qYURofSbRk438a1+jxiA19kHolX6ZkiJQPfezo/Wwt/WsJiTj+1QaXHmx66hodAtnGbxr4CZft/pFAcrBKRcEqLlBkHfLfn3NTC5I3DSzjCzwiCj0UO82qKUbeDFEJNgJP/vCKRHHW3UoMNfIESj6mx9UQ7jju9hIEvspjad2C8ncx5v13DNpnGIXYR1fsDyaLqrgA8aG0E2+4kNKO4xoC5ZrrBj3deGu6JE7Zvtz7PalzUVb/JDzRR6cMZi3E1FsSanwE1RVnLVp6Ug/Xp2SUD8z/mjUUhj0ht83pdVu8K3636nt/4bhVk6BYeOWkjA40BKsjKEhE1YjdwHZ514UgXvMmXG+w0wUzFZdcll9Bro7bPvEJCYQRh85I8QcgvW/aTfqDvX87XXrkHe7FxoLa5Rz6VWMwFsgXey2e4Pi8VDkfvys1NzcHg3qbm33wNnr4M8F0FLl85S7IslGptaeXvidP1USvtuS11zfwKclDcHZDBnwocggNs/+/wF4n1beERaklWcAuDCtK+0+n5sOjhMof/splCXWy4ByS7uPJGv2KiKeDk/aNWcbtpQrnvci005GAgfV/hSyTg5KxA1PA24tNMF8NmEKnm1q1nBCAX8Ph89fmneQ/onIsbY3B0QeeEV+DKY2b+y9fB+TsSXfYsfmi5f3IQBznw70pnzvrsZpcJplERyOcCGcF3EFKSswDg7KzGhzIQbof4uCpMwJn+tuYC24VqA4N/6ysKubqnqm/7pR6HBf1Q4bzEOmevqc+q9mLpLAxNEFo9N3URAM4vymeuUs+tl2WjzR1sz4igQCGo43Be54OthvDdN47k/8J0bXUtebflW+5uDJjS2Cp8OVYLfr9kUr/OCNWIi62nVcvtUYIcVHEHpZ3svusp4oS1tWbbkhdeYaviy40Hc0ft8aqgiW4/S4ioTljjxhzrfwKvFrijXRrElnA0hDY/3e7aDVlMm4gGwlDBW4hMkOrtr/4f1MfR/8RHJtHODM3D4AGIwd+GL6Mh2uGYVFIFxw1yPlw2HlPTPRx6apLDEOYf+jQAXb6ZgwG3CMlsAZ17pZOBQPYX8hRg0KBHj3K2ZaY1zha5Ybtl8wA0ZtPi/B+PywZYm9Lvjf44wJvSCzuLGm9/c57yGwjZTIMVToFrf2DJt81PqIs3ncbycvmDPCLyQWbCFKUe69FoGW93gmb/L2gNQ3Dp3DQuUNsknUUT8EvXSeQaSqhCM9BWe2DiSqNpxENv+QkGC9zlN2GpQA+VpantouCrriOuftq3/XDO7YC/8ojU2BC3jZ/AkkE5rgHnZRi6SGHhXJTZ0eCCiIF8FE73i2E/Qhc4CXzVNd0X0UMjPXHUkVjtVa5buTfCzA/v1/RB64TYy6rakBM2c1rekL6fSeo7Awu5u+dYQcSCU3CdszPOMx9cJZfhy/M9vV7MHWvcM7V5m9ajIGejBNhrL2KCHNGKDtJgdYGVdkpnPmev4Q7tmDm/3M5xq3w2i+saoGk1LCFINw5gbCzgQxWLXU7qGfooRU/UWgvflYzOjkRuNzKEKrjWxClN3QgCEOpTJseHd5ckncGmPkHvuc5oRHgEViLJtxe7wJVChls5GP1cTl4QrHlHbwSn3kfmwraefHAUao8HepOHdkrraeltYdH/yj0Y/RfGrEuVwDwAA" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="" />
+
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl05_seamless_script_manager_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-GB%3add3ac3d5-1e29-4112-8fed-529caffa8f24%3aea597d4b%3bSeamless.Web%3aen-GB%3a2ea41070-4d83-4a58-b682-fb1f5a2753bc%3ac38c7732%3bOpenCities.CustomControls%3aen-GB%3a7197b077-b068-4a69-9481-a6cf2e7718f9%3a8e1d32bf%3bTelerik.Web.UI%2c+Version%3d2020.1.114.45%2c+Culture%3dneutral%2c+PublicKeyToken%3d121fae78165ba3d4%3aen-GB%3a40a36146-6362-49db-b4b5-57ab81f34dac%3a16e4e7cd%3a11e117d7" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=EYVjNsQ7oYmzBqCI0dkEyYe0LYmPcVFL4WPcQCXhKfQwUqkAT7lLra0za-OLMuUUcCyPINdTVMHIWti96-8R_oN-trjXUUZnJRzckxTjid4ecctwwEJyNI-05jZYvXHBRiEKL0MUQMEyEJ2FXanyE1uBk88RxZ1wVK6AUn9D4v8rW-LNx2OOtB8vE3hC8P0jk4XZt7GAPiCeYQolxUlwFZA8cuOfgd4u08OASxFdh8mChz3A0YHhuwRrXGVlulfs9SJVkAvulhjdHYIIp1SRohDxt9acTwxUQrOlxuxC847b00zOOWg9SlpwD_iBuQQ1rOK9WH9O_wN9c2TXm4GeXaQHHT4yQ9IlzZXw6th8ch3f-k_n1yYeeurDMbwChXW1Vh_7rpu00kgmegsg9w2J3ququXIPfy2Gq8IscVTmtwouupfmUzAOicU_yESgQ-dG0" type="text/javascript"></script>
+    
+<script type="text/javascript">
+    try{
+        function SeamlessEndRequestHandler(sender, args) {
+            try {
+                var dataItems = args.get_dataItems();
+                if(dataItems.ctl05_seamless_script_manager)
+                    document.getElementById('__SEAMLESSVIEWSTATE').value = dataItems.ctl05_seamless_script_manager;
+            }
+            catch (e) { }
+        }
+
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(SeamlessEndRequestHandler);
+    }
+    catch (e) { }
+</script>
+
+    <div class="unsupported-browser-warning js-element"></div>
+    
+    <div hidden>
+        <span id="new-window-0">opens in new tab or window </span>
+    </div>
+    <div class="overlay-container"></div>
+    
+    <div class="background-container">
+        <div class="page-container">
+            <!-- OC Layout Element GROUP TEMPLATE -->
+            <!--groupTemplateStart--><header><div class="print-header-outer-container print-element">
+<img src="/files/assets/public/templateimages/print-header.png" alt="City of Culver City - Logo" />
+</div>
+            <div class="toolbar-outer-container">
+  <div class="toolbar-inner-container clearfix">
+    <div class="toolbar-item toolbar-language notranslate toolbar-display-links"><div class="toolbar-language-links"><a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Upcoming-Election-Information?oc_lang=en-US" class="lang-item lang-en-us" data-translate-to="en-us" lang="en-US">English (United States)<span class="visuallyhidden"> Select this as your preferred language</span></a><a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Upcoming-Election-Information?oc_lang=es" class="lang-item lang-es" data-translate-to="es" lang="en">Spanish<span class="visuallyhidden"> Select this as your preferred language</span></a></div></div>
+  </div>
+</div>
+            <div class="header-outer-container">
+    <div class="header-container header-layout-4  clearfix">
+			<div class="header-site-logo">
+				<a href="https://www.culvercity.gov/Home" lang="en-US" aria-label="City of Culver City - Home - Logo">
+				</a>
+			</div>
+      
+		    <div class="mobile-search-btn js-element">
+		        <button><i aria-hidden="true"></i><span class="mobile-search-btn-text"><span class="visuallyhidden">Open </span>Search</span></button>
+		    </div>
+		    <div class="header-website-settings">
+                <button id="btn-mob-nav" type="button" aria-expanded="false" aria-controls="nav">
+                    <i aria-hidden="true"></i><span class="side-menu-btn-text">Menu</span>
+                </button>
+        	</div>
+          <div class="navigation-outer-container">
+	<div id="nav" role="navigation" class="navigation-container  navigation-container-option-8" data-menu-type="horizontal" aria-label="primary">
+        <div class="grid">
+            <div class="col-xs-12">              
+                <ul class="sf-menu" id="sc-main-menu"><li class="nav-section-quarters-1   first-item nav-item-seq-1">
+<a href="https://www.culvercity.gov/Services" class="nav-level-1 nav-has-children"  target="">
+	<i class="item-icon" aria-hidden="true"></i><span class="item-text">Services</span>
+</a>
+<button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow" aria-controls="sc-menu-second-level-nav-item-seq-1">
+              <i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-second-level-nav-item-seq-1">
+
+          
+            <li class=" "><a  href="https://www.culvercity.gov/Services/Applications-Forms" class="nav-has-children"  target="">Applications & Forms</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-1-nav-item-seq-1"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-1-nav-item-seq-1">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/Services/Applications-Forms/Budget-Input-Box"  target="">Budget Input Box</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Applications-Forms/City-Information-Requests"  target="">City Information Requests</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Applications-Forms/Passport-Services"  target="">Passport Services</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Applications-Forms/Report-Fraud-Waste-and-Abuse-of-City-Resources"  target="">Report Fraud, Waste and Abuse of City Resources</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Applications-Forms/Request-Geographic-Information-System-GIS-Map-Data"  target="">Request Geographic Information System (GIS) Map Data</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Applications-Forms/Special-Permits"  target="">Special Permits</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Applications-Forms/Submit-a-Claim-for-Damages"  target="">Submit a Claim for Damages</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Applications-Forms/Discrimination-Complaint"  target="">Submit a Complaint for Discrimination, Retaliation or Harassment</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Applications-Forms/Rental-Unit-Registration"  target="">Landlord Rental Registration</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Applications-Forms/Public-Records-Request"  target="">Submit a Public Records Request</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Applications-Forms/Homeless-Outreach-Request"  target="">Submit a Homeless Outreach Request</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/Services/Adult-Senior-Services" class="nav-has-children"  target="">Adult & Senior Services</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-1-nav-item-seq-2"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-1-nav-item-seq-2">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/Services/Adult-Senior-Services/Health-Social-Services"  target="">Health & Social Services</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Adult-Senior-Services/Senior-Disabled-Transportation-Services"  target="">Senior & Disabled Transportation Services</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Adult-Senior-Services/Senior-Center"  target="">Culver City Senior Center and Community Services</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Adult-Senior-Services/Senior-Nutrition-Program"  target="">Senior Nutrition Program</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Adult-Senior-Services/Senior-Housing"  target="">Senior Housing</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/Services/Business-Resources" class="nav-has-children"  target="">Business Resources</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-1-nav-item-seq-3"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-1-nav-item-seq-3">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/Services/Business-Resources/Start-a-Business-in-Culver-City"  target="">Start a Business in Culver City</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Business-Resources/Business-Resource-Center"  target="">Business Resource Center</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Business-Resources/Become-a-City-Vendor"  target="">Become a City Vendor</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Business-Resources/Business-Owner-Resources"  target="">Business Owner Resources</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Business-Resources/Become-a-Certified-Sustainable-Business"  target="">Sustainable Business Certification</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Business-Resources/Business-License-Information"  target="">Business License Information</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Business-Resources/Commercial-Property-Listings"  target="">Commercial Property Listings</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Business-Resources/Filming-within-PRCS"  target="">Filming at Parks, Recreation & Community Services Parks and Facilities</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Business-Resources/Taxes-Fees"  target="">Taxes & Fees</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Business-Resources/Special-Permits"  target="">Special Permits</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Business-Resources/Outdoor-Dining-Decision-Tree"  target="">Outdoor Dining</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Business-Resources/Cannabis-Welcome-Page"  target="">Finance, Cannabis Permitting</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Business-Resources/Filming-in-Culver-City"  target="">Filming in Culver City</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Business-Resources/Minimum-Wage"  target="_self">City of Culver City Minimum Wage Information</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/Services/Building-Development" class="nav-has-children"  target="">Building & Development</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-1-nav-item-seq-4"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-1-nav-item-seq-4">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/Business-Districts"  target="">Business Districts</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/General-Plan"  target="">General Plan 2045</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/E-Homeowner-Resources"  target="">Property Owner Resources</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/Permits"  target="">Permits</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/B-Planning-Documents"  target="">Planning Documents</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/Development-Related-City-Documents"  target="">Development-Related City Documents</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/C-Planning-Applications-Forms"  target="">Planning Applications, Forms & Fees</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/D-Updates-Handouts"  target="">Planning Updates & Handouts</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/Municipal-Code"  target="_blank">City Charter and Municipal Code</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/Wireless-Utility-Permit"  target="">Wireless Utility Permit</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/I-Current-Planning-FAQs"  target="">Current Planning FAQs</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/Electric-Vehicle-Service-Equipment-Permits"  target="">Electric Vehicle Service Equipment Permits</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/City-Projects"  target="">City Projects</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/Dumpster-Application"  target="">Application for a Dumpster, POD or a Moving Truck Permit</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/K-CEQA-Information-Documents"  target="">CEQA Information and Documents</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/L-SB-35-SB-330-Resources"  target="">SB 330 / SB 35 Resources</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/Cannabis"  target="_self">Cannabis Business Permits</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/Residential-Parking-Permits"  target="_blank">Residential Parking Permits</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/Blue-Zone-Permit"  target="_blank">Residential Blue Zone Permit</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/Block-Party"  target="_blank">Residential Block Party Application</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/Alarm-Permit"  target="_blank">Security Alarm Permit</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/Transportation-Permit-Application"  target="">Application for a Transportation Permit</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/M-SB-9-and-Other-Subdivisions"  target="">SB 9 and Other Subdivisions</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/N-Decision-Letters"  target="">Decision Letters</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/Valet-Permit"  target="_blank">Valet Permit</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/N-DOBI-and-ODS"  target="">Density Bonus Update and Objective Design Standards</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Building-Development/Expedited-Solar-Permits"  target="">Expedited Solar Permits</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/Services/Environmental-Programs" class="nav-has-children"  target="">Environmental Programs</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-1-nav-item-seq-5"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-1-nav-item-seq-5">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/Sustainability-Policy-Updates-and-Restrictions"  target="">Sustainability Policy Updates and Restrictions</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/Meet-Stan-Culver-City’s-Recycling-Spokesmonster"  target="">Meet Stan: Culver City’s Recycling Spokesmonster</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/Services"  target="">City Trash & Recycling Services</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/Sustainable-Solutions"  target="">Sustainable Solutions for Culver City</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/Organics"  target="">Organics</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/Recycling"  target="">Recycling</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/Environmental-Solutions"  target="">Environmental Solutions</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/File-a-Complaint"  target="">File a Complaint of Noncompliance on Composting or Recycling Rules</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/Trash-and-Waste"  target="">Trash and Waste</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/Waste-Reduction"  target="">Waste Reduction</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/Construction-and-Demolition"  target="">Construction and Demolition</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/Educational-Resources"  target="">Educational Resources</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/Stormwater"  target="">Stormwater</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/Current-Updates-and-Events"  target="">Current Updates and Events</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/Recycle-Coach"  target="">Recycle Coach</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/Proposed-Refuse-Rate-Increase"  target="">Proposed Refuse Rate Increase</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/Street-Sweeping"  target="">Street Sweeping</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/Special-Events-Waste-Plan"  target="">Special Events Waste Plan</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Environmental-Programs/Waste-Hauling-Permits-Requirements"  target="">Waste Hauling Permits & Requirements</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/Services/Housing-Homeless-Human-Services" class="nav-has-children"  target="">Housing, Homeless, and Human Services</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-1-nav-item-seq-6"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-1-nav-item-seq-6">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/Services/Housing-Homeless-Human-Services/Rent-Stabilization-Tenant-Protection-Measures"  target="">Rent Stabilization & Tenant Protection Measures</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Housing-Homeless-Human-Services/Family-Self-Sufficiency-Program"  target="">Family Self-Sufficiency Program</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Housing-Homeless-Human-Services/Submit-a-Homeless-Outreach-Request"  target="">Submit a Homeless Outreach Request</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Housing-Homeless-Human-Services/Homeless-Dashboard-v2"  target="">Homeless Reporting Dashboard</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Housing-Homeless-Human-Services/Homeless-Services"  target="">Homeless Services</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Housing-Homeless-Human-Services/Housing-Quality-Standards"  target="">Housing Quality Standards</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Housing-Homeless-Human-Services/Housing-Services"  target="">Housing Services</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Housing-Homeless-Human-Services/Globe-Avenue-Properties-Build"  target="">Globe Avenue Properties Build</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Housing-Homeless-Human-Services/Disability-Services"  target="">Disability Services</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Housing-Homeless-Human-Services/Walk-In-Clinic"  target="_self">Bet Tzedek Housing Walk-In Clinic</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Housing-Homeless-Human-Services/Mobile-Crisis-Team"  target="">Culver City Mobile Crisis Team (MCT)</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Housing-Homeless-Human-Services/Jubilo-Village-Affordable-Housing-Project"  target="">Jubilo Village</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Housing-Homeless-Human-Services/Adult-Senior-Services"  target="_self">Adult & Senior Services</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/Services/Make-a-Payment" class="nav-has-children"  target="">Make a Payment</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-1-nav-item-seq-7"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-1-nav-item-seq-7">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/Services/Make-a-Payment/Parking-Ticket"  target="_blank">Find, Pay or Appeal your Parking Ticket</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Make-a-Payment/Pay-Your-City-Invoice"  target="">Pay Your City Invoice</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Make-a-Payment/Renew-Business-Tax-Certificate"  target="_blank">Renew Business Tax Certificate</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Make-a-Payment/Recreation-Registration"  target="_blank">Recreation Registration</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Make-a-Payment/Security-Alarm-Permits"  target="_blank">Security Alarm Permits</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Make-a-Payment/Film-Event-Parking"  target="">Temporary Film and Event Parking</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Make-a-Payment/Outdoor-Dining-Payment"  target="_blank">Outdoor Dining Payment</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Make-a-Payment/Transient-Occupancy-Tax"  target="_blank">Transient Occupancy Tax</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Make-a-Payment/Quarterly-Cannabis-Business-Tax"  target="_blank">Quarterly Cannabis Business Tax</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/Services/Neighborhood-Services" class="nav-has-children"  target="">Neighborhood Services</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-1-nav-item-seq-8"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-1-nav-item-seq-8">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/Services/Neighborhood-Services/How-to-Watch"  target="">How to Watch City Meetings</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Neighborhood-Services/Culver-City-Pool"  target="_self">Culver City Pool</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Neighborhood-Services/Farmers-Market"  target="_self">Farmer's Market</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Neighborhood-Services/Library-Schools"  target="_self">Library & Schools</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Neighborhood-Services/Park-Facility-Ambassadors"  target="">Park & Facility Ambassador Program</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Neighborhood-Services/Senior-Center"  target="_self">Senior Center</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Neighborhood-Services/Graffiti"  target="_self">Graffiti Removal</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Neighborhood-Services/Trash-Can-Graffiti"  target="_self">Trash Can Graffiti</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Neighborhood-Services/Animal-Services"  target="">Culver City Animal Services</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/Services/Parking-Streets-Transportation" class="nav-has-children"  target="">Parking, Streets & Transportation</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-1-nav-item-seq-9"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-1-nav-item-seq-9">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/Services/Parking-Streets-Transportation/Culver-CityBus"  target="_self">Culver CityBus</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Parking-Streets-Transportation/Biking-In-Culver-City"  target="">Biking In Culver City</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Parking-Streets-Transportation/Traffic-Control-Plan-Requirements-and-Procedures"  target="">Traffic Control Plan Requirements and Procedures</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Parking-Streets-Transportation/Lease-Business-Parking"  target="">Lease Business Parking</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Parking-Streets-Transportation/Downtown-Parking"  target="">Downtown Parking</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Parking-Streets-Transportation/Temporary-Film-and-Event-Parking"  target="">Temporary Film and Event Parking</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Parking-Streets-Transportation/Street-Maintenance"  target="">Street Maintenance</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Parking-Streets-Transportation/Electric-Vehicles-Main-Page"  target="">Electric Vehicles (EV)</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Parking-Streets-Transportation/Shared-Micromobility-Program"  target="">Shared Micromobility Program</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Parking-Streets-Transportation/Culver-City-Your-Way"  target="">Culver City Your Way</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/Services/Public-Safety" class="nav-has-children"  target="">Public Safety</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-1-nav-item-seq-10"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-1-nav-item-seq-10">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/Services/Public-Safety/Hazard-Mitigation-Plan"  target="">Hazard Mitigation Plan</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Public-Safety/Fire-Department"  target="_blank">Fire Department</a></li><li  class=" "><a href="https://www.culvercity.gov/Services/Public-Safety/Police-Department"  target="_blank">Police Department</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/Services/Solve-a-Problem" class=""  target="_self">Solve a Problem - Contact Culver City</a></li><li class=" "><a  href="https://www.culvercity.gov/Services/Know-Your-Rights" class=""  target="">Know Your Rights Resources</a></li></ul></li>
+          
+            <li class="nav-section-quarters-2 nav-active-path  nav-item-seq-2">
+<a href="https://www.culvercity.gov/City-Hall" class="nav-level-1 nav-has-children"  target="">City Hall</a>
+<button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow" aria-controls="sc-menu-second-level-nav-item-seq-2">
+              <i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-second-level-nav-item-seq-2">
+
+          
+            <li class=" "><a  href="https://www.culvercity.gov/City-Hall/Careers-and-Employment-Human-Resources" class=""  target="_self">Careers & Employment</a></li><li class=" "><a  href="https://www.culvercity.gov/City-Hall/City-Departments" class=""  target="">City Departments & Divisions</a></li><li class=" "><a  href="https://www.culvercity.gov/City-Hall/City-Council" class="nav-has-children"  target="">City Council</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-2-nav-item-seq-3"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-2-nav-item-seq-3">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/City-Hall/City-Council/City-Council-Policies-Legislation"  target="">City Council Policies & Legislation</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/City-Council/Strategic-Plan-2024-2029"  target="">Strategic Plan 2024-2029</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/City-Council/City-Council-Subcommittees"  target="_self">City Council Subcommittees</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/City-Hall/Meetings-Agendas" class="nav-has-children"  target="">Meetings & Agendas</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-2-nav-item-seq-4"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-2-nav-item-seq-4">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/City-Hall/Meetings-Agendas/Listening-Service"  target="">Assistive Listening Services for Meetings</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/City-Hall/RFPs" class=""  target="_self">Request for Proposals & Bids</a></li><li class=" "><a  href="https://www.culvercity.gov/City-Hall/Boards-Commissions" class="nav-has-children"  target="">Commissions, Boards & Committees</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-2-nav-item-seq-6"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-2-nav-item-seq-6">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/City-Hall/Boards-Commissions/Apply-Now-to-CBCs"  target="">Apply Now to Commissions, Boards & Committees</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Boards-Commissions/Bicycle-and-Pedestrian-Advisory-Committee"  target="">Bicycle and Pedestrian Advisory Committee</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Boards-Commissions/Civil-Service-Commission"  target="">Civil Service Commission</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Boards-Commissions/Advisory-Committee-on-Housing-and-Homelessness"  target="">Advisory Committee on Housing and Homelessness</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Boards-Commissions/Cultural-Affairs-Commission"  target="">Cultural Affairs Commission</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Boards-Commissions/Disability-Advisory-Committee"  target="">Disability Advisory Committee</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Boards-Commissions/Martin-Luther-King-Jr.-Celebration-and-Juneteenth-Celebration-Advisory-Committee"  target="">MLK, Jr. Celebration and Juneteenth Celebration Advisory Committee</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Boards-Commissions/EHRAC"  target="">Equity & Human Relations Advisory Committee</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Boards-Commissions/Finance-Advisory-Committee"  target="">Finance Advisory Committee</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Boards-Commissions/Landlord-Tenant-Mediation-Board"  target="">Landlord Tenant Mediation Board</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Boards-Commissions/Parks-Recreation-and-Community-Services-Commission"  target="">Parks, Recreation and Community Services Commission</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Boards-Commissions/H-Planning-Commission"  target="">Planning Commission</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Boards-Commissions/Council-Commission-Committee-Information"  target="">Information for Council, Commission, Board & Committee Members</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Boards-Commissions/Culver-City-Sister-City-Committee"  target="_blank">Culver City Sister City Committee</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Boards-Commissions/Outside-Body-Appointments"  target="">Outside Body Appointments</a></li></ul></li><li class="nav-active-path "><a  href="https://www.culvercity.gov/City-Hall/Election-Information-Updated" class="nav-has-children"  target="">Election Information</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-2-nav-item-seq-7"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-2-nav-item-seq-7">
+          
+            <li  class="nav-active-path nav-active-page"><a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Upcoming-Election-Information"  target="">Upcoming Election Information</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/How-to-Vote-in-Culver-City"  target="">How to Vote in Culver City</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Past-Election-Information"  target="">Past Election Information & Results</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/How-to-Run-for-City-Council"  target="">How to Run for City Council</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Campaign-Rules"  target="">Campaign Rules</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Campaign-Rules-FAQ-Quick-Facts"  target="">Campaign Rules FAQ</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Information-About-Initiatives"  target="">Information About Initiatives</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Fair-Political-Practices-Commission-FPPC-Required-Reporting"  target="">Fair Political Practices Commission (FPPC) Required Reporting</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/General-Election-Documents-and-Codes"  target="">General Election Documents and Codes</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Voter-Registration-and-Education"  target="">Voter Registration and Education</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Culver-City-Youth-Election-Outreach"  target="">Culver City Youth Election Outreach</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/City-Hall/Local-Agencies-Officials" class="nav-has-children"  target="">Local Agencies & Officials</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-2-nav-item-seq-8"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-2-nav-item-seq-8">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/City-Hall/Local-Agencies-Officials/Local-Agencies"  target="">Local Agencies</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Local-Agencies-Officials/Legislators"  target="">Legislators</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Local-Agencies-Officials/Utilities-Company-Contacts"  target="">Utilities - Company Contacts</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Local-Agencies-Officials/Library-Schools"  target="">Library & Schools</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Local-Agencies-Officials/Chamber-of-Commerce"  target="_blank">Culver City Chamber of Commerce</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Local-Agencies-Officials/Downtown-Business-Association"  target="_blank">Culver City Downtown Business Association</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Local-Agencies-Officials/Sister-City-Committee"  target="_blank">Culver City Sister City Committee</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Local-Agencies-Officials/Culver-Crest-Neighborhood-Association"  target="_blank">Culver Crest Neighborhood Association</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Local-Agencies-Officials/Fox-Hills-Neighborhood-Association"  target="_blank">Fox Hills Neighborhood Association</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Local-Agencies-Officials/Lindberg-Park-Neighborhood-Association"  target="_blank">Lindberg Park Neighborhood Association</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Local-Agencies-Officials/Rancho-Higuera-Neighborhood-Association"  target="_blank">Rancho Higuera Neighborhood Association</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/City-Hall/Have-Your-Say" class=""  target="">Have Your Say</a></li><li class=" "><a  href="https://www.culvercity.gov/City-Hall/Get-Involved" class="nav-has-children"  target="">Get Involved</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-2-nav-item-seq-10"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-2-nav-item-seq-10">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/City-Hall/Get-Involved/Coyote-Management"  target="">Coyote Management</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Get-Involved/Boards-Commissions-page"  target="_self">Commissions, Boards & Committees</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Get-Involved/MOVE-Culver-City"  target="_blank">MOVE Culver City</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Get-Involved/Inglewood-Oil-Field"  target="">Inglewood Oil Field</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Get-Involved/Speaker-Series"  target="">Speaker Series</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Get-Involved/Diversity-Equity-and-Inclusion-in-Culver-City"  target="">Diversity, Equity and Inclusion in Culver City</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Get-Involved/Civic-Assembly"  target="">Civic Assemblies</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/City-Hall/Public-Notices" class=""  target="_self">Public Notices</a></li><li class=" "><a  href="https://www.culvercity.gov/City-Hall/Reports-policies-local-laws" class="nav-has-children"  target="">Reports, policies & local laws</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-2-nav-item-seq-12"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-2-nav-item-seq-12">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/City-Hall/Reports-policies-local-laws/Government-Transparency"  target="">Government Transparency</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Reports-policies-local-laws/e-Cigarette-Ban"  target="">e-Cigarette Ban</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Reports-policies-local-laws/Smoking-Ban"  target="">Smoking Ban in Multi-Unit Housing</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Reports-policies-local-laws/City-Ban-On-Single-Use-Plastics"  target="_self">City Ban On Single-Use Plastics</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Reports-policies-local-laws/Ban-on-the-Sale-of-FlavoredMenthol-Tobacco-Products"  target="">Flavored/Menthol Tobacco Products Ban</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Reports-policies-local-laws/Police-Reform"  target="">Police Reform</a></li><li  class=" "><a href="https://www.culvercity.gov/City-Hall/Reports-policies-local-laws/Leaf-Blower-Restrictions"  target="">Leaf Blower Restrictions</a></li></ul></li></ul></li>
+          
+            <li class="nav-section-quarters-3   nav-item-seq-3">
+<a href="https://www.culvercity.gov/Explore" class="nav-level-1 nav-has-children"  target="">Explore</a>
+<button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow" aria-controls="sc-menu-second-level-nav-item-seq-3">
+              <i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-second-level-nav-item-seq-3">
+
+          
+            <li class=" "><a  href="https://www.culvercity.gov/Explore/Community-Calendar" class=""  target="_self">Community Calendar</a></li><li class=" "><a  href="https://www.culvercity.gov/Explore/About-Culver-City" class="nav-has-children"  target="">About Culver City</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-3-nav-item-seq-2"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-3-nav-item-seq-2">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/Explore/About-Culver-City/Culver-City-Fact-Sheet"  target="">Culver City Fact Sheet</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/About-Culver-City/Culver-City-Historic-Images"  target="">Culver City Historic Images</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/Explore/Annual-Special-Events" class=""  target="">Annual & Special Events</a></li><li class=" "><a  href="https://www.culvercity.gov/Explore/Arts-Culture" class="nav-has-children"  target="">Arts & Culture</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-3-nav-item-seq-4"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-3-nav-item-seq-4">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/Explore/Arts-Culture/2028-Games"  target="">2028 Games - Cultural Programs</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Arts-Culture/Public-Art"  target="">Public Art</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Arts-Culture/PAG"  target="">Performing Arts Grant Program</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Arts-Culture/Cultural-Equity-Plan"  target="">Culver City Community Cultural Equity Plan</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Arts-Culture/Artist-Laureate-Program"  target="">Artist Laureate Program</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Arts-Culture/Preservation"  target="">Historic Preservation Program</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Arts-Culture/Galleries"  target="">Galleries, Museums & Exhibition Spaces</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Arts-Culture/Orgs-Venues"  target="">Local Arts Groups</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Arts-Culture/Commission"  target="_blank">Cultural Affairs Commission</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/Explore/Ballona-Creek" class=""  target="">Ballona Creek</a></li><li class=" "><a  href="https://www.culvercity.gov/Explore/City-Maps" class=""  target="">City Maps</a></li><li class=" "><a  href="https://www.culvercity.gov/Explore/Farmers-Market" class=""  target="">Culver City Farmers Market</a></li><li class=" "><a  href="https://www.culvercity.gov/Explore/Museums-Sites-Tours" class=""  target="">Museums, Sites & Tours</a></li><li class=" "><a  href="https://www.culvercity.gov/Explore/Parks-Recreation" class="nav-has-children"  target="">Parks & Recreation</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-3-nav-item-seq-9"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-3-nav-item-seq-9">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/Explore/Parks-Recreation/Parks-Plan"  target="">Citywide Parks Plan</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Parks-Recreation/CCARP"  target="">Culver City Afterschool Recreation Program (CCARP)</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Parks-Recreation/Culver-City-Living-Brochure"  target="">Culver City Living</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Parks-Recreation/Parks"  target="_self">Culver City Parks</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Parks-Recreation/Culver-City-Pool"  target="">Culver City Pool</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Parks-Recreation/Seasonal-Camps"  target="">Seasonal Camps</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Parks-Recreation/Parks-Recreation-and-Community-Services-Department"  target="_self">Parks, Recreation, and Community Services Department</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Parks-Recreation/Senior-Center-Programs"  target="_self">Senior Center Programs</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Parks-Recreation/Recreational-Activities"  target="">Recreational Activities</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Parks-Recreation/Teen-Center"  target="">Teen Center</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Parks-Recreation/PRCS-Refund-Information"  target="">PRCS Refund Information</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Parks-Recreation/Youth-Sports"  target="">Youth Sports</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/Explore/Volunteer" class="nav-has-children"  target="">Volunteer</a><button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow-child" aria-controls="sc-menu-third-level-nav-item-seq-3-nav-item-seq-10"><i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-third-level-nav-item-seq-3-nav-item-seq-10">
+          
+            <li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Culver-City-Senior-Center"  target="">Culver City Senior Center</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Culver-City-Walk-and-Rollers"  target="">Culver City Walk and Rollers</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Culver-City-Youth-Health-Center"  target="">Culver City Youth Health Center</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Culver-Palms-Family-YMCA"  target="">Culver-Palms Family YMCA</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Culver-Palms-Meals-on-Wheels"  target="">Culver-Palms Meals on Wheels</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Didi-Hirsch-Community-Mental-Health-Center"  target="">Didi Hirsch Community Mental Health Center</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Didi-Hirsch-Suicide-Prevention-Center"  target="">Didi Hirsch Suicide Prevention Center</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Disabled-American-Veterans-at-West-L.A.-V.A.-Hospital"  target="">Disabled American Veterans at West L.A. V.A. Hospital</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Exceptional-Childrens-Foundation"  target="">Exceptional Children's Foundation</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Food-Forward"  target="">Food Forward</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Friends-of-Ballona-Wetlands"  target="">Friends of Ballona Wetlands</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Friends-of-the-Culver-City-Dog-Park"  target="">Friends of the Culver City Dog Park</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Global-Girl-Media"  target="">Global Girl Media</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Grace-Diner"  target="">Grace Diner</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Greener-Way-Associates"  target="">Greener Way Associates</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Julian-Dixon-Public-Library"  target="">Julian Dixon Public Library</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Kaiser-Permanente-Hospital"  target="">Kaiser Permanente Hospital</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Kenneth-Hahn-State-Recreation-Area"  target="">Kenneth Hahn State Recreation Area</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/LA-GOAL"  target="">L.A. GOAL Volunteer Opportunities</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Life-Steps-Foundation"  target="">Life Steps Foundation</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Long-Term-Care-Ombudsmen-Program"  target="">Long Term Care Ombudsmen Program</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Loved-Ones-Victims-Services"  target="">Loved Ones Victims Services</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Mar-Vista-Family-Center"  target="">Mar Vista Family Center</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Mar-Vista-Gardens-Boys-Girls-Club"  target="">Boys & Girls Clubs of Santa Monica - Mar Vista Gardens</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Mychals-Learning-Place"  target="">Mychal's Learning Place</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/No-Limits-for-Deaf-and-Hard-of-Hearing-Children"  target="">No Limits for Deaf and Hard-of-Hearing Children</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/One-Incredible-Family"  target="">One Incredible Family, Inc.</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Open-Paths-Counseling-Center"  target="">Open Paths Counseling Center</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/reDiscover-Center"  target="">reDiscover Center</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Senior-Center-Lunch-Program"  target="">Senior Center Lunch Program</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/SHARE"  target="">SHARE!</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Shoes-For-The-Homeless"  target="">Shoes For The Homeless</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Southern-California-Counseling-Center"  target="">Southern California Counseling Center</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/St.-Augustine-Volunteer-Emergency-Services-SAVES"  target="">St. Augustine Volunteer Emergency Services (SAVES)</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/St.-Joseph-Center"  target="">St. Joseph Center</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/STAR-Eco-Station"  target="">STAR Eco Station</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/STAR-Education"  target="">STAR Education</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/The-Actors’-Gang-The-Ivy-Substation"  target="">The Actors’ Gang: The Ivy Substation</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/The-Bead-Society"  target="">The Bead Society</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/The-Help-Group-Culver-City-Campus"  target="">The Help Group - Culver City Campus</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/The-Jeffrey-Foundation"  target="">The Jeffrey Foundation</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Upward-Bound-House"  target="">Upward Bound House</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Volunteer-Information-Professional-LAX"  target="">Volunteer Information Professional - LAX</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Westside-Center-for-Independent-Living-WCIL"  target="">Westside Center for Independent Living (WCIL)</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Allies-for-Every-Child"  target="">Allies for Every Child</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Westside-Pacific-Villages"  target="">Westside Pacific Villages</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/World-Affairs-Council-of-Los-Angeles"  target="">World Affairs Council of Los Angeles</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Culver-City-Service-Clubs"  target="">Culver City Service Clubs</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Teen-Volunteers"  target="">Teen Volunteers</a></li><li  class=" "><a href="https://www.culvercity.gov/Explore/Volunteer/Best-Friends-Animal-Society"  target="">Best Friends Animal Society</a></li></ul></li><li class=" "><a  href="https://www.culvercity.gov/Explore/My-Neighborhood" class=""  target="">My Neighborhood</a></li><li class=" "><a  href="https://www.culvercity.gov/Explore/Culver-City-Historical-Society" class=""  target="_blank">Culver City Historical Society</a></li></ul></li>
+          
+            <li class="nav-section-quarters-4   nav-item-seq-4">
+<a href="https://www.culvercity.gov/Contact-Us" class="nav-level-1 nav-has-children"  target="">Contact Us</a>
+<button aria-label="Expand" aria-haspopup="true" class="mobnav-subarrow" aria-controls="sc-menu-second-level-nav-item-seq-4">
+              <i aria-hidden="true"></i>
+              </button>
+<ul id="sc-menu-second-level-nav-item-seq-4">
+
+          
+            <li class=" "><a  href="https://www.culvercity.gov/Contact-Us/Contact-Culver-City" class=""  target="_self">Contact Culver City</a></li><li class=" "><a  href="https://www.culvercity.gov/Contact-Us/Subscribe" class=""  target="_blank">Subscribe to Email Notifications</a></li><li class=" "><a  href="https://www.culvercity.gov/Contact-Us/Social-Media-Customer-Use-Policy" class=""  target="">Social Media Customer Use Policy</a></li><li class=" "><a  href="https://www.culvercity.gov/Contact-Us/Privacy-Statement" class=""  target="">Privacy Statement</a></li><li class=" "><a  href="https://www.culvercity.gov/Contact-Us/Accessibility-Policy" class=""  target="">Accessibility Policy</a></li><li class=" "><a  href="https://www.culvercity.gov/Contact-Us/AI-Policy" class=""  target="">Culver City and Artificial Intelligence (AI)</a></li><li class=" "><a  href="https://www.culvercity.gov/Contact-Us/Media-Page" class=""  target="">Media Page</a></li></ul></li>
+          
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+			
+			<div class="header-search-control-container" id="header-search">
+				<div class="search-inner-container">
+					<div class="sc-search-panel">
+	<label for="ctl09_txtSearch" id="ctl09_lblSearch" class="sc-search-label">Search</label><input name="ctl09$txtSearch" type="text" id="ctl09_txtSearch" class="sc-search-text" placeholder="How can we help you?" /><input type="submit" name="ctl09$btnSearch" value="Search" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl09$btnSearch&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl09_btnSearch" class="sc-search-button" />
+</div>
+					<div role="status" id="predictiveResults"></div>
+				</div>
+			</div>
+    </div>
+</div>
+
+            
+            </header>
+            <div class="content-outer-container">
+                <div id="main" role="main" class="main-outer-container clearfix">
+                        
+                        <div class="content-main-container">
+                            <div class="grid">
+					            <div class="col-xs-12">
+						            <nav id="breadcrumbs-container" aria-label="You Are Here :">
+							            <span role="list">
+<span role="listitem">
+	<a href="https://www.culvercity.gov/Home"  lang="en-US">Home</a>
+	<span class="nav-separator" aria-hidden="true" role="presentation">/</span>
+</span>
+          <span role="listitem"><a href="https://www.culvercity.gov/City-Hall" >City Hall</a><span class='nav-separator' aria-hidden="true" role="presentation">/</span></span><span role="listitem">
+	<a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated" >
+		Election Information
+	</a>
+	<span class='nav-separator' aria-hidden="true" role="presentation">/</span>
+</span>
+<span class="current-page" role="listitem" aria-current="page" >Upcoming Election Information</span>
+          </span>
+						            </nav>
+					            </div>
+                      
+					            <div class="col-xs-12">
+						            <div class="main-inner-container">
+                                        <div class="grid">							
+								            <div class="col-lg-4">								
+									            <div id="sub-navigation-outter-container" role="navigation" aria-label="Section Navigation">
+									            &nbsp;
+									            <div id="sub-navigation-container">
+                                <p class="sub-nav-header" role="heading" aria-level="2" id="in-this-section" >
+	In This Section
+</p>
+<ul><li class='nav-level-1   '>
+	<a href="https://www.culvercity.gov/City-Hall/Careers-and-Employment-Human-Resources"  target="_self">Careers & Employment</a>
+	
+</li><li class='nav-level-1   '>
+	<a href="https://www.culvercity.gov/City-Hall/City-Departments"  target="">City Departments & Divisions</a>
+	
+</li><li class='nav-level-1   nav-has-children'>
+	<a href="https://www.culvercity.gov/City-Hall/City-Council"  target="">City Council</a>
+	
+</li><li class='nav-level-1   nav-has-children'>
+	<a href="https://www.culvercity.gov/City-Hall/Meetings-Agendas"  target="">Meetings & Agendas</a>
+	
+</li><li class='nav-level-1   '>
+	<a href="https://www.culvercity.gov/City-Hall/RFPs"  target="_self">Request for Proposals & Bids</a>
+	
+</li><li class='nav-level-1   nav-has-children'>
+	<a href="https://www.culvercity.gov/City-Hall/Boards-Commissions"  target="">Commissions, Boards & Committees</a>
+	
+</li><li class='nav-level-1 nav-active-path  nav-has-children'>
+	<a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated"  target="">Election Information</a>
+	<ul><li class='nav-level-2 nav-active-path nav-active-page '>
+	<a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Upcoming-Election-Information"  target="">Upcoming Election Information</a>
+	
+</li><li class='nav-level-2   '>
+	<a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/How-to-Vote-in-Culver-City"  target="">How to Vote in Culver City</a>
+	
+</li><li class='nav-level-2   nav-has-children'>
+	<a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Past-Election-Information"  target="">Past Election Information & Results</a>
+	
+</li><li class='nav-level-2   '>
+	<a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/How-to-Run-for-City-Council"  target="">How to Run for City Council</a>
+	
+</li><li class='nav-level-2   '>
+	<a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Campaign-Rules"  target="">Campaign Rules</a>
+	
+</li><li class='nav-level-2   '>
+	<a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Campaign-Rules-FAQ-Quick-Facts"  target="">Campaign Rules FAQ</a>
+	
+</li><li class='nav-level-2   '>
+	<a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Information-About-Initiatives"  target="">Information About Initiatives</a>
+	
+</li><li class='nav-level-2   '>
+	<a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Fair-Political-Practices-Commission-FPPC-Required-Reporting"  target="">Fair Political Practices Commission (FPPC) Required Reporting</a>
+	
+</li><li class='nav-level-2   '>
+	<a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/General-Election-Documents-and-Codes"  target="">General Election Documents and Codes</a>
+	
+</li><li class='nav-level-2   '>
+	<a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Voter-Registration-and-Education"  target="">Voter Registration and Education</a>
+	
+</li><li class='nav-level-2   '>
+	<a href="https://www.culvercity.gov/City-Hall/Election-Information-Updated/Culver-City-Youth-Election-Outreach"  target="">Culver City Youth Election Outreach</a>
+	
+</li></ul>
+</li><li class='nav-level-1   nav-has-children'>
+	<a href="https://www.culvercity.gov/City-Hall/Local-Agencies-Officials"  target="">Local Agencies & Officials</a>
+	
+</li><li class='nav-level-1   '>
+	<a href="https://www.culvercity.gov/City-Hall/Have-Your-Say"  target="">Have Your Say</a>
+	
+</li><li class='nav-level-1   nav-has-children'>
+	<a href="https://www.culvercity.gov/City-Hall/Get-Involved"  target="">Get Involved</a>
+	
+</li><li class='nav-level-1   '>
+	<a href="https://www.culvercity.gov/City-Hall/Public-Notices"  target="_self">Public Notices</a>
+	
+</li><li class='nav-level-1   nav-has-children'>
+	<a href="https://www.culvercity.gov/City-Hall/Reports-policies-local-laws"  target="">Reports, policies & local laws</a>
+	
+</li></ul>
+									            </div>
+									            </div>
+								            </div>
+								            <div class="col-xs-12 col-lg-8">
+							                <div id="main-content" class="main-container clearfix">
+							                  
+                                <!-- OC Layout Element Conent Template -->
+							                  <!--normalTemplateStart--><h1 class='oc-page-title '>Upcoming Election Information</h1>
+
+<p><span class="BigBlueText">November 3, 2026 General Municipal Election Information</span></p>
+<p><a title="2026-08-14__Official List of Qualified Candidates__Final.pdf" href="/files/assets/public/v/1/documents/city-clerk/election-info/2026-nov-3-election/2026-08-14__official-list-of-qualified-candidates__final.pdf" target="_blank" class="document ext-pdf"><i aria-hidden="true"></i><strong>List of Qualified Candidates and Contact Information</strong><span class="file-info">(PDF,&nbsp;320KB)</span></a> &nbsp;</p>
+<p>Before any candidate raises or spends any money in connection with their campaign, they must first complete and sign the <a href="https://www.fppc.ca.gov/content/dam/fppc/NS-Documents/TAD/Campaign%20Forms/501.pdf" data-docaccess-source-url="https://www.fppc.ca.gov/content/dam/fppc/NS-Documents/TAD/Campaign%20Forms/501.pdf" data-url-hash="21926914567892ed94237974aa2ad6a81744ce49f541c1cc9d668456dc9d77d4" data-url-status="disabled">Fair Political Practices Commission Form 501</a> to be filed with the City Clerk.&nbsp;</p>
+<p>To better understand committee and candidate responsibilities before, during, and after the election, please consult the <a href="http://www.fppc.ca.gov/learn/campaign-rules/candidate-toolkit-getting-started.html" rel="noopener" target="_blank" aria-label="Fair Political Practices Commission Candidate Toolkit Opens in new window" aria-describedby="new-window-0">Fair Political Practices Commission Candidate Toolkit</a>.</p>
+<h2>Candidate Statements</h2>
+<div data-type="0" data-title-level="2" class="oc-wysiwyg-container">
+<div class="oc-wysiwyg-container-panel">
+<h2>Jeannine Wisnosky Stehlin</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>I'm Jeannine Wisnosky Stehlin, and I&rsquo;d be honored to earn your vote for City Council. My husband and I raised our three daughters here, and they attended CCUSD schools. Like so many families, we chose Culver City for our excellent schools, safe neighborhoods, and strong community spirit.&nbsp;</p>
+<p>I'm running for City Council to enhance Culver City's quality of life by improving parks and neighborhoods, making our city more affordable, addressing homelessness, creating safer streets, sidewalks, intersections, and routes to school, work, and play; reducing traffic congestion; supporting schools, local businesses, and creative economy; and providing fiscally responsible, leadership that listens, and ensures every neighbor has a voice.&nbsp;</p>
+<p>I'm a small business owner and nonprofit executive director specializing in performing arts, access to justice, education, and student healthcare. I earned a BS from the University of Illinois and an MBA from the Illinois Institute of Technology.</p>
+<p>I served as a Cultural Affairs Commissioner (2016-2024), on the Citizens Bond Oversight Committee for CCUSD, am a SAG-AFTRA union member, and co-founder of community organizations that strengthen our parks, schools, arts, and neighborhoods.</p>
+<p>Endorsed by a coalition of residents and community leaders: Lt. Governor Eleni Kounalakis, State Treasurer Fiona Ma, former Culver City mayors, school board members, commissioners, and organizations representing labor, business, equality, environment, and the creative economy.<br />
+<br />
+Jeannine4CulverCity.com</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Franklin Carvajal</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>I am Franklin Carvajal, a Culver City resident, psychologist, business owner, longtime renter, and homeowner. I came to the United States alone at age 16 with few resources and a determination to build a better life. Through hard work and education, I earned two PhDs from UMass Amherst and Virginia Tech.</p>
+<p>My experiences with financial hardship, public transportation, affordable housing, and homeownership taught me the importance of opportunity, perseverance, and practical leadership.</p>
+<p>I am running for Culver City Council because local government should deliver results that improve residents' everyday lives. My priorities are simple: a Culver City that is safe, clean, quiet, beautiful, and accountable. That means responsive public safety, clean streets and parks, peaceful neighborhoods, thoughtful development and green spaces, responsible use of taxpayer dollars, transparent government, and a City Council that listens to residents.</p>
+<p>Culver City is my home. I want to bring my professional experience, life experience, and common-sense approach to City Hall and work collaboratively to protect what makes our community special while building a strong future for everyone.</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Freddy Puza</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>As your current Mayor, I am honored to seek re-election to the Culver City Council. As the city&rsquo;s first openly LGBTQ+ Mayor, I have worked to make Culver City more affordable, accountable, and functional for the people who live and work here.</p>
+<p>I championed the Affordable Housing Trust Fund, launched the Affordability&nbsp; Subcommittee, and expanded access to childcare, helping working families, seniors, renters, and small businesses stay in the city they call home.</p>
+<p>I also led on investments in the Mobile Crisis Team, giving residents access to trained mental health professionals during crises while ensuring our emergency response systems remain strong and reliable.</p>
+<p>I delivered small business microgrants and fee relief to help local entrepreneurs recover and grow.</p>
+<p>Under my leadership, City Council adopted our first balanced budget in three years while investing in the basics that matter most: repairing sidewalks, resurfacing roads, and expanding tree canopy maintenance to make our neighborhoods greener and more livable.</p>
+<p>I&rsquo;m proud to be endorsed by Congresswoman Sydney Kamlager-Dove, Supervisor Holly Mitchell, State Senator Lola Smallwood-Cuevas, Assemblymember Isaac Bryan, the Sierra Club, and dozens of other elected officials and community leaders.</p>
+<p>I&rsquo;m running for re-election to keep Culver City affordable, safe, and welcoming for everyone.</p>
+<p>www.freddypuza.com&nbsp;</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Thomas Aujero Small</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>Great cities don't happen by accident they're built through thoughtful, integrated planning. That conviction guided my career and my service as Culver City Councilmember and Mayor.</p>
+<p>My experience has taught me that housing, transportation, economic development, infrastructure, and quality of life are not separate challenges they're interconnected. When cities plan them together, they become more affordable, prosperous, and resilient for every generation.</p>
+<p>As Mayor, I led the City's General Plan Update, championed the Ballona Creek Bikeway Extension, strengthened the city's finances, expanded housing opportunities, and secured millions of dollars in outside funding for local priorities.</p>
+<p>My approach is to anticipate change, integrate solutions across issues, and measure success by results residents feel safer streets, more housing choices, stronger neighborhoods and a government that plans instead of reacting to crises.</p>
+<p>Effective government depends on understanding how every decision affects the whole city. I believe Culver City deserves leaders who connect the dots linking housing to transportation, infrastructure to economic opportunity, and planning to everyday outcomes.</p>
+<p>That is the experience and proven leadership I bring to Culver City: integrated thinking, disciplined execution, and results that improve everyday life for every neighborhood.</p>
+<p>To learn more visit www.smallforculvercity.com.&nbsp;</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Kimberley &ldquo;Kim&rdquo; Griffin</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>I am dedicated, personally and professionally, to serving the Culver City community. As a longtime resident, public safety professional, volunteer, and civic leader, I bring 20+ years of experience working collaboratively to address public safety, homelessness, human trafficking, and quality of life.</p>
+<p>I have always been guided by common sense, accountability, integrity, and respect for our community. Throughout my career, I have worked with government agencies, nonprofit organizations, businesses, and community members to solve problems, build partnerships, and deliver meaningful results. I believe government works best when it listens to residents, spends taxpayer dollars responsibly, plans thoughtfully for the future, and delivers exceptional public services.</p>
+<p>As your Councilmember, I will work to:</p>
+<ul type="disc">
+<li>Connect the unhoused with critical services</li>
+<li>Fight for affordable housing, so seniors and young professionals can afford to live here</li>
+<li>Enhance mobility without creating gridlock</li>
+<li>Help small businesses thrive</li>
+<li>Protect our community</li>
+<li>Invest in city infrastructure</li>
+<li>Stop wasteful spending</li>
+<li>Make City Hall more transparent</li>
+</ul>
+<p>Culver City is a remarkable city with an engaged and caring community. I am committed to preserving what makes our neighborhoods special while planning responsibly for the future. It would be an honor to earn your vote and serve as your representative on the Culver City City Council.</p>
+<p>www.Griffin4culvercity.com</p>
+</div>
+</div>
+</div>
+<table style="border-color: rgb(0,0,0); font-family: arial;" class=""></table>
+<h2>Ballot Measure Information</h2>
+<p>There are 3 measures that will be placed onto the November 3, 2026 Election for Voter Approval:</p>
+<ul>
+<li class="">Measure YV - An Amendment to the City Charter to Lower the Voting Age to 16
+<ul>
+<li><a title="This is the resolution to call the election for the Vote 16 ballot measure" href="/files/assets/public/v/1/documents/city-clerk/election-info/2026-nov-3-election/2026-6-22-resolution-for-vote-16.pdf" target="_self" class="document ext-pdf"><i aria-hidden="true"></i>Resolution and Ballot Question to Lower Voting Age<span class="file-info">(PDF,&nbsp;216KB)</span></a></li>
+</ul>
+</li>
+<li>Measure AA - An Initiative Ordinance to the Culver City Municipal Code to Enact a Special Parcel Tax of forty-eight cents ($0.48) per square foot, subject to a tax cap, for 10 years, generating approximately $18,000,000 annually to benefit Culver City public schools
+<ul>
+<li><a title="26-07-13__RESO-2026-R083-Sufficiency-of-Petition-to-Place-a-Parcel-Tax-Ballot-Measure-on-Nov-3-2026-Election" href="/files/assets/public/v/1/documents/city-clerk/election-info/2026-nov-3-election/2026-07-13__reso-2026-r083-sufficiency-of-petition-to-place-a-parcel-tax-ballot-measure-on-nov-3-2026-election.pdf" target="_self" class="document ext-pdf"><i aria-hidden="true"></i>Resolution and Ballot Question to Enact a Parcel Tax<span class="file-info">(PDF,&nbsp;724KB)</span></a></li>
+</ul>
+</li>
+<li>Measure T - An Ordinance to Increase the Transient Occupancy Tax (TOT) paid by hotel/motel guests from 14% to 15% until March 1, 2028 and then to 16% until ended by Voters
+<ul>
+<li><a title="2026-07-27__RESO-2026-R084-Increase-Rate-of-Transient-Occupancy-Tax" href="/files/assets/public/v/1/documents/city-clerk/election-info/2026-nov-3-election/2026-07-27__reso-2026-r084-increase-rate-of-transient-occupancy-tax.pdf" target="_self" class="document ext-pdf"><i aria-hidden="true"></i>Resolution and Ballot Question to Increase TOT<span class="file-info">(PDF,&nbsp;372KB)</span></a></li>
+</ul>
+</li>
+</ul>
+<p><span style="color: rgb(18,100,132); font-family: &quot;Fjalla One&quot;, sans-serif; font-size: 1.5em;">Ballot Arguments and Rebuttals</span></p>
+<p><span style="font-family: inherit; font-size: 1em;">The deadline for arguments for all measures is August 14, 2026. Please use the forms below to complete, sign using up to 5 wet signatures and return the original to the City Clerk. Written argument for or against a ballot measure shall not exceed 300 words and rebuttals may not exceed 250 words in length.&nbsp;&nbsp;Please call for an appointment:</span> <a href="tel:3102535851" style="font-family: inherit; font-size: 1em;">(310) 253-5851</a><span style="font-family: inherit; font-size: 1em;">.&nbsp;</span></p>
+<ul>
+<li><a title="POST__2026-11-03-Notice-of-Argument-Deadlines-Ballot-Measure-General-Municipal-Election__-ENGLISH" href="/files/assets/public/v/1/documents/city-clerk/election-info/2026-nov-3-election/post__2026-11-03-notice-of-argument-deadlines-ballot-measure-general-municipal-election__-english.pdf" target="_self" class="document ext-pdf"><i aria-hidden="true"></i>Notice of Deadlines for Ballot Arguments, Rebuttals, and Impartial Analysis - English<span class="file-info">(PDF,&nbsp;218KB)</span></a></li>
+<li><a title="POST__2026-11-03-Notice-of-Argument-Deadlines-Ballot-Measure-General-Municipal-Election__-SPANISH" href="/files/assets/public/v/1/documents/city-clerk/election-info/2026-nov-3-election/post__2026-11-03-notice-of-argument-deadlines-ballot-measure-general-municipal-election__-spanish.pdf" target="_self" class="document ext-pdf"><i aria-hidden="true"></i>Notice of Deadlines for Ballot Arguments, Rebuttals, and Impartial Analysis - Spanish<span class="file-info">(PDF,&nbsp;407KB)</span></a></li>
+<li><a title="Ballot-Label-Argument-and-Rebuttals-Form-Fillable" href="/files/assets/public/v/1/documents/city-clerk/election-info/2026-nov-3-election/ballot-label-argument-and-rebuttals-form-fillable.pdf" target="_self" class="document ext-pdf"><i aria-hidden="true"></i>Ballot Arguments and Rebuttals Form<span class="file-info">(PDF,&nbsp;1MB)</span></a></li>
+<li><a title="Ballot-Label-Attestation-Form-Fillable" href="/files/assets/public/v/1/documents/city-clerk/election-info/2026-nov-3-election/ballot-label-attestation-form-fillable.pdf" target="_self" class="document ext-pdf"><i aria-hidden="true"></i>Ballot Label Attestation Form<span class="file-info">(PDF,&nbsp;4MB)</span></a></li>
+<li><a title="Authorization-Form-for-Another-Person-to-Sign-Rebuttal.pdf" href="/files/assets/public/v/1/documents/city-clerk/election-info/2026-nov-3-election/authorization-form-for-another-person-to-sign-rebuttal.pdf" target="_self" class="document ext-pdf"><i aria-hidden="true"></i>Authorization Form for Another Person to Sign Rebuttal<span class="file-info">(PDF,&nbsp;217KB)</span></a></li>
+</ul>
+<div data-type="0" data-title-level="2" class="oc-wysiwyg-container">
+<div class="oc-wysiwyg-container-panel">
+<h2>Impartial Analysis - CCUSD Parcel Tax (Measure AA)</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p style="text-align: center"><strong>CITY ATTORNEY&rsquo;S IMPARTIAL ANALYSIS OF MEASURE AA</strong></p>
+<p>The City Council of the City of Culver City (City) placed Measure AA on the ballot to amend the Culver City Municipal Code to add a new Parcel Tax to provide additional funding to the Culver City Unified School District.</p>
+<p>The Measure would add a new Chapter 3.08 to the Culver City Municipal Code to create a new tax on all parcels of taxable real property in the City. The tax is calculated at the rate of forty-eight cents ($0.48) per square foot on all improvements on the parcel up to a maximum of $15,000 per parcel. The tax would be collected annually and paid by the owner of each parcel in the same way as other property taxes. The tax will expire after 10 years.</p>
+<p>The proposed tax would not apply to persons 65 years or older, or anyone who receives Supplemental Security Income for a disability, or those who receive Social Security Disability Insurance benefits. The tax also would not apply to an Accessory Dwelling Unit occupied by a person meeting the exemption standards listed above.</p>
+<p>The Measure requires the City and District jointly form an oversight board to monitor the use of the funds raised, to ensure the funds are being used for educational purposes. The Board must consist of Culver City residents including parents or guardians of District Students of various grade levels, representatives of District employee bargaining units, and members of the community at large. Proper uses of funds include salaries and professional development for staff, maintaining STEM (Science, Technology, Engineering, and Mathematics) programs, art, music, visual and performing arts, technology, counseling, health, and extra-curricular activities. Funds may not be used for administrative salaries.</p>
+<p>The City will collect the tax revenues and transmit them to the District. The City&rsquo;s costs for administering the tax will be reimbursed by the District.</p>
+<p>To be adopted, State law requires this Measure be approved by a majority of Culver City voters. A &ldquo;Yes&rdquo; vote on the Measure would approve of the tax, amend the Municipal Code, and provide the resulting funding to the District. A &ldquo;No&rdquo; vote would mean no new parcel tax would be established.</p>
+<p>Dated:&nbsp; August 13, 2026&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>Heather Baker, City Attorney<br />
+City of Culver City</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Argument In Favor - CCUSD Parcel Tax (Measure AA)</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p style="text-align: left;">Support Culver City Schools!</p>
+<p>Measure AA&nbsp; was put on the ballot by an all-volunteer group of Culver City parents, residents, and teachers who worked together all year to craft the measure and gather enough signatures to place it on the ballot.&nbsp; Thanks to thousands of you who signed the petition, we finally have the opportunity to put local dollars into Culver City schools that cannot be taken by the State.&nbsp; The final step on our journey together is to vote YES on Measure AA.</p>
+<p>Our tagline is &ldquo;Strong schools, strong homes.&rdquo;&nbsp; We believe that strong public schools mean stronger communities and better home values. &nbsp;&ldquo;Strong schools&rdquo; means having the resources to attract and retain the best teachers and support staff.&nbsp;</p>
+<p>We need Measure AA because Culver City receives the lowest funding allocation per student possible from the State of California. Our kids deserve full supply closets and no economic barriers to participation in sports, STEM, arts, extracurriculars, and music.&nbsp;</p>
+<p>Measure AA ensures responsible spending.&nbsp; Measure AA establishes committee of parents and residents, not chosen by the school board, who will write a plan for our money each year before a single dollar is budgeted or spent. We can create new programs and strengthen existing programs.&nbsp; This is the community&rsquo;s choice, and our community&rsquo;s voice. &nbsp;</p>
+<p>The Measure AA&nbsp; &ldquo;sliding scale&rdquo; mechanism ensures tax fairness. &nbsp;For the first time in Culver City history, commercial buildings and movie studios will be asked to pay their fair share.&nbsp;</p>
+<p>Measure AA provides an exemption for homes owned by seniors and ADUs where seniors live.</p>
+<p>This measure is supported by CCUSD teachers and staff.&nbsp; Every member of the CCUSD Board of Education signed the petition.</p>
+<p>Measure AA will provide Culver City families with the great public schools we deserve.&nbsp;</p>
+<p>Vote YES on Measure AA!</p>
+<p><strong>Darrel Menthe</strong></p>
+<p><strong>Ross Piro</strong></p>
+<p><strong>President Ray Long, Culver City Federation of Teachers</strong></p>
+<p><strong>President Lauren Jagnow, CCUSD Association of Classified Employees</strong></p>
+<p><strong>Ji Young Denick</strong></p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Argument in Opposition - CCUSD Parcel Tax (Measure AA)</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>Culver City residents strongly support public education, but ENOUGH IS ENOUGH.</p>
+<p>Neary every year, we're asked to vote for ANOTHER tax increase. This will be one of the biggest yet: about $800 per household (based on the city's average home size of 1618 sf).</p>
+<p>We just voted for a $189 parcel tax for our schools in Nov. 2024, and a $358 million bond measure in March 2024. Those two votes alone added nearly $1,000 a year to my tax bill. I'm sure plenty of homeowners are paying even more.</p>
+<p>Plus, there were votes to increase our sales tax in 2025, 2020, and 2018, as well as a $99 a year parcel tax for clean water in 2016. Culver City now has one of the highest sales tax rates in the nation.</p>
+<p>I hear a lot of gripes about "affordability" these days. So here's a helpful tip for everyone: STOP VOTING TO RAISE OUR TAXES!</p>
+<p>Do our schools need money? Sure, that's why you voted for all the bonds and parcel taxes in 2024 (as well as other parcel taxes in 2018 and 2010). Do we really need yet another school tax just two years after the last one? Plenty of neighboring school districts achieve higher academic ratings and student outcomes without forcing residents to pay ANY extra taxes at all.</p>
+<p>So this November, vote for affordability. Vote for common sense. Vote NO on Measure AA.</p>
+<p><strong>John Derevlany</strong></p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Rebuttal to Argument in Favor of Measure AA</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p style="text-align: center">ELECTION: Nov. 3, 2026, in Culver City, CA</p>
+<p>Measure AA is a well-intentioned, but terribly-timed effort.</p>
+<p>We are in the midst of an affordability crisis. AND we just voted for a huge amount of money for our schools in 2024.</p>
+<p>We here in Culver City have always been EXTREMELY generous to our schools and city. But enough is enough.</p>
+<p>Measure AA= Always Asking (for more money).</p>
+<p>Voters have already supported TEN tax hikes in Culver City since 2014. AlwaysAsking.org, lists them all. This website will also help you figure out how much you will pay if this Always Asking Measure passes. Typical homeowners can expect to see $500-$1000 of new taxes. Larger buildings can be charged up to $15,000 per parcel each year.</p>
+<p>Ultimately, we can't control the price of our groceries. We can't control the price of our gas. We can't control all the greedy corporations trying to take our money.</p>
+<p>However, here in California, we CAN control our tax increases with our vote. So this Nov. 3, Vote NO on Measure AA.</p>
+<p>It's time to say NO to those "Always Asking" for more tax hikes.</p>
+<p><strong>John Derevlany</strong></p>
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Rebuttal to Argument Against Measure AA</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>Great public schools require more than bare minimum state funding.&nbsp; There&rsquo;s no way around it.&nbsp; CCUSD is in danger of being taken over by the State if the district cannot put together a long-term financial solution that maintains reserves and avoids critical layoffs.&nbsp; The layoffs CCUSD has already been forced to make are unacceptable. Our children deserve better!&nbsp;&nbsp;</p>
+<p>Contrary to the claims of the opposition, Culver City voters have not yet supported public schools with significant local dollars at the level other communities do. The only parcel tax that exists is $189 per parcel, whether you&rsquo;re a movie studio or a homeowner.&nbsp; In 2024, we voted to renew the existing tax at the same rate without even adjusting for inflation. A school bond can only be used for construction, not classroom services.</p>
+<p>By contrast, Measure AA is a fair, progressive measure.&nbsp; Commercial properties will pay more of their fair share for the first time, and all the money can go to classroom services.</p>
+<p>What the Opposition fails to appreciate is that the public schools are one of the most important contributors to home values. Strong schools = strong homes.&nbsp; Research indicates that well-funded public schools increase home values by 5%-10% long term. This is an investment in our kids, our community, and our homes.&nbsp; Seniors are exempt from this measure, but still get the property value boost!&nbsp;</p>
+<p>Measure AA will be our long-term solution for underfunded schools.</p>
+<p>Vote YES on Measure AA!</p>
+<p>www.efccs.org</p>
+<p><strong>Albert Vera, Council Member</strong></p>
+<p><strong>Amy Hee Kim</strong></p>
+<p><strong>G. Paul Zagala</strong></p>
+<p><strong>Jeanne T. Black</strong></p>
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Impartial Analysis - TOT Increase (Measure T)</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p style="text-align: center"><strong>CITY ATTORNEY&rsquo;S IMPARTIAL ANALYSIS OF MEASURE T</strong></p>
+<p>Measure T, which was placed on the ballot by the City Council, would increase the City of Culver City&rsquo;s current Transient Occupancy Tax (TOT) from 14% to 16% in two phases.&nbsp; Effective March 1, 2027, the TOT would increase from 14% to 15%.&nbsp; Effective March 1, 2028, the TOT would increase from 15% to 16%.&nbsp; If passed, the Measure would amend Culver City Municipal Code (CCMC) Section 11.02.105, which establishes the TOT rate.&nbsp;</p>
+<p>The City&rsquo;s existing TOT rate of 14% has been in effect since 2012.&nbsp; The TOT is a percentage of the room rate charged to a guest who stays in a &ldquo;hotel&rdquo; within the City for a period of 30 days or less.&nbsp; The TOT is collected from guests by the hotel operators and then remitted to the City.&nbsp; CCMC Section 11.02.100 defines a hotel as &ldquo;[a]ny structure, or any portion of any structure, which is occupied or intended or designed for occupancy by transients for dwelling, lodging or sleeping purposes, and includes any hotel, inn, tourist home or house, motel, studio hotel, bachelor hotel, lodging house, rooming house, apartment house, dormitory, public or private club, mobile home or house trailer at a fixed location, or other similar structure or portion thereof.&rdquo;</p>
+<p>The Measure proposes to increase only the rate of the existing TOT.&nbsp; It does not change the method of collection of the TOT, and all other related regulations shall remain the same, if the Measure is approved by a majority of the voters.&nbsp;</p>
+<p>The TOT provides revenue for the City&rsquo;s General Fund, which is primarily used for basic City services, such as emergency response; firefighter, paramedic and police staffing; affordable housing, mental health and homeless reduction programs; improvements to streets, sidewalks, public transportation, infrastructure and parks; and other general services.&nbsp; The City anticipates the proposed increase would be expected to generate up to an additional $1,000,000, approximately, in the first year of its implementation and up to approximately $2,000,000 per year thereafter, in General Fund revenue to fund City services.</p>
+<p>State law requires that this measure be approved by a majority of the voters to be enacted.&nbsp; A &ldquo;Yes&rdquo; vote for the Measure will increase the existing TOT from 14% to 16% over a two-year phase in period.&nbsp; A &ldquo;No&rdquo; vote against the Measure will leave in place the existing TOT at 14%.</p>
+<p>Dated:&nbsp; August 13, 2026&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p style="text-align: left;">Heather Baker, City Attorney<br />
+City of Culver City</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Argument in Favor - TOT Increase (Measure T)</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p style="text-align: center"><strong>ARGUMENT IN FAVOR OF BALLOT MEASURE T<br />
+ARGUMENT TO INCREASE TRANSIENT OCCUPANCY TAX (TOT)</strong></p>
+<p>Measure T asks visitors &mdash; not Culver City residents &mdash; to help pay for the services they use while they&rsquo;re here.</p>
+<p>Culver City&rsquo;s Transient Occupancy Tax (TOT), the &ldquo;hotel tax,&rdquo; is paid by guests staying in our hotels, motels, and short-term rentals for 30 days or less. Residents don&rsquo;t pay it. The rate hasn&rsquo;t changed since April 2012, when 83.3% of voters approved it. Costs have risen ever since.</p>
+<p>This measure raises the TOT one percent at a time &mdash; to 15% in 2027, then 16% in 2028 &mdash; generating an estimated $2 million annually. Those dollars stay here, maintaining 9-1-1 emergency response, firefighter, paramedic and police staffing; affordable housing, mental health and homelessness reduction programs; and repairs to streets, sidewalks, storm drains and parks.</p>
+<p>The phase-in matters. Increasing gradually gives our 17 tax-paying hotels time to adjust before the 2028 Olympics bring record visitor demand to the Westside.</p>
+<p>At 16%, Culver City is no outlier. Counting tourism district assessments, our neighbors already charge as much or more: Los Angeles 16% (14% plus a 2% Tourism Marketing District assessment), Anaheim 17% (15% plus 2%), Santa Monica roughly 16&ndash;18%, West Hollywood 15.5% (12.5% plus 3%). Inglewood charges 15.5% today. We would sit squarely within the regional market &mdash; competitive for our hotels, fair to our residents.</p>
+<p>Unlike other revenue, this local tax cannot be taken by Sacramento. It requires annual audits and public disclosure of spending, and continues only until voters end it.</p>
+<p>Visitors use our streets, our parks and our emergency services. This measure simply asks them to pay their share.</p>
+<p>Please join us in voting YES on Measure T.</p>
+<p><strong>Mayor Freddy Puza</strong></p>
+<p><strong>Vice-Mayor Bryan "Bubba" Fish</strong></p>
+<p><strong>Council Member Yasmine-Imani McMorrin &nbsp;</strong></p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Argument in Opposition - TOT Increase (Measure T)</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>An argument in opposition of the TOT Increase (Measure T) was not filed.</p>
+<p><br /></p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Impartial Analysis - Vote 16 (Measure YV)</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p style="text-align: center"><strong>CITY ATTORNEY&rsquo;S IMPARTIAL ANALYSIS OF MEASURE YV</strong></p>
+<p>The City Council of the City of Culver City (City) placed Measure YV on the ballot to amend the City Charter (Charter) by allowing City residents aged 16 and 17 to vote for City Council candidates, City ballot measures, and Culver City Unified School District (CCUSD) Board candidates and measures once certain conditions are met by the City and CCUSD Board.</p>
+<p>The City Charter states that &ldquo;unless otherwise provided by this Charter,&rdquo; state law will control the procedures for holding all City elections and elections for members of the CCUSD school board.&nbsp; See Charter Sections 1500 and 1503. California Constitution Article II section 2 states that &ldquo;United States citizens 18 years of age and resident of this state may vote.&rdquo; &nbsp;The California Elections Code also requires that a valid registered voter must be a California resident, a United States citizen, and at least 18 years of age.</p>
+<p>The California Constitution, Article XI Section 5, grants charter cities the right to govern their municipal affairs, which includes the conduct of city elections. The Measure proposes to add Section 1506, &ldquo;Voting Age&rdquo;, to the Charter, which would allow 16- and 17-year-old City residents, who are otherwise eligible under state and local law, to vote in City and CCUSD elections. The Measure also amends Section 1500 regarding School Board elections, to refer to the provisions of the new Section 1506.&nbsp;</p>
+<p>The Measure provides that in order for the voting age to be lowered to 16, the City Council and the CCUSD Board must each decide to do the following for their respective elections: (1) approve the budgetary funds to cover any additional election costs that may be incurred; (2) determine that logistical systems are in place to conduct the election; and (3) determine that including 16- and 17-year-olds in the election would not prevent consolidation of the election with the County election, which has occurred since 2020.</p>
+<p>The conditions described in the preceding paragraph include having equipment, software, and procedures in place for voter registration and for casting votes during the election. These systems and logistics must be technically capable and ready to handle accommodating 16- and 17-year-old voting. Additionally, the Measure allows the City and the CCUSD to independently decide, as to their respective elections, the manner, method and times at which 16- and 17-year-olds may cast their votes, which do not need to be the same as those for persons 18 and older.</p>
+<p>The requirements of this Measure, if approved, would apply to the City and the CCUSD independently of each other.</p>
+<p>To be adopted, State law requires this Measure be approved by a majority of Culver City voters. A &ldquo;Yes&rdquo; vote on Measure YV would lower the age requirement to 16 for City and CCUSD elections, but before the Measure is implemented, the City Council and the CCUSD Board must determine that the conditions listed in the Measure are met. A &ldquo;No&rdquo; vote on the Measure would not lower the voting age to 16.</p>
+<p>Dated:&nbsp; August 13, 2026&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p>Heather Baker, City Attorney<br />
+City of Culver City</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Argument in Favor - Vote 16 (Measure YV)</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p style="text-align: center;"><strong>ARGUMENT IN FAVOR OF BALLOT MEASURE YV<br />
+ARGUMENT TO LOWER THE CULVER CITY VOTING AGE TO 16</strong></p>
+<p>Measure YV is an investment in Culver City&rsquo;s future, strengthening local democracy by welcoming 16- and 17-year-olds into the civic process. Young people don&rsquo;t have to wait until 18 before local government begins shaping their lives. Decisions by the Mayor, City Council, and School Board affect their schools, parks, transportation, public safety, recreation programs, and future opportunities.</p>
+<p>Every day, Culver City&rsquo;s 16- and 17-year-olds contribute to the community by working, paying taxes, driving, volunteering, leading student organizations, and serving as active neighbors. They have demonstrated the responsibility to participate in decisions that directly affect them. A YES vote on Measure YV gives them a voice in local elections where they already have a meaningful stake.</p>
+<p>This proposal is not new to Culver City voters. In 2022, the same idea appeared on the ballot as Measure VY and fell just 16 votes short of passage&mdash;the narrowest margin of any contest on the county&rsquo;s ballot that year. It also received more votes than the highest vote getting City Council candidate, demonstrating broad community engagement with the issue.</p>
+<p>Measure YV builds on a growing movement. Communities across California and the nation have expanded local voting rights to 16- and 17-year-olds, with encouraging results. Research shows that people who vote when they first become eligible are more likely to remain engaged throughout their lives. 16- and 17-year-olds are especially well positioned to cast their first ballot while supported by their families, schools, and community. Communities that have adopted Vote16 have reported strong youth turnout, increased civic knowledge, and deeper connections between young people and local government.</p>
+<p>A YES vote on Measure YV is about more than one election. It prepares the next generation of informed voters, strengthens local democracy, and ensures more residents with a stake in Culver City&rsquo;s future have the opportunity to help shape it for generations to come.</p>
+<p><strong>Mayor Freddy Puza</strong></p>
+<p><strong>Vice-Mayor Bryan "Bubba" Fish</strong></p>
+<p><strong>Council Member Yasmine-Imani McMorrin &nbsp;</strong></p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Argument in Opposition - Vote 16 (Measure YV)</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p style="text-align: center;"><strong>Direct Argument Against Vote16</strong></p>
+<p>High school has been a formative time in all our lives. It was our first introduction to politics and culture. The Vote16 amendment makes promises to engage Culver City High School students in our civic culture by granting them the right to decide who our next councilmembers will be.</p>
+<p>The reality is a bit different.</p>
+<p>For a while now, activists have had an eye to campaigning in our school district. They've pressured Council to approve this measure on the ballot - for a second time.</p>
+<p>Let's set aside how this is going to work. Let's assume the proponents thought of all that-how those under 18 get registered, whether outside students can vote, whether students can run for Council, etc.</p>
+<p>The fact is, this measure makes our students a captive, impressionable voting bloc. The candidates with the best access to the school district will have an advantage over outsiders. That makes our Council less accessible or accountable.</p>
+<p>And a voter is public record. Their name, address, and contact info would be published by the election administrator, available to anyone who requests it. It's a necessary part of elections. That means your 16-year old child would be getting contacted - and courted - by strangers with political motives.</p>
+<p>Is that the school district you want? Do you want it to become a political football, with your children being contacted by competing strangers, pressured to vote for their favored candidates? Or do you feel like your children should be shielded from the political winds of our city?</p>
+<p>If you feel like our Council elections should leave our kids alone, vote NO on Vote16.</p>
+<p><strong>President Ron Bassilian, Protect Culver City</strong></p>
+<p><strong>Councilman Albert Vera</strong></p>
+<p><strong>Former Mayor Goran Eriksson</strong></p>
+<p><strong>Former Mayor Ed Wolkowitz</strong></p>
+<p><strong>Marta Valdez</strong></p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Rebuttal to Argument in Favor of Measure YV</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>Let us address the half-truths and flawed logic in the Argument in Favor.</p>
+<p>Working teens pay State and Federal taxes. Culver City&rsquo;s budget is based primarily on Property taxes and Business taxes.&nbsp; This proposal gives children the power to increase your property taxes and pass-thru rent increases.&nbsp;</p>
+<p>They point out the proposal failed by 16 votes in 2022. One vote over a tie wins an election, and citizens have already signaled TWICE (2022, 2024) they do NOT support this measure.</p>
+<p>The &ldquo;growing movement&rdquo; in the US has mostly been limited to school-related votes; not general city council matters.</p>
+<p>The research they claim shows increased youth participation and turnout actually shows that, after the initial excitement, they engage no more than older voters do.</p>
+<p>So what is the motivation of the three Culver City Council people listed above to repeatedly support lowering the voting age?</p>
+<p>Several elections have been decided by fewer than 100 votes in Culver City. Adding ~1,000 16- and 17-year-old voters will instantly make them the deciding voting bloc in future elections.&nbsp;<br />
+<br />
+Clinical studies clearly show 16- and 17-year-olds are highly susceptible to peer pressure and emotional arguments. State education code requires any adult that works with children submit to a criminal background check. If passed, the student vote will empower adults to impose their political will through our children without such protection, while candidates and their supporters lobby your children for votes.&nbsp;</p>
+<p>Vote NO on Measure YV - Vote16CulverCity.com</p>
+<p><strong>Councilmember Dan O&rsquo;Brien</strong></p>
+<p><strong>Councilmember Albert Vera, Jr.</strong></p>
+<p><strong>Former Mayor Goran Eriksson</strong></p>
+<p><strong>Philip Lelyveld</strong></p>
+<p>&nbsp;</p>
+</div>
+</div>
+<div class="oc-wysiwyg-container-panel">
+<h2>Rebuttal to Argument Against Measure YV</h2>
+<div class="oc-wysiwyg-container-panel-content">
+<p>Culver City's 16- and 17-year-olds already work, pay taxes, drive, and lead their communities. Yet opponents claim they're too impressionable to be trusted with a ballot on the local decisions that shape their mobility, education, services, and safety. Denying them a vote is arbitrarily unjust and counter to raising capable, self-advocating young adults.</p>
+<p>A few misleading claims deserve correction:</p>
+<p>Measure YV returns because Council listened when voters asked. In 2022 it fell just 16 votes short - the closest contest on the entire county ballot - and outpolled the top Council candidate.</p>
+<p>California has let 16- and 17-year-olds pre-register to vote since 2016. Our teenagers are already in the system, and none of the harms opponents predict have materialized here or in any of the twelve Vote16 cities nationwide.</p>
+<p>The School District is a separate government with its own rules. No candidate gets special access to students, and campuses aren't campaign offices. Meanwhile, seniors, homeowners, and union members are campaigned at senior centers, neighborhood meetings, and union halls. We don't strip their votes because someone might ask for one. In fact, being asked is what having a voice looks like.</p>
+<p>California voter information isn't handed to "anyone who requests it." State law limits access to electoral, governmental, scholarly, journalistic, and political purposes, and misuse is a crime - the same protection every voter receives.</p>
+<p>Our students are neighbors with real stakes in this city's mobility, education, services, and safety. They've earned a say in it. Vote YES on Measure YV.</p>
+<p><strong>Yasmine-Imani McMorrin, Council Member&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong></p>
+<p><strong>Dorien Davies, Secretary, Our Culver</strong></p>
+<p><strong>Jeff Schwartz, Past President of The Culver City Democratic Club</strong></p>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+
+
+      
+
+
+<!--normalTemplateEnd-->
+                                
+                                
+<script type="text/javascript">
+    function ctl11_divFormContainer_ValidateSeamlessForm() {
+        var $ = $seamless.$;
+        
+        $('a[href$="se_form"], a[href*="se_form_JsDatePicker_dateInput_text"], a.captcha-class',
+                    document.getElementById('ctl11_divFormContainer'))
+        .each(function () {
+            this.onclick = function () {
+                $($(this).attr('href')).trigger('focus');
+                return false;
+            }
+        });
+    }
+</script>
+
+<div>
+	<div id="ctl11_divFormContainer" class="se-form-container">
+        <div class="sc-feedback-form sc-form">
+   <div class="sc-form-errors">
+      
+   </div>
+          
+		
+				
+			
+				
+			
+				<div class="sc-element-container sc-radio-button generic-form-radiobutton">
+	<fieldset>
+		<legend>
+			<span id='span_ctl11_rpControls_ctl02_fiControl_se_form' class='sc-label se-matrix-control-label'>Was this page helpful?<span class="se-form-required-asterisk"> * </span> <span class="se-form-required-text">(required)</span></span>
+   			<span class="sc-description">Help us improve this site</span>
+		</legend>
+   		<div class="sc-form-control"><span id="ctl11_rpControls_ctl02_fiControl_se_form" class="generic-form-radiobutton" aria-labelledby="span_ctl11_rpControls_ctl02_fiControl_se_form"><input id="ctl11_rpControls_ctl02_fiControl_se_form_0" type="radio" name="ctl11$rpControls$ctl02$fiControl$se_form" value="Yes" /><label for="ctl11_rpControls_ctl02_fiControl_se_form_0">Yes</label><br /><input id="ctl11_rpControls_ctl02_fiControl_se_form_1" type="radio" name="ctl11$rpControls$ctl02$fiControl$se_form" value="Maybe" /><label for="ctl11_rpControls_ctl02_fiControl_se_form_1">Maybe</label><br /><input id="ctl11_rpControls_ctl02_fiControl_se_form_2" type="radio" name="ctl11$rpControls$ctl02$fiControl$se_form" value="No" /><label for="ctl11_rpControls_ctl02_fiControl_se_form_2">No</label></span></div>
+	</fieldset>   
+</div>
+          
+			
+				<div class="sc-element-container sc-textarea generic-form-textarea">
+   <div class="sc-label"><label for='ctl11_rpControls_ctl03_fiControl_se_form'>How can we improve this page?</label></div>
+   <div class="sc-description"></div>
+   <div class="sc-form-control"><textarea name="ctl11$rpControls$ctl03$fiControl$se_form" rows="2" cols="20" id="ctl11_rpControls_ctl03_fiControl_se_form" class="generic-form-textarea" maxlength="1000">
+</textarea></div>
+</div>
+          
+			
+				<div class="sc-element-container sc-textbox generic-form-textbox">
+   <div class="sc-label"><label for='ctl11_rpControls_ctl04_fiControl_se_form'>Email address</label></div>
+   <div class="sc-description"></div>
+   <div class="sc-form-control"><input name="ctl11$rpControls$ctl04$fiControl$se_form" type="text" maxlength="300" id="ctl11_rpControls_ctl04_fiControl_se_form" class="generic-form-textbox" autocomplete="email" /></div>
+</div>
+          
+			
+		<div id="ctl11_pnlCaptcha">
+	
+		    <div class="sc-element-container sc-captcha">
+	<fieldset>
+	<legend>
+	   <div class="sc-captcha-description"><span class="sc-captcha-description-text">Type the characters you see in the image below<span><span class="se-form-required-asterisk"> * </span> <span class="se-form-required-text">(Required)</span></div>
+   </legend>
+   <div class="sc-captcha-image">
+   	<div id="ctl11_CAPTCHA_Image" class="RadCaptcha RadCaptcha_Default  CaptchaImageDiv">
+		<!-- 2020.1.114.45 -->&nbsp;<div id="ctl11_CAPTCHA_Image_SpamProtectorPanel" class="CaptchaImageDiv">
+			<div id="ctl11_CAPTCHA_Image_ctl01">
+				<img id="ctl11_CAPTCHA_Image_CaptchaImageUP" alt="Type the letters in the image or Type the first letter of the words spoken in the audio." src="../../Telerik.Web.UI.WebResource.axd?type=rca&amp;isc=true&amp;guid=10f2c2b3-86b9-4e7a-9d51-4fd13477ccee" height="50" width="180" border="0" style="display:block;" /><a id="ctl11_CAPTCHA_Image_CaptchaLinkButton" class="rcRefreshImage" title="Generate new image" href="javascript:__doPostBack(&#39;ctl11$CAPTCHA_Image$CaptchaLinkButton&#39;,&#39;&#39;)" style="display:block;">Generate new image</a><span style='display:none;'>&nbsp;</span><a href="../../Telerik.Web.UI.WebResource.axd?type=cah&amp;isc=true&amp;guid=10f2c2b3-86b9-4e7a-9d51-4fd13477ccee" id="ctl11_CAPTCHA_Image_CaptchaAudioCodeUP" title="Read aloud" class="rcCaptchaAudioLink" style="display:block;">Read aloud</a>
+			</div>
+		</div><input id="ctl11_CAPTCHA_Image_ClientState" name="ctl11_CAPTCHA_Image_ClientState" type="hidden" />
+	</div>
+   </div>
+   <div class="sc-captcha-input"><label for="ctl11_CAPTCHA_Input" class="visuallyhidden">Please enter the text in the image</label><input name="ctl11$CAPTCHA_Input" type="text" maxlength="5" id="ctl11_CAPTCHA_Input" /></div>
+   </fieldset>
+</div>
+          
+		
+</div>
+		<div class="sc-form-submit-row">
+	<div class="sc-form-submit-button-container">
+		<input type="submit" name="ctl11$ctl00" value="Submit Feedback" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl11$ctl00&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" />
+	</div>
+	<div class="sc-form-clear-button-container">
+		<input type="reset" value="Cancel">
+	</div>
+</div>
+</div>
+<script>
+$(document).ready(function(){
+  if(typeof(OpenCities.SeamlessForms.init) == "function")
+  {
+	  OpenCities.SeamlessForms.init();
+  }
+});
+</script>
+          
+	</div>
+	
+	
+</div>
+                                
+							                </div>
+							                </div>
+							             </div>
+						            </div>
+						            </div>
+                        
+					                  </div>
+                        </div>
+                        <div class="back-to-top-container text-center">
+                            <a href="#body-top" id="back-to-top"><i aria-hidden="true"></i><span class="js-visuallyhidden">Back to top</span></a>
+                        </div>
+                </div>
+            </div><!--groupTemplateEnd-->
+            <footer>
+                
+                    <div class="footer-outer-container footer-first-row">
+                        <div class="footer-container clearfix">
+                            <div class="grid grid-pad">
+                                <div class="col-xs-12 col-s-12 col-m-4 col-lg-3 hide-on-mobile" >
+	
+	<p><img alt="The Seal of the City of Culver City" src="/files/sharedassets/public/v/3/footer/footer-seal.png" width="150" height="150" /></p>
+
+
+	<ul class="footer-links with-icons ">   </ul>
+	
+</div><div class="col-xs-12 col-s-12 col-m-4 col-lg-3" >
+	
+			<h2 class="visuallyhidden">Site Footer</h2>
+			<h3 class="footer-title">Contact Us</h3>
+			
+	<p><a href="https://www.culvercity.gov/City-Hall/City-Departments" target="_self">City Departments</a></p>
+<p>City of Culver City - City Hall<br />
+9770 Culver Blvd.<br />
+Culver City, CA 90232</p>
+
+
+	<ul class="footer-links with-icons ">   </ul>
+	
+</div><div class="col-xs-12 col-s-12 col-m-4 col-lg-3" >
+	
+			<h2 class="visuallyhidden">Site Footer</h2>
+			<h3 class="footer-title">Connect with Us</h3>
+			
+	
+	<ul class="footer-links with-icons social-media-links">  <li class="footer-link-facebook">
+	<a href="https://www.facebook.com/CityOfCulverCity" target="_blank"  >
+<i aria-hidden="true"></i>Culver City Facebook
+</a>
+</li>
+          <li class="footer-link-twitter">
+	<a href="http://twitter.com/CulverCityGov" target="_blank"  >
+<i aria-hidden="true"></i>Culver City Twitter
+</a>
+</li>
+          <li class="footer-link-youtube">
+	<a href="https://www.youtube.com/cityofculvercitygov?sub_confirmation=1" target="_blank"  >
+<i aria-hidden="true"></i>Culver City YouTube
+</a>
+</li>
+          <li class="footer-link-nextdoor">
+	<a href="https://nextdoor.com/agency/city-of-culver-city" target="_blank"  >
+<i aria-hidden="true"></i>Culver City Nextdoor
+</a>
+</li>
+           </ul>
+	<p><a href="https://www.culvercity.gov/Contact-Us#socialmedia" target="_self">Follow us on social media.</a></p>
+
+
+</div><div class="col-xs-12 col-s-12 col-m-6 col-lg-3" >
+	
+			<h2 class="visuallyhidden">Site Footer</h2>
+			<h3 class="footer-title">Hours</h3>
+			
+	<p>Monday &ndash; Friday: 7:30 am &ndash; 5:30 pm<br />
+<a href="https://www.culvercity.gov/Events-directory/City-Hall-Closed" target="_self">City Hall is closed on alternating Fridays.</a></p>
+
+
+	<ul class="footer-links with-icons ">   </ul>
+	
+</div>
+                            </div>
+                        </div>
+                    </div>
+                
+                <div class="footer-outer-container footer-second-row">
+                    <div class="footer-container clearfix">
+                        <div class="grid grid-pad footer-secondary-links">
+                            <div class="col-xs-12 col-m-7">
+                                
+                                    <div><a href="https://www.culvercity.gov/Contact-Us/Accessibility-Policy" target="_self"  >Accessibility Policy</a>&nbsp;| <a href="https://www.culvercity.gov/Contact-Us/Privacy-Statement" target="_self"  >Privacy Policy</a>&nbsp;| <a href="https://www.culvercity.gov/Contact-Us/Translation-Disclaimer" target="_self"  >Translation Disclaimer</a>&nbsp;| <a href="https://www.culvercity.gov/Contact-Us/AI-Policy" target="_self"  >AI Policy</a></div>
+                                
+                            </div>
+                            <div class="col-xs-12 col-m-5 powered-by">
+                                <div class="right">
+                                    &copy; 2026 City of Culver City&nbsp;|&nbsp;<span class="powered-by">Powered by <a href="https://granicus.com/solution/govaccess/opencities/" target="_blank">Granicus</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="/files/oc-resources/b9015858-988c-48a4-9473-7c193df083e4/JsTextSnippets.js?ocsvclang=en-US" type="text/javascript"></script><script></script>
+    
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PC4G7JR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Monsido -->
+<script type="text/javascript">
+    window._monsido = window._monsido || {
+        token: "9HKul5zqL1c8pQYjEVk9Ww",
+        statistics: {
+            enabled: true,
+            documentTracking: {
+                enabled: true,
+                documentCls: "document",
+                documentIgnoreCls: "monsido_ignore_download",
+                documentExt: [],
+            },
+        },
+    };
+</script>
+<script type="text/javascript" async src="https://app-script.monsido.com/v2/monsido-script.js"></script>
+<!-- End Monsido -->
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XR8H42VBCM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XR8H42VBCM');
+</script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ix6mrm5yi0");
+</script>
+    
+    
+
+<script type="text/javascript">
+//<![CDATA[
+window.__TsmHiddenField = $get('ctl05_seamless_script_manager_TSM');Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadCaptcha, {"_audioUrl":"/Telerik.Web.UI.WebResource.axd?type=cah\u0026isc=true\u0026guid=10f2c2b3-86b9-4e7a-9d51-4fd13477ccee","_enableAudio":true,"_persistCode":false,"clientStateFieldID":"ctl11_CAPTCHA_Image_ClientState"}, null, null, $get("ctl11_CAPTCHA_Image"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>
