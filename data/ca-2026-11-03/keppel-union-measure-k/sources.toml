@@ -1,0 +1,76 @@
+# Archived sources for Keppel Union School District Measure K, 2026-11-03
+# general election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" prints the measure's letter, vote threshold and
+# ballot question, and says in words who filed the primary arguments
+# ("Supporters: ... Opponents: None submitted."). The card quotes the
+# ballot question from it (ballot-question), and the no side cites it as
+# the Registrar's statement of filing (measure-list).
+#
+# The impartial analysis, the full text, the tax rate statement and the
+# argument in favor are the Registrar's own copies from its Interactive
+# Sample Ballot, saved as HTML (the contest data's URL is in each file).
+
+[contest]
+id = "ca-2026-11-03-keppel-union-measure-k"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:keppel_union_elementary_school_district"
+kind = "measure"
+title = "Keppel Union School District Measure K: $27 Million School Repair Bond"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026 (Rev. 9/22/26): Keppel Union School District, Measure K"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "measure-list"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026 (Rev. 9/22/26): Measure K, its supporters and opponents as filed"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Dawyn R. Harrison, County Counsel, County of Los Angeles, Impartial Analysis of Measure K, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Impartial Analysis of Measure K, Los Angeles County Counsel"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10874.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Keppel Union School District, Full Text of Ballot Measure K, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Full Text of Ballot Measure K, Keppel Union School District"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10874.json"
+file = "sources/full-text.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Keppel Union School District, Tax Rate Statement, Measure K, signed by Priya Darbari, Superintendent, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Tax Rate Statement, Keppel Union School District"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10874.json"
+file = "sources/tax-rate-statement.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure K, as filed with the Los Angeles County Registrar-Recorder/County Clerk and printed in its Interactive Sample Ballot"
+credit = "Argument in Favor of Measure K"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10874.json"
+file = "sources/argument-for.html"
+retrieved = "2026-10-30"

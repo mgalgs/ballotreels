@@ -3509,3 +3509,84 @@ source = "ballot-question"
 quote = "generating approximately $8,700,000 annually"
 amount = 8700000
 period = "per-year"
+
+# Keppel Union School District Measure K: a school bond; the district's
+# tax rate statement gives the total debt service (the bonds are $27
+# million).
+[keppel-union-measure-k]
+source = "tax-statement"
+quote = "that would be required to be repaid if all the bonds are issued and sold will be approximately $67,800,000."
+amount = 67800000
+period = "unstated"
+
+# Hawthorne School District Measure HH: a school bond; the district's
+# tax rate statement gives the total debt service (the bonds are
+# $110 million).
+[hawthorne-school-measure-hh]
+source = "tax-statement"
+quote = "that would be required to be repaid if all the bonds are issued and sold is approximately $226,231,000."
+amount = 226231000
+period = "unstated"
+
+# Valle Lindo School District Measure R: a school bond; the district's
+# tax rate statement gives the total debt service (the bonds are
+# $9.2 million).
+[valle-lindo-school-measure-r]
+source = "tax-statement"
+quote = "that would be required to be repaid if all the bonds are issued and sold is approximately $18,700,000."
+amount = 18700000
+period = "unstated"
+
+# Charter Oak Unified School District Measure S: a school bond; the district's
+# tax rate statement gives the total debt service (the bonds are
+# $75 million).
+[charter-oak-unified-measure-s]
+source = "tax-statement"
+quote = "that would be required to be repaid if all the bonds are issued and sold will be approximately $157 million."
+amount = 157000000
+period = "unstated"
+
+# Inglewood Unified School District Measure MM: a school bond; the district's
+# tax rate statement gives the total debt service (the bonds are
+# $396 million).
+[inglewood-unified-measure-mm]
+source = "tax-statement"
+quote = "that would be required to be repaid if all the bonds are issued and sold is approximately $813,005,302."
+amount = 813005302
+period = "unstated"
+
+# El Rancho Unified School District Measure ED: a school bond; the district's
+# tax rate statement gives the total debt service (the bonds are
+# $118 million).
+[el-rancho-unified-measure-ed]
+source = "tax-statement"
+quote = "that would be required to be repaid if all the bonds are issued and sold will be approximately $246.5 million."
+amount = 246500000
+period = "unstated"
+
+# Temple City Unified School District Measure TCS: a school bond; the district's
+# tax rate statement gives the total debt service (the bonds are
+# $146 million).
+[temple-city-unified-measure-tcs]
+source = "tax-statement"
+quote = "that would be required to be repaid if all the bonds are issued and sold is approximately $319,140,333."
+amount = 319140333
+period = "unstated"
+
+# San Marino Unified School District Measure SMS: a parcel tax, so no tax
+# rate statement; the revenue estimate its ballot question prints, as the
+# Registrar's list "Measures Appearing on the Ballot" quotes it.
+[san-marino-unified-measure-sms]
+source = "ballot-question"
+quote = "raising approximately $6,100,000 annually"
+amount = 6100000
+period = "per-year"
+
+# Las Virgenes Unified School District Measure LV: a parcel tax, so no
+# tax rate statement; the revenue estimate its ballot question prints, as
+# the Registrar's list "Measures Appearing on the Ballot" quotes it.
+[las-virgenes-unified-measure-lv]
+source = "ballot-question"
+quote = "all funds ($2,000,000 annually)"
+amount = 2000000
+period = "per-year"

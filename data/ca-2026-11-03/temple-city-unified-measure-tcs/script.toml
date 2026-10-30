@@ -1,0 +1,191 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; who placed it and the vote it needs; what
+# the money may and may not pay for; the tax rate statement's estimates,
+# with its own caveat; one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the opening
+# says "the voters of this school district". The card and title carry the
+# names. "Counsel" is heard as "Council" (standard/speakability.txt), so
+# the narration says "the impartial analysis". The last fiscal year is
+# said with both years in full.
+#
+# The card quotes the Los Angeles County Registrar-Recorder/County Clerk's
+# list "Measures Appearing on the Ballot", which prints the ballot question
+# with no yes and no sentences, so the card has no boxes and the two vote
+# lines highlight the same phrase of the question.
+#
+# The tax rate statement's average rate is $42.25 and its highest $43
+# per $100,000 of assessed value; the script gives both, the total debt
+# service, and the statement's own caveat on its estimates. The bonds are
+# repaid from a tax on property in the district, not from the district's
+# budget, and no archived source states that budget, so the figures have
+# no budget scale (STANDARD.md 6.5; left open), as other school bonds' do.
+#
+# The ballot question opens "WITHOUT INCREASING EXISTING TAX RATES", and
+# the argument in favor makes the same point; no neutral document gives
+# the existing rates, so the narration leaves the claim to the card and
+# to the yes side, attributed (STANDARD.md 6.3).
+#
+# The argument in favor is the Registrar's printed copy. The list says
+# "Opponents: None submitted.", so the no side says plainly that no
+# argument against was submitted, citing the list (filed = false). Its
+# clause on what the list records balances the yes line's length without
+# a further claim.
+
+contest = "ca-2026-11-03-temple-city-unified-measure-tcs"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "TCS"
+title = "TEMPLE CITY UNIFIED SCHOOL DISTRICT"
+origin = "VOTE PASSAGE – 55% of the Votes Cast"
+summary = "WITHOUT INCREASING EXISTING TAX RATES, to upgrade safety/ security and HVAC systems; remove asbestos/ lead pipes; repair/upgrade/equip aging classrooms, science labs, school/ career technology facilities to support college/ career readiness in math, science, technology, arts, medical science, skilled trades; shall Temple City Unified School District's measure be adopted authorizing $146,000,000 in bonds at legal rates, levying $43 per $100,000 assessed value (averaging $8,710,000 annually) while bonds are outstanding, with independent citizen oversight, audits, all money locally controlled?"
+
+[[section]]
+id = "what"
+heading = "Measure TCS"
+
+[[section.line]]
+text = "Measure TCS asks the voters of this school district whether to approve $146 million in school bonds."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $146,000,000 in bonds"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+id = "threshold"
+text = "The district's governing board placed Measure TCS on the ballot, and it needs 55 percent of the vote to pass."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "projects"
+text = "The bond money could pay to upgrade safety, security and heating systems, remove asbestos and lead pipes, and repair classrooms and labs."
+sources = ["ballot-question", "impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-roof-repair"
+
+[[section.line]]
+id = "limits"
+text = "The money could not pay teacher or administrator salaries, and a citizens' oversight committee and yearly audits would be required."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "inspection-clipboard"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax rate statement says"
+
+[[section.line]]
+id = "rate"
+text = "The district's tax rate statement estimates an average tax of $42.25 per $100,000 of assessed value, and a highest of $43, through 2063-2064."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "bars"
+title = "Estimated tax per $100,000 of assessed value, dollars"
+source = "tax-statement"
+unit = ""
+labels = ["Average", "Highest"]
+values = [42.25, 43]
+
+[[section.line]]
+id = "total"
+text = "The statement puts the total to repay, with interest, at about $319.1 million, and says its figures are estimates only, which may vary."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say many buildings are over 70 years old, with asbestos and lead pipes, and the measure will not increase taxes."
+sources = ["argument-for"]
+basis = ["many facilities were built more than 70 years ago, when asbestos and lead pipes were standard construction materials", "Remove hazardous materials such as asbestos and lead pipes", "Measure TCS will not increase taxes"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Many buildings over 70 years old", "Will not increase taxes"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The official list of measures from the county, which names who filed each argument, says no argument against Measure TCS was submitted."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves the $146 million in school bonds."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $146,000,000 in bonds"]
+
+[[section.line]]
+text = "A no vote rejects the $146 million in school bonds."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $146,000,000 in bonds"]
+
+[[question]]
+ask = "How much tax would I pay, and for how long?"
+lines = ["rate"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["projects", "limits"]
+
+[[question]]
+ask = "What vote does the measure need to pass?"
+lines = ["threshold"]
+
+[[question]]
+ask = "What would the bonds cost in all?"
+lines = ["total"]
+
+[[question]]
+ask = "How large is the bond next to the district's yearly budget?"
+unanswered = true

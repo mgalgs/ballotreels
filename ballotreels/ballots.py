@@ -1035,6 +1035,28 @@ BALLOTS: dict[str, Ballot] = {
                                      "cudahy-measure-ok",
                                      "cudahy-measure-h",
                                      "palos-verdes-estates-measure-pve")},
+                     # Los Angeles County's school district measures quote
+                     # their ballot question from the Registrar-Recorder/
+                     # County Clerk's list "Measures Appearing on the
+                     # Ballot"
+                     **{f"ca-2026-11-03-{slug}":
+                        "Los Angeles County Registrar-Recorder/County "
+                        "Clerk, Measures Appearing on the Ballot"
+                        for slug in ("keppel-union-measure-k",
+                                     "hawthorne-school-measure-hh",
+                                     "valle-lindo-school-measure-r",
+                                     "charter-oak-unified-measure-s",
+                                     "el-rancho-unified-measure-ed",
+                                     "temple-city-unified-measure-tcs",
+                                     "san-marino-unified-measure-sms",
+                                     "las-virgenes-unified-measure-lv")},
+                     # The staged excerpt of that list misreads a figure
+                     # in Inglewood Unified MM's question, so its card
+                     # quotes the question from the measure's full text in
+                     # the Registrar's Interactive Sample Ballot
+                     "ca-2026-11-03-inglewood-unified-measure-mm":
+                        "Los Angeles County Registrar-Recorder/County "
+                        "Clerk, Interactive Sample Ballot",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
