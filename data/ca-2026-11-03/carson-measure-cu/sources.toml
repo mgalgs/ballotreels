@@ -8,15 +8,18 @@
 # question, quoted on the card; its "Supporters: ... Opponents: None
 # submitted." line states in words who filed the primary arguments, so
 # the same file backs `measure-list`, the official statement of filing.
-# The argument in favor that the list's supporters filed was not
-# gathered; no argument against was submitted. The City Attorney's
-# impartial analysis is the measure's neutral explanation, the kind a
-# state's attorney general's explanatory statement is; it gives no cost
-# estimate. Resolution No. 26-098 is the operative text (its Exhibit A,
-# the charter amendments), and its ballot question says "Charter Reform"
-# where the county's list says "Charter Update": the county's wins on the
-# card. Resolution No. 26-092, which 26-098 supersedes, and the
-# resolution setting argument priorities are not cited.
+# The Registrar's Interactive Sample Ballot prints the argument in favor
+# that the list's supporters filed, with "NO ARGUMENT AGAINST THIS MEASURE
+# WAS SUBMITTED" under it, and the full text of the charter amendments,
+# saved as HTML; the full text supersedes the resolution's Exhibit A for
+# what the charter would say. The City Attorney's impartial analysis is
+# the measure's neutral explanation, the kind a state's attorney
+# general's explanatory statement is; it gives no cost estimate.
+# Resolution No. 26-098 is the City's operative text, and its ballot
+# question says "Charter Reform" where the county's list says "Charter
+# Update": the county's wins on the card. Resolution No. 26-092, which
+# 26-098 supersedes, and the resolution setting argument priorities are
+# not cited.
 
 [contest]
 id = "ca-2026-11-03-carson-measure-cu"
@@ -50,6 +53,24 @@ publisher = "City Attorney, City of Carson, Impartial Analysis of Measure CU, by
 credit = "Impartial Analysis of Measure CU, City of Carson"
 url = "https://cms3.revize.com/revize/carsonca/Documents/City Charter Update/(Measure CU_Charter Amendment Measure) IMPARTIAL ANALYSIS OF MEASURE CU (2182076.2) FINAL.pdf"
 file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "full-text"
+kind = "official-text"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Interactive Sample Ballot: Full Text of Ballot Measure CU, City of Carson (Exhibit A, Charter Amendments)"
+credit = "Full text of Measure CU, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10945.json"
+file = "sources/full-text.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure CU, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument in favor of Measure CU, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10945.json"
+file = "sources/argument-for.html"
 retrieved = "2026-10-30"
 
 [[source]]

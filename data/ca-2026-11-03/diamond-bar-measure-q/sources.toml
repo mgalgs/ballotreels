@@ -8,8 +8,9 @@
 # question, quoted on the card; its "Supporters: ... Opponents: None
 # submitted." line states in words who filed the primary arguments, so
 # the same file backs `measure-list`, the official statement of filing.
-# The argument in favor that the list's supporters filed was not
-# gathered; no argument against was submitted. The City Attorney's
+# The Registrar's Interactive Sample Ballot prints the argument in favor
+# that the list's supporters filed, saved as HTML, with "NO ARGUMENT
+# AGAINST THIS MEASURE WAS SUBMITTED" under it. The City Attorney's
 # impartial analysis is the measure's neutral explanation, the kind a
 # state's attorney general's explanatory statement is, and gives the
 # City's revenue estimate. Resolution No. 2026-28 (a scan with a text
@@ -49,6 +50,15 @@ publisher = "City Attorney, City of Diamond Bar, Impartial Analysis of Measure Q
 credit = "Impartial Analysis of Measure Q, City of Diamond Bar"
 url = "https://www.diamondbarca.gov/DocumentCenter/View/14209/Impartial-Analysis-of-Measure-Q-from-Diamond-Bar-City-Attorney"
 file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure Q, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument in favor of Measure Q, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10930.json"
+file = "sources/argument-for.html"
 retrieved = "2026-10-30"
 
 [[source]]

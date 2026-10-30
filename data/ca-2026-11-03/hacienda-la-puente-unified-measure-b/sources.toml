@@ -11,13 +11,18 @@
 # it as the Registrar's statement of filing (measure-list). The same
 # excerpt backs both.
 #
-# No impartial analysis was staged. The measure is explained from the
-# Board of Education's Resolution No. 2025/26-38, as filed with the Los
-# Angeles County Board of Supervisors. Its page 1 has only a garbled text
-# layer and page 2 none: both were typed from the page images into
-# sources/resolution-transcription.txt, which that source points at.
-# A term limit has no tax rate statement, and no document gathered gives
-# a cost estimate.
+# The Registrar's Interactive Sample Ballot prints County Counsel's
+# impartial analysis (the measure's neutral explanation), saved as HTML,
+# with "NO ARGUMENT FOR OR AGAINST THIS MEASURE WAS SUBMITTED" under it.
+# It says terms served on or after November 3, 2026 count toward the
+# limit, where the resolution says December 11, 2026: the analysis wins.
+# The measure is also explained from the Board of Education's Resolution
+# No. 2025/26-38, as filed with the Los Angeles County Board of
+# Supervisors. Its page 1 has only a garbled text layer and page 2 none:
+# both were typed from the page images into
+# sources/resolution-transcription.txt, which that source points at. A
+# term limit has no tax rate statement, and the analysis gives no cost
+# estimate.
 
 [contest]
 id = "ca-2026-11-03-hacienda-la-puente-unified-measure-b"
@@ -42,6 +47,15 @@ publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appear
 credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
 url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
 file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Dawyn R. Harrison, County Counsel, Impartial Analysis of Measure B, Hacienda La Puente Unified School District, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "County Counsel's Impartial Analysis of Measure B, Los Angeles County"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10873.json"
+file = "sources/impartial-analysis.html"
 retrieved = "2026-10-30"
 
 [[source]]

@@ -1,11 +1,12 @@
 # Recipe E, about 60 seconds, distilled: one claim per line. The chain:
 # what it asks and whose measure it is; how eviction for unpaid rent
 # works today and which rentals the charter's eviction rules cover, from
-# the resolution's recitals; how the measure reached the ballot and the
-# Council's stated reason (its purpose, STANDARD.md 6.2); what would
-# change, from the amendment's text (Exhibit 2); that no cost estimate is
-# given; who filed the argument for, and that none was submitted against;
-# what a vote does.
+# the City Attorney's impartial analysis; how the measure reached the
+# ballot and the Council's stated reason (its purpose, STANDARD.md 6.2);
+# what would change, from the analysis and the amendment's text (Exhibit
+# 2), including that landlords could still collect unpaid rent; that no
+# cost estimate is given; the argument for, and that none was submitted
+# against; what a vote does.
 #
 # No place name is narrated (the narrator mispronounces them): the
 # opening says "the voters of this city". The card shows the name. The
@@ -17,20 +18,21 @@
 # has no boxes; the vote lines take both meanings from the question and
 # highlight the same phrase.
 #
-# Not a tax: no fiscal statement applies, and no impartial analysis was
-# fetched. The fiscal line follows the no-cost-estimate wording, naming
-# the county's list (the card's guide) as "the official list of measures
-# from the county" ("county's" is misheard as "counties"). No archived
+# Not a tax: no fiscal statement applies, and the impartial analysis
+# gives no cost estimate; the fiscal line says so in the no-estimate
+# wording. The analysis's plain rule (a landlord may evict over any
+# amount owed) replaces the Council's recital that evictions over small
+# debts "may be legal" as the today line. No archived
 # document states what one month of that market rent is: left open, under
 # [[question]].
 #
-# Sides: the county's list names five supporters who filed the argument
-# for (the mayor, a Rent Control Board commissioner, a councilmember and
-# two others) and says "Opponents: None submitted." The argument for's
-# text could not be fetched: its line says only who filed it and that its
-# text was not gathered, nothing reconstructed. The no side says that
-# none was submitted. filed = false on both (neither has text to quote as
-# a `basis`); word counts kept within 5%.
+# Sides: the yes side comes from the argument in favor filed by the five
+# supporters the county's list names, with its basis: no one should lose
+# their home over a small amount of rent, and tenants would get time to
+# catch up. Its eviction-notice amounts and the Federal Reserve figure
+# are left out. The list and the sample ballot say no argument against
+# was submitted, so the no side says so (filed = false); word counts kept
+# within 5%.
 
 contest = "ca-2026-11-03-santa-monica-measure-rr"
 template = "measure"
@@ -63,8 +65,8 @@ heading = "Today"
 
 [[section.line]]
 id = "today-rule"
-text = "The City Council says evictions over rent debts of hundreds of dollars or less may be legal today."
-sources = ["resolution"]
+text = "Today, the charter's eviction rules let a landlord evict a tenant who owes any amount of rent."
+sources = ["impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -73,7 +75,7 @@ name = "door-notice"
 [[section.line]]
 id = "covered"
 text = "The charter's eviction rules cover most rentals, but generally not single-family homes or condominiums."
-sources = ["resolution"]
+sources = ["impartial-analysis", "resolution"]
 
 [section.line.visual]
 kind = "illustration"
@@ -94,7 +96,7 @@ heading = "What would change"
 [[section.line]]
 id = "threshold"
 text = "An eviction for unpaid rent would be allowed only when the tenant owes more than one month of rent, at a set rate."
-sources = ["resolution", "ballot-question"]
+sources = ["impartial-analysis", "resolution", "ballot-question"]
 
 [section.line.visual]
 kind = "illustration"
@@ -103,23 +105,32 @@ name = "lease-keys"
 [[section.line]]
 id = "fmr"
 text = "That rate is the average market rent the federal housing department sets each year for local ZIP codes, for a unit of that size."
-sources = ["resolution", "ballot-question"]
+sources = ["impartial-analysis", "resolution", "ballot-question"]
 
 [[section.line]]
 text = "The eviction notice would have to state the number of bedrooms and that amount."
-sources = ["resolution"]
+sources = ["impartial-analysis", "resolution"]
 
 [section.line.visual]
 kind = "illustration"
 name = "door-notice"
+
+[[section.line]]
+id = "collect"
+text = "Landlords could still collect unpaid rent by means other than eviction."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "lease-keys"
 
 [[section]]
 id = "fiscal"
 heading = "What it would cost"
 
 [[section.line]]
-text = "The official list of measures from the county does not include a cost estimate for the measure."
-sources = ["ballot-question"]
+text = "The impartial analysis does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -130,16 +141,17 @@ stamp = "None reported"
 id = "yes"
 heading = "Why some vote yes"
 side = "yes"
-filed = false
 
 [[section.line]]
-text = "The mayor, a rent board member, a council member and two others filed an argument for Measure RR; its text was not gathered."
-sources = ["arguments-filed"]
+id = "yes-case"
+text = "Supporters say no one should lose their home over a small amount of rent, and tenants would get time to catch up."
+sources = ["argument-for"]
+basis = ["No one should lose their home over a small amount of rent after an unexpected hardship.", "This gives renters a meaningful window to catch up or secure rental assistance, while still needing to pay all of the rent owed."]
 
 [section.line.visual]
 kind = "list"
-source = "arguments-filed"
-items = ["Argument for filed; text not gathered"]
+source = "argument-for"
+items = ["No eviction over small rent debts", "Time for tenants to catch up"]
 
 [[section]]
 id = "no"
@@ -183,9 +195,17 @@ ask = "Can a tenant be evicted today for owing a small amount of rent?"
 lines = ["today-rule"]
 
 [[question]]
+ask = "Would tenants still owe the rent?"
+lines = ["collect"]
+
+[[question]]
 ask = "Which renters would this cover?"
 lines = ["covered"]
 
 [[question]]
 ask = "How much is one month of rent at the federal rate?"
 unanswered = true
+
+[[question]]
+ask = "What do the supporters argue?"
+lines = ["yes-case"]

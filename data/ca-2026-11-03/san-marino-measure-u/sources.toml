@@ -8,18 +8,21 @@
 # question, quoted on the card; its "Opponents: None submitted." is the
 # official statement that no argument against was filed (`measure-list`).
 #
+# The Registrar's Interactive Sample Ballot prints the City Attorney's
+# impartial analysis (the measure's neutral explanation, which records
+# the Council's unanimous vote and gives the City's revenue estimate) and
+# the argument in favor as filed, signed by the five Council members the
+# county's list names, saved as HTML. The filed argument matches the
+# draft in the Council's agenda packet, which it supersedes.
+#
 # staff-report.pdf is the City Manager's July 8, 2026 staff report as
 # excerpted from the City Council's agenda packet (packet pages 105-142
 # of 303). It carries, as attachments, Resolution No. R-26-28 (packet
 # pages 111-114), which places the measure and states what it changes,
-# Ordinance No. O-26-1427 (pages 115-141), the measure's full text, and
-# the argument in favor (page 142), the draft the Council approved to be
-# signed by its members, with the measure letter not yet filled in; the
-# county's list names the five Council members as its filers. The
-# packet's resolution is the unsigned draft, its vote left blank; its
+# and Ordinance No. O-26-1427 (pages 115-141), the measure's full text.
+# The packet's resolution is the unsigned draft, its vote left blank; its
 # ballot question matches the county's word for word. The staff report's
-# own pages are the City's case and are not cited. No impartial analysis
-# was gathered; the revenue figure is the ballot question's.
+# own pages are the City's case and are not cited.
 
 [contest]
 id = "ca-2026-11-03-san-marino-measure-u"
@@ -47,6 +50,15 @@ file = "sources/county-measure-list-excerpt.txt"
 retrieved = "2026-10-30"
 
 [[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney, City of San Marino, City Attorney's Impartial Analysis of Measure U, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "City Attorney's Impartial Analysis of Measure U, City of San Marino"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10957.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
 id = "resolution"
 kind = "official-text"
 publisher = "City of San Marino, Resolution No. R-26-28, submitting a ballot measure to re-adopt and amend the utility user tax to extend its term and increase its rate from five percent to six percent, as attached to the City Manager's July 8, 2026 staff report (City Council agenda packet pages 111-114 of 303)"
@@ -67,8 +79,8 @@ retrieved = "2026-10-30"
 [[source]]
 id = "argument-for"
 kind = "official-argument"
-publisher = "Argument in favor of Measure U (\"VOTE YES ON MEASURE _\"), as approved by the City Council for signing by its members, attached to the City Manager's July 8, 2026 staff report (City Council agenda packet page 142 of 303)"
-credit = "Argument in favor of Measure U, City Council agenda packet"
-url = "https://cms9files.revize.com/cityofsanmarino/City%20Clerk/elections/StaffReport_CONSIDERATION%20OF%20RESOLUTION%20NO.%20R-26-28.pdf"
-file = "sources/staff-report.pdf"
+publisher = "Argument in Favor of Measure U, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument in favor of Measure U, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10957.json"
+file = "sources/argument-for.html"
 retrieved = "2026-10-30"

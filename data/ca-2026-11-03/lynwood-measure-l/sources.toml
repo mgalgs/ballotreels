@@ -22,8 +22,12 @@
 # for plain facts only: its "Fiscal Impact" section (page 5) compares the
 # revenue estimate with the City's General Fund, and is cited as the
 # measure's fiscal statement for that comparison, as Red Bluff D's staff
-# report is. No impartial analysis and no argument text could be found.
-# The City's Measure L web page is not cited.
+# report is. The Registrar's Interactive Sample Ballot prints the City
+# Attorney's impartial analysis (the measure's neutral explanation, which
+# states that the City levies no such tax today and gives the City's
+# revenue estimate) and the argument in favor, saved as HTML, with "NO
+# ARGUMENT AGAINST THIS MEASURE WAS SUBMITTED" under it. The City's
+# Measure L web page is not cited.
 
 [contest]
 id = "ca-2026-11-03-lynwood-measure-l"
@@ -48,6 +52,24 @@ publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appear
 credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
 url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
 file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Noel Tapia, City Attorney, City of Lynwood, City Attorney's Impartial Analysis of Measure L, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "City Attorney's Impartial Analysis of Measure L, City of Lynwood"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10952.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure L, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument in favor of Measure L, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10952.json"
+file = "sources/argument-for.html"
 retrieved = "2026-10-30"
 
 [[source]]

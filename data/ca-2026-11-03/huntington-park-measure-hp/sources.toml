@@ -8,17 +8,16 @@
 # question, quoted on the card; its "Opponents: None submitted." is the
 # official statement that no argument against was filed (`measure-list`).
 #
-# resolution.pdf is the City's consolidation packet as the Board of
-# Supervisors posts it: Resolutions No. 2026-25 and 2026-28, Ordinance
-# No. 2026-06 (the measure's full text), the ballot question, the City
-# Attorney's impartial analysis and, on pages 19 and 20, the argument in
-# favor, signed by the Mayor and a Council Member, the two the county's
-# list names as supporters. la-sources.md says the argument is not in the
-# packet; it is, as scanned pages with no text layer, typed into
-# sources/resolution-transcription.txt, which `argument-for` points at.
-# The impartial analysis is the measure's neutral explanation, the kind a
+# The Registrar's Interactive Sample Ballot prints the City Attorney's
+# impartial analysis (the measure's neutral explanation, the kind a
 # state's attorney general's explanatory statement is; it gives no cost
-# estimate.
+# estimate) and the argument in favor, signed by the Mayor and a Council
+# Member, the two the county's list names as supporters, saved as HTML.
+# These supersede the copies in the City's consolidation packet
+# (resolution.pdf, pages 17-20; the argument's scanned pages typed into
+# sources/resolution-transcription.txt), which say the same. The packet,
+# as the Board of Supervisors posts it, stays the source for Ordinance
+# No. 2026-06, the measure's full text.
 
 [contest]
 id = "ca-2026-11-03-huntington-park-measure-hp"
@@ -48,10 +47,10 @@ retrieved = "2026-10-30"
 [[source]]
 id = "impartial-analysis"
 kind = "official-title-summary"
-publisher = "City Attorney, City of Huntington Park, Impartial Analysis of Measure HP, prepared by Andrew Sarega, in the City's consolidation packet as posted by the Los Angeles County Board of Supervisors (pages 17-18)"
+publisher = "City Attorney, City of Huntington Park, City Attorney's Impartial Analysis of Measure HP, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
 credit = "Impartial Analysis, City Attorney of Huntington Park"
-url = "https://file.lacounty.gov/SDSInter/bos/supdocs/221467.pdf"
-file = "sources/resolution.pdf"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10956.json"
+file = "sources/impartial-analysis.html"
 retrieved = "2026-10-30"
 
 [[source]]
@@ -66,8 +65,8 @@ retrieved = "2026-10-30"
 [[source]]
 id = "argument-for"
 kind = "official-argument"
-publisher = "Argument in Favor of Measure HP, signed by Eduardo Martinez, Mayor, and Nancy Martiz, Council Member, as filed with the City Clerk in the City of Huntington Park's consolidation packet posted by the Los Angeles County Board of Supervisors (pages 19-20, transcribed from the scan)"
-credit = "Argument in Favor of Measure HP"
-url = "https://file.lacounty.gov/SDSInter/bos/supdocs/221467.pdf"
-file = "sources/resolution-transcription.txt"
+publisher = "Argument in Favor of Measure HP, signed by Eduardo Martinez, Mayor, and Nancy Martiz, Council Member, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument in favor of Measure HP, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10956.json"
+file = "sources/argument-for.html"
 retrieved = "2026-10-30"

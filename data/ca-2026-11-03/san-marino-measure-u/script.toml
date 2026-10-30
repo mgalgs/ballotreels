@@ -2,8 +2,8 @@
 # what it asks and whose measure it is; what the tax is charged on, its
 # rate and end date today, and how the measure reached the ballot; what
 # would change (the rate, no end date, where the money goes, the vote it
-# needs); the revenue as the ballot question gives it; both sides; what a
-# vote does.
+# needs); the revenue as the impartial analysis gives it; both sides;
+# what a vote does.
 #
 # No place name is narrated (the narrator mispronounces them): the
 # opening says "the voters of this city". The card, title and chart
@@ -12,13 +12,14 @@
 # The ballot question says "extending the currently existing utility
 # users tax at a rate of 6 percent"; the resolution placing the measure
 # says it would "increase the tax rate for the UUT from 5% to 6%" and
-# delete the repeal date of March 31, 2027. The script says both, in the
-# opening and in the today and change lines, from the resolution. The
+# delete the repeal date of March 31, 2027, as the City Attorney's
+# impartial analysis does. The script says both, in the opening and in
+# the today and change lines. The
 # tax's history (three voter renewals, the 2015 cut from 6 to 5 percent)
 # is told only by the argument in favor, so it is left to that side
-# (STANDARD.md 6.3) and not narrated. No impartial analysis was gathered:
-# what the measure does comes from the resolution and the ordinance, and
-# the fiscal line says the revenue figure is the ballot question's.
+# (STANDARD.md 6.3) and not narrated. What the measure does comes from
+# the impartial analysis, the resolution and the ordinance; the fiscal
+# line gives the City's revenue estimate as the analysis reports it.
 #
 # The card quotes the Los Angeles County Registrar-Recorder/County
 # Clerk's list "Measures Appearing on the Ballot": the City's heading,
@@ -27,15 +28,17 @@
 # meanings from the question and the resolution, and both highlight the
 # same phrase.
 #
-# The argument in favor is the draft in the Council's agenda packet
-# (page 142), approved for signing by the Council members the county's
-# list names. It names no signer, so the yes side names no one. The list
+# The argument in favor is cited from the Registrar's sample ballot copy,
+# signed by the five Council members the county's list names; it matches
+# the draft in the Council's agenda packet, so the yes line is unchanged.
+# The yes side names no one. The list
 # says "Opponents: None submitted.", so the no side says plainly that no
 # argument against was submitted, citing the list (filed = false). Its
 # clause on what the list records balances the yes line's length
 # without a further claim.
 #
-# The $2.62 million a year is the ballot question's figure. No archived
+# The $2.62 million a year is the City's estimate as the impartial
+# analysis reports it (the ballot question states it too). No archived
 # official document states the City's general fund budget to give it a
 # scale (STANDARD.md 6.5; left open, under [[question]]): the argument's
 # "approximately 6% of the City's General Fund" is that side's claim.
@@ -72,7 +75,7 @@ heading = "The tax today"
 [[section.line]]
 id = "charged"
 text = "The tax is charged on telecommunications, video, electricity, gas and water service."
-sources = ["ordinance"]
+sources = ["impartial-analysis", "ordinance"]
 
 [section.line.visual]
 kind = "illustration"
@@ -81,7 +84,7 @@ name = "utility-bills"
 [[section.line]]
 id = "today-rate"
 text = "Today the rate is 5 percent, and the tax is set to end on March 31, 2027."
-sources = ["resolution"]
+sources = ["impartial-analysis", "resolution"]
 
 [section.line.visual]
 kind = "illustration"
@@ -89,7 +92,7 @@ name = "end-date"
 
 [[section.line]]
 text = "The City Council placed Measure U on the ballot."
-sources = ["resolution", "ballot-question"]
+sources = ["impartial-analysis", "ballot-question"]
 
 [section.line.visual]
 kind = "illustration"
@@ -102,7 +105,7 @@ heading = "What would change"
 [[section.line]]
 id = "rate"
 text = "Measure U would raise the rate to 6 percent."
-sources = ["resolution", "ordinance"]
+sources = ["impartial-analysis", "resolution", "ordinance"]
 
 [section.line.visual]
 kind = "bars"
@@ -115,7 +118,7 @@ values = [5, 6]
 [[section.line]]
 id = "end"
 text = "Measure U would remove the end date, so the tax would last until ended by voters."
-sources = ["resolution", "ordinance"]
+sources = ["impartial-analysis", "resolution", "ordinance"]
 
 [section.line.visual]
 kind = "illustration"
@@ -124,7 +127,7 @@ name = "hourglass-plans"
 [[section.line]]
 id = "general"
 text = "As a general tax, the money would go to the general fund, for the usual expenses of the city."
-sources = ["ordinance", "resolution"]
+sources = ["impartial-analysis", "ordinance", "resolution"]
 
 [section.line.visual]
 kind = "illustration"
@@ -132,7 +135,7 @@ name = "state-budget"
 
 [[section.line]]
 text = "Measure U needs a majority yes vote to pass."
-sources = ["resolution", "ballot-question"]
+sources = ["impartial-analysis", "resolution", "ballot-question"]
 
 [section.line.visual]
 kind = "illustration"
@@ -140,12 +143,12 @@ name = "vote-thresholds"
 
 [[section]]
 id = "fiscal"
-heading = "What the ballot question says"
+heading = "What the impartial analysis says"
 
 [[section.line]]
 id = "revenue"
-text = "The ballot question says the tax would raise $2.62 million a year; no impartial analysis is among the documents gathered."
-sources = ["ballot-question", "resolution"]
+text = "The city attorney's impartial analysis says the city estimates about $2.62 million a year in revenue."
+sources = ["impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"

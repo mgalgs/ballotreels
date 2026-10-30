@@ -22,14 +22,14 @@
 # sentences, so the card has no boxes. The vote lines give the impartial
 # analysis's own meanings, and both highlight the same phrase.
 #
-# The list names the filers of an argument in favor (the mayor, the
-# sheriff, two organizations and a business owner), whose text is not
-# among the documents gathered: the yes side says only who filed it and
-# that its text was not gathered (filed = false, no basis to quote). The
-# list says "Opponents: None submitted.", so the no side says plainly
-# that no argument against was submitted, citing the list. The no line's
-# clause on what the list records balances the yes line's length without
-# a further claim.
+# The yes side comes from the argument in favor filed by the supporters
+# the list names (the mayor, the sheriff, two organizations and a
+# business owner), with its basis: heavy truck traffic damages local
+# streets, and a typical small business property would pay less than $100
+# a year (their own figure, attributed). The list and the sample ballot
+# say no argument against was submitted, so the no side says so plainly,
+# citing the list (filed = false). The no line's clause on what the list
+# records balances the yes line's length without a further claim.
 #
 # The $4 million a year is the City's estimate as the impartial analysis
 # reports it. No archived official document states the City's general
@@ -80,7 +80,7 @@ heading = "What would change"
 [[section.line]]
 id = "rates"
 text = "Commercial, industrial and vacant parcels would each have a top yearly rate per square foot, and residential property would not be taxed."
-sources = ["impartial-analysis"]
+sources = ["impartial-analysis", "full-text"]
 
 [section.line.visual]
 kind = "bars"
@@ -93,7 +93,7 @@ values = [0.08, 0.11, 0.13]
 [[section.line]]
 id = "phase"
 text = "The rates would phase in over three years, then could rise by up to 3 percent a year for inflation."
-sources = ["impartial-analysis"]
+sources = ["impartial-analysis", "full-text"]
 
 [section.line.visual]
 kind = "illustration"
@@ -102,7 +102,7 @@ name = "warehouse-loading-docks"
 [[section.line]]
 id = "uses"
 text = "As a special tax, the money could pay only for roads, public safety, environmental services and business programs."
-sources = ["impartial-analysis"]
+sources = ["impartial-analysis", "full-text"]
 
 [section.line.visual]
 kind = "illustration"
@@ -111,7 +111,7 @@ name = "special-tax"
 [[section.line]]
 id = "end"
 text = "An oversight committee would monitor the money, and the tax would last until ended by voters."
-sources = ["impartial-analysis"]
+sources = ["impartial-analysis", "full-text"]
 
 [section.line.visual]
 kind = "illustration"
@@ -142,16 +142,17 @@ name = "save-more"
 id = "yes"
 heading = "Why some vote yes"
 side = "yes"
-filed = false
 
 [[section.line]]
-text = "The mayor, the sheriff, two organizations and a business owner filed an argument for Measure P; its text was not gathered."
-sources = ["measure-list"]
+id = "yes-case"
+text = "Supporters say heavy truck traffic damages local streets, and a typical small business property would pay less than $100 a year."
+sources = ["argument-for"]
+basis = ["Paramount faces rising costs to maintain essential services and repair local streets damaged by heavy truck traffic.", "Because the tax is based on property size, a typical small business property will pay less than $100 annually, while massive corporate distribution centers will pay their appropriate share."]
 
 [section.line.visual]
 kind = "list"
-source = "measure-list"
-items = ["Filed by supporters; text not gathered"]
+source = "argument-for"
+items = ["Heavy trucks damage local streets", "Small properties under $100 yearly"]
 
 [[section]]
 id = "no"
@@ -205,3 +206,7 @@ lines = ["end"]
 [[question]]
 ask = "How big is $4 million a year next to the city budget?"
 unanswered = true
+
+[[question]]
+ask = "What do the supporters argue?"
+lines = ["yes-case"]

@@ -3218,10 +3218,10 @@ amount = 5000000
 period = "per-year"
 
 # Hacienda La Puente Unified School District Measure B (term limits for
-# board members): not a tax; the Registrar's list and the board's
-# resolution, the documents gathered, print no cost estimate.
+# board members): not a tax; County Counsel's impartial analysis gives no
+# cost estimate.
 [hacienda-la-puente-unified-measure-b]
-source = "ballot-question"
+source = "impartial-analysis"
 status = "none-printed"
 
 # City of Culver City Measure AA: no tax rate statement was found; the
@@ -3314,11 +3314,10 @@ period = "per-year"
 source = "ballot-question"
 status = "none-printed"
 
-# City of Santa Monica Measure RR: a charter amendment, not a tax; the Los
-# Angeles County Registrar-Recorder/County Clerk's list prints no cost
-# estimate, and no impartial analysis was among the documents gathered.
+# City of Santa Monica Measure RR: a charter amendment, not a tax; the
+# City Attorney's impartial analysis gives no cost estimate.
 [santa-monica-measure-rr]
-source = "ballot-question"
+source = "impartial-analysis"
 status = "none-printed"
 
 # City of Santa Monica Measure VV: a charter amendment, not a tax; the Los
@@ -3329,11 +3328,10 @@ source = "ballot-question"
 status = "none-printed"
 
 # City of Santa Monica Measure TT: keeps the hotel tax's existing rates;
-# the Los Angeles County Registrar-Recorder/County Clerk's list prints no
-# revenue or cost estimate, and no impartial analysis was among the
-# documents gathered.
+# the City Attorney's impartial analysis gives no revenue or cost
+# estimate.
 [santa-monica-measure-tt]
-source = "ballot-question"
+source = "impartial-analysis"
 status = "none-printed"
 
 # City of Hermosa Beach Measure HB: a general sales tax, so no tax rate
@@ -3356,12 +3354,11 @@ amount = 10400000
 period = "per-year"
 
 # City of Lynwood Measure L: a general hotel tax, so no tax rate
-# statement, and no impartial analysis among the documents gathered; the
-# Los Angeles County Registrar-Recorder/County Clerk's list prints the
-# ballot question's revenue estimate.
+# statement; the City Attorney's impartial analysis gives the City's
+# revenue estimate.
 [lynwood-measure-l]
-source = "ballot-question"
-quote = "providing approximately $751,315 annually until ended by voters"
+source = "impartial-analysis"
+quote = "The City estimates the measure would generate approximately $751,315 annually."
 amount = 751315
 period = "per-year"
 
@@ -3411,11 +3408,11 @@ quote = "providing approximately $6,000,000 annually"
 amount = 6000000
 period = "per-year"
 
-# City of San Marino Measure U: a general tax; no impartial analysis was
-# gathered, so the figure is the ballot question's.
+# City of San Marino Measure U: a general tax; the City Attorney's
+# impartial analysis gives the City's revenue estimate.
 [san-marino-measure-u]
-source = "ballot-question"
-quote = "raising $2,620,000 annually"
+source = "impartial-analysis"
+quote = "The City estimates that the Proposed Tax would provide approximately $2,620,000 in annual revenue."
 amount = 2620000
 period = "per-year"
 

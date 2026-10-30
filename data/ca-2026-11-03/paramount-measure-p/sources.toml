@@ -7,12 +7,14 @@
 # question and the vote threshold, quoted on the card; its "Supporters:
 # ... Opponents: None submitted." line states in words who filed the
 # primary arguments, so the same file backs `measure-list`, the official
-# statement of filing. The argument in favor that the list's supporters
-# filed was not gathered; no argument against was submitted. The City
-# Attorney's impartial analysis is the measure's neutral explanation, the
-# kind a state's attorney general's explanatory statement is, and gives
-# the City's revenue estimate. The ordinance itself was not posted; the
-# analysis states its rates, uses and term. The City Clerk's notice of
+# statement of filing. The Registrar's Interactive Sample Ballot prints
+# the argument in favor that the list's supporters filed, with "NO
+# ARGUMENT AGAINST THIS MEASURE WAS SUBMITTED" under it, and the full text
+# of the ordinance, saved as HTML. The City Attorney's impartial analysis
+# is the measure's neutral explanation, the kind a state's attorney
+# general's explanatory statement is, and gives the City's revenue
+# estimate; the full text agrees with it on the rates, phase-in, uses,
+# oversight committee and term. The City Clerk's notice of
 # public hearing states the two-thirds vote a special tax needs. The
 # City's mailer and web pages are its own case for the measure and are
 # not cited.
@@ -49,6 +51,24 @@ publisher = "City Attorney, City of Paramount, City Attorney's Impartial Analysi
 credit = "City Attorney's Impartial Analysis, City of Paramount"
 url = "https://www.paramountcity.gov/wp-content/uploads/2026/09/Impartial-Analysis_Paramount-Parcel-Tax-Ballot-Measure-2026-08-12.pdf"
 file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "full-text"
+kind = "official-text"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Interactive Sample Ballot: Full Text of Ballot Measure P, City of Paramount (an ordinance adding Chapter 3.38, Special Parcel Tax, to the Paramount Municipal Code)"
+credit = "Full text of Measure P, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10934.json"
+file = "sources/full-text.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure P, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument in favor of Measure P, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10934.json"
+file = "sources/argument-for.html"
 retrieved = "2026-10-30"
 
 [[source]]
