@@ -33,3 +33,11 @@ This is the text in the agenda draft. **Not confirmed** that the adopted resolut
 - "the effective date for the proposed Ordinance depends on whether the State passes Senate Bill 762 (Arreguin), which concerns the maximum transactions and use tax rate the City may impose at one time"
 - "if SB 762 is not passed in time to take effect by the end of June 2027, then the proposed Ordinance would go into effect on October 1, 2027"
 - "in any event, the proposed Ordinance would expire ten years after it goes into effect"
+
+## Adoption record retrieved 2026-10-30
+
+| File | Title | URL |
+|---|---|---|
+| `legistar-event-1673-item-26-379.json` | Legistar record of the City Council meeting of July 13, 2026, item 26-379: action "Adopted"; action text includes "A motion was made by Councilmember Ponce, seconded by Councilmember Pineda, to adopt resolution to place the attached Transactions and Use (Sales) tax measure (Ordinance) on the November 3, 2026 election ballot. The Motion carried by the following vote: Aye: 5" (no amendment recorded) | <https://webapi.legistar.com/v1/sanpablo/events/1673/eventitems?AgendaNote=1&MinutesNote=1> |
+
+This is the official record that the draft resolution above (the only resolution attached to the item) was adopted, with the attached ordinance, on July 13, 2026. The matter history records the resolution as Adopted/Pass on 2026-07-14. Publisher: City of San Pablo (Legistar).

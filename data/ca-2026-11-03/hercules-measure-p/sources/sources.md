@@ -34,3 +34,11 @@ Agenda-copy text; the adopted ordinance and printed ballot are **not confirmed**
 - "Senate Bill 762 (“SB 762”), which has been approved by the Senate and the Assembly and has been submitted to the Governor for his signature, would authorize the City of Hercules to impose up to a one percent (1%) transactions and use tax without counting that tax against the two percent (2%) cap specified in Revenue and Taxation Code Section 7251.1"
 - "The foregoing Ordinance was duly and regularly adopted at a regular meeting of the City Council of the City of Hercules held on the twenty-eighth day of July 2026" (agenda copy; vote blank)
 - Section 16: "The transactions and use tax to be submitted to the voters is a general tax that can be used for any legitimate governmental purpose"
+
+## Adoption record retrieved 2026-10-30
+
+| File | Title | URL |
+|---|---|---|
+| `legistar-event-1866-item-26-200.json` | Legistar record of the City Council meeting of July 28, 2026, item 26-200: action "adopt", result "Pass"; action text: "MOTION: A motion was made by Vice Mayor Walker-Griffin, seconded by Council Member Grimsley, to adopt Ordinance 558. The motion carried by the following vote:" (no amendment recorded) | <https://webapi.legistar.com/v1/hercules/events/1866/eventitems?AgendaNote=1&MinutesNote=1> |
+
+This is the official record that the urgency ordinance (agenda copy above) was adopted, as Ordinance No. 558, on July 28, 2026. Publisher: City of Hercules (Legistar).
