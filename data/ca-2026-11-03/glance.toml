@@ -3771,3 +3771,12 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $15,113,922."
 amount = 15113922
 period = "unstated"
+
+# Marin County Measure P: a citizens' initiative parcel tax; no fiscal
+# statement is printed, so the revenue estimate in County Counsel's
+# impartial analysis, as the Voter Information Guide prints it.
+[marin-county-measure-p]
+source = "impartial-analysis"
+quote = "The County of Marin estimates revenue from this Measure will average approximately $12,500,000 annually."
+amount = 12500000
+period = "per-year"

@@ -1,0 +1,195 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how a citizens' initiative reached
+# the ballot; what would change (how the tax is charged and for how long,
+# the inflation adjustment, what the money may pay for, who plans and
+# approves the spending and the audit, the vote it needs); the county's
+# revenue estimate; one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the opening
+# says "the voters of this county". The card and title carry the names.
+# No person is named. "Counsel" is heard as "Council"
+# (standard/speakability.txt), so the narration says "the impartial
+# analysis", never whose it is. The rate (5 cents a square foot) is left
+# to the card: an amount under a dollar is transcribed either way
+# (standard/speakability.txt), so the line says how the tax is charged.
+#
+# Every neutral line rests on the impartial analysis and the guide's
+# ballot question; the threshold is said as the county's Measure P page
+# states it ("simple majority"), which the impartial analysis explains
+# (an initiative needs "a majority of the votes cast").
+#
+# The $12.5 million a year is the impartial analysis's estimate ("The
+# County of Marin estimates revenue ... approximately $12,500,000
+# annually"), attributed to the county. No archived source states the
+# county's general fund budget, so the figure has no scale (STANDARD.md
+# 6.5; left open, under [[question]]).
+#
+# Sides: the arguments as printed in the guide. The supporters' line
+# distils the argument in favor's claims for what the measure will do;
+# the opponents' line the argument against's opening sentence. The
+# rebuttals are not cited. Who signed each argument is not named
+# (STANDARD.md 9 permits naming, never requires it).
+
+contest = "ca-2026-11-03-marin-county-measure-p"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "guide-page"
+number = "P"
+title = "CHILD CARE INITIATIVE"
+origin = "This Measure was placed on the ballot following submission of a voter initiative petition containing the number of signatures required by law."
+summary = "Shall the Marin County Child Care Initiative be adopted to levy a special parcel tax of 5 cents per building square foot, generating approximately $12.5 million annually for fifteen years, to fund affordable childcare and high-quality early childhood education and improve compensation to retain and attract educators, with public disclosure, optional annual inflation adjustments, and a corresponding increase in the County appropriations limit, with all funds used locally in Marin County?"
+
+[[section]]
+id = "what"
+heading = "Measure P"
+
+[[section.line]]
+text = "Measure P asks the voters of this county whether to adopt a 15-year parcel tax on buildings for child care and early education."
+sources = ["guide-page", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["special parcel tax of 5 cents per building square foot"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+id = "petition"
+text = "Measure P is a citizens' initiative, placed on the ballot by a voter petition."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "neighborhood-petition"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rate"
+text = "The tax would be charged each year on each square foot of building floor area, and the Board of Supervisors could adjust it yearly for inflation."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-parcels"
+
+[[section.line]]
+id = "uses"
+text = "The money could pay for child care and early education for low- and middle-income families, and for providers' wages and facilities."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "preschool-playroom"
+
+[[section.line]]
+id = "oversight"
+text = "A county commission would plan the spending, which the Board of Supervisors would approve each year, with a yearly independent audit."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "inspection-clipboard"
+
+[[section.line]]
+id = "threshold"
+text = "As an initiative, Measure P needs a simple majority to pass."
+sources = ["county-page", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+id = "revenue"
+text = "The county estimates the tax would raise about $12.5 million a year on average."
+sources = ["impartial-analysis", "guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["generating approximately $12.5 million annually for fifteen years"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure P will make early education more affordable, create more child care spaces, help keep educators, and let more parents work."
+sources = ["argument-for"]
+basis = ["Measure P will make high-quality early childhood education more affordable, create more child care spaces, and help attract and retain qualified child care educators.", "It also means more parents can work."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["More affordable care and more spaces", "More parents able to work"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure P locks taxpayers into a 15-year tax with no defined spending rules, no defined eligibility, and no way to judge results."
+sources = ["argument-against"]
+basis = ["This measure locks Marin taxpayers into a new 15-year tax with no defined spending rules, no defined eligibility, and no way to judge results."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["A 15-year tax, no spending rules", "No set eligibility or way to judge"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the parcel tax for 15 years."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["Child Care Initiative be adopted"]
+
+[[section.line]]
+text = "A no vote does not adopt the tax."
+sources = ["guide-page"]
+
+[section.line.visual]
+kind = "page"
+source = "guide-page"
+highlight = ["Child Care Initiative be adopted"]
+
+[[question]]
+ask = "Who put this on the ballot?"
+lines = ["petition"]
+
+[[question]]
+ask = "How is the tax charged?"
+lines = ["rate"]
+
+[[question]]
+ask = "Who decides how the money is spent, and on what?"
+lines = ["uses", "oversight"]
+
+[[question]]
+ask = "What vote does the measure need to pass?"
+lines = ["threshold"]
+
+[[question]]
+ask = "How big is $12.5 million a year next to the county budget?"
+unanswered = true
