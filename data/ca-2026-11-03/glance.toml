@@ -3127,3 +3127,56 @@ status = "none-printed"
 [mcfarland-measure-n]
 source = "ballot-question"
 status = "none-printed"
+
+# Tehachapi Unified School District Measure D: the district's Tax Rate
+# Statement (Appendix C to its resolution), its total debt service (the
+# bonds are $61 million).
+[tehachapi-unified-measure-d]
+source = "tax-statement"
+quote = "required to be repaid if all the bonds are issued and sold will be approximately $121,200,000."
+amount = 121200000
+period = "unstated"
+
+# Lost Hills Union School District Measure E: the county posts no tax
+# rate statement, and County Counsel's impartial analysis gives no dollar
+# total; the yearly levy, as the ballot question gives it (the bonds are
+# $9 million).
+[lost-hills-union-measure-e]
+source = "ballot-question"
+quote = "levying $30 per $100,000 of assessed valuation, ($720,000 annually) while bonds are outstanding"
+amount = 720000
+period = "per-year"
+
+# City of California City Measure J: the City Attorney's impartial
+# analysis, the one fiscal estimate posted (the ballot question prints the
+# same figure).
+[california-city-measure-j]
+source = "impartial-analysis"
+quote = "would generate an estimated $75,000 per year in additional revenue."
+amount = 75000
+period = "per-year"
+direction = "revenue-gain"
+
+# Bear Valley Community Services District Measure R: a citizens'
+# initiative repealing water rate increases; County Counsel's impartial
+# analysis gives no cost estimate, and no fiscal statement was posted.
+[bear-valley-csd-measure-r]
+source = "impartial-analysis"
+status = "none-printed"
+
+# Bear Valley Community Services District Measure S: a citizens'
+# initiative repealing the 1997 police special tax; County Counsel's
+# impartial analysis gives no cost estimate, and no fiscal statement was
+# posted.
+[bear-valley-csd-measure-s]
+source = "impartial-analysis"
+status = "none-printed"
+
+# Kern County Measure Z: County Counsel's impartial analysis, the one
+# fiscal estimate posted (the ballot question gives the same figure in
+# words).
+[kern-county-measure-z]
+source = "impartial-analysis"
+quote = "generate approximately $24 million annually, and remain in effect until repealed by voters."
+amount = 24000000
+period = "per-year"
