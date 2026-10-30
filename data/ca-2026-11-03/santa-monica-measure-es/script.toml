@@ -29,7 +29,7 @@
 # its text is not among the documents gathered; nothing is reconstructed.
 # filed = false on both, as for any side with no argument text to quote
 # (no `basis` is possible); the lists say the argument was filed. Each
-# side is described by kind, not name, the first-listed filer first.
+# side is described by kind, not name, without ranking the filers.
 
 contest = "ca-2026-11-03-santa-monica-measure-es"
 template = "measure"
@@ -137,7 +137,7 @@ side = "yes"
 filed = false
 
 [[section.line]]
-text = "Three groups, led by a teachers association, filed an argument for Measure ES; its text is not among the documents gathered for this video."
+text = "Three groups, including a teachers association, filed an argument for Measure ES; its text is not among the documents gathered for this video."
 sources = ["arguments-filed"]
 
 [section.line.visual]
