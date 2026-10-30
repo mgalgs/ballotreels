@@ -3347,12 +3347,11 @@ amount = 2000000
 period = "per-year"
 
 # City of South Gate Measure SG: a general utility users tax, so no tax
-# rate statement, and no impartial analysis among the documents gathered;
-# the Los Angeles County Registrar-Recorder/County Clerk's list prints the
-# ballot question's revenue estimate.
+# rate statement; the City Attorney's impartial analysis gives City
+# staff's revenue estimate.
 [south-gate-measure-sg]
-source = "ballot-question"
-quote = "annually providing approximately $10,400,000 until ended by voters"
+source = "impartial-analysis"
+quote = "City staff estimate the tax would generate approximately $10,400,000 annually."
 amount = 10400000
 period = "per-year"
 
