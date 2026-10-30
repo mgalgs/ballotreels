@@ -1100,7 +1100,25 @@ def check_sources(c: Contest) -> list[Failure]:
             out.append(Failure("source",
                                f"source {s.id!r} file {s.file!r} does not "
                                f"exist"))
+    sources_dir = c.path / "sources"
+    if sources_dir.is_dir():
+        for p in sorted(sources_dir.rglob("*")):
+            if p.suffix.lower() in ARCHIVED_TEXT_SUFFIXES and p.is_file() \
+                    and GOOGLE_API_KEY.search(p.read_text(errors="replace")):
+                out.append(Failure(
+                    "source",
+                    f"{p.relative_to(c.path)} contains a Google API key; "
+                    f"replace each with {GOOGLE_API_KEY_REDACTION}"))
     return out
+
+
+# A Google API key, such as the Maps key a government page embeds. It is
+# the site's, but this repo is public and GitHub's secret scanning flags
+# it, so an archived page carries the redaction in its place.
+GOOGLE_API_KEY = re.compile(r"AIza[0-9A-Za-z_-]{35}")
+GOOGLE_API_KEY_REDACTION = "REDACTED_GOOGLE_API_KEY"
+ARCHIVED_TEXT_SUFFIXES = frozenset({".html", ".htm", ".txt", ".json",
+                                    ".md", ".xml", ".csv"})
 
 
 def _fits(got: tuple[str, ...], t: Template) -> bool:

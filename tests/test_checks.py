@@ -84,6 +84,15 @@ class BrokenCopyTest(ContestCopyTestCase):
         [f] = self.assertOnly("source")
         self.assertIn("outside", f.message)
 
+    def test_google_api_key_in_archived_page(self):
+        key = "AIza" + "Sy" + "x" * 33
+        (self.dir / "sources" / "city-page.html").write_text(
+            f'<script src="https://maps.googleapis.com/maps/api/js?key={key}">'
+            f'</script>')
+        [f] = self.assertOnly("source")
+        self.assertIn("sources/city-page.html", f.message)
+        self.assertIn("REDACTED_GOOGLE_API_KEY", f.message)
+
     # 4b. background-only kinds (rule 6.1)
     TODAY_RESERVES = ('text = "Today, the state has about 20 billion dollars '
                       'in reserves it can use for any program."\n'
