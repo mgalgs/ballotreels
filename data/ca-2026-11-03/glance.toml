@@ -3945,3 +3945,13 @@ source = "ballot-question"
 quote = "generating approximately $326,000 annually"
 amount = 326000
 period = "per-year"
+
+# Sleepy Hollow Fire Protection District Measure DD: a parcel tax, so no
+# tax rate statement; the revenue estimate its ballot question
+# (Resolution No. 2026-5, Section 3) prints. It continues an existing
+# tax, so no direction is given.
+[sleepy-hollow-fpd-measure-dd]
+source = "ballot-question"
+quote = "generating approximately One Hundred Five Thousand Dollars ($105,000) annually"
+amount = 105000
+period = "per-year"
