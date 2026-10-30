@@ -3136,3 +3136,9 @@ source = "impartial-analysis"
 quote = "provide an additional $2,200,000 annually to the City’s General Fund"
 amount = 2200000
 period = "per-year"
+
+# City of Carson Measure CU (charter amendments): not a tax; the City
+# Attorney's impartial analysis prints no cost estimate.
+[carson-measure-cu]
+source = "impartial-analysis"
+status = "none-printed"
