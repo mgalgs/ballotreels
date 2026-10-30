@@ -1138,6 +1138,18 @@ BALLOTS: dict[str, Ballot] = {
                          "Notice of Election for Two Charter Amendments",
                      "ca-2026-11-03-dinuba-measure-s":
                          "Notice of a Transaction and Use Tax Election",
+                     # Siskiyou County's Notice of Election for each city
+                     # measure prints its ballot question, which the card
+                     # quotes, named as headed
+                     "ca-2026-11-03-yreka-measure-g":
+                         "Notice of Election",
+                     "ca-2026-11-03-weed-measure-k":
+                         "Notice of Election",
+                     # Placer County Elections' list of the measures on
+                     # its ballot prints Colfax I's question and the vote
+                     # it needs; the card names the list as headed
+                     "ca-2026-11-03-colfax-measure-i":
+                         "Measures to Appear on Ballot",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

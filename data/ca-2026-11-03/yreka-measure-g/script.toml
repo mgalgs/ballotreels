@@ -1,0 +1,204 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot; the
+# tax today; what would change (the new rate and when, what the money is
+# for, the Council's limited powers to amend the tax, the vote it
+# needs); the revenue estimate as the ballot question gives it; both
+# sides, neither of which has an archived argument; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry the
+# names.
+#
+# The card quotes the Siskiyou County Clerk's Notice of Election, which
+# prints the question with blank YES and NO lines but no yes/no
+# statements: so the card has no YES/NO boxes.
+#
+# No impartial analysis was archived: every neutral line rests on the
+# notice, on what Resolution No. 2026-22 finds or enacts (the 10 percent
+# rate today, Section 3; a general tax paid into the General Fund,
+# Section 5; a majority of the voters, Section 8) and on Exhibit A, the
+# measure's text. The minutes give the fact of adoption. The agenda
+# memorandum (the City staff's case for the increase) is not cited.
+#
+# The $245,000 a year is the ballot question's estimate. No archived
+# source states the City's general fund budget to give it a scale
+# (STANDARD.md 6.5; left open, under [[question]]).
+#
+# No argument for or against Measure G was archived, and no document
+# says whether any was filed (the resolution authorizes an argument in
+# favor; nothing records one submitted). So the sides do not say none
+# was filed: each says none is among the documents gathered (filed =
+# false, STANDARD.md 2.5), as for Walnut Creek Measure U.
+
+contest = "ca-2026-11-03-yreka-measure-g"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "G"
+title = "CITY OF YREKA"
+origin = "NOTICE OF ELECTION"
+summary = "To provide funding (all funds used for local services) for infrastructure and general City services, including, but not limited to, public safety, park and recreation programming, community events, and local economic development, shall the City increase the transient occupancy tax (hotel tax) rate from 10% to 12% on July 1, 2027, with an estimated increase of $245,000.00 generated annually from the resulting tax and will remain in effect until repealed or amended?"
+
+[[section]]
+id = "what"
+heading = "Measure G"
+
+[[section.line]]
+text = "Measure G asks the voters of this city whether to raise the hotel tax from 10 percent to 12 percent of the rent."
+sources = ["ballot-question", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["transient occupancy tax (hotel tax) rate from 10% to 12%"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "placed"
+text = "The City Council placed Measure G on the ballot in June 2026."
+sources = ["minutes"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section.line]]
+id = "today"
+text = "Today, guests of hotels, campgrounds and RV parks in the city pay a tax of 10 percent of the rent."
+sources = ["resolution", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hotel-front-desk"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rate"
+text = "The rate would rise to 12 percent on July 1, 2027, and stay until repealed or amended."
+sources = ["ballot-question", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+id = "general"
+text = "It is a general tax, paid into the general fund for city services."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+id = "amend"
+text = "Without a new vote, the council could clarify the tax or change its exemptions, but not raise the rate above 12 percent."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "law-book"
+
+[[section.line]]
+id = "threshold"
+text = "Measure G needs a majority of the vote to pass."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+id = "revenue"
+text = "The ballot question estimates that Measure G would raise about $245,000 more a year."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["an estimated increase of $245,000.00 generated annually"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure G appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure G appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote on Measure G raises the hotel tax from 10 percent to 12 percent."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["transient occupancy tax (hotel tax) rate from 10% to 12%"]
+
+[[section.line]]
+text = "A no vote on Measure G keeps the hotel tax at 10 percent."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["transient occupancy tax (hotel tax) rate from 10% to 12%"]
+
+[[question]]
+ask = "Who pays the tax?"
+lines = ["today"]
+
+[[question]]
+ask = "When would the new rate start, and when would it end?"
+lines = ["rate"]
+
+[[question]]
+ask = "What can the money be spent on?"
+lines = ["general"]
+
+[[question]]
+ask = "Could the council change the tax later?"
+lines = ["amend"]
+
+[[question]]
+ask = "How big is $245,000 a year next to the city budget?"
+unanswered = true
