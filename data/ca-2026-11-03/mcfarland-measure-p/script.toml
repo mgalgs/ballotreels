@@ -1,0 +1,204 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; why it is on the ballot (the law
+# came from an initiative, so only voters can change it) and how it got
+# there; the law today; what would change (who could amend the law, the
+# hearing first, that the measure itself changes no rule, the vote it
+# needs); no cost estimate; both sides, neither of which has an argument
+# among the county's documents; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry it.
+# "CAFO" is said in words, never as the acronym (an acronym's plural is
+# misheard, standard/speakability.txt). The council's vote is said as
+# who voted, not as a tally.
+#
+# The card quotes the ballot question as Resolution No. 2026-95 gives
+# it, the county's copy. It has no yes/no sentences, so the card has no
+# boxes; the vote lines give the impartial analysis's own meanings, and
+# both highlight the same phrase of the question.
+#
+# Measure O, on the same ballot, is a citizens' initiative that would
+# change the same chapter of city law. Neither measure's county
+# documents mention the other, so this script does not connect them (see
+# [[question]]).
+#
+# Kern County Elections' page posts no argument for or against Measure P,
+# and no document says that none was filed. So the sides do not say none
+# was filed: each says none is among the documents gathered (filed =
+# false, STANDARD.md 2.5), as for Livingston T and U.
+
+contest = "ca-2026-11-03-mcfarland-measure-p"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "P"
+title = "RESOLUTION NO. 2026-95"
+origin = "The exact form of the ballot question shall be as follows:"
+summary = "Shall the measure authorizing the McFarland City Council, after a duly noticed public hearing, to amend, revise, extend, supplement, or repeal provisions of Chapter 17.200 of the McFarland Municipal Code, relating to concentrated animal feeding operations, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure P"
+
+[[section.line]]
+text = "Measure P asks the voters of this city whether the City Council may amend the city law on concentrated animal feeding operations."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to amend, revise, extend, supplement, or repeal provisions of Chapter 17.200"]
+
+[[section]]
+id = "background"
+heading = "Why it is on the ballot"
+
+[[section.line]]
+id = "origin"
+text = "The council adopted that law after a citizen initiative petition qualified."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "neighborhood-petition"
+
+[[section.line]]
+id = "locked"
+text = "Under state election law, the council cannot amend it without another vote of the people."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "law-book"
+
+[[section.line]]
+text = "All five council members voted to place Measure P on the ballot."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-law"
+text = "Today, that law prohibits new operations, such as those keeping dairy cattle, and phases out existing ones."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "dairy-barn"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "power"
+text = "Measure P would let the council amend, revise, extend, supplement or repeal that law by ordinance."
+sources = ["impartial-analysis", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "amended-page"
+
+[[section.line]]
+id = "hearing"
+text = "Any change would first need a public hearing, with proper notice."
+sources = ["impartial-analysis", "resolution"]
+
+[[section.line]]
+id = "no-change"
+text = "Measure P itself would not change the current rules."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+text = "Measure P needs a majority vote to pass."
+sources = ["impartial-analysis", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The county elections page for this election does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure P appears among the official documents gathered for this video."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "list"
+source = "impartial-analysis"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure P appears among the official documents gathered for this video."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "list"
+source = "impartial-analysis"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote lets the council change the animal feeding operations law itself, after proper notice."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to amend, revise, extend, supplement, or repeal provisions of Chapter 17.200"]
+
+[[section.line]]
+text = "A no vote keeps the rule that any change to that law needs the approval of voters."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to amend, revise, extend, supplement, or repeal provisions of Chapter 17.200"]
+
+[[question]]
+ask = "Why does the council need voters' permission to change this law?"
+lines = ["origin", "locked"]
+
+[[question]]
+ask = "Would anything change right away if it passes?"
+lines = ["no-change"]
+
+[[question]]
+ask = "How does Measure P relate to Measure O on the same ballot?"
+unanswered = true
