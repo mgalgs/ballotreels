@@ -466,6 +466,8 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution 299-2026",
                      "ca-2026-11-03-marin-csa-29-measure-z":
                          "Resolution No. 2026-032",
+                     "ca-2026-11-03-upper-bay-prd-measure-ff":
+                         "Resolution No. 2026-071",
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.

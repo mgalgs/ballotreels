@@ -1,0 +1,213 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the road today and who keeps it
+# up; how many parcels the division holds; who formed the division and
+# placed the measure, and the vote it needs; what would change (the
+# rates for 10 years, then the maintenance rate, what the money pays
+# for); the loan and cost recovery the resolution provides; both sides,
+# neither of which has an archived argument; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this road division", and the road is "a
+# private road". The card, the title and the "Only voters in
+# ..." line carry the names.
+#
+# The card quotes the ballot question from paragraph 8 of Resolution No.
+# 2026-071, as printed ("to fun improvements"). It prints no yes/no
+# lines, so the card has no boxes and the vote lines take their meaning
+# from the question.
+#
+# The figure $456,750 is not narrated: the ballot question calls it a
+# yearly total, the resolution's recital and the staff report the total
+# over 10 years (sources.toml). The script gives the per-parcel rates
+# and the term, which every record states alike, and the staff report's
+# count of parcels, attributed to it; the per-parcel amounts are exempt
+# from scale (STANDARD.md 6.5). The fiscal section says what the
+# resolution provides for the county's costs and a loan, which it states
+# without figures.
+#
+# The formation resolution's recitals (the petition, the objections to
+# forming the division) are not used: with no argument filed on either
+# side, the script does not set out either side's case.
+#
+# No argument for or against Measure FF was archived, and no document
+# says whether any was filed, so each side says none is among the
+# documents gathered (filed = false, STANDARD.md 2.5), as for Walnut
+# Creek Measure U.
+
+contest = "ca-2026-11-03-upper-bay-prd-measure-ff"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "resolution"
+number = "FF"
+title = "MEASURE SUBMITTED TO VOTE OF VOTERS OF UPPER BAY PERMANENT ROAD DIVISION FOR APPROVAL OF SPECIAL TAX AND LOAN AND ITS REPAYMENT"
+origin = "Board of Supervisors of the County of Marin"
+summary = "Shall the measure be adopted authorizing a special tax on parcels within the Division of $4,350 per improved parcel per year and $2,175 per unimproved parcel per year for 10 years, beginning in fiscal year 2027-28, resulting in a total assessment of approximately $456,750 each year, to fun improvements; thereafter, beginning in fiscal year 2037-2038, the special tax shall be $455 per year for each year until repealed, to fund ongoing maintenance, with a provision for an annual adjustment effective July 1 every year in accordance with the change in the Consumer Price Index for All Urban Consumers San Francisco—Oakland—Hayward for the previous calendar year."
+
+[[section]]
+id = "what"
+heading = "Measure FF"
+
+[[section.line]]
+text = "Measure FF asks the voters of this road division whether to approve a yearly parcel tax to repave and maintain a private road."
+sources = ["resolution", "notice"]
+
+[section.line.visual]
+kind = "page"
+source = "resolution"
+highlight = ["authorizing a special tax on parcels within the Division"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "road"
+text = "The county does not maintain the road, and its upkeep falls to the owners of the parcels along it."
+sources = ["formation", "staff-report"]
+
+[section.line.visual]
+kind = "illustration"
+name = "country-road"
+
+[[section.line]]
+id = "parcels"
+text = "A county staff report says the division holds ten improved parcels and one unimproved parcel."
+sources = ["staff-report"]
+
+[[section.line]]
+id = "placed"
+text = "The county board of supervisors formed the division in June 2026, and placed Measure FF on the ballot in July."
+sources = ["formation", "vote-certification", "minutes"]
+
+[section.line.visual]
+kind = "illustration"
+name = "district-map"
+
+[[section.line]]
+id = "threshold"
+text = "Measure FF needs two-thirds of the vote to pass."
+sources = ["county-report", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rates"
+text = "For 10 years from fiscal year 2027-2028, each improved parcel would pay $4,350 a year, and the unimproved parcel $2,175, for improvements."
+sources = ["resolution", "text"]
+
+[section.line.visual]
+kind = "bars"
+title = "Special tax per parcel per year, dollars"
+source = "resolution"
+unit = ""
+labels = ["Improved parcel, first 10 years", "Unimproved parcel, first 10 years", "Each parcel, after 10 years"]
+values = [4350, 2175, 455]
+
+[[section.line]]
+id = "maintenance"
+text = "After that, each parcel would pay $455 a year for ongoing maintenance, adjusted every year for consumer prices, until repealed."
+sources = ["resolution", "text"]
+
+[[section.line]]
+id = "uses"
+text = "The money would repave and maintain the road, from the end of the county-maintained section to the cul-de-sac at its south end."
+sources = ["notice"]
+
+[section.line.visual]
+kind = "illustration"
+name = "road-repaving"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+id = "loan"
+text = "If Measure FF passes, the division could borrow from the county against the tax, and the tax would repay the loan and its costs."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "loan-papers"
+
+[[section.line]]
+id = "recovery"
+text = "The county would recover its costs of forming the division and holding this election from the funds of the division."
+sources = ["text"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure FF appears among the official documents gathered for this video."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "list"
+source = "resolution"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure FF appears among the official documents gathered for this video."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "list"
+source = "resolution"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the special tax, for improvements and then ongoing maintenance."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "resolution"
+highlight = ["authorizing a special tax on parcels within the Division"]
+
+[[section.line]]
+text = "A no vote rejects the special tax."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "resolution"
+highlight = ["authorizing a special tax on parcels within the Division"]
+
+[[question]]
+ask = "Who would pay, and how many parcels are there?"
+lines = ["road", "parcels"]
+
+[[question]]
+ask = "How long would the tax last?"
+lines = ["rates", "maintenance"]
+
+[[question]]
+ask = "How much would the tax raise in all?"
+unanswered = true
+
+[[question]]
+ask = "Why is the county involved in a private road?"
+lines = ["road", "placed"]
