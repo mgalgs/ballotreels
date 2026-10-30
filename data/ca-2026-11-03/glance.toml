@@ -3780,3 +3780,12 @@ source = "ballot-question"
 quote = "with an estimated increase of $245,000.00 generated annually"
 amount = 245000
 period = "per-year"
+
+# City of Colfax Measure I: a sales tax, so no tax rate statement; no
+# impartial analysis was archived. The revenue estimate is the one its
+# ballot question (Placer County's list of measures) prints.
+[colfax-measure-i]
+source = "ballot-question"
+quote = "providing approximately $1,864,000 annually until ended by voters"
+amount = 1864000
+period = "per-year"

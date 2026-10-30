@@ -1,0 +1,69 @@
+# Archived sources for City of Colfax Measure I, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Placer County Elections' page for Measure I could not be reached (its
+# measure PDF returned HTTP 404 and its index answered a bot challenge),
+# so no impartial analysis, argument or rebuttal was archived, and no
+# document says whether any argument was filed (the resolution only
+# authorizes and invites them). The ballot question is quoted from the
+# county's list "Measures to Appear on Ballot", the authority for the
+# letter, the question and the vote needed ("Requires 2/3 vote to
+# pass"); Section 3 of the City's resolution prints the same question
+# word for word under the short title "Colfax Streets and Sidewalks
+# Sales Tax".
+#
+# The ordinance (the measure's full text) and the resolution submitting
+# it are cited from the City's July 22, 2026 agenda packet, item 8B
+# (packet pages 207 to 220): the copies published with the agenda, with
+# the ordinance's and resolution's numbers and votes left blank. The
+# ordinance's sections are numbered 3.06 (its first, 3.60.010, and its
+# Section 1 say Chapter 3.60); the script names no section. The draft
+# minutes of that meeting, published in the August 26, 2026 packet
+# (item 2B, packet pages 13 to 17), record the ordinance's and the
+# resolution's adoption. The staff report in item 8B is the City staff's
+# material and is not cited.
+
+[contest]
+id = "ca-2026-11-03-colfax-measure-i"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:colfax"
+kind = "measure"
+title = "City of Colfax Measure I: A 1% Sales Tax for Streets, Sidewalks and Right-of-Way Infrastructure"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Placer County Elections, Measures to Appear on Ballot, November 3, 2026 General Election: Measure I – City of Colfax"
+credit = "Measures to Appear on Ballot, Placer County Elections"
+url = "https://www.placercountyelections.gov/Uploads/documents/11032026/11032026_Measures_Appear_on_Ballot.pdf"
+file = "sources/county-measure-list.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-title-summary"
+publisher = "City of Colfax, Resolution № __-2026, A Resolution of the City Council of the City of Colfax Ordering the Submission to the Qualified Voters of the City a Measure to Approve a Local Special Transactions and Use Tax (Sales Tax) in the November 3, 2026, General Election (City Council agenda packet, July 22, 2026, item 8B, packet pages 217 to 220; the copy published with the agenda, its number and vote left blank)"
+credit = "Resolution calling the election, City of Colfax"
+url = "https://colfax-ca.gov/download/194/2026-agendas/4794/2026-07-22-agenda-packet"
+file = "sources/2026-07-22-packet-item-8b.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Colfax, Ordinance No. ___, An Ordinance of the City Council of the City of Colfax Imposing a One Percent Transactions and Use Tax for the Construction, Improvement, Maintenance, Repair, and Replacement of Streets, Sidewalks, Roadways, and Other Public Infrastructure in the Public Right-of-Way (City Council agenda packet, July 22, 2026, item 8B, packet pages 209 to 216; the copy published with the agenda, its number and vote left blank)"
+credit = "Streets and Sidewalks Transactions and Use Tax Ordinance, City of Colfax"
+url = "https://colfax-ca.gov/download/194/2026-agendas/4794/2026-07-22-agenda-packet"
+file = "sources/2026-07-22-packet-item-8b.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "minutes"
+kind = "public-record"
+publisher = "City of Colfax, Draft Regular Meeting Minutes of the City Council, July 22, 2026: item 8B (City Council agenda packet, August 26, 2026, consent item 2B, packet pages 13 to 17)"
+credit = "Draft City Council minutes, City of Colfax"
+url = "https://colfax-ca.gov/download/194/2026-agendas/4838/2026-08-26-agenda-packet"
+file = "sources/2026-08-26-packet-item-2b-draft-minutes-2026-07-22.pdf"
+retrieved = "2026-10-30"
