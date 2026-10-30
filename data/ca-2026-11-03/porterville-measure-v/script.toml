@@ -1,0 +1,204 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot; how
+# an empty council seat is filled today; what would change (appointment
+# or special election by the time left, the rule for a majority of
+# seats, the vote it needs); no cost estimate; both sides, neither of
+# which has an archived argument; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry the
+# names.
+#
+# The Registrar's notice prints two charter amendment questions, each
+# headed "CITY OF PORTERVILLE CHARTER AMENDMENT". Measure V's is the one
+# whose words match Section 3 of Resolution No. 60-2026 (Charter Section
+# 16), not merely the second. The notice prints no yes/no statements:
+# so the card has no YES/NO boxes, and both vote lines highlight the
+# same phrase of the question.
+#
+# No impartial analysis was archived: every neutral line rests on the
+# notice and on what Resolution No. 60-2026 (as the Registrar posted
+# it) records or enacts. Today's rule is the existing Section 16 as
+# Section 4 prints it, struck out (read from the page images): the
+# Council appoints until the next general municipal election, the Mayor
+# fills a seat the Council has not filled within thirty days, and a
+# special election is called when a majority of seats are vacant. The
+# new text is Exhibit A, which keeps the majority rule and the
+# recall exclusion. The resolution's "WHEREAS" finding (that a clear
+# process "promotes consistency, continuity of representation") is the
+# City's own claim and is not used.
+#
+# Neither the notice nor the resolution gives a cost figure, so the
+# fiscal line says so, naming both.
+#
+# No argument for or against Measure V was archived (the county's guide
+# could not be fetched), and no document says whether any was filed. So
+# the sides do not say none was filed: each says none is among the
+# documents gathered (filed = false, STANDARD.md 2.5), as for Walnut
+# Creek Measure U.
+
+contest = "ca-2026-11-03-porterville-measure-v"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "V"
+title = "CITY OF PORTERVILLE CHARTER AMENDMENT"
+origin = "NOTICE OF ELECTION FOR TWO CHARTER AMENDMENTS"
+summary = "Shall the City Charter be amended to require that vacancies on the City Council be filled by appointment of the City Council when less than one year remains in the unexpired term, and by a special election when one year or more remains in the unexpired term?"
+
+[[section]]
+id = "what"
+heading = "Measure V"
+
+[[section.line]]
+text = "Measure V asks the voters of this city whether to change how empty seats on the City Council are filled."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["require that vacancies on the City Council be filled"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "placed"
+text = "The City Council placed Measure V on the ballot in July 2026."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section.line]]
+id = "appoint-today"
+text = "Today the council appoints someone to an empty seat until voters choose a successor at the next regular city election."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "empty-commission-seat"
+
+[[section.line]]
+id = "mayor-today"
+text = "If the council does not fill the seat within 30 days, the mayor fills it."
+sources = ["resolution"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "appoint"
+text = "Under Measure V, the council would appoint someone only when less than a year remains in the term."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "amended-page"
+
+[[section.line]]
+id = "special"
+text = "With a year or more left, a special election would fill the seat, and the mayor would no longer fill seats."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-one-question"
+
+[[section.line]]
+id = "majority-seats"
+text = "As today, if most council seats become empty, a special election would fill them."
+sources = ["resolution"]
+
+[[section.line]]
+id = "threshold"
+text = "Measure V needs a majority of the vote to pass."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+id = "cost"
+text = "Neither the notice of election nor the resolution includes a cost estimate for Measure V."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure V appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure V appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote on Measure V changes how empty council seats are filled."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["require that vacancies on the City Council be filled"]
+
+[[section.line]]
+text = "A no vote on Measure V keeps the current way empty council seats are filled."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["require that vacancies on the City Council be filled"]
+
+[[question]]
+ask = "How is an empty seat filled today?"
+lines = ["appoint-today", "mayor-today"]
+
+[[question]]
+ask = "What happens if several seats are empty at once?"
+lines = ["majority-seats"]
+
+[[question]]
+ask = "What would a special election cost?"
+unanswered = true

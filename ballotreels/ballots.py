@@ -1132,6 +1132,8 @@ BALLOTS: dict[str, Ballot] = {
                          "Notice of General Tax Election",
                      "ca-2026-11-03-porterville-measure-u":
                          "Notice of Election for Two Charter Amendments",
+                     "ca-2026-11-03-porterville-measure-v":
+                         "Notice of Election for Two Charter Amendments",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
