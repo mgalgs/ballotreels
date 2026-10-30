@@ -915,8 +915,9 @@ BALLOTS: dict[str, Ballot] = {
                      # in its County Voter Information Pamphlet; Amador
                      # County Elections posts each measure's question,
                      # analysis and arguments on its "2026 General
-                     # Election" page, with no guide, so those cards name
-                     # the page as titled, as Merced's do
+                     # Election" page, which every cited file comes from,
+                     # so those cards name the page as titled, as
+                     # Merced's do
                      "ca-2026-11-03-willows-measure-k":
                          "General Election Voter Information Guide",
                      **{f"ca-2026-11-03-{slug}":
