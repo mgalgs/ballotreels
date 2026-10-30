@@ -3127,3 +3127,13 @@ status = "none-printed"
 [mcfarland-measure-n]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Santa Monica Measure ES: a parcel tax with no tax rate statement
+# and no impartial analysis among the documents gathered; the Los Angeles
+# County Registrar-Recorder/County Clerk's list prints the ballot
+# question's revenue estimate.
+[santa-monica-measure-es]
+source = "ballot-question"
+quote = "generating an estimated $12,000,000 annually until repealed by voters"
+amount = 12000000
+period = "per-year"
