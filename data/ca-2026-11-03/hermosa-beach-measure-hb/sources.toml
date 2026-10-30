@@ -5,18 +5,19 @@
 #
 # The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
 # Appearing on the Ballot" (sources/county-measure-list-excerpt.txt, the
-# measure's entry) gives its letter, vote threshold and ballot question,
-# and, on its "Supporters: ... Opponents: ..." line, who filed the
-# primary arguments: the card quotes it, and the sides cite it as the
-# official statement of filing. The City Council's Resolution No.
+# measure's entry) gives its letter, vote threshold and ballot question:
+# the card quotes it. The Registrar's Interactive Sample Ballot gives the
+# City Attorney's impartial analysis and the arguments and rebuttals as
+# filed (HTML, retrieved 2026-10-30); the impartial analysis is the
+# measure's neutral explanation. The City Council's Resolution No.
 # 26-7574, as transmitted to the Los Angeles County Board of Supervisors,
 # gives how the measure reached the ballot (with the City Clerk's
 # certification of the Council's vote), the rules for a general tax, the
 # oversight committee, and the proposed ordinance as Exhibit A. The
 # ordinance's Attachment 1, the full text of the new Chapter 3.26, is not
-# in the archived file. No impartial analysis and no argument text could
-# be fetched (the City's site blocked downloads). A general sales tax has
-# no tax rate statement; the revenue estimate is the ballot question's.
+# in the archived file, and the Registrar printed no full text. A general
+# sales tax has no tax rate statement; the revenue estimate is the
+# measure's own, as the impartial analysis reports it.
 
 [contest]
 id = "ca-2026-11-03-hermosa-beach-measure-hb"
@@ -35,19 +36,55 @@ file = "sources/county-measure-list-excerpt.txt"
 retrieved = "2026-10-30"
 
 [[source]]
-id = "arguments-filed"
-kind = "election-filing"
-publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): Measure HB, the supporters and opponents who filed its arguments"
-credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
-url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
-file = "sources/county-measure-list-excerpt.txt"
-retrieved = "2026-10-30"
-
-[[source]]
 id = "resolution"
 kind = "official-text"
 publisher = "City of Hermosa Beach City Council, Resolution No. 26-7574, calling for the placement of a general tax measure on the ballot for the November 3, 2026 General Municipal Election, adopted July 28, 2026, with the proposed ordinance (Exhibit A) and the City Clerk's certification of the vote, as transmitted to the Los Angeles County Board of Supervisors"
 credit = "Resolution No. 26-7574, City of Hermosa Beach"
 url = "https://file.lacounty.gov/SDSInter/bos/supdocs/221063.pdf"
 file = "sources/resolution.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Jason Baltimore, Interim City Attorney, City of Hermosa Beach, City Attorney's Impartial Analysis of Measure HB, as printed by the Los Angeles County Registrar-Recorder/County Clerk in the Interactive Sample Ballot"
+credit = "City Attorney's Impartial Analysis of Measure HB, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10951.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure HB, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument in Favor of Measure HB, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10951.json"
+file = "sources/argument-for.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "rebuttal-to-against"
+kind = "official-argument"
+publisher = "Rebuttal to Argument Against Measure HB, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Rebuttal to Argument Against Measure HB, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10951.json"
+file = "sources/rebuttal-to-argument-against.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure HB, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument Against Measure HB, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10951.json"
+file = "sources/argument-against.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "rebuttal-to-for"
+kind = "official-argument"
+publisher = "Rebuttal to Argument in Favor of Measure HB, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Rebuttal to Argument in Favor of Measure HB, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10951.json"
+file = "sources/rebuttal-to-argument-for.html"
 retrieved = "2026-10-30"

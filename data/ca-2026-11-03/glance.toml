@@ -3200,7 +3200,7 @@ amount = 1000000
 period = "per-year"
 
 # Glendora Unified School District Measure G: a school bond; the
-# district's tax rate statement (Appendix C to its resolution) gives the
+# district's tax rate statement, as the Registrar prints it, gives the
 # total debt service.
 [glendora-unified-measure-g]
 source = "tax-statement"
@@ -3208,9 +3208,9 @@ quote = "would be required to be repaid if all the bonds are issued and sold wil
 amount = 161348832
 period = "unstated"
 
-# Claremont Unified School District Measure CS: a school bond; no tax rate
-# statement was staged, so the one estimate is the ballot question's own
-# yearly levy, as the Registrar's list prints it.
+# Claremont Unified School District Measure CS: a school bond; the
+# estimate is the ballot question's own yearly levy, as the Registrar's
+# list prints it (the tax rate statement gives no yearly total).
 [claremont-unified-measure-cs]
 source = "ballot-question"
 quote = "levying approximately $32/$100,000 of assessed value ($5,000,000 annually)"
@@ -3337,9 +3337,9 @@ source = "ballot-question"
 status = "none-printed"
 
 # City of Hermosa Beach Measure HB: a general sales tax, so no tax rate
-# statement, and no impartial analysis among the documents gathered; the
-# Los Angeles County Registrar-Recorder/County Clerk's list prints the
-# ballot question's revenue estimate.
+# statement; the Los Angeles County Registrar-Recorder/County Clerk's list
+# prints the ballot question's revenue estimate, the one the City
+# Attorney's impartial analysis reports.
 [hermosa-beach-measure-hb]
 source = "ballot-question"
 quote = "providing approximately two million dollars ($2,000,000) annually until ended by voters"

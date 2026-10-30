@@ -2,8 +2,8 @@
 # what it asks and whose measure it is; how the measure reached the
 # ballot; what would change (how the tax is charged, who is exempt, what
 # the money may pay for, the audits, the term and the two-thirds vote it
-# needs); the revenue estimate as the impartial analysis gives it; both
-# sides as the county's list records them; what a vote does.
+# needs); the revenue estimate as the impartial analysis gives it; one
+# line per side; what a vote does.
 #
 # No place name is narrated (the narrator mispronounces them): the
 # opening says "the voters of this city". The card and title carry it.
@@ -22,13 +22,13 @@
 # analysis's paragraph on what the City may face without the measure is
 # left out with the measure's stated benefits: both are the City's case.
 #
-# The list names the filers of both arguments, and neither text is among
-# the documents gathered: each side says only who filed its argument
-# and that the text was not gathered (filed = false on both sides, no
-# basis to quote). Each names its filers by role, the yes side its first
-# and its elected filer (a firefighters association and the mayor), the
-# no side its one filer (an association of realtors); the two lines are
-# of equal length.
+# The sides come from the arguments and rebuttals the Registrar prints:
+# for supporters, fewer firefighters than 75 years ago against calls that
+# grew more than tenfold, and stations that fail earthquake standards; for
+# opponents, that only property owners would pay for a service everyone
+# uses, and that audits cannot guarantee results. The audits and the
+# limit on uses are stated once, in the neutral lines, from the impartial
+# analysis. No filer is named or described, on either side alike.
 #
 # The $22.1 million a year is the impartial analysis's estimate. No
 # archived official document states the City's general fund budget to
@@ -136,31 +136,33 @@ name = "save-more"
 id = "yes"
 heading = "Why some vote yes"
 side = "yes"
-filed = false
 
 [[section.line]]
-text = "Supporters, including a firefighters association and the mayor, filed an argument for Measure PFD; its text was not gathered."
-sources = ["measure-list"]
+id = "yes-line"
+text = "Supporters say the city has fewer firefighters than 75 years ago while calls grew more than tenfold, and two stations fail earthquake standards."
+sources = ["argument-for", "rebuttal-to-against"]
+basis = ["Pasadena has fewer firefighters today than it did 75 years ago in the 1950s.", "Pasadena has fewer firefighters than we did 75 years ago, while emergency calls have increased more than tenfold.", "Two fail earthquake safety standards and could be condemned."]
 
 [section.line.visual]
 kind = "list"
-source = "measure-list"
-items = ["Filed by supporters; text not gathered"]
+source = "argument-for"
+items = ["Fewer firefighters, more emergency calls", "Stations fail earthquake standards"]
 
 [[section]]
 id = "no"
 heading = "Why some vote no"
 side = "no"
-filed = false
 
 [[section.line]]
-text = "An association of realtors filed an argument against Measure PFD; its text is not among the official documents gathered."
-sources = ["measure-list"]
+id = "no-line"
+text = "Opponents say only property owners would bear a tax for services everyone uses, and audits cannot guarantee repaired stations or faster response times."
+sources = ["argument-against", "rebuttal-to-for"]
+basis = ["Firefighters serve everyone: homeowners, renters, workers, tourists, businesses, commuters, Rose Bowl guests, and people experiencing homelessness.", "But only property owners bear the higher tax burden.", "it does not guarantee completed station repairs, faster response times, successful recruitment, or fewer overlapping emergencies."]
 
 [section.line.visual]
 kind = "list"
-source = "measure-list"
-items = ["Filed by opponents; text not gathered"]
+source = "argument-against"
+items = ["Only property owners would pay", "Audits do not guarantee results"]
 
 [[section]]
 id = "vote"
@@ -195,6 +197,10 @@ lines = ["uses"]
 [[question]]
 ask = "When would the tax end?"
 lines = ["end"]
+
+[[question]]
+ask = "What do the supporters and the opponents argue?"
+lines = ["yes-line", "no-line"]
 
 [[question]]
 ask = "How big is $22.1 million a year next to the city budget?"
