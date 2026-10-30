@@ -3884,3 +3884,12 @@ source = "resolution"
 quote = "$4,350 per improved parcel, per year, and $2,175 per unimproved parcel, per year, for 10 years, resulting in a total tax revenue of approximately $456,750"
 amount = 456750
 period = "over 10 years"
+
+# Reed Union School District Measure O: the total debt service, from the
+# District's Tax Rate Statement (Exhibit C to Resolution No.
+# 07-2025/2026, transcribed from the scan); the bonds are $115,000,000.
+[reed-union-measure-o]
+source = "tax-statement"
+quote = "The best estimate from official sources of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $213,000,000."
+amount = 213000000
+period = "unstated"
