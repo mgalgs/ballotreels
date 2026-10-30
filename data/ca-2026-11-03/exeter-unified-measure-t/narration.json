@@ -1,0 +1,313 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 97.05,
+  "phrases": [
+    {
+      "text": "Measure T asks the voters of this school district whether to approve $23 million in school bonds.",
+      "start": 0.03,
+      "end": 6.53
+    },
+    {
+      "text": "The district would sell the bonds and repay them from a tax on property in the district.",
+      "start": 7.19,
+      "end": 12.35
+    },
+    {
+      "text": "Measure T needs 55 percent of the vote to pass.",
+      "start": 13.01,
+      "end": 16.79
+    },
+    {
+      "text": "The money could build an agricultural shop, renovate science labs, modernize classrooms and restrooms, and repair roofs, plumbing, heating and cooling.",
+      "start": 17.45,
+      "end": 27.95
+    },
+    {
+      "text": "Bond money could not pay teacher or administrator salaries, and a citizens' oversight committee and yearly audits would check the spending.",
+      "start": 28.61,
+      "end": 37.59
+    },
+    {
+      "text": "The district's tax statement estimates $38.70 per $100,000 of assessed value each year, through 2060-2061.",
+      "start": 38.25,
+      "end": 48.92
+    },
+    {
+      "text": "The statement says the district expects its total bond tax rate to stay at or below the 2025-2026 rate of $93.20 per $100,000.",
+      "start": 49.58,
+      "end": 61.39
+    },
+    {
+      "text": "The full text says that expectation is not a limit, and that the measure extends the final repayment date of the district's bonds.",
+      "start": 62.05,
+      "end": 69.85
+    },
+    {
+      "text": "The statement estimates the total to repay, with interest, at about $48.4 million.",
+      "start": 70.51,
+      "end": 76.82
+    },
+    {
+      "text": "No argument for Measure T appears among the official documents gathered for this video.",
+      "start": 77.48,
+      "end": 82.06
+    },
+    {
+      "text": "No argument against Measure T appears among the official documents gathered for this video.",
+      "start": 82.72,
+      "end": 88.21
+    },
+    {
+      "text": "A yes vote authorizes the district to issue the bonds.",
+      "start": 88.87,
+      "end": 92.51
+    },
+    {
+      "text": "A no vote does not authorize the district to issue the bonds.",
+      "start": 93.17,
+      "end": 97.02
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure T asks the voters of this school district whether to approve $23 million in school bonds.",
+      "The district would sell the bonds and repay them from a tax on property in the district.",
+      "Measure T needs 55 percent of the vote to pass.",
+      "The money could build an agricultural shop, renovate science labs, modernize classrooms and restrooms, and repair roofs, plumbing, heating and cooling.",
+      "Bond money could not pay teacher or administrator salaries, and a citizens' oversight committee and yearly audits would check the spending.",
+      "The district's tax statement estimates $38.70 per $100,000 of assessed value each year, through 2060-2061.",
+      "The statement says the district expects its total bond tax rate to stay at or below the 2025-2026 rate of $93.20 per $100,000.",
+      "The full text says that expectation is not a limit, and that the measure extends the final repayment date of the district's bonds.",
+      "The statement estimates the total to repay, with interest, at about $48.4 million.",
+      "No argument for Measure T appears among the official documents gathered for this video.",
+      "No argument against Measure T appears among the official documents gathered for this video.",
+      "A yes vote authorizes the district to issue the bonds.",
+      "A no vote does not authorize the district to issue the bonds."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure T asks the voters of this school district whether to approve $23 million in school bonds."
+      },
+      "bounds": [
+        0,
+        157440
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure T asks the voters of this school district whether to approve $23 million in school bonds.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The district would sell the bonds and repay them from a tax on property in the district."
+      },
+      "bounds": [
+        171840,
+        297120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district would sell the bonds and repay them from a tax on property in the district.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure T needs 55 percent of the vote to pass."
+      },
+      "bounds": [
+        311520,
+        403680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure T needs 55 percent of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money could build an agricultural shop, renovate science labs, modernize classrooms and restrooms, and repair roofs, plumbing, heating and cooling."
+      },
+      "bounds": [
+        418080,
+        671520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money could build an agricultural shop, renovate science labs, modernize classrooms and restrooms, and repair roofs, plumbing, heating and cooling.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Bond money could not pay teacher or administrator salaries, and a citizens' oversight committee and yearly audits would check the spending."
+      },
+      "bounds": [
+        685920,
+        902880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Bond money could not pay teacher or administrator salaries, and a citizens' oversight committee and yearly audits would check the spending.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The district's tax statement estimates $38.70 per $100,000 of assessed value each year, through 2060-2061."
+      },
+      "bounds": [
+        917280,
+        1174800
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district's tax statement estimates $38.70 per $100,000 of assessed value each year, through 2060-2061.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The statement says the district expects its total bond tax rate to stay at or below the 2025-2026 rate of $93.20 per $100,000."
+      },
+      "bounds": [
+        1189200,
+        1474080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The statement says the district expects its total bond tax rate to stay at or below the 2025-2026 rate of $93.20 per $100,000.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The full text says that expectation is not a limit, and that the measure extends the final repayment date of the district's bonds."
+      },
+      "bounds": [
+        1488480,
+        1677120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The full text says that expectation is not a limit, and that the measure extends the final repayment date of the district's bonds.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The statement estimates the total to repay, with interest, at about $48.4 million."
+      },
+      "bounds": [
+        1691520,
+        1844400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The statement estimates the total to repay, with interest, at about $48.4 million.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument for Measure T appears among the official documents gathered for this video."
+      },
+      "bounds": [
+        1858800,
+        1970160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure T appears among the official documents gathered for this video.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument against Measure T appears among the official documents gathered for this video."
+      },
+      "bounds": [
+        1984560,
+        2117760
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure T appears among the official documents gathered for this video.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote authorizes the district to issue the bonds."
+      },
+      "bounds": [
+        2132160,
+        2220960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote authorizes the district to issue the bonds.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote does not authorize the district to issue the bonds."
+      },
+      "bounds": [
+        2235360,
+        2329200
+      ]
+    }
+  ],
+  "sha256": "cccc6a152a6fdaa31af4949915a19c056e3da6e23811fdbd5483f78cde8bc9e2",
+  "take": {
+    "sha256": "0b941cec3dd522ef93a26f7d31f18633f1d58502ab23b743f5ee866e17715c48",
+    "bytes": 4658444
+  }
+}
