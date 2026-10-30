@@ -1,0 +1,66 @@
+# Archived sources for City of Walnut Creek Measure U, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Contra Costa County's Voter Information Guide could not be fetched
+# (contracostavote.gov answered a bot challenge, and no Internet Archive
+# capture of the Measure U page was found), and www.walnutcreekca.gov
+# answered HTTP 403. These are the City's files from its agenda system,
+# for the City Council meeting of July 21, 2026, item 6b. No impartial
+# analysis, argument or rebuttal was reached, and no document says
+# whether any argument was filed.
+#
+# The ballot question is quoted from Section 2 of the City's resolution
+# submitting the initiative to the voters (Attachment 3 to item 6b).
+# The question runs across a page break, where the PDF's text layer sets
+# the page number, the YES and NO cells and the next page's running
+# header inside it, so the card's source (ballot-question) is
+# sources/resolution-ballot-question-extract.txt, the question copied
+# from the text layer without them; its url is the PDF. The resolution's
+# other facts are cited from the PDF itself (resolution). The Council
+# could place the initiative only "without alteration" (Elections Code
+# section 9215). The copy archived is the one in the agenda packet,
+# with its number left blank; the errata sheet for item 6b changes only
+# its Section 8, on ballot arguments, so the question stands as quoted.
+# The full text is the Walnut Creek Senior Housing Transit Village
+# Initiative as received by the City Clerk (a scan with a text layer).
+#
+# The two Council agenda reports (April 21 and July 21, 2026) are the
+# City staff's material and the errata sheet changes nothing the script
+# says; none is cited, since the resolution and the initiative state
+# every fact the script uses.
+
+[contest]
+id = "ca-2026-11-03-walnut-creek-measure-u"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:walnut_creek"
+kind = "measure"
+title = "City of Walnut Creek Measure U: Rezoning a 2.4-Acre Office Site for Senior Housing and Commercial Uses"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Walnut Creek, Resolution of the City Council Submitting a Measure to the Voters of Walnut Creek at the November 3, 2026 Election Entitled “The Walnut Creek Senior Housing Transit Village Initiative” (Attachment 3 to City Council agenda item 6b, July 21, 2026): Section 2, the ballot question, pages 2 and 3 (extracted from the text layer without its page breaks)"
+credit = "Resolution Submitting a Measure, City of Walnut Creek"
+url = "https://walnutcreek.granicus.com/MetaViewer.php?view_id=12&event_id=2963&meta_id=357310"
+file = "sources/resolution-ballot-question-extract.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-title-summary"
+publisher = "City of Walnut Creek, Resolution of the City Council Submitting a Measure to the Voters of Walnut Creek at the November 3, 2026 Election Entitled “The Walnut Creek Senior Housing Transit Village Initiative” (Attachment 3 to City Council agenda item 6b, July 21, 2026)"
+credit = "Resolution Submitting a Measure, City of Walnut Creek"
+url = "https://walnutcreek.granicus.com/MetaViewer.php?view_id=12&event_id=2963&meta_id=357310"
+file = "sources/measure-u-resolution-to-place.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Walnut Creek Senior Housing Transit Village Initiative, full text as received by the City of Walnut Creek on March 16, 2026 (Attachment 1 to City Council agenda item 6b, July 21, 2026)"
+credit = "Initiative full text, City of Walnut Creek"
+url = "https://walnutcreek.granicus.com/MetaViewer.php?view_id=12&event_id=2963&meta_id=357306"
+file = "sources/measure-u-initiative-full-text.pdf"
+retrieved = "2026-10-30"
