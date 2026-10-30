@@ -1,0 +1,101 @@
+# Archived sources for Gilroy Unified School District Measure M, 2026-11-03
+# general election (sources/sources.md, sources/rov-sources.md). Every id
+# here may be cited by script.toml. `kind` must be one the standard
+# allows (docs/STANDARD.md, section 1).
+#
+# The County of Santa Clara Registrar of Voters posts each local measure's
+# letter, ballot question and vote threshold on its "List of Local
+# Measures" page, with its impartial analysis, arguments and rebuttals as
+# separate scans. The card quotes the ballot question from that page.
+# County Counsel's impartial analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is. The full text and the tax rate statement come from the
+# county voter guide's page proof that the district posts (the ROV posts
+# neither); the tax rate statement is the measure's fiscal statement.
+#
+# The ROV's PDFs are scans with no text layer. The passages cited were
+# typed from the page images into sources/rov-*-transcription.txt, each
+# naming the PDF and URL it copies; those sources point at the
+# transcription, and their url at the scan. The file the ROV names
+# "rebuttal-to-in-favor-position" is the opponents' rebuttal; the one
+# named "rebuttal-to-opposition" is the proponents' (its form ticks
+# "Rebuttal to the Argument Against / Proponent").
+
+[contest]
+id = "ca-2026-11-03-gilroy-unified-measure-m"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:gilroy_unified_school_district"
+kind = "measure"
+title = "Gilroy Unified School District Measure M: $295 Million School Facilities Bond"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "County of Santa Clara Registrar of Voters, List of Local Measures, November 3, 2026 General Election: Gilroy Unified School District Measure M"
+credit = "List of Local Measures, Santa Clara County Registrar of Voters"
+url = "https://vote.santaclaracounty.gov/list-local-measures-4"
+file = "sources/rov-measure-list-2026-10-29.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Santa Clara County Counsel, Impartial Analysis – Measure M – Gilroy Unified School District – Bonds, as posted by the County of Santa Clara Registrar of Voters (transcribed from the scan)"
+credit = "Impartial Analysis, Santa Clara County Counsel"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-m-impartial-analysis-gilroy-unified_redacted.pdf"
+file = "sources/rov-impartial-analysis-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Gilroy Unified School District, Tax Rate Statement for Measure M, County Voter Information Guide page proof, page 6"
+credit = "Tax Rate Statement, Gilroy Unified School District"
+url = "https://resources.finalsite.net/images/v1788902237/gusdk12caus/tqi6dssrgnesysurl0gg/MeasureM.pdf"
+file = "sources/voter-guide-page-proof-full-text-and-tax-rate-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Gilroy Unified School District, Complete Text of Measure M, County Voter Information Guide page proof, pages 1-6"
+credit = "Full Text of Measure M, Gilroy Unified School District"
+url = "https://resources.finalsite.net/images/v1788902237/gusdk12caus/tqi6dssrgnesysurl0gg/MeasureM.pdf"
+file = "sources/voter-guide-page-proof-full-text-and-tax-rate-statement.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure M, as filed with the Santa Clara County Registrar of Voters (transcribed from the scan)"
+credit = "Argument in favor, Measure M"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-m-gilroy-bond-primary-argument-in-favor_redacted-v2_0.pdf"
+file = "sources/rov-argument-for-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument against Measure M, as filed with the Santa Clara County Registrar of Voters (transcribed from the scan)"
+credit = "Argument against, Measure M"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-m-gilroy-bond-primary-argument-in-opposition_redacted-v2.pdf"
+file = "sources/rov-argument-against-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "rebuttal-for"
+kind = "official-argument"
+publisher = "Rebuttal to the Argument Against Measure M, as filed with the Santa Clara County Registrar of Voters (transcribed from the scan)"
+credit = "Rebuttal to argument against, Measure M"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-m-gilroy-bond-rebuttal-to-opposition_redacted.pdf"
+file = "sources/rov-rebuttal-to-argument-against-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "rebuttal-against"
+kind = "official-argument"
+publisher = "Rebuttal to Argument in Favor of Measure M, as filed with the Santa Clara County Registrar of Voters (transcribed from the scan)"
+credit = "Rebuttal to argument in favor, Measure M"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-m-gilroy-bond-rebuttal-to-in-favor-position_redacted.pdf"
+file = "sources/rov-rebuttal-to-argument-for-transcription.txt"
+retrieved = "2026-10-29"

@@ -2656,3 +2656,13 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $17.5 million."
 amount = 17500000
 period = "unstated"
+
+# Gilroy Unified School District Measure M: the district's Tax Rate
+# Statement, its total debt service (the bonds are $295 million).
+# pdftotext interleaves the statement's column with the full text's, so
+# the quote is the sentence's last clause, which it keeps whole.
+[gilroy-unified-measure-m]
+source = "tax-statement"
+quote = "bonds are issued and sold is approximately $623,300,000."
+amount = 623300000
+period = "unstated"
