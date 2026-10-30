@@ -504,12 +504,14 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 2026-071",
                      "ca-2026-11-03-reed-union-measure-o":
                          "Resolution No. 07-2025/2026",
-                     # Ventura County's measures page and guide could not
-                     # be read: each Ventura card quotes the ballot
-                     # question from the resolution placing the measure,
-                     # named as headed; the Allan Hancock bond's card
-                     # quotes the guide of Santa Barbara County, which
-                     # administers the district's election, as that
+                     # Ventura County's guide could not be read: each
+                     # Ventura card quotes the ballot question from the
+                     # resolution placing the measure, named as headed,
+                     # except Oxnard's, whose printed question differs
+                     # from its resolution's and is quoted from the
+                     # county's measures page; the Allan Hancock bond's
+                     # card quotes the guide of Santa Barbara County,
+                     # which administers the district's election, as that
                      # county's does.
                      "ca-2026-11-03-rio-esd-measure-b":
                          "Resolution No. 2526/20",
@@ -517,10 +519,8 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 2026-13",
                      "ca-2026-11-03-simi-valley-measure-a":
                          "Resolution No. 2026-25",
-                     # (Oxnard's resolution is an agenda copy, its number
-                     # left blank, so it is named by its title)
                      "ca-2026-11-03-oxnard-measure-e":
-                         "Resolution Ordering an Election",
+                         "2026 County of Ventura Measures",
                      "ca-2026-11-03-allan-hancock-measure-h-ventura":
                          "Santa Barbara County Voter Information Guide "
                          "and Sample Ballot",
