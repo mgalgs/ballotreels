@@ -23,10 +23,13 @@
 # sentences, so the card has no boxes. The vote lines give the impartial
 # analysis's own meanings, and both highlight the same phrase.
 #
-# The list names the filers of an argument in favor (the mayor, the
-# mayor pro tem, two council members and a restaurant), whose text is
-# not among the documents gathered: the yes side says only who filed it
-# and that its text was not gathered (filed = false, no basis to quote).
+# The list names five supporters who filed an argument in favor (the
+# mayor, the mayor pro tem, two councilmembers and Darrow's New Orleans
+# Grill); the yes line says "the mayor and four other supporters", words
+# the list states, rather than describing the others in its own terms.
+# The argument's text is not among the documents gathered: the yes side
+# says only who filed it and that its text was not gathered (filed =
+# false, no basis to quote).
 # The list says "Opponents: None submitted.", so the no side says plainly
 # that no argument against was submitted, citing the list. The no line's
 # clause on what the list records balances the yes line's length without
@@ -93,7 +96,7 @@ heading = "What would change"
 
 [[section.line]]
 id = "terms"
-text = "Measure CU would end term limits for every elected city office."
+text = "Under Measure CU, no elected city office would have term limits."
 sources = ["impartial-analysis", "resolution"]
 
 [section.line.visual]
@@ -111,7 +114,7 @@ name = "ballot-box"
 
 [[section.line]]
 id = "refinery"
-text = "Measure CU would remove charter limits on added taxes and certain environmental rules for oil refineries and fuel storage, but would not itself impose any tax."
+text = "Measure CU would remove charter limits on added taxes and certain environmental rules for oil refineries and fuel storage, but would not itself impose or increase any tax."
 sources = ["impartial-analysis"]
 
 [section.line.visual]
@@ -163,7 +166,7 @@ side = "yes"
 filed = false
 
 [[section.line]]
-text = "The mayor, three council members and a restaurant filed an argument for Measure CU; its text is not among the documents gathered."
+text = "The mayor and four other supporters filed an argument for Measure CU; its text is not among the documents gathered."
 sources = ["measure-list"]
 
 [section.line.visual]
