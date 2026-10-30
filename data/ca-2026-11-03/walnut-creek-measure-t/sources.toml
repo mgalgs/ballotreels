@@ -1,0 +1,63 @@
+# Archived sources for City of Walnut Creek Measure T, 2026-11-03
+# general election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Contra Costa County's Voter Information Guide could not be fetched
+# (contracostavote.gov answered a bot challenge), and www.walnutcreekca.gov
+# answered HTTP 403. These are the City's files from its Granicus
+# meeting archive, for the City Council meeting of May 19, 2026, item
+# 5c. No impartial analysis, argument or rebuttal was reached, and no
+# document says whether any argument was filed (Section 8 of the
+# resolution only authorizes one in favor).
+#
+# The ballot question is quoted from Section 2 of the proposed
+# resolution placing the measure (Attachment 1, the agenda copy, its
+# number left blank). The agenda report's copy of the question drops
+# "the"; the resolution's wording is the one quoted. The minutes record
+# that the Council adopted the resolution, unanimously, as Resolution
+# No. 26-31.
+#
+# The May 19 agenda report is City staff material. It is cited only for
+# plain facts it states from state law and the Municipal Code (what the
+# Treasurer does, the timing of the change, who would appoint, the
+# residency rule) and for its account of the 1956 and 1996 measures,
+# attributed to it; its reasons for the change are not used, nor is its
+# $116,000, which is the City's budget for the whole November election.
+# Attachment 2 (the Treasurer's duties, Government Code sections
+# 41001-41007) and the October 6, 2026 agenda report on the City's
+# endorsement are archived but not cited.
+
+[contest]
+id = "ca-2026-11-03-walnut-creek-measure-t"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:walnut_creek"
+kind = "measure"
+title = "City of Walnut Creek Measure T: Making the City Treasurer an Appointed Office"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Walnut Creek, Resolution No. 26-31, A Resolution of the City Council of the City of Walnut Creek Submitting a Measure to the Voters of Walnut Creek at the November 3, 2026 Election to Determine Whether the Position of City Treasurer Should Be Changed from Elected to Appointive (Attachment 1 to City Council agenda item 5c, May 19, 2026; the proposed resolution as published with the agenda, its number left blank)"
+credit = "Resolution No. 26-31, City of Walnut Creek"
+url = "https://walnutcreek.granicus.com/MetaViewer.php?view_id=12&clip_id=5383&meta_id=354208"
+file = "sources/measure-t-resolution-26-31-proposed.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "minutes"
+kind = "public-record"
+publisher = "City of Walnut Creek, Minutes of the Regular Meeting of the City Council, May 19, 2026: item 5c"
+credit = "City Council minutes, City of Walnut Creek"
+url = "https://walnutcreek.granicus.com/MinutesViewer.php?view_id=12&clip_id=5383"
+file = "sources/may19-2026-council-minutes.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "agenda-report"
+kind = "official-title-summary"
+publisher = "City of Walnut Creek, City Council Agenda Report, item 5c, May 19, 2026, from the City Manager's Office: Transition of City Treasurer to Appointed Position, pages 1 to 4"
+credit = "City Council Agenda Report, City of Walnut Creek"
+url = "https://walnutcreek.granicus.com/MetaViewer.php?view_id=12&clip_id=5383&meta_id=354207"
+file = "sources/measure-t-may19-agenda-report.pdf"
+retrieved = "2026-10-30"

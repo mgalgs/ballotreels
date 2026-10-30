@@ -1,0 +1,213 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the office today and how the
+# measure reached the ballot; what would change (when, who would
+# appoint, the residency rule), the earlier votes, the vote it needs;
+# no cost figure; both sides, neither of which has an archived argument;
+# what a vote does.
+#
+# No place name and no person is narrated: the opening says "the voters
+# of this city". "Appointive", the ballot's word, is said "appointed"
+# (standard/speakability.txt). The card and title carry the names.
+#
+# The card quotes the ballot question from Section 2 of the resolution
+# placing the measure, adopted as Resolution No. 26-31 (the minutes);
+# the agenda report's copy drops "the". The card prints no yes/no lines
+# (the resolution's "YES/NO" is left out of the quote), so both vote
+# lines highlight the question.
+#
+# No impartial analysis was archived. What the measure does is stated
+# from the resolution and from what the City staff's agenda report says
+# state law and the Municipal Code provide (Government Code sections
+# 36508 to 36510, Municipal Code section 2-6.405(c)); the report's
+# reasons for the change (professional qualifications, staff could
+# absorb the work, savings) are the City's case and are left out, as no
+# argument on either side was archived. Its account of the 1956 and
+# 1996 measures is attributed to it, without vote counts.
+#
+# No document gives a cost or saving for the measure itself: the
+# report's $116,000 is the City's budget for the whole November
+# election, so it is not used, and the fiscal line says neither the
+# resolution nor the report puts a figure on the measure.
+#
+# No argument for or against Measure T was archived, and no document
+# says whether any was filed (Section 8 of the resolution only
+# authorizes one in favor). So the sides do not say none was filed: each
+# says none is among the documents gathered (filed = false, STANDARD.md
+# 2.5), as for Walnut Creek Measure U.
+
+contest = "ca-2026-11-03-walnut-creek-measure-t"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "T"
+title = "TO DETERMINE WHETHER THE POSITION OF CITY TREASURER SHOULD BE CHANGED FROM ELECTED TO APPOINTIVE"
+origin = "CITY OF WALNUT CREEK"
+summary = "Shall the office of the City Treasurer be appointive?"
+
+[[section]]
+id = "what"
+heading = "Measure T"
+
+[[section.line]]
+text = "Measure T asks the voters of this city whether the office of city treasurer should be appointed instead of elected."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["Shall the office of the City Treasurer be appointive?"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "elected"
+text = "Today the treasurer, who oversees cash, investments and financial reporting for the city, is elected by voters."
+sources = ["agenda-report", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bank-vault"
+
+[[section.line]]
+id = "placed"
+text = "The City Council voted unanimously in May to place Measure T on the ballot."
+sources = ["minutes"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "when"
+text = "The treasurer elected on this same ballot would serve a full term; the office would become appointed when that term ends, or sooner if it falls vacant."
+sources = ["agenda-report", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "empty-commission-seat"
+
+[[section.line]]
+id = "who"
+text = "The city manager would then appoint the treasurer, who would not need to live in the city."
+sources = ["agenda-report"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-clerk-office"
+
+[[section.line]]
+id = "history"
+text = "A city staff report says voters turned down making the office appointed in 1956 and again in 1996."
+sources = ["agenda-report"]
+
+[section.line.visual]
+kind = "illustration"
+name = "newspaper-notices"
+
+[[section.line]]
+id = "threshold"
+text = "Measure T needs a majority of the vote to pass."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+id = "cost"
+text = "Neither the resolution placing Measure T on the ballot nor the staff report puts a dollar figure on what the measure would cost or save."
+sources = ["ballot-question", "agenda-report"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure T appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure T appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote makes the office of city treasurer appointed."
+sources = ["ballot-question", "agenda-report"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["Shall the office of the City Treasurer be appointive?"]
+
+[[section.line]]
+text = "A no vote keeps the office elected."
+sources = ["ballot-question", "agenda-report"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["Shall the office of the City Treasurer be appointive?"]
+
+[[question]]
+ask = "What does the treasurer do?"
+lines = ["elected"]
+
+[[question]]
+ask = "Who put this on the ballot?"
+lines = ["placed"]
+
+[[question]]
+ask = "Would the treasurer elected this year lose the job?"
+lines = ["when"]
+
+[[question]]
+ask = "Who would choose the treasurer?"
+lines = ["who"]
+
+[[question]]
+ask = "Have voters decided this before?"
+lines = ["history"]
+
+[[question]]
+ask = "What would it cost or save the city?"
+lines = ["cost"]
