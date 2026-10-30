@@ -2656,3 +2656,12 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $17.5 million."
 amount = 17500000
 period = "unstated"
+
+# City of Merced Measure B: no tax rate statement or fiscal analysis
+# applies (a general sales tax); the City's revenue estimate, as the City
+# Attorney's impartial analysis gives it.
+[merced-measure-b]
+source = "impartial-analysis"
+quote = "The City estimates that the Measure will raise approximately $18,000,000 per year in new local revenue for use in the City."
+amount = 18000000
+period = "per-year"
