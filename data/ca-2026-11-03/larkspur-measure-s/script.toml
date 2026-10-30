@@ -1,0 +1,198 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the regional paramedic authority
+# and the tax today; what would change (the most it could be, the yearly
+# confirmation, what the question says of its use); the vote it needs;
+# the revenue estimate with its scale; both sides, neither of which has
+# an archived argument; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city", and the Ross Valley Paramedic
+# Authority is "the regional paramedic authority". The card and title
+# carry the names. No person is named.
+#
+# No impartial analysis was archived, and the resolution is the
+# measure's only text: the neutral lines rest on the ballot question, the
+# resolution and the plain facts of the City staff report. The
+# resolution's recital of "responsive, high-quality" care, the ballot
+# question's opening purpose clause and the staff report's praise of the
+# authority are words of need and benefit and are not narrated; what
+# the question promises of the money is attributed to the question. The
+# card quotes the ballot question from Section 2 of the resolution,
+# named by its number; the resolution prints only YES and NO cells
+# beside the question, so the card has no yes/no boxes and both vote
+# lines highlight the same phrase of the question.
+#
+# The ballot question's "approximately $834,000 annually" is paramedic
+# tax revenue. Its scale is the regional paramedic authority's budget,
+# the one the staff report sets the parcel tax against ("a significant
+# portion of the approximately $3.8 million annual budget"): 834,000 /
+# 3,800,000 = 22 percent (STANDARD.md 6.5). No archived source states
+# the City's own general fund. The tax rates are amounts per housing
+# unit or per 1,000 square feet (exempt).
+#
+# No argument for or against Measure S was archived, and no document
+# says whether any was filed (the staff report's draft argument is not
+# one). So the sides do not say none was filed: each says none is among
+# the documents gathered (filed = false, STANDARD.md 2.5), as for Walnut
+# Creek Measure U.
+
+contest = "ca-2026-11-03-larkspur-measure-s"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "S"
+title = "RESOLUTION 46/26"
+origin = "CITY OF LARKSPUR"
+summary = "To maintain rapid 9-1-1 emergency response times and preserve the number of on-duty paramedics ready to respond to accidents/medical emergencies, shall the Ross Valley Paramedic Authority measure be adopted continuing for four years the paramedic services special tax of up to $107.50 / residential living unit or 1,000 square feet of developed nonresidential property, adjusted up to $4.00/ year, generating approximately $834,000 annually, with annual audits, public spending disclosure and all funds for local paramedic services?"
+
+[[section]]
+id = "what"
+heading = "Measure S"
+
+[[section.line]]
+text = "Measure S asks the voters of this city whether to continue a parcel tax for paramedic services for four more years."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["continuing for four years the paramedic services special tax"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "authority"
+text = "The tax pays for paramedic care from the regional paramedic authority, which eight local governments formed in 1982."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "town-street-ambulance"
+
+[[section.line]]
+id = "rate-today"
+text = "This year the tax is $103.50 per housing unit, and the current tax ends in June 2027."
+sources = ["staff-report"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-parcels"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rate"
+text = "Measure S would allow up to $107.50 per housing unit or 1,000 square feet of other buildings, rising up to $4 a year."
+sources = ["ballot-question"]
+
+[[section.line]]
+id = "confirm"
+text = "Each year the city confirms the rate, and it may keep the tax below the most allowed."
+sources = ["staff-report"]
+
+[section.line.visual]
+kind = "illustration"
+name = "recurring-review"
+
+[[section.line]]
+id = "use"
+text = "The ballot question says all of the money would go to local paramedic services, with yearly audits."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+id = "threshold"
+text = "Measure S needs two-thirds of the vote to pass."
+sources = ["measure-list", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+id = "revenue"
+text = "The ballot question estimates the tax would raise about $834,000 a year, about 22 percent of the roughly $3.8 million yearly budget of the paramedic authority."
+sources = ["ballot-question", "staff-report"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["generating approximately $834,000 annually"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure S appears among the official documents gathered for this video."
+sources = ["text"]
+
+[section.line.visual]
+kind = "list"
+source = "text"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure S appears among the official documents gathered for this video."
+sources = ["text"]
+
+[section.line.visual]
+kind = "list"
+source = "text"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote continues the paramedic tax for four more years."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["continuing for four years the paramedic services special tax"]
+
+[[section.line]]
+text = "A no vote does not continue the paramedic tax."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["continuing for four years the paramedic services special tax"]
+
+[[question]]
+ask = "What does the tax pay for?"
+lines = ["authority", "use"]
+
+[[question]]
+ask = "How much would a property owner pay?"
+lines = ["rate-today", "rate", "confirm"]
+
+[[question]]
+ask = "How big is $834,000 a year?"
+lines = ["revenue"]

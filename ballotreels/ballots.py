@@ -478,6 +478,17 @@ BALLOTS: dict[str, Ballot] = {
                      # number left blank, so it is named by its title)
                      "ca-2026-11-03-mill-valley-measure-t":
                          "Resolution Calling a Special Election",
+                     # The Ross Valley Paramedic Authority tax measures'
+                     # cards quote the ballot question from the document
+                     # placing each, named as headed
+                     "ca-2026-11-03-san-anselmo-measure-v":
+                         "Resolution No. 2026-4628",
+                     "ca-2026-11-03-larkspur-measure-s":
+                         "Resolution 46/26",
+                     "ca-2026-11-03-marin-csa-27-measure-y":
+                         "Resolution No. 2026-066",
+                     "ca-2026-11-03-kentfield-fpd-measure-bb":
+                         "Resolution No. 7-2026",
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.

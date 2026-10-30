@@ -1,0 +1,69 @@
+# Archived sources for Town of San Anselmo Measure V, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Marin County's guide could not be archived. These are the Town's files
+# from its Upcoming Elections page: the Town Council's signed Resolution
+# No. 2026-4628 (adopted June 9, 2026), whose Section 3 is the ballot
+# question and whose Exhibit "A" is the full text, an ordinance adding
+# Chapter 9 "Paramedic Services Tax" to Title 8 of the Town's code; and
+# the Town Attorney's Impartial Analysis of Measure V, the measure's
+# neutral explanation. The Town's page labels arguments in favor, against
+# and rebuttals but links no file, so no argument was archived and no
+# document says whether any was filed. A parcel tax has no tax rate
+# statement; the one revenue estimate is the ballot question's, which
+# the impartial analysis repeats.
+#
+# The resolution is a Docusign scan with no text layer, and the impartial
+# analysis is a scan whose text layer misreads words. The pages cited
+# were typed from the page images into the two transcriptions, which
+# name the PDF and URL each copies; the sources point at the
+# transcriptions, and their url at the scans.
+#
+# The letter V and the two-thirds vote are confirmed by the Registrar of
+# Voters' Board of Supervisors staff report 26-4515, listing every
+# measure on the county's November 3, 2026 ballot.
+
+[contest]
+id = "ca-2026-11-03-san-anselmo-measure-v"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:san_anselmo"
+kind = "measure"
+title = "Town of San Anselmo Measure V: Continuing the Paramedic Services Special Tax for Four Years"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Town of San Anselmo, Resolution No. 2026-4628, calling a municipal election on a measure authorizing the continuation of a special parcel tax for paramedic services, adopted June 9, 2026: Section 3, Ballot Question, page 2 (transcribed from the scan)"
+credit = "Resolution No. 2026-4628, Town of San Anselmo"
+url = "https://sananselmo.gov/DocumentCenter/View/34302/Resolution-2026-4628?bidId="
+file = "sources/resolution-2026-4628-with-exhibit-a-ordinance-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Town of San Anselmo, Resolution No. 2026-4628, adopted June 9, 2026, and its Exhibit \"A\": An Ordinance of the Town of San Anselmo Adding Chapter 9 \"Paramedic Services Tax\" to Title 8 \"Finance, Revenue, and Taxation\", pages 1, 2 and 4 to 7 (transcribed from the scan)"
+credit = "Resolution No. 2026-4628 and Exhibit \"A\", Town of San Anselmo"
+url = "https://sananselmo.gov/DocumentCenter/View/34302/Resolution-2026-4628?bidId="
+file = "sources/resolution-2026-4628-with-exhibit-a-ordinance-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Town of San Anselmo, Town Attorney's Impartial Analysis of Measure V: Special Tax for Paramedic Services (transcribed from the scan)"
+credit = "Town Attorney's Impartial Analysis, Town of San Anselmo"
+url = "https://www.sananselmo.gov/DocumentCenter/View/34407/Impartial-Analysis-RVPA-tax-2026-V?bidId="
+file = "sources/impartial-analysis-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "Marin County Registrar of Voters, Board of Supervisors staff report 26-4515, September 8, 2026: the list of measures on the November 3, 2026 ballot, page 2"
+credit = "Staff report 26-4515, Marin County Registrar of Voters"
+url = "https://marin.granicus.com/MetaViewer.php?view_id=33&event_id=4262&meta_id=1474983"
+file = "sources/marin-bos-2026-09-08-consolidation-staff-report-26-4515.pdf"
+retrieved = "2026-10-28"

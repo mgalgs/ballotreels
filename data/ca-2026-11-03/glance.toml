@@ -3906,3 +3906,42 @@ source = "impartial-analysis"
 quote = "The Marin Healthcare District estimates revenue from this Measure will average approximately $12,400,000 annually."
 amount = 12400000
 period = "per-year"
+
+# Town of San Anselmo Measure V: a parcel tax, so no tax rate statement;
+# the revenue estimate its ballot question (Resolution No. 2026-4628,
+# Section 3) prints. It continues an existing tax, so no direction is
+# given.
+[san-anselmo-measure-v]
+source = "ballot-question"
+quote = "generating approximately $688,000 annually"
+amount = 688000
+period = "per-year"
+
+# City of Larkspur Measure S: a parcel tax, so no tax rate statement;
+# the revenue estimate its ballot question (Resolution 46/26, Section 2)
+# prints. It continues an existing tax, so no direction is given.
+[larkspur-measure-s]
+source = "ballot-question"
+quote = "generating approximately $834,000 annually"
+amount = 834000
+period = "per-year"
+
+# County Service Area 27 Measure Y: a parcel tax, so no tax rate
+# statement; the revenue estimate its ballot question (Resolution No.
+# 2026-066, Section 3) prints. It continues an existing tax, so no
+# direction is given.
+[marin-csa-27-measure-y]
+source = "ballot-question"
+quote = "generating approximately $84,000 annually"
+amount = 84000
+period = "per-year"
+
+# Kentfield Fire Protection District Measure BB: a parcel tax, so no tax
+# rate statement; the revenue estimate its ballot question (draft
+# Resolution No. 7-2026, Section 3) prints. It continues an existing
+# tax, so no direction is given.
+[kentfield-fpd-measure-bb]
+source = "ballot-question"
+quote = "generating approximately $326,000 annually"
+amount = 326000
+period = "per-year"
