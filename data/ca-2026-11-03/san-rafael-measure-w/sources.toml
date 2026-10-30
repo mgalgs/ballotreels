@@ -1,0 +1,75 @@
+# Archived sources for City of San Rafael Measure W, the San Rafael
+# Essential Services Protection Measure, 2026-11-03 general election
+# (sources/sources.md, its section "Feed documents retrieved
+# 2026-10-30"). Every id here may be cited by script.toml. `kind` must be
+# one the standard allows (docs/STANDARD.md, section 1).
+#
+# The County of Marin's Voter Information Guide and Sample Ballot (ballot
+# type 26, which covers the City of San Rafael) prints Measure W's ballot
+# question, the City Attorney's impartial analysis, the arguments for and
+# against, both rebuttals and the Full Text of Measure W (the ordinance).
+# The card quotes the guide's ballot question, and its yes and no
+# sentences from the impartial analysis. The City Attorney's impartial
+# analysis is the measure's neutral explanation, the kind a state's
+# attorney general's explanatory statement is. No fiscal statement is
+# printed: the revenue estimate is the impartial analysis's.
+#
+# The guide's text layer is partly garbled (a font with a broken
+# character map), so the passages cited were typed from the page images
+# into sources/county-vig-bt26-measure-w-transcription.txt, which names
+# the PDF, its pages and the guide's URL; the sources point at the
+# transcription, and their url at the guide. The city's July 20, 2026
+# staff report and its measure page (both archived) are not cited: the
+# guide gives every fact the script states.
+
+[contest]
+id = "ca-2026-11-03-san-rafael-measure-w"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:san_rafael"
+kind = "measure"
+title = "City of San Rafael Measure W: Raising the Real Property Transfer Tax from 0.2% to 1%"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "County of Marin Elections Department, Voter Information Guide and Sample Ballot, November 3, 2026 General Election, ballot type 26: Measure W's ballot question and impartial analysis, page 29 (transcribed from the page images)"
+credit = "Voter Information Guide and Sample Ballot, County of Marin"
+url = "https://assets.marincounty.gov/marincounty-prod/public/2026-09/VIG-BT26.pdf"
+file = "sources/county-vig-bt26-measure-w-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney of San Rafael, Impartial Analysis by the City Attorney, San Rafael Essential Services Protection Measure, Measure W, Voter Information Guide and Sample Ballot, County of Marin, November 3, 2026 General Election, ballot type 26, page 29 (transcribed from the page images)"
+credit = "Impartial Analysis, City Attorney of San Rafael"
+url = "https://assets.marincounty.gov/marincounty-prod/public/2026-09/VIG-BT26.pdf"
+file = "sources/county-vig-bt26-measure-w-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure W, an ordinance of the City Council of the City of San Rafael amending Chapter 3.22 of the San Rafael Municipal Code, Voter Information Guide and Sample Ballot, County of Marin, November 3, 2026 General Election, ballot type 26, page 33 (transcribed from the page images)"
+credit = "Full Text of Measure W, Marin County Voter Information Guide"
+url = "https://assets.marincounty.gov/marincounty-prod/public/2026-09/VIG-BT26.pdf"
+file = "sources/county-vig-bt26-measure-w-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure W, Voter Information Guide and Sample Ballot, County of Marin, November 3, 2026 General Election, ballot type 26, page 30 (transcribed from the page images)"
+credit = "Argument in favor, Marin County Voter Information Guide"
+url = "https://assets.marincounty.gov/marincounty-prod/public/2026-09/VIG-BT26.pdf"
+file = "sources/county-vig-bt26-measure-w-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure W, Voter Information Guide and Sample Ballot, County of Marin, November 3, 2026 General Election, ballot type 26, page 32 (transcribed from the page images)"
+credit = "Argument against, Marin County Voter Information Guide"
+url = "https://assets.marincounty.gov/marincounty-prod/public/2026-09/VIG-BT26.pdf"
+file = "sources/county-vig-bt26-measure-w-transcription.txt"
+retrieved = "2026-10-30"
