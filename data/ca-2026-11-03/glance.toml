@@ -3186,3 +3186,13 @@ source = "ballot-question"
 quote = "annually providing approximately $10,400,000 until ended by voters"
 amount = 10400000
 period = "per-year"
+
+# City of Lynwood Measure L: a general hotel tax, so no tax rate
+# statement, and no impartial analysis among the documents gathered; the
+# Los Angeles County Registrar-Recorder/County Clerk's list prints the
+# ballot question's revenue estimate.
+[lynwood-measure-l]
+source = "ballot-question"
+quote = "providing approximately $751,315 annually until ended by voters"
+amount = 751315
+period = "per-year"

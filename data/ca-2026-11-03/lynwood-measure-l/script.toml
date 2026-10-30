@@ -1,0 +1,201 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; that the city charges no hotel
+# tax today, from the ordinance's recitals; what would change, from the
+# ordinance (who pays and on what, online bookings, who is exempt, where
+# the money goes, how long it lasts, what the Council may change); the
+# revenue estimate with the staff report's own comparison to the General
+# Fund; who filed the argument for, and that none was submitted against;
+# what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card shows the name.
+#
+# The card quotes the measure's entry in the county's list "Measures
+# Appearing on the Ballot", which prints no yes/no meanings, so the card
+# has no boxes; the vote lines take both meanings from the question and
+# highlight the same phrase. The services the question lists are on the
+# card; the narration says once that the money may go to any purpose, as
+# the ordinance says the list is only illustrative.
+#
+# The $751,315 a year is the ballot question's estimate, and the staff
+# report's Fiscal Impact section states its scale in words, "approximately
+# 1.69 percent of the City's reported General Fund", which the fiscal line
+# quotes (STANDARD.md 6.5). The staff report is cited for nothing else
+# but the plain fact, in its executive summary, that the City levies no
+# such tax today; its reasons for the tax are not used.
+#
+# Sides: the county's list names four supporters who filed the argument
+# for (a former treasurer, a board member, a business owner and one
+# other) and says "Opponents: None submitted." The argument for's text
+# could not be found: its line says only who filed it and that its text
+# was not gathered, nothing reconstructed. The no side says that none was
+# submitted. filed = false on both (neither has text to quote as a
+# `basis`); word counts kept within 5%.
+
+contest = "ca-2026-11-03-lynwood-measure-l"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "L"
+title = "CITY OF LYNWOOD"
+origin = "VOTE PASSAGE – Majority Vote 50%+1"
+summary = "Lynwood Public Safety/Community Protection/City Services Measure To maintain 911 emergency response; prevent crime, including gang/juvenile crime and human trafficking; address homelessness; keep parks/public areas safe/clean; address speeding/unsafe driving; repair streets/potholes; support youth/senior programs, other general city services, shall the City of Lynwood ordinance establishing a 12% transient occupancy tax, (paid only by hotel/motel guests), be adopted, providing approximately $751,315 annually until ended by voters, requiring audits/public spending disclosure, all funds locally controlled/benefitting Lynwood residents?"
+
+[[section]]
+id = "what"
+heading = "Measure L"
+
+[[section.line]]
+text = "Measure L asks the voters of this city whether to tax hotel and motel stays at 12 percent, for general city services."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establishing a 12% transient occupancy tax"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-none"
+text = "Today, the city does not tax hotel and motel stays."
+sources = ["ordinance", "staff-report"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-hotel"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rate"
+text = "Guests staying 30 days or less would pay 12 percent of what they pay for the room."
+sources = ["ordinance", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hotel-front-desk"
+
+[[section.line]]
+id = "online"
+text = "The tax would apply to the full price, including fees, and online travel companies would collect it too."
+sources = ["ordinance"]
+
+[section.line.visual]
+kind = "illustration"
+name = "online-booking-laptop"
+
+[[section.line]]
+id = "exempt"
+text = "Government travelers, emergency shelter stays and residents displaced from their homes by a disaster would be exempt."
+sources = ["ordinance"]
+
+[section.line.visual]
+kind = "illustration"
+name = "fire-damaged-lot"
+
+[[section.line]]
+id = "uses"
+text = "The money would go to the general fund for any city purpose, with yearly audits, until voters repeal the tax."
+sources = ["ordinance", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "recurring-review"
+
+[[section.line]]
+id = "council-rate"
+text = "The City Council could lower the rate and raise it again, but never above 12 percent without another vote."
+sources = ["ordinance"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+id = "revenue"
+text = "The ballot question estimates about $751,315 a year, which the city staff report puts at approximately 1.69 percent of the general fund."
+sources = ["ballot-question", "staff-report"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "A former treasurer, a board member, a business owner and one other person filed an argument for Measure L; its text was not gathered."
+sources = ["arguments-filed"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments-filed"
+items = ["Argument for filed; text not gathered"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The official county list of measures for this election says that no argument against Measure L was submitted, by any group or person."
+sources = ["arguments-filed"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments-filed"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the 12 percent hotel tax."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establishing a 12% transient occupancy tax"]
+
+[[section.line]]
+text = "A no vote rejects the 12 percent hotel tax."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establishing a 12% transient occupancy tax"]
+
+[[question]]
+ask = "Who would pay the tax?"
+lines = ["rate", "online", "exempt"]
+
+[[question]]
+ask = "Does the city have a hotel tax now?"
+lines = ["today-none"]
+
+[[question]]
+ask = "What could the money be spent on, and for how long?"
+lines = ["uses"]
+
+[[question]]
+ask = "How big is the revenue next to the city budget?"
+lines = ["revenue"]
