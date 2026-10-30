@@ -1,0 +1,55 @@
+# Archived sources for Pixley Union Elementary School District Measure W,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Tulare County voter guide could not be fetched (tularecounty.ca.gov
+# answers a Cloudflare challenge), and the District's site served no
+# measure documents, so no impartial analysis, argument or rebuttal was
+# archived, and no document says whether any argument was filed. The
+# Registrar's measure page, in an Internet Archive capture of October 9,
+# 2026, prints the Registrar's notice of the election, with the ballot
+# question and the vote needed; the card quotes the question from it.
+# The page links the Board of Education's Resolution No. 26.05 (adopted
+# July 21, 2026, as the notice says; the scan's own adoption line is cut
+# off after "July 21, 20"), with the District's cover letter to the
+# Registrar; its Appendix A is the measure's full text and Appendix C the
+# District's tax rate statement. The resolution is a scan with no text
+# layer: every page was typed from the page images, word for word, into
+# sources/resolution-26-05-transcription.txt, which names the PDF and URL
+# it copies; both sources point at the transcription, and their url at
+# the scan.
+
+[contest]
+id = "ca-2026-11-03-pixley-union-elementary-measure-w"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:pixley_union_elementary_school_district"
+kind = "measure"
+title = "Pixley Union Elementary School District Measure W: $6.9 Million in School Facility Bonds"
+
+[[source]]
+id = "notice"
+kind = "official-title-summary"
+publisher = "Tulare County Registrar of Voters, Publication Notice of Special Bond Elections and Notice of Date Fixed for Submitting Arguments for Pixley Union Elementary School District, dated July 29, 2026, on the Registrar's page “Pixley Union Elementary School District Special Bond Information” (Internet Archive capture of October 9, 2026)"
+credit = "Notice of Election, Tulare County Registrar of Voters"
+url = "http://web.archive.org/web/20261009122131/https://tularecounty.ca.gov/elections/pixley-union-elementary-school-district-special-bond-information"
+file = "sources/county-measure-page.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Board of Education of the Pixley Union Elementary School District, Resolution No. 26.05, with Appendix A, Full Text of Bond Measure (pages A-1 to A-4), as posted by the Tulare County Registrar of Voters (transcribed from the scan)"
+credit = "Resolution No. 26.05, Pixley Union Elementary School District"
+url = "https://tc-web.widen.net/s/dhvpq8d6jm/resolution-no-26.05"
+file = "sources/resolution-26-05-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Pixley Union Elementary School District, Tax Rate Statement (Appendix C, page C-1, to Resolution No. 26.05), as posted by the Tulare County Registrar of Voters (transcribed from the scan)"
+credit = "Tax Rate Statement, Pixley Union Elementary School District"
+url = "https://tc-web.widen.net/s/dhvpq8d6jm/resolution-no-26.05"
+file = "sources/resolution-26-05-transcription.txt"
+retrieved = "2026-10-30"
