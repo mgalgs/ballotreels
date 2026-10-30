@@ -3678,3 +3678,12 @@ direction = "cost"
 [walnut-creek-measure-u]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Concord Measure O: a general business license tax; no tax rate
+# statement applies, and no impartial analysis was archived. The figure
+# is the one its ballot question (the City's Measure O page) prints.
+[concord-measure-o]
+source = "ballot-question"
+quote = "providing an additional $2,900,000 annually"
+amount = 2900000
+period = "per-year"

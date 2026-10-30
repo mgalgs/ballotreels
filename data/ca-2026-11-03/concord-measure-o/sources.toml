@@ -1,0 +1,63 @@
+# Archived sources for City of Concord Measure O, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Contra Costa County's Voter Information Guide could not be fetched
+# (contracostavote.gov answered a bot challenge). These are the City's
+# own files: its "Ballot Question and Election Information" page, and
+# item 4.a of the City Council's July 28, 2026 agenda: the resolution
+# placing the measure (Attachment 1) and the proposed ordinance with
+# its redlined Chapter 5.05 of the Municipal Code (Exhibit A, from the
+# agenda packet), which is the measure's full text. Both are agenda
+# copies, with their numbers and the Council's vote left blank. No
+# impartial analysis, argument or rebuttal was reached, and no document
+# says whether any argument was filed.
+#
+# The card quotes the ballot question from the City's page, which
+# prints the same text as Section 3 of the resolution. The July 28
+# agenda report is City staff material; the script cites it only for
+# the date the change would take effect.
+
+[contest]
+id = "ca-2026-11-03-concord-measure-o"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:concord"
+kind = "measure"
+title = "City of Concord Measure O: A Single Business License Tax Rate of 0.1% of Gross Receipts"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Concord, Ballot Question and Election Information (the City's Measure O web page)"
+credit = "Ballot Question and Election Information, City of Concord"
+url = "https://www.cityofconcord.org/1396/Ballot-Question-and-Election-Information"
+file = "sources/city-ballot-question-page.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-title-summary"
+publisher = "City of Concord, A Resolution Calling for and Giving Notice of a November 3, 2026, Election on a Proposed Business License Tax Simplification Ballot Measure (Resolution No. 26-XX, Attachment 1 to City Council agenda item 4.a, July 28, 2026; the agenda copy, with its number and vote left blank)"
+credit = "Resolution Calling an Election, City of Concord"
+url = "https://stream2.ci.concord.ca.us/OnBaseAgendaOnline/Documents/DownloadFileBytes/Resolution%20for%20-%20%20-%20Attachment%201%20-%20Resolution%20(26026).pdf?documentType=1&meetingId=1463&itemId=26026&publishId=37963&isSection=False&isAttachment=True"
+file = "sources/concord-O-resolution.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Concord, Proposed Ordinance No. 26-XX, Business License Tax Simplification Ballot Measure, with Exhibit 1, Redlined Changes to Concord Municipal Code Chapter 5.05 (Exhibit A to Attachment 1, City Council agenda item 4.a, July 28, 2026; agenda packet pages 112 to 130; the agenda copy, with its number and vote left blank)"
+credit = "Proposed Ordinance No. 26-XX, City of Concord"
+url = "https://stream2.ci.concord.ca.us/OnBaseAgendaOnline/Documents/DownloadFileBytes/Regular_Meeting_1463_Agenda_Packet_7_28_2026_6_30_00_PM.pdf?documentType=5&meetingId=1463&isAttachment=True"
+file = "sources/concord-O-ordinance-exhibit-a.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "staff-report"
+kind = "official-title-summary"
+publisher = "City of Concord, City Council Agenda Report, Item No. 4.a, July 28, 2026: Financial Impact, page 7"
+credit = "City Council Agenda Report, City of Concord"
+url = "https://stream2.ci.concord.ca.us/OnBaseAgendaOnline/Documents/DownloadFileBytes/Agenda%20Staff%20Report%20for%20-%20BUSINESS%20LICENSE%20SIMPLIFICATION%20BALLOT%20MEASURE%20(26026).pdf?documentType=1&meetingId=1463&itemId=26026&publishId=37962&isSection=False&isAttachment=True"
+file = "sources/concord-O-staff-report.pdf"
+retrieved = "2026-10-28"
