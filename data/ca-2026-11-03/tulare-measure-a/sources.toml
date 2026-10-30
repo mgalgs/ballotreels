@@ -1,0 +1,45 @@
+# Archived sources for City of Tulare Measure A, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The City's site (tulare.ca.gov) and the county's (tularecounty.ca.gov)
+# blocked downloads. The Tulare County Registrar of Voters' measure page
+# is archived as the Internet Archive's capture of October 9, 2026; it
+# prints the Registrar's published notice of election, whose ballot
+# question ("to be displayed on each individual ballot") and vote
+# requirement the card and script quote, so each url is that capture.
+# The page links the City's placing resolution, which is archived as
+# the Registrar posted it (a 3-page scan, no text layer).
+#
+# The resolution says the measure is "more completely described in the
+# ordinance attached hereto as Exhibit A", but the Registrar's copy is
+# the resolution alone, and no copy of the ordinance was reached, so no
+# `official-text` source is listed. No impartial analysis, argument or
+# rebuttal was reached (the county's guide is blocked), and no document
+# says whether any argument was filed.
+
+[contest]
+id = "ca-2026-11-03-tulare-measure-a"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:tulare"
+kind = "measure"
+title = "City of Tulare Measure A: A 1¢ Sales Tax Increase for City Services Until Ended by Voters"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Tulare County Registrar of Voters, Publication Notice of a Transaction and Use Tax Election and Notice of Date Fixed for Submitting Arguments for the City of Tulare, dated July 1, 2026, on the county's page City of Tulare Transaction and Use Tax Measure Information (Internet Archive capture of October 9, 2026)"
+credit = "Notice of Election, Tulare County Registrar of Voters"
+url = "http://web.archive.org/web/20261009122132/https://tularecounty.ca.gov/elections/city-tulare-transaction-and-use-tax-measure-information"
+file = "sources/county-measure-page.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-title-summary"
+publisher = "City of Tulare, Resolution 2026-041, A Resolution of the City Council of the City of Tulare Calling an Election ... and Submitting to the Electors a Ballot Measure to Increase the City's Sales and Use Tax by One Percent (One Cent), adopted June 2, 2026, as posted by the Tulare County Registrar of Voters (pages 1-3)"
+credit = "Resolution 2026-041, City of Tulare"
+url = "https://tc-web.widen.net/s/bkwzhkzfn2/resolution-for-sales-tax-measure"
+file = "sources/county-resolution-for-sales-tax-measure.pdf"
+retrieved = "2026-10-30"

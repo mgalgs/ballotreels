@@ -3725,3 +3725,12 @@ source = "ballot-question"
 quote = "providing $23,000,000 annually for 18 years"
 amount = 23000000
 period = "per-year"
+
+# City of Tulare Measure A: a sales tax, so no tax rate statement; the
+# revenue estimate its ballot question (the Registrar's notice of
+# election) prints.
+[tulare-measure-a]
+source = "ballot-question"
+quote = "providing approximately $16,000,000 annually until ended by voters"
+amount = 16000000
+period = "per-year"

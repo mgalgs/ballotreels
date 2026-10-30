@@ -1109,6 +1109,12 @@ BALLOTS: dict[str, Ballot] = {
                                      "monterey-park-measure-hom",
                                      "monterey-park-measure-aaa",
                                      "burbank-measure-cc")},
+                     # Tulare County's guide could not be fetched: the
+                     # City of Tulare's card quotes the Registrar of
+                     # Voters' published notice of election, named as
+                     # headed
+                     "ca-2026-11-03-tulare-measure-a":
+                         "Notice of a Transaction and Use Tax Election",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
