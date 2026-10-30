@@ -24,8 +24,9 @@
 # dredging, its past dredging cost and its ten-year revenue projection
 # are not used.
 #
-# The ballot question's estimate ($272,800, at the $2,200 rate) is the
-# service area's revenue; no archived source states the service area's
+# The ballot question's estimate ($272,800, for which it gives no period)
+# is narrated as printed, with no period added; it is the service area's
+# revenue, and no archived source states the service area's
 # budget, so the figure has no scale (STANDARD.md 6.5; left open). The
 # per-lot amounts are exempt.
 #
@@ -125,7 +126,7 @@ heading = "What it would raise"
 
 [[section.line]]
 id = "revenue"
-text = "The ballot question estimates the tax would provide about $272,800 a year at the starting rate."
+text = "The ballot question estimates the tax would provide about $272,800."
 sources = ["resolution"]
 
 [section.line.visual]
