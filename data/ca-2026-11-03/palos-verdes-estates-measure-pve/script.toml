@@ -1,0 +1,219 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the tax voters approved in 2018
+# and when it ends; how the measure reached the ballot and the two-thirds
+# vote it needs; what each parcel pays today; what would change (the new
+# rate and yearly increase, the pension share, what the money may not
+# buy, oversight, the end date); the revenue estimate; the argument for,
+# and that no argument against was submitted; what a vote does.
+#
+# Only the ballot question, the City Attorney's impartial analysis and
+# the argument for were gathered (no full text), so the neutral lines are
+# from the question and the analysis alone.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card shows the name. The
+# earlier measures the argument names (Measures E and PF) are not named
+# by letter in any line.
+#
+# The 20 cents per square foot is under a dollar, which the transcript
+# check cannot hear reliably (standard/speakability.txt); the lines say
+# "a charge per square foot" and leave the figure to the card.
+#
+# The $8.7 million a year is the estimate the ballot question and the
+# impartial analysis both give; the $1 million a year for pensions is a
+# share of it. No archived source states the City's general fund budget,
+# so neither has a scale (STANDARD.md 6.5; left open). The rates per
+# parcel are amounts per property, exempt. The argument's $7 million
+# deficit is that side's claim and stays out of the neutral sections
+# (STANDARD.md 6.3); the yes line gives its point without the figure.
+#
+# The card quotes the measure's entry in the county's list "Measures
+# Appearing on the Ballot", which prints no yes/no meanings, so the card
+# has no boxes; the vote lines take both meanings from the impartial
+# analysis and highlight the same phrase of the question.
+#
+# Sides: the argument in favor is presented from its text; the county's
+# list says "Opponents: None submitted.", and the no side says so
+# (filed = false).
+
+contest = "ca-2026-11-03-palos-verdes-estates-measure-pve"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "PVE"
+title = "CITY OF PALOS VERDES ESTATES"
+origin = "VOTE PASSAGE – 2/3 Votes (66.6% of Votes)"
+summary = "Palos Verdes Estates Law Enforcement Services and Pension Liability Payment Measure. Shall the measure to maintain Palos Verdes Estates Police Department services and to pay down the City's unfunded accrued pension liability, by extending the City's special parcel tax for 6 years at the new rate of $1,025 per taxable parcel plus 20¢ per square foot of taxable building improvements, subject to 2% annual adjustment, generating approximately $8,700,000 annually, subject to annual audits, reporting and citizens' committee oversight, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure PVE"
+
+[[section.line]]
+text = "Measure PVE asks the voters of this city whether to extend and raise the parcel tax that pays for police services, for six more years."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["extending the City's special parcel tax for 6 years"]
+
+[[section]]
+id = "background"
+heading = "How it reached the ballot"
+
+[[section.line]]
+id = "expires"
+text = "Voters approved the current police parcel tax in 2018, and it expires on June 30, 2027."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+text = "The City Council placed Measure PVE on the ballot in July; as a special tax, it needs two-thirds of the vote to pass."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-rate"
+text = "Today, each parcel pays $342 a year, plus a charge per square foot of buildings, and the money goes only to police services."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "single-family-street"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "new-rate"
+text = "From July 2027, the base would rise to $1,025 a parcel, with the same square-foot charge, then go up 2 percent a year."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["the new rate of $1,025 per taxable parcel"]
+
+[[section.line]]
+id = "lower"
+text = "The City Council could set a lower rate in any year."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+id = "pension"
+text = "The first $1 million each year would pay down the unfunded pension debt of the city; the rest would fund police services."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section.line]]
+id = "limits"
+text = "The money could not buy land or build new police buildings, and a finance committee would review the spending every year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "recurring-review"
+
+[[section.line]]
+id = "end"
+text = "The tax would end on June 30, 2033."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+id = "revenue"
+text = "The impartial analysis estimates the tax would raise $8.7 million a year until it expires."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the measure protects local police services, and without it the city faces a yearly deficit that would drain its emergency reserves."
+sources = ["argument-for"]
+basis = ["Vote YES on Measure PVE to protect the high-quality local police services", "June 2027 is the last chance to avoid a $7 million annual deficit with the expiration of Measure E, which will begin depleting the City's Emergency Reserves."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Protects local police services", "Avoids a yearly deficit"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The official county list of measures for this election says that no argument against Measure PVE was submitted, by any group or person."
+sources = ["arguments-filed"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments-filed"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves the parcel tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["extending the City's special parcel tax for 6 years"]
+
+[[section.line]]
+text = "A no vote does not approve the parcel tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["extending the City's special parcel tax for 6 years"]
+
+[[question]]
+ask = "How much would each property owner pay?"
+lines = ["today-rate", "new-rate", "lower"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["pension", "limits"]
+
+[[question]]
+ask = "When would the tax end?"
+lines = ["end"]
+
+[[question]]
+ask = "How big is $8.7 million a year next to the city budget?"
+unanswered = true

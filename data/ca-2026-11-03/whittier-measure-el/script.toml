@@ -1,0 +1,180 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot; that
+# there is no limit today; what would change (who could not run, what
+# counts toward the 12 years, what does not, write-ins); that no
+# official document gives a cost estimate; the argument for, and that no
+# argument against was submitted; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card shows the name.
+#
+# The card quotes the measure's entry in the county's list "Measures
+# Appearing on the Ballot", which prints no yes/no meanings, so the card
+# has no boxes; the vote lines take both meanings from the impartial
+# analysis and highlight the same phrase of the question.
+#
+# The count of years (the analysis's four items, rounded to whole years)
+# is distilled to one line; the exclusion of terms won or appointed by
+# November 3, 2026 gets its own, as the question itself states it.
+#
+# Sides: the Registrar's Interactive Sample Ballot prints the argument in
+# favor, so the yes side is presented from it; the county's list says
+# "Opponents: None submitted.", and the no side says so (filed = false).
+
+contest = "ca-2026-11-03-whittier-measure-el"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "EL"
+title = "CITY OF WHITTIER"
+origin = "VOTE PASSAGE – Majority Vote 50%+1"
+summary = "Shall the measure amending the City's charter to prohibit candidates from running for mayor or member of the city council if their election would result in that candidate serving more than 12 total years in elective office in the City (aside from terms of office that were elected or appointed at or prior to November 3, 2026) be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure EL"
+
+[[section.line]]
+text = "Measure EL asks the voters of this city whether to limit the mayor and council members to 12 total years in city office."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["more than 12 total years in elective office"]
+
+[[section]]
+id = "background"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The City Council placed Measure EL on the ballot, as an amendment to the city charter."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-none"
+text = "Today, the city has no limit on the number of terms a mayor or council member may serve."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rule"
+text = "No one could file to run for mayor or council if winning would bring their time in city elective office past 12 years."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "nominee-list"
+
+[[section.line]]
+id = "count"
+text = "The count would include the term being sought, any current term up to that election, and time served in past terms."
+sources = ["impartial-analysis", "text"]
+
+[[section.line]]
+id = "grandfather"
+text = "Terms won or appointed on or before November 3, 2026 would not count toward the 12 years."
+sources = ["impartial-analysis", "text", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "retroactive-tax"
+
+[[section.line]]
+text = "The limit would apply to write-in candidates too."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-one-question"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The county Registrar's list of measures and the impartial analysis do not include a cost estimate for the measure."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say 12 years gives officials enough time to gain experience and finish long-term projects, while term limits bring accountability and new leadership."
+sources = ["argument-for"]
+basis = ["This allows elected officials sufficient time to gain experience, complete long-term projects, and effectively represent the community while ensuring regular opportunities for new leadership.", "Term limits promote accountability by encouraging competitive elections"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Time to gain experience", "Accountability and new leadership"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The official county list of measures for this election says that no argument against Measure EL was submitted, by any group or person."
+sources = ["arguments-filed"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments-filed"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote imposes term limits on the mayor and council members."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["more than 12 total years in elective office"]
+
+[[section.line]]
+text = "A no vote does not establish such limits."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["more than 12 total years in elective office"]
+
+[[question]]
+ask = "Does time already served count?"
+lines = ["count", "grandfather"]
+
+[[question]]
+ask = "Is there any limit now?"
+lines = ["today-none"]

@@ -1,0 +1,71 @@
+# Archived sources for City of Whittier Measure EV, 2026-11-03 general
+# election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" (sources/county-measure-list-excerpt.txt, the
+# measure's entry) gives its letter, vote threshold and ballot question,
+# which the card quotes. Its "Supporters: None submitted. Opponents: None
+# submitted." line is contradicted by the Registrar's own Interactive
+# Sample Ballot, which prints an argument in favor and an argument
+# against (sources/argument-for.html, sources/argument-against.html):
+# the list (Rev. 9/22/26) is the earlier document, so the sides follow
+# the printed arguments and the list is not cited for filing.
+#
+# The City Attorney's impartial analysis and the full text of the
+# ordinance amending the charter, as the Registrar prints them, are the
+# measure's neutral explanation and its text. Neither gives a cost
+# estimate.
+
+[contest]
+id = "ca-2026-11-03-whittier-measure-ev"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:whittier"
+kind = "measure"
+title = "City of Whittier Measure EV: Moving City Elections from April to November"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): City of Whittier, Measure EV"
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Impartial Analysis of Measure EV, by Keith Collins, City Attorney, as printed by the Los Angeles County Registrar-Recorder/County Clerk in its Interactive Sample Ballot"
+credit = "City Attorney's Impartial Analysis of Measure EV"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10876.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Ballot Measure EV, an ordinance of the people of the City of Whittier amending the City Charter to change the City's general municipal election date, as printed by the Los Angeles County Registrar-Recorder/County Clerk in its Interactive Sample Ballot"
+credit = "Full Text of Measure EV"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10876.json"
+file = "sources/full-text.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure EV, signed by Vicky Santana and Aida Macedo, Whittier City Councilmembers, as printed by the Los Angeles County Registrar-Recorder/County Clerk in its Interactive Sample Ballot"
+credit = "Argument in favor of Measure EV"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10876.json"
+file = "sources/argument-for.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure EV, signed by Meri Rama, Andrew Pryor, Alana Melgar and Henry M. Ortega, as printed by the Los Angeles County Registrar-Recorder/County Clerk in its Interactive Sample Ballot"
+credit = "Argument against Measure EV"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10876.json"
+file = "sources/argument-against.html"
+retrieved = "2026-10-30"

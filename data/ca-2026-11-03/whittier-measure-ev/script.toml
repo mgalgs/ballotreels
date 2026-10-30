@@ -1,0 +1,181 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot; when
+# city elections are held today; what would change (the new date, the
+# first election under it, the extended terms); that no official
+# document gives a cost estimate; each side's argument; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card shows the name.
+#
+# The card quotes the measure's entry in the county's list "Measures
+# Appearing on the Ballot", which prints no yes/no meanings, so the card
+# has no boxes; the vote lines take both meanings from the impartial
+# analysis and highlight the same phrase of the question.
+#
+# Cost: the two sides disagree on what the election date costs (the
+# argument against gives $450,000 for April and up to $1.7 million for
+# November; the argument for says consolidating saves money). Those are
+# the sides' claims, so they stay in the sides (STANDARD.md 6.3); no
+# official estimate was printed, and the fiscal line says so.
+#
+# Sides: the county's list says neither side submitted an argument, but
+# the Registrar's Interactive Sample Ballot prints both (sources.toml), so
+# each side is presented from its printed argument.
+
+contest = "ca-2026-11-03-whittier-measure-ev"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "EV"
+title = "CITY OF WHITTIER"
+origin = "VOTE PASSAGE – Majority Vote 50%+1"
+summary = "Shall the measure amending the City's charter so that the City's general municipal elections (currently held in April of each even-numbered year) are held in each even-numbered year on the same day as the November statewide general elections, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure EV"
+
+[[section.line]]
+text = "Measure EV asks the voters of this city whether to move city elections from April to the day of the November statewide election."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["on the same day as the November statewide general elections"]
+
+[[section]]
+id = "background"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The City Council placed Measure EV on the ballot, as an amendment to the city charter."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-april"
+text = "Today, the city holds its general elections every two years, on the second Tuesday in April."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "City elections would still come every two years, but on the same day as the statewide general election in November."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section.line]]
+id = "first"
+text = "The first would be held on November 7, 2028, instead of April 11, 2028."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "extend-deadline"
+
+[[section.line]]
+id = "terms"
+text = "The terms of the mayor and council members would be extended until the people elected after them take office."
+sources = ["impartial-analysis", "text"]
+
+[[section.line]]
+id = "terms-example"
+text = "A council member elected in April 2026, for example, would serve until the winner of the November 2030 election takes office."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The county Registrar's list of measures and the impartial analysis do not include a cost estimate for the measure."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say turnout fell after the city returned to April elections, and that November elections would draw more voters and save money."
+sources = ["argument-for"]
+basis = ["After the City returned to stand-alone April elections, voter participation declined significantly.", "Aligning our elections with the November statewide ballot will give more residents the opportunity to have their voices heard in local decisions.", "Consolidating elections will also reduce the cost of administering separate municipal elections, saving taxpayer dollars while increasing civic engagement."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Higher voter participation", "Saves taxpayer dollars"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say moving to November protects incumbents, helps special interests, costs taxpayers more money, and means waiting three weeks for results."
+sources = ["argument-against"]
+basis = ["Moving Whittier's elections from April to November protects incumbent councilmembers, costs the taxpayers more money, helps special interests and means waiting three weeks for results."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Protects incumbents", "Costs taxpayers more"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote moves city elections to the day of the statewide general election."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["on the same day as the November statewide general elections"]
+
+[[section.line]]
+text = "A no vote keeps city elections in April of even-numbered years."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["on the same day as the November statewide general elections"]
+
+[[question]]
+ask = "When would the first November city election be?"
+lines = ["first"]
+
+[[question]]
+ask = "What happens to the people in office now?"
+lines = ["terms", "terms-example"]
+
+[[question]]
+ask = "Would the change cost or save the city money?"
+unanswered = true

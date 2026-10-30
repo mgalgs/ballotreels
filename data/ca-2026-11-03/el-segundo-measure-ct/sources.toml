@@ -1,0 +1,62 @@
+# Archived sources for City of El Segundo Measure CT, 2026-11-03 general
+# election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" (sources/county-measure-list-excerpt.txt, the
+# measure's entry) gives its letter, vote threshold and ballot question,
+# which the card quotes, and, on its "Supporters: ... Opponents: ..."
+# line, that the Mayor and four Council members filed the argument for
+# and that no argument against was submitted: the no side cites it as the
+# official statement of filing.
+#
+# The City Attorney's impartial analysis and the argument in favor are
+# the Registrar's copies, from its Interactive Sample Ballot. The
+# ordinance's full text was not gathered (the City's sites block automated
+# requests), so the script explains the measure from the analysis and the
+# ballot question alone. The analysis gives no revenue estimate; the
+# ballot question's is the one figure.
+
+[contest]
+id = "ca-2026-11-03-el-segundo-measure-ct"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:el_segundo"
+kind = "measure"
+title = "City of El Segundo Measure CT: Business License Tax on Nonprofits and Charities"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): City of El Segundo, Measure CT"
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "arguments-filed"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): Measure CT, the supporters who filed its argument for, and \"Opponents: None submitted.\""
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney's Impartial Analysis of Measure CT, as printed by the Los Angeles County Registrar-Recorder/County Clerk in its Interactive Sample Ballot"
+credit = "City Attorney's Impartial Analysis of Measure CT"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10883.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure CT, signed by Mayor Chris Pimentel, Mayor Pro Tem Ryan Baldino and Council Members Drew Boyles, Lance Giroux and Michelle Keldorf, as printed by the Los Angeles County Registrar-Recorder/County Clerk in its Interactive Sample Ballot (\"No argument against this measure was submitted\")"
+credit = "Argument in favor of Measure CT"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10883.json"
+file = "sources/argument-for.html"
+retrieved = "2026-10-30"

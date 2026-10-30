@@ -3418,3 +3418,94 @@ source = "ballot-question"
 quote = "raising $2,620,000 annually"
 amount = 2620000
 period = "per-year"
+
+# City of Bell Gardens Measure W: the sale of the City's water system, not
+# a tax; the ballot question prints no figure, and the City Attorney's
+# impartial analysis gives the sale price.
+[bell-gardens-measure-w]
+source = "impartial-analysis"
+quote = "In exchange, Golden State would pay the City $41 million, which the City may use to fund any public purpose or service."
+amount = 41000000
+period = "unstated"
+direction = "revenue-gain"
+
+# City of Whittier Measure EV (moving city elections to November): not a
+# tax; the Registrar-Recorder's list and the City Attorney's impartial
+# analysis print no cost estimate.
+[whittier-measure-ev]
+source = "ballot-question"
+status = "none-printed"
+
+# City of Whittier Measure EL (term limits): not a tax; the
+# Registrar-Recorder's list and the City Attorney's impartial analysis
+# print no cost estimate.
+[whittier-measure-el]
+source = "ballot-question"
+status = "none-printed"
+
+# City of Burbank Measure C: a general tax, so no tax rate statement; the
+# ballot question gives the City's revenue estimate.
+[burbank-measure-c]
+source = "ballot-question"
+quote = "providing approximately $3,000,000 annually until ended by voters"
+amount = 3000000
+period = "per-year"
+
+# City of Burbank Measure CD (by-district council elections): not a tax;
+# the Registrar-Recorder's list and the City Attorney's impartial
+# analysis print no cost estimate.
+[burbank-measure-cd]
+source = "ballot-question"
+status = "none-printed"
+
+# City of El Segundo Measure CT: a general tax, so no tax rate statement;
+# the City Attorney's impartial analysis gives no figure, so it is the
+# ballot question's.
+[el-segundo-measure-ct]
+source = "ballot-question"
+quote = "thereby indefinitely restoring approximately $700,000 general funds annually"
+amount = 700000
+period = "per-year"
+
+# City of San Gabriel Measure PS: a general tax, so no tax rate statement;
+# the ballot question's figure ($7,100,000) is listed, the impartial
+# analysis's ($7,000,000) being the lower of the two.
+[san-gabriel-measure-ps]
+source = "ballot-question"
+quote = "providing approximately $7,100,000 annually until ended by voters"
+amount = 7100000
+period = "per-year"
+
+# City of Hawaiian Gardens Measure BL: a general tax, so no tax rate
+# statement; the ballot question's figure is listed (no period printed),
+# the impartial analysis's ($450,000 a year) being the lower of the two.
+[hawaiian-gardens-measure-bl]
+source = "ballot-question"
+quote = "generating approximately $563,810 until ended by voters"
+amount = 563810
+period = "unstated"
+
+# City of Cudahy Measure OK: a general tax, so no tax rate statement; the
+# City Attorney's impartial analysis gives no figure, so it is the ballot
+# question's.
+[cudahy-measure-ok]
+source = "ballot-question"
+quote = "providing approximately $1.3 million annually for local use"
+amount = 1300000
+period = "per-year"
+
+# City of Cudahy Measure H (rent stabilization protections): not a tax;
+# the Registrar-Recorder's list and the City Attorney's impartial
+# analysis print no cost estimate.
+[cudahy-measure-h]
+source = "ballot-question"
+status = "none-printed"
+
+# City of Palos Verdes Estates Measure PVE: a special parcel tax; no tax
+# rate statement applies, and the ballot question and the City
+# Attorney's impartial analysis give the same estimate.
+[palos-verdes-estates-measure-pve]
+source = "ballot-question"
+quote = "generating approximately $8,700,000 annually"
+amount = 8700000
+period = "per-year"
