@@ -2684,3 +2684,13 @@ source = "impartial-analysis"
 quote = "including principal and interest, is that $281,756,000 would be required to be repaid if all the bonds are issued and sold."
 amount = 281756000
 period = "unstated"
+
+# City of Lemoore Measure P: a general hotel tax, so no tax rate
+# statement or fiscal analysis applies, and the impartial analysis gives
+# no figure; the one estimate is the ballot label's.
+[lemoore-measure-p]
+source = "ballot-question"
+quote = "providing approximately $512,000 annually for general City services"
+amount = 512000
+period = "per-year"
+direction = "revenue-gain"
