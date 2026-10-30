@@ -2666,3 +2666,12 @@ source = "tax-statement"
 quote = "bonds are issued and sold is approximately $623,300,000."
 amount = 623300000
 period = "unstated"
+
+# Alum Rock Union Elementary School District Measure O: a parcel tax, so
+# no tax rate statement; the revenue estimate its ballot question prints,
+# as the Registrar of Voters' List of Local Measures quotes it.
+[alum-rock-measure-o]
+source = "measure-list"
+quote = "raising $6.5 million annually"
+amount = 6500000
+period = "per-year"
