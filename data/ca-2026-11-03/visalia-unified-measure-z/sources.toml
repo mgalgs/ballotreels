@@ -1,0 +1,57 @@
+# Archived sources for Visalia Unified School District Measure Z,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Tulare County voter guide could not be fetched (tularecounty.ca.gov
+# answers a Cloudflare challenge), so no impartial analysis, argument or
+# rebuttal was archived, and no document says whether any argument was
+# filed. The Registrar's measure page, in an Internet Archive capture of
+# October 9, 2026, prints the Registrar's notice of the election, with
+# the ballot question and the vote needed; the card quotes the question
+# from it. The page links the Board of Education's Resolution No.
+# 26-27-05 (adopted July 23, 2026), whose Exhibit A is the measure's full
+# text and Exhibit C the District's tax rate statement. The resolution
+# is a scan with no text layer: every page was typed from the page
+# images, word for word, into sources/resolution-26-27-05-transcription.txt,
+# which names the PDF and URL it copies; both sources point at the
+# transcription, and their url at the scan.
+#
+# The District's own Measure Z pages, presentation and one-pager, and the
+# Board's agenda, item cover and minutes, are the District's material
+# and are not cited: the Registrar's notice and the resolution state
+# every fact the script uses.
+
+[contest]
+id = "ca-2026-11-03-visalia-unified-measure-z"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:visalia_unified_school_district"
+kind = "measure"
+title = "Visalia Unified School District Measure Z: $158 Million in School Facility Bonds"
+
+[[source]]
+id = "notice"
+kind = "official-title-summary"
+publisher = "Tulare County Registrar of Voters, Publication Notice of Special Bond Elections and Notice of Date Fixed for Submitting Arguments for Visalia Unified School District, dated July 29, 2026, on the Registrar's page “Visalia Unified School District Special Bond Information” (Internet Archive capture of October 9, 2026)"
+credit = "Notice of Election, Tulare County Registrar of Voters"
+url = "http://web.archive.org/web/20261009122131/https://tularecounty.ca.gov/elections/visalia-unified-school-district-special-bond-information"
+file = "sources/county-measure-page.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Board of Education of the Visalia Unified School District, Resolution No. 26-27-05, adopted July 23, 2026, with Exhibit A, Full Text of the Measure (Exhibit A, pages 1 to 6), as posted by the Tulare County Registrar of Voters (transcribed from the scan)"
+credit = "Resolution No. 26-27-05, Visalia Unified School District"
+url = "https://tc-web.widen.net/s/d22hggnlqz/resolution-no.-26-27-05-visalia-usd-resolution-to-order-an-election-for-a-school-bond-measure-on-nov-3.2026-1002434.1"
+file = "sources/resolution-26-27-05-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Visalia Unified School District, Tax Rate Statement, dated July 23, 2026 (Exhibit C, pages 1 and 2, to Resolution No. 26-27-05), as posted by the Tulare County Registrar of Voters (transcribed from the scan)"
+credit = "Tax Rate Statement, Visalia Unified School District"
+url = "https://tc-web.widen.net/s/d22hggnlqz/resolution-no.-26-27-05-visalia-usd-resolution-to-order-an-election-for-a-school-bond-measure-on-nov-3.2026-1002434.1"
+file = "sources/resolution-26-27-05-transcription.txt"
+retrieved = "2026-10-30"

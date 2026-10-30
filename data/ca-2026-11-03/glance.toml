@@ -3688,3 +3688,12 @@ source = "notice"
 quote = "raising approximately $276,000 annually"
 amount = 276000
 period = "per-year"
+
+# Visalia Unified School District Measure Z: the District's Tax Rate
+# Statement (Exhibit C to Resolution No. 26-27-05, as the Tulare County
+# Registrar of Voters posted it), its total debt service.
+[visalia-unified-measure-z]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the Bonds are issued and sold is $313,172,174."
+amount = 313172174
+period = "unstated"
