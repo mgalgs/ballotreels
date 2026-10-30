@@ -3156,3 +3156,11 @@ source = "impartial-analysis"
 quote = "The City estimates that this Measure would generate approximately $4,000,000 annually in new local revenue."
 amount = 4000000
 period = "per-year"
+
+# City of Pasadena Measure PFD: a special parcel tax; the City Attorney's
+# impartial analysis gives the revenue estimate.
+[pasadena-measure-pfd]
+source = "impartial-analysis"
+quote = "The Measure is estimated to generate approximately $22.1 million annually"
+amount = 22100000
+period = "per-year"
