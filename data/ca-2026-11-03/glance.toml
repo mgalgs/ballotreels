@@ -3169,3 +3169,10 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $154,764,858"
 amount = 154764858
 period = "unstated"
+
+# City of South El Monte Measure CL (council term limits): not a tax; the
+# Registrar-Recorder's list and the City Attorney's impartial analysis
+# print no cost estimate.
+[south-el-monte-measure-cl]
+source = "ballot-question"
+status = "none-printed"

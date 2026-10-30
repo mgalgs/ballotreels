@@ -1,0 +1,49 @@
+# Archived sources for City of South El Monte Measure CL, 2026-11-03
+# general election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" is the authority for the measure's letter,
+# ballot question and vote threshold, and says in words that no argument
+# against was submitted ("Opponents: None submitted.");
+# sources/county-measure-list-excerpt.txt is the measure's entry, cut from
+# it. The City posts the City Attorney's impartial analysis (the
+# measure's neutral explanation) and the argument in favor, both text
+# PDFs. Resolution No. 26-057 (a scan), the City Clerk's notice and the
+# list's page PDF are not cited. Not a tax: no fiscal statement applies,
+# and none was found.
+
+[contest]
+id = "ca-2026-11-03-south-el-monte-measure-cl"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:south_el_monte"
+kind = "measure"
+title = "City of South El Monte Measure CL: A Lifetime Limit of Four Terms for City Council Members"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026: City of South El Monte, Measure CL"
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Susie Altamirano, City Attorney, City of South El Monte, City Attorney's Impartial Analysis of Measure CL"
+credit = "City Attorney's Impartial Analysis of Measure CL, City of South El Monte"
+url = "https://www.cityofsouthelmonte.org/DocumentCenter/View/7673/City-Attorney-Impartial-Analysis---Term-Limits-2026"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure CL, as posted by the City of South El Monte (no argument against was submitted)"
+credit = "Argument in favor of Measure CL, City of South El Monte"
+url = "https://www.cityofsouthelmonte.org/DocumentCenter/View/7674/Argument-In-Favor-of-Term-Limits-2026"
+file = "sources/argument-for.pdf"
+retrieved = "2026-10-30"
