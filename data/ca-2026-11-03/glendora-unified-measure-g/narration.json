@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 88.43,
+  "seconds": 96.18,
   "phrases": [
     {
       "text": "Measure G asks the voters of this school district whether to approve $86 million in school bonds.",
@@ -44,24 +44,24 @@
       "end": 66.39
     },
     {
-      "text": "Opponents filed an argument against Measure G; its text is not among the documents gathered here.",
+      "text": "Opponents say the old bond tax ends in 2027 if Measure G fails, and the district never weighed income that could reduce the need.",
       "start": 67.05,
-      "end": 72.77
+      "end": 76.63
     },
     {
-      "text": "Supporters filed an argument for Measure G; its text is not among the documents gathered here.",
-      "start": 73.43,
-      "end": 79.26
+      "text": "Supporters say many school buildings are nearly 70 years old with failing systems, and Measure G would help qualify for state matching funds.",
+      "start": 77.29,
+      "end": 87.05
     },
     {
       "text": "A yes vote approves the $86 million in school bonds.",
-      "start": 79.92,
-      "end": 83.74
+      "start": 87.71,
+      "end": 91.49
     },
     {
       "text": "A no vote rejects the $86 million in school bonds.",
-      "start": 84.4,
-      "end": 88.4
+      "start": 92.15,
+      "end": 96.15
     }
   ],
   "inputs": {
@@ -74,8 +74,8 @@
       "The bond money could pay for roof, plumbing and heating repairs, removing asbestos and lead pipes, and upgrading classrooms and labs.",
       "The district's tax rate statement estimates the tax for these bonds at $33 per $100,000 of assessed value, through 2056-2057.",
       "The statement estimates the total to repay, with interest, at about $161.3 million.",
-      "Opponents filed an argument against Measure G; its text is not among the documents gathered here.",
-      "Supporters filed an argument for Measure G; its text is not among the documents gathered here.",
+      "Opponents say the old bond tax ends in 2027 if Measure G fails, and the district never weighed income that could reduce the need.",
+      "Supporters say many school buildings are nearly 70 years old with failing systems, and Measure G would help qualify for state matching funds.",
       "A yes vote approves the $86 million in school bonds.",
       "A no vote rejects the $86 million in school bonds."
     ],
@@ -227,11 +227,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Opponents filed an argument against Measure G; its text is not among the documents gathered here."
+        "text": "Opponents say the old bond tax ends in 2027 if Measure G fails, and the district never weighed income that could reduce the need."
       },
       "bounds": [
         1608480,
-        1747200
+        1839840
       ]
     },
     {
@@ -239,15 +239,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents filed an argument against Measure G; its text is not among the documents gathered here.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say the old bond tax ends in 2027 if Measure G fails, and the district never weighed income that could reduce the need.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Supporters filed an argument for Measure G; its text is not among the documents gathered here."
+        "text": "Supporters say many school buildings are nearly 70 years old with failing systems, and Measure G would help qualify for state matching funds."
       },
       "bounds": [
-        1761600,
-        1902960
+        1854240,
+        2089920
       ]
     },
     {
@@ -255,15 +255,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters filed an argument for Measure G; its text is not among the documents gathered here.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say many school buildings are nearly 70 years old with failing systems, and Measure G would help qualify for state matching funds.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote approves the $86 million in school bonds."
       },
       "bounds": [
-        1917360,
-        2010480
+        2104320,
+        2196480
       ]
     },
     {
@@ -278,14 +278,14 @@
         "text": "A no vote rejects the $86 million in school bonds."
       },
       "bounds": [
-        2024880,
-        2122320
+        2210880,
+        2308320
       ]
     }
   ],
-  "sha256": "6e78f34720cad1f4a3da961093369b2caf259b6a2c53f121265c71eca803e67f",
+  "sha256": "52aafec8d9141062519804054a0d89f09a0fd76d9425b49b5fa9460ae2110afa",
   "take": {
-    "sha256": "2c9b2d5dac4021923df0970b16e9e48169a25d34b9852ae04a113fa1d388d517",
-    "bytes": 4244684
+    "sha256": "c1afa88e24d364cbd78c2d82da6a5052e8344b253b82e28095fc464813602b99",
+    "bytes": 4616684
   }
 }

@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 76.21,
+  "seconds": 79.35,
   "phrases": [
     {
       "text": "Measure CS asks the voters of this school district whether to approve $77 million in school bonds.",
@@ -29,34 +29,34 @@
       "end": 33.24
     },
     {
-      "text": "No tax rate statement was gathered; the ballot question itself estimates a tax of about $32 per $100,000 of assessed value.",
+      "text": "The district's tax rate statement estimates a tax of $31.96 per $100,000 of assessed value each year, through 2056-2057.",
       "start": 33.9,
-      "end": 43.56
+      "end": 45.8
     },
     {
-      "text": "The ballot question puts the yearly total at about $5 million while the bonds are outstanding, and says current taxes would not increase.",
-      "start": 44.22,
-      "end": 52.71
+      "text": "The statement estimates the total to repay, with interest, at about $153.7 million.",
+      "start": 46.46,
+      "end": 53.32
     },
     {
-      "text": "Supporters filed an argument for Measure CS; its text is not among the documents gathered here.",
-      "start": 53.37,
-      "end": 59.59
+      "text": "Supporters say Measure CS would fund safety and repair work at every school without raising the current school bond tax rate.",
+      "start": 53.98,
+      "end": 61.34
     },
     {
-      "text": "Opponents filed an argument against Measure CS; its text is not among the documents gathered here.",
-      "start": 60.25,
-      "end": 66.79
+      "text": "Opponents say district enrollment is falling, and that taxes would drop when the old bond ends unless Measure CS extends them.",
+      "start": 62.0,
+      "end": 70.08
     },
     {
       "text": "A yes vote approves the $77 million in school bonds.",
-      "start": 67.45,
-      "end": 71.5
+      "start": 70.74,
+      "end": 74.64
     },
     {
       "text": "A no vote rejects the $77 million in school bonds.",
-      "start": 72.16,
-      "end": 76.18
+      "start": 75.3,
+      "end": 79.32
     }
   ],
   "inputs": {
@@ -66,10 +66,10 @@
       "Measure CS needs 55 percent of the vote to pass.",
       "The bond money could pay only for the school projects the measure lists.",
       "Those include repairing classrooms, heating, air conditioning, plumbing and electrical systems, improving safety and security, and replacing leaky roofs.",
-      "No tax rate statement was gathered; the ballot question itself estimates a tax of about $32 per $100,000 of assessed value.",
-      "The ballot question puts the yearly total at about $5 million while the bonds are outstanding, and says current taxes would not increase.",
-      "Supporters filed an argument for Measure CS; its text is not among the documents gathered here.",
-      "Opponents filed an argument against Measure CS; its text is not among the documents gathered here.",
+      "The district's tax rate statement estimates a tax of $31.96 per $100,000 of assessed value each year, through 2056-2057.",
+      "The statement estimates the total to repay, with interest, at about $153.7 million.",
+      "Supporters say Measure CS would fund safety and repair work at every school without raising the current school bond tax rate.",
+      "Opponents say district enrollment is falling, and that taxes would drop when the old bond ends unless Measure CS extends them.",
       "A yes vote approves the $77 million in school bonds.",
       "A no vote rejects the $77 million in school bonds."
     ],
@@ -173,11 +173,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No tax rate statement was gathered; the ballot question itself estimates a tax of about $32 per $100,000 of assessed value."
+        "text": "The district's tax rate statement estimates a tax of $31.96 per $100,000 of assessed value each year, through 2056-2057."
       },
       "bounds": [
         812880,
-        1046160
+        1099920
       ]
     },
     {
@@ -185,15 +185,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No tax rate statement was gathered; the ballot question itself estimates a tax of about $32 per $100,000 of assessed value.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district's tax rate statement estimates a tax of $31.96 per $100,000 of assessed value each year, through 2056-2057.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The ballot question puts the yearly total at about $5 million while the bonds are outstanding, and says current taxes would not increase."
+        "text": "The statement estimates the total to repay, with interest, at about $153.7 million."
       },
       "bounds": [
-        1060560,
-        1265760
+        1114320,
+        1280400
       ]
     },
     {
@@ -201,15 +201,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The ballot question puts the yearly total at about $5 million while the bonds are outstanding, and says current taxes would not increase.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The statement estimates the total to repay, with interest, at about $153.7 million.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Supporters filed an argument for Measure CS; its text is not among the documents gathered here."
+        "text": "Supporters say Measure CS would fund safety and repair work at every school without raising the current school bond tax rate."
       },
       "bounds": [
-        1280160,
-        1430880
+        1294800,
+        1472880
       ]
     },
     {
@@ -217,15 +217,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters filed an argument for Measure CS; its text is not among the documents gathered here.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure CS would fund safety and repair work at every school without raising the current school bond tax rate.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Opponents filed an argument against Measure CS; its text is not among the documents gathered here."
+        "text": "Opponents say district enrollment is falling, and that taxes would drop when the old bond ends unless Measure CS extends them."
       },
       "bounds": [
-        1445280,
-        1603680
+        1487280,
+        1682640
       ]
     },
     {
@@ -233,15 +233,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents filed an argument against Measure CS; its text is not among the documents gathered here.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say district enrollment is falling, and that taxes would drop when the old bond ends unless Measure CS extends them.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote approves the $77 million in school bonds."
       },
       "bounds": [
-        1618080,
-        1716720
+        1697040,
+        1792080
       ]
     },
     {
@@ -256,14 +256,14 @@
         "text": "A no vote rejects the $77 million in school bonds."
       },
       "bounds": [
-        1731120,
-        1829040
+        1806480,
+        1904400
       ]
     }
   ],
-  "sha256": "934edb71a258b094e72cae95804298c839557e3cb92ced3abf65732a8bed47f2",
+  "sha256": "867e6c821e46e22d4c43abaa1fa87440c0f40e4a133e65129305624200daf338",
   "take": {
-    "sha256": "bdb49e0b0e3de5268158d456666b8cf4a049088f7fdccf2bf9cba82a36b67811",
-    "bytes": 3658124
+    "sha256": "258a6a1bb491e96c166671a81dee514d1ff73b044165ccf4148f45ed32af8c13",
+    "bytes": 3808844
   }
 }

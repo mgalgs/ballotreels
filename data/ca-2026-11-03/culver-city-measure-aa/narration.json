@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 67.16,
+  "seconds": 67.82,
   "phrases": [
     {
       "text": "Measure AA asks the voters of this city whether to tax property for 10 years to fund the local public schools.",
@@ -9,55 +9,55 @@
       "end": 7.57
     },
     {
-      "text": "A citizen petition placed Measure AA on the ballot, and it needs a simple majority to pass.",
+      "text": "The City Council placed Measure AA on the ballot after a citizen petition, and it needs a simple majority to pass.",
       "start": 8.23,
-      "end": 14.0
+      "end": 15.1
     },
     {
       "text": "Owners would pay a yearly tax on each square foot of buildings, up to $15,000 per parcel.",
-      "start": 14.66,
-      "end": 21.16
+      "start": 15.76,
+      "end": 21.82
     },
     {
       "text": "People 65 or older, and people receiving certain disability benefits, would not pay.",
-      "start": 21.82,
-      "end": 27.46
+      "start": 22.48,
+      "end": 28.12
     },
     {
       "text": "The money could pay for school staff, arts, music and counseling, but not salaries for administrators.",
-      "start": 28.12,
-      "end": 35.64
+      "start": 28.78,
+      "end": 36.3
     },
     {
       "text": "The ballot question says the tax would raise about $18 million a year for the schools.",
-      "start": 36.3,
-      "end": 42.07
+      "start": 36.96,
+      "end": 42.73
     },
     {
       "text": "Opponents say voters passed a school parcel tax and bond in 2024, and this tax would cost about $800 per household.",
-      "start": 42.73,
-      "end": 51.57
+      "start": 43.39,
+      "end": 52.23
     },
     {
       "text": "Supporters say the state gives these schools the lowest funding per student possible, and the state could not take this local money.",
-      "start": 52.23,
-      "end": 59.99
+      "start": 52.89,
+      "end": 60.65
     },
     {
       "text": "A yes vote approves the tax for the school district.",
-      "start": 60.65,
-      "end": 63.55
+      "start": 61.31,
+      "end": 64.21
     },
     {
       "text": "A no vote means no new parcel tax.",
-      "start": 64.21,
-      "end": 67.13
+      "start": 64.87,
+      "end": 67.79
     }
   ],
   "inputs": {
     "phrases": [
       "Measure AA asks the voters of this city whether to tax property for 10 years to fund the local public schools.",
-      "A citizen petition placed Measure AA on the ballot, and it needs a simple majority to pass.",
+      "The City Council placed Measure AA on the ballot after a citizen petition, and it needs a simple majority to pass.",
       "Owners would pay a yearly tax on each square foot of buildings, up to $15,000 per parcel.",
       "People 65 or older, and people receiving certain disability benefits, would not pay.",
       "The money could pay for school staff, arts, music and counseling, but not salaries for administrators.",
@@ -103,11 +103,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "A citizen petition placed Measure AA on the ballot, and it needs a simple majority to pass."
+        "text": "The City Council placed Measure AA on the ballot after a citizen petition, and it needs a simple majority to pass."
       },
       "bounds": [
         196800,
-        336720
+        363120
       ]
     },
     {
@@ -115,15 +115,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A citizen petition placed Measure AA on the ballot, and it needs a simple majority to pass.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Council placed Measure AA on the ballot after a citizen petition, and it needs a simple majority to pass.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "Owners would pay a yearly tax on each square foot of buildings, up to $15,000 per parcel."
       },
       "bounds": [
-        351120,
-        508560
+        377520,
+        524400
       ]
     },
     {
@@ -138,8 +138,8 @@
         "text": "People 65 or older, and people receiving certain disability benefits, would not pay."
       },
       "bounds": [
-        522960,
-        659760
+        538800,
+        675600
       ]
     },
     {
@@ -154,8 +154,8 @@
         "text": "The money could pay for school staff, arts, music and counseling, but not salaries for administrators."
       },
       "bounds": [
-        674160,
-        856080
+        690000,
+        871920
       ]
     },
     {
@@ -170,8 +170,8 @@
         "text": "The ballot question says the tax would raise about $18 million a year for the schools."
       },
       "bounds": [
-        870480,
-        1010400
+        886320,
+        1026240
       ]
     },
     {
@@ -186,8 +186,8 @@
         "text": "Opponents say voters passed a school parcel tax and bond in 2024, and this tax would cost about $800 per household."
       },
       "bounds": [
-        1024800,
-        1238400
+        1040640,
+        1254240
       ]
     },
     {
@@ -202,8 +202,8 @@
         "text": "Supporters say the state gives these schools the lowest funding per student possible, and the state could not take this local money."
       },
       "bounds": [
-        1252800,
-        1440480
+        1268640,
+        1456320
       ]
     },
     {
@@ -218,8 +218,8 @@
         "text": "A yes vote approves the tax for the school district."
       },
       "bounds": [
-        1454880,
-        1525920
+        1470720,
+        1541760
       ]
     },
     {
@@ -234,14 +234,14 @@
         "text": "A no vote means no new parcel tax."
       },
       "bounds": [
-        1540320,
-        1611840
+        1556160,
+        1627680
       ]
     }
   ],
-  "sha256": "e33e3d877db57a85c4986fe310ef8b5d8fb3905df7943dce7bd259b19e1c019b",
+  "sha256": "f1c6133967595fdf9bd37343929a8ebed60b8d766b0d96ee6718ae4e6473d3dd",
   "take": {
-    "sha256": "a2db4fbf0bae7151f34fc135728199184620289a1c84ba7ae14fe44b9faccbf6",
-    "bytes": 3223724
+    "sha256": "278e9f57e5b5961187f43251fee4c2730c967e0a3ea93b75afdcf071e0dcdb54",
+    "bytes": 3255404
   }
 }
