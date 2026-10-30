@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 91.47,
+  "seconds": 90.1,
   "phrases": [
     {
       "text": "Measure ES asks the voters of this city whether to tax each parcel of property every year to fund the local public schools.",
@@ -39,29 +39,29 @@
       "end": 53.29
     },
     {
-      "text": "The ballot question estimates the tax would raise about $12 million a year; no fiscal analysis was gathered.",
+      "text": "The impartial analysis estimates the tax would raise $12 million a year for the schools.",
       "start": 53.95,
-      "end": 61.28
+      "end": 59.62
     },
     {
-      "text": "Two neighborhood groups and three individuals filed an argument against Measure ES; its text is not among the documents gathered for this video.",
-      "start": 61.94,
-      "end": 70.85
+      "text": "Opponents say schools get no more money, the city does, because the tax shifts payment from the city to residents, forever.",
+      "start": 60.28,
+      "end": 69.22
     },
     {
-      "text": "Three groups, including a teachers association, filed an argument for Measure ES; its text is not among the documents gathered for this video.",
-      "start": 71.51,
-      "end": 80.57
+      "text": "Supporters say the tax replaces uncertain city funding with a permanent local source, preventing the loss of up to 73 teachers.",
+      "start": 69.88,
+      "end": 78.86
     },
     {
       "text": "A yes vote adopts the $495 parcel tax for the public schools.",
-      "start": 81.23,
-      "end": 86.1
+      "start": 79.52,
+      "end": 84.73
     },
     {
       "text": "A no vote rejects the $495 parcel tax for the public schools.",
-      "start": 86.76,
-      "end": 91.44
+      "start": 85.39,
+      "end": 90.07
     }
   ],
   "inputs": {
@@ -73,9 +73,9 @@
       "Owners 65 or older living on their parcel, nonprofits, affordable housing, religious groups and schools could be exempt.",
       "All the money would go to the school district, though not for administrator salaries, land or new buildings.",
       "The tax would last until voters repeal it, with an independent audit of the spending each year.",
-      "The ballot question estimates the tax would raise about $12 million a year; no fiscal analysis was gathered.",
-      "Two neighborhood groups and three individuals filed an argument against Measure ES; its text is not among the documents gathered for this video.",
-      "Three groups, including a teachers association, filed an argument for Measure ES; its text is not among the documents gathered for this video.",
+      "The impartial analysis estimates the tax would raise $12 million a year for the schools.",
+      "Opponents say schools get no more money, the city does, because the tax shifts payment from the city to residents, forever.",
+      "Supporters say the tax replaces uncertain city funding with a permanent local source, preventing the loss of up to 73 teachers.",
       "A yes vote adopts the $495 parcel tax for the public schools.",
       "A no vote rejects the $495 parcel tax for the public schools."
     ],
@@ -211,11 +211,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The ballot question estimates the tax would raise about $12 million a year; no fiscal analysis was gathered."
+        "text": "The impartial analysis estimates the tax would raise $12 million a year for the schools."
       },
       "bounds": [
         1294080,
-        1471440
+        1431600
       ]
     },
     {
@@ -223,15 +223,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The ballot question estimates the tax would raise about $12 million a year; no fiscal analysis was gathered.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The impartial analysis estimates the tax would raise $12 million a year for the schools.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Two neighborhood groups and three individuals filed an argument against Measure ES; its text is not among the documents gathered for this video."
+        "text": "Opponents say schools get no more money, the city does, because the tax shifts payment from the city to residents, forever."
       },
       "bounds": [
-        1485840,
-        1701120
+        1446000,
+        1662000
       ]
     },
     {
@@ -239,15 +239,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Two neighborhood groups and three individuals filed an argument against Measure ES; its text is not among the documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say schools get no more money, the city does, because the tax shifts payment from the city to residents, forever.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Three groups, including a teachers association, filed an argument for Measure ES; its text is not among the documents gathered for this video."
+        "text": "Supporters say the tax replaces uncertain city funding with a permanent local source, preventing the loss of up to 73 teachers."
       },
       "bounds": [
-        1715520,
-        1934400
+        1676400,
+        1893360
       ]
     },
     {
@@ -255,15 +255,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Three groups, including a teachers association, filed an argument for Measure ES; its text is not among the documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the tax replaces uncertain city funding with a permanent local source, preventing the loss of up to 73 teachers.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote adopts the $495 parcel tax for the public schools."
       },
       "bounds": [
-        1948800,
-        2067120
+        1907760,
+        2034240
       ]
     },
     {
@@ -278,14 +278,14 @@
         "text": "A no vote rejects the $495 parcel tax for the public schools."
       },
       "bounds": [
-        2081520,
-        2195280
+        2048640,
+        2162400
       ]
     }
   ],
-  "sha256": "8f515f74160fc72d7774517bad0e9a5077158430196fd02f27e441edf03e51c2",
+  "sha256": "54a0a30d5147f9c679ef51b5627fc72f930987c8301d6e2779f8fd6dda8fac80",
   "take": {
-    "sha256": "b5827ccd14e6127cfd74c36858b3fc0e0f9d7f5716fdcbcd81fe27255922a526",
-    "bytes": 4390604
+    "sha256": "4ab91796e4235dd1a0297884819eb3e0d1319814ff8e118abfea505941d179cc",
+    "bytes": 4324844
   }
 }

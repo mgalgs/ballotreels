@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 91.42,
+  "seconds": 87.59,
   "phrases": [
     {
       "text": "Measure VV asks the voters of this city whether to extend eviction protections to tenants who rent single-unit homes and condominiums.",
@@ -39,29 +39,29 @@
       "end": 57.87
     },
     {
-      "text": "The official list of measures from the county does not include a cost estimate for the measure.",
+      "text": "The impartial analysis does not include a cost estimate for the measure.",
       "start": 58.53,
-      "end": 63.61
+      "end": 62.85
     },
     {
-      "text": "The official county list of measures for this election says that no argument against Measure VV was submitted, by any group or person.",
-      "start": 64.27,
-      "end": 72.91
+      "text": "Opponents say the measure unfairly penalizes small property owners, and will drive homes and condos off the rental market.",
+      "start": 63.51,
+      "end": 70.99
     },
     {
-      "text": "Two council members, the rent board vice chair and one other person filed an argument for Measure VV; its text was not gathered.",
-      "start": 73.57,
-      "end": 82.46
+      "text": "Supporters say no family should be evicted without good cause, and that all tenants should have the same rights.",
+      "start": 71.65,
+      "end": 78.44
     },
     {
       "text": "A yes vote extends the protections and sets the stricter move-in rule.",
-      "start": 83.12,
-      "end": 87.21
+      "start": 79.1,
+      "end": 83.38
     },
     {
       "text": "A no vote leaves the eviction rules in the charter as they are.",
-      "start": 87.87,
-      "end": 91.39
+      "start": 84.04,
+      "end": 87.56
     }
   ],
   "inputs": {
@@ -73,9 +73,9 @@
       "Tenants of single-unit homes and condominiums would get the same eviction protections as other renters.",
       "An owner moving in would have to intend to do so within 60 days, and to stay at least two years.",
       "An owner who fails to, without extenuating circumstances, would have to offer the unit back and pay the moving costs of the tenant.",
-      "The official list of measures from the county does not include a cost estimate for the measure.",
-      "The official county list of measures for this election says that no argument against Measure VV was submitted, by any group or person.",
-      "Two council members, the rent board vice chair and one other person filed an argument for Measure VV; its text was not gathered.",
+      "The impartial analysis does not include a cost estimate for the measure.",
+      "Opponents say the measure unfairly penalizes small property owners, and will drive homes and condos off the rental market.",
+      "Supporters say no family should be evicted without good cause, and that all tenants should have the same rights.",
       "A yes vote extends the protections and sets the stricter move-in rule.",
       "A no vote leaves the eviction rules in the charter as they are."
     ],
@@ -211,11 +211,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The official list of measures from the county does not include a cost estimate for the measure."
+        "text": "The impartial analysis does not include a cost estimate for the measure."
       },
       "bounds": [
         1404000,
-        1527360
+        1509120
       ]
     },
     {
@@ -223,15 +223,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The official list of measures from the county does not include a cost estimate for the measure.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The impartial analysis does not include a cost estimate for the measure.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The official county list of measures for this election says that no argument against Measure VV was submitted, by any group or person."
+        "text": "Opponents say the measure unfairly penalizes small property owners, and will drive homes and condos off the rental market."
       },
       "bounds": [
-        1541760,
-        1750560
+        1523520,
+        1704480
       ]
     },
     {
@@ -239,15 +239,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The official county list of measures for this election says that no argument against Measure VV was submitted, by any group or person.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say the measure unfairly penalizes small property owners, and will drive homes and condos off the rental market.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Two council members, the rent board vice chair and one other person filed an argument for Measure VV; its text was not gathered."
+        "text": "Supporters say no family should be evicted without good cause, and that all tenants should have the same rights."
       },
       "bounds": [
-        1764960,
-        1979760
+        1718880,
+        1883280
       ]
     },
     {
@@ -255,15 +255,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Two council members, the rent board vice chair and one other person filed an argument for Measure VV; its text was not gathered.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say no family should be evicted without good cause, and that all tenants should have the same rights.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote extends the protections and sets the stricter move-in rule."
       },
       "bounds": [
-        1994160,
-        2093760
+        1897680,
+        2001840
       ]
     },
     {
@@ -278,14 +278,14 @@
         "text": "A no vote leaves the eviction rules in the charter as they are."
       },
       "bounds": [
-        2108160,
-        2194080
+        2016240,
+        2102160
       ]
     }
   ],
-  "sha256": "00ed7684027f1a142cbbdef07c6ed903eff49107dd94eea2ad8e592596be3faa",
+  "sha256": "a8f5f8a9bd434e18f8d077114359e77fcbbc3b24aec5f5fcc0192a4bf9fae8e3",
   "take": {
-    "sha256": "4a5ac59e7125f0325f0739a47516562f2bf9cfa0456a5d8a49bec152904f805c",
-    "bytes": 4388204
+    "sha256": "eac296043b3efdad9ee00de9236b0aa5b25b8b7776c5a4768289e312136d6fc3",
+    "bytes": 4204364
   }
 }
