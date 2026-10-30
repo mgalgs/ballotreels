@@ -1,0 +1,72 @@
+# Archived sources for Santa Clara County Measure RTM, the Regional
+# Transit Measure, 2026-11-03 general election. Every id here may be cited
+# by script.toml.
+#
+# The Santa Clara County Registrar of Voters' List of Local Measures
+# (sources/rov-measure-list-2026-10-29.html) is the authority for the
+# measure's letter, its ballot question, verbatim, and its threshold
+# ("Majority Vote Required"); the Registrar's posted copies of the
+# impartial analysis and the filed arguments (sources/rov-*.pdf,
+# described in sources/rov-sources.md) are the documents the county
+# prints. Those PDFs are scans with no text layer: each was typed from
+# its page images into sources/rov-*-transcription.txt, which these
+# sources point at for the verbatim checks; each url is the Registrar's
+# PDF.
+#
+# The measure is the Public Transit Revenue Measure District's, voted on
+# in five counties under one text and one district-wide vote total. The
+# district's Resolution No. 2 with the initiative's full text was
+# archived from San Mateo County's election page (sources/sources.md),
+# and is the full-text source here. Both rebuttals are archived beside
+# the arguments; the script quotes neither, so they are not listed.
+
+[contest]
+id = "ca-2026-11-03-santa-clara-county-measure-rtm"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:santa_clara"
+kind = "measure"
+title = "Santa Clara County Measure RTM: Regional Transit Measure, a Sales Tax for Public Transit"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "County of Santa Clara Registrar of Voters, List of Local Measures, November 3, 2026 General Election: Measure RTM's ballot question and vote threshold"
+credit = "Santa Clara County Registrar of Voters, List of Local Measures"
+url = "https://vote.santaclaracounty.gov/list-local-measures-4"
+file = "sources/rov-measure-list-2026-10-29.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Kathleen Kane, Legal Counsel for the Public Transit Revenue Measure District, Impartial Analysis of Regional Transit Measure, as posted by the County of Santa Clara Registrar of Voters (transcribed from the scan)"
+credit = "Impartial Analysis of Regional Transit Measure"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/public-transit-revenue-measure-district_ia_final-v1_redacted.pdf"
+file = "sources/rov-impartial-analysis-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Public Transit Revenue Measure District Resolution No. 2, with the full text of the Connect Bay Area Transit Initiative (Exhibit B), San Mateo County Assessor-County Clerk-Recorder & Elections"
+url = "https://smcacre.gov/system/files/2026-07/52-ENG-M206-Contest%20Code-Reso-Public%20Transit%20District%20Sales%20Tax_Redacted.pdf"
+file = "sources/resolution-full-text.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Primary Argument in Favor of the Regional Transit Measure, as filed with the Santa Clara County Registrar of Voters (transcribed from the scan)"
+credit = "Argument in favor, Santa Clara County Registrar of Voters"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-rtm-public-transit-revenue-measure-district-ptrmd-primary-argument-in-favor_redacted-v2.pdf"
+file = "sources/rov-argument-for-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Regional Transit Measure, as filed with the Santa Clara County Registrar of Voters (transcribed from the scan)"
+credit = "Argument against, Santa Clara County Registrar of Voters"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-rtm-public-transit-revenue-measure-district-ptrmd-primary-argument-against_redacted_0.pdf"
+file = "sources/rov-argument-against-transcription.txt"
+retrieved = "2026-10-29"

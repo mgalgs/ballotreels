@@ -1,0 +1,72 @@
+# Archived sources for City of Sunnyvale Measure G, 2026-11-03 general
+# election. Every id here may be cited by script.toml.
+#
+# The Santa Clara County Registrar of Voters' List of Local Measures
+# (sources/rov-measure-list-2026-10-29.html) is the authority for the
+# measure's letter, its ballot question, verbatim, and its threshold
+# ("Majority Vote Required"). The Registrar's posted copies of the City
+# Attorney's impartial analysis and the filed arguments (sources/rov-*.pdf,
+# described in sources/rov-sources.md) are scans with no text layer: each
+# was typed from its page images into sources/rov-*-transcription.txt,
+# which these sources point at for the verbatim checks; each url is the
+# Registrar's PDF.
+#
+# Earlier research archived only the city's draft resolution (dated June
+# 11, 2026, from the council's agenda packet), whose Exhibit A is the
+# proposed Charter Section 1309; it is cited for the charter text only,
+# and the Registrar's question and analysis for everything else. The
+# council's draft argument in favor is superseded by the filed one and is
+# not listed. Both rebuttals are archived beside the arguments; the
+# script quotes neither, so they are not listed.
+
+[contest]
+id = "ca-2026-11-03-sunnyvale-measure-g"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:sunnyvale"
+kind = "measure"
+title = "City of Sunnyvale Measure G: Charter Amendment on Public Works Contracting"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "County of Santa Clara Registrar of Voters, List of Local Measures, November 3, 2026 General Election: Measure G's ballot question and vote threshold"
+credit = "Santa Clara County Registrar of Voters, List of Local Measures"
+url = "https://vote.santaclaracounty.gov/list-local-measures-4"
+file = "sources/rov-measure-list-2026-10-29.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Rebecca L. Moon, City Attorney, City Attorney’s Impartial Analysis of City of Sunnyvale Measure G, as posted by the County of Santa Clara Registrar of Voters (transcribed from the scan)"
+credit = "City Attorney’s Impartial Analysis of Measure G"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-g-city-of-sunnyvale_charter-amendment-ia_08-18-2026_redacted.pdf"
+file = "sources/rov-impartial-analysis-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "charter-text"
+kind = "official-text"
+publisher = "City of Sunnyvale, draft resolution calling the election (dated June 11, 2026, council agenda packet), Exhibit A: Proposed Charter Amendments (Contracts on Public Works)"
+credit = "City of Sunnyvale draft resolution, Exhibit A"
+url = "https://legistar.granicus.com/Sunnyvale/attachments/68ee7642-0d10-4401-8846-cb907606bda5.pdf"
+file = "sources/resolution-full-text-draft-2026-06.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Primary Argument in Favor of Measure G, as filed with the Santa Clara County Registrar of Voters (transcribed from the scan)"
+credit = "Argument in favor of Measure G, Santa Clara County Registrar of Voters"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-g-city-charter-amendment-public-works-contract-primary-arguemnt-in-favor_redacted.pdf"
+file = "sources/rov-argument-for-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Primary Argument Against Measure G, as filed with the Santa Clara County Registrar of Voters (transcribed from the scan)"
+credit = "Argument against Measure G, Santa Clara County Registrar of Voters"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-g-city-charter-amendment-public-works-contract-primary-arguemnt-against_redacted.pdf"
+file = "sources/rov-argument-against-transcription.txt"
+retrieved = "2026-10-29"

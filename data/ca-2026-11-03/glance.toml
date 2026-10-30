@@ -2829,3 +2829,50 @@ source = "impartial-analysis"
 quote = "The best estimate from official sources of the total debt service, including principal and interest, is that $21,046,910 would be required to be repaid if all the bonds are issued and sold."
 amount = 21046910
 period = "unstated"
+
+# Santa Clara County Measure RTM: no fiscal statement or tax rate
+# statement was published; the one estimate is in its ballot question (and
+# the Legal Counsel's Impartial Analysis), for the whole five-county
+# district, as for the other four counties' Measure RTM.
+[santa-clara-county-measure-rtm]
+source = "ballot-question"
+quote = "generating approximately $980,000,000 annually"
+amount = 980000000
+period = "per-year"
+direction = "revenue-gain"
+
+# City of Palo Alto Measure J: no fiscal or tax rate statement was
+# published; the city's estimate is in its ballot question (and the City
+# Attorney's Impartial Analysis).
+[palo-alto-measure-j]
+source = "ballot-question"
+quote = "providing approximately $15,600,000 annually until ended by voters"
+amount = 15600000
+period = "per-year"
+direction = "revenue-gain"
+
+# City of Santa Clara Measure C: a charter amendment, not a tax; the City
+# Attorney's Impartial Analysis projects savings in staff time with no
+# figure or size.
+[santa-clara-measure-c]
+source = "impartial-analysis"
+status = "none-printed"
+quote = "the measure is projected to generate cost savings resulting from reductions in staff time"
+
+# City of Sunnyvale Measure G: a charter amendment, not a tax; the City
+# Attorney's Impartial Analysis prints no fiscal statement.
+[sunnyvale-measure-g]
+source = "impartial-analysis"
+status = "none-printed"
+
+# City of Sunnyvale Measure H: a charter amendment, not a tax; the City
+# Attorney's Impartial Analysis prints no fiscal statement.
+[sunnyvale-measure-h]
+source = "impartial-analysis"
+status = "none-printed"
+
+# City of Sunnyvale Measure I: a charter amendment, not a tax; the City
+# Attorney's Impartial Analysis prints no fiscal statement.
+[sunnyvale-measure-i]
+source = "impartial-analysis"
+status = "none-printed"

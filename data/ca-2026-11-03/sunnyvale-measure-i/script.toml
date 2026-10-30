@@ -1,0 +1,153 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how a council vacancy is filled
+# today and how long an appointee serves; what would change, and the
+# effect and trade-off the impartial analysis gives for it; that no cost
+# estimate was given; one line per side; what a vote does.
+#
+# No narrated line names the city (the narrator mispronounces proper
+# names); the card and title show it.
+#
+# The analysis states both what the change does to an appointee's time in
+# office (it could be longer) and what it avoids (a special election at a
+# spring primary followed by a November election in the same year), so
+# the story states both, in one line, as the analysis does (STANDARD.md
+# 6.4). The sides' own figures (turnout, costs, the city's history of
+# appointments) stay in their sections.
+#
+# The card quotes the Registrar of Voters' List of Local Measures, which
+# prints no yes/no lines; the vote lines give the impartial analysis's
+# meanings, each highlighting the phrase of the question it turns on.
+
+contest = "ca-2026-11-03-sunnyvale-measure-i"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "I"
+title = "City Charter Amendment - City Council Vacancies"
+origin = "City of Sunnyvale"
+summary = "Shall Section 606 of the City Charter be amended to require that a person appointed to fill a vacancy on the City Council serve until a successor is elected at the next General Municipal Election (November of even-numbered years), rather than until an earlier election date that could be consolidated with a statewide election? "
+
+[[section]]
+id = "what"
+heading = "Measure I"
+
+[[section.line]]
+text = "Measure I asks the voters of this city how long a person appointed to fill a council vacancy should serve before an election."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+focus = "fill a vacancy on the City Council"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "options"
+text = "When a council seat becomes vacant, the council may call a special election, or appoint someone to fill the seat."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "empty-commission-seat"
+
+[[section.line]]
+id = "today-term"
+text = "Today an appointee serves until the next November city election, or an earlier special election held with a statewide one, whichever is sooner."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "november"
+text = "Measure I would have an appointee serve until the next November city election, held in even-numbered years."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section.line]]
+id = "effect"
+text = "Depending on when a seat opens, an appointee could serve longer, but the city would avoid a special election at a spring primary followed by a November election in the same year."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The city attorney's impartial analysis does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the charter can require two elections for the same seat in one year, and November elections draw more voters than primaries."
+sources = ["argument-for"]
+basis = ["the Charter can require Sunnyvale to hold two elections for the same seat in the same year", "November general elections in Sunnyvale draw roughly 60% turnout. Primary Elections draw about 40%."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["No more two elections for one seat a year", "More voters choose the successor"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say it allows appointments of two years or more, and cuts the elections that can fill a vacancy by at least half."
+sources = ["argument-against"]
+basis = ["ALLOWS LONGER APPOINTMENTS, UP TO 2+ YEARS.", "If passed, this will cut the eligible elections to fill vacancies by at least half."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Allows appointments of two years or more", "Fewer and later chances to vote"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote sends an appointed seat to the voters at the next November election in an even-numbered year."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["General Municipal Election (November of even-numbered years)"]
+
+[[section.line]]
+text = "A no vote keeps the rule of the next statewide or November city election, whichever is sooner."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["an earlier election date that could be consolidated with a statewide election"]
+
+[[question]]
+ask = "Who fills a council seat when it opens?"
+lines = ["options"]
+
+[[question]]
+ask = "Would an appointee serve longer?"
+lines = ["today-term", "effect"]
