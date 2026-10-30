@@ -1,0 +1,83 @@
+# Archived sources for City of Mill Valley Measure T, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Marin County's Voter Information Guide could not be fetched
+# (marincounty.gov blocked the download), so no impartial analysis,
+# argument or rebuttal was reached, and no document says whether any
+# argument was filed (Attachment 5 only authorizes Council members to
+# write one in favor). These are the City's files from its Granicus
+# portal: the packet for item 7 of the special City Council meeting of
+# July 29, 2026 (one PDF of 36 pages: the staff report; the Public
+# Facilities and Services Report; the resolution forming Community
+# Facilities District No. 2026-1, with Exhibit A, the services, and
+# Exhibit B, the Rate and Method of Apportionment, the tax's full text;
+# the resolution calling the special election, whose Section 2 prints
+# the ballot proposition; and the consolidation and argument
+# resolutions), and the draft action minutes of that meeting, in the
+# packet for the September 8, 2026 meeting, which record the
+# resolutions' adoption. The packet's resolutions are agenda copies with
+# their numbers left blank ("26-___"), and the ballot proposition ends
+# on that blank; it is quoted as printed, and no number is supplied. The
+# City's records do not print the letter; the county's list of measures
+# (sources/county-measure-list.html) gives it as T.
+#
+# The staff report is the City staff's material: it is cited only for
+# plain facts (when the current tax
+# expires, and its statement that the new rate is no increase over what
+# taxpayers pay now). The Public Facilities and Services Report's
+# $25,000,000 is the estimated cost of the services over ten years, not
+# a revenue figure, and is not used.
+
+[contest]
+id = "ca-2026-11-03-mill-valley-measure-t"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:mill_valley"
+kind = "measure"
+title = "City of Mill Valley Measure T: Renewing the Municipal Service Tax for Fire Suppression and Street Repair for 10 Years"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Mill Valley, Resolution No. 26-___, A Resolution of the City Council of the City of Mill Valley Calling a Special Election within City of Mill Valley Community Facilities District No. 2026-1 (Municipal Services) and Directing the City Attorney to Prepare an Impartial Analysis (Attachment 3 to special City Council meeting item 7, July 29, 2026; the agenda copy, its number left blank): Section 2, the ballot proposition, packet pages 18 and 19"
+credit = "Resolution Calling a Special Election, City of Mill Valley"
+url = "https://cityofmillvalley.granicus.com/MetaViewer.php?view_id=2&clip_id=2235&meta_id=107249"
+file = "sources/2026-07-29-item7-cfd-2026-1-staff-report-resolutions.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "formation"
+kind = "official-text"
+publisher = "City of Mill Valley, Resolution No. 26-___, A Resolution of Formation of the City Council of the City of Mill Valley to Establish City of Mill Valley Community Facilities District No. 2026-1 (Municipal Services), to Establish an Appropriations Limit Therefor, to Authorize the Levy of a Special Tax Therein, and to Submit the Establishment of an Appropriations Limit and the Levy of a Special Tax to the Qualified Electors Thereof, with Exhibit A, Description of Facilities and Services (Attachment 2 to special City Council meeting item 7, July 29, 2026; the agenda copy, its number left blank), packet pages 6 to 12"
+credit = "Resolution of Formation, City of Mill Valley"
+url = "https://cityofmillvalley.granicus.com/MetaViewer.php?view_id=2&clip_id=2235&meta_id=107249"
+file = "sources/2026-07-29-item7-cfd-2026-1-staff-report-resolutions.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Mill Valley, Rate and Method of Apportionment of Special Tax, Community Facilities District No. 2026-1 (Municipal Services) (Exhibit B to the Resolution of Formation, Attachment 2 to special City Council meeting item 7, July 29, 2026), packet pages 14 to 17"
+credit = "Rate and Method of Apportionment, City of Mill Valley"
+url = "https://cityofmillvalley.granicus.com/MetaViewer.php?view_id=2&clip_id=2235&meta_id=107249"
+file = "sources/2026-07-29-item7-cfd-2026-1-staff-report-resolutions.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "staff-report"
+kind = "official-title-summary"
+publisher = "City of Mill Valley, City Council Staff Report, item 7, July 29, 2026, from the Deputy Director of Administration: Formation of City of Mill Valley Community Facilities District No. 2026-1 (Municipal Services) and Other Actions Related to the November 3, 2026 Election, pages 1 to 4"
+credit = "City Council staff report, City of Mill Valley"
+url = "https://cityofmillvalley.granicus.com/MetaViewer.php?view_id=2&clip_id=2235&meta_id=107249"
+file = "sources/2026-07-29-item7-cfd-2026-1-staff-report-resolutions.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "minutes"
+kind = "public-record"
+publisher = "City of Mill Valley, Special City Council Meeting Draft Action Minutes, Wednesday, July 29, 2026: item 7, pages 4 and 5 (Attachment 1 to consent item 5 of the City Council meeting of September 8, 2026)"
+credit = "Draft action minutes, City of Mill Valley"
+url = "https://cityofmillvalley.granicus.com/MetaViewer.php?view_id=2&clip_id=2244&meta_id=107841"
+file = "sources/2026-07-29-special-meeting-action-minutes-draft.pdf"
+retrieved = "2026-10-30"

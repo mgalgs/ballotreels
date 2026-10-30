@@ -1,0 +1,76 @@
+# Archived sources for Town of Corte Madera Measure Q, 2026-11-03
+# general election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Marin County's Voter Information Guide could not be fetched
+# (marincounty.gov blocked the download), so no impartial analysis,
+# argument or rebuttal was reached, and no document says whether any
+# argument was filed (Section 6 of the resolution only provides for one
+# in favor on behalf of the Town). These are the Town's files for the
+# Town Council meeting of June 2, 2026, item 7.B: the staff report, with
+# Resolution No. 24/2026 (Attachment 1, the agenda copy, its vote left
+# blank) and its Exhibit A, the draft ordinance (its number left blank),
+# the measure's text, all in one PDF; and the minutes of that meeting,
+# which record the resolution's adoption. The Town's records leave the
+# letter blank ("Measure __"); the county's list of measures
+# (sources/county-measure-list.html) gives it as Q.
+#
+# The same PDF prints, as Attachment 2, a draft "Argument in Favor of
+# Measure __". It is a draft, not a filed argument, and is not cited.
+# The staff report is the Town staff's material: it is cited only for
+# plain facts (this year's rate and the current tax's end date). The
+# resolution's recitals are cited only for the tax's history (voters
+# last approved it in 2022), never for its account of the service.
+
+[contest]
+id = "ca-2026-11-03-corte-madera-measure-q"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:corte_madera"
+kind = "measure"
+title = "Town of Corte Madera Measure Q: Continuing the Paramedic Services Special Tax for Four Years"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Town of Corte Madera, Resolution No. 24/2026, A Resolution of the Town Council of Town of Corte Madera Calling for a Municipal Election to Be Held in Its Jurisdiction on November 3, 2026, for the Purpose of Submitting to the Voters a Measure Authorizing the Continuation of a Special Parcel Tax for Paramedic Services (Attachment 1 to Town Council agenda item 7.B, June 2, 2026; the agenda copy, its vote left blank): Section 3, the ballot question"
+credit = "Resolution No. 24/2026, Town of Corte Madera"
+url = "https://www.cortemadera.gov/DocumentCenter/View/11589/7B-Staff-Report-and-Attachments"
+file = "sources/2026-06-02-item-7B-staff-report-res-24-2026-ordinance.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-title-summary"
+publisher = "Town of Corte Madera, Resolution No. 24/2026, A Resolution of the Town Council of Town of Corte Madera Calling for a Municipal Election to Be Held in Its Jurisdiction on November 3, 2026, for the Purpose of Submitting to the Voters a Measure Authorizing the Continuation of a Special Parcel Tax for Paramedic Services (Attachment 1 to Town Council agenda item 7.B, June 2, 2026; the agenda copy, its vote left blank)"
+credit = "Resolution No. 24/2026, Town of Corte Madera"
+url = "https://www.cortemadera.gov/DocumentCenter/View/11589/7B-Staff-Report-and-Attachments"
+file = "sources/2026-06-02-item-7B-staff-report-res-24-2026-ordinance.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Town of Corte Madera, Draft Ordinance No. __/2026, An Ordinance of the Town of Corte Madera Imposing and Extending a Special Tax for Paramedic and/or Emergency Medical Services (Exhibit A to Resolution No. 24/2026, Town Council agenda item 7.B, June 2, 2026; its number left blank)"
+credit = "Draft paramedic tax ordinance, Town of Corte Madera"
+url = "https://www.cortemadera.gov/DocumentCenter/View/11589/7B-Staff-Report-and-Attachments"
+file = "sources/2026-06-02-item-7B-staff-report-res-24-2026-ordinance.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "staff-report"
+kind = "official-title-summary"
+publisher = "Town of Corte Madera, Corte Madera Town Council Staff Report, meeting date June 2, 2026, item 7.B, from the Fire Chief and the Town Manager: Adoption of Resolution No. 24/2026 Calling for and Giving Notice of the Holding of the General Municipal Election on November 3, 2026 for a Ballot Measure Imposing and Extending the Special Parcel Tax for Paramedic Services, pages 1 to 4"
+credit = "Town Council staff report, Town of Corte Madera"
+url = "https://www.cortemadera.gov/DocumentCenter/View/11589/7B-Staff-Report-and-Attachments"
+file = "sources/2026-06-02-item-7B-staff-report-res-24-2026-ordinance.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "minutes"
+kind = "public-record"
+publisher = "Town of Corte Madera, Minutes of June 2, 2026 Regular Meeting of the Corte Madera Town Council: item 7.B"
+credit = "Town Council minutes, Town of Corte Madera"
+url = "https://www.cortemadera.gov/AgendaCenter/ViewFile/Minutes/_06022026-1643"
+file = "sources/2026-06-02-town-council-minutes.pdf"
+retrieved = "2026-10-30"
