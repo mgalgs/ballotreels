@@ -3071,3 +3071,11 @@ source = "ballot-question"
 quote = "generating approximately $55,000 annually"
 amount = 55000
 period = "per-year"
+
+# City of Arvin Measure H: a general sales tax, so no tax rate statement;
+# the City Attorney's impartial analysis gives the revenue estimate.
+[arvin-measure-h]
+source = "impartial-analysis"
+quote = "will generate approximately $2,350,000 annually in additional revenue"
+amount = 2350000
+period = "per-year"
