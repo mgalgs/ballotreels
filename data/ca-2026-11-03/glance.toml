@@ -2675,3 +2675,12 @@ source = "measure-list"
 quote = "raising $6.5 million annually"
 amount = 6500000
 period = "per-year"
+
+# Alum Rock Union Elementary School District Measure P: the district's
+# Tax Rate Statement, its total debt service (the bonds are $100
+# million).
+[alum-rock-measure-p]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $170 million."
+amount = 170000000
+period = "unstated"
