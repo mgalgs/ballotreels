@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 85.67,
+  "seconds": 85.11,
   "phrases": [
     {
       "text": "Measure HB asks the voters of this city whether to add a half percent sales tax for general city services.",
@@ -39,29 +39,29 @@
       "end": 51.24
     },
     {
-      "text": "The ballot question estimates the tax would raise about $2 million a year; no fiscal analysis was gathered.",
+      "text": "The impartial analysis says the measure estimates about $2 million a year, with actual revenue depending on taxable sales.",
       "start": 51.9,
-      "end": 59.34
+      "end": 59.99
     },
     {
-      "text": "Two council members, a school board member and two others filed an argument for Measure HB; its text was not gathered.",
-      "start": 60.0,
-      "end": 68.53
+      "text": "Supporters say the county is seeking higher charges for fire and lifeguard services, and every dollar the tax raises would stay local.",
+      "start": 60.65,
+      "end": 69.9
     },
     {
-      "text": "A council member, a former mayor and three small business owners filed an argument against Measure HB; its text was not gathered.",
-      "start": 69.19,
-      "end": 78.56
+      "text": "Opponents say the tax would put the sales tax here above neighboring cities, and the city balanced this year's budget without it.",
+      "start": 70.56,
+      "end": 78.04
     },
     {
       "text": "A yes vote adopts the half percent sales tax.",
-      "start": 79.22,
-      "end": 82.05
+      "start": 78.7,
+      "end": 81.49
     },
     {
       "text": "A no vote rejects the half percent sales tax.",
-      "start": 82.71,
-      "end": 85.64
+      "start": 82.15,
+      "end": 85.08
     }
   ],
   "inputs": {
@@ -73,9 +73,9 @@
       "Measure HB would add a half percent tax on retail sales in the city, with no end date unless voters repeal it.",
       "The ballot question lists public safety, streets, storm drains and parks among its uses, but the money could fund any city purpose.",
       "The city would report the revenue each year, and a citizens' committee would review the reports and audits.",
-      "The ballot question estimates the tax would raise about $2 million a year; no fiscal analysis was gathered.",
-      "Two council members, a school board member and two others filed an argument for Measure HB; its text was not gathered.",
-      "A council member, a former mayor and three small business owners filed an argument against Measure HB; its text was not gathered.",
+      "The impartial analysis says the measure estimates about $2 million a year, with actual revenue depending on taxable sales.",
+      "Supporters say the county is seeking higher charges for fire and lifeguard services, and every dollar the tax raises would stay local.",
+      "Opponents say the tax would put the sales tax here above neighboring cities, and the city balanced this year's budget without it.",
       "A yes vote adopts the half percent sales tax.",
       "A no vote rejects the half percent sales tax."
     ],
@@ -211,11 +211,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The ballot question estimates the tax would raise about $2 million a year; no fiscal analysis was gathered."
+        "text": "The impartial analysis says the measure estimates about $2 million a year, with actual revenue depending on taxable sales."
       },
       "bounds": [
         1244880,
-        1424880
+        1440480
       ]
     },
     {
@@ -223,15 +223,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The ballot question estimates the tax would raise about $2 million a year; no fiscal analysis was gathered.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The impartial analysis says the measure estimates about $2 million a year, with actual revenue depending on taxable sales.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Two council members, a school board member and two others filed an argument for Measure HB; its text was not gathered."
+        "text": "Supporters say the county is seeking higher charges for fire and lifeguard services, and every dollar the tax raises would stay local."
       },
       "bounds": [
-        1439280,
-        1645440
+        1454880,
+        1678320
       ]
     },
     {
@@ -239,15 +239,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Two council members, a school board member and two others filed an argument for Measure HB; its text was not gathered.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the county is seeking higher charges for fire and lifeguard services, and every dollar the tax raises would stay local.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "A council member, a former mayor and three small business owners filed an argument against Measure HB; its text was not gathered."
+        "text": "Opponents say the tax would put the sales tax here above neighboring cities, and the city balanced this year's budget without it."
       },
       "bounds": [
-        1659840,
-        1886160
+        1692720,
+        1873680
       ]
     },
     {
@@ -255,15 +255,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A council member, a former mayor and three small business owners filed an argument against Measure HB; its text was not gathered.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say the tax would put the sales tax here above neighboring cities, and the city balanced this year's budget without it.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote adopts the half percent sales tax."
       },
       "bounds": [
-        1900560,
-        1969920
+        1888080,
+        1956480
       ]
     },
     {
@@ -278,14 +278,14 @@
         "text": "A no vote rejects the half percent sales tax."
       },
       "bounds": [
-        1984320,
-        2056080
+        1970880,
+        2042640
       ]
     }
   ],
-  "sha256": "3d6d1a3cce7f49174caa03567bc8eb416ed24422fa186da5bb78f9d26e86628e",
+  "sha256": "6411f270eec16c4a7ea6423c51af18f6553e44bb97c527bf7436fd2c0dbb9fe2",
   "take": {
-    "sha256": "4a928581760135e0bf2f97a44ebd8a1234e048854775148df40e7330332bb15f",
-    "bytes": 4112204
+    "sha256": "da0eac492311017505e0b0333e35c398df682216550a3117a373a9795965de2d",
+    "bytes": 4085324
   }
 }
