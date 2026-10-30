@@ -1,0 +1,224 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; what kind of city it is today and
+# how the measure reached the ballot; what a charter would change (more
+# control over local affairs, then the five things the ballot question
+# names: term limits, a city prosecutor, economic development funds,
+# council pay, veterans' contract preferences; how it could be amended;
+# the vote it needs); that the analysis gives no cost estimate; both
+# sides; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry it.
+#
+# Measure RC is a whole charter; the script explains only what the
+# ballot question names, each as the City Attorney's impartial analysis
+# states it, with the charter's own sections beside it. The ballot
+# question says the charter keeps "following California law for limiting
+# compensation"; the analysis says it "would not affect Councilmember
+# compensation", and the charter (Section 1.4) pays members "in
+# accordance with the provisions of State law": the pay line says that.
+# The argument in favor's "limits compensation" is not narrated. That a
+# general law city prosecutes only with the District Attorney's consent
+# is a point the argument in favor makes, so it stays with that side
+# (STANDARD.md 6.3) and the prosecutor line gives only what the office
+# could do.
+#
+# The card quotes the Los Angeles County Registrar-Recorder/County
+# Clerk's list "Measures Appearing on the Ballot": the City's heading,
+# the vote needed and the ballot question, which has no yes or no
+# sentences, so the card has no boxes. The vote lines give the impartial
+# analysis's own meanings, and both highlight the same phrase.
+#
+# Both arguments are the Registrar's printed copies. Each side's line
+# gives two of its points, as the argument puts them; neither names
+# anyone, so the sides stay alike (STANDARD.md 9.3).
+
+contest = "ca-2026-11-03-rosemead-measure-rc"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "RC"
+title = "CITY OF ROSEMEAD"
+origin = "VOTE PASSAGE – Majority Vote 50%+1"
+summary = "Shall the City of Rosemead Charter be adopted to establish Rosemead as a charter city to have more authority over municipal affairs, imposing term limits on City Councilmembers, establishing the position of City prosecutor, permitting use of City funds for economic development, continuing following California law for limiting compensation for Councilmembers, and giving the City Council authority to adopt an ordinance giving veterans and disabled veterans preference in awarding contracts?"
+
+[[section]]
+id = "what"
+heading = "Measure RC"
+
+[[section.line]]
+text = "Measure RC asks the voters of this city whether to adopt a city charter."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establish Rosemead as a charter city"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "general-law"
+text = "Today, the city is a general law city, with only the powers state law gives it."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "law-book"
+
+[[section.line]]
+text = "The City Council placed Measure RC on the ballot."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "control"
+text = "A charter would give the city more control over local affairs, but state law would still govern matters of statewide concern."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section.line]]
+id = "terms"
+text = "Council members, who have no term limits today, would be limited to five four-year terms, counting only future terms."
+sources = ["impartial-analysis", "charter"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hourglass-plans"
+
+[[section.line]]
+id = "prosecutor"
+text = "The city could create a city prosecutor to charge violations of city laws and certain state misdemeanors."
+sources = ["impartial-analysis", "charter"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section.line]]
+id = "economy"
+text = "The city could spend general fund money on economic development."
+sources = ["impartial-analysis", "charter"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section.line]]
+id = "veterans"
+text = "The city could set its own contract rules, including extra points for all veterans, not only disabled veterans."
+sources = ["impartial-analysis", "charter"]
+
+[section.line.visual]
+kind = "illustration"
+name = "contract-bid-folder"
+
+[[section.line]]
+id = "pay"
+text = "Council pay and elections would still follow state law."
+sources = ["impartial-analysis", "charter"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section.line]]
+id = "amend"
+text = "The charter could be amended only by a majority of voters, the same vote Measure RC needs to pass."
+sources = ["impartial-analysis", "charter"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The city attorney's impartial analysis does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the charter lets the city create its own prosecutor for city law violations, and gives it new tools to grow the economy."
+sources = ["argument-for"]
+basis = ["The Charter lets us create our own City Prosecutor, so Rosemead's own can prosecute criminals that violate our city codes and laws.", "The Charter also gives our city new tools to grow our local economy."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Its own city prosecutor", "Tools to grow the economy"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say five four-year terms, 20 years, are not real term limits, and that all of these items can be handled through city ordinances."
+sources = ["argument-against"]
+basis = ["The proposed term limits, 5-4 years terms, are not term limits.", "Yes a 20 year term limit is more than a generation.", "All of these items can be addressed through city ordinances."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["20 years is no limit", "Ordinances can do this"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the charter, making this a charter city."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establish Rosemead as a charter city"]
+
+[[section.line]]
+text = "A no vote rejects the charter, and the city remains a general law city."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establish Rosemead as a charter city"]
+
+[[question]]
+ask = "Would terms already served count toward the limit?"
+lines = ["terms"]
+
+[[question]]
+ask = "Would council members' pay change?"
+lines = ["pay"]
+
+[[question]]
+ask = "Could the charter be changed later?"
+lines = ["amend"]

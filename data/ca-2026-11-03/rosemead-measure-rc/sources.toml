@@ -1,0 +1,67 @@
+# Archived sources for City of Rosemead Measure RC, 2026-11-03 general
+# election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" is the authority for the letter and the ballot
+# question, quoted on the card. The City Attorney's impartial analysis,
+# the full text of the proposed charter and both arguments are the
+# Registrar's own copies from its Interactive Sample Ballot, which
+# supersede la-sources.md's earlier "missing" notes. The impartial
+# analysis is the measure's neutral explanation, the kind a state's
+# attorney general's explanatory statement is; it gives no cost estimate.
+# Resolution No. 2026-20 (a scan, whose Exhibit A is the same charter)
+# adds nothing the script needs and is not cited.
+
+[contest]
+id = "ca-2026-11-03-rosemead-measure-rc"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:rosemead"
+kind = "measure"
+title = "City of Rosemead Measure RC: Adopting a City Charter"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 Statewide General Election: City of Rosemead Measure RC"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney, City of Rosemead, City Attorney Impartial Analysis of Measure RC, by Rachel Richman, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Impartial Analysis of Measure RC, City Attorney of Rosemead"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10508.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "charter"
+kind = "official-text"
+publisher = "City of Rosemead, proposed City Charter (Exhibit A to Resolution No. 2026-20), Full Text of Ballot Measure RC as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Proposed City Charter, City of Rosemead"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10508.json"
+file = "sources/full-text.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure RC, signed by Sandra Armenta, Mayor, and Steven Ly, Councilman, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Argument in Favor of Measure RC"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10508.json"
+file = "sources/argument-for.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure RC, signed by Barbara Murphy, Nancy Eng and Frances Chavez, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Argument Against Measure RC"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10508.json"
+file = "sources/argument-against.html"
+retrieved = "2026-10-30"
