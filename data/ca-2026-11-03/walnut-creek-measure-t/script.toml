@@ -20,7 +20,9 @@
 # provide (Government Code sections 36508 to 36510, Municipal Code
 # section 2-6.405(c)); the City Attorney's impartial analysis, printed on
 # the county's page, agrees with each of those lines and is cited beside
-# them. The report's reasons for the change (professional
+# each one it states in full (not the lines on the treasurer's duties
+# today or on residence, which it does not state as the lines do). The
+# report's reasons for the change (professional
 # qualifications, staff could absorb the work, savings) are the City's
 # case and stay out of the neutral sections. Its account of the 1956 and
 # 1996 measures is attributed to it, without vote counts.
@@ -74,7 +76,7 @@ heading = "Today"
 [[section.line]]
 id = "elected"
 text = "Today the treasurer, who oversees cash, investments and financial reporting for the city, is elected by voters."
-sources = ["agenda-report", "ballot-question", "impartial-analysis"]
+sources = ["agenda-report", "ballot-question"]
 
 [section.line.visual]
 kind = "illustration"
@@ -105,7 +107,7 @@ name = "empty-commission-seat"
 [[section.line]]
 id = "who"
 text = "The city manager would then appoint the treasurer, who would not need to live in the city."
-sources = ["agenda-report", "impartial-analysis"]
+sources = ["agenda-report"]
 
 [section.line.visual]
 kind = "illustration"

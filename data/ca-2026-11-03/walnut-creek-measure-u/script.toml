@@ -11,7 +11,9 @@
 #
 # The neutral lines rest on the resolution submitting the initiative, on
 # the initiative's own text and on the City Attorney's impartial analysis
-# printed on the county's page, which agrees with each of them; never on
+# printed on the county's page, which agrees with each of them and is
+# cited beside each line it states in full (not the 5,000 signatures or
+# the apartments, which it does not give); never on
 # the initiative's "Benefits, Purpose and Intent" section, which is the
 # proponents' text.
 # The City staff's agenda reports are not cited. The card quotes the
@@ -67,7 +69,7 @@ heading = "Today"
 [[section.line]]
 id = "petition"
 text = "Measure U is a citizens' initiative, which qualified with 5,000 valid signatures from voters in the city."
-sources = ["resolution", "impartial-analysis"]
+sources = ["resolution"]
 
 [section.line.visual]
 kind = "illustration"
@@ -89,7 +91,7 @@ heading = "What would change"
 [[section.line]]
 id = "uses"
 text = "A new zoning district would limit the site to apartments mainly for people 55 or older, and businesses suited to senior housing."
-sources = ["ballot-question", "text", "impartial-analysis"]
+sources = ["ballot-question", "text"]
 
 [section.line.visual]
 kind = "illustration"

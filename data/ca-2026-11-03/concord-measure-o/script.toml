@@ -13,7 +13,8 @@
 # redlined Chapter 5.05) and the resolution placing it, only from what
 # they enact; the City Attorney's impartial analysis, printed on the
 # county's page, agrees with each of those lines and is cited beside
-# them. The redline strikes
+# each one it states in full (not the tiers line: it does not give the
+# $25,000 first tier). The redline strikes
 # the tiered gross receipts schedule (1.00 down to 0.30 mil per dollar,
 # that is $1 per $1,000 on the first $25,000 and less on each step
 # above) and sets one-tenth of one percent, $1 per $1,000, keeping the
@@ -71,7 +72,7 @@ heading = "Today"
 [[section.line]]
 id = "tiers"
 text = "Today, a business taxed on its gross receipts pays $1 per $1,000 on its first $25,000, and lower rates on each step above that."
-sources = ["text", "impartial-analysis"]
+sources = ["text"]
 
 [section.line.visual]
 kind = "illustration"

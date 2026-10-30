@@ -12,7 +12,8 @@
 #
 # The neutral lines rest on the tax ordinance's own text, on the
 # resolution placing it and on the City Attorney's impartial analysis
-# printed on the county's page, and only on what they enact or state,
+# printed on the county's page (cited only beside lines it states in
+# full), and only on what they enact or state,
 # never on the ordinance's reasons for the tax (its recitals on the
 # Council's workplan and on sustaining services), which are the City's
 # case. The card quotes the ballot question from Section 1 of the agenda
@@ -107,7 +108,7 @@ name = "end-date"
 [[section.line]]
 id = "uses"
 text = "It is a general tax on retail sales in the city."
-sources = ["resolution", "text", "impartial-analysis"]
+sources = ["resolution", "text"]
 
 [section.line.visual]
 kind = "illustration"
@@ -116,7 +117,7 @@ name = "sales-receipt"
 [[section.line]]
 id = "oversight"
 text = "Each year, independent auditors for the city would review the tax money, and a committee of at least five residents or local business representatives would review and report on its use."
-sources = ["text", "impartial-analysis"]
+sources = ["text"]
 
 [section.line.visual]
 kind = "illustration"
