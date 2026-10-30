@@ -1,0 +1,45 @@
+# Archived sources for City of Carmel-by-the-Sea Measure N, 2026-11-03
+# general election (sources/county-sources.md, sources/sources.md). Every
+# id here may be cited by script.toml. `kind` must be one the standard
+# allows (docs/STANDARD.md, section 1).
+#
+# The County of Monterey Elections Department's List of Local Measures
+# gives Measure N's letter, vote threshold and ballot question, and says
+# "All related documents are filed and on public review with the city
+# clerk." The impartial analysis, the arguments and any rebuttals are
+# not posted online by the county or the City, so none is cited.
+#
+# The City Council's Resolution No. 2026-043, adopted and signed June 2,
+# 2026 (the City's file is marked "corrected 6.15.26"), orders the
+# measure; its ballot question matches the county's word for word, and
+# its Exhibit A is the proposed Ordinance No. 2026-003, the measure's full
+# text. The City's PDF is a scan whose OCR layer garbles many characters,
+# so the passages cited were typed from the page images into
+# sources/resolution-2026-043-transcription.txt, which names the PDF and
+# URL it copies; that source points at the transcription, and its url at
+# the scan.
+
+[contest]
+id = "ca-2026-11-03-carmel-by-the-sea-measure-n"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:carmel-by-the-sea"
+kind = "measure"
+title = "City of Carmel-by-the-Sea Measure N: Sales Tax from 1.5% to 1.875%, Until Ended by Voters"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "County of Monterey Elections Department, List of Local Measures, November 3, 2026 General Election: City of Carmel-By-The-Sea Measure N"
+credit = "List of Local Measures, Monterey County Elections"
+url = "https://www.countyofmonterey.gov/government/departments-a-h/elections/list-of-local-measures"
+file = "sources/county-measure-list.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City of Carmel-by-the-Sea City Council, Resolution No. 2026-043, ordering submission of a measure increasing the transactions and use tax rate from 1.5% to 1.875% and extending it until ended by voters, with Exhibit A, proposed Ordinance No. 2026-003, adopted June 2, 2026 (transcribed from the scan)"
+credit = "Resolution No. 2026-043, City of Carmel-by-the-Sea"
+url = "https://ci.carmel.ca.us/sites/main/files/file-attachments/2026-06-02_r_2026-043_-__ordering_submission_of_ballot_measure_for_sales_tax_for_11-3-26_election_corrected_6.15.26.pdf?1781647424"
+file = "sources/resolution-2026-043-transcription.txt"
+retrieved = "2026-10-28"

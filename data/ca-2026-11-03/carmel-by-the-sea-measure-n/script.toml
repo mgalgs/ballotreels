@@ -1,0 +1,196 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot; the
+# tax today and when it ends; what would change (the rate, no end date, a
+# general tax with an annual audit, a simple majority); the revenue as
+# the ballot question gives it; the two sides, whose arguments are not
+# online; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card, title and chart
+# titles carry it. The 0.375% increase is on the card and the chart, not
+# narrated (a decimal under 1 is transcribed unreliably); the narration
+# gives the two rates.
+#
+# Only the county's List of Local Measures (the card) and the City
+# Council's Resolution No. 2026-043, adopted and signed, whose ballot
+# question matches the county's word for word, are cited; its Exhibit A
+# is the ordinance voters would adopt. The ballot question's list of uses
+# is on the card, and not narrated: the tax is a general tax.
+#
+# The county says the measure's documents are filed with the city clerk;
+# none is online, so it is not known whether any argument was filed. Each
+# side says only that any argument is filed with the city clerk and is
+# not online (filed = false, STANDARD.md 2.5), and presents no side.
+#
+# The $1.8 million and $9.4 million a year are the ballot question's
+# figures. No archived source states the City's general fund budget, so
+# they have no scale (STANDARD.md 6.5; left open, under [[question]]).
+
+contest = "ca-2026-11-03-carmel-by-the-sea-measure-n"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "measure-list"
+number = "N"
+title = "City of Carmel-By-The-Sea"
+origin = "Majority Voter Approval Required"
+summary = "To upgrade streets/sidewalks, address beach erosion, enhance wildfire preparedness, maintain City trees, and fund other general government purposes in City of Carmel-by-the-Sea, shall the measure increasing the transactions and use tax (also known as sales tax) by 0.375%, from 1.50% to 1.875%, providing approximately $1,800,000 annually in additional revenue and approximately $9,400,000 annually in total revenue, and extending the total 1.875% tax until ended by voters, with independent audits and all funds benefitting Carmel-by-the-Sea, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure N"
+
+[[section.line]]
+text = "Measure N asks the voters of this city whether to raise the local sales tax and keep it until ended by voters."
+sources = ["measure-list", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["from 1.50% to 1.875%"]
+
+[[section]]
+id = "background"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The City Council placed Measure N on the ballot by a vote of 4 to 1."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "today"
+heading = "The tax today"
+
+[[section.line]]
+id = "today-end"
+text = "The city has a general sales tax of 1.5 percent, set to expire in 2040."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure N would raise the rate from 1.5 percent to 1.875 percent."
+sources = ["resolution", "measure-list"]
+
+[section.line.visual]
+kind = "bars"
+title = "Local sales tax rate in Carmel-by-the-Sea"
+source = "resolution"
+unit = "%"
+labels = ["Today", "With Measure N"]
+values = [1.5, 1.875]
+
+[[section.line]]
+id = "end"
+text = "The tax would no longer end in 2040, and would stay in effect until repealed by voters."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+id = "uses"
+text = "The tax would remain a general tax, its revenue audited each year, and Measure N needs a simple majority to pass."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section]]
+id = "fiscal"
+heading = "What the ballot question says"
+
+[[section.line]]
+id = "revenue"
+text = "The ballot question says the increase would raise about $1.8 million a year, and the total tax about $9.4 million."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "bars"
+title = "Sales tax revenue a year, Carmel-by-the-Sea"
+source = "measure-list"
+unit = ""
+labels = ["The 0.375% increase", "Total 1.875% tax"]
+values = [1800000, 9400000]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Any argument for Measure N is filed with the city clerk, and is not online."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["Filed with the city clerk, not online"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Any argument against Measure N is filed with the city clerk, and is not online."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["Filed with the city clerk, not online"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote raises the sales tax to 1.875 percent until ended by voters."
+sources = ["measure-list", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["from 1.50% to 1.875%"]
+
+[[section.line]]
+text = "A no vote keeps the 1.5 percent tax, which would expire in 2040."
+sources = ["measure-list", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["from 1.50% to 1.875%"]
+
+[[question]]
+ask = "When does the tax end today, and when would it end?"
+lines = ["today-end", "end"]
+
+[[question]]
+ask = "Is the money set aside for anything, and who checks it?"
+lines = ["uses"]
+
+[[question]]
+ask = "What do supporters and opponents say?"
+unanswered = true
+
+[[question]]
+ask = "How big is $1.8 million a year next to the city budget?"
+unanswered = true
