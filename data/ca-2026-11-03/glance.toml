@@ -3834,3 +3834,12 @@ source = "ballot-question"
 quote = "generating approximately $688,000 annually"
 amount = 688000
 period = "per-year"
+
+# City of Larkspur Measure S: a parcel tax, so no tax rate statement;
+# the revenue estimate its ballot question (Resolution 46/26, Section 2)
+# prints. It continues an existing tax, so no direction is given.
+[larkspur-measure-s]
+source = "ballot-question"
+quote = "generating approximately $834,000 annually"
+amount = 834000
+period = "per-year"

@@ -1,0 +1,77 @@
+# Archived sources for City of Larkspur Measure S, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Marin County's guide could not be archived, and the City's Elections
+# page posts no impartial analysis or argument, so no argument was
+# archived and no document says whether any was filed. These are the
+# City's files: Resolution 46/26, which calls the election and whose
+# Section 2 is the ballot question (no ordinance was attached: the
+# resolution is the measure's only text); the staff report for item
+# 8.1B of the June 3, 2026 City Council meeting; and the draft minutes
+# of that meeting, which record that the Council adopted Resolution
+# 46/26 (the posted resolution's signature lines are blank; its
+# certification and the minutes both record its adoption on June 3,
+# 2026; no line narrates it, so neither is cited for it). The City
+# Clerk's Notice of Election of July 8, 2026 prints the same question.
+#
+# The question is set beside YES and NO cells, which the PDF's text
+# layer interleaves with it, so the card's source (ballot-question) is
+# sources/resolution-46-26-ballot-question-extract.txt, the question
+# copied from the text layer without them; its url is the PDF.
+#
+# The staff report is the City staff's and the paramedic authority's
+# material: only its plain facts are cited (the current and proposed
+# yearly rates, the current tax's end, the yearly confirmation of the
+# rate, and the authority's budget of "approximately $3.8 million"),
+# never its statements of need or benefit, and never its attached draft
+# ballot argument, which is not a filed argument. It is of kind
+# public-record: no allowed kind fits a city staff report exactly, and
+# official-report is reserved for a nonpartisan fiscal office's reports.
+#
+# The letter S and the two-thirds vote are confirmed by the Registrar of
+# Voters' Board of Supervisors staff report 26-4515.
+
+[contest]
+id = "ca-2026-11-03-larkspur-measure-s"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:larkspur"
+kind = "measure"
+title = "City of Larkspur Measure S: Continuing the Paramedic Services Special Tax for Four Years"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Larkspur, Resolution 46/26, calling a municipal election on a measure authorizing the continuation of a special parcel tax for paramedic services: Section 2, the ballot question, page 2 (extracted from the text layer without its YES and NO cells)"
+credit = "Resolution 46/26, City of Larkspur"
+url = "https://www.larkspur.ca.gov/DocumentCenter/View/23037/Resolution-46-26---RVPA-Tax-Resolution-Larkspur"
+file = "sources/resolution-46-26-ballot-question-extract.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Larkspur, Resolution 46/26: A Resolution of the City Council of City of Larkspur Calling for a Municipal Election to Be Held in Its Jurisdiction on November 3, 2026, for the Purpose of Submitting to the Voters a Measure Authorizing the Continuation of a Special Parcel Tax for Paramedic Services"
+credit = "Resolution 46/26, City of Larkspur"
+url = "https://www.larkspur.ca.gov/DocumentCenter/View/23037/Resolution-46-26---RVPA-Tax-Resolution-Larkspur"
+file = "sources/resolution-46-26-adopted.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "staff-report"
+kind = "public-record"
+publisher = "City of Larkspur, Staff Report, Agenda Item 8.1B, June 3, 2026 City Council Meeting: adoption of Resolution No. 46/26, a special tax for paramedic services, pages 2 and 3"
+credit = "Staff report, item 8.1B, City of Larkspur"
+url = "https://www.larkspur.ca.gov/DocumentCenter/View/22969/81B-Larkspur-2027-31-RVPA-Tax"
+file = "sources/2026-06-03-item-8.1B-staff-report-rvpa-tax.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "Marin County Registrar of Voters, Board of Supervisors staff report 26-4515, September 8, 2026: the list of measures on the November 3, 2026 ballot, page 2"
+credit = "Staff report 26-4515, Marin County Registrar of Voters"
+url = "https://marin.granicus.com/MetaViewer.php?view_id=33&event_id=4262&meta_id=1474983"
+file = "sources/marin-bos-2026-09-08-consolidation-staff-report-26-4515.pdf"
+retrieved = "2026-10-28"

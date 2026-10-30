@@ -462,6 +462,8 @@ BALLOTS: dict[str, Ballot] = {
                      # placing each, named as headed
                      "ca-2026-11-03-san-anselmo-measure-v":
                          "Resolution No. 2026-4628",
+                     "ca-2026-11-03-larkspur-measure-s":
+                         "Resolution 46/26",
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.
