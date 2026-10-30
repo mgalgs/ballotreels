@@ -2,7 +2,7 @@
 # what it asks and whose measure it is; the regional paramedic authority
 # and the tax today; what would change (the rate, the yearly increase,
 # the use and the end date); the vote it needs; the revenue estimate;
-# both sides, neither of which has an archived argument; what a vote
+# both sides, for neither of which an argument was filed; what a vote
 # does.
 #
 # No place name is narrated (the narrator mispronounces them): the
@@ -27,11 +27,10 @@
 # open). The tax rates are amounts per housing unit or per 1,000 square
 # feet (exempt).
 #
-# No argument for or against Measure V was archived (the Town's page
-# labels them but links no file), and no document says whether any was
-# filed. So the sides do not say none was filed: each says none is among
-# the documents gathered (filed = false, STANDARD.md 2.5), as for Walnut
-# Creek Measure U.
+# The county's page says no argument in favor and no argument against
+# Measure V was filed, so each side says so, attributed to the county
+# (filed = false, STANDARD.md 2.5). The county prints the same ballot
+# question and impartial analysis as the Town's files.
 
 contest = "ca-2026-11-03-san-anselmo-measure-v"
 template = "measure"
@@ -105,7 +104,7 @@ name = "end-date"
 [[section.line]]
 id = "threshold"
 text = "Measure V needs two-thirds of the vote to pass."
-sources = ["measure-list", "text"]
+sources = ["measure-list", "text", "county-page"]
 
 [section.line.visual]
 kind = "illustration"
@@ -132,13 +131,13 @@ side = "yes"
 filed = false
 
 [[section.line]]
-text = "No argument for Measure V appears among the official documents gathered for this video."
-sources = ["text"]
+text = "The elections office of the county says on its page for this measure that no argument for Measure V was filed."
+sources = ["county-page"]
 
 [section.line.visual]
 kind = "list"
-source = "text"
-items = ["No argument for was found"]
+source = "county-page"
+items = ["No argument for was filed"]
 
 [[section]]
 id = "no"
@@ -147,13 +146,13 @@ side = "no"
 filed = false
 
 [[section.line]]
-text = "No argument against Measure V appears among the official documents gathered for this video."
-sources = ["text"]
+text = "The elections office of the county says on its page for this measure that no argument against Measure V was filed."
+sources = ["county-page"]
 
 [section.line.visual]
 kind = "list"
-source = "text"
-items = ["No argument against was found"]
+source = "county-page"
+items = ["No argument against was filed"]
 
 [[section]]
 id = "vote"
