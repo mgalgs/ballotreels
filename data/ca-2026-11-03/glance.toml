@@ -2855,3 +2855,13 @@ period = "per-year"
 [salinas-measure-h]
 source = "measure-list"
 status = "none-printed"
+
+# City of Carmel-by-the-Sea Measure M: no fiscal statement is online (the
+# county says the measure's documents are with the city clerk); the new
+# tax's revenue, as the ballot question gives it (it puts the total 12%
+# tax at $11,700,000 a year).
+[carmel-by-the-sea-measure-m]
+source = "measure-list"
+quote = "with the new 2% tax generating approximately $1,900,000 annually"
+amount = 1900000
+period = "per-year"
