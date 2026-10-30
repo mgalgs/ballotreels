@@ -1,0 +1,185 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom (one area of the high school district); who
+# votes and who pays; what it needs to pass; what the money would pay
+# for and what it may not; the district's tax statement; one line per
+# side; what a vote does. Measures W, X and Z are the district's three
+# improvement district bonds and their scripts are kept parallel: only
+# the figures differ.
+#
+# No place or school name is narrated (the narrator mispronounces
+# them): the opening says "voters in one area of this high school
+# district", and the supporters' line drops the school name the
+# argument uses. The card, title and the `voters` line carry the names.
+# "Counsel" is heard as "Council" (standard/speakability.txt), so the
+# narration says "the impartial analysis".
+#
+# The card quotes the county's Measure Z PDF, which prints the heading
+# "MEASURE Z", the ballot question and blank Yes and No lines, no yes
+# and no sentences: so the card has no boxes, its origin is the
+# question's own name for the improvement district, and the vote lines
+# give the impartial analysis's meanings. The tax statement's estimates
+# are given as it gives them: the average yearly rate ($29.27; the
+# ballot question rounds it to $29, and the highest is $30.00 in
+# 2027-28), the last year (2062-63), and the total to repay
+# ($281,756,000). The bonds and their debt service are repaid from a tax
+# on property in the area, not from the district's budget, and no
+# archived source states that budget, so they have no budget scale
+# (STANDARD.md 6.5; left open, under [[question]]).
+#
+# The supporters' "21st century standards" is said "modern standards",
+# since an ordinal is transcribed either way. No argument against
+# Measure Z is among the county's postings: the no side says so
+# plainly; its section is marked filed = false.
+
+contest = "ca-2026-11-03-merced-union-high-sfid-3-measure-z"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "Z"
+title = "MEASURE Z"
+origin = "Merced Union High School District's School Facilities Improvement District No. 3"
+summary = "To improve the quality of education; construct, upgrade, and modernize classrooms, restrooms, and school facilities; make safety/security improvements; renovate or construct career technical education classrooms; replace leaky roofs; and renovate plumbing/sewer systems, shall Merced Union High School District's School Facilities Improvement District No. 3 measure authorizing $129,000,000 in bonds, at legal rates, and levying approximately $29 per $100,000 assessed value ($7,825,000 annually), while outstanding, be adopted, with annual audits, independent oversight, NO money for teacher/administrator salaries and all money spent locally?"
+
+[[section]]
+id = "what"
+heading = "Measure Z"
+
+[[section.line]]
+text = "Measure Z asks voters in one area of this high school district whether to approve $129 million in school bonds."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $129,000,000 in bonds"]
+
+[[section]]
+id = "today"
+heading = "How this bond works"
+
+[[section.line]]
+id = "who-votes"
+text = "Only voters in that area vote, and a tax on property there would repay the bonds."
+sources = ["text", "tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "district-map"
+
+[[section.line]]
+text = "Measure Z needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "projects"
+text = "The money would modernize classrooms, make safety improvements, replace leaky roofs, and renovate plumbing."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-roof-repair"
+
+[[section.line]]
+id = "limits"
+text = "The money could not pay salaries, and yearly audits and a citizens' committee would oversee the spending."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-board-room"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+id = "rate"
+text = "The district's tax statement estimates an average tax of $29.27 per $100,000 of assessed value each year, through 2062-2063."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "bars"
+title = "Measure Z bonds, in millions of dollars"
+source = "tax-statement"
+unit = ""
+labels = ["Bonds authorized", "Total to repay"]
+values = [129, 281.756]
+
+[[section.line]]
+text = "The statement puts the total to repay, with interest, at about $281,756,000."
+sources = ["tax-statement"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say many classrooms and buildings no longer meet modern standards, and passing qualifies the district for state matching funds."
+sources = ["argument-for"]
+basis = ["many classrooms and buildings no longer meet 21st century standards", "If passed, the District qualifies for State matching funds to help pay for school repairs."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Buildings below modern standards", "Qualifies for state matching funds"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure Z appears among the documents that the county elections office has posted for this election."
+sources = ["argument-for"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the district to issue up to $129 million in bonds, repaid by a property tax in that area."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $129,000,000 in bonds"]
+
+[[section.line]]
+text = "A no vote is against authorizing the district to issue the bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["be adopted"]
+
+[[question]]
+ask = "Who votes on this, and who would pay the tax?"
+lines = ["who-votes"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["projects", "limits"]
+
+[[question]]
+ask = "How big are the bonds next to the district's budget?"
+unanswered = true
