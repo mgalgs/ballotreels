@@ -3456,3 +3456,12 @@ source = "tax-statement"
 quote = "that would be required to be repaid if all the bonds are issued and sold will be approximately $157 million."
 amount = 157000000
 period = "unstated"
+
+# Inglewood Unified School District Measure MM: a school bond; the district's
+# tax rate statement gives the total debt service (the bonds are
+# $396 million).
+[inglewood-unified-measure-mm]
+source = "tax-statement"
+quote = "that would be required to be repaid if all the bonds are issued and sold is approximately $813,005,302."
+amount = 813005302
+period = "unstated"
