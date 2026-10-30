@@ -2940,3 +2940,9 @@ source = "tax-statement"
 quote = "required to be repaid if all the bonds are issued and sold will be approximately $23,975,000."
 amount = 23975000
 period = "unstated"
+
+# Shasta County Measure E: a charter amendment, not a tax; the County
+# Voter Information Guide prints no fiscal statement for it.
+[shasta-county-measure-e]
+source = "ballot-question"
+status = "none-printed"

@@ -1,0 +1,58 @@
+# Archived sources for Shasta County Measure E, 2026-11-03 general
+# election (sources/county-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Shasta County Elections prints each local measure's ballot question,
+# impartial analysis and arguments in its County Voter Information
+# Guide; each file here is that measure's page cut from one ballot type's
+# guide (BT24), whose page numbers each citation gives. The card quotes
+# the ballot question page. County Counsel's impartial analysis is the
+# measure's neutral explanation, the kind a state's attorney general's
+# explanatory statement is. No fiscal statement is printed for the
+# measure. The opponents' rebuttal to the argument in favor is not cited:
+# their line rests on their own argument against, as the supporters'
+# rests on theirs (no rebuttal to the argument against was filed).
+
+[contest]
+id = "ca-2026-11-03-shasta-county-measure-e"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:shasta"
+kind = "measure"
+title = "Shasta County Measure E: Charter Limit on Eminent Domain for Transfer to Private Parties"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Shasta County Elections, County Voter Information Guide, November 3, 2026 General Election: Charter Amendment Measure E, Ballot Question, page 48"
+credit = "County Voter Information Guide, Shasta County Elections"
+url = "https://elections.shastacounty.gov/wp-content/uploads/2026/09/Shasta-VIG-BT24.pdf"
+file = "sources/county-ballot-question.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Renee Belcastro, Deputy County Counsel, Impartial Analysis by County Counsel, Measure E, as printed in the Shasta County Elections County Voter Information Guide, page 49"
+credit = "Impartial Analysis, Shasta County Counsel"
+url = "https://elections.shastacounty.gov/wp-content/uploads/2026/09/Shasta-VIG-BT24.pdf"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure E, as filed with Shasta County Elections and printed in its County Voter Information Guide, page 50"
+credit = "Argument in favor, Measure E"
+url = "https://elections.shastacounty.gov/wp-content/uploads/2026/09/Shasta-VIG-BT24.pdf"
+file = "sources/county-argument-for.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure E, as filed with Shasta County Elections and printed in its County Voter Information Guide, page 52"
+credit = "Argument against, Measure E"
+url = "https://elections.shastacounty.gov/wp-content/uploads/2026/09/Shasta-VIG-BT24.pdf"
+file = "sources/county-argument-against.pdf"
+retrieved = "2026-10-29"

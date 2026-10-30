@@ -1,0 +1,178 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; what eminent domain is, and what the 2005
+# Supreme Court decision the impartial analysis cites allows today; what
+# the amendment would bar, and the vote it needs; no cost estimate; one line per side; what a vote does. Measure F,
+# the other charter amendment on this ballot, follows the same chain.
+#
+# No place name is narrated (the narrator mispronounces them): the opening
+# says "the voters of this county", and the charter is "the county
+# charter". "Counsel" is heard as "Council" and "consent" as "can sense"
+# (standard/speakability.txt), so the narration says neither: the owner's
+# "agreement" stands for the analysis's "consent".
+#
+# Every neutral line rests on the ballot question page and County
+# Counsel's impartial analysis. The opponents cite the state law that
+# already limits eminent domain (Proposition 99) and the 2024 vote on an
+# earlier measure, and the supporters cite protecting property owners, so
+# neither appears in a neutral section (STANDARD.md 6.3). The guide prints
+# no fiscal statement; the opponents' estimate of the cost of placing the
+# measure on the ballot is theirs, and is not used in the fiscal line.
+#
+# The card quotes the ballot question page with its yes and no sentences.
+
+contest = "ca-2026-11-03-shasta-county-measure-e"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "E"
+title = "Limitation on Exercise of Eminent Domain"
+origin = "Charter Amendment Measure E"
+summary = "Shall Measure E (Adding to the Shasta County Charter) be adopted? This measure adds a subsection to the Shasta County Charter. The proposed addition would restrict the County’s authority to exercise eminent domain to acquire property from any private owner, without such owner’s consent, when the purpose of the acquisition is to convey the property acquired to any private party."
+yes = "If approved by a majority of the qualified electors, the Ordinance would provide that the County Board of Supervisors cannot authorize the County to use its power of eminent domain for the purpose of acquiring property from any private Owner thereof, without the Owner’s consent, when the County’s purpose in acquiring the property is to convey the property to another private party."
+no = "A “No” Vote on this measure means the County Board of Supervisors will keep its current ability to authorize the County to use its power of eminent domain for the purpose of acquiring property from any private owner thereof without the owner’s consent even though the County’s purpose in acquiring the property is to convey the property to some other private party which the County Board of Supervisors has determined will put the property to a more economically beneficial use."
+
+[[section]]
+id = "what"
+heading = "Measure E"
+
+[[section.line]]
+text = "Measure E asks the voters of this county whether to add a limit on eminent domain to the county charter."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["restrict the County’s authority to exercise eminent domain"]
+
+[[section]]
+id = "today"
+heading = "What eminent domain is"
+
+[[section.line]]
+id = "eminent-domain"
+text = "Eminent domain lets a government take private property for public use, paying the owner just compensation."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-parcels"
+
+[[section.line]]
+id = "kelo"
+text = "In 2005, the United States Supreme Court confirmed that a government may take property for economic development and transfer it to a different private owner."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "change-bar"
+text = "Measure E would bar the county from taking property from a private owner, without the owner's agreement, to convey it to another private party."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to convey the property acquired to any private party"]
+
+[[section.line]]
+id = "threshold"
+text = "Measure E needs a majority of the vote to pass."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The county voter guide does not include a cost estimate for the measure."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the amendment would protect local private property owners from having their property taken for another private party."
+sources = ["argument-for"]
+basis = ["The Board of Supervisors proposes this addition to the Charter to protect local, private property owners.", "specifically restraining the acquisition of property from a private owner to be conveyed to another private party"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Protects local private property owners", "Limits taking property for private parties"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say existing state law already tightly controls eminent domain, and county voters rejected this same measure in 2024."
+sources = ["argument-against"]
+basis = ["eminent domain is already controlled tightly by existing law enacted by the voters in Prop 99 in 2008.", "This same measure (E) was presented to Shasta County voters and rejected by the voters in 2024."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["State law already controls eminent domain", "Voters rejected the same measure in 2024"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means the board of supervisors cannot authorize eminent domain to take property from a private owner for another private party."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["cannot authorize the County"]
+
+[[section.line]]
+text = "A no vote means the board of supervisors will keep its current ability to authorize taking property for another private party."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["will keep its current ability"]
+
+[[question]]
+ask = "What is eminent domain?"
+lines = ["eminent-domain"]
+
+[[question]]
+ask = "Can the county do this today?"
+lines = ["kelo"]
+
+[[question]]
+ask = "Would this stop the county from using eminent domain for public projects?"
+lines = ["change-bar"]
+
+[[question]]
+ask = "What vote does the measure need to pass?"
+lines = ["threshold"]
+
+[[question]]
+ask = "How often has the county taken property to transfer it to another private owner?"
+unanswered = true
