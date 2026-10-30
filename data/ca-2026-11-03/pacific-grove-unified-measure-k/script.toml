@@ -24,8 +24,10 @@
 # neutral sections leave out the oversight and the ban on administrator
 # pay, which they also cite (STANDARD.md 6.3).
 #
-# The list links no argument against Measure K. The no side says so
-# plainly; its section is marked filed = false.
+# The list links no argument against Measure K, but no official document
+# says in words that none was filed. So the no side does not say none was
+# filed: it says none is among the documents gathered (filed = false,
+# STANDARD.md 2.5), as for Livingston Measures T and U.
 
 contest = "ca-2026-11-03-pacific-grove-unified-measure-k"
 template = "measure"
@@ -139,13 +141,13 @@ side = "no"
 filed = false
 
 [[section.line]]
-text = "No argument against Measure K was filed, so the list of local measures from the county shows only the argument in favor of the measure."
+text = "No argument against Measure K appears among the official documents gathered for this video; the county measure list links only the argument in favor."
 sources = ["measure-list"]
 
 [section.line.visual]
 kind = "list"
 source = "measure-list"
-items = ["No argument against was submitted"]
+items = ["No argument against was found"]
 
 [[section]]
 id = "vote"

@@ -2,8 +2,8 @@
 # what it asks and of whom; why the district put it on the ballot (as the
 # impartial analysis states it) and the vote it needs; what would change
 # (the financing district, the rates, how long, where the money goes);
-# the revenue and the spending limit; both sides, neither of which filed
-# an argument; what a vote does.
+# the revenue and the spending limit; both sides, for neither of which an
+# argument was gathered; what a vote does.
 #
 # No place name is narrated (the narrator mispronounces them): the opening
 # says "the voters of this community services district". The card, the
@@ -25,8 +25,10 @@
 # chart shows the highest first-year rate for each class of parcel in the
 # rate and method of apportionment (page 11 of the full text).
 #
-# The list links no argument for or against Measure T: none was filed.
-# Each side says so plainly; both sections are marked filed = false.
+# The list links no argument for or against Measure T, but no official
+# document says in words that none was filed. So the sides do not say
+# none was filed: each says none is among the documents gathered
+# (filed = false, STANDARD.md 2.5), as for Livingston Measures T and U.
 
 contest = "ca-2026-11-03-santa-lucia-csd-measure-t"
 template = "measure"
@@ -145,13 +147,13 @@ side = "yes"
 filed = false
 
 [[section.line]]
-text = "No argument for Measure T was filed, so the list of local measures from the county shows none."
+text = "No argument for Measure T appears among the official documents gathered for this video."
 sources = ["measure-list"]
 
 [section.line.visual]
 kind = "list"
 source = "measure-list"
-items = ["No argument for was submitted"]
+items = ["No argument for was found"]
 
 [[section]]
 id = "no"
@@ -160,13 +162,13 @@ side = "no"
 filed = false
 
 [[section.line]]
-text = "No argument against Measure T was filed, so the list of local measures from the county shows none."
+text = "No argument against Measure T appears among the official documents gathered for this video."
 sources = ["measure-list"]
 
 [section.line.visual]
 kind = "list"
 source = "measure-list"
-items = ["No argument against was submitted"]
+items = ["No argument against was found"]
 
 [[section]]
 id = "vote"

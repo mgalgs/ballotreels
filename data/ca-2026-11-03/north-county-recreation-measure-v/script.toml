@@ -24,8 +24,10 @@
 # space), and leaves out the gym's cost estimate, a figure about the
 # district's money with no budget beside it.
 #
-# The list links no argument against Measure V. The no side says so
-# plainly; its section is marked filed = false.
+# The list links no argument against Measure V, but no official document
+# says in words that none was filed. So the no side does not say none was
+# filed: it says none is among the documents gathered (filed = false,
+# STANDARD.md 2.5), as for Livingston Measures T and U.
 
 contest = "ca-2026-11-03-north-county-recreation-measure-v"
 template = "measure"
@@ -137,13 +139,13 @@ side = "no"
 filed = false
 
 [[section.line]]
-text = "No argument against Measure V was filed, so the list of local measures from the county shows only the argument in favor of the measure."
+text = "No argument against Measure V appears among the official documents gathered for this video; the county list of measures links only the argument in favor."
 sources = ["measure-list"]
 
 [section.line.visual]
 kind = "list"
 source = "measure-list"
-items = ["No argument against was submitted"]
+items = ["No argument against was found"]
 
 [[section]]
 id = "vote"
