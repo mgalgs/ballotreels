@@ -3660,3 +3660,13 @@ source = "ballot-question"
 quote = "raising approximately $10,238,737 annually for nine years"
 amount = 10238737
 period = "per-year"
+
+# City of San Pablo Measure S: no tax rate statement applies; the ballot
+# question (the county's Voter Information Guide page) prints the City's
+# estimate of the program's yearly cost, funded by fees.
+[san-pablo-measure-s]
+source = "ballot-question"
+quote = "requiring City administration estimated to cost approximately $1,080,000 to $2,360,000 annually, funded by annual rental property owner fees"
+amount = 2360000
+period = "per-year"
+direction = "cost"
