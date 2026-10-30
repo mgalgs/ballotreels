@@ -1,0 +1,177 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; who placed it and the two-thirds
+# it needs; what the bonds pay for; who repays them; the separate account
+# and yearly report; the tax rate statement's average and highest rates
+# and total repayment; one line per side; what a vote does.
+#
+# No place name is narrated: the opening says "the voters of this city".
+# The card quotes the Registrar-Recorder's list: the city's heading as
+# the title, its vote-passage line as the origin, the ballot question
+# (with its printed name) as the summary. The list prints no yes/no
+# statements; the vote lines take their meanings from the impartial
+# analysis.
+#
+# The bonds are repaid by a tax on property in the city, not from the
+# City's budget, so rule 6.5's scale does not apply, as for the other
+# city bond measures. The argument's street ratings and repair costs are
+# the supporters' own, so the neutral sections leave them out
+# (STANDARD.md 6.3).
+# The list says no argument against was submitted: the no side says so
+# plainly, citing it, and is marked filed = false.
+
+contest = "ca-2026-11-03-south-pasadena-measure-sos"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "SOS"
+title = "CITY OF SOUTH PASADENA"
+origin = "VOTE PASSAGE – 2/3 Votes (66.6% of Votes)"
+summary = "SOUTH PASADENA STREET/ROAD/POTHOLE REPAIR, 9-1-1 SAFETY MEASURE. To fix damaged local streets/roads/sidewalks, repair potholes, address speeding/unsafe driving; improve emergency evacuation routes; upgrade/repair storm drains to prevent flooding, prevent cuts to City services; shall the City of South Pasadena measure authorizing $80,000,000 in bonds at legal rates, levying on average $33 per $100,000 of assessed valuation, generating approximately $4,400,000 annually while bonds are outstanding be adopted, requiring public spending disclosure, audits, all funds spent locally?"
+
+[[section]]
+id = "what"
+heading = "Measure SOS"
+
+[[section.line]]
+text = "Measure SOS asks the voters of this city whether to issue $80 million in bonds to repair streets, sidewalks and storm drains."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["$80,000,000 in bonds"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The City Council placed Measure SOS on the ballot, and it needs two-thirds of voters to pass."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "uses"
+text = "The bonds could pay for streets, sidewalks, curbs and gutters, evacuation routes and storm drains."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "storm-drain-street"
+
+[[section.line]]
+id = "who-repays"
+text = "Property owners in the city would repay the bonds through a tax based on assessed value."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "homestead"
+
+[[section.line]]
+id = "accountability"
+text = "The money must stay in a separate account, with a yearly public report on how it is spent."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "public-funds-locked"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax rate statement says"
+
+[[section.line]]
+id = "rate"
+text = "The tax rate statement estimates an average tax of $32.33 per $100,000 of assessed value, and at most $54.64, through 2063."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section.line]]
+text = "The statement estimates the total to repay, with interest, at about $154.8 million."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "bars"
+title = "Measure SOS bonds, in millions of dollars"
+source = "tax-statement"
+unit = ""
+labels = ["Bonds issued", "Total to repay"]
+values = [80, 154.8]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say delaying maintenance makes repairs more expensive, so local streets should be fixed before they fail."
+sources = ["argument-for"]
+basis = ["Delaying maintenance makes repairs more expensive.", "That's why Measure SOS focuses on repairing streets before they fail."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Delayed repairs cost more", "Fix streets before they fail"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure SOS was submitted, according to the county Registrar's official list of ballot measures."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote allows the city to issue the bonds for these repairs."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["$80,000,000 in bonds"]
+
+[[section.line]]
+text = "A no vote is against issuing the bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["$80,000,000 in bonds"]
+
+[[question]]
+ask = "Who pays for the bonds?"
+lines = ["who-repays", "rate"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["uses"]
+
+[[question]]
+ask = "How would anyone know how the money is spent?"
+lines = ["accountability"]

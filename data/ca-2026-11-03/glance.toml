@@ -3160,3 +3160,12 @@ status = "none-printed"
 [redondo-beach-measure-art]
 source = "ballot-question"
 status = "none-printed"
+
+# City of South Pasadena Measure SOS: the City's Tax Rate Statement, its
+# total debt service ($154,764,858.10; the quote stops before the cents,
+# which the amount, in whole dollars, leaves out).
+[south-pasadena-measure-sos]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $154,764,858"
+amount = 154764858
+period = "unstated"
