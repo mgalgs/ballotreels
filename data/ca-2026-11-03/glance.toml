@@ -3468,3 +3468,12 @@ source = "ballot-question"
 quote = "thereby indefinitely restoring approximately $700,000 general funds annually"
 amount = 700000
 period = "per-year"
+
+# City of San Gabriel Measure PS: a general tax, so no tax rate statement;
+# the ballot question's figure ($7,100,000) is listed, the impartial
+# analysis's ($7,000,000) being the lower of the two.
+[san-gabriel-measure-ps]
+source = "ballot-question"
+quote = "providing approximately $7,100,000 annually until ended by voters"
+amount = 7100000
+period = "per-year"

@@ -1,0 +1,70 @@
+# Archived sources for City of San Gabriel Measure PS, 2026-11-03 general
+# election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" (sources/county-measure-list-excerpt.txt, the
+# measure's entry) gives its letter, vote threshold and ballot question,
+# which the card quotes, and, on its "Supporters: ... Opponents: ..."
+# line, that the firefighters' and police officers' association
+# presidents filed the argument for and that no argument against was
+# submitted: the no side cites it as the official statement of filing.
+#
+# The City Attorney's impartial analysis, the full text of the ordinance
+# and the argument in favor are the Registrar's copies, from its
+# Interactive Sample Ballot. A sales tax has no tax rate statement; the
+# ballot question and the analysis each give a revenue estimate, and they
+# differ ($7,100,000 and $7,000,000), so the script gives both.
+
+[contest]
+id = "ca-2026-11-03-san-gabriel-measure-ps"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:san_gabriel"
+kind = "measure"
+title = "City of San Gabriel Measure PS: A 1% Sales Tax Until Ended by Voters"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): City of San Gabriel, Measure PS"
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "arguments-filed"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): Measure PS, the supporters who filed its argument for, and \"Opponents: None submitted.\""
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney's Impartial Analysis of Measure PS, City of San Gabriel Public Safety/Local Control Measure, by Martin D. Koczanowicz, Assistant City Attorney, dated August 13, 2026, as printed by the Los Angeles County Registrar-Recorder/County Clerk in its Interactive Sample Ballot"
+credit = "City Attorney's Impartial Analysis of Measure PS"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10915.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Ballot Measure PS, an ordinance imposing a one percent transactions and use tax, codified in Chapter 35 of Title III of the San Gabriel Municipal Code, as printed by the Los Angeles County Registrar-Recorder/County Clerk in its Interactive Sample Ballot"
+credit = "Full Text of Measure PS"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10915.json"
+file = "sources/full-text.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure PS, signed by Philip Apparis, San Gabriel Firefighters Association President, and Tushar Guliani, San Gabriel Police Officers Association President, as printed by the Los Angeles County Registrar-Recorder/County Clerk in its Interactive Sample Ballot (\"No argument against this measure was submitted\")"
+credit = "Argument in favor of Measure PS"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10915.json"
+file = "sources/argument-for.html"
+retrieved = "2026-10-30"

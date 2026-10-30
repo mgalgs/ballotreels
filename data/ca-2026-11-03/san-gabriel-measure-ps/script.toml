@@ -1,0 +1,190 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot and the
+# vote it needs; what would change (who pays and on what, what is not
+# taxed, where the money goes, how long it lasts); the two official
+# revenue estimates; the argument for, and that no argument against was
+# submitted; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card shows the name.
+#
+# Neither the analysis nor the text says what sales tax the City levies
+# today, so the `today` section tells how the measure reached the ballot,
+# as St. Helena S's does.
+#
+# The card quotes the measure's entry in the county's list "Measures
+# Appearing on the Ballot", which prints no yes/no meanings, so the card
+# has no boxes; the vote lines take both meanings from the impartial
+# analysis and highlight the same phrase of the question.
+#
+# Revenue: the ballot question says about $7,100,000 a year and the
+# impartial analysis about $7,000,000; both are given, each attributed,
+# in one line (rule 5b). No archived source states the City's general
+# fund budget, so neither has a scale (STANDARD.md 6.5; left open).
+#
+# The argument for names a second ambulance among its uses; the analysis
+# says the money is not restricted, and the change section says so. The
+# argument's homelessness figure stays in the side (STANDARD.md 6.3) and
+# is not used.
+#
+# Sides: the argument in favor is presented from its text; the county's
+# list says "Opponents: None submitted.", and the no side says so
+# (filed = false).
+
+contest = "ca-2026-11-03-san-gabriel-measure-ps"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "PS"
+title = "CITY OF SAN GABRIEL"
+origin = "VOTE PASSAGE – Majority Vote 50%+1"
+summary = "SAN GABRIEL PUBLIC SAFETY/ LOCAL CONTROL To protect San Gabriel's financial stability; maintain medical 911/police response, fire services; prevent crime; protect drinking water sources; repair streets/potholes; keep public areas safe/clean; maintain safe schools; prepare for/respond to earthquakes, fire/other disasters; retain /attract qualified firefighters; for other general services; shall a measure establishing a 1¢ sales tax providing approximately $7,100,000 annually until ended by voters, requiring audits, spending disclosure, funds locally controlled, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure PS"
+
+[[section.line]]
+text = "Measure PS asks the voters of this city whether to add a 1 percent sales tax for general city services."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establishing a 1¢ sales tax"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The City Council placed Measure PS on the ballot, and it needs a simple majority to pass."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "who-pays"
+text = "The tax would add 1 percent to the price of most goods sold in the city, paid by residents and visitors alike."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section.line]]
+id = "exempt"
+text = "Groceries and prescription medicine would not be taxed."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "grocery-bag"
+
+[[section.line]]
+id = "uses"
+text = "The money would go into the general fund for any lawful city purpose, and that fund is audited every year."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+id = "end"
+text = "The tax would have no end date, unless voters repeal it at a later election."
+sources = ["text", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+id = "revenue"
+text = "The ballot question estimates about $7.1 million a year, and the impartial analysis estimates about $7 million a year."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the city has only one ambulance, and the measure would pay for a second, more firefighters and paramedics, all spent locally."
+sources = ["argument-for"]
+basis = ["San Gabriel only has one ambulance to respond to 911 calls.", "a second ambulance, more firefighters, and paramedics to address our residents' medical emergency needs", "By law, every penny raised by measure PS must be spent in San Gabriel."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["A second ambulance", "Every penny spent locally"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The official county list of measures for this election says that no argument against Measure PS was submitted, by any group or person."
+sources = ["arguments-filed"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments-filed"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves the 1 percent sales tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establishing a 1¢ sales tax"]
+
+[[section.line]]
+text = "A no vote is a vote against the 1 percent sales tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["establishing a 1¢ sales tax"]
+
+[[question]]
+ask = "What would be taxed, and what would not?"
+lines = ["who-pays", "exempt"]
+
+[[question]]
+ask = "Must the money go to ambulances and firefighters?"
+lines = ["uses"]
+
+[[question]]
+ask = "When would the tax end?"
+lines = ["end"]
+
+[[question]]
+ask = "How big is $7 million a year next to the city budget?"
+unanswered = true
