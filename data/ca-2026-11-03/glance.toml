@@ -3328,11 +3328,10 @@ source = "ballot-question"
 status = "none-printed"
 
 # City of Santa Monica Measure TT: keeps the hotel tax's existing rates;
-# the Los Angeles County Registrar-Recorder/County Clerk's list prints no
-# revenue or cost estimate, and no impartial analysis was among the
-# documents gathered.
+# the City Attorney's impartial analysis gives no revenue or cost
+# estimate.
 [santa-monica-measure-tt]
-source = "ballot-question"
+source = "impartial-analysis"
 status = "none-printed"
 
 # City of Hermosa Beach Measure HB: a general sales tax, so no tax rate
