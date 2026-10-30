@@ -1,11 +1,11 @@
 # Recipe E, about 60 seconds, distilled: one claim per line. The chain:
 # what it asks and whose measure it is; that the city charges no hotel
-# tax today, from the ordinance's recitals; what would change, from the
-# ordinance (who pays and on what, online bookings, who is exempt, where
-# the money goes, how long it lasts, what the Council may change); the
-# revenue estimate with the staff report's own comparison to the General
-# Fund; who filed the argument for, and that none was submitted against;
-# what a vote does.
+# tax today; what would change, from the City Attorney's impartial
+# analysis and the ordinance (who pays and on what, online bookings, who
+# is exempt, where the money goes, how long it lasts, what the Council
+# may change); the revenue estimate with the staff report's own
+# comparison to the General Fund; the argument for, and that none was
+# submitted against; what a vote does.
 #
 # No place name is narrated (the narrator mispronounces them): the
 # opening says "the voters of this city". The card shows the name.
@@ -17,20 +17,19 @@
 # card; the narration says once that the money may go to any purpose, as
 # the ordinance says the list is only illustrative.
 #
-# The $751,315 a year is the ballot question's estimate, and the staff
+# The $751,315 a year is the City's estimate as the impartial analysis
+# reports it (the ballot question states it too), and the staff
 # report's Fiscal Impact section states its scale in words, "approximately
 # 1.69 percent of the City's reported General Fund", which the fiscal line
-# quotes (STANDARD.md 6.5). The staff report is cited for nothing else
-# but the plain fact, in its executive summary, that the City levies no
-# such tax today; its reasons for the tax are not used.
+# quotes (STANDARD.md 6.5). The staff report is cited for nothing else;
+# its reasons for the tax are not used.
 #
-# Sides: the county's list names four supporters who filed the argument
-# for (a former treasurer, a board member, a business owner and one
-# other) and says "Opponents: None submitted." The argument for's text
-# could not be found: its line says only who filed it and that its text
-# was not gathered, nothing reconstructed. The no side says that none was
-# submitted. filed = false on both (neither has text to quote as a
-# `basis`); word counts kept within 5%.
+# Sides: the yes side comes from the argument in favor filed by the four
+# supporters the county's list names, with its basis: hotel and motel
+# visitors use city streets and services without paying for them, and
+# residents would not pay this tax. The list and the sample ballot say no
+# argument against was submitted, so the no side says so (filed = false);
+# word counts kept within 5%.
 
 contest = "ca-2026-11-03-lynwood-measure-l"
 template = "measure"
@@ -64,7 +63,7 @@ heading = "Today"
 [[section.line]]
 id = "today-none"
 text = "Today, the city does not tax hotel and motel stays."
-sources = ["ordinance", "staff-report"]
+sources = ["impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -77,7 +76,7 @@ heading = "What would change"
 [[section.line]]
 id = "rate"
 text = "Guests staying 30 days or less would pay 12 percent of what they pay for the room."
-sources = ["ordinance", "ballot-question"]
+sources = ["impartial-analysis", "ordinance", "ballot-question"]
 
 [section.line.visual]
 kind = "illustration"
@@ -86,7 +85,7 @@ name = "hotel-front-desk"
 [[section.line]]
 id = "online"
 text = "The tax would apply to the full price, including fees, and online travel companies would collect it too."
-sources = ["ordinance"]
+sources = ["impartial-analysis", "ordinance"]
 
 [section.line.visual]
 kind = "illustration"
@@ -95,7 +94,7 @@ name = "online-booking-laptop"
 [[section.line]]
 id = "exempt"
 text = "Government travelers, emergency shelter stays and residents displaced from their homes by a disaster would be exempt."
-sources = ["ordinance"]
+sources = ["impartial-analysis", "ordinance"]
 
 [section.line.visual]
 kind = "illustration"
@@ -104,7 +103,7 @@ name = "fire-damaged-lot"
 [[section.line]]
 id = "uses"
 text = "The money would go to the general fund for any city purpose, with yearly audits, until voters repeal the tax."
-sources = ["ordinance", "ballot-question"]
+sources = ["impartial-analysis", "ordinance", "ballot-question"]
 
 [section.line.visual]
 kind = "illustration"
@@ -113,7 +112,7 @@ name = "recurring-review"
 [[section.line]]
 id = "council-rate"
 text = "The City Council could lower the rate and raise it again, but never above 12 percent without another vote."
-sources = ["ordinance"]
+sources = ["impartial-analysis", "ordinance"]
 
 [section.line.visual]
 kind = "illustration"
@@ -125,8 +124,8 @@ heading = "What it would raise"
 
 [[section.line]]
 id = "revenue"
-text = "The ballot question estimates about $751,315 a year, which the city staff report puts at approximately 1.69 percent of the general fund."
-sources = ["ballot-question", "staff-report"]
+text = "The impartial analysis says the city estimates about $751,315 a year, which the city staff report puts at approximately 1.69 percent of the general fund."
+sources = ["impartial-analysis", "staff-report"]
 
 [section.line.visual]
 kind = "illustration"
@@ -136,16 +135,17 @@ name = "special-tax"
 id = "yes"
 heading = "Why some vote yes"
 side = "yes"
-filed = false
 
 [[section.line]]
-text = "A former treasurer, a board member, a business owner and one other person filed an argument for Measure L; its text was not gathered."
-sources = ["arguments-filed"]
+id = "yes-case"
+text = "Supporters say hotel and motel visitors use city streets and services without paying for them, and residents would not pay this tax."
+sources = ["argument-for"]
+basis = ["People who stay in motels and hotels use our streets, public safety services, and community facilities without paying for them.", "This is NOT a tax on Lynwood residents."]
 
 [section.line.visual]
 kind = "list"
-source = "arguments-filed"
-items = ["Argument for filed; text not gathered"]
+source = "argument-for"
+items = ["Visitors use services without paying", "Not a tax on residents"]
 
 [[section]]
 id = "no"
@@ -199,3 +199,7 @@ lines = ["uses"]
 [[question]]
 ask = "How big is the revenue next to the city budget?"
 lines = ["revenue"]
+
+[[question]]
+ask = "What do the supporters argue?"
+lines = ["yes-case"]
