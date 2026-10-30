@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 79.64,
+  "seconds": 85.86,
   "phrases": [
     {
       "text": "Measure W asks the voters of this high school district whether to levy a parcel tax of $168 a parcel for eight years, beginning with the 2027-2028 fiscal year.",
@@ -39,24 +39,24 @@
       "end": 58.6
     },
     {
-      "text": "No argument for Measure W appears among the official documents gathered for this video.",
+      "text": "Supporters say the tax protects the quality of education after years of inadequate state funding, and without it, cuts to programs and teachers continue.",
       "start": 59.26,
-      "end": 64.84
+      "end": 68.86
     },
     {
-      "text": "No argument against Measure W appears among the official documents gathered for this video.",
-      "start": 65.5,
-      "end": 71.33
+      "text": "Opponents say the district has a spending problem, not a revenue problem, and is back with a bigger tax after voters rejected one last year.",
+      "start": 69.52,
+      "end": 77.99
     },
     {
       "text": "A yes vote levies the $168 parcel tax for eight years.",
-      "start": 71.99,
-      "end": 76.85
+      "start": 78.65,
+      "end": 83.07
     },
     {
       "text": "A no vote does not levy the tax.",
-      "start": 77.51,
-      "end": 79.61
+      "start": 83.73,
+      "end": 85.83
     }
   ],
   "inputs": {
@@ -68,8 +68,8 @@
       "It could not pay administrators' salaries or benefits, and a citizens' oversight committee would report yearly on spending.",
       "Owners aged 65 or older who live in their home could apply for an exemption, and so could some residents with disabilities.",
       "The ballot question says the tax would provide $6 million a year in local school funding.",
-      "No argument for Measure W appears among the official documents gathered for this video.",
-      "No argument against Measure W appears among the official documents gathered for this video.",
+      "Supporters say the tax protects the quality of education after years of inadequate state funding, and without it, cuts to programs and teachers continue.",
+      "Opponents say the district has a spending problem, not a revenue problem, and is back with a bigger tax after voters rejected one last year.",
       "A yes vote levies the $168 parcel tax for eight years.",
       "A no vote does not levy the tax."
     ],
@@ -205,11 +205,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument for Measure W appears among the official documents gathered for this video."
+        "text": "Supporters say the tax protects the quality of education after years of inadequate state funding, and without it, cuts to programs and teachers continue."
       },
       "bounds": [
         1421520,
-        1556880
+        1653360
       ]
     },
     {
@@ -217,15 +217,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure W appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the tax protects the quality of education after years of inadequate state funding, and without it, cuts to programs and teachers continue.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument against Measure W appears among the official documents gathered for this video."
+        "text": "Opponents say the district has a spending problem, not a revenue problem, and is back with a bigger tax after voters rejected one last year."
       },
       "bounds": [
-        1571280,
-        1712640
+        1667760,
+        1872480
       ]
     },
     {
@@ -233,15 +233,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure W appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say the district has a spending problem, not a revenue problem, and is back with a bigger tax after voters rejected one last year.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote levies the $168 parcel tax for eight years."
       },
       "bounds": [
-        1727040,
-        1845120
+        1886880,
+        1994400
       ]
     },
     {
@@ -256,14 +256,14 @@
         "text": "A no vote does not levy the tax."
       },
       "bounds": [
-        1859520,
-        1911360
+        2008800,
+        2060640
       ]
     }
   ],
-  "sha256": "2b47136b95870d23d44294797ca26aa7449f7ab471e8fcc00e75ff4b3a734de4",
+  "sha256": "1fcc4ec3a16a0460a4efa2a5a917c58d66b296137e01f3b77f3ffd89ca85349c",
   "take": {
-    "sha256": "77a767166aed83e2e5a4e631c0be2135357b7b3869fba9c415020224fce37d42",
-    "bytes": 3822764
+    "sha256": "e511b6803b57237764f7f0fe40eb11c89fa7ad52833fa5783d4d74a64c9cac6f",
+    "bytes": 4121324
   }
 }

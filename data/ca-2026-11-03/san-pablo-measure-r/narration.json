@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 74.57,
+  "seconds": 82.86,
   "phrases": [
     {
       "text": "Measure R asks the voters of this city whether to add a sales tax of one-half percent for 5 years, then one-quarter percent for 5 years, after which it ends.",
@@ -39,24 +39,24 @@
       "end": 55.22
     },
     {
-      "text": "No argument against Measure R appears among the official documents gathered for this video.",
+      "text": "Opponents say the ballot question lists popular services to win votes, but the money goes to the general fund, with no guarantee of what is funded.",
       "start": 55.88,
-      "end": 61.48
+      "end": 65.23
     },
     {
-      "text": "No argument for Measure R appears among the official documents gathered for this video.",
-      "start": 62.14,
-      "end": 67.24
+      "text": "Supporters say the temporary tax keeps essential services in place while casino revenue, which pays for most of the general fund of the city, is declining.",
+      "start": 65.89,
+      "end": 75.49
     },
     {
       "text": "A yes vote adds the temporary sales tax for 10 years.",
-      "start": 67.9,
-      "end": 71.51
+      "start": 76.15,
+      "end": 79.8
     },
     {
       "text": "A no vote does not add the tax.",
-      "start": 72.17,
-      "end": 74.54
+      "start": 80.46,
+      "end": 82.83
     }
   ],
   "inputs": {
@@ -68,8 +68,8 @@
       "It is a general tax on retail sales in the city.",
       "Each year, independent auditors for the city would review the tax money, and a committee of at least five residents or local business representatives would review and report on its use.",
       "The ballot question says the tax would raise about $2 million a year at first, then about $1 million a year.",
-      "No argument against Measure R appears among the official documents gathered for this video.",
-      "No argument for Measure R appears among the official documents gathered for this video.",
+      "Opponents say the ballot question lists popular services to win votes, but the money goes to the general fund, with no guarantee of what is funded.",
+      "Supporters say the temporary tax keeps essential services in place while casino revenue, which pays for most of the general fund of the city, is declining.",
       "A yes vote adds the temporary sales tax for 10 years.",
       "A no vote does not add the tax."
     ],
@@ -205,11 +205,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument against Measure R appears among the official documents gathered for this video."
+        "text": "Opponents say the ballot question lists popular services to win votes, but the money goes to the general fund, with no guarantee of what is funded."
       },
       "bounds": [
         1340400,
-        1476240
+        1566240
       ]
     },
     {
@@ -217,15 +217,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure R appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say the ballot question lists popular services to win votes, but the money goes to the general fund, with no guarantee of what is funded.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument for Measure R appears among the official documents gathered for this video."
+        "text": "Supporters say the temporary tax keeps essential services in place while casino revenue, which pays for most of the general fund of the city, is declining."
       },
       "bounds": [
-        1490640,
-        1614480
+        1580640,
+        1812480
       ]
     },
     {
@@ -233,15 +233,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure R appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the temporary tax keeps essential services in place while casino revenue, which pays for most of the general fund of the city, is declining.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote adds the temporary sales tax for 10 years."
       },
       "bounds": [
-        1628880,
-        1716960
+        1826880,
+        1915920
       ]
     },
     {
@@ -256,14 +256,14 @@
         "text": "A no vote does not add the tax."
       },
       "bounds": [
-        1731360,
-        1789680
+        1930320,
+        1988640
       ]
     }
   ],
-  "sha256": "7abc96cc6c692a7f01ae58e0789114401c3c61fd363401abacbaf75fe8615748",
+  "sha256": "9e04e68a30147af301128ec3da8d9b811523a6ecdbe0e4fc73b8f81bc8519045",
   "take": {
-    "sha256": "f4b15292f05d07f8a38cb9c1b498e8054e555ef6c2fc103ae81d080a7c534aa2",
-    "bytes": 3579404
+    "sha256": "9df446ef0525346e59e731b02a45501e67102db9aef2aba17009ebac61f082b4",
+    "bytes": 3977324
   }
 }

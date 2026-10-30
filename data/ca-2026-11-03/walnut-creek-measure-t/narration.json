@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 76.7,
+  "seconds": 84.8,
   "phrases": [
     {
       "text": "Measure T asks the voters of this city whether the office of city treasurer should be appointed instead of elected.",
@@ -44,24 +44,24 @@
       "end": 58.66
     },
     {
-      "text": "No argument for Measure T appears among the official documents gathered for this video.",
+      "text": "Supporters say the only requirement to be elected treasurer is being a registered voter, and appointment would make sure future treasurers are qualified.",
       "start": 59.32,
-      "end": 64.3
+      "end": 68.6
     },
     {
-      "text": "No argument against Measure T appears among the official documents gathered for this video.",
-      "start": 64.96,
-      "end": 69.86
+      "text": "Opponents say voters would give up their right to elect the treasurer, and an appointed one could be replaced for raising unwelcome concerns.",
+      "start": 69.26,
+      "end": 77.57
     },
     {
       "text": "A yes vote makes the office of city treasurer appointed.",
-      "start": 70.52,
-      "end": 73.69
+      "start": 78.23,
+      "end": 81.79
     },
     {
       "text": "A no vote keeps the office elected.",
-      "start": 74.35,
-      "end": 76.67
+      "start": 82.45,
+      "end": 84.77
     }
   ],
   "inputs": {
@@ -74,8 +74,8 @@
       "A city staff report says voters turned down making the office appointed in 1956 and again in 1996.",
       "Measure T needs a majority of the vote to pass.",
       "Neither the resolution placing Measure T on the ballot nor the staff report puts a dollar figure on what the measure would cost or save.",
-      "No argument for Measure T appears among the official documents gathered for this video.",
-      "No argument against Measure T appears among the official documents gathered for this video.",
+      "Supporters say the only requirement to be elected treasurer is being a registered voter, and appointment would make sure future treasurers are qualified.",
+      "Opponents say voters would give up their right to elect the treasurer, and an appointed one could be replaced for raising unwelcome concerns.",
       "A yes vote makes the office of city treasurer appointed.",
       "A no vote keeps the office elected."
     ],
@@ -227,11 +227,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument for Measure T appears among the official documents gathered for this video."
+        "text": "Supporters say the only requirement to be elected treasurer is being a registered voter, and appointment would make sure future treasurers are qualified."
       },
       "bounds": [
         1422960,
-        1543920
+        1647120
       ]
     },
     {
@@ -239,15 +239,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure T appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the only requirement to be elected treasurer is being a registered voter, and appointment would make sure future treasurers are qualified.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument against Measure T appears among the official documents gathered for this video."
+        "text": "Opponents say voters would give up their right to elect the treasurer, and an appointed one could be replaced for raising unwelcome concerns."
       },
       "bounds": [
-        1558320,
-        1677360
+        1661520,
+        1862400
       ]
     },
     {
@@ -255,15 +255,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure T appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say voters would give up their right to elect the treasurer, and an appointed one could be replaced for raising unwelcome concerns.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote makes the office of city treasurer appointed."
       },
       "bounds": [
-        1691760,
-        1769280
+        1876800,
+        1963680
       ]
     },
     {
@@ -278,14 +278,14 @@
         "text": "A no vote keeps the office elected."
       },
       "bounds": [
-        1783680,
-        1840800
+        1978080,
+        2035200
       ]
     }
   ],
-  "sha256": "038c6c187ccd36dc13d459118f3ec8dd25d961684b100dc615439f2ea5d8d09c",
+  "sha256": "f2d34f8739425a856b2d71efce7e78b520a750a6a54c3e8f53af24c1ce2b594e",
   "take": {
-    "sha256": "f840ed32d859e4e48cf1fabeeb1bbfa776764b6a3fc3670a64bd03c66c19e0b1",
-    "bytes": 3681644
+    "sha256": "12903380d228fda2cadbf0430aad80e07c3bfa7cefc5ef5551fe2418e37a6ef6",
+    "bytes": 4070444
   }
 }
