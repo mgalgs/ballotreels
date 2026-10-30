@@ -1,0 +1,75 @@
+# Archived sources for Lost Hills Union School District Measure E,
+# 2026-11-03 general election (sources/county-sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Kern County Elections posts each local measure's filed documents on its
+# page "November 3, 2026, General Election", which lists them client-side,
+# so no document has its own recoverable URL: every source here cites that
+# page. The ballot question is quoted from Exhibit A of the measure's full
+# text as the county posts it (the same words open Exhibit B, the full
+# text of the bond proposition); the county's letter list prints no
+# ballot question. County Counsel's impartial analysis is the measure's
+# neutral explanation, the kind a state's attorney general's explanatory
+# statement is, and gives the district's tax rate estimate; the county
+# posts no separate tax rate statement for Measure E.
+#
+# The argument in favor is a scan with no text layer, and leaves the
+# measure's letter blank (Measure " "); the passages cited were typed from
+# the page images into sources/county-argument-for-transcription.txt,
+# which the source points at. The county posts no argument against and no
+# rebuttals, but no official document says in words that none was filed.
+# The district's resolution (sources/county-resolution.pdf, a scan) is not
+# cited: the full text gives the question and the projects.
+
+[contest]
+id = "ca-2026-11-03-lost-hills-union-measure-e"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:lost_hills_union_elementary_school_district"
+kind = "measure"
+title = "Lost Hills Union School District Measure E: $9 Million School Repair Bond"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Lost Hills Union School District, Measure E Full Measure Text: Exhibit A, the ballot question, page A-1, as posted by Kern County Elections"
+credit = "Measure E Full Text, Lost Hills Union School District"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-full-text.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Kern County Counsel, Impartial Analysis by County Counsel, Lost Hills Union School District Measure E, as posted by Kern County Elections"
+credit = "Impartial Analysis, Kern County Counsel"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Lost Hills Union School District, Full Text Ballot Proposition of the Lost Hills Union School District Bond Measure Election November 3, 2026 (Exhibit B, pages B-1 to B-4), as posted by Kern County Elections"
+credit = "Full Text Ballot Proposition, Lost Hills Union School District"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-full-text.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "Kern County Elections, Measure Letter Designations for the November 3, 2026, Consolidated General Election, dated August 12, 2026"
+credit = "Measure Letter Designations, Kern County Elections"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-measure-list.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure E, as filed with Kern County Elections (printed with the letter left blank, as Measure \" \"; transcribed from the scan)"
+credit = "Argument in favor, Measure E"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-argument-for-transcription.txt"
+retrieved = "2026-10-29"
