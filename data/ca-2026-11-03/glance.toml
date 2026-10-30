@@ -2932,3 +2932,11 @@ source = "measure-list"
 quote = "raising approximately $300,000.00 per year"
 amount = 300000
 period = "per-year"
+
+# Columbia Elementary School District Measure D: the district's tax rate
+# statement's estimate of the total debt service.
+[columbia-elementary-measure-d]
+source = "tax-statement"
+quote = "required to be repaid if all the bonds are issued and sold will be approximately $23,975,000."
+amount = 23975000
+period = "unstated"
