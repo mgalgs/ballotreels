@@ -3,13 +3,20 @@
 # cited by script.toml. `kind` must be one the standard allows
 # (docs/STANDARD.md, section 1).
 #
-# The Contra Costa County voter guide could not be fetched, so no
-# impartial analysis, argument or rebuttal was archived, and it is not
-# known whether any argument was filed. The one official text archived is
-# the Governing Board's executed Resolution No. 26-27-01 (adopted August
+# Contra Costa County Elections' page for Measure W
+# (sources/county-page.txt, read in a browser, since contracostavote.gov
+# answers scripted fetches with a bot challenge) prints the ballot
+# question, County Counsel's impartial analysis, the argument in favor,
+# the argument against and both rebuttals. County Counsel's impartial
+# analysis is the measure's neutral explanation, the kind a state's
+# attorney general's explanatory statement is. The county's question is
+# word for word the one the card quotes from Exhibit B.
+#
+# The District's official text archived is the Governing Board's executed Resolution No. 26-27-01 (adopted August
 # 5, 2026), whose Exhibit A is the full text of the measure and Exhibit B
 # its ballot question. The card quotes Exhibit B, and every neutral line
-# rests on the resolution. The District's "Measure W Resolution" web page
+# rests on the resolution, with the impartial analysis cited beside the
+# lines it supports. The District's "Measure W Resolution" web page
 # (sources/district-measure-w-resolution-page.html) prints the same
 # question and part of Exhibit A; it is the District's own material and
 # is not cited, since the scan is readable. A parcel tax has no tax rate
@@ -26,6 +33,10 @@ election = "ca-2026-11-03"
 division = "ocd-division/country:us/state:ca/school_district:acalanes_union_high_school_district"
 kind = "measure"
 title = "Acalanes Union High School District Measure W: Parcel Tax for Educational Programs"
+
+[[contest.correction]]
+date = "2026-10-30"
+note = "The video now gives the arguments for and against printed by the county, which it had said were not among the documents gathered."
 
 [[source]]
 id = "ballot-question"
@@ -44,3 +55,30 @@ credit = "Full Text of Measure, Resolution No. 26-27-01"
 url = "https://resources.finalsite.net/images/v1786478331/acalanesk12caus/cunolukbgbeg5b2ngpyb/ExecutedFinalResolutionAug5_2026.pdf"
 file = "sources/resolution-26-27-01-transcription.txt"
 retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "County Counsel's Impartial Analysis of Measure W, Contra Costa County Elections, Measure W, November 3, 2026 General Election"
+credit = "Impartial Analysis, Contra Costa County Counsel"
+url = "https://www.contracostavote.gov/m9002-en-2/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure W, Contra Costa County Elections, Measure W, November 3, 2026 General Election"
+credit = "Argument in favor, Contra Costa County Elections"
+url = "https://www.contracostavote.gov/m9002-en-2/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure W, Contra Costa County Elections, Measure W, November 3, 2026 General Election"
+credit = "Argument against, Contra Costa County Elections"
+url = "https://www.contracostavote.gov/m9002-en-2/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
