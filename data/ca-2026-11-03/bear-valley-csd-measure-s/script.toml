@@ -1,0 +1,208 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; how a citizens' initiative reached the ballot;
+# the 1997 tax and what it pays for; what the measure would do, its
+# stated purpose and the vote it needs; no cost estimate; one line per
+# side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the opening
+# says "the voters of this community services district". The card, the
+# title and the "Only voters in ..." line carry the names. "Counsel" is
+# heard as "Council" (standard/speakability.txt), so the narration does
+# not say it. The 1997 tax's old name ("Measure A") is not said either,
+# so it is not taken for a measure on this ballot.
+#
+# The card quotes the question from the board's Resolution No. 26-51,
+# which prints no yes and no sentences, so the vote lines take their
+# meaning from the impartial analysis's own "Yes" and "No" sentences and
+# both highlight the question's subject. The question itself says the
+# repeal is "to pave a path for an updated and modernized special tax
+# measure", and the impartial analysis says the same of the initiative,
+# so that purpose is told once in "change", as the measure's own (STANDARD.md
+# 6.2); what such a tax would include, and when, is the supporters'
+# and stays in their side.
+#
+# No official source states the tax's amount or what it raises: the $80 a
+# year is in both arguments and the $288,000 a year is the opponents'. So
+# each stays in its side (STANDARD.md 6.3), and the fiscal line says the
+# impartial analysis gives no cost estimate. The opponents' line gives the
+# revenue loss without its dollar figure: no official source states the
+# district's budget, which the figure would need beside it (STANDARD.md
+# 6.5); their own argument's budget figures are not an official source
+# for it.
+#
+# Measure R, on the same ballot, repeals the district's water rate
+# increases; it is a separate measure with its own sides and is not
+# mentioned here.
+
+contest = "ca-2026-11-03-bear-valley-csd-measure-s"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "S"
+title = "RESOLUTION NO. 26-51"
+origin = "OF THE BEAR VALLEY COMMUNITY SERVICES DISTRICT BOARD OF DIRECTORS"
+summary = "Shall the Bear Valley Community Services District adopt an ordinance of the Board of Directors of the Bear Valley Community Services District Repeal of Legacy Measure A (1997) annual special tax for police and dispatch salaries and benefits in order to pave a path for an updated and modernized special tax measure?"
+
+[[section]]
+id = "what"
+heading = "Measure S"
+
+[[section.line]]
+text = "Measure S asks the voters of this community services district whether to repeal the special tax for police that its voters approved in 1997."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["annual special tax for police and dispatch salaries and benefits"]
+
+[[section]]
+id = "background"
+heading = "How it reached the ballot"
+
+[[section.line]]
+id = "petition"
+text = "Measure S is a citizens' initiative, placed on the ballot by a petition signed by at least 10 percent of the district's registered voters."
+sources = ["impartial-analysis", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "neighborhood-petition"
+
+[[section.line]]
+text = "The board then ordered it put to the voters without changes."
+sources = ["impartial-analysis", "resolution"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "tax-today"
+text = "Since 1997, an annual special tax has paid for the salaries and benefits of the district's police and dispatch staff."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "dispatch-desk"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "repeal"
+text = "Measure S would repeal the 1997 police tax in full."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+id = "purpose"
+text = "The measure's own title says the repeal would pave a path for an updated and modernized special tax measure."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["in order to pave a path for an updated and modernized special tax measure"]
+
+[[section.line]]
+id = "threshold"
+text = "Measure S needs a majority of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+id = "no-estimate"
+text = "The impartial analysis does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the 1997 tax has no citizen oversight or audits, and repeal lets voters decide on one single new police tax."
+sources = ["argument-for"]
+basis = ["The legacy tax measure includes no citizen oversight or fiscal audits or reports.", "Voters will have opportunity to approve or reject ONE SINGLE new police tax when the Board of Directors moves forward to place it on a ballot."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["No citizen oversight or audits today", "One single new police tax for voters"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the district's budgets are audited every year, and repeal means lost revenue each year, forcing added cuts to police service."
+sources = ["argument-against"]
+basis = ["In fact, BVCSD budgets and financial reports are publicly available, transparent, and subject to annual independent audits.", "If the existing tax is repealed, the CSD will lose $288,000 in annual revenue, forcing added reductions in police service."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Budgets already audited every year", "Lost revenue forces police cuts"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote repeals the 1997 special tax for police and dispatch staff."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["annual special tax for police and dispatch salaries and benefits"]
+
+[[section.line]]
+text = "A no vote leaves the 1997 special tax in place."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["annual special tax for police and dispatch salaries and benefits"]
+
+[[question]]
+ask = "Who put this on the ballot?"
+lines = ["petition"]
+
+[[question]]
+ask = "What does the 1997 tax pay for today?"
+lines = ["tax-today"]
+
+[[question]]
+ask = "Why repeal it, if a new tax is wanted?"
+lines = ["purpose"]
+
+[[question]]
+ask = "How much is the tax, and how much does it raise?"
+unanswered = true
+
+[[question]]
+ask = "What vote does the measure need to pass?"
+lines = ["threshold"]
