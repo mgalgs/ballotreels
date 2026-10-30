@@ -457,6 +457,13 @@ BALLOTS: dict[str, Ballot] = {
                          "Local Ballot Measure: AB",
                      "ca-2026-11-03-sausalito-measure-x":
                          "Measure X (2026)",
+                     # Marin special and school district measures from
+                     # local records: each card quotes the ballot question
+                     # from the resolution placing the measure, named as
+                     # headed. Inverness's copy is the draft in the
+                     # District's May 19, 2026 board packet.
+                     "ca-2026-11-03-inverness-pud-measure-aa":
+                         "Resolution 299-2026",
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.
