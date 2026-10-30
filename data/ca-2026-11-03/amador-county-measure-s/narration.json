@@ -1,0 +1,291 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 78.98,
+  "phrases": [
+    {
+      "text": "Measure S asks the voters of this county whether to bring back a vehicle registration fee that pays to remove abandoned vehicles.",
+      "start": 0.03,
+      "end": 8.16
+    },
+    {
+      "text": "Since 1991, a county authority has removed abandoned and wrecked vehicles from public and private property, cities included.",
+      "start": 8.82,
+      "end": 17.51
+    },
+    {
+      "text": "Its only funding was a yearly fee on each vehicle registered in the county, which had to be renewed every 10 years.",
+      "start": 18.17,
+      "end": 25.43
+    },
+    {
+      "text": "Voters renewed the fee in 2012, then turned it down in 2022.",
+      "start": 26.09,
+      "end": 30.96
+    },
+    {
+      "text": "Measure S would bring the fee back for 10 years: $1 a vehicle, and $3 for certain commercial vehicles.",
+      "start": 31.62,
+      "end": 38.87
+    },
+    {
+      "text": "The money could pay only for removing abandoned vehicles, and the State Controller would review the program every year.",
+      "start": 39.53,
+      "end": 46.18
+    },
+    {
+      "text": "Measure S needs two-thirds of the vote to pass.",
+      "start": 46.84,
+      "end": 49.85
+    },
+    {
+      "text": "The ballot question estimates the fee would raise about $55,000 a year.",
+      "start": 50.51,
+      "end": 55.35
+    },
+    {
+      "text": "No argument against Measure S was submitted: the county ballot question page lists its opponents as none submitted.",
+      "start": 56.01,
+      "end": 63.87
+    },
+    {
+      "text": "Supporters say abandoned vehicles cause blight and hazards, and without the fee, the program's reserves would run out.",
+      "start": 64.53,
+      "end": 71.93
+    },
+    {
+      "text": "A yes vote brings back the fee for 10 years.",
+      "start": 72.59,
+      "end": 75.56
+    },
+    {
+      "text": "A no vote means the fee is not collected.",
+      "start": 76.22,
+      "end": 78.95
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure S asks the voters of this county whether to bring back a vehicle registration fee that pays to remove abandoned vehicles.",
+      "Since 1991, a county authority has removed abandoned and wrecked vehicles from public and private property, cities included.",
+      "Its only funding was a yearly fee on each vehicle registered in the county, which had to be renewed every 10 years.",
+      "Voters renewed the fee in 2012, then turned it down in 2022.",
+      "Measure S would bring the fee back for 10 years: $1 a vehicle, and $3 for certain commercial vehicles.",
+      "The money could pay only for removing abandoned vehicles, and the State Controller would review the program every year.",
+      "Measure S needs two-thirds of the vote to pass.",
+      "The ballot question estimates the fee would raise about $55,000 a year.",
+      "No argument against Measure S was submitted: the county ballot question page lists its opponents as none submitted.",
+      "Supporters say abandoned vehicles cause blight and hazards, and without the fee, the program's reserves would run out.",
+      "A yes vote brings back the fee for 10 years.",
+      "A no vote means the fee is not collected."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure S asks the voters of this county whether to bring back a vehicle registration fee that pays to remove abandoned vehicles."
+      },
+      "bounds": [
+        0,
+        196560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure S asks the voters of this county whether to bring back a vehicle registration fee that pays to remove abandoned vehicles.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Since 1991, a county authority has removed abandoned and wrecked vehicles from public and private property, cities included."
+      },
+      "bounds": [
+        210960,
+        420960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Since 1991, a county authority has removed abandoned and wrecked vehicles from public and private property, cities included.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Its only funding was a yearly fee on each vehicle registered in the county, which had to be renewed every 10 years."
+      },
+      "bounds": [
+        435360,
+        611040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Its only funding was a yearly fee on each vehicle registered in the county, which had to be renewed every 10 years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Voters renewed the fee in 2012, then turned it down in 2022."
+      },
+      "bounds": [
+        625440,
+        743760
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Voters renewed the fee in 2012, then turned it down in 2022.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure S would bring the fee back for 10 years: $1 a vehicle, and $3 for certain commercial vehicles."
+      },
+      "bounds": [
+        758160,
+        933600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure S would bring the fee back for 10 years: $1 a vehicle, and $3 for certain commercial vehicles.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money could pay only for removing abandoned vehicles, and the State Controller would review the program every year."
+      },
+      "bounds": [
+        948000,
+        1109040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money could pay only for removing abandoned vehicles, and the State Controller would review the program every year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure S needs two-thirds of the vote to pass."
+      },
+      "bounds": [
+        1123440,
+        1197120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure S needs two-thirds of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The ballot question estimates the fee would raise about $55,000 a year."
+      },
+      "bounds": [
+        1211520,
+        1329120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The ballot question estimates the fee would raise about $55,000 a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument against Measure S was submitted: the county ballot question page lists its opponents as none submitted."
+      },
+      "bounds": [
+        1343520,
+        1533600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure S was submitted: the county ballot question page lists its opponents as none submitted.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say abandoned vehicles cause blight and hazards, and without the fee, the program's reserves would run out."
+      },
+      "bounds": [
+        1548000,
+        1727040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say abandoned vehicles cause blight and hazards, and without the fee, the program's reserves would run out.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote brings back the fee for 10 years."
+      },
+      "bounds": [
+        1741440,
+        1814160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote brings back the fee for 10 years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote means the fee is not collected."
+      },
+      "bounds": [
+        1828560,
+        1895520
+      ]
+    }
+  ],
+  "sha256": "c587cda249cef7d7c3041b899998b8023393d9c6e34e40529fe9d4137a41f612",
+  "take": {
+    "sha256": "162f18b97d513b60cbac729a484690b7a4b5604bec3530a6b8068a731be03edd",
+    "bytes": 3791084
+  }
+}
