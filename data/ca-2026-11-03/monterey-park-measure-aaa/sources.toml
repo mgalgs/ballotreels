@@ -1,0 +1,69 @@
+# Archived sources for City of Monterey Park Measure AAA, 2026-11-03
+# general election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" is the authority for the letter and the ballot
+# question, quoted on the card; its "Opponents: None submitted." is the
+# official statement that no argument against was filed (`measure-list`).
+# The City Attorney's impartial analysis and the argument in favor are
+# the City's posted copies, drafted before the letter was assigned
+# ("Measure XX"); the argument is signed by the five Council members the
+# list names as supporters. The impartial analysis is the measure's
+# neutral explanation, the kind a state's attorney general's explanatory
+# statement is, and gives the revenue estimate. The full text is the
+# Registrar's copy from its Interactive Sample Ballot. Resolution No.
+# 2026-R57 carries the same text and is not cited.
+
+[contest]
+id = "ca-2026-11-03-monterey-park-measure-aaa"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:monterey_park"
+kind = "measure"
+title = "City of Monterey Park Measure AAA: Raising the Hotel Tax to 14% and the Short-Term Rental Tax to 16%"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 Statewide General Election: City of Monterey Park Measure AAA"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "measure-list"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 Statewide General Election: City of Monterey Park Measure AAA, supporters and opponents who filed arguments"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney, City of Monterey Park, City Attorney's Impartial Analysis, Transient Occupancy Tax, by Karl H. Berger"
+credit = "Impartial Analysis of Measure AAA, City Attorney of Monterey Park"
+url = "https://www.montereypark.ca.gov/DocumentCenter/View/19364/MP---TOT-Proposition-City-Attorney-Impartial-Analysis-JV-9-July-2026"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "full-text"
+kind = "official-text"
+publisher = "City of Monterey Park, an ordinance increasing the City's transient occupancy tax, Full Text of Ballot Measure AAA as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Full Text of Measure AAA, City of Monterey Park"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10909.json"
+file = "sources/full-text.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure AAA (headed \"Vote Yes on Measure XX\"), signed by Mayor Henry Lo, Mayor Pro Tem Jose Sanchez, and Councilmembers Thomas Wong, Vinh Ngo and Elizabeth Yang, as filed with the City Clerk of the City of Monterey Park"
+credit = "Argument in Favor of Measure AAA"
+url = "https://www.montereypark.ca.gov/DocumentCenter/View/19419/Revised---Measure-XX-will-enhance-our-quality-of-life..."
+file = "sources/argument-for.pdf"
+retrieved = "2026-10-30"
