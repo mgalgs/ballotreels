@@ -89,7 +89,7 @@ name = "sales-receipt"
 
 [[section.line]]
 id = "split"
-text = "Half the money would go to the regional park and open space district, and half to the Board of Supervisors."
+text = "Half the money would go to the regional park and open space district, and half would be distributed by the Board of Supervisors."
 sources = ["text"]
 
 [section.line.visual]
@@ -97,7 +97,7 @@ kind = "bars"
 title = "Shares of the Measure B tax money"
 source = "text"
 unit = "%"
-labels = ["Regional Park and Open Space District", "Board of Supervisors"]
+labels = ["Regional Park and Open Space District", "Distributed by the Board of Supervisors"]
 values = [50, 50]
 
 [[section.line]]
@@ -111,7 +111,7 @@ name = "hillside-brush-clearing"
 
 [[section.line]]
 id = "oversight"
-text = "A committee of nine residents would review the spending each year."
+text = "A committee of nine residents would review the spending each year, and its findings would go into the county auditor-controller's annual audits."
 sources = ["text"]
 
 [section.line.visual]
