@@ -49,3 +49,4 @@
 \bCeres\b | the city name "Ceres" is heard as "series" | name it another way ("this city"); the card and title show its name
 \bPatterson\b | the city name "Patterson" is transcribed as "Paterson" | name it another way ("this city"); the card and title show its name
 (?i)\bappointive\b | the transcript may hear "appointive" as "appointed" (one script failed on it every retry) | say "appointed" ("makes the city clerk an appointed office")
+(?i)\bvot(?:e|ed|es|ing)\b[^.]{0,12}?\b\d+(?: to |-)\d+\b|\b\d+(?: to |-)\d+ vote\b | a vote tally ("by a vote of 5 to 0") is transcribed as a score ("5-0"), which the check folds to one number | say who voted ("All five members of the City Council voted to place it on the ballot", "Four of the five members voted for it")
