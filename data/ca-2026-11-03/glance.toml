@@ -2679,3 +2679,12 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $177,966,209."
 amount = 177966209
 period = "unstated"
+
+# Le Grand Union High School District Measure A: no tax rate statement is
+# posted; County Counsel's impartial analysis restates the district's,
+# its total debt service (the bonds are $9,100,000).
+[le-grand-union-high-measure-a]
+source = "impartial-analysis"
+quote = "The best estimate from official sources of the total debt service, including principal and interest, is that $21,046,910 would be required to be repaid if all the bonds are issued and sold."
+amount = 21046910
+period = "unstated"
