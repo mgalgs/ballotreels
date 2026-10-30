@@ -3483,3 +3483,12 @@ source = "tax-statement"
 quote = "that would be required to be repaid if all the bonds are issued and sold is approximately $319,140,333."
 amount = 319140333
 period = "unstated"
+
+# San Marino Unified School District Measure SMS: a parcel tax, so no tax
+# rate statement; the revenue estimate its ballot question prints, as the
+# Registrar's list "Measures Appearing on the Ballot" quotes it.
+[san-marino-unified-measure-sms]
+source = "ballot-question"
+quote = "raising approximately $6,100,000 annually"
+amount = 6100000
+period = "per-year"
