@@ -460,6 +460,12 @@ BALLOTS: dict[str, Ballot] = {
                          "Local Ballot Measure: AB",
                      "ca-2026-11-03-sausalito-measure-x":
                          "Measure X (2026)",
+                     "ca-2026-11-03-marin-county-measure-p":
+                         "Voter Information Guide and Sample Ballot",
+                     "ca-2026-11-03-san-rafael-measure-w":
+                         "Voter Information Guide and Sample Ballot",
+                     "ca-2026-11-03-marin-healthcare-measure-cc":
+                         "Voter Information Guide and Sample Ballot",
                      # and the Marin town and city measures placed by
                      # council resolution quote the ballot question from
                      # the resolution the minutes record as adopted,
@@ -472,12 +478,6 @@ BALLOTS: dict[str, Ballot] = {
                      # number left blank, so it is named by its title)
                      "ca-2026-11-03-mill-valley-measure-t":
                          "Resolution Calling a Special Election",
-                     "ca-2026-11-03-marin-county-measure-p":
-                         "Voter Information Guide and Sample Ballot",
-                     "ca-2026-11-03-san-rafael-measure-w":
-                         "Voter Information Guide and Sample Ballot",
-                     "ca-2026-11-03-marin-healthcare-measure-cc":
-                         "Voter Information Guide and Sample Ballot",
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.
