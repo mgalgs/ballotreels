@@ -885,6 +885,26 @@ BALLOTS: dict[str, Ballot] = {
                             "santa-lucia-csd-measure-t",
                             "soledad-mission-recreation-measure-u",
                             "north-county-recreation-measure-v")},
+                     # The Glenn County Elections Department prints
+                     # Willows K's ballot question, ordinance, impartial
+                     # analysis and fiscal analysis in its General
+                     # Election Voter Information Guide; Sutter County
+                     # Clerk-Recorder/Elections prints each measure's
+                     # ballot question, full text, analysis and arguments
+                     # in its County Voter Information Pamphlet; Amador
+                     # County Elections posts each measure's question,
+                     # analysis and arguments on its "2026 General
+                     # Election" page, with no guide, so those cards name
+                     # the page as titled, as Merced's do
+                     "ca-2026-11-03-willows-measure-k":
+                         "General Election Voter Information Guide",
+                     **{f"ca-2026-11-03-{slug}":
+                        "County Voter Information Pamphlet"
+                        for slug in ("sutter-county-measure-g",
+                                     "live-oak-unified-measure-h")},
+                     **{f"ca-2026-11-03-{slug}": "2026 General Election"
+                        for slug in ("sutter-creek-measure-r",
+                                     "amador-county-measure-s")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
