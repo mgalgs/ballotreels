@@ -1,10 +1,9 @@
 # Recipe E, about 60 seconds, distilled: one claim per line. The chain:
 # what it asks and whose measure it is; the road today and who keeps it
-# up; how many parcels the division holds; who formed the division and
-# placed the measure, and the vote it needs; what would change (the
-# rates for 10 years, then the maintenance rate, what the money pays
-# for); the loan and cost recovery the resolution provides; both sides,
-# neither of which has an archived argument; what a vote does.
+# up; who formed the division and placed the measure, and the vote it
+# needs; what would change (the rates for 10 years, then the maintenance
+# rate, what the money pays for); the loan the resolution provides; both
+# sides, neither of which has an archived argument; what a vote does.
 #
 # No place name is narrated (the narrator mispronounces them): the
 # opening says "the voters of this road division", and the road is "a
@@ -19,11 +18,9 @@
 # The figure $456,750 is not narrated: the ballot question calls it a
 # yearly total, the resolution's recital and the staff report the total
 # over 10 years (sources.toml). The script gives the per-parcel rates
-# and the term, which every record states alike, and the staff report's
-# count of parcels, attributed to it; the per-parcel amounts are exempt
-# from scale (STANDARD.md 6.5). The fiscal section says what the
-# resolution provides for the county's costs and a loan, which it states
-# without figures.
+# and the term, which every record states alike; the per-parcel amounts
+# are exempt from scale (STANDARD.md 6.5). The fiscal section says what
+# the resolution provides for a loan, which it states without figures.
 #
 # The formation resolution's recitals (the petition, the objections to
 # forming the division) are not used: with no argument filed on either
@@ -73,27 +70,13 @@ kind = "illustration"
 name = "country-road"
 
 [[section.line]]
-id = "parcels"
-text = "A county staff report says the division holds ten improved parcels and one unimproved parcel."
-sources = ["staff-report"]
-
-[[section.line]]
 id = "placed"
-text = "The county board of supervisors formed the division in June 2026, and placed Measure FF on the ballot in July."
-sources = ["formation", "vote-certification", "minutes"]
+text = "The county board of supervisors formed the division in June 2026 and placed Measure FF on the ballot in July; it needs two-thirds of the vote to pass."
+sources = ["formation", "vote-certification", "minutes", "county-report", "text"]
 
 [section.line.visual]
 kind = "illustration"
 name = "district-map"
-
-[[section.line]]
-id = "threshold"
-text = "Measure FF needs two-thirds of the vote to pass."
-sources = ["county-report", "text"]
-
-[section.line.visual]
-kind = "illustration"
-name = "vote-thresholds"
 
 [[section]]
 id = "change"
@@ -132,17 +115,12 @@ heading = "What it would cost"
 
 [[section.line]]
 id = "loan"
-text = "If Measure FF passes, the division could borrow from the county against the tax, and the tax would repay the loan and its costs."
+text = "If Measure FF passes, the division could borrow from the county against the tax, which would repay the loan and its costs."
 sources = ["text"]
 
 [section.line.visual]
 kind = "illustration"
 name = "loan-papers"
-
-[[section.line]]
-id = "recovery"
-text = "The county would recover its costs of forming the division and holding this election from the funds of the division."
-sources = ["text"]
 
 [[section]]
 id = "yes"
@@ -197,8 +175,8 @@ source = "resolution"
 highlight = ["authorizing a special tax on parcels within the Division"]
 
 [[question]]
-ask = "Who would pay, and how many parcels are there?"
-lines = ["road", "parcels"]
+ask = "Who would pay?"
+lines = ["road", "rates"]
 
 [[question]]
 ask = "How long would the tax last?"

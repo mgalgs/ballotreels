@@ -72,12 +72,7 @@ name = "spending-limit"
 
 [[section.line]]
 id = "gap"
-text = "The district's staff report says its calculated limit is substantially smaller than the tax money the district is entitled to."
-sources = ["staff-report"]
-
-[[section.line]]
-id = "cycle"
-text = "The report says that to keep the difference, the district must ask its voters every four years."
+text = "The district's staff report says its calculated limit is substantially smaller than the tax money it is entitled to, and that keeping the difference takes a vote every four years."
 sources = ["staff-report"]
 
 [section.line.visual]
@@ -179,7 +174,7 @@ lines = ["limit"]
 
 [[question]]
 ask = "Why is the district asking?"
-lines = ["gap", "cycle"]
+lines = ["gap"]
 
 [[question]]
 ask = "Does this change any tax?"

@@ -1,6 +1,6 @@
 # Recipe E, about 60 seconds, distilled: one claim per line. The chain:
-# what it asks and whose measure it is; how a school bond works; who
-# placed it and the vote it needs; what the money would pay for, what it
+# what it asks and whose measure it is; who placed it and the vote it
+# needs; what the money would pay for, what it
 # could not pay for, and who would check the spending; the tax rate
 # statement's estimates; both sides, neither of which has an archived
 # argument; what a vote does.
@@ -58,39 +58,17 @@ source = "ballot-question"
 highlight = ["shall a measure authorizing $115,000,000 in bonds"]
 
 [[section]]
-id = "background"
-heading = "How a school bond works"
-
-[[section.line]]
-id = "bonds"
-text = "The district would sell the bonds and repay them, with interest, from a tax on property in the district."
-sources = ["tax-statement"]
-
-[section.line.visual]
-kind = "illustration"
-name = "bond-certificates"
-
-[[section]]
 id = "today"
 heading = "Today"
 
 [[section.line]]
 id = "placed"
-text = "The board of trustees placed Measure O on the ballot on June 8, 2026."
-sources = ["resolution"]
-
-[section.line.visual]
-kind = "illustration"
-name = "school-board-room"
-
-[[section.line]]
-id = "threshold"
-text = "As a Proposition 39 bond, Measure O needs 55 percent of the vote to pass."
+text = "The board of trustees placed Measure O on the ballot on June 8, 2026; as a Proposition 39 bond, it needs 55 percent of the vote to pass."
 sources = ["resolution", "county-report"]
 
 [section.line.visual]
 kind = "illustration"
-name = "vote-thresholds"
+name = "school-board-room"
 
 [[section]]
 id = "change"
@@ -138,7 +116,7 @@ values = [26.63, 30]
 
 [[section.line]]
 id = "repay"
-text = "The statement estimates the total to repay, with interest, at $213 million."
+text = "The statement estimates the total to repay, with interest, from a tax on property in the district, at $213 million."
 sources = ["tax-statement"]
 
 [[section]]

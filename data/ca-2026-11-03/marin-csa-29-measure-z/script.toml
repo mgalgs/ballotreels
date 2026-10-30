@@ -2,7 +2,7 @@
 # what it asks and whose measure it is; the tax the service area pays
 # today and when it ends; who placed the measure and the vote it needs;
 # what would change (the rate, its yearly rise, the term, what it pays
-# for, what happens if it fails); the ballot question's revenue
+# for); the ballot question's revenue
 # estimate; both sides, neither of which has an archived argument; what
 # a vote does.
 #
@@ -20,9 +20,9 @@
 # Every rule of the tax is from the resolution, which is the measure's
 # whole text. The Public Works staff report is cited for two plain
 # facts only, attributed to it: the service area is waterfront parcels,
-# and today's rate and yearly revenue. Its account of the need for
-# dredging, its past dredging cost and its ten-year revenue projection
-# are not used.
+# and today's rate. Its account of the need for
+# dredging, its past dredging cost, today's yearly revenue and its
+# ten-year revenue projection are not used.
 #
 # The ballot question's estimate ($272,800, for which it gives no period)
 # is narrated as printed, with no period added; it is the service area's
@@ -75,17 +75,12 @@ name = "special-tax"
 
 [[section.line]]
 id = "current-rate"
-text = "A county staff report says that tax is $1,900.12 per lot and brings in about $250,000 a year."
-sources = ["staff-report"]
-
-[[section.line]]
-id = "expires"
-text = "The existing tax ends after fiscal year 2026-2027."
-sources = ["text"]
+text = "A county staff report says that tax is $1,900.12 per lot, and it ends after fiscal year 2026-2027."
+sources = ["staff-report", "text"]
 
 [[section.line]]
 id = "placed"
-text = "The county board of supervisors placed Measure Z on the ballot on May 19, 2026, and it needs two-thirds of the vote to pass."
+text = "The county board of supervisors placed Measure Z on the ballot in May 2026; it needs two-thirds of the vote to pass."
 sources = ["vote-certification", "minutes", "county-report", "text"]
 
 [section.line.visual]
@@ -114,11 +109,6 @@ sources = ["resolution", "text"]
 [section.line.visual]
 kind = "illustration"
 name = "canal-dredge"
-
-[[section.line]]
-id = "fails"
-text = "If Measure Z fails, the existing tax still runs through fiscal year 2026-2027."
-sources = ["text"]
 
 [[section]]
 id = "fiscal"
@@ -195,8 +185,8 @@ ask = "How does this compare with what lots pay now?"
 lines = ["current-rate", "rate"]
 
 [[question]]
-ask = "What happens if it fails?"
-lines = ["fails"]
+ask = "What happens to the existing tax?"
+lines = ["current-rate"]
 
 [[question]]
 ask = "How large is the tax next to the service area's budget?"
