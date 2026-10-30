@@ -2997,3 +2997,38 @@ source = "measure-list"
 quote = "providing approximately $3,600,000 annually until ended by voters"
 amount = 3600000
 period = "per-year"
+
+# Columbia Elementary School District Measure D: the district's tax rate
+# statement's estimate of the total debt service.
+[columbia-elementary-measure-d]
+source = "tax-statement"
+quote = "required to be repaid if all the bonds are issued and sold will be approximately $23,975,000."
+amount = 23975000
+period = "unstated"
+
+# Shasta County Measure E: a charter amendment, not a tax; the County
+# Voter Information Guide prints no fiscal statement for it.
+[shasta-county-measure-e]
+source = "ballot-question"
+status = "none-printed"
+
+# Shasta County Measure F: a charter amendment, not a tax; the County
+# Voter Information Guide prints no fiscal statement for it.
+[shasta-county-measure-f]
+source = "ballot-question"
+status = "none-printed"
+
+# Shasta Fire Protection District Measure G: a change in the size of the
+# district's board, not a tax; the County Voter Information Guide prints
+# no fiscal statement for it.
+[shasta-fpd-measure-g]
+source = "ballot-question"
+status = "none-printed"
+
+# Summerville Elementary School District Measure C: the district's tax
+# rate statement's estimate of the total debt service.
+[summerville-elementary-measure-c]
+source = "tax-statement"
+quote = "required to be repaid if all the bonds are issued and sold will be approximately $6,900,000."
+amount = 6900000
+period = "unstated"

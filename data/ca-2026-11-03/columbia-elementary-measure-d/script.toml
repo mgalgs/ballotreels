@@ -1,0 +1,199 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; how a school bond is repaid and what it needs
+# to pass; what the money may pay for; the district's tax rate statement;
+# one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the opening
+# says "the voters of this school district". The card and title carry the
+# names. "Counsel" is heard as "Council" (standard/speakability.txt), so
+# the narration does not say it.
+#
+# The card quotes the ballot question page of the Shasta County Elections
+# County Voter Information Guide, with its yes and no sentences. The bond
+# total and the debt service are repaid from a tax on property in the
+# district, not from the district's budget, and no archived source states
+# that budget, so they have no budget scale (STANDARD.md 6.5; left open),
+# as other school bonds' do.
+#
+# The supporters cite the outdated classrooms, failing systems, the
+# oversight and audits, local control of the money and the ban on
+# salaries, so the neutral sections describe the projects only as the
+# impartial analysis lists them and leave the oversight and the salary
+# ban out (STANDARD.md 6.3).
+#
+# The ballot question page says "Against None Submitted", so the no side
+# says no argument against was filed (filed = false, STANDARD.md 2.5).
+
+contest = "ca-2026-11-03-columbia-elementary-measure-d"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "D"
+title = "COLUMBIA ELEMENTARY SCHOOL DISTRICT BOND MEASURE D"
+origin = "Bond Measure D"
+summary = "To improve the quality of education at Columbia Elementary School and Mountain View Middle School; replace deteriorating plumbing and sewer systems; upgrade inadequate electrical systems; modernize old classrooms; replace outdated heating/cooling systems; maximize state funding eligibility; replace aging portables; make safety/security improvements; shall Columbia Elementary School District’s measure authorizing $11,500,000 in bonds at legal rates be adopted, with average levies of $23.49 per $100,000 assessed value (approximately $685,000) annually, while bonds are outstanding, with citizens’ oversight, audits, and all funds staying local?"
+yes = "A “yes” vote is to authorize the issuance of the bonds."
+no = "A “no” vote is against authorizing the issuance of the bonds."
+
+[[section]]
+id = "what"
+heading = "Measure D"
+
+[[section.line]]
+text = "Measure D asks the voters of this school district whether to approve $11.5 million in school bonds."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $11,500,000 in bonds"]
+
+[[section]]
+id = "today"
+heading = "How a school bond works"
+
+[[section.line]]
+id = "repay"
+text = "The district would sell the bonds and repay them from a yearly tax on property in the district."
+sources = ["impartial-analysis", "tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+id = "threshold"
+text = "Measure D needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "projects"
+text = "The bond money could pay only for the projects the measure lists."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section.line]]
+id = "project-list"
+text = "Those include heating and air conditioning, electrical, plumbing and sewer systems, and safety and security improvements."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "water-pipes"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+id = "rate"
+text = "The district's tax rate statement estimates an average tax of $23.49 per $100,000 of assessed value, and at most $24."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "bars"
+title = "Estimated tax per $100,000 of assessed value, dollars"
+source = "tax-statement"
+unit = ""
+labels = ["Average", "Highest"]
+values = [23.49, 24]
+
+[[section.line]]
+id = "duration"
+text = "The statement expects the tax to be collected until the 2060-2061 fiscal year."
+sources = ["tax-statement"]
+
+[[section.line]]
+id = "total"
+text = "The statement estimates the total to repay, with interest, at about $24 million."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say many classrooms are outdated and inadequate, and a citizens' oversight committee must review and audit the spending."
+sources = ["argument-for"]
+basis = ["many classrooms and buildings in the Columbia Elementary School District are outdated and inadequate to provide students with the school facilities they need to succeed.", "By law, spending must be reviewed and annually audited by an independent citizens’ oversight committee."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Upgrades outdated, inadequate classrooms", "Citizens' committee reviews and audits spending"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure D was filed, so the county voter guide prints only the argument of the supporters."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is to authorize the issuance of the bonds."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorize the issuance of the bonds"]
+
+[[section.line]]
+text = "A no vote is against authorizing the issuance of the bonds."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["against authorizing the issuance of the bonds"]
+
+[[question]]
+ask = "How would the bonds be paid back?"
+lines = ["repay", "total"]
+
+[[question]]
+ask = "How much tax would I pay, and for how long?"
+lines = ["rate", "duration"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["projects", "project-list"]
+
+[[question]]
+ask = "What vote does the measure need to pass?"
+lines = ["threshold"]
+
+[[question]]
+ask = "How large is the bond next to the district's yearly budget?"
+unanswered = true

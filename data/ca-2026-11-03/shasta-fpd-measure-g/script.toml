@@ -1,0 +1,188 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; the board today, who placed the measure on the
+# ballot, and the vote it needs; what would change and the purpose the
+# ballot question states; no cost estimate; both sides, neither of which
+# has an argument among the documents; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the opening
+# says "the voters of this fire protection district". The card, title and
+# `voters` line carry the name. "Counsel" is heard as "Council"
+# (standard/speakability.txt), so the narration does not say it.
+#
+# The card quotes the guide page's ballot question. pdftotext reads its
+# yes and no boxes, set side by side, into each other, but County
+# Counsel's analysis on the same page prints the same two sentences
+# together, so the card's yes and no quote them from there. That the
+# change is "to provide better representation for the district" is the
+# ballot question's own statement of purpose, attributed to it.
+#
+# No argument for or against Measure G is printed, but no official
+# document says in words that none was filed. So the sides do not say
+# none was filed: each says none is among the documents gathered
+# (filed = false, STANDARD.md 2.5), as for Livingston Measures T and U.
+
+contest = "ca-2026-11-03-shasta-fpd-measure-g"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "G"
+title = "SHASTA FIRE PROTECTION DISTRICT, NUMBER OF MEMBERS OF BOARD OF TRUSTEES"
+origin = "Measure G"
+summary = "Shasta Fire Protection District Services Measure. A YES vote would allow the Shasta Fire Protection District to increase its governing board from 3 members to 5 members to provide better representation for the district. Shall an ordinance authorizing an increase of the existing 3-person Board of Trustees to a 5-person Board of Trustees be adopted?"
+yes = "If a majority of the voters voting on the measure vote “yes”, the Board of Trustees of the Shasta Fire Protection District will be increased to five members."
+no = "A “no” vote on this measure will disapprove the proposal and there will be no change to the number of members on the Board of Trustees."
+
+[[section]]
+id = "what"
+heading = "Measure G"
+
+[[section.line]]
+text = "Measure G asks the voters of this fire protection district whether to enlarge its board of trustees from three members to five."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["from 3 members to 5 members"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-board"
+text = "Today, the district has a three-person board of trustees."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "fire-station-engine"
+
+[[section.line]]
+id = "placed"
+text = "The district's board of trustees placed the measure on the ballot."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+id = "threshold"
+text = "Under state law, a fire district can change the size of its board if a majority of voters approve, so Measure G needs a majority to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "change-seats"
+text = "Measure G would add two seats to the board, filled by election, each for a four-year term."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "empty-commission-seat"
+
+[[section.line]]
+id = "purpose"
+text = "The ballot question says the change is to provide better representation for the district."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["to provide better representation for the district"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The county voter guide does not include a cost estimate for the measure."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure G appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure G appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote means the board of trustees would be increased to five members."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["will be increased to five members"]
+
+[[section.line]]
+text = "A no vote means there would be no change to the number of members on the board."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["no change to the number of members"]
+
+[[question]]
+ask = "How many members does the board have now?"
+lines = ["today-board"]
+
+[[question]]
+ask = "Who put this on the ballot?"
+lines = ["placed"]
+
+[[question]]
+ask = "How would the new members be chosen, and for how long?"
+lines = ["change-seats"]
+
+[[question]]
+ask = "Why does the district want a bigger board?"
+lines = ["purpose"]
+
+[[question]]
+ask = "What vote does the measure need to pass?"
+lines = ["threshold"]
+
+[[question]]
+ask = "Would a bigger board cost the district more?"
+unanswered = true

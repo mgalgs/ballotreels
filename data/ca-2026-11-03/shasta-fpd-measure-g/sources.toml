@@ -1,0 +1,46 @@
+# Archived sources for Shasta Fire Protection District Measure G,
+# 2026-11-03 general election (sources/county-sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Shasta County Elections prints the measure's ballot question and County
+# Counsel's impartial analysis on one page of its County Voter
+# Information Guide, page 43 of the guide for ballot type 17, one of the
+# few ballot types covering the district. The page is staged twice, as
+# sources/county-ballot-question.pdf and sources/county-impartial-
+# analysis.pdf. The analysis's heading misprints "PROPOSED COUNTY CHARTER
+# AMENDMENT TO LIMIT EMINENT DOMAIN ... MEASURE E" (Measure E's heading);
+# its body is about Measure G, which it names, and the Resolution No.
+# 26-07 of the district's Board of Trustees that placed it on the ballot.
+# No fiscal statement, full text or argument is printed for the measure;
+# no official document says in words whether any argument was filed.
+#
+# A fire protection district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md), as for Yosemite Unified Measure W.
+
+[contest]
+id = "ca-2026-11-03-shasta-fpd-measure-g"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:shasta"
+kind = "measure"
+title = "Shasta Fire Protection District Measure G: Enlarging the Board of Trustees from Three to Five Members"
+voters = "the Shasta Fire Protection District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Shasta County Elections, County Voter Information Guide, November 3, 2026 General Election (ballot type 17): Measure G, Ballot Question, page 43"
+credit = "County Voter Information Guide, Shasta County Elections"
+url = "https://elections.shastacounty.gov/wp-content/uploads/2026/09/Shasta-VIG-BT17.pdf"
+file = "sources/county-ballot-question.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Renee Belcastro, Deputy County Counsel, Impartial Analysis by County Counsel, Measure G (its heading misprinted as Measure E's), as printed in the Shasta County Elections County Voter Information Guide (ballot type 17), page 43"
+credit = "Impartial Analysis, Shasta County Counsel"
+url = "https://elections.shastacounty.gov/wp-content/uploads/2026/09/Shasta-VIG-BT17.pdf"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"

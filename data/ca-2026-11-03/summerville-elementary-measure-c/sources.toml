@@ -1,0 +1,60 @@
+# Archived sources for Summerville Elementary School District Measure C,
+# 2026-11-03 general election (sources/county-sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Tuolumne County Elections prints the measure's ballot question, full
+# text, tax rate statement, impartial analysis and arguments in its Local
+# Voter Information Guide; each file here is the measure's pages cut from
+# that guide, whose page numbers each citation gives. The guide's own PDF
+# address was not recorded when it was fetched, so each url is the
+# county's Election Information page, which posts the guide. The card
+# quotes the ballot question page. County Counsel's impartial analysis is
+# the measure's neutral explanation, the kind a state's attorney
+# general's explanatory statement is; the district's tax rate statement
+# is its fiscal statement. The ballot question page and page 37 both
+# read "No argument against was filed." (the page's box header misprints
+# "Bond Measure B").
+
+[contest]
+id = "ca-2026-11-03-summerville-elementary-measure-c"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:summerville_elementary_school_district"
+kind = "measure"
+title = "Summerville Elementary School District Measure C: $3.4 Million School Repair Bond"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Tuolumne County Elections, Local Voter Information Guide, November 3, 2026 General Election: School Bond Measure C, Ballot Question, page 25"
+credit = "Local Voter Information Guide, Tuolumne County Elections"
+url = "https://www.tuolumnecounty.ca.gov/194/Election-Information"
+file = "sources/county-ballot-question.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Walter W. Wall, County Counsel, Impartial Analysis of Measure C, as printed in the Tuolumne County Elections Local Voter Information Guide, pages 34 to 36"
+credit = "Impartial Analysis, Tuolumne County Counsel"
+url = "https://www.tuolumnecounty.ca.gov/194/Election-Information"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Ben Howell, Superintendent, Summerville Elementary School District, Tax Rate Statement, as printed in the Tuolumne County Elections Local Voter Information Guide, pages 33 and 34"
+credit = "Tax Rate Statement, Summerville Elementary School District"
+url = "https://www.tuolumnecounty.ca.gov/194/Election-Information"
+file = "sources/county-tax-rate-statement.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument for Measure C, as filed with Tuolumne County Elections and printed in its Local Voter Information Guide, pages 36 and 37"
+credit = "Argument for, Measure C"
+url = "https://www.tuolumnecounty.ca.gov/194/Election-Information"
+file = "sources/county-argument-for.pdf"
+retrieved = "2026-10-29"
