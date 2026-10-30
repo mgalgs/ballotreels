@@ -1,0 +1,69 @@
+# Archived sources for Sutter County Measure G, 2026-11-03 general
+# election (sources/county-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Sutter County Clerk-Recorder/Elections prints Measure G's ballot
+# question, full text (the proposed ordinance adding Chapter 105), County
+# Counsel's impartial analysis, both arguments and both rebuttals on
+# pages 17 to 26 of its County Voter Information Pamphlet. The pages run
+# on with no breaks, so each file below shares its first or last page
+# with its neighbour; each source is only the document its heading names,
+# and every quote is from that document's own part of the page. The
+# pamphlet was fetched from the county's site through a browser; the url
+# is the Sample Ballot and Pamphlet page that posts it. County Counsel's
+# impartial analysis is the measure's neutral explanation and its one
+# revenue estimate; no tax rate statement or other fiscal analysis
+# applies to a sales tax.
+
+[contest]
+id = "ca-2026-11-03-sutter-county-measure-g"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:sutter"
+kind = "measure"
+title = "Sutter County Measure G: 1 Percent Sales Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Sutter County Clerk-Recorder/Elections, County Voter Information Pamphlet, November 3, 2026 General Election, page 17: Measure G Ballot Question"
+credit = "Measure G Ballot Question, Sutter County Voter Information Pamphlet"
+url = "https://www.sutter.gov/government/county-departments/clerk-recorder/elections/sample-ballot-and-pamphlet"
+file = "sources/county-ballot-question.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Sutter County Counsel, Impartial Analysis Relating to Measure G, Sutter County Clerk-Recorder/Elections, County Voter Information Pamphlet, November 3, 2026 General Election, pages 22 and 23"
+credit = "Impartial Analysis, Sutter County Counsel"
+url = "https://www.sutter.gov/government/county-departments/clerk-recorder/elections/sample-ballot-and-pamphlet"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "County of Sutter, proposed ordinance adding Chapter 105 (Sutter County Transactions and Use (Sales) Tax) to the Sutter County Ordinance Code, Sutter County Clerk-Recorder/Elections, County Voter Information Pamphlet, November 3, 2026 General Election, pages 17 to 22"
+credit = "Full Text of Measure G, Sutter County"
+url = "https://www.sutter.gov/government/county-departments/clerk-recorder/elections/sample-ballot-and-pamphlet"
+file = "sources/county-full-text.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure G, as filed with Sutter County Clerk-Recorder/Elections, Sutter County Clerk-Recorder/Elections, County Voter Information Pamphlet, November 3, 2026 General Election, pages 23 and 24"
+credit = "Argument in favor, Measure G"
+url = "https://www.sutter.gov/government/county-departments/clerk-recorder/elections/sample-ballot-and-pamphlet"
+file = "sources/county-argument-for.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure G, as filed with Sutter County Clerk-Recorder/Elections, Sutter County Clerk-Recorder/Elections, County Voter Information Pamphlet, November 3, 2026 General Election, pages 25 and 26"
+credit = "Argument against, Measure G"
+url = "https://www.sutter.gov/government/county-departments/clerk-recorder/elections/sample-ballot-and-pamphlet"
+file = "sources/county-argument-against.pdf"
+retrieved = "2026-10-29"

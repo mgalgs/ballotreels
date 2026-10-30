@@ -2941,3 +2941,11 @@ source = "fiscal-analysis"
 quote = "Fiscal Impact: Based on the estimate contained in Resolution No. 28-2026, Measure K is expected to generate approximately $260,000 annually."
 amount = 260000
 period = "per-year"
+
+# Sutter County Measure G: a sales tax, so no tax rate statement; County
+# Counsel's impartial analysis gives the revenue estimate.
+[sutter-county-measure-g]
+source = "impartial-analysis"
+quote = "It is estimated that the measure will provide $22,500,000 annually"
+amount = 22500000
+period = "per-year"
