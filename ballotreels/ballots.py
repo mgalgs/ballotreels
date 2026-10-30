@@ -840,6 +840,7 @@ BALLOTS: dict[str, Ballot] = {
                                      "alum-rock-measure-o",
                                      "alum-rock-measure-p",
                                      "orchard-measure-r",
+                                     "cambrian-measure-q",
                                      "el-camino-healthcare-measure-s")},
                      # Merced County Elections posts each measure's
                      # ballot question, impartial analysis, full text,
