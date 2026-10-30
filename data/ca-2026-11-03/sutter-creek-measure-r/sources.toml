@@ -1,0 +1,59 @@
+# Archived sources for City of Sutter Creek Measure R, 2026-11-03 general
+# election (sources/county-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Amador County Elections posts each measure's documents as separate PDFs
+# on its "2026 General Election" page: Measure R's ballot question (which
+# also lists the supporters who signed the argument in favor and
+# "Opponents: None submitted"), the City Attorney's impartial analysis,
+# the full text (the City Council's resolution placing the measure, as
+# excerpted for the ballot) and the argument in favor. The City
+# Attorney's impartial analysis is the measure's neutral explanation.
+# Not a tax: no fiscal statement applies. The signed resolution
+# (Resolution 25-26-32, sources/county-resolution.pdf) is a scan with no
+# text layer; the script cites nothing only it gives, so it is not listed
+# here and was not transcribed.
+
+[contest]
+id = "ca-2026-11-03-sutter-creek-measure-r"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:sutter_creek"
+kind = "measure"
+title = "City of Sutter Creek Measure R: Appointed City Treasurer"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Amador County Elections, 2026 General Election: Measure R Question"
+credit = "Measure R Question, Amador County Elections"
+url = "https://www.amadorcounty.gov/home/showpublisheddocument/58442/639254423211970000"
+file = "sources/county-ballot-question.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Sutter Creek City Attorney, Impartial Analysis of Measure R, as posted by Amador County Elections"
+credit = "Impartial Analysis, Sutter Creek City Attorney"
+url = "https://www.amadorcounty.gov/home/showpublisheddocument/58440/639197279722200000"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Sutter Creek, Full Text of Measure R (City Council resolution calling the election), as posted by Amador County Elections"
+credit = "Full Text of Measure R, City of Sutter Creek"
+url = "https://www.amadorcounty.gov/home/showpublisheddocument/58438/639197279717800000"
+file = "sources/county-full-text.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure R, as filed with Amador County Elections (no argument against was submitted)"
+credit = "Argument in favor, Measure R"
+url = "https://www.amadorcounty.gov/home/showpublisheddocument/58541/639202457565770000"
+file = "sources/county-argument-for.pdf"
+retrieved = "2026-10-29"
