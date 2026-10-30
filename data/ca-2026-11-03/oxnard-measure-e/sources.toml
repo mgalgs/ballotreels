@@ -3,12 +3,15 @@
 # script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
 # section 1).
 #
-# The letter E is not confirmed by an archived official record. The
-# County of Ventura's measures page and voter guide could not be read
-# (both answered a bot challenge), and oxnard.gov answered HTTP 403. The
-# County's records name the City's measure but give no letter; the
-# letter is published under the operator's rule for letters every
-# checkable one of which matched an official page.
+# The County of Ventura's measures page ("county-ballot", saved as text
+# from a browser, since it gives scripted fetches an empty body) gives
+# the letter E and the question as it is printed on the ballot. That
+# question differs from the one in the June 16 resolution (Section 4,
+# "substantially as follows"): it is titled "City of Oxnard Extension of
+# Measure O Sales Tax" and lists no services. The card quotes the
+# county's; no archived record says when or why the wording changed. The
+# page also lists the measure's supporters and opponents, but no
+# argument's text was reached.
 #
 # These are the City's files from its CivicClerk portal, for the City
 # Council meeting of June 16, 2026, item N.6: packet pages 2458 to 2478
@@ -25,9 +28,9 @@
 # its number left blank and unsigned. The minutes record that the
 # Council adopted it as Resolution No. 16,071 on the motion to approve
 # the recommended action, after a motion to reword the ballot question
-# failed for want of a second; the question stands as the resolution's
-# Section 4 prints it ("substantially as follows"), and Section 5 sets
-# the majority vote. No impartial analysis, argument or rebuttal was
+# failed for want of a second. Section 4 gives the question
+# "substantially as follows" (the ballot prints the county's wording,
+# above), and Section 5 sets the majority vote. No impartial analysis, argument or rebuttal was
 # reached: Section 11 asks the City Attorney for an analysis and lets
 # any person file an argument, and no filed argument is archived.
 #
@@ -58,6 +61,15 @@ publisher = "City of Oxnard, Resolution Ordering an Election to Be Held on Novem
 credit = "Resolution Ordering an Election, City of Oxnard"
 url = "https://oxnardca.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11443,plainText=false)"
 file = "sources/oxnard-cc-2026-06-16-item-N6-resolution-and-ordinance-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "county-ballot"
+kind = "official-title-summary"
+publisher = "County of Ventura, County Clerk and Recorder / Registrar of Voters, 2026 County of Ventura Measures: Measure “E”, notice of election and ballot question (web page, saved as text)"
+credit = "2026 County of Ventura Measures, County of Ventura Registrar of Voters"
+url = "https://clerkrecorder.venturacounty.gov/elections/2026-measures/"
+file = "sources/ventura-county-2026-measures-page.txt"
 retrieved = "2026-10-30"
 
 [[source]]

@@ -13,25 +13,25 @@
 # ordinance (Exhibit A, the full text) and the resolution placing it,
 # only from what they enact or record as fact; both are scans, quoted
 # from their transcription. Their recitals on what would be lost without
-# the measure, and the ballot question's list of services, are the
-# City's case: the list is attributed to the question, and the recitals
-# are not narrated. The end date is the ordinance's "March 31, 2029"
+# the measure are the City's case and are not narrated. The card and the
+# question's figures are the county's printed question (county-ballot),
+# not the resolution's longer draft with its list of services (see
+# sources.toml). The end date is the ordinance's "March 31, 2029"
 # (the staff report gives it three ways), said as "March 2029". The
 # staff report is cited only for the 2008 vote. The Council's adoption
 # of the resolution is from the June 16 minutes, without its tally; the
-# question stands as the resolution prints it, and the minutes' failed
-# motion to reword it is not narrated. The County's August 4 consent
-# item 12 shows the measure consolidated with the November 3 election.
+# minutes' failed motion to reword the question is not narrated. The
+# County's August 4 consent item 12 shows the measure consolidated with
+# the November 3 election.
 #
 # The $20 million a year is the ballot question's figure; no archived
 # source states the City's general fund budget for a matching year to
 # give it a scale (STANDARD.md 6.5; left open, under [[question]]).
 #
-# No argument for or against Measure E was archived. The resolution lets
-# any person file one (Section 11), but no document gathered says
-# whether any was filed. So the sides do not say none was filed: each
-# says none is among the documents gathered (filed = false, STANDARD.md
-# 2.5), as for Walnut Creek Measure U.
+# No argument for or against Measure E was archived. The county's page
+# lists supporters and opponents, so each side says so and that their
+# argument is not among the documents gathered (filed = false: no text,
+# STANDARD.md 2.5). Their names are not narrated.
 
 contest = "ca-2026-11-03-oxnard-measure-e"
 template = "measure"
@@ -39,11 +39,11 @@ template_version = 2
 standard_version = 2
 
 [card]
-source = "ballot-question"
+source = "county-ballot"
 number = "E"
-title = "CITY OF OXNARD PUBLIC SAFETY, FINANCIAL STABILITY MEASURE (NO TAX RATE INCREASE)."
+title = "CITY OF OXNARD EXTENSION OF MEASURE O SALES TAX."
 origin = "CITY OF OXNARD"
-summary = "Shall the measure maintaining City of Oxnard’s services without raising current tax rates, including protecting public safety, maintaining 911 emergency response/fire protection; repairing streets/potholes; addressing homelessness; maintaining programs for vulnerable seniors; anti-gang/after-school programs; other general services, by renewing an existing 1/2¢ sales tax, providing $20,000,000 annually until ended by voters, requiring oversight, audits, public spending disclosure, all funds for Oxnard, be adopted?"
+summary = "Shall the measure renewing an existing 1/2¢ sales tax used for maintaining City of Oxnard’s general governmental services, providing $20,000,000 annually until ended by voters, requiring oversight, audits, public spending disclosure, and all funds for Oxnard, be adopted?"
 
 [[section]]
 id = "what"
@@ -51,12 +51,12 @@ heading = "Measure E"
 
 [[section.line]]
 text = "Measure E asks the voters of this city whether to remove the end date of an existing half-cent sales tax."
-sources = ["ballot-question", "text"]
+sources = ["county-ballot", "text"]
 
 [section.line.visual]
 kind = "page"
-source = "ballot-question"
-highlight = ["by renewing an existing 1/2¢ sales tax"]
+source = "county-ballot"
+highlight = ["renewing an existing 1/2¢ sales tax"]
 
 [[section]]
 id = "today"
@@ -104,13 +104,13 @@ name = "city-storefronts"
 
 [[section.line]]
 id = "uses"
-text = "The ballot question lists uses such as public safety, 911 response, street repair and homelessness programs."
-sources = ["ballot-question"]
+text = "The ballot question says the tax pays for general government services of the city."
+sources = ["county-ballot"]
 
 [section.line.visual]
 kind = "page"
-source = "ballot-question"
-highlight = ["including protecting public safety"]
+source = "county-ballot"
+highlight = ["used for maintaining City of Oxnard’s general governmental services"]
 
 [[section.line]]
 id = "threshold"
@@ -128,11 +128,11 @@ heading = "What it would raise"
 [[section.line]]
 id = "revenue"
 text = "The ballot question says the tax would provide $20 million a year."
-sources = ["ballot-question"]
+sources = ["county-ballot"]
 
 [section.line.visual]
 kind = "page"
-source = "ballot-question"
+source = "county-ballot"
 highlight = ["providing $20,000,000 annually"]
 
 [[section]]
@@ -142,12 +142,12 @@ side = "yes"
 filed = false
 
 [[section.line]]
-text = "No argument for Measure E appears among the official documents gathered for this video."
-sources = ["ballot-question"]
+text = "The county lists supporters of Measure E, but their argument is not among the documents gathered for this video."
+sources = ["county-ballot"]
 
 [section.line.visual]
 kind = "list"
-source = "ballot-question"
+source = "county-ballot"
 items = ["No argument for was found"]
 
 [[section]]
@@ -157,12 +157,12 @@ side = "no"
 filed = false
 
 [[section.line]]
-text = "No argument against Measure E appears among the official documents gathered for this video."
-sources = ["ballot-question"]
+text = "The county lists opponents of Measure E, but their argument is not among the documents gathered for this video."
+sources = ["county-ballot"]
 
 [section.line.visual]
 kind = "list"
-source = "ballot-question"
+source = "county-ballot"
 items = ["No argument against was found"]
 
 [[section]]
@@ -171,20 +171,20 @@ heading = "What your vote means"
 
 [[section.line]]
 text = "A yes vote removes the end date, so the tax continues until ended by voters."
-sources = ["ballot-question", "text"]
+sources = ["county-ballot", "text"]
 
 [section.line.visual]
 kind = "page"
-source = "ballot-question"
+source = "county-ballot"
 highlight = ["until ended by voters"]
 
 [[section.line]]
 text = "A no vote keeps the end date, so the tax ends in March 2029."
-sources = ["text", "ballot-question"]
+sources = ["text", "county-ballot"]
 
 [section.line.visual]
 kind = "page"
-source = "ballot-question"
+source = "county-ballot"
 highlight = ["until ended by voters"]
 
 [[question]]
