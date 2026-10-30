@@ -1125,6 +1125,11 @@ BALLOTS: dict[str, Ballot] = {
                                      "exeter-unified-measure-t",
                                      "pixley-union-elementary-measure-w",
                                      "three-rivers-union-elementary-measure-y")},
+                     # and these city measures' cards quote the notice
+                     # of election on the Registrar's page, named as
+                     # headed
+                     "ca-2026-11-03-farmersville-measure-p":
+                         "Notice of General Tax Election",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
