@@ -906,13 +906,30 @@ BALLOTS: dict[str, Ballot] = {
                                      "shasta-fpd-measure-g")},
                      "ca-2026-11-03-summerville-elementary-measure-c":
                          "Local Voter Information Guide",
+                     # Kern County Elections posts each local measure's
+                     # filed documents (the resolution or full text with
+                     # its ballot question, the impartial analysis and
+                     # the arguments) on its page "November 3, 2026,
+                     # General Election", and no printed guide was
+                     # archived, so these cards name that page
+                     **{f"ca-2026-11-03-{slug}":
+                        "November 3, 2026, General Election"
+                        for slug in ("tehachapi-unified-measure-d",
+                                     "lost-hills-union-measure-e",
+                                     "california-city-measure-j",
+                                     "bear-valley-csd-measure-r",
+                                     "bear-valley-csd-measure-s",
+                                     "kern-county-measure-z")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
-                 # ballot boxes into Grand Terrace N's; it reads the
-                 # bullets of Benicia Z's question as an "x" each
+                 # ballot boxes into Grand Terrace N's and California
+                 # City J's; it reads the bullets of Benicia Z's question
+                 # as an "x" each
                  card_strays={
                      "ca-2026-11-03-benicia-measure-z": ("x",),
+                     "ca-2026-11-03-california-city-measure-j":
+                         ("YES", "NO"),
                      "ca-2026-11-03-grand-terrace-measure-n":
                          ("Yes", "No"),
                      "ca-2026-11-03-needles-measure-l":
