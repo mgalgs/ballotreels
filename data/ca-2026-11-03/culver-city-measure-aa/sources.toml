@@ -7,10 +7,11 @@
 # Appearing on the Ballot" is the authority for the measure's letter,
 # ballot question and vote threshold, and names who filed the arguments;
 # sources/county-measure-list-excerpt.txt is the measure's entry, cut from
-# it. The City Clerk's "Upcoming Election Information" page prints the
-# City Attorney's impartial analysis, the argument in favor and the
-# argument in opposition (and both rebuttals, not cited) for all three of
-# the city's measures. The impartial analysis is the measure's neutral
+# it. The Registrar's Interactive Sample Ballot gives the City Attorney's
+# impartial analysis, the full text, and the arguments and rebuttals as
+# filed (HTML, retrieved 2026-10-30); they supersede the City Clerk's
+# copies on its "Upcoming Election Information" page (measure-page.html,
+# no longer cited). The impartial analysis is the measure's neutral
 # explanation, the kind a state's attorney general's explanation is.
 # Resolution No. 2026-R083, which accepts the petition and places the
 # initiative on the ballot, is a scan with no text layer: its first two
@@ -38,10 +39,10 @@ retrieved = "2026-10-30"
 [[source]]
 id = "impartial-analysis"
 kind = "official-title-summary"
-publisher = "Heather Baker, City Attorney, City of Culver City, City Attorney's Impartial Analysis of Measure AA (August 13, 2026), on the City Clerk's Upcoming Election Information page"
-credit = "City Attorney's Impartial Analysis of Measure AA, City of Culver City"
-url = "https://www.culvercity.gov/City-Hall/Election-Information-Updated/Upcoming-Election-Information"
-file = "sources/measure-page.html"
+publisher = "Heather Baker, City Attorney, City of Culver City, City Attorney's Impartial Analysis of Measure AA (August 13, 2026), as printed by the Los Angeles County Registrar-Recorder/County Clerk in the Interactive Sample Ballot"
+credit = "City Attorney's Impartial Analysis of Measure AA, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10908.json"
+file = "sources/impartial-analysis.html"
 retrieved = "2026-10-30"
 
 [[source]]
@@ -56,17 +57,44 @@ retrieved = "2026-10-30"
 [[source]]
 id = "argument-for"
 kind = "official-argument"
-publisher = "Argument in Favor of Measure AA, as posted by the City of Culver City City Clerk"
-credit = "Argument in favor of Measure AA, City of Culver City City Clerk"
-url = "https://www.culvercity.gov/City-Hall/Election-Information-Updated/Upcoming-Election-Information"
-file = "sources/measure-page.html"
+publisher = "Argument in Favor of Measure AA, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument in Favor of Measure AA, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10908.json"
+file = "sources/argument-for.html"
 retrieved = "2026-10-30"
 
 [[source]]
 id = "argument-against"
 kind = "official-argument"
-publisher = "Argument in Opposition to Measure AA, as posted by the City of Culver City City Clerk"
-credit = "Argument against Measure AA, City of Culver City City Clerk"
-url = "https://www.culvercity.gov/City-Hall/Election-Information-Updated/Upcoming-Election-Information"
-file = "sources/measure-page.html"
+publisher = "Argument Against Measure AA, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument Against Measure AA, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10908.json"
+file = "sources/argument-against.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "full-text"
+kind = "official-text"
+publisher = "Full Text of Ballot Measure AA, as printed by the Los Angeles County Registrar-Recorder/County Clerk in the Interactive Sample Ballot"
+credit = "Full Text of Measure AA, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10908.json"
+file = "sources/full-text.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "rebuttal-to-against"
+kind = "official-argument"
+publisher = "Rebuttal to Argument Against Measure AA, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Rebuttal to Argument Against Measure AA, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10908.json"
+file = "sources/rebuttal-to-argument-against.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "rebuttal-to-for"
+kind = "official-argument"
+publisher = "Rebuttal to Argument in Favor of Measure AA, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Rebuttal to Argument in Favor of Measure AA, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10908.json"
+file = "sources/rebuttal-to-argument-for.html"
 retrieved = "2026-10-30"
