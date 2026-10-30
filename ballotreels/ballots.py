@@ -510,6 +510,8 @@ BALLOTS: dict[str, Ballot] = {
                      # named as headed
                      "ca-2026-11-03-rio-esd-measure-b":
                          "Resolution No. 2526/20",
+                     "ca-2026-11-03-united-water-measure-d":
+                         "Resolution No. 2026-13",
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.
