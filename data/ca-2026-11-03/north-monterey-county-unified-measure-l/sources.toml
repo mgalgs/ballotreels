@@ -1,0 +1,66 @@
+# Archived sources for North Monterey County Unified School District
+# Measure L, 2026-11-03 general election (sources/county-sources.md,
+# sources/sources.md). Every id here may be cited by script.toml. `kind`
+# must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# The County of Monterey Elections Department posts each local measure's
+# letter, vote threshold and ballot question on its List of Local
+# Measures page, with links to its filed documents: for Measure L, the
+# full text, the County Counsel's impartial analysis, the arguments for
+# and against, and both rebuttals, all scans with no text layer. The
+# impartial analysis and the two arguments were typed from their page
+# images into sources/county-*-transcription.txt, each naming the PDF and
+# URL it copies; those sources point at the transcription, and their url
+# at the scan. The full text and the rebuttals are not cited, so not
+# transcribed. County Counsel's impartial analysis is the measure's
+# neutral explanation, the kind a state's attorney general's explanatory
+# statement is.
+#
+# The county posts no tax rate statement for Measure L. The impartial
+# analysis restates the district's (its highest rate and final year), so
+# it is the source of those figures, attributed in the narration to the
+# analysis. The district's resolution and facilities page archived
+# earlier are superseded by the county's copies and not cited.
+
+[contest]
+id = "ca-2026-11-03-north-monterey-county-unified-measure-l"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:north_monterey_county_unified_school_district"
+kind = "measure"
+title = "North Monterey County Unified School District Measure L: School Facilities Bonds"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "County of Monterey Elections Department, List of Local Measures, November 3, 2026 General Election: North Monterey County Unified School District Measure L"
+credit = "List of Local Measures, Monterey County Elections"
+url = "https://www.countyofmonterey.gov/government/departments-a-h/elections/list-of-local-measures"
+file = "sources/county-measure-list.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Susan Blitch, County Counsel, County of Monterey, Impartial Analysis of Measure L, as posted by the County of Monterey Elections Department (transcribed from the scan)"
+credit = "Impartial Analysis of Measure L"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147793/639222442056670000"
+file = "sources/county-impartial-analysis-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure L, as filed with the County of Monterey Elections Department (transcribed from the scan)"
+credit = "Argument in favor of Measure L"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147789/639222442048430000"
+file = "sources/county-argument-for-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Bond Measure L, as filed with the County of Monterey Elections Department (transcribed from the scan)"
+credit = "Argument Against Bond Measure L"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147791/639222442053070000"
+file = "sources/county-argument-against-transcription.txt"
+retrieved = "2026-10-29"

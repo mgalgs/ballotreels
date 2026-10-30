@@ -2829,3 +2829,13 @@ source = "impartial-analysis"
 quote = "The best estimate from official sources of the total debt service, including principal and interest, is that $21,046,910 would be required to be repaid if all the bonds are issued and sold."
 amount = 21046910
 period = "unstated"
+
+# North Monterey County Unified School District Measure L: the county
+# posts no tax rate statement, and County Counsel's impartial analysis
+# gives no dollar total; the yearly levy, as the ballot question gives it
+# (the bonds are $40,000,000).
+[north-monterey-county-unified-measure-l]
+source = "measure-list"
+quote = "levying $32 per $100,000 assessed value ($2,800,000 annually) while bonds are outstanding"
+amount = 2800000
+period = "per-year"
