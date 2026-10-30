@@ -449,9 +449,12 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 30 - 2026",
                      "ca-2026-11-03-belmont-measure-y":
                          "Resolution No. 2026 – 69",
-                     # Marin County's guide could not be archived: Marin's
-                     # Measure AB card quotes Sonoma's pages, as Sonoma's
-                     # does, and Sausalito's quotes the City Clerk's page,
+                     # Marin County's guide was archived for ballot type
+                     # 26 only (the Internet Archive caught no other), so
+                     # only the measures on that ballot quote it: their
+                     # cards quote its ballot questions. Marin's Measure
+                     # AB card quotes Sonoma's pages, as Sonoma's does,
+                     # and Sausalito's quotes the City Clerk's page,
                      # headed "Measure X (2026)".
                      "ca-2026-11-03-santa-rosa-junior-college-measure-ab-marin":
                          "Local Ballot Measure: AB",
@@ -469,6 +472,12 @@ BALLOTS: dict[str, Ballot] = {
                      # number left blank, so it is named by its title)
                      "ca-2026-11-03-mill-valley-measure-t":
                          "Resolution Calling a Special Election",
+                     "ca-2026-11-03-marin-county-measure-p":
+                         "Voter Information Guide and Sample Ballot",
+                     "ca-2026-11-03-san-rafael-measure-w":
+                         "Voter Information Guide and Sample Ballot",
+                     "ca-2026-11-03-marin-healthcare-measure-cc":
+                         "Voter Information Guide and Sample Ballot",
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.

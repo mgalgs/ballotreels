@@ -1,0 +1,91 @@
+# Archived sources for Marin Healthcare District Measure CC, the Emergency
+# Healthcare Funding Measure, 2026-11-03 general election
+# (sources/sources.md, its section "Feed documents retrieved
+# 2026-10-30"). Every id here may be cited by script.toml. `kind` must be
+# one the standard allows (docs/STANDARD.md, section 1).
+#
+# Who votes: a healthcare district has no Census boundary, so the
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md), as for Bear Valley Community Services District
+# Measure R.
+#
+# The County of Marin's Voter Information Guide and Sample Ballot (ballot
+# type 26, which covers part of the district) prints Measure CC's ballot
+# question, County Counsel's impartial analysis, the arguments for and
+# against, both rebuttals and the Full Text of Measure CC (the initiative
+# ordinance). The card quotes the guide's ballot question. County
+# Counsel's impartial analysis is the measure's neutral explanation, the
+# kind a state's attorney general's explanatory statement is. No fiscal
+# statement is printed: the revenue estimate is the impartial analysis's.
+#
+# The guide's text layer is partly garbled (a font with a broken
+# character map), so the passages cited were typed from the page images
+# into sources/county-vig-bt26-measure-cc-transcription.txt, which names
+# the PDF, its pages and the guide's URL; the guide's sources point at the
+# transcription, and their url at the guide. The county's Measure CC page
+# (its text layer is clean) prints the same question, without the
+# measure's name the guide sets before it, and the same analysis, and the
+# vote the measure needs ("Votes required to pass: simple majority."),
+# which the guide does not print.
+
+[contest]
+id = "ca-2026-11-03-marin-healthcare-measure-cc"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:marin"
+kind = "measure"
+title = "Marin Healthcare District Measure CC: A 30-Year Parcel Tax for Emergency, Intensive Care and Hospital Facilities"
+voters = "the Marin Healthcare District"
+
+[[source]]
+id = "guide-page"
+kind = "official-title-summary"
+publisher = "County of Marin Elections Department, Voter Information Guide and Sample Ballot, November 3, 2026 General Election, ballot type 26: Measure CC's ballot question and impartial analysis, page 35 (transcribed from the page images)"
+credit = "Voter Information Guide and Sample Ballot, County of Marin"
+url = "https://assets.marincounty.gov/marincounty-prod/public/2026-09/VIG-BT26.pdf"
+file = "sources/county-vig-bt26-measure-cc-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Marin County Counsel, Impartial Analysis by County Counsel, Marin Healthcare District Measure CC, Voter Information Guide and Sample Ballot, County of Marin, November 3, 2026 General Election, ballot type 26, page 35 (transcribed from the page images)"
+credit = "Impartial Analysis, Marin County Counsel"
+url = "https://assets.marincounty.gov/marincounty-prod/public/2026-09/VIG-BT26.pdf"
+file = "sources/county-vig-bt26-measure-cc-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "county-page"
+kind = "official-title-summary"
+publisher = "County of Marin Elections Department, Measure CC, November 3, 2026 General Election (list of measures)"
+credit = "Measure CC page, County of Marin Elections"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-cc-110326"
+file = "sources/measure-cc-county-page.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Measure CC, an ordinance of the people of the Marin Healthcare District enacting a special parcel tax, Voter Information Guide and Sample Ballot, County of Marin, November 3, 2026 General Election, ballot type 26, pages 39-40 (transcribed from the page images)"
+credit = "Full Text of Measure CC, Marin County Voter Information Guide"
+url = "https://assets.marincounty.gov/marincounty-prod/public/2026-09/VIG-BT26.pdf"
+file = "sources/county-vig-bt26-measure-cc-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure CC, Voter Information Guide and Sample Ballot, County of Marin, November 3, 2026 General Election, ballot type 26, page 36 (transcribed from the page images)"
+credit = "Argument in favor, Marin County Voter Information Guide"
+url = "https://assets.marincounty.gov/marincounty-prod/public/2026-09/VIG-BT26.pdf"
+file = "sources/county-vig-bt26-measure-cc-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure CC, Voter Information Guide and Sample Ballot, County of Marin, November 3, 2026 General Election, ballot type 26, page 37 (transcribed from the page images)"
+credit = "Argument against, Marin County Voter Information Guide"
+url = "https://assets.marincounty.gov/marincounty-prod/public/2026-09/VIG-BT26.pdf"
+file = "sources/county-vig-bt26-measure-cc-transcription.txt"
+retrieved = "2026-10-30"
