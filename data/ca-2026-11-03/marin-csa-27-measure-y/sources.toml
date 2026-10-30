@@ -3,10 +3,12 @@
 # script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
 # section 1).
 #
-# Marin County's guide could not be archived, and the county's Measure Y
-# page was not reached, so no impartial analysis or argument was
-# archived and no document says whether any argument was filed. These
-# are the Board of Supervisors' files for item 9b of its July 7, 2026
+# The county's Measure Y page (sources/county-page.txt, saved as text
+# from a browser, since the site refuses scripted fetches) prints the
+# ballot question, the vote required to pass, County Counsel's
+# impartial analysis and the argument in favor, and says that no
+# argument against Measure Y was filed. The other files are the Board of
+# Supervisors' files for item 9b of its July 7, 2026
 # meeting: the signed Resolution No. 2026-066, whose Section 3 is the
 # ballot question and whose Exhibit A is the measure's full ballot text;
 # the staff report; the vote certification; and the minutes. The vote
@@ -39,6 +41,10 @@ division = "ocd-division/country:us/state:ca/county:marin"
 kind = "measure"
 title = "County Service Area 27 Measure Y: Continuing the Paramedic Services Special Tax for Four Years"
 voters = "County Service Area 27"
+
+[[contest.correction]]
+date = "2026-10-30"
+note = "The video now gives the argument in favor printed by the county, and says, as the county does, that no argument against was filed."
 
 [[source]]
 id = "ballot-question"
@@ -75,3 +81,30 @@ credit = "Staff report 26-4515, Marin County Registrar of Voters"
 url = "https://marin.granicus.com/MetaViewer.php?view_id=33&event_id=4262&meta_id=1474983"
 file = "sources/marin-bos-2026-09-08-consolidation-staff-report-26-4515.pdf"
 retrieved = "2026-10-28"
+
+[[source]]
+id = "county-page"
+kind = "official-title-summary"
+publisher = "County of Marin, Elections, Measure Y 11/03/26 (November 3, 2026 General Election, list of measures): the ballot question, the vote required to pass, and the county's statement that no argument against Measure Y was filed"
+credit = "Measure Y page, County of Marin Elections"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-csa-27-ross-valley-paramedic-service-area-110326"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Marin County Counsel, Impartial analysis by County Counsel of Measure Y, as printed by County of Marin, Elections, Measure Y 11/03/26"
+credit = "Impartial analysis, Marin County Counsel"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-csa-27-ross-valley-paramedic-service-area-110326"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure Y, as printed by County of Marin, Elections, Measure Y 11/03/26"
+credit = "Argument in favor, County of Marin Elections"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-csa-27-ross-valley-paramedic-service-area-110326"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
