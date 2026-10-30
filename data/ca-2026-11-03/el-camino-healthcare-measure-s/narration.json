@@ -1,0 +1,247 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 70.78,
+  "phrases": [
+    {
+      "text": "Measure S asks the voters of this health care district whether to limit its directors to four four-year terms.",
+      "start": 0.03,
+      "end": 7.35
+    },
+    {
+      "text": "Today, the district has no limit on the number of terms a director may serve.",
+      "start": 8.01,
+      "end": 12.29
+    },
+    {
+      "text": "Measure S needs a majority of the vote to pass.",
+      "start": 12.95,
+      "end": 16.04
+    },
+    {
+      "text": "The district bylaws would say that no one may serve more than four full terms as a director.",
+      "start": 16.7,
+      "end": 23.12
+    },
+    {
+      "text": "Only terms beginning on or after December 1, 2026 would count, and a partial term, such as filling a vacancy, would not.",
+      "start": 23.78,
+      "end": 32.31
+    },
+    {
+      "text": "The impartial analysis does not include a cost estimate for the measure.",
+      "start": 32.97,
+      "end": 37.16
+    },
+    {
+      "text": "Supporters say good governance needs fresh perspectives, and term limits open seats to new candidates and keep the board accountable to the community.",
+      "start": 37.82,
+      "end": 46.67
+    },
+    {
+      "text": "No argument against Measure S was filed, so the list of local measures from the county shows only the argument in favor of it.",
+      "start": 47.33,
+      "end": 55.32
+    },
+    {
+      "text": "A yes vote amends the district bylaws to bar directors from serving more than four full terms, counting terms that begin on or after December 1, 2026.",
+      "start": 55.98,
+      "end": 67.03
+    },
+    {
+      "text": "A no vote does not amend the district bylaws.",
+      "start": 67.69,
+      "end": 70.75
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure S asks the voters of this health care district whether to limit its directors to four four-year terms.",
+      "Today, the district has no limit on the number of terms a director may serve.",
+      "Measure S needs a majority of the vote to pass.",
+      "The district bylaws would say that no one may serve more than four full terms as a director.",
+      "Only terms beginning on or after December 1, 2026 would count, and a partial term, such as filling a vacancy, would not.",
+      "The impartial analysis does not include a cost estimate for the measure.",
+      "Supporters say good governance needs fresh perspectives, and term limits open seats to new candidates and keep the board accountable to the community.",
+      "No argument against Measure S was filed, so the list of local measures from the county shows only the argument in favor of it.",
+      "A yes vote amends the district bylaws to bar directors from serving more than four full terms, counting terms that begin on or after December 1, 2026.",
+      "A no vote does not amend the district bylaws."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure S asks the voters of this health care district whether to limit its directors to four four-year terms."
+      },
+      "bounds": [
+        0,
+        177120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure S asks the voters of this health care district whether to limit its directors to four four-year terms.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, the district has no limit on the number of terms a director may serve."
+      },
+      "bounds": [
+        191520,
+        295680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, the district has no limit on the number of terms a director may serve.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure S needs a majority of the vote to pass."
+      },
+      "bounds": [
+        310080,
+        385680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure S needs a majority of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The district bylaws would say that no one may serve more than four full terms as a director."
+      },
+      "bounds": [
+        400080,
+        555600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district bylaws would say that no one may serve more than four full terms as a director.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Only terms beginning on or after December 1, 2026 would count, and a partial term, such as filling a vacancy, would not."
+      },
+      "bounds": [
+        570000,
+        776160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Only terms beginning on or after December 1, 2026 would count, and a partial term, such as filling a vacancy, would not.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The impartial analysis does not include a cost estimate for the measure."
+      },
+      "bounds": [
+        790560,
+        892560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The impartial analysis does not include a cost estimate for the measure.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say good governance needs fresh perspectives, and term limits open seats to new candidates and keep the board accountable to the community."
+      },
+      "bounds": [
+        906960,
+        1120800
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say good governance needs fresh perspectives, and term limits open seats to new candidates and keep the board accountable to the community.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument against Measure S was filed, so the list of local measures from the county shows only the argument in favor of it."
+      },
+      "bounds": [
+        1135200,
+        1328400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure S was filed, so the list of local measures from the county shows only the argument in favor of it.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote amends the district bylaws to bar directors from serving more than four full terms, counting terms that begin on or after December 1, 2026."
+      },
+      "bounds": [
+        1342800,
+        1609440
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote amends the district bylaws to bar directors from serving more than four full terms, counting terms that begin on or after December 1, 2026.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote does not amend the district bylaws."
+      },
+      "bounds": [
+        1623840,
+        1698720
+      ]
+    }
+  ],
+  "sha256": "a014fcb1dd9d60a0dccf1901b959f09b9a109cff33b3cf514a54d9fbea820d39",
+  "take": {
+    "sha256": "8458eac0f486408c876bcbf0dca5d00729e0c760c481aaf52621bc4cf4dfcfee",
+    "bytes": 3397484
+  }
+}
