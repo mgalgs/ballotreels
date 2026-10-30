@@ -2673,3 +2673,12 @@ source = "ballot-question"
 quote = "generating up to $5,200,000 annually until ended by voters"
 amount = 5200000
 period = "per-year"
+
+# City of Milpitas Measure K: a general tax, so no tax rate statement;
+# the ballot question on the Santa Clara County Registrar of Voters' List
+# of Local Measures gives the yearly revenue estimate.
+[milpitas-measure-k]
+source = "ballot-question"
+quote = "providing approximately $3,000,000 annually for general city services"
+amount = 3000000
+period = "per-year"
