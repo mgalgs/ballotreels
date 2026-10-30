@@ -8,16 +8,18 @@
 # "Reed Union Elementary School District"). The county's list of
 # measures is the authority for the letter; the Registrar of Voters'
 # staff report 26-4515 (September 8, 2026) gives the vote required
-# ("requires 55% approval"). Marin County's own Measure O pages could
-# not be fetched, so no impartial analysis, argument or rebuttal was
-# reached, and no document says whether any argument was filed (the
-# resolution only authorizes the filing of one in favor).
+# ("requires 55% approval"). The county's Measure O page
+# (sources/county-page.txt, read in a browser on 2026-10-30, since
+# marincounty.gov refuses scripted fetches) prints the same ballot
+# question, the vote required, County Counsel's impartial analysis, the
+# tax rate statement (its figures the same as Exhibit C's), the argument
+# in favor, and its statement that no argument against was filed.
 #
 # The District's Resolution No. 07-2025/2026 ordering the election is a
 # 15-page scan with no text layer. The pages cited (3, 5, 6, 7, 8, 13 and
 # 15) were typed from the page images into
 # sources/reed-resolution-07-2025-2026-ordering-election-transcription.txt,
-# which names the scan and its URL; every source below but the county's
+# which names the scan and its URL; every District source below
 # points at the transcription, and its url at the scan. Page 5 is the
 # clerk's certificate of adoption on June 8, 2026 (it writes the number
 # "No. 7-2026-27"; the title page reads "07-2025/2026"). Exhibit A (page 6)
@@ -38,6 +40,10 @@ election = "ca-2026-11-03"
 division = "ocd-division/country:us/state:ca/school_district:reed_union_elementary_school_district"
 kind = "measure"
 title = "Reed Union School District Measure O: $115 Million in School Repair, Safety and Upgrade Bonds"
+
+[[contest.correction]]
+date = "2026-10-30"
+note = "The video now gives the argument in favor printed by the county, and says, as the county does, that no argument against was filed."
 
 [[source]]
 id = "ballot-question"
@@ -91,4 +97,40 @@ publisher = "County of Marin, Elections: List of Measures, November 3, 2026 Gene
 credit = "List of measures, Marin County Elections"
 url = "https://web.archive.org/web/20261009122136/https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326"
 file = "sources/county-measure-list.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "county-page"
+kind = "official-title-summary"
+publisher = "County of Marin, Elections, Measure O 11/03/26, November 3, 2026 General Election (list of measures): the ballot question and the votes required to pass"
+credit = "Measure O page, County of Marin Elections"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-o-110326"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Marin County Counsel, Impartial analysis by County Counsel of Measure O, dated 8/24/26, on County of Marin, Elections, Measure O 11/03/26, November 3, 2026 General Election (list of measures)"
+credit = "Impartial analysis, Marin County Counsel"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-o-110326"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "county-tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Reed Union School District, Tax Rate Statement, dated June 8, 2026, on County of Marin, Elections, Measure O 11/03/26, November 3, 2026 General Election (list of measures)"
+credit = "Tax Rate Statement, Reed Union School District"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-o-110326"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure O, on County of Marin, Elections, Measure O 11/03/26, November 3, 2026 General Election (list of measures)"
+credit = "Argument in favor, County of Marin Elections"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-o-110326"
+file = "sources/county-page.txt"
 retrieved = "2026-10-30"

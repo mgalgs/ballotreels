@@ -3,8 +3,8 @@
 # today and when it ends; who placed the measure and the vote it needs;
 # what would change (the rate, its yearly rise, the term, what it pays
 # for); the ballot question's revenue
-# estimate; both sides, neither of which has an archived argument; what
-# a vote does.
+# estimate; both sides, for neither of which an argument was filed;
+# what a vote does.
 #
 # No place name is narrated (the narrator mispronounces them): the
 # opening says "the voters of this service area", and the channels run
@@ -28,12 +28,13 @@
 # is narrated as printed, with no period added; it is the service area's
 # revenue, and no archived source states the service area's
 # budget, so the figure has no scale (STANDARD.md 6.5; left open). The
-# per-lot amounts are exempt.
+# per-lot amounts are exempt. County Counsel's impartial analysis calls
+# it an average "annually"; the line, which quotes the question, is
+# left as it was.
 #
-# No argument for or against Measure Z was archived, and no document
-# says whether any was filed, so each side says none is among the
-# documents gathered (filed = false, STANDARD.md 2.5), as for Walnut
-# Creek Measure U.
+# The county's page says no argument in favor and no argument against
+# Measure Z was filed, so each side says so, attributed to the county
+# (filed = false, STANDARD.md 2.5).
 
 contest = "ca-2026-11-03-marin-csa-29-measure-z"
 template = "measure"
@@ -81,7 +82,7 @@ sources = ["staff-report", "text"]
 [[section.line]]
 id = "placed"
 text = "The county board of supervisors placed Measure Z on the ballot in May 2026; it needs two-thirds of the vote to pass."
-sources = ["vote-certification", "minutes", "county-report", "text"]
+sources = ["vote-certification", "minutes", "county-report", "text", "county-page", "impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -94,7 +95,7 @@ heading = "What would change"
 [[section.line]]
 id = "rate"
 text = "Starting in July 2027, each lot would pay $2,200 a year, rising 3 percent each year, for a total of ten years."
-sources = ["resolution", "text"]
+sources = ["resolution", "text", "impartial-analysis"]
 
 [section.line.visual]
 kind = "page"
@@ -104,7 +105,7 @@ highlight = ["for $2,200 per lot per year commencing in July 2027", "automatical
 [[section.line]]
 id = "uses"
 text = "The tax would pay for ongoing maintenance dredging of the main waterways and the two entry channels to the bay."
-sources = ["resolution", "text"]
+sources = ["resolution", "text", "impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -131,13 +132,13 @@ side = "yes"
 filed = false
 
 [[section.line]]
-text = "No argument for Measure Z appears among the official documents gathered for this video."
-sources = ["resolution"]
+text = "The elections office of the county says on its page for this measure that no argument for Measure Z was filed."
+sources = ["county-page"]
 
 [section.line.visual]
 kind = "list"
-source = "resolution"
-items = ["No argument for was found"]
+source = "county-page"
+items = ["No argument for was filed"]
 
 [[section]]
 id = "no"
@@ -146,13 +147,13 @@ side = "no"
 filed = false
 
 [[section.line]]
-text = "No argument against Measure Z appears among the official documents gathered for this video."
-sources = ["resolution"]
+text = "The elections office of the county says on its page for this measure that no argument against Measure Z was filed."
+sources = ["county-page"]
 
 [section.line.visual]
 kind = "list"
-source = "resolution"
-items = ["No argument against was found"]
+source = "county-page"
+items = ["No argument against was filed"]
 
 [[section]]
 id = "vote"

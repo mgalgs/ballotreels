@@ -3,7 +3,8 @@
 # and why the district puts this question every four years (the staff
 # report's plain facts, attributed); who placed it and the vote it needs;
 # what would change (the resolution's question); no cost estimate; both
-# sides, neither of which has an archived argument; what a vote does.
+# sides (an argument in favor; none against was filed); what a vote
+# does.
 #
 # No place name is narrated (the narrator mispronounces them): the
 # opening says "the voters of this utility district". The card, the
@@ -27,10 +28,11 @@
 # is in no archived document and is not used.
 #
 # Neither the resolution nor the staff report gives a cost figure, so
-# the fiscal line says so, naming both. No argument for or against
-# Measure AA was archived, and no document says whether any was filed,
-# so each side says none is among the documents gathered (filed =
-# false, STANDARD.md 2.5), as for Walnut Creek Measure U.
+# the fiscal line says so, naming both; County Counsel's impartial
+# analysis gives none either. The county's page prints an argument in
+# favor and says "No argument against Measure AA was filed." The yes
+# side gives the argument's points (its signers are not named); the no
+# side says what the county says (filed = false, STANDARD.md 2.5).
 
 contest = "ca-2026-11-03-inverness-pud-measure-aa"
 template = "measure"
@@ -82,7 +84,7 @@ name = "recurring-review"
 [[section.line]]
 id = "placed"
 text = "The board placed Measure AA on the ballot on May 19, 2026, and it needs a majority of the vote to pass."
-sources = ["minutes", "minutes-approval", "county-report"]
+sources = ["minutes", "minutes-approval", "county-report", "county-page", "impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -120,16 +122,16 @@ stamp = "None reported"
 id = "yes"
 heading = "Why some vote yes"
 side = "yes"
-filed = false
 
 [[section.line]]
-text = "No argument for Measure AA appears among the official documents gathered for this video."
-sources = ["resolution"]
+text = "Supporters say Measure AA keeps the district's full share of property taxes for fire protection, and will not raise taxes."
+sources = ["argument-for"]
+basis = ["Measure AA simply authorizes the County of Marin to transmit to the Inverness Public Utility District the full amount of the District’s statutory share of the property tax dollars paid by owners of property within Inverness.", "These revenues support Inverness fire protection, fire prevention, first-responder medical care, and disaster preparedness and response.", "A YES VOTE WILL NOT RAISE TAXES, A NO VOTE WILL NOT REDUCE TAXES."]
 
 [section.line.visual]
 kind = "list"
-source = "resolution"
-items = ["No argument for was found"]
+source = "argument-for"
+items = ["Keeps tax money local", "Does not raise taxes"]
 
 [[section]]
 id = "no"
@@ -138,13 +140,13 @@ side = "no"
 filed = false
 
 [[section.line]]
-text = "No argument against Measure AA appears among the official documents gathered for this video."
-sources = ["resolution"]
+text = "The elections office of the county says on its page for this measure that no argument against Measure AA was filed."
+sources = ["county-page"]
 
 [section.line.visual]
 kind = "list"
-source = "resolution"
-items = ["No argument against was found"]
+source = "county-page"
+items = ["No argument against was filed"]
 
 [[section]]
 id = "vote"

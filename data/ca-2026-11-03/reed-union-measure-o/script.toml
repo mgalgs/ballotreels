@@ -2,8 +2,8 @@
 # what it asks and whose measure it is; who placed it and the vote it
 # needs; what the money would pay for, what it
 # could not pay for, and who would check the spending; the tax rate
-# statement's estimates; both sides, neither of which has an archived
-# argument; what a vote does.
+# statement's estimates; both sides (an argument in favor; none against
+# was filed); what a vote does.
 #
 # No place name is narrated (the narrator mispronounces them): the
 # opening says "the voters of this school district", and the schools are
@@ -20,17 +20,18 @@
 # What the money pays for is the question's own list and Exhibit B's
 # project list, as enacted; Exhibit B's statements of need and benefit
 # (and the resolution's recitals) are the District's and are not used.
-# The figures are the tax rate statement's, attributed to it. No
+# The figures are the tax rate statement's, attributed to it; the
+# county's page prints the same statement, and County Counsel's
+# impartial analysis the same average rate. No
 # archived source states the district's budget, so the $115 million and
 # the $213 million to repay have no scale (STANDARD.md 6.5; left open),
 # as for the other school bonds; the tax per $100,000 of assessed value
 # is a per-property amount, exempt.
 #
-# No argument for or against Measure O was archived, and no document
-# says whether any was filed (the resolution only authorizes the filing
-# of one in favor), so each side says none is among the documents
-# gathered (filed = false, STANDARD.md 2.5), as for Walnut Creek
-# Measure U.
+# The county's page prints an argument in favor and says "No argument
+# against Measure O was filed." The yes side gives the argument's points
+# (its signers are not named, and neither are the schools it names); the
+# no side says what the county says (filed = false, STANDARD.md 2.5).
 
 contest = "ca-2026-11-03-reed-union-measure-o"
 template = "measure"
@@ -64,7 +65,7 @@ heading = "Today"
 [[section.line]]
 id = "placed"
 text = "The board of trustees placed Measure O on the ballot on June 8, 2026; as a Proposition 39 bond, it needs 55 percent of the vote to pass."
-sources = ["resolution", "county-report"]
+sources = ["resolution", "county-report", "county-page", "impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -86,12 +87,12 @@ name = "school-roof-repair"
 [[section.line]]
 id = "salaries"
 text = "The bond money could not pay teacher or administrator salaries, or other operating costs."
-sources = ["text", "resolution"]
+sources = ["text", "resolution", "impartial-analysis"]
 
 [[section.line]]
 id = "oversight"
 text = "A citizens' oversight committee and yearly independent audits would check how the money is spent."
-sources = ["text", "resolution"]
+sources = ["text", "resolution", "impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -104,7 +105,7 @@ heading = "What the tax statement says"
 [[section.line]]
 id = "rate"
 text = "The tax rate statement of the district estimates an average tax of $26.63 per $100,000 of assessed value, and at most $30, through 2060-2061."
-sources = ["tax-statement"]
+sources = ["tax-statement", "county-tax-statement"]
 
 [section.line.visual]
 kind = "bars"
@@ -117,22 +118,22 @@ values = [26.63, 30]
 [[section.line]]
 id = "repay"
 text = "The statement estimates the total to repay, with interest, from a tax on property in the district, at $213 million."
-sources = ["tax-statement"]
+sources = ["tax-statement", "county-tax-statement"]
 
 [[section]]
 id = "yes"
 heading = "Why some vote yes"
 side = "yes"
-filed = false
 
 [[section.line]]
-text = "No argument for Measure O appears among the official documents gathered for this video."
-sources = ["ballot-question"]
+text = "Supporters say the district's buildings are deteriorating, with leaking roofs and moldy portables, and that all bond money must be spent locally."
+sources = ["argument-for"]
+basis = ["the buildings and infrastructure are deteriorating and need our help", "Roofs leak. Pipes and wiring are wearing out.", "Portables have developed mold, and a few have been closed because they simply aren't safe for kids anymore.", "All bond funds must be spent locally and cannot be taken by the State."]
 
 [section.line.visual]
 kind = "list"
-source = "ballot-question"
-items = ["No argument for was found"]
+source = "argument-for"
+items = ["Buildings are deteriorating", "Money must be spent locally"]
 
 [[section]]
 id = "no"
@@ -141,13 +142,13 @@ side = "no"
 filed = false
 
 [[section.line]]
-text = "No argument against Measure O appears among the official documents gathered for this video."
-sources = ["ballot-question"]
+text = "The elections office of the county says on its page for this measure that no argument against Measure O was filed."
+sources = ["county-page"]
 
 [section.line.visual]
 kind = "list"
-source = "ballot-question"
-items = ["No argument against was found"]
+source = "county-page"
+items = ["No argument against was filed"]
 
 [[section]]
 id = "vote"
