@@ -1,0 +1,69 @@
+# Archived sources for City of Lynwood Measure L, 2026-11-03 general
+# election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" (sources/county-measure-list-excerpt.txt, the
+# measure's entry) gives its letter, vote threshold and ballot question,
+# and, on its "Supporters: ... Opponents: ..." line, who filed the
+# primary arguments ("Opponents: None submitted."): the card quotes it,
+# and the sides cite it as the official statement of filing.
+#
+# The measure's text and the resolutions placing it are only in the
+# City's August 4, 2026 staff-report packet (sources/staff-report.pdf, a
+# text PDF of 76 pages, Agenda Item 6.1): the resolution approving the
+# form of the ordinance is on PDF pages 51 to 53, and the ordinance it
+# attaches (Attachment No. 1) on pages 54 to 73; the script cites its
+# recitals (pages 54 to 56), the tax and exemptions (pages 60 and 61)
+# and the operative date (page 72). The packet holds the resolutions as
+# proposed, unsigned and with blank vote lines; no adopted copy was
+# found. The staff report itself (pages 1 to 6) is the City's own, cited
+# for plain facts only: its "Fiscal Impact" section (page 5) compares the
+# revenue estimate with the City's General Fund, and is cited as the
+# measure's fiscal statement for that comparison, as Red Bluff D's staff
+# report is. No impartial analysis and no argument text could be found.
+# The City's Measure L web page is not cited.
+
+[contest]
+id = "ca-2026-11-03-lynwood-measure-l"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:lynwood"
+kind = "measure"
+title = "City of Lynwood Measure L: A 12% Hotel Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): City of Lynwood, Measure L"
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "arguments-filed"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): Measure L, the supporters who filed its argument for, and \"Opponents: None submitted.\""
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "ordinance"
+kind = "official-text"
+publisher = "City of Lynwood, proposed ordinance adding Section 6-9 \"Transient Occupancy Tax\" to Chapter 6 of the Lynwood Municipal Code (The Lynwood Public Safety/Community Protection/City Services Measure), Attachment No. 1 to the City Council's resolution approving the form of the proposed ordinance, in the August 4, 2026 City Council agenda packet, Item 6.1, PDF pages 51 to 73"
+credit = "Measure L ordinance, City of Lynwood"
+url = "https://www.lynwoodca.gov/DocumentCenter/View/2634/measure-l-staff-report"
+file = "sources/staff-report.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "staff-report"
+kind = "official-fiscal-analysis"
+publisher = "City of Lynwood, City Council Agenda Staff Report, Item 6.1, August 4, 2026, Approval to Place a Transient Occupancy Tax Measure on the November 3, 2026 General Municipal Election Ballot: Executive Summary and Fiscal Impact, PDF pages 1 to 5"
+credit = "City Council staff report, City of Lynwood"
+url = "https://www.lynwoodca.gov/DocumentCenter/View/2634/measure-l-staff-report"
+file = "sources/staff-report.pdf"
+retrieved = "2026-10-30"

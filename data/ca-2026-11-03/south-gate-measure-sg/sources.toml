@@ -1,0 +1,66 @@
+# Archived sources for City of South Gate Measure SG, 2026-11-03 general
+# election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" (sources/county-measure-list-excerpt.txt, the
+# measure's entry) gives its letter, vote threshold and ballot question,
+# and, on its "Supporters: ... Opponents: ..." line, who filed the
+# primary arguments: the card quotes it, and the sides cite it as the
+# official statement of filing. The City Council's Resolution No.
+# 2026-35-CC, a text PDF, gives the ballot question, the City Clerk's
+# certification of the Council's vote, and the ordinance (Exhibit A) with
+# its rates, exemption and recitals. The City's August 2026 budget
+# presentation (sources/staff-report.pdf, page 4) is cited for one plain
+# fact no other document states, that the City levies no utility users
+# tax today, in a background line only; its General Fund revenue figure
+# is not used to scale the revenue estimate (STANDARD.md 6.5 takes a
+# total only from a fiscal statement or a nonpartisan fiscal office). The
+# City's water bill insert, web pages, notices and the resolution calling
+# the election are not cited. No impartial analysis and no argument text
+# could be found. A general utility users tax has no tax rate statement;
+# the revenue estimate is the ballot question's.
+
+[contest]
+id = "ca-2026-11-03-south-gate-measure-sg"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:south_gate"
+kind = "measure"
+title = "City of South Gate Measure SG: An 8% Utility Users Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): City of South Gate, Measure SG"
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "arguments-filed"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): Measure SG, the supporters and opponents who filed its arguments"
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City of South Gate City Council, Resolution No. 2026-35-CC, submitting ballot measure text for the utility users tax measure to the voters at the November 3, 2026 General Municipal Election, adopted June 23, 2026, with the ordinance adopting a utility users tax (Exhibit A) and the City Clerk's certification of the vote"
+credit = "Resolution No. 2026-35-CC and ordinance, City of South Gate"
+url = "https://www.cityofsouthgate.org/files/sharedassets/public/v/1/government/departments/city-clerks-office/elections/documents/resolution-no.-2026-35-cc.pdf"
+file = "sources/resolution.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "budget-presentation"
+kind = "official-report"
+publisher = "City of South Gate, Administrative Services Department, Budget Reductions and Service Impacts, August 2026 (City Council presentation), page 4"
+credit = "City of South Gate budget presentation, August 2026"
+url = "https://www.cityofsouthgate.org/files/sharedassets/public/v/1/government/city-manager/documents/uut/260818-budget-cut-update-presentation-final.pdf"
+file = "sources/staff-report.pdf"
+retrieved = "2026-10-30"

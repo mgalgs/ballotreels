@@ -1454,7 +1454,8 @@ def _in_text(phrase: str, archived: str) -> bool:
     the phrase may be missing from the text: pdftotext joins a word
     hyphenated across a line break ("bolt-" / "action" -> "boltaction"),
     and drops a dash standing alone at a line's end with it ("$0.60 -" /
-    "$1.50" -> "$0.60 $1.50")."""
+    "$1.50" -> "$0.60 $1.50"); or followed by a space, where a text copy
+    keeps the line break ("non-" / "payment" -> "non- payment")."""
     want = _normalise(phrase)
     if want in archived:
         return True
@@ -1466,8 +1467,9 @@ def _in_text(phrase: str, archived: str) -> bool:
 
 
 def _hyphen_optional(phrase: str) -> str:
-    """A regex for `phrase` with each of its hyphens optional."""
-    return "-?".join(re.escape(p) for p in phrase.split("-"))
+    """A regex for `phrase` with each of its hyphens optional, or followed
+    by a space (a line break kept in the text)."""
+    return "(?:- ?)?".join(re.escape(p) for p in phrase.split("-"))
 
 
 # A basis is compared looser than a card quote: a side's argument is

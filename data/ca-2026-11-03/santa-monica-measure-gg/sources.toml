@@ -1,0 +1,51 @@
+# Archived sources for City of Santa Monica Measure GG, 2026-11-03 general
+# election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" (sources/county-measure-list-excerpt.txt, the
+# measure's entry) gives its letter, vote threshold and ballot question,
+# and, on its "Supporters: ... Opponents: ..." line, who filed the
+# primary arguments ("Opponents: None submitted."): the card quotes it,
+# and the sides cite it as the official statement of filing. The City
+# Council's resolution submitting the measure, a text PDF, gives today's
+# charter rules in its recitals and the charter amendment itself as
+# Exhibit 2 (pages 37 to 44). Its Exhibit 1, the Rent Control Board's
+# and City Attorney's transmittals, is not cited. No impartial analysis
+# and no argument text could be fetched (the City's site blocked
+# downloads). Not a tax; no fiscal statement applies.
+
+[contest]
+id = "ca-2026-11-03-santa-monica-measure-gg"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:santa_monica"
+kind = "measure"
+title = "City of Santa Monica Measure GG: Rent Control Board Terms, Fees and Eviction Rules"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): City of Santa Monica, Measure GG"
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "arguments-filed"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): Measure GG, the supporters who filed its argument for, and \"Opponents: None submitted.\""
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City of Santa Monica City Council, Resolution submitting to the voters a measure to amend Articles XXIII and XVIII of the City Charter, July 14, 2026, with the charter amendment as Exhibit 2 (pages 37 to 44)"
+credit = "Resolution and Exhibit 2, Measure GG, City of Santa Monica"
+url = "https://SantaMonicaCityCA.IQM2.com/Citizens/FileOpen.aspx?Type=4&ID=20759"
+file = "sources/resolution.pdf"
+retrieved = "2026-10-30"
