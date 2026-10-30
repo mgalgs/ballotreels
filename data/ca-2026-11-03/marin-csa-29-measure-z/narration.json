@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 81.86,
+  "seconds": 84.54,
   "phrases": [
     {
       "text": "Measure Z asks the voters of this service area whether to approve a yearly parcel tax for maintenance dredging, for ten years.",
@@ -39,24 +39,24 @@
       "end": 58.32
     },
     {
-      "text": "No argument against Measure Z appears among the official documents gathered for this video.",
+      "text": "The elections office of the county says on its page for this measure that no argument against Measure Z was filed.",
       "start": 58.98,
-      "end": 64.28
+      "end": 66.06
     },
     {
-      "text": "No argument for Measure Z appears among the official documents gathered for this video.",
-      "start": 64.94,
-      "end": 69.96
+      "text": "The elections office of the county says on its page for this measure that no argument for Measure Z was filed.",
+      "start": 66.72,
+      "end": 73.3
     },
     {
       "text": "A yes vote approves the parcel tax of $2,200 per lot a year, rising 3 percent a year, for ten years.",
-      "start": 70.62,
-      "end": 79.14
+      "start": 73.96,
+      "end": 81.82
     },
     {
       "text": "A no vote rejects the new tax.",
-      "start": 79.8,
-      "end": 81.83
+      "start": 82.48,
+      "end": 84.51
     }
   ],
   "inputs": {
@@ -68,8 +68,8 @@
       "Starting in July 2027, each lot would pay $2,200 a year, rising 3 percent each year, for a total of ten years.",
       "The tax would pay for ongoing maintenance dredging of the main waterways and the two entry channels to the bay.",
       "The ballot question estimates the tax would provide about $272,800.",
-      "No argument against Measure Z appears among the official documents gathered for this video.",
-      "No argument for Measure Z appears among the official documents gathered for this video.",
+      "The elections office of the county says on its page for this measure that no argument against Measure Z was filed.",
+      "The elections office of the county says on its page for this measure that no argument for Measure Z was filed.",
       "A yes vote approves the parcel tax of $2,200 per lot a year, rising 3 percent a year, for ten years.",
       "A no vote rejects the new tax."
     ],
@@ -205,11 +205,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument against Measure Z appears among the official documents gathered for this video."
+        "text": "The elections office of the county says on its page for this measure that no argument against Measure Z was filed."
       },
       "bounds": [
         1414800,
-        1543440
+        1586160
       ]
     },
     {
@@ -217,15 +217,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure Z appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The elections office of the county says on its page for this measure that no argument against Measure Z was filed.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument for Measure Z appears among the official documents gathered for this video."
+        "text": "The elections office of the county says on its page for this measure that no argument for Measure Z was filed."
       },
       "bounds": [
-        1557840,
-        1679760
+        1600560,
+        1759920
       ]
     },
     {
@@ -233,15 +233,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure Z appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The elections office of the county says on its page for this measure that no argument for Measure Z was filed.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote approves the parcel tax of $2,200 per lot a year, rising 3 percent a year, for ten years."
       },
       "bounds": [
-        1694160,
-        1900080
+        1774320,
+        1964400
       ]
     },
     {
@@ -256,14 +256,14 @@
         "text": "A no vote rejects the new tax."
       },
       "bounds": [
-        1914480,
-        1964640
+        1978800,
+        2028960
       ]
     }
   ],
-  "sha256": "c1ef4ea30a55e470fcb3f6ec5372a33d678af3e24e4950da0115aded8ce47334",
+  "sha256": "b03f397411447d33aa4f6106e82674eb78d5f5892e0c0a5ededfe9e87f2952af",
   "take": {
-    "sha256": "94129cf99851f8d073a045f271efc4ebdc9194e4c52fcff8a210844266feb0e4",
-    "bytes": 3929324
+    "sha256": "9331db97a4f87ef05d0c302a9862ec71a8cb78582f12725121ed833008bb1258",
+    "bytes": 4057964
   }
 }

@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 77.04,
+  "seconds": 80.39,
   "phrases": [
     {
       "text": "Measure AA asks the voters of this utility district whether to adjust its spending limit for four fiscal years.",
@@ -34,24 +34,24 @@
       "end": 54.11
     },
     {
-      "text": "No argument against Measure AA appears among the official documents gathered for this video.",
+      "text": "The elections office of the county says on its page for this measure that no argument against Measure AA was filed.",
       "start": 54.77,
-      "end": 60.07
+      "end": 61.36
     },
     {
-      "text": "No argument for Measure AA appears among the official documents gathered for this video.",
-      "start": 60.73,
-      "end": 66.09
+      "text": "Supporters say Measure AA keeps the district's full share of property taxes for fire protection, and will not raise taxes.",
+      "start": 62.02,
+      "end": 69.68
     },
     {
       "text": "A yes vote adjusts the limit to include the combined total of all applicable revenue sources, for those four years.",
-      "start": 66.75,
-      "end": 74.17
+      "start": 70.34,
+      "end": 77.52
     },
     {
       "text": "A no vote does not adjust the limit.",
-      "start": 74.83,
-      "end": 77.01
+      "start": 78.18,
+      "end": 80.36
     }
   ],
   "inputs": {
@@ -62,8 +62,8 @@
       "The board placed Measure AA on the ballot on May 19, 2026, and it needs a majority of the vote to pass.",
       "For fiscal years 2026-2027 through 2029-2030, the limit would include the combined total of all applicable revenue sources.",
       "Neither the resolution nor the staff report on it includes a cost estimate for the measure.",
-      "No argument against Measure AA appears among the official documents gathered for this video.",
-      "No argument for Measure AA appears among the official documents gathered for this video.",
+      "The elections office of the county says on its page for this measure that no argument against Measure AA was filed.",
+      "Supporters say Measure AA keeps the district's full share of property taxes for fire protection, and will not raise taxes.",
       "A yes vote adjusts the limit to include the combined total of all applicable revenue sources, for those four years.",
       "A no vote does not adjust the limit."
     ],
@@ -183,11 +183,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument against Measure AA appears among the official documents gathered for this video."
+        "text": "The elections office of the county says on its page for this measure that no argument against Measure AA was filed."
       },
       "bounds": [
         1313760,
-        1442400
+        1473360
       ]
     },
     {
@@ -195,15 +195,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure AA appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The elections office of the county says on its page for this measure that no argument against Measure AA was filed.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument for Measure AA appears among the official documents gathered for this video."
+        "text": "Supporters say Measure AA keeps the district's full share of property taxes for fire protection, and will not raise taxes."
       },
       "bounds": [
-        1456800,
-        1586880
+        1487760,
+        1673040
       ]
     },
     {
@@ -211,15 +211,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure AA appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure AA keeps the district's full share of property taxes for fire protection, and will not raise taxes.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote adjusts the limit to include the combined total of all applicable revenue sources, for those four years."
       },
       "bounds": [
-        1601280,
-        1780800
+        1687440,
+        1861200
       ]
     },
     {
@@ -234,14 +234,14 @@
         "text": "A no vote does not adjust the limit."
       },
       "bounds": [
-        1795200,
-        1848960
+        1875600,
+        1929360
       ]
     }
   ],
-  "sha256": "573a52a34f4534cf92c97cfff32fca5b775fa19d41d15bbd48d7059f2b81214d",
+  "sha256": "ae79f780d3510a4ab8b435899f41a8596254987fefa3ceedbb526a3a95fde138",
   "take": {
-    "sha256": "4a589bffcb80827e50faf720a044dce2ac19414672b3e60aba5c5b6b982776e3",
-    "bytes": 3697964
+    "sha256": "bfba5209c5c0a34c7b6b0b6fd50ad8bd32f0ed1e1007af21f160b7c63d8bcf96",
+    "bytes": 3858764
   }
 }

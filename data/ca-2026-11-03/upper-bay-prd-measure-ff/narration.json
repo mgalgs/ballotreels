@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 91.64,
+  "seconds": 95.4,
   "phrases": [
     {
       "text": "Measure FF asks the voters of this road division whether to approve a yearly parcel tax to repave and maintain a private road.",
@@ -39,24 +39,24 @@
       "end": 69.62
     },
     {
-      "text": "No argument against Measure FF appears among the official documents gathered for this video.",
+      "text": "The elections office of the county says on its page for this measure that no argument against Measure FF was filed.",
       "start": 70.28,
-      "end": 75.85
+      "end": 78.06
     },
     {
-      "text": "No argument for Measure FF appears among the official documents gathered for this video.",
-      "start": 76.51,
-      "end": 82.04
+      "text": "The elections office of the county says on its page for this measure that no argument for Measure FF was filed.",
+      "start": 78.72,
+      "end": 85.84
     },
     {
       "text": "A yes vote authorizes the special tax, for improvements and then ongoing maintenance.",
-      "start": 82.7,
-      "end": 88.73
+      "start": 86.5,
+      "end": 92.49
     },
     {
       "text": "A no vote rejects the special tax.",
-      "start": 89.39,
-      "end": 91.61
+      "start": 93.15,
+      "end": 95.37
     }
   ],
   "inputs": {
@@ -68,8 +68,8 @@
       "After that, each parcel would pay $455 a year for ongoing maintenance, adjusted every year for consumer prices, until repealed.",
       "The money would repave and maintain the road, from the end of the county-maintained section to the cul-de-sac at its south end.",
       "If Measure FF passes, the division could borrow from the county against the tax, which would repay the loan and its costs.",
-      "No argument against Measure FF appears among the official documents gathered for this video.",
-      "No argument for Measure FF appears among the official documents gathered for this video.",
+      "The elections office of the county says on its page for this measure that no argument against Measure FF was filed.",
+      "The elections office of the county says on its page for this measure that no argument for Measure FF was filed.",
       "A yes vote authorizes the special tax, for improvements and then ongoing maintenance.",
       "A no vote rejects the special tax."
     ],
@@ -205,11 +205,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument against Measure FF appears among the official documents gathered for this video."
+        "text": "The elections office of the county says on its page for this measure that no argument against Measure FF was filed."
       },
       "bounds": [
         1686000,
-        1821120
+        1874160
       ]
     },
     {
@@ -217,15 +217,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure FF appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The elections office of the county says on its page for this measure that no argument against Measure FF was filed.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument for Measure FF appears among the official documents gathered for this video."
+        "text": "The elections office of the county says on its page for this measure that no argument for Measure FF was filed."
       },
       "bounds": [
-        1835520,
-        1969680
+        1888560,
+        2060880
       ]
     },
     {
@@ -233,15 +233,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure FF appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The elections office of the county says on its page for this measure that no argument for Measure FF was filed.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote authorizes the special tax, for improvements and then ongoing maintenance."
       },
       "bounds": [
-        1984080,
-        2130240
+        2075280,
+        2220480
       ]
     },
     {
@@ -256,14 +256,14 @@
         "text": "A no vote rejects the special tax."
       },
       "bounds": [
-        2144640,
-        2199360
+        2234880,
+        2289600
       ]
     }
   ],
-  "sha256": "f6271e600ba1b3364316a3c3355d4ea95449f49580ee98fd35aadf87eb43e636",
+  "sha256": "cca62a9d49c7305c70a92b9c4fdaccfa5eb5b01eb0d46af8bf6c715517746625",
   "take": {
-    "sha256": "e64d8c5602df77c94f57a70b570de26ee7687fca834d288f17611754cc796068",
-    "bytes": 4398764
+    "sha256": "2aa16c0935fb171100069a928e3a8bc2f7dc77b64924f38f1f4b3656947e89ba",
+    "bytes": 4579244
   }
 }

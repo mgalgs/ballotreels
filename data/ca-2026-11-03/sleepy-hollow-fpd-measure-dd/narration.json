@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 90.72,
+  "seconds": 96.13,
   "phrases": [
     {
       "text": "Measure DD asks the voters of this fire district whether to continue a parcel tax for paramedic services for four more years.",
@@ -44,24 +44,24 @@
       "end": 70.4
     },
     {
-      "text": "No argument for Measure DD appears among the official documents gathered for this video.",
+      "text": "Supporters say Measure DD keeps 9-1-1 response rapid and paramedics on duty, at the current rate with modest increases.",
       "start": 71.06,
-      "end": 76.1
+      "end": 79.9
     },
     {
-      "text": "No argument against Measure DD appears among the official documents gathered for this video.",
-      "start": 76.76,
-      "end": 82.36
+      "text": "The county elections office says on its page for this measure that no argument against Measure DD was filed.",
+      "start": 80.56,
+      "end": 87.54
     },
     {
       "text": "A yes vote continues the paramedic tax for four more years.",
-      "start": 83.02,
-      "end": 86.85
+      "start": 88.2,
+      "end": 92.26
     },
     {
       "text": "A no vote does not continue the paramedic tax.",
-      "start": 87.51,
-      "end": 90.69
+      "start": 92.92,
+      "end": 96.1
     }
   ],
   "inputs": {
@@ -74,8 +74,8 @@
       "The ballot question says all of the money would go to local paramedic services, with yearly audits.",
       "The resolution placing Measure DD on the ballot records its adoption by the fire district board in June, and it needs two-thirds of the vote to pass.",
       "The ballot question estimates the tax would raise about $105,000 a year.",
-      "No argument for Measure DD appears among the official documents gathered for this video.",
-      "No argument against Measure DD appears among the official documents gathered for this video.",
+      "Supporters say Measure DD keeps 9-1-1 response rapid and paramedics on duty, at the current rate with modest increases.",
+      "The county elections office says on its page for this measure that no argument against Measure DD was filed.",
       "A yes vote continues the paramedic tax for four more years.",
       "A no vote does not continue the paramedic tax."
     ],
@@ -227,11 +227,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument for Measure DD appears among the official documents gathered for this video."
+        "text": "Supporters say Measure DD keeps 9-1-1 response rapid and paramedics on duty, at the current rate with modest increases."
       },
       "bounds": [
         1704720,
-        1827120
+        1918320
       ]
     },
     {
@@ -239,15 +239,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure DD appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure DD keeps 9-1-1 response rapid and paramedics on duty, at the current rate with modest increases.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument against Measure DD appears among the official documents gathered for this video."
+        "text": "The county elections office says on its page for this measure that no argument against Measure DD was filed."
       },
       "bounds": [
-        1841520,
-        1977360
+        1932720,
+        2101680
       ]
     },
     {
@@ -255,15 +255,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure DD appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The county elections office says on its page for this measure that no argument against Measure DD was filed.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote continues the paramedic tax for four more years."
       },
       "bounds": [
-        1991760,
-        2085120
+        2116080,
+        2214960
       ]
     },
     {
@@ -278,14 +278,14 @@
         "text": "A no vote does not continue the paramedic tax."
       },
       "bounds": [
-        2099520,
-        2177280
+        2229360,
+        2307120
       ]
     }
   ],
-  "sha256": "3b912db02b7ef45b23baf69ce198741b0226222398f15410554ce12115da1de8",
+  "sha256": "f2a1d74cf1af1252f3a6949a01d98adb93fb5fb41532f5172198fd1004a54141",
   "take": {
-    "sha256": "cdcaf915045217e5526f43c8d93f43d17dc6b32d18d32726959219031c5139e1",
-    "bytes": 4354604
+    "sha256": "46ef842406324b2f78b47eec6ea9c6cf5d9934fb449cd819732af7a23fcb3ff1",
+    "bytes": 4614284
   }
 }

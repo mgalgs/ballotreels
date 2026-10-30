@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 82.58,
+  "seconds": 87.69,
   "phrases": [
     {
       "text": "Measure U asks the voters of this town whether to continue a special tax for paramedic services for four more years.",
@@ -44,24 +44,24 @@
       "end": 59.55
     },
     {
-      "text": "No argument against Measure U appears among the official documents gathered for this video.",
+      "text": "The county elections office says on its page for this measure that no argument against Measure U was filed.",
       "start": 60.21,
-      "end": 65.82
+      "end": 67.34
     },
     {
-      "text": "No argument for Measure U appears among the official documents gathered for this video.",
-      "start": 66.48,
-      "end": 71.57
+      "text": "Supporters say Measure U keeps paramedics on duty on fire engines and ambulances, and caps yearly increases at $4.",
+      "start": 68.0,
+      "end": 76.74
     },
     {
       "text": "A yes vote continues the paramedic tax for four more years.",
-      "start": 72.23,
-      "end": 76.22
+      "start": 77.4,
+      "end": 81.33
     },
     {
       "text": "A no vote does not continue the paramedic tax, which ends in June 2027.",
-      "start": 76.88,
-      "end": 82.55
+      "start": 81.99,
+      "end": 87.66
     }
   ],
   "inputs": {
@@ -74,8 +74,8 @@
       "The tax would end on June 30, 2031, and the ballot question says all funds would go to local paramedic services.",
       "Measure U needs two-thirds of the vote to pass.",
       "The ballot question says the tax would raise about $111,000 a year.",
-      "No argument against Measure U appears among the official documents gathered for this video.",
-      "No argument for Measure U appears among the official documents gathered for this video.",
+      "The county elections office says on its page for this measure that no argument against Measure U was filed.",
+      "Supporters say Measure U keeps paramedics on duty on fire engines and ambulances, and caps yearly increases at $4.",
       "A yes vote continues the paramedic tax for four more years.",
       "A no vote does not continue the paramedic tax, which ends in June 2027."
     ],
@@ -227,11 +227,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument against Measure U appears among the official documents gathered for this video."
+        "text": "The county elections office says on its page for this measure that no argument against Measure U was filed."
       },
       "bounds": [
         1444320,
-        1580400
+        1616880
       ]
     },
     {
@@ -239,15 +239,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure U appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The county elections office says on its page for this measure that no argument against Measure U was filed.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument for Measure U appears among the official documents gathered for this video."
+        "text": "Supporters say Measure U keeps paramedics on duty on fire engines and ambulances, and caps yearly increases at $4."
       },
       "bounds": [
-        1594800,
-        1718400
+        1631280,
+        1842480
       ]
     },
     {
@@ -255,15 +255,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure U appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure U keeps paramedics on duty on fire engines and ambulances, and caps yearly increases at $4.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote continues the paramedic tax for four more years."
       },
       "bounds": [
-        1732800,
-        1830000
+        1856880,
+        1952640
       ]
     },
     {
@@ -278,14 +278,14 @@
         "text": "A no vote does not continue the paramedic tax, which ends in June 2027."
       },
       "bounds": [
-        1844400,
-        1981920
+        1967040,
+        2104560
       ]
     }
   ],
-  "sha256": "ba733ef15f12e6470cfdd0f83528ced4f332100f40c28d5bfc71afbd94c5ee12",
+  "sha256": "1719e5b10c4b12daeb914eb97901dae53dafffbf8e019b801d090701f5385d23",
   "take": {
-    "sha256": "d9ab996e39743a7051f6ca782cc8f3a9b52ad53896becc36836ac61ec4448dc3",
-    "bytes": 3963884
+    "sha256": "152ecb0711184b416121292bef69d8d58311d781016c97c0a000398eb602fad7",
+    "bytes": 4209164
   }
 }

@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 89.85,
+  "seconds": 108.75,
   "phrases": [
     {
       "text": "Measure T asks the voters of this city whether to renew a special tax for fire suppression and road repair, for 10 years.",
@@ -24,49 +24,54 @@
       "end": 27.31
     },
     {
-      "text": "Homeowners over 65 who live in their homes, with incomes at or below the median income scale of a county housing authority, would not pay.",
+      "text": "The city attorney's impartial analysis says the current tax was approved in 2016 at a base rate of $266 a home, and that Measure T renews it with the rates increased.",
       "start": 27.97,
-      "end": 37.15
+      "end": 41.54
+    },
+    {
+      "text": "Homeowners over 65 who live in their homes, with incomes at or below the median income scale of a county housing authority, would not pay.",
+      "start": 42.2,
+      "end": 51.47
     },
     {
       "text": "Until the tax ends in 2037, its money could go only to fire suppression, including vegetation and tree work, and to street repair.",
-      "start": 37.81,
-      "end": 47.33
+      "start": 52.13,
+      "end": 61.65
     },
     {
       "text": "The same vote would set a legal spending limit for the new tax district, equal to what the tax collects each year.",
-      "start": 47.99,
-      "end": 54.49
+      "start": 62.31,
+      "end": 68.81
     },
     {
       "text": "Measure T needs two-thirds of the vote to pass.",
-      "start": 55.15,
-      "end": 58.43
+      "start": 69.47,
+      "end": 72.75
     },
     {
       "text": "The ballot question says the tax would raise an average of $1.9 million a year over 10 years.",
-      "start": 59.09,
-      "end": 65.86
+      "start": 73.41,
+      "end": 80.18
     },
     {
-      "text": "No argument against Measure T appears among the official documents gathered for this video.",
-      "start": 66.52,
-      "end": 71.77
+      "text": "The elections office of the county says on its page for this measure that no argument against Measure T was filed.",
+      "start": 80.84,
+      "end": 87.93
     },
     {
-      "text": "No argument for Measure T appears among the official documents gathered for this video.",
-      "start": 72.43,
-      "end": 77.67
+      "text": "Supporters say Measure T keeps road repair and wildfire safety funded, and that all of its money stays in the city.",
+      "start": 88.59,
+      "end": 96.29
     },
     {
       "text": "A yes vote renews the service tax for 10 years and sets the district's spending limit.",
-      "start": 78.33,
-      "end": 83.4
+      "start": 96.95,
+      "end": 102.3
     },
     {
       "text": "A no vote does not renew the service tax, which expires in mid-2027.",
-      "start": 84.06,
-      "end": 89.82
+      "start": 102.96,
+      "end": 108.72
     }
   ],
   "inputs": {
@@ -75,13 +80,14 @@
       "A city staff report says the current service tax expires in mid-2027.",
       "The tax would be $303 a year for each single-family home, rising 2 percent each year.",
       "The staff report says that rate is no increase over what taxpayers pay now.",
+      "The city attorney's impartial analysis says the current tax was approved in 2016 at a base rate of $266 a home, and that Measure T renews it with the rates increased.",
       "Homeowners over 65 who live in their homes, with incomes at or below the median income scale of a county housing authority, would not pay.",
       "Until the tax ends in 2037, its money could go only to fire suppression, including vegetation and tree work, and to street repair.",
       "The same vote would set a legal spending limit for the new tax district, equal to what the tax collects each year.",
       "Measure T needs two-thirds of the vote to pass.",
       "The ballot question says the tax would raise an average of $1.9 million a year over 10 years.",
-      "No argument against Measure T appears among the official documents gathered for this video.",
-      "No argument for Measure T appears among the official documents gathered for this video.",
+      "The elections office of the county says on its page for this measure that no argument against Measure T was filed.",
+      "Supporters say Measure T keeps road repair and wildfire safety funded, and that all of its money stays in the city.",
       "A yes vote renews the service tax for 10 years and sets the district's spending limit.",
       "A no vote does not renew the service tax, which expires in mid-2027."
     ],
@@ -169,11 +175,27 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Homeowners over 65 who live in their homes, with incomes at or below the median income scale of a county housing authority, would not pay."
+        "text": "The city attorney's impartial analysis says the current tax was approved in 2016 at a base rate of $266 a home, and that Measure T renews it with the rates increased."
       },
       "bounds": [
         670560,
-        892320
+        997680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The city attorney's impartial analysis says the current tax was approved in 2016 at a base rate of $266 a home, and that Measure T renews it with the rates increased.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Homeowners over 65 who live in their homes, with incomes at or below the median income scale of a county housing authority, would not pay."
+      },
+      "bounds": [
+        1012080,
+        1236000
       ]
     },
     {
@@ -188,8 +210,8 @@
         "text": "Until the tax ends in 2037, its money could go only to fire suppression, including vegetation and tree work, and to street repair."
       },
       "bounds": [
-        906720,
-        1136640
+        1250400,
+        1480320
       ]
     },
     {
@@ -204,8 +226,8 @@
         "text": "The same vote would set a legal spending limit for the new tax district, equal to what the tax collects each year."
       },
       "bounds": [
-        1151040,
-        1308480
+        1494720,
+        1652160
       ]
     },
     {
@@ -220,8 +242,8 @@
         "text": "Measure T needs two-thirds of the vote to pass."
       },
       "bounds": [
-        1322880,
-        1403040
+        1666560,
+        1746720
       ]
     },
     {
@@ -236,8 +258,8 @@
         "text": "The ballot question says the tax would raise an average of $1.9 million a year over 10 years."
       },
       "bounds": [
-        1417440,
-        1581360
+        1761120,
+        1925040
       ]
     },
     {
@@ -249,11 +271,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument against Measure T appears among the official documents gathered for this video."
+        "text": "The elections office of the county says on its page for this measure that no argument against Measure T was filed."
       },
       "bounds": [
-        1595760,
-        1723200
+        1939440,
+        2111040
       ]
     },
     {
@@ -261,15 +283,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure T appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The elections office of the county says on its page for this measure that no argument against Measure T was filed.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument for Measure T appears among the official documents gathered for this video."
+        "text": "Supporters say Measure T keeps road repair and wildfire safety funded, and that all of its money stays in the city."
       },
       "bounds": [
-        1737600,
-        1864800
+        2125440,
+        2311680
       ]
     },
     {
@@ -277,15 +299,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure T appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure T keeps road repair and wildfire safety funded, and that all of its money stays in the city.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote renews the service tax for 10 years and sets the district's spending limit."
       },
       "bounds": [
-        1879200,
-        2002320
+        2326080,
+        2455920
       ]
     },
     {
@@ -300,14 +322,14 @@
         "text": "A no vote does not renew the service tax, which expires in mid-2027."
       },
       "bounds": [
-        2016720,
-        2156400
+        2470320,
+        2610000
       ]
     }
   ],
-  "sha256": "d0984aaf738c8537e204b578180553036256b3e7124844dfb1b4b436d3a0b9cf",
+  "sha256": "d7c34f724aebc5a1b6e99a55d0f96504ba55fa737c076eb61d9bfa6defb34af1",
   "take": {
-    "sha256": "74715c59ecd36695bfe8286fd5319d29db7d37c05fee653402b08502e637b252",
-    "bytes": 4312844
+    "sha256": "9444cc5b134aeb426be294e0bbf0d53fe341058b811a145581fb756d3a343f0e",
+    "bytes": 5220044
   }
 }

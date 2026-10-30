@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 85.86,
+  "seconds": 90.7,
   "phrases": [
     {
       "text": "Measure BB asks the voters of this fire district whether to continue a parcel tax for paramedic services for four more years.",
@@ -44,24 +44,24 @@
       "end": 65.96
     },
     {
-      "text": "No argument against Measure BB appears among the official documents gathered for this video.",
+      "text": "The county elections office says on its page for this measure that no argument against Measure BB was filed.",
       "start": 66.62,
-      "end": 72.05
+      "end": 73.04
     },
     {
-      "text": "No argument for Measure BB appears among the official documents gathered for this video.",
-      "start": 72.71,
-      "end": 77.77
+      "text": "Supporters say Measure BB keeps 9-1-1 response rapid and paramedics on duty, at the current rate with modest increases.",
+      "start": 73.7,
+      "end": 82.38
     },
     {
       "text": "A yes vote continues the paramedic tax for four more years.",
-      "start": 78.43,
-      "end": 82.17
+      "start": 83.04,
+      "end": 87.01
     },
     {
       "text": "A no vote does not continue the paramedic tax.",
-      "start": 82.83,
-      "end": 85.83
+      "start": 87.67,
+      "end": 90.67
     }
   ],
   "inputs": {
@@ -74,8 +74,8 @@
       "The ballot question says all of the money would go to local paramedic services, with yearly audits.",
       "The fire district board placed Measure BB on the ballot in June, and it needs two-thirds of the vote to pass.",
       "The ballot question estimates the tax would raise about $326,000 a year.",
-      "No argument against Measure BB appears among the official documents gathered for this video.",
-      "No argument for Measure BB appears among the official documents gathered for this video.",
+      "The county elections office says on its page for this measure that no argument against Measure BB was filed.",
+      "Supporters say Measure BB keeps 9-1-1 response rapid and paramedics on duty, at the current rate with modest increases.",
       "A yes vote continues the paramedic tax for four more years.",
       "A no vote does not continue the paramedic tax."
     ],
@@ -227,11 +227,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument against Measure BB appears among the official documents gathered for this video."
+        "text": "The county elections office says on its page for this measure that no argument against Measure BB was filed."
       },
       "bounds": [
         1598160,
-        1729920
+        1753680
       ]
     },
     {
@@ -239,15 +239,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure BB appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The county elections office says on its page for this measure that no argument against Measure BB was filed.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument for Measure BB appears among the official documents gathered for this video."
+        "text": "Supporters say Measure BB keeps 9-1-1 response rapid and paramedics on duty, at the current rate with modest increases."
       },
       "bounds": [
-        1744320,
-        1867200
+        1768080,
+        1977840
       ]
     },
     {
@@ -255,15 +255,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure BB appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure BB keeps 9-1-1 response rapid and paramedics on duty, at the current rate with modest increases.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote continues the paramedic tax for four more years."
       },
       "bounds": [
-        1881600,
-        1972800
+        1992240,
+        2088960
       ]
     },
     {
@@ -278,14 +278,14 @@
         "text": "A no vote does not continue the paramedic tax."
       },
       "bounds": [
-        1987200,
-        2060640
+        2103360,
+        2176800
       ]
     }
   ],
-  "sha256": "b04f0a36a79f0a0570847c4b5c14021d374bb8620cd5ced0756fce3e1dceca97",
+  "sha256": "a04230ee57164a0f56d913ca83bc62545b1b35196b3e0367de49bc67444939c8",
   "take": {
-    "sha256": "ccbad191347db62b576e00b0ac7e90344279791888bfac9babb297d733b2efcc",
-    "bytes": 4121324
+    "sha256": "ef9e7e44514845305ac6bff3efb16051a6b635692c9d0031de8bbc81430af141",
+    "bytes": 4353644
   }
 }

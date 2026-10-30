@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 91.25,
+  "seconds": 97.97,
   "phrases": [
     {
       "text": "Measure O asks the voters of this school district whether to approve $115 million in bonds for school repairs and upgrades.",
@@ -39,24 +39,24 @@
       "end": 69.27
     },
     {
-      "text": "No argument against Measure O appears among the official documents gathered for this video.",
+      "text": "The elections office of the county says on its page for this measure that no argument against Measure O was filed.",
       "start": 69.93,
-      "end": 75.11
+      "end": 77.63
     },
     {
-      "text": "No argument for Measure O appears among the official documents gathered for this video.",
-      "start": 75.77,
-      "end": 80.91
+      "text": "Supporters say the district's buildings are deteriorating, with leaking roofs and moldy portables, and that all bond money must be spent locally.",
+      "start": 78.29,
+      "end": 87.59
     },
     {
       "text": "A yes vote authorizes the district to issue up to $115 million in bonds.",
-      "start": 81.57,
-      "end": 87.84
+      "start": 88.25,
+      "end": 94.56
     },
     {
       "text": "A no vote does not authorize the bonds.",
-      "start": 88.5,
-      "end": 91.22
+      "start": 95.22,
+      "end": 97.94
     }
   ],
   "inputs": {
@@ -68,8 +68,8 @@
       "A citizens' oversight committee and yearly independent audits would check how the money is spent.",
       "The tax rate statement of the district estimates an average tax of $26.63 per $100,000 of assessed value, and at most $30, through 2060-2061.",
       "The statement estimates the total to repay, with interest, from a tax on property in the district, at $213 million.",
-      "No argument against Measure O appears among the official documents gathered for this video.",
-      "No argument for Measure O appears among the official documents gathered for this video.",
+      "The elections office of the county says on its page for this measure that no argument against Measure O was filed.",
+      "Supporters say the district's buildings are deteriorating, with leaking roofs and moldy portables, and that all bond money must be spent locally.",
       "A yes vote authorizes the district to issue up to $115 million in bonds.",
       "A no vote does not authorize the bonds."
     ],
@@ -205,11 +205,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument against Measure O appears among the official documents gathered for this video."
+        "text": "The elections office of the county says on its page for this measure that no argument against Measure O was filed."
       },
       "bounds": [
         1677600,
-        1803360
+        1863840
       ]
     },
     {
@@ -217,15 +217,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure O appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The elections office of the county says on its page for this measure that no argument against Measure O was filed.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument for Measure O appears among the official documents gathered for this video."
+        "text": "Supporters say the district's buildings are deteriorating, with leaking roofs and moldy portables, and that all bond money must be spent locally."
       },
       "bounds": [
-        1817760,
-        1942560
+        1878240,
+        2102880
       ]
     },
     {
@@ -233,15 +233,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure O appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the district's buildings are deteriorating, with leaking roofs and moldy portables, and that all bond money must be spent locally.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote authorizes the district to issue up to $115 million in bonds."
       },
       "bounds": [
-        1956960,
-        2108880
+        2117280,
+        2270160
       ]
     },
     {
@@ -256,14 +256,14 @@
         "text": "A no vote does not authorize the bonds."
       },
       "bounds": [
-        2123280,
-        2190000
+        2284560,
+        2351280
       ]
     }
   ],
-  "sha256": "096fd7fd1e02883489bf1ecedd53344aa427e513bfe3dbeeaf03eb4a2bac49ec",
+  "sha256": "e239d8a5c91a685f971166a7c9c973cc97b224ea91f2f5eed703b1666c36bc50",
   "take": {
-    "sha256": "aef8edbe5039ff87920d4968169f7e613f6cf859b51f6341cc2fde40dcd3d478",
-    "bytes": 4380044
+    "sha256": "81d36804f454d91037f1ec1c705bf7c3256c12f0b0bef9afaa12c3dd4cee90bb",
+    "bytes": 4702604
   }
 }

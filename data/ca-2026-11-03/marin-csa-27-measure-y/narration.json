@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 81.02,
+  "seconds": 86.41,
   "phrases": [
     {
       "text": "Measure Y asks the voters of this service area whether to continue a parcel tax for paramedic services for four more years.",
@@ -44,24 +44,24 @@
       "end": 61.01
     },
     {
-      "text": "No argument against Measure Y appears among the official documents gathered for this video.",
+      "text": "The county elections office says on its page for this measure that no argument against Measure Y was filed.",
       "start": 61.67,
-      "end": 66.91
+      "end": 68.37
     },
     {
-      "text": "No argument for Measure Y appears among the official documents gathered for this video.",
-      "start": 67.57,
-      "end": 72.51
+      "text": "Supporters say Measure Y keeps 9-1-1 response rapid and paramedics on duty, at the current rate with modest increases.",
+      "start": 69.03,
+      "end": 78.03
     },
     {
       "text": "A yes vote continues the paramedic tax for four more years.",
-      "start": 73.17,
-      "end": 76.96
+      "start": 78.69,
+      "end": 82.35
     },
     {
       "text": "A no vote does not continue the paramedic tax.",
-      "start": 77.62,
-      "end": 80.99
+      "start": 83.01,
+      "end": 86.38
     }
   ],
   "inputs": {
@@ -74,8 +74,8 @@
       "The money would go only to paramedic and emergency medical services, kept in a separate fund.",
       "Measure Y needs two-thirds of the vote to pass.",
       "The ballot question estimates the tax would raise about $84,000 a year.",
-      "No argument against Measure Y appears among the official documents gathered for this video.",
-      "No argument for Measure Y appears among the official documents gathered for this video.",
+      "The county elections office says on its page for this measure that no argument against Measure Y was filed.",
+      "Supporters say Measure Y keeps 9-1-1 response rapid and paramedics on duty, at the current rate with modest increases.",
       "A yes vote continues the paramedic tax for four more years.",
       "A no vote does not continue the paramedic tax."
     ],
@@ -227,11 +227,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument against Measure Y appears among the official documents gathered for this video."
+        "text": "The county elections office says on its page for this measure that no argument against Measure Y was filed."
       },
       "bounds": [
         1479360,
-        1606560
+        1641600
       ]
     },
     {
@@ -239,15 +239,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure Y appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The county elections office says on its page for this measure that no argument against Measure Y was filed.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument for Measure Y appears among the official documents gathered for this video."
+        "text": "Supporters say Measure Y keeps 9-1-1 response rapid and paramedics on duty, at the current rate with modest increases."
       },
       "bounds": [
-        1620960,
-        1740960
+        1656000,
+        1873440
       ]
     },
     {
@@ -255,15 +255,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure Y appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure Y keeps 9-1-1 response rapid and paramedics on duty, at the current rate with modest increases.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote continues the paramedic tax for four more years."
       },
       "bounds": [
-        1755360,
-        1847760
+        1887840,
+        1977120
       ]
     },
     {
@@ -278,14 +278,14 @@
         "text": "A no vote does not continue the paramedic tax."
       },
       "bounds": [
-        1862160,
-        1944480
+        1991520,
+        2073840
       ]
     }
   ],
-  "sha256": "f08ae51fb25bf68726850fa25f0c08201b6e1a06990981c10149deee22a6b4d5",
+  "sha256": "d0d0fc913c94bf7afad3ce83b4bba4a352e20359ba7aee384399b865bf0f68c5",
   "take": {
-    "sha256": "4f4aa7b30942993f52b8136052371f2ea51c6e7b6547f80218a2b8d0c7be87dd",
-    "bytes": 3889004
+    "sha256": "8e6b705e3b0e01e788020dcf3ec75e29bd2a22aede73d41f6beabb98ff4df01e",
+    "bytes": 4147724
   }
 }

@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 86.99,
+  "seconds": 90.93,
   "phrases": [
     {
       "text": "Measure Q asks the voters of this town whether to continue a special tax for paramedic services for four more years.",
@@ -49,24 +49,24 @@
       "end": 64.56
     },
     {
-      "text": "No argument against Measure Q appears among the official documents gathered for this video.",
+      "text": "The county elections office says on its page for this measure that no argument against Measure Q was filed.",
       "start": 65.22,
-      "end": 70.85
+      "end": 71.84
     },
     {
-      "text": "No argument for Measure Q appears among the official documents gathered for this video.",
-      "start": 71.51,
-      "end": 76.79
+      "text": "Supporters say Measure Q keeps 9-1-1 response rapid and paramedics on duty, at the current rate with modest increases.",
+      "start": 72.5,
+      "end": 80.67
     },
     {
       "text": "A yes vote continues the paramedic tax for four more years.",
-      "start": 77.45,
-      "end": 81.1
+      "start": 81.33,
+      "end": 85.04
     },
     {
       "text": "A no vote does not continue the paramedic tax, which ends in June 2027.",
-      "start": 81.76,
-      "end": 86.96
+      "start": 85.7,
+      "end": 90.9
     }
   ],
   "inputs": {
@@ -80,8 +80,8 @@
       "The town treasurer would report each year on the money collected and spent.",
       "Measure Q needs two-thirds of the vote to pass.",
       "The ballot question says the tax would raise about $786,000 a year.",
-      "No argument against Measure Q appears among the official documents gathered for this video.",
-      "No argument for Measure Q appears among the official documents gathered for this video.",
+      "The county elections office says on its page for this measure that no argument against Measure Q was filed.",
+      "Supporters say Measure Q keeps 9-1-1 response rapid and paramedics on duty, at the current rate with modest increases.",
       "A yes vote continues the paramedic tax for four more years.",
       "A no vote does not continue the paramedic tax, which ends in June 2027."
     ],
@@ -249,11 +249,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument against Measure Q appears among the official documents gathered for this video."
+        "text": "The county elections office says on its page for this measure that no argument against Measure Q was filed."
       },
       "bounds": [
         1564560,
-        1701120
+        1724880
       ]
     },
     {
@@ -261,15 +261,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure Q appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The county elections office says on its page for this measure that no argument against Measure Q was filed.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument for Measure Q appears among the official documents gathered for this video."
+        "text": "Supporters say Measure Q keeps 9-1-1 response rapid and paramedics on duty, at the current rate with modest increases."
       },
       "bounds": [
-        1715520,
-        1843680
+        1739280,
+        1936800
       ]
     },
     {
@@ -277,15 +277,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure Q appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say Measure Q keeps 9-1-1 response rapid and paramedics on duty, at the current rate with modest increases.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote continues the paramedic tax for four more years."
       },
       "bounds": [
-        1858080,
-        1947120
+        1951200,
+        2041680
       ]
     },
     {
@@ -300,14 +300,14 @@
         "text": "A no vote does not continue the paramedic tax, which ends in June 2027."
       },
       "bounds": [
-        1961520,
-        2087760
+        2056080,
+        2182320
       ]
     }
   ],
-  "sha256": "01c35b72acb923cbeb047419f978e723287f273d631ad3a6388bb2756a75a827",
+  "sha256": "979962e4fca941a966a8eaab7adf09a2b3647105364c80cfedee20ef6663403b",
   "take": {
-    "sha256": "30b6f402ba33f264b872561f434098ea734e87a7dc88a29c19628260fccf445b",
-    "bytes": 4175564
+    "sha256": "d758ba8415e889c5c439c6e174e018ffda4d1237a3a7cdcf1a69df9c6ac63e55",
+    "bytes": 4364684
   }
 }
