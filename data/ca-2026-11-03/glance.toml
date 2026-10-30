@@ -3486,3 +3486,12 @@ source = "ballot-question"
 quote = "generating approximately $563,810 until ended by voters"
 amount = 563810
 period = "unstated"
+
+# City of Cudahy Measure OK: a general tax, so no tax rate statement; the
+# City Attorney's impartial analysis gives no figure, so it is the ballot
+# question's.
+[cudahy-measure-ok]
+source = "ballot-question"
+quote = "providing approximately $1.3 million annually for local use"
+amount = 1300000
+period = "per-year"
