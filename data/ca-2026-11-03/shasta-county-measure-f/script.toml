@@ -19,10 +19,8 @@
 # statement; the opponents' cost figures are theirs, and are not used in
 # the fiscal line.
 #
-# pdftotext reads the ballot question page's yes and no sentences, set
-# side by side, line by line into each other, so the card quotes the
-# question alone (no YES/NO boxes) and the vote lines take their meanings
-# from the impartial analysis, which prints the same two sentences.
+# The card quotes the ballot question page with its yes and no sentences,
+# as Measure E's does.
 
 contest = "ca-2026-11-03-shasta-county-measure-f"
 template = "measure"
@@ -35,6 +33,8 @@ number = "F"
 title = "PROPOSED COUNTY CHARTER AMENDMENT TO ADDRESS UNEXPECTED VACANCIES OF AN ELECTED DEPARTMENT HEAD"
 origin = "Charter Amendment Measure F"
 summary = "Shall Measure F (Adding to the Shasta County Charter) be adopted? This measure adds a subsection to the Shasta County Charter. The proposed addition would require that, whenever a vacancy occurs for a Shasta County Elected Department Head Position, the Board direct staff to fill the Vacancy by calling for an election, and consolidating it with the next regularly scheduled election, so long as that election occurs within 12 months of the vacancy. Should the next regularly scheduled election not occur within 12 months of the vacancy the Board shall, by a 4/5 vote, fill the Vacancy by appointment via open recruitment."
+yes = "If approved by a majority of the qualified electors, Measure F would allow voters to vote sooner as to what individual serves as an elected department head position where there is an unexpected vacancy."
+no = "If the voters reject this measure, the Board will keep its current ability to fill by appointment all vacancies of elected county officers."
 
 [[section]]
 id = "what"
@@ -158,7 +158,7 @@ sources = ["impartial-analysis", "ballot-question"]
 [section.line.visual]
 kind = "page"
 source = "ballot-question"
-highlight = ["be adopted"]
+highlight = ["Measure F would allow voters"]
 
 [[section.line]]
 text = "A no vote means the board keeps its current ability to fill all vacancies of elected county officers by appointment."
@@ -167,7 +167,7 @@ sources = ["impartial-analysis", "ballot-question"]
 [section.line.visual]
 kind = "page"
 source = "ballot-question"
-highlight = ["be adopted"]
+highlight = ["fill by appointment all vacancies"]
 
 [[question]]
 ask = "Which offices does this cover?"
