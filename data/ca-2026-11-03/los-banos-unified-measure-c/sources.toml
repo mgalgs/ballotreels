@@ -1,0 +1,68 @@
+# Archived sources for Los Banos Unified School District Measure C,
+# 2026-11-03 general election (sources/county-sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Merced County Elections (the Registrar of Voters) posts each measure's
+# filed documents on its "November 3, 2026, General Election" page, one
+# PDF each, all text: for Measure C, the ballot question, the full text,
+# County Counsel's impartial analysis, the district's tax rate statement
+# and the argument in favor. The bond is $99,000,000, as the county's
+# ballot question, the analysis and the tax rate statement all print it
+# (an earlier district agenda title said $70,000,000; the county record
+# supersedes it). The impartial analysis is the measure's neutral
+# explanation; the tax rate statement is its fiscal statement. No
+# argument against was filed: the county posts none, and its List of
+# Ballot Measures shows none; no rebuttals either.
+
+[contest]
+id = "ca-2026-11-03-los-banos-unified-measure-c"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:los_banos_unified_school_district"
+kind = "measure"
+title = "Los Banos Unified School District Measure C: School Facilities Bonds"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Merced County Elections, Measure C, Los Banos Unified School District, ballot question, November 3, 2026, General Election"
+credit = "Measure C, Merced County Elections"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53620/MEASURE-C"
+file = "sources/county-ballot-question.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Merced County Counsel (Thomas E. Ebersole, Assistant County Counsel), County Counsel Impartial Analysis of Los Banos Unified School District Measure C, as posted by Merced County Elections, November 3, 2026, General Election"
+credit = "County Counsel Impartial Analysis of Measure C"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53683/Impartial-Analysis_Eng-for-Print"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Tax Rate Statement, Los Banos Unified School District General Obligation Bonds, signed by Dr. Bree Valla, Superintendent of Schools, dated July 30, 2026, as posted by Merced County Elections, November 3, 2026, General Election"
+credit = "Tax Rate Statement, Los Banos Unified School District"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53686/Measure-C-Tax-Rate-Statement-Los-Banos-USD"
+file = "sources/county-tax-rate-statement.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure C, Los Banos Unified School District, as filed with Merced County Elections, November 3, 2026, General Election"
+credit = "Argument in Favor of Measure C"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53687/Measure-C-LBUSD_ArgumentInFavor_080526v6"
+file = "sources/county-argument-for.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "measure-list"
+kind = "election-filing"
+publisher = "Merced County Registrar of Voters, List of Ballot Measures, November 3 2026 General Election (CFMR004), printed August 7, 2026, page 3"
+credit = "List of Ballot Measures, Merced County Registrar of Voters"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53380/List-of-Ballot-Measures-for-November-3-2026-General-Election"
+file = "sources/county-measure-list.pdf"
+retrieved = "2026-10-29"
