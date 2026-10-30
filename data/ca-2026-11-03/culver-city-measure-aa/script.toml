@@ -1,0 +1,168 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot (a
+# petition, its sufficient signatures) and the vote it needs; how the tax
+# is charged, who is exempt, the oversight board and what the money may
+# pay for; the revenue the ballot question states; one line per side;
+# what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city", and the school district is
+# "the school district". The rate, 48 cents a square foot, is left to the
+# card (an amount under a dollar is misheard, standard/speakability.txt).
+#
+# The card quotes the Registrar-Recorder's list: the city's heading as
+# the title, its vote-passage line as the origin, the ballot question as
+# the summary. The list prints no yes/no statements; the vote lines take
+# their meanings from the impartial analysis and both highlight the same
+# phrase of the question.
+#
+# The $18 million a year is the school district's money, so rule 6.5
+# asks for its scale, the district's budget; no archived source states
+# that budget, so the figure is given without one. Opponents' figures
+# (about $800 a household, the 2024 parcel tax and bond) are theirs, and
+# appear only in their line (STANDARD.md 6.3).
+
+contest = "ca-2026-11-03-culver-city-measure-aa"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "AA"
+title = "CITY OF CULVER CITY"
+origin = "VOTE PASSAGE – Majority Vote 50%+1"
+summary = "Shall the measure, to strengthen academic excellence, attract and retain teachers, support music/arts/athletics/STEM programs, instructional aides, and for other designated purposes, by imposing a special tax on all real estate parcels, including commercial use, of $0.48/building square foot, with senior exemptions, independent citizen/auditor oversight, subject to a tax cap, for 10 years, generating approximately $18,000,000 annually in local funds for Culver City public schools that the state cannot take be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure AA"
+
+[[section.line]]
+text = "Measure AA asks the voters of this city whether to tax property for 10 years to fund the local public schools."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["imposing a special tax on all real estate parcels"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+id = "petition"
+text = "A citizen petition placed Measure AA on the ballot, and it needs a simple majority to pass."
+sources = ["resolution", "impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "neighborhood-petition"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rate"
+text = "Owners would pay a yearly tax on each square foot of buildings, up to $15,000 per parcel."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-parcels"
+
+[[section.line]]
+id = "exempt"
+text = "People 65 or older, and people receiving certain disability benefits, would not pay."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+id = "uses"
+text = "The money could pay for school staff, arts, music and counseling, but not administrators' salaries."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+text = "The ballot question says the tax would raise about $18 million a year for the schools."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the state gives these schools the lowest funding per student possible, and the state could not take this local money."
+sources = ["argument-for"]
+basis = ["Culver City receives the lowest funding allocation per student possible from the State of California.", "put local dollars into Culver City schools that cannot be taken by the State."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Lowest state funding per student", "Local money the state cannot take"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say voters passed a school parcel tax and bond in 2024, and this tax would cost about $800 per household."
+sources = ["argument-against"]
+basis = ["We just voted for a $189 parcel tax for our schools in Nov. 2024, and a $358 million bond measure in March 2024.", "This will be one of the biggest yet: about $800 per household"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Another school tax after 2024's", "About $800 per household"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves the tax for the school district."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["imposing a special tax on all real estate parcels"]
+
+[[section.line]]
+text = "A no vote means no new parcel tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["imposing a special tax on all real estate parcels"]
+
+[[question]]
+ask = "Who put this measure on the ballot?"
+lines = ["petition"]
+
+[[question]]
+ask = "How much would a property owner pay?"
+lines = ["rate"]
+
+[[question]]
+ask = "Who would not have to pay?"
+lines = ["exempt"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["uses"]

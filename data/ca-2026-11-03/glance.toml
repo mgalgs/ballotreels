@@ -3127,3 +3127,12 @@ status = "none-printed"
 [mcfarland-measure-n]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Culver City Measure AA: no tax rate statement was found; the
+# ballot question on the Registrar-Recorder's list states the yearly
+# revenue.
+[culver-city-measure-aa]
+source = "ballot-question"
+quote = "generating approximately $18,000,000 annually in local funds for Culver City public schools"
+amount = 18000000
+period = "per-year"
