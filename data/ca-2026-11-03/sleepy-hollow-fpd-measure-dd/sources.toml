@@ -1,0 +1,79 @@
+# Archived sources for Sleepy Hollow Fire Protection District Measure DD,
+# 2026-11-03 general election (sources/sources.md, its section "Feed
+# documents retrieved 2026-10-30"). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Marin County's guide could not be archived, so no impartial analysis
+# or argument was archived and no document says whether any argument
+# was filed. These are the District's files from its board page:
+# Resolution No. 2026-5, whose Section 3 is the ballot question, and the
+# staff report for the June 3, 2026 special meeting. The resolution is
+# cited as posted: its header reads "DRAFT -- REQUIRES BOARD APPROVAL",
+# yet its certification records it as "PASSED AND ADOPTED at a Special
+# Meeting ... on the 3rd day of June 2026" (unsigned). Its Exhibit "A",
+# the ordinance, is a blank page; nothing here stands in for it. The
+# minutes of that meeting do not name Resolution No. 2026-5, so they are
+# not cited; the resolution's own certification and the county's listing
+# of Measure DD are the record that it was adopted.
+#
+# The staff report is District staff's material: only its plain facts
+# are cited (the current rate and its square-foot basis, the change of
+# the yearly adjustment cap, the current tax's end, the yearly
+# confirmation of the rate), never its statements of need or benefit.
+# It is of kind public-record: no allowed kind fits a staff report
+# exactly, and official-report is reserved for a nonpartisan fiscal
+# office's reports. The staged RVPA rate table
+# (resolution-2026-5-exhibit-a-tax-rates.pdf) is an exhibit to the
+# authority's joint powers agreement, not the ordinance, and is not
+# cited.
+#
+# A fire protection district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md). The letter DD and the two-thirds vote are
+# confirmed by the Registrar of Voters' Board of Supervisors staff report
+# 26-4515.
+
+[contest]
+id = "ca-2026-11-03-sleepy-hollow-fpd-measure-dd"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:marin"
+kind = "measure"
+title = "Sleepy Hollow Fire Protection District Measure DD: Continuing the Paramedic Services Special Tax for Four Years"
+voters = "the Sleepy Hollow Fire Protection District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Sleepy Hollow Fire Protection District, Resolution No. 2026-5, calling for a district election on a measure authorizing the continuation of a special parcel tax for paramedic services: Section 3, Ballot Question, page 2 (as posted, headed \"DRAFT -- REQUIRES BOARD APPROVAL\")"
+credit = "Resolution No. 2026-5, Sleepy Hollow Fire Protection District"
+url = "https://www.shfpd.org/files/f4fd6ee3a/2026-06-03+Resolution+No.+2026-5+RVPA+Tax+Election+%26+Rates.pdf"
+file = "sources/resolution-2026-5-rvpa-tax-election.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Sleepy Hollow Fire Protection District, Resolution No. 2026-5: Resolution of the Board of the Sleepy Hollow Fire Protection District Calling for a District Election to Be Held in Its Jurisdiction on November 3, 2026 for the Purpose of Submitting to the Voters a Measure Authorizing the Continuation of a Special Parcel Tax for Paramedic Services, pages 1 to 4 (as posted, headed \"DRAFT -- REQUIRES BOARD APPROVAL\", its certification recording it passed and adopted June 3, 2026; its Exhibit \"A\" page is blank)"
+credit = "Resolution No. 2026-5, Sleepy Hollow Fire Protection District"
+url = "https://www.shfpd.org/files/f4fd6ee3a/2026-06-03+Resolution+No.+2026-5+RVPA+Tax+Election+%26+Rates.pdf"
+file = "sources/resolution-2026-5-rvpa-tax-election.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "staff-report"
+kind = "public-record"
+publisher = "Sleepy Hollow Fire Protection District, staff report for the June 3, 2026 special meeting: Resolution Calling for an Election for the Passage of the Ross Valley Paramedic Authority Four-Year Special Parcel Tax for the Tax Cycle 2027-2031, pages 1 and 2"
+credit = "Staff report, Sleepy Hollow Fire Protection District"
+url = "https://www.shfpd.org/files/0408be381/2026-06-03+Resolution+No.+2026-5+RVPA+Tax+Election+%26+Rates+-+Staff+Report.pdf"
+file = "sources/resolution-2026-5-staff-report.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "Marin County Registrar of Voters, Board of Supervisors staff report 26-4515, September 8, 2026: the list of measures on the November 3, 2026 ballot, pages 2 and 3"
+credit = "Staff report 26-4515, Marin County Registrar of Voters"
+url = "https://marin.granicus.com/MetaViewer.php?view_id=33&event_id=4262&meta_id=1474983"
+file = "sources/marin-bos-2026-09-08-consolidation-staff-report-26-4515.pdf"
+retrieved = "2026-10-30"
