@@ -1,0 +1,64 @@
+# Archived sources for City of Baldwin Park Measure CR, 2026-11-03 general
+# election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" prints each measure's letter, vote threshold and
+# ballot question, and says in words who filed the primary arguments
+# ("Supporters: ... Opponents: None submitted."). The card quotes the
+# ballot question from it (ballot-question), and the sides cite it as the
+# Registrar's statement of filing (measure-list). The same excerpt backs
+# both.
+#
+# No impartial analysis and no argument text was staged (the resolution
+# directs the City Attorney to write one; no copy was found). The measure
+# is explained from the City's Resolution No. 2026-023 and its Exhibit A,
+# Ordinance No. 1529. The resolution's pages 1 and 2 are a scan with no
+# text layer: they were typed from the page images into
+# sources/resolution-transcription.txt, which that source points at. The
+# City's FAQ and community presentation are not cited. A general tax has no
+# tax rate statement; the one revenue figure is the ballot question's own.
+
+[contest]
+id = "ca-2026-11-03-baldwin-park-measure-cr"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:baldwin_park"
+kind = "measure"
+title = "City of Baldwin Park Measure CR: A 4% Tax on Non-Retail Cannabis Businesses"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026 (Rev. 9/22/26): City of Baldwin Park, Measure CR"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "measure-list"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026 (Rev. 9/22/26): Measure CR, its supporters and opponents as filed"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City of Baldwin Park, City Council Resolution No. 2026-023, submitting a non-retail cannabis business tax measure to the electorate, pages 1 and 2 (transcribed from the scan)"
+credit = "Resolution No. 2026-023, City of Baldwin Park"
+url = "https://www.baldwinpark.com/DocumentCenter/View/5110/Resolution-No-2026-023---Proposed-Non-Retail-Cannabis-Reform-Measure-PDF"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "ordinance"
+kind = "official-text"
+publisher = "City of Baldwin Park, Ordinance No. 1529, adding Chapter 129.5 (Cannabis Business Tax—Non-Retail) to the Baldwin Park Municipal Code (Exhibit A to Resolution No. 2026-023)"
+credit = "Ordinance No. 1529, City of Baldwin Park"
+url = "https://www.baldwinpark.com/DocumentCenter/View/5111/Ordinance-No-1529---Proposed-Non-Retail-Cannabis-Reform-Measure-PDF"
+file = "sources/full-text.pdf"
+retrieved = "2026-10-30"

@@ -3136,3 +3136,12 @@ source = "tax-statement"
 quote = "would be required to be repaid if all the bonds are issued and sold is approximately $240.9 million."
 amount = 240900000
 period = "unstated"
+
+# City of Baldwin Park Measure CR: a general tax, so no tax rate statement;
+# no impartial analysis was staged, and the one revenue figure is the
+# ballot question's own projection, as the Registrar's list prints it.
+[baldwin-park-measure-cr]
+source = "ballot-question"
+quote = "providing a projected $1,000,000 annually in additional locally controlled funding"
+amount = 1000000
+period = "per-year"
