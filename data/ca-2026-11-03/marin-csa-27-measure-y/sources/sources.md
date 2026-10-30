@@ -41,3 +41,11 @@ NOT FOUND
 - RVPA's own site was not checked (time).
 - Boundary of CSA 27: not retrieved.
 ```
+
+## Marin County Elections measure page, read 2026-10-30
+
+county-page.txt: the county's page for Measure Y. Read in a desktop Chrome browser (marincounty.gov returns
+403 to scripted fetches) and saved as text; the file's header gives the URL and how
+the text was taken. It prints the ballot question, the vote required, the impartial
+analysis, the argument in favor (or 'No argument in favor ... was filed.') and the
+argument against (or 'No argument against ... was filed.'), as on the county's site.

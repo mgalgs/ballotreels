@@ -54,3 +54,11 @@ Letter "U" confirmed by the Town's election page (see ../../town-of-ross/measure
 
 Note: these records do not mention a separate "Ross Fire Station" measure.
 ```
+
+## Marin County Elections measure page, read 2026-10-30
+
+county-page.txt: the county's page for Measure U. Read in a desktop Chrome browser (marincounty.gov returns
+403 to scripted fetches) and saved as text; the file's header gives the URL and how
+the text was taken. It prints the ballot question, the vote required, the impartial
+analysis, the argument in favor (or 'No argument in favor ... was filed.') and the
+argument against (or 'No argument against ... was filed.'), as on the county's site.

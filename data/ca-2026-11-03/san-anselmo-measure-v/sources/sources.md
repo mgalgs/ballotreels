@@ -74,3 +74,11 @@ Also (pre-existing, same file): ../../town-of-san-anselmo/measure-v/
 NOT FOUND: arguments and rebuttals (Town page labels them but posts no files); council minutes of June 9, 2026 (the
 signed resolution with roll-call vote stands as proof of adoption).
 ```
+
+## Marin County Elections measure page, read 2026-10-30
+
+county-page.txt: the county's page for Measure V. Read in a desktop Chrome browser (marincounty.gov returns
+403 to scripted fetches) and saved as text; the file's header gives the URL and how
+the text was taken. It prints the ballot question, the vote required, the impartial
+analysis, the argument in favor (or 'No argument in favor ... was filed.') and the
+argument against (or 'No argument against ... was filed.'), as on the county's site.

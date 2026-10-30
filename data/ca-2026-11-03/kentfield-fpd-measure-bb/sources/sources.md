@@ -45,3 +45,11 @@ Ballot question (verbatim, draft Resolution No. 7-2026 §3):
 NOT FOUND: signed/certified copy of Resolution 7-2026; impartial analysis; arguments/rebuttals. Later packets
 (Jul 8, Sep 9, Oct 14, 2026) not checked for an analysis or argument.
 ```
+
+## Marin County Elections measure page, read 2026-10-30
+
+county-page.txt: the county's page for Measure BB. Read in a desktop Chrome browser (marincounty.gov returns
+403 to scripted fetches) and saved as text; the file's header gives the URL and how
+the text was taken. It prints the ballot question, the vote required, the impartial
+analysis, the argument in favor (or 'No argument in favor ... was filed.') and the
+argument against (or 'No argument against ... was filed.'), as on the county's site.

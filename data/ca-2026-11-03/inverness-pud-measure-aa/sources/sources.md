@@ -65,3 +65,11 @@ NOT FOUND
     limit of $653,712" — that figure is NOT confirmed by any document saved here.
 ```
 ipud-packet-2026-05-19-item4-resolution-299-2026.pdf: pages 1 and 8-11 of the May 19 Item 4 packet (staff report and DRAFT Resolution 299-2026), extracted with qpdf.
+
+## Marin County Elections measure page, read 2026-10-30
+
+county-page.txt: the county's page for Measure AA. Read in a desktop Chrome browser (marincounty.gov returns
+403 to scripted fetches) and saved as text; the file's header gives the URL and how
+the text was taken. It prints the ballot question, the vote required, the impartial
+analysis, the argument in favor (or 'No argument in favor ... was filed.') and the
+argument against (or 'No argument against ... was filed.'), as on the county's site.
