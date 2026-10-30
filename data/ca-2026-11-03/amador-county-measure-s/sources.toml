@@ -1,0 +1,61 @@
+# Archived sources for Amador County Measure S, 2026-11-03 general
+# election (sources/county-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Amador County Elections posts each measure's documents as separate PDFs
+# on its "2026 General Election" page: Measure S's ballot question (which
+# also lists the supporter who signed the argument in favor and
+# "Opponents: None submitted"), County Counsel's impartial analysis, the
+# argument in favor, and the Board of Supervisors' Resolution No. 26-110
+# placing the measure. No separate full text was published: the measure
+# re-establishes an existing fee, and the resolution is its text. County
+# Counsel's impartial analysis is the measure's neutral explanation; no
+# fiscal statement was printed, and the one revenue estimate is the
+# ballot question's. The resolution is a scan with no text layer: its
+# three pages were typed from the page images into
+# sources/county-resolution-transcription.txt, which that source points
+# at, its url at the scan.
+
+[contest]
+id = "ca-2026-11-03-amador-county-measure-s"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:amador"
+kind = "measure"
+title = "Amador County Measure S: Renewing the Abandoned Vehicle Abatement Fee"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Amador County Elections, 2026 General Election: Measure S Question"
+credit = "Measure S Question, Amador County Elections"
+url = "https://www.amadorcounty.gov/home/showpublisheddocument/58434/639235315980300000"
+file = "sources/county-ballot-question.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Amador County Counsel, Impartial Analysis of Measure S, as posted by Amador County Elections"
+credit = "Impartial Analysis, Amador County Counsel"
+url = "https://www.amadorcounty.gov/home/showpublisheddocument/58543/639202490100570000"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Amador County Board of Supervisors, Resolution No. 26-110, adopted July 14, 2026, as posted by Amador County Elections (transcribed from the scan)"
+credit = "Resolution No. 26-110, Amador County Board of Supervisors"
+url = "https://www.amadorcounty.gov/home/showpublisheddocument/58436/639197269531670000"
+file = "sources/county-resolution-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure S, as filed with Amador County Elections (no argument against was submitted)"
+credit = "Argument in favor, Measure S"
+url = "https://www.amadorcounty.gov/home/showpublisheddocument/58432/639197269526530000"
+file = "sources/county-argument-for.pdf"
+retrieved = "2026-10-29"

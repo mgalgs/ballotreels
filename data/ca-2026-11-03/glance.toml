@@ -3032,3 +3032,42 @@ source = "tax-statement"
 quote = "required to be repaid if all the bonds are issued and sold will be approximately $6,900,000."
 amount = 6900000
 period = "unstated"
+
+# City of Willows Measure K: the guide's Fiscal Analysis of Measure K, its
+# "Fiscal Impact" paragraph (the ballot question prints a different
+# estimate, about $280,000 a year; the script gives both).
+[willows-measure-k]
+source = "fiscal-analysis"
+quote = "Fiscal Impact: Based on the estimate contained in Resolution No. 28-2026, Measure K is expected to generate approximately $260,000 annually."
+amount = 260000
+period = "per-year"
+
+# Sutter County Measure G: a sales tax, so no tax rate statement; County
+# Counsel's impartial analysis gives the revenue estimate.
+[sutter-county-measure-g]
+source = "impartial-analysis"
+quote = "It is estimated that the measure will provide $22,500,000 annually"
+amount = 22500000
+period = "per-year"
+
+# Live Oak Unified School District Measure H: the district's Tax Rate
+# Statement, its total debt service (the bonds are $33.2 million).
+[live-oak-unified-measure-h]
+source = "tax-statement"
+quote = "required to be repaid if all the bonds are issued and sold will be approximately $67,100,000."
+amount = 67100000
+period = "unstated"
+
+# City of Sutter Creek Measure R: not a tax; Amador County Elections'
+# documents for it print no cost estimate.
+[sutter-creek-measure-r]
+source = "ballot-question"
+status = "none-printed"
+
+# Amador County Measure S: no fiscal statement was printed; the revenue
+# estimate its ballot question prints, as Amador County Elections posts it.
+[amador-county-measure-s]
+source = "ballot-question"
+quote = "generating approximately $55,000 annually"
+amount = 55000
+period = "per-year"

@@ -1,0 +1,59 @@
+# Archived sources for City of Willows Measure K, 2026-11-03 general
+# election (sources/county-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Glenn County Elections Department's General Election Voter
+# Information Guide prints Measure K's ballot question (page 19), its
+# full text, Ordinance No. 770-2026 (pages 20 to 36), the Willows City
+# Attorney's impartial analysis (page 37) and a "Fiscal Analysis of
+# Measure K" (page 38); each was cut from the guide into its own file.
+# The impartial analysis is the measure's neutral explanation, the kind a
+# state's attorney general's explanatory statement is; the fiscal
+# analysis is its fiscal statement (kept as county-tax-rate-statement.pdf,
+# though it is no tax rate statement). The guide prints no argument for
+# or against Measure K; its later pages are blank, and no official
+# document says in words that none was filed.
+
+[contest]
+id = "ca-2026-11-03-willows-measure-k"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:willows"
+kind = "measure"
+title = "City of Willows Measure K: Cannabis Business Tax"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Glenn County Elections Department, General Election Voter Information Guide, November 3, 2026, page 19: Ballot Measure K"
+credit = "Ballot Measure K, Glenn County Voter Information Guide"
+url = "https://www.countyofglenn.net/sites/default/files/resources/elections/2026-general-voter-information-guide/E325103%20Glen%20Co%20Web%20Pamphlet.pdf"
+file = "sources/county-ballot-question.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Willows City Attorney, Impartial Analysis of Measure K, Glenn County Elections Department, General Election Voter Information Guide, November 3, 2026, page 37"
+credit = "Impartial Analysis, Willows City Attorney"
+url = "https://www.countyofglenn.net/sites/default/files/resources/elections/2026-general-voter-information-guide/E325103%20Glen%20Co%20Web%20Pamphlet.pdf"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "fiscal-analysis"
+kind = "official-fiscal-analysis"
+publisher = "Fiscal Analysis of Measure K, City of Willows Cannabis Business Tax, Glenn County Elections Department, General Election Voter Information Guide, November 3, 2026, page 38"
+credit = "Fiscal Analysis of Measure K, Glenn County Voter Information Guide"
+url = "https://www.countyofglenn.net/sites/default/files/resources/elections/2026-general-voter-information-guide/E325103%20Glen%20Co%20Web%20Pamphlet.pdf"
+file = "sources/county-tax-rate-statement.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Willows, Ordinance No. 770-2026, adding Chapter 3.12 (Cannabis Business Tax) to the Willows Municipal Code, Glenn County Elections Department, General Election Voter Information Guide, November 3, 2026, pages 20 to 36"
+credit = "Ordinance No. 770-2026, City of Willows"
+url = "https://www.countyofglenn.net/sites/default/files/resources/elections/2026-general-voter-information-guide/E325103%20Glen%20Co%20Web%20Pamphlet.pdf"
+file = "sources/county-full-text.pdf"
+retrieved = "2026-10-29"
