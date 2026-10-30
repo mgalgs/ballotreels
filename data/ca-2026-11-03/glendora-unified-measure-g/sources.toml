@@ -5,16 +5,18 @@
 #
 # The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
 # Appearing on the Ballot" prints each measure's letter, vote threshold and
-# ballot question, and says in words who filed the primary arguments
-# ("Supporters: ... Opponents: Mel Bennett"). The card quotes the ballot
-# question from it (ballot-question), and the sides cite it as the
-# Registrar's statement of filing (measure-list). The same excerpt backs
-# both.
+# ballot question; the card quotes the ballot question from it
+# (ballot-question).
 #
-# No impartial analysis and no argument text was staged. The measure is
-# explained from the district's Board Resolution No. 26-27-01, a text PDF:
-# its Appendix A (the full text of the bond measure) and its Appendix C
-# (the tax rate statement).
+# The Registrar's Interactive Sample Ballot gives the County Counsel's
+# impartial analysis, the district's tax rate statement, the full text of
+# the bond measure, and the arguments and rebuttals as filed (HTML,
+# retrieved 2026-10-30). The full text and the tax rate statement
+# supersede the copies in the district's Board Resolution No. 26-27-01
+# (resolution.pdf, its Appendices A and C, no longer cited); the passages
+# the script cites read the same in both. The impartial analysis is the
+# measure's neutral explanation, the kind the state rounds give an
+# analyst's explanation.
 
 [contest]
 id = "ca-2026-11-03-glendora-unified-measure-g"
@@ -33,28 +35,64 @@ file = "sources/county-measure-list-excerpt.txt"
 retrieved = "2026-10-30"
 
 [[source]]
-id = "measure-list"
-kind = "election-filing"
-publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026 (Rev. 9/22/26): Measure G, its supporters and opponents as filed"
-credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
-url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
-file = "sources/county-measure-list-excerpt.txt"
-retrieved = "2026-10-30"
-
-[[source]]
 id = "text"
 kind = "official-text"
-publisher = "Glendora Unified School District, Board Resolution No. 26-27-01 ordering a general obligation bond election, Appendix A, Full Text of the Bond Measure"
-credit = "Full Text of the Bond Measure, Glendora Unified School District"
-url = "https://www.glendora.k12.ca.us/ourpages/auto/2026/8/14/37751635/Final%20Glendora%20USD%20-%20November%202026%20GO%20Bond%20Election%20Resolution.pdf"
-file = "sources/resolution.pdf"
+publisher = "Full Text of Ballot Measure G, as printed by the Los Angeles County Registrar-Recorder/County Clerk in the Interactive Sample Ballot"
+credit = "Full Text of Measure G, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10931.json"
+file = "sources/full-text.html"
 retrieved = "2026-10-30"
 
 [[source]]
 id = "tax-statement"
 kind = "official-fiscal-analysis"
-publisher = "Glendora Unified School District, Tax Rate Statement (Appendix C to Board Resolution No. 26-27-01)"
-credit = "Tax Rate Statement, Glendora Unified School District"
-url = "https://www.glendora.k12.ca.us/ourpages/auto/2026/8/14/37751635/Final%20Glendora%20USD%20-%20November%202026%20GO%20Bond%20Election%20Resolution.pdf"
-file = "sources/resolution.pdf"
+publisher = "Glendora Unified School District, Tax Rate Statement for Measure G, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Tax Rate Statement, Measure G, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10931.json"
+file = "sources/tax-rate-statement.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-fiscal-analysis"
+publisher = "Dawyn R. Harrison, County Counsel, Impartial Analysis of Measure G, as printed by the Los Angeles County Registrar-Recorder/County Clerk in the Interactive Sample Ballot"
+credit = "Impartial Analysis of Measure G, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10931.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure G, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument in Favor of Measure G, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10931.json"
+file = "sources/argument-for.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "rebuttal-to-against"
+kind = "official-argument"
+publisher = "Rebuttal to Argument Against Measure G, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Rebuttal to Argument Against Measure G, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10931.json"
+file = "sources/rebuttal-to-argument-against.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure G, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument Against Measure G, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10931.json"
+file = "sources/argument-against.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "rebuttal-to-for"
+kind = "official-argument"
+publisher = "Rebuttal to Argument in Favor of Measure G, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Rebuttal to Argument in Favor of Measure G, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10931.json"
+file = "sources/rebuttal-to-argument-for.html"
 retrieved = "2026-10-30"
