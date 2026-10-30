@@ -2656,3 +2656,10 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $17.5 million."
 amount = 17500000
 period = "unstated"
+
+# City of Mountain View Measure E: a charter amendment, not a tax; the
+# Santa Clara County Registrar of Voters' List of Local Measures prints no
+# fiscal statement, nor does the impartial analysis.
+[mountain-view-measure-e]
+source = "ballot-question"
+status = "none-printed"
