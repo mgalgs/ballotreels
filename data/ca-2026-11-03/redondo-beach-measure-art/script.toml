@@ -64,12 +64,8 @@ text = "Along two commercial boulevards, buildings are limited today to 30 feet 
 sources = ["impartial-analysis"]
 
 [section.line.visual]
-kind = "bars"
-title = "Maximum floor area ratio, Artesia and Aviation Boulevards"
-source = "impartial-analysis"
-unit = ""
-labels = ["Today", "Measure ART"]
-values = [0.6, 1.5]
+kind = "illustration"
+name = "mixed-use-storefronts"
 
 [[section]]
 id = "change"
@@ -79,13 +75,17 @@ heading = "What would change"
 text = "Measure ART would allow 45 feet and three stories there, with more floor area and design standards for pedestrians."
 sources = ["impartial-analysis"]
 
+[section.line.visual]
+kind = "bars"
+title = "Maximum floor area ratio, Artesia and Aviation Boulevards"
+source = "impartial-analysis"
+unit = ""
+labels = ["Today", "Measure ART"]
+values = [0.6, 1.5]
+
 [[section.line]]
 text = "Industrial areas, and some commercial areas along Pacific Coast Highway, could also build more floor area."
 sources = ["impartial-analysis"]
-
-[section.line.visual]
-kind = "illustration"
-name = "mixed-use-storefronts"
 
 [[section.line]]
 id = "density"
