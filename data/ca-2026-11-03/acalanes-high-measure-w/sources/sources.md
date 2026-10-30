@@ -30,3 +30,11 @@ From the District's "Measure W Resolution" web page (the "by:" items appear ther
 - Resolution p. 1: "the District, comprised of Acalanes High School, Campolindo High School, Las Lomas High School, Miramonte High School, and Acalanes Center for Independent Study"
 - Measure text (web page): "the Acalanes Union High School District proposes to levy and collect a qualified special parcel tax for a period of eight years, beginning in fiscal year 2027-28, in the amount of $168 per parcel"
 - Measure text: "the parcel tax revenues will be used only for lawful educational purposes and shall not be used for administrators’ salaries or benefits."
+
+## Contra Costa County Elections measure page, read 2026-10-30
+
+county-page.txt: the county's page for Measure W. Read in a desktop Chrome browser
+(contracostavote.gov returns a bot challenge to scripted fetches) and saved as text; the
+file's header gives the URL and how the text was taken. It prints the ballot question,
+the impartial analysis, the argument in favor, the argument against and both rebuttals
+(or the county's statement that one was not filed), as on the county's site.

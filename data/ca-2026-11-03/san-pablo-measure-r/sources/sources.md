@@ -41,3 +41,11 @@ This is the text in the agenda draft. **Not confirmed** that the adopted resolut
 | `legistar-event-1673-item-26-379.json` | Legistar record of the City Council meeting of July 13, 2026, item 26-379: action "Adopted"; action text includes "A motion was made by Councilmember Ponce, seconded by Councilmember Pineda, to adopt resolution to place the attached Transactions and Use (Sales) tax measure (Ordinance) on the November 3, 2026 election ballot. The Motion carried by the following vote: Aye: 5" (no amendment recorded) | <https://webapi.legistar.com/v1/sanpablo/events/1673/eventitems?AgendaNote=1&MinutesNote=1> |
 
 This is the official record that the draft resolution above (the only resolution attached to the item) was adopted, with the attached ordinance, on July 13, 2026. The matter history records the resolution as Adopted/Pass on 2026-07-14. Publisher: City of San Pablo (Legistar).
+
+## Contra Costa County Elections measure page, read 2026-10-30
+
+county-page.txt: the county's page for Measure R. Read in a desktop Chrome browser
+(contracostavote.gov returns a bot challenge to scripted fetches) and saved as text; the
+file's header gives the URL and how the text was taken. It prints the ballot question,
+the impartial analysis, the argument in favor, the argument against and both rebuttals
+(or the county's statement that one was not filed), as on the county's site.

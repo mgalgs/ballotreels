@@ -52,3 +52,11 @@ concord-O-ordinance-exhibit-a.pdf
         Attachment 1; its Section 3 sets the ballot question and refers to this ordinance as
         Exhibit A.
 ```
+
+## Contra Costa County Elections measure page, read 2026-10-30
+
+county-page.txt: the county's page for Measure O. Read in a desktop Chrome browser
+(contracostavote.gov returns a bot challenge to scripted fetches) and saved as text; the
+file's header gives the URL and how the text was taken. It prints the ballot question,
+the impartial analysis, the argument in favor, the argument against and both rebuttals
+(or the county's statement that one was not filed), as on the county's site.

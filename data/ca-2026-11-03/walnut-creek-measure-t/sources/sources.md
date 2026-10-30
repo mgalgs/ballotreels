@@ -81,3 +81,11 @@ measure-t-duties-of-treasurer.pdf
   What: Attachment 2, the City Treasurer's duties (Walnut Creek Municipal Code extract).
   URL: https://walnutcreek.granicus.com/MetaViewer.php?view_id=12&clip_id=5383&meta_id=354209
 ```
+
+## Contra Costa County Elections measure page, read 2026-10-30
+
+county-page.txt: the county's page for Measure T. Read in a desktop Chrome browser
+(contracostavote.gov returns a bot challenge to scripted fetches) and saved as text; the
+file's header gives the URL and how the text was taken. It prints the ballot question,
+the impartial analysis, the argument in favor, the argument against and both rebuttals
+(or the county's statement that one was not filed), as on the county's site.

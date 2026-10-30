@@ -42,3 +42,11 @@ Agenda-copy text; the adopted ordinance and printed ballot are **not confirmed**
 | `legistar-event-1866-item-26-200.json` | Legistar record of the City Council meeting of July 28, 2026, item 26-200: action "adopt", result "Pass"; action text: "MOTION: A motion was made by Vice Mayor Walker-Griffin, seconded by Council Member Grimsley, to adopt Ordinance 558. The motion carried by the following vote:" (no amendment recorded) | <https://webapi.legistar.com/v1/hercules/events/1866/eventitems?AgendaNote=1&MinutesNote=1> |
 
 This is the official record that the urgency ordinance (agenda copy above) was adopted, as Ordinance No. 558, on July 28, 2026. Publisher: City of Hercules (Legistar).
+
+## Contra Costa County Elections measure page, read 2026-10-30
+
+county-page.txt: the county's page for Measure P. Read in a desktop Chrome browser
+(contracostavote.gov returns a bot challenge to scripted fetches) and saved as text; the
+file's header gives the URL and how the text was taken. It prints the ballot question,
+the impartial analysis, the argument in favor, the argument against and both rebuttals
+(or the county's statement that one was not filed), as on the county's site.
