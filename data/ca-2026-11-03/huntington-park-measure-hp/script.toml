@@ -1,0 +1,206 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the term limit today and its
+# reset; how the measure reached the ballot; what would change (no reset,
+# how partial terms and district moves count, that past terms do not
+# count, the vote it needs); that the analysis gives no cost estimate;
+# both sides; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry it.
+#
+# The today and change lines are the City Attorney's impartial analysis,
+# which states the reset and what the measure does; the argument's own
+# words on them ("career politicians", "new voices") are the yes side's.
+# The card quotes the Los Angeles County Registrar-Recorder/County
+# Clerk's list "Measures Appearing on the Ballot": the City's heading,
+# the vote needed and the ballot question, which has no yes or no
+# sentences, so the card has no boxes. The vote lines give the impartial
+# analysis's own meanings, and both highlight the same phrase.
+#
+# The argument in favor is in the City's consolidation packet (pages 19
+# and 20, transcribed). The list says "Opponents: None submitted.", so
+# the no side says plainly that no argument against was submitted,
+# citing the list (filed = false). Its clause on what the list records
+# balances the yes line's length without a further claim. Neither side
+# names anyone: the record names no one on the no side.
+
+contest = "ca-2026-11-03-huntington-park-measure-hp"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "HP"
+title = "CITY OF HUNTINGTON PARK"
+origin = "VOTE PASSAGE – Majority Vote 50%+1"
+summary = "Shall an ordinance be adopted to establish a lifetime limit of two (2) terms for members of the City Council, where a partial term of more than two (2) years counts as a full term, and a partial term of two (2) years or less does not count against the limit?"
+
+[[section]]
+id = "what"
+heading = "Measure HP"
+
+[[section.line]]
+text = "Measure HP asks the voters of this city whether to limit council members to two terms in a lifetime."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["a lifetime limit of two (2) terms"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-limit"
+text = "Today, city law limits council members to three terms."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "law-book"
+
+[[section.line]]
+id = "reset"
+text = "But someone who sits out one election cycle starts counting again, and can serve up to three more terms."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hourglass-plans"
+
+[[section.line]]
+text = "The City Council placed Measure HP on the ballot."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "lifetime"
+text = "Measure HP would end that reset, so no one could serve more than two terms in a lifetime."
+sources = ["impartial-analysis", "ordinance"]
+
+[section.line.visual]
+kind = "illustration"
+name = "empty-commission-seat"
+
+[[section.line]]
+id = "partial"
+text = "A partial term would count as a full term only if it ran more than two years."
+sources = ["impartial-analysis", "ordinance", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["a partial term of more than two (2) years counts as a full term"]
+
+[[section.line]]
+id = "district"
+text = "Moving to another council district would not reset the count."
+sources = ["impartial-analysis", "ordinance"]
+
+[section.line.visual]
+kind = "illustration"
+name = "district-map"
+
+[[section.line]]
+id = "past"
+text = "Terms served before November 3, 2026, would not count toward the limit."
+sources = ["impartial-analysis", "ordinance"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+text = "Measure HP needs a majority yes vote to pass."
+sources = ["ballot-question", "ordinance"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The city attorney's impartial analysis does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the current rotating system creates career politicians, and that a lifetime limit opens the council to new voices."
+sources = ["argument-for"]
+basis = ["This rotating system creates career politicians and prevents new leaders from stepping up to serve our community.", "Lifetime limits guarantee opportunities for new voices, new ideas, and regular citizens to represent our neighborhoods."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Ends career politicians", "Opens seats to new voices"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The official county list of measures, which names who filed each argument, says no argument against Measure HP was submitted."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote sets a two-term lifetime limit and ends the reset."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["a lifetime limit of two (2) terms"]
+
+[[section.line]]
+text = "A no vote keeps the current three-term limit, with the reset."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["a lifetime limit of two (2) terms"]
+
+[[question]]
+ask = "Can council members serve more terms after a break today?"
+lines = ["today-limit", "reset"]
+
+[[question]]
+ask = "Would terms already served count?"
+lines = ["past"]
+
+[[question]]
+ask = "How do partial terms and moving districts count?"
+lines = ["partial", "district"]
