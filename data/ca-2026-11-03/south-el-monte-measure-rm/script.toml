@@ -15,6 +15,14 @@
 # 6.3). Measure CL, on the same ballot, would limit council terms;
 # neither measure's documents mention the other, so this script does not
 # connect them.
+#
+# The Registrar's sample ballot added the full text and both rebuttals.
+# The text agrees with the impartial analysis on the change and its
+# timing, and those lines now cite it too. The sides keep their lines
+# from the arguments: one line per side leaves no room for the
+# rebuttals, which repeat the same points (and, in the supporters'
+# rebuttal, make accusations against the current mayor that are not
+# repeated here).
 
 contest = "ca-2026-11-03-south-el-monte-measure-rm"
 template = "measure"
@@ -70,7 +78,7 @@ heading = "What would change"
 [[section.line]]
 id = "change-structure"
 text = "Measure RM would return to five elected council members, who would pick one of themselves as mayor at least every two years."
-sources = ["impartial-analysis"]
+sources = ["impartial-analysis", "full-text"]
 
 [section.line.visual]
 kind = "illustration"
@@ -79,7 +87,7 @@ name = "empty-commission-seat"
 [[section.line]]
 id = "timing"
 text = "The current mayor would finish the term, and the office would leave the ballot starting in November 2028."
-sources = ["impartial-analysis"]
+sources = ["impartial-analysis", "full-text"]
 
 [[section.line]]
 text = "Measure RM needs a simple majority to pass."
