@@ -1,0 +1,48 @@
+# Archived sources for City of Palmdale Measure DE, 2026-11-03 general
+# election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" is the authority for the letter and the ballot
+# question, quoted on the card; its "Supporters: None submitted.
+# Opponents: None submitted." is the official statement that no argument
+# was filed on either side (`measure-list`). No impartial analysis was
+# printed or gathered: what the measure does comes from the full text of
+# Ordinance No. 1669 as the Registrar prints it in its Interactive Sample
+# Ballot. Resolution No. CC 2026-047 (a scan, whose Exhibit A is the same
+# ordinance) adds nothing the script needs and is not cited.
+
+[contest]
+id = "ca-2026-11-03-palmdale-measure-de"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:palmdale"
+kind = "measure"
+title = "City of Palmdale Measure DE: A Mayor Elected Citywide Beginning in 2028"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 Statewide General Election: City of Palmdale Measure DE"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "measure-list"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 Statewide General Election: City of Palmdale Measure DE, supporters and opponents who filed arguments"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "ordinance"
+kind = "official-text"
+publisher = "City of Palmdale, Ordinance No. 1669, amending Palmdale Municipal Code Section 2.08.010 to establish the office of Mayor as an at-large elected position, Full Text of Ballot Measure DE as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Ordinance No. 1669, City of Palmdale"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10881.json"
+file = "sources/full-text.html"
+retrieved = "2026-10-30"

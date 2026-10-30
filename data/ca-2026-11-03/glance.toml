@@ -3428,3 +3428,10 @@ source = "ballot-question"
 quote = "generating approximately $3.1 million annually"
 amount = 3100000
 period = "per-year"
+
+# City of Palmdale Measure DE: an elected mayor; no impartial analysis
+# was printed, and neither the ordinance nor the county's list gives a
+# cost estimate.
+[palmdale-measure-de]
+source = "ballot-question"
+status = "none-printed"
