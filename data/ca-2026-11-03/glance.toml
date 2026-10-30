@@ -2759,3 +2759,41 @@ period = "per-year"
 [el-camino-healthcare-measure-s]
 source = "impartial-analysis"
 status = "none-printed"
+
+# Merced Union High School District SFID No. 1 Measure W: the
+# district's Tax Information Statement, its total debt service (the
+# bonds are $33,800,000).
+[merced-union-high-sfid-1-measure-w]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all of the bonds are issued and sold is approximately $68,850,000."
+amount = 68850000
+period = "unstated"
+
+# Merced Union High School District SFID No. 2 Measure X: the
+# district's Tax Information Statement, its total debt service (the
+# bonds are $59,100,000).
+[merced-union-high-sfid-2-measure-x]
+source = "tax-statement"
+quote = "be required to be repaid if all of the bonds are issued and sold is approximately $119,140,000."
+amount = 119140000
+period = "unstated"
+
+# Merced Union High School District SFID No. 3 Measure Z: the total debt
+# service from the district's Tax Information Statement, quoted as County
+# Counsel's impartial analysis gives it (the statement's PDF text runs
+# words together; the bonds are $129,000,000).
+[merced-union-high-sfid-3-measure-z]
+source = "impartial-analysis"
+quote = "including principal and interest, is that $281,756,000 would be required to be repaid if all the bonds are issued and sold."
+amount = 281756000
+period = "unstated"
+
+# City of Lemoore Measure P: a general hotel tax, so no tax rate
+# statement or fiscal analysis applies, and the impartial analysis gives
+# no figure; the one estimate is the ballot label's.
+[lemoore-measure-p]
+source = "ballot-question"
+quote = "providing approximately $512,000 annually for general City services"
+amount = 512000
+period = "per-year"
+direction = "revenue-gain"

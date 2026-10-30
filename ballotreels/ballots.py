@@ -830,6 +830,22 @@ BALLOTS: dict[str, Ballot] = {
                                      "alum-rock-measure-p",
                                      "orchard-measure-r",
                                      "el-camino-healthcare-measure-s")},
+                     # Merced County Elections posts each measure's
+                     # ballot question, impartial analysis, full text,
+                     # tax rate statement and arguments on its "November
+                     # 3, 2026, General Election" page (no printed guide
+                     # archived); Kings County Elections posts Lemoore's
+                     # ballot label, impartial analysis and resolution on
+                     # its "Current Election Information" page. Each card
+                     # names its county's page as titled.
+                     **{f"ca-2026-11-03-{slug}":
+                        "November 3, 2026, General Election"
+                        for slug in (
+                            "merced-union-high-sfid-1-measure-w",
+                            "merced-union-high-sfid-2-measure-x",
+                            "merced-union-high-sfid-3-measure-z")},
+                     "ca-2026-11-03-lemoore-measure-p":
+                         "Current Election Information",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
