@@ -3,12 +3,19 @@
 # script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
 # section 1).
 #
-# Contra Costa County's Voter Information Guide could not be fetched
-# (contracostavote.gov answered a bot challenge), and www.sanpabloca.gov
-# answered HTTP 403. These are the City's files from its Legistar agenda
-# system, for the City Council meeting of July 13, 2026, matter 26-379.
-# No impartial analysis, argument or rebuttal was reached, and no
-# document says whether any argument was filed.
+# Contra Costa County Elections' page for Measure R
+# (sources/county-page.txt, read in a browser, since contracostavote.gov
+# answers scripted fetches with a bot challenge) prints the ballot
+# question, the City Attorney's impartial analysis, the argument in
+# favor, the argument against, the rebuttal to the argument in favor,
+# and the county's statement that no rebuttal to the argument against
+# was filed. The City Attorney's impartial analysis is the measure's
+# neutral explanation, the kind a state's attorney general's explanatory
+# statement is.
+#
+# The City's own files are from its Legistar agenda system, for the City
+# Council meeting of July 13, 2026, matter 26-379 (www.sanpabloca.gov
+# answered HTTP 403).
 #
 # The placing document is the resolution submitting the tax to the
 # voters (Attachment 1 to matter 26-379), whose Section 1 sets the ballot
@@ -16,6 +23,8 @@
 # number, date and vote left blank; the City's Legistar records the
 # resolution as RES 2026-121 (matter), adopted with the attached ordinance
 # at the July 13, 2026 meeting with no amendment recorded (adoption). The
+# county's page prints the same ballot question word for word, so the
+# draft's question, which the card quotes, is the one on the ballot. The
 # Word files' text is copied into sources/*.txt, unchanged but for line
 # breaks (the ballot question's table set as paragraphs), and each source
 # points at the copy, its url at the Word file. The full text is Exhibit
@@ -31,6 +40,10 @@ election = "ca-2026-11-03"
 division = "ocd-division/country:us/state:ca/place:san_pablo"
 kind = "measure"
 title = "City of San Pablo Measure R: Temporary Sales Tax of One-Half Cent, Then One-Quarter Cent"
+
+[[contest.correction]]
+date = "2026-10-30"
+note = "The video now gives the arguments for and against printed by the county, which it had said were not among the documents gathered."
 
 [[source]]
 id = "ballot-question"
@@ -76,3 +89,30 @@ credit = "Legistar matter record, City of San Pablo"
 url = "https://webapi.legistar.com/v1/sanpablo/matters/7520"
 file = "sources/legistar-matter-26-379.json"
 retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney's Impartial Analysis of Measure R, Contra Costa County Elections, Measure R, November 3, 2026 General Election"
+credit = "Impartial Analysis, San Pablo City Attorney"
+url = "https://www.contracostavote.gov/m9010-en-2/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure R, Contra Costa County Elections, Measure R, November 3, 2026 General Election"
+credit = "Argument in favor, Contra Costa County Elections"
+url = "https://www.contracostavote.gov/m9010-en-2/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure R, Contra Costa County Elections, Measure R, November 3, 2026 General Election"
+credit = "Argument against, Contra Costa County Elections"
+url = "https://www.contracostavote.gov/m9010-en-2/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"

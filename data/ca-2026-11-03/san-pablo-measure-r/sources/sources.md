@@ -20,7 +20,7 @@ Attachment list: <https://webapi.legistar.com/v1/sanpablo/matters/7520/attachmen
 
 > To provide funding to maintain City services, including crime prevention, police protection, reducing illegal dumping, the City’s daily senior meal program, youth scholarship programs, assisting the homeless, street maintenance, and other general services, shall San Pablo enact a temporary ½-cent sales tax for 5 years, generating approximately $2,000,000 annually, then reduced to ¼-cent for 5 years, generating approximately $1,000,000 annually, then terminate; with all funds staying in San Pablo, citizen oversight, and mandated annual audits?
 
-This is the text in the agenda draft. **Not confirmed** that the adopted resolution or the printed ballot uses identical words.
+This is the text in the agenda draft. **Not confirmed** that the adopted resolution or the printed ballot uses identical words. (Update, 2026-10-30: the county's Measure R page, county-page.txt below, prints this question word for word.)
 
 ## Who votes on it
 
