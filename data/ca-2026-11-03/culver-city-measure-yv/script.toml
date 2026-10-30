@@ -13,6 +13,11 @@
 #
 # The 2022 vote on a similar measure appears only in the arguments, so
 # the neutral sections leave it out (STANDARD.md 6.3).
+#
+# The impartial analysis, full text, arguments and rebuttals are the
+# Registrar's copies. Each side's line also rests on its rebuttal, which
+# makes the same points again. The analysis prints no cost estimate
+# either, so the fiscal line stands.
 
 contest = "ca-2026-11-03-culver-city-measure-yv"
 template = "measure"
@@ -66,7 +71,7 @@ heading = "What would change"
 
 [[section.line]]
 text = "Measure YV would let eligible 16- and 17-year-olds vote in city and school board elections."
-sources = ["impartial-analysis"]
+sources = ["impartial-analysis", "full-text"]
 
 [section.line.visual]
 kind = "illustration"
@@ -109,8 +114,8 @@ side = "yes"
 
 [[section.line]]
 text = "Supporters say local decisions shape the lives of teens, and people who vote once eligible stay engaged for life."
-sources = ["argument-for"]
-basis = ["Decisions by the Mayor, City Council, and School Board affect their schools, parks, transportation, public safety, recreation programs, and future opportunities.", "Research shows that people who vote when they first become eligible are more likely to remain engaged throughout their lives."]
+sources = ["argument-for", "rebuttal-to-against"]
+basis = ["Our students are neighbors with real stakes in this city's mobility, education, services, and safety.", "Decisions by the Mayor, City Council, and School Board affect their schools, parks, transportation, public safety, recreation programs, and future opportunities.", "Research shows that people who vote when they first become eligible are more likely to remain engaged throughout their lives."]
 
 [section.line.visual]
 kind = "list"
@@ -124,8 +129,8 @@ side = "no"
 
 [[section.line]]
 text = "Opponents say students would become a captive voting bloc, and strangers with political motives would court and contact teens."
-sources = ["argument-against"]
-basis = ["The fact is, this measure makes our students a captive, impressionable voting bloc.", "That means your 16-year old child would be getting contacted - and courted - by strangers with political motives."]
+sources = ["argument-against", "rebuttal-to-for"]
+basis = ["will instantly make them the deciding voting bloc in future elections.", "while candidates and their supporters lobby your children for votes.", "The fact is, this measure makes our students a captive, impressionable voting bloc.", "That means your 16-year old child would be getting contacted - and courted - by strangers with political motives."]
 
 [section.line.visual]
 kind = "list"
