@@ -1,0 +1,186 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; who placed it and the vote it needs; what
+# the money may and may not pay for; the tax rate statement's estimates,
+# with its own caveat; one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the opening
+# says "the voters of this school district". The card and title carry the
+# names. "Counsel" is heard as "Council" (standard/speakability.txt), so
+# the narration says "the impartial analysis". The last fiscal year is
+# said with both years in full.
+#
+# The card quotes the Los Angeles County Registrar-Recorder/County Clerk's
+# list "Measures Appearing on the Ballot", which prints the ballot question
+# with no yes and no sentences, so the card has no boxes and the two vote
+# lines highlight the same phrase of the question.
+#
+# The tax rate statement's average and highest rates are both $40 per
+# $100,000 of assessed value; the script gives both, the total debt
+# service, and the statement's own caveat on its estimates. The bonds are
+# repaid from a tax on property in the district, not from the district's
+# budget, and no archived source states that budget, so the figures have
+# no budget scale (STANDARD.md 6.5; left open), as other school bonds' do.
+#
+# The argument in favor is the Registrar's printed copy. The list says
+# "Opponents: None submitted.", so the no side says plainly that no
+# argument against was submitted, citing the list (filed = false). Its
+# clause on what the list records balances the yes line's length without
+# a further claim.
+
+contest = "ca-2026-11-03-charter-oak-unified-measure-s"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "S"
+title = "CHARTER OAK UNIFIED SCHOOL DISTRICT"
+origin = "VOTE PASSAGE – 55% of the Votes Cast"
+summary = "To provide safe, modern neighborhood schools by repairing/upgrading/equipping aging classrooms, science labs, instructional technology, and school facilities that support math, science, engineering, literacy, arts, skilled trades, and college/career readiness, fixing deteriorating roofs, plumbing, electrical systems, and removing asbestos/lead pipes, shall Charter Oak Unified School District's measure authorizing $75,000,000 in bonds at legal rates be adopted, levying $40 per $100,000 assessed value ($5,000,000 annually) while bonds are outstanding, with independent oversight/audits, all money locally controlled?"
+
+[[section]]
+id = "what"
+heading = "Measure S"
+
+[[section.line]]
+text = "Measure S asks the voters of this school district whether to approve $75 million in school bonds."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $75,000,000 in bonds"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+id = "threshold"
+text = "The district's governing board placed Measure S on the ballot, and it needs 55 percent of the vote to pass."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "projects"
+text = "The bond money could pay to upgrade classrooms and science labs, fix roofs, plumbing and electrical systems, and remove asbestos and lead pipes."
+sources = ["ballot-question", "impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-roof-repair"
+
+[[section.line]]
+id = "limits"
+text = "The money could not pay teacher or administrator salaries, and a citizens' oversight committee and yearly audits would be required."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "inspection-clipboard"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax rate statement says"
+
+[[section.line]]
+id = "rate"
+text = "The district's tax rate statement estimates an average and a highest tax of $40 per $100,000 of assessed value, through 2061-2062."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "bars"
+title = "Estimated tax per $100,000 of assessed value, dollars"
+source = "tax-statement"
+unit = ""
+labels = ["Average", "Highest"]
+values = [40, 40]
+
+[[section.line]]
+id = "total"
+text = "The statement puts the total to repay, with interest, at about $157 million, and says its figures are estimates, not maximum amounts."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say many schools are more than 60 years old, and every dollar stays local and cannot be taken by the state."
+sources = ["argument-for"]
+basis = ["Many of our schools are more than 60 years old.", "Every dollar stays in Charter Oak Unified schools and cannot be taken by the State"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Many schools over 60 years old", "Every dollar stays local"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The official list of measures from the county, which names who filed each argument, says no argument against Measure S was submitted."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves the $75 million in school bonds."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $75,000,000 in bonds"]
+
+[[section.line]]
+text = "A no vote rejects the $75 million in school bonds."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $75,000,000 in bonds"]
+
+[[question]]
+ask = "How much tax would I pay, and for how long?"
+lines = ["rate"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["projects", "limits"]
+
+[[question]]
+ask = "What vote does the measure need to pass?"
+lines = ["threshold"]
+
+[[question]]
+ask = "What would the bonds cost in all?"
+lines = ["total"]
+
+[[question]]
+ask = "How large is the bond next to the district's yearly budget?"
+unanswered = true
