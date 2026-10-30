@@ -1,0 +1,58 @@
+# Archived sources for City of Los Altos Measure D, 2026-11-03 general
+# election (sources/rov-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Santa Clara County Registrar of Voters' List of Local Measures is
+# the authority for the measure's letter, ballot question and vote
+# threshold. The impartial analysis and the arguments are the Registrar's
+# posted copies, scans with no text layer: their verbatim checks read
+# their transcriptions (sources/rov-*-transcription.txt, made from the
+# page images); the urls are the PDFs'. No full text of the initiative
+# is archived; the ballot question and the City Attorney's impartial
+# analysis, the measure's neutral explanation, carry what it would do.
+# Both rebuttals are archived and transcribed; the script quotes neither,
+# so they are not listed here.
+
+[contest]
+id = "ca-2026-11-03-los-altos-measure-d"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:los_altos"
+kind = "measure"
+title = "City of Los Altos Measure D: Voter Approval to Sell, Lease or Alter the Downtown Parking Plazas"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "County of Santa Clara Registrar of Voters, List of Local Measures, November 3, 2026 General Election: Measure D"
+credit = "Santa Clara County Registrar of Voters, List of Local Measures"
+url = "https://vote.santaclaracounty.gov/list-local-measures-4"
+file = "sources/rov-measure-list-2026-10-29.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Jolie Houston, Los Altos City Attorney, City Attorney's Impartial Analysis of Measure D, County of Santa Clara Registrar of Voters"
+credit = "City Attorney's Impartial Analysis of Measure D"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-d-city-of-los-altos-ia-08-18-2026_redacted.pdf"
+file = "sources/rov-impartial-analysis-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure D, as filed with the Santa Clara County Registrar of Voters"
+credit = "Argument in favor of Measure D, Santa Clara County Registrar of Voters"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-d-city-of-los-altos-citizen-sponsored-intiiative_argument-in-favor_08102026_redacted.pdf"
+file = "sources/rov-argument-for-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure D, as filed with the Santa Clara County Registrar of Voters"
+credit = "Argument against Measure D, Santa Clara County Registrar of Voters"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-d-city-of-los-altos-citizen-sponsored-intiiative_argument-against_08102026_redacted.pdf"
+file = "sources/rov-argument-against-transcription.txt"
+retrieved = "2026-10-29"

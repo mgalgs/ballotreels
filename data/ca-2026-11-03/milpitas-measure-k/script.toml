@@ -1,0 +1,179 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; how the business tax works today; who placed it and
+# what it needs; what gross receipts are and how the new tax would be
+# charged, and when; the ballot question's revenue estimate; one line per
+# side; what a vote does.
+#
+# No narrated line names the city or the county (the card and title show
+# them). The card quotes the Registrar's List of Local Measures: its
+# heading for the measure as the title, the city as the origin, the
+# ballot question as the summary. The list prints no yes/no statements;
+# the vote lines take their meanings from the impartial analysis's "yes"
+# and "no" sentences and highlight the question's one phrase both votes
+# turn on.
+#
+# The ballot question's "no tax increase to residents" and "small
+# businesses pay less" are the supporters' points too, so no neutral line
+# repeats them (STANDARD.md 6.3). The percentage rates (0.025% to 0.035%)
+# stay on the card: decimals of a percent are misheard by the transcript
+# check. Per-business amounts are exempt from rule 6.5; the city's yearly
+# $3 million has no archived general fund total to scale it, so it goes
+# without one (listed as open).
+
+contest = "ca-2026-11-03-milpitas-measure-k"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "K"
+title = "Local Funding -Business Tax Update"
+origin = "City of Milpitas"
+summary = "City of Milpitas Local Funding Measure. Shall an ordinance to update City of Milpitas's 50-year-old business tax be adopted, with no tax increase to residents, so small businesses pay less than larger businesses, with all paying an annual flat rate, plus 0.025% to 0.035% of gross receipts for larger businesses, providing approximately $3,000,000 annually for general city services such as maintaining fiscal stability, neighborhood safety /cleanliness; requiring public disclosure, all funds invested locally, until ended by voters?"
+
+[[section]]
+id = "what"
+heading = "Measure K"
+
+[[section.line]]
+text = "Measure K asks the voters of this city whether to replace the business tax with one based on gross receipts."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["update City of Milpitas's 50-year-old business tax"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-tax"
+text = "The business tax today dates from 1976, and charges each business by its industry and number of employees."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "business-license-certificate"
+
+[[section.line]]
+text = "The City Council placed Measure K on the ballot, and it needs a majority to pass."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "gross-receipts"
+text = "Gross receipts are all the money a business takes in, before expenses."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section.line]]
+id = "flat-rate"
+text = "Starting in 2028, each business would pay a flat amount from $25 to $400 a year, rising with inflation."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section.line]]
+id = "larger"
+text = "Businesses taking in more than $700,000 would also pay a tax on part of their receipts."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "office-tower"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+id = "revenue"
+text = "The ballot question estimates about $3 million a year for general city services."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say small businesses now pay a higher tax rate than large corporations, in some cases over 70 times more."
+sources = ["argument-for"]
+basis = ["Right now, small and locally owned businesses have a higher tax rate than larger, wealthier corporations – in some cases, over 70 times more."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Small businesses now pay higher rates", "No tax increase for residents"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say businesses must pass taxes on to customers through higher prices, and living costs here are already too high."
+sources = ["argument-against"]
+basis = ["Taxes are just another cost of doing business, which owners must pass along, to stay in business.", "Gadget businesses necessarily passed the tariff expense along to us, through higher prices.", "The cost of living here is already too high."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Businesses pass taxes on to customers", "Cost of living is already too high"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the new gross receipts tax to replace the existing business tax."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["update City of Milpitas's 50-year-old business tax"]
+
+[[section.line]]
+text = "A no vote rejects the new tax and keeps the existing one."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["update City of Milpitas's 50-year-old business tax"]
+
+[[question]]
+ask = "What are gross receipts?"
+lines = ["gross-receipts"]
+
+[[question]]
+ask = "How much would a business pay?"
+lines = ["flat-rate", "larger"]
+
+[[question]]
+ask = "How big is $3 million next to the city's budget?"
+unanswered = true
+
+[[question]]
+ask = "How many businesses would pay more, and how many less?"
+unanswered = true

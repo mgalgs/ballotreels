@@ -1,0 +1,62 @@
+# Archived sources for City of Gilroy Measure B, 2026-11-03 general
+# election (sources/sources.md, sources/rov-sources.md). Every id here may
+# be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Santa Clara County Registrar of Voters' List of Local Measures is
+# the authority for the measure's letter, ballot question and vote
+# threshold, and says no rebuttal to the argument in favor was filed. The
+# impartial analysis and the arguments are the Registrar's posted copies,
+# which supersede the City Clerk's copies archived beside them: scans
+# with no text layer, whose verbatim checks read their transcriptions
+# (sources/rov-*-transcription.txt, made from the page images); the urls
+# are the PDFs'. The analysis was filed before the letter was assigned
+# and calls the measure "Measure (X)". The City Attorney's impartial
+# analysis is the measure's neutral explanation. A general tax has no tax
+# rate statement; the ballot question gives the revenue estimate. The
+# rebuttal on file (its file name says "rebuttal-against") is the
+# proponents' rebuttal to the argument against; the script quotes it
+# nowhere, so it is not listed here.
+
+[contest]
+id = "ca-2026-11-03-gilroy-measure-b"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:gilroy"
+kind = "measure"
+title = "City of Gilroy Measure B: Transient Occupancy Tax Increase from 9% to a Maximum of 13%"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "County of Santa Clara Registrar of Voters, List of Local Measures, November 3, 2026 General Election: Measure B"
+credit = "Santa Clara County Registrar of Voters, List of Local Measures"
+url = "https://vote.santaclaracounty.gov/list-local-measures-4"
+file = "sources/rov-measure-list-2026-10-29.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Andrew L. Faber, City Attorney, City of Gilroy, City Attorney's Impartial Analysis of Measure B, County of Santa Clara Registrar of Voters"
+credit = "City Attorney's Impartial Analysis of Measure B"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-b-city-of-gilroy_ia_8.7.26_redacted.pdf"
+file = "sources/rov-impartial-analysis-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure B, as filed with the Santa Clara County Registrar of Voters"
+credit = "Argument in favor of Measure B, Santa Clara County Registrar of Voters"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-b-city-of-gilroy_primary-argument_in-favor_8.7.26_redacted.pdf"
+file = "sources/rov-argument-for-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument against Measure B, as filed with the Santa Clara County Registrar of Voters"
+credit = "Argument against Measure B, Santa Clara County Registrar of Voters"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-b-city-of-gilroy-transient-occupancy-tax-argument_against-08-11-2026_redacted.pdf"
+file = "sources/rov-argument-against-transcription.txt"
+retrieved = "2026-10-29"

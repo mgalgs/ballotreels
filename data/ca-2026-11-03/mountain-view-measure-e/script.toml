@@ -1,0 +1,160 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; what a city charter is; who placed it and what it
+# needs; what would change (wording, the vacancy deadline, reading
+# ordinances, board qualifications); no cost estimate; one line per side;
+# what a vote does.
+#
+# No narrated line names the city or the county (the narrator mispronounces
+# place names; the card and title show them), so the fiscal and no-side
+# lines name "the Registrar of Voters". The card quotes the Registrar's
+# List of Local Measures: its heading for the measure as the title, the
+# city as the origin, the ballot question as the summary. The list prints
+# no yes/no statements, so the vote lines take their meanings from the
+# question and highlight the one phrase both votes turn on, as Utah's do.
+# No argument against Measure E was filed: the no side says so plainly;
+# its section is marked filed = false.
+
+contest = "ca-2026-11-03-mountain-view-measure-e"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "E"
+title = "City Charter Amendment - Modernizing Provisions"
+origin = "City of Mountain View"
+summary = "Shall the measure amending the City Charter to modernize provisions by replacing gender-specific terms with gender-neutral language; extending the time to take action to fill a council vacancy from 30 to 60 days; eliminating the requirement to read ordinances and resolutions in full; authorizing Council to establish qualifications for legislatively created boards, commissions, and committees; updating outdated terminology; improving internal consistency, and making clarifying edits to align with State law and current practices, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure E"
+
+[[section.line]]
+text = "Measure E asks the voters of this city whether to update parts of the city charter."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["amending the City Charter to modernize provisions"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "charter"
+text = "A city charter works like a local constitution, setting out the form of city government and some of its rules."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section.line]]
+text = "The City Council placed Measure E on the ballot unanimously, and it needs a majority to pass."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "wording"
+text = "Measure E would replace gender-specific terms with gender-neutral ones, and fix typographical errors and outdated terms."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "amended-page"
+
+[[section.line]]
+id = "vacancy"
+text = "The City Council would have 60 days, instead of 30, to fill a vacancy on the council."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section.line]]
+text = "Ordinances and resolutions would no longer have to be read before adoption."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Registrar of Voters' List of Local Measures does not include a cost estimate for the measure."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure E modernizes the charter and makes council meetings more efficient."
+sources = ["argument-for"]
+basis = ["Measure E will modernize the Mountain View City Charter.", "Measure E also corrects references to the Mountain View City Code, improves City Council meeting efficiency"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Modernizes the city charter", "Makes council meetings more efficient"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure E was filed with the county Registrar of Voters."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the charter amendments."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["amending the City Charter to modernize provisions"]
+
+[[section.line]]
+text = "A no vote rejects the charter amendments."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["amending the City Charter to modernize provisions"]
+
+[[question]]
+ask = "What is a city charter?"
+lines = ["charter"]
+
+[[question]]
+ask = "What would actually change?"
+lines = ["wording", "vacancy"]

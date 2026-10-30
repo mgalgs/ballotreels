@@ -1,0 +1,51 @@
+# Archived sources for City of Mountain View Measure F, 2026-11-03
+# general election (sources/sources.md, sources/rov-sources.md). Every id
+# here may be cited by script.toml. `kind` must be one the standard
+# allows (docs/STANDARD.md, section 1).
+#
+# The Santa Clara County Registrar of Voters' List of Local Measures is
+# the authority for the measure's letter, ballot question and vote
+# threshold, and says no argument against was filed. The impartial
+# analysis and the argument in favor are the Registrar's posted copies,
+# scans with no text layer: their verbatim checks read their
+# transcriptions (sources/rov-*-transcription.txt, made from the page
+# images); the urls are the PDFs'. The City Attorney's impartial analysis
+# is the measure's neutral explanation, and gives the one revenue
+# estimate per point of tax beside the ballot question's total. A general
+# tax has no tax rate statement. Resolution No. 19130 (the June 23 council
+# packet copy) is archived beside them for the full text; the script
+# cites nothing only it states, so it is not listed.
+
+[contest]
+id = "ca-2026-11-03-mountain-view-measure-f"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:mountain_view"
+kind = "measure"
+title = "City of Mountain View Measure F: Transient Occupancy Tax Increase from 10% up to 15%"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "County of Santa Clara Registrar of Voters, List of Local Measures, November 3, 2026 General Election: Measure F"
+credit = "Santa Clara County Registrar of Voters, List of Local Measures"
+url = "https://vote.santaclaracounty.gov/list-local-measures-4"
+file = "sources/rov-measure-list-2026-10-29.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney of the City of Mountain View, City Attorney's Impartial Analysis of Measure F (filed July 16, 2026), County of Santa Clara Registrar of Voters"
+credit = "City Attorney's Impartial Analysis of Measure F"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-f-city-of-mountain-view-tot-ia07-16-2026_redacted.pdf"
+file = "sources/rov-impartial-analysis-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure F, as filed with the Santa Clara County Registrar of Voters (no argument against was filed)"
+credit = "Argument in favor of Measure F, Santa Clara County Registrar of Voters"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-f-transient-occupy-tax-primary-arguemnt-in-favor_redacted.pdf"
+file = "sources/rov-argument-for-transcription.txt"
+retrieved = "2026-10-29"

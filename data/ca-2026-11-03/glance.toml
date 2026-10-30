@@ -2656,3 +2656,62 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $17.5 million."
 amount = 17500000
 period = "unstated"
+
+# City of Mountain View Measure E: a charter amendment, not a tax; the
+# Santa Clara County Registrar of Voters' List of Local Measures prints no
+# fiscal statement, nor does the impartial analysis.
+[mountain-view-measure-e]
+source = "ballot-question"
+status = "none-printed"
+
+# City of Mountain View Measure F: a general tax, so no tax rate
+# statement; the ballot question on the Santa Clara County Registrar of
+# Voters' List of Local Measures gives the total yearly revenue at the
+# 15% maximum.
+[mountain-view-measure-f]
+source = "ballot-question"
+quote = "generating up to $5,200,000 annually until ended by voters"
+amount = 5200000
+period = "per-year"
+
+# City of Milpitas Measure K: a general tax, so no tax rate statement;
+# the ballot question on the Santa Clara County Registrar of Voters' List
+# of Local Measures gives the yearly revenue estimate.
+[milpitas-measure-k]
+source = "ballot-question"
+quote = "providing approximately $3,000,000 annually for general city services"
+amount = 3000000
+period = "per-year"
+
+# City of Cupertino Measure L: a General Plan amendment, not a tax; the
+# Santa Clara County Registrar of Voters' List of Local Measures prints no
+# fiscal statement, nor does the impartial analysis.
+[cupertino-measure-l]
+source = "ballot-question"
+status = "none-printed"
+
+# City of Gilroy Measure B: a general tax, so no tax rate statement; the
+# ballot question on the Santa Clara County Registrar of Voters' List of
+# Local Measures gives the yearly revenue figure.
+[gilroy-measure-b]
+source = "ballot-question"
+quote = "providing $700,000 annually paid only by hotel/lodging guests"
+amount = 700000
+period = "per-year"
+
+# City of Morgan Hill Measure A: not a tax; the City Attorney's impartial
+# analysis gives the city's savings estimate (the largest figure the
+# yearly personnel savings).
+[morgan-hill-measure-a]
+source = "impartial-analysis"
+quote = "the city estimates savings of approximately $40,000 annually in personnel costs and approximately $15,000 in election costs every four years."
+amount = 40000
+period = "per-year"
+direction = "savings"
+
+# City of Los Altos Measure D: a citizens' initiative, not a tax; the
+# Santa Clara County Registrar of Voters' List of Local Measures prints no
+# fiscal statement, and the impartial analysis gives no cost figure.
+[los-altos-measure-d]
+source = "ballot-question"
+status = "none-printed"
