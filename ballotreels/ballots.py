@@ -1018,6 +1018,23 @@ BALLOTS: dict[str, Ballot] = {
                                      "pasadena-measure-pfd",
                                      "diamond-bar-measure-q",
                                      "san-marino-measure-u")},
+                     # These cards, too, quote the ballot question from the
+                     # Registrar-Recorder/County Clerk's list "Measures
+                     # Appearing on the Ballot"
+                     **{f"ca-2026-11-03-{slug}":
+                        "Los Angeles County Registrar-Recorder/County "
+                        "Clerk, Measures Appearing on the Ballot"
+                        for slug in ("bell-gardens-measure-w",
+                                     "whittier-measure-ev",
+                                     "whittier-measure-el",
+                                     "burbank-measure-c",
+                                     "burbank-measure-cd",
+                                     "el-segundo-measure-ct",
+                                     "san-gabriel-measure-ps",
+                                     "hawaiian-gardens-measure-bl",
+                                     "cudahy-measure-ok",
+                                     "cudahy-measure-h",
+                                     "palos-verdes-estates-measure-pve")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
