@@ -3145,3 +3145,12 @@ source = "ballot-question"
 quote = "providing a projected $1,000,000 annually in additional locally controlled funding"
 amount = 1000000
 period = "per-year"
+
+# Glendora Unified School District Measure G: a school bond; the
+# district's tax rate statement (Appendix C to its resolution) gives the
+# total debt service.
+[glendora-unified-measure-g]
+source = "tax-statement"
+quote = "would be required to be repaid if all the bonds are issued and sold will be approximately $161,348,832."
+amount = 161348832
+period = "unstated"

@@ -1,0 +1,60 @@
+# Archived sources for Glendora Unified School District Measure G,
+# 2026-11-03 general election (sources/la-sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" prints each measure's letter, vote threshold and
+# ballot question, and says in words who filed the primary arguments
+# ("Supporters: ... Opponents: Mel Bennett"). The card quotes the ballot
+# question from it (ballot-question), and the sides cite it as the
+# Registrar's statement of filing (measure-list). The same excerpt backs
+# both.
+#
+# No impartial analysis and no argument text was staged. The measure is
+# explained from the district's Board Resolution No. 26-27-01, a text PDF:
+# its Appendix A (the full text of the bond measure) and its Appendix C
+# (the tax rate statement).
+
+[contest]
+id = "ca-2026-11-03-glendora-unified-measure-g"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:glendora_unified_school_district"
+kind = "measure"
+title = "Glendora Unified School District Measure G: $86 Million School Repair Bond"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026 (Rev. 9/22/26): Glendora Unified School District, Measure G"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "measure-list"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026 (Rev. 9/22/26): Measure G, its supporters and opponents as filed"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Glendora Unified School District, Board Resolution No. 26-27-01 ordering a general obligation bond election, Appendix A, Full Text of the Bond Measure"
+credit = "Full Text of the Bond Measure, Glendora Unified School District"
+url = "https://www.glendora.k12.ca.us/ourpages/auto/2026/8/14/37751635/Final%20Glendora%20USD%20-%20November%202026%20GO%20Bond%20Election%20Resolution.pdf"
+file = "sources/resolution.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Glendora Unified School District, Tax Rate Statement (Appendix C to Board Resolution No. 26-27-01)"
+credit = "Tax Rate Statement, Glendora Unified School District"
+url = "https://www.glendora.k12.ca.us/ourpages/auto/2026/8/14/37751635/Final%20Glendora%20USD%20-%20November%202026%20GO%20Bond%20Election%20Resolution.pdf"
+file = "sources/resolution.pdf"
+retrieved = "2026-10-30"
