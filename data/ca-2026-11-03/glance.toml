@@ -3420,3 +3420,12 @@ source = "ballot-question"
 quote = "raising $2,620,000 annually"
 amount = 2620000
 period = "per-year"
+
+# Keppel Union School District Measure K: a school bond; the district's
+# tax rate statement gives the total debt service (the bonds are $27
+# million).
+[keppel-union-measure-k]
+source = "tax-statement"
+quote = "that would be required to be repaid if all the bonds are issued and sold will be approximately $67,800,000."
+amount = 67800000
+period = "unstated"
