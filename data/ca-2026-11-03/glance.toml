@@ -3495,3 +3495,10 @@ source = "ballot-question"
 quote = "providing approximately $1.3 million annually for local use"
 amount = 1300000
 period = "per-year"
+
+# City of Cudahy Measure H (rent stabilization protections): not a tax;
+# the Registrar-Recorder's list and the City Attorney's impartial
+# analysis print no cost estimate.
+[cudahy-measure-h]
+source = "ballot-question"
+status = "none-printed"
