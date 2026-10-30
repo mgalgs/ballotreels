@@ -1,0 +1,190 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; which offices it covers and how their
+# vacancies are filled today; what the amendment would require instead,
+# and the vote it needs; no cost estimate; one line per side; what a vote
+# does. Measure E, the other charter amendment on this ballot, follows the
+# same chain.
+#
+# No place name is narrated (the narrator mispronounces them): the opening
+# says "the voters of this county", and the charter is "the county
+# charter". "Counsel" is heard as "Council" (standard/speakability.txt),
+# so the narration does not say it.
+#
+# Every neutral line rests on the ballot question page and County
+# Counsel's impartial analysis. The opponents cite the cost of elections
+# (a 2025 special election's), the 2024 vote on an earlier measure and
+# that the change does not guarantee voters a say; the supporters cite
+# electing these officials at every opportunity; so none of it appears in
+# a neutral section (STANDARD.md 6.3). The guide prints no fiscal
+# statement; the opponents' cost figures are theirs, and are not used in
+# the fiscal line.
+#
+# pdftotext reads the ballot question page's yes and no sentences, set
+# side by side, line by line into each other, so the card quotes the
+# question alone (no YES/NO boxes) and the vote lines take their meanings
+# from the impartial analysis, which prints the same two sentences.
+
+contest = "ca-2026-11-03-shasta-county-measure-f"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "F"
+title = "PROPOSED COUNTY CHARTER AMENDMENT TO ADDRESS UNEXPECTED VACANCIES OF AN ELECTED DEPARTMENT HEAD"
+origin = "Charter Amendment Measure F"
+summary = "Shall Measure F (Adding to the Shasta County Charter) be adopted? This measure adds a subsection to the Shasta County Charter. The proposed addition would require that, whenever a vacancy occurs for a Shasta County Elected Department Head Position, the Board direct staff to fill the Vacancy by calling for an election, and consolidating it with the next regularly scheduled election, so long as that election occurs within 12 months of the vacancy. Should the next regularly scheduled election not occur within 12 months of the vacancy the Board shall, by a 4/5 vote, fill the Vacancy by appointment via open recruitment."
+
+[[section]]
+id = "what"
+heading = "Measure F"
+
+[[section.line]]
+text = "Measure F asks the voters of this county whether to add a rule for filling vacancies in elected department head offices to the county charter."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["whenever a vacancy occurs"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "offices"
+text = "The elected department heads are the assessor-recorder, county clerk and registrar of voters, sheriff-coroner, auditor-controller, district attorney, and treasurer-tax collector."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section.line]]
+id = "today-appoint"
+text = "Today, under state law, the board of supervisors fills a vacancy in an elected county office by appointment."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "empty-commission-seat"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "change-election"
+text = "Measure F would have the board fill a vacancy by election, at the next regularly scheduled election, if one falls within 12 months."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["fill the Vacancy by calling for an election"]
+
+[[section.line]]
+id = "change-appoint"
+text = "If no election falls within 12 months, the board would appoint someone through open recruitment, by a four-fifths vote."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by a 4/5 vote, fill the Vacancy by appointment via open recruitment"]
+
+[[section.line]]
+id = "threshold"
+text = "Measure F needs a majority of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The county voter guide does not include a cost estimate for the measure."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the amendment gives the public the chance to elect people to critically important county offices at every opportunity."
+sources = ["argument-for"]
+basis = ["to provide the public the opportunity to elect those individuals to critically important elected positions throughout the County at all available opportunities, especially in the event of an unexpected vacancy."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Lets the public elect key officials", "At every available opportunity"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the change does not guarantee voters a say in a replacement, and frequent elections for vacancies are expensive."
+sources = ["argument-against"]
+basis = ["does not guarantee that the voters will have a say in a replacement", "Elections are expensive; holding frequent elections for every vacancy could also lead to voter fatigue and low turnout."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Does not guarantee voters a say", "Frequent elections are expensive"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote would let voters choose sooner who serves in an elected department head office after an unexpected vacancy."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["be adopted"]
+
+[[section.line]]
+text = "A no vote means the board keeps its current ability to fill all vacancies of elected county officers by appointment."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["be adopted"]
+
+[[question]]
+ask = "Which offices does this cover?"
+lines = ["offices"]
+
+[[question]]
+ask = "How are these vacancies filled now?"
+lines = ["today-appoint"]
+
+[[question]]
+ask = "What happens if there is no election within a year?"
+lines = ["change-appoint"]
+
+[[question]]
+ask = "What vote does the measure need to pass?"
+lines = ["threshold"]
+
+[[question]]
+ask = "How much would holding these elections cost?"
+unanswered = true
