@@ -8,8 +8,9 @@
 # question, quoted on the card; its "Supporters: ... Opponents: None
 # submitted." line states in words who filed the primary arguments, so
 # the same file backs `measure-list`, the official statement of filing.
-# The argument in favor that the list's supporters filed was not
-# gathered; no argument against was submitted. The City Attorney's
+# The Registrar's Interactive Sample Ballot prints the argument in favor
+# that the list's supporters filed, saved as HTML, with "NO ARGUMENT
+# AGAINST THIS MEASURE WAS SUBMITTED" under it. The City Attorney's
 # impartial analysis is the measure's neutral explanation, the kind a
 # state's attorney general's explanatory statement is; it gives the
 # revenue estimate (a general tax has no tax rate statement). The staff
@@ -57,4 +58,13 @@ publisher = "City of Rancho Palos Verdes, City Council Resolution No. 2026-61, p
 credit = "Resolution No. 2026-61, City of Rancho Palos Verdes"
 url = "https://www.rpvca.gov/DocumentCenter/View/25017/CC-RES-2026-061"
 file = "sources/resolution.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure RS, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument in favor of Measure RS, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10936.json"
+file = "sources/argument-for.html"
 retrieved = "2026-10-30"
