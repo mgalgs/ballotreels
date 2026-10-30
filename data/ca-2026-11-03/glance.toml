@@ -2708,3 +2708,10 @@ quote = "the city estimates savings of approximately $40,000 annually in personn
 amount = 40000
 period = "per-year"
 direction = "savings"
+
+# City of Los Altos Measure D: a citizens' initiative, not a tax; the
+# Santa Clara County Registrar of Voters' List of Local Measures prints no
+# fiscal statement, and the impartial analysis gives no cost figure.
+[los-altos-measure-d]
+source = "ballot-question"
+status = "none-printed"

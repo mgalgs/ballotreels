@@ -1,0 +1,172 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# asks and of whom; the lots it covers; how it reached the ballot and
+# what it needs; what would need a public vote; what would not (two lots
+# for affordable housing, upkeep and events); no cost estimate; one line
+# per side; what a vote does.
+#
+# No narrated line names the city or the county (the card and title show
+# them). The card quotes the Registrar's List of Local Measures: its
+# heading for the measure as the title, the city as the origin, the
+# ballot question as the summary. The list prints no yes/no statements;
+# the vote lines take their meanings from the impartial analysis's "Yes"
+# and "No" sentences and highlight the question's one phrase both votes
+# turn on.
+#
+# The impartial analysis quotes the city's 9212 report on housing limits
+# and legal defense costs, and a letter threatening a lawsuit. Those are
+# the opponents' points (the cost of lawsuits, the housing plan), so no
+# neutral line repeats them (STANDARD.md 6.3); the fiscal line follows
+# the other measures in saying no cost estimate is given, and the
+# analysis's statement that any defense costs would come from the general
+# fund is left to the opponents' side. Which two lots the housing
+# exception covers (Plazas 7 and 8) is named only inside that report's
+# quotation and the supporters' argument, so the neutral line says "two".
+
+contest = "ca-2026-11-03-los-altos-measure-d"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "D"
+title = "Citizen-Sponsored Initiative"
+origin = "City of Los Altos"
+summary = "Shall the Ordinance, which prohibits the City of Los Altos from selling, leasing, conveying, or declaring as surplus land the ten City-owned Downtown Parking Plazas for any reason, or from authorizing new uses or physical alterations that would diminish protected trees or parking availability, access, or convenience, unless separately approved by a majority of voters, except that two Parking Plazas may be developed for affordable housing without a vote, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure D"
+
+[[section.line]]
+text = "Measure D asks the voters of this city whether selling, leasing or changing the city-owned downtown parking lots should need a public vote."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["unless separately approved by a majority of voters"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "lots"
+text = "The city owns ten open surface parking lots downtown, known as Plazas 1 through 10."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "downtown-parking-lot"
+
+[[section.line]]
+text = "Measure D is a citizen-sponsored initiative, and it needs a majority to pass."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "neighborhood-petition"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "needs-vote"
+text = "Without a majority public vote, the city could not sell or lease the lots, or declare them surplus land."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+text = "Nor could the city cut public parking, add levels, or harm protected trees at the plazas."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "street-trees-lights"
+
+[[section.line]]
+id = "exceptions"
+text = "Two of the lots could be developed for affordable housing without a vote, and upkeep and the farmers' market could go on."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "apartment-building"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The Registrar of Voters' List of Local Measures does not include a cost estimate for the measure."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say residents, not any one city council, should decide on permanent changes to the downtown parking plazas."
+sources = ["argument-for"]
+basis = ["gives Los Altos residents the right to vote on permanent changes to public downtown parking plazas.", "Before changing the fundamental nature of Downtown, the community, not any one city council, should have a say."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Residents vote on permanent changes", "Leaves room for affordable housing"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure D would cost taxpayers millions in legal battles, and would endanger the state-approved housing plan."
+sources = ["argument-against"]
+basis = ["It will cost taxpayers millions in legal battles", "It jeopardizes Los Altos’ state-approved housing plan."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Costly legal battles for taxpayers", "Puts the housing plan at risk"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote requires a public vote before the plazas are sold, leased or permanently repurposed."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["unless separately approved by a majority of voters"]
+
+[[section.line]]
+text = "A no vote leaves the city free to use the plazas as the law allows."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["unless separately approved by a majority of voters"]
+
+[[question]]
+ask = "Which parking lots does it cover?"
+lines = ["lots"]
+
+[[question]]
+ask = "What could still happen without a vote?"
+lines = ["exceptions"]
+
+[[question]]
+ask = "What would the measure cost the city?"
+unanswered = true
