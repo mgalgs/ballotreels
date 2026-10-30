@@ -1,0 +1,115 @@
+# Archived sources for City of Oxnard Measure E, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The letter E is not confirmed by an archived official record. The
+# County of Ventura's measures page and voter guide could not be read
+# (both answered a bot challenge), and oxnard.gov answered HTTP 403. The
+# County's records name the City's measure but give no letter; the
+# letter is published under the operator's rule for letters every
+# checkable one of which matched an official page.
+#
+# These are the City's files from its CivicClerk portal, for the City
+# Council meeting of June 16, 2026, item N.6: packet pages 2458 to 2478
+# (the staff report, with a text layer; Attachment 1, the resolution
+# placing the measure; and its Exhibit A, the ordinance), and the
+# meeting's minutes. The resolution, the ordinance and the minutes are
+# scans with no text layer: the pages cited were typed from the page
+# images into sources/oxnard-cc-2026-06-16-item-N6-resolution-and-
+# ordinance-transcription.txt and sources/oxnard-cc-2026-06-16-minutes-
+# transcription.txt, which name the scans and their URLs; the sources
+# for them point at the transcriptions, and their urls at the scans.
+#
+# The resolution archived is the agenda copy, "Resolution (revised)",
+# its number left blank and unsigned. The minutes record that the
+# Council adopted it as Resolution No. 16,071 on the motion to approve
+# the recommended action, after a motion to reword the ballot question
+# failed for want of a second; the question stands as the resolution's
+# Section 4 prints it ("substantially as follows"), and Section 5 sets
+# the majority vote. No impartial analysis, argument or rebuttal was
+# reached: Section 11 asks the City Attorney for an analysis and lets
+# any person file an argument, and no filed argument is archived.
+#
+# The staff report is City staff material. It is cited only for plain
+# facts it states (Measure O's approval in 2008 and its end in March
+# 2029), attributed to it; its reasons for the measure, its account of
+# the City's finances, the election's cost and the opinion survey it
+# reports are not used.
+#
+# The County of Ventura's Board of Supervisors approved, as consent item
+# 12 on August 4, 2026, the requests of the agencies in Exhibit 1 to
+# consolidate their elections with the November 3, 2026 General
+# Election; Exhibit 1 lists the City of Oxnard among the six local
+# measures. They are cited for the fact that the measure is on Ventura
+# County's November 3 ballot.
+
+[contest]
+id = "ca-2026-11-03-oxnard-measure-e"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:oxnard"
+kind = "measure"
+title = "City of Oxnard Measure E: Continuing the Existing Half-Cent Sales Tax Until Ended by Voters"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Oxnard, Resolution Ordering an Election to Be Held on November 3, 2026 to Consider the Adoption of a Measure Entitled “City of Oxnard Public Safety, Financial Stability Measure (No Tax Rate Increase)” (Attachment 1, “Resolution (revised)”, to City Council agenda item N.6, June 16, 2026; the agenda copy, its number left blank): Sections 4 and 5, agenda packet page 2472 (transcribed)"
+credit = "Resolution Ordering an Election, City of Oxnard"
+url = "https://oxnardca.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11443,plainText=false)"
+file = "sources/oxnard-cc-2026-06-16-item-N6-resolution-and-ordinance-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Oxnard, Exhibit A to the Resolution Ordering an Election: An Uncodified Ordinance of the City of Oxnard, California Adopting the “City of Oxnard Public Safety, Financial Stability Measure (No Tax Rate Increase)” (City Council agenda item N.6, June 16, 2026; agenda packet pages 2476 to 2478, transcribed)"
+credit = "Measure ordinance, City of Oxnard"
+url = "https://oxnardca.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11443,plainText=false)"
+file = "sources/oxnard-cc-2026-06-16-item-N6-resolution-and-ordinance-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "staff-report"
+kind = "official-title-summary"
+publisher = "City of Oxnard, City Council Agenda Report, agenda item N.6, June 16, 2026, from the City Manager: Report on Measure O and Consideration of Placing the Renewal of a ½ cent Transactions (Sales) and Use Tax Measure on the November 3, 2026 Ballot (agenda packet pages 2458 to 2469)"
+credit = "City Council Agenda Report, City of Oxnard"
+url = "https://oxnardca.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11443,plainText=false)"
+file = "sources/oxnard-cc-2026-06-16-item-N6-resolution-and-ordinance.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "minutes"
+kind = "public-record"
+publisher = "City of Oxnard, Minutes of the Oxnard City Council, June 16, 2026: item 6, adopting Resolution No. 16,071, page 13 (transcribed)"
+credit = "City Council minutes, City of Oxnard"
+url = "https://oxnardca.api.civicclerk.com/v1/Meetings/GetMeetingFileStream(fileId=11498,plainText=false)"
+file = "sources/oxnard-cc-2026-06-16-minutes-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "county-letter"
+kind = "public-record"
+publisher = "County of Ventura, County Clerk-Recorder & Registrar of Voters, Board letter to the Board of Supervisors, August 4, 2026 (consent item 12): Approval of requests for election services for the General Election to be held on November 3, 2026"
+credit = "Board letter, County of Ventura Clerk-Recorder & Registrar of Voters"
+url = "https://ventura.primegov.com/api/compilemeetingattachmenthistory/historyattachment/?historyId=0693a4f1-2f94-4ce3-ad05-56b313f1f921"
+file = "sources/bos-2026-08-04-item12-board-letter.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "county-exhibit"
+kind = "public-record"
+publisher = "County of Ventura, Exhibit 1 to Board of Supervisors consent item 12, August 4, 2026: Agencies Requesting Consolidation with the November 3, 2026, General Election (Local Measures, page 6)"
+credit = "Exhibit 1, County of Ventura Board of Supervisors"
+url = "https://ventura.primegov.com/api/compilemeetingattachmenthistory/historyattachment/?historyId=4205c26b-060e-4e8d-9a3a-a871b442d8fe"
+file = "sources/bos-2026-08-04-item12-exhibit1-agencies-consolidation.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "county-minutes"
+kind = "public-record"
+publisher = "County of Ventura, Board of Supervisors, Board Minutes, August 4, 2026: Item #12, Approval of Requests for Election Services for the General Election to be Held on November 3, 2026"
+credit = "Board Minutes, County of Ventura Board of Supervisors"
+url = "https://ventura.primegov.com/Public/CompiledDocument?meetingTemplateId=27625&compileOutputType=1"
+file = "sources/bos-2026-08-04-item12-minute-order.pdf"
+retrieved = "2026-10-30"

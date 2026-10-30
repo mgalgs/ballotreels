@@ -1,0 +1,204 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the tax today and when it ends;
+# how it reached the ballot; what would change (no end date, the same
+# rate and rules) and the vote it needs; the ballot question's revenue
+# figure; both sides, neither of which has an archived argument; what a
+# vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry the
+# name.
+#
+# No impartial analysis was archived: what Measure E does comes from the
+# ordinance (Exhibit A, the full text) and the resolution placing it,
+# only from what they enact or record as fact; both are scans, quoted
+# from their transcription. Their recitals on what would be lost without
+# the measure, and the ballot question's list of services, are the
+# City's case: the list is attributed to the question, and the recitals
+# are not narrated. The end date is the ordinance's "March 31, 2029"
+# (the staff report gives it three ways), said as "March 2029". The
+# staff report is cited only for the 2008 vote. The Council's adoption
+# of the resolution is from the June 16 minutes, without its tally; the
+# question stands as the resolution prints it, and the minutes' failed
+# motion to reword it is not narrated. The County's August 4 consent
+# item 12 shows the measure consolidated with the November 3 election.
+#
+# The $20 million a year is the ballot question's figure; no archived
+# source states the City's general fund budget for a matching year to
+# give it a scale (STANDARD.md 6.5; left open, under [[question]]).
+#
+# No argument for or against Measure E was archived. The resolution lets
+# any person file one (Section 11), but no document gathered says
+# whether any was filed. So the sides do not say none was filed: each
+# says none is among the documents gathered (filed = false, STANDARD.md
+# 2.5), as for Walnut Creek Measure U.
+
+contest = "ca-2026-11-03-oxnard-measure-e"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "E"
+title = "CITY OF OXNARD PUBLIC SAFETY, FINANCIAL STABILITY MEASURE (NO TAX RATE INCREASE)."
+origin = "CITY OF OXNARD"
+summary = "Shall the measure maintaining City of Oxnard’s services without raising current tax rates, including protecting public safety, maintaining 911 emergency response/fire protection; repairing streets/potholes; addressing homelessness; maintaining programs for vulnerable seniors; anti-gang/after-school programs; other general services, by renewing an existing 1/2¢ sales tax, providing $20,000,000 annually until ended by voters, requiring oversight, audits, public spending disclosure, all funds for Oxnard, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure E"
+
+[[section.line]]
+text = "Measure E asks the voters of this city whether to remove the end date of an existing half-cent sales tax."
+sources = ["ballot-question", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by renewing an existing 1/2¢ sales tax"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "measure-o"
+text = "Voters approved this half-cent sales tax, known as Measure O, in 2008."
+sources = ["text", "staff-report"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section.line]]
+id = "sunset"
+text = "Under its twenty-year sunset, the tax is set to end in March 2029."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+id = "placed"
+text = "The City Council placed Measure E on the ballot in June."
+sources = ["minutes", "county-letter", "county-exhibit", "county-minutes"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "repeal"
+text = "Measure E would repeal the sunset, so the tax would continue at the same rate, under its existing rules, until ended by voters."
+sources = ["text", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section.line]]
+id = "uses"
+text = "The ballot question lists uses such as public safety, 911 response, street repair and homelessness programs."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["including protecting public safety"]
+
+[[section.line]]
+id = "threshold"
+text = "Measure E needs a majority of the vote to pass."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+id = "revenue"
+text = "The ballot question says the tax would provide $20 million a year."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["providing $20,000,000 annually"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure E appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure E appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote removes the end date, so the tax continues until ended by voters."
+sources = ["ballot-question", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["until ended by voters"]
+
+[[section.line]]
+text = "A no vote keeps the end date, so the tax ends in March 2029."
+sources = ["text", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["until ended by voters"]
+
+[[question]]
+ask = "When does the tax end today?"
+lines = ["sunset"]
+
+[[question]]
+ask = "Would the tax rate go up?"
+lines = ["repeal"]
+
+[[question]]
+ask = "What can the money be spent on?"
+lines = ["uses"]
+
+[[question]]
+ask = "How big is $20 million a year next to the city budget?"
+unanswered = true

@@ -4006,3 +4006,14 @@ source = "ballot-question"
 quote = "providing approximately $400,000 annually"
 amount = 400000
 period = "per-year"
+
+# City of Oxnard Measure E: continues an existing general sales tax; no
+# tax rate statement applies, and no impartial analysis was archived.
+# The figure is the one its ballot question (the resolution placing it,
+# Section 4, transcribed from the scan) prints. It continues an existing
+# tax, so no direction is given.
+[oxnard-measure-e]
+source = "ballot-question"
+quote = "providing $20,000,000 annually"
+amount = 20000000
+period = "per-year"

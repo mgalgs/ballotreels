@@ -509,6 +509,10 @@ BALLOTS: dict[str, Ballot] = {
                      # it cites, named as headed
                      "ca-2026-11-03-simi-valley-measure-a":
                          "Resolution No. 2026-25",
+                     # (Oxnard's resolution is an agenda copy, its number
+                     # left blank, so it is named by its title)
+                     "ca-2026-11-03-oxnard-measure-e":
+                         "Resolution Ordering an Election",
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.
