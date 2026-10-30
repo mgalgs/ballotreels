@@ -53,12 +53,8 @@ text = "Hotel guests staying 30 days or less pay 14 percent of the room rate, a 
 sources = ["impartial-analysis"]
 
 [section.line.visual]
-kind = "bars"
-title = "Culver City hotel tax rate"
-source = "impartial-analysis"
-unit = "%"
-labels = ["Today", "March 2027", "March 2028"]
-values = [14, 15, 16]
+kind = "illustration"
+name = "hotel-front-desk"
 
 [[section]]
 id = "change"
@@ -67,6 +63,14 @@ heading = "What would change"
 [[section.line]]
 text = "Measure T would raise the rate to 15 percent in March 2027, then to 16 percent in March 2028."
 sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Culver City hotel tax rate"
+source = "impartial-analysis"
+unit = "%"
+labels = ["Today", "March 2027", "March 2028"]
+values = [14, 15, 16]
 
 [[section.line]]
 id = "uses"
