@@ -2932,3 +2932,12 @@ source = "measure-list"
 quote = "raising approximately $300,000.00 per year"
 amount = 300000
 period = "per-year"
+
+# City of Willows Measure K: the guide's Fiscal Analysis of Measure K, its
+# "Fiscal Impact" paragraph (the ballot question prints a different
+# estimate, about $280,000 a year; the script gives both).
+[willows-measure-k]
+source = "fiscal-analysis"
+quote = "Fiscal Impact: Based on the estimate contained in Resolution No. 28-2026, Measure K is expected to generate approximately $260,000 annually."
+amount = 260000
+period = "per-year"
