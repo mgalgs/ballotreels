@@ -1,0 +1,52 @@
+# Archived sources for City of Sunnyvale Measure H, 2026-11-03 general
+# election. Every id here may be cited by script.toml.
+#
+# The Santa Clara County Registrar of Voters' List of Local Measures
+# (sources/rov-measure-list-2026-10-29.html) is the authority for the
+# measure's letter, its ballot question, verbatim, and its threshold
+# ("Majority Vote Required"), and says "(none filed)" for the argument
+# against. The Registrar's posted copies of the City Attorney's impartial
+# analysis and the argument in favor (sources/rov-*.pdf, described in
+# sources/rov-sources.md) are scans with no text layer: each was typed
+# from its page images into sources/rov-*-transcription.txt, which these
+# sources point at for the verbatim checks; each url is the Registrar's
+# PDF.
+#
+# Earlier research archived only the city's draft resolution (June 11,
+# 2026) and the council's draft argument; the Registrar's question,
+# analysis and filed argument supersede them, and the script needs
+# neither, so they are not listed.
+
+[contest]
+id = "ca-2026-11-03-sunnyvale-measure-h"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:sunnyvale"
+kind = "measure"
+title = "City of Sunnyvale Measure H: Charter Amendment on the City Manager's Authority to Settle Claims"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "County of Santa Clara Registrar of Voters, List of Local Measures, November 3, 2026 General Election: Measure H's ballot question and vote threshold, and that no argument against was filed"
+credit = "Santa Clara County Registrar of Voters, List of Local Measures"
+url = "https://vote.santaclaracounty.gov/list-local-measures-4"
+file = "sources/rov-measure-list-2026-10-29.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Rebecca L. Moon, City Attorney, City Attorney’s Impartial Analysis of City of Sunnyvale Measure H, as posted by the County of Santa Clara Registrar of Voters (transcribed from the scan)"
+credit = "City Attorney’s Impartial Analysis of Measure H"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-h-city-of-sunnyvale_charter-amendment_city-manager-settlement-ia_08-18-2026_redacted.pdf"
+file = "sources/rov-impartial-analysis-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Primary Argument in Favor of Measure H, as filed with the Santa Clara County Registrar of Voters (transcribed from the scan)"
+credit = "Argument in favor of Measure H, Santa Clara County Registrar of Voters"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-h-city-charter-amenedment-city-manager-settlement-authority-argument-in-favor_08112026_redacted-v2.pdf"
+file = "sources/rov-argument-for-transcription.txt"
+retrieved = "2026-10-29"
