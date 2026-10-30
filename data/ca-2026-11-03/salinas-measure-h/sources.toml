@@ -1,0 +1,55 @@
+# Archived sources for City of Salinas Measure H, 2026-11-03 general
+# election (sources/county-sources.md, sources/sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The County of Monterey Elections Department's List of Local Measures
+# gives Measure H's letter, vote threshold and ballot question, and says
+# "All related documents are filed and on public review with the city
+# clerk." The impartial analysis, the arguments and any rebuttals are
+# not posted online by the county or the City, so none is cited.
+#
+# Measure H is a referendum on Ordinance No. 2687, whose signed copy (a
+# text PDF) is the measure's full text. The City Council's resolution
+# calling the election is archived from its agenda packet (a Word file,
+# its number and vote left blank); its ballot question matches the
+# county's word for word, so it is the resolution adopted. Its text was
+# extracted into sources/resolution-calling-election-draft-2026-04-15.txt,
+# which names the file and URL it copies; that source points at the
+# extraction, and its url at the Word file. The City Attorney's impartial
+# analysis in the same packet is an unsigned draft that may differ from
+# the one filed, and is not cited; nor is the council report.
+
+[contest]
+id = "ca-2026-11-03-salinas-measure-h"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:salinas"
+kind = "measure"
+title = "City of Salinas Measure H: Referendum on Repealing Four Rental Housing Ordinances"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "County of Monterey Elections Department, List of Local Measures, November 3, 2026 General Election: City of Salinas Measure H"
+credit = "List of Local Measures, Monterey County Elections"
+url = "https://www.countyofmonterey.gov/government/departments-a-h/elections/list-of-local-measures"
+file = "sources/county-measure-list.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "ordinance"
+kind = "official-text"
+publisher = "City of Salinas, Ordinance No. 2687 (N.C.S.), An Ordinance Repealing Ordinance No. 2663, Ordinance No. 2681, Ordinance No. 2682, and Ordinance No. 2683, adopted June 3, 2025"
+credit = "Ordinance No. 2687, City of Salinas"
+url = "https://legistar2.granicus.com/salinas/attachments/a07af4a2-a5e0-4368-8377-73b620116d14.pdf"
+file = "sources/ordinance-2687.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City of Salinas, City Council resolution calling the November 3, 2026 General Municipal Election on whether Ordinance No. 2687 should be adopted, passed June 2, 2026, as attached to the Council's agenda (Legistar ID#26-251; text extracted from the Word file)"
+credit = "City Council resolution, City of Salinas"
+url = "https://legistar2.granicus.com/salinas/attachments/a185d4d8-12d9-4852-8b1f-a318a7f3fb42.docx"
+file = "sources/resolution-calling-election-draft-2026-04-15.txt"
+retrieved = "2026-10-28"
