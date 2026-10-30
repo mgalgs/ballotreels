@@ -3843,3 +3843,13 @@ source = "ballot-question"
 quote = "generating approximately $834,000 annually"
 amount = 834000
 period = "per-year"
+
+# County Service Area 27 Measure Y: a parcel tax, so no tax rate
+# statement; the revenue estimate its ballot question (Resolution No.
+# 2026-066, Section 3) prints. It continues an existing tax, so no
+# direction is given.
+[marin-csa-27-measure-y]
+source = "ballot-question"
+quote = "generating approximately $84,000 annually"
+amount = 84000
+period = "per-year"

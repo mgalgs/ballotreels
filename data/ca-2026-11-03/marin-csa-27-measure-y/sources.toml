@@ -1,0 +1,77 @@
+# Archived sources for County Service Area 27 Measure Y, 2026-11-03
+# general election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Marin County's guide could not be archived, and the county's Measure Y
+# page was not reached, so no impartial analysis or argument was
+# archived and no document says whether any argument was filed. These
+# are the Board of Supervisors' files for item 9b of its July 7, 2026
+# meeting: the signed Resolution No. 2026-066, whose Section 3 is the
+# ballot question and whose Exhibit A is the measure's full ballot text;
+# the staff report; the vote certification; and the minutes. The vote
+# certification and the minutes record the resolution's adoption; no
+# line narrates it, so neither is cited.
+#
+# The question runs across a page break and beside YES and NO cells,
+# which the PDF's text layer sets inside it, so the card's source
+# (ballot-question) is sources/resolution-2026-066-ballot-question-extract.txt,
+# the question copied from the text layer without them; its url is the
+# PDF. Exhibit A is cited only for what it prints.
+#
+# The staff report is County staff's material: only its plain facts are
+# cited (the current rate and its square-foot basis, the current tax's
+# end, the yearly confirmation of the rate), never its statements of
+# need or benefit. It is of kind public-record: no allowed kind fits a
+# staff report exactly, and official-report is reserved for a
+# nonpartisan fiscal office's reports.
+#
+# A county service area has no Census boundary, so the measure's
+# division is the county and `voters` names the service area as the
+# County's documents name it (docs/SCRIPT-FORMAT.md). The letter Y and
+# the two-thirds vote are confirmed by the Registrar of Voters' Board of
+# Supervisors staff report 26-4515.
+
+[contest]
+id = "ca-2026-11-03-marin-csa-27-measure-y"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:marin"
+kind = "measure"
+title = "County Service Area 27 Measure Y: Continuing the Paramedic Services Special Tax for Four Years"
+voters = "County Service Area 27"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "County of Marin, Board of Supervisors, Resolution No. 2026-066, calling a special election in County Service Area No. 27 on a measure authorizing the continuation of a special parcel tax for paramedic services, adopted July 7, 2026: Section 3, Ballot Question, pages 2 and 3 (extracted from the text layer without its YES and NO cells and page footer)"
+credit = "Resolution No. 2026-066, County of Marin"
+url = "https://marin.granicus.com/MetaViewer.php?view_id=33&clip_id=13185&meta_id=1444101"
+file = "sources/resolution-2026-066-ballot-question-extract.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "County of Marin, Board of Supervisors, Resolution No. 2026-066, adopted July 7, 2026, and its Exhibit A, Special Tax Measure for County Service Area 27 (Full Ballot Text)"
+credit = "Resolution No. 2026-066 and Exhibit A, County of Marin"
+url = "https://marin.granicus.com/MetaViewer.php?view_id=33&clip_id=13185&meta_id=1444101"
+file = "sources/y-bos-2026-07-07-9b-resolution-2026-066.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "staff-report"
+kind = "public-record"
+publisher = "County of Marin, Board of Supervisors staff report 26-2254, agenda date July 7, 2026: a hearing for County Service Area 27 calling for an election on the Ross Valley Paramedic Authority Four-Year Special Parcel Tax, page 2"
+credit = "Staff report 26-2254, County of Marin"
+url = "https://marin.granicus.com/MetaViewer.php?view_id=33&clip_id=13185&meta_id=1444100"
+file = "sources/y-bos-2026-07-07-9b-staff-report.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "Marin County Registrar of Voters, Board of Supervisors staff report 26-4515, September 8, 2026: the list of measures on the November 3, 2026 ballot, page 2"
+credit = "Staff report 26-4515, Marin County Registrar of Voters"
+url = "https://marin.granicus.com/MetaViewer.php?view_id=33&event_id=4262&meta_id=1474983"
+file = "sources/marin-bos-2026-09-08-consolidation-staff-report-26-4515.pdf"
+retrieved = "2026-10-28"
