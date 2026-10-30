@@ -1,0 +1,194 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; the tax today, who placed the measure and the
+# vote it needs; what would change (the rate and term, what the money may
+# and may not pay for, the exemptions); the full text's revenue estimate;
+# one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the opening
+# says "the voters of this school district". The card and title carry the
+# names.
+#
+# "Renew" is the measure's own word: its full text proposes "to renew and
+# extend its existing ... parcel tax", and the impartial analysis says it
+# "would extend an existing special parcel tax of $98". The narration
+# gives the rate and the dates; the argument's "DOES NOT INCREASE TAXES"
+# stays in the yes side.
+#
+# The card quotes the Los Angeles County Registrar-Recorder/County Clerk's
+# list "Measures Appearing on the Ballot", which prints the ballot question
+# with no yes and no sentences, so the card has no boxes; the vote lines
+# give the impartial analysis's meanings and highlight the same phrase.
+#
+# The $2 million a year is the district's estimate in the full text and
+# the ballot question. The argument in favor says "more than $2,300,000";
+# that is the side's own figure, so its line gives no number. No archived
+# official document states the district's budget to scale the estimate
+# (STANDARD.md 6.5; left open, under [[question]]).
+#
+# The argument in favor is the Registrar's printed copy. The list says
+# "Opponents: None submitted.", so the no side says plainly that no
+# argument against was submitted, citing the list (filed = false).
+
+contest = "ca-2026-11-03-las-virgenes-unified-measure-lv"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "LV"
+title = "LAS VIRGENES UNIFIED SCHOOL DISTRICT"
+origin = "VOTE PASSAGE – 2/3 Votes (66.6% of Votes)"
+summary = "To protect the quality of education in local schools and continue funding for math, science, technology, engineering, arts, skilled trades, and advanced programs that prepare students for success in college/ careers; attracting and retaining highly qualified teachers; and maintaining manageable class sizes, shall Las Virgenes Unified School Districts measure renewing the existing school parcel tax at the current $98 rate (no increase) for twelve years be adopted, with senior exemptions and all funds ($2,000,000 annually) benefiting local students?"
+
+[[section]]
+id = "what"
+heading = "Measure LV"
+
+[[section.line]]
+text = "Measure LV asks the voters of this school district whether to renew a $98 parcel tax for twelve more years."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["renewing the existing school parcel tax at the current $98 rate"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-tax"
+text = "The current parcel tax of $98 a year, which voters renewed in 2015, is due to expire in June 2028."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+id = "threshold"
+text = "The district's governing board placed Measure LV on the ballot, and it needs two-thirds of the vote to pass."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rate"
+text = "Measure LV would levy $98 on each parcel every year for twelve years, starting in July 2028."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-parcels"
+
+[[section.line]]
+id = "uses"
+text = "The money could pay for academic and arts programs, class sizes and teachers, but not for administrator salaries."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section.line]]
+id = "exempt"
+text = "Owners 65 or older, and some with disabilities, could apply for an exemption on the home they live in."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "senior-center"
+
+[[section]]
+id = "fiscal"
+heading = "What the measure's text estimates"
+
+[[section.line]]
+id = "revenue"
+text = "The measure's full text estimates the tax would keep providing about $2 million a year."
+sources = ["text", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["all funds ($2,000,000 annually)"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the measure renews funding at the current rate without raising taxes, and that without it, teacher layoffs would follow."
+sources = ["argument-for"]
+basis = ["Voting YES on LV simply renews existing local school funding at the current $98 annual rate and DOES NOT INCREASE TAXES.", "will expire, forcing cuts like teacher layoffs, larger class sizes, and reduced educational programs for students"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Renews current rate, no increase", "Avoids teacher layoffs and cuts"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The official list of measures from the county, which names who filed each argument, says no argument against Measure LV was submitted."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote renews the $98 parcel tax for twelve years."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["renewing the existing school parcel tax at the current $98 rate"]
+
+[[section.line]]
+text = "A no vote leaves the $98 parcel tax to expire in June 2028."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["renewing the existing school parcel tax at the current $98 rate"]
+
+[[question]]
+ask = "Would this raise my tax?"
+lines = ["today-tax", "rate"]
+
+[[question]]
+ask = "Who could be exempt?"
+lines = ["exempt"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["uses"]
+
+[[question]]
+ask = "What vote does the measure need to pass?"
+lines = ["threshold"]
+
+[[question]]
+ask = "How big is $2 million a year next to the district's budget?"
+unanswered = true
