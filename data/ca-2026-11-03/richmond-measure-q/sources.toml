@@ -1,0 +1,73 @@
+# Archived sources for City of Richmond Measure Q, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Contra Costa County's Voter Information Guide could not be fetched
+# (contracostavote.gov answered a bot challenge), so these are the City's
+# own signed copies from its 2026 General Election Information page. The
+# ballot question is quoted from Section 1 of Resolution No. 143-26,
+# which places the measure. The City Attorney's impartial analysis is the
+# measure's neutral explanation, the kind a state's attorney general's
+# explanatory statement is; the Finance Director's financial analysis is
+# the measure's tax rate statement (Elections Code section 9401), its
+# fiscal statement.
+#
+# Resolution No. 143-26 is a scan with no text layer. Its title and
+# Sections 1 and 2 were typed from the page images into
+# sources/resolution-143-26-transcription.txt, which names the PDF and
+# URL it copies; the source points at the transcription, and its url at
+# the scan. Neither rebuttal is cited.
+
+[contest]
+id = "ca-2026-11-03-richmond-measure-q"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:richmond"
+kind = "measure"
+title = "City of Richmond Measure Q: $120 Million in Bonds for Fire Stations"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Richmond, City Council, Resolution No. 143-26, adopted July 28, 2026: Section 1, the ballot question, pages 1 and 2 (transcribed from the scan)"
+credit = "Resolution No. 143-26, City of Richmond"
+url = "https://ca-richmond3.civicplus.com/DocumentCenter/View/80526/143-26-CC-reso-Ballot-Measure-Fire-Stations-Nov-3-2026-General-Election--CONFORMED---Adopted-7-28-2026"
+file = "sources/resolution-143-26-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City of Richmond, City Attorney’s Impartial Analysis of Measure Q"
+credit = "City Attorney’s Impartial Analysis of Measure Q"
+url = "https://www.ci.richmond.ca.us/DocumentCenter/View/80652/City-Attorney-Impartial-Analysis---FINAL_775101_-WITH-ASSIGNED-LETTER"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "City of Richmond, Finance Director, Financial Analysis of the City of Richmond General Obligation Bond Measure for Fire Station Improvements (November 3, 2026) – Measure Q"
+credit = "Finance Director’s Financial Analysis of Measure Q"
+url = "https://www.ci.richmond.ca.us/DocumentCenter/View/80651/IMPARTIAL-FINANCIAL-ANALYSIS-_GO_Bond_Measure__EC_81126-WITH-ASSIGNED-LETTER"
+file = "sources/tax-rate-statement.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure Q, as filed with the City Clerk of the City of Richmond, August 17, 2026"
+credit = "Argument in favor, City of Richmond"
+url = "https://www.ci.richmond.ca.us/DocumentCenter/View/80727/ARGUMENT-IN-FAVOR-MEASURE-Q---SUBMITTED-8-17-26"
+file = "sources/argument-in-favor.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure Q, as filed with the City Clerk of the City of Richmond"
+credit = "Argument against, City of Richmond"
+url = "https://www.ci.richmond.ca.us/DocumentCenter/View/80726/Argument-Against-Richmond-Measure-Q"
+file = "sources/argument-against.pdf"
+retrieved = "2026-10-30"
+

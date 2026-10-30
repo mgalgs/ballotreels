@@ -1,0 +1,171 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the vote it needs; what the bonds
+# could pay for, and what the council decides; the Finance Director's tax
+# rates and total repayment; one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry it.
+#
+# The card quotes the ballot question from Section 1 of Resolution No.
+# 143-26, which prints no yes/no lines, so the card has no YES/NO boxes
+# and both vote lines highlight the same phrase of the question.
+#
+# The $120 million borrowing and the $249.7 million total repayment are
+# repaid by a property tax on owners, "not from the City's General Fund"
+# (the Finance Director's statement), so they are money not paid from a
+# government's budget and need no scale (STANDARD.md 6.5). The tax rates
+# are per $100,000 of assessed value (exempt). The total repayment is the
+# statement's own figure, so it stays in the fiscal section although the
+# argument against also cites it.
+#
+# Sides: each line's basis is quoted from its own argument. The argument
+# against's settlement figures ($550 million, $115 million) are left out
+# to keep the line short; it keeps the claim they support, that
+# settlement money could fix the stations, as the opponents' claim. No
+# signer is named, and no line repeats the rebuttals' disputes.
+
+contest = "ca-2026-11-03-richmond-measure-q"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "Q"
+title = "RESOLUTION NO. 143-26"
+origin = "THE CITY COUNCIL OF THE CITY OF RICHMOND"
+summary = "To support rapid, 911 emergency medical response, modernize and rehabilitate unsafe/deteriorating firefighter housing and facilities, including mold/asbestos abatement/removal, replace electrical systems, leaky pipes/roofs, and improve structure resiliency during disasters, shall the City of Richmond’s measure authorizing $120,000,000 in bonds at legal rates, levying an estimated average tax rate of $22.15/$100,000 of assessed valuation, averaging $7,568,158 annually while bonds are outstanding, requiring citizen oversight, audits, and spending only on approved projects, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure Q"
+
+[[section.line]]
+text = "Measure Q asks the voters of this city whether to borrow up to $120 million in bonds to repair and rebuild fire stations."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $120,000,000 in bonds"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+id = "threshold"
+text = "The City Council placed Measure Q on the ballot; it needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "uses"
+text = "The bonds could pay to fix or rebuild fire stations and firefighter living quarters, including their roofs, wiring and plumbing."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "fire-station-engine"
+
+[[section.line]]
+id = "discretion"
+text = "The council would decide which projects come first, and completing every listed project is not guaranteed."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+id = "rate"
+text = "The Finance Director's statement estimates an average tax of $22.15 per $100,000 of assessed value, and at most $24.06."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "bars"
+title = "Estimated tax per $100,000 of assessed value"
+source = "tax-statement"
+unit = ""
+labels = ["Average", "Highest"]
+values = [22.15, 24.06]
+
+[[section.line]]
+id = "total"
+text = "The statement says a property tax, not the general fund, would repay about $249.7 million with interest; the City Attorney's analysis says through 2060."
+sources = ["tax-statement", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say aging, undersized stations slow the response to emergencies, and that some firefighters work in unsafe buildings with mold and leaky roofs."
+sources = ["argument-for"]
+basis = ["Slower response times put residents at risk when speed is a matter of life or death.", "But our aging, undersized stations can't accommodate enough firefighters or the latest equipment needed to respond quickly.", "Today, some Richmond firefighters work in seismically unsafe buildings, with cracking foundations, leaky roofs, mold, and outdated electrical systems"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Faster emergency response", "Safer stations for firefighters"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the city need not borrow, because settlement money already in hand could fix the stations, with no new tax and no interest."
+sources = ["argument-against"]
+basis = ["And Richmond does not need to borrow.", "Two years of settlement money covers all of it, with no new tax and no interest.", "Fix the stations with the money already in hand."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Use settlement money instead", "No new tax and no interest"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the city to issue the bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $120,000,000 in bonds"]
+
+[[section.line]]
+text = "A no vote does not authorize the city to issue the bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $120,000,000 in bonds"]
+
+[[question]]
+ask = "What would the bonds pay for?"
+lines = ["uses", "discretion"]
+
+[[question]]
+ask = "How much would a property owner pay?"
+lines = ["rate"]
+
+[[question]]
+ask = "Who repays the bonds, and for how long?"
+lines = ["total"]

@@ -370,6 +370,22 @@ BALLOTS: dict[str, Ballot] = {
                          "Notice of Special Measure Election for the City of Clayton",
                      "ca-2026-11-03-clayton-measure-n":
                          "Notice of Special Measure Election for the City of Clayton",
+                     # and Richmond's and Walnut Creek's cards quote the
+                     # ballot question from the City Council's resolution
+                     # placing the measure, named as its first page
+                     # titles it
+                     "ca-2026-11-03-richmond-measure-q":
+                         "Resolution No. 143-26",
+                     "ca-2026-11-03-walnut-creek-measure-u":
+                         "Resolution Submitting a Measure to the Voters of Walnut Creek",
+                     # The Internet Archive's captures of the county
+                     # guide's own pages for West Contra Costa Unified's
+                     # Measure V and San Pablo's Measure S print each
+                     # ballot question, impartial analysis and arguments
+                     **{f"ca-2026-11-03-{slug}":
+                        "Contra Costa County Voter Information Guide"
+                        for slug in ("west-contra-costa-unified-measure-v",
+                                     "san-pablo-measure-s")},
                      # and Acalanes Union High's card quotes the ballot
                      # question from the Governing Board's resolution,
                      # named as its first page titles it

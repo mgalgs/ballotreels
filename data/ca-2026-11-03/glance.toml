@@ -3642,3 +3642,39 @@ period = "per-year"
 [burbank-measure-cc]
 source = "impartial-analysis"
 status = "none-printed"
+
+# City of Richmond Measure Q: a general obligation bond; the Finance
+# Director's financial analysis (its tax rate statement) gives the total
+# debt service.
+[richmond-measure-q]
+source = "tax-statement"
+quote = "Estimated total debt service (principal + interest): $249,749,206 over the life of the bonds."
+amount = 249749206
+period = "unstated"
+
+# West Contra Costa Unified School District Measure V: a parcel tax
+# renewal, so no tax rate statement; the revenue figure its ballot
+# question (the county's Voter Information Guide page) prints.
+[west-contra-costa-unified-measure-v]
+source = "ballot-question"
+quote = "raising approximately $10,238,737 annually for nine years"
+amount = 10238737
+period = "per-year"
+
+# City of San Pablo Measure S: no tax rate statement applies; the ballot
+# question (the county's Voter Information Guide page) prints the City's
+# estimate of the program's yearly cost, funded by fees.
+[san-pablo-measure-s]
+source = "ballot-question"
+quote = "requiring City administration estimated to cost approximately $1,080,000 to $2,360,000 annually, funded by annual rental property owner fees"
+amount = 2360000
+period = "per-year"
+direction = "cost"
+
+# City of Walnut Creek Measure U: a land-use initiative; neither the
+# resolution submitting it (whose ballot question the card quotes) nor
+# the initiative's text gives a cost estimate, and no impartial analysis
+# was archived.
+[walnut-creek-measure-u]
+source = "ballot-question"
+status = "none-printed"

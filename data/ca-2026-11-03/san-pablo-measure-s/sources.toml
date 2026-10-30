@@ -1,0 +1,80 @@
+# Archived sources for City of San Pablo Measure S, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The guide page is the Contra Costa County Elections Division's Voter
+# Information Guide page for Measure S, which prints, in order, the final
+# ballot question, the City Attorney's impartial analysis, the argument
+# in favor and its rebuttal, and the argument against and its rebuttal.
+# contracostavote.gov answers a bot challenge, so the page was archived
+# from the Internet Archive's capture of 2026-10-09; each url is that
+# capture, and the original is https://www.contracostavote.gov/m9011-en-2/.
+#
+# The guide page is the final official text and wins over the earlier
+# Legistar files: the draft resolution and the draft and revised ballot
+# questions (sources/*.docx) are superseded and not cited. The
+# initiative ordinance's pages after its first are a scan with no text
+# layer, so the measure's full text is not cited either; the City
+# Attorney's impartial analysis explains what it does. The one other
+# source is the City Attorney's ballot title and summary prepared for
+# the petition (Elections Code section 9203), cited only for the vote
+# the measure needs, which the guide page does not state.
+#
+# The City Attorney's impartial analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is. No tax rate statement applies; the cost estimate is the
+# analysis's (and the ballot question's), from the City's Elections Code
+# section 9212 report.
+
+[contest]
+id = "ca-2026-11-03-san-pablo-measure-s"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:san_pablo"
+kind = "measure"
+title = "City of San Pablo Measure S: Limits on Rent Increases and Evictions"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Contra Costa County Elections Division, Voter Information Guide, Measure S page (https://www.contracostavote.gov/m9011-en-2/, Internet Archive capture of October 9, 2026): the ballot question"
+credit = "Contra Costa County Voter Information Guide"
+url = "http://web.archive.org/web/20261009091234/https://www.contracostavote.gov/m9011-en-2/"
+file = "sources/county-vig-page.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Contra Costa County Elections Division, Voter Information Guide, Measure S page: City Attorney’s Impartial Analysis of Measure S"
+credit = "City Attorney’s Impartial Analysis, Contra Costa County Voter Information Guide"
+url = "http://web.archive.org/web/20261009091234/https://www.contracostavote.gov/m9011-en-2/"
+file = "sources/county-vig-page.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "title-summary"
+kind = "official-title-summary"
+publisher = "City of San Pablo, Ballot Title and Summary, prepared by the San Pablo City Attorney pursuant to California Elections Code Section 9203(a), Council matter 26-378, July 13, 2026"
+credit = "City Attorney’s Ballot Title and Summary, City of San Pablo"
+url = "https://sanpablo.legistar1.com/sanpablo/attachments/8b3bae20-f47a-47ee-a596-97dc03492fc8.pdf"
+file = "sources/sanpablo-S-city-attorney-title-summary.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Contra Costa County Elections Division, Voter Information Guide, Measure S page: Argument in Favor of Measure S"
+credit = "Argument in favor, Contra Costa County Voter Information Guide"
+url = "http://web.archive.org/web/20261009091234/https://www.contracostavote.gov/m9011-en-2/"
+file = "sources/county-vig-page.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Contra Costa County Elections Division, Voter Information Guide, Measure S page: Argument Against Measure S"
+credit = "Argument against, Contra Costa County Voter Information Guide"
+url = "http://web.archive.org/web/20261009091234/https://www.contracostavote.gov/m9011-en-2/"
+file = "sources/county-vig-page.html"
+retrieved = "2026-10-30"
