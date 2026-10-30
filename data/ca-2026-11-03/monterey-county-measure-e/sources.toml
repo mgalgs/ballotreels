@@ -1,0 +1,59 @@
+# Archived sources for Monterey County Measure E, 2026-11-03 general
+# election (sources/county-sources.md, sources/sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The County of Monterey Elections Department posts each local measure's
+# letter, vote threshold and ballot question on its List of Local
+# Measures page, with links to its filed documents: for Measure E, the
+# full text (the Board of Supervisors' Resolution No. 26-223, text, not
+# cited: the impartial analysis states all the script uses), the County
+# Counsel's impartial analysis and the argument in favor (scans with no
+# text layer). The two scans were typed from their page images
+# into sources/county-*-transcription.txt, each naming the PDF and URL it
+# copies; those sources point at the transcription, and their url at the
+# scan. County Counsel's impartial analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is.
+#
+# The resolution directs the Auditor-Controller to prepare a fiscal
+# impact statement; the county posts none, so the one revenue estimate
+# is the impartial analysis's (also in the ballot question). The page
+# links no argument against and no rebuttal for Measure E, and nothing
+# the county posts says whether one was filed. The Legistar copies
+# archived earlier (the signed resolution, the board report and
+# Ordinance 5450) are superseded by the county's copies and not cited.
+
+[contest]
+id = "ca-2026-11-03-monterey-county-measure-e"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:monterey"
+kind = "measure"
+title = "Monterey County Measure E: Hotel Tax Increase in the Unincorporated Area"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "County of Monterey Elections Department, List of Local Measures, November 3, 2026 General Election: County Measure E"
+credit = "List of Local Measures, Monterey County Elections"
+url = "https://www.countyofmonterey.gov/government/departments-a-h/elections/list-of-local-measures"
+file = "sources/county-measure-list.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Susan Blitch, County Counsel, County of Monterey, Impartial Analysis of Measure E, as posted by the County of Monterey Elections Department (transcribed from the scan)"
+credit = "Impartial Analysis of Measure E"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147771/639222425601600000"
+file = "sources/county-impartial-analysis-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure E, as filed with the County of Monterey Elections Department (transcribed from the scan)"
+credit = "Argument in Favor of Measure E"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147773/639222425792770000"
+file = "sources/county-argument-for-transcription.txt"
+retrieved = "2026-10-29"

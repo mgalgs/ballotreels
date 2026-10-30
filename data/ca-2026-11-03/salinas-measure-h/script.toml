@@ -1,0 +1,188 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot (the
+# council's ordinance, the referendum petition, the council's choice to
+# put it to a vote); what the ordinance repeals; that no cost estimate is
+# among the documents; the two sides, whose arguments are not online;
+# what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry it.
+#
+# Only the county's List of Local Measures (the card), Ordinance No. 2687
+# and the City Council's resolution, whose ballot question matches the
+# county's word for word, are cited. The four ordinances are named as
+# the ordinance and the ballot question name them; what each does is
+# described only in the City Attorney's draft impartial analysis, which
+# may differ from the one filed and is not cited, so the script says no
+# more than their titles. The petitioners' committee, named in the
+# resolution, is not named (STANDARD.md 9 permits naming, never requires
+# it, and no one is named for the other side).
+#
+# A yes vote adopts the ordinance and repeals the four; a no vote does
+# not adopt it. Both vote lines say only that, from the ballot question.
+#
+# The county says the measure's documents are filed with the city clerk;
+# none is online, so it is not known whether any argument was filed. Each
+# side says only that any argument is filed with the city clerk and is
+# not online (filed = false, STANDARD.md 2.5), and presents no side.
+
+contest = "ca-2026-11-03-salinas-measure-h"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "measure-list"
+number = "H"
+title = "City of Salinas"
+origin = "Majority Voter Approval Required"
+summary = "Shall Ordinance No. 2687, which repeals the Residential Rental Registration Ordinance, the Rent Stabilization Ordinance, the Tenant Protection and Just Cause Eviction Ordinance, and the Tenant Anti-Harassment Ordinance, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure H"
+
+[[section.line]]
+text = "Measure H asks the voters of this city whether to adopt an ordinance that repeals four city ordinances on rental housing."
+sources = ["measure-list", "ordinance"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["Shall Ordinance No. 2687"]
+
+[[section]]
+id = "background"
+heading = "How it reached the ballot"
+
+[[section.line]]
+id = "adopted"
+text = "In June 2025, the City Council adopted the ordinance by a vote of 5 to 2."
+sources = ["ordinance"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section.line]]
+id = "referendum"
+text = "A referendum petition signed by more than 10 percent of the registered voters in the city was then filed against the ordinance."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "neighborhood-petition"
+
+[[section.line]]
+text = "The City Council then chose to submit the ordinance to the voters."
+sources = ["resolution"]
+
+[[section]]
+id = "today"
+heading = "The rules today"
+
+[[section.line]]
+id = "rules"
+text = "The four ordinances cover rental registration, rent stabilization, tenant protection and just cause eviction, and tenant anti-harassment."
+sources = ["ordinance", "measure-list"]
+
+[section.line.visual]
+kind = "illustration"
+name = "apartment-building"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure H would repeal all four ordinances in their entirety."
+sources = ["ordinance"]
+
+[section.line.visual]
+kind = "illustration"
+name = "rental-permit"
+
+[[section.line]]
+text = "Measure H needs a simple majority to pass."
+sources = ["resolution", "measure-list"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The ballot question and the City Council resolution do not include a cost estimate for the measure."
+sources = ["measure-list", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Any argument for Measure H is filed with the city clerk, and is not online."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["Filed with the city clerk, not online"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Any argument against Measure H is filed with the city clerk, and is not online."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["Filed with the city clerk, not online"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the ordinance, repealing the four rental housing ordinances."
+sources = ["measure-list", "ordinance"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["Shall Ordinance No. 2687"]
+
+[[section.line]]
+text = "A no vote does not adopt the ordinance that would repeal them."
+sources = ["measure-list", "ordinance"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["Shall Ordinance No. 2687"]
+
+[[question]]
+ask = "Why is the council's own ordinance on the ballot?"
+lines = ["adopted", "referendum"]
+
+[[question]]
+ask = "What do the four ordinances do?"
+lines = ["rules"]
+
+[[question]]
+ask = "What do supporters and opponents say?"
+unanswered = true

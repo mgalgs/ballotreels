@@ -2932,3 +2932,68 @@ source = "measure-list"
 quote = "raising approximately $300,000.00 per year"
 amount = 300000
 period = "per-year"
+
+# Monterey County Measure E: the county posts no fiscal impact statement;
+# the yearly revenue, as County Counsel's impartial analysis gives it (the
+# ballot question gives the same figure).
+[monterey-county-measure-e]
+source = "impartial-analysis"
+quote = "The tax would provide approximately $7,600,000 annually to be spent locally, until ended by voters, as set forth in the Measure."
+amount = 7600000
+period = "per-year"
+
+# North Monterey County Unified School District Measure L: the county
+# posts no tax rate statement, and County Counsel's impartial analysis
+# gives no dollar total; the yearly levy, as the ballot question gives it
+# (the bonds are $40,000,000).
+[north-monterey-county-unified-measure-l]
+source = "measure-list"
+quote = "levying $32 per $100,000 assessed value ($2,800,000 annually) while bonds are outstanding"
+amount = 2800000
+period = "per-year"
+
+# City of Salinas Measure G: no fiscal statement is online (the county
+# says the measure's documents are with the city clerk); the revenue
+# estimate, as the ballot question gives it.
+[salinas-measure-g]
+source = "measure-list"
+quote = "providing approximately $30,000,000 annually until ended by the voters"
+amount = 30000000
+period = "per-year"
+
+# City of Salinas Measure H: a referendum on an ordinance, not a tax; no
+# fiscal statement is online (the county says the measure's documents
+# are with the city clerk).
+[salinas-measure-h]
+source = "measure-list"
+status = "none-printed"
+
+# City of Carmel-by-the-Sea Measure M: no fiscal statement is online (the
+# county says the measure's documents are with the city clerk); the new
+# tax's revenue, as the ballot question gives it (it puts the total 12%
+# tax at $11,700,000 a year).
+[carmel-by-the-sea-measure-m]
+source = "measure-list"
+quote = "with the new 2% tax generating approximately $1,900,000 annually"
+amount = 1900000
+period = "per-year"
+
+# City of Carmel-by-the-Sea Measure N: no fiscal statement is online (the
+# county says the measure's documents are with the city clerk); the
+# increase's revenue, as the ballot question gives it (it puts the total
+# 1.875% tax at $9,400,000 a year).
+[carmel-by-the-sea-measure-n]
+source = "measure-list"
+quote = "providing approximately $1,800,000 annually in additional revenue"
+amount = 1800000
+period = "per-year"
+
+# City of King City Measure P: no fiscal statement is online (the county
+# says the measure's documents are with the city clerk); the total tax's
+# revenue, as the ballot question gives it (the City Council's resolution
+# puts the 0.5% increase at $1,200,000 a year).
+[king-city-measure-p]
+source = "measure-list"
+quote = "providing approximately $3,600,000 annually until ended by voters"
+amount = 3600000
+period = "per-year"

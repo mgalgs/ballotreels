@@ -1,0 +1,47 @@
+# Archived sources for City of Salinas Measure G, 2026-11-03 general
+# election (sources/county-sources.md, sources/sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The County of Monterey Elections Department's List of Local Measures
+# gives Measure G's letter, vote threshold and ballot question, and says
+# "All related documents are filed and on public review with the city
+# clerk." The impartial analysis, the arguments and any rebuttals are
+# not posted online by the county or the City, so none is cited.
+#
+# The City Council's resolution calling the election is archived from
+# its agenda packet (a Word file, its number and vote left blank); its
+# ballot question matches the county's word for word, so it is the
+# resolution adopted, and the script's explanation rests on it. Its text
+# was extracted into sources/resolution-council-draft.txt, which names
+# the file and URL it copies; that source points at the extraction, and
+# its url at the Word file. Its recitals' own views (the 2014 vote share,
+# the survey, the warnings about budget cuts) are not cited. The City
+# Attorney's impartial analysis in the same packet is an unsigned draft
+# that may differ from the one filed, and is not cited; nor are the
+# ordinance draft and the staff report.
+
+[contest]
+id = "ca-2026-11-03-salinas-measure-g"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:salinas"
+kind = "measure"
+title = "City of Salinas Measure G: Renewing the 1¢ Sales Tax Until Ended by Voters"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "County of Monterey Elections Department, List of Local Measures, November 3, 2026 General Election: City of Salinas Measure G"
+credit = "List of Local Measures, Monterey County Elections"
+url = "https://www.countyofmonterey.gov/government/departments-a-h/elections/list-of-local-measures"
+file = "sources/county-measure-list.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City of Salinas, City Council resolution calling the November 3, 2026 General Municipal Election to renew the one-cent transactions and use tax (Measure G), passed June 2, 2026, as attached to the Council's agenda (Legistar ID#26-258; text extracted from the Word file)"
+credit = "City Council resolution, City of Salinas"
+url = "https://legistar2.granicus.com/salinas/attachments/8da0015d-9b27-468c-b9a9-5021e92787f1.docx"
+file = "sources/resolution-council-draft.txt"
+retrieved = "2026-10-28"
