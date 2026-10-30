@@ -1,0 +1,73 @@
+# Archived sources for Soledad-Mission Recreation District Measure U,
+# 2026-11-03 general election (sources/county-sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Soledad-Mission Recreation District is a special district with no
+# Census boundary layer, so its division is the county and `voters` names
+# the district (docs/SCRIPT-FORMAT.md); the tax is levied on improved
+# parcels within the District and continues until ended by the voters of
+# the District (the impartial analysis).
+#
+# The County of Monterey Elections Department posts each local measure's
+# letter, vote threshold and ballot question on its "List of Local
+# Measures" page, with links to each filed document. The card quotes the
+# ballot question from that page. County Counsel's impartial analysis is
+# the measure's neutral explanation, the kind a state's attorney
+# general's explanatory statement is. The "Full Text" is the District's
+# packet (a June 2026 staff report, Resolution No. 2026-06.01 and the
+# measure's text); only its page 7, the text's "Purpose and Use of Funds"
+# and "Amount and Basis of Tax", is cited, from its text layer. The list
+# links only an argument in favor (no argument against and no rebuttal);
+# no official document says in words whether any other was filed. A
+# per-square-foot special tax has no tax rate statement.
+#
+# The impartial analysis and the argument are scans with no text layer.
+# The passages cited were typed from the page images into
+# sources/county-*-transcription.txt, each naming the PDF and URL it
+# copies; those sources point at the transcription, and their url at the
+# scan.
+
+[contest]
+id = "ca-2026-11-03-soledad-mission-recreation-measure-u"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:monterey"
+kind = "measure"
+title = "Soledad-Mission Recreation District Measure U: Special Tax on Building Space for Recreation"
+voters = "the Soledad-Mission Recreation District"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "County of Monterey Elections Department, List of Local Measures, November 3, 2026 General Election: Measure U - Soledad-Mission Recreation District"
+credit = "List of Local Measures, County of Monterey Elections"
+url = "https://www.countyofmonterey.gov/government/departments-a-h/elections/list-of-local-measures"
+file = "sources/county-measure-list.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Monterey County Counsel, Impartial Analysis of Measure U, as posted by the County of Monterey Elections Department (transcribed from the scan)"
+credit = "Impartial Analysis, Monterey County Counsel"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147787/639222436564170000"
+file = "sources/county-impartial-analysis-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Soledad-Mission Recreation District, Full Text of Measure U, page 7, as posted by the County of Monterey Elections Department"
+credit = "Full Text of Measure U, Soledad-Mission Recreation District"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147317/639205024446730000"
+file = "sources/county-full-text.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure U, as filed with the County of Monterey Elections Department (transcribed from the scan; the county's list links no argument against)"
+credit = "Argument in favor, Measure U"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147785/639222436562370000"
+file = "sources/county-argument-for-transcription.txt"
+retrieved = "2026-10-29"

@@ -1,0 +1,195 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; what the district does and the vote it needs;
+# what would change (how the tax is charged, how it may rise, how long it
+# lasts, what the money may pay for); the revenue estimate; one line per
+# side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the opening
+# says "the voters of this recreation district". The card, the title and
+# the "Only voters in ..." line carry the names. "Counsel" is heard as
+# "Council" (standard/speakability.txt), so the narration does not say
+# it. The rate is an amount under a dollar, which no spelling narrates
+# reliably (standard/speakability.txt): the narration says how the tax is
+# charged and leaves the figure to the card, where it is highlighted. The
+# ballot question and the argument give it as 3.5 cents and the full text
+# as $0.035 per building square foot; the impartial analysis prints
+# "$.35 cents", which the script does not use.
+#
+# The card quotes the County of Monterey Elections Department's List of
+# Local Measures, which prints the ballot question with no yes and no
+# sentences, so the card has no boxes and the vote lines take their
+# meaning from the impartial analysis. The $292,000 a year is district
+# revenue, and no archived source states the district's budget, so it has
+# no scale (STANDARD.md 6.5; left open).
+#
+# The supporters cite funding unchanged since 1962 against rising costs,
+# keeping the pool open and programs affordable, and the oversight, so the
+# neutral sections leave those out (STANDARD.md 6.3) and give the uses as
+# the full text lists them.
+#
+# The list links no argument against Measure U, but no official document
+# says in words that none was filed. So the no side does not say none was
+# filed: it says none is among the documents gathered (filed = false,
+# STANDARD.md 2.5), as for Livingston Measures T and U.
+
+contest = "ca-2026-11-03-soledad-mission-recreation-measure-u"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "measure-list"
+number = "U"
+title = "Soledad-Mission Recreation District"
+origin = "2/3 Voter Approval Required"
+summary = "Soledad-Mission Recreation District (Soledad Rec) Affordable Recreation Measure. To maintain park/ recreation programs, such as: helping keep recreation programs affordable; improving accessibility of services/ facilities for people with disabilities; maintaining recreation/ swim programs for all ages; and supporting toddler programs like T-Ball, soccer, tumbling/ day camp; shall the Soledad-Mission Recreation District’s measure, levying a tax of 3.5¢ per building square foot, until ended by voters, with annual adjustments, and independent citizens’ oversight, providing approximately $292,000 annually, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure U"
+
+[[section.line]]
+text = "Measure U asks the voters of this recreation district whether to approve a special tax on building space to fund its programs and facilities."
+sources = ["measure-list", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["levying a tax of 3.5¢ per building square foot"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "district"
+text = "The district provides recreation programs, a swimming pool, parks and related services to the people within its boundaries."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "community-center"
+
+[[section.line]]
+id = "threshold"
+text = "Measure U needs two-thirds of the vote to pass."
+sources = ["impartial-analysis", "measure-list"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "charge"
+text = "Starting in 2027, each parcel with a building would pay a yearly tax on each square foot of building space, and land with no building would pay nothing."
+sources = ["impartial-analysis", "text", "measure-list"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["levying a tax of 3.5¢ per building square foot"]
+
+[[section.line]]
+id = "increase"
+text = "From 2028, the board could raise the rate each year with consumer prices, by no more than 3 percent a year."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+id = "duration"
+text = "The tax would continue until the district's voters repeal it."
+sources = ["impartial-analysis", "text"]
+
+[[section.line]]
+id = "uses"
+text = "The money could pay only for the pool and other facilities, staffing, recreation programs, and improvements and reserves for the district's facilities."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "set-aside-funds"
+
+[[section]]
+id = "fiscal"
+heading = "What the analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The impartial analysis estimates the tax would raise about $292,000 a year."
+sources = ["impartial-analysis", "measure-list"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["providing approximately $292,000 annually"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the district's main local funding dates from 1962 while costs keep rising, and the tax would help keep the pool open and programs affordable."
+sources = ["argument-for"]
+basis = ["the Soledad-Mission Recreation District has served local families using essentially the same primary local funding approved in 1962.", "While the costs of lifeguards, insurance, utilities, maintenance, recreation programs, and other services and supplies have continued to rise, local funding has not kept pace.", "Please vote YES to help keep Soledad's pool open, maintain our park, and preserve affordable recreation programs"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Funding unchanged since 1962 as costs rise", "Keeps the pool open and programs affordable"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure U appears among the official documents gathered for this video; the county list of local measures links only the argument in favor."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is in favor of a special tax to fund the district's recreation programs, pool services, upkeep, staffing and long-term needs."
+sources = ["impartial-analysis", "measure-list"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["levying a tax of 3.5¢ per building square foot"]
+
+[[section.line]]
+text = "A no vote is against the special tax."
+sources = ["impartial-analysis", "measure-list"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["be adopted"]
+
+[[question]]
+ask = "Who would pay, and how is the tax figured?"
+lines = ["charge"]
+
+[[question]]
+ask = "Could the tax go up, and how long would it last?"
+lines = ["increase", "duration"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["uses"]
+
+[[question]]
+ask = "How large is $292,000 next to the district's budget?"
+unanswered = true

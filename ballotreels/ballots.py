@@ -870,6 +870,21 @@ BALLOTS: dict[str, Ballot] = {
                                      "sunnyvale-measure-g",
                                      "sunnyvale-measure-h",
                                      "sunnyvale-measure-i")},
+                     # The County of Monterey Elections Department posts
+                     # each local measure's letter, vote threshold and
+                     # ballot question on its List of Local Measures page,
+                     # linking each filed document; the cards quote the
+                     # question from that page
+                     **{f"ca-2026-11-03-{slug}":
+                        "County of Monterey Elections Department, List of "
+                        "Local Measures"
+                        for slug in (
+                            "carmel-unified-measure-i",
+                            "south-monterey-county-joint-union-high-measure-j",
+                            "pacific-grove-unified-measure-k",
+                            "santa-lucia-csd-measure-t",
+                            "soledad-mission-recreation-measure-u",
+                            "north-county-recreation-measure-v")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

@@ -1,0 +1,62 @@
+# Archived sources for Santa Lucia Community Services District Measure T,
+# the Community Facilities District No. 2 (Road Quality) special tax,
+# 2026-11-03 general election (sources/county-sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Who votes: the financing district's boundaries are the same as the
+# community services district's, and its qualified electors are the
+# registered voters of the community services district (Resolution No.
+# 26-09, its recitals and Exhibit A, section 8). A community services
+# district has no Census boundary, so the division is the county and
+# `voters` names the district (docs/SCRIPT-FORMAT.md).
+#
+# The County of Monterey Elections Department posts each local measure's
+# letter, vote threshold and ballot question on its "List of Local
+# Measures" page, with links to each filed document. The card quotes the
+# ballot question from that page. County Counsel's impartial analysis is
+# the measure's neutral explanation, the kind a state's attorney
+# general's explanatory statement is. The "Full Text" is the District's
+# Resolution No. 26-09 calling the election, with Resolution No. 26-08
+# (forming the financing district) and its rate and method of
+# apportionment attached; it has a text layer. The list links no argument
+# for or against (no official document says in words whether any was
+# filed), and no tax rate statement was posted.
+# The impartial analysis is a scan with no text layer; it was typed from
+# the page image into sources/county-impartial-analysis-transcription.txt,
+# which the source points at, its url at the scan.
+
+[contest]
+id = "ca-2026-11-03-santa-lucia-csd-measure-t"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:monterey"
+kind = "measure"
+title = "Santa Lucia Community Services District Measure T: Special Tax for Road Maintenance"
+voters = "the Santa Lucia Community Services District"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "County of Monterey Elections Department, List of Local Measures, November 3, 2026 General Election: Measure T: Community Facilities District No. 2 (Road Quality) of the Santa Lucia Community Services District"
+credit = "List of Local Measures, County of Monterey Elections"
+url = "https://www.countyofmonterey.gov/government/departments-a-h/elections/list-of-local-measures"
+file = "sources/county-measure-list.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Monterey County Counsel, Impartial Analysis of Measure T, as posted by the County of Monterey Elections Department (transcribed from the scan)"
+credit = "Impartial Analysis, Monterey County Counsel"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147783/639222435419130000"
+file = "sources/county-impartial-analysis-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Santa Lucia Community Services District, Resolution No. 26-09 with Resolution No. 26-08 and its Rate and Method of Apportionment, as posted by the County of Monterey Elections Department as the Full Text of Measure T"
+credit = "Full Text of Measure T, Santa Lucia Community Services District"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147323/639205024893530000"
+file = "sources/county-full-text.pdf"
+retrieved = "2026-10-29"

@@ -1,0 +1,209 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; why the district put it on the ballot (as the
+# impartial analysis states it) and the vote it needs; what would change
+# (the financing district, the rates, how long, where the money goes);
+# the revenue and the spending limit; both sides, for neither of which an
+# argument was gathered; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the opening
+# says "the voters of this community services district". The card, the
+# title and the "Only voters in ..." line carry the names. "Counsel" is
+# heard as "Council" (standard/speakability.txt), so the narration does
+# not say it.
+#
+# The card quotes the County of Monterey Elections Department's List of
+# Local Measures, which prints the ballot question with no yes and no
+# sentences, so the card has no boxes and the vote lines take their
+# meaning from the impartial analysis. That the district lacked the money
+# for its road work is the impartial analysis's own statement, so it is
+# told in the background attributed to the analysis.
+#
+# The first-year revenue ($999,736) is the district's, and no archived
+# source states the district's budget, so it has no scale (STANDARD.md
+# 6.5; left open). The appropriations limit is a ceiling the measure
+# sets, not money raised or spent. The rates per parcel are exempt; the
+# chart shows the highest first-year rate for each class of parcel in the
+# rate and method of apportionment (page 11 of the full text).
+#
+# The list links no argument for or against Measure T, but no official
+# document says in words that none was filed. So the sides do not say
+# none was filed: each says none is among the documents gathered
+# (filed = false, STANDARD.md 2.5), as for Livingston Measures T and U.
+
+contest = "ca-2026-11-03-santa-lucia-csd-measure-t"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "measure-list"
+number = "T"
+title = "Community Facilities District No. 2 (Road Quality) of the Santa Lucia Community Services District"
+origin = "2/3 Voter Approval Required"
+summary = "Shall a special tax to maintain and operate Santa Lucia’s roads (including necessary resurfacing, rehabilitation, preventative treatments, and similar work) be levied annually for 15 years at an initial rate of $2,968 per year for developed and undeveloped estate residential parcels with rates for other parcels shown in Resolution No. 26-08, with all rates subject to a 2% annual inflation adjustment, initially generating approximately $999,736 and shall Community Facilities District No. 2 (Road Quality) of the Santa Lucia Community Services District have an appropriations limit of $1,350,000?"
+
+[[section]]
+id = "what"
+heading = "Measure T"
+
+[[section.line]]
+text = "Measure T asks the voters of this community services district whether to approve a yearly special tax for its roads, for 15 years."
+sources = ["measure-list", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["be levied annually for 15 years"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "roads"
+text = "The district runs and maintains the roads within its boundaries."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "country-road"
+
+[[section.line]]
+id = "study"
+text = "The impartial analysis says a study found the road work needed, and the district lacked the funding to pay for it."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+id = "threshold"
+text = "Measure T needs two-thirds of the vote to pass."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "financing-district"
+text = "The board formed a financing district with the same boundaries to charge the tax."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "district-map"
+
+[[section.line]]
+id = "rates"
+text = "Estate home lots, built on or not, would pay up to $2,968 in the first year, other parcels their own set rates, and all rates would rise 2 percent a year."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "bars"
+title = "Highest special tax per parcel in the first year, dollars"
+source = "text"
+unit = ""
+labels = ["Estate and employee homes", "Ranch club parcels", "Golf club parcels"]
+values = [2968, 6320, 31832]
+
+[[section.line]]
+id = "years"
+text = "The tax would run for 15 years, from as early as 2027 through 2042, into a special account used only for the road work."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "gravel-forest-road"
+
+[[section]]
+id = "fiscal"
+heading = "What the analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The impartial analysis says the tax would first raise about $999,736 a year."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section.line]]
+id = "limit"
+text = "The measure would also set the financing district's spending limit at $1,350,000."
+sources = ["impartial-analysis", "measure-list"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["have an appropriations limit of $1,350,000"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure T appears among the official documents gathered for this video."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure T appears among the official documents gathered for this video."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is in favor of a special tax to maintain and operate the district's roads."
+sources = ["impartial-analysis", "measure-list"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["Shall a special tax to maintain and operate"]
+
+[[section.line]]
+text = "A no vote is against the special tax."
+sources = ["impartial-analysis", "measure-list"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["be levied annually for 15 years"]
+
+[[question]]
+ask = "How much would my parcel pay?"
+lines = ["rates"]
+
+[[question]]
+ask = "How long would the tax last, and what can the money pay for?"
+lines = ["years"]
+
+[[question]]
+ask = "Why is the district asking for this?"
+lines = ["study"]
+
+[[question]]
+ask = "How large is the tax next to the district's budget?"
+unanswered = true
