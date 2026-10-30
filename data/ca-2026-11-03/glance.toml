@@ -3148,3 +3148,11 @@ status = "none-printed"
 [huntington-park-measure-hp]
 source = "impartial-analysis"
 status = "none-printed"
+
+# City of Paramount Measure P: a special parcel tax; the City Attorney's
+# impartial analysis gives the City's revenue estimate.
+[paramount-measure-p]
+source = "impartial-analysis"
+quote = "The City estimates that this Measure would generate approximately $4,000,000 annually in new local revenue."
+amount = 4000000
+period = "per-year"
