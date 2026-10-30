@@ -2,7 +2,7 @@
 # what it asks and of whom; how board terms work and how the measure
 # reached the ballot (the board's own stated purpose and its split vote);
 # what would change (the limit, which terms count, the vote it needs);
-# that no document gathered gives a cost estimate; both sides, neither of
+# that the impartial analysis gives no cost estimate; both sides, neither of
 # which filed an argument; what a vote does.
 #
 # No place name is narrated (the narrator mispronounces them): the opening
@@ -24,11 +24,15 @@
 #
 # The board majority's purpose is stated as its own, from the resolution's
 # recital (STANDARD.md 6.2), beside the split vote, so the dissent the
-# record shows is told as plainly as the majority's reason. No impartial
-# analysis was staged.
+# record shows is told as plainly as the majority's reason. County
+# Counsel's impartial analysis says full terms served on or after
+# November 3, 2026 count toward the limit; the resolution says December
+# 11, 2026. The analysis wins, and the counting line follows it. The
+# analysis gives no cost estimate.
 #
 # The Registrar's list says in words "Supporters: None submitted.
-# Opponents: None submitted.", so each side says plainly that no argument
+# Opponents: None submitted." (the sample ballot says the same under the
+# impartial analysis), so each side says plainly that no argument
 # was submitted, citing the list, in the same words (filed = false on
 # both, STANDARD.md 2.5).
 
@@ -87,7 +91,7 @@ heading = "What would change"
 [[section.line]]
 id = "limit"
 text = "No one could serve more than two four-year terms on the board in a lifetime, whichever part of the district they represent."
-sources = ["ballot-question", "resolution"]
+sources = ["ballot-question", "impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -95,8 +99,8 @@ name = "district-map"
 
 [[section.line]]
 id = "counting"
-text = "Only full terms served from December 11, 2026 onward would count toward the limit."
-sources = ["resolution"]
+text = "Only full terms served from November 3, 2026 onward would count toward the limit."
+sources = ["impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -105,7 +109,7 @@ name = "end-date"
 [[section.line]]
 id = "threshold"
 text = "Measure B needs a majority yes vote to pass."
-sources = ["ballot-question", "resolution"]
+sources = ["ballot-question", "impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -117,8 +121,8 @@ heading = "Cost"
 
 [[section.line]]
 id = "cost"
-text = "Neither the county registrar's list of measures nor the board's resolution includes a cost estimate for the measure."
-sources = ["ballot-question", "resolution"]
+text = "The county counsel's impartial analysis does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
