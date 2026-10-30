@@ -3164,3 +3164,12 @@ source = "impartial-analysis"
 quote = "The Measure is estimated to generate approximately $22.1 million annually"
 amount = 22100000
 period = "per-year"
+
+# City of Diamond Bar Measure Q: a general sales tax, so no tax rate
+# statement; the impartial analysis gives the City's estimate in words
+# only ("six million dollars"), so the figure is the ballot question's.
+[diamond-bar-measure-q]
+source = "ballot-question"
+quote = "providing approximately $6,000,000 annually"
+amount = 6000000
+period = "per-year"
