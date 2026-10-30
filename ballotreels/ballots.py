@@ -463,6 +463,8 @@ BALLOTS: dict[str, Ballot] = {
                      # named as headed
                      "ca-2026-11-03-ross-measure-u":
                          "Resolution No. 2637",
+                     "ca-2026-11-03-corte-madera-measure-q":
+                         "Resolution No. 24/2026",
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.

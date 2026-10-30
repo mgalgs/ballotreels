@@ -1,0 +1,226 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the tax today (this year's
+# rate, when it ends, the last approval); what would change (the rate,
+# how far it may rise, when it ends, where the money goes, the yearly
+# report, the vote it needs); the revenue as the ballot question gives
+# it; both sides, neither of which has an archived argument; what a vote
+# does.
+#
+# No place name and no person is narrated: the opening says "the voters
+# of this town", and the Ross Valley Paramedic Authority is not named.
+# The card and title carry the names. No vote count of the Council or of
+# past elections is given (the staff report's share for 2022 is left
+# out, as is the minutes' roll call).
+#
+# No impartial analysis was archived. What the tax does is stated from
+# the draft ordinance (the measure's text, its number left blank) and
+# from Resolution No. 24/2026, whose Section 3 prints the ballot question
+# the card quotes and whose Section 4 sets the two-thirds vote. The
+# archived resolution is the agenda copy, its vote left blank; the
+# minutes record that the Council adopted it on June 2, 2026. The
+# resolution prints only bare Yes and No cells, so the card has no
+# YES/NO boxes and both vote lines highlight the same phrase. The
+# ordinance gives the rate as "$94.50 to a maximum of $117.75"; the
+# yearly step of up to $7.75 is the ballot question's. The resolution's
+# recitals are used only for the last approval (2022); the staff report
+# only for this year's rate and the current tax's end date. The staff
+# report's account of the need for a higher rate, and the draft argument
+# in favor printed with it, are not used.
+#
+# The $786,000 a year is the ballot question's figure. No archived
+# source states the Town's general fund budget, so it has no scale
+# (STANDARD.md 6.5; left open, under [[question]]).
+#
+# No argument for or against Measure Q was archived, and no document
+# says whether any was filed (Section 6 of the resolution only provides
+# for one in favor; the draft printed with the staff report is not a
+# filed argument). So the sides do not say none was filed: each says
+# none is among the documents gathered (filed = false, STANDARD.md 2.5),
+# as for Walnut Creek Measure U.
+
+contest = "ca-2026-11-03-corte-madera-measure-q"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "Q"
+title = "A MEASURE AUTHORIZING THE CONTINUATION OF A SPECIAL PARCEL TAX FOR PARAMEDIC SERVICES"
+origin = "TOWN OF CORTE MADERA"
+summary = "To maintain rapid 9-1-1 emergency response times and preserve the number of on-duty paramedics ready to respond to accidents/medical emergencies, shall the Ross Valley Paramedic Authority measure be adopted continuing for four years the paramedic services special tax of up to $94.50/ residential living unit or 1,000 square feet of developed nonresidential property, adjusted up to $7.75/ year, generating approximately $786,000 annually, with annual audits, public spending disclosure and all funds for local paramedic services?"
+
+[[section]]
+id = "what"
+heading = "Measure Q"
+
+[[section.line]]
+id = "asks"
+text = "Measure Q asks the voters of this town whether to continue a special tax for paramedic services for four more years."
+sources = ["ballot-question", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["continuing for four years the paramedic services special tax"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "current"
+text = "A town staff report says this year's tax is $87 for each home, and the current tax ends in June 2027."
+sources = ["staff-report"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+id = "history"
+text = "The resolution placing Measure Q on the ballot says voters here last approved the tax in 2022."
+sources = ["resolution", "minutes"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rate"
+text = "The tax would start at $94.50 a year for each home, and the same for each 1,000 square feet of other buildings."
+sources = ["text", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "single-family-street"
+
+[[section.line]]
+id = "raise"
+text = "The rate could rise by up to $7.75 a year, to no more than $117.75."
+sources = ["ballot-question", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "special-tax"
+
+[[section.line]]
+id = "uses"
+text = "The tax would end on June 30, 2031, and its money would be kept in a special fund for paramedic and emergency medical services only."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "valley-town-ambulance"
+
+[[section.line]]
+id = "report"
+text = "The town treasurer would report each year on the money collected and spent."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+id = "threshold"
+text = "Measure Q needs two-thirds of the vote to pass."
+sources = ["resolution", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+id = "revenue"
+text = "The ballot question says the tax would raise about $786,000 a year."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["generating approximately $786,000 annually"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure Q appears among the official documents gathered for this video."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "list"
+source = "resolution"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure Q appears among the official documents gathered for this video."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "list"
+source = "resolution"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote continues the paramedic tax for four more years."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["continuing for four years the paramedic services special tax"]
+
+[[section.line]]
+text = "A no vote does not continue the paramedic tax, which ends in June 2027."
+sources = ["ballot-question", "staff-report"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["continuing for four years the paramedic services special tax"]
+
+[[question]]
+ask = "How much is the tax now?"
+lines = ["current"]
+
+[[question]]
+ask = "Have voters approved this tax before?"
+lines = ["history"]
+
+[[question]]
+ask = "How much would each property pay?"
+lines = ["rate", "raise"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["uses"]
+
+[[question]]
+ask = "Who would check how the money is spent?"
+lines = ["report"]
+
+[[question]]
+ask = "How big is $786,000 a year next to the town budget?"
+unanswered = true
