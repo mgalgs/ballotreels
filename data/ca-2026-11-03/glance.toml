@@ -2667,3 +2667,13 @@ quote = "generating approximately $980,000,000 annually"
 amount = 980000000
 period = "per-year"
 direction = "revenue-gain"
+
+# City of Palo Alto Measure J: no fiscal or tax rate statement was
+# published; the city's estimate is in its ballot question (and the City
+# Attorney's Impartial Analysis).
+[palo-alto-measure-j]
+source = "ballot-question"
+quote = "providing approximately $15,600,000 annually until ended by voters"
+amount = 15600000
+period = "per-year"
+direction = "revenue-gain"
