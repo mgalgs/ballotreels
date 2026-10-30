@@ -466,6 +466,8 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution 46/26",
                      "ca-2026-11-03-marin-csa-27-measure-y":
                          "Resolution No. 2026-066",
+                     "ca-2026-11-03-kentfield-fpd-measure-bb":
+                         "Resolution No. 7-2026",
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.

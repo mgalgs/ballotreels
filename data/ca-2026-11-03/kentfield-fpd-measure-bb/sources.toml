@@ -1,0 +1,89 @@
+# Archived sources for Kentfield Fire Protection District Measure BB,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Marin County's guide could not be archived, so no impartial analysis
+# or argument was archived and no document says whether any argument
+# was filed. These are the District's files: pages 30 to 35 of its June
+# 10, 2026 Board of Directors packet, the staff report and Resolution
+# No. 7-2026, whose Section 3 is the ballot question (the resolution is
+# the measure's only text; it has no ordinance), and the minutes of that
+# meeting. The resolution archived is the DRAFT in the packet: its vote
+# lines are blank and it is unsigned. No signed copy was found. The
+# minutes record that the Board approved Resolution 7-2026 at that
+# meeting, and they are cited for that fact.
+#
+# The packet pages are a scan with no text layer. They were typed from
+# the page images into
+# sources/2026-06-10-packet-pp30-35-staff-report-resolution-7-2026-transcription.txt,
+# which names the PDF and URL it copies; the sources from the packet
+# point at the transcription, and their url at the scan.
+#
+# The staff report is District staff's material: only its plain facts
+# are cited (the current rate and its square-foot basis, the current
+# tax's end, the yearly confirmation of the rate), never its statements
+# of need or benefit, and never its "BALLOT ARGUMENT" section, a
+# proposed text, not a filed argument. It and the minutes are of kind
+# public-record: no allowed kind fits a staff report or minutes exactly,
+# and official-report is reserved for a nonpartisan fiscal office's
+# reports.
+#
+# A fire protection district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md). The letter BB and the two-thirds vote are
+# confirmed by the Registrar of Voters' Board of Supervisors staff report
+# 26-4515.
+
+[contest]
+id = "ca-2026-11-03-kentfield-fpd-measure-bb"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:marin"
+kind = "measure"
+title = "Kentfield Fire Protection District Measure BB: Continuing the Paramedic Services Special Tax for Four Years"
+voters = "the Kentfield Fire Protection District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Kentfield Fire Protection District, Resolution No. 7-2026, calling an election on a measure authorizing the continuation of a special parcel tax for paramedic services: Section 3, Ballot Question, the draft in the June 10, 2026 Board of Directors meeting packet, packet page 34 (transcribed from the scan)"
+credit = "Resolution No. 7-2026 (draft), Kentfield Fire Protection District"
+url = "https://kentfieldfire.org/board/meeting-packets/file/2026/BOD%20Packet_061026.pdf"
+file = "sources/2026-06-10-packet-pp30-35-staff-report-resolution-7-2026-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Kentfield Fire Protection District, Resolution No. 7-2026: A Resolution of the Board of Directors of the Kentfield Fire Protection District Calling for an Election to Be Held in Its Jurisdiction on November 3, 2026 for the Purpose of Submitting to the Voters a Measure Authorizing the Continuation of a Special Parcel Tax for Paramedic Services, the draft in the June 10, 2026 Board of Directors meeting packet, packet pages 33 to 35 (transcribed from the scan)"
+credit = "Resolution No. 7-2026 (draft), Kentfield Fire Protection District"
+url = "https://kentfieldfire.org/board/meeting-packets/file/2026/BOD%20Packet_061026.pdf"
+file = "sources/2026-06-10-packet-pp30-35-staff-report-resolution-7-2026-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "staff-report"
+kind = "public-record"
+publisher = "Kentfield Fire Protection District, staff report: Consider approval of the Resolution Calling for an Election for the Passage of the Ross Valley Paramedic Authority Four-Year Special Parcel Tax for the Tax Cycle 2027-2031, June 10, 2026 Board of Directors meeting packet, packet pages 31 and 32 (transcribed from the scan)"
+credit = "Staff report, Kentfield Fire Protection District"
+url = "https://kentfieldfire.org/board/meeting-packets/file/2026/BOD%20Packet_061026.pdf"
+file = "sources/2026-06-10-packet-pp30-35-staff-report-resolution-7-2026-transcription.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "minutes"
+kind = "public-record"
+publisher = "Kentfield Fire Protection District, Minutes of the Board of Directors Meeting of June 10, 2026, item c, Ross Valley Paramedic Authority"
+credit = "June 10, 2026 minutes, Kentfield Fire Protection District"
+url = "https://kentfieldfire.org/board/meeting-minutes/file/2026/2026%2006%2010%20Regular%20Board%20Minutes.pdf"
+file = "sources/2026-06-10-board-minutes.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "Marin County Registrar of Voters, Board of Supervisors staff report 26-4515, September 8, 2026: the list of measures on the November 3, 2026 ballot, page 2"
+credit = "Staff report 26-4515, Marin County Registrar of Voters"
+url = "https://marin.granicus.com/MetaViewer.php?view_id=33&event_id=4262&meta_id=1474983"
+file = "sources/marin-bos-2026-09-08-consolidation-staff-report-26-4515.pdf"
+retrieved = "2026-10-28"

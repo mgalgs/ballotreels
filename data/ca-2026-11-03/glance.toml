@@ -3853,3 +3853,13 @@ source = "ballot-question"
 quote = "generating approximately $84,000 annually"
 amount = 84000
 period = "per-year"
+
+# Kentfield Fire Protection District Measure BB: a parcel tax, so no tax
+# rate statement; the revenue estimate its ballot question (draft
+# Resolution No. 7-2026, Section 3) prints. It continues an existing
+# tax, so no direction is given.
+[kentfield-fpd-measure-bb]
+source = "ballot-question"
+quote = "generating approximately $326,000 annually"
+amount = 326000
+period = "per-year"
