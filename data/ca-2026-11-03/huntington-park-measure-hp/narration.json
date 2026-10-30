@@ -1,0 +1,335 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 81.75,
+  "phrases": [
+    {
+      "text": "Measure HP asks the voters of this city whether to limit council members to two terms in a lifetime.",
+      "start": 0.03,
+      "end": 6.48
+    },
+    {
+      "text": "Today, city law limits council members to three terms.",
+      "start": 7.14,
+      "end": 11.12
+    },
+    {
+      "text": "But someone who sits out one election cycle starts counting again, and can serve up to three more terms.",
+      "start": 11.78,
+      "end": 19.01
+    },
+    {
+      "text": "The City Council placed Measure HP on the ballot.",
+      "start": 19.67,
+      "end": 22.61
+    },
+    {
+      "text": "Measure HP would end that reset, so no one could serve more than two terms in a lifetime.",
+      "start": 23.27,
+      "end": 29.38
+    },
+    {
+      "text": "A partial term would count as a full term only if it ran more than two years.",
+      "start": 30.04,
+      "end": 34.74
+    },
+    {
+      "text": "Moving to another council district would not reset the count.",
+      "start": 35.4,
+      "end": 39.51
+    },
+    {
+      "text": "Terms served before November 3, 2026, would not count toward the limit.",
+      "start": 40.17,
+      "end": 44.95
+    },
+    {
+      "text": "Measure HP needs a majority yes vote to pass.",
+      "start": 45.61,
+      "end": 49.14
+    },
+    {
+      "text": "The city attorney's impartial analysis does not include a cost estimate for the measure.",
+      "start": 49.8,
+      "end": 54.85
+    },
+    {
+      "text": "The official county list of measures, which names who filed each argument, says no argument against Measure HP was submitted.",
+      "start": 55.51,
+      "end": 63.73
+    },
+    {
+      "text": "Supporters say the current rotating system creates career politicians, and that a lifetime limit opens the council to new voices.",
+      "start": 64.39,
+      "end": 72.24
+    },
+    {
+      "text": "A yes vote sets a two-term lifetime limit and ends the reset.",
+      "start": 72.9,
+      "end": 77.34
+    },
+    {
+      "text": "A no vote keeps the current three-term limit, with the reset.",
+      "start": 78.0,
+      "end": 81.72
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure HP asks the voters of this city whether to limit council members to two terms in a lifetime.",
+      "Today, city law limits council members to three terms.",
+      "But someone who sits out one election cycle starts counting again, and can serve up to three more terms.",
+      "The City Council placed Measure HP on the ballot.",
+      "Measure HP would end that reset, so no one could serve more than two terms in a lifetime.",
+      "A partial term would count as a full term only if it ran more than two years.",
+      "Moving to another council district would not reset the count.",
+      "Terms served before November 3, 2026, would not count toward the limit.",
+      "Measure HP needs a majority yes vote to pass.",
+      "The city attorney's impartial analysis does not include a cost estimate for the measure.",
+      "The official county list of measures, which names who filed each argument, says no argument against Measure HP was submitted.",
+      "Supporters say the current rotating system creates career politicians, and that a lifetime limit opens the council to new voices.",
+      "A yes vote sets a two-term lifetime limit and ends the reset.",
+      "A no vote keeps the current three-term limit, with the reset."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure HP asks the voters of this city whether to limit council members to two terms in a lifetime."
+      },
+      "bounds": [
+        0,
+        156240
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure HP asks the voters of this city whether to limit council members to two terms in a lifetime.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, city law limits council members to three terms."
+      },
+      "bounds": [
+        170640,
+        267600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, city law limits council members to three terms.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "But someone who sits out one election cycle starts counting again, and can serve up to three more terms."
+      },
+      "bounds": [
+        282000,
+        456960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"But someone who sits out one election cycle starts counting again, and can serve up to three more terms.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The City Council placed Measure HP on the ballot."
+      },
+      "bounds": [
+        471360,
+        543360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Council placed Measure HP on the ballot.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure HP would end that reset, so no one could serve more than two terms in a lifetime."
+      },
+      "bounds": [
+        557760,
+        705840
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure HP would end that reset, so no one could serve more than two terms in a lifetime.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A partial term would count as a full term only if it ran more than two years."
+      },
+      "bounds": [
+        720240,
+        834480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A partial term would count as a full term only if it ran more than two years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Moving to another council district would not reset the count."
+      },
+      "bounds": [
+        848880,
+        948960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Moving to another council district would not reset the count.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Terms served before November 3, 2026, would not count toward the limit."
+      },
+      "bounds": [
+        963360,
+        1079520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Terms served before November 3, 2026, would not count toward the limit.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure HP needs a majority yes vote to pass."
+      },
+      "bounds": [
+        1093920,
+        1180080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure HP needs a majority yes vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The city attorney's impartial analysis does not include a cost estimate for the measure."
+      },
+      "bounds": [
+        1194480,
+        1317120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The city attorney's impartial analysis does not include a cost estimate for the measure.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The official county list of measures, which names who filed each argument, says no argument against Measure HP was submitted."
+      },
+      "bounds": [
+        1331520,
+        1530240
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The official county list of measures, which names who filed each argument, says no argument against Measure HP was submitted.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say the current rotating system creates career politicians, and that a lifetime limit opens the council to new voices."
+      },
+      "bounds": [
+        1544640,
+        1734480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the current rotating system creates career politicians, and that a lifetime limit opens the council to new voices.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote sets a two-term lifetime limit and ends the reset."
+      },
+      "bounds": [
+        1748880,
+        1856880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote sets a two-term lifetime limit and ends the reset.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote keeps the current three-term limit, with the reset."
+      },
+      "bounds": [
+        1871280,
+        1962000
+      ]
+    }
+  ],
+  "sha256": "f735067af68ef68e4b3c2e98aea5c3488d0c473b9f9a7ed989f5e4a71ab779f1",
+  "take": {
+    "sha256": "6cd6e9f67966b277311141f5700399fcd2d1e7b8e2111ebdd8e1b25095111e99",
+    "bytes": 3924044
+  }
+}
