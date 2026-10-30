@@ -394,6 +394,12 @@ BALLOTS: dict[str, Ballot] = {
                          "Ordinance No. 558",
                      "ca-2026-11-03-san-pablo-measure-r":
                          "Resolution No. 2026-121",
+                     # Napa County's guide could not be fetched either:
+                     # Measure B's card quotes the ballot question from
+                     # the Board of Supervisors' resolution calling the
+                     # election, named as its first page titles it
+                     "ca-2026-11-03-napa-county-measure-b":
+                         "Resolution of the Napa County Board of Supervisors",
                      # The Internet Archive's captures of the county
                      # guide's own pages for West Contra Costa Unified's
                      # Measure V and San Pablo's Measure S print each

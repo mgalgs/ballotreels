@@ -1,0 +1,64 @@
+# Archived sources for Napa County Measure B, 2026-11-03 general election
+# (sources/sources.md, its section "Feed documents retrieved 2026-10-30").
+# Every id here may be cited by script.toml. `kind` must be one the
+# standard allows (docs/STANDARD.md, section 1).
+#
+# Every www.napacounty.gov page answered a Cloudflare 403, and no
+# Internet Archive capture was found, so the county's Voter Information
+# Guide (County Counsel's impartial analysis, the arguments and any
+# rebuttals) was not reached, and no document says whether any argument
+# was filed. These are the files of the Board of Supervisors' Legistar
+# record for its meeting of June 16, 2026, item 26-1244 (item A).
+#
+# The resolution calling the election sets the ballot question. The copy
+# archived is the agenda copy (a Word file, its number and vote left
+# blank); the Legistar minutes record that the Board adopted the
+# resolution that day ("Motion Text: Adopt the Resolution." ... "Result:
+# Passed"), with no amendment recorded. Its text was extracted into
+# sources/resolution-text.txt, which names the file and URL it copies,
+# and gives the question (set in a text box beside the YES and NO boxes)
+# without the boxes; those sources point at the extraction, and their url
+# at the Word file. The resolution also records that no fiscal impact
+# statement by the County Auditor is required.
+#
+# The initiative's full text is a scan with no text layer. The passages
+# cited were typed from the page images into
+# sources/initiative-text-transcription.txt, which names the PDF and URL
+# it copies; that source points at the transcription, and its url at the
+# scan. The initiative's findings (its Section 2) are the proponents'
+# text and are not cited. The Registrar's certificate of sufficiency
+# (a scan) is not cited: the resolution states the certification.
+
+[contest]
+id = "ca-2026-11-03-napa-county-measure-b"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:napa"
+kind = "measure"
+title = "Napa County Measure B: A Half-Cent Sales Tax for Wildfire Preparedness, Watersheds and Open Space"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "County of Napa, Resolution of the Napa County Board of Supervisors calling a special election on the initiative known as Measure B and consolidating it with the November 3, 2026 General Election (Board of Supervisors agenda item 26-1244, June 16, 2026; text extracted from the Word file)"
+credit = "Resolution of the Napa County Board of Supervisors"
+url = "https://napa.legistar1.com/napa/attachments/0ca2c0b0-b0b0-4536-b781-b6c45fe1e235.docx"
+file = "sources/resolution-text.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "minutes"
+kind = "legislative-record"
+publisher = "County of Napa, Board of Supervisors, Legistar record of the meeting of June 16, 2026, item 26-1244: minutes"
+credit = "Board of Supervisors minutes, County of Napa"
+url = "https://webapi.legistar.com/v1/napa/events/2129/eventitems?AgendaNote=1&MinutesNote=1"
+file = "sources/legistar-event-2129-item-26-1244.json"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "The Napa County Wildfire Preparedness, Watershed Protection and Open Space Preservation Act of 2026, full text as filed with the Napa County Election Division on February 5, 2026 (attachment to Board of Supervisors agenda item 26-1244, June 16, 2026; transcribed from the scan)"
+credit = "Initiative full text, County of Napa"
+url = "https://napa.legistar1.com/napa/attachments/de09b212-aa34-4cbd-9374-31c4e8825bfb.pdf"
+file = "sources/initiative-text-transcription.txt"
+retrieved = "2026-10-30"
