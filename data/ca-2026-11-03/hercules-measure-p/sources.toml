@@ -1,0 +1,70 @@
+# Archived sources for City of Hercules Measure P, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Contra Costa County's Voter Information Guide could not be fetched
+# (contracostavote.gov answered a bot challenge), and www.herculesca.gov
+# answered HTTP 403. These are the City's files from its Legistar agenda
+# system, for the City Council meeting of July 28, 2026, item 26-200. No
+# impartial analysis, argument or rebuttal was reached, and no document
+# says whether any argument was filed.
+#
+# The placing document is the urgency ordinance calling the election
+# (Attachment 1 to item 26-200), whose Section 3 sets the ballot question.
+# The archived copy is the agenda copy, a Word file with its number and
+# vote left blank; the City's Legistar record of the meeting (adoption)
+# records the item adopted as Ordinance 558 on July 28, 2026, with no
+# amendment recorded. The Word files' text is copied into
+# sources/*.txt, unchanged but for line breaks, and each source points at
+# the copy, its url at the Word file. The full text is Exhibit A, the
+# transactions and use tax ordinance submitted to the voters.
+#
+# The urgency ordinance's recitals and Section 2 findings, and the City
+# staff report (sources/hercules-P-staff-report.docx), are the City's
+# case for the tax: they are not cited, and the script uses the
+# ordinance only for what it does (the ballot question, the vote needed,
+# that the tax is a general tax).
+
+[contest]
+id = "ca-2026-11-03-hercules-measure-p"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:hercules"
+kind = "measure"
+title = "City of Hercules Measure P: One-Cent Sales Tax Until Ended by Voters"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Hercules, Urgency Ordinance of the City Council calling an election for the purpose of submitting to the voters of Hercules a transaction and use (sales) tax of one percent, adopted July 28, 2026 as Ordinance No. 558 (Attachment 1 to City Council item 26-200, agenda copy; text extracted from the Word file): Section 3, the ballot question"
+credit = "Ordinance No. 558, City of Hercules"
+url = "https://hercules.legistar1.com/hercules/attachments/f6a248a3-95fd-420c-8fbf-3e8f5e9a0702.docx"
+file = "sources/hercules-P-urgency-ordinance.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "ordinance"
+kind = "official-title-summary"
+publisher = "City of Hercules, Urgency Ordinance of the City Council calling an election for the purpose of submitting to the voters of Hercules a transaction and use (sales) tax of one percent, adopted July 28, 2026 as Ordinance No. 558 (Attachment 1 to City Council item 26-200, agenda copy; text extracted from the Word file)"
+credit = "Ordinance No. 558, City of Hercules"
+url = "https://hercules.legistar1.com/hercules/attachments/f6a248a3-95fd-420c-8fbf-3e8f5e9a0702.docx"
+file = "sources/hercules-P-urgency-ordinance.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Hercules, Ordinance adding Chapter 11, “2026 Transactions and Use Tax”, to Title 8 of the Hercules Municipal Code (Exhibit A to the urgency ordinance, City Council item 26-200, July 28, 2026; text extracted from the Word file)"
+credit = "Transactions and use tax ordinance, City of Hercules"
+url = "https://hercules.legistar1.com/hercules/attachments/571b1ff3-2a83-420c-8dd3-4c7a02c4b632.docx"
+file = "sources/hercules-P-tut-ordinance.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "adoption"
+kind = "public-record"
+publisher = "City of Hercules, Legistar record of the City Council meeting of July 28, 2026, item 26-200: action “adopt”, result “Pass”"
+credit = "City Council meeting record, City of Hercules"
+url = "https://webapi.legistar.com/v1/hercules/events/1866/eventitems?AgendaNote=1&MinutesNote=1"
+file = "sources/legistar-event-1866-item-26-200.json"
+retrieved = "2026-10-30"

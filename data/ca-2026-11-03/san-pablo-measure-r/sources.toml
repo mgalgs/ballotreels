@@ -1,0 +1,78 @@
+# Archived sources for City of San Pablo Measure R, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Contra Costa County's Voter Information Guide could not be fetched
+# (contracostavote.gov answered a bot challenge), and www.sanpabloca.gov
+# answered HTTP 403. These are the City's files from its Legistar agenda
+# system, for the City Council meeting of July 13, 2026, matter 26-379.
+# No impartial analysis, argument or rebuttal was reached, and no
+# document says whether any argument was filed.
+#
+# The placing document is the resolution submitting the tax to the
+# voters (Attachment 1 to matter 26-379), whose Section 1 sets the ballot
+# question. The archived copy is the agenda draft, a Word file with its
+# number, date and vote left blank; the City's Legistar records the
+# resolution as RES 2026-121 (matter), adopted with the attached ordinance
+# at the July 13, 2026 meeting with no amendment recorded (adoption). The
+# Word files' text is copied into sources/*.txt, unchanged but for line
+# breaks (the ballot question's table set as paragraphs), and each source
+# points at the copy, its url at the Word file. The full text is Exhibit
+# A, the transactions and use tax ordinance submitted to the voters.
+#
+# The resolution's and the ordinance's recitals are cited only for plain
+# facts (the rates and their periods, when the tax would start, that it
+# is a general tax); the ordinance's reasons for the tax are not used.
+
+[contest]
+id = "ca-2026-11-03-san-pablo-measure-r"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:san_pablo"
+kind = "measure"
+title = "City of San Pablo Measure R: Temporary Sales Tax of One-Half Cent, Then One-Quarter Cent"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of San Pablo, Resolution of the City Council Submitting a Proposed General Transactions and Use Tax to the City’s Voters at the Municipal Election to Be Held on November 3, 2026, adopted July 13, 2026 as Resolution No. 2026-121 (Attachment 1 to City Council matter 26-379, agenda draft; text extracted from the Word file): Section 1, the ballot question"
+credit = "Resolution No. 2026-121, City of San Pablo"
+url = "https://sanpablo.legistar1.com/sanpablo/attachments/d0758cb9-56fd-413b-89c8-14acecfbe43c.docx"
+file = "sources/sanpablo-R-resolution-draft.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-title-summary"
+publisher = "City of San Pablo, Resolution of the City Council Submitting a Proposed General Transactions and Use Tax to the City’s Voters at the Municipal Election to Be Held on November 3, 2026, adopted July 13, 2026 as Resolution No. 2026-121 (Attachment 1 to City Council matter 26-379, agenda draft; text extracted from the Word file)"
+credit = "Resolution No. 2026-121, City of San Pablo"
+url = "https://sanpablo.legistar1.com/sanpablo/attachments/d0758cb9-56fd-413b-89c8-14acecfbe43c.docx"
+file = "sources/sanpablo-R-resolution-draft.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of San Pablo, Ordinance of the People of the City of San Pablo adding Chapter 3.27 to Title 3 of the San Pablo Municipal Code imposing a transactions and use tax (Exhibit A to the resolution, City Council matter 26-379, July 13, 2026; text extracted from the Word file)"
+credit = "Transactions and use tax ordinance, City of San Pablo"
+url = "https://sanpablo.legistar1.com/sanpablo/attachments/48c1fc9b-5689-4597-8033-b04b3bff78e1.docx"
+file = "sources/sanpablo-R-ordinance.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "adoption"
+kind = "public-record"
+publisher = "City of San Pablo, Legistar record of the City Council meeting of July 13, 2026, matter 26-379: action “Adopted”"
+credit = "City Council meeting record, City of San Pablo"
+url = "https://webapi.legistar.com/v1/sanpablo/events/1673/eventitems?AgendaNote=1&MinutesNote=1"
+file = "sources/legistar-event-1673-item-26-379.json"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "matter"
+kind = "public-record"
+publisher = "City of San Pablo, Legistar record of matter 26-379: status “Passed”, passed July 13, 2026, enactment number RES 2026-121"
+credit = "Legistar matter record, City of San Pablo"
+url = "https://webapi.legistar.com/v1/sanpablo/matters/7520"
+file = "sources/legistar-matter-26-379.json"
+retrieved = "2026-10-28"
