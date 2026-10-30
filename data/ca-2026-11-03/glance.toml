@@ -3137,3 +3137,10 @@ source = "ballot-question"
 quote = "generating an estimated $12,000,000 annually until repealed by voters"
 amount = 12000000
 period = "per-year"
+
+# City of Santa Monica Measure GG: a charter amendment, not a tax; the Los
+# Angeles County Registrar-Recorder/County Clerk's list prints no cost
+# estimate, and no impartial analysis was among the documents gathered.
+[santa-monica-measure-gg]
+source = "ballot-question"
+status = "none-printed"
