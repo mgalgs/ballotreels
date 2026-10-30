@@ -3366,3 +3366,57 @@ source = "ballot-question"
 quote = "providing approximately $751,315 annually until ended by voters"
 amount = 751315
 period = "per-year"
+
+# City of Rancho Palos Verdes Measure RS: a general tax, so no tax rate
+# statement; the City Attorney's impartial analysis gives the revenue
+# estimate.
+[rancho-palos-verdes-measure-rs]
+source = "impartial-analysis"
+quote = "provide an additional $2,200,000 annually to the City’s General Fund"
+amount = 2200000
+period = "per-year"
+
+# City of Carson Measure CU (charter amendments): not a tax; the City
+# Attorney's impartial analysis prints no cost estimate.
+[carson-measure-cu]
+source = "impartial-analysis"
+status = "none-printed"
+
+# City of Huntington Park Measure HP (council term limits): not a tax;
+# the City Attorney's impartial analysis prints no cost estimate.
+[huntington-park-measure-hp]
+source = "impartial-analysis"
+status = "none-printed"
+
+# City of Paramount Measure P: a special parcel tax; the City Attorney's
+# impartial analysis gives the City's revenue estimate.
+[paramount-measure-p]
+source = "impartial-analysis"
+quote = "The City estimates that this Measure would generate approximately $4,000,000 annually in new local revenue."
+amount = 4000000
+period = "per-year"
+
+# City of Pasadena Measure PFD: a special parcel tax; the City Attorney's
+# impartial analysis gives the revenue estimate.
+[pasadena-measure-pfd]
+source = "impartial-analysis"
+quote = "The Measure is estimated to generate approximately $22.1 million annually"
+amount = 22100000
+period = "per-year"
+
+# City of Diamond Bar Measure Q: a general sales tax, so no tax rate
+# statement; the impartial analysis gives the City's estimate in words
+# only ("six million dollars"), so the figure is the ballot question's.
+[diamond-bar-measure-q]
+source = "ballot-question"
+quote = "providing approximately $6,000,000 annually"
+amount = 6000000
+period = "per-year"
+
+# City of San Marino Measure U: a general tax; no impartial analysis was
+# gathered, so the figure is the ballot question's.
+[san-marino-measure-u]
+source = "ballot-question"
+quote = "raising $2,620,000 annually"
+amount = 2620000
+period = "per-year"

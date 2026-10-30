@@ -1,0 +1,74 @@
+# Archived sources for City of San Marino Measure U, 2026-11-03 general
+# election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" is the authority for the letter and the ballot
+# question, quoted on the card; its "Opponents: None submitted." is the
+# official statement that no argument against was filed (`measure-list`).
+#
+# staff-report.pdf is the City Manager's July 8, 2026 staff report as
+# excerpted from the City Council's agenda packet (packet pages 105-142
+# of 303). It carries, as attachments, Resolution No. R-26-28 (packet
+# pages 111-114), which places the measure and states what it changes,
+# Ordinance No. O-26-1427 (pages 115-141), the measure's full text, and
+# the argument in favor (page 142), the draft the Council approved to be
+# signed by its members, with the measure letter not yet filled in; the
+# county's list names the five Council members as its filers. The
+# packet's resolution is the unsigned draft, its vote left blank; its
+# ballot question matches the county's word for word. The staff report's
+# own pages are the City's case and are not cited. No impartial analysis
+# was gathered; the revenue figure is the ballot question's.
+
+[contest]
+id = "ca-2026-11-03-san-marino-measure-u"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:san_marino"
+kind = "measure"
+title = "City of San Marino Measure U: Extending the Utility Users Tax at 6% Until Ended by Voters"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 Statewide General Election: City of San Marino Measure U"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "measure-list"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 Statewide General Election: City of San Marino Measure U, supporters and opponents who filed arguments"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City of San Marino, Resolution No. R-26-28, submitting a ballot measure to re-adopt and amend the utility user tax to extend its term and increase its rate from five percent to six percent, as attached to the City Manager's July 8, 2026 staff report (City Council agenda packet pages 111-114 of 303)"
+credit = "Resolution No. R-26-28, City of San Marino"
+url = "https://cms9files.revize.com/cityofsanmarino/City%20Clerk/elections/StaffReport_CONSIDERATION%20OF%20RESOLUTION%20NO.%20R-26-28.pdf"
+file = "sources/staff-report.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "ordinance"
+kind = "official-text"
+publisher = "City of San Marino, Ordinance No. O-26-1427, re-adopting and amending the utility user tax (Municipal Code Chapter 26, Article 03), as attached to the City Manager's July 8, 2026 staff report (City Council agenda packet pages 115-141 of 303)"
+credit = "Ordinance No. O-26-1427, City of San Marino"
+url = "https://cms9files.revize.com/cityofsanmarino/City%20Clerk/elections/StaffReport_CONSIDERATION%20OF%20RESOLUTION%20NO.%20R-26-28.pdf"
+file = "sources/staff-report.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure U (\"VOTE YES ON MEASURE _\"), as approved by the City Council for signing by its members, attached to the City Manager's July 8, 2026 staff report (City Council agenda packet page 142 of 303)"
+credit = "Argument in favor of Measure U, City Council agenda packet"
+url = "https://cms9files.revize.com/cityofsanmarino/City%20Clerk/elections/StaffReport_CONSIDERATION%20OF%20RESOLUTION%20NO.%20R-26-28.pdf"
+file = "sources/staff-report.pdf"
+retrieved = "2026-10-30"

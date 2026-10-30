@@ -1,0 +1,60 @@
+# Archived sources for City of Rancho Palos Verdes Measure RS, 2026-11-03
+# general election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" is the authority for the letter and the ballot
+# question, quoted on the card; its "Supporters: ... Opponents: None
+# submitted." line states in words who filed the primary arguments, so
+# the same file backs `measure-list`, the official statement of filing.
+# The argument in favor that the list's supporters filed was not
+# gathered; no argument against was submitted. The City Attorney's
+# impartial analysis is the measure's neutral explanation, the kind a
+# state's attorney general's explanatory statement is; it gives the
+# revenue estimate (a general tax has no tax rate statement). The staff
+# report and the resolution setting argument priorities are not cited:
+# the one is the City's own case, the other procedure only.
+
+[contest]
+id = "ca-2026-11-03-rancho-palos-verdes-measure-rs"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:rancho_palos_verdes"
+kind = "measure"
+title = "City of Rancho Palos Verdes Measure RS: Raising the Hotel and Motel Guest Tax from 10% to 13%"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 Statewide General Election: City of Rancho Palos Verdes Measure RS"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "measure-list"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 Statewide General Election: City of Rancho Palos Verdes Measure RS, supporters and opponents who filed arguments"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney, City of Rancho Palos Verdes, City Attorney's Impartial Analysis of Measure RS, by William W. Wynder, dated August 14, 2026"
+credit = "City Attorney's Impartial Analysis, City of Rancho Palos Verdes"
+url = "https://www.rpvca.gov/DocumentCenter/View/25131/Rancho-Palos-Verdes-TOT-Impartial-Analysis-21756002"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City of Rancho Palos Verdes, City Council Resolution No. 2026-61, placing the transient occupancy tax measure on the November 3, 2026 ballot, with the ordinance as Exhibit A"
+credit = "Resolution No. 2026-61, City of Rancho Palos Verdes"
+url = "https://www.rpvca.gov/DocumentCenter/View/25017/CC-RES-2026-061"
+file = "sources/resolution.pdf"
+retrieved = "2026-10-30"

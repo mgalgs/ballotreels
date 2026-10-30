@@ -1,0 +1,224 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the two charter rules it changes
+# most (term limits, the council vote to put a tax to voters) and how
+# the measure reached the ballot; what would change (those two rules,
+# the oil refinery provisions, campaign disclosure, the smaller changes,
+# the vote it needs); that the analysis gives no cost estimate; both
+# sides as the county's list records them; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry it.
+#
+# Every change is told as the City Attorney's impartial analysis tells
+# it, and the term-limit change as the charter text says it ("There
+# shall be no limit on the number of terms"). The ballot question's own
+# descriptions ("update term limits to increase voter options", "No Tax
+# Increase") are on the card, not narrated. The refinery line keeps both
+# halves of the analysis's paragraph: the restrictions it removes, and
+# that it would not itself impose or increase any tax.
+#
+# The card quotes the Los Angeles County Registrar-Recorder/County
+# Clerk's list "Measures Appearing on the Ballot": the City's heading,
+# the vote needed and the ballot question, which has no yes or no
+# sentences, so the card has no boxes. The vote lines give the impartial
+# analysis's own meanings, and both highlight the same phrase.
+#
+# The list names five supporters who filed an argument in favor (the
+# mayor, the mayor pro tem, two councilmembers and Darrow's New Orleans
+# Grill); the yes line says "the mayor and four other supporters", words
+# the list states, rather than describing the others in its own terms.
+# The argument's text is not among the documents gathered: the yes side
+# says only who filed it and that its text was not gathered (filed =
+# false, no basis to quote).
+# The list says "Opponents: None submitted.", so the no side says plainly
+# that no argument against was submitted, citing the list. The no line's
+# clause on what the list records balances the yes line's length without
+# a further claim.
+
+contest = "ca-2026-11-03-carson-measure-cu"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "CU"
+title = "CITY OF CARSON"
+origin = "VOTE PASSAGE – Majority Vote 50%+1"
+summary = "Carson City Government Accountability, Charter Update, No Tax Increase Measure. Shall the measure amending the Carson City Charter require campaign contribution transparency; make the City Charter consistent with State law on referring ballot measures for voter approval; update term limits to increase voter options; update City Treasurer duties; clarify and clean up inconsistent or outdated language, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure CU"
+
+[[section.line]]
+text = "Measure CU asks the voters of this city whether to amend several sections of the city charter."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["amending the Carson City Charter"]
+
+[[section]]
+id = "today"
+heading = "The charter today"
+
+[[section.line]]
+id = "today-terms"
+text = "Today, the charter limits council members to three four-year terms."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section.line]]
+id = "today-tax"
+text = "Putting a tax before voters takes a two-thirds vote of the council."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section.line]]
+text = "The City Council placed Measure CU on the ballot."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "terms"
+text = "Under Measure CU, no elected city office would have term limits."
+sources = ["impartial-analysis", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "amended-page"
+
+[[section.line]]
+id = "tax"
+text = "Under Measure CU, a majority of the council could put a tax before voters."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section.line]]
+id = "refinery"
+text = "Measure CU would remove charter limits on added taxes and certain environmental rules for oil refineries and fuel storage, but would not itself impose or increase any tax."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "coastal-industrial-yard"
+
+[[section.line]]
+text = "The state's campaign contribution disclosure rules would be written into the charter."
+sources = ["impartial-analysis", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "donation-checks"
+
+[[section.line]]
+id = "other"
+text = "Smaller changes cover council election districts, the city manager's contract powers and two treasurer duties."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "district-map"
+
+[[section.line]]
+text = "Measure CU needs a majority yes vote to pass."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+text = "The city attorney's impartial analysis does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "The mayor and four other supporters filed an argument for Measure CU; its text is not among the documents gathered."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["Filed by supporters; text not gathered"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The official county list of measures, which names who filed each argument, says that no argument against Measure CU was submitted."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is a vote in favor of the proposed charter amendments."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["amending the Carson City Charter"]
+
+[[section.line]]
+text = "A no vote is a vote against the proposed charter amendments."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["amending the Carson City Charter"]
+
+[[question]]
+ask = "Would council members still have term limits?"
+lines = ["today-terms", "terms"]
+
+[[question]]
+ask = "Does this measure raise any tax?"
+lines = ["today-tax", "tax", "refinery"]
+
+[[question]]
+ask = "What else in the charter would change?"
+lines = ["other"]

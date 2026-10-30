@@ -1,0 +1,196 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the hotel tax today and who pays
+# it; how the measure reached the ballot; what would change (the rate,
+# where the money goes, the vote it needs); the revenue as
+# the impartial analysis gives it; both sides as the county's list
+# records them; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry it.
+# "City's" sounds like "cities" (standard/speakability.txt), so the
+# narration says "the city".
+#
+# The card quotes the Los Angeles County Registrar-Recorder/County
+# Clerk's list "Measures Appearing on the Ballot": the City's heading,
+# the vote needed and the ballot question, which has no yes or no
+# sentences, so the card has no boxes. The vote lines give the impartial
+# analysis's own meanings ("Your YES vote means ..."), and both
+# highlight the same phrase of the question. The uses the question lists
+# are on the card, not narrated as the measure's effect; the analysis's
+# own list of general city services is.
+#
+# The list names the filers of an argument in favor (four organizations
+# and a retired judge), whose text is not among the documents gathered:
+# the yes side says only who filed it and that its text was not
+# gathered, and says nothing of what it argues (filed = false, no basis
+# to quote). The organizations are not named: each name carries a place
+# name. The list says "Opponents: None submitted.", so the no side says
+# plainly that no argument against was submitted, citing the list. The
+# no line's clause on what the list records balances the yes line's
+# length without a further claim.
+#
+# The $2.2 million a year is the impartial analysis's estimate. No
+# archived official document states the City's general fund budget to
+# give it a scale (STANDARD.md 6.5; left open, under [[question]]).
+
+contest = "ca-2026-11-03-rancho-palos-verdes-measure-rs"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "RS"
+title = "CITY OF RANCHO PALOS VERDES"
+origin = "VOTE PASSAGE – Majority Vote 50%+1"
+summary = "Rancho Palos Verdes Public Safety/City Services Measure: To help prepare for and respond to wildfires/natural disasters; maintain roads/storm drains; prevent sinkholes; address landslides/land movement; and support general city services, shall the transient occupancy tax (paid only by hotel/motel guests) be adjusted from 10% to 13%, providing approximately $2,200,000 annually until ended by voters, requiring audits, spending disclosures, all funds benefiting Rancho Palos Verdes which cannot be taken by the State or Los Angeles County, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure RS"
+
+[[section.line]]
+text = "Measure RS asks the voters of this city whether to raise the hotel and motel guest tax from 10 to 13 percent."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["transient occupancy tax (paid only by hotel/motel guests)"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "who-pays"
+text = "Today, guests staying 30 days or less at a hotel or motel pay this tax, at 10 percent of the rent."
+sources = ["impartial-analysis", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hotel-front-desk"
+
+[[section.line]]
+text = "The City Council placed Measure RS on the ballot by a unanimous vote."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rate"
+text = "Measure RS would raise the rate to 13 percent."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Hotel and motel guest tax in Rancho Palos Verdes"
+source = "impartial-analysis"
+unit = "%"
+labels = ["Today", "With Measure RS"]
+values = [10, 13]
+
+[[section.line]]
+id = "uses"
+text = "The money would go to the general fund, for general city services such as public safety and wildfire mitigation."
+sources = ["impartial-analysis", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+id = "end"
+text = "The higher rate would last until ended by voters, and needs a majority yes vote to pass."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The city attorney's impartial analysis says the increase would add $2.2 million a year to the general fund."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "save-more"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Four organizations and a retired judge filed an argument for Measure RS; its text is not among the documents gathered."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["Filed by supporters; text not gathered"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The official county list of measures, which names who filed each argument, says no argument against Measure RS was submitted."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves raising the hotel and motel guest tax from 10 to 13 percent."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["be adjusted from 10% to 13%"]
+
+[[section.line]]
+text = "A no vote disapproves of raising the hotel and motel guest tax at this time."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["be adjusted from 10% to 13%"]
+
+[[question]]
+ask = "Who pays this tax?"
+lines = ["who-pays"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["uses"]
+
+[[question]]
+ask = "When would the higher rate end?"
+lines = ["end"]
+
+[[question]]
+ask = "How big is $2.2 million a year next to the city budget?"
+unanswered = true
