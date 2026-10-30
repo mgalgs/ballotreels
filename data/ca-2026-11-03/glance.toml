@@ -2963,3 +2963,11 @@ period = "unstated"
 [sutter-creek-measure-r]
 source = "ballot-question"
 status = "none-printed"
+
+# Amador County Measure S: no fiscal statement was printed; the revenue
+# estimate its ballot question prints, as Amador County Elections posts it.
+[amador-county-measure-s]
+source = "ballot-question"
+quote = "generating approximately $55,000 annually"
+amount = 55000
+period = "per-year"
