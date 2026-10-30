@@ -1,0 +1,60 @@
+# Archived sources for City of Alhambra Measure DB, 2026-11-03 general
+# election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" is the authority for the letter and the ballot
+# question, quoted on the card; its "Opponents: None submitted." is the
+# official statement that no argument against was filed (`measure-list`).
+# The City Attorney's impartial analysis and the argument in favor are
+# the Registrar's own copies from its Interactive Sample Ballot (the
+# City's .docx analysis is the same document). The impartial analysis is
+# the measure's neutral explanation, the kind a state's attorney
+# general's explanatory statement is, and quotes the definition the
+# measure amends; it gives no cost estimate. The ordinance
+# (full-text.docx, which the check cannot read) and the consolidation
+# resolution (a scan) add nothing the script needs and are not cited.
+
+[contest]
+id = "ca-2026-11-03-alhambra-measure-db"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:alhambra"
+kind = "measure"
+title = "City of Alhambra Measure DB: A Voter-Approved Ban on Data Centers"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 Statewide General Election: City of Alhambra Measure DB"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "measure-list"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 Statewide General Election: City of Alhambra Measure DB, supporters and opponents who filed arguments"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney, City of Alhambra, City Attorney's Impartial Analysis of Measure DB, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Impartial Analysis of Measure DB, City Attorney of Alhambra"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10941.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure DB, signed by Jeffrey Maloney, Mayor, Adele Andrade-Stadler, Vice Mayor, and Ross Maza, Noya Wang and Katherine Lee, Councilmembers, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Argument in Favor of Measure DB"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10941.json"
+file = "sources/argument-for.html"
+retrieved = "2026-10-30"
