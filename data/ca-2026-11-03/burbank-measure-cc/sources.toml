@@ -1,0 +1,68 @@
+# Archived sources for City of Burbank Measure CC, 2026-11-03 general
+# election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" is the authority for the letter and the ballot
+# question, quoted on the card; its "Opponents: None submitted." is the
+# official statement that no argument against was filed (`measure-list`).
+# The City Attorney's impartial analysis, the full text of the charter
+# amendment and the argument in favor are the Registrar's own copies from
+# its Interactive Sample Ballot, which supersede la-sources.md's earlier
+# "blocked" notes. The impartial analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is; it gives no cost estimate. Resolution No. 26-29,725 (a
+# scan, whose Exhibit A is the same amendment) is not cited.
+
+[contest]
+id = "ca-2026-11-03-burbank-measure-cc"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:burbank"
+kind = "measure"
+title = "City of Burbank Measure CC: Removing the Charter's Citywide Election Requirement for the City Council"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 Statewide General Election: City of Burbank Measure CC"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "measure-list"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 Statewide General Election: City of Burbank Measure CC, supporters and opponents who filed arguments"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney, City of Burbank, City Attorney's Impartial Analysis of Measure CC, by Joseph H. McDougall, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Impartial Analysis of Measure CC, City Attorney of Burbank"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10942.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "full-text"
+kind = "official-text"
+publisher = "City of Burbank, Charter Amendment Measure (Article 3, Sections 300 and 305), Full Text of Ballot Measure CC as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Full Text of Measure CC, City of Burbank"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10942.json"
+file = "sources/full-text.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure CC, signed by Tamala Takahashi, Mayor, Zizette Mullins, Vice Mayor, and Konstantine Anthony, Chris Rizzotti and Nikki Perez, City Councilmembers, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Argument in Favor of Measure CC"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10942.json"
+file = "sources/argument-for.html"
+retrieved = "2026-10-30"

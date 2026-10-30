@@ -3590,3 +3590,58 @@ source = "ballot-question"
 quote = "all funds ($2,000,000 annually)"
 amount = 2000000
 period = "per-year"
+
+# City of Hawthorne Measure O: a general hotel tax; the impartial
+# analysis gives no estimate, so the figure is the ballot question's.
+[hawthorne-measure-o]
+source = "ballot-question"
+quote = "generating approximately $3.1 million annually"
+amount = 3100000
+period = "per-year"
+
+# City of Palmdale Measure DE: an elected mayor; no impartial analysis
+# was printed, and neither the ordinance nor the county's list gives a
+# cost estimate.
+[palmdale-measure-de]
+source = "ballot-question"
+status = "none-printed"
+
+# City of Rosemead Measure RC: a city charter; the City Attorney's
+# impartial analysis gives no cost estimate.
+[rosemead-measure-rc]
+source = "impartial-analysis"
+status = "none-printed"
+
+# City of Alhambra Measure HT: the hotel tax applied to more lodgings and
+# stays; the City Attorney's impartial analysis gives the estimate.
+[alhambra-measure-ht]
+source = "impartial-analysis"
+quote = "to generate additional revenue of approximately $134,000 per year"
+amount = 134000
+period = "per-year"
+
+# City of Alhambra Measure DB: a voter-approved data center ban; the
+# City Attorney's impartial analysis gives no cost estimate.
+[alhambra-measure-db]
+source = "impartial-analysis"
+status = "none-printed"
+
+# City of Monterey Park Measure HOM: a housing overlay; the City
+# Attorney's impartial analysis gives no cost estimate.
+[monterey-park-measure-hom]
+source = "impartial-analysis"
+status = "none-printed"
+
+# City of Monterey Park Measure AAA: a general hotel tax; the City
+# Attorney's impartial analysis gives the estimate.
+[monterey-park-measure-aaa]
+source = "impartial-analysis"
+quote = "would generate approximately $600,000 total in additional annual revenue"
+amount = 600000
+period = "per-year"
+
+# City of Burbank Measure CC: a charter amendment on how the council is
+# elected; the City Attorney's impartial analysis gives no cost estimate.
+[burbank-measure-cc]
+source = "impartial-analysis"
+status = "none-printed"

@@ -1,0 +1,197 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the tax today, who pays it, and
+# how the measure reached the ballot; what would change (the rate, short-
+# term rentals, where the money goes, the vote it needs); the revenue as
+# the ballot question gives it; both sides; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry it.
+#
+# The today and change lines are the City Attorney's impartial analysis,
+# and the short-term rental line the ordinance's own text as well. The
+# staff report's projections (a future deficit, neighboring cities'
+# rates, coming events) are the City's own case for the tax and are not
+# narrated; the argument in favor makes some of them, so they stay with
+# that side (STANDARD.md 6.3).
+#
+# The card quotes the Los Angeles County Registrar-Recorder/County
+# Clerk's list "Measures Appearing on the Ballot": the City's heading,
+# the vote needed and the ballot question, which has no yes or no
+# sentences, so the card has no boxes. The vote lines give the impartial
+# analysis's own meanings, and both highlight the same phrase.
+#
+# The argument in favor is the Registrar's printed copy. The list says
+# "Opponents: None submitted.", so the no side says plainly that no
+# argument against was submitted, citing the list (filed = false). Its
+# clause on what the list records balances the yes line's length
+# without a further claim. Neither side names anyone: the record names
+# no one on the no side.
+#
+# The $3.1 million a year is the ballot question's figure; the impartial
+# analysis gives none (the argument's "$1.2 million and $3.1 million" is
+# that side's). No archived official document states the City's general
+# fund budget to give it a scale (STANDARD.md 6.5; left open, under
+# [[question]]); the staff report's total hotel tax collections are not
+# that budget.
+
+contest = "ca-2026-11-03-hawthorne-measure-o"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "O"
+title = "CITY OF HAWTHORNE"
+origin = "VOTE PASSAGE – Majority Vote 50%+1"
+summary = "Shall the measure increasing the City of Hawthorne's transient occupancy (hotel) tax from 12% to 17%, to maintain City services such as police and fire protection, street repairs, park/recreation programs, and other general City services, generating approximately $3.1 million annually, paid only by hotel/lodging guests until ended by voters, with all funds staying local, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure O"
+
+[[section.line]]
+text = "Measure O asks the voters of this city whether to raise the tax on hotel stays from 12 to 17 percent."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["transient occupancy (hotel) tax from 12% to 17%"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-tax"
+text = "Today, guests who stay 30 days or less at a hotel, motel or inn pay a 12 percent tax on their room rent."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hotel-front-desk"
+
+[[section.line]]
+text = "The City Council placed Measure O on the ballot."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rate"
+text = "Measure O would raise that tax to 17 percent."
+sources = ["impartial-analysis", "ordinance"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-hotel"
+
+[[section.line]]
+id = "rentals"
+text = "Measure O would also make clear that the tax applies to short-term rentals, such as homes rented through an online platform."
+sources = ["impartial-analysis", "ordinance"]
+
+[section.line.visual]
+kind = "illustration"
+name = "online-booking-laptop"
+
+[[section.line]]
+id = "general"
+text = "The added money would go to the general fund, for purposes such as police, fire, parks and streets."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "public-funds-locked"
+
+[[section.line]]
+text = "As a general tax, Measure O needs a majority yes vote to pass."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What the ballot question says"
+
+[[section.line]]
+id = "revenue"
+text = "The ballot question says the tax would raise about $3.1 million a year; the impartial analysis gives no estimate."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the tax is paid mainly by visitors, not residents, and gives the city reliable local funding for essential services."
+sources = ["argument-for"]
+basis = ["Measure O increases the City's Transient Occupancy Tax (hotel tax), which is paid primarily by visitors staying in local hotels not Hawthorne residents.", "Hawthorne needs a reliable and sustainable source of local funding."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Paid mainly by visitors", "Reliable local funding"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The official county list of measures, which names who filed each argument, says no argument against Measure O was submitted."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote raises the hotel tax to 17 percent."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["transient occupancy (hotel) tax from 12% to 17%"]
+
+[[section.line]]
+text = "A no vote keeps the hotel tax at 12 percent."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["transient occupancy (hotel) tax from 12% to 17%"]
+
+[[question]]
+ask = "Does the tax apply to short-term rentals?"
+lines = ["rentals"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["general"]
+
+[[question]]
+ask = "How big is $3.1 million a year next to the city budget?"
+unanswered = true
