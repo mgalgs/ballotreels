@@ -1,0 +1,269 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 91.25,
+  "phrases": [
+    {
+      "text": "Measure O asks the voters of this school district whether to approve $115 million in bonds for school repairs and upgrades.",
+      "start": 0.03,
+      "end": 8.84
+    },
+    {
+      "text": "The board of trustees placed Measure O on the ballot on June 8, 2026; as a Proposition 39 bond, it needs 55 percent of the vote to pass.",
+      "start": 9.5,
+      "end": 20.1
+    },
+    {
+      "text": "The money would repair and upgrade the district's three schools, including classrooms, bathrooms, leaky roofs, heating and cooling, and fire, security and earthquake safety.",
+      "start": 20.76,
+      "end": 32.8
+    },
+    {
+      "text": "The bond money could not pay teacher or administrator salaries, or other operating costs.",
+      "start": 33.46,
+      "end": 39.33
+    },
+    {
+      "text": "A citizens' oversight committee and yearly independent audits would check how the money is spent.",
+      "start": 39.99,
+      "end": 45.61
+    },
+    {
+      "text": "The tax rate statement of the district estimates an average tax of $26.63 per $100,000 of assessed value, and at most $30, through 2060-2061.",
+      "start": 46.27,
+      "end": 59.93
+    },
+    {
+      "text": "The statement estimates the total to repay, with interest, from a tax on property in the district, at $213 million.",
+      "start": 60.59,
+      "end": 69.27
+    },
+    {
+      "text": "No argument against Measure O appears among the official documents gathered for this video.",
+      "start": 69.93,
+      "end": 75.11
+    },
+    {
+      "text": "No argument for Measure O appears among the official documents gathered for this video.",
+      "start": 75.77,
+      "end": 80.91
+    },
+    {
+      "text": "A yes vote authorizes the district to issue up to $115 million in bonds.",
+      "start": 81.57,
+      "end": 87.84
+    },
+    {
+      "text": "A no vote does not authorize the bonds.",
+      "start": 88.5,
+      "end": 91.22
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure O asks the voters of this school district whether to approve $115 million in bonds for school repairs and upgrades.",
+      "The board of trustees placed Measure O on the ballot on June 8, 2026; as a Proposition 39 bond, it needs 55 percent of the vote to pass.",
+      "The money would repair and upgrade the district's three schools, including classrooms, bathrooms, leaky roofs, heating and cooling, and fire, security and earthquake safety.",
+      "The bond money could not pay teacher or administrator salaries, or other operating costs.",
+      "A citizens' oversight committee and yearly independent audits would check how the money is spent.",
+      "The tax rate statement of the district estimates an average tax of $26.63 per $100,000 of assessed value, and at most $30, through 2060-2061.",
+      "The statement estimates the total to repay, with interest, from a tax on property in the district, at $213 million.",
+      "No argument against Measure O appears among the official documents gathered for this video.",
+      "No argument for Measure O appears among the official documents gathered for this video.",
+      "A yes vote authorizes the district to issue up to $115 million in bonds.",
+      "A no vote does not authorize the bonds."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure O asks the voters of this school district whether to approve $115 million in bonds for school repairs and upgrades."
+      },
+      "bounds": [
+        0,
+        212880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure O asks the voters of this school district whether to approve $115 million in bonds for school repairs and upgrades.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The board of trustees placed Measure O on the ballot on June 8, 2026; as a Proposition 39 bond, it needs 55 percent of the vote to pass."
+      },
+      "bounds": [
+        227280,
+        483120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The board of trustees placed Measure O on the ballot on June 8, 2026; as a Proposition 39 bond, it needs 55 percent of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money would repair and upgrade the district's three schools, including classrooms, bathrooms, leaky roofs, heating and cooling, and fire, security and earthquake safety."
+      },
+      "bounds": [
+        497520,
+        787920
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money would repair and upgrade the district's three schools, including classrooms, bathrooms, leaky roofs, heating and cooling, and fire, security and earthquake safety.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The bond money could not pay teacher or administrator salaries, or other operating costs."
+      },
+      "bounds": [
+        802320,
+        944640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The bond money could not pay teacher or administrator salaries, or other operating costs.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A citizens' oversight committee and yearly independent audits would check how the money is spent."
+      },
+      "bounds": [
+        959040,
+        1095360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A citizens' oversight committee and yearly independent audits would check how the money is spent.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The tax rate statement of the district estimates an average tax of $26.63 per $100,000 of assessed value, and at most $30, through 2060-2061."
+      },
+      "bounds": [
+        1109760,
+        1439040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The tax rate statement of the district estimates an average tax of $26.63 per $100,000 of assessed value, and at most $30, through 2060-2061.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The statement estimates the total to repay, with interest, from a tax on property in the district, at $213 million."
+      },
+      "bounds": [
+        1453440,
+        1663200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The statement estimates the total to repay, with interest, from a tax on property in the district, at $213 million.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument against Measure O appears among the official documents gathered for this video."
+      },
+      "bounds": [
+        1677600,
+        1803360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure O appears among the official documents gathered for this video.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument for Measure O appears among the official documents gathered for this video."
+      },
+      "bounds": [
+        1817760,
+        1942560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure O appears among the official documents gathered for this video.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote authorizes the district to issue up to $115 million in bonds."
+      },
+      "bounds": [
+        1956960,
+        2108880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote authorizes the district to issue up to $115 million in bonds.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote does not authorize the bonds."
+      },
+      "bounds": [
+        2123280,
+        2190000
+      ]
+    }
+  ],
+  "sha256": "096fd7fd1e02883489bf1ecedd53344aa427e513bfe3dbeeaf03eb4a2bac49ec",
+  "take": {
+    "sha256": "aef8edbe5039ff87920d4968169f7e613f6cf859b51f6341cc2fde40dcd3d478",
+    "bytes": 4380044
+  }
+}
