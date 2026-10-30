@@ -1,0 +1,190 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot; what
+# would change (the added rate, what the money is for, the audits, how
+# long it lasts and the vote it needs); the revenue estimate as the
+# ballot question gives it; both sides, neither of which has an
+# archived argument; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry the
+# names.
+#
+# The card quotes the Tulare County Registrar of Voters' published
+# notice of election, the question "to be displayed on each individual
+# ballot", which prints no yes/no statements: so the card has no YES/NO
+# boxes, and both vote lines highlight the same phrase of the question.
+#
+# No impartial analysis or ordinance was archived: every neutral line
+# rests on the notice and on what the City's resolution (Resolution
+# 2026-041, as the Registrar posted it) records or enacts: the increase
+# "by one percent (1%) or one cent to fund general services" (Section
+# 2), the adoption on June 2, 2026 (page 3). The resolution's "WHEREAS"
+# findings (the City's priorities, its "guaranteed source of funding")
+# are the City's own claims, not facts, and are not used; the services
+# the question lists are attributed to it. No archived source gives the
+# sales tax rate in the city today, so the script gives only the
+# increase.
+#
+# The $16 million a year is the ballot question's estimate. No archived
+# source states the City's general fund budget to give it a scale
+# (STANDARD.md 6.5; left open, under [[question]]).
+#
+# No argument for or against Measure A was archived (the county's guide
+# could not be fetched), and no document says whether any was filed. So
+# the sides do not say none was filed: each says none is among the
+# documents gathered (filed = false, STANDARD.md 2.5), as for Walnut
+# Creek Measure U.
+
+contest = "ca-2026-11-03-tulare-measure-a"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "A"
+title = "CITY OF TULARE"
+origin = "NOTICE OF A TRANSACTION AND USE TAX ELECTION"
+summary = "Shall the measure funding City of Tulare general services, such as maintaining 911 emergency/fire/paramedic/police response; preventing crime and gang activity; recruiting/retaining police, firefighters, paramedics; keeping public areas/parks clean/safe; repairing roads/potholes; addressing homelessness; protecting local drinking water sources; retaining/attracting local businesses, by increasing the existing sales tax by 1¢, providing approximately $16,000,000 annually until ended by voters, requiring independent audits, public spending disclosure, all funds used locally, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure A"
+
+[[section.line]]
+text = "Measure A asks the voters of this city whether to raise the sales tax by 1 percent to pay for general city services."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by increasing the existing sales tax by 1¢"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The City Council placed Measure A on the ballot in June 2026."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "rate"
+text = "The tax would add 1 percent to the existing sales tax in the city."
+sources = ["resolution", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-storefronts"
+
+[[section.line]]
+id = "general"
+text = "Measure A is a general tax for city services, which the ballot question lists as including police, fire, roads and parks."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+id = "audits"
+text = "The ballot question also calls for independent audits and public disclosure of spending."
+sources = ["ballot-question"]
+
+[[section.line]]
+id = "end"
+text = "The tax would last until ended by voters, and needs a majority of the vote to pass."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+id = "revenue"
+text = "The ballot question estimates that Measure A would raise about $16 million a year."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure A appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure A appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote on Measure A adopts the 1 percent sales tax increase."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by increasing the existing sales tax by 1¢"]
+
+[[section.line]]
+text = "A no vote on Measure A does not adopt the 1 percent sales tax increase."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by increasing the existing sales tax by 1¢"]
+
+[[question]]
+ask = "When would the tax end?"
+lines = ["end"]
+
+[[question]]
+ask = "What can the money be spent on?"
+lines = ["general"]
+
+[[question]]
+ask = "What is the sales tax rate in the city today?"
+unanswered = true
+
+[[question]]
+ask = "How big is $16 million a year next to the city budget?"
+unanswered = true

@@ -3678,3 +3678,12 @@ direction = "cost"
 [walnut-creek-measure-u]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Tulare Measure A: a sales tax, so no tax rate statement; the
+# revenue estimate its ballot question (the Registrar's notice of
+# election) prints.
+[tulare-measure-a]
+source = "ballot-question"
+quote = "providing approximately $16,000,000 annually until ended by voters"
+amount = 16000000
+period = "per-year"
