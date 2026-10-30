@@ -2689,3 +2689,12 @@ period = "per-year"
 [cupertino-measure-l]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Gilroy Measure B: a general tax, so no tax rate statement; the
+# ballot question on the Santa Clara County Registrar of Voters' List of
+# Local Measures gives the yearly revenue figure.
+[gilroy-measure-b]
+source = "ballot-question"
+quote = "providing $700,000 annually paid only by hotel/lodging guests"
+amount = 700000
+period = "per-year"
