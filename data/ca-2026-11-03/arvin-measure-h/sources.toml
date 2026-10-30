@@ -1,0 +1,56 @@
+# Archived sources for City of Arvin Measure H, 2026-11-03 general
+# election (sources/county-sources.md, sources/sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Kern County Elections posts each local measure's documents on its page
+# "November 3, 2026, General Election", which renders its document list
+# in the browser, so each file's url is that page. For Measure H it
+# posts the City's Resolution No. 2026-37 (asking the county to
+# consolidate the election), whose Section 2 prints the measure as it is
+# to appear on the ballot and whose Exhibit A is the ordinance, and the
+# City Attorney's impartial analysis. The resolution is a scan with no
+# text layer: its pages were typed from the page images into
+# sources/county-resolution-transcription.txt, which those sources point
+# at. Its ballot question differs from the one in Resolution No. 2026-34
+# as drafted in the City's June 25, 2026 agenda packet ("local police and
+# fire departments", "audited independently, and publicly disclosed");
+# the county's copy wins, and the packet is not cited. The impartial
+# analysis is the measure's neutral explanation, the kind a state's
+# attorney general's explanatory statement is. A general sales tax has no
+# tax rate statement; the revenue estimate is the analysis's. The page
+# posts no argument for or against, and no document says none was filed.
+
+[contest]
+id = "ca-2026-11-03-arvin-measure-h"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:arvin"
+kind = "measure"
+title = "City of Arvin Measure H: A 1% Sales Tax Until Ended by Voters"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Arvin, Resolution No. 2026-37, Section 2, the measure as it is to appear on the ballot, as posted by Kern County Elections, November 3, 2026, General Election (transcribed from the scan)"
+credit = "Resolution No. 2026-37, City of Arvin"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-resolution-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "ordinance"
+kind = "official-text"
+publisher = "City of Arvin, Resolution No. 2026-37, Exhibit A, the ordinance adding Chapter 3.36 (Transactions and Use Tax) to the Arvin Municipal Code, as posted by Kern County Elections, November 3, 2026, General Election (transcribed from the scan)"
+credit = "Resolution No. 2026-37, Exhibit A, City of Arvin"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-resolution-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney, City of Arvin, City Attorney's Impartial Analysis, Arvin Essential City Services Sales Tax Measure, as posted by Kern County Elections, November 3, 2026, General Election"
+credit = "City Attorney's Impartial Analysis, City of Arvin"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"

@@ -21,7 +21,7 @@ Retrieval date: 2026-10-29.
 | File | Original name | Pages kept (of total) | Scan/text | Note |
 |---|---|---|---|---|
 | `county-measure-list.pdf` | `03-measure-letter-assignments.pdf` | 1 of 1 | text | Official county letter-designation list for all 14 Nov 3 2026 local measures (dated Aug 12, 2026). |
-| `county-resolution.pdf` | `16-mcfarland-city-measure-prohibit-cafo.pdf` | 4 of 4 | scan | Resolution No. 2026-89, calling the election and submitting the citizens' CAFO-prohibition initiative. Ballot question is in §1, p.1. Kept whole (not trimmed — only argument PDFs are page-trimmed per the staging brief); p.3 is a near-blank scan artifact. Grayscale/120dpi, which did not shrink it (grayscale output was not smaller than the original, so the original was kept). |
+| `county-resolution.pdf` | `16-mcfarland-city-measure-prohibit-cafo.pdf` | 4 of 4 | scan | Resolution No. 2026-89, calling the election and submitting the citizens' CAFO-prohibition initiative. Ballot question is in §1, p.2 (corrected 2026-10-30 from the page images; first noted as p.1). Kept whole (not trimmed — only argument PDFs are page-trimmed per the staging brief); p.3 holds the vote table and signatures, and p.4 is blank (first noted as p.3 near-blank). Grayscale/120dpi, which did not shrink it (grayscale output was not smaller than the original, so the original was kept). |
 | `county-impartial-analysis.pdf` | `17-measure-o-impartial-analysis.pdf` | 2 of 2 | text | City Counsel's impartial analysis. |
 
 **Not filed (per official page):** no argument for or against Measure O.

@@ -1,0 +1,45 @@
+# Archived sources for City of Shafter Measure Q, 2026-11-03 general
+# election (sources/county-sources.md, sources/sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Kern County Elections posts each local measure's documents on its page
+# "November 3, 2026, General Election", which renders its document list
+# in the browser, so each file's url is that page. For Measure Q it
+# posts the City's Resolution No. 3105 (rules for filing arguments),
+# which prints the measure in a box as it is to be submitted to the
+# voters, and the City Attorney's impartial analysis. The resolution is a
+# scan with no text layer: its pages were typed from the page images
+# into sources/county-resolution-transcription.txt, which that source
+# points at. Its question matches Resolution No. 3103 in the City's July
+# 7, 2026 agenda packet ("all revenue remaining with the City"), which
+# the script does not need and does not cite. The impartial analysis is
+# the measure's neutral explanation, the kind a state's attorney
+# general's explanatory statement is. A general sales tax has no tax
+# rate statement; the revenue estimate is the analysis's. The page posts
+# no argument for or against, and no document says none was filed.
+
+[contest]
+id = "ca-2026-11-03-shafter-measure-q"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:shafter"
+kind = "measure"
+title = "City of Shafter Measure Q: A 1% Sales Tax Until Ended by Voters"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Shafter, Resolution No. 3105, the measure to be submitted to the voters, as posted by Kern County Elections, November 3, 2026, General Election (transcribed from the scan)"
+credit = "Resolution No. 3105, City of Shafter"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-resolution-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Marco Martinez, City Attorney, City of Shafter, City Attorney's Impartial Analysis of Measure Q, 1% Transactions and Use (Sales) Tax, as posted by Kern County Elections, November 3, 2026, General Election"
+credit = "City Attorney's Impartial Analysis of Measure Q"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"

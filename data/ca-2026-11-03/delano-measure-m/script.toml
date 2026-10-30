@@ -1,0 +1,204 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the three mayor questions on
+# this ballot and how they reached it; how the mayor is chosen today;
+# what would change (the term the four-year ordinance sets, what that
+# ordinance is written to follow, from when, the vote each measure
+# needs); no cost estimate; both sides, neither of which has an argument
+# among the county's documents; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry it.
+# The council's vote is said as who voted, not as a tally.
+#
+# The one official text is the City's Resolution No. 2025-43, which
+# orders the three questions (K, L and M) submitted together and
+# attaches two ordinances: an elected mayor with a two-year term, and
+# with a four-year term. The four-year ordinance recites that a majority
+# voted for the elective office of mayor and for a four-year term; the
+# script says so, and nothing more about how the three would combine:
+# the resolution does not say what follows if Measure K fails, or if
+# both term measures pass (see [[question]]). Measure M's own question
+# asks only the term; electing the mayor is Measure K's.
+#
+# The card quotes L's box as the resolution prints it, with blank YES
+# and NO boxes and no yes/no sentences. So the card has no boxes; the
+# vote lines answer its question, and both highlight it.
+#
+# Kern County Elections' page posts no impartial analysis and no
+# argument for or against Measure M, and no document says that none was
+# filed. So the sides do not say none was filed: each says none is
+# among the documents gathered (filed = false, STANDARD.md 2.5), as for
+# Livingston T and U.
+
+contest = "ca-2026-11-03-delano-measure-m"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "M"
+title = "FOUR YEAR TERM OF ELECTIVE OFFICE OF MAYOR"
+origin = "RESOLUTION NO. 2025 - 43"
+summary = "Shall the term of office of mayor be four years?"
+
+[[section]]
+id = "what"
+heading = "Measure M"
+
+[[section.line]]
+text = "Measure M asks the voters of this city whether an elected mayor should serve a four-year term."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["Shall the term of office of mayor be four years?"]
+
+[[section]]
+id = "background"
+heading = "Three questions about the mayor"
+
+[[section.line]]
+id = "three"
+text = "The City Council put three mayor questions on this ballot: K on electing the mayor, and L and M on a two-year or a four-year term."
+sources = ["resolution", "measure-list"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-three-questions"
+
+[[section.line]]
+id = "council-vote"
+text = "Four of the five council members voted to place them, in June 2025."
+sources = ["resolution"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-mayor"
+text = "Today, the council chooses one of its own members to preside as mayor each year."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "term"
+text = "The four-year ordinance would give an elected mayor a four-year term, and each of four council members a four-year term."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "amended-page"
+
+[[section.line]]
+id = "recital"
+text = "That ordinance is written to follow a majority vote both for an elected mayor and for a four-year term."
+sources = ["resolution"]
+
+[[section.line]]
+id = "first"
+text = "The first mayoral election would be in November 2028."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "nominee-list"
+
+[[section.line]]
+id = "threshold"
+text = "Each of the three measures needs a majority vote to pass."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The county elections page for this election does not include a cost estimate for the measure."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure M appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure M appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote on Measure M answers yes to a four-year term for the mayor."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["Shall the term of office of mayor be four years?"]
+
+[[section.line]]
+text = "A no vote on Measure M answers no to a four-year term for the mayor."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["Shall the term of office of mayor be four years?"]
+
+[[question]]
+ask = "What would Measure M change?"
+lines = ["term", "recital"]
+
+[[question]]
+ask = "When would the first mayor be elected?"
+lines = ["first"]
+
+[[question]]
+ask = "What happens to the term if Measure K fails?"
+unanswered = true
+
+[[question]]
+ask = "What happens if both Measure L and Measure M pass?"
+unanswered = true

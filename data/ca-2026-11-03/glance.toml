@@ -3071,3 +3071,59 @@ source = "ballot-question"
 quote = "generating approximately $55,000 annually"
 amount = 55000
 period = "per-year"
+
+# City of Arvin Measure H: a general sales tax, so no tax rate statement;
+# the City Attorney's impartial analysis gives the revenue estimate.
+[arvin-measure-h]
+source = "impartial-analysis"
+quote = "will generate approximately $2,350,000 annually in additional revenue"
+amount = 2350000
+period = "per-year"
+
+# City of Shafter Measure Q: a general sales tax, so no tax rate
+# statement; the City Attorney's impartial analysis gives the revenue
+# estimate.
+[shafter-measure-q]
+source = "impartial-analysis"
+quote = "It is estimated that Measure Q will provide an additional $4,000,000 in annual local funding"
+amount = 4000000
+period = "per-year"
+
+# City of Delano Measure K (elective office of mayor): not a tax; Kern County Elections
+# posts only the City's resolution for it, which prints no cost estimate.
+[delano-measure-k]
+source = "ballot-question"
+status = "none-printed"
+
+# City of Delano Measure L (two-year term of an elected mayor): not a tax; Kern County Elections
+# posts only the City's resolution for it, which prints no cost estimate.
+[delano-measure-l]
+source = "ballot-question"
+status = "none-printed"
+
+# City of Delano Measure M (four-year term of an elected mayor): not a tax; Kern County Elections
+# posts only the City's resolution for it, which prints no cost estimate.
+[delano-measure-m]
+source = "ballot-question"
+status = "none-printed"
+
+# City of McFarland Measure O: not a tax; the City Attorney's impartial
+# analysis, the one analysis Kern County Elections posts, prints no cost
+# estimate.
+[mcfarland-measure-o]
+source = "impartial-analysis"
+status = "none-printed"
+
+# City of McFarland Measure P: not a tax; the City Attorney's impartial
+# analysis, the one analysis Kern County Elections posts, prints no cost
+# estimate.
+[mcfarland-measure-p]
+source = "impartial-analysis"
+status = "none-printed"
+
+# City of McFarland Measure N: not a tax; Kern County Elections posts the
+# City's resolution and the arguments, and no impartial analysis or cost
+# estimate.
+[mcfarland-measure-n]
+source = "ballot-question"
+status = "none-printed"
