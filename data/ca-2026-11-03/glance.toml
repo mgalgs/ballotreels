@@ -3502,3 +3502,12 @@ period = "per-year"
 [cudahy-measure-h]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Palos Verdes Estates Measure PVE: a special parcel tax; no tax
+# rate statement applies, and the ballot question and the City
+# Attorney's impartial analysis give the same estimate.
+[palos-verdes-estates-measure-pve]
+source = "ballot-question"
+quote = "generating approximately $8,700,000 annually"
+amount = 8700000
+period = "per-year"
