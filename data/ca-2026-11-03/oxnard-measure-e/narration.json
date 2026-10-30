@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 73.08,
+  "seconds": 72.1,
   "phrases": [
     {
       "text": "Measure E asks the voters of this city whether to remove the end date of an existing half-cent sales tax.",
@@ -29,39 +29,39 @@
       "end": 32.0
     },
     {
-      "text": "The ballot question lists uses such as public safety, 911 response, street repair and homelessness programs.",
+      "text": "The ballot question says the tax pays for general government services of the city.",
       "start": 32.66,
-      "end": 41.25
+      "end": 37.28
     },
     {
       "text": "Measure E needs a majority of the vote to pass.",
-      "start": 41.91,
-      "end": 44.96
+      "start": 37.94,
+      "end": 41.1
     },
     {
       "text": "The ballot question says the tax would provide $20 million a year.",
-      "start": 45.62,
-      "end": 50.12
+      "start": 41.76,
+      "end": 46.26
     },
     {
-      "text": "No argument for Measure E appears among the official documents gathered for this video.",
-      "start": 50.78,
-      "end": 55.64
+      "text": "The county lists supporters of Measure E, but their argument is not among the documents gathered for this video.",
+      "start": 46.92,
+      "end": 52.98
     },
     {
-      "text": "No argument against Measure E appears among the official documents gathered for this video.",
-      "start": 56.3,
-      "end": 61.62
+      "text": "The county lists opponents of Measure E, but their argument is not among the documents gathered for this video.",
+      "start": 53.64,
+      "end": 60.14
     },
     {
       "text": "A yes vote removes the end date, so the tax continues until ended by voters.",
-      "start": 62.28,
-      "end": 67.51
+      "start": 60.8,
+      "end": 66.53
     },
     {
       "text": "A no vote keeps the end date, so the tax ends in March 2029.",
-      "start": 68.17,
-      "end": 73.05
+      "start": 67.19,
+      "end": 72.07
     }
   ],
   "inputs": {
@@ -71,11 +71,11 @@
       "Under its twenty-year sunset, the tax is set to end in March 2029.",
       "The City Council placed Measure E on the ballot in June.",
       "Measure E would repeal the sunset, so the tax would continue at the same rate, under its existing rules, until ended by voters.",
-      "The ballot question lists uses such as public safety, 911 response, street repair and homelessness programs.",
+      "The ballot question says the tax pays for general government services of the city.",
       "Measure E needs a majority of the vote to pass.",
       "The ballot question says the tax would provide $20 million a year.",
-      "No argument for Measure E appears among the official documents gathered for this video.",
-      "No argument against Measure E appears among the official documents gathered for this video.",
+      "The county lists supporters of Measure E, but their argument is not among the documents gathered for this video.",
+      "The county lists opponents of Measure E, but their argument is not among the documents gathered for this video.",
       "A yes vote removes the end date, so the tax continues until ended by voters.",
       "A no vote keeps the end date, so the tax ends in March 2029."
     ],
@@ -179,11 +179,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "The ballot question lists uses such as public safety, 911 response, street repair and homelessness programs."
+        "text": "The ballot question says the tax pays for general government services of the city."
       },
       "bounds": [
         783120,
-        990720
+        895440
       ]
     },
     {
@@ -191,15 +191,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The ballot question lists uses such as public safety, 911 response, street repair and homelessness programs.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The ballot question says the tax pays for general government services of the city.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "Measure E needs a majority of the vote to pass."
       },
       "bounds": [
-        1005120,
-        1079760
+        909840,
+        987120
       ]
     },
     {
@@ -214,8 +214,8 @@
         "text": "The ballot question says the tax would provide $20 million a year."
       },
       "bounds": [
-        1094160,
-        1203600
+        1001520,
+        1110960
       ]
     },
     {
@@ -227,11 +227,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument for Measure E appears among the official documents gathered for this video."
+        "text": "The county lists supporters of Measure E, but their argument is not among the documents gathered for this video."
       },
       "bounds": [
-        1218000,
-        1336080
+        1125360,
+        1272240
       ]
     },
     {
@@ -239,15 +239,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure E appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The county lists supporters of Measure E, but their argument is not among the documents gathered for this video.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "No argument against Measure E appears among the official documents gathered for this video."
+        "text": "The county lists opponents of Measure E, but their argument is not among the documents gathered for this video."
       },
       "bounds": [
-        1350480,
-        1479600
+        1286640,
+        1444080
       ]
     },
     {
@@ -255,15 +255,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure E appears among the official documents gathered for this video.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The county lists opponents of Measure E, but their argument is not among the documents gathered for this video.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote removes the end date, so the tax continues until ended by voters."
       },
       "bounds": [
-        1494000,
-        1620960
+        1458480,
+        1597440
       ]
     },
     {
@@ -278,14 +278,14 @@
         "text": "A no vote keeps the end date, so the tax ends in March 2029."
       },
       "bounds": [
-        1635360,
-        1753920
+        1611840,
+        1730400
       ]
     }
   ],
-  "sha256": "aac96d71f0d4bf34e27e2436dcdf409a07dbe05118637613be855374591e4879",
+  "sha256": "9cbc0cd9e69afbce4de3291dbba56c5d8e1a5a127b96d8fd65553a44bf1837fe",
   "take": {
-    "sha256": "e22a4b95390bddd0f1c4ee9da34d2e3b0b48588c4c8981df3462a56279285fb8",
-    "bytes": 3507884
+    "sha256": "5846e3180514e0d4105480ca7c4bdf64bb88a8b797672755ee532e937147cac6",
+    "bytes": 3460844
   }
 }
