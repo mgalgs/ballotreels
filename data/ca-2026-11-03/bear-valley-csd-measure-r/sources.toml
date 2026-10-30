@@ -1,0 +1,80 @@
+# Archived sources for Bear Valley Community Services District Measure R,
+# the citizens' initiative to repeal the water rate increases of March 26,
+# 2026, 2026-11-03 general election (sources/county-sources.md). Every id
+# here may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Who votes: a community services district has no Census boundary, so the
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md), as for Yosemite Unified SFID No. 1 Measure W.
+#
+# Kern County Elections posts each local measure's filed documents on its
+# page "November 3, 2026, General Election", which lists them client-side,
+# so no document has its own recoverable URL: every source here cites that
+# page. The ballot question is quoted from the District Board's
+# Resolution No. 26-50 calling the election; the county's letter list
+# prints no ballot question, and the initiative ordinance's own text was
+# not posted. County Counsel's impartial analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory statement
+# is; no fiscal statement was posted.
+#
+# The resolution, the argument in favor, the argument against and the
+# rebuttal to the argument against are scans with no text layer; each was
+# typed from the page images into sources/*-transcription.txt, and the
+# sources cited point at the transcription. The rebuttal to the argument
+# in favor has a text layer. The arguments leave the measure's letter
+# blank ("Measure ____"). Neither rebuttal is cited: the sides are drawn
+# from the two arguments.
+
+[contest]
+id = "ca-2026-11-03-bear-valley-csd-measure-r"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:kern"
+kind = "measure"
+title = "Bear Valley Community Services District Measure R: Repealing the Water Rate Increases of March 2026"
+voters = "the Bear Valley Community Services District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Bear Valley Community Services District, Board of Directors Resolution No. 26-50, adopted August 12, 2026: the question submitted to the voters, page 2, as posted by Kern County Elections (transcribed from the scan)"
+credit = "Resolution No. 26-50, Bear Valley Community Services District"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-resolution-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "resolution"
+kind = "election-filing"
+publisher = "Bear Valley Community Services District, Board of Directors Resolution No. 26-50, Calling and Ordering an Election, adopted August 12, 2026, as posted by Kern County Elections (transcribed from the scan)"
+credit = "Resolution No. 26-50, Bear Valley Community Services District"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-resolution-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Kern County Counsel, Impartial Analysis by County Counsel, Bear Valley Community Services District Measure R, as posted by Kern County Elections"
+credit = "Impartial Analysis, Kern County Counsel"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure R, as filed with Kern County Elections (printed with the letter left blank; transcribed from the scan)"
+credit = "Argument in favor, Measure R"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-argument-for-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure R, as filed with Kern County Elections (printed with the letter left blank; transcribed from the scan)"
+credit = "Argument against, Measure R"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-argument-against-transcription.txt"
+retrieved = "2026-10-29"
