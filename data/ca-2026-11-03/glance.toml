@@ -4014,3 +4014,33 @@ source = "ballot-question"
 quote = "approximately $23,000,000 annually on average"
 amount = 23000000
 period = "per-year"
+
+# City of Simi Valley Measure A: a general transient occupancy tax; no
+# tax rate statement applies, and no impartial analysis was archived.
+# The figure is the one its ballot question (Resolution No. 2026-25,
+# Section 2) prints.
+[simi-valley-measure-a]
+source = "ballot-question"
+quote = "providing approximately $400,000 annually"
+amount = 400000
+period = "per-year"
+
+# City of Oxnard Measure E: continues an existing general sales tax; no
+# tax rate statement applies, and no impartial analysis was archived.
+# The figure is the one its ballot question (the resolution placing it,
+# Section 4, transcribed from the scan) prints. It continues an existing
+# tax, so no direction is given.
+[oxnard-measure-e]
+source = "ballot-question"
+quote = "providing $20,000,000 annually"
+amount = 20000000
+period = "per-year"
+
+# Allan Hancock Joint Community College District Measure H (Ventura
+# County): the district's Tax Rate Statement, as Santa Barbara County's
+# guide prints it, its total debt service (the bonds are $290 million).
+[allan-hancock-measure-h-ventura]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $618,176,000."
+amount = 618176000
+period = "unstated"

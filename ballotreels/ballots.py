@@ -512,6 +512,21 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 2526/20",
                      "ca-2026-11-03-united-water-measure-d":
                          "Resolution No. 2026-13",
+                     # Ventura County's guide could not be read. Its city
+                     # measures from local records quote the ballot
+                     # question from the resolution placing each, named as
+                     # headed; the Allan Hancock bond's card quotes the
+                     # guide of Santa Barbara County, which administers
+                     # the district's election, as that county's does.
+                     "ca-2026-11-03-simi-valley-measure-a":
+                         "Resolution No. 2026-25",
+                     # (Oxnard's resolution is an agenda copy, its number
+                     # left blank, so it is named by its title)
+                     "ca-2026-11-03-oxnard-measure-e":
+                         "Resolution Ordering an Election",
+                     "ca-2026-11-03-allan-hancock-measure-h-ventura":
+                         "Santa Barbara County Voter Information Guide "
+                         "and Sample Ballot",
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.
