@@ -40,3 +40,33 @@ The same attachment also gives an "INITIAL DRAFT" without the cost clause. **Whi
 - "The City would impose a rental housing fee on landlords to fund the program, initially, $120 / year for units not entirely or partially exempt"
 
 Related: Legistar matter 26-470 (Council 2026-09-21, "ORD 2026-010") adopted a separate City "Rent Review Program effective January 1, 2027"; it is not part of Measure S.
+
+## Feed documents retrieved 2026-10-30
+
+```
+Measure S — City of San Pablo, November 3, 2026 General Election
+Retrieved 2026-10-30 via the Internet Archive Wayback Machine (contracostavote.gov answers
+HTTP 202 — bot-challenge interstitial — to a direct fetch; this page had been crawled by
+archive.org before/through the challenge, 2026-10-09).
+
+county-vig-page.html
+  Contra Costa County Registrar of Voters' Voter Information Guide page for Measure S.
+  Contains, in order:
+    - MEASURE S (official ballot question, verbatim — this is the FINAL adopted wording;
+      resolves the "initial draft vs. revised" ambiguity noted in the existing sources.md,
+      and confirms the cost clause ($1,080,000 to $2,360,000 annually) was in the adopted
+      version)
+    - CITY ATTORNEY'S IMPARTIAL ANALYSIS OF MEASURE S
+    - ARGUMENT IN FAVOR OF MEASURE S (signed)
+    - REBUTTAL TO ARGUMENT IN FAVOR OF MEASURE S (signed)
+    - ARGUMENT AGAINST MEASURE S (signed)
+    - REBUTTAL TO ARGUMENT AGAINST MEASURE S (signed)
+  No "FULL TEXT OF MEASURE S" section on this page — the full initiative ordinance text was
+  already archived separately from Legistar (san-pablo/measure-s/sanpablo-S-initiative-ordinance.pdf).
+  Wayback capture: http://web.archive.org/web/20261009091234/https://www.contracostavote.gov/m9011-en-2/
+  Original URL: https://www.contracostavote.gov/m9011-en-2/
+
+This page completes the Measure S package: ballot question (final), impartial analysis, and
+both arguments with both rebuttals. No tax rate statement applies (fee-funded initiative,
+not a bond).
+```
