@@ -1,0 +1,54 @@
+# Archived sources for Pacific Grove Unified School District Measure K,
+# 2026-11-03 general election (sources/county-sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The County of Monterey Elections Department posts each local measure's
+# letter, vote threshold and ballot question on its "List of Local
+# Measures" page, with links to each filed document. The card quotes the
+# ballot question from that page. County Counsel's impartial analysis is
+# the measure's neutral explanation, the kind a state's attorney
+# general's explanatory statement is. A flat parcel tax has no tax rate
+# statement; the revenue estimate is the ballot question's. Only an
+# argument in favor was filed (the list links no argument against and no
+# rebuttal). The full text (sources/county-full-text.pdf) is archived but
+# not cited: the analysis carries the explanation.
+#
+# The county's PDFs are scans with no text layer. The passages cited were
+# typed from the page images into sources/county-*-transcription.txt,
+# each naming the PDF and URL it copies; those sources point at the
+# transcription, and their url at the scan.
+
+[contest]
+id = "ca-2026-11-03-pacific-grove-unified-measure-k"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:pacific_grove_unified_school_district"
+kind = "measure"
+title = "Pacific Grove Unified School District Measure K: $85 Parcel Tax for Five Years"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "County of Monterey Elections Department, List of Local Measures, November 3, 2026 General Election: Measure K - Pacific Grove Unified School District"
+credit = "List of Local Measures, County of Monterey Elections"
+url = "https://www.countyofmonterey.gov/government/departments-a-h/elections/list-of-local-measures"
+file = "sources/county-measure-list.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Monterey County Counsel, Impartial Analysis of Measure K, as posted by the County of Monterey Elections Department (transcribed from the scan)"
+credit = "Impartial Analysis, Monterey County Counsel"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147797/639222444113000000"
+file = "sources/county-impartial-analysis-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure K, as filed with the County of Monterey Elections Department (transcribed from the scan; no argument against was filed)"
+credit = "Argument in favor, Measure K"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147795/639222444110970000"
+file = "sources/county-argument-for-transcription.txt"
+retrieved = "2026-10-29"
