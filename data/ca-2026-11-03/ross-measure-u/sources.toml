@@ -1,0 +1,74 @@
+# Archived sources for Town of Ross Measure U, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Marin County's Voter Information Guide could not be fetched
+# (marincounty.gov blocked the download), so no impartial analysis,
+# argument or rebuttal was reached, and no document says whether any
+# argument was filed (Section 6 of the resolution only provides for one
+# in favor on behalf of the Council). These are the Town's files for the
+# Town Council meeting of July 9, 2026, item 16: the staff report, with
+# Resolution No. 2637 (Attachment 1) and its Exhibit A, Ordinance No.
+# 736, the measure's text, all in one PDF; and the final minutes of that
+# meeting, which record the resolution's adoption. The item was
+# continued from June 11 to revise the ballot language; the question
+# quoted is the one Section 3 of the July 9 resolution prints. The
+# Town's election page (sources/ross-nov2026.html) gives the letter U.
+#
+# The staff report is the Town staff's material: it is cited only for
+# plain facts (the current tax's end date and this year's rate). The
+# resolution's recitals are cited only for the tax's history (voters
+# last approved it in 2022), never for its account of the service.
+
+[contest]
+id = "ca-2026-11-03-ross-measure-u"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:ross"
+kind = "measure"
+title = "Town of Ross Measure U: Continuing the Paramedic Services Special Tax for Four Years"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Town of Ross, Resolution No. 2637, A Resolution of the Ross Town Council Calling for a Municipal Election to Be Held in Its Jurisdiction on November 3, 2026, for the Purpose of Submitting to the Voters a Measure Authorizing the Continuation of a Special Parcel Tax for Paramedic Services (Attachment 1 to Town Council agenda item 16, July 9, 2026): Section 3, the ballot question, page 2"
+credit = "Resolution No. 2637, Town of Ross"
+url = "https://www.townofrossca.gov/sites/default/files/fileattachments/town_council/meeting/4582/final_staff_report_rvpa_tax_with_ta_rvpa_and_cj_review_web.pdf"
+file = "sources/2026-07-09-item16-staff-report-res-2637-ord-736.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-title-summary"
+publisher = "Town of Ross, Resolution No. 2637, A Resolution of the Ross Town Council Calling for a Municipal Election to Be Held in Its Jurisdiction on November 3, 2026, for the Purpose of Submitting to the Voters a Measure Authorizing the Continuation of a Special Parcel Tax for Paramedic Services (Attachment 1 to Town Council agenda item 16, July 9, 2026), pages 1 to 4"
+credit = "Resolution No. 2637, Town of Ross"
+url = "https://www.townofrossca.gov/sites/default/files/fileattachments/town_council/meeting/4582/final_staff_report_rvpa_tax_with_ta_rvpa_and_cj_review_web.pdf"
+file = "sources/2026-07-09-item16-staff-report-res-2637-ord-736.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Town of Ross, Ordinance No. 736, An Ordinance of the Town of Ross, California, Amending Chapter 3.30 of the Ross Municipal Code to Continue the Levy of a Special Tax to Finance Paramedic Services (Exhibit A to Resolution No. 2637, July 9, 2026), pages 6 and 7"
+credit = "Ordinance No. 736, Town of Ross"
+url = "https://www.townofrossca.gov/sites/default/files/fileattachments/town_council/meeting/4582/final_staff_report_rvpa_tax_with_ta_rvpa_and_cj_review_web.pdf"
+file = "sources/2026-07-09-item16-staff-report-res-2637-ord-736.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "staff-report"
+kind = "official-title-summary"
+publisher = "Town of Ross, Staff Report, Agenda Item No. 16, July 9, 2026, from the Town Manager and the Ross Valley Fire Department: Adopt Resolution No. 2637 Calling for an Election for the Passage of the Ross Valley Paramedic Authority Four-Year Special Parcel Tax, pages 1 to 3"
+credit = "Town Council staff report, Town of Ross"
+url = "https://www.townofrossca.gov/sites/default/files/fileattachments/town_council/meeting/4582/final_staff_report_rvpa_tax_with_ta_rvpa_and_cj_review_web.pdf"
+file = "sources/2026-07-09-item16-staff-report-res-2637-ord-736.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "minutes"
+kind = "public-record"
+publisher = "Town of Ross, Minutes of the Regular Meeting of the Ross Town Council, July 9, 2026 (final): item 16, pages 24 and 25"
+credit = "Town Council minutes, Town of Ross"
+url = "https://www.townofrossca.gov/sites/default/files/fileattachments/town_council/meeting/4582/july_9_2026_final_regular_minutes.pdf"
+file = "sources/2026-07-09-town-council-minutes-final.pdf"
+retrieved = "2026-10-30"

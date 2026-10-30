@@ -3771,3 +3771,12 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $15,113,922."
 amount = 15113922
 period = "unstated"
+
+# Town of Ross Measure U: no impartial analysis or fiscal statement was
+# archived; the revenue estimate, as the ballot question in Resolution
+# No. 2637 gives it.
+[ross-measure-u]
+source = "ballot-question"
+quote = "generating approximately $111,000 annually"
+amount = 111000
+period = "per-year"
