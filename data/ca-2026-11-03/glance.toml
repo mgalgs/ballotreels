@@ -3420,3 +3420,13 @@ source = "ballot-question"
 quote = "raising $2,620,000 annually"
 amount = 2620000
 period = "per-year"
+
+# City of Bell Gardens Measure W: the sale of the City's water system, not
+# a tax; the ballot question prints no figure, and the City Attorney's
+# impartial analysis gives the sale price.
+[bell-gardens-measure-w]
+source = "impartial-analysis"
+quote = "In exchange, Golden State would pay the City $41 million, which the City may use to fund any public purpose or service."
+amount = 41000000
+period = "unstated"
+direction = "revenue-gain"
