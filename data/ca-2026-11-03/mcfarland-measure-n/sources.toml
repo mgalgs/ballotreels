@@ -1,0 +1,68 @@
+# Archived sources for City of McFarland Measure N, 2026-11-03 general
+# election (sources/county-sources.md, sources/sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Kern County Elections posts each local measure's documents on its page
+# "November 3, 2026, General Election", which renders its document list
+# in the browser, so each file's url is that page. For Measure N it
+# posts the City's Resolution No. 2026-83 (a nunc pro tunc clerical
+# correction of Resolution No. 2026-75, "Hume Rule" to "Home Rule", that
+# also approves the proposed charter, orders it submitted and gives the
+# ballot question in Section 5), the argument in favor, the argument
+# against, and a rebuttal to the argument against; no impartial analysis
+# and no rebuttal to the argument in favor. The resolution's file omits
+# its Exhibit A, the charter. All four are scans with no text layer (the
+# rebuttal's last page has one; its text pages do not): their pages were
+# typed from the page images into sources/county-*-transcription.txt,
+# which these sources point at. The script cites the two primary
+# arguments; the rebuttal is transcribed beside them and not cited.
+#
+# The City's own copies archived earlier (Resolutions No. 2026-50 and
+# 2026-75, scans, and a March 2026 committee draft of the charter, not
+# confirmed to be the final text) are superseded by the county's copy
+# and not cited: the script states nothing of the charter's contents in
+# its own voice.
+
+[contest]
+id = "ca-2026-11-03-mcfarland-measure-n"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:mcfarland"
+kind = "measure"
+title = "City of McFarland Measure N: Adopting a City Charter"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of McFarland, Resolution No. 2026-83, Section 5, Ballot Question, as posted by Kern County Elections, November 3, 2026, General Election (transcribed from the scan)"
+credit = "Resolution No. 2026-83, City of McFarland"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-resolution-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City of McFarland, Resolution No. 2026-83, adopted July 8, 2026, amending Resolution No. 2026-75 and confirming submission of the proposed City Charter to the voters, as posted by Kern County Elections, November 3, 2026, General Election (transcribed from the scan)"
+credit = "Resolution No. 2026-83, City of McFarland"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-resolution-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure N, as filed with Kern County Elections, November 3, 2026, General Election (transcribed from the scan)"
+credit = "Argument in Favor of Measure N"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-argument-for-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure N, as filed with Kern County Elections, November 3, 2026, General Election (transcribed from the scan)"
+credit = "Argument Against Measure N"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-argument-against-transcription.txt"
+retrieved = "2026-10-29"
