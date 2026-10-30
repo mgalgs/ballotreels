@@ -1,0 +1,209 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot (a
+# petition, its valid signatures against those needed); the law today
+# and what it covers; what would change (existing operations stay, new
+# ones stay banned, a yearly certification, the vote it needs); no cost
+# estimate; both sides, neither of which has an argument among the
+# county's documents; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card, title and chart
+# title carry it. "CAFO" is said in words, never as the acronym (an
+# acronym's plural is misheard, standard/speakability.txt).
+#
+# The card quotes the initiative's ballot question as Resolution No.
+# 2026-89 prints it, the county's copy, with blank Yes and No boxes and
+# no yes/no sentences. So the card has no boxes; the vote lines give the
+# impartial analysis's own meanings, and both highlight the same phrase
+# of the question.
+#
+# The analysis says the measure "would require registration for existing
+# CAFOs", while the initiative text archived by earlier research (a city
+# agenda copy, not the county's) strikes the registration language; the
+# script says neither. It names no dairy or owner: the question says
+# "the existing dairy", and the proponent is named only in a city staff
+# report, not in a county document.
+#
+# Measure P, on the same ballot, would let the City Council amend the
+# same chapter of city law. Neither measure's county documents mention
+# the other, so this script does not connect them (see [[question]]).
+#
+# Kern County Elections' page posts no argument for or against Measure O,
+# and no document says that none was filed. So the sides do not say none
+# was filed: each says none is among the documents gathered (filed =
+# false, STANDARD.md 2.5), as for Livingston T and U.
+
+contest = "ca-2026-11-03-mcfarland-measure-o"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "O"
+title = "CITY OF MCFARLAND INITIATIVE ORDINANCE"
+origin = "RESOLUTION NO. 2026-89"
+summary = "Shall the measure to allow the continued operation of the existing dairy in the City of McFarland be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure O"
+
+[[section.line]]
+text = "Measure O asks the voters of this city whether to let the existing dairy keep operating."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["allow the continued operation of the existing dairy"]
+
+[[section]]
+id = "background"
+heading = "How it reached the ballot"
+
+[[section.line]]
+id = "petition"
+text = "Measure O is a citizen initiative, placed on the ballot by a petition with 632 valid signatures, where 524 were needed."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "bars"
+title = "Valid petition signatures, Measure O in McFarland"
+source = "resolution"
+unit = ""
+labels = ["Needed", "Certified"]
+values = [524, 632]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-law"
+text = "Today, city law prohibits concentrated animal feeding operations, and gives existing ones a period to phase out."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "dairy-barn"
+
+[[section.line]]
+id = "definition"
+text = "These are places where animals, such as dairy cattle, are confined and fed for 45 days or more in any 12 months."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure O would let existing operations keep running, and end the phase-out period."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "amended-page"
+
+[[section.line]]
+id = "new"
+text = "New operations would still be prohibited everywhere in the city."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+id = "certify"
+text = "Existing operations would have to certify each year that they meet state and federal requirements."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "inspection-clipboard"
+
+[[section.line]]
+text = "Measure O needs a majority vote to pass."
+sources = ["impartial-analysis", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The county elections page for this election does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure O appears among the official documents gathered for this video."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "list"
+source = "impartial-analysis"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure O appears among the official documents gathered for this video."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "list"
+source = "impartial-analysis"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote lets existing operations keep running, ends the phase-out period, and requires a yearly certification."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["allow the continued operation of the existing dairy"]
+
+[[section.line]]
+text = "A no vote keeps the current rules, which prohibit these operations and phase out existing ones."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["allow the continued operation of the existing dairy"]
+
+[[question]]
+ask = "What is a concentrated animal feeding operation?"
+lines = ["definition"]
+
+[[question]]
+ask = "Would new dairies or feedlots be allowed?"
+lines = ["new"]
+
+[[question]]
+ask = "Who put this measure on the ballot?"
+lines = ["petition"]
+
+[[question]]
+ask = "How does Measure O relate to Measure P on the same ballot?"
+unanswered = true

@@ -1,0 +1,59 @@
+# Archived sources for City of McFarland Measure O, 2026-11-03 general
+# election (sources/county-sources.md, sources/sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Kern County Elections posts each local measure's documents on its page
+# "November 3, 2026, General Election", which renders its document list
+# in the browser, so each file's url is that page. For Measure O it
+# posts the City's Resolution No. 2026-89, which calls the election,
+# prints the initiative's ballot question in a box and records how the
+# petition qualified, and the City Attorney's impartial analysis (headed
+# "Impartial Analysis by City Counsel"). The resolution's file omits its
+# Exhibit A, the initiative's text. The resolution is a scan with no text
+# layer: its pages were typed from the page images into
+# sources/county-resolution-transcription.txt, which those sources point
+# at. (Its question is in Section 1 on page 2, and its page 4 is blank;
+# county-sources.md has those pages the other way.) The resolution's
+# own title says "prohibiting" such operations, while its question and
+# the analysis say the measure allows the existing ones; the script
+# follows the question and the analysis, and quotes neither title. The
+# impartial analysis is the measure's neutral explanation, the kind a
+# state's attorney general's explanatory statement is. The City's agenda
+# packet copies archived earlier are not cited. The page posts no
+# argument for or against, and no document says none was filed. Not a
+# tax: no fiscal statement applies, and none was posted.
+
+[contest]
+id = "ca-2026-11-03-mcfarland-measure-o"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:mcfarland"
+kind = "measure"
+title = "City of McFarland Measure O: Allowing the Existing Dairy to Continue Operating"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of McFarland, Resolution No. 2026-89, Section 1, the proposed initiative measure, as posted by Kern County Elections, November 3, 2026, General Election (transcribed from the scan)"
+credit = "Resolution No. 2026-89, City of McFarland"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-resolution-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City of McFarland, Resolution No. 2026-89, adopted July 22, 2026, calling the election and submitting the initiative ordinance, as posted by Kern County Elections, November 3, 2026, General Election (transcribed from the scan)"
+credit = "Resolution No. 2026-89, City of McFarland"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-resolution-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Nathan M. Hodges, City Attorney, City of McFarland, Impartial Analysis by City Counsel, Measure O, as posted by Kern County Elections, November 3, 2026, General Election"
+credit = "Impartial Analysis of Measure O, City of McFarland"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"
