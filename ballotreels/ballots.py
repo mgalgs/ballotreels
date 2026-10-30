@@ -370,6 +370,11 @@ BALLOTS: dict[str, Ballot] = {
                          "Notice of Special Measure Election for the City of Clayton",
                      "ca-2026-11-03-clayton-measure-n":
                          "Notice of Special Measure Election for the City of Clayton",
+                     # and Acalanes Union High's card quotes the ballot
+                     # question from the Governing Board's resolution,
+                     # named as its first page titles it
+                     "ca-2026-11-03-acalanes-high-measure-w":
+                         "Resolution No. 26-27-01",
                      **{f"ca-2026-11-03-{x}":
                         "Santa Cruz County Voter Information Guide"
                         for x in ("santa-cruz-county-measure-d",
@@ -840,6 +845,7 @@ BALLOTS: dict[str, Ballot] = {
                                      "alum-rock-measure-o",
                                      "alum-rock-measure-p",
                                      "orchard-measure-r",
+                                     "cambrian-measure-q",
                                      "el-camino-healthcare-measure-s")},
                      # Merced County Elections posts each measure's
                      # ballot question, impartial analysis, full text,
