@@ -2663,3 +2663,13 @@ period = "unstated"
 [mountain-view-measure-e]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Mountain View Measure F: a general tax, so no tax rate
+# statement; the ballot question on the Santa Clara County Registrar of
+# Voters' List of Local Measures gives the total yearly revenue at the
+# 15% maximum.
+[mountain-view-measure-f]
+source = "ballot-question"
+quote = "generating up to $5,200,000 annually until ended by voters"
+amount = 5200000
+period = "per-year"
