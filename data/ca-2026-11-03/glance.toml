@@ -3734,3 +3734,40 @@ source = "ballot-question"
 quote = "providing approximately $16,000,000 annually until ended by voters"
 amount = 16000000
 period = "per-year"
+
+# Three Rivers Union Elementary School District Measure Y: a parcel tax,
+# so no tax rate statement, and no impartial analysis was archived; the
+# revenue figure its ballot question (the Tulare County Registrar of
+# Voters' notice of election) prints.
+[three-rivers-union-elementary-measure-y]
+source = "notice"
+quote = "raising approximately $276,000 annually"
+amount = 276000
+period = "per-year"
+
+# Visalia Unified School District Measure Z: the District's Tax Rate
+# Statement (Exhibit C to Resolution No. 26-27-05, as the Tulare County
+# Registrar of Voters posted it), its total debt service.
+[visalia-unified-measure-z]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the Bonds are issued and sold is $313,172,174."
+amount = 313172174
+period = "unstated"
+
+# Exeter Unified School District Measure T: the District's Tax Rate
+# Statement (Appendix C to Resolution No. 26-27-04, as the Tulare County
+# Registrar of Voters posted it), its total debt service.
+[exeter-unified-measure-t]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $48,428,002."
+amount = 48428002
+period = "unstated"
+
+# Pixley Union Elementary School District Measure W: the District's Tax
+# Rate Statement (Appendix C to Resolution No. 26.05, as the Tulare
+# County Registrar of Voters posted it), its total debt service.
+[pixley-union-elementary-measure-w]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $15,113,922."
+amount = 15113922
+period = "unstated"

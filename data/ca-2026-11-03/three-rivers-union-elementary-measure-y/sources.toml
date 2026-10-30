@@ -1,0 +1,48 @@
+# Archived sources for Three Rivers Union Elementary School District
+# Measure Y, 2026-11-03 general election (sources/sources.md). Every id
+# here may be cited by script.toml. `kind` must be one the standard
+# allows (docs/STANDARD.md, section 1).
+#
+# The Tulare County voter guide could not be fetched (tularecounty.ca.gov
+# answers a Cloudflare challenge), so no impartial analysis, argument or
+# rebuttal was archived, and no document says whether any argument was
+# filed. The Registrar's measure page, in an Internet Archive capture of
+# October 9, 2026, prints the Registrar's notice of the election, with
+# the ballot question, the vote needed and the argument deadlines; the
+# card quotes the question from it, and it wins over the District's
+# drafts. The page links the Board's Resolution No. 27-01 (signed,
+# adopted July 8, 2026; its number is handwritten, read from the page
+# image), whose Exhibit A is the measure's full text: every neutral line
+# on what the tax does rests on it.
+#
+# The District's unsigned draft of the resolution and its exhibits
+# (resolution-parcel-tax-election-draft.pdf, ballot-label_exhibit-B_p11.pdf,
+# full-text_exhibit-A_pp7-10.pdf) are superseded by the Registrar's copy
+# and are not cited. The resolution's recitals and Exhibit A's opening
+# paragraphs are the Board's findings and case for the tax, and are not
+# cited.
+
+[contest]
+id = "ca-2026-11-03-three-rivers-union-elementary-measure-y"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:three_rivers_union_elementary_school_district"
+kind = "measure"
+title = "Three Rivers Union Elementary School District Measure Y: $120 Parcel Tax for Eight Years for School Operations and Athletic Fields"
+
+[[source]]
+id = "notice"
+kind = "official-title-summary"
+publisher = "Tulare County Registrar of Voters, Publication Notice of a Special Parcel Tax Election and Notice of Date Fixed for Submitting Arguments for the Three Rivers Union Elementary School District, dated July 29, 2026, on the Registrar's page “Three Rivers Union Elementary School District Parcel Tax Measure Information” (Internet Archive capture of October 9, 2026)"
+credit = "Notice of Election, Tulare County Registrar of Voters"
+url = "http://web.archive.org/web/20261009122132/https://tularecounty.ca.gov/elections/three-rivers-union-elementary-school-district-parcel-tax-measure-information"
+file = "sources/county-measure-page.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Board of Trustees of the Three Rivers Union Elementary School District, Resolution No. 27-01, adopted July 8, 2026, with Exhibit A, Full Text of Ballot Measure (pages A-7 to A-10), as posted by the Tulare County Registrar of Voters"
+credit = "Resolution No. 27-01, Three Rivers Union Elementary School District"
+url = "https://tc-web.widen.net/s/n6ffdztd9c/resolution-27-01-ordering-parcel-tax-election"
+file = "sources/county-resolution-27-01-ordering-parcel-tax-election.pdf"
+retrieved = "2026-10-30"

@@ -1115,6 +1115,16 @@ BALLOTS: dict[str, Ballot] = {
                      # headed
                      "ca-2026-11-03-tulare-measure-a":
                          "Notice of a Transaction and Use Tax Election",
+                     # The Tulare County Registrar of Voters' page for
+                     # each of these school district measures prints its
+                     # notice of election, whose ballot question the card
+                     # quotes
+                     **{f"ca-2026-11-03-{slug}":
+                        "Tulare County Registrar of Voters, Notice of Election"
+                        for slug in ("visalia-unified-measure-z",
+                                     "exeter-unified-measure-t",
+                                     "pixley-union-elementary-measure-w",
+                                     "three-rivers-union-elementary-measure-y")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
