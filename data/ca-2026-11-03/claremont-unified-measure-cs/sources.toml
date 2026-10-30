@@ -1,0 +1,53 @@
+# Archived sources for Claremont Unified School District Measure CS,
+# 2026-11-03 general election (sources/la-sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" prints each measure's letter, vote threshold and
+# ballot question, and says in words who filed the primary arguments
+# ("Supporters: ... Opponents: ..."). The card quotes the ballot question
+# from it (ballot-question), and the sides cite it as the Registrar's
+# statement of filing (measure-list). The same excerpt backs both.
+#
+# No impartial analysis, no tax rate statement and no argument text was
+# staged: the resolution delegates the tax rate statement's filing to the
+# Registrar, and no copy was found. The measure is explained from the
+# district's Resolution No. 23-2026, a text PDF, and its Exhibit B (the
+# full text ballot proposition and project list). The one tax estimate is
+# the ballot question's own. The June 18, 2026 board agenda
+# (staff-report.html) adds no fact the script needs and is not cited.
+
+[contest]
+id = "ca-2026-11-03-claremont-unified-measure-cs"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:claremont_unified_school_district"
+kind = "measure"
+title = "Claremont Unified School District Measure CS: $77 Million School Repair Bond"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026 (Rev. 9/22/26): Claremont Unified School District, Measure CS"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "measure-list"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026 (Rev. 9/22/26): Measure CS, its supporters and opponents as filed"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Claremont Unified School District Board of Education, Resolution No. 23-2026 ordering an election, with Exhibit B, Full Text Ballot Proposition and Project List"
+credit = "Resolution No. 23-2026, Claremont Unified School District"
+url = "https://cusd-claremont.community.highbond.com/document/a89c9993-c97f-4bd5-8ef2-7368714f1497/"
+file = "sources/resolution.pdf"
+retrieved = "2026-10-30"

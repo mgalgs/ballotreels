@@ -3154,3 +3154,12 @@ source = "tax-statement"
 quote = "would be required to be repaid if all the bonds are issued and sold will be approximately $161,348,832."
 amount = 161348832
 period = "unstated"
+
+# Claremont Unified School District Measure CS: a school bond; no tax rate
+# statement was staged, so the one estimate is the ballot question's own
+# yearly levy, as the Registrar's list prints it.
+[claremont-unified-measure-cs]
+source = "ballot-question"
+quote = "levying approximately $32/$100,000 of assessed value ($5,000,000 annually)"
+amount = 5000000
+period = "per-year"
