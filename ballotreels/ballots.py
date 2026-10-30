@@ -803,6 +803,19 @@ BALLOTS: dict[str, Ballot] = {
                      "ca-2026-11-03-plumas-lake-elementary-measure-h":
                          "Measure H — Plumas Lake Elementary School "
                          "District",
+                     # The Santa Clara County Registrar of Voters posts
+                     # each measure's letter, ballot question and vote
+                     # threshold, with its filed impartial analysis and
+                     # arguments, on its List of Local Measures page
+                     **{f"ca-2026-11-03-{slug}":
+                        "Santa Clara County Registrar of Voters, List of "
+                        "Local Measures"
+                        for slug in ("santa-clara-county-measure-rtm",
+                                     "palo-alto-measure-j",
+                                     "santa-clara-measure-c",
+                                     "sunnyvale-measure-g",
+                                     "sunnyvale-measure-h",
+                                     "sunnyvale-measure-i")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
