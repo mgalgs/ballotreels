@@ -30,8 +30,10 @@
 # in the supporters' argument, so the neutral sections leave them out
 # (STANDARD.md 6.3).
 #
-# No argument against Measure A was filed: the county posts none, and
-# its List of Ballot Measures shows none. The no side says so plainly;
+# No argument against Measure A is posted by the county. (Its List of
+# Ballot Measures, printed before arguments were due, leaves every
+# argument field blank, so it shows nothing either way.) The no side
+# says none appears among the documents gathered, as Livingston T does;
 # its section is marked filed = false.
 
 contest = "ca-2026-11-03-le-grand-union-high-measure-a"
@@ -141,13 +143,13 @@ side = "no"
 filed = false
 
 [[section.line]]
-text = "No argument against Measure A was filed with the county elections office, which posts only the argument in favor of the measure."
+text = "No argument against Measure A appears among the official documents gathered for this video; only the argument in favor does."
 sources = ["measure-list", "argument-for"]
 
 [section.line.visual]
 kind = "list"
 source = "measure-list"
-items = ["No argument against was submitted"]
+items = ["No argument against was found"]
 
 [[section]]
 id = "vote"

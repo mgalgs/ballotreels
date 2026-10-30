@@ -19,9 +19,11 @@
 # states what the measure does and leaves the reasons out, as Livingston
 # T and U do, so the council's case is not heard with no reply beside it.
 #
-# No argument for or against Measure V was filed: the county posts none,
-# and its List of Ballot Measures shows none. Each side says so plainly
-# (filed = false, STANDARD.md 2.5).
+# No argument for or against Measure V is posted by the county. Its List
+# of Ballot Measures (printed August 7, before arguments were due) leaves
+# every argument field blank for all nine measures, so it is no evidence
+# either way. Each side says, as Livingston T and U do, that none appears
+# among the documents gathered (filed = false, STANDARD.md 2.5).
 
 contest = "ca-2026-11-03-los-banos-measure-v"
 template = "measure"
@@ -114,13 +116,13 @@ side = "yes"
 filed = false
 
 [[section.line]]
-text = "No argument for Measure V was filed with the county elections office."
+text = "No argument for Measure V appears among the official documents gathered for this video."
 sources = ["measure-list"]
 
 [section.line.visual]
 kind = "list"
 source = "measure-list"
-items = ["No argument for was submitted"]
+items = ["No argument for was found"]
 
 [[section]]
 id = "no"
@@ -129,13 +131,13 @@ side = "no"
 filed = false
 
 [[section.line]]
-text = "No argument against Measure V was filed with the county elections office."
+text = "No argument against Measure V appears among the official documents gathered for this video."
 sources = ["measure-list"]
 
 [section.line.visual]
 kind = "list"
 source = "measure-list"
-items = ["No argument against was submitted"]
+items = ["No argument against was found"]
 
 [[section]]
 id = "vote"
