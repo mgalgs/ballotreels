@@ -1,0 +1,223 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot; what
+# would change (the rate and its dates, where the money goes and what it
+# may pay for, the oversight, the vote it needs); the ballot question's
+# revenue estimate, and that no fiscal impact statement was required;
+# both sides, neither of which has an archived argument; what a vote
+# does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this county", and the park district is
+# "the county's regional park and open space district". The card and
+# title carry the names. No person is named. "Counsel" is heard as
+# "Council" (standard/speakability.txt), and no impartial analysis was
+# archived anyway.
+#
+# No impartial analysis was archived: every neutral line rests on the
+# Board's resolution (its ballot question and recitals), the Board's
+# minutes and the initiative's own text, and only on what they enact or
+# record, never on the initiative's findings (its Section 2), which are
+# the proponents' text, nor on the ballot question's list of purposes.
+# The initiative is a scan: its lines cite the transcription of the
+# passages used (sources/initiative-text-transcription.txt). The vote
+# needed is said as the text says it ("a majority of the electors voting
+# on the measure"), not inferred from the kind of tax.
+#
+# The $23,000,000 a year is the ballot question's estimate, attributed to
+# it; the resolution says no fiscal impact statement by the County
+# Auditor is required, and none was archived. No archived source states
+# the county's general fund budget, so the figure has no scale
+# (STANDARD.md 6.5; left open, under [[question]]).
+#
+# No argument for or against Measure B was archived, and no document
+# says whether any was filed (the resolution only sets the deadlines).
+# So the sides do not say none was filed: each says none is among the
+# documents gathered (filed = false, STANDARD.md 2.5), as for Walnut
+# Creek Measure U. The county's replacement Voter Information Guide for
+# Measure B is not mentioned: no archived record says what it changed.
+
+contest = "ca-2026-11-03-napa-county-measure-b"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "B"
+title = "Shall Napa County Ordinance No. 2026-01 be adopted?"
+origin = "NAPA COUNTY BOARD OF SUPERVISORS"
+summary = "To reduce the risk of catastrophic wildfires; remove dry brush, dead trees, and fire hazards; establish firebreaks and fire-safe evacuation routes for residents and first responders; preserve natural open spaces, and protect water quality/supplies and land around lakes, rivers, and streams; shall Napa County's one-half cent sales tax measure be adopted, providing $23,000,000 annually for 18 years, with oversight, annual audits and local control?"
+
+[[section]]
+id = "what"
+heading = "Measure B"
+
+[[section.line]]
+text = "Measure B asks the voters of this county whether to add a one-half percent sales tax for wildfire preparedness, watersheds and open space."
+sources = ["ballot-question", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["one-half cent sales tax measure"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+id = "petition"
+text = "Measure B is a citizens' initiative, placed on the ballot by the Board of Supervisors on June 16, after its petition signatures were certified."
+sources = ["ballot-question", "minutes"]
+
+[section.line.visual]
+kind = "illustration"
+name = "neighborhood-petition"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "dates"
+text = "The tax would run from April 2027 to March 2045."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section.line]]
+id = "split"
+text = "Half the money would go to the regional park and open space district, and half to the Board of Supervisors."
+sources = ["text"]
+
+[section.line.visual]
+kind = "bars"
+title = "Shares of the Measure B tax money"
+source = "text"
+unit = "%"
+labels = ["Regional Park and Open Space District", "Board of Supervisors"]
+values = [50, 50]
+
+[[section.line]]
+id = "uses"
+text = "The money would pay for wildfire preparedness, such as fuel clearing and fuel breaks, and for protecting watersheds and open space."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hillside-brush-clearing"
+
+[[section.line]]
+id = "oversight"
+text = "A committee of nine residents would review the spending each year."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "inspection-clipboard"
+
+[[section.line]]
+id = "threshold"
+text = "The initiative's text says the tax needs a majority of the votes cast."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "fiscal"
+heading = "What it would raise"
+
+[[section.line]]
+id = "revenue"
+text = "The ballot question estimates the tax would raise $23 million a year."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["providing $23,000,000 annually for 18 years"]
+
+[[section.line]]
+id = "no-statement"
+text = "The resolution says no fiscal impact statement by the county auditor is required."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure B appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure B appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the one-half cent sales tax for 18 years."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["one-half cent sales tax measure be adopted"]
+
+[[section.line]]
+text = "A no vote does not adopt the tax."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["one-half cent sales tax measure be adopted"]
+
+[[question]]
+ask = "Who put this on the ballot?"
+lines = ["petition"]
+
+[[question]]
+ask = "How long would the tax last?"
+lines = ["dates"]
+
+[[question]]
+ask = "Who decides how the money is spent, and on what?"
+lines = ["split", "uses"]
+
+[[question]]
+ask = "Who checks the spending?"
+lines = ["oversight"]
+
+[[question]]
+ask = "How big is $23 million a year next to the county budget?"
+unanswered = true

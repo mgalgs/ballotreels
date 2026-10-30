@@ -3678,3 +3678,13 @@ direction = "cost"
 [walnut-creek-measure-u]
 source = "ballot-question"
 status = "none-printed"
+
+# Napa County Measure B: a sales tax initiative; the resolution calling
+# the election says no fiscal impact statement by the County Auditor is
+# required, and no impartial analysis was archived. The quote is the
+# ballot question's, from the Board of Supervisors' resolution.
+[napa-county-measure-b]
+source = "ballot-question"
+quote = "providing $23,000,000 annually for 18 years"
+amount = 23000000
+period = "per-year"
