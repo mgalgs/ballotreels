@@ -3797,3 +3797,12 @@ status = "none-printed"
 [porterville-measure-v]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Dinuba Measure S: a sales tax, so no tax rate statement, and
+# no impartial analysis was archived; the revenue estimate its ballot
+# question (the Registrar's notice of election) prints.
+[dinuba-measure-s]
+source = "ballot-question"
+quote = "providing approximately $3,400,000 annually until ended by voters"
+amount = 3400000
+period = "per-year"
