@@ -378,6 +378,14 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 143-26",
                      "ca-2026-11-03-walnut-creek-measure-u":
                          "Resolution Submitting a Measure to the Voters of Walnut Creek",
+                     # and the Hercules Measure P and San Pablo Measure R
+                     # cards quote the ballot question from the ordinance
+                     # or resolution placing each, named by the number
+                     # the City's meeting records give it
+                     "ca-2026-11-03-hercules-measure-p":
+                         "Ordinance No. 558",
+                     "ca-2026-11-03-san-pablo-measure-r":
+                         "Resolution No. 2026-121",
                      # The Internet Archive's captures of the county
                      # guide's own pages for West Contra Costa Unified's
                      # Measure V and San Pablo's Measure S print each
