@@ -1125,6 +1125,11 @@ BALLOTS: dict[str, Ballot] = {
                                      "exeter-unified-measure-t",
                                      "pixley-union-elementary-measure-w",
                                      "three-rivers-union-elementary-measure-y")},
+                     # Siskiyou County's Notice of Election for each city
+                     # measure prints its ballot question, which the card
+                     # quotes, named as headed
+                     "ca-2026-11-03-yreka-measure-g":
+                         "Notice of Election",
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

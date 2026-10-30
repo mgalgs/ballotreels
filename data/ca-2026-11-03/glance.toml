@@ -3771,3 +3771,12 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $15,113,922."
 amount = 15113922
 period = "unstated"
+
+# City of Yreka Measure G: a hotel tax; no impartial analysis or fiscal
+# statement was archived. The revenue estimate is the one its ballot
+# question (Siskiyou County's Notice of Election) prints.
+[yreka-measure-g]
+source = "ballot-question"
+quote = "with an estimated increase of $245,000.00 generated annually"
+amount = 245000
+period = "per-year"

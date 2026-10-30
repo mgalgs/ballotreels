@@ -1,0 +1,66 @@
+# Archived sources for City of Yreka Measure G, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Siskiyou County posts no voter guide, only a Notice of Election per
+# measure. The ballot question is quoted from the County Clerk's Notice
+# of Election for Measure G, which is the authority for the letter and
+# the question; Section 4 of the City's Resolution No. 2026-22 prints
+# the same question word for word. No impartial analysis, argument or
+# rebuttal was reached, and no document says whether any argument was
+# filed (the notice and the resolution only invite or authorize them).
+#
+# The resolution and its Exhibit A (the code amendments, the measure's
+# full text) are cited from the City's June 16, 2026 agenda packet
+# (packet pages 77 to 86 cut from the 118-page packet): the copy
+# published with the agenda, its vote left blank. The minutes of that
+# meeting record the resolution's adoption; they are a scan with no text
+# layer, so the passage cited was typed from the page images into
+# sources/2026-06-16-council-minutes-transcription.txt, which names the
+# PDF and URL it copies; that source points at the transcription, and
+# its url at the scan. The agenda memorandum in the packet is the City
+# staff's material and is not cited.
+
+[contest]
+id = "ca-2026-11-03-yreka-measure-g"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:yreka"
+kind = "measure"
+title = "City of Yreka Measure G: Raising the Hotel Tax from 10% to 12%"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Siskiyou County Clerk, Legal Notice: Notice of Election and Date Fixed for Ballot Arguments For or Against Measure G, City of Yreka, dated June 18, 2026"
+credit = "Notice of Election, Siskiyou County Clerk"
+url = "https://www.siskiyoucounty.gov/sites/default/files/fileattachments/elections/page/32998/noe.measure_g.city_of_yreka_20260618.pdf"
+file = "sources/notice-of-election.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "resolution"
+kind = "official-title-summary"
+publisher = "City of Yreka, Resolution No. 2026-22, Resolution of the City Council of the City of Yreka Proposing, on Its Own Motion, the Submission to the Electors of the City of Yreka at the November General Election, a Ballot Measure Proposal to Amend Sections 3.12.030 and Add Section 3.12.140 of the City of Yreka Municipal Code to Increase the Uniform Transient Occupancy Tax (Hotel Tax) from Ten Percent (10%) to Twelve Percent (12%) (City Council agenda packet, June 16, 2026, pages 81 to 84; the copy published with the agenda, its vote left blank)"
+credit = "Resolution No. 2026-22, City of Yreka"
+url = "https://www.ci.yreka.ca.us/AgendaCenter/ViewFile/Agenda/_06162026-559"
+file = "sources/2026-06-16-council-packet-hotel-tax-item.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Yreka, Exhibit A to Resolution No. 2026-22: the full text of the measure, amending Section 3.12.030 and adding Section 3.12.140 of the Yreka Municipal Code (City Council agenda packet, June 16, 2026, pages 85 and 86)"
+credit = "Measure G full text, City of Yreka"
+url = "https://www.ci.yreka.ca.us/AgendaCenter/ViewFile/Agenda/_06162026-559"
+file = "sources/2026-06-16-council-packet-hotel-tax-item.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "minutes"
+kind = "public-record"
+publisher = "City of Yreka, Yreka City Council Meeting Minutes, June 16, 2026: item 11a, pages 3 and 4 (transcribed from the scan)"
+credit = "City Council minutes, City of Yreka"
+url = "https://www.ci.yreka.ca.us/AgendaCenter/ViewFile/Minutes/_06162026-559"
+file = "sources/2026-06-16-council-minutes-transcription.txt"
+retrieved = "2026-10-30"
