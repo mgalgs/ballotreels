@@ -464,6 +464,8 @@ BALLOTS: dict[str, Ballot] = {
                          "Voter Information Guide and Sample Ballot",
                      "ca-2026-11-03-san-rafael-measure-w":
                          "Voter Information Guide and Sample Ballot",
+                     "ca-2026-11-03-marin-healthcare-measure-cc":
+                         "Voter Information Guide and Sample Ballot",
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.
