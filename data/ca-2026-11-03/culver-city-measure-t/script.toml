@@ -14,6 +14,11 @@
 # scale; no archived source states the General Fund's total, so the
 # figures are given without one.
 #
+# The impartial analysis, full text and argument for are the
+# Registrar's copies, printed in its sample ballot; their wording matches
+# the City Clerk's page the script was first written from, so no line
+# changed.
+#
 # The list says no argument against was submitted: the no side says so
 # plainly, citing it, and its section is marked filed = false. The yes
 # line is kept as short as that line, so the word counts match.
@@ -62,7 +67,7 @@ heading = "What would change"
 
 [[section.line]]
 text = "Measure T would raise the rate to 15 percent in March 2027, then to 16 percent in March 2028."
-sources = ["impartial-analysis"]
+sources = ["impartial-analysis", "full-text"]
 
 [section.line.visual]
 kind = "bars"
