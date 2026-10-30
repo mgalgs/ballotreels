@@ -3459,3 +3459,12 @@ period = "per-year"
 [burbank-measure-cd]
 source = "ballot-question"
 status = "none-printed"
+
+# City of El Segundo Measure CT: a general tax, so no tax rate statement;
+# the City Attorney's impartial analysis gives no figure, so it is the
+# ballot question's.
+[el-segundo-measure-ct]
+source = "ballot-question"
+quote = "thereby indefinitely restoring approximately $700,000 general funds annually"
+amount = 700000
+period = "per-year"
