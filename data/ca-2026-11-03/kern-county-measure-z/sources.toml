@@ -1,0 +1,76 @@
+# Archived sources for Kern County Measure Z, the California Living
+# Museum Zoo Improvement and Conservation Act of 2026, a citizens'
+# initiative for a countywide sales tax, 2026-11-03 general election
+# (sources/county-sources.md). Every id here may be cited by script.toml.
+# `kind` must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# Kern County Elections posts each local measure's filed documents on its
+# page "November 3, 2026, General Election", which lists them client-side,
+# so no document has its own recoverable URL: every source here cites that
+# page. The ballot question is quoted from the Board of Supervisors'
+# Resolution No. 2026-280 calling the election (page 3); the county's
+# letter list prints no ballot question. The resolution's Exhibit A is
+# the initiative ordinance and its expenditure plan (pages 4 to 35).
+# County Counsel's impartial analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory statement
+# is, and gives the tax's revenue estimate, its spending plan and its vote
+# threshold; no separate fiscal statement was posted.
+#
+# The resolution and the argument in favor are scans with no text layer.
+# The argument, and the resolution's pages 1 to 4 (the only ones cited),
+# were typed from the page images into sources/*-transcription.txt, and
+# the sources cited point at the transcription. The county posts no
+# argument against and no rebuttals, but no official document says in
+# words that none was filed.
+
+[contest]
+id = "ca-2026-11-03-kern-county-measure-z"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:kern"
+kind = "measure"
+title = "Kern County Measure Z: 0.125% Sales Tax for the California Living Museum (CALM Zoo)"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Kern County Board of Supervisors, Resolution No. 2026-280, adopted July 28, 2026: the measure as it shall appear on the ballot, page 3, as posted by Kern County Elections (transcribed from the scan)"
+credit = "Resolution No. 2026-280, Kern County Board of Supervisors"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-resolution-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "resolution"
+kind = "election-filing"
+publisher = "Kern County Board of Supervisors, Resolution No. 2026-280, Calling an Election, adopted July 28, 2026, with Exhibit A, the initiative ordinance (pages 1 to 4 transcribed), as posted by Kern County Elections (transcribed from the scan)"
+credit = "Resolution No. 2026-280, Kern County Board of Supervisors"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-resolution-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Kern County Counsel, Impartial Analysis by County Counsel, California Living Museum Zoo Improvement and Conservation Act of 2026, Measure Z, as posted by Kern County Elections"
+credit = "Impartial Analysis, Kern County Counsel"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "Kern County Elections, Measure Letter Designations for the November 3, 2026, Consolidated General Election, dated August 12, 2026"
+credit = "Measure Letter Designations, Kern County Elections"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-measure-list.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure Z, as filed with Kern County Elections (transcribed from the scan)"
+credit = "Argument in favor, Measure Z"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-argument-for-transcription.txt"
+retrieved = "2026-10-29"
