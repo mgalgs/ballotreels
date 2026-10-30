@@ -2682,3 +2682,10 @@ source = "ballot-question"
 quote = "providing approximately $3,000,000 annually for general city services"
 amount = 3000000
 period = "per-year"
+
+# City of Cupertino Measure L: a General Plan amendment, not a tax; the
+# Santa Clara County Registrar of Voters' List of Local Measures prints no
+# fiscal statement, nor does the impartial analysis.
+[cupertino-measure-l]
+source = "ballot-question"
+status = "none-printed"
