@@ -504,6 +504,14 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 2026-071",
                      "ca-2026-11-03-reed-union-measure-o":
                          "Resolution No. 07-2025/2026",
+                     # Ventura County's measures page and guide could not
+                     # be read: each Ventura card quotes the ballot
+                     # question from the resolution placing the measure,
+                     # named as headed
+                     "ca-2026-11-03-rio-esd-measure-b":
+                         "Resolution No. 2526/20",
+                     "ca-2026-11-03-united-water-measure-d":
+                         "Resolution No. 2026-13",
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.

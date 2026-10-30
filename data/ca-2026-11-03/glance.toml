@@ -3996,3 +3996,21 @@ source = "ballot-question"
 quote = "generating approximately One Hundred Five Thousand Dollars ($105,000) annually"
 amount = 105000
 period = "per-year"
+
+# Rio Elementary School District Measure B: the total debt service, from
+# the District's Tax Rate Statement (Exhibit C to Resolution No. 2526/20,
+# transcribed from the packet scan); the bonds are $78,000,000.
+[rio-esd-measure-b]
+source = "tax-statement"
+quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the Bonds are issued and sold is $158,188,000."
+amount = 158188000
+period = "unstated"
+
+# United Water Conservation District Measure D: no tax rate statement was
+# archived, so the yearly levy the ballot question (Exhibit B to
+# Resolution No. 2026-13) prints; the bonds are $350,000,000.
+[united-water-measure-d]
+source = "ballot-question"
+quote = "approximately $23,000,000 annually on average"
+amount = 23000000
+period = "per-year"
