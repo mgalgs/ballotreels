@@ -1,0 +1,203 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the hotel tax today (its rates,
+# and the 30-day line in who owes it) and the question companies have
+# raised about long block bookings, from the resolution's recitals; the
+# Council's stated reason (STANDARD.md 6.2); what would change, from the
+# ordinance (Exhibit 1), in the order the ballot question lists it; that
+# no cost estimate is given; who filed the argument for, and that none
+# was submitted against; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card shows the name.
+#
+# The card quotes the measure's entry in the county's list "Measures
+# Appearing on the Ballot", which prints no yes/no meanings, so the card
+# has no boxes; the vote lines take both meanings from the question and
+# highlight the same phrase.
+#
+# The measure keeps today's rates and sets no new tax; no impartial
+# analysis was fetched and no document gathered estimates its effect on
+# revenue. The fiscal line follows the no-cost-estimate wording, naming
+# the county's list (the card's guide) as "the official list of measures
+# from the county" ("county's" is misheard as "counties"). The rates are
+# percentages, not dollar figures (STANDARD.md 6.5 does not apply).
+#
+# Sides: the county's list names five supporters who filed the argument
+# for (a firefighters' union local, a former mayor and three others) and
+# says "Opponents: None submitted." The argument for's text could not be
+# fetched: its line says only who filed it and that its text was not
+# gathered, nothing reconstructed. The no side says that none was
+# submitted. filed = false on both (neither has text to quote as a
+# `basis`); word counts kept within 5%.
+
+contest = "ca-2026-11-03-santa-monica-measure-tt"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "TT"
+title = "CITY OF SANTA MONICA"
+origin = "VOTE PASSAGE – Majority Vote 50%+1"
+summary = "MEASURE TT: Shall the measure, which maintains the existing transient occupancy tax rates; authorizes the City Council to establish Major Event Periods, as defined, when the tax applies to lodging paid for or obtained by corporate entities for stays over 30 days, and to adjust the hotel and motel tax rate for such stays; clarifies that refunds require a natural person to complete at least thirty-one consecutive days of occupancy, and authorizes administrative regulations, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure TT"
+
+[[section.line]]
+text = "Measure TT asks the voters of this city whether to change how the hotel tax applies to rooms that companies book for long stays."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["lodging paid for or obtained by corporate entities for stays over 30 days"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-rates"
+text = "Today, the hotel tax is 15 percent of the room charge at hotels, and 17 percent at home-shares."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "bars"
+title = "Santa Monica hotel tax rates today"
+source = "resolution"
+unit = "%"
+labels = ["Hotels", "Home-shares"]
+values = [15, 17]
+
+[[section.line]]
+id = "today-30-days"
+text = "The tax covers stays of 30 days or less, and companies have asked whether room blocks booked for longer are taxed."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hotel-front-desk"
+
+[[section.line]]
+text = "The City Council says the measure clarifies the tax, and puts it to voters to avoid doubt about enforcing it."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "same-rates"
+text = "The tax rates would stay the same."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-hotel"
+
+[[section.line]]
+id = "event-periods"
+text = "The Council could declare major event periods, like the 2028 Olympics, when rooms companies book for over 30 days would be taxed."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "event-tickets"
+
+[[section.line]]
+id = "event-rate"
+text = "During those periods, the Council could set the rate on rooms booked by companies anywhere from 15 percent down to zero."
+sources = ["resolution"]
+
+[[section.line]]
+id = "refunds"
+text = "A refund of the tax on a long stay would require the same person to stay in the room at least 31 days in a row."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "penalty-refund"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The official list of measures from the county does not include a cost estimate for the measure."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "A local firefighters union, a former mayor and three other people filed an argument for Measure TT; its text was not gathered."
+sources = ["arguments-filed"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments-filed"
+items = ["Argument for filed; text not gathered"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The official county list of measures for this election says that no argument against Measure TT was submitted, by any group or person."
+sources = ["arguments-filed"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments-filed"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts these changes to the hotel tax."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["lodging paid for or obtained by corporate entities for stays over 30 days"]
+
+[[section.line]]
+text = "A no vote leaves the hotel tax rules as they are."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["lodging paid for or obtained by corporate entities for stays over 30 days"]
+
+[[question]]
+ask = "Would the hotel tax rate go up?"
+lines = ["today-rates", "same-rates"]
+
+[[question]]
+ask = "Who would pay the tax on long stays, and when?"
+lines = ["today-30-days", "event-periods", "event-rate"]
+
+[[question]]
+ask = "How much money would this bring in?"
+unanswered = true
