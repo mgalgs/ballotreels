@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 81.2,
+  "seconds": 78.45,
   "phrases": [
     {
       "text": "Measure B asks the voters of this school district whether to limit school board members to two four-year terms in a lifetime.",
@@ -29,39 +29,39 @@
       "end": 39.37
     },
     {
-      "text": "Only full terms served from December 11, 2026 onward would count toward the limit.",
+      "text": "Only full terms served from November 3, 2026 onward would count toward the limit.",
       "start": 40.03,
-      "end": 45.82
+      "end": 45.78
     },
     {
       "text": "Measure B needs a majority yes vote to pass.",
-      "start": 46.48,
-      "end": 49.71
+      "start": 46.44,
+      "end": 49.47
     },
     {
-      "text": "Neither the county registrar's list of measures nor the board's resolution includes a cost estimate for the measure.",
-      "start": 50.37,
-      "end": 57.16
+      "text": "The impartial analysis does not include a cost estimate for the measure.",
+      "start": 50.13,
+      "end": 54.16
     },
     {
       "text": "According to the county registrar's official list of measures, no argument for Measure B was submitted.",
-      "start": 57.82,
-      "end": 63.38
+      "start": 54.82,
+      "end": 60.63
     },
     {
       "text": "According to the county registrar's official list of measures, no argument against Measure B was submitted.",
-      "start": 64.04,
-      "end": 70.83
+      "start": 61.29,
+      "end": 68.08
     },
     {
       "text": "A yes vote limits school board members to two four-year terms in a lifetime.",
-      "start": 71.49,
-      "end": 76.11
+      "start": 68.74,
+      "end": 73.36
     },
     {
       "text": "A no vote rejects the limit of two four-year terms in a lifetime.",
-      "start": 76.77,
-      "end": 81.17
+      "start": 74.02,
+      "end": 78.42
     }
   ],
   "inputs": {
@@ -71,9 +71,9 @@
       "Three of the five board members voted to place Measure B on the ballot, and two voted against.",
       "The resolution says the majority believes periodic turnover on the board promotes accountability and gives more people a chance to serve.",
       "No one could serve more than two four-year terms on the board in a lifetime, whichever part of the district they represent.",
-      "Only full terms served from December 11, 2026 onward would count toward the limit.",
+      "Only full terms served from November 3, 2026 onward would count toward the limit.",
       "Measure B needs a majority yes vote to pass.",
-      "Neither the county registrar's list of measures nor the board's resolution includes a cost estimate for the measure.",
+      "The impartial analysis does not include a cost estimate for the measure.",
       "According to the county registrar's official list of measures, no argument for Measure B was submitted.",
       "According to the county registrar's official list of measures, no argument against Measure B was submitted.",
       "A yes vote limits school board members to two four-year terms in a lifetime.",
@@ -179,11 +179,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Only full terms served from December 11, 2026 onward would count toward the limit."
+        "text": "Only full terms served from November 3, 2026 onward would count toward the limit."
       },
       "bounds": [
         960000,
-        1100400
+        1099440
       ]
     },
     {
@@ -191,15 +191,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Only full terms served from December 11, 2026 onward would count toward the limit.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Only full terms served from November 3, 2026 onward would count toward the limit.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "Measure B needs a majority yes vote to pass."
       },
       "bounds": [
-        1114800,
-        1193760
+        1113840,
+        1188000
       ]
     },
     {
@@ -211,11 +211,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Neither the county registrar's list of measures nor the board's resolution includes a cost estimate for the measure."
+        "text": "The impartial analysis does not include a cost estimate for the measure."
       },
       "bounds": [
-        1208160,
-        1372560
+        1202400,
+        1300560
       ]
     },
     {
@@ -223,15 +223,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Neither the county registrar's list of measures nor the board's resolution includes a cost estimate for the measure.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The impartial analysis does not include a cost estimate for the measure.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "According to the county registrar's official list of measures, no argument for Measure B was submitted."
       },
       "bounds": [
-        1386960,
-        1521840
+        1314960,
+        1455840
       ]
     },
     {
@@ -246,8 +246,8 @@
         "text": "According to the county registrar's official list of measures, no argument against Measure B was submitted."
       },
       "bounds": [
-        1536240,
-        1700640
+        1470240,
+        1634640
       ]
     },
     {
@@ -262,8 +262,8 @@
         "text": "A yes vote limits school board members to two four-year terms in a lifetime."
       },
       "bounds": [
-        1715040,
-        1827360
+        1649040,
+        1761360
       ]
     },
     {
@@ -278,14 +278,14 @@
         "text": "A no vote rejects the limit of two four-year terms in a lifetime."
       },
       "bounds": [
-        1841760,
-        1948800
+        1775760,
+        1882800
       ]
     }
   ],
-  "sha256": "4b635fbc50ae4acefd38c7a9c8b45ec935f7e8acb7a5215f1572aaf3d294d34e",
+  "sha256": "fbe020f9d34e10bb374005538c4ee88f3b3dc6e8e2d76f4d3b7cd0e118cadf16",
   "take": {
-    "sha256": "cb33d7920f287f4778571f3777ee2af0016681dd60910bdb22e304c1a45872f3",
-    "bytes": 3897644
+    "sha256": "438c60250ed369e576bde50e80960beef8750e8ca2ea81f7a056a6714d9f362b",
+    "bytes": 3765644
   }
 }
