@@ -2684,3 +2684,12 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $170 million."
 amount = 170000000
 period = "unstated"
+
+# Orchard School District Measure R: a parcel tax, so no tax rate
+# statement; the revenue estimate its ballot question prints, as the
+# Registrar of Voters' List of Local Measures quotes it.
+[orchard-measure-r]
+source = "measure-list"
+quote = "raising $1.4 million annually for eight years"
+amount = 1400000
+period = "per-year"
