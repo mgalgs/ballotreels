@@ -4053,3 +4053,13 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $132,500,000."
 amount = 132500000
 period = "unstated"
+
+# Town of Fairfax Measure R: a parcel tax, so no tax rate statement; the
+# revenue estimate the Town Attorney's impartial analysis prints, as the
+# county's Measure R page gives it. It continues an existing tax, at a
+# higher rate, so no direction is given.
+[fairfax-measure-r]
+source = "impartial-analysis"
+quote = "The tax is estimated to generate $432,000 annually until it expires."
+amount = 432000
+period = "per-year"
