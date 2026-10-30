@@ -936,7 +936,8 @@ BALLOTS: dict[str, Ballot] = {
                             "salinas-measure-h",
                             "carmel-by-the-sea-measure-m",
                             "carmel-by-the-sea-measure-n",
-                            "king-city-measure-p")},
+                            "king-city-measure-p",
+                            "pacific-grove-measure-r")},
                      # Shasta County Elections prints each local measure's
                      # pages in its guide, headed on its contest index
                      # "This is the County Voter Information Guide";

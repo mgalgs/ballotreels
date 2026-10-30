@@ -3771,3 +3771,12 @@ source = "tax-statement"
 quote = "The best estimate of total debt service, including principal and interest, that would be required to be repaid if all the bonds are issued and sold will be approximately $15,113,922."
 amount = 15113922
 period = "unstated"
+
+# City of Pacific Grove Measure R: no fiscal statement applies (a sales
+# tax); the revenue as the ballot question on the County of Monterey
+# Elections Department's List of Local Measures gives it.
+[pacific-grove-measure-r]
+source = "measure-list"
+quote = "providing approximately $1,000,000 annually for 10 years"
+amount = 1000000
+period = "per-year"
