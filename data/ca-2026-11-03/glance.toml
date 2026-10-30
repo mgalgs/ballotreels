@@ -3477,3 +3477,12 @@ source = "ballot-question"
 quote = "providing approximately $7,100,000 annually until ended by voters"
 amount = 7100000
 period = "per-year"
+
+# City of Hawaiian Gardens Measure BL: a general tax, so no tax rate
+# statement; the ballot question's figure is listed (no period printed),
+# the impartial analysis's ($450,000 a year) being the lower of the two.
+[hawaiian-gardens-measure-bl]
+source = "ballot-question"
+quote = "generating approximately $563,810 until ended by voters"
+amount = 563810
+period = "unstated"
