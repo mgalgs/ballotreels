@@ -1,0 +1,157 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how the charter has the city
+# build projects today, and that it allows no other way; what would
+# change, and what design-build is; that no cost estimate was given; one
+# line per side; what a vote does.
+#
+# No narrated line names the city (the narrator mispronounces proper
+# names); the card and title show it.
+#
+# The impartial analysis's remark that today's bidding cannot weigh a
+# contractor's qualifications is left out of the neutral sections: it is
+# the supporters' point ("not just the lowest bid"), so it stays theirs
+# (STANDARD.md 6.3); so do the opponents' examples elsewhere and the
+# claims of savings and speed. The analysis and the Registrar's list
+# print no cost estimate; the fiscal line names the analysis, not the
+# Registrar's page, whose name has the county's in it.
+#
+# The card quotes the Registrar of Voters' List of Local Measures, which
+# prints no yes/no lines; the vote lines give the impartial analysis's
+# meanings and highlight the one phrase of the question both turn on.
+
+contest = "ca-2026-11-03-sunnyvale-measure-g"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "G"
+title = "City Charter Amendment - Public Works Contracting"
+origin = "City of Sunnyvale"
+summary = "Shall Section 1309 of the City Charter be amended to allow the City Council to adopt an ordinance giving the City more options for delivery of public works construction projects by authorizing use of any purchasing or contracting method allowed by California law to select contractors for such projects, and to make clarifying changes to the wording of Section 1309 that do not alter the meaning of the section? "
+
+[[section]]
+id = "what"
+heading = "Measure G"
+
+[[section.line]]
+text = "Measure G asks the voters of this city whether to amend the city charter to allow more ways of hiring contractors for public works projects."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["more options for delivery of public works construction projects"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "design-bid-build"
+text = "Today the charter requires design-bid-build: one contract to design a project, then a separate construction contract to the lowest responsive and responsible bidder."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hourglass-plans"
+
+[[section.line]]
+text = "The charter allows no other method, even where state law permits one."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "any-method"
+text = "Measure G would let the council use any contracting method state law allows, and set rules for those contracts by ordinance."
+sources = ["ballot-question", "impartial-analysis", "charter-text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "project-site"
+
+[[section.line]]
+id = "design-build"
+text = "In design-build, one contractor both designs and builds a project, and is chosen by a process that can weigh more than the lowest bid."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The city attorney's impartial analysis does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say having one team design and build a project cuts errors, change orders and budget overruns, and finishes projects faster."
+sources = ["argument-for"]
+basis = ["This means the team that designs the project builds it, significantly reducing errors, change orders, and budget overruns.", "Combining design and construction means critical civic improvements and infrastructure projects get completed much faster"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Fewer errors, change orders and overruns", "Gets projects done much faster"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say design-build removes the independent designer who protects the public, and allows subjective best value scoring instead of low bids."
+sources = ["argument-against"]
+basis = ["The independent designer who normally protects the public by flagging problems, preventing corner-cutting is gone.", "Measure G allows contracts awarded on subjective “best value” scoring instead of “low-bid”."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["Removes the independent designer", "Subjective scoring instead of low bids"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote lets the council authorize other ways of delivering public works projects."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["more options for delivery of public works construction projects"]
+
+[[section.line]]
+text = "A no vote adds no such options, and leaves the charter's wording as it is."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["more options for delivery of public works construction projects"]
+
+[[question]]
+ask = "How does the city hire builders today?"
+lines = ["design-bid-build"]
+
+[[question]]
+ask = "What is design-build?"
+lines = ["design-build"]
+
+[[question]]
+ask = "Who would decide which method a project uses?"
+lines = ["any-method"]
