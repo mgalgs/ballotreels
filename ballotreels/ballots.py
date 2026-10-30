@@ -532,7 +532,8 @@ BALLOTS: dict[str, Ballot] = {
                      **{f"ca-2026-11-03-{slug}":
                         "Marin County Elections: List of measures 11/03/26"
                         for slug in ("miller-creek-measure-n",
-                                     "fairfax-measure-r")},
+                                     "fairfax-measure-r",
+                                     "stinson-beach-cwd-measure-ee")},
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.

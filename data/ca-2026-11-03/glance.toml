@@ -4063,3 +4063,10 @@ source = "impartial-analysis"
 quote = "The tax is estimated to generate $432,000 annually until it expires."
 amount = 432000
 period = "per-year"
+
+# Stinson Beach County Water District Measure EE: an appropriations limit;
+# the county's Measure EE page prints no fiscal statement and no cost
+# estimate.
+[stinson-beach-cwd-measure-ee]
+source = "county-page"
+status = "none-printed"
