@@ -1,0 +1,204 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; how a school bond is repaid and what it needs
+# to pass; what the money may pay for; the district's tax rate statement;
+# one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the opening
+# says "the voters of this school district". The card and title carry the
+# names. The tax rate statement's fiscal year "2057-58" is said in full,
+# "2057-2058" (standard/speakability.txt).
+#
+# The card quotes the Los Angeles County Registrar-Recorder/County Clerk's
+# list "Measures Appearing on the Ballot", which prints the ballot question
+# with no yes and no sentences, so the card has no boxes and the two vote
+# lines highlight the same phrase of the question.
+#
+# No impartial analysis was staged, so what the measure does comes from
+# its full ballot text and the tax rate statement alone. The bond total and
+# the debt service are repaid from a tax on property in the district, not
+# from the district's budget, and no archived source states that budget,
+# so they have no budget scale (STANDARD.md 6.5; left open), as other
+# school bonds' do.
+#
+# The Registrar's list names the supporters who filed an argument in
+# favor, but its text was not staged; the side says only that it was filed
+# and is not among the documents gathered, and never guesses what it says.
+# The list says in words "Opponents: None submitted.", so the no side says
+# plainly that none was submitted, citing the list. Both sides set filed =
+# false; their lines are still kept close in words and spoken length.
+
+contest = "ca-2026-11-03-bellflower-unified-measure-sm"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "SM"
+title = "BELLFLOWER UNIFIED SCHOOL DISTRICT"
+origin = "VOTE PASSAGE – 55% of the Votes Cast"
+summary = "With funds that cannot be taken by the State and spent elsewhere, shall Bellflower Unified School District's measure to repair/replace deteriorating roofs, plumbing, heating, ventilation and electrical systems; upgrade classrooms, labs and career training facilities; and, improve access for students with disabilities be adopted, authorizing $135 million in bonds levying $49 per $100,000 assessed value ($8 million annually) while outstanding, with legal rates, audits, citizen oversight, no funds for administrator salaries and full disclosure of all spending?"
+
+[[section]]
+id = "what"
+heading = "Measure SM"
+
+[[section.line]]
+text = "Measure SM asks the voters of this school district whether to approve $135 million in school bonds."
+sources = ["ballot-question", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $135 million in bonds"]
+
+[[section]]
+id = "today"
+heading = "How a school bond works"
+
+[[section.line]]
+id = "repay"
+text = "The district would sell the bonds and repay them from a yearly tax on property in the district."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+id = "threshold"
+text = "Measure SM needs 55 percent of the vote to pass."
+sources = ["ballot-question", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "projects"
+text = "The bond money could pay only for the school building projects the measure lists, not for salaries or other operating costs."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-roof-repair"
+
+[[section.line]]
+id = "project-list"
+text = "Those include repairing roofs, plumbing, heating and electrical systems, upgrading classrooms and labs, and improving disability access."
+sources = ["text", "ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax rate statement says"
+
+[[section.line]]
+id = "rate"
+text = "The district's tax rate statement estimates the tax at $45.78 per $100,000 of assessed value on average, and $49 at its highest."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "bars"
+title = "Estimated tax per $100,000 of assessed value, dollars"
+source = "tax-statement"
+unit = ""
+labels = ["Average", "Highest"]
+values = [45.78, 49]
+
+[[section.line]]
+id = "years"
+text = "The statement expects the tax to be collected through 2057-2058."
+sources = ["tax-statement"]
+
+[[section.line]]
+id = "total"
+text = "The statement estimates the total to repay, with interest, at about $240.9 million."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Supporters filed an argument for Measure SM; its text is not among the documents gathered here."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["Argument for filed; text not gathered"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "According to the county registrar's official list of measures, no argument against Measure SM was submitted."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves the $135 million in school bonds."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $135 million in bonds"]
+
+[[section.line]]
+text = "A no vote rejects the $135 million in school bonds."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $135 million in bonds"]
+
+[[question]]
+ask = "How would the bonds be paid back?"
+lines = ["repay", "total"]
+
+[[question]]
+ask = "How much tax would I pay, and for how long?"
+lines = ["rate", "years"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["projects", "project-list"]
+
+[[question]]
+ask = "What vote does the measure need to pass?"
+lines = ["threshold"]
+
+[[question]]
+ask = "What do the supporters argue?"
+unanswered = true
+
+[[question]]
+ask = "How large is the bond next to the district's yearly budget?"
+unanswered = true

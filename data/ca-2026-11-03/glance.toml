@@ -3127,3 +3127,12 @@ status = "none-printed"
 [mcfarland-measure-n]
 source = "ballot-question"
 status = "none-printed"
+
+# Bellflower Unified School District Measure SM: a school bond; the
+# district's tax rate statement (Exhibit C to its resolution) gives the
+# total debt service.
+[bellflower-unified-measure-sm]
+source = "tax-statement"
+quote = "would be required to be repaid if all the bonds are issued and sold is approximately $240.9 million."
+amount = 240900000
+period = "unstated"
