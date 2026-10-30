@@ -1,0 +1,291 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 90.42,
+  "phrases": [
+    {
+      "text": "Measure PFD asks the voters of this city whether to levy a yearly parcel tax for fire, paramedic and wildfire services.",
+      "start": 0.03,
+      "end": 9.36
+    },
+    {
+      "text": "The City Council placed Measure PFD on the ballot.",
+      "start": 10.02,
+      "end": 13.48
+    },
+    {
+      "text": "The tax would be a fixed rate on each square foot of improved property.",
+      "start": 14.14,
+      "end": 18.65
+    },
+    {
+      "text": "Owners with very low household incomes would be exempt, as would seniors and disabled owners exempt from the utility users tax.",
+      "start": 19.31,
+      "end": 27.4
+    },
+    {
+      "text": "The money would go to a special fund, only for fire, paramedic and wildfire services, and fire stations and equipment.",
+      "start": 28.06,
+      "end": 36.21
+    },
+    {
+      "text": "Annual independent audits and public spending disclosure would be required.",
+      "start": 36.87,
+      "end": 41.64
+    },
+    {
+      "text": "The tax would expire after 14 years, and needs two-thirds of the votes to pass.",
+      "start": 42.3,
+      "end": 47.75
+    },
+    {
+      "text": "The city attorney's impartial analysis says the tax would raise about $22.1 million a year.",
+      "start": 48.41,
+      "end": 55.31
+    },
+    {
+      "text": "An association of realtors filed an argument against Measure PFD; its text is not among the official documents gathered.",
+      "start": 55.97,
+      "end": 64.61
+    },
+    {
+      "text": "Supporters, including a firefighters association and the mayor, filed an argument for Measure PFD; its text was not gathered.",
+      "start": 65.27,
+      "end": 74.88
+    },
+    {
+      "text": "A yes vote approves the special parcel tax for fire and emergency services, with a 14-year sunset.",
+      "start": 75.54,
+      "end": 82.42
+    },
+    {
+      "text": "A no vote rejects the tax, leaving the city to fund fire and emergency services with available resources only.",
+      "start": 83.08,
+      "end": 90.39
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure PFD asks the voters of this city whether to levy a yearly parcel tax for fire, paramedic and wildfire services.",
+      "The City Council placed Measure PFD on the ballot.",
+      "The tax would be a fixed rate on each square foot of improved property.",
+      "Owners with very low household incomes would be exempt, as would seniors and disabled owners exempt from the utility users tax.",
+      "The money would go to a special fund, only for fire, paramedic and wildfire services, and fire stations and equipment.",
+      "Annual independent audits and public spending disclosure would be required.",
+      "The tax would expire after 14 years, and needs two-thirds of the votes to pass.",
+      "The city attorney's impartial analysis says the tax would raise about $22.1 million a year.",
+      "An association of realtors filed an argument against Measure PFD; its text is not among the official documents gathered.",
+      "Supporters, including a firefighters association and the mayor, filed an argument for Measure PFD; its text was not gathered.",
+      "A yes vote approves the special parcel tax for fire and emergency services, with a 14-year sunset.",
+      "A no vote rejects the tax, leaving the city to fund fire and emergency services with available resources only."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure PFD asks the voters of this city whether to levy a yearly parcel tax for fire, paramedic and wildfire services."
+      },
+      "bounds": [
+        0,
+        225360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure PFD asks the voters of this city whether to levy a yearly parcel tax for fire, paramedic and wildfire services.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The City Council placed Measure PFD on the ballot."
+      },
+      "bounds": [
+        239760,
+        324240
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Council placed Measure PFD on the ballot.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The tax would be a fixed rate on each square foot of improved property."
+      },
+      "bounds": [
+        338640,
+        448320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The tax would be a fixed rate on each square foot of improved property.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Owners with very low household incomes would be exempt, as would seniors and disabled owners exempt from the utility users tax."
+      },
+      "bounds": [
+        462720,
+        658320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Owners with very low household incomes would be exempt, as would seniors and disabled owners exempt from the utility users tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money would go to a special fund, only for fire, paramedic and wildfire services, and fire stations and equipment."
+      },
+      "bounds": [
+        672720,
+        869760
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money would go to a special fund, only for fire, paramedic and wildfire services, and fire stations and equipment.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Annual independent audits and public spending disclosure would be required."
+      },
+      "bounds": [
+        884160,
+        1000080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Annual independent audits and public spending disclosure would be required.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The tax would expire after 14 years, and needs two-thirds of the votes to pass."
+      },
+      "bounds": [
+        1014480,
+        1146720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The tax would expire after 14 years, and needs two-thirds of the votes to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The city attorney's impartial analysis says the tax would raise about $22.1 million a year."
+      },
+      "bounds": [
+        1161120,
+        1328160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The city attorney's impartial analysis says the tax would raise about $22.1 million a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "An association of realtors filed an argument against Measure PFD; its text is not among the official documents gathered."
+      },
+      "bounds": [
+        1342560,
+        1551360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"An association of realtors filed an argument against Measure PFD; its text is not among the official documents gathered.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters, including a firefighters association and the mayor, filed an argument for Measure PFD; its text was not gathered."
+      },
+      "bounds": [
+        1565760,
+        1797840
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters, including a firefighters association and the mayor, filed an argument for Measure PFD; its text was not gathered.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote approves the special parcel tax for fire and emergency services, with a 14-year sunset."
+      },
+      "bounds": [
+        1812240,
+        1978800
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote approves the special parcel tax for fire and emergency services, with a 14-year sunset.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote rejects the tax, leaving the city to fund fire and emergency services with available resources only."
+      },
+      "bounds": [
+        1993200,
+        2170080
+      ]
+    }
+  ],
+  "sha256": "b4f9c719de30238230929c0b317f17814b1199f13e62f8ab5b1e875cc19d1fe8",
+  "take": {
+    "sha256": "4c2507738e5e0c18f3e3ea67ee41cc6a290e9f9504f27d2fdbc81c4e97355083",
+    "bytes": 4340204
+  }
+}
