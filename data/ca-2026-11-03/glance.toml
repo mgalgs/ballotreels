@@ -3452,3 +3452,10 @@ source = "ballot-question"
 quote = "providing approximately $3,000,000 annually until ended by voters"
 amount = 3000000
 period = "per-year"
+
+# City of Burbank Measure CD (by-district council elections): not a tax;
+# the Registrar-Recorder's list and the City Attorney's impartial
+# analysis print no cost estimate.
+[burbank-measure-cd]
+source = "ballot-question"
+status = "none-printed"

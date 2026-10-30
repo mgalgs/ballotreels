@@ -1,0 +1,199 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot, and
+# that it needs Measure CC too; how council members are elected today;
+# what would change (five districts, who may run and vote in each, how
+# often, when it starts, sitting members' terms); that no official
+# document gives a cost estimate; that no argument for was submitted, and
+# the argument against; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card shows the name.
+#
+# The City Council placed the measure on the ballot and also filed the
+# argument against it. The background says only what the impartial
+# analysis says of how it got there (under a settlement of a voting
+# rights lawsuit against the City); the no side says only what the
+# argument says. Nothing else is said of why the Council opposes it.
+# The no side does not name the Council: the argument is signed "As your
+# City Council", and naming it would be the script's addition.
+#
+# The card quotes the measure's entry in the county's list "Measures
+# Appearing on the Ballot", which prints no yes/no meanings, and the
+# impartial analysis gives none either, so the card has no boxes and the
+# vote lines take both meanings from the question, highlighting the
+# same phrase.
+#
+# The companion charter amendment is described, not named: "Measure CC"
+# reads to the name check as an undeclared name.
+#
+# Sides: the county's list says "Supporters: None submitted.", and the
+# yes side says so (filed = false); the argument against is presented
+# from its text.
+
+contest = "ca-2026-11-03-burbank-measure-cd"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "CD"
+title = "CITY OF BURBANK"
+origin = "VOTE PASSAGE – Majority Vote 50%+1"
+summary = "BY-DISTRICT COUNCIL ELECTIONS MEASURE CD: Shall the Ordinance be adopted adding Chapter 3 to Title 2 of the Municipal Code changing the City's electoral system for City Council elections from at-large to by-district elections in the districts reflected in Map 130?"
+
+[[section]]
+id = "what"
+heading = "Measure CD"
+
+[[section.line]]
+text = "Measure CD asks the voters of this city whether to elect council members by district, instead of citywide."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["from at-large to by-district elections"]
+
+[[section]]
+id = "background"
+heading = "How it reached the ballot"
+
+[[section.line]]
+id = "settlement"
+text = "The City Council placed Measure CD on the ballot under the terms of a settlement of a voting rights lawsuit against the city."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section.line]]
+id = "needs-cc"
+text = "Measure CD can take effect only if voters also approve a separate charter amendment on this ballot, removing the requirement for citywide elections."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-two-questions"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-at-large"
+text = "Today, every voter can vote for as many council candidates as there are open seats: three this year, and two in 2028."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "districts"
+text = "The city would be split into five districts, each electing one council member to a four-year term."
+sources = ["text", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "zoning-map"
+
+[[section.line]]
+id = "who-votes"
+text = "Only the residents of a district could run for its seat, or vote for it, once every four years."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+id = "start"
+text = "Districts 2 and 4 would vote first, in November 2028, and districts 1, 3 and 5 in 2030."
+sources = ["text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+text = "Council members already in office would serve out their terms."
+sources = ["text"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The county Registrar's list of measures and the impartial analysis do not include a cost estimate for the measure."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "The official county list of measures for this election says that no argument for Measure CD was submitted, by any group or person."
+sources = ["arguments-filed"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments-filed"
+items = ["No argument for was submitted"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say voters would choose one council member every four years, losing their vote on the other four, who decide for the whole city."
+sources = ["argument-against"]
+basis = ["Under Measure CD, voters would VOTE ONLY ONCE EVERY FOUR YEARS FOR ONLY ONE COUNCIL MEMBER from their district.", "Residents would no longer have a vote on the other four Council members who make decisions that affect the entire city."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["One council vote every four years", "No vote on the other four seats"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the change from citywide to district elections for the City Council."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["from at-large to by-district elections"]
+
+[[section.line]]
+text = "A no vote rejects the change from citywide to district elections for the City Council."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["from at-large to by-district elections"]
+
+[[question]]
+ask = "Why is this on the ballot?"
+lines = ["settlement"]
+
+[[question]]
+ask = "Does it depend on another measure?"
+lines = ["needs-cc"]
+
+[[question]]
+ask = "When would district elections start?"
+lines = ["start"]

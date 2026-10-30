@@ -1,0 +1,70 @@
+# Archived sources for City of Burbank Measure CD, 2026-11-03 general
+# election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" (sources/county-measure-list-excerpt.txt, the
+# measure's entry) gives its letter, vote threshold and ballot question,
+# which the card quotes, and, on its "Supporters: ... Opponents: ..."
+# line, that no argument in favor was submitted and that the City Council
+# filed the argument against: the yes side cites it as the official
+# statement of filing.
+#
+# The City Attorney's impartial analysis, the full text of the ordinance
+# and the argument against are the Registrar's copies, from its
+# Interactive Sample Ballot. The City Council's resolution placing the
+# measure (sources/resolution.pdf) adds nothing the script needs and is
+# not cited.
+
+[contest]
+id = "ca-2026-11-03-burbank-measure-cd"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:burbank"
+kind = "measure"
+title = "City of Burbank Measure CD: Electing the City Council by District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): City of Burbank, Measure CD"
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "arguments-filed"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): Measure CD, \"Supporters: None submitted. Opponents: Burbank City Council.\""
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney's Impartial Analysis of Measure CD, City of Burbank By-District Council Elections Measure, by Joseph H. McDougall, City Attorney, as printed by the Los Angeles County Registrar-Recorder/County Clerk in its Interactive Sample Ballot"
+credit = "City Attorney's Impartial Analysis of Measure CD"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10943.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Ballot Measure CD, an ordinance adding a new Article 3 to Title 2 of the Burbank Municipal Code to change the City's electoral system from at-large to by-district elections, as printed by the Los Angeles County Registrar-Recorder/County Clerk in its Interactive Sample Ballot"
+credit = "Full Text of Measure CD"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10943.json"
+file = "sources/full-text.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure CD, signed by Mayor Tamala Takahashi, Vice Mayor Zizette Mullins and Council Members Chris Rizzotti and Nikki Perez, as printed by the Los Angeles County Registrar-Recorder/County Clerk in its Interactive Sample Ballot (\"No argument in favor of this measure was submitted\")"
+credit = "Argument against Measure CD"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10943.json"
+file = "sources/argument-against.html"
+retrieved = "2026-10-30"
