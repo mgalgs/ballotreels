@@ -19,13 +19,15 @@
 # are on the card, not narrated as the measure's effect; the analysis's
 # own list of general city services is.
 #
-# The list names five supporters who filed an argument in favor, whose
-# text is not among the documents gathered: the yes side says only that
-# supporters filed one and that its text was not gathered, and says
-# nothing of what it argues (filed = false, no basis to quote). The list
-# says "Opponents: None submitted.", so the no side says plainly that no
-# argument against was submitted, citing the list. The two lines are of
-# equal length and make no other claim.
+# The list names the filers of an argument in favor (four organizations
+# and a retired judge), whose text is not among the documents gathered:
+# the yes side says only who filed it and that its text was not
+# gathered, and says nothing of what it argues (filed = false, no basis
+# to quote). The organizations are not named: each name carries a place
+# name. The list says "Opponents: None submitted.", so the no side says
+# plainly that no argument against was submitted, citing the list. The
+# no line's clause on what the list records balances the yes line's
+# length without a further claim.
 #
 # The $2.2 million a year is the impartial analysis's estimate. No
 # archived official document states the City's general fund budget to
@@ -132,7 +134,7 @@ side = "yes"
 filed = false
 
 [[section.line]]
-text = "Supporters filed an argument for Measure RS; its text is not among the documents gathered."
+text = "Four organizations and a retired judge filed an argument for Measure RS; its text is not among the documents gathered."
 sources = ["measure-list"]
 
 [section.line.visual]
@@ -147,7 +149,7 @@ side = "no"
 filed = false
 
 [[section.line]]
-text = "The official county list of measures says that no argument against Measure RS was submitted."
+text = "The official county list of measures, which names who filed each argument, says no argument against Measure RS was submitted."
 sources = ["measure-list"]
 
 [section.line.visual]
