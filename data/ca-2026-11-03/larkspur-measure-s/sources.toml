@@ -3,10 +3,12 @@
 # script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
 # section 1).
 #
-# Marin County's guide could not be archived, and the City's Elections
-# page posts no impartial analysis or argument, so no argument was
-# archived and no document says whether any was filed. These are the
-# City's files: Resolution 46/26, which calls the election and whose
+# The county's Measure S page (sources/county-page.txt, saved as text
+# from a browser, since the site refuses scripted fetches) prints the
+# ballot question, the vote required to pass, the City Attorney's
+# impartial analysis and the argument in favor, and says that no
+# argument against Measure S was filed. The other files are the
+# City's: Resolution 46/26, which calls the election and whose
 # Section 2 is the ballot question (no ordinance was attached: the
 # resolution is the measure's only text); the staff report for item
 # 8.1B of the June 3, 2026 City Council meeting; and the draft minutes
@@ -26,8 +28,8 @@
 # yearly rates, the current tax's end, the yearly confirmation of the
 # rate, and the authority's budget of "approximately $3.8 million"),
 # never its statements of need or benefit, and never its attached draft
-# ballot argument, which is not a filed argument. It is of kind
-# public-record: no allowed kind fits a city staff report exactly, and
+# ballot argument (the filed argument cited is the one the county
+# prints). It is of kind public-record: no allowed kind fits a city staff report exactly, and
 # official-report is reserved for a nonpartisan fiscal office's reports.
 #
 # The letter S and the two-thirds vote are confirmed by the Registrar of
@@ -39,6 +41,10 @@ election = "ca-2026-11-03"
 division = "ocd-division/country:us/state:ca/place:larkspur"
 kind = "measure"
 title = "City of Larkspur Measure S: Continuing the Paramedic Services Special Tax for Four Years"
+
+[[contest.correction]]
+date = "2026-10-30"
+note = "The video now gives the argument in favor printed by the county, and says, as the county does, that no argument against was filed."
 
 [[source]]
 id = "ballot-question"
@@ -75,3 +81,30 @@ credit = "Staff report 26-4515, Marin County Registrar of Voters"
 url = "https://marin.granicus.com/MetaViewer.php?view_id=33&event_id=4262&meta_id=1474983"
 file = "sources/marin-bos-2026-09-08-consolidation-staff-report-26-4515.pdf"
 retrieved = "2026-10-28"
+
+[[source]]
+id = "county-page"
+kind = "official-title-summary"
+publisher = "County of Marin, Elections, Measure S 11/03/26 (November 3, 2026 General Election, list of measures): the ballot question, the vote required to pass, and the county's statement that no argument against Measure S was filed"
+credit = "Measure S page, County of Marin Elections"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-s-110326"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Larkspur City Attorney, Impartial analysis by City Attorney of Measure S, as printed by County of Marin, Elections, Measure S 11/03/26"
+credit = "Impartial analysis, Larkspur City Attorney"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-s-110326"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure S, as printed by County of Marin, Elections, Measure S 11/03/26"
+credit = "Argument in favor, County of Marin Elections"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-s-110326"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
