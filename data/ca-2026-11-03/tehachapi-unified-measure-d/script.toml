@@ -1,0 +1,201 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; how a school bond is repaid and what it needs
+# to pass; what the money may pay for; the district's tax rate statement;
+# one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the opening
+# says "the voters of this school district". The card and title carry the
+# names. "Counsel" is heard as "Council" (standard/speakability.txt), so
+# the narration does not say it.
+#
+# The card quotes the ballot question from Appendix B of the board's
+# resolution, which prints no yes and no sentences, so the vote lines take
+# their meaning from the impartial analysis and both highlight the
+# question's amount. The bond total and the debt service are repaid from
+# a tax on property in the district, not from the district's budget, and
+# no archived source states that budget, so they have no budget scale
+# (STANDARD.md 6.5; left open), as other school bonds' do.
+#
+# The supporters cite the district's paid-off past bonds, the repairs and
+# campus priorities, local control of the money, the oversight and audits
+# and the ban on salaries. The neutral sections describe the projects only
+# as the ballot question names them and leave the debt history, the
+# oversight and the salary ban out (STANDARD.md 6.3).
+#
+# The county posts no argument against Measure D, but no official document
+# says in words that none was filed. So the no side does not say none was
+# filed: it says none is among the documents the county has posted
+# (filed = false, STANDARD.md 2.5), as for Livingston Measures T and U.
+
+contest = "ca-2026-11-03-tehachapi-unified-measure-d"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "D"
+title = "ABBREVIATED FORM OF BOND MEASURE"
+origin = "RESOLUTION NO. 01JUL26"
+summary = "To replace aging roofs, heating, cooling, and plumbing; modernize outdated school facilities; construct new transitional kindergarten classrooms with restrooms; build visual and performing arts classrooms and new high school stadium; improve campus safety; shall Tehachapi Unified School District's measure authorizing $61,000,000 in bonds at legal rates be adopted, generating approximately $3,900,000 annually, while bonds are outstanding, levies averaging $28.65 per $100,000 assessed value, with independent citizens' oversight, annual audits, and no money taken by the State?"
+
+[[section]]
+id = "what"
+heading = "Measure D"
+
+[[section.line]]
+text = "Measure D asks the voters of this school district whether to approve $61 million in school bonds."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $61,000,000 in bonds"]
+
+[[section]]
+id = "today"
+heading = "How a school bond works"
+
+[[section.line]]
+id = "repay"
+text = "The district would sell the bonds and repay them from a yearly tax on property in the district."
+sources = ["impartial-analysis", "tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+id = "threshold"
+text = "Measure D needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "projects"
+text = "The bond money could pay only for the school facility projects the measure lists."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section.line]]
+id = "project-list"
+text = "The ballot question names roofs, heating, cooling and plumbing, new kindergarten and arts classrooms, and a new high school stadium."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["To replace aging roofs, heating, cooling, and plumbing", "new high school stadium"]
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+id = "rate"
+text = "The district's tax rate statement estimates an average tax of $28.65 per $100,000 of assessed value, and at most $29."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "bars"
+title = "Estimated tax per $100,000 of assessed value, dollars"
+source = "tax-statement"
+unit = ""
+labels = ["Average", "Highest"]
+values = [28.65, 29]
+
+[[section.line]]
+id = "duration"
+text = "The statement expects the tax to be collected until the 2057-2058 fiscal year."
+sources = ["tax-statement"]
+
+[[section.line]]
+id = "total"
+text = "The statement estimates the total to repay, with interest, at about $121.2 million."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the district paid off its past bonds in 2022, and the measure addresses urgent repairs and long-awaited campus priorities."
+sources = ["argument-for"]
+basis = ["The District refinanced past bonds saving taxpayers over $1.3 million and paid them off in 2022.", "Measure D addresses urgent repairs and long-awaited campus priorities"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Past bonds paid off in 2022", "Urgent repairs and campus priorities"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure D appears among the official documents that the county has posted online for this ballot measure."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the district to issue $61 million in bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $61,000,000 in bonds"]
+
+[[section.line]]
+text = "A no vote does not authorize the bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $61,000,000 in bonds"]
+
+[[question]]
+ask = "How would the bonds be paid back?"
+lines = ["repay", "total"]
+
+[[question]]
+ask = "How much tax would I pay, and for how long?"
+lines = ["rate", "duration"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["projects", "project-list"]
+
+[[question]]
+ask = "What vote does the measure need to pass?"
+lines = ["threshold"]
+
+[[question]]
+ask = "How large is the bond next to the district's yearly budget?"
+unanswered = true
