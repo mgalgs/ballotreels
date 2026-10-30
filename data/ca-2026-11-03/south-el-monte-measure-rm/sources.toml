@@ -11,9 +11,11 @@
 # measure's neutral explanation) and the two arguments, all text PDFs.
 # The argument against's text sets some letter pairs ("ti", "tt") as a
 # glyph pdftotext cannot map, so its basis quotes only passages without
-# them. The rebuttals (images), Resolution No. 26-058 (a scan), the City
-# Clerk's notice and the list's page PDF are not cited. Not a tax: no
-# fiscal statement applies, and none was found.
+# them. The Registrar's Interactive Sample Ballot prints the measure's
+# full text (an ordinance) and both rebuttals, saved as HTML; they
+# supersede the City's rebuttal images. Resolution No. 26-058 (a scan),
+# the City Clerk's notice and the list's page PDF are not cited. Not a
+# tax: no fiscal statement applies, and none was found.
 
 [contest]
 id = "ca-2026-11-03-south-el-monte-measure-rm"
@@ -56,4 +58,31 @@ publisher = "Argument Against Measure RM, as posted by the City of South El Mont
 credit = "Argument against Measure RM, City of South El Monte"
 url = "https://www.cityofsouthelmonte.org/DocumentCenter/View/7670/Argument-Against-City-Council-Reform-Measure-2026"
 file = "sources/argument-against.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "full-text"
+kind = "official-text"
+publisher = "Full Text of Ballot Measure RM (an ordinance eliminating the elective office of Mayor and providing for selection of the Mayor by the City Council), as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Text of Measure RM, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10938.json"
+file = "sources/full-text.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "rebuttal-to-argument-for"
+kind = "official-argument"
+publisher = "Rebuttal to Argument in Favor of Measure RM, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Rebuttal to argument in favor of Measure RM, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10938.json"
+file = "sources/rebuttal-to-argument-for.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "rebuttal-to-argument-against"
+kind = "official-argument"
+publisher = "Rebuttal to Argument Against Measure RM, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Rebuttal to argument against Measure RM, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10938.json"
+file = "sources/rebuttal-to-argument-against.html"
 retrieved = "2026-10-30"

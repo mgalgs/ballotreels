@@ -5,22 +5,17 @@
 #
 # The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
 # Appearing on the Ballot" (sources/county-measure-list-excerpt.txt, the
-# measure's entry) gives its letter, vote threshold and ballot question,
-# and, on its "Supporters: ... Opponents: ..." line, who filed the
-# primary arguments: the card quotes it, and the sides cite it as the
-# official statement of filing. The City Council's Resolution No.
+# measure's entry) gives its letter, vote threshold and ballot question:
+# the card quotes it. The Registrar's Interactive Sample Ballot prints the
+# City Attorney's impartial analysis (the measure's neutral explanation,
+# which states that the City levies no utility users tax today and gives
+# City staff's revenue estimate), the arguments for and against and both
+# rebuttals, each saved as HTML. The City Council's Resolution No.
 # 2026-35-CC, a text PDF, gives the ballot question, the City Clerk's
 # certification of the Council's vote, and the ordinance (Exhibit A) with
-# its rates, exemption and recitals. The City's August 2026 budget
-# presentation (sources/staff-report.pdf, page 4) is cited for one plain
-# fact no other document states, that the City levies no utility users
-# tax today, in a background line only; its General Fund revenue figure
-# is not used to scale the revenue estimate (STANDARD.md 6.5 takes a
-# total only from a fiscal statement or a nonpartisan fiscal office). The
-# City's water bill insert, web pages, notices and the resolution calling
-# the election are not cited. No impartial analysis and no argument text
-# could be found. A general utility users tax has no tax rate statement;
-# the revenue estimate is the ballot question's.
+# its rates, exemption and recitals. The City's budget presentation, water
+# bill insert, web pages, notices and the resolution calling the election
+# are not cited. A general utility users tax has no tax rate statement.
 
 [contest]
 id = "ca-2026-11-03-south-gate-measure-sg"
@@ -39,12 +34,48 @@ file = "sources/county-measure-list-excerpt.txt"
 retrieved = "2026-10-30"
 
 [[source]]
-id = "arguments-filed"
-kind = "election-filing"
-publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): Measure SG, the supporters and opponents who filed its arguments"
-credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
-url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
-file = "sources/county-measure-list-excerpt.txt"
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Raúl F. Salinas, City Attorney, City of South Gate, City Attorney's Impartial Analysis of Measure SG, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "City Attorney's Impartial Analysis of Measure SG, City of South Gate"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10910.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure SG, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument in favor of Measure SG, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10910.json"
+file = "sources/argument-for.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure SG, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument against Measure SG, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10910.json"
+file = "sources/argument-against.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "rebuttal-to-argument-for"
+kind = "official-argument"
+publisher = "Rebuttal to Argument in Favor of Measure SG, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Rebuttal to argument in favor of Measure SG, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10910.json"
+file = "sources/rebuttal-to-argument-for.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "rebuttal-to-argument-against"
+kind = "official-argument"
+publisher = "Rebuttal to Argument Against Measure SG, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Rebuttal to argument against Measure SG, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10910.json"
+file = "sources/rebuttal-to-argument-against.html"
 retrieved = "2026-10-30"
 
 [[source]]
@@ -54,13 +85,4 @@ publisher = "City of South Gate City Council, Resolution No. 2026-35-CC, submitt
 credit = "Resolution No. 2026-35-CC and ordinance, City of South Gate"
 url = "https://www.cityofsouthgate.org/files/sharedassets/public/v/1/government/departments/city-clerks-office/elections/documents/resolution-no.-2026-35-cc.pdf"
 file = "sources/resolution.pdf"
-retrieved = "2026-10-30"
-
-[[source]]
-id = "budget-presentation"
-kind = "official-report"
-publisher = "City of South Gate, Administrative Services Department, Budget Reductions and Service Impacts, August 2026 (City Council presentation), page 4"
-credit = "City of South Gate budget presentation, August 2026"
-url = "https://www.cityofsouthgate.org/files/sharedassets/public/v/1/government/city-manager/documents/uut/260818-budget-cut-update-presentation-final.pdf"
-file = "sources/staff-report.pdf"
 retrieved = "2026-10-30"

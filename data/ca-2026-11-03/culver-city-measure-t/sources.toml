@@ -9,11 +9,13 @@
 # against was submitted ("Opponents: None submitted."); the City Clerk's
 # page says the same ("An argument in opposition of the TOT Increase
 # (Measure T) was not filed."). sources/county-measure-list-excerpt.txt
-# is the measure's entry, cut from the list. The City Clerk's "Upcoming
-# Election Information" page prints the City Attorney's impartial
-# analysis and the argument in favor; the impartial analysis is the
-# measure's neutral explanation and states the City's revenue estimate.
-# The resolution (a scan) is not cited.
+# is the measure's entry, cut from the list. The Registrar's Interactive
+# Sample Ballot prints the City Attorney's impartial analysis (the
+# measure's neutral explanation, which states the City's revenue
+# estimate), the measure's full text and the argument in favor, saved as
+# HTML; they supersede the same texts on the City Clerk's "Upcoming
+# Election Information" page (sources/measure-page.html, not cited). The
+# resolution (a scan) is not cited.
 
 [contest]
 id = "ca-2026-11-03-culver-city-measure-t"
@@ -34,17 +36,26 @@ retrieved = "2026-10-30"
 [[source]]
 id = "impartial-analysis"
 kind = "official-title-summary"
-publisher = "Heather Baker, City Attorney, City of Culver City, City Attorney's Impartial Analysis of Measure T (August 13, 2026), on the City Clerk's Upcoming Election Information page"
+publisher = "Heather Baker, City Attorney, City of Culver City, City Attorney's Impartial Analysis of Measure T (August 13, 2026), as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
 credit = "City Attorney's Impartial Analysis of Measure T, City of Culver City"
-url = "https://www.culvercity.gov/City-Hall/Election-Information-Updated/Upcoming-Election-Information"
-file = "sources/measure-page.html"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10929.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "full-text"
+kind = "official-text"
+publisher = "Full Text of Ballot Measure T (an ordinance amending Section 11.02.105 of the Culver City Municipal Code to increase the transient occupancy tax), as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Text of Measure T, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10929.json"
+file = "sources/full-text.html"
 retrieved = "2026-10-30"
 
 [[source]]
 id = "argument-for"
 kind = "official-argument"
-publisher = "Argument in Favor of Ballot Measure T, as posted by the City of Culver City City Clerk (no argument against was submitted)"
-credit = "Argument in favor of Measure T, City of Culver City City Clerk"
-url = "https://www.culvercity.gov/City-Hall/Election-Information-Updated/Upcoming-Election-Information"
-file = "sources/measure-page.html"
+publisher = "Argument in Favor of Measure T, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot; no argument against was submitted)"
+credit = "Argument in favor of Measure T, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10929.json"
+file = "sources/argument-for.html"
 retrieved = "2026-10-30"

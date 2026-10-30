@@ -5,17 +5,14 @@
 #
 # The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
 # Appearing on the Ballot" (sources/county-measure-list-excerpt.txt, the
-# measure's entry) gives its letter, vote threshold and ballot question,
-# and, on its "Supporters: ... Opponents: ..." line, who filed the
-# primary arguments: the card quotes it, and the sides cite it as the
-# official statement of filing. The City Council's resolution submitting
-# the measure gives how it reached the ballot; the initiative's text,
-# Exhibit 1 to it, gives what it does. That text is a scan with no text
-# layer: the pages cited were typed into
-# sources/full-text-transcription.txt, from which the script's facts are
-# quoted. No impartial analysis and no argument text could be fetched
-# (the City's site blocked downloads), and no fiscal statement applies;
-# the revenue estimate is the ballot question's own.
+# measure's entry) gives its letter, vote threshold and ballot question:
+# the card quotes it. The Registrar's Interactive Sample Ballot prints the
+# City Attorney's impartial analysis (the measure's neutral explanation,
+# and the source of its revenue estimate), the arguments for and against
+# and both rebuttals, each saved as HTML. The City Council's resolution
+# submitting the measure gives how it reached the ballot; the initiative's
+# text, Exhibit 1 to it, is a scan, and the pages cited were typed into
+# sources/full-text-transcription.txt. No fiscal statement applies.
 
 [contest]
 id = "ca-2026-11-03-santa-monica-measure-es"
@@ -34,12 +31,48 @@ file = "sources/county-measure-list-excerpt.txt"
 retrieved = "2026-10-30"
 
 [[source]]
-id = "arguments-filed"
-kind = "election-filing"
-publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): Measure ES, the supporters and opponents who filed its arguments"
-credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
-url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
-file = "sources/county-measure-list-excerpt.txt"
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Heidi von Tongeln, City Attorney, City of Santa Monica, City Attorney's Impartial Analysis of Measure ES, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "City Attorney's Impartial Analysis of Measure ES, City of Santa Monica"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10916.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure ES, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument in favor of Measure ES, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10916.json"
+file = "sources/argument-for.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure ES, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument against Measure ES, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10916.json"
+file = "sources/argument-against.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "rebuttal-to-argument-for"
+kind = "official-argument"
+publisher = "Rebuttal to Argument in Favor of Measure ES, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Rebuttal to argument in favor of Measure ES, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10916.json"
+file = "sources/rebuttal-to-argument-for.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "rebuttal-to-argument-against"
+kind = "official-argument"
+publisher = "Rebuttal to Argument Against Measure ES, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Rebuttal to argument against Measure ES, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10916.json"
+file = "sources/rebuttal-to-argument-against.html"
 retrieved = "2026-10-30"
 
 [[source]]

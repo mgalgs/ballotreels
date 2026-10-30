@@ -7,17 +7,16 @@
 # Appearing on the Ballot" prints each measure's letter, vote threshold and
 # ballot question, and says in words who filed the primary arguments
 # ("Supporters: ... Opponents: None submitted."). The card quotes the
-# ballot question from it (ballot-question), and the sides cite it as the
-# Registrar's statement of filing (measure-list). The same excerpt backs
-# both.
+# ballot question from it (ballot-question), and the no side cites it as
+# the Registrar's statement of filing (measure-list). The same excerpt
+# backs both.
 #
-# No impartial analysis and no argument text was staged. The measure is
-# explained from the district's resolution: its Exhibit B (the full ballot
-# text, a text page of the copy filed with the Board of Supervisors) and
-# its Exhibit C (the tax rate statement), which only the district's own
-# Measure SM page prints. The page's FAQ and overview are not cited. The
-# scanned pages of resolution.pdf (cover and signature pages) are not
-# cited, so none is transcribed.
+# The Registrar's Interactive Sample Ballot prints County Counsel's
+# impartial analysis (the measure's neutral explanation), the full text,
+# the district's tax rate statement and the argument in favor, saved as
+# HTML, with "NO ARGUMENT AGAINST THIS MEASURE WAS SUBMITTED" under the
+# argument. These supersede the district's copies (its resolution and
+# Measure SM page, not cited).
 
 [contest]
 id = "ca-2026-11-03-bellflower-unified-measure-sm"
@@ -45,19 +44,37 @@ file = "sources/county-measure-list-excerpt.txt"
 retrieved = "2026-10-30"
 
 [[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Dawyn R. Harrison, County Counsel, Impartial Analysis of Measure SM, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "County Counsel's Impartial Analysis of Measure SM, Los Angeles County"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10872.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
 id = "text"
 kind = "official-text"
-publisher = "Bellflower Unified School District, Resolution Ordering School Bond Election, Exhibit B, Full Ballot Text, pages B-1 to B-6, as filed with the Los Angeles County Board of Supervisors"
+publisher = "Full Text of Ballot Measure SM, Bellflower Unified School District, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
 credit = "Full Ballot Text, Bellflower Unified School District"
-url = "https://file.lacounty.gov/SDSInter/bos/supdocs/218657.pdf"
-file = "sources/resolution.pdf"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10872.json"
+file = "sources/full-text.html"
 retrieved = "2026-10-30"
 
 [[source]]
 id = "tax-statement"
 kind = "official-fiscal-analysis"
-publisher = "Bellflower Unified School District, Tax Rate Statement (Exhibit C to Resolution No. 2026-0618), as posted on the district's Measure SM page"
+publisher = "Bellflower Unified School District, Tax Rate Statement, Measure SM (June 18, 2026), as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
 credit = "Tax Rate Statement, Bellflower Unified School District"
-url = "https://www.busd.k12.ca.us/our-district/measuresm"
-file = "sources/measure-page.html"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10872.json"
+file = "sources/tax-rate-statement.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure SM, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot; no argument against was submitted)"
+credit = "Argument in favor of Measure SM, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10872.json"
+file = "sources/argument-for.html"
 retrieved = "2026-10-30"

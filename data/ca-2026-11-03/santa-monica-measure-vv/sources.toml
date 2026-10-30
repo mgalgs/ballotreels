@@ -5,18 +5,19 @@
 #
 # The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
 # Appearing on the Ballot" (sources/county-measure-list-excerpt.txt, the
-# measure's entry) gives its letter, vote threshold and ballot question,
-# and, on its "Supporters: ... Opponents: ..." line, who filed the
-# primary arguments ("Opponents: None submitted."): the card quotes it,
-# and the sides cite it as the official statement of filing. The City
-# Council's final resolution submitting the measure (July 28, 2026; it
-# replaced a broader July 14 resolution, which the staff report covers
-# and which is not cited) gives today's rules in its recitals and the
-# charter amendment as Exhibit 1 (pages 5 and 6), a redline: what the
+# measure's entry) gives its letter, vote threshold and ballot question:
+# the card quotes it. Its "Opponents: None submitted." is contradicted by
+# the Registrar's own Interactive Sample Ballot, which prints an argument
+# against (with signers), beside the City Attorney's impartial analysis
+# (the measure's neutral explanation), the argument for and both
+# rebuttals, each saved as HTML; the sides follow the printed arguments.
+# The City Council's final resolution submitting the measure (July 28,
+# 2026; it replaced a broader July 14 resolution, which the staff report
+# covers and which is not cited) gives today's rules in its recitals and
+# the charter amendment as Exhibit 1 (pages 5 and 6), a redline: what the
 # script calls today's rule is the struck text, read from the page
-# images, since pdftotext keeps struck and added words alike. No
-# impartial analysis and no argument text could be fetched (the City's
-# site blocked downloads). Not a tax; no fiscal statement applies.
+# images, since pdftotext keeps struck and added words alike. Not a tax;
+# no fiscal statement applies.
 
 [contest]
 id = "ca-2026-11-03-santa-monica-measure-vv"
@@ -35,12 +36,48 @@ file = "sources/county-measure-list-excerpt.txt"
 retrieved = "2026-10-30"
 
 [[source]]
-id = "arguments-filed"
-kind = "election-filing"
-publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, November 3, 2026 (Rev. 9/22/26): Measure VV, the supporters who filed its argument for, and \"Opponents: None submitted.\""
-credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
-url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
-file = "sources/county-measure-list-excerpt.txt"
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Heidi von Tongeln, City Attorney, City of Santa Monica, City Attorney's Impartial Analysis of Measure VV, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "City Attorney's Impartial Analysis of Measure VV, City of Santa Monica"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10919.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure VV, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument in favor of Measure VV, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10919.json"
+file = "sources/argument-for.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure VV, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument against Measure VV, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10919.json"
+file = "sources/argument-against.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "rebuttal-to-argument-for"
+kind = "official-argument"
+publisher = "Rebuttal to Argument in Favor of Measure VV, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Rebuttal to argument in favor of Measure VV, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10919.json"
+file = "sources/rebuttal-to-argument-for.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "rebuttal-to-argument-against"
+kind = "official-argument"
+publisher = "Rebuttal to Argument Against Measure VV, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Rebuttal to argument against Measure VV, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10919.json"
+file = "sources/rebuttal-to-argument-against.html"
 retrieved = "2026-10-30"
 
 [[source]]

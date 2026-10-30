@@ -4,8 +4,9 @@
 # who evicts a tenant to move in, from the resolution's recitals and the
 # struck text of its redline; the 2022 change for rent-controlled units
 # the Council says this would match (its stated reason, STANDARD.md
-# 6.2); what would change; that no cost estimate is given; who filed the
-# argument for, and that none was submitted against; what a vote does.
+# 6.2); what would change, from the City Attorney's impartial analysis
+# and the redline; that no cost estimate is given; one line per side;
+# what a vote does.
 #
 # No place name is narrated (the narrator mispronounces them): the
 # opening says "the voters of this city". The card shows the name. The
@@ -17,20 +18,21 @@
 # has no boxes; the vote lines take both meanings from the question and
 # highlight the same phrase.
 #
-# Not a tax: no fiscal statement applies, and no impartial analysis was
-# fetched. The fiscal line follows the no-cost-estimate wording, naming
-# the county's list (the card's guide) as "the official list of measures
-# from the county" ("county's" is misheard as "counties"). No archived
-# document says how many homes and condominiums are rented: left open,
-# under [[question]].
+# Not a tax: no fiscal statement applies, and the impartial analysis
+# gives no cost estimate; the fiscal line says so in the no-estimate
+# wording. No archived document says how many homes and condominiums are
+# rented: left open, under [[question]]. The line on what an owner who
+# does not move in must do comes from the amendment's text; the analysis
+# does not mention it, and nothing in it disagrees.
 #
-# Sides: the county's list names four supporters who filed the argument
-# for (two councilmembers, the Rent Control Board's vice chair and one
-# other) and says "Opponents: None submitted." The argument for's text
-# could not be fetched: its line says only who filed it and that its text
-# was not gathered, nothing reconstructed. The no side says that none was
-# submitted. filed = false on both (neither has text to quote as a
-# `basis`); word counts kept within 5%.
+# Sides: the county's list says "Opponents: None submitted.", but the
+# Registrar's sample ballot prints an argument against and a rebuttal,
+# so both sides are presented from their filed texts. Supporters: no
+# family should be evicted without good cause, and all tenants should
+# have the same rights. Opponents: it unfairly penalizes small property
+# owners, and will drive homes and condos off the rental market.
+# The opponents' relocation-fee figures, which the supporters' rebuttal
+# disputes, are left out of both lines.
 
 contest = "ca-2026-11-03-santa-monica-measure-vv"
 template = "measure"
@@ -64,7 +66,7 @@ heading = "Today"
 [[section.line]]
 id = "today-coverage"
 text = "Today, the charter allows evictions only for listed reasons, but those protections generally leave out single-unit homes and condominiums."
-sources = ["resolution"]
+sources = ["impartial-analysis", "resolution"]
 
 [section.line.visual]
 kind = "illustration"
@@ -73,7 +75,7 @@ name = "single-family-street"
 [[section.line]]
 id = "today-move-in"
 text = "An owner who evicts a tenant to move in must intend to do so within 30 days, and to stay at least one year."
-sources = ["resolution"]
+sources = ["impartial-analysis", "resolution"]
 
 [section.line.visual]
 kind = "illustration"
@@ -94,7 +96,7 @@ heading = "What would change"
 [[section.line]]
 id = "coverage"
 text = "Tenants of single-unit homes and condominiums would get the same eviction protections as other renters."
-sources = ["resolution", "ballot-question"]
+sources = ["impartial-analysis", "resolution", "ballot-question"]
 
 [section.line.visual]
 kind = "illustration"
@@ -103,7 +105,7 @@ name = "single-family-street"
 [[section.line]]
 id = "move-in"
 text = "An owner moving in would have to intend to do so within 60 days, and to stay at least two years."
-sources = ["resolution", "ballot-question"]
+sources = ["impartial-analysis", "resolution", "ballot-question"]
 
 [section.line.visual]
 kind = "illustration"
@@ -123,8 +125,8 @@ id = "fiscal"
 heading = "What it would cost"
 
 [[section.line]]
-text = "The official list of measures from the county does not include a cost estimate for the measure."
-sources = ["ballot-question"]
+text = "The impartial analysis does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -135,31 +137,31 @@ stamp = "None reported"
 id = "yes"
 heading = "Why some vote yes"
 side = "yes"
-filed = false
 
 [[section.line]]
-text = "Two council members, the rent board vice chair and one other person filed an argument for Measure VV; its text was not gathered."
-sources = ["arguments-filed"]
+text = "Supporters say no family should be evicted without good cause, and that all tenants should have the same rights."
+sources = ["argument-for"]
+basis = ["No family should be evicted from their home for arbitrary reasons or without good cause.", "It is important for all tenants to enjoy the same rights, and this measure helps accomplish that goal."]
 
 [section.line.visual]
 kind = "list"
-source = "arguments-filed"
-items = ["Argument for filed; text not gathered"]
+source = "argument-for"
+items = ["No eviction without good cause", "Same rights for all tenants"]
 
 [[section]]
 id = "no"
 heading = "Why some vote no"
 side = "no"
-filed = false
 
 [[section.line]]
-text = "The official county list of measures for this election says that no argument against Measure VV was submitted, by any group or person."
-sources = ["arguments-filed"]
+text = "Opponents say the measure unfairly penalizes small property owners, and will drive homes and condos off the rental market."
+sources = ["argument-against"]
+basis = ["It unfairly penalizes individual families and small property owners while actively worsening Santa Monica's housing shortage.", "Imposing excessive financial penalties and rigid administrative barriers on property owners will inevitably drive single-family homes and condos off the rental market entirely."]
 
 [section.line.visual]
 kind = "list"
-source = "arguments-filed"
-items = ["No argument against was submitted"]
+source = "argument-against"
+items = ["Penalizes small property owners", "Shrinks the rental supply"]
 
 [[section]]
 id = "vote"
