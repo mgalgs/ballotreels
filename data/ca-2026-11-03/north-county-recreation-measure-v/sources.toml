@@ -1,0 +1,73 @@
+# Archived sources for North County Recreation and Park District Measure
+# V, 2026-11-03 general election (sources/county-sources.md). Every id
+# here may be cited by script.toml. `kind` must be one the standard
+# allows (docs/STANDARD.md, section 1).
+#
+# The district is a special district with no Census boundary layer, so
+# its division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md); the tax is levied on each property within the
+# district boundaries (the impartial analysis). The ballot question calls
+# it the "North County Recreation and Park District"; the county list's
+# heading, the impartial analysis and the full text's own heading call
+# it the "North County Public Recreation District". The title, card and
+# voters line use the ballot question's name.
+#
+# The County of Monterey Elections Department posts each local measure's
+# letter, vote threshold and ballot question on its "List of Local
+# Measures" page, with links to each filed document. The card quotes the
+# ballot question from that page. County Counsel's impartial analysis is
+# the measure's neutral explanation, the kind a state's attorney
+# general's explanatory statement is. The full text is the district's
+# Exhibit C (a text PDF). Only an argument in favor was filed (the list
+# links no argument against and no rebuttal). A flat parcel tax has no
+# tax rate statement.
+#
+# The impartial analysis and the argument are scans with no text layer.
+# The passages cited were typed from the page images into
+# sources/county-*-transcription.txt, each naming the PDF and URL it
+# copies; those sources point at the transcription, and their url at the
+# scan.
+
+[contest]
+id = "ca-2026-11-03-north-county-recreation-measure-v"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:monterey"
+kind = "measure"
+title = "North County Recreation and Park District Measure V: $82 Parcel Tax for Parks and Recreation"
+voters = "the North County Recreation and Park District"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "County of Monterey Elections Department, List of Local Measures, November 3, 2026 General Election: Measure V - North County Public Recreation District"
+credit = "List of Local Measures, County of Monterey Elections"
+url = "https://www.countyofmonterey.gov/government/departments-a-h/elections/list-of-local-measures"
+file = "sources/county-measure-list.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Monterey County Counsel, Impartial Analysis of Measure V, as posted by the County of Monterey Elections Department (transcribed from the scan)"
+credit = "Impartial Analysis, Monterey County Counsel"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147781/639222432621230000"
+file = "sources/county-impartial-analysis-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "North County Recreation and Park District, Full Text of Measure V (Exhibit C), as posted by the County of Monterey Elections Department"
+credit = "Full Text of Measure V"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147469/639217160290670000"
+file = "sources/county-full-text.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure V, as filed with the County of Monterey Elections Department (transcribed from the scan; no argument against was filed)"
+credit = "Argument in favor, Measure V"
+url = "https://www.countyofmonterey.gov/home/showpublisheddocument/147779/639222432617730000"
+file = "sources/county-argument-for-transcription.txt"
+retrieved = "2026-10-29"
