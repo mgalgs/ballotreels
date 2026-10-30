@@ -41,3 +41,5 @@ The RR/CC final list (p. 4) prints the title slightly differently: "COUNTY OF LO
 - "The measure does not identify a funding/revenue source for these expenditures."
 
 **Argument in favor** signers: Fatima Malik (League of Women Voters of LA County); Trent Lange (CA Clean Money); Lindsey P. Horvath (LA County Supervisor); Darius Kemp (CA Common Cause); Alton Wang (AAPI Equity Alliance).
+
+county-measure-list-excerpt.txt: an excerpt (page 3, County Measures, Measure E) of the Registrar-Recorder/County Clerk's "Measures Appearing on the Ballot", General Election November 3, 2026 (Rev. 9/22/26), https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf, retrieved 2026-10-30, as pdftotext -layout prints it. Its title for E reads "... ETHICS COMMISSION AND COMMUNITY INVESTMENT BUDGET ALLOCATION CHARTER AMENDMENT.", adding "BUDGET ALLOCATION" to the ordinance's Section 2.

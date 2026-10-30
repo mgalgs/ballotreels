@@ -74,8 +74,11 @@ BALLOTS: dict[str, Ballot] = {
                          "San Diego County Voter Information Guide",
                      "ca-2026-11-03-la-county-measure-a":
                          "Proposed Ordinance of Measure A",
+                     # (the final list's title for E adds words to the
+                     # ordinance's, so E's card quotes the list)
                      "ca-2026-11-03-la-county-measure-e":
-                         "Proposed Ordinance of Measure E",
+                         "Los Angeles County Registrar-Recorder/County "
+                         "Clerk, Measures Appearing on the Ballot",
                      "ca-2026-11-03-san-diego-unified-measure-m":
                          "San Diego County Voter Information Guide",
                      "ca-2026-11-03-vista-unified-measure-n":

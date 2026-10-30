@@ -5,10 +5,11 @@
 # Clerk's own web copy of the measure's document; no page range of the
 # printed Sample Ballot and Voter Information Pamphlet was archived.
 #
-# The ballot label is printed only in the ordinance (its Section 2, "The
-# exact form of the measure as it is to appear on the ballot"), so the
-# ordinance backs two sources: the ballot label the card quotes, and the
-# full text.
+# The ordinance's Section 2 gives "The exact form of the measure as it is
+# to appear on the ballot", so it backs the ballot label and the full
+# text. The Registrar's final list "Measures Appearing on the Ballot"
+# (Rev. 9/22/26) prints the title with "BUDGET ALLOCATION" added, so the
+# card quotes the list (county-list, an excerpt of its page 3).
 
 [contest]
 id = "ca-2026-11-03-la-county-measure-e"
@@ -16,6 +17,19 @@ election = "ca-2026-11-03"
 division = "ocd-division/country:us/state:ca/county:los_angeles"
 kind = "measure"
 title = "Los Angeles County Measure E: Ethics Commission and Community Investment Charter Amendment"
+
+[[contest.correction]]
+date = "2026-10-30"
+note = "The card now quotes the county's final list of measures on the ballot, whose title adds the words \"Budget Allocation\" to the one in the proposed ordinance."
+
+[[source]]
+id = "county-list"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026 (Rev. 9/22/26): County Measures, Measure E"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
 
 [[source]]
 id = "ballot-label"

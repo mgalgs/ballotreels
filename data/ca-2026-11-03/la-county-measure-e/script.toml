@@ -5,9 +5,10 @@
 # Auditor-Controller's statement, the cost and how it would be paid; one
 # line per side; what a vote does.
 #
-# The card quotes the ballot label, printed only in the ordinance, which
-# prints no yes/no lines (County Counsel's analysis has them, on another
-# document). So, as for Utah, the card has no YES/NO boxes, the vote
+# The card quotes the Registrar's final list of measures, whose title
+# adds "BUDGET ALLOCATION" to the ordinance's. Neither prints yes/no
+# lines (County Counsel's analysis has them, on another document). So,
+# as for Utah, the card has no YES/NO boxes, the vote
 # lines give the analysis's meanings, and both highlight the same two
 # phrases of the question.
 #
@@ -27,11 +28,11 @@ template_version = 2
 standard_version = 2
 
 [card]
-source = "ballot-label"
+source = "county-list"
 number = "E"
-title = "PROPOSED COUNTY CHARTER AMENDMENT. COUNTY OF LOS ANGELES ETHICS COMMISSION AND COMMUNITY INVESTMENT CHARTER AMENDMENT."
-origin = "The Board of Supervisors of the County of Los Angeles ordains as follows:"
-summary = "Shall the measure, amending the Los Angeles County Charter to provide greater independence and structure for the County of Los Angeles Ethics Commission, Office of Ethics Compliance, and Ethics Compliance Officer, including appointment processes, qualifications, term, duties, and responsibilities, and to continue uninterrupted the County's commitment to community investment and alternatives to incarceration, as specified in the charter amendment ordinance, be adopted?"
+title = "PROPOSED COUNTY CHARTER AMENDMENT. COUNTY OF LOS ANGELES ETHICS COMMISSION AND COMMUNITY INVESTMENT BUDGET ALLOCATION CHARTER AMENDMENT."
+origin = "VOTE PASSAGE – Majority Vote 50%+"
+summary = "Shall the measure amending the Los Angeles County Charter to provide greater independence and structure for the County of Los Angeles Ethics Commission, Office of Ethics Compliance, and Ethics Compliance Officer, including appointment processes, qualifications, term, duties and responsibilities, and to continue uninterrupted the County's commitment to community investment and alternatives to incarceration, as specified in the charter amendment ordinance, be adopted?"
 
 [[section]]
 id = "what"
@@ -39,11 +40,11 @@ heading = "Measure E"
 
 [[section.line]]
 text = "Los Angeles County Measure E asks county voters whether to change the County Charter on ethics and community investment."
-sources = ["ballot-label"]
+sources = ["county-list"]
 
 [section.line.visual]
 kind = "page"
-source = "ballot-label"
+source = "county-list"
 highlight = ["ETHICS COMMISSION AND COMMUNITY INVESTMENT"]
 
 [[section]]
@@ -134,18 +135,18 @@ heading = "What your vote means"
 
 [[section.line]]
 text = "A yes vote means a more independent ethics commission, and the set-aside continues."
-sources = ["impartial-analysis", "ballot-label"]
+sources = ["impartial-analysis", "county-list"]
 
 [section.line.visual]
 kind = "page"
-source = "ballot-label"
+source = "county-list"
 highlight = ["greater independence and structure", "commitment to community investment"]
 
 [[section.line]]
 text = "A no vote means the commission stays as it is, and the set-aside is not required after 2028."
-sources = ["impartial-analysis", "ballot-label"]
+sources = ["impartial-analysis", "county-list"]
 
 [section.line.visual]
 kind = "page"
-source = "ballot-label"
+source = "county-list"
 highlight = ["greater independence and structure", "commitment to community investment"]
