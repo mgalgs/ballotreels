@@ -1,0 +1,291 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 91.06,
+  "phrases": [
+    {
+      "text": "Measure L asks the voters of this city whether to tax hotel and motel stays at 12 percent, for general city services.",
+      "start": 0.03,
+      "end": 8.51
+    },
+    {
+      "text": "Today, the city does not tax hotel and motel stays.",
+      "start": 9.17,
+      "end": 12.67
+    },
+    {
+      "text": "Guests staying 30 days or less would pay 12 percent of what they pay for the room.",
+      "start": 13.33,
+      "end": 18.37
+    },
+    {
+      "text": "The tax would apply to the full price, including fees, and online travel companies would collect it too.",
+      "start": 19.03,
+      "end": 25.48
+    },
+    {
+      "text": "Government travelers, emergency shelter stays and residents displaced from their homes by a disaster would be exempt.",
+      "start": 26.14,
+      "end": 34.49
+    },
+    {
+      "text": "The money would go to the general fund for any city purpose, with yearly audits, until voters repeal the tax.",
+      "start": 35.15,
+      "end": 42.93
+    },
+    {
+      "text": "The City Council could lower the rate and raise it again, but never above 12 percent without another vote.",
+      "start": 43.59,
+      "end": 50.75
+    },
+    {
+      "text": "The ballot question estimates about $751,315 a year, which the city staff report puts at approximately 1.69 percent of the general fund.",
+      "start": 51.41,
+      "end": 63.85
+    },
+    {
+      "text": "The official county list of measures for this election says that no argument against Measure L was submitted, by any group or person.",
+      "start": 64.51,
+      "end": 73.09
+    },
+    {
+      "text": "A former treasurer, a board member, a business owner and one other person filed an argument for Measure L; its text was not gathered.",
+      "start": 73.75,
+      "end": 83.09
+    },
+    {
+      "text": "A yes vote adopts the 12 percent hotel tax.",
+      "start": 83.75,
+      "end": 87.23
+    },
+    {
+      "text": "A no vote rejects the 12 percent hotel tax.",
+      "start": 87.89,
+      "end": 91.03
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure L asks the voters of this city whether to tax hotel and motel stays at 12 percent, for general city services.",
+      "Today, the city does not tax hotel and motel stays.",
+      "Guests staying 30 days or less would pay 12 percent of what they pay for the room.",
+      "The tax would apply to the full price, including fees, and online travel companies would collect it too.",
+      "Government travelers, emergency shelter stays and residents displaced from their homes by a disaster would be exempt.",
+      "The money would go to the general fund for any city purpose, with yearly audits, until voters repeal the tax.",
+      "The City Council could lower the rate and raise it again, but never above 12 percent without another vote.",
+      "The ballot question estimates about $751,315 a year, which the city staff report puts at approximately 1.69 percent of the general fund.",
+      "The official county list of measures for this election says that no argument against Measure L was submitted, by any group or person.",
+      "A former treasurer, a board member, a business owner and one other person filed an argument for Measure L; its text was not gathered.",
+      "A yes vote adopts the 12 percent hotel tax.",
+      "A no vote rejects the 12 percent hotel tax."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure L asks the voters of this city whether to tax hotel and motel stays at 12 percent, for general city services."
+      },
+      "bounds": [
+        0,
+        204960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure L asks the voters of this city whether to tax hotel and motel stays at 12 percent, for general city services.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, the city does not tax hotel and motel stays."
+      },
+      "bounds": [
+        219360,
+        304800
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, the city does not tax hotel and motel stays.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Guests staying 30 days or less would pay 12 percent of what they pay for the room."
+      },
+      "bounds": [
+        319200,
+        441600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Guests staying 30 days or less would pay 12 percent of what they pay for the room.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The tax would apply to the full price, including fees, and online travel companies would collect it too."
+      },
+      "bounds": [
+        456000,
+        612240
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The tax would apply to the full price, including fees, and online travel companies would collect it too.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Government travelers, emergency shelter stays and residents displaced from their homes by a disaster would be exempt."
+      },
+      "bounds": [
+        626640,
+        828480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Government travelers, emergency shelter stays and residents displaced from their homes by a disaster would be exempt.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money would go to the general fund for any city purpose, with yearly audits, until voters repeal the tax."
+      },
+      "bounds": [
+        842880,
+        1031040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money would go to the general fund for any city purpose, with yearly audits, until voters repeal the tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The City Council could lower the rate and raise it again, but never above 12 percent without another vote."
+      },
+      "bounds": [
+        1045440,
+        1218720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The City Council could lower the rate and raise it again, but never above 12 percent without another vote.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The ballot question estimates about $751,315 a year, which the city staff report puts at approximately 1.69 percent of the general fund."
+      },
+      "bounds": [
+        1233120,
+        1533120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The ballot question estimates about $751,315 a year, which the city staff report puts at approximately 1.69 percent of the general fund.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The official county list of measures for this election says that no argument against Measure L was submitted, by any group or person."
+      },
+      "bounds": [
+        1547520,
+        1754880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The official county list of measures for this election says that no argument against Measure L was submitted, by any group or person.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A former treasurer, a board member, a business owner and one other person filed an argument for Measure L; its text was not gathered."
+      },
+      "bounds": [
+        1769280,
+        1994880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A former treasurer, a board member, a business owner and one other person filed an argument for Measure L; its text was not gathered.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote adopts the 12 percent hotel tax."
+      },
+      "bounds": [
+        2009280,
+        2094240
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote adopts the 12 percent hotel tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote rejects the 12 percent hotel tax."
+      },
+      "bounds": [
+        2108640,
+        2185440
+      ]
+    }
+  ],
+  "sha256": "eada13621a7c1ec2278d6f71e7e7d957c0c9fae3b4bdc2f401a72d078b79e16a",
+  "take": {
+    "sha256": "db5fb77fa34b06d89079fef3c8b5fe120e2fe10b4f6c7973a88e1cb4f0477beb",
+    "bytes": 4370924
+  }
+}
