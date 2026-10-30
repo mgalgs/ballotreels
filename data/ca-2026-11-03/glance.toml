@@ -3687,3 +3687,13 @@ source = "ballot-question"
 quote = "generating approximately $4,000,000 annually until ended by voters"
 amount = 4000000
 period = "per-year"
+
+# City of San Pablo Measure R: no impartial analysis or fiscal statement
+# was archived; the revenue estimate, as the ballot question in the
+# resolution placing the measure gives it ($2 million a year for the
+# first five years, then $1 million a year).
+[san-pablo-measure-r]
+source = "ballot-question"
+quote = "generating approximately $2,000,000 annually, then reduced to ¼-cent for 5 years, generating approximately $1,000,000 annually"
+amount = 2000000
+period = "per-year"

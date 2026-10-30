@@ -57,7 +57,8 @@ id = "what"
 heading = "Measure P"
 
 [[section.line]]
-text = "Measure P asks the voters of this city whether to add a 1 percent sales tax with no end date."
+id = "asks"
+text = "Measure P asks the voters of this city whether to add a 1 percent sales tax that would last until voters repeal it."
 sources = ["ballot-question", "text"]
 
 [section.line.visual]
@@ -93,7 +94,7 @@ heading = "What would change"
 
 [[section.line]]
 id = "rate"
-text = "The tax would add 1 percent to retail sales in the city, until voters repeal it."
+text = "The tax would add 1 percent to retail sales in the city."
 sources = ["text", "ballot-question"]
 
 [section.line.visual]
@@ -199,7 +200,7 @@ lines = ["placed"]
 
 [[question]]
 ask = "How long would the tax last?"
-lines = ["rate"]
+lines = ["asks"]
 
 [[question]]
 ask = "What if the state's limit on these taxes gets in the way?"
