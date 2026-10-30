@@ -3180,3 +3180,46 @@ source = "impartial-analysis"
 quote = "generate approximately $24 million annually, and remain in effect until repealed by voters."
 amount = 24000000
 period = "per-year"
+
+# Bellflower Unified School District Measure SM: a school bond; the
+# district's tax rate statement (Exhibit C to its resolution) gives the
+# total debt service.
+[bellflower-unified-measure-sm]
+source = "tax-statement"
+quote = "would be required to be repaid if all the bonds are issued and sold is approximately $240.9 million."
+amount = 240900000
+period = "unstated"
+
+# City of Baldwin Park Measure CR: a general tax, so no tax rate statement;
+# no impartial analysis was staged, and the one revenue figure is the
+# ballot question's own projection, as the Registrar's list prints it.
+[baldwin-park-measure-cr]
+source = "ballot-question"
+quote = "providing a projected $1,000,000 annually in additional locally controlled funding"
+amount = 1000000
+period = "per-year"
+
+# Glendora Unified School District Measure G: a school bond; the
+# district's tax rate statement (Appendix C to its resolution) gives the
+# total debt service.
+[glendora-unified-measure-g]
+source = "tax-statement"
+quote = "would be required to be repaid if all the bonds are issued and sold will be approximately $161,348,832."
+amount = 161348832
+period = "unstated"
+
+# Claremont Unified School District Measure CS: a school bond; no tax rate
+# statement was staged, so the one estimate is the ballot question's own
+# yearly levy, as the Registrar's list prints it.
+[claremont-unified-measure-cs]
+source = "ballot-question"
+quote = "levying approximately $32/$100,000 of assessed value ($5,000,000 annually)"
+amount = 5000000
+period = "per-year"
+
+# Hacienda La Puente Unified School District Measure B (term limits for
+# board members): not a tax; the Registrar's list and the board's
+# resolution, the documents gathered, print no cost estimate.
+[hacienda-la-puente-unified-measure-b]
+source = "ballot-question"
+status = "none-printed"

@@ -957,6 +957,18 @@ BALLOTS: dict[str, Ballot] = {
                                      "bear-valley-csd-measure-r",
                                      "bear-valley-csd-measure-s",
                                      "kern-county-measure-z")},
+                     # The Los Angeles County Registrar-Recorder/County
+                     # Clerk's list "Measures Appearing on the Ballot"
+                     # prints each local measure's letter, vote threshold
+                     # and ballot question, which these cards quote
+                     **{f"ca-2026-11-03-{slug}":
+                        "Los Angeles County Registrar-Recorder/County Clerk,"
+                        " Measures Appearing on the Ballot"
+                        for slug in ("bellflower-unified-measure-sm",
+                                     "baldwin-park-measure-cr",
+                                     "glendora-unified-measure-g",
+                                     "claremont-unified-measure-cs",
+                                     "hacienda-la-puente-unified-measure-b")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's

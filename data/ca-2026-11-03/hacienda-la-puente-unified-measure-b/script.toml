@@ -1,0 +1,194 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; how board terms work and how the measure
+# reached the ballot (the board's own stated purpose and its split vote);
+# what would change (the limit, which terms count, the vote it needs);
+# that no document gathered gives a cost estimate; both sides, neither of
+# which filed an argument; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the opening
+# says "the voters of this school district". The card and title carry the
+# names. The board's vote is said as who voted, not as a tally
+# (standard/speakability.txt).
+#
+# The card quotes the Los Angeles County Registrar-Recorder/County Clerk's
+# list "Measures Appearing on the Ballot", which prints the ballot question
+# with no yes and no sentences, so the card has no boxes and the two vote
+# lines highlight the same phrase of the question.
+#
+# The resolution's Section 3 and its draft ballot question say "two (2)
+# consecutive" terms; the question the Registrar lists, which is the one on
+# the ballot, says "no more than two (2) four-year terms during their
+# lifetime", as the resolution's recitals do ("two (2) lifetime four-year
+# terms"). The narration follows the ballot question and never says
+# "consecutive".
+#
+# The board majority's purpose is stated as its own, from the resolution's
+# recital (STANDARD.md 6.2), beside the split vote, so the dissent the
+# record shows is told as plainly as the majority's reason. No impartial
+# analysis was staged.
+#
+# The Registrar's list says in words "Supporters: None submitted.
+# Opponents: None submitted.", so each side says plainly that no argument
+# was submitted, citing the list, in the same words (filed = false on
+# both, STANDARD.md 2.5).
+
+contest = "ca-2026-11-03-hacienda-la-puente-unified-measure-b"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "B"
+title = "HACIENDA LA PUENTE UNIFIED SCHOOL DISTRICT"
+origin = "VOTE PASSAGE – Majority Vote 50%+1"
+summary = "Shall members of the Board of Education of the Hacienda La Puente Unified School District be limited to serving no more than two (2) four-year terms during their lifetime regardless of the trustee area represented?"
+
+[[section]]
+id = "what"
+heading = "Measure B"
+
+[[section.line]]
+text = "Measure B asks the voters of this school district whether to limit school board members to two four-year terms in a lifetime."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["no more than two (2) four-year terms during their lifetime"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "terms"
+text = "School board members serve four-year terms, and state law lets a board ask its voters to limit how many terms members may serve."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-board-room"
+
+[[section.line]]
+id = "board-vote"
+text = "Three of the five board members voted to place Measure B on the ballot, and two voted against."
+sources = ["resolution"]
+
+[[section.line]]
+id = "purpose"
+text = "The resolution says the majority believes periodic turnover on the board promotes accountability and gives more people a chance to serve."
+sources = ["resolution"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "limit"
+text = "No one could serve more than two four-year terms on the board in a lifetime, whichever part of the district they represent."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "district-map"
+
+[[section.line]]
+id = "counting"
+text = "Only full terms served from December 11, 2026 onward would count toward the limit."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+id = "threshold"
+text = "Measure B needs a majority yes vote to pass."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "Cost"
+
+[[section.line]]
+id = "cost"
+text = "Neither the county registrar's list of measures nor the board's resolution includes a cost estimate for the measure."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "No cost estimate"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "According to the county registrar's official list of measures, no argument for Measure B was submitted."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument for was submitted"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "According to the county registrar's official list of measures, no argument against Measure B was submitted."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote limits school board members to two four-year terms in a lifetime."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["no more than two (2) four-year terms during their lifetime"]
+
+[[section.line]]
+text = "A no vote rejects the limit of two four-year terms in a lifetime."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["no more than two (2) four-year terms during their lifetime"]
+
+[[question]]
+ask = "Would terms board members have already served count?"
+lines = ["counting"]
+
+[[question]]
+ask = "Who put this on the ballot, and was the board united?"
+lines = ["board-vote", "purpose"]
+
+[[question]]
+ask = "Does a move to a different part of the district restart the count?"
+lines = ["limit"]
+
+[[question]]
+ask = "Would it cost anything?"
+lines = ["cost"]

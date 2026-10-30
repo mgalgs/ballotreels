@@ -1,0 +1,54 @@
+# Archived sources for Hacienda La Puente Unified School District Measure
+# B, 2026-11-03 general election (sources/la-sources.md). Every id here may
+# be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" prints each measure's letter, vote threshold and
+# ballot question, and says in words who filed the primary arguments
+# ("Supporters: None submitted. Opponents: None submitted."). The card
+# quotes the ballot question from it (ballot-question), and the sides cite
+# it as the Registrar's statement of filing (measure-list). The same
+# excerpt backs both.
+#
+# No impartial analysis was staged. The measure is explained from the
+# Board of Education's Resolution No. 2025/26-38, as filed with the Los
+# Angeles County Board of Supervisors. Its page 1 has only a garbled text
+# layer and page 2 none: both were typed from the page images into
+# sources/resolution-transcription.txt, which that source points at.
+# A term limit has no tax rate statement, and no document gathered gives
+# a cost estimate.
+
+[contest]
+id = "ca-2026-11-03-hacienda-la-puente-unified-measure-b"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:hacienda_la_puente_unified_school_district"
+kind = "measure"
+title = "Hacienda La Puente Unified School District Measure B: A Two-Term Lifetime Limit for School Board Members"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026 (Rev. 9/22/26): Hacienda La Puente Unified School District, Measure B"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "measure-list"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026 (Rev. 9/22/26): Measure B, its supporters and opponents as filed"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Hacienda La Puente Unified School District Board of Education, Resolution No. 2025/26-38, proposing a limitation on the number of terms served by members of the governing board, pages 1 and 2, as filed with the Los Angeles County Board of Supervisors (transcribed from the scan)"
+credit = "Resolution No. 2025/26-38, Hacienda La Puente Unified School District"
+url = "https://file.lacounty.gov/SDSInter/bos/supdocs/217941.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-30"

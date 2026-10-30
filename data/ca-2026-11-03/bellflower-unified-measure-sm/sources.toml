@@ -1,0 +1,63 @@
+# Archived sources for Bellflower Unified School District Measure SM,
+# 2026-11-03 general election (sources/la-sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" prints each measure's letter, vote threshold and
+# ballot question, and says in words who filed the primary arguments
+# ("Supporters: ... Opponents: None submitted."). The card quotes the
+# ballot question from it (ballot-question), and the sides cite it as the
+# Registrar's statement of filing (measure-list). The same excerpt backs
+# both.
+#
+# No impartial analysis and no argument text was staged. The measure is
+# explained from the district's resolution: its Exhibit B (the full ballot
+# text, a text page of the copy filed with the Board of Supervisors) and
+# its Exhibit C (the tax rate statement), which only the district's own
+# Measure SM page prints. The page's FAQ and overview are not cited. The
+# scanned pages of resolution.pdf (cover and signature pages) are not
+# cited, so none is transcribed.
+
+[contest]
+id = "ca-2026-11-03-bellflower-unified-measure-sm"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:bellflower_unified_school_district"
+kind = "measure"
+title = "Bellflower Unified School District Measure SM: $135 Million School Facilities Bond"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026 (Rev. 9/22/26): Bellflower Unified School District, Measure SM"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "measure-list"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026 (Rev. 9/22/26): Measure SM, its supporters and opponents as filed"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Bellflower Unified School District, Resolution Ordering School Bond Election, Exhibit B, Full Ballot Text, pages B-1 to B-6, as filed with the Los Angeles County Board of Supervisors"
+credit = "Full Ballot Text, Bellflower Unified School District"
+url = "https://file.lacounty.gov/SDSInter/bos/supdocs/218657.pdf"
+file = "sources/resolution.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Bellflower Unified School District, Tax Rate Statement (Exhibit C to Resolution No. 2026-0618), as posted on the district's Measure SM page"
+credit = "Tax Rate Statement, Bellflower Unified School District"
+url = "https://www.busd.k12.ca.us/our-district/measuresm"
+file = "sources/measure-page.html"
+retrieved = "2026-10-30"
