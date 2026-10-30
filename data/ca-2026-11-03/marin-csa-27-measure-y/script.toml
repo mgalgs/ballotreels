@@ -2,19 +2,22 @@
 # what it asks and whose measure it is; the regional paramedic authority
 # and the tax today; what would change (the most it could be, the yearly
 # confirmation, the use of the money); the vote it needs; the revenue
-# estimate; both sides, neither of which has an archived argument; what
-# a vote does.
+# estimate; both sides (the argument in favor; none against was filed);
+# what a vote does.
 #
 # No place name is narrated (the narrator mispronounces them): the
 # opening says "the voters of this service area", and the Ross Valley
 # Paramedic Authority is "the regional paramedic authority". The card,
 # title and `voters` line carry the names. No person is named.
 #
-# No impartial analysis was archived: the neutral lines rest on the
-# ballot question, the resolution and its Exhibit A (the full ballot
-# text), and the plain facts of the County staff report. The
-# resolution's recitals and Exhibit A's findings of need and benefit,
-# and the ballot question's opening purpose clause, are not narrated.
+# The neutral lines rest on the ballot question, the resolution and its
+# Exhibit A (the full ballot text), and the plain facts of the County
+# staff report; the county's Measure Y page prints the same question
+# (the card is left as it was) and County Counsel's impartial analysis,
+# which agrees with every neutral line and is cited beside the rate and
+# the vote it needs. The resolution's recitals and Exhibit A's findings
+# of need and benefit, and the ballot question's opening purpose clause,
+# are not narrated.
 # The rate's basis (per housing unit or per 1,000 square feet) is the
 # ballot question's. The card quotes the ballot question from Section 3
 # of the resolution, named by its number; the resolution prints only
@@ -27,10 +30,14 @@
 # 6.5; left open). The tax rates are amounts per housing unit or per
 # 1,000 square feet (exempt).
 #
-# No argument for or against Measure Y was archived, and no document
-# says whether any was filed. So the sides do not say none was filed:
-# each says none is among the documents gathered (filed = false,
-# STANDARD.md 2.5), as for Walnut Creek Measure U.
+# The county's page prints an argument in favor of Measure Y and says
+# "No argument against Measure Y was filed." The yes side distils the
+# argument (its signers are not named); "at the current tax rate" is the
+# argument's own claim and stays in the yes line: the neutral lines give
+# the rates as the question, the staff report and County Counsel's
+# impartial analysis do. The no side says, as the county does, that none
+# was filed (filed = false, STANDARD.md 2.5), as for California
+# Proposition 1.
 
 contest = "ca-2026-11-03-marin-csa-27-measure-y"
 template = "measure"
@@ -86,7 +93,7 @@ heading = "What would change"
 [[section.line]]
 id = "rate"
 text = "Measure Y would allow up to $107.50 per housing unit or 1,000 square feet of other buildings, rising up to $4 a year."
-sources = ["ballot-question", "staff-report"]
+sources = ["ballot-question", "staff-report", "impartial-analysis"]
 
 [[section.line]]
 id = "confirm"
@@ -109,7 +116,7 @@ name = "special-tax"
 [[section.line]]
 id = "threshold"
 text = "Measure Y needs two-thirds of the vote to pass."
-sources = ["measure-list", "text"]
+sources = ["measure-list", "text", "county-page", "impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -133,16 +140,16 @@ highlight = ["generating approximately $84,000 annually"]
 id = "yes"
 heading = "Why some vote yes"
 side = "yes"
-filed = false
 
 [[section.line]]
-text = "No argument for Measure Y appears among the official documents gathered for this video."
-sources = ["text"]
+text = "Supporters say Measure Y keeps 9-1-1 response rapid and paramedics on duty, at the current rate with modest increases."
+sources = ["argument-for"]
+basis = ["Maintain rapid 9-1-1 emergency response times", "Preserve the number of on- duty paramedics ready to respond", "Voting Yes on Y renews local paramedic funding for four more years at the current tax rate with modest annual increases of no more than $4 per year."]
 
 [section.line.visual]
 kind = "list"
-source = "text"
-items = ["No argument for was found"]
+source = "argument-for"
+items = ["Keeps 9-1-1 response rapid", "Keeps paramedics on duty"]
 
 [[section]]
 id = "no"
@@ -151,13 +158,13 @@ side = "no"
 filed = false
 
 [[section.line]]
-text = "No argument against Measure Y appears among the official documents gathered for this video."
-sources = ["text"]
+text = "The county says no argument against Measure Y was filed, so it prints only the argument of the measure's supporters."
+sources = ["county-page"]
 
 [section.line.visual]
 kind = "list"
-source = "text"
-items = ["No argument against was found"]
+source = "county-page"
+items = ["No argument against was submitted"]
 
 [[section]]
 id = "vote"

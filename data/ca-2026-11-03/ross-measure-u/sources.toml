@@ -3,18 +3,18 @@
 # script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
 # section 1).
 #
-# Marin County's Voter Information Guide could not be fetched
-# (marincounty.gov blocked the download), so no impartial analysis,
-# argument or rebuttal was reached, and no document says whether any
-# argument was filed (Section 6 of the resolution only provides for one
-# in favor on behalf of the Council). These are the Town's files for the
-# Town Council meeting of July 9, 2026, item 16: the staff report, with
-# Resolution No. 2637 (Attachment 1) and its Exhibit A, Ordinance No.
-# 736, the measure's text, all in one PDF; and the final minutes of that
-# meeting, which record the resolution's adoption. The item was
-# continued from June 11 to revise the ballot language; the question
-# quoted is the one Section 3 of the July 9 resolution prints. The
-# Town's election page (sources/ross-nov2026.html) gives the letter U.
+# The county's Measure U page (sources/county-page.txt, saved as text
+# from a browser, since the site refuses scripted fetches) prints the
+# ballot question, the vote required to pass, the Town Attorney's
+# impartial analysis and the argument in favor, and says that no
+# argument against Measure U was filed. The other files are the Town's
+# for the Town Council meeting of July 9, 2026, item 16: the staff
+# report, with Resolution No. 2637 (Attachment 1) and its Exhibit A,
+# Ordinance No. 736, the measure's text, all in one PDF; and the final
+# minutes of that meeting, which record the resolution's adoption. The
+# item was continued from June 11 to revise the ballot language; the
+# question quoted is the one Section 3 of the July 9 resolution prints.
+# The Town's election page (sources/ross-nov2026.html) gives the letter U.
 #
 # The staff report is the Town staff's material: it is cited only for
 # plain facts (the current tax's end date and this year's rate). The
@@ -27,6 +27,10 @@ election = "ca-2026-11-03"
 division = "ocd-division/country:us/state:ca/place:ross"
 kind = "measure"
 title = "Town of Ross Measure U: Continuing the Paramedic Services Special Tax for Four Years"
+
+[[contest.correction]]
+date = "2026-10-30"
+note = "The video now gives the argument in favor printed by the county, and says, as the county does, that no argument against was filed."
 
 [[source]]
 id = "ballot-question"
@@ -71,4 +75,31 @@ publisher = "Town of Ross, Minutes of the Regular Meeting of the Ross Town Counc
 credit = "Town Council minutes, Town of Ross"
 url = "https://www.townofrossca.gov/sites/default/files/fileattachments/town_council/meeting/4582/july_9_2026_final_regular_minutes.pdf"
 file = "sources/2026-07-09-town-council-minutes-final.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "county-page"
+kind = "official-title-summary"
+publisher = "County of Marin, Elections, Measure U 11/03/26 (November 3, 2026 General Election, list of measures): the ballot question, the vote required to pass, and the county's statement that no argument against Measure U was filed"
+credit = "Measure U page, County of Marin Elections"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-u-110326"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Ross Town Attorney, Impartial analysis by Town Attorney of Measure U, as printed by County of Marin, Elections, Measure U 11/03/26"
+credit = "Impartial analysis, Ross Town Attorney"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-u-110326"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure U, as printed by County of Marin, Elections, Measure U 11/03/26"
+credit = "Argument in favor, County of Marin Elections"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-u-110326"
+file = "sources/county-page.txt"
 retrieved = "2026-10-30"

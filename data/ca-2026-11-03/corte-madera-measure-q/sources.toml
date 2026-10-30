@@ -3,21 +3,23 @@
 # script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
 # section 1).
 #
-# Marin County's Voter Information Guide could not be fetched
-# (marincounty.gov blocked the download), so no impartial analysis,
-# argument or rebuttal was reached, and no document says whether any
-# argument was filed (Section 6 of the resolution only provides for one
-# in favor on behalf of the Town). These are the Town's files for the
-# Town Council meeting of June 2, 2026, item 7.B: the staff report, with
-# Resolution No. 24/2026 (Attachment 1, the agenda copy, its vote left
-# blank) and its Exhibit A, the draft ordinance (its number left blank),
-# the measure's text, all in one PDF; and the minutes of that meeting,
-# which record the resolution's adoption. The Town's records leave the
-# letter blank ("Measure __"); the county's list of measures
-# (sources/county-measure-list.html) gives it as Q.
+# The county's Measure Q page (sources/county-page.txt, saved as text
+# from a browser, since the site refuses scripted fetches) prints the
+# ballot question, the vote required to pass, the Town Attorney's
+# impartial analysis and the argument in favor, and says that no
+# argument against Measure Q was filed. The other files are the Town's
+# for the Town Council meeting of June 2, 2026, item 7.B: the staff
+# report, with Resolution No. 24/2026 (Attachment 1, the agenda copy, its
+# vote left blank) and its Exhibit A, the draft ordinance (its number
+# left blank), the measure's text, all in one PDF; and the minutes of
+# that meeting, which record the resolution's adoption. The Town's
+# records leave the letter blank ("Measure __"); the county's list of
+# measures (sources/county-measure-list.html) and its page give it as Q.
 #
 # The same PDF prints, as Attachment 2, a draft "Argument in Favor of
-# Measure __". It is a draft, not a filed argument, and is not cited.
+# Measure __". It is a draft; the filed argument cited is the one the
+# county prints.
+#
 # The staff report is the Town staff's material: it is cited only for
 # plain facts (this year's rate and the current tax's end date). The
 # resolution's recitals are cited only for the tax's history (voters
@@ -29,6 +31,10 @@ election = "ca-2026-11-03"
 division = "ocd-division/country:us/state:ca/place:corte_madera"
 kind = "measure"
 title = "Town of Corte Madera Measure Q: Continuing the Paramedic Services Special Tax for Four Years"
+
+[[contest.correction]]
+date = "2026-10-30"
+note = "The video now gives the argument in favor printed by the county, and says, as the county does, that no argument against was filed."
 
 [[source]]
 id = "ballot-question"
@@ -73,4 +79,31 @@ publisher = "Town of Corte Madera, Minutes of June 2, 2026 Regular Meeting of th
 credit = "Town Council minutes, Town of Corte Madera"
 url = "https://www.cortemadera.gov/AgendaCenter/ViewFile/Minutes/_06022026-1643"
 file = "sources/2026-06-02-town-council-minutes.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "county-page"
+kind = "official-title-summary"
+publisher = "County of Marin, Elections, Measure Q 11/03/26 (November 3, 2026 General Election, list of measures): the ballot question, the vote required to pass, and the county's statement that no argument against Measure Q was filed"
+credit = "Measure Q page, County of Marin Elections"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-q-110326"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Corte Madera Town Attorney, Impartial analysis by Town Attorney of Measure Q, as printed by County of Marin, Elections, Measure Q 11/03/26"
+credit = "Impartial analysis, Corte Madera Town Attorney"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-q-110326"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure Q, as printed by County of Marin, Elections, Measure Q 11/03/26"
+credit = "Argument in favor, County of Marin Elections"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-q-110326"
+file = "sources/county-page.txt"
 retrieved = "2026-10-30"
