@@ -2698,3 +2698,13 @@ source = "ballot-question"
 quote = "providing $700,000 annually paid only by hotel/lodging guests"
 amount = 700000
 period = "per-year"
+
+# City of Morgan Hill Measure A: not a tax; the City Attorney's impartial
+# analysis gives the city's savings estimate (the largest figure the
+# yearly personnel savings).
+[morgan-hill-measure-a]
+source = "impartial-analysis"
+quote = "the city estimates savings of approximately $40,000 annually in personnel costs and approximately $15,000 in election costs every four years."
+amount = 40000
+period = "per-year"
+direction = "savings"
