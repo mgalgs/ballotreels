@@ -1,0 +1,74 @@
+# Archived sources for City of Monterey Measure S, 2026-11-03 general
+# election (sources/county-sources.md, sources/sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The County of Monterey Elections Department's List of Local Measures
+# gives Measure S's letter, vote threshold and ballot question, and says
+# the measure's documents are filed with the city clerk. The City Clerk
+# posts them on the City's Elections page: the City Council's signed
+# Resolution No. 26-103 C.S., adopted July 21, 2026, whose ballot question
+# matches the county's word for word, with the ordinance as its Exhibit A;
+# the City Attorney's impartial analysis, the measure's neutral
+# explanation (the kind a state's attorney general's explanatory
+# statement is); and the primary arguments for and against and the two
+# rebuttals, as filed with the City Clerk. No tax rate statement or fiscal
+# analysis applies (a sales tax).
+#
+# The arguments are scans with no text layer. Their words were typed from
+# the page images into sources/*-transcription.txt, each naming the PDF
+# and URL it copies; those sources point at the transcription, and their
+# url at the scan. The sides are built from the two primary arguments; the
+# rebuttals are archived but not cited.
+
+[contest]
+id = "ca-2026-11-03-monterey-measure-s"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:monterey"
+kind = "measure"
+title = "City of Monterey Measure S: Continuing the 1% Sales Tax for Street Repair for 8 Years"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "County of Monterey Elections Department, List of Local Measures, November 3, 2026 General Election: Measure S - City of Monterey"
+credit = "List of Local Measures, Monterey County Elections"
+url = "https://www.countyofmonterey.gov/government/departments-a-h/elections/list-of-local-measures"
+file = "sources/county-measure-list.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City of Monterey, City Attorney’s Impartial Analysis of Measure S, August 3, 2026"
+credit = "City Attorney’s Impartial Analysis of Measure S"
+url = "https://files.monterey.gov/Document-Center/City-Hall/City-Clerk/Elections/2026/Measure-S-City-Attorney-impartial-analysis-2026.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Council of the City of Monterey, Resolution No. 26-103 C.S., calling an election for the continuation of the existing special transactions and use tax, with Exhibit A, the ordinance, adopted July 21, 2026"
+credit = "Resolution No. 26-103 C.S., City of Monterey"
+url = "https://files.monterey.gov/Document-Center/City-Hall/City-Clerk/Elections/2026/26-103%20Continuation%20of%20Special%20Taxations%20and%20Use%20Tax.pdf"
+file = "sources/resolution-26-103-cs.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Primary Argument in Favor of Measure S, as filed with the City Clerk of the City of Monterey (transcribed from the scan)"
+credit = "Argument in favor, City of Monterey"
+url = "https://files.monterey.gov/Document-Center/City-Hall/City-Clerk/Elections/2026/Primary-Argument-In-Favor-of-Measure-S.pdf"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Primary Argument Against Measure S, as filed with the City Clerk of the City of Monterey (transcribed from the scan)"
+credit = "Argument against, City of Monterey"
+url = "https://files.monterey.gov/Document-Center/City-Hall/City-Clerk/Elections/2026/FINAL-Primary-Argument-Against-Measure-S.pdf"
+file = "sources/argument-against-transcription.txt"
+retrieved = "2026-10-30"

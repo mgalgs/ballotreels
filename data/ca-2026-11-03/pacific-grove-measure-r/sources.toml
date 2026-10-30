@@ -1,0 +1,73 @@
+# Archived sources for City of Pacific Grove Measure R, 2026-11-03
+# general election (sources/county-sources.md, sources/sources.md). Every
+# id here may be cited by script.toml. `kind` must be one the standard
+# allows (docs/STANDARD.md, section 1).
+#
+# The County of Monterey Elections Department's List of Local Measures
+# gives Measure R's letter, vote threshold and ballot question, and says
+# the measure's documents are filed with the city clerk. The City Clerk
+# posts them on the City's election page: the City Council's signed
+# Resolution No. 26-023, adopted July 7, 2026, whose ballot question
+# matches the county's word for word, with the full ordinance as its
+# Exhibit A; the City Attorney's impartial analysis, the measure's neutral
+# explanation (the kind a state's attorney general's explanatory
+# statement is); and the argument in favor. The same page says "No
+# argument against was submitted".
+#
+# The July 7 meeting packet (a draft of the resolution, the staff report
+# and polling) and the minutes are archived but not cited: the signed
+# resolution supersedes the draft, and no line needs the staff report.
+# No tax rate statement or fiscal analysis applies (a sales tax); the one
+# revenue estimate is the ballot question's.
+
+[contest]
+id = "ca-2026-11-03-pacific-grove-measure-r"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:pacific_grove"
+kind = "measure"
+title = "City of Pacific Grove Measure R: A New 0.375% Sales Tax for 10 Years"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "County of Monterey Elections Department, List of Local Measures, November 3, 2026 General Election: Measure R - City of Pacific Grove"
+credit = "List of Local Measures, Monterey County Elections"
+url = "https://www.countyofmonterey.gov/government/departments-a-h/elections/list-of-local-measures"
+file = "sources/county-measure-list.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City of Pacific Grove, City Attorney’s Impartial Analysis of Measure “R”, Transactions and Use (Sales) Tax"
+credit = "City Attorney’s Impartial Analysis of Measure R"
+url = "https://files.cityofpacificgrove.org/Document_Center/Our%20city/City%20Clerk/2026%20Ballot%20Measure/TUT%20Impartial%20Analysis.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City of Pacific Grove City Council, Resolution No. 26-023, submitting a proposed general transactions and use tax to the City’s voters, with Exhibit A, the proposed ordinance, adopted July 7, 2026"
+credit = "Resolution No. 26-023, City of Pacific Grove"
+url = "https://files.cityofpacificgrove.org/Document_Center/Our%20city/City%20Clerk/2026%20Ballot%20Measure/26-023%20Placing%20TUT%20on%20Nov%202026%20Ballot%20%26%20Att%20Reso.pdf"
+file = "sources/resolution-26-023-full-measure.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure R, as filed with the City Clerk of the City of Pacific Grove"
+credit = "Argument in favor, City of Pacific Grove"
+url = "https://files.cityofpacificgrove.org/Document_Center/Our%20city/City%20Clerk/2026%20Ballot%20Measure/Measure%20R%20-%20Arg%20in%20Favor.pdf"
+file = "sources/argument-in-favor.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "city-page"
+kind = "election-filing"
+publisher = "City of Pacific Grove, City Clerk, November 3, 2026 General Election and Ballot Measures (captured October 28, 2026): “Primary Argument Against - No argument against was submitted”"
+credit = "City Clerk, City of Pacific Grove"
+url = "https://www.cityofpacificgrove.gov/our_city/city_clerk/november_3_2026_general_election_and_ballot_measures.php"
+file = "sources/city-election-and-ballot-measures-page.html"
+retrieved = "2026-10-28"
