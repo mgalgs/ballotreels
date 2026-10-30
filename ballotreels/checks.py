@@ -1454,11 +1454,17 @@ def _in_text(phrase: str, archived: str) -> bool:
     the phrase may be missing from the text: pdftotext joins a word
     hyphenated across a line break ("bolt-" / "action" -> "boltaction"),
     and drops a dash standing alone at a line's end with it ("$0.60 -" /
-    "$1.50" -> "$0.60 $1.50")."""
+    "$1.50" -> "$0.60 $1.50"); and a hyphenated word that a plain-text
+    copy wraps after its hyphen ("well-" / "trained" -> "well- trained",
+    as Los Angeles County's measure list excerpts do) keeps its hyphen
+    and gains a space."""
     want = _normalise(phrase)
     if want in archived:
         return True
     if re.search(_hyphen_optional(want), archived) is not None:
+        return True
+    wrapped = "(?:- ?)?".join(re.escape(p) for p in want.split("-"))
+    if re.search(wrapped, archived) is not None:
         return True
     unspaced = want.replace(" - ", " ")
     return unspaced != want and \

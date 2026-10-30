@@ -6,7 +6,7 @@ import unittest
 
 from ballotreels import check_contest, load_contest
 from ballotreels.ballots import BALLOTS, badge, ballot_for, designation
-from ballotreels.checks import _card_quote_in
+from ballotreels.checks import _card_quote_in, _in_text
 
 from ballotreels.ballots import (BALLOTS, badge, ballot_for, designation,
                                  guide_of)
@@ -604,3 +604,23 @@ class PdfCardTest(ContestCopyTestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class WrappedHyphenTest(unittest.TestCase):
+    """A plain-text copy that wraps a hyphenated word after its hyphen
+    ("well-" / "trained") keeps the hyphen and gains a space; a card
+    quoting the word as printed still matches (checks._in_text)."""
+
+    TEXT = ("recruit/retain well- trained firefighters; shall the measure "
+            "levy a tax, with low- income senior exemption, be adopted?")
+
+    def test_wrapped_hyphenated_word_matches(self):
+        self.assertTrue(_in_text("recruit/retain well-trained firefighters",
+                                 self.TEXT))
+        self.assertTrue(_in_text("with low-income senior exemption",
+                                 self.TEXT))
+
+    def test_other_words_still_verbatim(self):
+        self.assertFalse(_in_text("recruit/retain well-paid firefighters",
+                                  self.TEXT))
+        self.assertFalse(_in_text("welltrained firefighters", self.TEXT))
