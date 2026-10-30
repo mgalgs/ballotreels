@@ -3,12 +3,19 @@
 # script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
 # section 1).
 #
-# Contra Costa County's Voter Information Guide could not be fetched
-# (contracostavote.gov answered a bot challenge), and www.herculesca.gov
-# answered HTTP 403. These are the City's files from its Legistar agenda
-# system, for the City Council meeting of July 28, 2026, item 26-200. No
-# impartial analysis, argument or rebuttal was reached, and no document
-# says whether any argument was filed.
+# Contra Costa County Elections' page for Measure P
+# (sources/county-page.txt, read in a browser, since contracostavote.gov
+# answers scripted fetches with a bot challenge) prints the ballot
+# question, the City Attorney's impartial analysis, the argument in
+# favor, the argument against and both rebuttals. The City Attorney's
+# impartial analysis is the measure's neutral explanation, the kind a
+# state's attorney general's explanatory statement is. The county's
+# question is word for word the one the card quotes from the urgency
+# ordinance.
+#
+# The City's own files are from its Legistar agenda system, for the City
+# Council meeting of July 28, 2026, item 26-200 (www.herculesca.gov
+# answered HTTP 403).
 #
 # The placing document is the urgency ordinance calling the election
 # (Attachment 1 to item 26-200), whose Section 3 sets the ballot question.
@@ -32,6 +39,10 @@ election = "ca-2026-11-03"
 division = "ocd-division/country:us/state:ca/place:hercules"
 kind = "measure"
 title = "City of Hercules Measure P: One-Cent Sales Tax Until Ended by Voters"
+
+[[contest.correction]]
+date = "2026-10-30"
+note = "The video now gives the arguments for and against printed by the county, which it had said were not among the documents gathered."
 
 [[source]]
 id = "ballot-question"
@@ -67,4 +78,31 @@ publisher = "City of Hercules, Legistar record of the City Council meeting of Ju
 credit = "City Council meeting record, City of Hercules"
 url = "https://webapi.legistar.com/v1/hercules/events/1866/eventitems?AgendaNote=1&MinutesNote=1"
 file = "sources/legistar-event-1866-item-26-200.json"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney's Impartial Analysis of Measure P, Contra Costa County Elections, Measure P, November 3, 2026 General Election"
+credit = "Impartial Analysis, Hercules City Attorney"
+url = "https://www.contracostavote.gov/m9008-en-2/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure P, Contra Costa County Elections, Measure P, November 3, 2026 General Election"
+credit = "Argument in favor, Contra Costa County Elections"
+url = "https://www.contracostavote.gov/m9008-en-2/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure P, Contra Costa County Elections, Measure P, November 3, 2026 General Election"
+credit = "Argument against, Contra Costa County Elections"
+url = "https://www.contracostavote.gov/m9008-en-2/"
+file = "sources/county-page.txt"
 retrieved = "2026-10-30"
