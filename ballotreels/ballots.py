@@ -927,6 +927,22 @@ BALLOTS: dict[str, Ballot] = {
                      **{f"ca-2026-11-03-{slug}": "2026 General Election"
                         for slug in ("sutter-creek-measure-r",
                                      "amador-county-measure-s")},
+                     # Kern County Elections posts each measure's
+                     # documents (the resolution with its ballot
+                     # question, any impartial analysis and arguments)
+                     # on its page "November 3, 2026, General Election",
+                     # which every cited county file comes from, so these
+                     # cards name the page as titled, as Merced's do
+                     **{f"ca-2026-11-03-{slug}":
+                        "November 3, 2026, General Election"
+                        for slug in ("arvin-measure-h",
+                                     "delano-measure-k",
+                                     "delano-measure-l",
+                                     "delano-measure-m",
+                                     "mcfarland-measure-n",
+                                     "mcfarland-measure-o",
+                                     "mcfarland-measure-p",
+                                     "shafter-measure-q")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
