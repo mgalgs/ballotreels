@@ -1,0 +1,291 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 85.71,
+  "phrases": [
+    {
+      "text": "Measure Z asks the voters of this county whether to add a sales tax of one-eighth of 1 percent to fund the California Living Museum zoo.",
+      "start": 0.03,
+      "end": 9.91
+    },
+    {
+      "text": "Measure Z is a citizens' initiative, placed on the ballot by the Board of Supervisors after its petition was certified.",
+      "start": 10.57,
+      "end": 18.19
+    },
+    {
+      "text": "The zoo is operated by the county superintendent of schools.",
+      "start": 18.85,
+      "end": 22.45
+    },
+    {
+      "text": "The tax would apply in every city and the unincorporated areas, on top of current sales taxes.",
+      "start": 23.11,
+      "end": 29.72
+    },
+    {
+      "text": "The tax would start no earlier than April 1, 2027, and remain until repealed by voters.",
+      "start": 30.38,
+      "end": 37.81
+    },
+    {
+      "text": "A spending plan would split the money: 40 percent for animal care and habitats, 25 percent for education, 20 percent for infrastructure, and 15 percent for conservation.",
+      "start": 38.47,
+      "end": 50.74
+    },
+    {
+      "text": "Measure Z needs a majority of the vote to pass.",
+      "start": 51.4,
+      "end": 54.33
+    },
+    {
+      "text": "The impartial analysis estimates the tax would raise about $24 million a year.",
+      "start": 54.99,
+      "end": 60.25
+    },
+    {
+      "text": "Supporters say many exhibits are out of date and too small, and the measure keeps entrance fees low for families.",
+      "start": 60.91,
+      "end": 68.31
+    },
+    {
+      "text": "No argument against Measure Z appears among the official documents gathered for this video; only the argument in favor does.",
+      "start": 68.97,
+      "end": 76.31
+    },
+    {
+      "text": "A yes vote authorizes the county to levy the sales tax of one-eighth of 1 percent for the zoo.",
+      "start": 76.97,
+      "end": 82.91
+    },
+    {
+      "text": "A no vote rejects the tax.",
+      "start": 83.57,
+      "end": 85.68
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure Z asks the voters of this county whether to add a sales tax of one-eighth of 1 percent to fund the California Living Museum zoo.",
+      "Measure Z is a citizens' initiative, placed on the ballot by the Board of Supervisors after its petition was certified.",
+      "The zoo is operated by the county superintendent of schools.",
+      "The tax would apply in every city and the unincorporated areas, on top of current sales taxes.",
+      "The tax would start no earlier than April 1, 2027, and remain until repealed by voters.",
+      "A spending plan would split the money: 40 percent for animal care and habitats, 25 percent for education, 20 percent for infrastructure, and 15 percent for conservation.",
+      "Measure Z needs a majority of the vote to pass.",
+      "The impartial analysis estimates the tax would raise about $24 million a year.",
+      "Supporters say many exhibits are out of date and too small, and the measure keeps entrance fees low for families.",
+      "No argument against Measure Z appears among the official documents gathered for this video; only the argument in favor does.",
+      "A yes vote authorizes the county to levy the sales tax of one-eighth of 1 percent for the zoo.",
+      "A no vote rejects the tax."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure Z asks the voters of this county whether to add a sales tax of one-eighth of 1 percent to fund the California Living Museum zoo."
+      },
+      "bounds": [
+        0,
+        238560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure Z asks the voters of this county whether to add a sales tax of one-eighth of 1 percent to fund the California Living Museum zoo.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure Z is a citizens' initiative, placed on the ballot by the Board of Supervisors after its petition was certified."
+      },
+      "bounds": [
+        252960,
+        437280
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure Z is a citizens' initiative, placed on the ballot by the Board of Supervisors after its petition was certified.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The zoo is operated by the county superintendent of schools."
+      },
+      "bounds": [
+        451680,
+        539520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The zoo is operated by the county superintendent of schools.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The tax would apply in every city and the unincorporated areas, on top of current sales taxes."
+      },
+      "bounds": [
+        553920,
+        714000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The tax would apply in every city and the unincorporated areas, on top of current sales taxes.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The tax would start no earlier than April 1, 2027, and remain until repealed by voters."
+      },
+      "bounds": [
+        728400,
+        908160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The tax would start no earlier than April 1, 2027, and remain until repealed by voters.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A spending plan would split the money: 40 percent for animal care and habitats, 25 percent for education, 20 percent for infrastructure, and 15 percent for conservation."
+      },
+      "bounds": [
+        922560,
+        1218480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A spending plan would split the money: 40 percent for animal care and habitats, 25 percent for education, 20 percent for infrastructure, and 15 percent for conservation.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure Z needs a majority of the vote to pass."
+      },
+      "bounds": [
+        1232880,
+        1304640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure Z needs a majority of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The impartial analysis estimates the tax would raise about $24 million a year."
+      },
+      "bounds": [
+        1319040,
+        1446720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The impartial analysis estimates the tax would raise about $24 million a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say many exhibits are out of date and too small, and the measure keeps entrance fees low for families."
+      },
+      "bounds": [
+        1461120,
+        1640160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say many exhibits are out of date and too small, and the measure keeps entrance fees low for families.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument against Measure Z appears among the official documents gathered for this video; only the argument in favor does."
+      },
+      "bounds": [
+        1654560,
+        1832160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure Z appears among the official documents gathered for this video; only the argument in favor does.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote authorizes the county to levy the sales tax of one-eighth of 1 percent for the zoo."
+      },
+      "bounds": [
+        1846560,
+        1990560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote authorizes the county to levy the sales tax of one-eighth of 1 percent for the zoo.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote rejects the tax."
+      },
+      "bounds": [
+        2004960,
+        2057040
+      ]
+    }
+  ],
+  "sha256": "44d61231f708decbf7bd7ec2a3ba2655472d532a3d0f402cf2cd0711d71b553c",
+  "take": {
+    "sha256": "d68acef40837396ea027e9890821432861b6bbf22b57673930f4a1e6b5b24f5b",
+    "bytes": 4114124
+  }
+}
