@@ -1,6 +1,6 @@
 # Recipe E, about 60 seconds, distilled: one claim per line. The chain:
-# what it asks and whose measure it is; the tax today (how long the
-# city has had one, when the current one expires); what would change
+# what it asks and whose measure it is; the tax today (when the
+# current one expires); what would change
 # (the rate and its yearly step, the staff report's word that it is no
 # increase, the exemption for older homeowners at or below a median
 # income, how long it lasts and what it pays for, the spending limit in
@@ -10,7 +10,7 @@
 # businesses are left to the Rate and Method, for length.
 #
 # No place name and no person is narrated: the opening says "the voters
-# of this city", and the county housing authority is not named. The
+# of this city", and the county housing authority is described, not named. The
 # card and title carry the names. No vote count of the Council or of
 # past elections is given.
 #
@@ -25,7 +25,7 @@
 # Council adopted both on July 29, 2026. The proposition prints only bare
 # YES and NO cells, so the card has no YES/NO boxes and both vote lines
 # highlight the same phrase. The staff report is used only for the
-# tax's history, the current tax's expiry and its statement that the
+# current tax's expiry and its statement that the
 # rate is no increase, attributed to it. The draft action minutes are
 # cited for the Council's adoption of the resolutions.
 #
@@ -76,7 +76,7 @@ heading = "Today"
 
 [[section.line]]
 id = "history"
-text = "A city staff report says voters here have approved a city service tax since 1987, and the current one expires in mid-2027."
+text = "A city staff report says the current service tax expires in mid-2027."
 sources = ["staff-report"]
 
 [section.line.visual]
@@ -107,7 +107,7 @@ name = "special-tax"
 
 [[section.line]]
 id = "exempt"
-text = "Homeowners over 65 who live in their homes, with incomes at or below a county median scale, would not pay."
+text = "Homeowners over 65 who live in their homes, with incomes at or below the median income scale of a county housing authority, would not pay."
 sources = ["text"]
 
 [section.line.visual]
