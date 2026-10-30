@@ -11,14 +11,20 @@
 # Registrar's statement of filing (measure-list). The same excerpt backs
 # both.
 #
-# No impartial analysis and no argument text was staged (the resolution
-# directs the City Attorney to write one; no copy was found). The measure
-# is explained from the City's Resolution No. 2026-023 and its Exhibit A,
-# Ordinance No. 1529. The resolution's pages 1 and 2 are a scan with no
-# text layer: they were typed from the page images into
-# sources/resolution-transcription.txt, which that source points at. The
-# City's FAQ and community presentation are not cited. A general tax has no
-# tax rate statement; the one revenue figure is the ballot question's own.
+# The Registrar's Interactive Sample Ballot prints the City Attorney's
+# impartial analysis (the measure's neutral explanation) and the argument
+# in favor, saved as HTML, with "NO ARGUMENT AGAINST THIS MEASURE WAS
+# SUBMITTED" under the argument. The analysis describes Measure CB's 2022
+# retailer tax rates (0.5% medicinal, 4% adult use, adjustable by the
+# Council); the resolution states the current rate, 4%, and stays the
+# source for it. The measure is also explained from the City's
+# Resolution No. 2026-023 and its Exhibit A, Ordinance No. 1529. The
+# resolution's pages 1 and 2 are a scan with no text layer: they were
+# typed from the page images into sources/resolution-transcription.txt,
+# which that source points at. The City's FAQ and community presentation
+# are not cited. A general tax has no tax rate statement, and the analysis
+# gives no revenue estimate; the one revenue figure is the ballot
+# question's own.
 
 [contest]
 id = "ca-2026-11-03-baldwin-park-measure-cr"
@@ -43,6 +49,24 @@ publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appear
 credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
 url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
 file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Christian Bettenhausen, City Attorney, City of Baldwin Park, City Attorney's Impartial Analysis of Measure CR, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "City Attorney's Impartial Analysis of Measure CR, City of Baldwin Park"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10912.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure CR, as filed with the Los Angeles County Registrar-Recorder/County Clerk (Interactive Sample Ballot)"
+credit = "Argument in favor of Measure CR, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10912.json"
+file = "sources/argument-for.html"
 retrieved = "2026-10-30"
 
 [[source]]
