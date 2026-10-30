@@ -3,12 +3,14 @@
 # script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
 # section 1).
 #
-# Marin County's Voter Information Guide could not be fetched
-# (marincounty.gov blocked the download), so no impartial analysis,
-# argument or rebuttal was reached, and no document says whether any
-# argument was filed (Attachment 5 only authorizes Council members to
-# write one in favor). These are the City's files from its Granicus
-# portal: the packet for item 7 of the special City Council meeting of
+# The county's measure page (sources/county-page.txt, read in a browser
+# on 2026-10-30, since marincounty.gov refuses scripted fetches) prints
+# the ballot question as the county prints it, ending "Resolution No.
+# 26-49"; the vote required; the City Attorney's impartial analysis; the
+# argument in favor; and its statement that no argument against was
+# filed. The card quotes the county's question.
+#
+# The City's files, from its Granicus portal, are the packet for item 7 of the special City Council meeting of
 # July 29, 2026 (one PDF of 36 pages: the staff report; the Public
 # Facilities and Services Report; the resolution forming Community
 # Facilities District No. 2026-1, with Exhibit A, the services, and
@@ -19,14 +21,18 @@
 # packet for the September 8, 2026 meeting, which record the
 # resolutions' adoption. The packet's resolutions are agenda copies with
 # their numbers left blank ("26-___"), and the ballot proposition ends
-# on that blank; it is quoted as printed, and no number is supplied. The
-# City's records do not print the letter; the county's list of measures
+# on that blank; the resolution's question is not quoted (the county's
+# page prints the number, 26-49), and the resolutions remain sources for
+# what they say. The City's records do not print the letter; the county's list of measures
 # (sources/county-measure-list.html) gives it as T.
 #
 # The staff report is the City staff's material: it is cited only for
 # plain facts (when the current tax
 # expires, and its statement that the new rate is no increase over what
-# taxpayers pay now). The Public Facilities and Services Report's
+# taxpayers pay now). The City Attorney's impartial analysis says the
+# current tax was approved in 2016 "at the base rate of $266 per
+# residence per year" and that Measure T renews it "with the tax rates
+# increased"; the script gives both, each attributed. The Public Facilities and Services Report's
 # $25,000,000 is the estimated cost of the services over ten years, not
 # a revenue figure, and is not used.
 
@@ -36,6 +42,37 @@ election = "ca-2026-11-03"
 division = "ocd-division/country:us/state:ca/place:mill_valley"
 kind = "measure"
 title = "City of Mill Valley Measure T: Renewing the Municipal Service Tax for Fire Suppression and Street Repair for 10 Years"
+
+[[contest.correction]]
+date = "2026-10-30"
+note = "The video now gives the argument in favor printed by the county, says, as the county does, that no argument against was filed, shows the ballot question as the county prints it, and adds the City Attorney's statement that the tax was approved in 2016 at a base rate of $266 and that Measure T increases the rates."
+
+[[source]]
+id = "county-page"
+kind = "official-title-summary"
+publisher = "County of Marin, Elections, Measure T 11/03/26, November 3, 2026 General Election (list of measures): the ballot question and the votes required to pass"
+credit = "Measure T page, County of Marin Elections"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-t-110326"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney of the City of Mill Valley, Impartial analysis by City Attorney of Measure T, on County of Marin, Elections, Measure T 11/03/26, November 3, 2026 General Election (list of measures)"
+credit = "Impartial analysis, Mill Valley City Attorney"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-t-110326"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in favor of Measure T, on County of Marin, Elections, Measure T 11/03/26, November 3, 2026 General Election (list of measures)"
+credit = "Argument in favor, County of Marin Elections"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-t-110326"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
 
 [[source]]
 id = "ballot-question"

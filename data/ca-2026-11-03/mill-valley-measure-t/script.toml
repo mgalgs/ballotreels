@@ -2,11 +2,12 @@
 # what it asks and whose measure it is; the tax today (when the
 # current one expires); what would change
 # (the rate and its yearly step, the staff report's word that it is no
-# increase, the exemption for older homeowners at or below a median
+# increase and the impartial analysis's that the rates are increased,
+# the exemption for older homeowners at or below a median
 # income, how long it lasts and what it pays for, the spending limit in
 # the same question, the vote it needs); the revenue as the ballot
-# question gives it; both sides, neither of which has an archived
-# argument; what a vote does. The rates for second units, apartments and
+# question gives it; both sides (an argument in favor; none against was
+# filed); what a vote does. The rates for second units, apartments and
 # businesses are left to the Rate and Method, for length.
 #
 # No place name and no person is narrated: the opening says "the voters
@@ -14,20 +15,24 @@
 # card and title carry the names. No vote count of the Council or of
 # past elections is given.
 #
-# No impartial analysis was archived. What the tax does is stated from
-# the Rate and Method of Apportionment (Exhibit B, the tax's full text)
-# and the resolution forming the district (the services, the end date,
-# the use of the money, the spending limit, the two-thirds vote); the
-# card quotes the ballot proposition from Section 2 of the resolution
-# calling the election. Both resolutions are agenda copies with their
-# numbers left blank, and the proposition ends on "Resolution No.
-# 26-___", quoted as printed; the draft action minutes record that the
-# Council adopted both on July 29, 2026. The proposition prints only bare
-# YES and NO cells, so the card has no YES/NO boxes and both vote lines
-# highlight the same phrase. The staff report is used only for the
-# current tax's expiry and its statement that the
-# rate is no increase, attributed to it. The draft action minutes are
-# cited for the Council's adoption of the resolutions.
+# What the tax does is stated from the Rate and Method of Apportionment
+# (Exhibit B, the tax's full text) and the resolution forming the
+# district (the services, the end date, the use of the money, the
+# spending limit, the two-thirds vote). The card quotes the ballot
+# question as the county's measure page prints it, ending "Resolution
+# No. 26-49"; the resolution calling the election printed the same
+# question in its agenda copy with the number left blank, and remains a
+# source for the spending limit and the vote. The county's page prints
+# only bare YES and NO, so the card has no YES/NO boxes and both vote
+# lines highlight the same phrase. The draft action minutes are cited
+# for the Council's adoption of the resolutions.
+#
+# The rate: the staff report says the $303 rate is no increase over
+# what taxpayers pay now; the City Attorney's impartial analysis says
+# the current tax was approved in 2016 at a base rate of $266 per
+# residence and that Measure T renews it with the rates increased. Both
+# are given, each attributed, one line each, neither reconciled; no
+# arithmetic is done on them.
 #
 # The question's "improved fire suppression" is the City's own word in
 # the proposition; the narration says what the resolution's Exhibit A
@@ -38,11 +43,10 @@
 # source states the City's general fund budget, so it has no scale
 # (STANDARD.md 6.5; left open, under [[question]]).
 #
-# No argument for or against Measure T was archived, and no document
-# says whether any was filed (Attachment 5 only authorizes one in
-# favor). So the sides do not say none was filed: each says none is
-# among the documents gathered (filed = false, STANDARD.md 2.5), as for
-# Walnut Creek Measure U.
+# The county's page prints an argument in favor and says "No argument
+# against Measure T was filed." The yes side gives the argument's points
+# (its signers are not named); the no side says what the county says
+# (filed = false, STANDARD.md 2.5).
 
 contest = "ca-2026-11-03-mill-valley-measure-t"
 template = "measure"
@@ -50,11 +54,11 @@ template_version = 2
 standard_version = 2
 
 [card]
-source = "ballot-question"
+source = "county-page"
 number = "T"
-title = "COMMUNITY FACILITIES DISTRICT NO. 2026-1 (MUNICIPAL SERVICES)"
-origin = "CITY OF MILL VALLEY"
-summary = "To renew funding exclusively for improved fire suppression activities including vegetation management and tree maintenance, and road repair and street maintenance, shall the Mill Valley Municipal Service Tax be renewed within the City of Mill Valley Community Facilities District Number 2026-1, at a rate of $303 for single family residential property, with a 2% annual adjustment, raising an average of $1.9 million annually over 10 years, and shall the appropriations limit be established, all as specified in Mill Valley City Council Resolution No. 26-___?"
+title = "Community Facilities District No. 2026-1 (Municipal Services)"
+origin = "City of Mill Valley"
+summary = "To renew funding exclusively for improved fire suppression activities including vegetation management and tree maintenance, and road repair and street maintenance, shall the Mill Valley Municipal Service Tax be renewed within the City of Mill Valley Community Facilities District Number 2026-1, at a rate of $303 for single family residential property, with a 2% annual adjustment, raising an average of $1.9 million annually over 10 years, and shall the appropriations limit be established, all as specified in Mill Valley City Council Resolution No. 26-49?"
 
 [[section]]
 id = "what"
@@ -63,11 +67,11 @@ heading = "Measure T"
 [[section.line]]
 id = "asks"
 text = "Measure T asks the voters of this city whether to renew a special tax for fire suppression and road repair, for 10 years."
-sources = ["ballot-question", "formation"]
+sources = ["county-page", "formation"]
 
 [section.line.visual]
 kind = "page"
-source = "ballot-question"
+source = "county-page"
 highlight = ["shall the Mill Valley Municipal Service Tax be renewed"]
 
 [[section]]
@@ -106,6 +110,15 @@ kind = "illustration"
 name = "special-tax"
 
 [[section.line]]
+id = "increase"
+text = "The city attorney's impartial analysis says the current tax was approved in 2016 at a base rate of $266 a home, and that Measure T renews it with the rates increased."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-parcels"
+
+[[section.line]]
 id = "exempt"
 text = "Homeowners over 65 who live in their homes, with incomes at or below the median income scale of a county housing authority, would not pay."
 sources = ["text"]
@@ -135,7 +148,7 @@ name = "spending-limit"
 [[section.line]]
 id = "threshold"
 text = "Measure T needs two-thirds of the vote to pass."
-sources = ["formation", "ballot-question"]
+sources = ["formation", "ballot-question", "county-page"]
 
 [section.line.visual]
 kind = "illustration"
@@ -148,27 +161,27 @@ heading = "What it would raise"
 [[section.line]]
 id = "revenue"
 text = "The ballot question says the tax would raise an average of $1.9 million a year over 10 years."
-sources = ["ballot-question"]
+sources = ["county-page"]
 
 [section.line.visual]
 kind = "page"
-source = "ballot-question"
+source = "county-page"
 highlight = ["raising an average of $1.9 million annually over 10 years"]
 
 [[section]]
 id = "yes"
 heading = "Why some vote yes"
 side = "yes"
-filed = false
 
 [[section.line]]
-text = "No argument for Measure T appears among the official documents gathered for this video."
-sources = ["ballot-question"]
+text = "Supporters say Measure T keeps road repair and wildfire safety funded, and that all of its money stays in the city."
+sources = ["argument-for"]
+basis = ["maintaining a stable funding source for the next 10 years to protect our community’s safety and property values", "100% of Measure T funds stay in Mill Valley and are used exclusively for road maintenance and repairs and fire prevention."]
 
 [section.line.visual]
 kind = "list"
-source = "ballot-question"
-items = ["No argument for was found"]
+source = "argument-for"
+items = ["Keeps funding stable", "All money stays local"]
 
 [[section]]
 id = "no"
@@ -177,13 +190,13 @@ side = "no"
 filed = false
 
 [[section.line]]
-text = "No argument against Measure T appears among the official documents gathered for this video."
-sources = ["ballot-question"]
+text = "The elections office of the county says on its page for this measure that no argument against Measure T was filed."
+sources = ["county-page"]
 
 [section.line.visual]
 kind = "list"
-source = "ballot-question"
-items = ["No argument against was found"]
+source = "county-page"
+items = ["No argument against was filed"]
 
 [[section]]
 id = "vote"
@@ -191,25 +204,25 @@ heading = "What your vote means"
 
 [[section.line]]
 text = "A yes vote renews the service tax for 10 years and sets the district's spending limit."
-sources = ["ballot-question"]
+sources = ["county-page"]
 
 [section.line.visual]
 kind = "page"
-source = "ballot-question"
+source = "county-page"
 highlight = ["shall the Mill Valley Municipal Service Tax be renewed"]
 
 [[section.line]]
 text = "A no vote does not renew the service tax, which expires in mid-2027."
-sources = ["ballot-question", "staff-report"]
+sources = ["county-page", "impartial-analysis", "staff-report"]
 
 [section.line.visual]
 kind = "page"
-source = "ballot-question"
+source = "county-page"
 highlight = ["shall the Mill Valley Municipal Service Tax be renewed"]
 
 [[question]]
 ask = "Is this a new tax?"
-lines = ["history", "same"]
+lines = ["history", "same", "increase"]
 
 [[question]]
 ask = "How much would each property pay?"
