@@ -3051,3 +3051,13 @@ source = "ballot-question"
 quote = "levying $30 per $100,000 of assessed valuation, ($720,000 annually) while bonds are outstanding"
 amount = 720000
 period = "per-year"
+
+# City of California City Measure J: the City Attorney's impartial
+# analysis, the one fiscal estimate posted (the ballot question prints the
+# same figure).
+[california-city-measure-j]
+source = "impartial-analysis"
+quote = "would generate an estimated $75,000 per year in additional revenue."
+amount = 75000
+period = "per-year"
+direction = "revenue-gain"

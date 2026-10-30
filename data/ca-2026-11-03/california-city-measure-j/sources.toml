@@ -1,0 +1,66 @@
+# Archived sources for City of California City Measure J, 2026-11-03
+# general election (sources/county-sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Kern County Elections posts each local measure's filed documents on its
+# page "November 3, 2026, General Election", which lists them client-side,
+# so no document has its own recoverable URL: every source here cites that
+# page. The ballot question is quoted from section 2 of the City Council's
+# Resolution No. 26-3253, which has a text layer on that page; pdftotext
+# sets the question's YES and NO boxes inside it (the card's strays,
+# ballotreels/ballots.py). Its Exhibit A, the ordinance, is a blank page in
+# the posted copy, and its pages 4 and 5 (the signatures and the clerk's
+# certification) are scanned; neither is cited. The City Attorney's
+# impartial analysis is the measure's neutral explanation, the kind a
+# state's attorney general's explanatory statement is, and gives the
+# measure's revenue estimate; no separate fiscal statement was posted.
+#
+# The argument in favor is a scan with no text layer; the passages cited
+# were typed from the page images into
+# sources/county-argument-for-transcription.txt, which the source points
+# at. The county posts no argument against, but no official document
+# says in words that none was filed.
+
+[contest]
+id = "ca-2026-11-03-california-city-measure-j"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:california_city"
+kind = "measure"
+title = "City of California City Measure J: Raising the Hotel Room Tax from 6% to 10%"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of California City, City Council Resolution No. 26-3253, adopted June 9, 2026: section 2, the ballot question, page 2, as posted by Kern County Elections"
+credit = "Resolution No. 26-3253, City of California City"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-resolution.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Victor Ponto, City Attorney, City of California City, City Attorney's Impartial Analysis, Measure J, as posted by Kern County Elections"
+credit = "Impartial Analysis, City Attorney of California City"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "Kern County Elections, Measure Letter Designations for the November 3, 2026, Consolidated General Election, dated August 12, 2026"
+credit = "Measure Letter Designations, Kern County Elections"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-measure-list.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure J, as filed with Kern County Elections (transcribed from the scan)"
+credit = "Argument in favor, Measure J"
+url = "https://www.kernvote.com/elections/upcoming-elections/november-3-2026-general-election"
+file = "sources/county-argument-for-transcription.txt"
+retrieved = "2026-10-29"
