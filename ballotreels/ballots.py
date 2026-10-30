@@ -464,6 +464,8 @@ BALLOTS: dict[str, Ballot] = {
                      # District's May 19, 2026 board packet.
                      "ca-2026-11-03-inverness-pud-measure-aa":
                          "Resolution 299-2026",
+                     "ca-2026-11-03-marin-csa-29-measure-z":
+                         "Resolution No. 2026-032",
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.
