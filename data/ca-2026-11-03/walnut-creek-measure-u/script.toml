@@ -1,17 +1,19 @@
 # Recipe E, about 60 seconds, distilled: one claim per line. The chain:
 # what it asks and whose measure it is; how it reached the ballot and the
 # vote it needs; the site today; what would change (the new district's
-# uses, and the protection of what it allows); no cost estimate; both
-# sides, neither of which has an archived argument; what a vote does.
+# uses, and the protection of what it allows); no cost estimate; the
+# argument in favor, and the county's statement that no argument
+# against was filed; what a vote does.
 #
 # No place name is narrated (the narrator mispronounces them): the
 # opening says "the voters of this city", and the site is "a 2.4-acre
 # site", never its streets. The card and title carry the names.
 #
-# No impartial analysis was archived: every neutral line rests on the
-# resolution submitting the initiative and on the initiative's own text,
-# and only on what they enact or record, never on the initiative's
-# "Benefits, Purpose and Intent" section, which is the proponents' text.
+# The neutral lines rest on the resolution submitting the initiative, on
+# the initiative's own text and on the City Attorney's impartial analysis
+# printed on the county's page, which agrees with each of them; never on
+# the initiative's "Benefits, Purpose and Intent" section, which is the
+# proponents' text.
 # The City staff's agenda reports are not cited. The card quotes the
 # ballot question from Section 2 of the resolution, which prints no
 # yes/no lines (it is copied, without the page break's furniture, into
@@ -19,14 +21,17 @@
 # YES/NO boxes and both vote lines highlight the same phrase of the
 # question.
 #
-# Neither the resolution nor the initiative gives a cost figure, so the
-# fiscal line says so, naming both documents. The staff report's figures from
+# Neither the resolution nor the initiative gives a cost figure (nor
+# does the impartial analysis), so the fiscal line says so, naming both
+# documents. The staff report's figures from
 # the City's section 9212 report are not used.
 #
-# No argument for or against Measure U was archived, and no document
-# says whether any was filed. So the sides do not say none was filed:
-# each says none is among the documents gathered (filed = false,
-# STANDARD.md 2.5), as for Livingston Measures T and U.
+# The county's page prints the argument in favor and says "No Argument
+# Against was filed." The yes side distils the argument's two central
+# claims (seniors pushed away from their families; over 200 senior homes
+# near transit without raising taxes), naming no signer; the no side
+# says, attributed to the county, that none was filed (filed = false,
+# STANDARD.md 2.5), as for CA Proposition 1. No rebuttal was filed.
 
 contest = "ca-2026-11-03-walnut-creek-measure-u"
 template = "measure"
@@ -60,7 +65,7 @@ heading = "Today"
 [[section.line]]
 id = "petition"
 text = "Measure U is a citizens' initiative, which qualified with 5,000 valid signatures from voters in the city."
-sources = ["resolution"]
+sources = ["resolution", "impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -82,7 +87,7 @@ heading = "What would change"
 [[section.line]]
 id = "uses"
 text = "A new zoning district would limit the site to apartments mainly for people 55 or older, and businesses suited to senior housing."
-sources = ["ballot-question", "text"]
+sources = ["ballot-question", "text", "impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -91,7 +96,7 @@ name = "mixed-use-storefronts"
 [[section.line]]
 id = "locked"
 text = "Later city rules could not reduce what the initiative allows on the site, except by a vote of the people or by approving an application from the site's owner."
-sources = ["text"]
+sources = ["text", "impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -100,7 +105,7 @@ name = "zoning-map"
 [[section.line]]
 id = "threshold"
 text = "Measure U needs a majority of the vote to pass."
-sources = ["ballot-question"]
+sources = ["impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -124,16 +129,16 @@ stamp = "None reported"
 id = "yes"
 heading = "Why some vote yes"
 side = "yes"
-filed = false
 
 [[section.line]]
-text = "No argument for Measure U appears among the official documents gathered for this video."
-sources = ["resolution"]
+text = "Supporters say seniors are being pushed far from their families, and Measure U allows over 200 senior homes near transit, without raising taxes."
+sources = ["argument-for"]
+basis = ["many seniors and older adults are being pushed out further and further into the East Bay, away from their families", "updating zoning in North Downtown Walnut Creek to permit over 200 units of high-quality senior housing and community-serving retail near BART – without raising taxes."]
 
 [section.line.visual]
 kind = "list"
-source = "resolution"
-items = ["No argument for was found"]
+source = "argument-for"
+items = ["Seniors pushed far from family", "Senior homes without new taxes"]
 
 [[section]]
 id = "no"
@@ -142,13 +147,13 @@ side = "no"
 filed = false
 
 [[section.line]]
-text = "No argument against Measure U appears among the official documents gathered for this video."
-sources = ["resolution"]
+text = "The county says no argument against Measure U was filed, so its page prints only the argument in favor of the measure."
+sources = ["argument-for"]
 
 [section.line.visual]
 kind = "list"
-source = "resolution"
-items = ["No argument against was found"]
+source = "argument-for"
+items = ["No argument against was filed"]
 
 [[section]]
 id = "vote"
