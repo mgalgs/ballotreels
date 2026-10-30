@@ -37,3 +37,13 @@ Vote threshold: Majority, 50%+1 (Resolution 2026-35-CC body text: "requires the 
 - **Argument against**: **confirmed filed**, despite organized opposition (California Taxpayers Association, LA County Taxpayers Association). The filed text is missing, not found, same as above.
 - **Rebuttals**: status unconfirmed either way — California law would allow a rebuttal on each side since both a for and an against argument exist, but no rebuttal text (or confirmation one was filed) was found. `notice-no-more-arguments.pdf` confirms only that a deadline for primary arguments existed, not whether rebuttals followed.
 - **Tax rate statement**: not applicable — SG is a general utility users tax, not a property-tax-secured bond measure.
+
+## Registrar's Interactive Sample Ballot documents (added 2026-10-30)
+
+Publisher: Los Angeles County Registrar-Recorder/County Clerk. Source: the Interactive Sample Ballot's contest data, https://isb.lavote.gov/parsed/4348/contests/bmc10910.json (English text of each statement, saved as HTML; the source URL and statement id are in a comment at the top of each file). Retrieved 2026-10-30. These are the documents the Registrar prints for the measure in the sample ballot, so they supersede any 'missing' note above for the same document.
+
+- `argument-against.html`
+- `argument-for.html`
+- `impartial-analysis.html`
+- `rebuttal-to-argument-against.html`
+- `rebuttal-to-argument-for.html`

@@ -34,3 +34,10 @@ Vote threshold: majority vote, 50%+1 (this is a general tax).
 - **Argument against**: none submitted, per the county list (official — not merely unfound).
 - **Rebuttals**: none — consistent with no argument against being filed; the resolution (§8) sets a ≤300-word argument limit and ≤250-word rebuttal limit, with an arguments deadline of 2026-08-05 and a rebuttal deadline of 2026-08-17.
 - **Fiscal analysis**: no separate fiscal study found; the $1,000,000/yr estimate appears only in the ballot question itself and is repeated in `faq.pdf` and `staff-report.pdf` without underlying methodology.
+
+## Registrar's Interactive Sample Ballot documents (added 2026-10-30)
+
+Publisher: Los Angeles County Registrar-Recorder/County Clerk. Source: the Interactive Sample Ballot's contest data, https://isb.lavote.gov/parsed/4348/contests/bmc10912.json (English text of each statement, saved as HTML; the source URL and statement id are in a comment at the top of each file). Retrieved 2026-10-30. These are the documents the Registrar prints for the measure in the sample ballot, so they supersede any 'missing' note above for the same document.
+
+- `argument-for.html`
+- `impartial-analysis.html`

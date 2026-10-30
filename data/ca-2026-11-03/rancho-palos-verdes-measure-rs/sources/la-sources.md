@@ -34,3 +34,9 @@ Vote threshold: Majority 50%+1 (confirmed in the impartial analysis: "takes effe
 - **Rebuttal to argument for / rebuttal to argument against**: **not applicable.** With no argument against filed, there is nothing to rebut on either side (a rebuttal to the favor argument would require an opposing proponent, which none submitted).
 - **Full text**: the code amendment (RPVMC §3.16.030) is described in the impartial analysis; the operative amendment language is expected to be in `resolution.pdf`'s exhibit, but this was not independently re-confirmed line-by-line against the ordinance text — treat as present-but-unverified.
 - **Tax rate statement**: **not applicable.** This is a general tax rate adjustment, not a bond measure, so no Prop-13-style tax rate statement applies.
+
+## Registrar's Interactive Sample Ballot documents (added 2026-10-30)
+
+Publisher: Los Angeles County Registrar-Recorder/County Clerk. Source: the Interactive Sample Ballot's contest data, https://isb.lavote.gov/parsed/4348/contests/bmc10936.json (English text of each statement, saved as HTML; the source URL and statement id are in a comment at the top of each file). Retrieved 2026-10-30. These are the documents the Registrar prints for the measure in the sample ballot, so they supersede any 'missing' note above for the same document.
+
+- `argument-for.html`

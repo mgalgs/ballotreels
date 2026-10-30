@@ -30,3 +30,13 @@ Vote threshold: Majority, 50%+1.
 - **Argument for / argument against**: both sides are named in the county's final list (3 supporters, 5 opponents) as of the list's "Rev. 9/22/26" date, which is after the state-law deadline for filing arguments — so both an argument for and an argument against were almost certainly filed. The actual filed text of either is missing — not found, same `santamonica.gov` block.
 - **Rebuttals**: status unconfirmed either way — California law would allow a rebuttal on each side since both a for and an against argument exist, but no rebuttal text (or confirmation one was filed) was found.
 - **Tax rate statement**: not applicable — ES is a parcel tax, not a property-tax-secured bond measure, so no tax-rate statement is required.
+
+## Registrar's Interactive Sample Ballot documents (added 2026-10-30)
+
+Publisher: Los Angeles County Registrar-Recorder/County Clerk. Source: the Interactive Sample Ballot's contest data, https://isb.lavote.gov/parsed/4348/contests/bmc10916.json (English text of each statement, saved as HTML; the source URL and statement id are in a comment at the top of each file). Retrieved 2026-10-30. These are the documents the Registrar prints for the measure in the sample ballot, so they supersede any 'missing' note above for the same document.
+
+- `argument-against.html`
+- `argument-for.html`
+- `impartial-analysis.html`
+- `rebuttal-to-argument-against.html`
+- `rebuttal-to-argument-for.html`

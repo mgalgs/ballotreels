@@ -32,3 +32,10 @@ Vote threshold: Majority 50%+1 (the packet's "Request for Measure Information" f
 - **Rebuttal to argument for / rebuttal to argument against**: **not applicable/not found.** A "Ballot Label Arguments & Rebuttals Form" is listed in the transmittal letter's table of contents but not present in the scanned packet — likely a blank procedural form, or no rebuttal was filed since no opposing argument exists (opponents: none submitted).
 - **Full text**: present, inside `resolution.pdf` — Ordinance No. 2026-06, amending Huntington Park Municipal Code Title 2, Ch. 9, §2-9.03.
 - **Tax rate statement / fiscal**: **not applicable.** This is a governance/term-limits measure with no direct cost; no fiscal analysis was found or appears to exist.
+
+## Registrar's Interactive Sample Ballot documents (added 2026-10-30)
+
+Publisher: Los Angeles County Registrar-Recorder/County Clerk. Source: the Interactive Sample Ballot's contest data, https://isb.lavote.gov/parsed/4348/contests/bmc10956.json (English text of each statement, saved as HTML; the source URL and statement id are in a comment at the top of each file). Retrieved 2026-10-30. These are the documents the Registrar prints for the measure in the sample ballot, so they supersede any 'missing' note above for the same document.
+
+- `argument-for.html`
+- `impartial-analysis.html`

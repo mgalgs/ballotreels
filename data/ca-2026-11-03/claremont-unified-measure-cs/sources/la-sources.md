@@ -34,3 +34,15 @@ Vote threshold: 55% of the votes cast (Prop 39 school bond).
 - **Argument against**: filed, by the five named opponents above (per the county list), but the filed text was not located. Status: filed (official) but not found/not fetched.
 - **Rebuttals**: not confirmed either way; full argument/rebuttal text would appear in the county's Voter Information Guide/sample ballot pamphlet, which was not located as a standalone online PDF. Status: not found/not fetched.
 - **Fiscal analysis / staff report**: `staff-report.html` (Item 18.01) is the closest available staff write-up; it carries no separate "Financial Impact" line beyond the bond amount and levy figures already in the ballot question.
+
+## Registrar's Interactive Sample Ballot documents (added 2026-10-30)
+
+Publisher: Los Angeles County Registrar-Recorder/County Clerk. Source: the Interactive Sample Ballot's contest data, https://isb.lavote.gov/parsed/4348/contests/bmc10937.json (English text of each statement, saved as HTML; the source URL and statement id are in a comment at the top of each file). Retrieved 2026-10-30. These are the documents the Registrar prints for the measure in the sample ballot, so they supersede any 'missing' note above for the same document.
+
+- `argument-against.html`
+- `argument-for.html`
+- `full-text.html`
+- `impartial-analysis.html`
+- `rebuttal-to-argument-against.html`
+- `rebuttal-to-argument-for.html`
+- `tax-rate-statement.html`

@@ -29,3 +29,13 @@ Vote threshold: Majority, 50%+1, per Elections Code §9217 (a 2/3 council vote w
 - **Argument against**: both sides are named in the county's final list (four named opponents), so an argument against was almost certainly filed too. The filed text is missing, not found, same block.
 - **Rebuttals**: status unconfirmed either way — California law would allow a rebuttal on each side since both a for and an against argument exist, but no rebuttal text (or confirmation one was filed) was found.
 - **Tax rate statement**: not applicable — HB is a general sales tax, not a property-tax-secured bond measure.
+
+## Registrar's Interactive Sample Ballot documents (added 2026-10-30)
+
+Publisher: Los Angeles County Registrar-Recorder/County Clerk. Source: the Interactive Sample Ballot's contest data, https://isb.lavote.gov/parsed/4348/contests/bmc10951.json (English text of each statement, saved as HTML; the source URL and statement id are in a comment at the top of each file). Retrieved 2026-10-30. These are the documents the Registrar prints for the measure in the sample ballot, so they supersede any 'missing' note above for the same document.
+
+- `argument-against.html`
+- `argument-for.html`
+- `impartial-analysis.html`
+- `rebuttal-to-argument-against.html`
+- `rebuttal-to-argument-for.html`

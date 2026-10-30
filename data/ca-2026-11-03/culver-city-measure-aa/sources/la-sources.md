@@ -31,3 +31,14 @@ Vote threshold: Majority Vote 50%+1.
 - **Rebuttal to argument against**: present (in `measure-page.html`).
 - **Full text**: present, inside `resolution.pdf`.
 - **Tax rate statement**: not found. No standalone tax rate statement or fiscal/staff report distinct from the resolution and impartial analysis appears to be separately published by the city for this parcel tax measure — "not found/not fetched" rather than confirmed "not filed," since no official source states one doesn't exist.
+
+## Registrar's Interactive Sample Ballot documents (added 2026-10-30)
+
+Publisher: Los Angeles County Registrar-Recorder/County Clerk. Source: the Interactive Sample Ballot's contest data, https://isb.lavote.gov/parsed/4348/contests/bmc10908.json (English text of each statement, saved as HTML; the source URL and statement id are in a comment at the top of each file). Retrieved 2026-10-30. These are the documents the Registrar prints for the measure in the sample ballot, so they supersede any 'missing' note above for the same document.
+
+- `argument-against.html`
+- `argument-for.html`
+- `full-text.html`
+- `impartial-analysis.html`
+- `rebuttal-to-argument-against.html`
+- `rebuttal-to-argument-for.html`

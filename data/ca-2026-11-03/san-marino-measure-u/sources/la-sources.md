@@ -34,3 +34,10 @@ Vote threshold: Majority 50%+1 (this is a general-purpose tax renewal, not a spe
 - **Rebuttal to argument for / rebuttal to argument against**: **missing — not found, consistent with none filed.** Same caveat as above: plausible given no opposing argument, but not independently confirmed by an official notice.
 - **Full text**: present, inside `staff-report.pdf` — Ordinance No. O-26-1427, amending San Marino Municipal Code Chapter 26, Article 03 (the Utility Tax Ordinance).
 - **Tax rate statement / fiscal**: the $2,620,000/year estimate is captured in the ballot question and in the staff report's background section (UUT first adopted 1992 via Ord. No. O-92-1028, renewed by voters three times since, reduced from 6% to 5% in 2015; current 5% UUT expires March 31, 2027). No separate fiscal/tax-rate-statement document was found beyond this.
+
+## Registrar's Interactive Sample Ballot documents (added 2026-10-30)
+
+Publisher: Los Angeles County Registrar-Recorder/County Clerk. Source: the Interactive Sample Ballot's contest data, https://isb.lavote.gov/parsed/4348/contests/bmc10957.json (English text of each statement, saved as HTML; the source URL and statement id are in a comment at the top of each file). Retrieved 2026-10-30. These are the documents the Registrar prints for the measure in the sample ballot, so they supersede any 'missing' note above for the same document.
+
+- `argument-for.html`
+- `impartial-analysis.html`

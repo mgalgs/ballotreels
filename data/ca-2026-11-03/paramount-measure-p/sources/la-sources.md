@@ -35,3 +35,10 @@ Vote threshold: **2/3** (confirmed by the public-hearing notice's citation of Go
 - **Rebuttal to argument for / rebuttal to argument against**: **not applicable/not found.** With no opposing argument filed, there is nothing to rebut; no rebuttal document was located for the favor side either.
 - **Full text**: **missing — not found.** The public-hearing notice states "a copy of the complete resolution and proposed ordinance are available in the City Clerk's office," but no web-published copy of the adopted resolution or ordinance was found as a standalone document.
 - **Tax rate statement / fiscal**: present (`fiscal.pdf`), though it is an informational mailer rather than a formal tax-rate-statement document; it covers the rate structure, phase-in schedule, and revenue estimate.
+
+## Registrar's Interactive Sample Ballot documents (added 2026-10-30)
+
+Publisher: Los Angeles County Registrar-Recorder/County Clerk. Source: the Interactive Sample Ballot's contest data, https://isb.lavote.gov/parsed/4348/contests/bmc10934.json (English text of each statement, saved as HTML; the source URL and statement id are in a comment at the top of each file). Retrieved 2026-10-30. These are the documents the Registrar prints for the measure in the sample ballot, so they supersede any 'missing' note above for the same document.
+
+- `argument-for.html`
+- `full-text.html`

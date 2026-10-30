@@ -40,3 +40,13 @@ Vote threshold: 2/3 of votes cast (confirmed in Resolution No. 10203 §6 and the
 - **Rebuttal to argument for / rebuttal to argument against**: **missing — not found/not fetched.** Both an argument for and against exist per the county list, so rebuttals to each are plausible, but neither was located as a standalone document.
 - **Full text**: present, inside `resolution.pdf` — Exhibit A, the ordinance adding Pasadena Municipal Code Chapter 4.110.
 - **Tax rate statement / fiscal**: the ~$22,100,000/year estimate is confirmed in the ballot question itself and in `fact-sheet.pdf`/`staff-report.pdf`. No standalone Prop-13-style tax rate statement was found; Measure PFD is a flat parcel tax rather than a bond, so that document type may not apply in the same way.
+
+## Registrar's Interactive Sample Ballot documents (added 2026-10-30)
+
+Publisher: Los Angeles County Registrar-Recorder/County Clerk. Source: the Interactive Sample Ballot's contest data, https://isb.lavote.gov/parsed/4348/contests/bmc10954.json (English text of each statement, saved as HTML; the source URL and statement id are in a comment at the top of each file). Retrieved 2026-10-30. These are the documents the Registrar prints for the measure in the sample ballot, so they supersede any 'missing' note above for the same document.
+
+- `argument-against.html`
+- `argument-for.html`
+- `full-text.html`
+- `rebuttal-to-argument-against.html`
+- `rebuttal-to-argument-for.html`

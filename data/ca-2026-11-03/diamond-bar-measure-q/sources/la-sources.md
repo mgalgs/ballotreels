@@ -35,3 +35,9 @@ Vote threshold: Majority 50%+1 (Resolution 2026-28 §2; the earlier research pas
 - **Rebuttal to argument for / rebuttal to argument against**: **missing — not confirmed either way.** An August 24, 2026 deadline for rebuttals exists per Resolution 2026-28, but whether anything was filed is unconfirmed (same search-budget limitation as the argument in favor).
 - **Full text**: present, inside `resolution.pdf` — the ordinance adding Chapter 3.14 to Title 3 of the Diamond Bar City Code.
 - **Tax rate statement / fiscal**: present, inside `staff-report.pdf` — ~$6,000,000/year revenue estimate, ~$160,000 implementation/administration cost (already in the adopted FY2026-27 budget), and backing detail on the city's structural deficit (~$1M in FY2026-27, growing to ~$5M by 2030 and ~$12M by 2035) and General Fund reserves (~$29.9M).
+
+## Registrar's Interactive Sample Ballot documents (added 2026-10-30)
+
+Publisher: Los Angeles County Registrar-Recorder/County Clerk. Source: the Interactive Sample Ballot's contest data, https://isb.lavote.gov/parsed/4348/contests/bmc10930.json (English text of each statement, saved as HTML; the source URL and statement id are in a comment at the top of each file). Retrieved 2026-10-30. These are the documents the Registrar prints for the measure in the sample ballot, so they supersede any 'missing' note above for the same document.
+
+- `argument-for.html`

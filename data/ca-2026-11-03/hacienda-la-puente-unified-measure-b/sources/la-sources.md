@@ -29,3 +29,9 @@ Vote threshold: majority vote, 50%+1.
 - **Impartial analysis**: missing — not located (district/county counsel). Status: not found/not fetched.
 - **Arguments for/against, rebuttals**: none submitted, per the county list (official — not merely unfound). The resolution itself has no argument exhibits attached, consistent with this.
 - **Staff report**: no document beyond the resolution's own "WHEREAS" recitals was located; `hlpschools.org`'s BoardDocs portal (http://www.boarddocs.com/ca/hlpusd/board.nsf/public) was identified as the likely home for a March 12, 2026 "Term Limits Presentation" but was not fetched (follow-on work, not pursued for this staging pass).
+
+## Registrar's Interactive Sample Ballot documents (added 2026-10-30)
+
+Publisher: Los Angeles County Registrar-Recorder/County Clerk. Source: the Interactive Sample Ballot's contest data, https://isb.lavote.gov/parsed/4348/contests/bmc10873.json (English text of each statement, saved as HTML; the source URL and statement id are in a comment at the top of each file). Retrieved 2026-10-30. These are the documents the Registrar prints for the measure in the sample ballot, so they supersede any 'missing' note above for the same document.
+
+- `impartial-analysis.html`

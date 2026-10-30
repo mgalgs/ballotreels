@@ -37,3 +37,15 @@ Note: the earlier research pass's `sources.md` flagged an opponent ("We Are Glen
 - **Argument against**: filed, by Mel Bennett (per the county list), but the text was not located. Status: filed (official) but not found/not fetched.
 - **Rebuttals**: not located either way; not stated as "none submitted" by any official source seen. Status: not found/not fetched.
 - **Fiscal analysis / staff report**: no document beyond the resolution's own recitals and Tax Rate Statement was found; the district's "School Improvements" page (reported to host a Fact Sheet/Project List/Bond Oversight Committee materials) returned HTTP 503 on fetch and was not recovered.
+
+## Registrar's Interactive Sample Ballot documents (added 2026-10-30)
+
+Publisher: Los Angeles County Registrar-Recorder/County Clerk. Source: the Interactive Sample Ballot's contest data, https://isb.lavote.gov/parsed/4348/contests/bmc10931.json (English text of each statement, saved as HTML; the source URL and statement id are in a comment at the top of each file). Retrieved 2026-10-30. These are the documents the Registrar prints for the measure in the sample ballot, so they supersede any 'missing' note above for the same document.
+
+- `argument-against.html`
+- `argument-for.html`
+- `full-text.html`
+- `impartial-analysis.html`
+- `rebuttal-to-argument-against.html`
+- `rebuttal-to-argument-for.html`
+- `tax-rate-statement.html`

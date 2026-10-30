@@ -34,3 +34,10 @@ Vote threshold: Majority 50%+1.
 - **Rebuttal to argument for / rebuttal to argument against**: **not applicable** — with no opposing argument filed, there is nothing to rebut on either side.
 - **Full text**: present — the charter sections being amended (§301, §305, §306, §319, §320, §502, §907) are detailed in both the resolution and the impartial analysis.
 - **Tax rate statement / fiscal**: **not applicable.** The measure explicitly imposes no tax increase; it is a governance/charter-cleanup measure.
+
+## Registrar's Interactive Sample Ballot documents (added 2026-10-30)
+
+Publisher: Los Angeles County Registrar-Recorder/County Clerk. Source: the Interactive Sample Ballot's contest data, https://isb.lavote.gov/parsed/4348/contests/bmc10945.json (English text of each statement, saved as HTML; the source URL and statement id are in a comment at the top of each file). Retrieved 2026-10-30. These are the documents the Registrar prints for the measure in the sample ballot, so they supersede any 'missing' note above for the same document.
+
+- `argument-for.html`
+- `full-text.html`
