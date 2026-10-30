@@ -1,0 +1,46 @@
+# Archived sources for City of King City Measure P, 2026-11-03 general
+# election (sources/county-sources.md, sources/sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The County of Monterey Elections Department's List of Local Measures
+# gives Measure P's letter, vote threshold and ballot question (under
+# "City of King"), and says "All related documents are filed and on
+# public review with the city clerk." The impartial analysis, the
+# arguments and any rebuttals are not posted online by the county or the
+# City, so none is cited.
+#
+# The City Council's Resolution No. 2026-5097, adopted and signed July
+# 28, 2026, orders the measure; its ballot question matches the county's
+# word for word, and its Exhibit A is the proposed Ordinance No.
+# 2026-844, the measure's full text. The City's PDF is a scan with no text
+# layer, so the passages cited were typed from the page images into
+# sources/resolution-2026-5097-transcription.txt, which names the PDF and
+# URL it copies; that source points at the transcription, and its url at
+# the scan. The City's news post on Measure P, archived earlier, is not
+# cited.
+
+[contest]
+id = "ca-2026-11-03-king-city-measure-p"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:king_city"
+kind = "measure"
+title = "City of King City Measure P: Sales Tax from 1% to 1.5%, Until Ended by Voters"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "County of Monterey Elections Department, List of Local Measures, November 3, 2026 General Election: City of King Measure P"
+credit = "List of Local Measures, Monterey County Elections"
+url = "https://www.countyofmonterey.gov/government/departments-a-h/elections/list-of-local-measures"
+file = "sources/county-measure-list.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City Council of the City of King City, Resolution No. 2026-5097, submitting a ballot measure reauthorizing the City's transactions and use tax at a rate of 1.5% and extending it until ended by voters, with Exhibit A, proposed Ordinance No. 2026-844, adopted July 28, 2026 (transcribed from the scan)"
+credit = "Resolution No. 2026-5097, City of King City"
+url = "https://www.kingcity.com/DocumentCenter/View/1380/2026-5097-Ballot-Measure"
+file = "sources/resolution-2026-5097-transcription.txt"
+retrieved = "2026-10-28"

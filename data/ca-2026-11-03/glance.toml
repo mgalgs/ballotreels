@@ -2875,3 +2875,13 @@ source = "measure-list"
 quote = "providing approximately $1,800,000 annually in additional revenue"
 amount = 1800000
 period = "per-year"
+
+# City of King City Measure P: no fiscal statement is online (the county
+# says the measure's documents are with the city clerk); the total tax's
+# revenue, as the ballot question gives it (the City Council's resolution
+# puts the 0.5% increase at $1,200,000 a year).
+[king-city-measure-p]
+source = "measure-list"
+quote = "providing approximately $3,600,000 annually until ended by voters"
+amount = 3600000
+period = "per-year"
