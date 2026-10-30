@@ -1,0 +1,269 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 65.55,
+  "phrases": [
+    {
+      "text": "Measure G asks the voters of this fire protection district whether to enlarge its board of trustees from three members to five.",
+      "start": 0.03,
+      "end": 7.75
+    },
+    {
+      "text": "Today, the district has a three-person board of trustees.",
+      "start": 8.41,
+      "end": 12.01
+    },
+    {
+      "text": "The district's board of trustees placed the measure on the ballot.",
+      "start": 12.67,
+      "end": 16.12
+    },
+    {
+      "text": "Under state law, a fire district can change the size of its board if a majority of voters approve, so Measure G needs a majority to pass.",
+      "start": 16.78,
+      "end": 26.54
+    },
+    {
+      "text": "Measure G would add two seats to the board, filled by election, each for a four-year term.",
+      "start": 27.2,
+      "end": 32.97
+    },
+    {
+      "text": "The ballot question says the change is to provide better representation for the district.",
+      "start": 33.63,
+      "end": 38.85
+    },
+    {
+      "text": "The county voter guide does not include a cost estimate for the measure.",
+      "start": 39.51,
+      "end": 43.57
+    },
+    {
+      "text": "No argument for Measure G appears among the official documents gathered for this video.",
+      "start": 44.23,
+      "end": 49.29
+    },
+    {
+      "text": "No argument against Measure G appears among the official documents gathered for this video.",
+      "start": 49.95,
+      "end": 55.61
+    },
+    {
+      "text": "A yes vote means the board of trustees would be increased to five members.",
+      "start": 56.27,
+      "end": 60.78
+    },
+    {
+      "text": "A no vote means there would be no change to the number of members on the board.",
+      "start": 61.44,
+      "end": 65.52
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure G asks the voters of this fire protection district whether to enlarge its board of trustees from three members to five.",
+      "Today, the district has a three-person board of trustees.",
+      "The district's board of trustees placed the measure on the ballot.",
+      "Under state law, a fire district can change the size of its board if a majority of voters approve, so Measure G needs a majority to pass.",
+      "Measure G would add two seats to the board, filled by election, each for a four-year term.",
+      "The ballot question says the change is to provide better representation for the district.",
+      "The county voter guide does not include a cost estimate for the measure.",
+      "No argument for Measure G appears among the official documents gathered for this video.",
+      "No argument against Measure G appears among the official documents gathered for this video.",
+      "A yes vote means the board of trustees would be increased to five members.",
+      "A no vote means there would be no change to the number of members on the board."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure G asks the voters of this fire protection district whether to enlarge its board of trustees from three members to five."
+      },
+      "bounds": [
+        0,
+        186720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure G asks the voters of this fire protection district whether to enlarge its board of trustees from three members to five.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, the district has a three-person board of trustees."
+      },
+      "bounds": [
+        201120,
+        288960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, the district has a three-person board of trustees.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The district's board of trustees placed the measure on the ballot."
+      },
+      "bounds": [
+        303360,
+        387600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district's board of trustees placed the measure on the ballot.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Under state law, a fire district can change the size of its board if a majority of voters approve, so Measure G needs a majority to pass."
+      },
+      "bounds": [
+        402000,
+        637680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Under state law, a fire district can change the size of its board if a majority of voters approve, so Measure G needs a majority to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure G would add two seats to the board, filled by election, each for a four-year term."
+      },
+      "bounds": [
+        652080,
+        792000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure G would add two seats to the board, filled by election, each for a four-year term.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The ballot question says the change is to provide better representation for the district."
+      },
+      "bounds": [
+        806400,
+        933120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The ballot question says the change is to provide better representation for the district.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The county voter guide does not include a cost estimate for the measure."
+      },
+      "bounds": [
+        947520,
+        1046400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The county voter guide does not include a cost estimate for the measure.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument for Measure G appears among the official documents gathered for this video."
+      },
+      "bounds": [
+        1060800,
+        1183680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure G appears among the official documents gathered for this video.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument against Measure G appears among the official documents gathered for this video."
+      },
+      "bounds": [
+        1198080,
+        1335360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure G appears among the official documents gathered for this video.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote means the board of trustees would be increased to five members."
+      },
+      "bounds": [
+        1349760,
+        1459440
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote means the board of trustees would be increased to five members.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote means there would be no change to the number of members on the board."
+      },
+      "bounds": [
+        1473840,
+        1573200
+      ]
+    }
+  ],
+  "sha256": "a7d39036c235431af5c54ceef5a3f0fada3d1fb71c9bd5d7c38e0307c021435a",
+  "take": {
+    "sha256": "986efb826cc17e81f15ba707332e0eef1869db70a4f38886c40d4c8ce49e31d0",
+    "bytes": 3146444
+  }
+}
