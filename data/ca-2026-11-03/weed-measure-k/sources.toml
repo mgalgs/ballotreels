@@ -1,0 +1,78 @@
+# Archived sources for City of Weed Measure K, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Siskiyou County posts no voter guide, only a Notice of Election per
+# measure. The ballot question is quoted from the County Clerk's Notice
+# of Election for Measure K, the authority for the letter and the
+# question; Section 2 (the second so numbered) of the City's Resolution
+# No. 30-2026 orders the same question word for word. No argument or
+# rebuttal was reached, and no document says whether any was filed (the
+# notice and the resolution only invite or authorize them).
+#
+# The City Attorney's impartial analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is; it has a text layer and is cited as archived. The
+# resolution and Ordinance No. 493-2026 (the measure's full text) are
+# the City's unsigned copies of the versions the Council approved,
+# scans with no text layer: the passages cited were typed from the page
+# images into sources/resolution-30-2026-transcription.txt and
+# sources/ordinance-493-2026-transcription.txt, which name the PDFs and
+# URLs they copy; those sources point at the transcriptions, and their
+# urls at the scans. The City's Measure K page is cited for two plain
+# facts only, attributed to the City: the date the Council placed the
+# measure (July 9, 2026) and the combined sales tax rate today. The
+# July 9 agenda memorandum (the City staff's material) is not cited.
+
+[contest]
+id = "ca-2026-11-03-weed-measure-k"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:weed"
+kind = "measure"
+title = "City of Weed Measure K: A 1.5% Sales Tax for General City Services Until Repealed by Voters"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Siskiyou County Clerk, Legal Notice: Notice of Election and Date Fixed for Ballot Arguments For or Against Measure K, City of Weed, dated June 24, 2026"
+credit = "Notice of Election, Siskiyou County Clerk"
+url = "https://www.siskiyoucounty.gov/sites/default/files/fileattachments/elections/page/32998/noe.measure_k.city_of_weed.pdf"
+file = "sources/notice-of-election.pdf"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City of Weed, City Attorney’s Impartial Analysis of Measure K, dated July 29, 2026"
+credit = "Impartial Analysis, Weed City Attorney"
+url = "https://storage.googleapis.com/juniper-media-library/512/2026/10/2026-07-29%20Measure%20K%20Impartial%20Analysis.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-title-summary"
+publisher = "City of Weed, Resolution No. 30-2026, A Resolution of the City Council of the City of Weed Placing a Measure Regarding a Transactions and Use Tax on the Ballot for the General Municipal Election Called for November 3, 2026 (the City's unsigned copy): pages 1 to 3 (transcribed from the scan)"
+credit = "Resolution No. 30-2026, City of Weed"
+url = "https://storage.googleapis.com/juniper-media-library/512/2026/10/Resolution30-2026_SalesTaxMeasure.pdf"
+file = "sources/resolution-30-2026-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Weed, Ordinance No. 493-2026, An Ordinance of the City Council of the City of Weed Imposing a One and One Half Percent Transactions and Use Tax for General Governmental Purposes (Exhibit A to Resolution No. 30-2026; the City's unsigned copy): pages 1, 2, 3 and 7 (transcribed from the scan)"
+credit = "Ordinance No. 493-2026, City of Weed"
+url = "https://storage.googleapis.com/juniper-media-library/512/2026/10/SalesTaxMeasure_Ordinance493-2026.pdf"
+file = "sources/ordinance-493-2026-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "city-page"
+kind = "public-record"
+publisher = "City of Weed, Measure K — November 3, 2026 (the City's Measure K page)"
+credit = "Measure K page, City of Weed"
+url = "https://ci.weed.ca.us/measurek/"
+file = "sources/city-measure-k-page.html"
+retrieved = "2026-10-30"

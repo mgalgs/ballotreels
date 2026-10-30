@@ -3789,3 +3789,13 @@ source = "ballot-question"
 quote = "providing approximately $1,864,000 annually until ended by voters"
 amount = 1864000
 period = "per-year"
+
+# City of Weed Measure K: a sales tax, so no tax rate statement; the
+# City Attorney's impartial analysis gives no figure. The revenue
+# estimate is the one its ballot question (Siskiyou County's Notice of
+# Election) prints.
+[weed-measure-k]
+source = "ballot-question"
+quote = "providing approximately $1,700,000 annually until repealed by voters"
+amount = 1700000
+period = "per-year"

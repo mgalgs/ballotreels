@@ -1130,6 +1130,8 @@ BALLOTS: dict[str, Ballot] = {
                      # quotes, named as headed
                      "ca-2026-11-03-yreka-measure-g":
                          "Notice of Election",
+                     "ca-2026-11-03-weed-measure-k":
+                         "Notice of Election",
                      # Placer County Elections' list of the measures on
                      # its ballot prints Colfax I's question and the vote
                      # it needs; the card names the list as headed
