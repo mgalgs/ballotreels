@@ -378,6 +378,14 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 143-26",
                      "ca-2026-11-03-walnut-creek-measure-u":
                          "Resolution Submitting a Measure to the Voters of Walnut Creek",
+                     # Walnut Creek's Measure T card quotes Section 2 of
+                     # the resolution the minutes record as adopted
+                     "ca-2026-11-03-walnut-creek-measure-t":
+                         "Resolution No. 26-31",
+                     # and Concord's Measure O card quotes the City's
+                     # web page, named as the page titles itself
+                     "ca-2026-11-03-concord-measure-o":
+                         "Ballot Question and Election Information",
                      # The Internet Archive's captures of the county
                      # guide's own pages for West Contra Costa Unified's
                      # Measure V and San Pablo's Measure S print each

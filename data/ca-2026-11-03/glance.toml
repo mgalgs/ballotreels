@@ -3678,3 +3678,21 @@ direction = "cost"
 [walnut-creek-measure-u]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Concord Measure O: a general business license tax; no tax rate
+# statement applies, and no impartial analysis was archived. The figure
+# is the one its ballot question (the City's Measure O page) prints.
+[concord-measure-o]
+source = "ballot-question"
+quote = "providing an additional $2,900,000 annually"
+amount = 2900000
+period = "per-year"
+
+# City of Walnut Creek Measure T: whether the City Treasurer is
+# appointed; neither the resolution placing it (whose ballot question
+# the card quotes) nor the City's agenda report gives a cost for the
+# measure (the report's $116,000 is the whole November election's
+# budget), and no impartial analysis was archived.
+[walnut-creek-measure-t]
+source = "ballot-question"
+status = "none-printed"
