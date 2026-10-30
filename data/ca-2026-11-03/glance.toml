@@ -3180,3 +3180,12 @@ source = "impartial-analysis"
 quote = "generate approximately $24 million annually, and remain in effect until repealed by voters."
 amount = 24000000
 period = "per-year"
+
+# Cambrian School District Measure Q: a parcel tax, so no tax rate
+# statement; the revenue figure its ballot question prints, as the
+# Registrar of Voters' List of Local Measures quotes it.
+[cambrian-measure-q]
+source = "measure-list"
+quote = "providing $1,000,000 annually in locally controlled funding"
+amount = 1000000
+period = "per-year"
