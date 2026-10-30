@@ -1,0 +1,190 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; how a school bond is repaid and what it needs
+# to pass; what the money may pay for; the impartial analysis's figures
+# from the district's tax rate statement; one line per side; what a vote
+# does. The same shape as Calaveras Unified Measure A.
+#
+# No name of the district, county or school is narrated (the narrator
+# mispronounces them): the opening says "the voters of this school
+# district", and the supporters' line says "the high school". The card,
+# title and chart titles carry the names. "Counsel" is heard as
+# "Council" (standard/speakability.txt), so the narration says
+# "impartial analysis" only.
+#
+# The card quotes the ballot question as Merced County Elections posts
+# it, headed only "MEASURE A", with blank Yes and No lines. Its title is
+# the district's name as the question prints it (the badge already says
+# MEASURE A, and Los Banos Unified C's page prints the district's name as
+# its heading); "MEASURE A" stands beside SUMMARY. The card has no boxes;
+# the vote lines give the impartial analysis's own meanings, and both
+# highlight the same phrase of the question.
+#
+# The county posts no tax rate statement for Measure A; the impartial
+# analysis restates the district's (its highest rate, the total debt
+# service and the final year), so the fiscal lines name the analysis.
+# The ballot question's own "approximately $25 per $100,000" is on the
+# card. The bonds and the debt service are repaid from a tax on property
+# in the district, and no archived source states the district's budget,
+# so they have no budget scale (STANDARD.md 6.5; left open). The bar on
+# salaries, the audits and oversight, and the State matching grants are
+# in the supporters' argument, so the neutral sections leave them out
+# (STANDARD.md 6.3).
+#
+# No argument against Measure A is posted by the county. (Its List of
+# Ballot Measures, printed before arguments were due, leaves every
+# argument field blank, so it shows nothing either way.) The no side
+# says none appears among the documents gathered, as Livingston T does;
+# its section is marked filed = false.
+
+contest = "ca-2026-11-03-le-grand-union-high-measure-a"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "A"
+title = "Le Grand Union High School District"
+origin = "MEASURE A"
+summary = "To improve the quality of education; modernize outdated classrooms, restrooms and school facilities; repair/replace leaky roofs; upgrade inadequate electrical systems; replace deteriorating plumbing systems; and make health and safety improvements; shall Le Grand Union High School District's measure authorizing $9,100,000 of bonds at legal rates be adopted, generating on average $672,300 annually while outstanding at annual rates of approximately $25 per $100,000 assessed value, with annual audits, independent citizens' oversight, NO money for salaries and all money staying local?"
+
+[[section]]
+id = "what"
+heading = "Measure A"
+
+[[section.line]]
+text = "Measure A asks the voters of this school district whether to approve $9,100,000 in school bonds."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $9,100,000 of bonds"]
+
+[[section]]
+id = "today"
+heading = "How a school bond works"
+
+[[section.line]]
+id = "repaid"
+text = "The district would sell the bonds and repay them from a tax on property in the district."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bond-certificates"
+
+[[section.line]]
+text = "Measure A needs 55 percent of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "projects"
+text = "The ballot question lists projects such as modernizing classrooms and restrooms, replacing leaky roofs, and upgrading electrical and plumbing systems."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-roof-repair"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "tax-rate"
+text = "The impartial analysis, citing the district's tax rate statement, estimates the highest rate at $25.25 a year per $100,000 of assessed value."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "debt-payments"
+
+[[section.line]]
+id = "total"
+text = "The analysis estimates the total to repay, with interest, at about $21 million, with the tax ending in 2057-2058."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Measure A, in dollars"
+source = "impartial-analysis"
+unit = ""
+labels = ["Bonds", "Total to repay"]
+values = [9100000, 21046910]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say the high school opened in 1909, its roofs and plumbing must be revamped, and tax rates would stay similar."
+sources = ["argument-for"]
+basis = ["Le Grand High first opened in 1909.", "Old and inadequate infrastructure (roofs, electrical, HVAC, plumbing and sewer systems) must be revamped.", "Tax rates remain at similar levels previously approved by voters."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Old school buildings need repair", "Does not increase tax burden"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure A appears among the official documents gathered for this video; only the argument in favor does."
+sources = ["measure-list", "argument-for"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is in favor of authorizing the district to issue and sell up to $9,100,000 in bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $9,100,000 of bonds"]
+
+[[section.line]]
+text = "A no vote is against authorizing the district to issue and sell the bonds."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorizing $9,100,000 of bonds"]
+
+[[question]]
+ask = "Who would repay the bonds?"
+lines = ["repaid"]
+
+[[question]]
+ask = "What would the bond money pay for?"
+lines = ["projects"]
+
+[[question]]
+ask = "How much would property owners pay, and for how long?"
+lines = ["tax-rate", "total"]
+
+[[question]]
+ask = "How big is $9,100,000 next to the district's yearly budget?"
+unanswered = true

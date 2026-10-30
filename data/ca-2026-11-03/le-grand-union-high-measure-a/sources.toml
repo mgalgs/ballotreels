@@ -1,0 +1,65 @@
+# Archived sources for Le Grand Union High School District Measure A,
+# 2026-11-03 general election (sources/county-sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Merced County Elections (the Registrar of Voters) posts each measure's
+# filed documents on its "November 3, 2026, General Election" page, one
+# PDF each: for Measure A, the ballot question and County Counsel's
+# impartial analysis (text), and the full text and the argument in favor
+# (scans with no text layer). The argument in favor was typed from its
+# page image into sources/county-argument-for-transcription.txt, which
+# names the PDF and URL it copies; that source points at the
+# transcription, and its url at the scan (as American Canyon Measure P's
+# resolution does). The full text is not cited, so not transcribed.
+#
+# The county posts no tax rate statement for Measure A. The impartial
+# analysis restates the district's Tax Rate Statement (its highest rate,
+# total debt service and final year), so it is the measure's neutral
+# explanation and the source of those figures, attributed in the
+# narration to the analysis. The county posts no argument against and no
+# rebuttals. (Its List of Ballot Measures, printed before arguments were
+# due, leaves every argument field blank, so it shows nothing either way.)
+
+[contest]
+id = "ca-2026-11-03-le-grand-union-high-measure-a"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:le_grand_union_high_school_district"
+kind = "measure"
+title = "Le Grand Union High School District Measure A: School Facilities Bonds"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Merced County Elections, Measure A, Le Grand Union High School District, ballot question, November 3, 2026, General Election"
+credit = "Measure A, Merced County Elections"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53618/MEASURE-A"
+file = "sources/county-ballot-question.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Merced County Counsel (Thomas E. Ebersole, Assistant County Counsel), County Counsel Impartial Analysis of Le Grand Union High School District Measure A, as posted by Merced County Elections, November 3, 2026, General Election"
+credit = "County Counsel Impartial Analysis of Measure A"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53674/Impartial-Analysis-Eng"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure \"A\", Le Grand Union High School District, as filed with Merced County Elections, November 3, 2026, General Election (transcribed from the scan)"
+credit = "Argument in Favor of Measure A"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53672/Argument-in-Favor-of-Measure-A--Merced_County_Signature_Form---LeGrandUHSD-8-10-2026"
+file = "sources/county-argument-for-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "measure-list"
+kind = "election-filing"
+publisher = "Merced County Registrar of Voters, List of Ballot Measures, November 3 2026 General Election (CFMR004), printed August 7, 2026, pages 2 and 3"
+credit = "List of Ballot Measures, Merced County Registrar of Voters"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53380/List-of-Ballot-Measures-for-November-3-2026-General-Election"
+file = "sources/county-measure-list.pdf"
+retrieved = "2026-10-29"

@@ -1,0 +1,180 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot; what
+# would change (the rate, where the money goes, how long it lasts and
+# the vote it needs); the revenue estimate as the impartial analysis
+# gives it; one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card, title and chart
+# title carry it. "City's" sounds like "cities" (standard/speakability.txt),
+# so the narration says "the city".
+#
+# The card quotes the ballot question as Merced County Elections posts
+# it, with blank Yes and No lines and no yes/no sentences. So the card
+# has no boxes; the vote lines give the impartial analysis's own
+# meanings, and both highlight the same phrase of the question.
+#
+# The uses the ballot question lists are on the card, and not narrated:
+# the money is a general tax's, for any general city purpose. The
+# supporters'
+# firefighter grant and the opponents' Measure C history and police and
+# fire share of the budget are each side's own facts, so the neutral
+# sections leave them out (STANDARD.md 6.3), as they do the existing
+# half-cent tax, which the opponents' argument also raises.
+#
+# The $18 million a year is the City's estimate as the impartial
+# analysis gives it. No county document states the City's general fund
+# budget to give it a scale (STANDARD.md 6.5; left open, under
+# [[question]]); the City's five-year forecast chart archived earlier is
+# a City staff projection, not a fiscal statement, and is not cited.
+#
+# Both sides filed: the argument against's PDF renders "ti" as a broken
+# glyph, so its basis quotes passages without one.
+
+contest = "ca-2026-11-03-merced-measure-b"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "B"
+title = "CITY OF MERCED VITAL SERVICES PROTECTION MEASURE."
+origin = "MEASURE B"
+summary = "Shall the measure to maintain local quality of life/ general city services, such as 911 police/ emergency medical/ natural disaster response; responding quickly to neighborhood fires/ retaining firefighters; youth services/gang prevention; addressing homelessness; fixing roads/potholes; and keeping parks safe/clean, by establishing a 1¢ sales tax, providing approximately $18,000,000 annually until ended by voters, with public disclosure, independent audits, citizen oversight, and all funds for Merced, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure B"
+
+[[section.line]]
+text = "Measure B asks the voters of this city whether to add a 1 percent sales tax for general city services."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by establishing a 1¢ sales tax"]
+
+[[section]]
+id = "today"
+heading = "How it reached the ballot"
+
+[[section.line]]
+text = "The City Council placed Measure B on the ballot by a vote of 6 to 1."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The total sales tax rate in the city would rise from 8.25 percent to 9.25 percent."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Sales tax rate in Merced"
+source = "impartial-analysis"
+unit = "%"
+labels = ["Today", "With Measure B"]
+values = [8.25, 9.25]
+
+[[section.line]]
+id = "general"
+text = "As a general tax, the money could be spent for any general city purpose."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+id = "end"
+text = "The tax would last until ended by voters, and needs a simple majority to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The city attorney's impartial analysis says the city estimates about $18 million a year in new revenue."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure B keeps a paramedic or medical responder on every emergency call, and repairs potholes and streets."
+sources = ["argument-for"]
+basis = ["Measure B keeps a paramedic or medical responder on every emergency call", "YES on B repairs potholes, maintains our streets"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Paramedic or medical responder", "Repairs potholes, maintains streets"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say Measure B is a forever tax on families already struggling, with no guarantee for parks or street repair."
+sources = ["argument-against"]
+basis = ["Merced families are already struggling under the weight of high", "Measure B is a forever tax.", "there is no guarantee that this tax revenue will go to parks, youth investment, or street repair"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["A forever tax on struggling families", "No guarantee for parks or streets"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote on Measure B adopts the sales tax ordinance."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by establishing a 1¢ sales tax"]
+
+[[section.line]]
+text = "A no vote on Measure B does not adopt the sales tax ordinance."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["by establishing a 1¢ sales tax"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["general"]
+
+[[question]]
+ask = "When would the tax end?"
+lines = ["end"]
+
+[[question]]
+ask = "How big is $18 million a year next to the city budget?"
+unanswered = true

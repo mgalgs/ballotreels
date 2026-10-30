@@ -1,0 +1,59 @@
+# Archived sources for City of Los Banos Measure V, 2026-11-03 general
+# election (sources/county-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Merced County Elections (the Registrar of Voters) posts each measure's
+# filed documents on its "November 3, 2026, General Election" page, one
+# PDF each, all text: for Measure V, the ballot question, the full text
+# (the ordinance, Exhibit "A" to City Council Resolution No. 7115) and
+# the City Attorney's impartial analysis, which is the measure's neutral
+# explanation, the kind a state's attorney general's explanatory
+# statement is. Not a tax: no fiscal statement applies. The county posts
+# no argument for or against Measure V. Its List of Ballot Measures
+# (printed August 7, 2026, before arguments were due) leaves every
+# argument field blank for all nine measures, Merced B included, so it
+# records nothing either way about arguments.
+
+[contest]
+id = "ca-2026-11-03-los-banos-measure-v"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:los_banos"
+kind = "measure"
+title = "City of Los Banos Measure V: Making the City Treasurer Appointive"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Merced County Elections, Measure V, ballot question, November 3, 2026, General Election"
+credit = "Measure V, Merced County Elections"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53623/Measure-V"
+file = "sources/county-ballot-question.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Mary F. Lerner, City Attorney, Impartial Analysis of Measure V, Appointment of the City Treasurer, as posted by Merced County Elections, November 3, 2026, General Election"
+credit = "City Attorney's Impartial Analysis of Measure V"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53693/Measure-V-Impartial-Analysis---City-Treasurer---Final"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Los Banos, ordinance to make the office of City Treasurer an appointive office, Exhibit \"A\" to City Council Resolution No. 7115, June 17, 2026, full text of Measure V as posted by Merced County Elections, November 3, 2026, General Election"
+credit = "Full Text of Measure V, Merced County Elections"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53692/Measure-V-Full-Text-cc-reso-7115-june-17-2026"
+file = "sources/county-full-text.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "measure-list"
+kind = "election-filing"
+publisher = "Merced County Registrar of Voters, List of Ballot Measures, November 3 2026 General Election (CFMR004), printed August 7, 2026, page 1"
+credit = "List of Ballot Measures, Merced County Registrar of Voters"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53380/List-of-Ballot-Measures-for-November-3-2026-General-Election"
+file = "sources/county-measure-list.pdf"
+retrieved = "2026-10-29"

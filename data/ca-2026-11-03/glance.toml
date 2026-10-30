@@ -2797,3 +2797,35 @@ quote = "providing approximately $512,000 annually for general City services"
 amount = 512000
 period = "per-year"
 direction = "revenue-gain"
+
+# City of Merced Measure B: no tax rate statement or fiscal analysis
+# applies (a general sales tax); the City's revenue estimate, as the City
+# Attorney's impartial analysis gives it.
+[merced-measure-b]
+source = "impartial-analysis"
+quote = "The City estimates that the Measure will raise approximately $18,000,000 per year in new local revenue for use in the City."
+amount = 18000000
+period = "per-year"
+
+# City of Los Banos Measure V: not a tax; no fiscal analysis was filed,
+# and the City Attorney's impartial analysis prints no cost estimate.
+[los-banos-measure-v]
+source = "impartial-analysis"
+status = "none-printed"
+
+# Los Banos Unified School District Measure C: the district's Tax Rate
+# Statement, its total debt service (the bonds are $99,000,000).
+[los-banos-unified-measure-c]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $177,966,209."
+amount = 177966209
+period = "unstated"
+
+# Le Grand Union High School District Measure A: no tax rate statement is
+# posted; County Counsel's impartial analysis restates the district's,
+# its total debt service (the bonds are $9,100,000).
+[le-grand-union-high-measure-a]
+source = "impartial-analysis"
+quote = "The best estimate from official sources of the total debt service, including principal and interest, is that $21,046,910 would be required to be repaid if all the bonds are issued and sold."
+amount = 21046910
+period = "unstated"

@@ -1,0 +1,60 @@
+# Archived sources for City of Merced Measure B, 2026-11-03 general
+# election (sources/county-sources.md, sources/sources.md). Every id here
+# may be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Merced County Elections (the Registrar of Voters) posts each measure's
+# filed documents on its "November 3, 2026, General Election" page, one
+# PDF each, all text: the ballot question, the full text of the
+# ordinance, the City Attorney's impartial analysis, and the arguments
+# for and against. These supersede the City's agenda-packet copies
+# archived earlier (an unsigned draft resolution and a presentation),
+# which are not cited. The City Attorney's impartial analysis is the
+# measure's neutral explanation, the kind a state's attorney general's
+# explanatory statement is. No tax rate statement or fiscal analysis
+# applies (a general sales tax); the one revenue estimate is the City's,
+# as the analysis gives it. The county's List of Ballot Measures shows no
+# rebuttal filed, and none is posted.
+
+[contest]
+id = "ca-2026-11-03-merced-measure-b"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:merced"
+kind = "measure"
+title = "City of Merced Measure B: A 1¢ Sales Tax Until Ended by Voters"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Merced County Elections, Measure B, ballot question, November 3, 2026, General Election"
+credit = "Measure B, Merced County Elections"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53619/MEASURE-B"
+file = "sources/county-ballot-question.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Craig J. Corwell, Merced City Attorney, City Attorney's Impartial Analysis of Measure B, as posted by Merced County Elections, November 3, 2026, General Election"
+credit = "City Attorney's Impartial Analysis of Measure B"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53675/Impartial-Analysis---Measure-B"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure B, as filed with Merced County Elections, November 3, 2026, General Election"
+credit = "Argument in Favor of Measure B"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53680/20260817-Merced-City-Council-Argument-in-Favor_Measure-B-Final"
+file = "sources/county-argument-for.pdf"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure B, as filed with Merced County Elections, November 3, 2026, General Election"
+credit = "Argument Against Measure B"
+url = "https://www.countyofmerced.com/DocumentCenter/View/53681/2026_Measure_B_Argument_Against"
+file = "sources/county-argument-against.pdf"
+retrieved = "2026-10-29"
