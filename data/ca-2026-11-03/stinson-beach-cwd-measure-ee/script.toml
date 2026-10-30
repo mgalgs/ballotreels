@@ -1,0 +1,190 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; what an appropriations limit is
+# (the impartial analysis), who placed it and the vote it needs; what
+# would change if it passes and if it fails, and that it raises no tax
+# rate (all the analysis's); no cost estimate; one line per side; what a
+# vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this water district". The card, the title
+# and the "Only voters in ..." line carry the name. No person is named.
+#
+# The narration calls the appropriations limit "the spending limit", as
+# the impartial analysis does ("also known as an appropriations limit"),
+# and says what it is in the analysis's words. The analysis is not named
+# by its author ("Counsel" is heard as "Council"). That the measure "does
+# not authorize the District to impose a new assessment or increase any
+# property tax rate" is the analysis's, said as its own line; the
+# argument's claim about water rates is the yes side's only.
+#
+# The card quotes the ballot question as the county's Measure EE page
+# prints it. The page prints only YES and NO cells beside the question,
+# so the card has no boxes and the vote lines take their meaning from the
+# impartial analysis ("whether the District's current appropriations
+# limit should continue for another four years").
+#
+# The county's page prints no fiscal statement, so the fiscal line says
+# it includes no cost estimate (glance status "none-printed"). The
+# $1,536,312 limit is a figure about the district's budget, and no
+# archived source states that budget, so it has no scale (STANDARD.md
+# 6.5; left open); it is left to the card, not narrated.
+#
+# The yes side is the argument in favor. The county's page says "No
+# argument against Measure EE was filed.": the no side says so,
+# attributed to the county (filed = false, STANDARD.md 2.5).
+
+contest = "ca-2026-11-03-stinson-beach-cwd-measure-ee"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "county-page"
+number = "EE"
+title = "Measure EE"
+origin = "Stinson Beach County Water District"
+summary = "Shall the appropriations limit of the Stinson Beach County Water District for Fiscal Year 2026-2027 be established at $1,536,312 and should the limit for that Fiscal Year (i.e., $1,536,312) be used to determine the limits for Fiscal Years 2026-2027 through 2029-2030?"
+
+[[section]]
+id = "what"
+heading = "Measure EE"
+
+[[section.line]]
+text = "Measure EE asks the voters of this water district whether to keep its current spending limit for another four years."
+sources = ["impartial-analysis", "county-page"]
+
+[section.line.visual]
+kind = "page"
+source = "county-page"
+highlight = ["Shall the appropriations limit of the Stinson Beach County Water District"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "limit"
+text = "The state constitution sets a yearly limit on the tax money a local government may spend, and lets voters change the limit for up to four years."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "spending-limit"
+
+[[section.line]]
+id = "placed"
+text = "The board of directors placed Measure EE on the ballot, and it needs a simple majority to pass."
+sources = ["impartial-analysis", "county-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "pass"
+text = "If Measure EE passes, the district could keep spending tax revenue above its base limit through 2029-2030, to meet its current operating costs."
+sources = ["impartial-analysis", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "recurring-review"
+
+[[section.line]]
+id = "fail"
+text = "If Measure EE fails, the impartial analysis says, the spending limits of the district would be reduced, leaving less money for its current services."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+id = "no-tax"
+text = "The analysis says Measure EE does not allow a new assessment or an increase in any property tax rate."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "water-pipes"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+id = "cost"
+text = "The measure page from the county election office does not include a cost estimate for the measure."
+sources = ["county-page"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None printed"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure EE lets the district fully use property tax it already receives, and otherwise water rates would rise to make up the loss."
+sources = ["argument-for"]
+basis = ["It will allow the Stinson Beach County Water District to make full use of the property tax revenue it already receives.", "The lost tax revenue would then have to be made up by an increase in local water rates."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Full use of property tax already received", "Avoids higher water rates for lost revenue"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure EE was filed, according to the page for the measure from the county, so only the argument in favor appears there."
+sources = ["county-page"]
+
+[section.line.visual]
+kind = "list"
+source = "county-page"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote continues the current spending limit of the district for four more years."
+sources = ["impartial-analysis", "county-page"]
+
+[section.line.visual]
+kind = "page"
+source = "county-page"
+highlight = ["be used to determine the limits for Fiscal Years 2026-2027 through 2029-2030"]
+
+[[section.line]]
+text = "A no vote does not continue the current limit."
+sources = ["impartial-analysis", "county-page"]
+
+[section.line.visual]
+kind = "page"
+source = "county-page"
+highlight = ["be used to determine the limits for Fiscal Years 2026-2027 through 2029-2030"]
+
+[[question]]
+ask = "What is an appropriations limit?"
+lines = ["limit"]
+
+[[question]]
+ask = "What happens if it fails?"
+lines = ["fail"]
+
+[[question]]
+ask = "Does this change any tax?"
+lines = ["no-tax"]
+
+[[question]]
+ask = "How large is the limit next to the district's budget?"
+unanswered = true
