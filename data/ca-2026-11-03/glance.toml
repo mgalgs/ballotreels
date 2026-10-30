@@ -2839,3 +2839,12 @@ source = "measure-list"
 quote = "levying $32 per $100,000 assessed value ($2,800,000 annually) while bonds are outstanding"
 amount = 2800000
 period = "per-year"
+
+# City of Salinas Measure G: no fiscal statement is online (the county
+# says the measure's documents are with the city clerk); the revenue
+# estimate, as the ballot question gives it.
+[salinas-measure-g]
+source = "measure-list"
+quote = "providing approximately $30,000,000 annually until ended by the voters"
+amount = 30000000
+period = "per-year"
