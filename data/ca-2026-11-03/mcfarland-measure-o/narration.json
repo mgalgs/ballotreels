@@ -1,0 +1,313 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 89.21,
+  "phrases": [
+    {
+      "text": "Measure O asks the voters of this city whether to let the existing dairy keep operating.",
+      "start": 0.03,
+      "end": 5.16
+    },
+    {
+      "text": "Measure O is a citizen initiative, placed on the ballot by a petition with 632 valid signatures, where 524 were needed.",
+      "start": 5.82,
+      "end": 15.43
+    },
+    {
+      "text": "Today, city law prohibits concentrated animal feeding operations, and gives existing ones a period to phase out.",
+      "start": 16.09,
+      "end": 24.0
+    },
+    {
+      "text": "Measure O would keep the existing definition, which sorts them as large, medium or small by the number and type of animals confined and their potential to affect water quality.",
+      "start": 24.66,
+      "end": 36.14
+    },
+    {
+      "text": "Measure O would let existing operations keep running, and end the phase-out period.",
+      "start": 36.8,
+      "end": 42.39
+    },
+    {
+      "text": "New operations would still be prohibited everywhere in the city.",
+      "start": 43.05,
+      "end": 46.57
+    },
+    {
+      "text": "Existing operations would have to certify each year that they meet state and federal requirements.",
+      "start": 47.23,
+      "end": 53.11
+    },
+    {
+      "text": "Measure O needs a majority vote to pass.",
+      "start": 53.77,
+      "end": 56.52
+    },
+    {
+      "text": "The county elections page for this election does not include a cost estimate for the measure.",
+      "start": 57.18,
+      "end": 61.79
+    },
+    {
+      "text": "No argument against Measure O appears among the official documents gathered for this video.",
+      "start": 62.45,
+      "end": 68.13
+    },
+    {
+      "text": "No argument for Measure O appears among the official documents gathered for this video.",
+      "start": 68.79,
+      "end": 73.91
+    },
+    {
+      "text": "A yes vote lets existing operations keep running, ends the phase-out period, and requires a yearly certification.",
+      "start": 74.57,
+      "end": 82.33
+    },
+    {
+      "text": "A no vote keeps the current rules, which prohibit these operations and phase out existing ones.",
+      "start": 82.99,
+      "end": 89.18
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure O asks the voters of this city whether to let the existing dairy keep operating.",
+      "Measure O is a citizen initiative, placed on the ballot by a petition with 632 valid signatures, where 524 were needed.",
+      "Today, city law prohibits concentrated animal feeding operations, and gives existing ones a period to phase out.",
+      "Measure O would keep the existing definition, which sorts them as large, medium or small by the number and type of animals confined and their potential to affect water quality.",
+      "Measure O would let existing operations keep running, and end the phase-out period.",
+      "New operations would still be prohibited everywhere in the city.",
+      "Existing operations would have to certify each year that they meet state and federal requirements.",
+      "Measure O needs a majority vote to pass.",
+      "The county elections page for this election does not include a cost estimate for the measure.",
+      "No argument against Measure O appears among the official documents gathered for this video.",
+      "No argument for Measure O appears among the official documents gathered for this video.",
+      "A yes vote lets existing operations keep running, ends the phase-out period, and requires a yearly certification.",
+      "A no vote keeps the current rules, which prohibit these operations and phase out existing ones."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure O asks the voters of this city whether to let the existing dairy keep operating."
+      },
+      "bounds": [
+        0,
+        124560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure O asks the voters of this city whether to let the existing dairy keep operating.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure O is a citizen initiative, placed on the ballot by a petition with 632 valid signatures, where 524 were needed."
+      },
+      "bounds": [
+        138960,
+        371040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure O is a citizen initiative, placed on the ballot by a petition with 632 valid signatures, where 524 were needed.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, city law prohibits concentrated animal feeding operations, and gives existing ones a period to phase out."
+      },
+      "bounds": [
+        385440,
+        576720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, city law prohibits concentrated animal feeding operations, and gives existing ones a period to phase out.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure O would keep the existing definition, which sorts them as large, medium or small by the number and type of animals confined and their potential to affect water quality."
+      },
+      "bounds": [
+        591120,
+        868080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure O would keep the existing definition, which sorts them as large, medium or small by the number and type of animals confined and their potential to affect water quality.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure O would let existing operations keep running, and end the phase-out period."
+      },
+      "bounds": [
+        882480,
+        1018080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure O would let existing operations keep running, and end the phase-out period.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "New operations would still be prohibited everywhere in the city."
+      },
+      "bounds": [
+        1032480,
+        1118400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"New operations would still be prohibited everywhere in the city.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Existing operations would have to certify each year that they meet state and federal requirements."
+      },
+      "bounds": [
+        1132800,
+        1275360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Existing operations would have to certify each year that they meet state and federal requirements.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure O needs a majority vote to pass."
+      },
+      "bounds": [
+        1289760,
+        1357200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure O needs a majority vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The county elections page for this election does not include a cost estimate for the measure."
+      },
+      "bounds": [
+        1371600,
+        1483680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The county elections page for this election does not include a cost estimate for the measure.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument against Measure O appears among the official documents gathered for this video."
+      },
+      "bounds": [
+        1498080,
+        1635840
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure O appears among the official documents gathered for this video.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument for Measure O appears among the official documents gathered for this video."
+      },
+      "bounds": [
+        1650240,
+        1774560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure O appears among the official documents gathered for this video.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote lets existing operations keep running, ends the phase-out period, and requires a yearly certification."
+      },
+      "bounds": [
+        1788960,
+        1976640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote lets existing operations keep running, ends the phase-out period, and requires a yearly certification.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote keeps the current rules, which prohibit these operations and phase out existing ones."
+      },
+      "bounds": [
+        1991040,
+        2141040
+      ]
+    }
+  ],
+  "sha256": "7349531355f521e69cdf9a1f66b26faf677e6953025a2adccaa98f7d612d9a9c",
+  "take": {
+    "sha256": "7b17de36290347bd015e8bc685af42fd136383aac28c904d4116f8462c0b72d4",
+    "bytes": 4282124
+  }
+}
