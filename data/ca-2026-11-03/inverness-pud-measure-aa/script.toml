@@ -1,0 +1,185 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; what an appropriations limit is
+# and why the district puts this question every four years (the staff
+# report's plain facts, attributed); who placed it and the vote it needs;
+# what would change (the resolution's question); no cost estimate; both
+# sides, neither of which has an archived argument; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this utility district". The card, the
+# title and the "Only voters in ..." line carry the name.
+#
+# The card quotes the ballot question from DRAFT Resolution 299-2026, the
+# only copy online (sources.toml). The draft's adoption line still names
+# April 21, 2026; the script takes the fact and the date of adoption
+# from the approved May 19 minutes instead, and never repeats April 21.
+# The resolution prints no yes/no lines, so the card has no boxes and the
+# vote lines take their meaning from the question.
+#
+# The narration calls the appropriations limit "the spending limit" and
+# says what it is (the staff report's own description: the most tax
+# money the district may spend in a fiscal year). The measure's text
+# says nothing about any tax rate, so the script says nothing about one.
+# That the calculated limit is smaller than the tax money the district is
+# entitled to, and that the district must ask every four years to keep
+# the difference, are the staff report's statements, attributed to it.
+# The figure in search snippets of the county's Measure AA page ($653,712)
+# is in no archived document and is not used.
+#
+# Neither the resolution nor the staff report gives a cost figure, so
+# the fiscal line says so, naming both. No argument for or against
+# Measure AA was archived, and no document says whether any was filed,
+# so each side says none is among the documents gathered (filed =
+# false, STANDARD.md 2.5), as for Walnut Creek Measure U.
+
+contest = "ca-2026-11-03-inverness-pud-measure-aa"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "resolution"
+number = "AA"
+title = "PROPOSING AN ADJUSTMENT IN THE APPROPRIATIONS LIMIT"
+origin = "Inverness Public Utility District"
+summary = "Shall the measure adjusting the appropriations limit for the Inverness Public Utility District pursuant to Article XIIIB of the California Constitution so that for each of the fiscal years 2026/2027 through 2029/2030 the appropriations limit shall include the combined total of all applicable revenue sources be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure AA"
+
+[[section.line]]
+text = "Measure AA asks the voters of this utility district whether to adjust its spending limit for four fiscal years."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "resolution"
+highlight = ["Shall the measure adjusting the appropriations limit"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "limit"
+text = "Since 1979, the state constitution has required the board to set the most tax money the district may spend each fiscal year."
+sources = ["staff-report"]
+
+[section.line.visual]
+kind = "illustration"
+name = "spending-limit"
+
+[[section.line]]
+id = "gap"
+text = "The district's staff report says its calculated limit is substantially smaller than the tax money it is entitled to, and that keeping the difference takes a vote every four years."
+sources = ["staff-report"]
+
+[section.line.visual]
+kind = "illustration"
+name = "recurring-review"
+
+[[section.line]]
+id = "placed"
+text = "The board placed Measure AA on the ballot on May 19, 2026, and it needs a majority of the vote to pass."
+sources = ["minutes", "minutes-approval", "county-report"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "adjust"
+text = "For fiscal years 2026-2027 through 2029-2030, the limit would include the combined total of all applicable revenue sources."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "resolution"
+highlight = ["the appropriations limit shall include the combined total of all applicable revenue sources"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+id = "cost"
+text = "Neither the resolution nor the district's staff report includes a cost estimate for the measure."
+sources = ["resolution", "staff-report"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure AA appears among the official documents gathered for this video."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "list"
+source = "resolution"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure AA appears among the official documents gathered for this video."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "list"
+source = "resolution"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adjusts the limit to include the combined total of all applicable revenue sources, for those four years."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "resolution"
+highlight = ["the appropriations limit shall include the combined total of all applicable revenue sources"]
+
+[[section.line]]
+text = "A no vote does not adjust the limit."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "resolution"
+highlight = ["Shall the measure adjusting the appropriations limit"]
+
+[[question]]
+ask = "What is an appropriations limit?"
+lines = ["limit"]
+
+[[question]]
+ask = "Why is the district asking?"
+lines = ["gap"]
+
+[[question]]
+ask = "Does this change any tax?"
+unanswered = true
+
+[[question]]
+ask = "How much money is involved?"
+unanswered = true

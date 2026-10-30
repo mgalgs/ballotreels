@@ -1,0 +1,188 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; who placed it and the vote it
+# needs; what the money would pay for, what it
+# could not pay for, and who would check the spending; the tax rate
+# statement's estimates; both sides, neither of which has an archived
+# argument; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this school district", and the schools are
+# "the district's three schools". The card and the title carry the
+# names.
+#
+# The card quotes Exhibit A of the District's Resolution No.
+# 07-2025/2026, the ballot question, from the transcription of the scan
+# (sources.toml). Its bold lead-in is the card's title. The ballot's
+# "Bonds – Yes" and "Bonds – No" are its choices, not yes/no sentences,
+# so the card has no boxes and the vote lines take their meaning from
+# the question.
+#
+# What the money pays for is the question's own list and Exhibit B's
+# project list, as enacted; Exhibit B's statements of need and benefit
+# (and the resolution's recitals) are the District's and are not used.
+# The figures are the tax rate statement's, attributed to it. No
+# archived source states the district's budget, so the $115 million and
+# the $213 million to repay have no scale (STANDARD.md 6.5; left open),
+# as for the other school bonds; the tax per $100,000 of assessed value
+# is a per-property amount, exempt.
+#
+# No argument for or against Measure O was archived, and no document
+# says whether any was filed (the resolution only authorizes the filing
+# of one in favor), so each side says none is among the documents
+# gathered (filed = false, STANDARD.md 2.5), as for Walnut Creek
+# Measure U.
+
+contest = "ca-2026-11-03-reed-union-measure-o"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "O"
+title = "Reed Union School District Repair, Safety, Upgrade Measure"
+origin = "Board of Trustees of the Reed Union School District"
+summary = "To support quality education and retain/attract quality teachers by upgrading all Reed schools, keeping them safe; repairing deteriorating classrooms/bathrooms, leaky roofs; updating fire/electrical/security systems and earthquake safety; removing mold/asbestos; constructing, repairing facilities, acquiring equipment; shall a measure authorizing $115,000,000 in bonds at legal rates, levying $30 per $100,000 of assessed valuation, ($6,200,000 annually) while bonds are outstanding, requiring citizens’ oversight, spending disclosure/audits, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure O"
+
+[[section.line]]
+text = "Measure O asks the voters of this school district whether to approve $115 million in bonds for school repairs and upgrades."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["shall a measure authorizing $115,000,000 in bonds"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "placed"
+text = "The board of trustees placed Measure O on the ballot on June 8, 2026; as a Proposition 39 bond, it needs 55 percent of the vote to pass."
+sources = ["resolution", "county-report"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-board-room"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "uses"
+text = "The money would repair and upgrade the district's three schools, including classrooms, bathrooms, leaky roofs, heating and cooling, and fire, security and earthquake safety."
+sources = ["ballot-question", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-roof-repair"
+
+[[section.line]]
+id = "salaries"
+text = "The bond money could not pay teacher or administrator salaries, or other operating costs."
+sources = ["text", "resolution"]
+
+[[section.line]]
+id = "oversight"
+text = "A citizens' oversight committee and yearly independent audits would check how the money is spent."
+sources = ["text", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "inspection-clipboard"
+
+[[section]]
+id = "fiscal"
+heading = "What the tax statement says"
+
+[[section.line]]
+id = "rate"
+text = "The tax rate statement of the district estimates an average tax of $26.63 per $100,000 of assessed value, and at most $30, through 2060-2061."
+sources = ["tax-statement"]
+
+[section.line.visual]
+kind = "bars"
+title = "Estimated tax per $100,000 of assessed value, dollars"
+source = "tax-statement"
+unit = ""
+labels = ["Average over the bonds' life", "Highest, in 2027-28"]
+values = [26.63, 30]
+
+[[section.line]]
+id = "repay"
+text = "The statement estimates the total to repay, with interest, from a tax on property in the district, at $213 million."
+sources = ["tax-statement"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure O appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure O appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the district to issue up to $115 million in bonds."
+sources = ["ballot-question", "tax-statement"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["shall a measure authorizing $115,000,000 in bonds"]
+
+[[section.line]]
+text = "A no vote does not authorize the bonds."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["shall a measure authorizing $115,000,000 in bonds"]
+
+[[question]]
+ask = "Which schools would the money go to?"
+lines = ["uses"]
+
+[[question]]
+ask = "What would it cost a property owner?"
+lines = ["rate"]
+
+[[question]]
+ask = "Who checks how the money is spent?"
+lines = ["oversight"]
+
+[[question]]
+ask = "How large is the bond next to the district's budget?"
+unanswered = true

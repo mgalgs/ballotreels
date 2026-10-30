@@ -1,0 +1,100 @@
+# Archived sources for Inverness Public Utility District Measure AA,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# A public utility district has no Census boundary, so the division is
+# the county and `voters` names the district (docs/SCRIPT-FORMAT.md).
+# The county's list of measures is the authority for the letter and the
+# district; the Registrar of Voters' staff report 26-4515 (September 8,
+# 2026) gives each measure's vote required ("requires 50% approval").
+# Marin County's own Measure AA page could not be fetched, so no
+# impartial analysis, argument or rebuttal was reached, and no document
+# says whether any argument was filed.
+#
+# The ballot question is quoted from the DRAFT Resolution 299-2026 in the
+# District's May 19, 2026 board packet (Agenda Item No. 4): the only copy
+# online, unsigned, its vote lines blank. Its "PASSED AND ADOPTED" line
+# still names April 21, 2026, a meeting that was cancelled; the script
+# never repeats that date. The fact and date of adoption come from the
+# approved minutes of May 19, 2026, item 4B, approved on the consent
+# calendar of June 16, 2026. The staff report's own copy of the question
+# reads "2025/2026 through 2029/2030"; the resolution, the minutes and
+# the item's title read 2026/2027, which the script follows.
+#
+# The packet extract staged by the research round
+# (ipud-packet-2026-05-19-item4-resolution-299-2026.pdf) holds the wrong
+# pages (the item list, a fence estimate, a photograph and the staff
+# report's first page), not the resolution. The resolution was taken
+# from the same URL as packet pages 10 to 12 (the staff report and the
+# two pages of the draft resolution) into
+# sources/ipud-packet-2026-05-19-item4-pages-10-12.pdf, which both
+# sources below point at; it has a text layer.
+#
+# The District General Manager's staff report is the District staff's
+# material: it is cited only for plain facts about the appropriations
+# limit (what the constitution requires, how the District's calculated
+# limit compares with its tax proceeds, the four-year cycle), each
+# attributed to it.
+
+[contest]
+id = "ca-2026-11-03-inverness-pud-measure-aa"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:marin"
+kind = "measure"
+title = "Inverness Public Utility District Measure AA: Adjusting the District's Appropriations Limit for Fiscal Years 2026/2027 Through 2029/2030"
+voters = "the Inverness Public Utility District"
+
+[[source]]
+id = "resolution"
+kind = "official-title-summary"
+publisher = "Inverness Public Utility District, Resolution 299-2026 (DRAFT, as attached to the May 19, 2026 board packet, Agenda Item No. 4): A Resolution of the Board of Directors of the Inverness Public Utility District Proposing an Adjustment in the Appropriations Limit, Establishing a Date for Election, Adopting Intended Ballot Language ...; packet pages 11 and 12"
+credit = "Resolution 299-2026 (draft), Inverness Public Utility District"
+url = "https://www.invernesspud.org/files/c1f92a3e8/Agenda+Item+4+District+Business.pdf"
+file = "sources/ipud-packet-2026-05-19-item4-pages-10-12.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "staff-report"
+kind = "public-record"
+publisher = "Inverness Public Utility District, Board Agenda Item Staff Report, Resolution 299-2026: Appropriations Limit Override Election, meeting date May 19, 2026 (May 19, 2026 board packet, Agenda Item No. 4, packet page 10)"
+credit = "Staff report, Inverness Public Utility District"
+url = "https://www.invernesspud.org/files/c1f92a3e8/Agenda+Item+4+District+Business.pdf"
+file = "sources/ipud-packet-2026-05-19-item4-pages-10-12.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "minutes"
+kind = "public-record"
+publisher = "Inverness Public Utility District, Board of Directors Minutes, Regular Meeting, Tuesday, May 19, 2026 (approved), item 4B"
+credit = "Board minutes, May 19, 2026, Inverness Public Utility District"
+url = "https://www.invernesspud.org/files/8f3211d1a/2026.05.19+Regular+Meeting+Minutes_approved.pdf"
+file = "sources/ipud-minutes-2026-05-19.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "minutes-approval"
+kind = "public-record"
+publisher = "Inverness Public Utility District, Board of Directors Minutes, Regular Meeting, Tuesday, June 16, 2026 (approved), Consent Calendar item A, approving the May 19, 2026 minutes"
+credit = "Board minutes, June 16, 2026, Inverness Public Utility District"
+url = "https://www.invernesspud.org/files/b2980fe82/2026.06.16+Regular+Meeting+Minutes_approved.pdf"
+file = "sources/ipud-minutes-2026-06-16.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "county-report"
+kind = "public-record"
+publisher = "County of Marin, Registrar of Voters, Board of Supervisors staff report 26-4515, September 8, 2026: requests from local jurisdictions to consolidate their elections with the November 3, 2026 General Election (Ballot Measures, page 3)"
+credit = "Staff report 26-4515, Marin County Registrar of Voters"
+url = "https://marin.granicus.com/MetaViewer.php?view_id=33&event_id=4262&meta_id=1474983"
+file = "sources/marin-bos-2026-09-08-consolidation-staff-report-26-4515.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "measure-list"
+kind = "public-record"
+publisher = "County of Marin, Elections: List of Measures, November 3, 2026 General Election (Internet Archive copy of October 9, 2026)"
+credit = "List of measures, Marin County Elections"
+url = "https://web.archive.org/web/20261009122136/https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326"
+file = "sources/county-measure-list.html"
+retrieved = "2026-10-30"

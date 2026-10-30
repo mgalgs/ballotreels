@@ -3945,3 +3945,44 @@ source = "ballot-question"
 quote = "generating approximately $326,000 annually"
 amount = 326000
 period = "per-year"
+
+# Inverness Public Utility District Measure AA: an appropriations limit
+# adjustment, not a tax; no fiscal analysis or impartial analysis was
+# archived, and the ballot question (DRAFT Resolution 299-2026) prints
+# no figure.
+[inverness-pud-measure-aa]
+source = "resolution"
+status = "none-printed"
+
+# County Service Area No. 29 (Paradise Cay) Measure Z: a special parcel
+# tax; no impartial analysis or tax rate statement was archived. The
+# estimate is the one its ballot question (Resolution No. 2026-032)
+# prints, which states no period for it.
+[marin-csa-29-measure-z]
+source = "resolution"
+quote = "for $2,200 per lot per year commencing in July 2027 providing an estimated $272,800"
+amount = 272800
+period = "unstated"
+
+# Upper Bay Permanent Road Division Measure FF: a special parcel tax; no
+# impartial analysis or tax rate statement was archived. The county's
+# records disagree on $456,750: the ballot question calls it "each year",
+# paragraph 7 of Resolution No. 2026-071 "in the first year", while the
+# resolution's recital and the Public Works staff report give it as the
+# total over the 10 years (10 improved parcels at $4,350 and one
+# unimproved at $2,175 come to $45,675 a year). The quote is the recital,
+# whose period matches the rates.
+[upper-bay-prd-measure-ff]
+source = "resolution"
+quote = "$4,350 per improved parcel, per year, and $2,175 per unimproved parcel, per year, for 10 years, resulting in a total tax revenue of approximately $456,750"
+amount = 456750
+period = "over 10 years"
+
+# Reed Union School District Measure O: the total debt service, from the
+# District's Tax Rate Statement (Exhibit C to Resolution No.
+# 07-2025/2026, transcribed from the scan); the bonds are $115,000,000.
+[reed-union-measure-o]
+source = "tax-statement"
+quote = "The best estimate from official sources of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $213,000,000."
+amount = 213000000
+period = "unstated"

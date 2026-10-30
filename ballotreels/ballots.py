@@ -489,6 +489,19 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 2026-066",
                      "ca-2026-11-03-kentfield-fpd-measure-bb":
                          "Resolution No. 7-2026",
+                     # Marin special and school district measures from
+                     # local records: each card quotes the ballot question
+                     # from the resolution placing the measure, named as
+                     # headed. Inverness's copy is the draft in the
+                     # District's May 19, 2026 board packet.
+                     "ca-2026-11-03-inverness-pud-measure-aa":
+                         "Resolution 299-2026",
+                     "ca-2026-11-03-marin-csa-29-measure-z":
+                         "Resolution No. 2026-032",
+                     "ca-2026-11-03-upper-bay-prd-measure-ff":
+                         "Resolution No. 2026-071",
+                     "ca-2026-11-03-reed-union-measure-o":
+                         "Resolution No. 07-2025/2026",
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.
