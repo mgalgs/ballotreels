@@ -1,0 +1,56 @@
+# Archived sources for Exeter Unified School District Measure T,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Tulare County voter guide could not be fetched (tularecounty.ca.gov
+# answers a Cloudflare challenge), so no impartial analysis, argument or
+# rebuttal was archived, and no document says whether any argument was
+# filed. The Registrar's measure page, in an Internet Archive capture of
+# October 9, 2026, prints the Registrar's notice of the election, with
+# the ballot question and the vote needed; the card quotes the question
+# from it. The page links the Board of Trustees' Resolution No. 26-27-04
+# (adopted July 8, 2026), whose Appendix A is the measure's full text
+# and Appendix C the District's tax rate statement. The resolution is a
+# scan with no text layer: every page was typed from the page images,
+# word for word, into sources/general-bond-resolution-transcription.txt,
+# which names the PDF and URL it copies; both sources point at the
+# transcription, and their url at the scan.
+#
+# The District's FAQ page (district-faq-current-bond-initiatives-nov-2026.html)
+# predates the Board's resolution and is the District's own material; it
+# is not cited.
+
+[contest]
+id = "ca-2026-11-03-exeter-unified-measure-t"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:exeter_unified_school_district"
+kind = "measure"
+title = "Exeter Unified School District Measure T: $23 Million in School Facility Bonds"
+
+[[source]]
+id = "notice"
+kind = "official-title-summary"
+publisher = "Tulare County Registrar of Voters, Publication Notice of Special Bond Election and Notice of Date Fixed for Submitting Arguments for Exeter Unified School District, dated July 22, 2026, on the Registrar's page “Exeter Unified School District Bond Information” (Internet Archive capture of October 9, 2026)"
+credit = "Notice of Election, Tulare County Registrar of Voters"
+url = "http://web.archive.org/web/20261009122131/https://tularecounty.ca.gov/elections/exeter-unified-school-district-bond-information"
+file = "sources/county-measure-page.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Board of Trustees of the Exeter Unified School District, Resolution No. 26-27-04, adopted July 8, 2026, with Appendix A, Full Text of Bond Measure (pages A-1 to A-6), as posted by the Tulare County Registrar of Voters (transcribed from the scan)"
+credit = "Resolution No. 26-27-04, Exeter Unified School District"
+url = "https://tc-web.widen.net/s/cxfnf9nkm9/general-bond-resolution-2026"
+file = "sources/general-bond-resolution-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Exeter Unified School District, Tax Rate Statement (Appendix C, pages C-1 and C-2, to Resolution No. 26-27-04), as posted by the Tulare County Registrar of Voters (transcribed from the scan)"
+credit = "Tax Rate Statement, Exeter Unified School District"
+url = "https://tc-web.widen.net/s/cxfnf9nkm9/general-bond-resolution-2026"
+file = "sources/general-bond-resolution-transcription.txt"
+retrieved = "2026-10-30"
