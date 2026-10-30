@@ -504,6 +504,11 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 2026-071",
                      "ca-2026-11-03-reed-union-measure-o":
                          "Resolution No. 07-2025/2026",
+                     # Ventura County measures from local records: each
+                     # card quotes the ballot question from the document
+                     # it cites, named as headed
+                     "ca-2026-11-03-simi-valley-measure-a":
+                         "Resolution No. 2026-25",
                      # San Joaquin County prints each measure's ballot
                      # question, impartial analysis, tax rate statement
                      # and arguments in its composite guide.

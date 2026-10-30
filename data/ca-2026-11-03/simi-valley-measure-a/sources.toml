@@ -1,0 +1,106 @@
+# Archived sources for City of Simi Valley Measure A, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The letter A is not confirmed by an archived official record. The
+# County of Ventura's measures page and voter guide could not be read
+# (both answered a bot challenge), and www.simivalley.org answered HTTP
+# 403. The County's records name the City's measure but give no letter;
+# the letter is published under the operator's rule for letters every
+# checkable one of which matched an official page.
+#
+# These are the City's files from its Granicus meeting archive, for the
+# City Council meeting of June 8, 2026, item 9B: the staff report with
+# its attachments, among them Resolution No. 2026-25 placing the
+# measure (Attachment A), whose Exhibit A is the ordinance raising the
+# transient occupancy tax, and the minutes of that meeting. The copy of
+# the resolution archived is the unsigned one in the agenda packet; the
+# minutes record that the Council adopted Resolution No. 2026-25. The
+# ballot question is quoted from its Section 2 ("the exact form of the
+# question"), the vote it needs from its Section 4. No impartial
+# analysis, argument or rebuttal was reached: the Council asked the City
+# Attorney for an analysis (Resolution No. 2026-26) and set rules for
+# arguments (Resolution No. 2026-27), and no filed argument is archived.
+#
+# The staff report is City staff material. It is cited only for plain
+# facts it states (the rate today and who pays it); its reasons for the
+# measure, its account of the tax's history, its election cost and the
+# voter survey it attaches (Attachment E) are not used.
+#
+# The County of Ventura's Board of Supervisors approved, as consent item
+# 12 on August 4, 2026, the requests of the agencies in Exhibit 1 to
+# consolidate their elections with the November 3, 2026 General
+# Election; Exhibit 1 lists the City of Simi Valley among the six local
+# measures. They are cited for the fact that the measure is on Ventura
+# County's November 3 ballot.
+
+[contest]
+id = "ca-2026-11-03-simi-valley-measure-a"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:simi_valley"
+kind = "measure"
+title = "City of Simi Valley Measure A: Raising the Hotel Tax from 10% to 12%"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "City of Simi Valley, Resolution No. 2026-25, A Resolution Requesting the Board of Supervisors of the County of Ventura to Add a Ballot Proposition to the Previously Consolidated General Municipal Election to Be Held on November 3, 2026 (Attachment A to City Council agenda item 9B, June 8, 2026; the copy published with the agenda, unsigned): Sections 2 and 4, pages 6 to 8 of the item"
+credit = "Resolution No. 2026-25, City of Simi Valley"
+url = "https://simivalley.granicus.com/MetaViewer.php?view_id=5&clip_id=2994&meta_id=241425"
+file = "sources/simi-cc-2026-06-08-item9B-staff-report.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "City of Simi Valley, Exhibit A to Resolution No. 2026-25, Full Text of Ballot Measure: an ordinance amending Simi Valley Municipal Code § 3-5.303 (Transient Occupancy Tax, Imposed: Rate), pages 9 to 12 of City Council agenda item 9B, June 8, 2026"
+credit = "Full text of the ballot measure, City of Simi Valley"
+url = "https://simivalley.granicus.com/MetaViewer.php?view_id=5&clip_id=2994&meta_id=241425"
+file = "sources/simi-cc-2026-06-08-item9B-staff-report.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "staff-report"
+kind = "official-title-summary"
+publisher = "City of Simi Valley, Staff Report, City Council agenda item 9B, June 8, 2026, from the Office of the City Manager: Adoption of resolutions placing a ballot proposition on the November 3, 2026, ballot that, if approved by a majority of voters, would increase the City’s Transient Occupancy Tax (TOT) rate from 10% to 12%, pages 1 to 5"
+credit = "Staff Report, City of Simi Valley"
+url = "https://simivalley.granicus.com/MetaViewer.php?view_id=5&clip_id=2994&meta_id=241425"
+file = "sources/simi-cc-2026-06-08-item9B-staff-report.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "minutes"
+kind = "public-record"
+publisher = "City of Simi Valley, Minutes of the City Council, June 8, 2026: item 9B, adopting Resolution No. 2026-25 (attached to the City Council agenda of July 27, 2026, consent item 1), pages 28 and 29"
+credit = "City Council minutes, City of Simi Valley"
+url = "https://simivalley.granicus.com/MetaViewer.php?view_id=5&clip_id=3000&meta_id=242700"
+file = "sources/simi-cc-minutes-2026-05-11-and-06-08.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "county-letter"
+kind = "public-record"
+publisher = "County of Ventura, County Clerk-Recorder & Registrar of Voters, Board letter to the Board of Supervisors, August 4, 2026 (consent item 12): Approval of requests for election services for the General Election to be held on November 3, 2026"
+credit = "Board letter, County of Ventura Clerk-Recorder & Registrar of Voters"
+url = "https://ventura.primegov.com/api/compilemeetingattachmenthistory/historyattachment/?historyId=0693a4f1-2f94-4ce3-ad05-56b313f1f921"
+file = "sources/bos-2026-08-04-item12-board-letter.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "county-exhibit"
+kind = "public-record"
+publisher = "County of Ventura, Exhibit 1 to Board of Supervisors consent item 12, August 4, 2026: Agencies Requesting Consolidation with the November 3, 2026, General Election (Local Measures, page 6)"
+credit = "Exhibit 1, County of Ventura Board of Supervisors"
+url = "https://ventura.primegov.com/api/compilemeetingattachmenthistory/historyattachment/?historyId=4205c26b-060e-4e8d-9a3a-a871b442d8fe"
+file = "sources/bos-2026-08-04-item12-exhibit1-agencies-consolidation.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "county-minutes"
+kind = "public-record"
+publisher = "County of Ventura, Board of Supervisors, Board Minutes, August 4, 2026: Item #12, Approval of Requests for Election Services for the General Election to be Held on November 3, 2026"
+credit = "Board Minutes, County of Ventura Board of Supervisors"
+url = "https://ventura.primegov.com/Public/CompiledDocument?meetingTemplateId=27625&compileOutputType=1"
+file = "sources/bos-2026-08-04-item12-minute-order.pdf"
+retrieved = "2026-10-30"
