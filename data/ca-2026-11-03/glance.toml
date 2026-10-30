@@ -3678,3 +3678,12 @@ direction = "cost"
 [walnut-creek-measure-u]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Hercules Measure P: no impartial analysis or fiscal statement
+# was archived; the revenue estimate, as the ballot question in the
+# urgency ordinance placing the measure gives it.
+[hercules-measure-p]
+source = "ballot-question"
+quote = "generating approximately $4,000,000 annually until ended by voters"
+amount = 4000000
+period = "per-year"
