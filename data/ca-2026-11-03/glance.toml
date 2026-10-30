@@ -3430,3 +3430,10 @@ quote = "In exchange, Golden State would pay the City $41 million, which the Cit
 amount = 41000000
 period = "unstated"
 direction = "revenue-gain"
+
+# City of Whittier Measure EV (moving city elections to November): not a
+# tax; the Registrar-Recorder's list and the City Attorney's impartial
+# analysis print no cost estimate.
+[whittier-measure-ev]
+source = "ballot-question"
+status = "none-printed"
