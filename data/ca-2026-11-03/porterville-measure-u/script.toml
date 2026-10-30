@@ -1,0 +1,204 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; how it reached the ballot; the
+# charter's rule today; what would change (the old rules deleted, the
+# new powers, the vote it needs); no cost estimate; both sides, neither
+# of which has an archived argument; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card and title carry the
+# names.
+#
+# The Registrar's notice prints two charter amendment questions, each
+# headed "CITY OF PORTERVILLE CHARTER AMENDMENT". Measure U's is the one
+# whose words match Section 3 of Resolution No. 59-2026 (Charter Section
+# 61), not merely the first. The notice prints no yes/no statements: so
+# the card has no YES/NO boxes, and both vote lines highlight the same
+# phrase of the question.
+#
+# No impartial analysis was archived: every neutral line rests on the
+# notice and on what Resolution No. 59-2026 (as the Registrar posted
+# it) records or enacts. Today's rule is the existing Section 61 as
+# Section 4 prints it, struck out (read from the page images): the
+# $5,000 bidding rule, the Council's four-fifths vote to proceed another
+# way after rejecting bids, and the four-fifths vote in a disaster. The
+# new text is Exhibit A. The resolution's "WHEREAS" findings (that the
+# section "would benefit from modernization", "greater flexibility")
+# are the City's own claims and are not used. The $5,000 is a
+# threshold, not an amount of the City's money, so it has no scale
+# (STANDARD.md 6.5).
+#
+# Neither the notice nor the resolution gives a cost figure, so the
+# fiscal line says so, naming both. The June staff report's estimate of
+# the cost of the election is not the measure's cost and is not used.
+#
+# No argument for or against Measure U was archived (the county's guide
+# could not be fetched), and no document says whether any was filed. So
+# the sides do not say none was filed: each says none is among the
+# documents gathered (filed = false, STANDARD.md 2.5), as for Walnut
+# Creek Measure U.
+
+contest = "ca-2026-11-03-porterville-measure-u"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "U"
+title = "CITY OF PORTERVILLE CHARTER AMENDMENT"
+origin = "NOTICE OF ELECTION FOR TWO CHARTER AMENDMENTS"
+summary = "Shall the City Charter be amended to authorize the City Council to determine whether public works, maintenance, repair, improvement, and construction activities are performed by City forces, through contracts, or through agreements with other public agencies, and to authorize the City to establish purchasing and contracting procedures?"
+
+[[section]]
+id = "what"
+heading = "Measure U"
+
+[[section.line]]
+text = "Measure U asks the voters of this city whether to change the city charter's rules for public works and purchasing."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorize the City Council to determine whether public works, maintenance, repair, improvement, and construction activities are performed by City forces"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "placed"
+text = "The City Council placed Measure U on the ballot in July 2026."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section.line]]
+id = "bidding"
+text = "Today the charter says spending over $5,000 must be contracted to the lowest responsible bidder after public notice."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "contract-bid-folder"
+
+[[section.line]]
+id = "exceptions"
+text = "The council can do the work another way only by a four-fifths vote, after rejecting the bids or in a disaster."
+sources = ["resolution"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "delete"
+text = "Measure U would delete those rules from the charter."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "amended-page"
+
+[[section.line]]
+id = "forces"
+text = "Instead, the city could do public works with its own workers, without having to contract them out, or contract with other public agencies."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "project-site"
+
+[[section.line]]
+id = "purchasing"
+text = "The city could also set its own rules for buying goods, property and services."
+sources = ["resolution"]
+
+[[section.line]]
+id = "threshold"
+text = "Measure U needs a majority of the vote to pass."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "ballot-box"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+id = "cost"
+text = "Neither the notice of election nor the resolution includes a cost estimate for Measure U."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure U appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure U appears among the official documents gathered for this video."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote on Measure U changes the charter's rules for public works and purchasing."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorize the City Council to determine whether public works, maintenance, repair, improvement, and construction activities are performed by City forces"]
+
+[[section.line]]
+text = "A no vote on Measure U keeps the charter's current rules for public works and purchasing."
+sources = ["ballot-question", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["authorize the City Council to determine whether public works, maintenance, repair, improvement, and construction activities are performed by City forces"]
+
+[[question]]
+ask = "What does the charter require today?"
+lines = ["bidding", "exceptions"]
+
+[[question]]
+ask = "Would the city still have to seek bids?"
+lines = ["delete", "forces", "purchasing"]
+
+[[question]]
+ask = "What would the change cost?"
+lines = ["cost"]

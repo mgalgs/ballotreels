@@ -3781,3 +3781,11 @@ source = "ballot-question"
 quote = "which is expected to generate an estimated $250,000 annually per hotel"
 amount = 250000
 period = "per-year"
+
+# City of Porterville Measure U: a charter amendment; neither the
+# Registrar's notice of election (its ballot question) nor the City's
+# resolution prints a cost estimate, and no impartial analysis was
+# archived.
+[porterville-measure-u]
+source = "ballot-question"
+status = "none-printed"

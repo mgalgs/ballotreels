@@ -1,0 +1,49 @@
+# Archived sources for City of Porterville Measure U, 2026-11-03 general
+# election (sources/sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The county's site (tularecounty.ca.gov) is behind a Cloudflare
+# challenge. The Tulare County Registrar of Voters' page for the City's
+# two charter amendments is archived as the Internet Archive's capture
+# of October 9, 2026; it prints the Registrar's published notice of
+# election, which gives both ballot questions ("each to be presented on
+# the individual ballot") and the vote needed. Measure U's question is
+# the one that matches Section 3 of Resolution No. 59-2026 (Charter
+# Section 61); the other is Measure V's (Section 16, Resolution No.
+# 60-2026).
+#
+# Resolution No. 59-2026, as the Registrar posted it, rescinds and
+# replaces the City's June resolution (No. 44-2026) and prints the
+# complete text of the amendment (Section 4, the existing Section 61 with
+# its deletions struck out and its additions underlined, read from the
+# page images; and Exhibit A, the new Section 61). The drafts in the
+# City's June 16 and July 21 agenda packets are not used: the
+# Registrar's copy wins. No impartial analysis, argument or rebuttal was
+# reached (the county's guide is blocked), and no document says whether
+# any argument was filed.
+
+[contest]
+id = "ca-2026-11-03-porterville-measure-u"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:porterville"
+kind = "measure"
+title = "City of Porterville Measure U: Charter Amendment on Public Works and Purchasing"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Tulare County Registrar of Voters, Notice of Election for Two Charter Amendments and Notice of Date Fixed for Submitting Arguments for the City of Porterville, dated July 30, 2026, on the county's page City of Porterville Two Charter Amendments Measure Information (Internet Archive capture of October 9, 2026)"
+credit = "Notice of Election, Tulare County Registrar of Voters"
+url = "http://web.archive.org/web/20261009122132/https://tularecounty.ca.gov/elections/city-porterville-two-charter-amendments-measure-information"
+file = "sources/county-measure-page.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City of Porterville, Resolution No. 59-2026, A Resolution of the City Council of the City of Porterville Rescinding and Replacing Resolution No. 44-2026, and Approving and Calling for the Submission to the Voters of a City Council Proposed Measure to Amend City Charter Section 61 Relating to the Local Control of Public Works and Procurement Authority, adopted July 21, 2026, with Exhibit A, as posted by the Tulare County Registrar of Voters (pages 1-6)"
+credit = "Resolution No. 59-2026, City of Porterville"
+url = "https://tc-web.widen.net/s/zh6fxwqwxb/reso--59-u-"
+file = "sources/county-reso--59-u-.pdf"
+retrieved = "2026-10-30"
