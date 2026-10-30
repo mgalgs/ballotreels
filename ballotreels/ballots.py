@@ -857,6 +857,16 @@ BALLOTS: dict[str, Ballot] = {
                             "merced-union-high-sfid-3-measure-z")},
                      "ca-2026-11-03-lemoore-measure-p":
                          "Current Election Information",
+                     # The County of Monterey Elections Department posts
+                     # each local measure's letter, vote threshold and
+                     # ballot question on its List of Local Measures page,
+                     # with the impartial analysis and arguments beside
+                     # it; the cards quote the question from that page
+                     **{f"ca-2026-11-03-{slug}":
+                        "Monterey County Elections, List of Local Measures"
+                        for slug in (
+                            "monterey-county-measure-e",
+                            "north-monterey-county-unified-measure-l")},
                  },
                  # pdftotext runs the ordinance's document footer into the
                  # middle of Needles L's question, and the resolution's
