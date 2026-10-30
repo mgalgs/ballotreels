@@ -3,19 +3,24 @@
 # script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
 # section 1).
 #
-# Contra Costa County's Voter Information Guide could not be fetched
-# (contracostavote.gov answered a bot challenge). These are the City's
-# own files: its "Ballot Question and Election Information" page, and
+# Contra Costa County Elections' page for Measure O
+# (sources/county-page.txt, read in a browser, since contracostavote.gov
+# answers scripted fetches with a bot challenge) prints the ballot
+# question, the City Attorney's impartial analysis, the argument in
+# favor, the argument against and both rebuttals. The City Attorney's
+# impartial analysis is the measure's neutral explanation, the kind a
+# state's attorney general's explanatory statement is.
+#
+# The City's own files are its "Ballot Question and Election Information" page, and
 # item 4.a of the City Council's July 28, 2026 agenda: the resolution
 # placing the measure (Attachment 1) and the proposed ordinance with
 # its redlined Chapter 5.05 of the Municipal Code (Exhibit A, from the
 # agenda packet), which is the measure's full text. Both are agenda
-# copies, with their numbers and the Council's vote left blank. No
-# impartial analysis, argument or rebuttal was reached, and no document
-# says whether any argument was filed.
+# copies, with their numbers and the Council's vote left blank.
 #
 # The card quotes the ballot question from the City's page, which
-# prints the same text as Section 3 of the resolution. The July 28
+# prints the same text as Section 3 of the resolution; the county's
+# page prints it word for word too. The July 28
 # agenda report is City staff material; the script cites it only for
 # the date the change would take effect.
 
@@ -25,6 +30,10 @@ election = "ca-2026-11-03"
 division = "ocd-division/country:us/state:ca/place:concord"
 kind = "measure"
 title = "City of Concord Measure O: A Single Business License Tax Rate of 0.1% of Gross Receipts"
+
+[[contest.correction]]
+date = "2026-10-30"
+note = "The video now gives the arguments for and against printed by the county, which it had said were not among the documents gathered."
 
 [[source]]
 id = "ballot-question"
@@ -61,3 +70,30 @@ credit = "City Council Agenda Report, City of Concord"
 url = "https://stream2.ci.concord.ca.us/OnBaseAgendaOnline/Documents/DownloadFileBytes/Agenda%20Staff%20Report%20for%20-%20BUSINESS%20LICENSE%20SIMPLIFICATION%20BALLOT%20MEASURE%20(26026).pdf?documentType=1&meetingId=1463&itemId=26026&publishId=37962&isSection=False&isAttachment=True"
 file = "sources/concord-O-staff-report.pdf"
 retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney's Impartial Analysis of Measure O, Contra Costa County Elections, Measure O, November 3, 2026 General Election"
+credit = "Impartial Analysis, Concord City Attorney"
+url = "https://www.contracostavote.gov/m9007-en/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure O, Contra Costa County Elections, Measure O, November 3, 2026 General Election"
+credit = "Argument in favor, Contra Costa County Elections"
+url = "https://www.contracostavote.gov/m9007-en/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure O, Contra Costa County Elections, Measure O, November 3, 2026 General Election"
+credit = "Argument against, Contra Costa County Elections"
+url = "https://www.contracostavote.gov/m9007-en/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"

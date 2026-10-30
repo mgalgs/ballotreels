@@ -3,13 +3,18 @@
 # script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
 # section 1).
 #
-# Contra Costa County's Voter Information Guide could not be fetched
-# (contracostavote.gov answered a bot challenge), and www.walnutcreekca.gov
-# answered HTTP 403. These are the City's files from its Granicus
-# meeting archive, for the City Council meeting of May 19, 2026, item
-# 5c. No impartial analysis, argument or rebuttal was reached, and no
-# document says whether any argument was filed (Section 8 of the
-# resolution only authorizes one in favor).
+# Contra Costa County Elections' page for Measure T
+# (sources/county-page.txt, read in a browser, since contracostavote.gov
+# answers scripted fetches with a bot challenge) prints the ballot
+# question, the City Attorney's impartial analysis, the argument in
+# favor, the argument against and both rebuttals. The City Attorney's
+# impartial analysis is the measure's neutral explanation, the kind a
+# state's attorney general's explanatory statement is. The county's
+# question is word for word the one the card quotes from the resolution.
+#
+# The City's own files are from its Granicus meeting archive, for the
+# City Council meeting of May 19, 2026, item 5c (www.walnutcreekca.gov
+# answered HTTP 403).
 #
 # The ballot question is quoted from Section 2 of the proposed
 # resolution placing the measure (Attachment 1, the agenda copy, its
@@ -34,6 +39,10 @@ election = "ca-2026-11-03"
 division = "ocd-division/country:us/state:ca/place:walnut_creek"
 kind = "measure"
 title = "City of Walnut Creek Measure T: Making the City Treasurer an Appointed Office"
+
+[[contest.correction]]
+date = "2026-10-30"
+note = "The video now gives the arguments for and against printed by the county, which it had said were not among the documents gathered."
 
 [[source]]
 id = "ballot-question"
@@ -60,4 +69,31 @@ publisher = "City of Walnut Creek, City Council Agenda Report, item 5c, May 19, 
 credit = "City Council Agenda Report, City of Walnut Creek"
 url = "https://walnutcreek.granicus.com/MetaViewer.php?view_id=12&clip_id=5383&meta_id=354207"
 file = "sources/measure-t-may19-agenda-report.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney's Impartial Analysis of Measure T, Contra Costa County Elections, Measure T, November 3, 2026 General Election"
+credit = "Impartial Analysis, Walnut Creek City Attorney"
+url = "https://www.contracostavote.gov/m9012-en-2/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure T, Contra Costa County Elections, Measure T, November 3, 2026 General Election"
+credit = "Argument in favor, Contra Costa County Elections"
+url = "https://www.contracostavote.gov/m9012-en-2/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure T, Contra Costa County Elections, Measure T, November 3, 2026 General Election"
+credit = "Argument against, Contra Costa County Elections"
+url = "https://www.contracostavote.gov/m9012-en-2/"
+file = "sources/county-page.txt"
 retrieved = "2026-10-30"

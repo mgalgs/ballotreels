@@ -3,17 +3,23 @@
 # script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
 # section 1).
 #
-# Contra Costa County's Voter Information Guide could not be fetched
-# (contracostavote.gov answered a bot challenge, and no Internet Archive
-# capture of the Measure U page was found), and www.walnutcreekca.gov
-# answered HTTP 403. These are the City's files from its agenda system,
-# for the City Council meeting of July 21, 2026, item 6b. No impartial
-# analysis, argument or rebuttal was reached, and no document says
-# whether any argument was filed.
+# Contra Costa County Elections' page for Measure U
+# (sources/county-page.txt, read in a browser, since contracostavote.gov
+# answers scripted fetches with a bot challenge) prints the ballot
+# question, the City Attorney's impartial analysis, the argument in
+# favor, and the county's statements that no argument against and no
+# rebuttal to either side was filed (the statement on the argument
+# against is cited as its own source, argument-against). The City
+# Attorney's impartial analysis is the measure's neutral explanation,
+# the kind a state's attorney general's explanatory statement is. The county's question is
+# word for word the one in Section 2 of the City's resolution, which the
+# card quotes.
 #
-# The ballot question is quoted from Section 2 of the City's resolution
-# submitting the initiative to the voters (Attachment 3 to item 6b).
-# The question runs across a page break, where the PDF's text layer sets
+# The City's own files are from its agenda system, for the City Council
+# meeting of July 21, 2026, item 6b (www.walnutcreekca.gov answered
+# HTTP 403). The ballot question is quoted from Section 2 of the City's
+# resolution submitting the initiative to the voters (Attachment 3 to
+# item 6b). The question runs across a page break, where the PDF's text layer sets
 # the page number, the YES and NO cells and the next page's running
 # header inside it, so the card's source (ballot-question) is
 # sources/resolution-ballot-question-extract.txt, the question copied
@@ -28,8 +34,8 @@
 #
 # The two Council agenda reports (April 21 and July 21, 2026) are the
 # City staff's material and the errata sheet changes nothing the script
-# says; none is cited, since the resolution and the initiative state
-# every fact the script uses.
+# says; none is cited, since the resolution, the initiative and the
+# impartial analysis state every fact the script uses.
 
 [contest]
 id = "ca-2026-11-03-walnut-creek-measure-u"
@@ -37,6 +43,10 @@ election = "ca-2026-11-03"
 division = "ocd-division/country:us/state:ca/place:walnut_creek"
 kind = "measure"
 title = "City of Walnut Creek Measure U: Rezoning a 2.4-Acre Office Site for Senior Housing and Commercial Uses"
+
+[[contest.correction]]
+date = "2026-10-30"
+note = "The video now gives the argument in favor printed by the county, and the county's statement that no argument against was filed; it had said neither was among the documents gathered."
 
 [[source]]
 id = "ballot-question"
@@ -63,4 +73,31 @@ publisher = "Walnut Creek Senior Housing Transit Village Initiative, full text a
 credit = "Initiative full text, City of Walnut Creek"
 url = "https://walnutcreek.granicus.com/MetaViewer.php?view_id=12&event_id=2963&meta_id=357306"
 file = "sources/measure-u-initiative-full-text.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney's Impartial Analysis of Measure U, Contra Costa County Elections, Measure U, November 3, 2026 General Election"
+credit = "Impartial Analysis, Walnut Creek City Attorney"
+url = "https://www.contracostavote.gov/m9013-en/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure U, Contra Costa County Elections, Measure U, November 3, 2026 General Election"
+credit = "Argument in favor, Contra Costa County Elections"
+url = "https://www.contracostavote.gov/m9013-en/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "election-filing"
+publisher = "Contra Costa County Elections, Measure U, November 3, 2026 General Election: Argument Against Measure U, \"No Argument Against was filed.\""
+credit = "Argument against, Contra Costa County Elections"
+url = "https://www.contracostavote.gov/m9013-en/"
+file = "sources/county-page.txt"
 retrieved = "2026-10-30"

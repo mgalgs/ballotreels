@@ -2,8 +2,8 @@
 # what it asks and whose measure it is; the office today and how the
 # measure reached the ballot; what would change (when, who would
 # appoint, the residency rule), the earlier votes, the vote it needs;
-# no cost figure; both sides, neither of which has an archived argument;
-# what a vote does.
+# no cost figure; both sides, from the arguments printed on the county's
+# page; what a vote does.
 #
 # No place name and no person is narrated: the opening says "the voters
 # of this city". "Appointive", the ballot's word, is said "appointed"
@@ -15,25 +15,34 @@
 # (the resolution's "YES/NO" is left out of the quote), so both vote
 # lines highlight the question.
 #
-# No impartial analysis was archived. What the measure does is stated
-# from the resolution and from what the City staff's agenda report says
-# state law and the Municipal Code provide (Government Code sections
-# 36508 to 36510, Municipal Code section 2-6.405(c)); the report's
-# reasons for the change (professional qualifications, staff could
-# absorb the work, savings) are the City's case and are left out, as no
-# argument on either side was archived. Its account of the 1956 and
+# What the measure does is stated from the resolution and from what the
+# City staff's agenda report says state law and the Municipal Code
+# provide (Government Code sections 36508 to 36510, Municipal Code
+# section 2-6.405(c)); the City Attorney's impartial analysis, printed on
+# the county's page, agrees with each of those lines and is cited beside
+# each one it states in full (not the lines on the treasurer's duties
+# today or on residence, which it does not state as the lines do). The
+# report's reasons for the change (professional
+# qualifications, staff could absorb the work, savings) are the City's
+# case and stay out of the neutral sections. Its account of the 1956 and
 # 1996 measures is attributed to it, without vote counts.
 #
 # No document gives a cost or saving for the measure itself: the
 # report's $116,000 is the City's budget for the whole November
 # election, so it is not used, and the fiscal line says neither the
-# resolution nor the report puts a figure on the measure.
+# resolution nor the report puts a figure on the measure. The impartial
+# analysis says the measure "would save future costs associated with
+# candidate elections", with no figure; it does not contradict the line,
+# which is left as it was.
 #
-# No argument for or against Measure T was archived, and no document
-# says whether any was filed (Section 8 of the resolution only
-# authorizes one in favor). So the sides do not say none was filed: each
-# says none is among the documents gathered (filed = false, STANDARD.md
-# 2.5), as for Walnut Creek Measure U.
+# The sides come from the argument in favor and the argument against on
+# the county's page, not from the rebuttals, each line on what its
+# argument leads with and comes back to (for: qualifications; against:
+# voters giving up the choice to the body the treasurer oversees). The
+# arguments name the current treasurer and their signers; no name is
+# narrated. One sentence of the argument against is garbled as printed
+# ("Making the office appointive would let the / Council hires ..."), so
+# it is not quoted.
 
 contest = "ca-2026-11-03-walnut-creek-measure-t"
 template = "measure"
@@ -89,7 +98,7 @@ heading = "What would change"
 [[section.line]]
 id = "when"
 text = "The treasurer elected on this same ballot would serve a full term; the office would become appointed when that term ends, or sooner if it falls vacant."
-sources = ["agenda-report", "ballot-question"]
+sources = ["agenda-report", "ballot-question", "impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -116,7 +125,7 @@ name = "newspaper-notices"
 [[section.line]]
 id = "threshold"
 text = "Measure T needs a majority of the vote to pass."
-sources = ["ballot-question"]
+sources = ["impartial-analysis"]
 
 [section.line.visual]
 kind = "illustration"
@@ -140,31 +149,31 @@ stamp = "None reported"
 id = "yes"
 heading = "Why some vote yes"
 side = "yes"
-filed = false
 
 [[section.line]]
-text = "No argument for Measure T appears among the official documents gathered for this video."
-sources = ["ballot-question"]
+text = "Supporters say the only requirement to be elected treasurer is being a registered voter, and appointment would make sure future treasurers are qualified."
+sources = ["argument-for"]
+basis = ["Currently, the only requirement to be elected Walnut Creek City Treasurer, is to be “a registered voter” in our city.", "ensuring that future city treasurers are qualified to serve, subject to proper criteria, screening and background checks."]
 
 [section.line.visual]
 kind = "list"
-source = "ballot-question"
-items = ["No argument for was found"]
+source = "argument-for"
+items = ["Only requirement today: be a voter", "Ensures future treasurers are qualified"]
 
 [[section]]
 id = "no"
 heading = "Why some vote no"
 side = "no"
-filed = false
 
 [[section.line]]
-text = "No argument against Measure T appears among the official documents gathered for this video."
-sources = ["ballot-question"]
+text = "Opponents say voters would give up their right to elect the treasurer, and an appointed one could be replaced for raising unwelcome concerns."
+sources = ["argument-against"]
+basis = ["Measure T asks Walnut Creek voters to give up their right to elect the City Treasurer and hand that choice to the City Council.", "An appointed Treasurer serves at the Council’s pleasure and can be replaced for raising concerns the Council would rather not hear."]
 
 [section.line.visual]
 kind = "list"
-source = "ballot-question"
-items = ["No argument against was found"]
+source = "argument-against"
+items = ["Voters give up their right to elect", "Could be replaced for raising concerns"]
 
 [[section]]
 id = "vote"
