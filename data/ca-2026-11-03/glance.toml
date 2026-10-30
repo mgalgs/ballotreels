@@ -3444,3 +3444,11 @@ status = "none-printed"
 [whittier-measure-el]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Burbank Measure C: a general tax, so no tax rate statement; the
+# ballot question gives the City's revenue estimate.
+[burbank-measure-c]
+source = "ballot-question"
+quote = "providing approximately $3,000,000 annually until ended by voters"
+amount = 3000000
+period = "per-year"
