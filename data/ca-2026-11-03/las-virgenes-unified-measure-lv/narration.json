@@ -1,0 +1,269 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 84.04,
+  "phrases": [
+    {
+      "text": "Measure LV asks the voters of this school district whether to renew a $98 parcel tax for twelve more years.",
+      "start": 0.03,
+      "end": 7.84
+    },
+    {
+      "text": "The current parcel tax of $98 a year, which voters renewed in 2015, is due to expire in June 2028.",
+      "start": 8.5,
+      "end": 17.47
+    },
+    {
+      "text": "The district's governing board placed Measure LV on the ballot, and it needs two-thirds of the vote to pass.",
+      "start": 18.13,
+      "end": 24.58
+    },
+    {
+      "text": "Measure LV would levy $98 on each parcel every year for twelve years, starting in July 2028.",
+      "start": 25.24,
+      "end": 33.15
+    },
+    {
+      "text": "The money could pay for academic and arts programs, class sizes and teachers, but not for administrator salaries.",
+      "start": 33.81,
+      "end": 42.14
+    },
+    {
+      "text": "Owners 65 or older, and some with disabilities, could apply for an exemption on the home they live in.",
+      "start": 42.8,
+      "end": 49.29
+    },
+    {
+      "text": "The measure's full text estimates the tax would keep providing about $2 million a year.",
+      "start": 49.95,
+      "end": 55.35
+    },
+    {
+      "text": "The official list of measures from the county, which names who filed each argument, says no argument against Measure LV was submitted.",
+      "start": 56.01,
+      "end": 64.59
+    },
+    {
+      "text": "Supporters say the measure renews funding at the current rate without raising taxes, and that without it, teacher layoffs would follow.",
+      "start": 65.25,
+      "end": 73.09
+    },
+    {
+      "text": "A yes vote renews the $98 parcel tax for twelve years.",
+      "start": 73.75,
+      "end": 78.04
+    },
+    {
+      "text": "A no vote leaves the $98 parcel tax to expire in June 2028.",
+      "start": 78.7,
+      "end": 84.01
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure LV asks the voters of this school district whether to renew a $98 parcel tax for twelve more years.",
+      "The current parcel tax of $98 a year, which voters renewed in 2015, is due to expire in June 2028.",
+      "The district's governing board placed Measure LV on the ballot, and it needs two-thirds of the vote to pass.",
+      "Measure LV would levy $98 on each parcel every year for twelve years, starting in July 2028.",
+      "The money could pay for academic and arts programs, class sizes and teachers, but not for administrator salaries.",
+      "Owners 65 or older, and some with disabilities, could apply for an exemption on the home they live in.",
+      "The measure's full text estimates the tax would keep providing about $2 million a year.",
+      "The official list of measures from the county, which names who filed each argument, says no argument against Measure LV was submitted.",
+      "Supporters say the measure renews funding at the current rate without raising taxes, and that without it, teacher layoffs would follow.",
+      "A yes vote renews the $98 parcel tax for twelve years.",
+      "A no vote leaves the $98 parcel tax to expire in June 2028."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure LV asks the voters of this school district whether to renew a $98 parcel tax for twelve more years."
+      },
+      "bounds": [
+        0,
+        188880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure LV asks the voters of this school district whether to renew a $98 parcel tax for twelve more years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The current parcel tax of $98 a year, which voters renewed in 2015, is due to expire in June 2028."
+      },
+      "bounds": [
+        203280,
+        420000
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The current parcel tax of $98 a year, which voters renewed in 2015, is due to expire in June 2028.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The district's governing board placed Measure LV on the ballot, and it needs two-thirds of the vote to pass."
+      },
+      "bounds": [
+        434400,
+        590640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district's governing board placed Measure LV on the ballot, and it needs two-thirds of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure LV would levy $98 on each parcel every year for twelve years, starting in July 2028."
+      },
+      "bounds": [
+        605040,
+        796320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure LV would levy $98 on each parcel every year for twelve years, starting in July 2028.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money could pay for academic and arts programs, class sizes and teachers, but not for administrator salaries."
+      },
+      "bounds": [
+        810720,
+        1012080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money could pay for academic and arts programs, class sizes and teachers, but not for administrator salaries.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Owners 65 or older, and some with disabilities, could apply for an exemption on the home they live in."
+      },
+      "bounds": [
+        1026480,
+        1183680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Owners 65 or older, and some with disabilities, could apply for an exemption on the home they live in.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The measure's full text estimates the tax would keep providing about $2 million a year."
+      },
+      "bounds": [
+        1198080,
+        1329120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The measure's full text estimates the tax would keep providing about $2 million a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The official list of measures from the county, which names who filed each argument, says no argument against Measure LV was submitted."
+      },
+      "bounds": [
+        1343520,
+        1550880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The official list of measures from the county, which names who filed each argument, says no argument against Measure LV was submitted.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say the measure renews funding at the current rate without raising taxes, and that without it, teacher layoffs would follow."
+      },
+      "bounds": [
+        1565280,
+        1754880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the measure renews funding at the current rate without raising taxes, and that without it, teacher layoffs would follow.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote renews the $98 parcel tax for twelve years."
+      },
+      "bounds": [
+        1769280,
+        1873680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote renews the $98 parcel tax for twelve years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote leaves the $98 parcel tax to expire in June 2028."
+      },
+      "bounds": [
+        1888080,
+        2016960
+      ]
+    }
+  ],
+  "sha256": "68bf8b3a644de6ebe6c9a26d2eb8400fe630c4466fca4269a2d18f6b70da05fc",
+  "take": {
+    "sha256": "7c1574e138fcea13fdf7fc7cb388de210409d2e3ebaf37b41965e713731e5a54",
+    "bytes": 4033964
+  }
+}
