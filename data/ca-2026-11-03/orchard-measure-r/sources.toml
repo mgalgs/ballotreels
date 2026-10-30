@@ -1,0 +1,52 @@
+# Archived sources for Orchard School District Measure R, 2026-11-03
+# general election (sources/rov-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# Only the County of Santa Clara Registrar of Voters' record is archived:
+# its "List of Local Measures" page, which prints the measure's letter,
+# ballot question and vote threshold and lists "Primary Argument Against
+# (none filed)"; County Counsel's impartial analysis; and the argument in
+# favor. The card quotes the ballot question from the page. The
+# impartial analysis is the measure's neutral explanation; the measure's
+# full text was not archived. A parcel tax has no tax rate statement: the
+# measure's revenue estimate is in its ballot question.
+#
+# The ROV's PDFs are scans with no text layer. The passages cited were
+# typed from the page images into sources/rov-*-transcription.txt, each
+# naming the PDF and URL it copies; those sources point at the
+# transcription, and their url at the scan.
+
+[contest]
+id = "ca-2026-11-03-orchard-measure-r"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:orchard_elementary_school_district"
+kind = "measure"
+title = "Orchard School District Measure R: Parcel Tax for Educational Programs"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "County of Santa Clara Registrar of Voters, List of Local Measures, November 3, 2026 General Election: Orchard School District Measure R"
+credit = "List of Local Measures, Santa Clara County Registrar of Voters"
+url = "https://vote.santaclaracounty.gov/list-local-measures-4"
+file = "sources/rov-measure-list-2026-10-29.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Santa Clara County Counsel, Impartial Analysis – Orchard School District Measure R - Parcel Tax, as posted by the County of Santa Clara Registrar of Voters (transcribed from the scan)"
+credit = "Impartial Analysis, Santa Clara County Counsel"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure-r-orchard-school-district-parcel-tax-ia-redacted-20260818.pdf"
+file = "sources/rov-impartial-analysis-transcription.txt"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure R, as filed with the Santa Clara County Registrar of Voters (transcribed from the scan; no argument against was filed)"
+credit = "Argument in favor, Measure R"
+url = "https://files.santaclaracounty.gov/exjcpb1296/2026-08/measure_r_orchard-school-district-parcel-tax-primary-argument-in-favor_8.11.26_redacted.pdf"
+file = "sources/rov-argument-for-transcription.txt"
+retrieved = "2026-10-29"

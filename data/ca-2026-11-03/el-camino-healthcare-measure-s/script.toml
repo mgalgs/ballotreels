@@ -1,0 +1,170 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; the rule today and the vote Measure S needs;
+# what would change (which terms count); the cost line; one line per
+# side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the opening
+# says "the voters of this health care district". The card, the title and
+# the "Only voters in ..." line carry the names. "Counsel" is heard as
+# "Council" (standard/speakability.txt), so the narration does not say
+# it.
+#
+# The card quotes the Registrar of Voters' List of Local Measures, which
+# prints the ballot question with no yes and no sentences, so the card has
+# no boxes and the vote lines take their meaning from the impartial
+# analysis. Neither the list nor the analysis prints a cost estimate; the
+# fiscal line says so of the analysis, the measure's neutral explanation,
+# as other local scripts do ("The city attorney's impartial analysis does
+# not include a cost estimate ..."), rather than naming the list, whose
+# county name the narration avoids.
+#
+# The supporters' argument also says only full, future terms count; the
+# change section states those rules as the impartial analysis does, and
+# the yes line keeps to the argument's own reasons for term limits.
+#
+# The List of Local Measures shows "Primary Argument Against (none
+# filed)". The no side says so plainly; its section is marked
+# filed = false.
+
+contest = "ca-2026-11-03-el-camino-healthcare-measure-s"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "measure-list"
+number = "S"
+title = "Limit District Directors to Four Four-Year Terms"
+origin = "El Camino Healthcare District"
+summary = "Shall the measure amending the Bylaws of the El Camino Healthcare District to limit District Directors to four four-year terms be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure S"
+
+[[section.line]]
+text = "Measure S asks the voters of this health care district whether to limit its directors to four four-year terms."
+sources = ["measure-list", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["to limit District Directors to four four-year terms"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "today-rule"
+text = "Today, the district has no limit on the number of terms a director may serve."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-board-room"
+
+[[section.line]]
+text = "Measure S needs a majority of the vote to pass."
+sources = ["impartial-analysis", "measure-list"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "limit"
+text = "The district bylaws would say that no one may serve more than four full terms as a director."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "timeline"
+source = "impartial-analysis"
+labels = ["Before December 1, 2026", "From December 1, 2026"]
+items = ["Terms served do not count", "Up to four full terms"]
+
+[[section.line]]
+id = "which-terms"
+text = "Only terms beginning on or after December 1, 2026 would count, and a partial term, such as filling a vacancy, would not."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The impartial analysis does not include a cost estimate for the measure."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say good governance needs fresh perspectives, and term limits open seats to new candidates and keep the board accountable to the community."
+sources = ["argument-for"]
+basis = ["Good governance requires fresh perspectives. El Camino Healthcare District serves our entire community", "They create opportunities for qualified candidates, including those who have been underrepresented, to run for seats that would otherwise remain occupied indefinitely.", "they ensure that our Board stays accountable to the community it serves"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Brings fresh perspectives and new candidates", "Keeps the board accountable to the community"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure S was filed, so the list of local measures from the county shows only the argument in favor of it."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote amends the district bylaws to bar directors from serving more than four full terms, counting terms that begin on or after December 1, 2026."
+sources = ["impartial-analysis", "measure-list"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["to limit District Directors to four four-year terms"]
+
+[[section.line]]
+text = "A no vote does not amend the district bylaws."
+sources = ["impartial-analysis", "measure-list"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["be adopted"]
+
+[[question]]
+ask = "Does the district limit terms now?"
+lines = ["today-rule"]
+
+[[question]]
+ask = "Would terms directors have already served count?"
+lines = ["which-terms"]
+
+[[question]]
+ask = "How many current directors would the limit affect?"
+unanswered = true
