@@ -8,22 +8,28 @@
 # The county's list of measures is the authority for the letter (the
 # Board's documents do not carry it); the Registrar of Voters' staff
 # report 26-4515 (September 8, 2026) gives the vote required ("requires
-# 2/3 approval"). Marin County's own Measure FF page has no capture, so
-# no impartial analysis, argument or rebuttal was reached, and no
-# document says whether any argument was filed.
+# 2/3 approval"). The county's Measure FF page (sources/county-page.txt,
+# read in a browser on 2026-10-30, since marincounty.gov refuses scripted
+# fetches) prints the ballot question as the county prints it, the vote
+# required, County Counsel's impartial analysis, and its statements that
+# no argument in favor and no argument against was filed. The card
+# quotes the county's question.
 #
-# The card quotes the ballot question from paragraph 8 of the signed
-# Board of Supervisors Resolution No. 2026-071 (July 14, 2026), which is
-# also the measure's operative text (a road division's tax is levied by
-# resolution; there is no ordinance). It has a text layer. The question
-# prints "to fun improvements"; the card quotes it as printed. Exhibit C
+# Paragraph 8 of the signed Board of Supervisors Resolution No. 2026-071
+# (July 14, 2026) prints a different, longer question ("to fun
+# improvements"), which is not quoted. The resolution is also the
+# measure's operative text (a road division's tax is levied by
+# resolution; there is no ordinance) and remains a source for what it
+# says. It has a text layer. Exhibit C
 # to the resolution, the Notice of Special Election, describes the road
 # work and where it runs. The vote certification records the adoption.
 # Resolution No. 26-052 (June 23, 2026) formed the division.
 #
-# The county's own records disagree on the figure $456,750: the ballot
-# question calls it "a total assessment of approximately $456,750 each
-# year", paragraph 7 "a total tax revenue of approximately $456,750 in
+# The county's own records disagree on the figure $456,750: the county's
+# printed ballot question says "totaling approximately $456,750" and
+# County Counsel's impartial analysis "approximately $456,750 annually";
+# the resolution's question calls it "a total assessment of
+# approximately $456,750 each year", paragraph 7 "a total tax revenue of approximately $456,750 in
 # the first year", the notice "approximately $456,750 per year", while
 # the resolution's recital and the Public Works staff report call it the
 # total over the 10 years. The script does not narrate the figure; the
@@ -42,6 +48,28 @@ division = "ocd-division/country:us/state:ca/county:marin"
 kind = "measure"
 title = "Upper Bay Permanent Road Division Measure FF: A Special Parcel Tax to Repave and Maintain a Private Road"
 voters = "the Upper Bay Permanent Road Division"
+
+[[contest.correction]]
+date = "2026-10-30"
+note = "The video now says, as the county does, that no argument for and no argument against Measure FF was filed, and the card shows the ballot question as the county prints it."
+
+[[source]]
+id = "county-page"
+kind = "official-title-summary"
+publisher = "County of Marin, Elections, Measure FF 11/03/26, November 3, 2026 General Election (list of measures): the ballot question, the votes required to pass and the statements that no argument was filed"
+credit = "Measure FF page, County of Marin Elections"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-upper-bay-permanent-road-division110326"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Marin County Counsel, Impartial analysis by County Counsel of Measure FF, on County of Marin, Elections, Measure FF 11/03/26, November 3, 2026 General Election (list of measures)"
+credit = "Impartial analysis, Marin County Counsel"
+url = "https://www.marincounty.gov/departments/elections/november-3-2026-general-election/information-about-measures-110326/list-measures-110326/measure-upper-bay-permanent-road-division110326"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
 
 [[source]]
 id = "resolution"

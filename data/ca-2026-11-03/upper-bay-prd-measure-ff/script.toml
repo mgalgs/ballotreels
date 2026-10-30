@@ -3,21 +3,22 @@
 # up; who formed the division and placed the measure, and the vote it
 # needs; what would change (the rates for 10 years, then the maintenance
 # rate, what the money pays for); the loan the resolution provides; both
-# sides, neither of which has an archived argument; what a vote does.
+# sides, for neither of which an argument was filed; what a vote does.
 #
 # No place name is narrated (the narrator mispronounces them): the
 # opening says "the voters of this road division", and the road is "a
 # private road". The card, the title and the "Only voters in
 # ..." line carry the names.
 #
-# The card quotes the ballot question from paragraph 8 of Resolution No.
-# 2026-071, as printed ("to fun improvements"). It prints no yes/no
-# lines, so the card has no boxes and the vote lines take their meaning
-# from the question.
+# The card quotes the ballot question as the county's measure page
+# prints it (paragraph 8 of Resolution No. 2026-071 prints a different
+# one). The page prints only bare YES and NO, so the card has no boxes
+# and the vote lines take their meaning from the question.
 #
-# The figure $456,750 is not narrated: the ballot question calls it a
-# yearly total, the resolution's recital and the staff report the total
-# over 10 years (sources.toml). The script gives the per-parcel rates
+# The figure $456,750 is not narrated: the county's question says
+# "totaling approximately $456,750" and its impartial analysis
+# "approximately $456,750 annually", the resolution's recital and the
+# staff report the total over 10 years (sources.toml). The script gives the per-parcel rates
 # and the term, which every record states alike; the per-parcel amounts
 # are exempt from scale (STANDARD.md 6.5). The fiscal section says what
 # the resolution provides for a loan, which it states without figures.
@@ -26,10 +27,9 @@
 # forming the division) are not used: with no argument filed on either
 # side, the script does not set out either side's case.
 #
-# No argument for or against Measure FF was archived, and no document
-# says whether any was filed, so each side says none is among the
-# documents gathered (filed = false, STANDARD.md 2.5), as for Walnut
-# Creek Measure U.
+# The county's page says no argument in favor and no argument against
+# Measure FF was filed, so each side says so, attributed to the county
+# (filed = false, STANDARD.md 2.5).
 
 contest = "ca-2026-11-03-upper-bay-prd-measure-ff"
 template = "measure"
@@ -37,11 +37,11 @@ template_version = 2
 standard_version = 2
 
 [card]
-source = "resolution"
+source = "county-page"
 number = "FF"
-title = "MEASURE SUBMITTED TO VOTE OF VOTERS OF UPPER BAY PERMANENT ROAD DIVISION FOR APPROVAL OF SPECIAL TAX AND LOAN AND ITS REPAYMENT"
-origin = "Board of Supervisors of the County of Marin"
-summary = "Shall the measure be adopted authorizing a special tax on parcels within the Division of $4,350 per improved parcel per year and $2,175 per unimproved parcel per year for 10 years, beginning in fiscal year 2027-28, resulting in a total assessment of approximately $456,750 each year, to fun improvements; thereafter, beginning in fiscal year 2037-2038, the special tax shall be $455 per year for each year until repealed, to fund ongoing maintenance, with a provision for an annual adjustment effective July 1 every year in accordance with the change in the Consumer Price Index for All Urban Consumers San Francisco—Oakland—Hayward for the previous calendar year."
+title = "Upper Bay Permanent Road Division"
+origin = "County of Marin"
+summary = "Shall the measure be adopted authorizing a special tax on parcels within the Division of $4,350 per improved parcel and $2,175 per unimproved parcel per year for 10 years, beginning Fiscal Year 2027-28, totaling approximately $456,750, to fund improvements; thereafter, authorizing a special tax of $455 per parcel per year for ongoing maintenance, adjusted annually effective July 1 every year in accordance with the Consumer Price Index for All Urban Consumers San Francisco—Oakland—Hayward for the previous calendar year."
 
 [[section]]
 id = "what"
@@ -49,11 +49,11 @@ heading = "Measure FF"
 
 [[section.line]]
 text = "Measure FF asks the voters of this road division whether to approve a yearly parcel tax to repave and maintain a private road."
-sources = ["resolution", "notice"]
+sources = ["county-page", "notice"]
 
 [section.line.visual]
 kind = "page"
-source = "resolution"
+source = "county-page"
 highlight = ["authorizing a special tax on parcels within the Division"]
 
 [[section]]
@@ -98,7 +98,7 @@ values = [4350, 2175, 455]
 [[section.line]]
 id = "maintenance"
 text = "After that, each parcel would pay $455 a year for ongoing maintenance, adjusted every year for consumer prices, until repealed."
-sources = ["resolution", "text"]
+sources = ["resolution", "text", "county-page", "impartial-analysis"]
 
 [[section.line]]
 id = "uses"
@@ -129,13 +129,13 @@ side = "yes"
 filed = false
 
 [[section.line]]
-text = "No argument for Measure FF appears among the official documents gathered for this video."
-sources = ["resolution"]
+text = "The elections office of the county says on its page for this measure that no argument for Measure FF was filed."
+sources = ["county-page"]
 
 [section.line.visual]
 kind = "list"
-source = "resolution"
-items = ["No argument for was found"]
+source = "county-page"
+items = ["No argument for was filed"]
 
 [[section]]
 id = "no"
@@ -144,13 +144,13 @@ side = "no"
 filed = false
 
 [[section.line]]
-text = "No argument against Measure FF appears among the official documents gathered for this video."
-sources = ["resolution"]
+text = "The elections office of the county says on its page for this measure that no argument against Measure FF was filed."
+sources = ["county-page"]
 
 [section.line.visual]
 kind = "list"
-source = "resolution"
-items = ["No argument against was found"]
+source = "county-page"
+items = ["No argument against was filed"]
 
 [[section]]
 id = "vote"
@@ -158,20 +158,20 @@ heading = "What your vote means"
 
 [[section.line]]
 text = "A yes vote authorizes the special tax, for improvements and then ongoing maintenance."
-sources = ["resolution"]
+sources = ["county-page"]
 
 [section.line.visual]
 kind = "page"
-source = "resolution"
+source = "county-page"
 highlight = ["authorizing a special tax on parcels within the Division"]
 
 [[section.line]]
 text = "A no vote rejects the special tax."
-sources = ["resolution"]
+sources = ["county-page"]
 
 [section.line.visual]
 kind = "page"
-source = "resolution"
+source = "county-page"
 highlight = ["authorizing a special tax on parcels within the Division"]
 
 [[question]]

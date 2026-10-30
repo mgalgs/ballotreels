@@ -499,12 +499,12 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution 299-2026",
                      "ca-2026-11-03-marin-csa-29-measure-z":
                          "Resolution No. 2026-032",
-                     "ca-2026-11-03-upper-bay-prd-measure-ff":
-                         "Resolution No. 2026-071",
                      "ca-2026-11-03-reed-union-measure-o":
                          "Resolution No. 07-2025/2026",
                      # These cards quote the county's measure page.
                      "ca-2026-11-03-mill-valley-measure-t":
+                         "Marin County Elections: List of measures 11/03/26",
+                     "ca-2026-11-03-upper-bay-prd-measure-ff":
                          "Marin County Elections: List of measures 11/03/26",
                      # Ventura County's guide could not be read: each
                      # Ventura card quotes the ballot question from the
