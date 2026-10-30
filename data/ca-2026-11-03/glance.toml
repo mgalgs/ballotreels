@@ -3314,11 +3314,10 @@ period = "per-year"
 source = "ballot-question"
 status = "none-printed"
 
-# City of Santa Monica Measure RR: a charter amendment, not a tax; the Los
-# Angeles County Registrar-Recorder/County Clerk's list prints no cost
-# estimate, and no impartial analysis was among the documents gathered.
+# City of Santa Monica Measure RR: a charter amendment, not a tax; the
+# City Attorney's impartial analysis gives no cost estimate.
 [santa-monica-measure-rr]
-source = "ballot-question"
+source = "impartial-analysis"
 status = "none-printed"
 
 # City of Santa Monica Measure VV: a charter amendment, not a tax; the Los
