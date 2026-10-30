@@ -3780,3 +3780,12 @@ source = "measure-list"
 quote = "providing approximately $1,000,000 annually for 10 years"
 amount = 1000000
 period = "per-year"
+
+# City of Monterey Measure S: no fiscal statement applies (a sales tax);
+# the revenue as the ballot question on the County of Monterey Elections
+# Department's List of Local Measures gives it.
+[monterey-measure-s]
+source = "measure-list"
+quote = "providing $12 million annually"
+amount = 12000000
+period = "per-year"
