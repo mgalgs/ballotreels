@@ -378,6 +378,12 @@ BALLOTS: dict[str, Ballot] = {
                          "Resolution No. 143-26",
                      "ca-2026-11-03-walnut-creek-measure-u":
                          "Resolution Submitting a Measure to the Voters of Walnut Creek",
+                     # Napa County's guide could not be fetched either:
+                     # Measure B's card quotes the ballot question from
+                     # the Board of Supervisors' resolution calling the
+                     # election, named as its first page titles it
+                     "ca-2026-11-03-napa-county-measure-b":
+                         "Resolution of the Napa County Board of Supervisors",
                      # The Internet Archive's captures of the county
                      # guide's own pages for West Contra Costa Unified's
                      # Measure V and San Pablo's Measure S print each
