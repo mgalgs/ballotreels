@@ -1,0 +1,291 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 90.53,
+  "phrases": [
+    {
+      "text": "Measure CC asks the voters of this healthcare district whether to adopt a 30-year parcel tax on buildings for emergency, intensive care and hospital facilities.",
+      "start": 0.03,
+      "end": 11.12
+    },
+    {
+      "text": "Measure CC is a citizens' initiative, placed on the ballot by a voter petition.",
+      "start": 11.78,
+      "end": 17.01
+    },
+    {
+      "text": "The tax would be charged each year on each square foot of building area on a parcel, for 30 years.",
+      "start": 17.67,
+      "end": 24.64
+    },
+    {
+      "text": "The money could expand and modernize intensive care, trauma, triage and hospital facilities, and add emergency room and patient room capacity.",
+      "start": 25.3,
+      "end": 36.67
+    },
+    {
+      "text": "It could also pay to hire and keep doctors and nurses, but not administrator salaries.",
+      "start": 37.33,
+      "end": 42.62
+    },
+    {
+      "text": "A committee of district residents would report each year on whether the money is spent as the measure requires, with a yearly independent audit.",
+      "start": 43.28,
+      "end": 51.34
+    },
+    {
+      "text": "As an initiative, Measure CC needs a simple majority to pass.",
+      "start": 52.0,
+      "end": 56.66
+    },
+    {
+      "text": "The district estimates the tax would raise about $12.4 million a year on average.",
+      "start": 57.32,
+      "end": 63.06
+    },
+    {
+      "text": "Opponents say charging by the square foot makes a modest house pay like a mansion, with no senior or low-income exemption, atop current bills.",
+      "start": 63.72,
+      "end": 73.13
+    },
+    {
+      "text": "Supporters say the hospital is the only trauma center in this county, and without investment it risks falling behind safety standards and losing services.",
+      "start": 73.79,
+      "end": 83.43
+    },
+    {
+      "text": "A yes vote adopts the parcel tax for 30 years.",
+      "start": 84.09,
+      "end": 87.31
+    },
+    {
+      "text": "A no vote does not adopt the tax.",
+      "start": 87.97,
+      "end": 90.5
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure CC asks the voters of this healthcare district whether to adopt a 30-year parcel tax on buildings for emergency, intensive care and hospital facilities.",
+      "Measure CC is a citizens' initiative, placed on the ballot by a voter petition.",
+      "The tax would be charged each year on each square foot of building area on a parcel, for 30 years.",
+      "The money could expand and modernize intensive care, trauma, triage and hospital facilities, and add emergency room and patient room capacity.",
+      "It could also pay to hire and keep doctors and nurses, but not administrator salaries.",
+      "A committee of district residents would report each year on whether the money is spent as the measure requires, with a yearly independent audit.",
+      "As an initiative, Measure CC needs a simple majority to pass.",
+      "The district estimates the tax would raise about $12.4 million a year on average.",
+      "Opponents say charging by the square foot makes a modest house pay like a mansion, with no senior or low-income exemption, atop current bills.",
+      "Supporters say the hospital is the only trauma center in this county, and without investment it risks falling behind safety standards and losing services.",
+      "A yes vote adopts the parcel tax for 30 years.",
+      "A no vote does not adopt the tax."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure CC asks the voters of this healthcare district whether to adopt a 30-year parcel tax on buildings for emergency, intensive care and hospital facilities."
+      },
+      "bounds": [
+        0,
+        267600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure CC asks the voters of this healthcare district whether to adopt a 30-year parcel tax on buildings for emergency, intensive care and hospital facilities.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure CC is a citizens' initiative, placed on the ballot by a voter petition."
+      },
+      "bounds": [
+        282000,
+        408960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure CC is a citizens' initiative, placed on the ballot by a voter petition.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The tax would be charged each year on each square foot of building area on a parcel, for 30 years."
+      },
+      "bounds": [
+        423360,
+        592080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The tax would be charged each year on each square foot of building area on a parcel, for 30 years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The money could expand and modernize intensive care, trauma, triage and hospital facilities, and add emergency room and patient room capacity."
+      },
+      "bounds": [
+        606480,
+        880800
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The money could expand and modernize intensive care, trauma, triage and hospital facilities, and add emergency room and patient room capacity.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "It could also pay to hire and keep doctors and nurses, but not administrator salaries."
+      },
+      "bounds": [
+        895200,
+        1023600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"It could also pay to hire and keep doctors and nurses, but not administrator salaries.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A committee of district residents would report each year on whether the money is spent as the measure requires, with a yearly independent audit."
+      },
+      "bounds": [
+        1038000,
+        1232880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A committee of district residents would report each year on whether the money is spent as the measure requires, with a yearly independent audit.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "As an initiative, Measure CC needs a simple majority to pass."
+      },
+      "bounds": [
+        1247280,
+        1360560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"As an initiative, Measure CC needs a simple majority to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The district estimates the tax would raise about $12.4 million a year on average."
+      },
+      "bounds": [
+        1374960,
+        1514160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The district estimates the tax would raise about $12.4 million a year on average.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say charging by the square foot makes a modest house pay like a mansion, with no senior or low-income exemption, atop current bills."
+      },
+      "bounds": [
+        1528560,
+        1755840
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say charging by the square foot makes a modest house pay like a mansion, with no senior or low-income exemption, atop current bills.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say the hospital is the only trauma center in this county, and without investment it risks falling behind safety standards and losing services."
+      },
+      "bounds": [
+        1770240,
+        2003040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the hospital is the only trauma center in this county, and without investment it risks falling behind safety standards and losing services.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote adopts the parcel tax for 30 years."
+      },
+      "bounds": [
+        2017440,
+        2096160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote adopts the parcel tax for 30 years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote does not adopt the tax."
+      },
+      "bounds": [
+        2110560,
+        2172720
+      ]
+    }
+  ],
+  "sha256": "ada488df95a38feeec31ba88e68bebc071d4f269b3db76cd875a0ff9b68aebce",
+  "take": {
+    "sha256": "0f37d95e7382a9310c78a9695a4402c9e02b0414d6cc14ddd2e381e5f72f8d6c",
+    "bytes": 4345484
+  }
+}

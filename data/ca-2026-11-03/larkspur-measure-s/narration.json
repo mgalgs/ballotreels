@@ -1,0 +1,291 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 85.38,
+  "phrases": [
+    {
+      "text": "Measure S asks the voters of this city whether to continue a parcel tax for paramedic services for four more years.",
+      "start": 0.03,
+      "end": 7.34
+    },
+    {
+      "text": "The tax pays for paramedic care from the regional paramedic authority, which eight local governments formed in 1982.",
+      "start": 8.0,
+      "end": 16.07
+    },
+    {
+      "text": "This year the tax is $103.50 per housing unit, and the current tax ends in June 2027.",
+      "start": 16.73,
+      "end": 25.39
+    },
+    {
+      "text": "Measure S would allow up to $107.50 per housing unit or 1,000 square feet of other buildings, rising up to $4 a year.",
+      "start": 26.05,
+      "end": 35.95
+    },
+    {
+      "text": "Each year the city confirms the rate, and it may keep the tax below the most allowed.",
+      "start": 36.61,
+      "end": 42.32
+    },
+    {
+      "text": "The ballot question says all of the money would go to local paramedic services, with yearly audits.",
+      "start": 42.98,
+      "end": 48.75
+    },
+    {
+      "text": "Measure S needs two-thirds of the vote to pass.",
+      "start": 49.41,
+      "end": 52.17
+    },
+    {
+      "text": "The ballot question estimates the tax would raise about $834,000 a year, about 22 percent of the roughly $3.8 million yearly budget of the paramedic authority.",
+      "start": 52.83,
+      "end": 64.56
+    },
+    {
+      "text": "No argument against Measure S appears among the official documents gathered for this video.",
+      "start": 65.22,
+      "end": 71.19
+    },
+    {
+      "text": "No argument for Measure S appears among the official documents gathered for this video.",
+      "start": 71.85,
+      "end": 76.84
+    },
+    {
+      "text": "A yes vote continues the paramedic tax for four more years.",
+      "start": 77.5,
+      "end": 81.51
+    },
+    {
+      "text": "A no vote does not continue the paramedic tax.",
+      "start": 82.17,
+      "end": 85.35
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure S asks the voters of this city whether to continue a parcel tax for paramedic services for four more years.",
+      "The tax pays for paramedic care from the regional paramedic authority, which eight local governments formed in 1982.",
+      "This year the tax is $103.50 per housing unit, and the current tax ends in June 2027.",
+      "Measure S would allow up to $107.50 per housing unit or 1,000 square feet of other buildings, rising up to $4 a year.",
+      "Each year the city confirms the rate, and it may keep the tax below the most allowed.",
+      "The ballot question says all of the money would go to local paramedic services, with yearly audits.",
+      "Measure S needs two-thirds of the vote to pass.",
+      "The ballot question estimates the tax would raise about $834,000 a year, about 22 percent of the roughly $3.8 million yearly budget of the paramedic authority.",
+      "No argument against Measure S appears among the official documents gathered for this video.",
+      "No argument for Measure S appears among the official documents gathered for this video.",
+      "A yes vote continues the paramedic tax for four more years.",
+      "A no vote does not continue the paramedic tax."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure S asks the voters of this city whether to continue a parcel tax for paramedic services for four more years."
+      },
+      "bounds": [
+        0,
+        176880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure S asks the voters of this city whether to continue a parcel tax for paramedic services for four more years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The tax pays for paramedic care from the regional paramedic authority, which eight local governments formed in 1982."
+      },
+      "bounds": [
+        191280,
+        386400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The tax pays for paramedic care from the regional paramedic authority, which eight local governments formed in 1982.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "This year the tax is $103.50 per housing unit, and the current tax ends in June 2027."
+      },
+      "bounds": [
+        400800,
+        610080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"This year the tax is $103.50 per housing unit, and the current tax ends in June 2027.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure S would allow up to $107.50 per housing unit or 1,000 square feet of other buildings, rising up to $4 a year."
+      },
+      "bounds": [
+        624480,
+        863520
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure S would allow up to $107.50 per housing unit or 1,000 square feet of other buildings, rising up to $4 a year.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Each year the city confirms the rate, and it may keep the tax below the most allowed."
+      },
+      "bounds": [
+        877920,
+        1016400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Each year the city confirms the rate, and it may keep the tax below the most allowed.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The ballot question says all of the money would go to local paramedic services, with yearly audits."
+      },
+      "bounds": [
+        1030800,
+        1170720
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The ballot question says all of the money would go to local paramedic services, with yearly audits.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure S needs two-thirds of the vote to pass."
+      },
+      "bounds": [
+        1185120,
+        1252800
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure S needs two-thirds of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The ballot question estimates the tax would raise about $834,000 a year, about 22 percent of the roughly $3.8 million yearly budget of the paramedic authority."
+      },
+      "bounds": [
+        1267200,
+        1550160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The ballot question estimates the tax would raise about $834,000 a year, about 22 percent of the roughly $3.8 million yearly budget of the paramedic authority.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument against Measure S appears among the official documents gathered for this video."
+      },
+      "bounds": [
+        1564560,
+        1709280
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument against Measure S appears among the official documents gathered for this video.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "No argument for Measure S appears among the official documents gathered for this video."
+      },
+      "bounds": [
+        1723680,
+        1844880
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"No argument for Measure S appears among the official documents gathered for this video.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote continues the paramedic tax for four more years."
+      },
+      "bounds": [
+        1859280,
+        1956960
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote continues the paramedic tax for four more years.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote does not continue the paramedic tax."
+      },
+      "bounds": [
+        1971360,
+        2049120
+      ]
+    }
+  ],
+  "sha256": "9d90fd8cc0d20b413de35bd33759af6a24bc188f128798b75afd689de560897e",
+  "take": {
+    "sha256": "f19a221bbb82a1d9734c617b8b7cee5cc86f06e8e790026553d34f6e93a1febd",
+    "bytes": 4098284
+  }
+}
