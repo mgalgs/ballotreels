@@ -1,0 +1,200 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the tax today;
+# who the change reaches (every ballot in the county carries it, but only
+# the unincorporated areas are taxed); what would change (the rate, a
+# general tax into the general fund, a simple majority, until ended by
+# voters); the revenue estimate as the impartial analysis gives it; one
+# line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this county". The card, title and chart
+# title carry it. "Counsel" is heard as "Council"
+# (standard/speakability.txt), so the narration says "the impartial
+# analysis" only.
+#
+# The card quotes Measure E's entry on the county's List of Local
+# Measures: its heading, vote threshold and ballot question, with no
+# yes/no sentences. So the card has no boxes; the vote lines give the
+# impartial analysis's own meanings, and both highlight the same phrase
+# of the question.
+#
+# The services the ballot question lists are on the card and not
+# narrated; the impartial analysis's use of the money is said in its
+# words, attributed to it. The supporters' points (visitors pay, not
+# residents; roads and potholes; rates like other communities') stay in
+# their section (STANDARD.md 6.3).
+#
+# The $7.6 million a year is the impartial analysis's figure (the ballot
+# question's too). The county posts no fiscal impact statement, and no
+# archived source states the county's general fund budget, so it has no
+# scale (STANDARD.md 6.5; left open, under [[question]]).
+#
+# The county's page links no argument against Measure E, and no county
+# document says whether one was filed. The no side says none appears
+# among the documents gathered, as Le Grand Union High A does; its
+# section is marked filed = false.
+
+contest = "ca-2026-11-03-monterey-county-measure-e"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "measure-list"
+number = "E"
+title = "COUNTY OF MONTEREY"
+origin = "Majority Voter Approval Required"
+summary = "To fund critical County of Monterey services, including programs to improve street, water and sewer infrastructure maintenance; repair potholes; enhance emergency services; update libraries, parks and recreation facilities; improve healthcare and job development programs; and reduce homelessness, shall the County of Monterey increase its existing Transient Occupancy Tax paid only by hotel/lodging guests in the unincorporated area from 10.5% to 12.5% providing approximately $7,600,000 annually to be spent locally, until ended by voters?"
+
+[[section]]
+id = "what"
+heading = "Measure E"
+
+[[section.line]]
+text = "Measure E asks the voters of this county whether to raise the hotel tax in the unincorporated areas."
+sources = ["measure-list", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["increase its existing Transient Occupancy Tax"]
+
+[[section]]
+id = "background"
+heading = "The tax today"
+
+[[section.line]]
+text = "The county taxes hotel, motel and other lodging stays of 30 days or less, at 10.5 percent of the rent."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hotel-front-desk"
+
+[[section]]
+id = "today"
+heading = "Who votes, and who pays"
+
+[[section.line]]
+id = "where"
+text = "Every ballot in the county carries the question, but the tax would rise only in the unincorporated areas."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "country-road"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Measure E would raise the rate from 10.5 percent to 12.5 percent."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "bars"
+title = "Hotel tax rate, unincorporated Monterey County"
+source = "impartial-analysis"
+unit = "%"
+labels = ["Today", "With Measure E"]
+values = [10.5, 12.5]
+
+[[section.line]]
+id = "uses"
+text = "The impartial analysis says the money goes to the general fund, for services such as roads, libraries and parks."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "county-building"
+
+[[section.line]]
+id = "end"
+text = "The higher rate would last until ended by voters, and needs a simple majority to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section]]
+id = "fiscal"
+heading = "What the impartial analysis says"
+
+[[section.line]]
+id = "revenue"
+text = "The impartial analysis says the tax would provide about $7.6 million a year, to be spent locally."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "travel-receipts"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Measure E is paid only by overnight visitors, not local residents, and would fix potholes and maintain roads."
+sources = ["argument-for"]
+basis = ["is a \"hotel tax,\" applied only on visitors staying overnight in hotels and short-term accommodations", "without raising taxes on local residents' homes, purchases, or income", "Fix potholes and maintain streets and roads"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Paid by overnight visitors, not residents", "Fixes potholes and maintains roads"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure E appears among the official documents gathered for this video; only the argument in favor does."
+sources = ["measure-list", "argument-for"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote is in favor of raising the tax to 12.5 percent."
+sources = ["impartial-analysis", "measure-list"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["from 10.5% to 12.5%"]
+
+[[section.line]]
+text = "A no vote is against raising the tax to 12.5 percent."
+sources = ["impartial-analysis", "measure-list"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["from 10.5% to 12.5%"]
+
+[[question]]
+ask = "Would people who live in a city pay the higher tax?"
+lines = ["where"]
+
+[[question]]
+ask = "What could the money be spent on?"
+lines = ["uses"]
+
+[[question]]
+ask = "When would the higher rate end?"
+lines = ["end"]
+
+[[question]]
+ask = "How big is $7.6 million a year next to the county budget?"
+unanswered = true
