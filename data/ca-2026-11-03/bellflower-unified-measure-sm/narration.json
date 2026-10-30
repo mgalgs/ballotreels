@@ -1,7 +1,7 @@
 {
   "audio": "narration.wav",
   "captions": "narration.vtt",
-  "seconds": 85.85,
+  "seconds": 86.44,
   "phrases": [
     {
       "text": "Measure SM asks the voters of this school district whether to approve $135 million in school bonds.",
@@ -44,24 +44,24 @@
       "end": 62.09
     },
     {
-      "text": "According to the county registrar's official list of measures, no argument against Measure SM was submitted.",
+      "text": "According to the county registrar's official list of ballot measures, no argument against Measure SM was submitted.",
       "start": 62.75,
-      "end": 68.93
+      "end": 69.45
     },
     {
-      "text": "Supporters filed an argument for Measure SM; its text is not among the documents gathered here.",
-      "start": 69.59,
-      "end": 75.21
+      "text": "Supporters say some school buildings are over 70 years old, and the state cannot take the money.",
+      "start": 70.11,
+      "end": 76.06
     },
     {
       "text": "A yes vote approves the $135 million in school bonds.",
-      "start": 75.87,
-      "end": 80.56
+      "start": 76.72,
+      "end": 81.15
     },
     {
       "text": "A no vote rejects the $135 million in school bonds.",
-      "start": 81.22,
-      "end": 85.82
+      "start": 81.81,
+      "end": 86.41
     }
   ],
   "inputs": {
@@ -74,8 +74,8 @@
       "The district's tax rate statement estimates the tax at $45.78 per $100,000 of assessed value on average, and $49 at its highest.",
       "The statement expects the tax to be collected through 2057-2058.",
       "The statement estimates the total to repay, with interest, at about $240.9 million.",
-      "According to the county registrar's official list of measures, no argument against Measure SM was submitted.",
-      "Supporters filed an argument for Measure SM; its text is not among the documents gathered here.",
+      "According to the county registrar's official list of ballot measures, no argument against Measure SM was submitted.",
+      "Supporters say some school buildings are over 70 years old, and the state cannot take the money.",
       "A yes vote approves the $135 million in school bonds.",
       "A no vote rejects the $135 million in school bonds."
     ],
@@ -227,11 +227,11 @@
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "According to the county registrar's official list of measures, no argument against Measure SM was submitted."
+        "text": "According to the county registrar's official list of ballot measures, no argument against Measure SM was submitted."
       },
       "bounds": [
         1505280,
-        1655040
+        1667520
       ]
     },
     {
@@ -239,15 +239,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"According to the county registrar's official list of measures, no argument against Measure SM was submitted.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"According to the county registrar's official list of ballot measures, no argument against Measure SM was submitted.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
-        "text": "Supporters filed an argument for Measure SM; its text is not among the documents gathered here."
+        "text": "Supporters say some school buildings are over 70 years old, and the state cannot take the money."
       },
       "bounds": [
-        1669440,
-        1805760
+        1681920,
+        1826160
       ]
     },
     {
@@ -255,15 +255,15 @@
         "engine": "gemini",
         "model": "gemini-3.8-flash-tts",
         "voice": "Rasalgethi",
-        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters filed an argument for Measure SM; its text is not among the documents gathered here.\"",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say some school buildings are over 70 years old, and the state cannot take the money.\"",
         "convert_to_sha256": null,
         "check": true,
         "retries": 3,
         "text": "A yes vote approves the $135 million in school bonds."
       },
       "bounds": [
-        1820160,
-        1934160
+        1840560,
+        1948320
       ]
     },
     {
@@ -278,14 +278,14 @@
         "text": "A no vote rejects the $135 million in school bonds."
       },
       "bounds": [
-        1948560,
-        2060400
+        1962720,
+        2074560
       ]
     }
   ],
-  "sha256": "68970fa04b182730c296c9bc0840edfa416083b75e68f42eed38a711390c77ee",
+  "sha256": "c68f6da554335c1f9f69a1675a3c86eda86295af29c7a00c7686b56bbf9a0adf",
   "take": {
-    "sha256": "d9d89fd3069e7bd0dac0759bccc2f73bca7ca4bbc90f2fc542bbcb22519878f2",
-    "bytes": 4120844
+    "sha256": "f16426576f2ac201cc6ef89f72a4d697a95e3e2929316571dfd34796d99c4a26",
+    "bytes": 4149164
   }
 }
