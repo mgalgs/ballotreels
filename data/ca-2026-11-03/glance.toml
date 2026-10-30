@@ -3651,3 +3651,12 @@ source = "tax-statement"
 quote = "Estimated total debt service (principal + interest): $249,749,206 over the life of the bonds."
 amount = 249749206
 period = "unstated"
+
+# West Contra Costa Unified School District Measure V: a parcel tax
+# renewal, so no tax rate statement; the revenue figure its ballot
+# question (the county's Voter Information Guide page) prints.
+[west-contra-costa-unified-measure-v]
+source = "ballot-question"
+quote = "raising approximately $10,238,737 annually for nine years"
+amount = 10238737
+period = "per-year"

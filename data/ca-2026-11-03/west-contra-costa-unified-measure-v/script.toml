@@ -1,0 +1,185 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and of whom; the tax today and when it ends; how long the
+# renewal runs and the vote it needs; what a parcel pays, and who may be
+# exempt; what the money may pay for; the revenue figure; one line per
+# side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this school district". The card and title
+# carry the names. The rate in cents is left to the card (cents are
+# misheard by the transcript check).
+#
+# Every source is the county's Voter Information Guide page for Measure
+# V (an Internet Archive capture). The card quotes its ballot question,
+# which prints no yes/no lines, so the card has no YES/NO boxes; the vote
+# lines give County Counsel's meanings and highlight the same phrase.
+#
+# The ballot question's $10,238,737 a year is district revenue, and no
+# official source archived states the district's budget, so it has no
+# scale (STANDARD.md 6.5; left open). The argument against's $532 million
+# of 2026-27 revenue is that side's figure, which the rebuttal disputes,
+# so it is neither used for a scale nor narrated. The $144 example is an
+# amount per parcel (exempt).
+#
+# Sides: each line's basis is quoted from its own argument. The argument
+# against's surplus and enrollment figures are left out, since the
+# rebuttal disputes both; its line keeps the claim the district "does not
+# have a revenue problem", as the opponents' claim, and the school-bond
+# rate, which the rebuttal does not dispute. No signer is named.
+
+contest = "ca-2026-11-03-west-contra-costa-unified-measure-v"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "V"
+title = "MEASURE V"
+origin = "WEST CONTRA COSTA UNIFIED SCHOOL DISTRICT"
+summary = "Shall the measure supporting local quality education in West Contra Costa Unified School District, protecting core academics, science, music, arts, and career technical programs that prepare students for the changing economy; attracting and retaining qualified teachers; and maintaining mental health services and counselors to support student success; by renewing the parcel tax at the existing rate of 7.2¢/building square foot, raising approximately $10,238,737 annually for nine years, with senior exemptions, independent citizen oversight, audits, and local control, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure V"
+
+[[section.line]]
+text = "Measure V asks the voters of this school district whether to renew its parcel tax, a yearly tax on each square foot of building, for nine years."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["renewing the parcel tax at the existing rate of 7.2¢/building square foot"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+id = "history"
+text = "The district's voters first approved the tax in 2004, then again in 2012 and 2016, and today's tax ends in June 2027."
+sources = ["text", "impartial-analysis"]
+
+[section.line.visual]
+kind = "timeline"
+source = "text"
+labels = ["2004", "2012", "2016"]
+items = ["Voters approve the parcel tax", "Voters approve it again", "Voters approve it again"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "term"
+text = "The renewed tax would run from July 2027 to June 2036, and it needs two-thirds of the vote to pass."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section.line]]
+id = "example"
+text = "A parcel with a 2,000-square-foot building would pay $144 a year; owners 65 or older, and some with disabilities, could apply for an exemption."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-parcels"
+
+[[section.line]]
+id = "uses"
+text = "The money could pay only for listed purposes, such as core academics, teachers and counseling, under an oversight committee."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "school-classroom"
+
+[[section]]
+id = "fiscal"
+heading = "What the ballot question says"
+
+[[section.line]]
+id = "revenue"
+text = "The ballot question says the tax would raise about $10.2 million a year."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["raising approximately $10,238,737 annually for nine years"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say this renews an existing tax rather than adding one, and that without it, schools face cuts to programs students rely on."
+sources = ["argument-for"]
+basis = ["It is not a new tax; it will renew local education funding and continue our investment in West Contra Costa students.", "Without renewal, our schools face cuts to programs students rely on every day."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Renews a tax, adds none", "Avoids cuts to school programs"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say the district does not have a revenue problem, and that its residents already pay the highest school-bond tax in the county."
+sources = ["argument-against"]
+basis = ["The West Contra Costa Unified School District (WCCUSD) does not have a revenue problem.", "The highest school-bond tax in Contra Costa County, about $254 per $100,000 of assessed value"]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["No revenue problem to fix", "Highest school-bond tax in county"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote authorizes the parcel tax for nine years."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["renewing the parcel tax at the existing rate of 7.2¢/building square foot"]
+
+[[section.line]]
+text = "A no vote is against authorizing the parcel tax for nine years."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["renewing the parcel tax at the existing rate of 7.2¢/building square foot"]
+
+[[question]]
+ask = "Is this a new tax?"
+lines = ["history"]
+
+[[question]]
+ask = "How much would a parcel pay?"
+lines = ["example"]
+
+[[question]]
+ask = "Who would be exempt?"
+lines = ["example"]
+
+[[question]]
+ask = "What would the money pay for?"
+lines = ["uses"]
+
+[[question]]
+ask = "How large is $10.2 million a year next to the district's budget?"
+unanswered = true
