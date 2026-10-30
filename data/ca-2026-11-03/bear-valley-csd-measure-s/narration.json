@@ -1,0 +1,291 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 85.4,
+  "phrases": [
+    {
+      "text": "Measure S asks the voters of this community services district whether to repeal the special tax for police that its voters approved in 1997.",
+      "start": 0.03,
+      "end": 9.41
+    },
+    {
+      "text": "Measure S is a citizens' initiative, placed on the ballot by a petition signed by at least 10 percent of the district's registered voters.",
+      "start": 10.07,
+      "end": 18.58
+    },
+    {
+      "text": "The board then ordered it put to the voters without changes.",
+      "start": 19.24,
+      "end": 22.61
+    },
+    {
+      "text": "Since 1997, an annual special tax has helped pay for the salaries and benefits of the district's police and dispatch staff.",
+      "start": 23.27,
+      "end": 31.87
+    },
+    {
+      "text": "Measure S would repeal the 1997 police tax in full.",
+      "start": 32.53,
+      "end": 36.98
+    },
+    {
+      "text": "The measure's own title says the repeal would pave a path for an updated and modernized special tax measure.",
+      "start": 37.64,
+      "end": 45.13
+    },
+    {
+      "text": "Measure S needs a majority of the vote to pass.",
+      "start": 45.79,
+      "end": 49.15
+    },
+    {
+      "text": "The impartial analysis does not include a cost estimate for the measure.",
+      "start": 49.81,
+      "end": 53.87
+    },
+    {
+      "text": "Opponents say the district's budgets are audited every year, and repeal means lost revenue each year, forcing added cuts to police service.",
+      "start": 54.53,
+      "end": 64.27
+    },
+    {
+      "text": "Supporters say the 1997 tax has no citizen oversight or audits, and repeal lets voters decide on one single new police tax.",
+      "start": 64.93,
+      "end": 74.43
+    },
+    {
+      "text": "A yes vote repeals the 1997 special tax for police and dispatch staff.",
+      "start": 75.09,
+      "end": 80.6
+    },
+    {
+      "text": "A no vote leaves the 1997 special tax in place.",
+      "start": 81.26,
+      "end": 85.37
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Measure S asks the voters of this community services district whether to repeal the special tax for police that its voters approved in 1997.",
+      "Measure S is a citizens' initiative, placed on the ballot by a petition signed by at least 10 percent of the district's registered voters.",
+      "The board then ordered it put to the voters without changes.",
+      "Since 1997, an annual special tax has helped pay for the salaries and benefits of the district's police and dispatch staff.",
+      "Measure S would repeal the 1997 police tax in full.",
+      "The measure's own title says the repeal would pave a path for an updated and modernized special tax measure.",
+      "Measure S needs a majority of the vote to pass.",
+      "The impartial analysis does not include a cost estimate for the measure.",
+      "Opponents say the district's budgets are audited every year, and repeal means lost revenue each year, forcing added cuts to police service.",
+      "Supporters say the 1997 tax has no citizen oversight or audits, and repeal lets voters decide on one single new police tax.",
+      "A yes vote repeals the 1997 special tax for police and dispatch staff.",
+      "A no vote leaves the 1997 special tax in place."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure S asks the voters of this community services district whether to repeal the special tax for police that its voters approved in 1997."
+      },
+      "bounds": [
+        0,
+        226560
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure S asks the voters of this community services district whether to repeal the special tax for police that its voters approved in 1997.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure S is a citizens' initiative, placed on the ballot by a petition signed by at least 10 percent of the district's registered voters."
+      },
+      "bounds": [
+        240960,
+        446640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure S is a citizens' initiative, placed on the ballot by a petition signed by at least 10 percent of the district's registered voters.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The board then ordered it put to the voters without changes."
+      },
+      "bounds": [
+        461040,
+        543360
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The board then ordered it put to the voters without changes.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Since 1997, an annual special tax has helped pay for the salaries and benefits of the district's police and dispatch staff."
+      },
+      "bounds": [
+        557760,
+        765600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Since 1997, an annual special tax has helped pay for the salaries and benefits of the district's police and dispatch staff.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure S would repeal the 1997 police tax in full."
+      },
+      "bounds": [
+        780000,
+        888240
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure S would repeal the 1997 police tax in full.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The measure's own title says the repeal would pave a path for an updated and modernized special tax measure."
+      },
+      "bounds": [
+        902640,
+        1083840
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The measure's own title says the repeal would pave a path for an updated and modernized special tax measure.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Measure S needs a majority of the vote to pass."
+      },
+      "bounds": [
+        1098240,
+        1180320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Measure S needs a majority of the vote to pass.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The impartial analysis does not include a cost estimate for the measure."
+      },
+      "bounds": [
+        1194720,
+        1293600
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The impartial analysis does not include a cost estimate for the measure.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say the district's budgets are audited every year, and repeal means lost revenue each year, forcing added cuts to police service."
+      },
+      "bounds": [
+        1308000,
+        1543200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say the district's budgets are audited every year, and repeal means lost revenue each year, forcing added cuts to police service.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say the 1997 tax has no citizen oversight or audits, and repeal lets voters decide on one single new police tax."
+      },
+      "bounds": [
+        1557600,
+        1787040
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the 1997 tax has no citizen oversight or audits, and repeal lets voters decide on one single new police tax.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote repeals the 1997 special tax for police and dispatch staff."
+      },
+      "bounds": [
+        1801440,
+        1935120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote repeals the 1997 special tax for police and dispatch staff.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote leaves the 1997 special tax in place."
+      },
+      "bounds": [
+        1949520,
+        2049600
+      ]
+    }
+  ],
+  "sha256": "8c8807c59cea168021418064ea3f79a701c7a727f3386786b7fc5651e71dacdb",
+  "take": {
+    "sha256": "825e6fe1e4c3e27cb06088fe2545a966e95e0d6044cbd1ff133d40f840755025",
+    "bytes": 4099244
+  }
+}
