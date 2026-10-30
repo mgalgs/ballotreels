@@ -3166,3 +3166,13 @@ status = "none-printed"
 [santa-monica-measure-tt]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Hermosa Beach Measure HB: a general sales tax, so no tax rate
+# statement, and no impartial analysis among the documents gathered; the
+# Los Angeles County Registrar-Recorder/County Clerk's list prints the
+# ballot question's revenue estimate.
+[hermosa-beach-measure-hb]
+source = "ballot-question"
+quote = "providing approximately two million dollars ($2,000,000) annually until ended by voters"
+amount = 2000000
+period = "per-year"
