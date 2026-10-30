@@ -1,0 +1,58 @@
+# Archived sources for City of South Pasadena Measure SOS, 2026-11-03
+# general election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" is the authority for the measure's letter,
+# ballot question and vote threshold (two-thirds), and says in words that
+# no argument against was submitted ("Opponents: None submitted.");
+# sources/county-measure-list-excerpt.txt is the measure's entry, cut from
+# it. The City posts the City Attorney's impartial analysis (the
+# measure's neutral explanation), the argument in favor and the Tax Rate
+# Statement (Exhibit A, signed by the City Manager), the measure's fiscal
+# statement; all three are text PDFs. Ordinance No. 2416 and the City's
+# measure page are not cited.
+
+[contest]
+id = "ca-2026-11-03-south-pasadena-measure-sos"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:south_pasadena"
+kind = "measure"
+title = "City of South Pasadena Measure SOS: $80 Million in Bonds for Streets, Sidewalks and Storm Drains"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026: City of South Pasadena, Measure SOS"
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Roxanne M. Diaz, City Attorney, City of South Pasadena, City Attorney's Impartial Analysis of Measure SOS"
+credit = "City Attorney's Impartial Analysis of Measure SOS, City of South Pasadena"
+url = "https://www.southpasadenaca.gov/files/assets/public/v/1/management-services/documents/final-south-pasadena-city-attorney-impartial-analysis-go-bond-measure-with-letter-designation.pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Tax Rate Statement (Exhibit A), Todd Hileman, City Manager, City of South Pasadena, July 7, 2026"
+credit = "Tax Rate Statement, City of South Pasadena"
+url = "https://www.southpasadenaca.gov/files/assets/public/v/1/management-services/documents/tax-statement.pdf"
+file = "sources/tax-rate-statement.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure SOS, as posted by the City of South Pasadena (no argument against was submitted)"
+credit = "Argument in favor of Measure SOS, City of South Pasadena"
+url = "https://www.southpasadenaca.gov/files/assets/public/v/1/management-services/documents/final-argument-with-signers.pdf"
+file = "sources/argument-for.pdf"
+retrieved = "2026-10-30"

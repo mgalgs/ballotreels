@@ -1,0 +1,162 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; no term limits today, and the
+# state law that lets voters adopt them; who placed it; the limit, breaks
+# between terms, partial terms, and current terms; the vote it needs; no
+# cost estimate; one line per side; what a vote does.
+#
+# No place name is narrated: the opening says "the voters of this city".
+# The card quotes the Registrar-Recorder's list: the city's heading as
+# the title, its vote-passage line as the origin, the ballot question as
+# the summary. The list prints no yes/no statements; the vote lines quote
+# the impartial analysis's.
+#
+# Measure RM, on the same ballot, would change how the mayor is chosen.
+# Neither measure's documents mention the other, so this script does not
+# connect them. The list says no argument against was submitted: the no
+# side says so plainly, citing it, and is marked filed = false.
+
+contest = "ca-2026-11-03-south-el-monte-measure-cl"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-question"
+number = "CL"
+title = "CITY OF SOUTH EL MONTE"
+origin = "VOTE PASSAGE – Majority Vote 50%+1"
+summary = "Shall the terms served by the City Council in the City of South El Monte be limited to no more than four (4) four-year terms in their lifetime and where service for the unexpired balance of a vacated City Council seat (whether by appointment or election) will not count as service for a full four-year term even if such service is for less than four years in duration?"
+
+[[section]]
+id = "what"
+heading = "Measure CL"
+
+[[section.line]]
+text = "Measure CL asks the voters of this city whether to limit City Council members to four four-year terms in a lifetime."
+sources = ["ballot-question", "impartial-analysis"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["no more than four (4) four-year terms in their lifetime"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the city has no term limits for its elected officials."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "city-council-chamber"
+
+[[section.line]]
+id = "state-law"
+text = "State law lets a city like this one limit council terms if a majority of its voters approve, and the City Council placed Measure CL on the ballot."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "breaks"
+text = "No one could serve more than four full terms, even with a break between them."
+sources = ["impartial-analysis"]
+
+[section.line.visual]
+kind = "illustration"
+name = "hourglass-plans"
+
+[[section.line]]
+id = "partial"
+text = "Filling the rest of a vacant seat would not count as a full term, so some members could serve more than 16 years."
+sources = ["impartial-analysis"]
+
+[[section.line]]
+id = "current"
+text = "Terms being served now would not count toward the limit."
+sources = ["impartial-analysis"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The county Registrar's list of measures does not include a cost estimate for the measure."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say a four-term limit ensures no one serves indefinitely, while preserving the experience needed to lead."
+sources = ["argument-for"]
+basis = ["establishing a reasonable limit of four four-year terms, ensuring that no one can serve indefinitely while preserving the experience needed to lead our city effectively."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["No one serves indefinitely", "Keeps experienced leadership"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure CL was submitted, according to the county Registrar's official list of ballot measures."
+sources = ["ballot-question"]
+
+[section.line.visual]
+kind = "list"
+source = "ballot-question"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves the proposed term limits."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["no more than four (4) four-year terms in their lifetime"]
+
+[[section.line]]
+text = "A no vote rejects the proposed term limits."
+sources = ["impartial-analysis", "ballot-question"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-question"
+highlight = ["no more than four (4) four-year terms in their lifetime"]
+
+[[question]]
+ask = "Can a city limit council terms on its own?"
+lines = ["state-law"]
+
+[[question]]
+ask = "What about members who leave and come back, or fill a vacancy?"
+lines = ["breaks", "partial"]
+
+[[question]]
+ask = "Would current council members be forced out?"
+lines = ["current"]

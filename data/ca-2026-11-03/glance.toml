@@ -3223,3 +3223,59 @@ period = "per-year"
 [hacienda-la-puente-unified-measure-b]
 source = "ballot-question"
 status = "none-printed"
+
+# City of Culver City Measure AA: no tax rate statement was found; the
+# ballot question on the Registrar-Recorder's list states the yearly
+# revenue.
+[culver-city-measure-aa]
+source = "ballot-question"
+quote = "generating approximately $18,000,000 annually in local funds for Culver City public schools"
+amount = 18000000
+period = "per-year"
+
+# City of Culver City Measure T: a general tax, so no tax rate statement;
+# the City Attorney's impartial analysis gives the City's revenue
+# estimate.
+[culver-city-measure-t]
+source = "impartial-analysis"
+quote = "The City anticipates the proposed increase would be expected to generate up to an additional $1,000,000, approximately, in the first year of its implementation and up to approximately $2,000,000 per year thereafter, in General Fund revenue to fund City services."
+amount = 2000000
+period = "per-year"
+direction = "revenue-gain"
+
+# City of Culver City Measure YV: a charter amendment, not a tax; the
+# Registrar-Recorder's list and the City Attorney's impartial analysis
+# print no cost estimate.
+[culver-city-measure-yv]
+source = "ballot-question"
+status = "none-printed"
+
+# City of Redondo Beach Measure ART: a land use measure, not a tax; the
+# Registrar-Recorder's list and the City Attorney's impartial analysis
+# print no cost estimate.
+[redondo-beach-measure-art]
+source = "ballot-question"
+status = "none-printed"
+
+# City of South Pasadena Measure SOS: the City's Tax Rate Statement, its
+# total debt service ($154,764,858.10; the quote stops before the cents,
+# which the amount, in whole dollars, leaves out).
+[south-pasadena-measure-sos]
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is $154,764,858"
+amount = 154764858
+period = "unstated"
+
+# City of South El Monte Measure CL (council term limits): not a tax; the
+# Registrar-Recorder's list and the City Attorney's impartial analysis
+# print no cost estimate.
+[south-el-monte-measure-cl]
+source = "ballot-question"
+status = "none-printed"
+
+# City of South El Monte Measure RM (a mayor chosen by the council): not
+# a tax; the Registrar-Recorder's list and the City Attorney's impartial
+# analysis print no cost estimate.
+[south-el-monte-measure-rm]
+source = "ballot-question"
+status = "none-printed"

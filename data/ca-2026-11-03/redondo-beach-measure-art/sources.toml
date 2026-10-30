@@ -1,0 +1,61 @@
+# Archived sources for City of Redondo Beach Measure ART, 2026-11-03
+# general election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" is the authority for the measure's letter,
+# ballot question and vote threshold, and names who filed the arguments;
+# sources/county-measure-list-excerpt.txt is the measure's entry, cut from
+# it. The City Clerk posts the City Attorney's impartial analysis (the
+# measure's neutral explanation) and the two arguments, each on the
+# Registrar-Recorder's Ballot Label/Arguments and Rebuttals Form. The
+# arguments' text layers are OCR with many misread letters ("commerciaI",
+# "atso"), so their pages were typed from the page images into
+# sources/argument-*-transcription.txt, which those sources point at; the
+# urls are the PDFs'. The rebuttals (scans), the full text, the
+# resolution and the City's FAQ are not cited. A land use measure, not a
+# tax: no fiscal statement applies, and none was found.
+
+[contest]
+id = "ca-2026-11-03-redondo-beach-measure-art"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:redondo_beach"
+kind = "measure"
+title = "City of Redondo Beach Measure ART: Commercial and Industrial Zoning Changes and Lower Housing Density in Some Areas"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026: City of Redondo Beach, Measure ART"
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "City Attorney, City of Redondo Beach, City Attorney's Impartial Analysis of Measure ART, as posted by the City Clerk"
+credit = "City Attorney's Impartial Analysis of Measure ART, City of Redondo Beach"
+url = "https://www.redondo.org/City Clerk's Office/Documents/City Clerk/Elections/November 3, 2026/City Attorney's Impartial Analysis of Measure ART (REDACTED).pdf"
+file = "sources/impartial-analysis.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure ART, as filed with the Los Angeles County Registrar-Recorder/County Clerk and posted by the City of Redondo Beach City Clerk (transcribed from the page images)"
+credit = "Argument in favor of Measure ART, City of Redondo Beach City Clerk"
+url = "https://www.redondo.org/City Clerk's Office/Documents/City Clerk/Elections/November 3, 2026/Measure ART - Argument In Favor.pdf"
+file = "sources/argument-for-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure ART, as filed with the Los Angeles County Registrar-Recorder/County Clerk and posted by the City of Redondo Beach City Clerk (transcribed from the page images)"
+credit = "Argument against Measure ART, City of Redondo Beach City Clerk"
+url = "https://www.redondo.org/City Clerk's Office/Documents/City Clerk/Elections/November 3, 2026/Measure ART - Argument Against.pdf"
+file = "sources/argument-against-transcription.txt"
+retrieved = "2026-10-30"

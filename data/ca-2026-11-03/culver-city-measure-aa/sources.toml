@@ -1,0 +1,72 @@
+# Archived sources for City of Culver City Measure AA, 2026-11-03 general
+# election (sources/la-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" is the authority for the measure's letter,
+# ballot question and vote threshold, and names who filed the arguments;
+# sources/county-measure-list-excerpt.txt is the measure's entry, cut from
+# it. The City Clerk's "Upcoming Election Information" page prints the
+# City Attorney's impartial analysis, the argument in favor and the
+# argument in opposition (and both rebuttals, not cited) for all three of
+# the city's measures. The impartial analysis is the measure's neutral
+# explanation, the kind a state's attorney general's explanation is.
+# Resolution No. 2026-R083, which accepts the petition and places the
+# initiative on the ballot, is a scan with no text layer: its first two
+# pages were typed from the page images into
+# sources/resolution-transcription.txt, which that source points at. No
+# tax rate statement or other fiscal statement was found; the ballot
+# question states the yearly revenue.
+
+[contest]
+id = "ca-2026-11-03-culver-city-measure-aa"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:culver_city"
+kind = "measure"
+title = "City of Culver City Measure AA: Special Parcel Tax for Local Public Schools"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026: City of Culver City, Measure AA"
+credit = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Heather Baker, City Attorney, City of Culver City, City Attorney's Impartial Analysis of Measure AA (August 13, 2026), on the City Clerk's Upcoming Election Information page"
+credit = "City Attorney's Impartial Analysis of Measure AA, City of Culver City"
+url = "https://www.culvercity.gov/City-Hall/Election-Information-Updated/Upcoming-Election-Information"
+file = "sources/measure-page.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "City of Culver City, Resolution No. 2026-R083, accepting the certification of the petition's sufficiency and placing the measure on the ballot (transcribed from the scan, pages 1 and 2)"
+credit = "Resolution No. 2026-R083, City of Culver City"
+url = "https://www.culvercity.gov/files/assets/public/v/1/documents/city-clerk/election-info/2026-nov-3-election/2026-07-13__reso-2026-r083-sufficiency-of-petition-to-place-a-parcel-tax-ballot-measure-on-nov-3-2026-election.pdf"
+file = "sources/resolution-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure AA, as posted by the City of Culver City City Clerk"
+credit = "Argument in favor of Measure AA, City of Culver City City Clerk"
+url = "https://www.culvercity.gov/City-Hall/Election-Information-Updated/Upcoming-Election-Information"
+file = "sources/measure-page.html"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument in Opposition to Measure AA, as posted by the City of Culver City City Clerk"
+credit = "Argument against Measure AA, City of Culver City City Clerk"
+url = "https://www.culvercity.gov/City-Hall/Election-Information-Updated/Upcoming-Election-Information"
+file = "sources/measure-page.html"
+retrieved = "2026-10-30"
