@@ -1,0 +1,69 @@
+# Archived sources for City of Greenfield Measure O, 2026-11-03 general
+# election (sources/county-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The County of Monterey Elections Department's List of Local Measures
+# gives Measure O's letter, vote threshold and ballot question, and says
+# the measure's documents are filed with the city clerk. The City of
+# Greenfield's own documents are drafts as printed in council packets:
+# the May 26, 2026 packet holds the City Attorney's staff report, the
+# draft ordinance replacing Municipal Code chapter 3.26 and the draft
+# Resolution No. 2026-41 placing it on the ballot; the June 9 packet
+# holds the minutes of May 26, which record Resolution #2026-41 adopted
+# "as amended with the addition of an oversight committee" and the City
+# Attorney's statement that the measure is a general tax needing 50% plus
+# 1. The draft resolution's ballot question is not the county's (the
+# county's adds the oversight committee, the $1.4 million and the March
+# 31, 2033 end), so the draft resolution is not cited. The ordinance is
+# cited for its operative terms (the rate, section 3.26.150's end date),
+# the staff report for the tax's history and today's end date, as it
+# states them, attributed. The signed resolution and any impartial
+# analysis were not found, nor any argument for or against.
+#
+# The staff report and the minutes are `public-record`: the City's
+# record of what was proposed and adopted, neither the measure's text
+# nor a neutral explanation of it.
+
+[contest]
+id = "ca-2026-11-03-greenfield-measure-o"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:greenfield"
+kind = "measure"
+title = "City of Greenfield Measure O: Continuing the 0.75% Sales Tax to 2033"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "County of Monterey Elections Department, List of Local Measures, November 3, 2026 General Election: Measure O - City of Greenfield"
+credit = "List of Local Measures, Monterey County Elections"
+url = "https://www.countyofmonterey.gov/government/departments-a-h/elections/list-of-local-measures"
+file = "sources/county-measure-list.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "staff-report"
+kind = "public-record"
+publisher = "City of Greenfield, City Attorney’s Office, City Council Memorandum, Introduction and First Reading of an Ordinance Extending the Imposition of a Transactions and Use Tax for an Additional Six Years, City Council agenda packet of May 26, 2026, pages 101-103"
+credit = "Staff report, City of Greenfield, May 26, 2026"
+url = "https://www.greenfieldca.gov/AgendaCenter/ViewFile/Agenda/_05262026-870"
+file = "sources/council-2026-05-26-item.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "ordinance"
+kind = "official-text"
+publisher = "City of Greenfield, draft Ordinance, An Ordinance of the City Council of the City of Greenfield Extending the Imposition of a Transactions and Use Tax, replacing Municipal Code chapter 3.26, City Council agenda packet of May 26, 2026, pages 104-110"
+credit = "Draft Transactions and Use Tax Ordinance, City of Greenfield"
+url = "https://www.greenfieldca.gov/AgendaCenter/ViewFile/Agenda/_05262026-870"
+file = "sources/council-2026-05-26-item.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "minutes"
+kind = "public-record"
+publisher = "City of Greenfield, City Council Minutes, May 26, 2026, as printed in the City Council agenda packet of June 9, 2026, pages 28-34"
+credit = "City Council minutes, City of Greenfield, May 26, 2026"
+url = "https://www.greenfieldca.gov/AgendaCenter/ViewFile/Agenda/_06092026-874"
+file = "sources/council-minutes-2026-05-26.pdf"
+retrieved = "2026-10-30"
