@@ -1,0 +1,80 @@
+# Archived sources for Pasadena Area Community College District Measure
+# UP, 2026-11-03 general election (sources/sources.md). Every id here may
+# be cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# The Los Angeles County Registrar-Recorder/County Clerk's list "Measures
+# Appearing on the Ballot" is the authority for the letter, the vote
+# needed and the ballot question, quoted on the card; its "Opponents:
+# None submitted." is the official statement that no argument against
+# was filed (`measure-list`). County Counsel's impartial analysis, the
+# full text, the District's tax rate statement and the argument in favor
+# are the Registrar's own copies from its Interactive Sample Ballot. The
+# impartial analysis is the measure's neutral explanation, the kind a
+# state's attorney general's explanatory statement is.
+#
+# A community college district has no Census boundary, so the measure's
+# division is the county and `voters` names the district
+# (docs/SCRIPT-FORMAT.md), as Grossmont-Cuyamaca Measure G does.
+
+[contest]
+id = "ca-2026-11-03-pasadena-area-ccd-measure-up"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/county:los_angeles"
+kind = "measure"
+title = "Pasadena Area Community College District Measure UP: College Facility Bonds"
+voters = "the Pasadena Area Community College District"
+
+[[source]]
+id = "ballot-question"
+kind = "official-title-summary"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026 (Rev. 9/22/26): Pasadena Area Community College, Measure UP"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "measure-list"
+kind = "election-filing"
+publisher = "Los Angeles County Registrar-Recorder/County Clerk, Measures Appearing on the Ballot, General Election November 3, 2026 (Rev. 9/22/26): Measure UP, its supporters and opponents as filed"
+credit = "Measures Appearing on the Ballot, Los Angeles County Registrar-Recorder/County Clerk"
+url = "https://content.lavote.gov/docs/rrcc/documents/final-measures-appearing-on-the-ballot-9-22-2026-v-2.pdf"
+file = "sources/county-measure-list-excerpt.txt"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Dawyn R. Harrison, County Counsel, County of Los Angeles, Impartial Analysis of Measure UP, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Impartial Analysis of Measure UP, Los Angeles County Counsel"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10935.json"
+file = "sources/impartial-analysis.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Pasadena Area Community College District, Full Text of Ballot Measure UP, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Full Text of Ballot Measure UP, Pasadena Area Community College District"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10935.json"
+file = "sources/full-text.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Pasadena Area Community College District, Tax Rate Statement, Measure UP, signed by Jose A. Gomez, Superintendent/President, dated July 8, 2026, as printed in the Los Angeles County Registrar-Recorder/County Clerk's Interactive Sample Ballot"
+credit = "Tax Rate Statement, Pasadena Area Community College District"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10935.json"
+file = "sources/tax-rate-statement.html"
+retrieved = "2026-10-28"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure UP, as filed with the Los Angeles County Registrar-Recorder/County Clerk and printed in its Interactive Sample Ballot"
+credit = "Argument in Favor of Measure UP"
+url = "https://isb.lavote.gov/parsed/4348/contests/bmc10935.json"
+file = "sources/argument-for.html"
+retrieved = "2026-10-28"
