@@ -1,0 +1,66 @@
+# Archived sources for Oklahoma State Question 847, 2026-11-03 general
+# election. Every id here may be cited by script.toml. `kind` must be
+# one the standard allows (docs/STANDARD.md, section 1).
+#
+# Oklahoma prints no voter guide. The official explanation is the
+# Attorney General's Final Ballot Title, filed with the Secretary of
+# State: one paragraph, the question and the two choices.
+# final-ballot-title.pdf is pages 9-14 of the Secretary of State's file
+# for the question: the Attorney General's letter finding the
+# Legislature's proposed title deficient, the letter submitting the
+# rewritten Final Ballot Title, the title itself, and the Secretary of
+# State's certification of it. It backs two sources: ballot-title (the
+# card) and ballot-title-cost (its cost sentence, Oklahoma's one
+# official fiscal statement on the question).
+#
+# The enrolled SJR 39 prints the Legislature's own ballot title, which
+# the Attorney General rewrote; it is cited for the amended sections'
+# text only, never as the ballot title.
+#
+# Oklahoma publishes no official arguments for or against a state
+# question, so there is no source of kind official-argument: both side
+# sections say so, citing the State Election Board's "State Questions"
+# page, which lists only each question's ballot title and documents.
+
+[contest]
+id = "ok-2026-11-03-state-question-847"
+election = "ok-2026-11-03"
+division = "ocd-division/country:us/state:ok"
+kind = "measure"
+title = "State Question 847: Property Value Growth Limits and Senior Freeze"
+
+[[source]]
+id = "ballot-title"
+kind = "official-title-summary"
+publisher = "Oklahoma Secretary of State, SQ 847, LR 381 Final Ballot Title, certified June 4, 2026, pages 9-14"
+credit = "SQ 847, LR 381 Final Ballot Title"
+url = "https://www.sos.ok.gov/documents/questions/847.pdf"
+file = "sources/final-ballot-title.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "ballot-title-cost"
+kind = "official-fiscal-analysis"
+publisher = "Oklahoma Secretary of State, SQ 847, LR 381 Final Ballot Title: fiscal impact, pages 9-14"
+credit = "SQ 847, LR 381 Final Ballot Title"
+url = "https://www.sos.ok.gov/documents/questions/847.pdf"
+file = "sources/final-ballot-title.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Oklahoma Legislature, Enrolled Senate Joint Resolution No. 39, 2nd Session of the 60th Legislature"
+credit = "Enrolled Senate Joint Resolution No. 39"
+url = "https://www.oklegislature.gov/cf_pdf/2025-26%20ENR/sres/SJR39%20ENR.PDF"
+file = "sources/sjr39-enrolled.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "election-board"
+kind = "public-record"
+publisher = "Oklahoma State Election Board, State Questions"
+credit = "Oklahoma State Election Board"
+url = "https://oklahoma.gov/elections/elections-results/state-question-info.html"
+file = "sources/state-question-info.html"
+retrieved = "2026-10-30"
