@@ -3,12 +3,17 @@
 # Every id here may be cited by script.toml. `kind` must be one the
 # standard allows (docs/STANDARD.md, section 1).
 #
-# Every www.napacounty.gov page answered a Cloudflare 403, and no
-# Internet Archive capture was found, so the county's Voter Information
-# Guide (County Counsel's impartial analysis, the arguments and any
-# rebuttals) was not reached, and no document says whether any argument
-# was filed. These are the files of the Board of Supervisors' Legistar
-# record for its meeting of June 16, 2026, item 26-1244 (item A).
+# The county's Elections page for Measure B
+# (https://www.napacounty.gov/2471/County-of-Napa---Measure-B, read
+# 2026-10-30 in a browser; scripted fetches get HTTP 403) gave County
+# Counsel's impartial analysis, the ballot title and summary, and the
+# argument in favor and the argument against as filed with the Election
+# Division on August 14, 2026. The two arguments are scans: each page of
+# argument was typed word for word into a transcription, which those
+# sources point at, with their url at the county's PDF. The rebuttals
+# were not archived and are not used. The rest are the files of the
+# Board of Supervisors' Legistar record for its meeting of June 16,
+# 2026, item 26-1244 (item A).
 #
 # The resolution calling the election sets the ballot question. The copy
 # archived is the agenda copy (a Word file, its number and vote left
@@ -36,6 +41,10 @@ division = "ocd-division/country:us/state:ca/county:napa"
 kind = "measure"
 title = "Napa County Measure B: A Half-Cent Sales Tax for Wildfire Preparedness, Watersheds and Open Space"
 
+[[contest.correction]]
+date = "2026-10-30"
+note = "The video now gives the arguments for and against filed with the county, which it had said were not among the documents gathered."
+
 [[source]]
 id = "ballot-question"
 kind = "official-title-summary"
@@ -61,4 +70,31 @@ publisher = "The Napa County Wildfire Preparedness, Watershed Protection and Ope
 credit = "Initiative full text, County of Napa"
 url = "https://napa.legistar1.com/napa/attachments/de09b212-aa34-4cbd-9374-31c4e8825bfb.pdf"
 file = "sources/initiative-text-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "County of Napa, Elections, Measure B - Impartial Analysis - Napa County: Impartial Analysis by the County Counsel"
+credit = "County Counsel's Impartial Analysis, County of Napa"
+url = "https://www.napacounty.gov/DocumentCenter/View/46097/Measure-B---Impartial-Analysis---Napa-County-PDF"
+file = "sources/county-impartial-analysis.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "County of Napa, Elections, Measure B - Argument in Favor - Napa County, page 6 (filed August 14, 2026; transcribed from the scan)"
+credit = "Argument in favor, County of Napa Elections"
+url = "https://www.napacounty.gov/DocumentCenter/View/46100"
+file = "sources/county-argument-in-favor-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "County of Napa, Elections, Measure B - Argument Against - Napa County, page 2 (filed August 14, 2026; transcribed from the scan)"
+credit = "Argument against, County of Napa Elections"
+url = "https://www.napacounty.gov/DocumentCenter/View/46099"
+file = "sources/county-argument-against-transcription.txt"
 retrieved = "2026-10-30"
