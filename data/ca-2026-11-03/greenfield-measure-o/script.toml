@@ -1,0 +1,193 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; the tax today and its history, as
+# the City's staff report gives them; what would change (six more years
+# at the same rate, a general tax needing a simple majority, audits and
+# an oversight committee); the ballot question's revenue figure; the two
+# sides, of which no argument was found; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card, title and chart
+# title carry it. "three-quarters of 1 percent", not "0.75 percent".
+#
+# The card quotes the County of Monterey Elections Department's List of
+# Local Measures. It prints no yes and no sentences, so the card has no
+# boxes. The City's documents are drafts from the May 26, 2026 council
+# packet; the signed Resolution No. 2026-41 and an impartial analysis
+# were not found. The minutes record the resolution adopted "as amended
+# with the addition of an oversight committee", which the county's
+# ballot question carries, and the City Attorney's statement that it is
+# a general tax needing 50% plus 1. The draft resolution's ballot
+# question is the unamended one, so the draft resolution is not cited.
+#
+# The length is six years, ending March 31, 2033, as the ballot question,
+# the staff report and the ordinance's section 3.26.150 ("the sixth
+# anniversary of the operative date") say. The ordinance's caption, and
+# the minutes that repeat it, say "an Additional Three Years"; that is an
+# error in the City's documents and is not narrated.
+#
+# The history (Measure W in 2015, extended by Measure T in 2020 to March
+# 31, 2027) is the staff report's, narrated as it says it and attributed
+# to it. The ballot question's list of services is on the card and not
+# narrated: the tax is a general tax.
+#
+# No argument for or against Measure O was archived, and no document
+# says whether any was filed (the county says only that the documents
+# are with the city clerk). So the sides do not say none was filed: each
+# says none is among the documents gathered (filed = false, STANDARD.md
+# 2.5), as Walnut Creek Measure U's did.
+#
+# The $1.4 million a year is the ballot question's figure. No archived
+# source states the City's general fund budget, so it has no scale
+# (STANDARD.md 6.5; left open, under [[question]]).
+
+contest = "ca-2026-11-03-greenfield-measure-o"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "measure-list"
+number = "O"
+title = "City of Greenfield"
+origin = "Majority Voter Approval Required"
+summary = "Shall the Measure Continuing the City of Greenfield Transactions and Use Tax Measure be Adopted? To continue to enhance the health, safety and welfare of Greenfield, through strengthened public safety; increased youth recreation programs; continuance of code enforcement services; and other essential services, shall the City of Greenfield re-enact a voter approved 0.75 percent sales tax, subject to annual audits, and review by a City established oversight committee, raising $1.4 million annually and expiring on March 31, 2033?"
+
+[[section]]
+id = "what"
+heading = "Measure O"
+
+[[section.line]]
+text = "Measure O asks the voters of this city whether to continue a three-quarters of 1 percent sales tax until March 31, 2033."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["re-enact a voter approved 0.75 percent sales tax"]
+
+[[section]]
+id = "today"
+heading = "The tax today"
+
+[[section.line]]
+id = "history"
+text = "A city staff report says voters approved this tax in 2015 and extended it in 2020, until March 31, 2027."
+sources = ["staff-report"]
+
+[section.line.visual]
+kind = "illustration"
+name = "sales-receipt"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "end"
+text = "Measure O would keep the same rate for six more years, then end on its own."
+sources = ["staff-report", "ordinance", "measure-list"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+id = "general"
+text = "The council minutes record that it is a general tax, needing a simple majority to pass."
+sources = ["minutes", "measure-list"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section.line]]
+id = "oversight"
+text = "The ballot question calls for annual audits and review by an oversight committee the city sets up."
+sources = ["measure-list", "minutes"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["subject to annual audits, and review by a City established oversight committee"]
+
+[[section]]
+id = "fiscal"
+heading = "What the ballot question says"
+
+[[section.line]]
+id = "revenue"
+text = "The ballot question says the tax raises $1.4 million a year."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["raising $1.4 million annually"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "No argument for Measure O appears among the official documents gathered for this video."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument for was found"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "No argument against Measure O appears among the official documents gathered for this video."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "list"
+source = "measure-list"
+items = ["No argument against was found"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote continues the sales tax until March 31, 2033."
+sources = ["measure-list", "staff-report"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["expiring on March 31, 2033"]
+
+[[section.line]]
+text = "A no vote lets the tax expire on March 31, 2027."
+sources = ["measure-list", "staff-report"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["re-enact a voter approved 0.75 percent sales tax"]
+
+[[question]]
+ask = "Is this a new tax or an existing one, and when does it end today?"
+lines = ["history", "end"]
+
+[[question]]
+ask = "What could the money be spent on, and who watches it?"
+lines = ["general", "oversight"]
+
+[[question]]
+ask = "What do supporters and opponents say?"
+unanswered = true
+
+[[question]]
+ask = "How big is $1.4 million a year next to the city budget?"
+unanswered = true
