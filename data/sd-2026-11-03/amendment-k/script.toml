@@ -1,0 +1,153 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; what happens to unclaimed property today; what Amendment K
+# would set up, and where part of its earnings would go; that the
+# pamphlet includes no cost estimate; one point per side; what a vote
+# does.
+#
+# The card quotes South Dakota's 2026 Ballot Question Pamphlet: the
+# Attorney General's title, the closing passage of the "Attorney General
+# Explanation" (the part on what the amendment does), and the pamphlet's
+# "Vote “Yes”" and "Vote “No”" lines. The pamphlet prints no fiscal note,
+# so the card has no fiscal quote, and the explanation gives no amount
+# for the earnings that would go to the general fund; the script states
+# none.
+#
+# Only a pro statement was filed: the con column reads "“No statement
+# provided”". The no side says so once, in the pamphlet's words, and is
+# marked filed = false. The supporters' own figures (the returns of the
+# temporary fund and the other state trusts) stay with their statement.
+
+contest = "sd-2026-11-03-amendment-k"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "pamphlet"
+number = "K"
+title = "An Amendment to the South Dakota Constitution Establishing the Trust for Unclaimed Property Fund."
+origin = "Constitutional Amendment K"
+summary = "This proposed constitutional amendment establishes a trust fund where unclaimed abandoned property will be deposited. Portions of the interest and income from this fund will be distributed into the general fund for the benefit of the state. This proposed amendment requires the Legislature to determine the amount to be distributed that promotes the growth of the trust fund and the distributed amount."
+yes = "Vote “Yes” to adopt the amendment."
+no = "Vote “No” to leave the Constitution as it is."
+
+[[section]]
+id = "what"
+heading = "Amendment K"
+
+[[section.line]]
+text = "Amendment K is about unclaimed property, like bank deposits and refunds."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["Trust for Unclaimed Property Fund"]
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, property left unclaimed for over three years goes to the State Treasurer, who holds it for the owner."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "illustration"
+name = "bank-vault"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Amendment K would put that property in a trust fund in the state constitution."
+sources = ["pamphlet", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["establishes a trust fund where unclaimed abandoned property will be deposited"]
+
+[[section.line]]
+id = "general-fund"
+text = "Each year, part of the interest and income from the trust would go into the general fund, in an amount set by law."
+sources = ["pamphlet", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["Portions of the interest and income from this fund will be distributed into the general fund"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "South Dakota's ballot question pamphlet does not include a cost estimate for the amendment."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say Amendment K keeps unclaimed money safe for owners, and its interest pays for services without raising taxes."
+sources = ["arguments"]
+basis = ["Unclaimed funds like forgotten bank accounts, refunds, and insurance proceeds stay protected for their rightful owners.", "The interest those dollars earn becomes a new permanent source of state revenue for roads, schools, and other public services without raising taxes."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Keeps unclaimed money safe for owners", "Interest pays for services without new taxes"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "The state's ballot question pamphlet says no statement against Amendment K was provided, so only the supporters' statement is printed."
+sources = ["arguments"]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["No argument against was submitted"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the amendment."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["to adopt the amendment"]
+
+[[section.line]]
+text = "A no vote leaves the Constitution as it is."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["to leave the Constitution as it is"]
+
+[[question]]
+ask = "How much money would go to the general fund each year?"
+unanswered = true
+
+[[question]]
+ask = "Who decides how much of the earnings is paid out?"
+lines = ["general-fund"]
