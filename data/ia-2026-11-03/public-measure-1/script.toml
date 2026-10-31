@@ -9,10 +9,10 @@
 # prints no yes or no lines, so the card has none, and the vote lines
 # take their meanings from the summary and the question.
 #
-# Today: no archived source states the vote a tax bill needs now, so the
-# script says only what the resolution shows (the amendment adds a new
-# article, Taxation Limitations) and records the question as unanswered.
-# "Legal and special reserves" is left to the card for length.
+# Today: the codified Iowa Constitution (Art. III, sec. 17) sets the vote
+# for every bill, tax bills included, at a majority of the members elected
+# to each branch. "Legal and special reserves" is left to the card for
+# length.
 #
 # Fiscal: Iowa has no voter guide, so rule 5a's form names the ballot
 # summary: "Iowa's ballot summary does not include a cost estimate for
@@ -52,8 +52,9 @@ id = "today"
 heading = "Today"
 
 [[section.line]]
-text = "Today, the Iowa Constitution has no article on taxation limitations."
-sources = ["resolution"]
+id = "today-vote"
+text = "Today, the Iowa Constitution requires a majority of the members elected to each house to pass a bill."
+sources = ["constitution"]
 
 [section.line.visual]
 kind = "illustration"
@@ -165,4 +166,4 @@ highlight = ["Shall the following amendment to the Constitution be adopted?"]
 
 [[question]]
 ask = "How many votes does a bill raising income taxes need today?"
-unanswered = true
+lines = ["today-vote"]
