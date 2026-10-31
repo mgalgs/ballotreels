@@ -3290,8 +3290,9 @@ amount = 1000000
 period = "per-year"
 
 # Acalanes Union High School District Measure W: a parcel tax, so no tax
-# rate statement, and no impartial analysis was archived; the revenue
-# figure its ballot question (Resolution No. 26-27-01, Exhibit B) prints.
+# rate statement; the revenue figure its ballot question (Resolution No.
+# 26-27-01, Exhibit B) prints, which the county's impartial analysis
+# repeats.
 [acalanes-high-measure-w]
 source = "ballot-question"
 quote = "providing $6,000,000 annually in local school funding"
@@ -3673,15 +3674,16 @@ direction = "cost"
 
 # City of Walnut Creek Measure U: a land-use initiative; neither the
 # resolution submitting it (whose ballot question the card quotes) nor
-# the initiative's text gives a cost estimate, and no impartial analysis
-# was archived.
+# the initiative's text gives a cost estimate, and neither does the
+# county's impartial analysis.
 [walnut-creek-measure-u]
 source = "ballot-question"
 status = "none-printed"
 
 # City of Concord Measure O: a general business license tax; no tax rate
-# statement applies, and no impartial analysis was archived. The figure
-# is the one its ballot question (the City's Measure O page) prints.
+# statement applies. The figure is the one its ballot question (the
+# City's Measure O page) prints, which the county's impartial analysis
+# repeats.
 [concord-measure-o]
 source = "ballot-question"
 quote = "providing an additional $2,900,000 annually"
@@ -3692,24 +3694,25 @@ period = "per-year"
 # appointed; neither the resolution placing it (whose ballot question
 # the card quotes) nor the City's agenda report gives a cost for the
 # measure (the report's $116,000 is the whole November election's
-# budget), and no impartial analysis was archived.
+# budget), and neither does the county's impartial analysis.
 [walnut-creek-measure-t]
 source = "ballot-question"
 status = "none-printed"
 
-# City of Hercules Measure P: no impartial analysis or fiscal statement
-# was archived; the revenue estimate, as the ballot question in the
-# urgency ordinance placing the measure gives it.
+# City of Hercules Measure P: no fiscal statement was archived; the
+# revenue estimate, as the ballot question in the urgency ordinance
+# placing the measure gives it and the county's impartial analysis
+# repeats it.
 [hercules-measure-p]
 source = "ballot-question"
 quote = "generating approximately $4,000,000 annually until ended by voters"
 amount = 4000000
 period = "per-year"
 
-# City of San Pablo Measure R: no impartial analysis or fiscal statement
-# was archived; the revenue estimate, as the ballot question in the
-# resolution placing the measure gives it ($2 million a year for the
-# first five years, then $1 million a year).
+# City of San Pablo Measure R: no fiscal statement was archived; the
+# revenue estimate, as the ballot question in the resolution placing the
+# measure gives it and the county's impartial analysis repeats it ($2
+# million a year for the first five years, then $1 million a year).
 [san-pablo-measure-r]
 source = "ballot-question"
 quote = "generating approximately $2,000,000 annually, then reduced to ¼-cent for 5 years, generating approximately $1,000,000 annually"
