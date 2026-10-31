@@ -1,0 +1,225 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 60.81,
+  "phrases": [
+    {
+      "text": "Ballot Measure 3 is a proposed law about who may vote in Alaska elections.",
+      "start": 0.03,
+      "end": 5.31
+    },
+    {
+      "text": "Today, a voter must be a United States citizen, at least 18, a 30-day resident, and registered.",
+      "start": 5.97,
+      "end": 12.9
+    },
+    {
+      "text": "The measure would reword the law to say only a person who meets all four requirements may vote.",
+      "start": 13.56,
+      "end": 19.96
+    },
+    {
+      "text": "The Legislative Affairs Agency Summary says the requirements to vote would not change.",
+      "start": 20.62,
+      "end": 25.57
+    },
+    {
+      "text": "The state's statement of costs estimates $114,050 to implement the measure, for public hearings, petition review and translations.",
+      "start": 26.23,
+      "end": 37.54
+    },
+    {
+      "text": "The pamphlet says the Division of Elections did not receive a statement in opposition.",
+      "start": 38.2,
+      "end": 43.1
+    },
+    {
+      "text": "Supporters say the measure closes a gap, making clear that only citizens may vote.",
+      "start": 43.76,
+      "end": 49.14
+    },
+    {
+      "text": "A yes vote means the law would say only citizens meeting the other requirements may vote.",
+      "start": 49.8,
+      "end": 54.99
+    },
+    {
+      "text": "A no vote keeps today's wording: a voter must be a citizen and meet other requirements.",
+      "start": 55.65,
+      "end": 60.78
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Ballot Measure 3 is a proposed law about who may vote in Alaska elections.",
+      "Today, a voter must be a United States citizen, at least 18, a 30-day resident, and registered.",
+      "The measure would reword the law to say only a person who meets all four requirements may vote.",
+      "The Legislative Affairs Agency Summary says the requirements to vote would not change.",
+      "The state's statement of costs estimates $114,050 to implement the measure, for public hearings, petition review and translations.",
+      "The pamphlet says the Division of Elections did not receive a statement in opposition.",
+      "Supporters say the measure closes a gap, making clear that only citizens may vote.",
+      "A yes vote means the law would say only citizens meeting the other requirements may vote.",
+      "A no vote keeps today's wording: a voter must be a citizen and meet other requirements."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Ballot Measure 3 is a proposed law about who may vote in Alaska elections."
+      },
+      "bounds": [
+        0,
+        128160
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Ballot Measure 3 is a proposed law about who may vote in Alaska elections.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Today, a voter must be a United States citizen, at least 18, a 30-day resident, and registered."
+      },
+      "bounds": [
+        142560,
+        310320
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Today, a voter must be a United States citizen, at least 18, a 30-day resident, and registered.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The measure would reword the law to say only a person who meets all four requirements may vote."
+      },
+      "bounds": [
+        324720,
+        479760
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The measure would reword the law to say only a person who meets all four requirements may vote.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The Legislative Affairs Agency Summary says the requirements to vote would not change."
+      },
+      "bounds": [
+        494160,
+        614400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The Legislative Affairs Agency Summary says the requirements to vote would not change.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The state's statement of costs estimates $114,050 to implement the measure, for public hearings, petition review and translations."
+      },
+      "bounds": [
+        628800,
+        901680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The state's statement of costs estimates $114,050 to implement the measure, for public hearings, petition review and translations.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The pamphlet says the Division of Elections did not receive a statement in opposition."
+      },
+      "bounds": [
+        916080,
+        1035120
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The pamphlet says the Division of Elections did not receive a statement in opposition.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say the measure closes a gap, making clear that only citizens may vote."
+      },
+      "bounds": [
+        1049520,
+        1180080
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the measure closes a gap, making clear that only citizens may vote.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote means the law would say only citizens meeting the other requirements may vote."
+      },
+      "bounds": [
+        1194480,
+        1320480
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote means the law would say only citizens meeting the other requirements may vote.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote keeps today's wording: a voter must be a citizen and meet other requirements."
+      },
+      "bounds": [
+        1334880,
+        1459440
+      ]
+    }
+  ],
+  "sha256": "660e9ee5a4bc86931ee0b465a67dab3ce3273bbca09e9566b622ed7391c710b7",
+  "take": {
+    "sha256": "e317ecff6112c3d4cecb3df4a5c903f83f8b47f2b96c5f864d8015d9ba2ff400",
+    "bytes": 2918924
+  }
+}

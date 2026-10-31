@@ -1,0 +1,225 @@
+{
+  "audio": "narration.wav",
+  "captions": "narration.vtt",
+  "seconds": 65.7,
+  "phrases": [
+    {
+      "text": "Ballot Measure 2 would change Alaska's elections and campaign finance rules.",
+      "start": 0.03,
+      "end": 5.04
+    },
+    {
+      "text": "Since a 2020 vote, all candidates run in one open primary, and the general election uses ranked-choice voting.",
+      "start": 5.7,
+      "end": 13.04
+    },
+    {
+      "text": "The measure would bring back party primaries, and general elections where the most votes win.",
+      "start": 13.7,
+      "end": 19.83
+    },
+    {
+      "text": "The measure would also repeal some 2020 limits and disclosure rules on donations.",
+      "start": 20.49,
+      "end": 26.27
+    },
+    {
+      "text": "The state's statement of costs estimates about $2.6 million to implement the measure, mostly for voter education.",
+      "start": 26.93,
+      "end": 34.38
+    },
+    {
+      "text": "Opponents say the measure would flood Alaska with untraceable campaign cash, and take away freedom to vote for anyone.",
+      "start": 35.04,
+      "end": 43.02
+    },
+    {
+      "text": "Supporters say the measure returns Alaska to simple, one person, one vote elections, with primaries open to all Alaskans.",
+      "start": 43.68,
+      "end": 51.57
+    },
+    {
+      "text": "A yes vote brings back party primaries and repeals some 2020 campaign finance rules.",
+      "start": 52.23,
+      "end": 58.21
+    },
+    {
+      "text": "A no vote keeps the all-candidate primary, ranked-choice voting and 2020 campaign finance rules.",
+      "start": 58.87,
+      "end": 65.67
+    }
+  ],
+  "inputs": {
+    "phrases": [
+      "Ballot Measure 2 would change Alaska's elections and campaign finance rules.",
+      "Since a 2020 vote, all candidates run in one open primary, and the general election uses ranked-choice voting.",
+      "The measure would bring back party primaries, and general elections where the most votes win.",
+      "The measure would also repeal some 2020 limits and disclosure rules on donations.",
+      "The state's statement of costs estimates about $2.6 million to implement the measure, mostly for voter education.",
+      "Opponents say the measure would flood Alaska with untraceable campaign cash, and take away freedom to vote for anyone.",
+      "Supporters say the measure returns Alaska to simple, one person, one vote elections, with primaries open to all Alaskans.",
+      "A yes vote brings back party primaries and repeals some 2020 campaign finance rules.",
+      "A no vote keeps the all-candidate primary, ranked-choice voting and 2020 campaign finance rules."
+    ],
+    "gap": 0.6,
+    "engine": "gemini",
+    "model": "gemini-3.8-flash-tts",
+    "voice": "Rasalgethi",
+    "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+    "convert_to": null,
+    "convert_to_sha256": null,
+    "check": true,
+    "retries": 3
+  },
+  "phrase_cache": [
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive.",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Ballot Measure 2 would change Alaska's elections and campaign finance rules."
+      },
+      "bounds": [
+        0,
+        121680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Ballot Measure 2 would change Alaska's elections and campaign finance rules.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Since a 2020 vote, all candidates run in one open primary, and the general election uses ranked-choice voting."
+      },
+      "bounds": [
+        136080,
+        313680
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Since a 2020 vote, all candidates run in one open primary, and the general election uses ranked-choice voting.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The measure would bring back party primaries, and general elections where the most votes win."
+      },
+      "bounds": [
+        328080,
+        476640
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The measure would bring back party primaries, and general elections where the most votes win.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The measure would also repeal some 2020 limits and disclosure rules on donations."
+      },
+      "bounds": [
+        491040,
+        631200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The measure would also repeal some 2020 limits and disclosure rules on donations.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "The state's statement of costs estimates about $2.6 million to implement the measure, mostly for voter education."
+      },
+      "bounds": [
+        645600,
+        825840
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"The state's statement of costs estimates about $2.6 million to implement the measure, mostly for voter education.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Opponents say the measure would flood Alaska with untraceable campaign cash, and take away freedom to vote for anyone."
+      },
+      "bounds": [
+        840240,
+        1033200
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Opponents say the measure would flood Alaska with untraceable campaign cash, and take away freedom to vote for anyone.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "Supporters say the measure returns Alaska to simple, one person, one vote elections, with primaries open to all Alaskans."
+      },
+      "bounds": [
+        1047600,
+        1238400
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"Supporters say the measure returns Alaska to simple, one person, one vote elections, with primaries open to all Alaskans.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A yes vote brings back party primaries and repeals some 2020 campaign finance rules."
+      },
+      "bounds": [
+        1252800,
+        1397760
+      ]
+    },
+    {
+      "key": {
+        "engine": "gemini",
+        "model": "gemini-3.8-flash-tts",
+        "voice": "Rasalgethi",
+        "style": "Read this like a seasoned audiobook narrator reading a nonfiction book: warm, relaxed and unhurried, with low, steady energy and a gentle, conversational tone, as if talking to one listener. Use the natural emphasis that makes the meaning clear, but never punchy, dramatic or announcer-like. Stay neutral: not enthusiastic, sceptical or persuasive. This continues straight on from the narrator's previous sentence: \"A yes vote brings back party primaries and repeals some 2020 campaign finance rules.\"",
+        "convert_to_sha256": null,
+        "check": true,
+        "retries": 3,
+        "text": "A no vote keeps the all-candidate primary, ranked-choice voting and 2020 campaign finance rules."
+      },
+      "bounds": [
+        1412160,
+        1576800
+      ]
+    }
+  ],
+  "sha256": "5cdd8c708a1456916c8d340bb5a056b0e080eb82f2b6ec8a85b28972d943ccdf",
+  "take": {
+    "sha256": "0ee522da462cc10dddbf8be75a4742b345897bea144c64a9e570d15cd4d9659d",
+    "bytes": 3153644
+  }
+}
