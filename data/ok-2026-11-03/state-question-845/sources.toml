@@ -1,0 +1,67 @@
+# Archived sources for Oklahoma State Question 845, 2026-11-03 general
+# election. Every id here may be cited by script.toml. `kind` must be
+# one the standard allows (docs/STANDARD.md, section 1).
+#
+# Oklahoma prints no voter guide. The official explanation is the
+# Attorney General's Final Ballot Title, filed with the Secretary of
+# State: one paragraph, the question and the two choices.
+# final-ballot-title.pdf is pages 19-22 of the Secretary of State's file
+# for the question: the Attorney General's letter of August 13, 2026
+# correcting a typo on line 9 of the title, then the corrected title in a
+# REDLINE and a CLEAN version, which differ in that line. The letter asks
+# that the CLEAN version be used; the card quotes only words of it. It
+# backs two sources: ballot-title (the card) and ballot-title-cost (its
+# cost sentence, Oklahoma's one official fiscal statement on the
+# question).
+#
+# The enrolled HJR 1024 prints the Legislature's own ballot title, which
+# the Attorney General rewrote; it is cited for the amended section's
+# text only, never as the ballot title.
+#
+# Oklahoma publishes no official arguments for or against a state
+# question, so there is no source of kind official-argument: both side
+# sections say so, citing the State Election Board's "State Questions"
+# page, which lists only each question's ballot title and documents.
+
+[contest]
+id = "ok-2026-11-03-state-question-845"
+election = "ok-2026-11-03"
+division = "ocd-division/country:us/state:ok"
+kind = "measure"
+title = "State Question 845: Judicial Nominating Commission"
+
+[[source]]
+id = "ballot-title"
+kind = "official-title-summary"
+publisher = "Oklahoma Secretary of State, SQ 845, LR 379 Final Ballot Title, Corrected (CLEAN), filed August 13, 2026, pages 19-22"
+credit = "SQ 845, LR 379 Final Ballot Title"
+url = "https://www.sos.ok.gov/documents/questions/845.pdf"
+file = "sources/final-ballot-title.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "ballot-title-cost"
+kind = "official-fiscal-analysis"
+publisher = "Oklahoma Secretary of State, SQ 845, LR 379 Final Ballot Title, Corrected (CLEAN): fiscal impact, pages 19-22"
+credit = "SQ 845, LR 379 Final Ballot Title"
+url = "https://www.sos.ok.gov/documents/questions/845.pdf"
+file = "sources/final-ballot-title.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Oklahoma Legislature, Enrolled House Joint Resolution No. 1024, 2nd Session of the 60th Legislature"
+credit = "Enrolled House Joint Resolution No. 1024"
+url = "https://www.oklegislature.gov/cf_pdf/2025-26%20ENR/hres/HJR1024%20ENR.PDF"
+file = "sources/hjr1024-enrolled.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "election-board"
+kind = "public-record"
+publisher = "Oklahoma State Election Board, State Questions"
+credit = "Oklahoma State Election Board"
+url = "https://oklahoma.gov/elections/elections-results/state-question-info.html"
+file = "sources/state-question-info.html"
+retrieved = "2026-10-30"

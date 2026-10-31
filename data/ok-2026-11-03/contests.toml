@@ -1,0 +1,25 @@
+# Contest index for the 2026-11-03 Oklahoma general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot: the two state questions the Legislature referred. `number` is
+# a measure's ballot designation (a string). Oklahoma prints no voter
+# guide and no short titles, so each title pairs the designation with a
+# short subject in the Attorney General's Final Ballot Title's own words.
+
+[election]
+id = "ok-2026-11-03"
+state = "ocd-division/country:us/state:ok"
+title = "Oklahoma General Election, November 3, 2026"
+
+[[contest]]
+id = "ok-2026-11-03-state-question-845"
+kind = "measure"
+division = "ocd-division/country:us/state:ok"
+title = "State Question 845: Judicial Nominating Commission"
+number = "845"
+
+[[contest]]
+id = "ok-2026-11-03-state-question-847"
+kind = "measure"
+division = "ocd-division/country:us/state:ok"
+title = "State Question 847: Annual Growth in Fair Cash Value"
+number = "847"

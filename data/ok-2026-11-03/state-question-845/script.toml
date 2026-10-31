@@ -1,0 +1,171 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; what the commission does; how its members are chosen today;
+# who would choose them; who could serve; what the ballot title says it
+# costs; the two sides; what a vote does.
+#
+# The card quotes the CLEAN version of the Attorney General's corrected
+# Final Ballot Title (sources.toml): the question as title, the
+# designation as origin, the whole paragraph as summary, and the choice
+# lines as printed. The choice lines say nothing of what a vote does, so
+# the vote lines take their two meanings from the summary's "Currently"
+# and "If approved" sentences, one highlight each.
+#
+# Today's rules are told as the ballot title tells them (districts as
+# constituted in 1967). The title's changes to terms and to filling
+# vacancies are left out for length.
+#
+# Oklahoma publishes no official arguments for or against a state
+# question, so both sides are filed = false and each says so once, in
+# the same number of words. No person is named. "Commission's" and
+# "Governor's" are not narrated (each sounds like its plural).
+
+contest = "ok-2026-11-03-state-question-845"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "ballot-title"
+number = "845"
+title = "Shall the proposal be approved?"
+origin = "State Question 845, Legislative Referendum 379"
+summary = "This measure amends article 7-B, section 3 of the Oklahoma Constitution, changing the Judicial Nominating Commission’s structure. Currently appointments are based on congressional districts as constituted in 1967. If approved, appointments to the fifteen-member Commission will be as follows: 1) Governor appoints six members, including one from each congressional district as of the time of their appointment; 2) the Oklahoma Bar Association appoints six members, including one from each congressional district as of the date of selection; and 3) no less than eight members select three at-large members. The measure will permit any number of the commissioners to be licensed attorneys in Oklahoma or another state. The prohibition against immediate family members from practicing law will be removed. The measure changes terms so that at-large commissioners would serve a two-year term, and all other commissioners would serve a six-year term. Additionally, it removes restrictions on political party membership for members appointed by the Governor and at-large members. The measure also permits a commissioner to succeed himself or herself. Vacancies will be filled in the same manner as a commissioner is appointed or selected for the remainder of the relevant term. This measure will not have a fiscal impact."
+yes = "For the proposal – YES"
+no = "Against the proposal – NO"
+
+[[section]]
+id = "what"
+heading = "State Question 845"
+
+[[section.line]]
+text = "State Question 845 would change the structure of the Judicial Nominating Commission."
+sources = ["ballot-title"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-title"
+focus = "Judicial Nominating Commission"
+
+[[section]]
+id = "background"
+heading = "The commission"
+
+[[section.line]]
+text = "The commission has fifteen members, and decides whether nominees for judicial office qualify."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "empty-commission-seat"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, appointments are based on congressional districts as they stood in 1967."
+sources = ["ballot-title"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-title"
+highlight = ["congressional districts as constituted in 1967"]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "The Governor and the Oklahoma Bar Association would each appoint six members, including one from each current congressional district."
+sources = ["ballot-title"]
+
+[section.line.visual]
+kind = "illustration"
+name = "district-map"
+
+[[section.line]]
+text = "At least eight members would select three at-large members."
+sources = ["ballot-title"]
+
+[[section.line]]
+text = "Any number of commissioners could be licensed attorneys."
+sources = ["ballot-title"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-title"
+highlight = ["any number of the commissioners to be licensed attorneys"]
+
+[[section.line]]
+text = "Limits on party membership would end for members the Governor appoints and at-large members."
+sources = ["ballot-title"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-title"
+highlight = ["removes restrictions on political party membership"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "The ballot title says the measure will not have a fiscal impact."
+sources = ["ballot-title-cost"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "No fiscal impact"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Oklahoma publishes no official argument for the measure."
+sources = ["election-board"]
+
+[section.line.visual]
+kind = "list"
+source = "election-board"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Oklahoma publishes no official argument against the measure."
+sources = ["election-board"]
+
+[section.line.visual]
+kind = "list"
+source = "election-board"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote approves the new rules for choosing members."
+sources = ["ballot-title"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-title"
+highlight = ["If approved, appointments to the fifteen-member Commission will be as follows"]
+
+[[section.line]]
+text = "A no vote keeps the current rules for choosing members."
+sources = ["ballot-title"]
+
+[section.line.visual]
+kind = "page"
+source = "ballot-title"
+highlight = ["Currently appointments are based on congressional districts"]
