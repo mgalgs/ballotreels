@@ -3,8 +3,7 @@
 # no such tax today; what would change (the services it covers, the
 # half-rate for some low-income households, a general tax bound to no
 # purpose, the audit); the ballot question's revenue estimate; one line
-# per side; what a vote does, the yes line carrying "until ended by
-# voters" (the tax has no end date).
+# per side; what a vote does.
 #
 # No place name is narrated (the narrator mispronounces them): the
 # opening says "the voters of this city". The card, title and chart
@@ -18,9 +17,10 @@
 # resolution's ballot question matches the county's word for word, and
 # the minutes record both resolutions adopted. The July 7 minutes record
 # a direction to come back with a 30-year sunset; the July 15 staff
-# report recommends none, and the ballot question says "until ended by
-# voters", so the yes-vote line cites the ballot question beside the
-# ordinance's Section 4. Only the ordinance's operative terms are cited.
+# report recommends none. The ballot question's "until ended by voters"
+# is not narrated: ordinance section 3.07-270 also lets the council
+# repeal or amend the chapter without a vote. Only the ordinance's
+# operative terms are cited.
 #
 # The taxed services are the ordinance's own sections 3.07-040 to
 # 3.07-100 (telecommunication, video, electricity, gas, water), not the
@@ -164,7 +164,7 @@ heading = "What your vote means"
 
 [[section.line]]
 id = "vote-yes"
-text = "A yes vote creates the 7 percent utility users' tax, until ended by voters."
+text = "A yes vote creates the 7 percent utility users' tax."
 sources = ["measure-list", "ordinance"]
 
 [section.line.visual]
