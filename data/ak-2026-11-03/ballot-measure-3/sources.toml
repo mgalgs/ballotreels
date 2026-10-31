@@ -1,0 +1,53 @@
+# Archived sources for Alaska Ballot Measure 3 (25USCV), 2026-11-03
+# general election. Every id here may be cited by script.toml. `kind`
+# must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# The Division of Elections prints each ballot measure's Ballot Language,
+# Legislative Affairs Agency Summary, Statement of Costs, full text and
+# statements in support and in opposition in its 2026 Official Election
+# Pamphlet (Region II edition; the ballot measure pages are the same in
+# every region). The archived guide-section.pdf is this measure's pages,
+# 139 to 143, cut from the full pamphlet, so every source below shares
+# one file. Page numbers below are the pamphlet's printed ones. No
+# statement in opposition was received; page 143 says so.
+
+[contest]
+id = "ak-2026-11-03-ballot-measure-3"
+election = "ak-2026-11-03"
+division = "ocd-division/country:us/state:ak"
+kind = "measure"
+title = "Ballot Measure 3: An Act Addressing Voter Qualification"
+
+[[source]]
+id = "pamphlet"
+kind = "official-title-summary"
+publisher = "Alaska Division of Elections, 2026 Official Election Pamphlet, Ballot Measure No. 3 - 25USCV: Ballot Language and Legislative Affairs Agency Summary, page 139"
+credit = "Official Election Pamphlet, Ballot Measure 3"
+url = "https://www.elections.alaska.gov/election/2026/General/OEPbooks/2026%20Alaska%20General%20VP_Region%202_ENG_web.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "costs"
+kind = "official-fiscal-analysis"
+publisher = "Statement of Costs for Ballot Measure No. 3 - 25USCV, Office of the Lieutenant Governor and Division of Elections, 2026 Official Election Pamphlet, pages 139 to 140"
+credit = "Statement of Costs, Official Election Pamphlet"
+url = "https://www.elections.alaska.gov/election/2026/General/OEPbooks/2026%20Alaska%20General%20VP_Region%202_ENG_web.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "Full Text of Proposed Law, Ballot Measure No. 3 - 25USCV, Alaska Division of Elections, 2026 Official Election Pamphlet, page 141"
+url = "https://www.elections.alaska.gov/election/2026/General/OEPbooks/2026%20Alaska%20General%20VP_Region%202_ENG_web.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Statement in Support and Statement in Opposition, Ballot Measure No. 3 - 25USCV, as printed in the Alaska Division of Elections' 2026 Official Election Pamphlet, pages 142 to 143"
+url = "https://www.elections.alaska.gov/election/2026/General/OEPbooks/2026%20Alaska%20General%20VP_Region%202_ENG_web.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-30"
