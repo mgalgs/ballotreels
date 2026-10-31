@@ -1,9 +1,10 @@
 # Recipe E, about 60 seconds, distilled: one claim per line. The chain:
-# what it asks and whose measure it is; no such tax today; what would
-# change (the rate and the services it covers, the half-rate for some
-# low-income households, no end date, a general tax into the general
-# fund, the audit, a simple majority); the ballot question's revenue
-# estimate; one line per side; what a vote does.
+# what it asks, whose measure it is and the simple majority it needs;
+# no such tax today; what would change (the services it covers, the
+# half-rate for some low-income households, a general tax bound to no
+# purpose, the audit); the ballot question's revenue estimate; one line
+# per side; what a vote does, the yes line carrying "until ended by
+# voters" (the tax has no end date).
 #
 # No place name is narrated (the narrator mispronounces them): the
 # opening says "the voters of this city". The card, title and chart
@@ -18,7 +19,7 @@
 # the minutes record both resolutions adopted. The July 7 minutes record
 # a direction to come back with a 30-year sunset; the July 15 staff
 # report recommends none, and the ballot question says "until ended by
-# voters", so the end-date line cites the ballot question beside the
+# voters", so the yes-vote line cites the ballot question beside the
 # ordinance's Section 4. Only the ordinance's operative terms are cited.
 #
 # The taxed services are the ordinance's own sections 3.07-040 to
@@ -61,7 +62,7 @@ id = "what"
 heading = "Measure Q"
 
 [[section.line]]
-text = "Measure Q asks the voters of this city whether to create a new 7 percent tax on utility bills."
+text = "Measure Q asks the voters of this city, by simple majority, whether to create a 7 percent utility tax."
 sources = ["measure-list", "ordinance"]
 
 [section.line.visual]
@@ -87,7 +88,7 @@ heading = "What would change"
 
 [[section.line]]
 id = "services"
-text = "The tax would be 7 percent of telecommunications, video, electricity, gas and water charges."
+text = "It would tax telecommunications, video, electricity, gas and water charges."
 sources = ["ordinance"]
 
 [section.line.visual]
@@ -97,7 +98,7 @@ items = ["Telecommunications", "Video", "Electricity", "Gas", "Water"]
 
 [[section.line]]
 id = "reduced"
-text = "Residents enrolled in the CARE low-income energy program, and low-income seniors 65 or older, would pay half."
+text = "Low-income seniors, and residents in the CARE energy discount program, would pay half."
 sources = ["ordinance", "measure-list"]
 
 [section.line.visual]
@@ -105,31 +106,13 @@ kind = "illustration"
 name = "senior-center"
 
 [[section.line]]
-id = "end"
-text = "It would have no end date, lasting until ended by voters."
-sources = ["measure-list", "ordinance"]
-
-[section.line.visual]
-kind = "illustration"
-name = "end-date"
-
-[[section.line]]
 id = "uses"
-text = "As a general tax, the ordinance says, the money would not be bound to any specific purpose, and would be audited yearly."
+text = "The ordinance binds this general tax to no specific purpose, and requires yearly audits."
 sources = ["ordinance", "measure-list"]
 
 [section.line.visual]
 kind = "illustration"
 name = "state-budget"
-
-[[section.line]]
-id = "threshold"
-text = "Measure Q needs a simple majority to pass."
-sources = ["measure-list"]
-
-[section.line.visual]
-kind = "illustration"
-name = "vote-thresholds"
 
 [[section]]
 id = "fiscal"
@@ -137,7 +120,7 @@ heading = "What the ballot question says"
 
 [[section.line]]
 id = "revenue"
-text = "The ballot question says the tax would raise about $3.83 million a year."
+text = "The ballot question estimates about $3.83 million a year."
 sources = ["measure-list"]
 
 [section.line.visual]
@@ -180,6 +163,7 @@ id = "vote"
 heading = "What your vote means"
 
 [[section.line]]
+id = "vote-yes"
 text = "A yes vote creates the 7 percent utility users' tax, until ended by voters."
 sources = ["measure-list", "ordinance"]
 
@@ -207,7 +191,7 @@ lines = ["reduced"]
 
 [[question]]
 ask = "When would the tax end?"
-lines = ["end"]
+lines = ["vote-yes"]
 
 [[question]]
 ask = "Must the money go to the buildings the ballot question names?"
