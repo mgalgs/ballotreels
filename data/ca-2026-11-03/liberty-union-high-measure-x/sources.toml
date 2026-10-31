@@ -1,0 +1,69 @@
+# Archived sources for Liberty Union High School District Measure X,
+# 2026-11-03 general election (sources/sources.md). Every id here may be
+# cited by script.toml. `kind` must be one the standard allows
+# (docs/STANDARD.md, section 1).
+#
+# Every source is one page: Contra Costa County Elections' page for
+# Measure X (read in a browser and saved as text, sources/county-page.txt),
+# which prints, in order, the ballot question the card quotes, County
+# Counsel's impartial analysis (the measure's neutral explanation, the
+# kind a state's attorney general's explanatory statement is), the
+# District's tax rate statement (the measure's fiscal statement), the
+# argument in favor and its rebuttal, and the argument against and its
+# rebuttal. The page goes on to print the measure's full text and bond
+# project list, which were not saved, so no source here is the full text:
+# the impartial analysis is cited for what the measure provides. The
+# District's own Measure X page (sources/district-measure-x-page.html)
+# is its informational material and is not cited.
+
+[contest]
+id = "ca-2026-11-03-liberty-union-high-measure-x"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/school_district:liberty_union_high_school_district"
+kind = "measure"
+title = "Liberty Union High School District Measure X: $165 Million in School Facilities Repair and Upgrade Bonds"
+
+[[source]]
+id = "county-page"
+kind = "official-title-summary"
+publisher = "Contra Costa County Elections, MEASURE X (November 3, 2026, General Election, list of candidates and measures): the ballot question"
+credit = "Contra Costa County Voter Information Guide"
+url = "https://www.contracostavote.gov/m9003-en-2/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "impartial-analysis"
+kind = "official-title-summary"
+publisher = "Contra Costa County Elections, MEASURE X: County Counsel’s Impartial Analysis of Measure X"
+credit = "County Counsel’s Impartial Analysis, Contra Costa County Elections"
+url = "https://www.contracostavote.gov/m9003-en-2/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "tax-statement"
+kind = "official-fiscal-analysis"
+publisher = "Liberty Union High School District, Tax Rate Statement for Measure X, as printed on Contra Costa County Elections' page MEASURE X"
+credit = "Tax Rate Statement, Liberty Union High School District"
+url = "https://www.contracostavote.gov/m9003-en-2/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Contra Costa County Elections, MEASURE X: Argument in Favor of Measure X"
+credit = "Argument in favor, Contra Costa County Elections"
+url = "https://www.contracostavote.gov/m9003-en-2/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Contra Costa County Elections, MEASURE X: Argument Against Measure X"
+credit = "Argument against, Contra Costa County Elections"
+url = "https://www.contracostavote.gov/m9003-en-2/"
+file = "sources/county-page.txt"
+retrieved = "2026-10-30"
