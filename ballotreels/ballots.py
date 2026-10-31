@@ -1188,7 +1188,9 @@ BALLOTS: dict[str, Ballot] = {
                                      "alhambra-measure-db",
                                      "monterey-park-measure-hom",
                                      "monterey-park-measure-aaa",
-                                     "burbank-measure-cc")},
+                                     "burbank-measure-cc",
+                                     "inglewood-measure-at",
+                                     "inglewood-measure-bb")},
                      # Tulare County's guide could not be fetched: the
                      # City of Tulare's card quotes the Registrar of
                      # Voters' published notice of election, named as
