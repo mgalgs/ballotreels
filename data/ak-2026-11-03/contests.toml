@@ -1,0 +1,25 @@
+# Contest index for the 2026-11-03 Alaska general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). Titles
+# pair the designation with the act's title as printed in the Division
+# of Elections' Official Election Pamphlet. Ballot Measure 1 was on the
+# August primary ballot and is not listed.
+
+[election]
+id = "ak-2026-11-03"
+state = "ocd-division/country:us/state:ak"
+title = "Alaska General Election, November 3, 2026"
+
+[[contest]]
+id = "ak-2026-11-03-ballot-measure-2"
+kind = "measure"
+division = "ocd-division/country:us/state:ak"
+title = "Ballot Measure 2: An Act Restoring Political Party Primaries, Ending Ranked-Choice General Elections, and Repealing Recent Campaign Finance Laws"
+number = "2"
+
+[[contest]]
+id = "ak-2026-11-03-ballot-measure-3"
+kind = "measure"
+division = "ocd-division/country:us/state:ak"
+title = "Ballot Measure 3: An Act Addressing Voter Qualification"
+number = "3"
