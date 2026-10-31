@@ -1,0 +1,177 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; what Medicaid is and what the 2022 expansion added; who pays
+# for the expansion today; what Amendment I would change; that the
+# pamphlet includes no cost estimate; one point per side; what a vote
+# does.
+#
+# The card quotes South Dakota's 2026 Ballot Question Pamphlet: the
+# Attorney General's title, the closing passage of the "Attorney General
+# Explanation" (the part on what the amendment does), and the pamphlet's
+# "Vote “Yes”" and "Vote “No”" lines. The pamphlet prints no fiscal note,
+# so the card has no fiscal quote.
+#
+# Both sides filed statements. Each side's own figures (the people
+# covered, the yearly cost of a lower federal share, the income figures)
+# stay with that side's statement and out of the narration. The
+# expansion's income limit is in the official explanation and the text,
+# so the background line says "lower-income adults" (not the percentages). "Washington"
+# is the supporters' word; neutral lines say "the federal government".
+
+contest = "sd-2026-11-03-amendment-i"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "pamphlet"
+number = "I"
+title = "An Amendment to the South Dakota Constitution that Repeals Expanded Medicaid Coverage if Federal Funding for the Program Drops below 90%."
+origin = "Constitutional Amendment I"
+summary = "Currently, federal law requires the federal government to fund 90% of South Dakota’s Medicaid expansion. This proposed Constitutional Amendment ends the expanded Medicaid coverage if the federal funding for expansion drops below 90%. If federal funding drops below that 90% threshold, Medicaid coverage will once again only apply to low-income children, pregnant women, disabled individuals, and the elderly."
+yes = "Vote “Yes” to adopt the amendment."
+no = "Vote “No” to leave the Constitution as it is."
+
+[[section]]
+id = "what"
+heading = "Amendment I"
+
+[[section.line]]
+text = "Amendment I is about what happens to Medicaid expansion if federal funding falls."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["Repeals Expanded Medicaid Coverage"]
+
+[[section]]
+id = "background"
+heading = "What Medicaid is"
+
+[[section.line]]
+text = "Medicaid provides medical coverage, paid for by the state and the federal government."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "illustration"
+name = "health-form"
+
+[[section.line]]
+text = "In 2022, voters expanded it to lower-income adults over 18 and under 65."
+sources = ["pamphlet", "text"]
+
+[section.line.visual]
+kind = "illustration"
+name = "community-clinic"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, federal law sets the federal share at 90 percent."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "share"
+title = "Federal share of the Medicaid expansion"
+source = "pamphlet"
+unit = "%"
+labels = ["Federal government"]
+values = [90]
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "Amendment I would end the expanded coverage if that share drops below 90 percent."
+sources = ["pamphlet", "text"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["ends the expanded Medicaid coverage"]
+
+[[section.line]]
+id = "still-covered"
+text = "Medicaid would then cover only low-income children, pregnant women, disabled people and the elderly."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["only apply to low-income children, pregnant women, disabled individuals, and the elderly"]
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "South Dakota's ballot question pamphlet does not include a cost estimate for the amendment."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say nothing changes while Washington pays its share; if not, voters and lawmakers decide."
+sources = ["arguments"]
+basis = ["Amendment I says that as long as Washington keeps that promise, nothing changes.", "Legislators and voters could then decide whether expansion is still worth the new cost."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Nothing changes while the federal share holds", "Voters and lawmakers decide if it changes"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say a no vote keeps voter-approved expansion, so funding changes cannot automatically end coverage."
+sources = ["arguments"]
+basis = ["A vote NO would keep the South Dakota Constitution unchanged and preserve Medicaid expansion as approved by South Dakota voters in 2022.", "A vote NO would ensure that changes in federal funding do not automatically take health coverage from South Dakotans."]
+
+[section.line.visual]
+kind = "list"
+source = "arguments"
+items = ["Keeps the expansion voters approved in 2022", "Funding changes would not automatically end coverage"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adopts the amendment."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["to adopt the amendment"]
+
+[[section.line]]
+text = "A no vote leaves the Constitution as it is."
+sources = ["pamphlet"]
+
+[section.line.visual]
+kind = "page"
+source = "pamphlet"
+highlight = ["to leave the Constitution as it is"]
+
+[[question]]
+ask = "How many South Dakotans have coverage through the expansion?"
+unanswered = true
+
+[[question]]
+ask = "Who would still have Medicaid if the federal share fell?"
+lines = ["still-covered"]

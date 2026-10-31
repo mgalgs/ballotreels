@@ -1721,6 +1721,19 @@ BALLOTS: dict[str, Ballot] = {
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary",
                  badges={"Measure": "BALLOT MEASURE"}),
+
+    # South Dakota's Secretary of State compiles the "2026 Ballot
+    # Question Pamphlet" (SDCL 12-13-23): for each "Constitutional
+    # Amendment I" (badge AMENDMENT, from the title's designation), the
+    # Attorney General's title, explanation and the lines 'Vote “Yes” to
+    # adopt the amendment.' and 'Vote “No” to leave the Constitution as
+    # it is.', then the authors' pro and con statements. The law asks
+    # for a fiscal note only "if applicable", and the pamphlet prints
+    # none for any of the 2026 amendments.
+    "sd": Ballot(guide="2026 Ballot Question Pamphlet",
+                 fiscal_label=None,
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary"),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")

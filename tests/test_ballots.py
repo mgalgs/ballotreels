@@ -568,6 +568,17 @@ class LouisianaStatementsStitchTest(unittest.TestCase):
         self.assertEqual(badge(ak, "Ballot Measure 2: X", "2"),
                          "BALLOT MEASURE")
 
+    def test_south_dakota_uses_its_pamphlets_words(self):
+        sd = BALLOTS["sd"]
+        self.assertEqual((sd.guide, sd.fiscal_label, sd.choices,
+                          sd.card_source_kind),
+                         ("2026 Ballot Question Pamphlet", None,
+                          ("Yes", "No"), "official-title-summary"))
+        # "Constitutional Amendment I", as the pamphlet heads it
+        self.assertEqual(
+            badge(sd, "Constitutional Amendment I: Medicaid expansion", "I"),
+            "AMENDMENT")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):

@@ -1,0 +1,43 @@
+# Archived sources for South Dakota Constitutional Amendment K,
+# 2026-11-03 general election. Every id here may be cited by script.toml.
+# `kind` must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# South Dakota's Secretary of State prints each amendment's Attorney
+# General title, explanation and effect of a vote, the length of its
+# text and its pro statement (the pamphlet prints "No statement provided" for the con) on one page of the 2026 Ballot Question
+# Pamphlet; the archived file is that page with the pamphlet's
+# introduction (pages 1 and 4), so several sources below share it. The
+# pamphlet prints no fiscal note for the amendment. The full text is the
+# Legislature's enrolled joint resolution.
+
+[contest]
+id = "sd-2026-11-03-amendment-k"
+election = "sd-2026-11-03"
+division = "ocd-division/country:us/state:sd"
+kind = "measure"
+title = "Constitutional Amendment K: Establishing the Trust for Unclaimed Property Fund"
+
+[[source]]
+id = "pamphlet"
+kind = "official-title-summary"
+publisher = "South Dakota Secretary of State, 2026 Ballot Question Pamphlet, Constitutional Amendment K: Attorney General title, explanation and effect of a vote, pages 1 and 4"
+credit = "2026 Ballot Question Pamphlet, Constitutional Amendment K"
+url = "https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "arguments"
+kind = "official-argument"
+publisher = "Pro and con statements on Constitutional Amendment K, as printed in the South Dakota Secretary of State's 2026 Ballot Question Pamphlet, pages 1 and 4"
+url = "https://sdsos.gov/elections-voting/upcoming-elections/general-information/2026%20Ballot%20Question%20Information/2026%20Ballot%20Question%20Files/2026%20BQ/2026GeneralBQPamphletFINAL.pdf"
+file = "sources/guide-section.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "text"
+kind = "official-text"
+publisher = "South Dakota Legislature, 2025 Senate Joint Resolution 505, enrolled"
+url = "https://mylrc.sdlegislature.gov/api/Documents/284191.pdf"
+file = "sources/sjr505-2025-enrolled.pdf"
+retrieved = "2026-10-30"

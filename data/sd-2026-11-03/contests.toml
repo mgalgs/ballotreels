@@ -1,0 +1,38 @@
+# Contest index for the 2026-11-03 South Dakota general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot. `number` is a measure's ballot designation (a string). Titles
+# pair the designation with the Attorney General's title as the 2026
+# Ballot Question Pamphlet prints it, shortened in its own words.
+
+[election]
+id = "sd-2026-11-03"
+state = "ocd-division/country:us/state:sd"
+title = "South Dakota General Election, November 3, 2026"
+
+[[contest]]
+id = "sd-2026-11-03-amendment-i"
+kind = "measure"
+division = "ocd-division/country:us/state:sd"
+title = "Constitutional Amendment I: Repeals Expanded Medicaid Coverage if Federal Funding Drops below 90%"
+number = "I"
+
+[[contest]]
+id = "sd-2026-11-03-amendment-j"
+kind = "measure"
+division = "ocd-division/country:us/state:sd"
+title = "Constitutional Amendment J: Clarifying that an Individual Must Be a Citizen to be Eligible to Vote"
+number = "J"
+
+[[contest]]
+id = "sd-2026-11-03-amendment-k"
+kind = "measure"
+division = "ocd-division/country:us/state:sd"
+title = "Constitutional Amendment K: Establishing the Trust for Unclaimed Property Fund"
+number = "K"
+
+[[contest]]
+id = "sd-2026-11-03-amendment-l"
+kind = "measure"
+division = "ocd-division/country:us/state:sd"
+title = "Constitutional Amendment L: Requiring an Affirmative Vote of Sixty Percent"
+number = "L"
