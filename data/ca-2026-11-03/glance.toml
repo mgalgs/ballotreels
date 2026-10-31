@@ -4073,3 +4073,13 @@ period = "per-year"
 [stinson-beach-cwd-measure-ee]
 source = "county-page"
 status = "none-printed"
+
+# Liberty Union High School District Measure X: the bond amount its
+# ballot question prints, as the county's Measure X page gives it (the
+# District's tax rate statement puts total debt service at approximately
+# $350 million).
+[liberty-union-high-measure-x]
+source = "county-page"
+quote = "authorizing $165,000,000 in bonds at legal rates"
+amount = 165000000
+period = "unstated"

@@ -403,14 +403,16 @@ BALLOTS: dict[str, Ballot] = {
                      # election, named as its first page titles it
                      "ca-2026-11-03-napa-county-measure-b":
                          "Resolution of the Napa County Board of Supervisors",
-                     # The Internet Archive's captures of the county
-                     # guide's own pages for West Contra Costa Unified's
-                     # Measure V and San Pablo's Measure S print each
+                     # The county guide's own pages for West Contra
+                     # Costa Unified's Measure V and San Pablo's Measure S
+                     # (Internet Archive captures) and Liberty Union
+                     # High's Measure X (read in a browser) print each
                      # ballot question, impartial analysis and arguments
                      **{f"ca-2026-11-03-{slug}":
                         "Contra Costa County Voter Information Guide"
                         for slug in ("west-contra-costa-unified-measure-v",
-                                     "san-pablo-measure-s")},
+                                     "san-pablo-measure-s",
+                                     "liberty-union-high-measure-x")},
                      # and Acalanes Union High's card quotes the ballot
                      # question from the Governing Board's resolution,
                      # named as its first page titles it
