@@ -538,6 +538,16 @@ class LouisianaStatementsStitchTest(unittest.TestCase):
                   "2"),
             "QUESTION")
 
+    def test_alaska_uses_its_election_pamphlets_words(self):
+        ak = BALLOTS["ak"]
+        self.assertEqual((ak.guide, ak.fiscal_label, ak.choices,
+                          ak.card_source_kind, ak.card_column_breaks),
+                         ("Official Election Pamphlet", "Statement of Costs",
+                          ("Yes", "No"), "official-title-summary", False))
+        # "Ballot Measure No. 2", whose designation word is "Measure"
+        self.assertEqual(badge(ak, "Ballot Measure 2: X", "2"),
+                         "BALLOT MEASURE")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):
