@@ -1692,6 +1692,20 @@ BALLOTS: dict[str, Ballot] = {
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary",
                  badges={"Question": "STATE QUESTION"}),
+
+    # Iowa prints no voter guide, and its Secretary of State posts no copy
+    # of the 2026 measure. Each county's sample ballot prints it on the
+    # back, headed "Statewide Public Measure 1" (badge PUBLIC MEASURE,
+    # from the title's "Public Measure 1"): the question "Shall the
+    # following amendment to the Constitution be adopted?", a "Summary:"
+    # and the full text, under the notice to fill in the oval in front of
+    # the word "Yes" or "No". It prints no yes or no lines and no fiscal
+    # statement. The card quotes Linn County's.
+    "ia": Ballot(guide="Sample Ballot",
+                 fiscal_label=None,
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary",
+                 badges={"Measure": "PUBLIC MEASURE"}),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")

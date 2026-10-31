@@ -548,6 +548,16 @@ class LouisianaStatementsStitchTest(unittest.TestCase):
         self.assertEqual(badge(ok, "State Question 845: X", "845"),
                          "STATE QUESTION")
 
+    def test_iowa_uses_its_sample_ballots_words(self):
+        ia = BALLOTS["ia"]
+        self.assertEqual((ia.guide, ia.fiscal_label, ia.choices,
+                          ia.card_source_kind),
+                         ("Sample Ballot", None, ("Yes", "No"),
+                          "official-title-summary"))
+        # "Statewide Public Measure 1", as the ballot heads it
+        self.assertEqual(badge(ia, "Public Measure 1: X", "1"),
+                         "PUBLIC MEASURE")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):
