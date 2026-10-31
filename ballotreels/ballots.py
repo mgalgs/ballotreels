@@ -1706,6 +1706,21 @@ BALLOTS: dict[str, Ballot] = {
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary",
                  badges={"Measure": "PUBLIC MEASURE"}),
+
+    # Alaska's Division of Elections prints each ballot measure's
+    # "Ballot Language" box (its act's title, its ballot language and the
+    # question "Should this initiative become law?" over the choices "Yes"
+    # and "No"), the Legislative Affairs Agency Summary, the agencies'
+    # "Statement of Costs", the full text and the statements in support
+    # and in opposition in its Official Election Pamphlet. The pamphlet
+    # heads each "Ballot Measure No. 2" (the title's designation is
+    # "Measure", so the badge reads as printed). The box prints no "yes
+    # means" lines.
+    "ak": Ballot(guide="Official Election Pamphlet",
+                 fiscal_label="Statement of Costs",
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary",
+                 badges={"Measure": "BALLOT MEASURE"}),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
