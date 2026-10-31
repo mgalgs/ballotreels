@@ -24,3 +24,28 @@ separately (e.g. as `city-argument-for.pdf` etc.) despite no full text or impart
 analysis being available from any source.
 
 This is a new directory (no prior sources existed on `main` for this measure).
+
+## City documents, gathered 2026-10-30
+
+All published by the City of Marina. The packets are cut to the item's pages; the URL is
+the whole packet's.
+
+- council-2026-07-07-item-11a.pdf: July 7, 2026 City Council packet, pages 302-334 of
+  https://www.cityofmarina.org/AgendaCenter/ViewFile/Agenda/_07072026-742 : item 11a's staff
+  report, the draft resolution submitting the measure (its number left blank; adopted as
+  Resolution No. 2026-100), and Exhibit B, the full draft ordinance "Imposing a Utility Users'
+  Tax" (adds Municipal Code chapter 3.07).
+- council-2026-07-15-special-meeting.pdf: July 15, 2026 special meeting packet (whole),
+  https://www.cityofmarina.org/AgendaCenter/ViewFile/Agenda/_07152026-743 : staff report and the
+  draft resolution amending the ballot question (adopted as Resolution No. 2026-104); its
+  question matches the county's list word for word.
+- council-minutes-2026-07-07-and-07-15.pdf: pages 98-102 of the August 5, 2026 packet,
+  https://www.cityofmarina.org/AgendaCenter/ViewFile/Agenda/_08052026-746 : the action minutes of
+  July 7 (Resolution No. 2026-100 adopted, 4-0) and July 15 (Resolution No. 2026-104 adopted, 4-1).
+- argument-in-favor.pdf, argument-against.pdf: the argument in favor and the argument against,
+  pages of the City's "Arguments and Rebuttals" PDF linked from https://www.cityofmarina.org/MeasureQ
+  (scans, no text layer); typed word for word into argument-in-favor-transcription.txt and
+  argument-against-transcription.txt. The rebuttals are not used.
+
+Not found: a signed resolution, the ordinance as finally attached (the council asked on July 7
+for a "Day" definition the draft lacks), and any impartial analysis.
