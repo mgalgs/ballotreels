@@ -1,0 +1,18 @@
+# Contest index for the 2026-11-03 Iowa general election
+# (docs/ARCHITECTURE.md). One [[contest]] entry per contest on the
+# ballot: the one constitutional amendment the General Assembly proposed.
+# `number` is a measure's ballot designation (a string). The ballot
+# prints "Statewide Public Measure 1" and no short title, so the title
+# pairs the designation with a short subject in the summary's own words.
+
+[election]
+id = "ia-2026-11-03"
+state = "ocd-division/country:us/state:ia"
+title = "Iowa General Election, November 3, 2026"
+
+[[contest]]
+id = "ia-2026-11-03-public-measure-1"
+kind = "measure"
+division = "ocd-division/country:us/state:ia"
+title = "Public Measure 1: Two-Thirds Majority Vote for Income Tax Increases"
+number = "1"

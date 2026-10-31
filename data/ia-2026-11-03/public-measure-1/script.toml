@@ -1,0 +1,168 @@
+# Recipe E, 60 seconds, distilled: one claim per line. The chain: what it
+# is about; what the Constitution has today; which bills would need
+# two-thirds, which taxes are left out, and the one-year limit on
+# lawsuits; that the ballot gives no cost; the two sides; what a vote
+# does.
+#
+# The card quotes Linn County's sample ballot: its heading as title, its
+# question as origin, and its "Summary:" paragraph as summary. The ballot
+# prints no yes or no lines, so the card has none, and the vote lines
+# take their meanings from the summary and the question.
+#
+# Today: no archived source states the vote a tax bill needs now, so the
+# script says only what the resolution shows (the amendment adds a new
+# article, Taxation Limitations) and records the question as unanswered.
+# "Legal and special reserves" is left to the card for length.
+#
+# Fiscal: Iowa has no voter guide, so rule 5a's form names the ballot
+# summary: "Iowa's ballot summary does not include a cost estimate for
+# the amendment."
+#
+# Iowa publishes no official arguments for or against an amendment, so
+# both sides are filed = false and each says so once, in the same
+# number of words. No person is named.
+
+contest = "ia-2026-11-03-public-measure-1"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "sample-ballot"
+number = "1"
+title = "Statewide Public Measure 1"
+origin = "Shall the following amendment to the Constitution be adopted?"
+summary = "Provides that any bill to increase the individual income tax rate or the corporate income tax rate, or the rate of any other type of tax based upon income or legal and special reserves, shall require the affirmative votes of at least two-thirds of the members elected to each house of the legislature for passage. Further, the two-thirds majority vote requirement applies to the passage of a bill to establish a new tax on any type of income or legal and special reserves imposed by the state. The requirement excludes taxes imposed at the option of a local government. A lawsuit challenging the proper enactment of a bill under this section must be filed no later than one year following the enactment."
+
+[[section]]
+id = "what"
+heading = "Public Measure 1"
+
+[[section.line]]
+text = "Public Measure 1 is about the votes needed to pass a bill raising income taxes."
+sources = ["sample-ballot", "woodbury"]
+
+[section.line.visual]
+kind = "page"
+source = "sample-ballot"
+focus = "increase the individual income tax rate"
+
+[[section]]
+id = "today"
+heading = "Today"
+
+[[section.line]]
+text = "Today, the Iowa Constitution has no article on taxation limitations."
+sources = ["resolution"]
+
+[section.line.visual]
+kind = "illustration"
+name = "constitution-page"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+text = "A bill raising an income tax rate would need votes from two-thirds of the members elected to each house."
+sources = ["sample-ballot", "woodbury"]
+
+[section.line.visual]
+kind = "page"
+source = "sample-ballot"
+highlight = ["at least two-thirds of the members elected to each house"]
+
+[[section.line]]
+text = "So would a bill creating a new state tax on income."
+sources = ["sample-ballot", "woodbury"]
+
+[section.line.visual]
+kind = "page"
+source = "sample-ballot"
+highlight = ["a bill to establish a new tax on any type of income"]
+
+[[section.line]]
+text = "Taxes a local government chooses to impose would not be covered."
+sources = ["sample-ballot", "woodbury"]
+
+[section.line.visual]
+kind = "page"
+source = "sample-ballot"
+highlight = ["excludes taxes imposed at the option of a local government"]
+
+[[section.line]]
+text = "A lawsuit challenging how such a bill was passed would have to be filed within one year."
+sources = ["sample-ballot", "woodbury"]
+
+[section.line.visual]
+kind = "illustration"
+name = "court-gavel"
+
+[[section]]
+id = "fiscal"
+heading = "What it would cost"
+
+[[section.line]]
+text = "Iowa's ballot summary does not include a cost estimate for the amendment."
+sources = ["sample-ballot"]
+
+[section.line.visual]
+kind = "illustration"
+name = "analyst-review"
+stamp = "None reported"
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+filed = false
+
+[[section.line]]
+text = "Iowa publishes no official argument for the amendment."
+sources = ["sample-ballot"]
+
+[section.line.visual]
+kind = "list"
+source = "sample-ballot"
+items = ["No official argument for was published"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+filed = false
+
+[[section.line]]
+text = "Iowa publishes no official argument against the amendment."
+sources = ["sample-ballot"]
+
+[section.line.visual]
+kind = "list"
+source = "sample-ballot"
+items = ["No official argument against was published"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote adds the two-thirds requirement to the Constitution."
+sources = ["sample-ballot", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "sample-ballot"
+highlight = ["the two-thirds majority vote requirement"]
+
+[[section.line]]
+text = "A no vote does not add that requirement to the Constitution."
+sources = ["sample-ballot", "resolution"]
+
+[section.line.visual]
+kind = "page"
+source = "sample-ballot"
+highlight = ["Shall the following amendment to the Constitution be adopted?"]
+
+[[question]]
+ask = "How many votes does a bill raising income taxes need today?"
+unanswered = true

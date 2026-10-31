@@ -1,0 +1,64 @@
+# Archived sources for Iowa Statewide Public Measure 1, 2026-11-03
+# general election. Every id here may be cited by script.toml. `kind`
+# must be one the standard allows (docs/STANDARD.md, section 1).
+#
+# Iowa prints no voter guide, and the Secretary of State publishes no
+# copy of the measure online (sos.iowa.gov has no 2026 measure page), so
+# the ballot wording is quoted from two county election offices. The
+# card quotes Linn County's official sample ballot (ballot style 67; the
+# measure is on the back, set in a narrow column): its heading, its
+# question and its "Summary:" paragraph. Woodbury County Elections
+# prints the same heading, question and summary as one paragraph, and
+# backs the same lines as a check on the column's reading. Neither
+# prints a fiscal statement or yes or no lines.
+#
+# The amendment's text is cited from the enrolled SJR 11 (91st General
+# Assembly), which adopted it a second time; HJR 2006 (90th General
+# Assembly, 2024 Session) is its first passage, in the same words.
+#
+# Iowa publishes no official arguments for or against an amendment, so
+# there is no source of kind official-argument: both side sections say
+# so, citing the sample ballot, which prints none.
+
+[contest]
+id = "ia-2026-11-03-public-measure-1"
+election = "ia-2026-11-03"
+division = "ocd-division/country:us/state:ia"
+kind = "measure"
+title = "Public Measure 1: Two-Thirds Majority Vote for Income Tax Increases"
+
+[[source]]
+id = "sample-ballot"
+kind = "official-title-summary"
+publisher = "Linn County, Iowa, Official Sample Ballot, General Election, November 3, 2026, Ballot Style 67"
+credit = "Linn County Sample Ballot"
+url = "https://gis.linncountyiowa.gov/web-data/elections/year/2026/20261103GE/sb/067.pdf"
+file = "sources/linn-county-sample-ballot.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "woodbury"
+kind = "official-title-summary"
+publisher = "Woodbury County Elections, 2026 Public Measure 1: Constitutional Amendment - Full Language"
+credit = "Woodbury County Elections"
+url = "https://elections.woodburycountyiowa.gov/news/2026_public_measure_1_constitutional_amendment_full_language/"
+file = "sources/woodbury-county-full-language.html"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "resolution"
+kind = "official-text"
+publisher = "Iowa General Assembly, Senate Joint Resolution 11, Enrolled, Ninety-first General Assembly"
+credit = "Senate Joint Resolution 11"
+url = "https://www.legis.iowa.gov/docs/publications/LGE/91/SJR11.pdf"
+file = "sources/sjr11-enrolled.pdf"
+retrieved = "2026-10-27"
+
+[[source]]
+id = "first-passage"
+kind = "legislative-record"
+publisher = "Iowa General Assembly, House Joint Resolution 2006, Enrolled, Ninetieth General Assembly"
+credit = "House Joint Resolution 2006"
+url = "https://www.legis.iowa.gov/docs/publications/LGE/90/HJR2006.pdf"
+file = "sources/hjr2006-first-passage.pdf"
+retrieved = "2026-10-27"
