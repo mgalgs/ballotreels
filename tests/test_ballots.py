@@ -538,6 +538,16 @@ class LouisianaStatementsStitchTest(unittest.TestCase):
                   "2"),
             "QUESTION")
 
+    def test_oklahoma_uses_its_final_ballot_titles_words(self):
+        ok = BALLOTS["ok"]
+        self.assertEqual((ok.guide, ok.fiscal_label, ok.choices,
+                          ok.card_source_kind),
+                         ("Final Ballot Title", None, ("Yes", "No"),
+                          "official-title-summary"))
+        # "STATE QUESTION 845", as the State Election Board heads it
+        self.assertEqual(badge(ok, "State Question 845: X", "845"),
+                         "STATE QUESTION")
+
 
 class SideHeadingTest(ContestCopyTestCase):
     def failures(self):

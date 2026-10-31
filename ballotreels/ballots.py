@@ -1677,6 +1677,21 @@ BALLOTS: dict[str, Ballot] = {
                  choices=("Yes", "No"),
                  card_source_kind="official-title-summary",
                  card_column_breaks=True),
+
+    # Oklahoma prints no voter guide. For each legislative referendum the
+    # Attorney General writes the ballot title the Secretary of State
+    # files ("SQ 845, LR 379 Final Ballot Title"): one paragraph, whose
+    # cost sentence ("This measure will not have a fiscal impact.") sits
+    # under no heading of its own, so there is no fiscal label; the
+    # question "Shall the proposal be approved?"; and the choices "For
+    # the proposal – YES" and "Against the proposal – NO". The State
+    # Election Board heads each "STATE QUESTION 845" (badge STATE
+    # QUESTION, from the title's "State Question 845").
+    "ok": Ballot(guide="Final Ballot Title",
+                 fiscal_label=None,
+                 choices=("Yes", "No"),
+                 card_source_kind="official-title-summary",
+                 badges={"Question": "STATE QUESTION"}),
 }
 
 _STATE = re.compile(r"/state:([a-z]{2})(?:/|$)")
