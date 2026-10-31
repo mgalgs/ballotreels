@@ -4074,12 +4074,11 @@ period = "per-year"
 source = "county-page"
 status = "none-printed"
 
-# Liberty Union High School District Measure X: the bond amount its
-# ballot question prints, as the county's Measure X page gives it (the
-# District's tax rate statement puts total debt service at approximately
-# $350 million).
+# Liberty Union High School District Measure X: the total debt service,
+# from the District's tax rate statement as the county's Measure X page
+# prints it; the bonds are $165,000,000.
 [liberty-union-high-measure-x]
-source = "county-page"
-quote = "authorizing $165,000,000 in bonds at legal rates"
-amount = 165000000
+source = "tax-statement"
+quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $350 million."
+amount = 350000000
 period = "unstated"
