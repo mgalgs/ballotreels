@@ -11,8 +11,10 @@
 # so the card has no fiscal quote.
 #
 # Both sides filed statements. Each side's own figures (the people
-# covered, the yearly cost of a lower federal share, the income limits)
-# stay with that side's statement and out of the narration. "Washington"
+# covered, the yearly cost of a lower federal share, the income figures)
+# stay with that side's statement and out of the narration. The
+# expansion's income limit is in the official explanation and the text,
+# so the background line says "lower-income adults" (not the percentages). "Washington"
 # is the supporters' word; neutral lines say "the federal government".
 
 contest = "sd-2026-11-03-amendment-i"
@@ -55,7 +57,7 @@ kind = "illustration"
 name = "health-form"
 
 [[section.line]]
-text = "In 2022, voters expanded it to adults over 18 and under 65."
+text = "In 2022, voters expanded it to lower-income adults over 18 and under 65."
 sources = ["pamphlet", "text"]
 
 [section.line.visual]
