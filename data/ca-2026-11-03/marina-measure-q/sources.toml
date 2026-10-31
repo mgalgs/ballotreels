@@ -1,0 +1,69 @@
+# Archived sources for City of Marina Measure Q, 2026-11-03 general
+# election (sources/county-sources.md). Every id here may be cited by
+# script.toml. `kind` must be one the standard allows (docs/STANDARD.md,
+# section 1).
+#
+# The County of Monterey Elections Department's List of Local Measures
+# gives Measure Q's letter, vote threshold and ballot question, and says
+# the measure's documents are filed with the city clerk. The City of
+# Marina's own documents are drafts as printed in council packets: the
+# July 7, 2026 packet's item 11a holds the staff report, the draft
+# resolution (adopted as Resolution No. 2026-100) and, as its Exhibit B,
+# the full draft ordinance imposing the tax; the July 15 special meeting
+# packet holds the draft resolution amending the ballot question (adopted
+# as Resolution No. 2026-104), whose question matches the county's word
+# for word; the August 5 packet holds the action minutes of both
+# meetings. Only the ordinance is cited, for its operative terms (the
+# taxed services, the rate, the reductions, the general fund, the audit,
+# the end date), none of which the ballot question or the minutes
+# contradict. The signed resolutions, the ordinance as finally attached
+# and any impartial analysis were not found.
+#
+# The argument in favor and the argument against are scans on the City's
+# Measure Q page, with no text layer. Each was typed word for word into
+# sources/argument-*-transcription.txt, naming the PDF and URL it copies;
+# those sources point at the transcription, and their url at the City's
+# page that links the scan. The rebuttals are not used.
+
+[contest]
+id = "ca-2026-11-03-marina-measure-q"
+election = "ca-2026-11-03"
+division = "ocd-division/country:us/state:ca/place:marina"
+kind = "measure"
+title = "City of Marina Measure Q: A New 7% Utility Users' Tax"
+
+[[source]]
+id = "measure-list"
+kind = "official-title-summary"
+publisher = "County of Monterey Elections Department, List of Local Measures, November 3, 2026 General Election: Measure Q - City of Marina"
+credit = "List of Local Measures, Monterey County Elections"
+url = "https://www.countyofmonterey.gov/government/departments-a-h/elections/list-of-local-measures"
+file = "sources/county-measure-list.html"
+retrieved = "2026-10-29"
+
+[[source]]
+id = "ordinance"
+kind = "official-text"
+publisher = "City of Marina, Proposed Ordinance, An Ordinance of the City of Marina Imposing a Utility Users’ Tax (Exhibit B, revised, to the draft resolution submitting it to the voters), City Council agenda packet of July 7, 2026, item 11a, pages 302-334"
+credit = "Proposed Utility Users’ Tax Ordinance, City of Marina"
+url = "https://www.cityofmarina.org/AgendaCenter/ViewFile/Agenda/_07072026-742"
+file = "sources/council-2026-07-07-item-11a.pdf"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-for"
+kind = "official-argument"
+publisher = "Argument in Favor of Measure Q, as filed with the City Clerk of the City of Marina (City of Marina, Measure Q Arguments and Rebuttals, pages 8-9; transcribed from the scan)"
+credit = "Argument in favor, City of Marina"
+url = "https://www.cityofmarina.org/MeasureQ"
+file = "sources/argument-in-favor-transcription.txt"
+retrieved = "2026-10-30"
+
+[[source]]
+id = "argument-against"
+kind = "official-argument"
+publisher = "Argument Against Measure Q, as filed with the City Clerk of the City of Marina (City of Marina, Measure Q Arguments and Rebuttals, pages 1-3; transcribed from the scan)"
+credit = "Argument against, City of Marina"
+url = "https://www.cityofmarina.org/MeasureQ"
+file = "sources/argument-against-transcription.txt"
+retrieved = "2026-10-30"

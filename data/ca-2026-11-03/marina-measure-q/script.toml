@@ -1,0 +1,218 @@
+# Recipe E, about 60 seconds, distilled: one claim per line. The chain:
+# what it asks and whose measure it is; no such tax today; what would
+# change (the rate and the services it covers, the half-rate for some
+# low-income households, no end date, a general tax into the general
+# fund, the audit, a simple majority); the ballot question's revenue
+# estimate; one line per side; what a vote does.
+#
+# No place name is narrated (the narrator mispronounces them): the
+# opening says "the voters of this city". The card, title and chart
+# title carry it.
+#
+# The card quotes the County of Monterey Elections Department's List of
+# Local Measures. It prints no yes and no sentences, so the card has no
+# boxes. The City's documents are drafts from council packets: the
+# signed Resolutions No. 2026-100 and 2026-104, the ordinance as finally
+# attached and an impartial analysis were not found. The July 15 draft
+# resolution's ballot question matches the county's word for word, and
+# the minutes record both resolutions adopted. The July 7 minutes record
+# a direction to come back with a 30-year sunset; the July 15 staff
+# report recommends none, and the ballot question says "until ended by
+# voters", so the end-date line cites the ballot question beside the
+# ordinance's Section 4. Only the ordinance's operative terms are cited.
+#
+# The taxed services are the ordinance's own sections 3.07-040 to
+# 3.07-100 (telecommunication, video, electricity, gas, water), not the
+# City's web page. The half-rate is the ordinance's section 3.07-030 B
+# (residential users enrolled in the CARE program; seniors 65 or older
+# heading a household at or below 80% of the county's median income).
+# The City's estimates of the cost to a household disagree with each
+# other, so no neutral line gives one; the argument against's $336 is
+# that side's figure, and is not narrated either. The side lines leave
+# out the sides' own figures ($29.8 million, "largest UUT", $336,
+# "nearly 10 minutes").
+#
+# The ordinance makes the tax a general tax: its Section 2 says the
+# revenue "shall be spent for unrestricted general revenue purposes of
+# the City" and "Nothing herein shall bind the City to use the proceeds
+# for any specific purpose or function." The uses line says this in the
+# ordinance's sense, attributed; it is the neutral ground under the no
+# side's point that spending is not tied to the named buildings, and the
+# ballot question's list of uses stays on the card.
+#
+# The $3.83 million a year is the ballot question's figure. No archived
+# source states the City's general fund budget, so it has no scale
+# (STANDARD.md 6.5; left open, under [[question]]).
+
+contest = "ca-2026-11-03-marina-measure-q"
+template = "measure"
+template_version = 2
+standard_version = 2
+
+[card]
+source = "measure-list"
+number = "Q"
+title = "City of Marina"
+origin = "Majority Voter Approval Required"
+summary = "MARINA 911 EMERGENCY, PUBLIC SAFETY, AND COMMUNITY SERVICES MEASURE. To ensure firefighters, EMTs, police officers, emergency operations, response to emergencies and natural disasters including earthquakes; repair and upgrade police/fire/city buildings; protect water supply; repair streets/potholes; and provide general city services, shall the City of Marina's measure establishing a 7% utility users' tax with low-income rates, generating approximately $3,830,000 annually until ended by voters, requiring spending disclosures, audits, all funds spent locally, be adopted?"
+
+[[section]]
+id = "what"
+heading = "Measure Q"
+
+[[section.line]]
+text = "Measure Q asks the voters of this city whether to create a new 7 percent tax on utility bills."
+sources = ["measure-list", "ordinance"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["establishing a 7% utility users' tax with low-income rates"]
+
+[[section]]
+id = "today"
+heading = "The tax today"
+
+[[section.line]]
+text = "The city has no utility users' tax today."
+sources = ["ordinance", "measure-list"]
+
+[section.line.visual]
+kind = "illustration"
+name = "utility-bills"
+
+[[section]]
+id = "change"
+heading = "What would change"
+
+[[section.line]]
+id = "services"
+text = "The tax would be 7 percent of telecommunications, video, electricity, gas and water charges."
+sources = ["ordinance"]
+
+[section.line.visual]
+kind = "list"
+source = "ordinance"
+items = ["Telecommunications", "Video", "Electricity", "Gas", "Water"]
+
+[[section.line]]
+id = "reduced"
+text = "Residents enrolled in the CARE low-income energy program, and low-income seniors 65 or older, would pay half."
+sources = ["ordinance", "measure-list"]
+
+[section.line.visual]
+kind = "illustration"
+name = "senior-center"
+
+[[section.line]]
+id = "end"
+text = "It would have no end date, lasting until ended by voters."
+sources = ["measure-list", "ordinance"]
+
+[section.line.visual]
+kind = "illustration"
+name = "end-date"
+
+[[section.line]]
+id = "uses"
+text = "As a general tax, the ordinance says, the money would not be bound to any specific purpose, and would be audited yearly."
+sources = ["ordinance", "measure-list"]
+
+[section.line.visual]
+kind = "illustration"
+name = "state-budget"
+
+[[section.line]]
+id = "threshold"
+text = "Measure Q needs a simple majority to pass."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "illustration"
+name = "vote-thresholds"
+
+[[section]]
+id = "fiscal"
+heading = "What the ballot question says"
+
+[[section.line]]
+id = "revenue"
+text = "The ballot question says the tax would raise about $3.83 million a year."
+sources = ["measure-list"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["generating approximately $3,830,000 annually until ended by voters"]
+
+[[section]]
+id = "yes"
+heading = "Why some vote yes"
+side = "yes"
+
+[[section.line]]
+text = "Supporters say unsafe, outgrown police, fire and city buildings and slow emergency responses need fixing, with every dollar disclosed and audited."
+sources = ["argument-for"]
+basis = ["Three current city buildings are accidents waiting to happen and undermine the safety of Marina residents.", "LONG 911 RESPONSES: Our city has outgrown the Police/Fire Department building.", "Every dollar is subject to mandatory public spending disclosures and annual independent audits."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-for"
+items = ["Fix unsafe, outgrown city buildings", "Public spending disclosures and audits"]
+
+[[section]]
+id = "no"
+heading = "Why some vote no"
+side = "no"
+
+[[section.line]]
+text = "Opponents say this massive utility tax has no project or financing plan, and nothing legally requires spending it on the facilities named."
+sources = ["argument-against"]
+basis = ["Now, this city council wants a massive 7% utility users’ tax on your water, gas, electricity, and phones.", "without a financing plan, a project plan, or a clear evaluation of possibly cheaper alternatives.", "this measure absolutely lacks any legal requirement for future councils to spend this money on the emergency facilities mentioned in the ballot text."]
+
+[section.line.visual]
+kind = "list"
+source = "argument-against"
+items = ["No project or financing plan", "Not legally tied to facilities"]
+
+[[section]]
+id = "vote"
+heading = "What your vote means"
+
+[[section.line]]
+text = "A yes vote creates the 7 percent utility users' tax, until ended by voters."
+sources = ["measure-list", "ordinance"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["establishing a 7% utility users' tax with low-income rates"]
+
+[[section.line]]
+text = "A no vote means the city does not create the tax."
+sources = ["measure-list", "ordinance"]
+
+[section.line.visual]
+kind = "page"
+source = "measure-list"
+highlight = ["establishing a 7% utility users' tax with low-income rates"]
+
+[[question]]
+ask = "Which utility services would be taxed?"
+lines = ["services"]
+
+[[question]]
+ask = "Who would pay a lower rate?"
+lines = ["reduced"]
+
+[[question]]
+ask = "When would the tax end?"
+lines = ["end"]
+
+[[question]]
+ask = "Must the money go to the buildings the ballot question names?"
+lines = ["uses"]
+
+[[question]]
+ask = "How big is $3.83 million a year next to the city budget?"
+unanswered = true

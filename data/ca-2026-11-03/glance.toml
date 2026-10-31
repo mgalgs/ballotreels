@@ -4082,3 +4082,13 @@ source = "tax-statement"
 quote = "The best estimate of the total debt service, including the principal and interest, that would be required to be repaid if all the bonds are issued and sold is approximately $350 million."
 amount = 350000000
 period = "unstated"
+
+# City of Marina Measure Q: a utility users' tax; no fiscal statement or
+# impartial analysis was found. The revenue as the ballot question on
+# the County of Monterey Elections Department's List of Local Measures
+# gives it.
+[marina-measure-q]
+source = "measure-list"
+quote = "generating approximately $3,830,000 annually until ended by voters"
+amount = 3830000
+period = "per-year"
