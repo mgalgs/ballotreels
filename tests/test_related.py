@@ -150,16 +150,18 @@ class RealDataApiTest(unittest.TestCase):
                           ("New Hampshire", "nh-2026-11-03-question-2"),
                           ("North Carolina",
                            "nc-2026-11-03-property-tax-levy-limit"),
+                          ("Oklahoma", "ok-2026-11-03-state-question-847"),
                           ("Tennessee", "tn-2026-11-03-amendment-2"),
                           ("Wyoming",
                            "wy-2026-11-03-initiative-proposition-1")])
 
     def test_two_groups(self):
-        # Utah's Amendment B is in two groups: a link from one, four from
-        # the other.
+        # Utah's Amendment B is in two groups: two links from one, four
+        # from the other.
         self.assertEqual(self.related("ut-2026-11-03-amendment-b"),
                          [("California", "ca-2026-11-03-prop-43"),
                           ("Colorado", "co-2026-11-03-amendment-85"),
+                          ("Iowa", "ia-2026-11-03-public-measure-1"),
                           ("Missouri", "mo-2026-11-03-amendment-6"),
                           ("Montana", "mt-2026-11-03-ci-133"),
                           ("North Dakota", "nd-2026-11-03-measure-1")])
