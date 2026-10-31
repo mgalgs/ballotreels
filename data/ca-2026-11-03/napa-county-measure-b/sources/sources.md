@@ -65,3 +65,24 @@ capture). A search-engine summary says the county mailed a "replacement Voter In
 Guide for Measure B" (napacounty.gov/m/newsflash/Home/Detail/886, unreadable): what was
 replaced is unknown.
 ```
+
+## Napa County Elections measure page, read 2026-10-30
+
+The county's page "County of Napa - Measure B",
+https://www.napacounty.gov/2471/County-of-Napa---Measure-B, opened in a desktop Chrome
+browser (the site answers scripted fetches with HTTP 403). It links seven PDFs; each was
+fetched from that page in the same browser session and checked by SHA-256. Saved here:
+
+- county-ballot-title-and-summary.pdf: "Measure B - Ballot Title and Summary - Napa County",
+  https://www.napacounty.gov/DocumentCenter/View/40594 (text layer).
+- county-impartial-analysis.pdf: "Measure B - Impartial Analysis - Napa County", the County
+  Counsel's impartial analysis, https://www.napacounty.gov/DocumentCenter/View/46097 (text layer).
+- county-argument-in-favor.pdf: "Measure B - Argument in Favor - Napa County",
+  https://www.napacounty.gov/DocumentCenter/View/46100 (scan; page 6 is the argument, typed
+  into county-argument-in-favor-transcription.txt).
+- county-argument-against.pdf: "Measure B - Argument Against - Napa County",
+  https://www.napacounty.gov/DocumentCenter/View/46099 (scan; page 2 is the argument, typed
+  into county-argument-against-transcription.txt).
+
+Not saved: the full text (/DocumentCenter/View/40926; the same initiative already archived
+above) and the two rebuttals (/View/46153, /View/46152), which the video does not use.
